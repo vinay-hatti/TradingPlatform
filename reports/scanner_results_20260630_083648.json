@@ -1,0 +1,58 @@
+[
+  {
+    "symbol": "AAPL",
+    "signal": "CALL",
+    "strategy": "LONG_CALL",
+    "score": 75.0,
+    "regime": "BULL_TREND",
+    "price": 306.31,
+    "strike": 330.0,
+    "expiry": "2028-01-21",
+    "delta": 0.44840055770151616,
+    "iv": 0.28699028020361095,
+    "open_interest": 1926,
+    "rank_score": 91.89401115403032
+  },
+  {
+    "symbol": "AMD",
+    "signal": "CALL",
+    "strategy": "LONG_CALL",
+    "score": 75.0,
+    "regime": "BULL_TREND",
+    "price": 510.13,
+    "strike": 547.5,
+    "expiry": "2026-07-02",
+    "delta": 0.4424358713811712,
+    "iv": 0.8297160809552712,
+    "open_interest": 1202,
+    "rank_score": 86.05071742762343
+  },
+  {
+    "symbol": "AMZN",
+    "signal": "CALL",
+    "strategy": "LONG_CALL",
+    "score": 65.0,
+    "regime": "BULL_TREND",
+    "price": 261.26,
+    "strike": 330.0,
+    "expiry": "2028-06-16",
+    "delta": 0.44611429232574806,
+    "iv": 0.4127209103325905,
+    "open_interest": 1282,
+    "rank_score": 81.20428584651496
+  },
+  {
+    "symbol": "MSFT",
+    "signal": "CALL",
+    "strategy": "LONG_CALL",
+    "score": 60.0,
+    "regime": "VOLATILE",
+    "price": 460.52,
+    "strike": 390.0,
+    "expiry": "2026-10-16",
+    "delta": 0.45094923941461035,
+    "iv": 0.38795926813936393,
+    "open_interest": 1320,
+    "rank_score": 76.30101521170779
+  }
+]
