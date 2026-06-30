@@ -1,0 +1,65 @@
+from trading_ai.options.chain import OptionChain
+from trading_ai.options.expected_move import ExpectedMove
+from trading_ai.options.strikes import StrikeSelector
+from trading_ai.options.strategies import StrategySelector
+
+from trading_ai.options.greeks import Greeks
+from trading_ai.options.liquidity import LiquidityFilter
+from trading_ai.options.probability import ProbabilityModel
+from trading_ai.options.risk import RiskEngine
+
+
+class OptionsEngineV2:
+
+    def __init__(self):
+
+        self.chain = OptionChain()
+        self.strikes = StrikeSelector()
+        self.expected_move = ExpectedMove()
+        self.strategy = StrategySelector()
+
+        self.greeks = Greeks()
+        self.liquidity = LiquidityFilter()
+        self.prob = ProbabilityModel()
+        self.risk = RiskEngine()
+
+    def build_trade(self, symbol, price, score):
+
+        expirations = self.chain.expirations(symbol)
+        if not expirations:
+            return None
+
+        expiry = expirations[0]
+
+        chain = self.chain.get_chain(symbol, expiry)
+        calls = chain["calls"]
+
+        call = self.strikes.select_call_strike(calls, price)
+        if call is None:
+            return None
+
+        S = price
+        K = float(call["strike"])
+        T = 7 / 365
+        iv = float(call.get("impliedVolatility", 0.25))
+
+        pop = self.prob.pop_call(S, K, T, iv)
+
+        liq_score = self.liquidity.score(call)
+
+        if not self.risk.validate_trade(pop, liq_score):
+            return None
+
+        strategy = self.strategy.choose(score, iv * 100)
+
+        return {
+            "symbol": symbol,
+            "price": price,
+            "strike": K,
+            "expiry": expiry,
+            "strategy": strategy,
+            "iv": iv,
+            "pop": pop,
+            "liquidity_score": liq_score,
+            "score": score,
+        }

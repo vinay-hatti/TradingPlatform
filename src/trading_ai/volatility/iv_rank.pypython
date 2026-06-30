@@ -1,0 +1,14 @@
+class IVRankEngine:
+
+    def compute_rank(self, iv_series, current_iv):
+
+        if not iv_series:
+            return 0.5
+
+        low = min(iv_series)
+        high = max(iv_series)
+
+        if high == low:
+            return 0.5
+
+        return (current_iv - low) / (high - low)

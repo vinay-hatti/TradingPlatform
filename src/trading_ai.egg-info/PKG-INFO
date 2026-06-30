@@ -1,0 +1,33 @@
+Metadata-Version: 2.4
+Name: trading-ai
+Version: 0.1.0
+Summary: AI Powered Options Trading Platform
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: scipy
+Requires-Dist: sqlalchemy>=2.0
+Requires-Dist: psycopg2-binary
+Requires-Dist: python-dotenv
+Requires-Dist: pydantic>=2.0
+Requires-Dist: pydantic-settings
+Requires-Dist: loguru
+Requires-Dist: requests
+Requires-Dist: httpx
+Requires-Dist: yfinance
+Requires-Dist: polygon-api-client>=1.16.3
+Requires-Dist: plotly
+Requires-Dist: streamlit
+Requires-Dist: ta
+Requires-Dist: apscheduler
+Requires-Dist: redis
+Requires-Dist: xgboost
+Requires-Dist: scikit-learn
+Requires-Dist: alembic
+Requires-Dist: matplotlib>=3.11.0
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: pytest-cov; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+Requires-Dist: mypy; extra == "dev"

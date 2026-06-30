@@ -1,0 +1,64 @@
+import numpy as np
+
+from trading_ai.scanner.signals import Signal
+from trading_ai.market.service import MarketService
+from trading_ai.feature_store.pipeline import FeaturePipeline
+
+class SignalEngine:
+
+    def __init__(self):
+
+        self.market = MarketService()
+        self.pipeline = FeaturePipeline()
+        self.signal_engine = SignalEngine()
+
+        self.call_threshold = 20
+        self.put_threshold = 15
+
+    def scan(self, symbols, start, end):
+
+        results = []
+
+        for symbol in symbols:
+
+            bars = self.market.get_history(symbol, start, end)
+            df = self.market.provider.to_dataframe(bars)
+
+            df = self.pipeline.run(df)
+            signal = self.signal_engine.generate_signal(df)
+
+            results.append(signal)
+
+        return results
+
+    def generate_signal(self, df):
+
+        latest = df.iloc[-1]
+
+        call_score = latest.get("call_score", 0)
+        put_score = latest.get("put_score", 0)
+
+        regime = latest.get("market_regime", "UNKNOWN")
+        expected_move = latest.get("expected_move_1d", 0)
+
+        if call_score >= self.call_threshold and call_score > put_score:
+            action = "CALL"
+            score = call_score
+
+        elif put_score >= self.put_threshold and put_score > call_score:
+            action = "PUT"
+            score = put_score
+
+        else:
+            action = "NO_TRADE"
+            score = max(call_score, put_score)
+
+        return Signal(
+            symbol=latest.name if hasattr(latest, "name") else "UNKNOWN",
+            action=action,
+            score=score,
+            confidence=min(score / 50, 1.0),
+            regime=regime,
+            expected_move=expected_move,
+        )
+

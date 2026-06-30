@@ -1,0 +1,91 @@
+import numpy as np
+from trading_ai.indicators.feature_engine import FeatureEngine
+from trading_ai.market.regime import MarketRegimeEngine
+from trading_ai.options.features import OptionsFeatureEngine
+from trading_ai.options.scoring import OptionsScoringEngine
+from trading_ai.options.strike_selector import StrikeSelector
+#from trading_ai.scanner.engine import SignalEngine
+
+class FeaturePipeline:
+
+    def __init__(self):
+        self.engine = FeatureEngine()
+        self.regime = MarketRegimeEngine()
+        self.options_engine = OptionsFeatureEngine()
+        self.scorer = OptionsScoringEngine()
+        self.strike_selector = StrikeSelector()
+
+    def run(self, df):
+
+#        engine = SignalEngine()
+#
+#        signal = engine.generate_signal(df)
+#
+#        df["signal"] = signal.action
+#        df["score"] = signal.score
+#        df["confidence"] = signal.confidence
+
+        df = self.engine.build_features(df)
+
+        df["market_regime"] = self.regime.classify(df)
+        
+        df["hv20"] = self.options_engine.compute_hv(df)
+
+        hv_min = df["hv20"].rolling(50).min()
+        hv_max = df["hv20"].rolling(50).max()
+
+        df["iv_rank"] = [
+           self.options_engine.iv_rank_proxy(hv, hv_min.iloc[i], hv_max.iloc[i])
+           for i, hv in enumerate(df["hv20"])
+        ]
+
+        df["expected_move_1d"] = [
+           self.options_engine.expected_move(price, hv, 1)
+           for price, hv in zip(df["close"], df["hv20"])
+        ]
+
+        latest = df.iloc[-1]
+
+        df["atr14_mean"] = df["atr14"].rolling(20).mean()
+
+        df["call_score"] = df.apply(self.scorer.score_long_call, axis=1)
+        df["put_score"] = df.apply(self.scorer.score_long_put, axis=1)
+
+        df["signal"] = np.where(
+            df["call_score"] >= df["put_score"],
+            "CALL",
+            "PUT"
+        )
+
+        latest = df.iloc[-1]
+
+        price = latest["close"]
+        expected_move = latest["expected_move_1d"]
+
+        score = latest["call_score"] if latest["signal"] == "CALL" else latest["put_score"]
+
+        if latest["signal"] == "CALL":
+
+            trade = self.strike_selector.select_call_strike(
+                price=price,
+                expected_move=expected_move,
+                strength=score
+            )
+
+        else:
+
+            trade = self.strike_selector.select_put_strike(
+                price=price,
+                expected_move=expected_move,
+                strength=score
+            )
+
+        df["trade"] = latest["signal"]
+        df["strike"] = trade["strike"]
+        df["delta"] = trade["delta"]
+
+        df["atr14_mean"] = df["atr14"].rolling(20).mean()
+        df["call_score"] = df.apply(self.scorer.score_long_call, axis=1)
+        df["put_score"] = df.apply(self.scorer.score_long_put, axis=1)
+
+        return df

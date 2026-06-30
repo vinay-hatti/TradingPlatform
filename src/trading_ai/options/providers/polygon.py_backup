@@ -1,0 +1,113 @@
+from polygon import RESTClient
+
+from trading_ai.config import settings
+from trading_ai.domain.option import OptionContract
+
+
+class PolygonOptionsProvider:
+    def __init__(self):
+        self.client = RESTClient(settings.polygon_api_key)
+
+    def get_chain(self, symbol: str):
+        chain = []
+
+        contracts = self.client.list_snapshot_options_chain(symbol)
+
+        for c in contracts:
+            try:
+                details = getattr(c, "details", None)
+                if details is None:
+                    continue
+
+                if c.last_quote is None:
+                    continue
+
+                if c.greeks is None:
+                    continue
+
+                if c.implied_volatility is None:
+                    continue
+
+                if c.greeks.delta is None:
+                    continue
+
+                quote = getattr(c, "last_quote", None)
+                greeks = getattr(c, "greeks", None)
+                day = getattr(c, "day", None)
+
+                bid = float(quote.bid) if quote and quote.bid is not None else 0.0
+                ask = float(quote.ask) if quote and quote.ask is not None else 0.0
+
+                last = (
+                    float(day.close)
+                    if day and getattr(day, "close", None) is not None
+                    else 0.0
+                )
+
+                volume = (
+                    int(day.volume)
+                    if day and getattr(day, "volume", None) is not None
+                    else 0
+                )
+
+                open_interest = (
+                    int(c.open_interest)
+                    if getattr(c, "open_interest", None) is not None
+                    else 0
+                )
+
+                iv = (
+                    float(c.implied_volatility)
+                    if getattr(c, "implied_volatility", None) is not None
+                    else 0.0
+                )
+
+                delta = (
+                    float(greeks.delta)
+                    if greeks and getattr(greeks, "delta", None) is not None
+                    else 0.0
+                )
+
+                gamma = (
+                    float(greeks.gamma)
+                    if greeks and getattr(greeks, "gamma", None) is not None
+                    else 0.0
+                )
+
+                theta = (
+                    float(greeks.theta)
+                    if greeks and getattr(greeks, "theta", None) is not None
+                    else 0.0
+                )
+
+                vega = (
+                    float(greeks.vega)
+                    if greeks and getattr(greeks, "vega", None) is not None
+                    else 0.0
+                )
+
+                chain.append(
+                    OptionContract(
+                        underlying=symbol,
+                        option_symbol=details.ticker,
+                        strike=float(details.strike_price),
+                        expiry=str(details.expiration_date),
+                        option_type=str(details.contract_type).upper(),
+                        bid=bid,
+                        ask=ask,
+                        last=last,
+                        volume=volume,
+                        open_interest=open_interest,
+                        implied_volatility=iv,
+                        delta=delta,
+                        gamma=gamma,
+                        theta=theta,
+                        vega=vega,
+                        rho=0.0,
+                    )
+                )
+
+            except Exception:
+                continue
+        print(f"Downloaded {len(chain)} usable contracts for {symbol}")
+        return chain
