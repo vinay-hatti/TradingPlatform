@@ -8,14 +8,14 @@ class StrategyEngine:
 
     def recommend(self, symbol, ctx, analytics):
 
-        # Stronger pre-Phase-8 logic:
-        # choose direction by score, not regime.
-        if ctx.call_score >= ctx.put_score:
-            strategy = "LONG_CALL"
+        score = self._score(ctx, analytics)
+
+        if score >= 60:
             signal = "CALL"
+            strategy = "LONG_CALL"
         else:
-            strategy = "LONG_PUT"
             signal = "PUT"
+            strategy = "LONG_PUT"
 
         option = self.options_engine.select_contract(
             symbol,
@@ -26,8 +26,6 @@ class StrategyEngine:
 
         if option is None:
             return None
-
-        score = self._score(ctx, option, analytics, strategy)
 
         return TradeRecommendation(
             symbol=symbol,
@@ -44,13 +42,28 @@ class StrategyEngine:
             option=option,
         )
 
-    def _score(self, ctx, option, analytics, strategy):
+    def _score(self, ctx, analytics):
 
-        if strategy == "LONG_CALL":
-            return float(ctx.call_score)
+        score = 50.0
 
-        if strategy == "LONG_PUT":
-            return float(ctx.put_score)
+        if ctx.market_regime == "BULL_TREND":
+            score += 15
+        elif ctx.market_regime == "BEAR_TREND":
+            score -= 15
 
-        return 0.0
+        if ctx.rsi14 > 55:
+            score += 10
+        elif ctx.rsi14 < 40:
+            score -= 10
 
+        iv_rank = analytics.get("iv_rank", 0.5)
+
+        if iv_rank > 0.7:
+            score += 10
+        elif iv_rank < 0.3:
+            score -= 5
+
+        if ctx.em_ratio > 0.05:
+            score += 5
+
+        return float(max(0, min(100, score)))
