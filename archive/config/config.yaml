@@ -1,0 +1,41 @@
+environment: development
+
+database:
+
+  host: localhost
+
+  port: 5432
+
+  name: trading_ai
+
+  username: vinay.hatti
+
+  password: postgres
+
+scanner:
+
+  interval: 300
+
+market:
+
+  index:
+
+    - SPY
+
+    - QQQ
+
+vix:
+
+  symbol: ^VIX
+
+risk:
+
+  max_position_percent: 1
+
+  max_daily_loss_percent: 3
+
+alerts:
+
+  telegram: false
+
+  email: false

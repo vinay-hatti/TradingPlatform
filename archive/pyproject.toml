@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trading-ai"
+version = "0.1.0"
+description = "AI Powered Options Trading Platform"
+readme = "README.md"
+requires-python = ">=3.13"
+
+dependencies = [
+    "numpy",
+    "pandas",
+    "scipy",
+    "sqlalchemy>=2.0",
+    "psycopg2-binary",
+    "python-dotenv",
+    "pydantic>=2.0",
+    "pydantic-settings",
+    "loguru",
+    "requests",
+    "httpx",
+    "yfinance",
+    "polygon-api-client>=1.16.3",
+    "plotly",
+    "streamlit",
+    "ta",
+    "apscheduler",
+    "redis",
+    "xgboost",
+    "scikit-learn",
+    "alembic",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "ruff",
+    "mypy",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
