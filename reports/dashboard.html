@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trading AI Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background: #f7f7f7;
+            color: #222;
+        }
+        h1, h2 {
+            color: #111;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        th, td {
+            border-bottom: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            font-size: 14px;
+        }
+        th {
+            background: #eee;
+        }
+        .metric {
+            display: inline-block;
+            margin-right: 30px;
+            font-size: 18px;
+        }
+        .metric strong {
+            display: block;
+            font-size: 13px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Trading AI Dashboard</h1>
+<p>Generated: 2026-06-30 14:32:27</p>
+
+<div class="card">
+    <h2>Portfolio Summary</h2>
+    <div class="metric"><strong>Capital</strong>$100,000.00</div>
+    <div class="metric"><strong>Allocated</strong>$7,965.78</div>
+    <div class="metric"><strong>Cash</strong>$92,034.22</div>
+    <div class="metric"><strong>Portfolio Heat</strong>7.97%</div>
+</div>
+
+<div class="card">
+    <h2>Optimized Portfolio</h2>
+    <p>Source: reports/optimized_portfolio_20260630_143227.csv</p>
+    <table><thead><tr><th>symbol</th><th>signal</th><th>strategy</th><th>confidence</th><th>rank_score</th><th>win_probability</th><th>reward_risk</th><th>kelly_fraction</th><th>option_price_estimate</th><th>contract_cost</th><th>final_allocation</th><th>recommended_contracts</th><th>status</th><th>reason</th></tr></thead><tbody><tr><td>AAPL</td><td>CALL</td><td>LONG_CALL</td><td>A+</td><td>106.84153550410215</td><td>0.78</td><td>2.198400557701516</td><td>0.25</td><td>44.590619720276806</td><td>4459.061972027681</td><td>4459.061972027681</td><td>1</td><td>ACCEPTED</td><td>OK</td></tr><tr><td>AMD</td><td>CALL</td><td>LONG_CALL</td><td>A+</td><td>98.61171722439656</td><td>0.78</td><td>1.892435871381171</td><td>0.25</td><td>35.067192834731514</td><td>3506.7192834731513</td><td>3506.7192834731513</td><td>1</td><td>ACCEPTED</td><td>OK</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Scanner Candidates</h2>
+    <p>Source: reports/scanner_results_20260630_143227.csv</p>
+    <table><thead><tr><th>symbol</th><th>signal</th><th>strategy</th><th>rank_score</th><th>confidence</th><th>affordability_status</th><th>recommended_position_value</th><th>option_price_estimate</th><th>estimated_contract_cost</th><th>recommended_contracts</th><th>win_probability</th><th>reward_risk</th><th>kelly_fraction</th><th>regime</th><th>strike</th><th>expiry</th><th>delta</th><th>iv</th></tr></thead><tbody><tr><td>AAPL</td><td>CALL</td><td>LONG_CALL</td><td>106.84153550410215</td><td>A+</td><td>OK</td><td>5000.0</td><td>44.590619720276806</td><td>4459.061972027681</td><td>1</td><td>0.78</td><td>2.198400557701516</td><td>0.25</td><td>BULL_TREND</td><td>330.0</td><td>2028-01-21</td><td>0.44840055770151616</td><td>0.28699028020361095</td></tr><tr><td>AMD</td><td>CALL</td><td>LONG_CALL</td><td>98.61171722439656</td><td>A+</td><td>OK</td><td>5000.0</td><td>35.067192834731514</td><td>3506.7192834731513</td><td>1</td><td>0.78</td><td>1.892435871381171</td><td>0.25</td><td>BULL_TREND</td><td>547.5</td><td>2026-07-02</td><td>0.4424358713811712</td><td>0.8297160809552712</td></tr></tbody></table>
+</div>
+
+</body>
+</html>
