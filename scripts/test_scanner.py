@@ -76,6 +76,8 @@ def main():
         max_abs_delta=0.70,
         allowed_regimes=None,
         allowed_strategies=None,
+        max_open_positions=2,
+        max_daily_loss_pct=0.03,
     )
 
     engine = BacktestEngine(

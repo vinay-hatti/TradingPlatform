@@ -12,6 +12,9 @@ class Portfolio:
         min_option_price=0.50,
         min_abs_delta=0.30,
         max_abs_delta=0.70,
+        max_open_positions=2,
+        max_daily_loss_pct=0.03,
+        max_drawdown_pct=0.05,
     ):
         self.open_positions = {}
         self.closed_positions = []
@@ -25,6 +28,11 @@ class Portfolio:
         self.pricer = BlackScholesPricer()
         self.min_abs_delta = min_abs_delta
         self.max_abs_delta = max_abs_delta
+        self.max_open_positions = max_open_positions
+        self.max_daily_loss_pct = max_daily_loss_pct
+        self.daily_start_equity = self.initial_capital
+        self.max_drawdown_pct = max_drawdown_pct
+        self.peak_equity = self.initial_capital
 
     def has_open_position(self, symbol: str) -> bool:
         return symbol in self.open_positions
@@ -46,12 +54,46 @@ class Portfolio:
             option_type=signal,
         )
 
+    def can_open_new_position(self) -> bool:
+        return len(self.open_positions) < self.max_open_positions
+
+    def daily_loss_exceeded(self) -> bool:
+
+        equity = self.initial_capital + self.realized_pnl
+
+        loss = self.daily_start_equity - equity
+
+        max_loss = self.initial_capital * self.max_daily_loss_pct
+
+        return loss >= max_loss
+
+    def max_drawdown_exceeded(self) -> bool:
+
+        current_equity = self.initial_capital + self.realized_pnl
+
+        self.peak_equity = max(self.peak_equity, current_equity)
+
+        drawdown = self.peak_equity - current_equity
+
+        max_allowed_drawdown = self.initial_capital * self.max_drawdown_pct
+
+        return drawdown >= max_allowed_drawdown
+
     def open_position(self, recommendation, ctx, index: int):
 
         if self.has_open_position(recommendation.symbol):
             return None
 
         if recommendation.signal == "HOLD":
+            return None
+
+        if not self.can_open_new_position():
+            return None
+
+        if self.daily_loss_exceeded():
+            return None
+
+        if self.max_drawdown_exceeded():
             return None
 
         entry_option_price = self.price_option(

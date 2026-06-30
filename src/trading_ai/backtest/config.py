@@ -21,3 +21,6 @@ class BacktestConfig:
     max_abs_delta: float = 0.70
     allowed_regimes: list[str] | None = None
     allowed_strategies: list[str] | None = None
+    max_open_positions: int = 2
+    max_daily_loss_pct: float = 0.03
+    max_drawdown_pct: float = 0.05

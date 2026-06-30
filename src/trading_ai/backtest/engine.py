@@ -31,6 +31,9 @@ class BacktestEngine:
             max_contracts=self.config.max_contracts if self.config else 5,
             min_abs_delta=self.config.min_abs_delta if self.config else 0.30,
             max_abs_delta=self.config.max_abs_delta if self.config else 0.70,
+            max_open_positions=self.config.max_open_positions if self.config else 2,
+            max_daily_loss_pct=self.config.max_daily_loss_pct if self.config else 0.03,
+            max_drawdown_pct=0.05,
         )
 
         for symbol in symbols:
