@@ -69,6 +69,12 @@ def export_optimized_trades(trades, path=None):
             "recommended_contracts",
             "status",
             "reason",
+            "risk_portfolio_heat",
+            "risk_cash_reserve",
+            "risk_symbol_exposure",
+            "risk_sector_exposure",
+            "risk_strategy_exposure",
+            "risk_net_delta",
         ])
 
         for t in trades:
@@ -91,6 +97,12 @@ def export_optimized_trades(trades, path=None):
                 t.recommended_contracts,
                 t.status,
                 t.reason,
+                t.risk_metrics.get("portfolio_heat", ""),
+                t.risk_metrics.get("cash_reserve", ""),
+                t.risk_metrics.get("symbol_exposure", ""),
+                t.risk_metrics.get("sector_exposure", ""),
+                t.risk_metrics.get("strategy_exposure", ""),
+                t.risk_metrics.get("net_delta", ""),
             ])
 
     print(f"Optimized portfolio exported to {path}")
@@ -166,6 +178,8 @@ def main():
     for trade in optimized:
 
         total_allocated += trade.final_allocation
+        heat = trade.risk_metrics.get("portfolio_heat", 0.0)
+        net_delta = trade.risk_metrics.get("net_delta", 0.0)
 
         print(
             f"{trade.symbol:5} | "
@@ -180,6 +194,8 @@ def main():
             f"Cost=${trade.contract_cost:8.2f} | "
             f"Alloc=${trade.final_allocation:8.2f} | "
             f"Qty={trade.recommended_contracts:3} | "
+            f"Heat={heat:5.2%} | "
+            f"NetDelta={net_delta:5.2f} | "
             f"Status={trade.status:8} | "
             f"Reason={trade.reason}"
         )

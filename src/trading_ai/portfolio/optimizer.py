@@ -1,5 +1,7 @@
 from dataclasses import dataclass
 
+from trading_ai.risk.portfolio_risk import PortfolioRiskManager
+
 
 @dataclass
 class OptimizedTrade:
@@ -7,6 +9,9 @@ class OptimizedTrade:
     signal: str
     strategy: str
     confidence: str
+    strike: float
+    expiry: str
+    iv: float
     rank_score: float
     win_probability: float
     reward_risk: float
@@ -18,9 +23,8 @@ class OptimizedTrade:
     recommended_contracts: int
     status: str
     reason: str
-    strike: float
-    expiry: str
-    iv: float
+    risk_metrics: dict
+
 
 class PortfolioOptimizer:
 
@@ -35,6 +39,16 @@ class PortfolioOptimizer:
         self.max_position_pct = max_position_pct
         self.max_total_allocation_pct = max_total_allocation_pct
         self.cash_reserve_pct = cash_reserve_pct
+
+        self.risk = PortfolioRiskManager(
+            capital=capital,
+            max_portfolio_heat=max_total_allocation_pct,
+            max_symbol_exposure=max_position_pct,
+            max_sector_exposure=0.30,
+            max_strategy_exposure=0.70,
+            min_cash_reserve=cash_reserve_pct,
+            max_net_delta=2.0,
+        )
 
     def _weight(self, row):
 
@@ -72,8 +86,9 @@ class PortfolioOptimizer:
         total_allocation_budget = min(total_allocation_budget, max_spendable)
 
         optimized = []
-
+        accepted_positions = []
         used_capital = 0.0
+        cash = self.capital
 
         for row, weight in zip(tradable_rows, weights):
 
@@ -82,7 +97,9 @@ class PortfolioOptimizer:
             strategy = row["strategy"]
 
             option_price = float(row.get("option_price_estimate", 0.0))
-            contract_cost = float(row.get("estimated_contract_cost", option_price * 100.0))
+            contract_cost = float(
+                row.get("estimated_contract_cost", option_price * 100.0)
+            )
 
             requested_allocation = total_allocation_budget * (weight / total_weight)
             final_allocation = min(requested_allocation, max_position_value)
@@ -94,6 +111,8 @@ class PortfolioOptimizer:
                 contracts = 0
                 status = "REJECTED"
                 reason = "INVALID_CONTRACT_COST"
+                actual_allocation = 0.0
+                risk_metrics = {}
             else:
                 contracts = int(final_allocation / contract_cost)
 
@@ -101,14 +120,49 @@ class PortfolioOptimizer:
                     contracts = 0
                     status = "REJECTED"
                     reason = "ALLOCATION_TOO_SMALL"
+                    actual_allocation = 0.0
+                    risk_metrics = {}
                 else:
-                    status = "ACCEPTED"
-                    reason = "OK"
+                    candidate_trade = {
+                        "symbol": symbol,
+                        "signal": signal,
+                        "strategy": strategy,
+                        "option_price_estimate": option_price,
+                        "recommended_contracts": contracts,
+                        "delta": float(row.get("delta", 0.45)),
+                    }
 
-            actual_allocation = contracts * contract_cost
+                    risk_result = self.risk.evaluate(
+                        current_positions=accepted_positions,
+                        candidate_trade=candidate_trade,
+                        sector=row.get("sector", "UNKNOWN"),
+                        cash=cash,
+                    )
 
-            if status == "ACCEPTED":
-                used_capital += actual_allocation
+                    risk_metrics = risk_result.metrics
+
+                    if not risk_result.allowed:
+                        contracts = 0
+                        status = "REJECTED"
+                        reason = risk_result.reason
+                        actual_allocation = 0.0
+                    else:
+                        status = "ACCEPTED"
+                        reason = "OK"
+                        actual_allocation = contracts * contract_cost
+
+                        used_capital += actual_allocation
+                        cash -= actual_allocation
+
+                        accepted_positions.append({
+                            "symbol": symbol,
+                            "signal": signal,
+                            "strategy": strategy,
+                            "current_price": option_price,
+                            "quantity": contracts,
+                            "delta": float(row.get("delta", 0.45)),
+                            "sector": row.get("sector", "UNKNOWN"),
+                        })
 
             optimized.append(
                 OptimizedTrade(
@@ -116,6 +170,9 @@ class PortfolioOptimizer:
                     signal=signal,
                     strategy=strategy,
                     confidence=str(row.get("confidence", "")),
+                    strike=float(row.get("strike", 0.0) or 0.0),
+                    expiry=str(row.get("expiry", "")),
+                    iv=float(row.get("iv", 0.25) or 0.25),
                     rank_score=float(row.get("rank_score", 0.0)),
                     win_probability=float(row.get("win_probability", 0.0)),
                     reward_risk=float(row.get("reward_risk", 0.0)),
@@ -127,9 +184,7 @@ class PortfolioOptimizer:
                     recommended_contracts=contracts,
                     status=status,
                     reason=reason,
-                    strike=float(row.get("strike", 0.0) or 0.0),
-                    expiry=str(row.get("expiry", "")),
-                    iv=float(row.get("iv", 0.25) or 0.25),
+                    risk_metrics=risk_metrics,
                 )
             )
 

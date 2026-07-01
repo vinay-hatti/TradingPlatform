@@ -71,6 +71,13 @@ def main():
     scanner_rows = load_csv(scanner_file)
     optimized_rows = load_csv(optimized_file)
 
+    accepted_optimized = [
+        r for r in optimized_rows
+        if r.get("status") == "ACCEPTED"
+    ]
+
+    latest_risk = accepted_optimized[-1] if accepted_optimized else {}
+
     paper_positions = load_json("data/paper/positions.json", [])
     paper_cash = load_json("data/paper/cash.json", {"cash": 100000.0})
 
@@ -178,6 +185,16 @@ def main():
 </div>
 
 <div class="card">
+    <h2>Risk Summary</h2>
+    <div class="metric"><strong>Portfolio Heat</strong>{pct(latest_risk.get("risk_portfolio_heat", 0.0))}</div>
+    <div class="metric"><strong>Cash Reserve</strong>{pct(latest_risk.get("risk_cash_reserve", 0.0))}</div>
+    <div class="metric"><strong>Symbol Exposure</strong>{pct(latest_risk.get("risk_symbol_exposure", 0.0))}</div>
+    <div class="metric"><strong>Sector Exposure</strong>{pct(latest_risk.get("risk_sector_exposure", 0.0))}</div>
+    <div class="metric"><strong>Strategy Exposure</strong>{pct(latest_risk.get("risk_strategy_exposure", 0.0))}</div>
+    <div class="metric"><strong>Net Delta</strong>{latest_risk.get("risk_net_delta", "0.00")}</div>
+</div>
+
+<div class="card">
     <h2>Paper Trading Status</h2>
     <div class="metric"><strong>Cash</strong>{money(paper_cash_value)}</div>
     <div class="metric"><strong>Open Value</strong>{money(paper_open_value)}</div>
@@ -250,6 +267,12 @@ def main():
             "recommended_contracts",
             "status",
             "reason",
+            "risk_portfolio_heat",
+            "risk_cash_reserve",
+            "risk_symbol_exposure",
+            "risk_sector_exposure",
+            "risk_strategy_exposure",
+            "risk_net_delta",
         ],
     )}
 </div>
