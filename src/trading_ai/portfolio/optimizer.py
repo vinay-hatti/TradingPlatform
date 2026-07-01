@@ -18,7 +18,9 @@ class OptimizedTrade:
     recommended_contracts: int
     status: str
     reason: str
-
+    strike: float
+    expiry: str
+    iv: float
 
 class PortfolioOptimizer:
 
@@ -125,6 +127,9 @@ class PortfolioOptimizer:
                     recommended_contracts=contracts,
                     status=status,
                     reason=reason,
+                    strike=float(row.get("strike", 0.0) or 0.0),
+                    expiry=str(row.get("expiry", "")),
+                    iv=float(row.get("iv", 0.25) or 0.25),
                 )
             )
 

@@ -12,6 +12,8 @@ def main():
         "--only-affordable",
         "--min-confidence",
         "A",
+        "--min-days-to-expiry",
+        "45",
         "--export-csv",
         "--export-json",
     ]

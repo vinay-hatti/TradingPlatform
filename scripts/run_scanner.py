@@ -68,6 +68,14 @@ def time_to_expiry_years(expiry, as_of_date):
     except Exception:
         return 30 / 365.0
 
+def days_to_expiry(expiry, as_of_date):
+
+    try:
+        expiry_dt = datetime.strptime(str(expiry), "%Y-%m-%d")
+        as_of_dt = datetime.strptime(str(as_of_date), "%Y-%m-%d")
+        return (expiry_dt - as_of_dt).days
+    except Exception:
+        return 30
 
 def export_scanner_results(rows, path=None):
 
@@ -103,6 +111,7 @@ def export_scanner_results(rows, path=None):
                 "price",
                 "strike",
                 "expiry",
+                "days_to_expiry",
                 "delta",
                 "iv",
                 "open_interest",
@@ -191,6 +200,20 @@ def parse_args():
         help="Minimum confidence grade to show",
     )
 
+    parser.add_argument(
+        "--min-days-to-expiry",
+        type=int,
+        default=30,
+        help="Minimum option days to expiry",
+    )
+
+    parser.add_argument(
+        "--max-days-to-expiry",
+        type=int,
+        default=730,
+        help="Maximum option days to expiry",
+    )
+
     return parser.parse_args()
 
 
@@ -275,6 +298,17 @@ def main():
         iv_bonus = 0.0
         if 0.20 <= option.implied_volatility <= 0.80:
             iv_bonus = 5.0
+
+        dte = days_to_expiry(
+            recommendation.expiry,
+            args.end,
+        )
+
+        if dte < args.min_days_to_expiry:
+            continue
+
+        if dte > args.max_days_to_expiry:
+            continue
 
         win_probability = estimate_win_probability(
             recommendation.score,
@@ -365,6 +399,7 @@ def main():
             "price": recommendation.price,
             "strike": recommendation.strike,
             "expiry": recommendation.expiry,
+            "days_to_expiry": dte,
             "delta": recommendation.delta,
             "iv": option.implied_volatility,
             "open_interest": option.open_interest,
@@ -427,6 +462,7 @@ def main():
             f"Price={r['price']:8.2f} | "
             f"Strike={r['strike']:8.2f} | "
             f"Exp={r['expiry']} | "
+            f"DTE={r['days_to_expiry']:4} | "
             f"Delta={r['delta']:6.2f} | "
             f"IV={r['iv']:6.2%} | "
             f"OI={r['open_interest']}"
