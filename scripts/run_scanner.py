@@ -1,6 +1,6 @@
 import argparse
 from datetime import datetime
-
+from trading_ai.options.quality import OptionQualityScorer
 from trading_ai.app.bootstrap import container
 from trading_ai.backtest.config import BacktestConfig
 from trading_ai.options.pricing import BlackScholesPricer
@@ -115,6 +115,11 @@ def export_scanner_results(rows, path=None):
                 "delta",
                 "iv",
                 "open_interest",
+                "option_score",
+                "probability_of_profit",
+                "liquidity_score",
+                "delta_score",
+                "iv_score",
             ],
         )
 
@@ -221,6 +226,9 @@ def main():
 
     args = parse_args()
     pricer = BlackScholesPricer()
+    pricer = BlackScholesPricer()
+
+    quality_scorer = OptionQualityScorer()
 
     symbols = [
         s.strip().upper()
@@ -298,6 +306,11 @@ def main():
         iv_bonus = 0.0
         if 0.20 <= option.implied_volatility <= 0.80:
             iv_bonus = 5.0
+
+        option_quality = quality_scorer.score(
+            option,
+            recommendation.signal,
+        )
 
         dte = days_to_expiry(
             recommendation.expiry,
@@ -408,6 +421,11 @@ def main():
             "estimated_contract_cost": estimated_contract_cost,
             "recommended_contracts": recommended_contracts,
             "affordability_status": affordability_status,
+            "option_score": option_quality["option_score"],
+            "probability_of_profit": option_quality["probability_of_profit"],
+            "liquidity_score": option_quality["liquidity_score"],
+            "delta_score": option_quality["delta_score"],
+            "iv_score": option_quality["iv_score"],
         })
 
     results = sorted(
@@ -455,6 +473,9 @@ def main():
             f"Cost=${r['estimated_contract_cost']:8.2f} | "
             f"Qty={r['recommended_contracts']:3} | "
             f"Win={r['win_probability']:6.2%} | "
+            f"OptScore={r['option_score']:6.2f} | "
+            f"POP={r['probability_of_profit']:6.2%} | "
+            f"Liq={r['liquidity_score']:6.2f} | "
             f"RR={r['reward_risk']:4.2f} | "
             f"Kelly={r['kelly_fraction']:5.2%} | "
             f"Score={r['score']:6.2f} | "

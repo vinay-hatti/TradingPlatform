@@ -1,23 +1,25 @@
-from scipy.stats import norm
-import math
+class OptionProbabilityScorer:
 
+    def probability_itm(self, option):
 
-class ProbabilityModel:
+        delta = abs(float(getattr(option, "delta", 0.0) or 0.0))
 
-    def pop_call(self, S, K, T, iv):
+        return max(0.05, min(delta, 0.95))
 
-        if iv == 0:
-            return 0
+    def probability_otm(self, option):
 
-        d2 = (math.log(S / K) - (iv**2 / 2) * T) / (iv * math.sqrt(T))
+        return 1.0 - self.probability_itm(option)
 
-        return norm.cdf(d2)
+    def probability_of_profit(self, option, signal):
 
-    def pop_put(self, S, K, T, iv):
+        delta = abs(float(getattr(option, "delta", 0.0) or 0.0))
 
-        if iv == 0:
-            return 0
+        base = 1.0 - abs(delta - 0.45)
 
-        d2 = (math.log(S / K) - (iv**2 / 2) * T) / (iv * math.sqrt(T))
+        if signal == "CALL" and delta > 0.30:
+            base += 0.05
 
-        return norm.cdf(-d2)
+        if signal == "PUT" and delta > 0.30:
+            base += 0.05
+
+        return max(0.35, min(base, 0.85))

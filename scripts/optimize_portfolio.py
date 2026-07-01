@@ -75,6 +75,11 @@ def export_optimized_trades(trades, path=None):
             "risk_sector_exposure",
             "risk_strategy_exposure",
             "risk_net_delta",
+            "option_score",
+            "probability_of_profit",
+            "liquidity_score",
+            "delta_score",
+            "iv_score",
         ])
 
         for t in trades:
@@ -103,6 +108,11 @@ def export_optimized_trades(trades, path=None):
                 t.risk_metrics.get("sector_exposure", ""),
                 t.risk_metrics.get("strategy_exposure", ""),
                 t.risk_metrics.get("net_delta", ""),
+                t.option_score,
+                t.probability_of_profit,
+                t.liquidity_score,
+                t.delta_score,
+                t.iv_score,
             ])
 
     print(f"Optimized portfolio exported to {path}")

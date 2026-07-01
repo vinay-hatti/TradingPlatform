@@ -19,11 +19,13 @@
             margin-bottom: 25px;
             border-radius: 8px;
             box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+            overflow-x: auto;
         }
         table {
             width: 100%;
             border-collapse: collapse;
             background: white;
+            white-space: nowrap;
         }
         th, td {
             border-bottom: 1px solid #ddd;
@@ -50,40 +52,40 @@
 <body>
 
 <h1>Trading AI Dashboard</h1>
-<p>Generated: 2026-07-01 09:09:11</p>
+<p>Generated: 2026-07-01 10:56:55</p>
 
 <div class="card">
     <h2>Optimized Portfolio Summary</h2>
     <div class="metric"><strong>Capital</strong>$100,000.00</div>
-    <div class="metric"><strong>Allocated</strong>$4,459.06</div>
-    <div class="metric"><strong>Cash</strong>$95,540.94</div>
-    <div class="metric"><strong>Portfolio Heat</strong>4.46%</div>
+    <div class="metric"><strong>Allocated</strong>$3,395.36</div>
+    <div class="metric"><strong>Cash</strong>$96,604.64</div>
+    <div class="metric"><strong>Portfolio Heat</strong>3.40%</div>
 </div>
 
 <div class="card">
     <h2>Risk Summary</h2>
-    <div class="metric"><strong>Portfolio Heat</strong>4.46%</div>
-    <div class="metric"><strong>Cash Reserve</strong>95.54%</div>
-    <div class="metric"><strong>Symbol Exposure</strong>4.46%</div>
-    <div class="metric"><strong>Sector Exposure</strong>4.46%</div>
-    <div class="metric"><strong>Strategy Exposure</strong>4.46%</div>
-    <div class="metric"><strong>Net Delta</strong>0.44840055770151616</div>
+    <div class="metric"><strong>Portfolio Heat</strong>3.40%</div>
+    <div class="metric"><strong>Cash Reserve</strong>96.60%</div>
+    <div class="metric"><strong>Symbol Exposure</strong>3.40%</div>
+    <div class="metric"><strong>Sector Exposure</strong>3.40%</div>
+    <div class="metric"><strong>Strategy Exposure</strong>3.40%</div>
+    <div class="metric"><strong>Net Delta</strong>0.4502742238624455</div>
 </div>
 
 <div class="card">
     <h2>Paper Trading Status</h2>
-    <div class="metric"><strong>Cash</strong>$95,540.94</div>
-    <div class="metric"><strong>Open Value</strong>$4,293.13</div>
-    <div class="metric"><strong>Net Liquidation</strong>$99,834.07</div>
-    <div class="metric"><strong>Unrealized PnL</strong>$-165.93</div>
+    <div class="metric"><strong>Cash</strong>$92,145.58</div>
+    <div class="metric"><strong>Open Value</strong>$7,449.26</div>
+    <div class="metric"><strong>Net Liquidation</strong>$99,594.84</div>
+    <div class="metric"><strong>Unrealized PnL</strong>$-405.16</div>
     <div class="metric"><strong>Realized PnL</strong>$0.00</div>
-    <div class="metric"><strong>Open Positions</strong>1</div>
+    <div class="metric"><strong>Open Positions</strong>2</div>
     <div class="metric"><strong>Closed Positions</strong>0</div>
 </div>
 
 <div class="card">
     <h2>Open Paper Positions</h2>
-    <table><thead><tr><th>symbol</th><th>signal</th><th>strategy</th><th>strike</th><th>expiry</th><th>quantity</th><th>entry_price</th><th>current_price</th><th>unrealized_pnl</th><th>opened_at</th><th>status</th></tr></thead><tbody><tr><td>AAPL</td><td>CALL</td><td>LONG_CALL</td><td>330.0</td><td>2028-01-21</td><td>1</td><td>44.590619720276806</td><td>42.93130034765076</td><td>-165.93193726260438</td><td>2026-06-30T22:10:01.397413</td><td>OPEN</td></tr></tbody></table>
+    <table><thead><tr><th>Symbol</th><th>Side</th><th>Strategy</th><th>Strike</th><th>Expiry</th><th>Qty</th><th>Entry</th><th>Current</th><th>Unrealized PnL</th><th>IV</th><th>Opened</th><th>Status</th></tr></thead><tbody><tr><td>AAPL</td><td>CALL</td><td>LONG_CALL</td><td>330.0</td><td>2028-01-21</td><td>1</td><td>44.590619720276806</td><td>42.93130034765076</td><td>-165.93193726260438</td><td>0.28699028020361095</td><td>2026-06-30T22:10:01.397413</td><td>OPEN</td></tr><tr><td>AAPL</td><td>CALL</td><td>LONG_CALL</td><td>300.0</td><td>2027-01-15</td><td>1</td><td>33.95361853509641</td><td>31.561345569603247</td><td>-239.2272965493163</td><td>0.2762702516101445</td><td>2026-07-01T10:56:55.587712</td><td>OPEN</td></tr></tbody></table>
 </div>
 
 <div class="card">
@@ -93,14 +95,14 @@
 
 <div class="card">
     <h2>Optimized Portfolio</h2>
-    <p>Source: reports/optimized_portfolio_20260701_090911.csv</p>
-    <table><thead><tr><th>symbol</th><th>signal</th><th>strategy</th><th>strike</th><th>expiry</th><th>confidence</th><th>rank_score</th><th>win_probability</th><th>reward_risk</th><th>kelly_fraction</th><th>option_price_estimate</th><th>contract_cost</th><th>final_allocation</th><th>recommended_contracts</th><th>status</th><th>reason</th><th>risk_portfolio_heat</th><th>risk_cash_reserve</th><th>risk_symbol_exposure</th><th>risk_sector_exposure</th><th>risk_strategy_exposure</th><th>risk_net_delta</th></tr></thead><tbody><tr><td>AAPL</td><td>CALL</td><td>LONG_CALL</td><td>330.0</td><td>2028-01-21</td><td>A+</td><td>106.84153550410215</td><td>0.78</td><td>2.198400557701516</td><td>0.25</td><td>44.590619720276806</td><td>4459.061972027681</td><td>4459.061972027681</td><td>1</td><td>ACCEPTED</td><td>OK</td><td>0.04459061972027681</td><td>0.9554093802797232</td><td>0.04459061972027681</td><td>0.04459061972027681</td><td>0.04459061972027681</td><td>0.44840055770151616</td></tr></tbody></table>
+    <p>Source: reports/optimized_portfolio_20260701_105655.csv</p>
+    <table><thead><tr><th>Symbol</th><th>Side</th><th>Strategy</th><th>Confidence</th><th>Status</th><th>Reason</th><th>Rank</th><th>Option Score</th><th>POP</th><th>Win Prob</th><th>Reward/Risk</th><th>Kelly</th><th>Strike</th><th>Expiry</th><th>IV</th><th>Option Price</th><th>Contract Cost</th><th>Allocation</th><th>Qty</th><th>Risk Heat</th><th>Cash Reserve</th><th>Symbol Exposure</th><th>Sector Exposure</th><th>Strategy Exposure</th><th>Net Delta</th><th>Liquidity</th><th>Delta Score</th><th>IV Score</th></tr></thead><tbody><tr><td>AAPL</td><td>CALL</td><td>LONG_CALL</td><td>A+</td><td>ACCEPTED</td><td>OK</td><td>114.95665446887816</td><td>86.49314440343886</td><td>0.85</td><td>0.78</td><td>2.2002742238624453</td><td>0.25</td><td>300.0</td><td>2027-01-15</td><td>0.2762702516101445</td><td>33.95361853509641</td><td>3395.361853509641</td><td>3395.361853509641</td><td>1</td><td>0.03395361853509641</td><td>0.9660463814649035</td><td>0.03395361853509641</td><td>0.03395361853509641</td><td>0.03395361853509641</td><td>0.4502742238624455</td><td>70.0</td><td>99.97257761375545</td><td>100.0</td></tr></tbody></table>
 </div>
 
 <div class="card">
     <h2>Scanner Candidates</h2>
-    <p>Source: reports/scanner_results_20260701_090911.csv</p>
-    <table><thead><tr><th>symbol</th><th>signal</th><th>strategy</th><th>rank_score</th><th>confidence</th><th>affordability_status</th><th>recommended_position_value</th><th>option_price_estimate</th><th>estimated_contract_cost</th><th>recommended_contracts</th><th>win_probability</th><th>reward_risk</th><th>kelly_fraction</th><th>regime</th><th>strike</th><th>expiry</th><th>days_to_expiry</th><th>delta</th><th>iv</th></tr></thead><tbody><tr><td>AAPL</td><td>CALL</td><td>LONG_CALL</td><td>106.84153550410215</td><td>A+</td><td>OK</td><td>5000.0</td><td>44.590619720276806</td><td>4459.061972027681</td><td>1</td><td>0.78</td><td>2.198400557701516</td><td>0.25</td><td>BULL_TREND</td><td>330.0</td><td>2028-01-21</td><td>599</td><td>0.44840055770151616</td><td>0.28699028020361095</td></tr></tbody></table>
+    <p>Source: reports/scanner_results_20260701_105655.csv</p>
+    <table><thead><tr><th>Symbol</th><th>Side</th><th>Strategy</th><th>Confidence</th><th>Affordability</th><th>Rank</th><th>Option Score</th><th>POP</th><th>Win Prob</th><th>Reward/Risk</th><th>Kelly</th><th>Regime</th><th>Strike</th><th>Expiry</th><th>DTE</th><th>Delta</th><th>IV</th><th>Liquidity</th><th>Position Value</th><th>Option Price</th><th>Contract Cost</th><th>Qty</th></tr></thead><tbody><tr><td>AAPL</td><td>CALL</td><td>LONG_CALL</td><td>A+</td><td>OK</td><td>114.95665446887816</td><td>86.49314440343886</td><td>0.85</td><td>0.78</td><td>2.2002742238624453</td><td>0.25</td><td>BULL_TREND</td><td>300.0</td><td>2027-01-15</td><td>228</td><td>0.4502742238624455</td><td>0.2762702516101445</td><td>70.0</td><td>5000.0</td><td>33.95361853509641</td><td>3395.361853509641</td><td>1</td></tr></tbody></table>
 </div>
 
 </body>

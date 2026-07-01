@@ -24,7 +24,11 @@ class OptimizedTrade:
     status: str
     reason: str
     risk_metrics: dict
-
+    option_score: float
+    probability_of_profit: float
+    liquidity_score: float
+    delta_score: float
+    iv_score: float
 
 class PortfolioOptimizer:
 
@@ -185,6 +189,11 @@ class PortfolioOptimizer:
                     status=status,
                     reason=reason,
                     risk_metrics=risk_metrics,
+                    option_score=float(row.get("option_score", 0.0) or 0.0),
+                    probability_of_profit=float(row.get("probability_of_profit", 0.0) or 0.0),
+                    liquidity_score=float(row.get("liquidity_score", 0.0) or 0.0),
+                    delta_score=float(row.get("delta_score", 0.0) or 0.0),
+                    iv_score=float(row.get("iv_score", 0.0) or 0.0),
                 )
             )
 

@@ -1,7 +1,7 @@
 import pickle
 import time
 from pathlib import Path
-
+from trading_ai.options.quality import OptionQualityScorer
 from trading_ai.options.selector import OptionsSelector
 
 
@@ -14,6 +14,7 @@ class OptionsEngine:
 
         self.cache_dir = Path(".cache/options")
         self.cache_dir.mkdir(parents=True, exist_ok=True)
+        self.quality = OptionQualityScorer()
 
     def _cache_file(self, symbol):
         return self.cache_dir / f"{symbol}_chain.pkl"
@@ -75,24 +76,15 @@ class OptionsEngine:
 
         def score(c):
 
-            delta_distance = abs(c.delta - target_delta)
-            delta_score = 1.0 - min(delta_distance, 1.0)
-
-            liquidity_score = min(c.open_interest / 1000.0, 1.0)
-            iv_score = min(c.implied_volatility, 1.0)
+            quality = self.quality.score(c, signal)
 
             skew_bonus = 0.0
 
             if skew > 0 and signal == "CALL":
-                skew_bonus = 0.1
+                skew_bonus = 5.0
             elif skew < 0 and signal == "PUT":
-                skew_bonus = 0.1
+                skew_bonus = 5.0
 
-            return (
-                delta_score * 0.50
-                + liquidity_score * 0.30
-                + iv_score * 0.15
-                + skew_bonus
-            )
+            return quality["option_score"] + skew_bonus
 
         return max(candidates, key=score)

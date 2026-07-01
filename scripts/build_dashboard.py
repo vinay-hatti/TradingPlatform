@@ -12,17 +12,14 @@ def latest_file(pattern):
 def load_csv(path):
     if path is None:
         return []
-
     with open(path, "r") as f:
         return list(csv.DictReader(f))
 
 
 def load_json(path, default):
     path = Path(path)
-
     if not path.exists():
         return default
-
     with open(path, "r") as f:
         return json.load(f)
 
@@ -46,20 +43,17 @@ def build_table(rows, columns):
         return "<p>No data available.</p>"
 
     html = "<table><thead><tr>"
-
-    for col in columns:
-        html += f"<th>{col}</th>"
-
+    for label, key in columns:
+        html += f"<th>{label}</th>"
     html += "</tr></thead><tbody>"
 
     for row in rows:
         html += "<tr>"
-        for col in columns:
-            html += f"<td>{row.get(col, '')}</td>"
+        for _, key in columns:
+            html += f"<td>{row.get(key, '')}</td>"
         html += "</tr>"
 
     html += "</tbody></table>"
-
     return html
 
 
@@ -81,15 +75,8 @@ def main():
     paper_positions = load_json("data/paper/positions.json", [])
     paper_cash = load_json("data/paper/cash.json", {"cash": 100000.0})
 
-    open_positions = [
-        p for p in paper_positions
-        if p.get("status") == "OPEN"
-    ]
-
-    closed_positions = [
-        p for p in paper_positions
-        if p.get("status") == "CLOSED"
-    ]
+    open_positions = [p for p in paper_positions if p.get("status") == "OPEN"]
+    closed_positions = [p for p in paper_positions if p.get("status") == "CLOSED"]
 
     paper_cash_value = float(paper_cash.get("cash", 100000.0))
 
@@ -143,11 +130,13 @@ def main():
             margin-bottom: 25px;
             border-radius: 8px;
             box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+            overflow-x: auto;
         }}
         table {{
             width: 100%;
             border-collapse: collapse;
             background: white;
+            white-space: nowrap;
         }}
         th, td {{
             border-bottom: 1px solid #ddd;
@@ -210,17 +199,18 @@ def main():
     {build_table(
         open_positions,
         [
-            "symbol",
-            "signal",
-            "strategy",
-            "strike",
-            "expiry",
-            "quantity",
-            "entry_price",
-            "current_price",
-            "unrealized_pnl",
-            "opened_at",
-            "status",
+            ("Symbol", "symbol"),
+            ("Side", "signal"),
+            ("Strategy", "strategy"),
+            ("Strike", "strike"),
+            ("Expiry", "expiry"),
+            ("Qty", "quantity"),
+            ("Entry", "entry_price"),
+            ("Current", "current_price"),
+            ("Unrealized PnL", "unrealized_pnl"),
+            ("IV", "implied_volatility"),
+            ("Opened", "opened_at"),
+            ("Status", "status"),
         ],
     )}
 </div>
@@ -230,17 +220,17 @@ def main():
     {build_table(
         closed_positions,
         [
-            "symbol",
-            "signal",
-            "strategy",
-            "quantity",
-            "entry_price",
-            "exit_price",
-            "realized_pnl",
-            "exit_reason",
-            "opened_at",
-            "closed_at",
-            "status",
+            ("Symbol", "symbol"),
+            ("Side", "signal"),
+            ("Strategy", "strategy"),
+            ("Qty", "quantity"),
+            ("Entry", "entry_price"),
+            ("Exit", "exit_price"),
+            ("Realized PnL", "realized_pnl"),
+            ("Exit Reason", "exit_reason"),
+            ("Opened", "opened_at"),
+            ("Closed", "closed_at"),
+            ("Status", "status"),
         ],
     )}
 </div>
@@ -251,28 +241,38 @@ def main():
     {build_table(
         optimized_rows,
         [
-            "symbol",
-            "signal",
-            "strategy",
-            "strike",
-            "expiry",
-            "confidence",
-            "rank_score",
-            "win_probability",
-            "reward_risk",
-            "kelly_fraction",
-            "option_price_estimate",
-            "contract_cost",
-            "final_allocation",
-            "recommended_contracts",
-            "status",
-            "reason",
-            "risk_portfolio_heat",
-            "risk_cash_reserve",
-            "risk_symbol_exposure",
-            "risk_sector_exposure",
-            "risk_strategy_exposure",
-            "risk_net_delta",
+            ("Symbol", "symbol"),
+            ("Side", "signal"),
+            ("Strategy", "strategy"),
+            ("Confidence", "confidence"),
+            ("Status", "status"),
+            ("Reason", "reason"),
+
+            ("Rank", "rank_score"),
+            ("Option Score", "option_score"),
+            ("POP", "probability_of_profit"),
+            ("Win Prob", "win_probability"),
+            ("Reward/Risk", "reward_risk"),
+            ("Kelly", "kelly_fraction"),
+
+            ("Strike", "strike"),
+            ("Expiry", "expiry"),
+            ("IV", "iv"),
+            ("Option Price", "option_price_estimate"),
+            ("Contract Cost", "contract_cost"),
+            ("Allocation", "final_allocation"),
+            ("Qty", "recommended_contracts"),
+
+            ("Risk Heat", "risk_portfolio_heat"),
+            ("Cash Reserve", "risk_cash_reserve"),
+            ("Symbol Exposure", "risk_symbol_exposure"),
+            ("Sector Exposure", "risk_sector_exposure"),
+            ("Strategy Exposure", "risk_strategy_exposure"),
+            ("Net Delta", "risk_net_delta"),
+
+            ("Liquidity", "liquidity_score"),
+            ("Delta Score", "delta_score"),
+            ("IV Score", "iv_score"),
         ],
     )}
 </div>
@@ -283,25 +283,31 @@ def main():
     {build_table(
         scanner_rows,
         [
-            "symbol",
-            "signal",
-            "strategy",
-            "rank_score",
-            "confidence",
-            "affordability_status",
-            "recommended_position_value",
-            "option_price_estimate",
-            "estimated_contract_cost",
-            "recommended_contracts",
-            "win_probability",
-            "reward_risk",
-            "kelly_fraction",
-            "regime",
-            "strike",
-            "expiry",
-            "days_to_expiry",
-            "delta",
-            "iv",
+            ("Symbol", "symbol"),
+            ("Side", "signal"),
+            ("Strategy", "strategy"),
+            ("Confidence", "confidence"),
+            ("Affordability", "affordability_status"),
+
+            ("Rank", "rank_score"),
+            ("Option Score", "option_score"),
+            ("POP", "probability_of_profit"),
+            ("Win Prob", "win_probability"),
+            ("Reward/Risk", "reward_risk"),
+            ("Kelly", "kelly_fraction"),
+
+            ("Regime", "regime"),
+            ("Strike", "strike"),
+            ("Expiry", "expiry"),
+            ("DTE", "days_to_expiry"),
+            ("Delta", "delta"),
+            ("IV", "iv"),
+            ("Liquidity", "liquidity_score"),
+
+            ("Position Value", "recommended_position_value"),
+            ("Option Price", "option_price_estimate"),
+            ("Contract Cost", "estimated_contract_cost"),
+            ("Qty", "recommended_contracts"),
         ],
     )}
 </div>
