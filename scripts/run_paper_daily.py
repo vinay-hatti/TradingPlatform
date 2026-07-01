@@ -19,9 +19,11 @@ def main():
     run([sys.executable, "scripts/paper_trade_from_optimizer.py"])
     run([sys.executable, "scripts/mark_paper_positions.py"])
     run([sys.executable, "scripts/paper_status.py"])
+    run([sys.executable, "scripts/build_dashboard.py"])
 
     print()
     print("Paper daily workflow complete.")
+    print("Dashboard ready: reports/dashboard.html")
 
 
 if __name__ == "__main__":

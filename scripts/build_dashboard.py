@@ -1,4 +1,5 @@
 import csv
+import json
 from pathlib import Path
 from datetime import datetime
 
@@ -14,6 +15,16 @@ def load_csv(path):
 
     with open(path, "r") as f:
         return list(csv.DictReader(f))
+
+
+def load_json(path, default):
+    path = Path(path)
+
+    if not path.exists():
+        return default
+
+    with open(path, "r") as f:
+        return json.load(f)
 
 
 def money(value):
@@ -59,6 +70,40 @@ def main():
 
     scanner_rows = load_csv(scanner_file)
     optimized_rows = load_csv(optimized_file)
+
+    paper_positions = load_json("data/paper/positions.json", [])
+    paper_cash = load_json("data/paper/cash.json", {"cash": 100000.0})
+
+    open_positions = [
+        p for p in paper_positions
+        if p.get("status") == "OPEN"
+    ]
+
+    closed_positions = [
+        p for p in paper_positions
+        if p.get("status") == "CLOSED"
+    ]
+
+    paper_cash_value = float(paper_cash.get("cash", 100000.0))
+
+    paper_open_value = sum(
+        float(p.get("current_price", 0.0))
+        * int(p.get("quantity", 0))
+        * 100.0
+        for p in open_positions
+    )
+
+    paper_unrealized = sum(
+        float(p.get("unrealized_pnl", 0.0))
+        for p in open_positions
+    )
+
+    paper_realized = sum(
+        float(p.get("realized_pnl", 0.0))
+        for p in closed_positions
+    )
+
+    paper_net_liq = paper_cash_value + paper_open_value
 
     total_allocated = sum(
         float(r.get("final_allocation", 0.0))
@@ -109,6 +154,7 @@ def main():
         .metric {{
             display: inline-block;
             margin-right: 30px;
+            margin-bottom: 15px;
             font-size: 18px;
         }}
         .metric strong {{
@@ -124,11 +170,62 @@ def main():
 <p>Generated: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</p>
 
 <div class="card">
-    <h2>Portfolio Summary</h2>
+    <h2>Optimized Portfolio Summary</h2>
     <div class="metric"><strong>Capital</strong>{money(capital)}</div>
     <div class="metric"><strong>Allocated</strong>{money(total_allocated)}</div>
     <div class="metric"><strong>Cash</strong>{money(cash)}</div>
     <div class="metric"><strong>Portfolio Heat</strong>{pct(heat)}</div>
+</div>
+
+<div class="card">
+    <h2>Paper Trading Status</h2>
+    <div class="metric"><strong>Cash</strong>{money(paper_cash_value)}</div>
+    <div class="metric"><strong>Open Value</strong>{money(paper_open_value)}</div>
+    <div class="metric"><strong>Net Liquidation</strong>{money(paper_net_liq)}</div>
+    <div class="metric"><strong>Unrealized PnL</strong>{money(paper_unrealized)}</div>
+    <div class="metric"><strong>Realized PnL</strong>{money(paper_realized)}</div>
+    <div class="metric"><strong>Open Positions</strong>{len(open_positions)}</div>
+    <div class="metric"><strong>Closed Positions</strong>{len(closed_positions)}</div>
+</div>
+
+<div class="card">
+    <h2>Open Paper Positions</h2>
+    {build_table(
+        open_positions,
+        [
+            "symbol",
+            "signal",
+            "strategy",
+            "strike",
+            "expiry",
+            "quantity",
+            "entry_price",
+            "current_price",
+            "unrealized_pnl",
+            "opened_at",
+            "status",
+        ],
+    )}
+</div>
+
+<div class="card">
+    <h2>Closed Paper Positions</h2>
+    {build_table(
+        closed_positions,
+        [
+            "symbol",
+            "signal",
+            "strategy",
+            "quantity",
+            "entry_price",
+            "exit_price",
+            "realized_pnl",
+            "exit_reason",
+            "opened_at",
+            "closed_at",
+            "status",
+        ],
+    )}
 </div>
 
 <div class="card">
@@ -140,6 +237,8 @@ def main():
             "symbol",
             "signal",
             "strategy",
+            "strike",
+            "expiry",
             "confidence",
             "rank_score",
             "win_probability",
@@ -177,6 +276,7 @@ def main():
             "regime",
             "strike",
             "expiry",
+            "days_to_expiry",
             "delta",
             "iv",
         ],
