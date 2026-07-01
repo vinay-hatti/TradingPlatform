@@ -27,6 +27,7 @@ def main():
     sub.add_parser("optimize")
     sub.add_parser("dashboard")
     sub.add_parser("daily")
+    sub.add_parser("option-details")
 
     paper = sub.add_parser("paper")
     paper_sub = paper.add_subparsers(dest="paper_command")
@@ -49,6 +50,9 @@ def main():
 
     elif args.command == "daily":
         run_script("scripts/run_paper_daily.py", extra)
+
+    elif args.command == "option-details":
+        run_script("scripts/option_details.py", extra)
 
     elif args.command == "paper":
 
