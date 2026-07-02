@@ -108,6 +108,41 @@ class BacktestReport:
 
         return rows
 
+    def performance_by_signal(self, trades):
+
+        grouped = {}
+
+        for trade in trades:
+            grouped.setdefault(trade.signal, []).append(trade)
+
+        rows = []
+
+        for signal, signal_trades in sorted(grouped.items()):
+            metrics = self.metrics.calculate(
+                signal_trades,
+                initial_capital=self.initial_capital,
+            )
+
+            profit_factor = metrics["profit_factor"]
+
+            rows.append({
+                "signal": signal,
+                "trades": metrics["trades"],
+                "wins": metrics["wins"],
+                "losses": metrics["losses"],
+                "win_rate": self.pct(metrics["win_rate"]),
+                "net_pnl": self.money(metrics["net_pnl"]),
+                "return_pct": self.pct(metrics["return_pct"]),
+                "profit_factor": (
+                    "inf"
+                    if profit_factor == float("inf")
+                    else f"{profit_factor:.2f}"
+                ),
+                "expectancy": self.money(metrics["expectancy"]),
+            })
+
+        return rows
+
     def generate(self, trades, path="reports/backtest.html"):
 
         metrics = self.metrics.calculate(
@@ -125,6 +160,8 @@ class BacktestReport:
         symbol_rows = self.performance_by_symbol(trades)
 
         exit_reason_rows = self.performance_by_exit_reason(trades)
+
+        signal_rows = self.performance_by_signal(trades)
 
         trade_rows = []
 
@@ -243,6 +280,24 @@ class BacktestReport:
         exit_reason_rows,
         [
             ("Exit Reason", "exit_reason"),
+            ("Trades", "trades"),
+            ("Wins", "wins"),
+            ("Losses", "losses"),
+            ("Win Rate", "win_rate"),
+            ("Net PnL", "net_pnl"),
+            ("Return", "return_pct"),
+            ("Profit Factor", "profit_factor"),
+            ("Expectancy", "expectancy"),
+        ],
+    )}
+</div>
+
+<div class="card">
+    <h2>Performance by Signal</h2>
+    {self.build_table(
+        signal_rows,
+        [
+            ("Signal", "signal"),
             ("Trades", "trades"),
             ("Wins", "wins"),
             ("Losses", "losses"),
