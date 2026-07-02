@@ -38,6 +38,41 @@ class BacktestReport:
 
         return html
 
+    def performance_by_symbol(self, trades):
+
+        grouped = {}
+
+        for trade in trades:
+            grouped.setdefault(trade.symbol, []).append(trade)
+
+        rows = []
+
+        for symbol, symbol_trades in sorted(grouped.items()):
+            metrics = self.metrics.calculate(
+                symbol_trades,
+                initial_capital=self.initial_capital,
+            )
+
+            profit_factor = metrics["profit_factor"]
+
+            rows.append({
+                "symbol": symbol,
+                "trades": metrics["trades"],
+                "wins": metrics["wins"],
+                "losses": metrics["losses"],
+                "win_rate": self.pct(metrics["win_rate"]),
+                "net_pnl": self.money(metrics["net_pnl"]),
+                "return_pct": self.pct(metrics["return_pct"]),
+                "profit_factor": (
+                    "inf"
+                    if profit_factor == float("inf")
+                    else f"{profit_factor:.2f}"
+                ),
+                "expectancy": self.money(metrics["expectancy"]),
+            })
+
+        return rows
+
     def generate(self, trades, path="reports/backtest.html"):
 
         metrics = self.metrics.calculate(
@@ -51,6 +86,8 @@ class BacktestReport:
         )
 
         max_dd = self.equity.max_drawdown(curve)
+
+        symbol_rows = self.performance_by_symbol(trades)
 
         trade_rows = []
 
@@ -66,15 +103,15 @@ class BacktestReport:
                 "entry_price": t.entry_price,
                 "exit_price": t.exit_price,
                 "contracts": t.contracts,
-                "pnl": t.pnl,
+                "pnl": self.money(t.pnl),
                 "pnl_pct": f"{t.pnl_pct:.2%}",
                 "days_held": t.days_held,
                 "exit_reason": t.exit_reason,
-                "rank_score": t.rank_score,
-                "option_score": t.option_score,
+                "rank_score": f"{t.rank_score:.2f}",
+                "option_score": f"{t.option_score:.2f}",
                 "pop": f"{t.pop:.2%}",
-                "liquidity": t.liquidity,
-                "atm_score": t.atm_score,
+                "liquidity": f"{t.liquidity:.2f}",
+                "atm_score": f"{t.atm_score:.2f}",
             })
 
         html = f"""
@@ -143,6 +180,24 @@ class BacktestReport:
     <div class="metric"><strong>Profit Factor</strong>{metrics["profit_factor"]:.2f}</div>
     <div class="metric"><strong>Expectancy</strong>{self.money(metrics["expectancy"])}</div>
     <div class="metric"><strong>Max Drawdown</strong>{self.money(max_dd)}</div>
+</div>
+
+<div class="card">
+    <h2>Performance by Symbol</h2>
+    {self.build_table(
+        symbol_rows,
+        [
+            ("Symbol", "symbol"),
+            ("Trades", "trades"),
+            ("Wins", "wins"),
+            ("Losses", "losses"),
+            ("Win Rate", "win_rate"),
+            ("Net PnL", "net_pnl"),
+            ("Return", "return_pct"),
+            ("Profit Factor", "profit_factor"),
+            ("Expectancy", "expectancy"),
+        ],
+    )}
 </div>
 
 <div class="card">

@@ -15,7 +15,7 @@ def parse_args():
         description="Run historical strategy backtest"
     )
 
-    parser.add_argument("--symbol", default="AAPL")
+    parser.add_argument("--symbols", default="AAPL")
     parser.add_argument("--start", default="2026-01-01")
     parser.add_argument("--end", default="2026-06-01")
     parser.add_argument("--capital", type=float, default=100000.0)
@@ -33,24 +33,6 @@ def main():
 
     datasource = HistoricalDataSource(container.market)
 
-    price_history = datasource.get_price_history(
-        args.symbol,
-        args.start,
-        args.end,
-    )
-
-    runner = HistoricalStrategyRunner(
-        datasource=datasource,
-        feature_pipeline=container.pipeline,
-        min_score=args.min_score,
-    )
-
-    signals = runner.run(
-        symbol=args.symbol,
-        start_date=args.start,
-        end_date=args.end,
-    )
-
     simulator = OptionTradeSimulator(
         take_profit_pct=args.take_profit,
         stop_loss_pct=args.stop_loss,
@@ -64,15 +46,54 @@ def main():
         max_hold_days=args.max_hold,
     )
 
-    trades = generator.generate(
-        signals=signals,
-        price_history=price_history,
-    )
+    symbols = [
+        s.strip().upper()
+        for s in args.symbols.split(",")
+        if s.strip()
+    ]
+
+    all_trades = []
+    total_trading_days = 0
+    total_signals = 0
+
+    for symbol in symbols:
+        price_history = datasource.get_price_history(
+            symbol,
+            args.start,
+            args.end,
+        )
+
+        total_trading_days += len(price_history)
+
+        runner = HistoricalStrategyRunner(
+            datasource=datasource,
+            feature_pipeline=container.pipeline,
+            min_score=args.min_score,
+        )
+
+        signals = runner.run(
+            symbol=symbol,
+            start_date=args.start,
+            end_date=args.end,
+        )
+
+        total_signals += len(signals)
+
+        trades = generator.generate(
+            signals=signals,
+            price_history=price_history,
+        )
+
+        all_trades.extend(trades)
+
+    trades = all_trades
+
+
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
     report_path = (
-        f"reports/backtest_{args.symbol}_{timestamp}.html"
+        f"reports/backtest_multi_{timestamp}.html"
     )
 
     result = BacktestEngine(
@@ -86,10 +107,10 @@ def main():
 
     print()
     print("========== Historical Backtest ==========")
-    print(f"Symbol        : {args.symbol}")
+    print(f"Symbols       : {', '.join(symbols)}")
     print(f"Period        : {args.start} -> {args.end}")
-    print(f"Trading Days  : {len(price_history)}")
-    print(f"Signals       : {len(signals)}")
+    print(f"Trading Days  : {total_trading_days}")
+    print(f"Signals       : {total_signals}")
     print(f"Trades        : {len(trades)}")
     print(f"Win Rate      : {metrics['win_rate']:.2%}")
     print(f"Net PnL       : ${metrics['net_pnl']:,.2f}")
