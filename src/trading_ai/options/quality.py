@@ -8,9 +8,15 @@ class OptionQualityScorer:
         self.liquidity = OptionLiquidityScorer()
         self.probability = OptionProbabilityScorer()
 
-    def score(self, option, signal):
+    def score(self, option, signal, spot=None):
 
-        pop = self.probability.probability_of_profit(option, signal)
+#        pop = self.probability.probability_of_profit(option, signal)
+        pop = self.probability.probability_of_profit(
+            option,
+            signal,
+            spot=spot,
+        )
+
         liquidity = self.liquidity.score(option)
 
         delta = abs(float(getattr(option, "delta", 0.0) or 0.0))

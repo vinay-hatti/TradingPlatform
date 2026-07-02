@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trading AI Backtest Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background: #f7f7f7;
+            color: #222;
+        }
+        h1, h2 {
+            color: #111;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+            overflow-x: auto;
+        }
+        .metric {
+            display: inline-block;
+            margin-right: 30px;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        .metric strong {
+            display: block;
+            font-size: 13px;
+            color: #666;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            white-space: nowrap;
+        }
+        th, td {
+            border-bottom: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            font-size: 14px;
+        }
+        th {
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Trading AI Backtest Report</h1>
+
+<div class="card">
+    <h2>Summary</h2>
+    <div class="metric"><strong>Trades</strong>3</div>
+    <div class="metric"><strong>Wins</strong>2</div>
+    <div class="metric"><strong>Losses</strong>1</div>
+    <div class="metric"><strong>Win Rate</strong>66.67%</div>
+    <div class="metric"><strong>Net PnL</strong>$900.00</div>
+    <div class="metric"><strong>Return</strong>0.90%</div>
+    <div class="metric"><strong>Profit Factor</strong>4.00</div>
+    <div class="metric"><strong>Expectancy</strong>$300.00</div>
+    <div class="metric"><strong>Max Drawdown</strong>$-300.00</div>
+</div>
+
+<div class="card">
+    <h2>Equity Curve</h2>
+    <table><thead><tr><th>Date</th><th>Equity</th><th>PnL</th><th>Symbol</th><th>Exit Reason</th></tr></thead><tbody><tr><td>2026-01-05</td><td>100500.0</td><td>500.0</td><td>AAPL</td><td>TAKE_PROFIT</td></tr><tr><td>2026-01-08</td><td>100200.0</td><td>-300.0</td><td>MSFT</td><td>STOP_LOSS</td></tr><tr><td>2026-01-10</td><td>100900.0</td><td>700.0</td><td>AMZN</td><td>TAKE_PROFIT</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Trade Log</h2>
+    <table><thead><tr><th>Symbol</th><th>Entry</th><th>Exit</th><th>Signal</th><th>Strategy</th><th>Strike</th><th>Expiry</th><th>Entry Price</th><th>Exit Price</th><th>Contracts</th><th>PnL</th><th>PnL %</th><th>Hold Days</th><th>Exit Reason</th><th>Rank</th><th>Option Score</th><th>POP</th><th>Liquidity</th><th>ATM</th></tr></thead><tbody><tr><td>AAPL</td><td>2026-01-01</td><td>2026-01-05</td><td>CALL</td><td>LONG_CALL</td><td>300.0</td><td>2026-09-18</td><td>10.0</td><td>15.0</td><td>1</td><td>500.0</td><td>50.00%</td><td>5</td><td>TAKE_PROFIT</td><td>75.0</td><td>70.0</td><td>55.00%</td><td>70.0</td><td>100.0</td></tr><tr><td>MSFT</td><td>2026-01-01</td><td>2026-01-08</td><td>CALL</td><td>LONG_CALL</td><td>300.0</td><td>2026-09-18</td><td>10.0</td><td>7.0</td><td>1</td><td>-300.0</td><td>-30.00%</td><td>5</td><td>STOP_LOSS</td><td>75.0</td><td>70.0</td><td>55.00%</td><td>70.0</td><td>100.0</td></tr><tr><td>AMZN</td><td>2026-01-01</td><td>2026-01-10</td><td>CALL</td><td>LONG_CALL</td><td>300.0</td><td>2026-09-18</td><td>10.0</td><td>17.0</td><td>1</td><td>700.0</td><td>70.00%</td><td>5</td><td>TAKE_PROFIT</td><td>75.0</td><td>70.0</td><td>55.00%</td><td>70.0</td><td>100.0</td></tr></tbody></table>
+</div>
+
+</body>
+</html>

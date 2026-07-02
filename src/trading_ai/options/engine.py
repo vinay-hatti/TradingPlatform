@@ -3,6 +3,7 @@ import time
 from pathlib import Path
 from trading_ai.options.quality import OptionQualityScorer
 from trading_ai.options.selector import OptionsSelector
+from trading_ai.options.ranker import OptionRanker
 
 
 class OptionsEngine:
@@ -15,6 +16,7 @@ class OptionsEngine:
         self.cache_dir = Path(".cache/options")
         self.cache_dir.mkdir(parents=True, exist_ok=True)
         self.quality = OptionQualityScorer()
+        self.ranker = OptionRanker()
 
     def _cache_file(self, symbol):
         return self.cache_dir / f"{symbol}_chain.pkl"
@@ -48,6 +50,42 @@ class OptionsEngine:
         self._chain_cache[symbol] = chain
         return chain
 
+    def rank_contracts(self, symbol, ctx, analytics, strategy=None, limit=10):
+
+        chain = self._load_chain(symbol)
+
+        if strategy == "LONG_CALL":
+            signal = "CALL"
+        elif strategy == "LONG_PUT":
+            signal = "PUT"
+        else:
+            signal = "CALL" if ctx.call_score >= ctx.put_score else "PUT"
+
+        candidates = [
+            c for c in chain
+            if c.option_type == signal
+            and c.implied_volatility > 0
+            and c.open_interest > 10
+            and abs(c.delta) > 0.15
+        ]
+
+        underlying_price = float(
+            getattr(ctx, "close", 0.0)
+            or getattr(ctx, "current_price", 0.0)
+            or getattr(ctx, "underlying_price", 0.0)
+            or 0.0
+        )
+
+        if not candidates:
+            return []
+
+        return self.ranker.rank(
+            candidates,
+            signal=signal,
+            limit=limit,
+            spot=underlying_price,
+        )
+
     def select_contract(self, symbol, ctx, analytics, strategy=None):
 
         chain = self._load_chain(symbol)
@@ -69,22 +107,24 @@ class OptionsEngine:
             and abs(c.delta) > 0.15
         ]
 
+        underlying_price = float(
+            getattr(ctx, "close", 0.0)
+            or getattr(ctx, "stock_price", 0.0)
+            or getattr(ctx, "underlying_price", 0.0)
+        )
+
         if not candidates:
             return None
 
-        target_delta = 0.45 if signal == "CALL" else -0.45
+        ranked = self.ranker.rank(
+            candidates,
+            signal=signal,
+            limit=10,
+            spot=underlying_price,
+        )
 
-        def score(c):
+        if not ranked:
+            return None
 
-            quality = self.quality.score(c, signal)
+        return ranked[0].option
 
-            skew_bonus = 0.0
-
-            if skew > 0 and signal == "CALL":
-                skew_bonus = 5.0
-            elif skew < 0 and signal == "PUT":
-                skew_bonus = 5.0
-
-            return quality["option_score"] + skew_bonus
-
-        return max(candidates, key=score)

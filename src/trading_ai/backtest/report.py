@@ -1,366 +1,197 @@
+from pathlib import Path
+
+from trading_ai.backtest.metrics import BacktestMetrics
+from trading_ai.backtest.equity import EquityCurveBuilder
+
+
 class BacktestReport:
 
-    def summarize(self, results):
+    def __init__(self, initial_capital=100000.0):
+        self.initial_capital = initial_capital
+        self.metrics = BacktestMetrics()
+        self.equity = EquityCurveBuilder()
 
-        open_positions = results.get("open_positions", {})
-        closed_positions = results.get("closed_positions", [])
-        equity_curve = results.get("equity_curve", [])
+    def money(self, value):
+        return f"${float(value):,.2f}"
 
-        wins = [p for p in closed_positions if p.pnl > 0]
-        losses = [p for p in closed_positions if p.pnl <= 0]
+    def pct(self, value):
+        return f"{float(value) * 100:.2f}%"
 
-        gross_profit = sum(p.pnl for p in wins)
-        gross_loss = abs(sum(p.pnl for p in losses))
+    def build_table(self, rows, columns):
+        if not rows:
+            return "<p>No data available.</p>"
 
-        win_rate = len(wins) / max(1, len(closed_positions))
-        avg_win = gross_profit / max(1, len(wins))
-        avg_loss = -gross_loss / max(1, len(losses))
+        html = "<table><thead><tr>"
 
-        regime_stats = {}
+        for label, key in columns:
+            html += f"<th>{label}</th>"
 
-        for p in closed_positions:
-            regime = p.regime or "UNKNOWN"
+        html += "</tr></thead><tbody>"
 
-            if regime not in regime_stats:
-                regime_stats[regime] = {
-                    "trades": 0,
-                    "wins": 0,
-                    "losses": 0,
-                    "pnl": 0.0,
-                }
+        for row in rows:
+            html += "<tr>"
+            for _, key in columns:
+                html += f"<td>{row.get(key, '')}</td>"
+            html += "</tr>"
 
-            regime_stats[regime]["trades"] += 1
-            regime_stats[regime]["pnl"] += p.pnl
-            if p.pnl > 0:
-                regime_stats[regime]["wins"] += 1
-            else:
-                regime_stats[regime]["losses"] += 1
+        html += "</tbody></table>"
 
+        return html
 
-            strategy_stats = {}
-            for p in closed_positions:
-                strategy = p.strategy or "UNKNOWN"
-                if strategy not in strategy_stats:
-                    strategy_stats[strategy] = {
-                        "trades": 0,
-                        "wins": 0,
-                        "losses": 0,
-                        "pnl": 0.0,
-                    }
-                strategy_stats[strategy]["trades"] += 1
-                strategy_stats[strategy]["pnl"] += p.pnl
-                if p.pnl > 0:
-                    strategy_stats[strategy]["wins"] += 1
-                else:
-                    strategy_stats[strategy]["losses"] += 1
+    def generate(self, trades, path="reports/backtest.html"):
 
-        profit_factor = (
-            gross_profit / gross_loss
-            if gross_loss > 0
-            else float("inf")
+        metrics = self.metrics.calculate(
+            trades,
+            initial_capital=self.initial_capital,
         )
 
-        expectancy = (
-            win_rate * avg_win
-            + (1 - win_rate) * avg_loss
+        curve = self.equity.build(
+            trades,
+            initial_capital=self.initial_capital,
         )
 
-        total_pnl = equity_curve[-1] if equity_curve else 0.0
+        max_dd = self.equity.max_drawdown(curve)
 
-        max_drawdown = self._max_drawdown(equity_curve)
-        sharpe, sortino = self._sharpe_sortino(equity_curve)
- 
-        calmar = (
-            total_pnl / max_drawdown
-            if max_drawdown > 0
-            else 0.0
-        )
+        trade_rows = []
 
-        exit_reasons = {}
+        for t in trades:
+            trade_rows.append({
+                "symbol": t.symbol,
+                "entry_date": t.entry_date,
+                "exit_date": t.exit_date,
+                "strategy": t.strategy,
+                "signal": t.signal,
+                "strike": t.strike,
+                "expiry": t.expiry,
+                "entry_price": t.entry_price,
+                "exit_price": t.exit_price,
+                "contracts": t.contracts,
+                "pnl": t.pnl,
+                "pnl_pct": f"{t.pnl_pct:.2%}",
+                "days_held": t.days_held,
+                "exit_reason": t.exit_reason,
+                "rank_score": t.rank_score,
+                "option_score": t.option_score,
+                "pop": f"{t.pop:.2%}",
+                "liquidity": t.liquidity,
+                "atm_score": t.atm_score,
+            })
 
-        for p in closed_positions:
-            reason = p.exit_reason or "UNKNOWN"
-            exit_reasons[reason] = exit_reasons.get(reason, 0) + 1
+        html = f"""
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trading AI Backtest Report</title>
+    <style>
+        body {{
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background: #f7f7f7;
+            color: #222;
+        }}
+        h1, h2 {{
+            color: #111;
+        }}
+        .card {{
+            background: white;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+            overflow-x: auto;
+        }}
+        .metric {{
+            display: inline-block;
+            margin-right: 30px;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }}
+        .metric strong {{
+            display: block;
+            font-size: 13px;
+            color: #666;
+        }}
+        table {{
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            white-space: nowrap;
+        }}
+        th, td {{
+            border-bottom: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            font-size: 14px;
+        }}
+        th {{
+            background: #eee;
+        }}
+    </style>
+</head>
+<body>
 
-#        total_pnl = equity_curve[-1] if equity_curve else 0.0
+<h1>Trading AI Backtest Report</h1>
 
-        return {
-            "open_positions": len(open_positions),
-            "closed_positions": len(closed_positions),
-            "wins": len(wins),
-            "losses": len(losses),
-            "win_rate": win_rate,
-            "final_pnl": total_pnl,
-            "avg_win": avg_win,
-            "avg_loss": avg_loss,
-            "gross_profit": gross_profit,
-            "gross_loss": gross_loss,
-            "profit_factor": profit_factor,
-            "expectancy": expectancy,
-            "max_drawdown": max_drawdown,
-            "exit_reasons": exit_reasons,
-            "sharpe": sharpe,
-            "sortino": sortino,
-            "calmar": calmar,
-            "regime_stats": regime_stats,
-            "strategy_stats": strategy_stats,
-        }
+<div class="card">
+    <h2>Summary</h2>
+    <div class="metric"><strong>Trades</strong>{metrics["trades"]}</div>
+    <div class="metric"><strong>Wins</strong>{metrics["wins"]}</div>
+    <div class="metric"><strong>Losses</strong>{metrics["losses"]}</div>
+    <div class="metric"><strong>Win Rate</strong>{self.pct(metrics["win_rate"])}</div>
+    <div class="metric"><strong>Net PnL</strong>{self.money(metrics["net_pnl"])}</div>
+    <div class="metric"><strong>Return</strong>{self.pct(metrics["return_pct"])}</div>
+    <div class="metric"><strong>Profit Factor</strong>{metrics["profit_factor"]:.2f}</div>
+    <div class="metric"><strong>Expectancy</strong>{self.money(metrics["expectancy"])}</div>
+    <div class="metric"><strong>Max Drawdown</strong>{self.money(max_dd)}</div>
+</div>
 
-    def _max_drawdown(self, equity_curve):
+<div class="card">
+    <h2>Equity Curve</h2>
+    {self.build_table(
+        curve,
+        [
+            ("Date", "date"),
+            ("Equity", "equity"),
+            ("PnL", "pnl"),
+            ("Symbol", "symbol"),
+            ("Exit Reason", "exit_reason"),
+        ],
+    )}
+</div>
 
-        if not equity_curve:
-            return 0.0
+<div class="card">
+    <h2>Trade Log</h2>
+    {self.build_table(
+        trade_rows,
+        [
+            ("Symbol", "symbol"),
+            ("Entry", "entry_date"),
+            ("Exit", "exit_date"),
+            ("Signal", "signal"),
+            ("Strategy", "strategy"),
+            ("Strike", "strike"),
+            ("Expiry", "expiry"),
+            ("Entry Price", "entry_price"),
+            ("Exit Price", "exit_price"),
+            ("Contracts", "contracts"),
+            ("PnL", "pnl"),
+            ("PnL %", "pnl_pct"),
+            ("Hold Days", "days_held"),
+            ("Exit Reason", "exit_reason"),
+            ("Rank", "rank_score"),
+            ("Option Score", "option_score"),
+            ("POP", "pop"),
+            ("Liquidity", "liquidity"),
+            ("ATM", "atm_score"),
+        ],
+    )}
+</div>
 
-        peak = equity_curve[0]
-        max_dd = 0.0
-
-        for value in equity_curve:
-            peak = max(peak, value)
-            drawdown = peak - value
-            max_dd = max(max_dd, drawdown)
-
-        return max_dd
-
-    def print(self, results):
-
-        summary = self.summarize(results)
-
-        print()
-        print("========== Backtest Summary ==========")
-        print(f"Open Positions  : {summary['open_positions']}")
-        print(f"Closed Positions: {summary['closed_positions']}")
-        print(f"Wins            : {summary['wins']}")
-        print(f"Losses          : {summary['losses']}")
-        print(f"Win Rate        : {summary['win_rate']:.2%}")
-        print(f"Average Win     : {summary['avg_win']:.2f}")
-        print(f"Average Loss    : {summary['avg_loss']:.2f}")
-        print(f"Gross Profit    : {summary['gross_profit']:.2f}")
-        print(f"Gross Loss      : {summary['gross_loss']:.2f}")
-        print(f"Profit Factor   : {summary['profit_factor']:.2f}")
-        print(f"Expectancy      : {summary['expectancy']:.2f}")
-        print(f"Max Drawdown    : {summary['max_drawdown']:.2f}")
-        print(f"Final PnL       : {summary['final_pnl']:.2f}")
-        print(f"Sharpe Ratio    : {summary['sharpe']:.2f}")
-        print(f"Sortino Ratio   : {summary['sortino']:.2f}")
-        print(f"Calmar Ratio    : {summary['calmar']:.2f}")
-
-        print()
-        print("Exit Reasons:")
-        for reason, count in summary["exit_reasons"].items():
-            print(f"  {reason:12}: {count}")
-
-        print()
-        print("Regime Stats:")
-        for regime, stats in summary["regime_stats"].items():
-            win_rate = stats["wins"] / max(1, stats["trades"])
-            print(
-                f"  {regime:12} | "
-                f"Trades={stats['trades']:3} | "
-                f"Win={win_rate:6.2%} | "
-                f"PnL={stats['pnl']:10.2f}"
-            )
-
-        print()
-        print("Strategy Stats:")
-        for strategy, stats in summary["strategy_stats"].items():
-            win_rate = stats["wins"] / max(1, stats["trades"])
-            print(
-                f"  {strategy:14} | "
-                f"Trades={stats['trades']:3} | "
-                f"Win={win_rate:6.2%} | "
-                f"PnL={stats['pnl']:10.2f}"
-            )
-
-        print("======================================")
-        print()
-
-        self.print_closed_trades(results)
-
-    def print_closed_trades(self, results):
-
-        closed_positions = results.get("closed_positions", [])
-
-        if not closed_positions:
-            print("No closed trades.")
-            return
-
-        print("========== Closed Trades =============")
-
-        for p in closed_positions:
-            print(
-                f"{p.symbol:5} | "
-                f"{p.signal:4} | "
-                f"Regime={p.regime:12} | "
-                f"EntryIdx={p.entry_index:3} | "
-                f"ExitIdx={p.exit_index:3} | "
-                f"Reason={p.exit_reason:11} | "
-                f"StockIn={p.stock_entry_price:8.2f} | "
-                f"StockOut={p.stock_exit_price:8.2f} | "
-                f"OptIn={p.option_entry_price:8.2f} | "
-                f"OptOut={p.option_exit_price:8.2f} | "
-                f"PnL={p.pnl:10.2f} | "
-                f"Score={p.score:6.2f}"
-            )
-
-        print("======================================")
-        print()
-
-    def export_closed_trades_csv(self, results, path="reports/closed_trades.csv"):
-
-        import csv
-        from pathlib import Path
-
-        closed_positions = results.get("closed_positions", [])
+</body>
+</html>
+"""
 
         Path(path).parent.mkdir(parents=True, exist_ok=True)
+        Path(path).write_text(html)
 
-        with open(path, "w", newline="") as f:
-            writer = csv.writer(f)
-
-            writer.writerow([
-                "symbol",
-                "signal",
-                "strategy",
-                "entry_index",
-                "exit_index",
-                "exit_reason",
-                "stock_entry_price",
-                "stock_exit_price",
-                "option_entry_price",
-                "option_exit_price",
-                "strike",
-                "expiry",
-                "delta",
-                "size",
-                "score",
-                "pnl",
-            ])
-
-            for p in closed_positions:
-                writer.writerow([
-                    p.symbol,
-                    p.signal,
-                    p.strategy,
-                    p.entry_index,
-                    p.exit_index,
-                    p.exit_reason,
-                    p.stock_entry_price,
-                    p.stock_exit_price,
-                    p.option_entry_price,
-                    p.option_exit_price,
-                    p.strike,
-                    p.expiry,
-                    p.delta,
-                    p.size,
-                    p.score,
-                    p.pnl,
-                ])
-
-        print(f"Closed trades exported to {path}")
-
-    def export_equity_curve_csv(self, results, path="reports/equity_curve.csv"):
-
-        import csv
-        from pathlib import Path
-
-        equity_curve = results.get("equity_curve", [])
-
-        Path(path).parent.mkdir(parents=True, exist_ok=True)
-
-        with open(path, "w", newline="") as f:
-            writer = csv.writer(f)
-
-            writer.writerow([
-                "step",
-                "equity",
-            ])
-
-            for i, value in enumerate(equity_curve):
-                writer.writerow([
-                    i,
-                    value,
-                ])
-
-        print(f"Equity curve exported to {path}")
-
-    def export_equity_curve_chart(self, results, path="reports/equity_curve.png"):
-
-        try:
-            import matplotlib.pyplot as plt
-        except ImportError:
-            print("matplotlib not installed; skipping chart export.")
-            return
-
-        from pathlib import Path
-
-        equity_curve = results.get("equity_curve", [])
-
-        if not equity_curve:
-            print("No equity curve to chart.")
-            return
-
-        Path(path).parent.mkdir(parents=True, exist_ok=True)
-
-        plt.figure(figsize=(12, 6))
-        plt.plot(equity_curve, linewidth=2)
-        plt.title("Trading AI Equity Curve")
-        plt.xlabel("Step")
-        plt.ylabel("PnL")
-        plt.grid(True)
-        plt.tight_layout()
-        plt.savefig(path, dpi=150)
-        plt.close()
-
-        print(f"Equity curve chart exported to {path}")
-
-    def _returns(self, equity_curve):
-
-        if len(equity_curve) < 2:
-            return []
-
-        returns = []
-
-        for i in range(1, len(equity_curve)):
-            prev = equity_curve[i - 1]
-            curr = equity_curve[i]
-
-            if prev == 0:
-                returns.append(0.0)
-            else:
-                returns.append((curr - prev) / abs(prev))
-
-        return returns
-
-    def _sharpe_sortino(self, equity_curve):
-
-        import math
-        import statistics
-
-        returns = self._returns(equity_curve)
-
-        if len(returns) < 2:
-            return 0.0, 0.0
-
-        mean_return = statistics.mean(returns)
-        std_return = statistics.stdev(returns)
-
-        sharpe = (
-            mean_return / std_return * math.sqrt(252)
-            if std_return > 0
-            else 0.0
-        )
-
-        downside = [r for r in returns if r < 0]
-
-        if len(downside) < 2:
-            sortino = 0.0
-        else:
-            downside_std = statistics.stdev(downside)
-            sortino = (
-                mean_return / downside_std * math.sqrt(252)
-                if downside_std > 0
-                else 0.0
-            )
-
-        return sharpe, sortino
-
+        return path

@@ -28,6 +28,8 @@ def main():
     sub.add_parser("dashboard")
     sub.add_parser("daily")
     sub.add_parser("option-details")
+    sub.add_parser("option-rankings")
+    sub.add_parser("backtest-smoke")
 
     paper = sub.add_parser("paper")
     paper_sub = paper.add_subparsers(dest="paper_command")
@@ -53,6 +55,12 @@ def main():
 
     elif args.command == "option-details":
         run_script("scripts/option_details.py", extra)
+
+    elif args.command == "option-rankings":
+        run_script("scripts/export_option_rankings.py", extra)
+
+    elif args.command == "backtest-smoke":
+        run_script("scripts/run_backtest_smoke.py", extra)
 
     elif args.command == "paper":
 
