@@ -33,6 +33,7 @@ def main():
     sub.add_parser("backtest-engine-test")
     sub.add_parser("backtest-datasource-test")
     sub.add_parser("strategy-runner-test")
+    sub.add_parser("trade-generator-test")
 
     paper = sub.add_parser("paper")
     paper_sub = paper.add_subparsers(dest="paper_command")
@@ -73,6 +74,9 @@ def main():
 
     elif args.command == "strategy-runner-test":
         run_script("scripts/test_strategy_runner.py", extra)
+
+    elif args.command == "trade-generator-test":
+        run_script("scripts/test_trade_generator.py", extra)
 
     elif args.command == "paper":
 

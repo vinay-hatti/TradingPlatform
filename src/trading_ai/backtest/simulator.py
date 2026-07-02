@@ -1,5 +1,3 @@
-from datetime import timedelta
-
 from trading_ai.backtest.trade import BacktestTrade
 
 
@@ -35,6 +33,9 @@ class OptionTradeSimulator:
         entry_price = float(entry_price)
         contracts = int(contracts)
 
+        signal = str(signal).upper()
+        direction = 1.0 if signal == "CALL" else -1.0
+
         max_profit = 0.0
         max_drawdown = 0.0
 
@@ -47,12 +48,17 @@ class OptionTradeSimulator:
             current_price = float(price_point["price"])
 
             pnl = (
-                current_price - entry_price
-            ) * contracts * 100.0
+                (current_price - entry_price)
+                * direction
+                * contracts
+                * 100.0
+            )
 
             pnl_pct = (
-                current_price - entry_price
-            ) / max(entry_price, 0.01)
+                (current_price - entry_price)
+                * direction
+                / max(entry_price, 0.01)
+            )
 
             max_profit = max(max_profit, pnl)
             max_drawdown = min(max_drawdown, pnl)
@@ -73,12 +79,17 @@ class OptionTradeSimulator:
                 break
 
         pnl = (
-            exit_price - entry_price
-        ) * contracts * 100.0
+            (exit_price - entry_price)
+            * direction
+            * contracts
+            * 100.0
+        )
 
         pnl_pct = (
-            exit_price - entry_price
-        ) / max(entry_price, 0.01)
+            (exit_price - entry_price)
+            * direction
+            / max(entry_price, 0.01)
+        )
 
         days_held = max(
             (exit_date - entry_date).days,
