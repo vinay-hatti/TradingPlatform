@@ -31,6 +31,7 @@ def main():
     sub.add_parser("option-rankings")
     sub.add_parser("backtest-smoke")
     sub.add_parser("backtest-engine-test")
+    sub.add_parser("backtest-datasource-test")
 
     paper = sub.add_parser("paper")
     paper_sub = paper.add_subparsers(dest="paper_command")
@@ -65,6 +66,9 @@ def main():
 
     elif args.command == "backtest-engine-test":
         run_script("scripts/test_backtest_engine.py", extra)
+
+    elif args.command == "backtest-datasource-test":
+        run_script("scripts/test_historical_datasource.py", extra)
 
     elif args.command == "paper":
 
