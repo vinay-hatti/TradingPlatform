@@ -14,7 +14,8 @@ class BacktestEngine:
         self.report = BacktestReport(initial_capital=initial_capital)
         self.exporter = BacktestExporter()
 
-    def run(self, trades, report_path="reports/backtest.html"):
+#    def run(self, trades, report_path="reports/backtest.html"):
+    def run(self, trades, report_path="reports/backtest.html", rejected=None):
 
         metrics = self.metrics.calculate(
             trades,
@@ -47,6 +48,12 @@ class BacktestEngine:
             metrics,
             report_dir / "metrics.json",
         )
+
+        if rejected is not None:
+            self.exporter.export_rejected(
+                rejected,
+                report_dir / "rejected.csv",
+            )
 
         return {
             "trades": trades,

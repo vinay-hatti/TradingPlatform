@@ -85,3 +85,38 @@ class BacktestExporter:
 
         with open(path, "w") as f:
             json.dump(metrics, f, indent=2)
+
+    def export_rejected(self, rejected, path):
+
+        Path(path).parent.mkdir(parents=True, exist_ok=True)
+
+        fieldnames = [
+            "symbol",
+            "entry_date",
+            "signal",
+            "strategy",
+            "entry_price",
+            "contracts",
+            "reason",
+            "rank_score",
+            "option_score",
+        ]
+
+        with open(path, "w", newline="") as f:
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            writer.writeheader()
+
+            for item in rejected:
+                trade = item["trade"]
+
+                writer.writerow({
+                    "symbol": trade.symbol,
+                    "entry_date": trade.entry_date,
+                    "signal": trade.signal,
+                    "strategy": trade.strategy,
+                    "entry_price": trade.entry_price,
+                    "contracts": trade.contracts,
+                    "reason": item["reason"],
+                    "rank_score": trade.rank_score,
+                    "option_score": trade.option_score,
+                })

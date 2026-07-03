@@ -138,6 +138,7 @@ def main():
     ).run(
         trades,
         report_path=report_path,
+        rejected=rejected_trades,
     )
 
     metrics = result["metrics"]
