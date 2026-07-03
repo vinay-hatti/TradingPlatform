@@ -159,6 +159,54 @@ class BacktestReport:
 
         rows = []
 
+    def performance_by_hold_days(self, trades):
+
+        grouped = {}
+
+        for trade in trades:
+            days = int(trade.days_held)
+
+            if days <= 3:
+                bucket = "0-3 days"
+            elif days <= 5:
+                bucket = "4-5 days"
+            elif days <= 10:
+                bucket = "6-10 days"
+            elif days <= 20:
+                bucket = "11-20 days"
+            else:
+                bucket = "20+ days"
+
+            grouped.setdefault(bucket, []).append(trade)
+
+        rows = []
+
+        for bucket, bucket_trades in grouped.items():
+            metrics = self.metrics.calculate(
+                bucket_trades,
+                initial_capital=self.initial_capital,
+            )
+
+            profit_factor = metrics["profit_factor"]
+
+            rows.append({
+                "hold_bucket": bucket,
+                "trades": metrics["trades"],
+                "wins": metrics["wins"],
+                "losses": metrics["losses"],
+                "win_rate": self.pct(metrics["win_rate"]),
+                "net_pnl": self.money(metrics["net_pnl"]),
+                "return_pct": self.pct(metrics["return_pct"]),
+                "profit_factor": (
+                    "inf"
+                    if profit_factor == float("inf")
+                    else f"{profit_factor:.2f}"
+                ),
+                "expectancy": self.money(metrics["expectancy"]),
+            })
+
+        return rows
+
         for bucket, bucket_trades in sorted(grouped.items()):
             metrics = self.metrics.calculate(
                 bucket_trades,
@@ -206,6 +254,8 @@ class BacktestReport:
         signal_rows = self.performance_by_signal(trades)
 
         score_bucket_rows = self.performance_by_score_bucket(trades)
+
+        hold_days_rows = self.performance_by_hold_days(trades)
 
         trade_rows = []
 
@@ -360,6 +410,24 @@ class BacktestReport:
         score_bucket_rows,
         [
             ("Score Bucket", "score_bucket"),
+            ("Trades", "trades"),
+            ("Wins", "wins"),
+            ("Losses", "losses"),
+            ("Win Rate", "win_rate"),
+            ("Net PnL", "net_pnl"),
+            ("Return", "return_pct"),
+            ("Profit Factor", "profit_factor"),
+            ("Expectancy", "expectancy"),
+        ],
+    )}
+</div>
+
+<div class="card">
+    <h2>Performance by Hold Days</h2>
+    {self.build_table(
+        hold_days_rows,
+        [
+            ("Hold Days", "hold_bucket"),
             ("Trades", "trades"),
             ("Wins", "wins"),
             ("Losses", "losses"),
