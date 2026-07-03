@@ -243,6 +243,42 @@ class BacktestReport:
 
         return rows
 
+    def performance_by_year(self, trades):
+
+        grouped = {}
+
+        for trade in trades:
+            year = trade.exit_date.strftime("%Y")
+            grouped.setdefault(year, []).append(trade)
+
+        rows = []
+
+        for year, year_trades in sorted(grouped.items()):
+            metrics = self.metrics.calculate(
+                year_trades,
+                initial_capital=self.initial_capital,
+            )
+
+            profit_factor = metrics["profit_factor"]
+
+            rows.append({
+                "year": year,
+                "trades": metrics["trades"],
+                "wins": metrics["wins"],
+                "losses": metrics["losses"],
+                "win_rate": self.pct(metrics["win_rate"]),
+                "net_pnl": self.money(metrics["net_pnl"]),
+                "return_pct": self.pct(metrics["return_pct"]),
+                "profit_factor": (
+                    "inf"
+                    if profit_factor == float("inf")
+                    else f"{profit_factor:.2f}"
+                ),
+                "expectancy": self.money(metrics["expectancy"]),
+            })
+
+        return rows
+
         for bucket, bucket_trades in sorted(grouped.items()):
             metrics = self.metrics.calculate(
                 bucket_trades,
@@ -294,6 +330,8 @@ class BacktestReport:
         hold_days_rows = self.performance_by_hold_days(trades)
 
         month_rows = self.performance_by_month(trades)
+
+        year_rows = self.performance_by_year(trades)
 
         trade_rows = []
 
@@ -484,6 +522,24 @@ class BacktestReport:
         month_rows,
         [
             ("Month", "month"),
+            ("Trades", "trades"),
+            ("Wins", "wins"),
+            ("Losses", "losses"),
+            ("Win Rate", "win_rate"),
+            ("Net PnL", "net_pnl"),
+            ("Return", "return_pct"),
+            ("Profit Factor", "profit_factor"),
+            ("Expectancy", "expectancy"),
+        ],
+    )}
+</div>
+
+<div class="card">
+    <h2>Performance by Year</h2>
+    {self.build_table(
+        year_rows,
+        [
+            ("Year", "year"),
             ("Trades", "trades"),
             ("Wins", "wins"),
             ("Losses", "losses"),
