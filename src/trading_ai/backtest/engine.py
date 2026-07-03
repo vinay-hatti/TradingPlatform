@@ -30,6 +30,7 @@ class BacktestEngine:
         self.report.generate(
             trades,
             path=report_path,
+            rejected=rejected or [],
         )
 
         report_dir = Path(report_path).parent

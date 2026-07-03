@@ -17,6 +17,27 @@ class BacktestReport:
     def pct(self, value):
         return f"{float(value) * 100:.2f}%"
 
+    def rejected_rows(self, rejected):
+
+        rows = []
+
+        for item in rejected:
+            trade = item["trade"]
+
+            rows.append({
+                "symbol": trade.symbol,
+                "entry_date": trade.entry_date,
+                "signal": trade.signal,
+                "strategy": trade.strategy,
+                "entry_price": f"{float(trade.entry_price):.2f}",
+                "contracts": trade.contracts,
+                "reason": item["reason"],
+                "rank_score": f"{float(trade.rank_score):.2f}",
+                "option_score": f"{float(trade.option_score):.2f}",
+            })
+
+        return rows
+
     def build_table(self, rows, columns):
         if not rows:
             return "<p>No data available.</p>"
@@ -210,7 +231,11 @@ class BacktestReport:
 
         return rows
 
-    def generate(self, trades, path="reports/backtest.html"):
+#    def generate(self, trades, path="reports/backtest.html"):
+    def generate(self, trades, path="reports/backtest.html", rejected=None):
+
+        rejected = rejected or []
+        rejected_rows = self.rejected_rows(rejected)
 
         metrics = self.metrics.calculate(
             trades,
@@ -460,6 +485,24 @@ class BacktestReport:
             ("PnL", "pnl"),
             ("PnL %", "pnl_pct"),
             ("Exit Reason", "exit_reason"),
+            ("Rank", "rank_score"),
+            ("Score", "option_score"),
+        ],
+    )}
+</div>
+
+<div class="card">
+    <h2>Rejected Trades</h2>
+    {self.build_table(
+        rejected_rows,
+        [
+            ("Symbol", "symbol"),
+            ("Entry", "entry_date"),
+            ("Signal", "signal"),
+            ("Strategy", "strategy"),
+            ("Entry Price", "entry_price"),
+            ("Contracts", "contracts"),
+            ("Reason", "reason"),
             ("Rank", "rank_score"),
             ("Score", "option_score"),
         ],
