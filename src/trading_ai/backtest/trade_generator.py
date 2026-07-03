@@ -36,7 +36,8 @@ class HistoricalTradeGenerator:
         for signal in signals:
 
             entry_date = signal["date"]
-            entry_price = float(signal["close"])
+            underlying_price = float(signal["close"])
+            entry_price = underlying_price * 0.08
 
             contracts = self._contracts_for_trade(entry_price)
 
@@ -49,6 +50,14 @@ class HistoricalTradeGenerator:
                 days=self.max_hold_days,
             )
 
+            future_prices = [
+                {
+                    "date": p["date"],
+                    "price": float(p["price"]) * 0.08,
+                }
+                for p in future_prices
+            ]
+
             if not future_prices:
                 continue
 
@@ -60,7 +69,8 @@ class HistoricalTradeGenerator:
                     if signal["signal"] == "CALL"
                     else "LONG_PUT"
                 ),
-                strike=entry_price,
+#                strike=entry_price,
+                strike=underlying_price,
                 expiry="STOCK_PROXY",
                 entry_date=entry_date,
                 entry_price=entry_price,
