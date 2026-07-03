@@ -152,6 +152,17 @@ def main():
     print(f"Trades        : {len(trades)}")
     print(f"Accepted      : {len(trades)}")
     print(f"Rejected      : {len(rejected_trades)}")
+    rejected_by_reason = {}
+
+    for item in rejected_trades:
+        reason = item["reason"]
+        rejected_by_reason[reason] = rejected_by_reason.get(reason, 0) + 1
+
+    if rejected_by_reason:
+        print("Rejected By Reason:")
+
+        for reason, count in sorted(rejected_by_reason.items()):
+            print(f"  {reason:22}: {count}")
     print(f"Win Rate      : {metrics['win_rate']:.2%}")
     print(f"Net PnL       : ${metrics['net_pnl']:,.2f}")
     print(f"Return        : {metrics['return_pct']:.2%}")
