@@ -38,129 +38,79 @@ class BacktestReport:
 
         return html
 
-    def performance_by_symbol(self, trades):
+    def _metrics_row(self, label_key, label_value, trades):
+        metrics = self.metrics.calculate(
+            trades,
+            initial_capital=self.initial_capital,
+        )
 
+        profit_factor = metrics["profit_factor"]
+
+        return {
+            label_key: label_value,
+            "trades": metrics["trades"],
+            "wins": metrics["wins"],
+            "losses": metrics["losses"],
+            "win_rate": self.pct(metrics["win_rate"]),
+            "net_pnl": self.money(metrics["net_pnl"]),
+            "return_pct": self.pct(metrics["return_pct"]),
+            "profit_factor": (
+                "inf"
+                if profit_factor == float("inf")
+                else f"{profit_factor:.2f}"
+            ),
+            "expectancy": self.money(metrics["expectancy"]),
+        }
+
+    def performance_by_symbol(self, trades):
         grouped = {}
 
         for trade in trades:
             grouped.setdefault(trade.symbol, []).append(trade)
 
-        rows = []
-
-        for symbol, symbol_trades in sorted(grouped.items()):
-            metrics = self.metrics.calculate(
-                symbol_trades,
-                initial_capital=self.initial_capital,
-            )
-
-            profit_factor = metrics["profit_factor"]
-
-            rows.append({
-                "symbol": symbol,
-                "trades": metrics["trades"],
-                "wins": metrics["wins"],
-                "losses": metrics["losses"],
-                "win_rate": self.pct(metrics["win_rate"]),
-                "net_pnl": self.money(metrics["net_pnl"]),
-                "return_pct": self.pct(metrics["return_pct"]),
-                "profit_factor": (
-                    "inf"
-                    if profit_factor == float("inf")
-                    else f"{profit_factor:.2f}"
-                ),
-                "expectancy": self.money(metrics["expectancy"]),
-            })
-
-        return rows
+        return [
+            self._metrics_row("symbol", symbol, symbol_trades)
+            for symbol, symbol_trades in sorted(grouped.items())
+        ]
 
     def performance_by_exit_reason(self, trades):
-
         grouped = {}
 
         for trade in trades:
             grouped.setdefault(trade.exit_reason, []).append(trade)
 
-        rows = []
-
-        for reason, reason_trades in sorted(grouped.items()):
-            metrics = self.metrics.calculate(
-                reason_trades,
-                initial_capital=self.initial_capital,
-            )
-
-            profit_factor = metrics["profit_factor"]
-
-            rows.append({
-                "exit_reason": reason,
-                "trades": metrics["trades"],
-                "wins": metrics["wins"],
-                "losses": metrics["losses"],
-                "win_rate": self.pct(metrics["win_rate"]),
-                "net_pnl": self.money(metrics["net_pnl"]),
-                "return_pct": self.pct(metrics["return_pct"]),
-                "profit_factor": (
-                    "inf"
-                    if profit_factor == float("inf")
-                    else f"{profit_factor:.2f}"
-                ),
-                "expectancy": self.money(metrics["expectancy"]),
-            })
-
-        return rows
+        return [
+            self._metrics_row("exit_reason", reason, reason_trades)
+            for reason, reason_trades in sorted(grouped.items())
+        ]
 
     def performance_by_signal(self, trades):
-
         grouped = {}
 
         for trade in trades:
             grouped.setdefault(trade.signal, []).append(trade)
 
-        rows = []
-
-        for signal, signal_trades in sorted(grouped.items()):
-            metrics = self.metrics.calculate(
-                signal_trades,
-                initial_capital=self.initial_capital,
-            )
-
-            profit_factor = metrics["profit_factor"]
-
-            rows.append({
-                "signal": signal,
-                "trades": metrics["trades"],
-                "wins": metrics["wins"],
-                "losses": metrics["losses"],
-                "win_rate": self.pct(metrics["win_rate"]),
-                "net_pnl": self.money(metrics["net_pnl"]),
-                "return_pct": self.pct(metrics["return_pct"]),
-                "profit_factor": (
-                    "inf"
-                    if profit_factor == float("inf")
-                    else f"{profit_factor:.2f}"
-                ),
-                "expectancy": self.money(metrics["expectancy"]),
-            })
-
-        return rows
+        return [
+            self._metrics_row("signal", signal, signal_trades)
+            for signal, signal_trades in sorted(grouped.items())
+        ]
 
     def performance_by_score_bucket(self, trades):
-
         grouped = {}
 
         for trade in trades:
             score = float(trade.rank_score)
-
             bucket_start = int(score // 10) * 10
             bucket_end = bucket_start + 10
-
             bucket = f"{bucket_start}-{bucket_end}"
-
             grouped.setdefault(bucket, []).append(trade)
 
-        rows = []
+        return [
+            self._metrics_row("score_bucket", bucket, bucket_trades)
+            for bucket, bucket_trades in sorted(grouped.items())
+        ]
 
     def performance_by_hold_days(self, trades):
-
         grouped = {}
 
         for trade in trades:
@@ -179,128 +129,83 @@ class BacktestReport:
 
             grouped.setdefault(bucket, []).append(trade)
 
-        rows = []
+        order = {
+            "0-3 days": 0,
+            "4-5 days": 1,
+            "6-10 days": 2,
+            "11-20 days": 3,
+            "20+ days": 4,
+        }
 
-        for bucket, bucket_trades in grouped.items():
-            metrics = self.metrics.calculate(
-                bucket_trades,
-                initial_capital=self.initial_capital,
+        return [
+            self._metrics_row("hold_bucket", bucket, bucket_trades)
+            for bucket, bucket_trades in sorted(
+                grouped.items(),
+                key=lambda item: order.get(item[0], 99),
             )
-
-            profit_factor = metrics["profit_factor"]
-
-            rows.append({
-                "hold_bucket": bucket,
-                "trades": metrics["trades"],
-                "wins": metrics["wins"],
-                "losses": metrics["losses"],
-                "win_rate": self.pct(metrics["win_rate"]),
-                "net_pnl": self.money(metrics["net_pnl"]),
-                "return_pct": self.pct(metrics["return_pct"]),
-                "profit_factor": (
-                    "inf"
-                    if profit_factor == float("inf")
-                    else f"{profit_factor:.2f}"
-                ),
-                "expectancy": self.money(metrics["expectancy"]),
-            })
-
-        return rows
+        ]
 
     def performance_by_month(self, trades):
-
         grouped = {}
 
         for trade in trades:
             month = trade.exit_date.strftime("%Y-%m")
             grouped.setdefault(month, []).append(trade)
 
-        rows = []
-
-        for month, month_trades in sorted(grouped.items()):
-            metrics = self.metrics.calculate(
-                month_trades,
-                initial_capital=self.initial_capital,
-            )
-
-            profit_factor = metrics["profit_factor"]
-
-            rows.append({
-                "month": month,
-                "trades": metrics["trades"],
-                "wins": metrics["wins"],
-                "losses": metrics["losses"],
-                "win_rate": self.pct(metrics["win_rate"]),
-                "net_pnl": self.money(metrics["net_pnl"]),
-                "return_pct": self.pct(metrics["return_pct"]),
-                "profit_factor": (
-                    "inf"
-                    if profit_factor == float("inf")
-                    else f"{profit_factor:.2f}"
-                ),
-                "expectancy": self.money(metrics["expectancy"]),
-            })
-
-        return rows
+        return [
+            self._metrics_row("month", month, month_trades)
+            for month, month_trades in sorted(grouped.items())
+        ]
 
     def performance_by_year(self, trades):
-
         grouped = {}
 
         for trade in trades:
             year = trade.exit_date.strftime("%Y")
             grouped.setdefault(year, []).append(trade)
 
+        return [
+            self._metrics_row("year", year, year_trades)
+            for year, year_trades in sorted(grouped.items())
+        ]
+
+    def best_trades(self, trades, limit=10):
+        return sorted(
+            trades,
+            key=lambda t: float(t.pnl),
+            reverse=True,
+        )[:limit]
+
+    def worst_trades(self, trades, limit=10):
+        return sorted(
+            trades,
+            key=lambda t: float(t.pnl),
+        )[:limit]
+
+    def trade_rows(self, trades):
         rows = []
 
-        for year, year_trades in sorted(grouped.items()):
-            metrics = self.metrics.calculate(
-                year_trades,
-                initial_capital=self.initial_capital,
-            )
-
-            profit_factor = metrics["profit_factor"]
-
+        for t in trades:
             rows.append({
-                "year": year,
-                "trades": metrics["trades"],
-                "wins": metrics["wins"],
-                "losses": metrics["losses"],
-                "win_rate": self.pct(metrics["win_rate"]),
-                "net_pnl": self.money(metrics["net_pnl"]),
-                "return_pct": self.pct(metrics["return_pct"]),
-                "profit_factor": (
-                    "inf"
-                    if profit_factor == float("inf")
-                    else f"{profit_factor:.2f}"
-                ),
-                "expectancy": self.money(metrics["expectancy"]),
-            })
-
-        return rows
-
-        for bucket, bucket_trades in sorted(grouped.items()):
-            metrics = self.metrics.calculate(
-                bucket_trades,
-                initial_capital=self.initial_capital,
-            )
-
-            profit_factor = metrics["profit_factor"]
-
-            rows.append({
-                "score_bucket": bucket,
-                "trades": metrics["trades"],
-                "wins": metrics["wins"],
-                "losses": metrics["losses"],
-                "win_rate": self.pct(metrics["win_rate"]),
-                "net_pnl": self.money(metrics["net_pnl"]),
-                "return_pct": self.pct(metrics["return_pct"]),
-                "profit_factor": (
-                    "inf"
-                    if profit_factor == float("inf")
-                    else f"{profit_factor:.2f}"
-                ),
-                "expectancy": self.money(metrics["expectancy"]),
+                "symbol": t.symbol,
+                "entry_date": t.entry_date,
+                "exit_date": t.exit_date,
+                "strategy": t.strategy,
+                "signal": t.signal,
+                "strike": t.strike,
+                "expiry": t.expiry,
+                "entry_price": f"{float(t.entry_price):.2f}",
+                "exit_price": f"{float(t.exit_price):.2f}",
+                "contracts": t.contracts,
+                "pnl": self.money(t.pnl),
+                "pnl_pct": f"{t.pnl_pct:.2%}",
+                "days_held": t.days_held,
+                "exit_reason": t.exit_reason,
+                "rank_score": f"{t.rank_score:.2f}",
+                "option_score": f"{t.option_score:.2f}",
+                "pop": f"{t.pop:.2%}",
+                "liquidity": f"{t.liquidity:.2f}",
+                "atm_score": f"{t.atm_score:.2f}",
             })
 
         return rows
@@ -320,43 +225,16 @@ class BacktestReport:
         max_dd = self.equity.max_drawdown(curve)
 
         symbol_rows = self.performance_by_symbol(trades)
-
         exit_reason_rows = self.performance_by_exit_reason(trades)
-
         signal_rows = self.performance_by_signal(trades)
-
         score_bucket_rows = self.performance_by_score_bucket(trades)
-
         hold_days_rows = self.performance_by_hold_days(trades)
-
         month_rows = self.performance_by_month(trades)
-
         year_rows = self.performance_by_year(trades)
 
-        trade_rows = []
-
-        for t in trades:
-            trade_rows.append({
-                "symbol": t.symbol,
-                "entry_date": t.entry_date,
-                "exit_date": t.exit_date,
-                "strategy": t.strategy,
-                "signal": t.signal,
-                "strike": t.strike,
-                "expiry": t.expiry,
-                "entry_price": t.entry_price,
-                "exit_price": t.exit_price,
-                "contracts": t.contracts,
-                "pnl": self.money(t.pnl),
-                "pnl_pct": f"{t.pnl_pct:.2%}",
-                "days_held": t.days_held,
-                "exit_reason": t.exit_reason,
-                "rank_score": f"{t.rank_score:.2f}",
-                "option_score": f"{t.option_score:.2f}",
-                "pop": f"{t.pop:.2%}",
-                "liquidity": f"{t.liquidity:.2f}",
-                "atm_score": f"{t.atm_score:.2f}",
-            })
+        trade_rows = self.trade_rows(trades)
+        best_trade_rows = self.trade_rows(self.best_trades(trades))
+        worst_trade_rows = self.trade_rows(self.worst_trades(trades))
 
         html = f"""
 <!DOCTYPE html>
@@ -548,6 +426,42 @@ class BacktestReport:
             ("Return", "return_pct"),
             ("Profit Factor", "profit_factor"),
             ("Expectancy", "expectancy"),
+        ],
+    )}
+</div>
+
+<div class="card">
+    <h2>Best Trades</h2>
+    {self.build_table(
+        best_trade_rows,
+        [
+            ("Symbol", "symbol"),
+            ("Entry", "entry_date"),
+            ("Exit", "exit_date"),
+            ("Signal", "signal"),
+            ("PnL", "pnl"),
+            ("PnL %", "pnl_pct"),
+            ("Exit Reason", "exit_reason"),
+            ("Rank", "rank_score"),
+            ("Score", "option_score"),
+        ],
+    )}
+</div>
+
+<div class="card">
+    <h2>Worst Trades</h2>
+    {self.build_table(
+        worst_trade_rows,
+        [
+            ("Symbol", "symbol"),
+            ("Entry", "entry_date"),
+            ("Exit", "exit_date"),
+            ("Signal", "signal"),
+            ("PnL", "pnl"),
+            ("PnL %", "pnl_pct"),
+            ("Exit Reason", "exit_reason"),
+            ("Rank", "rank_score"),
+            ("Score", "option_score"),
         ],
     )}
 </div>
