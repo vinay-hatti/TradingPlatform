@@ -2,6 +2,7 @@ import argparse
 from datetime import datetime
 import json
 from pathlib import Path
+
 from trading_ai.app.bootstrap import container
 from trading_ai.backtest.datasource import HistoricalDataSource
 from trading_ai.backtest.runner import HistoricalStrategyRunner
@@ -27,6 +28,8 @@ def parse_args():
     parser.add_argument("--max-hold", type=int, default=10)
     parser.add_argument("--max-open-positions", type=int, default=5)
     parser.add_argument("--max-position-pct", type=float, default=0.05)
+    parser.add_argument("--commission", type=float, default=0.65)
+    parser.add_argument("--slippage", type=float, default=0.05)
 
     return parser.parse_args()
 
@@ -41,6 +44,8 @@ def main():
         take_profit_pct=args.take_profit,
         stop_loss_pct=args.stop_loss,
         max_hold_days=args.max_hold,
+        commission_per_contract=args.commission,
+        slippage_per_contract=args.slippage,
     )
 
     generator = HistoricalTradeGenerator(
@@ -90,7 +95,6 @@ def main():
 
         all_trades.extend(trades)
 
-#        trades = all_trades
     portfolio = BacktestPortfolio(
         initial_capital=args.capital,
         max_open_positions=args.max_open_positions,
@@ -102,15 +106,8 @@ def main():
     trades = portfolio_result["closed_trades"]
     rejected_trades = portfolio_result["rejected"]
 
-
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-
-#    report_path = (
-#        f"reports/backtest_multi_{timestamp}.html"
-#    )
-
     safe_symbols = "_".join(symbols)
-
     run_dir = f"reports/backtests/{timestamp}_{safe_symbols}"
 
     Path(run_dir).mkdir(parents=True, exist_ok=True)
@@ -126,6 +123,8 @@ def main():
         "max_hold": args.max_hold,
         "max_open_positions": args.max_open_positions,
         "max_position_pct": args.max_position_pct,
+        "commission": args.commission,
+        "slippage": args.slippage,
     }
 
     with open(f"{run_dir}/config.json", "w") as f:
@@ -152,6 +151,7 @@ def main():
     print(f"Trades        : {len(trades)}")
     print(f"Accepted      : {len(trades)}")
     print(f"Rejected      : {len(rejected_trades)}")
+
     rejected_by_reason = {}
 
     for item in rejected_trades:
@@ -163,8 +163,14 @@ def main():
 
         for reason, count in sorted(rejected_by_reason.items()):
             print(f"  {reason:22}: {count}")
-    print(f"Win Rate      : {metrics['win_rate']:.2%}")
+
+    total_fees = sum(float(t.fees) for t in trades)
+    gross_pnl = sum(float(t.gross_pnl) for t in trades)
+
+    print(f"Gross PnL     : ${gross_pnl:,.2f}")
+    print(f"Fees          : ${total_fees:,.2f}")
     print(f"Net PnL       : ${metrics['net_pnl']:,.2f}")
+    print(f"Win Rate      : {metrics['win_rate']:.2%}")
     print(f"Return        : {metrics['return_pct']:.2%}")
     print(f"Profit Factor : {metrics['profit_factor']:.2f}")
     print(f"Expectancy    : ${metrics['expectancy']:,.2f}")

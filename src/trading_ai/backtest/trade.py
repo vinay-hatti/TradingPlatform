@@ -35,3 +35,7 @@ class BacktestTrade:
     pop: float
     liquidity: float
     atm_score: float
+
+    gross_pnl: float = 0.0
+    fees: float = 0.0
+    net_pnl: float = 0.0

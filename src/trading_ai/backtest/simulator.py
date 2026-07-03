@@ -8,10 +8,14 @@ class OptionTradeSimulator:
         take_profit_pct=0.25,
         stop_loss_pct=-0.12,
         max_hold_days=10,
+        commission_per_contract=0.65,
+        slippage_per_contract=0.05,
     ):
         self.take_profit_pct = take_profit_pct
         self.stop_loss_pct = stop_loss_pct
         self.max_hold_days = max_hold_days
+        self.commission_per_contract = commission_per_contract
+        self.slippage_per_contract = slippage_per_contract
 
     def simulate(
         self,
@@ -47,7 +51,7 @@ class OptionTradeSimulator:
             current_date = price_point["date"]
             current_price = float(price_point["price"])
 
-            pnl = (
+            gross_pnl = (
                 (current_price - entry_price)
                 * direction
                 * contracts
@@ -60,8 +64,8 @@ class OptionTradeSimulator:
                 / max(entry_price, 0.01)
             )
 
-            max_profit = max(max_profit, pnl)
-            max_drawdown = min(max_drawdown, pnl)
+            max_profit = max(max_profit, gross_pnl)
+            max_drawdown = min(max_drawdown, gross_pnl)
 
             exit_price = current_price
             exit_date = current_date
@@ -78,17 +82,23 @@ class OptionTradeSimulator:
                 exit_reason = "TIME_STOP"
                 break
 
-        pnl = (
+        gross_pnl = (
             (exit_price - entry_price)
             * direction
             * contracts
             * 100.0
         )
 
+        fees = (
+            self.commission_per_contract
+            + self.slippage_per_contract
+        ) * contracts * 2.0
+
+        net_pnl = gross_pnl - fees
+
         pnl_pct = (
-            (exit_price - entry_price)
-            * direction
-            / max(entry_price, 0.01)
+            net_pnl
+            / max(entry_price * contracts * 100.0, 0.01)
         )
 
         days_held = max(
@@ -107,7 +117,7 @@ class OptionTradeSimulator:
             entry_price=entry_price,
             exit_price=exit_price,
             contracts=contracts,
-            pnl=pnl,
+            pnl=net_pnl,
             pnl_pct=pnl_pct,
             max_profit=max_profit,
             max_drawdown=max_drawdown,
@@ -118,4 +128,7 @@ class OptionTradeSimulator:
             pop=pop,
             liquidity=liquidity,
             atm_score=atm_score,
+            gross_pnl=gross_pnl,
+            fees=fees,
+            net_pnl=net_pnl,
         )

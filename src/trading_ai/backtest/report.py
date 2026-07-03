@@ -234,8 +234,16 @@ class BacktestReport:
 #    def generate(self, trades, path="reports/backtest.html"):
     def generate(self, trades, path="reports/backtest.html", rejected=None):
 
-        rejected = rejected or []
-        rejected_rows = self.rejected_rows(rejected)
+#        rejected = rejected or []
+#        rejected_rows = self.rejected_rows(rejected)
+#
+#        accepted_count = len(trades)
+#        rejected_count = len(rejected)
+#        final_equity = (
+#            curve[-1]["equity"]
+#            if curve
+#            else self.initial_capital
+#        )
 
         metrics = self.metrics.calculate(
             trades,
@@ -245,6 +253,17 @@ class BacktestReport:
         curve = self.equity.build(
             trades,
             initial_capital=self.initial_capital,
+        )
+
+        rejected = rejected or []
+        rejected_rows = self.rejected_rows(rejected)
+
+        accepted_count = len(trades)
+        rejected_count = len(rejected)
+        final_equity = (
+            curve[-1]["equity"]
+            if curve
+            else self.initial_capital
         )
 
         max_dd = self.equity.max_drawdown(curve)
@@ -319,10 +338,13 @@ class BacktestReport:
 <div class="card">
     <h2>Summary</h2>
     <div class="metric"><strong>Trades</strong>{metrics["trades"]}</div>
+    <div class="metric"><strong>Accepted</strong>{accepted_count}</div>
+    <div class="metric"><strong>Rejected</strong>{rejected_count}</div>
     <div class="metric"><strong>Wins</strong>{metrics["wins"]}</div>
     <div class="metric"><strong>Losses</strong>{metrics["losses"]}</div>
     <div class="metric"><strong>Win Rate</strong>{self.pct(metrics["win_rate"])}</div>
     <div class="metric"><strong>Net PnL</strong>{self.money(metrics["net_pnl"])}</div>
+    <div class="metric"><strong>Final Equity</strong>{self.money(final_equity)}</div>
     <div class="metric"><strong>Return</strong>{self.pct(metrics["return_pct"])}</div>
     <div class="metric"><strong>Profit Factor</strong>{metrics["profit_factor"]:.2f}</div>
     <div class="metric"><strong>Expectancy</strong>{self.money(metrics["expectancy"])}</div>
@@ -466,6 +488,9 @@ class BacktestReport:
             ("Signal", "signal"),
             ("PnL", "pnl"),
             ("PnL %", "pnl_pct"),
+            ("Gross PnL", "gross_pnl"),
+            ("Fees", "fees"),
+            ("Net PnL", "net_pnl"),
             ("Exit Reason", "exit_reason"),
             ("Rank", "rank_score"),
             ("Score", "option_score"),
@@ -484,6 +509,9 @@ class BacktestReport:
             ("Signal", "signal"),
             ("PnL", "pnl"),
             ("PnL %", "pnl_pct"),
+            ("Gross PnL", "gross_pnl"),
+            ("Fees", "fees"),
+            ("Net PnL", "net_pnl"),
             ("Exit Reason", "exit_reason"),
             ("Rank", "rank_score"),
             ("Score", "option_score"),
@@ -540,6 +568,9 @@ class BacktestReport:
             ("Contracts", "contracts"),
             ("PnL", "pnl"),
             ("PnL %", "pnl_pct"),
+            ("Gross PnL", "gross_pnl"),
+            ("Fees", "fees"),
+            ("Net PnL", "net_pnl"),
             ("Hold Days", "days_held"),
             ("Exit Reason", "exit_reason"),
             ("Rank", "rank_score"),
