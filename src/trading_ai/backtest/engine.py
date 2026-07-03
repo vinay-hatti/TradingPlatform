@@ -2,6 +2,7 @@ from trading_ai.backtest.metrics import BacktestMetrics
 from trading_ai.backtest.equity import EquityCurveBuilder
 from trading_ai.backtest.report import BacktestReport
 from trading_ai.backtest.exporter import BacktestExporter
+from pathlib import Path
 
 
 class BacktestEngine:
@@ -30,21 +31,21 @@ class BacktestEngine:
             path=report_path,
         )
 
-        base = report_path.rsplit(".", 1)[0]
+        report_dir = Path(report_path).parent
 
         self.exporter.export_trades(
             trades,
-            f"{base}_trades.csv",
+            report_dir / "trades.csv",
         )
 
         self.exporter.export_equity(
             equity_curve,
-            f"{base}_equity.csv",
+            report_dir / "equity.csv",
         )
 
         self.exporter.export_metrics(
             metrics,
-            f"{base}_metrics.json",
+            report_dir / "metrics.json",
         )
 
         return {

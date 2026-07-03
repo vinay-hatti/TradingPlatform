@@ -92,9 +92,15 @@ def main():
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
-    report_path = (
-        f"reports/backtest_multi_{timestamp}.html"
-    )
+#    report_path = (
+#        f"reports/backtest_multi_{timestamp}.html"
+#    )
+
+    safe_symbols = "_".join(symbols)
+
+    run_dir = f"reports/backtests/{timestamp}_{safe_symbols}"
+
+    report_path = f"{run_dir}/report.html"
 
     result = BacktestEngine(
         initial_capital=args.capital,
