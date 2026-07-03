@@ -1,6 +1,7 @@
 import argparse
 from datetime import datetime
-
+import json
+from pathlib import Path
 from trading_ai.app.bootstrap import container
 from trading_ai.backtest.datasource import HistoricalDataSource
 from trading_ai.backtest.runner import HistoricalStrategyRunner
@@ -99,6 +100,22 @@ def main():
     safe_symbols = "_".join(symbols)
 
     run_dir = f"reports/backtests/{timestamp}_{safe_symbols}"
+
+    Path(run_dir).mkdir(parents=True, exist_ok=True)
+
+    config = {
+        "symbols": symbols,
+        "start": args.start,
+        "end": args.end,
+        "capital": args.capital,
+        "min_score": args.min_score,
+        "take_profit": args.take_profit,
+        "stop_loss": args.stop_loss,
+        "max_hold": args.max_hold,
+    }
+
+    with open(f"{run_dir}/config.json", "w") as f:
+        json.dump(config, f, indent=2)
 
     report_path = f"{run_dir}/report.html"
 
