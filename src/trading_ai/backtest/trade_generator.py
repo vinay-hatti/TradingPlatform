@@ -8,6 +8,7 @@ class HistoricalTradeGenerator:
         max_hold_days=10,
         position_sizer=None,
         capital=100000.0,
+        option_premium_pct=0.08,
     ):
         self.datasource = datasource
         self.simulator = simulator
@@ -15,6 +16,7 @@ class HistoricalTradeGenerator:
         self.max_hold_days = max_hold_days
         self.position_sizer = position_sizer
         self.capital = float(capital)
+        self.option_premium_pct = float(option_premium_pct)
 
     def _contracts_for_trade(self, entry_price):
 
@@ -25,6 +27,10 @@ class HistoricalTradeGenerator:
             capital=self.capital,
             option_price=entry_price,
         )
+
+    def _option_proxy_price(self, underlying_price):
+
+        return float(underlying_price) * self.option_premium_pct
 
     def generate(
         self,
@@ -37,7 +43,7 @@ class HistoricalTradeGenerator:
 
             entry_date = signal["date"]
             underlying_price = float(signal["close"])
-            entry_price = underlying_price * 0.08
+            entry_price = self._option_proxy_price(underlying_price)
 
             contracts = self._contracts_for_trade(entry_price)
 
@@ -50,16 +56,16 @@ class HistoricalTradeGenerator:
                 days=self.max_hold_days,
             )
 
+            if not future_prices:
+                continue
+
             future_prices = [
                 {
                     "date": p["date"],
-                    "price": float(p["price"]) * 0.08,
+                    "price": self._option_proxy_price(p["price"]),
                 }
                 for p in future_prices
             ]
-
-            if not future_prices:
-                continue
 
             trade = self.simulator.simulate(
                 symbol=signal["symbol"],
@@ -69,9 +75,8 @@ class HistoricalTradeGenerator:
                     if signal["signal"] == "CALL"
                     else "LONG_PUT"
                 ),
-#                strike=entry_price,
                 strike=underlying_price,
-                expiry="STOCK_PROXY",
+                expiry="OPTION_PROXY",
                 entry_date=entry_date,
                 entry_price=entry_price,
                 future_prices=future_prices,

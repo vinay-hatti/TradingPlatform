@@ -30,6 +30,7 @@ def parse_args():
     parser.add_argument("--max-position-pct", type=float, default=0.05)
     parser.add_argument("--commission", type=float, default=0.65)
     parser.add_argument("--slippage", type=float, default=0.05)
+    parser.add_argument( "--option-premium-pct", type=float, default=0.08)
     parser.add_argument("--risk-per-trade-pct", type=float, default=0.01)
     parser.add_argument("--sizer-max-position-pct", type=float, default=0.10)
 
@@ -62,6 +63,7 @@ def main():
         max_hold_days=args.max_hold,
         position_sizer=position_sizer,
         capital=args.capital,
+        option_premium_pct=args.option_premium_pct,
     )
 
     symbols = [
@@ -136,6 +138,7 @@ def main():
         "slippage": args.slippage,
         "risk_per_trade_pct": args.risk_per_trade_pct,
         "sizer_max_position_pct": args.sizer_max_position_pct,
+        "option_premium_pct": args.option_premium_pct,
     }
 
     with open(f"{run_dir}/config.json", "w") as f:
