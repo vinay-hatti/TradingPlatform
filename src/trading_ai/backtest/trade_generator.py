@@ -6,11 +6,25 @@ class HistoricalTradeGenerator:
         simulator,
         contracts=1,
         max_hold_days=10,
+        position_sizer=None,
+        capital=100000.0,
     ):
         self.datasource = datasource
         self.simulator = simulator
         self.contracts = contracts
         self.max_hold_days = max_hold_days
+        self.position_sizer = position_sizer
+        self.capital = float(capital)
+
+    def _contracts_for_trade(self, entry_price):
+
+        if self.position_sizer is None:
+            return int(self.contracts)
+
+        return self.position_sizer.contracts(
+            capital=self.capital,
+            option_price=entry_price,
+        )
 
     def generate(
         self,
@@ -23,6 +37,11 @@ class HistoricalTradeGenerator:
 
             entry_date = signal["date"]
             entry_price = float(signal["close"])
+
+            contracts = self._contracts_for_trade(entry_price)
+
+            if contracts <= 0:
+                continue
 
             future_prices = self.datasource.get_next_days(
                 price_history,
@@ -46,7 +65,7 @@ class HistoricalTradeGenerator:
                 entry_date=entry_date,
                 entry_price=entry_price,
                 future_prices=future_prices,
-                contracts=self.contracts,
+                contracts=contracts,
                 rank_score=float(signal.get("score", 0.0)),
                 option_score=float(signal.get("score", 0.0)),
                 pop=0.0,

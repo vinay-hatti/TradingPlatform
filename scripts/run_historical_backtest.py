@@ -2,7 +2,7 @@ import argparse
 from datetime import datetime
 import json
 from pathlib import Path
-
+from trading_ai.risk.position_sizer import PositionSizer
 from trading_ai.app.bootstrap import container
 from trading_ai.backtest.datasource import HistoricalDataSource
 from trading_ai.backtest.runner import HistoricalStrategyRunner
@@ -30,6 +30,8 @@ def parse_args():
     parser.add_argument("--max-position-pct", type=float, default=0.05)
     parser.add_argument("--commission", type=float, default=0.65)
     parser.add_argument("--slippage", type=float, default=0.05)
+    parser.add_argument("--risk-per-trade-pct", type=float, default=0.01)
+    parser.add_argument("--sizer-max-position-pct", type=float, default=0.10)
 
     return parser.parse_args()
 
@@ -48,11 +50,18 @@ def main():
         slippage_per_contract=args.slippage,
     )
 
+    position_sizer = PositionSizer(
+        risk_per_trade_pct=args.risk_per_trade_pct,
+        max_position_pct=args.sizer_max_position_pct,
+    )
+
     generator = HistoricalTradeGenerator(
         datasource=datasource,
         simulator=simulator,
         contracts=1,
         max_hold_days=args.max_hold,
+        position_sizer=position_sizer,
+        capital=args.capital,
     )
 
     symbols = [
@@ -125,6 +134,8 @@ def main():
         "max_position_pct": args.max_position_pct,
         "commission": args.commission,
         "slippage": args.slippage,
+        "risk_per_trade_pct": args.risk_per_trade_pct,
+        "sizer_max_position_pct": args.sizer_max_position_pct,
     }
 
     with open(f"{run_dir}/config.json", "w") as f:

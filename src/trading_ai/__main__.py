@@ -35,6 +35,7 @@ def main():
     sub.add_parser("strategy-runner-test")
     sub.add_parser("trade-generator-test")
     sub.add_parser("backtest")
+    sub.add_parser("position-sizer-test")
 
     paper = sub.add_parser("paper")
     paper_sub = paper.add_subparsers(dest="paper_command")
@@ -81,6 +82,9 @@ def main():
 
     elif args.command == "backtest":
         run_script("scripts/run_historical_backtest.py", extra)
+
+    elif args.command == "position-sizer-test":
+        run_script("scripts/test_position_sizer.py", extra)
 
     elif args.command == "paper":
 
