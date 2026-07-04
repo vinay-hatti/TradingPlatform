@@ -117,7 +117,8 @@ def main():
     trades = portfolio_result["closed_trades"]
     rejected_trades = portfolio_result["rejected"]
 
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+#    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
     safe_symbols = "_".join(symbols)
     run_dir = f"reports/backtests/{timestamp}_{safe_symbols}"
 
