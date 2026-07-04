@@ -38,6 +38,8 @@ def main():
     sub.add_parser("position-sizer-test")
     sub.add_parser("backtest-experiments")
     sub.add_parser("analyze-experiments")
+    sub.add_parser("walkforward-splitter-test")
+    sub.add_parser("walkforward-optimizer-test")
 
     paper = sub.add_parser("paper")
     paper_sub = paper.add_subparsers(dest="paper_command")
@@ -93,6 +95,15 @@ def main():
 
     elif args.command == "analyze-experiments":
         run_script("scripts/analyze_experiments.py", extra)
+
+    elif args.command == "walkforward-splitter-test":
+        run_script("scripts/test_walkforward_splitter.py", extra)
+
+    elif args.command == "walkforward-optimizer-test":
+        run_script(
+            "scripts/test_walkforward_optimizer.py",
+            extra,
+        )
 
     elif args.command == "paper":
 
