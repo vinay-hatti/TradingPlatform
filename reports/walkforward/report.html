@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trading AI Walk-Forward Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background: #f7f7f7;
+            color: #222;
+        }
+        h1, h2 {
+            color: #111;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+            overflow-x: auto;
+        }
+        .metric {
+            display: inline-block;
+            margin-right: 30px;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        .metric strong {
+            display: block;
+            font-size: 13px;
+            color: #666;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            white-space: nowrap;
+        }
+        th, td {
+            border-bottom: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            font-size: 14px;
+        }
+        th {
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Trading AI Walk-Forward Report</h1>
+
+<div class="card">
+    <h2>Summary</h2>
+    <div class="metric"><strong>Windows</strong>3</div>
+    <div class="metric"><strong>Total PnL</strong>$750.40</div>
+    <div class="metric"><strong>Avg Return</strong>0.25%</div>
+    <div class="metric"><strong>Avg Profit Factor</strong>1.44</div>
+</div>
+
+<div class="card">
+    <h2>Ranked Windows</h2>
+    <table><thead><tr><th>Window</th><th>Test</th><th>Trades</th><th>Return</th><th>Profit Factor</th><th>Net PnL</th><th>Run Dir</th></tr></thead><tbody><tr><td>3</td><td>2026-05-01 -> 2026-06-01</td><td>14</td><td>0.52%</td><td>2.19</td><td>$519.10</td><td>reports/backtests/20260705_194421_997903_AAPL_MSFT_AMZN</td></tr><tr><td>2</td><td>2026-04-01 -> 2026-05-01</td><td>24</td><td>0.50%</td><td>1.49</td><td>$496.00</td><td>reports/backtests/20260705_194421_609502_AAPL_MSFT_AMZN</td></tr><tr><td>1</td><td>2026-03-01 -> 2026-04-01</td><td>16</td><td>-0.26%</td><td>0.64</td><td>$-264.70</td><td>reports/backtests/20260705_194421_221758_AAPL_MSFT_AMZN</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Full Window Log</h2>
+    <table><thead><tr><th>Window</th><th>Train</th><th>Test</th><th>Premium</th><th>TP</th><th>SL</th><th>Hold</th><th>Trades</th><th>Win Rate</th><th>Return</th><th>Profit Factor</th><th>Net PnL</th><th>Run Dir</th></tr></thead><tbody><tr><td>1</td><td>2026-01-01 -> 2026-03-01</td><td>2026-03-01 -> 2026-04-01</td><td>10.00%</td><td>3.00%</td><td>-2.00%</td><td>5</td><td>16</td><td>31.25%</td><td>-0.26%</td><td>0.64</td><td>$-264.70</td><td>reports/backtests/20260705_194421_221758_AAPL_MSFT_AMZN</td></tr><tr><td>2</td><td>2026-02-01 -> 2026-04-01</td><td>2026-04-01 -> 2026-05-01</td><td>10.00%</td><td>3.00%</td><td>-2.00%</td><td>5</td><td>24</td><td>70.83%</td><td>0.50%</td><td>1.49</td><td>$496.00</td><td>reports/backtests/20260705_194421_609502_AAPL_MSFT_AMZN</td></tr><tr><td>3</td><td>2026-03-01 -> 2026-05-01</td><td>2026-05-01 -> 2026-06-01</td><td>10.00%</td><td>3.00%</td><td>-2.00%</td><td>5</td><td>14</td><td>42.86%</td><td>0.52%</td><td>2.19</td><td>$519.10</td><td>reports/backtests/20260705_194421_997903_AAPL_MSFT_AMZN</td></tr></tbody></table>
+</div>
+
+</body>
+</html>

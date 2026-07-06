@@ -42,6 +42,9 @@ def main():
     sub.add_parser("walkforward-optimizer-test")
     sub.add_parser("walkforward-validator-test")
     sub.add_parser("walkforward")
+    sub.add_parser("analyze-walkforward")
+    sub.add_parser("walkforward-report")
+    sub.add_parser("black-scholes-test")
 
     paper = sub.add_parser("paper")
     paper_sub = paper.add_subparsers(dest="paper_command")
@@ -112,6 +115,15 @@ def main():
 
     elif args.command == "walkforward":
         run_script("scripts/run_walkforward.py", extra)
+
+    elif args.command == "analyze-walkforward":
+        run_script("scripts/analyze_walkforward.py", extra)
+
+    elif args.command == "walkforward-report":
+        run_script("scripts/build_walkforward_report.py", extra)
+
+    elif args.command == "black-scholes-test":
+        run_script("scripts/test_black_scholes.py", extra)
 
     elif args.command == "paper":
 
