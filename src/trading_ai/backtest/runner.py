@@ -60,6 +60,8 @@ class HistoricalStrategyRunner:
                 "call_score": call_score,
                 "put_score": put_score,
                 "close": row.get("close", 0.0),
+                "hv20": row.get("hv20", row.get("iv", 0.30)),
+                "iv": row.get("iv", 0.30),
             })
 
         return signals

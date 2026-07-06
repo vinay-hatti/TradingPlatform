@@ -10,6 +10,7 @@ from trading_ai.backtest.simulator import OptionTradeSimulator
 from trading_ai.backtest.trade_generator import HistoricalTradeGenerator
 from trading_ai.backtest.engine import BacktestEngine
 from trading_ai.backtest.portfolio import BacktestPortfolio
+from trading_ai.options.pricing_service import OptionPricingService
 
 
 def parse_args():
@@ -33,6 +34,8 @@ def parse_args():
     parser.add_argument( "--option-premium-pct", type=float, default=0.08)
     parser.add_argument("--risk-per-trade-pct", type=float, default=0.01)
     parser.add_argument("--sizer-max-position-pct", type=float, default=0.10)
+    parser.add_argument("--pricing-dte", type=int, default=30)
+    parser.add_argument("--risk-free-rate", type=float, default=0.04)
 
     return parser.parse_args()
 
@@ -56,6 +59,11 @@ def main():
         max_position_pct=args.sizer_max_position_pct,
     )
 
+    pricing_service = OptionPricingService(
+        risk_free_rate=args.risk_free_rate,
+        default_dte=args.pricing_dte,
+    )
+
     generator = HistoricalTradeGenerator(
         datasource=datasource,
         simulator=simulator,
@@ -64,6 +72,8 @@ def main():
         position_sizer=position_sizer,
         capital=args.capital,
         option_premium_pct=args.option_premium_pct,
+        pricing_service=pricing_service,
+        pricing_dte=args.pricing_dte,
     )
 
     symbols = [
@@ -140,6 +150,8 @@ def main():
         "risk_per_trade_pct": args.risk_per_trade_pct,
         "sizer_max_position_pct": args.sizer_max_position_pct,
         "option_premium_pct": args.option_premium_pct,
+        "pricing_dte": args.pricing_dte,
+        "risk_free_rate": args.risk_free_rate,
     }
 
     with open(f"{run_dir}/config.json", "w") as f:
