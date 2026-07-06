@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trading AI Backtest Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background: #f7f7f7;
+            color: #222;
+        }
+        h1, h2 {
+            color: #111;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+            overflow-x: auto;
+        }
+        .metric {
+            display: inline-block;
+            margin-right: 30px;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        .metric strong {
+            display: block;
+            font-size: 13px;
+            color: #666;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            white-space: nowrap;
+        }
+        th, td {
+            border-bottom: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            font-size: 14px;
+        }
+        th {
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Trading AI Backtest Report</h1>
+
+<div class="card">
+    <h2>Summary</h2>
+    <div class="metric"><strong>Trades</strong>14</div>
+    <div class="metric"><strong>Accepted</strong>14</div>
+    <div class="metric"><strong>Rejected</strong>0</div>
+    <div class="metric"><strong>Wins</strong>6</div>
+    <div class="metric"><strong>Losses</strong>8</div>
+    <div class="metric"><strong>Win Rate</strong>42.86%</div>
+    <div class="metric"><strong>Net PnL</strong>$519.10</div>
+    <div class="metric"><strong>Final Equity</strong>$100,519.10</div>
+    <div class="metric"><strong>Return</strong>0.52%</div>
+    <div class="metric"><strong>Profit Factor</strong>2.19</div>
+    <div class="metric"><strong>Expectancy</strong>$37.08</div>
+    <div class="metric"><strong>Max Drawdown</strong>$-217.20</div>
+</div>
+
+<div class="card">
+    <h2>Performance by Symbol</h2>
+    <table><thead><tr><th>Symbol</th><th>Trades</th><th>Wins</th><th>Losses</th><th>Win Rate</th><th>Net PnL</th><th>Return</th><th>Profit Factor</th><th>Expectancy</th></tr></thead><tbody><tr><td>AAPL</td><td>7</td><td>2</td><td>5</td><td>28.57%</td><td>$-46.70</td><td>-0.05%</td><td>0.78</td><td>$-6.67</td></tr><tr><td>AMZN</td><td>3</td><td>0</td><td>3</td><td>0.00%</td><td>$-218.90</td><td>-0.22%</td><td>0.00</td><td>$-72.97</td></tr><tr><td>MSFT</td><td>4</td><td>4</td><td>0</td><td>100.00%</td><td>$784.70</td><td>0.78%</td><td>inf</td><td>$196.18</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Performance by Exit Reason</h2>
+    <table><thead><tr><th>Exit Reason</th><th>Trades</th><th>Wins</th><th>Losses</th><th>Win Rate</th><th>Net PnL</th><th>Return</th><th>Profit Factor</th><th>Expectancy</th></tr></thead><tbody><tr><td>STOP_LOSS</td><td>3</td><td>0</td><td>3</td><td>0.00%</td><td>$-218.90</td><td>-0.22%</td><td>0.00</td><td>$-72.97</td></tr><tr><td>TAKE_PROFIT</td><td>3</td><td>3</td><td>0</td><td>100.00%</td><td>$726.60</td><td>0.73%</td><td>inf</td><td>$242.20</td></tr><tr><td>TIME_STOP</td><td>8</td><td>3</td><td>5</td><td>37.50%</td><td>$11.40</td><td>0.01%</td><td>1.05</td><td>$1.42</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Performance by Signal</h2>
+    <table><thead><tr><th>Signal</th><th>Trades</th><th>Wins</th><th>Losses</th><th>Win Rate</th><th>Net PnL</th><th>Return</th><th>Profit Factor</th><th>Expectancy</th></tr></thead><tbody><tr><td>CALL</td><td>12</td><td>6</td><td>6</td><td>50.00%</td><td>$642.80</td><td>0.64%</td><td>3.06</td><td>$53.57</td></tr><tr><td>PUT</td><td>2</td><td>0</td><td>2</td><td>0.00%</td><td>$-123.70</td><td>-0.12%</td><td>0.00</td><td>$-61.85</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Performance by Score Bucket</h2>
+    <table><thead><tr><th>Score Bucket</th><th>Trades</th><th>Wins</th><th>Losses</th><th>Win Rate</th><th>Net PnL</th><th>Return</th><th>Profit Factor</th><th>Expectancy</th></tr></thead><tbody><tr><td>60-70</td><td>11</td><td>3</td><td>8</td><td>27.27%</td><td>$-207.70</td><td>-0.21%</td><td>0.52</td><td>$-18.88</td></tr><tr><td>70-80</td><td>2</td><td>2</td><td>0</td><td>100.00%</td><td>$625.40</td><td>0.63%</td><td>inf</td><td>$312.70</td></tr><tr><td>80-90</td><td>1</td><td>1</td><td>0</td><td>100.00%</td><td>$101.40</td><td>0.10%</td><td>inf</td><td>$101.40</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Performance by Hold Days</h2>
+    <table><thead><tr><th>Hold Days</th><th>Trades</th><th>Wins</th><th>Losses</th><th>Win Rate</th><th>Net PnL</th><th>Return</th><th>Profit Factor</th><th>Expectancy</th></tr></thead><tbody><tr><td>0-3 days</td><td>4</td><td>1</td><td>3</td><td>25.00%</td><td>$-119.70</td><td>-0.12%</td><td>0.46</td><td>$-29.93</td></tr><tr><td>4-5 days</td><td>3</td><td>0</td><td>3</td><td>0.00%</td><td>$-166.90</td><td>-0.17%</td><td>0.00</td><td>$-55.63</td></tr><tr><td>6-10 days</td><td>7</td><td>5</td><td>2</td><td>71.43%</td><td>$805.70</td><td>0.81%</td><td>17.75</td><td>$115.10</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Performance by Month</h2>
+    <table><thead><tr><th>Month</th><th>Trades</th><th>Wins</th><th>Losses</th><th>Win Rate</th><th>Net PnL</th><th>Return</th><th>Profit Factor</th><th>Expectancy</th></tr></thead><tbody><tr><td>2026-05</td><td>14</td><td>6</td><td>8</td><td>42.86%</td><td>$519.10</td><td>0.52%</td><td>2.19</td><td>$37.08</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Performance by Year</h2>
+    <table><thead><tr><th>Year</th><th>Trades</th><th>Wins</th><th>Losses</th><th>Win Rate</th><th>Net PnL</th><th>Return</th><th>Profit Factor</th><th>Expectancy</th></tr></thead><tbody><tr><td>2026</td><td>14</td><td>6</td><td>8</td><td>42.86%</td><td>$519.10</td><td>0.52%</td><td>2.19</td><td>$37.08</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Best Trades</h2>
+    <table><thead><tr><th>Symbol</th><th>Entry</th><th>Exit</th><th>Signal</th><th>PnL</th><th>PnL %</th><th>Gross PnL</th><th>Fees</th><th>Net PnL</th><th>Exit Reason</th><th>Rank</th><th>Score</th></tr></thead><tbody><tr><td>MSFT</td><td>2026-05-21</td><td>2026-05-28</td><td>CALL</td><td>$315.30</td><td>7.53%</td><td></td><td></td><td></td><td>TAKE_PROFIT</td><td>70.00</td><td>70.00</td></tr><tr><td>MSFT</td><td>2026-05-20</td><td>2026-05-28</td><td>CALL</td><td>$310.10</td><td>7.40%</td><td></td><td></td><td></td><td>TAKE_PROFIT</td><td>70.00</td><td>70.00</td></tr><tr><td>MSFT</td><td>2026-05-28</td><td>2026-05-31</td><td>CALL</td><td>$101.40</td><td>2.25%</td><td></td><td></td><td></td><td>TIME_STOP</td><td>80.00</td><td>80.00</td></tr><tr><td>AAPL</td><td>2026-05-19</td><td>2026-05-27</td><td>CALL</td><td>$101.20</td><td>3.35%</td><td></td><td></td><td></td><td>TAKE_PROFIT</td><td>65.00</td><td>65.00</td></tr><tr><td>AAPL</td><td>2026-05-20</td><td>2026-05-28</td><td>CALL</td><td>$69.30</td><td>2.27%</td><td></td><td></td><td></td><td>TIME_STOP</td><td>65.00</td><td>65.00</td></tr><tr><td>MSFT</td><td>2026-05-19</td><td>2026-05-27</td><td>CALL</td><td>$57.90</td><td>1.38%</td><td></td><td></td><td></td><td>TIME_STOP</td><td>65.00</td><td>65.00</td></tr><tr><td>AAPL</td><td>2026-05-25</td><td>2026-05-31</td><td>CALL</td><td>$-21.60</td><td>-0.70%</td><td></td><td></td><td></td><td>TIME_STOP</td><td>65.00</td><td>65.00</td></tr><tr><td>AAPL</td><td>2026-05-21</td><td>2026-05-31</td><td>CALL</td><td>$-26.50</td><td>-0.86%</td><td></td><td></td><td></td><td>TIME_STOP</td><td>65.00</td><td>65.00</td></tr><tr><td>AAPL</td><td>2026-05-26</td><td>2026-05-31</td><td>CALL</td><td>$-46.80</td><td>-1.51%</td><td></td><td></td><td></td><td>TIME_STOP</td><td>65.00</td><td>65.00</td></tr><tr><td>AMZN</td><td>2026-05-21</td><td>2026-05-26</td><td>PUT</td><td>$-56.70</td><td>-2.13%</td><td></td><td></td><td></td><td>STOP_LOSS</td><td>65.00</td><td>65.00</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Worst Trades</h2>
+    <table><thead><tr><th>Symbol</th><th>Entry</th><th>Exit</th><th>Signal</th><th>PnL</th><th>PnL %</th><th>Gross PnL</th><th>Fees</th><th>Net PnL</th><th>Exit Reason</th><th>Rank</th><th>Score</th></tr></thead><tbody><tr><td>AMZN</td><td>2026-05-28</td><td>2026-05-31</td><td>CALL</td><td>$-95.20</td><td>-3.52%</td><td></td><td></td><td></td><td>STOP_LOSS</td><td>60.00</td><td>60.00</td></tr><tr><td>AMZN</td><td>2026-05-25</td><td>2026-05-26</td><td>PUT</td><td>$-67.00</td><td>-2.53%</td><td></td><td></td><td></td><td>STOP_LOSS</td><td>65.00</td><td>65.00</td></tr><tr><td>AAPL</td><td>2026-05-27</td><td>2026-05-31</td><td>CALL</td><td>$-63.40</td><td>-2.03%</td><td></td><td></td><td></td><td>TIME_STOP</td><td>65.00</td><td>65.00</td></tr><tr><td>AAPL</td><td>2026-05-28</td><td>2026-05-31</td><td>CALL</td><td>$-58.90</td><td>-1.89%</td><td></td><td></td><td></td><td>TIME_STOP</td><td>65.00</td><td>65.00</td></tr><tr><td>AMZN</td><td>2026-05-21</td><td>2026-05-26</td><td>PUT</td><td>$-56.70</td><td>-2.13%</td><td></td><td></td><td></td><td>STOP_LOSS</td><td>65.00</td><td>65.00</td></tr><tr><td>AAPL</td><td>2026-05-26</td><td>2026-05-31</td><td>CALL</td><td>$-46.80</td><td>-1.51%</td><td></td><td></td><td></td><td>TIME_STOP</td><td>65.00</td><td>65.00</td></tr><tr><td>AAPL</td><td>2026-05-21</td><td>2026-05-31</td><td>CALL</td><td>$-26.50</td><td>-0.86%</td><td></td><td></td><td></td><td>TIME_STOP</td><td>65.00</td><td>65.00</td></tr><tr><td>AAPL</td><td>2026-05-25</td><td>2026-05-31</td><td>CALL</td><td>$-21.60</td><td>-0.70%</td><td></td><td></td><td></td><td>TIME_STOP</td><td>65.00</td><td>65.00</td></tr><tr><td>MSFT</td><td>2026-05-19</td><td>2026-05-27</td><td>CALL</td><td>$57.90</td><td>1.38%</td><td></td><td></td><td></td><td>TIME_STOP</td><td>65.00</td><td>65.00</td></tr><tr><td>AAPL</td><td>2026-05-20</td><td>2026-05-28</td><td>CALL</td><td>$69.30</td><td>2.27%</td><td></td><td></td><td></td><td>TIME_STOP</td><td>65.00</td><td>65.00</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Rejected Trades</h2>
+    <p>No data available.</p>
+</div>
+
+<div class="card">
+    <h2>Equity Curve</h2>
+    <table><thead><tr><th>Date</th><th>Equity</th><th>PnL</th><th>Symbol</th><th>Exit Reason</th></tr></thead><tbody><tr><td>2026-05-26</td><td>99943.3</td><td>-56.70000000000008</td><td>AMZN</td><td>STOP_LOSS</td></tr><tr><td>2026-05-26</td><td>99876.3</td><td>-66.99999999999989</td><td>AMZN</td><td>STOP_LOSS</td></tr><tr><td>2026-05-27</td><td>99977.5</td><td>101.19999999999997</td><td>AAPL</td><td>TAKE_PROFIT</td></tr><tr><td>2026-05-27</td><td>100035.4</td><td>57.900000000000354</td><td>MSFT</td><td>TIME_STOP</td></tr><tr><td>2026-05-28</td><td>100104.7</td><td>69.30000000000007</td><td>AAPL</td><td>TIME_STOP</td></tr><tr><td>2026-05-28</td><td>100414.8</td><td>310.10000000000025</td><td>MSFT</td><td>TAKE_PROFIT</td></tr><tr><td>2026-05-28</td><td>100730.1</td><td>315.3000000000002</td><td>MSFT</td><td>TAKE_PROFIT</td></tr><tr><td>2026-05-31</td><td>100703.6</td><td>-26.50000000000012</td><td>AAPL</td><td>TIME_STOP</td></tr><tr><td>2026-05-31</td><td>100682.0</td><td>-21.599999999999817</td><td>AAPL</td><td>TIME_STOP</td></tr><tr><td>2026-05-31</td><td>100635.2</td><td>-46.800000000000416</td><td>AAPL</td><td>TIME_STOP</td></tr><tr><td>2026-05-31</td><td>100571.8</td><td>-63.4000000000001</td><td>AAPL</td><td>TIME_STOP</td></tr><tr><td>2026-05-31</td><td>100512.90000000001</td><td>-58.90000000000028</td><td>AAPL</td><td>TIME_STOP</td></tr><tr><td>2026-05-31</td><td>100614.3</td><td>101.39999999999986</td><td>MSFT</td><td>TIME_STOP</td></tr><tr><td>2026-05-31</td><td>100519.1</td><td>-95.19999999999989</td><td>AMZN</td><td>STOP_LOSS</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Trade Log</h2>
+    <table><thead><tr><th>Symbol</th><th>Entry</th><th>Exit</th><th>Signal</th><th>Strategy</th><th>Strike</th><th>Expiry</th><th>Entry Price</th><th>Exit Price</th><th>Contracts</th><th>PnL</th><th>PnL %</th><th>Gross PnL</th><th>Fees</th><th>Net PnL</th><th>Hold Days</th><th>Exit Reason</th><th>Rank</th><th>Option Score</th><th>POP</th><th>Liquidity</th><th>ATM</th></tr></thead><tbody><tr><td>AAPL</td><td>2026-05-19</td><td>2026-05-27</td><td>CALL</td><td>LONG_CALL</td><td>302.25</td><td>OPTION_PROXY</td><td>30.23</td><td>31.25</td><td>1</td><td>$101.20</td><td>3.35%</td><td></td><td></td><td></td><td>8</td><td>TAKE_PROFIT</td><td>65.00</td><td>65.00</td><td>0.00%</td><td>0.00</td><td>100.00</td></tr><tr><td>MSFT</td><td>2026-05-19</td><td>2026-05-27</td><td>CALL</td><td>LONG_CALL</td><td>421.06</td><td>OPTION_PROXY</td><td>42.11</td><td>42.70</td><td>1</td><td>$57.90</td><td>1.38%</td><td></td><td></td><td></td><td>8</td><td>TIME_STOP</td><td>65.00</td><td>65.00</td><td>0.00%</td><td>0.00</td><td>100.00</td></tr><tr><td>AAPL</td><td>2026-05-20</td><td>2026-05-28</td><td>CALL</td><td>LONG_CALL</td><td>304.99</td><td>OPTION_PROXY</td><td>30.50</td><td>31.21</td><td>1</td><td>$69.30</td><td>2.27%</td><td></td><td></td><td></td><td>8</td><td>TIME_STOP</td><td>65.00</td><td>65.00</td><td>0.00%</td><td>0.00</td><td>100.00</td></tr><tr><td>MSFT</td><td>2026-05-20</td><td>2026-05-28</td><td>CALL</td><td>LONG_CALL</td><td>419.09</td><td>OPTION_PROXY</td><td>41.91</td><td>45.02</td><td>1</td><td>$310.10</td><td>7.40%</td><td></td><td></td><td></td><td>8</td><td>TAKE_PROFIT</td><td>70.00</td><td>70.00</td><td>0.00%</td><td>0.00</td><td>100.00</td></tr><tr><td>AAPL</td><td>2026-05-21</td><td>2026-05-31</td><td>CALL</td><td>LONG_CALL</td><td>308.82</td><td>OPTION_PROXY</td><td>30.88</td><td>30.63</td><td>1</td><td>$-26.50</td><td>-0.86%</td><td></td><td></td><td></td><td>10</td><td>TIME_STOP</td><td>65.00</td><td>65.00</td><td>0.00%</td><td>0.00</td><td>100.00</td></tr><tr><td>MSFT</td><td>2026-05-21</td><td>2026-05-28</td><td>CALL</td><td>LONG_CALL</td><td>418.57</td><td>OPTION_PROXY</td><td>41.86</td><td>45.02</td><td>1</td><td>$315.30</td><td>7.53%</td><td></td><td></td><td></td><td>7</td><td>TAKE_PROFIT</td><td>70.00</td><td>70.00</td><td>0.00%</td><td>0.00</td><td>100.00</td></tr><tr><td>AMZN</td><td>2026-05-21</td><td>2026-05-26</td><td>PUT</td><td>LONG_PUT</td><td>266.32</td><td>OPTION_PROXY</td><td>26.63</td><td>27.19</td><td>1</td><td>$-56.70</td><td>-2.13%</td><td></td><td></td><td></td><td>5</td><td>STOP_LOSS</td><td>65.00</td><td>65.00</td><td>0.00%</td><td>0.00</td><td>100.00</td></tr><tr><td>AAPL</td><td>2026-05-25</td><td>2026-05-31</td><td>CALL</td><td>LONG_CALL</td><td>308.33</td><td>OPTION_PROXY</td><td>30.83</td><td>30.63</td><td>1</td><td>$-21.60</td><td>-0.70%</td><td></td><td></td><td></td><td>6</td><td>TIME_STOP</td><td>65.00</td><td>65.00</td><td>0.00%</td><td>0.00</td><td>100.00</td></tr><tr><td>AMZN</td><td>2026-05-25</td><td>2026-05-26</td><td>PUT</td><td>LONG_PUT</td><td>265.29</td><td>OPTION_PROXY</td><td>26.53</td><td>27.19</td><td>1</td><td>$-67.00</td><td>-2.53%</td><td></td><td></td><td></td><td>1</td><td>STOP_LOSS</td><td>65.00</td><td>65.00</td><td>0.00%</td><td>0.00</td><td>100.00</td></tr><tr><td>AAPL</td><td>2026-05-26</td><td>2026-05-31</td><td>CALL</td><td>LONG_CALL</td><td>310.85</td><td>OPTION_PROXY</td><td>31.09</td><td>30.63</td><td>1</td><td>$-46.80</td><td>-1.51%</td><td></td><td></td><td></td><td>5</td><td>TIME_STOP</td><td>65.00</td><td>65.00</td><td>0.00%</td><td>0.00</td><td>100.00</td></tr><tr><td>AAPL</td><td>2026-05-27</td><td>2026-05-31</td><td>CALL</td><td>LONG_CALL</td><td>312.51</td><td>OPTION_PROXY</td><td>31.25</td><td>30.63</td><td>1</td><td>$-63.40</td><td>-2.03%</td><td></td><td></td><td></td><td>4</td><td>TIME_STOP</td><td>65.00</td><td>65.00</td><td>0.00%</td><td>0.00</td><td>100.00</td></tr><tr><td>AAPL</td><td>2026-05-28</td><td>2026-05-31</td><td>CALL</td><td>LONG_CALL</td><td>312.06</td><td>OPTION_PROXY</td><td>31.21</td><td>30.63</td><td>1</td><td>$-58.90</td><td>-1.89%</td><td></td><td></td><td></td><td>3</td><td>TIME_STOP</td><td>65.00</td><td>65.00</td><td>0.00%</td><td>0.00</td><td>100.00</td></tr><tr><td>MSFT</td><td>2026-05-28</td><td>2026-05-31</td><td>CALL</td><td>LONG_CALL</td><td>450.24</td><td>OPTION_PROXY</td><td>45.02</td><td>46.05</td><td>1</td><td>$101.40</td><td>2.25%</td><td></td><td></td><td></td><td>3</td><td>TIME_STOP</td><td>80.00</td><td>80.00</td><td>0.00%</td><td>0.00</td><td>100.00</td></tr><tr><td>AMZN</td><td>2026-05-28</td><td>2026-05-31</td><td>CALL</td><td>LONG_CALL</td><td>270.64</td><td>OPTION_PROXY</td><td>27.06</td><td>26.13</td><td>1</td><td>$-95.20</td><td>-3.52%</td><td></td><td></td><td></td><td>3</td><td>STOP_LOSS</td><td>60.00</td><td>60.00</td><td>0.00%</td><td>0.00</td><td>100.00</td></tr></tbody></table>
+</div>
+
+</body>
+</html>

@@ -40,6 +40,8 @@ def main():
     sub.add_parser("analyze-experiments")
     sub.add_parser("walkforward-splitter-test")
     sub.add_parser("walkforward-optimizer-test")
+    sub.add_parser("walkforward-validator-test")
+    sub.add_parser("walkforward")
 
     paper = sub.add_parser("paper")
     paper_sub = paper.add_subparsers(dest="paper_command")
@@ -104,6 +106,12 @@ def main():
             "scripts/test_walkforward_optimizer.py",
             extra,
         )
+
+    elif args.command == "walkforward-validator-test":
+        run_script("scripts/test_walkforward_validator.py", extra)
+
+    elif args.command == "walkforward":
+        run_script("scripts/run_walkforward.py", extra)
 
     elif args.command == "paper":
 
