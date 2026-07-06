@@ -39,3 +39,12 @@ class BacktestTrade:
     gross_pnl: float = 0.0
     fees: float = 0.0
     net_pnl: float = 0.0
+
+    entry_delta: float = 0.0
+    entry_gamma: float = 0.0
+    entry_theta: float = 0.0
+    entry_vega: float = 0.0
+    entry_rho: float = 0.0
+    entry_iv: float = 0.0
+    entry_dte: int = 0
+    entry_volatility: float = 0.0

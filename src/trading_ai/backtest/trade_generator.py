@@ -68,6 +68,14 @@ class HistoricalTradeGenerator:
                 hv20=hv20,
             )
 
+            entry_greeks = self.pricing.greeks(
+                signal=signal["signal"],
+                spot=underlying_price,
+                strike=underlying_price,
+                hv20=hv20,
+                dte=self.pricing_dte,
+            )
+
             contracts = self._contracts_for_trade(entry_price)
 
             if contracts <= 0:
@@ -140,6 +148,14 @@ class HistoricalTradeGenerator:
                 pop=0.0,
                 liquidity=0.0,
                 atm_score=100.0,
+                entry_delta=entry_greeks["delta"],
+                entry_gamma=entry_greeks["gamma"],
+                entry_theta=entry_greeks["theta"],
+                entry_vega=entry_greeks["vega"],
+                entry_rho=entry_greeks["rho"],
+                entry_iv=entry_greeks["volatility"],
+                entry_volatility=entry_greeks["volatility"],
+                entry_dte=entry_greeks["dte"],
             )
 
             trades.append(trade)
