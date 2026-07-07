@@ -46,6 +46,7 @@ def parse_args():
     parser.add_argument("--min-delta", default="0.0")
     parser.add_argument("--max-delta", default="1.0")
     parser.add_argument("--min-vega", default="0.0")
+    parser.add_argument("--max-vega", default="999.0")
     parser.add_argument("--max-theta", default="999.0")
 
     return parser.parse_args()
@@ -66,6 +67,7 @@ def main():
     min_deltas = parse_float_list(args.min_delta)
     max_deltas = parse_float_list(args.max_delta)
     min_vegas = parse_float_list(args.min_vega)
+    max_vegas = parse_float_list(args.max_vega)
     max_thetas = parse_float_list(args.max_theta)
 
     combos = list(
@@ -77,7 +79,9 @@ def main():
             min_deltas,
             max_deltas,
             min_vegas,
+            max_vegas,
             max_thetas,
+            
         )
     )
 
@@ -101,6 +105,7 @@ def main():
             min_delta,
             max_delta,
             min_vega,
+            max_vega,
             max_theta,
         ) = combo
 
@@ -147,6 +152,8 @@ def main():
             str(max_delta),
             "--min-vega",
             str(min_vega),
+            "--max-vega",
+            str(max_vega),
             "--max-theta",
             str(max_theta),
         ]
@@ -188,6 +195,7 @@ def main():
             "min_delta": config.get("min_delta", min_delta),
             "max_delta": config.get("max_delta", max_delta),
             "min_vega": config.get("min_vega", min_vega),
+            "max_vega": config.get("max_vega", max_vega),
             "max_theta": config.get("max_theta", max_theta),
         })
 
@@ -217,6 +225,7 @@ def main():
         "min_delta",
         "max_delta",
         "min_vega",
+        "max_vega",
         "max_theta",
     ]
 
