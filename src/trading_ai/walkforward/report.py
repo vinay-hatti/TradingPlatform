@@ -63,12 +63,22 @@ class WalkForwardReport:
         for r in rows:
             display_rows.append({
                 "window": r["window"],
+                "selected_profile": r.get(
+                    "selected_profile",
+                    r.get("profile", ""),
+                ),
+                "profile": r.get("profile", ""),
                 "train": f"{r['train_start']} -> {r['train_end']}",
                 "test": f"{r['test_start']} -> {r['test_end']}",
                 "premium": self.pct(r["option_premium_pct"]),
                 "take_profit": self.pct(r["take_profit"]),
                 "stop_loss": self.pct(r["stop_loss"]),
                 "max_hold": r["max_hold"],
+                "min_delta": r.get("min_delta", ""),
+                "max_delta": r.get("max_delta", ""),
+                "min_vega": r.get("min_vega", ""),
+                "max_vega": r.get("max_vega", ""),
+                "max_theta": r.get("max_theta", ""),
                 "trades": r["trades"],
                 "win_rate": self.pct(r["win_rate"]) if "win_rate" in r else "",
                 "return_pct": self.pct(r["return_pct"]),
@@ -82,6 +92,10 @@ class WalkForwardReport:
         for r in ranked:
             ranked_rows.append({
                 "window": r["window"],
+                "selected_profile": r.get(
+                    "selected_profile",
+                    r.get("profile", ""),
+                ),
                 "test": f"{r['test_start']} -> {r['test_end']}",
                 "trades": r["trades"],
                 "return_pct": self.pct(r["return_pct"]),
@@ -159,6 +173,7 @@ class WalkForwardReport:
         ranked_rows,
         [
             ("Window", "window"),
+            ("Profile", "selected_profile"),
             ("Test", "test"),
             ("Trades", "trades"),
             ("Return", "return_pct"),
@@ -175,12 +190,19 @@ class WalkForwardReport:
         display_rows,
         [
             ("Window", "window"),
+            ("Selected Profile", "selected_profile"),
+            ("Primary Profile", "profile"),
             ("Train", "train"),
             ("Test", "test"),
             ("Premium", "premium"),
             ("TP", "take_profit"),
             ("SL", "stop_loss"),
             ("Hold", "max_hold"),
+            ("Min Delta", "min_delta"),
+            ("Max Delta", "max_delta"),
+            ("Min Vega", "min_vega"),
+            ("Max Vega", "max_vega"),
+            ("Max Theta", "max_theta"),
             ("Trades", "trades"),
             ("Win Rate", "win_rate"),
             ("Return", "return_pct"),

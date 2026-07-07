@@ -56,19 +56,19 @@
 <div class="card">
     <h2>Summary</h2>
     <div class="metric"><strong>Windows</strong>3</div>
-    <div class="metric"><strong>Total PnL</strong>$750.40</div>
-    <div class="metric"><strong>Avg Return</strong>0.25%</div>
-    <div class="metric"><strong>Avg Profit Factor</strong>1.44</div>
+    <div class="metric"><strong>Total PnL</strong>$1,423.78</div>
+    <div class="metric"><strong>Avg Return</strong>0.47%</div>
+    <div class="metric"><strong>Avg Profit Factor</strong>2.34</div>
 </div>
 
 <div class="card">
     <h2>Ranked Windows</h2>
-    <table><thead><tr><th>Window</th><th>Test</th><th>Trades</th><th>Return</th><th>Profit Factor</th><th>Net PnL</th><th>Run Dir</th></tr></thead><tbody><tr><td>3</td><td>2026-05-01 -> 2026-06-01</td><td>14</td><td>0.52%</td><td>2.19</td><td>$519.10</td><td>reports/backtests/20260705_194421_997903_AAPL_MSFT_AMZN</td></tr><tr><td>2</td><td>2026-04-01 -> 2026-05-01</td><td>24</td><td>0.50%</td><td>1.49</td><td>$496.00</td><td>reports/backtests/20260705_194421_609502_AAPL_MSFT_AMZN</td></tr><tr><td>1</td><td>2026-03-01 -> 2026-04-01</td><td>16</td><td>-0.26%</td><td>0.64</td><td>$-264.70</td><td>reports/backtests/20260705_194421_221758_AAPL_MSFT_AMZN</td></tr></tbody></table>
+    <table><thead><tr><th>Window</th><th>Profile</th><th>Test</th><th>Trades</th><th>Return</th><th>Profit Factor</th><th>Net PnL</th><th>Run Dir</th></tr></thead><tbody><tr><td>2</td><td>balanced</td><td>2026-04-01 -> 2026-05-01</td><td>7</td><td>15.87%</td><td>5.58</td><td>$15,866.15</td><td>reports/backtests/20260707_134123_441148_AAPL_MSFT_AMZN</td></tr><tr><td>3</td><td>aggressive</td><td>2026-05-01 -> 2026-06-01</td><td>8</td><td>-0.67%</td><td>0.92</td><td>$-672.95</td><td>reports/backtests/20260707_134124_199953_AAPL_MSFT_AMZN</td></tr><tr><td>1</td><td>unfiltered</td><td>2026-03-01 -> 2026-04-01</td><td>16</td><td>-13.77%</td><td>0.52</td><td>$-13,769.43</td><td>reports/backtests/20260707_134123_056704_AAPL_MSFT_AMZN</td></tr></tbody></table>
 </div>
 
 <div class="card">
     <h2>Full Window Log</h2>
-    <table><thead><tr><th>Window</th><th>Train</th><th>Test</th><th>Premium</th><th>TP</th><th>SL</th><th>Hold</th><th>Trades</th><th>Win Rate</th><th>Return</th><th>Profit Factor</th><th>Net PnL</th><th>Run Dir</th></tr></thead><tbody><tr><td>1</td><td>2026-01-01 -> 2026-03-01</td><td>2026-03-01 -> 2026-04-01</td><td>10.00%</td><td>3.00%</td><td>-2.00%</td><td>5</td><td>16</td><td>31.25%</td><td>-0.26%</td><td>0.64</td><td>$-264.70</td><td>reports/backtests/20260705_194421_221758_AAPL_MSFT_AMZN</td></tr><tr><td>2</td><td>2026-02-01 -> 2026-04-01</td><td>2026-04-01 -> 2026-05-01</td><td>10.00%</td><td>3.00%</td><td>-2.00%</td><td>5</td><td>24</td><td>70.83%</td><td>0.50%</td><td>1.49</td><td>$496.00</td><td>reports/backtests/20260705_194421_609502_AAPL_MSFT_AMZN</td></tr><tr><td>3</td><td>2026-03-01 -> 2026-05-01</td><td>2026-05-01 -> 2026-06-01</td><td>10.00%</td><td>3.00%</td><td>-2.00%</td><td>5</td><td>14</td><td>42.86%</td><td>0.52%</td><td>2.19</td><td>$519.10</td><td>reports/backtests/20260705_194421_997903_AAPL_MSFT_AMZN</td></tr></tbody></table>
+    <table><thead><tr><th>Window</th><th>Selected Profile</th><th>Primary Profile</th><th>Train</th><th>Test</th><th>Premium</th><th>TP</th><th>SL</th><th>Hold</th><th>Min Delta</th><th>Max Delta</th><th>Min Vega</th><th>Max Vega</th><th>Max Theta</th><th>Trades</th><th>Win Rate</th><th>Return</th><th>Profit Factor</th><th>Net PnL</th><th>Run Dir</th></tr></thead><tbody><tr><td>1</td><td>unfiltered</td><td>balanced</td><td>2026-01-01 -> 2026-03-01</td><td>2026-03-01 -> 2026-04-01</td><td>10.00%</td><td>3.00%</td><td>-2.00%</td><td>5</td><td>0.0</td><td>1.0</td><td>0.0</td><td>999.0</td><td>999.0</td><td>16</td><td>50.00%</td><td>-13.77%</td><td>0.52</td><td>$-13,769.43</td><td>reports/backtests/20260707_134123_056704_AAPL_MSFT_AMZN</td></tr><tr><td>2</td><td>balanced</td><td>balanced</td><td>2026-02-01 -> 2026-04-01</td><td>2026-04-01 -> 2026-05-01</td><td>10.00%</td><td>3.00%</td><td>-2.00%</td><td>5</td><td>0.45</td><td>0.6</td><td>0.2</td><td>0.3</td><td>999.0</td><td>7</td><td>57.14%</td><td>15.87%</td><td>5.58</td><td>$15,866.15</td><td>reports/backtests/20260707_134123_441148_AAPL_MSFT_AMZN</td></tr><tr><td>3</td><td>aggressive</td><td>balanced</td><td>2026-03-01 -> 2026-05-01</td><td>2026-05-01 -> 2026-06-01</td><td>10.00%</td><td>3.00%</td><td>-2.00%</td><td>5</td><td>0.45</td><td>0.6</td><td>0.2</td><td>0.4</td><td>999.0</td><td>8</td><td>50.00%</td><td>-0.67%</td><td>0.92</td><td>$-672.95</td><td>reports/backtests/20260707_134124_199953_AAPL_MSFT_AMZN</td></tr></tbody></table>
 </div>
 
 </body>

@@ -165,11 +165,13 @@ def main():
         })
 
         print(
+            f"Profile={selected_profile} | "
             f"Trades={metrics['trades']} | "
             f"Return={metrics['return_pct']:.2%} | "
             f"PF={metrics['profit_factor']:.2f} | "
             f"PnL=${metrics['net_pnl']:,.2f}"
         )
+
 
     output_dir = Path("reports/walkforward")
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -192,13 +194,13 @@ def main():
         "profit_factor",
         "net_pnl",
         "run_dir",
+        "selected_profile",
         "profile",
         "min_delta",
         "max_delta",
         "min_vega",
         "max_vega",
         "max_theta",
-        "selected_profile",
     ]
 
     with open(output_file, "w", newline="") as f:
