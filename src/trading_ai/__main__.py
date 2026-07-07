@@ -47,6 +47,7 @@ def main():
     sub.add_parser("black-scholes-test")
     sub.add_parser("analyze-greeks")
     sub.add_parser("score-strategies")
+    sub.add_parser("optimization-report")
 
     paper = sub.add_parser("paper")
     paper_sub = paper.add_subparsers(dest="paper_command")
@@ -132,6 +133,9 @@ def main():
 
     elif args.command == "score-strategies":
         run_script("scripts/score_strategies.py", extra)
+
+    elif args.command == "optimization-report":
+        run_script("scripts/build_optimization_report.py", extra)
 
     elif args.command == "paper":
 

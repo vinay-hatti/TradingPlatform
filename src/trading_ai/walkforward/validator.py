@@ -64,6 +64,16 @@ class WalkForwardValidator:
             str(params["stop_loss"]),
             "--max-hold",
             str(params["max_hold"]),
+            "--min-delta",
+            str(params.get("min_delta", 0.0)),
+            "--max-delta",
+            str(params.get("max_delta", 1.0)),
+            "--min-vega",
+            str(params.get("min_vega", 0.0)),
+            "--max-vega",
+            str(params.get("max_vega", 999.0)),
+            "--max-theta",
+            str(params.get("max_theta", 999.0)),
         ]
 
         subprocess.run(

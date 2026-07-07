@@ -19,6 +19,19 @@ def parse_args():
     parser.add_argument("--train-months", type=int, default=2)
     parser.add_argument("--test-months", type=int, default=1)
     parser.add_argument("--step-months", type=int, default=1)
+    parser.add_argument(
+        "--profile",
+        choices=["conservative", "balanced", "aggressive"],
+        default="balanced",
+    )
+    parser.add_argument("--min-trades", type=int, default=10)
+    parser.add_argument(
+        "--fallback-profile",
+        choices=["conservative", "balanced", "aggressive", "none"],
+        default="none",
+    )
+
+    parser.add_argument("--min-test-trades", type=int, default=1)
 
     return parser.parse_args()
 
@@ -35,9 +48,22 @@ def main():
         step_months=args.step_months,
     )
 
-    optimizer = WalkForwardOptimizer()
+    primary_optimizer = WalkForwardOptimizer(
+        profile=args.profile,
+        min_trades=args.min_trades,
+    )
 
-    params = optimizer.best_parameters()
+    primary_params = primary_optimizer.best_parameters()
+
+    fallback_params = None
+
+    if args.fallback_profile != "none":
+        fallback_optimizer = WalkForwardOptimizer(
+            profile=args.fallback_profile,
+            min_trades=args.min_trades,
+        )
+
+        fallback_params = fallback_optimizer.best_parameters()
 
     validator = WalkForwardValidator(
         symbols=args.symbols,
@@ -57,11 +83,33 @@ def main():
             f"Test {window.test_start} -> {window.test_end}"
         )
 
+        selected_profile = args.profile
+        selected_params = primary_params
+
         result = validator.validate(
             start=window.test_start,
             end=window.test_end,
-            params=params,
+            params=selected_params,
         )
+
+        metrics = result["metrics"]
+
+        if (
+            int(metrics["trades"]) < args.min_test_trades
+            and fallback_params is not None
+        ):
+            selected_profile = args.fallback_profile
+            selected_params = fallback_params
+
+            result = validator.validate(
+                start=window.test_start,
+                end=window.test_end,
+                params=selected_params,
+            )
+
+            metrics = result["metrics"]
+
+
 
         metrics = result["metrics"]
 
@@ -71,16 +119,23 @@ def main():
             "train_end": window.train_end,
             "test_start": window.test_start,
             "test_end": window.test_end,
-            "option_premium_pct": params["option_premium_pct"],
-            "take_profit": params["take_profit"],
-            "stop_loss": params["stop_loss"],
-            "max_hold": params["max_hold"],
+            "option_premium_pct": selected_params["option_premium_pct"],
+            "take_profit": selected_params["take_profit"],
+            "stop_loss": selected_params["stop_loss"],
+            "max_hold": selected_params["max_hold"],
+            "min_delta": selected_params.get("min_delta", 0.0),
+            "max_delta": selected_params.get("max_delta", 1.0),
+            "min_vega": selected_params.get("min_vega", 0.0),
+            "max_vega": selected_params.get("max_vega", 999.0),
+            "max_theta": selected_params.get("max_theta", 999.0),
             "trades": metrics["trades"],
             "win_rate": metrics["win_rate"],
             "return_pct": metrics["return_pct"],
             "profit_factor": metrics["profit_factor"],
             "net_pnl": metrics["net_pnl"],
             "run_dir": result["run_dir"],
+            "profile": args.profile,
+            "selected_profile": selected_profile,
         })
 
         print(
@@ -111,6 +166,13 @@ def main():
         "profit_factor",
         "net_pnl",
         "run_dir",
+        "profile",
+        "min_delta",
+        "max_delta",
+        "min_vega",
+        "max_vega",
+        "max_theta",
+        "selected_profile",
     ]
 
     with open(output_file, "w", newline="") as f:
