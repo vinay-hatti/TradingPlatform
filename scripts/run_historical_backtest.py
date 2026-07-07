@@ -39,6 +39,7 @@ def parse_args():
     parser.add_argument("--min-delta", type=float, default=0.0)
     parser.add_argument("--max-delta", type=float, default=1.0)
     parser.add_argument("--min-vega", type=float, default=0.0)
+    parser.add_argument("--max-vega", type=float, default=999.0)
     parser.add_argument("--max-theta", type=float, default=999.0)
 
     return parser.parse_args()
@@ -81,6 +82,7 @@ def main():
         min_delta=args.min_delta,
         max_delta=args.max_delta,
         min_vega=args.min_vega,
+        max_vega=args.max_vega,
         max_theta=args.max_theta,
     )
 
@@ -163,6 +165,7 @@ def main():
         "min_delta": args.min_delta,
         "max_delta": args.max_delta,
         "min_vega": args.min_vega,
+        "max_vega": args.max_vega,
         "max_theta": args.max_theta,
     }
 

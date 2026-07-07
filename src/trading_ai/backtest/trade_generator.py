@@ -17,6 +17,7 @@ class HistoricalTradeGenerator:
         min_delta=0.0,
         max_delta=1.0,
         min_vega=0.0,
+        max_vega=999.0,
         max_theta=999.0,
     ):
         self.datasource = datasource
@@ -31,6 +32,7 @@ class HistoricalTradeGenerator:
         self.min_delta = float(min_delta)
         self.max_delta = float(max_delta)
         self.min_vega = float(min_vega)
+        self.max_vega = float(max_vega)
         self.max_theta = float(max_theta)
 
     def _contracts_for_trade(self, entry_price):
@@ -95,6 +97,9 @@ class HistoricalTradeGenerator:
                 continue
 
             if vega < self.min_vega:
+                continue
+
+            if vega > self.max_vega:
                 continue
 
             if abs_theta > self.max_theta:
