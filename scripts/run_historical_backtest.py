@@ -36,6 +36,10 @@ def parse_args():
     parser.add_argument("--sizer-max-position-pct", type=float, default=0.10)
     parser.add_argument("--pricing-dte", type=int, default=30)
     parser.add_argument("--risk-free-rate", type=float, default=0.04)
+    parser.add_argument("--min-delta", type=float, default=0.0)
+    parser.add_argument("--max-delta", type=float, default=1.0)
+    parser.add_argument("--min-vega", type=float, default=0.0)
+    parser.add_argument("--max-theta", type=float, default=999.0)
 
     return parser.parse_args()
 
@@ -74,6 +78,10 @@ def main():
         option_premium_pct=args.option_premium_pct,
         pricing_service=pricing_service,
         pricing_dte=args.pricing_dte,
+        min_delta=args.min_delta,
+        max_delta=args.max_delta,
+        min_vega=args.min_vega,
+        max_theta=args.max_theta,
     )
 
     symbols = [
@@ -152,6 +160,10 @@ def main():
         "option_premium_pct": args.option_premium_pct,
         "pricing_dte": args.pricing_dte,
         "risk_free_rate": args.risk_free_rate,
+        "min_delta": args.min_delta,
+        "max_delta": args.max_delta,
+        "min_vega": args.min_vega,
+        "max_theta": args.max_theta,
     }
 
     with open(f"{run_dir}/config.json", "w") as f:

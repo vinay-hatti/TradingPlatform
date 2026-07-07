@@ -14,6 +14,10 @@ class HistoricalTradeGenerator:
         option_premium_pct=0.08,
         pricing_service=None,
         pricing_dte=30,
+        min_delta=0.0,
+        max_delta=1.0,
+        min_vega=0.0,
+        max_theta=999.0,
     ):
         self.datasource = datasource
         self.simulator = simulator
@@ -24,6 +28,10 @@ class HistoricalTradeGenerator:
         self.option_premium_pct = float(option_premium_pct)
         self.pricing = pricing_service or OptionPricingService()
         self.pricing_dte = int(pricing_dte)
+        self.min_delta = float(min_delta)
+        self.max_delta = float(max_delta)
+        self.min_vega = float(min_vega)
+        self.max_theta = float(max_theta)
 
     def _contracts_for_trade(self, entry_price):
 
@@ -75,6 +83,22 @@ class HistoricalTradeGenerator:
                 hv20=hv20,
                 dte=self.pricing_dte,
             )
+
+            abs_delta = abs(float(entry_greeks["delta"]))
+            abs_theta = abs(float(entry_greeks["theta"]))
+            vega = float(entry_greeks["vega"])
+
+            if abs_delta < self.min_delta:
+                continue
+
+            if abs_delta > self.max_delta:
+                continue
+
+            if vega < self.min_vega:
+                continue
+
+            if abs_theta > self.max_theta:
+                continue
 
             contracts = self._contracts_for_trade(entry_price)
 

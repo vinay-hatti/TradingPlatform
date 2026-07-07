@@ -190,6 +190,42 @@ class BacktestReport:
             for year, year_trades in sorted(grouped.items())
         ]
 
+    def performance_by_delta_bucket(self, trades):
+
+        grouped = {}
+
+        for trade in trades:
+            delta = abs(float(trade.entry_delta))
+
+            if delta < 0.30:
+                bucket = "0.00-0.30"
+            elif delta < 0.45:
+                bucket = "0.30-0.45"
+            elif delta < 0.60:
+                bucket = "0.45-0.60"
+            elif delta < 0.75:
+                bucket = "0.60-0.75"
+            else:
+                bucket = "0.75+"
+
+            grouped.setdefault(bucket, []).append(trade)
+
+        order = {
+            "0.00-0.30": 0,
+            "0.30-0.45": 1,
+            "0.45-0.60": 2,
+            "0.60-0.75": 3,
+            "0.75+": 4,
+        }
+
+        return [
+            self._metrics_row("delta_bucket", bucket, bucket_trades)
+            for bucket, bucket_trades in sorted(
+                grouped.items(),
+                key=lambda item: order.get(item[0], 99),
+            )
+        ]
+
     def best_trades(self, trades, limit=10):
         return sorted(
             trades,
@@ -285,7 +321,7 @@ class BacktestReport:
         hold_days_rows = self.performance_by_hold_days(trades)
         month_rows = self.performance_by_month(trades)
         year_rows = self.performance_by_year(trades)
-
+        delta_bucket_rows = self.performance_by_delta_bucket(trades)
         trade_rows = self.trade_rows(trades)
         best_trade_rows = self.trade_rows(self.best_trades(trades))
         worst_trade_rows = self.trade_rows(self.worst_trades(trades))
@@ -475,6 +511,24 @@ class BacktestReport:
         year_rows,
         [
             ("Year", "year"),
+            ("Trades", "trades"),
+            ("Wins", "wins"),
+            ("Losses", "losses"),
+            ("Win Rate", "win_rate"),
+            ("Net PnL", "net_pnl"),
+            ("Return", "return_pct"),
+            ("Profit Factor", "profit_factor"),
+            ("Expectancy", "expectancy"),
+        ],
+    )}
+</div>
+
+<div class="card">
+    <h2>Performance by Delta Bucket</h2>
+    {self.build_table(
+        delta_bucket_rows,
+        [
+            ("Delta Bucket", "delta_bucket"),
             ("Trades", "trades"),
             ("Wins", "wins"),
             ("Losses", "losses"),
