@@ -30,8 +30,11 @@ def parse_args():
         choices=["conservative", "balanced", "aggressive", "none"],
         default="none",
     )
-
     parser.add_argument("--min-test-trades", type=int, default=1)
+    parser.add_argument(
+        "--final-fallback-unfiltered",
+        action="store_true",
+    )
 
     return parser.parse_args()
 
@@ -64,6 +67,15 @@ def main():
         )
 
         fallback_params = fallback_optimizer.best_parameters()
+
+    unfiltered_params = dict(primary_params)
+    unfiltered_params.update({
+        "min_delta": 0.0,
+        "max_delta": 1.0,
+        "min_vega": 0.0,
+        "max_vega": 999.0,
+        "max_theta": 999.0,
+    })
 
     validator = WalkForwardValidator(
         symbols=args.symbols,
@@ -109,9 +121,23 @@ def main():
 
             metrics = result["metrics"]
 
+        if (
+            int(metrics["trades"]) < args.min_test_trades
+            and args.final_fallback_unfiltered
+        ):
+            selected_profile = "unfiltered"
+            selected_params = unfiltered_params
+
+            result = validator.validate(
+                start=window.test_start,
+                end=window.test_end,
+                params=selected_params,
+            )
+
+            metrics = result["metrics"]
 
 
-        metrics = result["metrics"]
+#        metrics = result["metrics"]
 
         rows.append({
             "window": window.index,
