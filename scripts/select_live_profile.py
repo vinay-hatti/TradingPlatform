@@ -1,4 +1,5 @@
 import csv
+import json
 from pathlib import Path
 
 
@@ -65,6 +66,11 @@ def main():
 
     best = summaries[0]
 
+    output = REPORT_DIR / "live_profile.json"
+
+    with open(output, "w") as f:
+        json.dump(best, f, indent=2)
+
     print()
     print("========== Automatic Live Profile Selection ==========")
     print()
@@ -89,6 +95,7 @@ def main():
     print(f"Avg Return   : {best['avg_return']:.2%}")
     print(f"Avg PF       : {best['avg_pf']:.2f}")
     print(f"Consistency  : {best['consistency']:.2%}")
+    print(f"Saved JSON   : {output}")
     print("================================================")
     print()
 
