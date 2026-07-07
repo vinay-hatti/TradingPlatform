@@ -1,0 +1,4 @@
+window,train_start,train_end,test_start,test_end,option_premium_pct,take_profit,stop_loss,max_hold,trades,win_rate,return_pct,profit_factor,net_pnl,run_dir,selected_profile,profile,min_delta,max_delta,min_vega,max_vega,max_theta
+1,2026-01-01,2026-03-01,2026-03-01,2026-04-01,0.1,0.03,-0.02,5,0,0.0,0.0,0.0,0.0,reports/backtests/20260707_154423_262464_AAPL_MSFT_AMZN,aggressive,aggressive,0.45,0.6,0.2,0.4,999.0
+2,2026-02-01,2026-04-01,2026-04-01,2026-05-01,0.1,0.03,-0.02,5,16,0.5625,0.31981317037534407,4.370307242808045,31981.317037534405,reports/backtests/20260707_154423_647319_AAPL_MSFT_AMZN,aggressive,aggressive,0.45,0.6,0.2,0.4,999.0
+3,2026-03-01,2026-05-01,2026-05-01,2026-06-01,0.1,0.03,-0.02,5,8,0.5,-0.006729500415123529,0.917699750143504,-672.9500415123529,reports/backtests/20260707_154424_028188_AAPL_MSFT_AMZN,aggressive,aggressive,0.45,0.6,0.2,0.4,999.0

@@ -48,6 +48,7 @@ def main():
     sub.add_parser("analyze-greeks")
     sub.add_parser("score-strategies")
     sub.add_parser("optimization-report")
+    sub.add_parser("profile-comparison")
 
     paper = sub.add_parser("paper")
     paper_sub = paper.add_subparsers(dest="paper_command")
@@ -136,6 +137,12 @@ def main():
 
     elif args.command == "optimization-report":
         run_script("scripts/build_optimization_report.py", extra)
+
+    elif args.command == "profile-comparison":
+        run_script(
+            "scripts/build_profile_comparison_report.py",
+            extra,
+        )
 
     elif args.command == "paper":
 

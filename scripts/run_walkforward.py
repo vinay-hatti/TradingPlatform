@@ -35,6 +35,10 @@ def parse_args():
         "--final-fallback-unfiltered",
         action="store_true",
     )
+    parser.add_argument(
+        "--output-name",
+        default="summary",
+    )
 
     return parser.parse_args()
 
@@ -176,7 +180,8 @@ def main():
     output_dir = Path("reports/walkforward")
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    output_file = output_dir / "summary.csv"
+#    output_file = output_dir / "summary.csv"
+    output_file = output_dir / f"{args.output_name}.csv"
 
     fieldnames = [
         "window",
