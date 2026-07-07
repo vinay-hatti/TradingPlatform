@@ -49,6 +49,7 @@ def main():
     sub.add_parser("score-strategies")
     sub.add_parser("optimization-report")
     sub.add_parser("profile-comparison")
+    sub.add_parser("select-live-profile")
 
     paper = sub.add_parser("paper")
     paper_sub = paper.add_subparsers(dest="paper_command")
@@ -143,6 +144,9 @@ def main():
             "scripts/build_profile_comparison_report.py",
             extra,
         )
+
+    elif args.command == "select-live-profile":
+        run_script("scripts/select_live_profile.py", extra)
 
     elif args.command == "paper":
 
