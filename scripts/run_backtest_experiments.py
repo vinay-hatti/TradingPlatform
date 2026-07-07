@@ -43,6 +43,11 @@ def parse_args():
     parser.add_argument("--risk-per-trade-pct", type=float, default=0.05)
     parser.add_argument("--sizer-max-position-pct", type=float, default=0.05)
 
+    parser.add_argument("--min-delta", default="0.0")
+    parser.add_argument("--max-delta", default="1.0")
+    parser.add_argument("--min-vega", default="0.0")
+    parser.add_argument("--max-theta", default="999.0")
+
     return parser.parse_args()
 
 
@@ -58,6 +63,10 @@ def main():
         for v in args.max_hold.split(",")
         if v.strip()
     ]
+    min_deltas = parse_float_list(args.min_delta)
+    max_deltas = parse_float_list(args.max_delta)
+    min_vegas = parse_float_list(args.min_vega)
+    max_thetas = parse_float_list(args.max_theta)
 
     combos = list(
         itertools.product(
@@ -65,6 +74,10 @@ def main():
             take_profits,
             stop_losses,
             max_holds,
+            min_deltas,
+            max_deltas,
+            min_vegas,
+            max_thetas,
         )
     )
 
@@ -78,7 +91,18 @@ def main():
 
     for idx, combo in enumerate(combos, start=1):
 
-        option_premium_pct, take_profit, stop_loss, max_hold = combo
+#        option_premium_pct, take_profit, stop_loss, max_hold = combo
+
+        (
+            option_premium_pct,
+            take_profit,
+            stop_loss,
+            max_hold,
+            min_delta,
+            max_delta,
+            min_vega,
+            max_theta,
+        ) = combo
 
         print(
             f"Run {idx}/{len(combos)} | "
@@ -117,6 +141,14 @@ def main():
             str(stop_loss),
             "--max-hold",
             str(max_hold),
+            "--min-delta",
+            str(min_delta),
+            "--max-delta",
+            str(max_delta),
+            "--min-vega",
+            str(min_vega),
+            "--max-theta",
+            str(max_theta),
         ]
 
         subprocess.run(
@@ -153,6 +185,10 @@ def main():
             "return_pct": metrics["return_pct"],
             "profit_factor": metrics["profit_factor"],
             "expectancy": metrics["expectancy"],
+            "min_delta": config.get("min_delta", min_delta),
+            "max_delta": config.get("max_delta", max_delta),
+            "min_vega": config.get("min_vega", min_vega),
+            "max_theta": config.get("max_theta", max_theta),
         })
 
     output_dir = Path("reports/backtest_experiments")
@@ -178,6 +214,10 @@ def main():
         "return_pct",
         "profit_factor",
         "expectancy",
+        "min_delta",
+        "max_delta",
+        "min_vega",
+        "max_theta",
     ]
 
     with open(output_file, "w", newline="") as f:

@@ -45,6 +45,7 @@ def main():
     sub.add_parser("analyze-walkforward")
     sub.add_parser("walkforward-report")
     sub.add_parser("black-scholes-test")
+    sub.add_parser("analyze-greeks")
 
     paper = sub.add_parser("paper")
     paper_sub = paper.add_subparsers(dest="paper_command")
@@ -124,6 +125,9 @@ def main():
 
     elif args.command == "black-scholes-test":
         run_script("scripts/test_black_scholes.py", extra)
+
+    elif args.command == "analyze-greeks":
+        run_script("scripts/analyze_greeks.py", extra)
 
     elif args.command == "paper":
 
