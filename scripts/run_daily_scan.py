@@ -1,9 +1,11 @@
 import argparse
+from datetime import date
 
 from trading_ai.app.bootstrap import container
 from trading_ai.backtest.datasource import HistoricalDataSource
 from trading_ai.daily.live_profile import LiveProfileLoader
 from trading_ai.daily.scanner import DailyScanner
+from trading_ai.daily.reporter import DailyRecommendationReporter
 
 
 def parse_args():
@@ -23,7 +25,37 @@ def parse_args():
     parser.add_argument("--top", type=int, default=10)
     parser.add_argument("--pricing-dte", type=int, default=30)
 
+    parser.add_argument(
+        "--report-date",
+        default=None,
+        help="Report date folder, default today",
+    )
+
     return parser.parse_args()
+
+
+def print_candidate(idx, c):
+
+    print()
+    print(f"{idx}. {c.symbol} {c.signal}")
+    print(f"   Strategy      : {c.strategy}")
+    print(f"   Final Score   : {c.final_score:.2f}")
+    print(f"   Signal Score  : {c.score:.2f}")
+    print(f"   Call / Put    : {c.call_score:.2f} / {c.put_score:.2f}")
+    print(f"   Regime        : {c.market_regime}")
+    print(f"   Underlying    : ${c.close:.2f}")
+    print(f"   Strike        : ${c.strike:.2f}")
+    print(f"   Option Price  : ${c.option_price:.2f}")
+    print(f"   Expiry Proxy  : {c.expiry}")
+    print(
+        f"   Greeks        : "
+        f"Δ={c.delta:.4f}, "
+        f"Γ={c.gamma:.5f}, "
+        f"Θ={c.theta:.4f}, "
+        f"V={c.vega:.4f}, "
+        f"ρ={c.rho:.4f}"
+    )
+    print(f"   Vol / DTE     : {c.volatility:.2%} / {c.dte}")
 
 
 def main():
@@ -50,8 +82,25 @@ def main():
         end=args.end,
     )
 
-
     candidates = scanner.scan(symbols)
+
+    metadata = {
+        "date": args.report_date or date.today().isoformat(),
+        "symbols": symbols,
+        "symbols_scanned": len(symbols),
+        "candidates": len(candidates),
+        "live_profile": live_profile.get("profile", "unknown"),
+        "min_score": args.min_score,
+        "pricing_dte": args.pricing_dte,
+        "start": args.start,
+        "end": args.end,
+    }
+
+    report_paths = DailyRecommendationReporter().generate(
+        candidates=candidates,
+        metadata=metadata,
+        report_date=args.report_date,
+    )
 
     print()
     print("========== Daily AI Trading Scan ==========")
@@ -64,33 +113,17 @@ def main():
 
     if not candidates:
         print("No candidates passed signal and Greek filters.")
-        print("===========================================")
-        print()
-        return
-
-    for idx, c in enumerate(candidates[:args.top], start=1):
-        print()
-        print(f"{idx}. {c.symbol} {c.signal}")
-        print(f"   Strategy      : {c.strategy}")
-        print(f"   Final Score   : {c.final_score:.2f}")
-        print(f"   Signal Score  : {c.score:.2f}")
-        print(f"   Call / Put    : {c.call_score:.2f} / {c.put_score:.2f}")
-        print(f"   Regime        : {c.market_regime}")
-        print(f"   Underlying    : ${c.close:.2f}")
-        print(f"   Strike        : ${c.strike:.2f}")
-        print(f"   Option Price  : ${c.option_price:.2f}")
-        print(f"   Expiry Proxy  : {c.expiry}")
-        print(
-            f"   Greeks        : "
-            f"Δ={c.delta:.4f}, "
-            f"Γ={c.gamma:.5f}, "
-            f"Θ={c.theta:.4f}, "
-            f"V={c.vega:.4f}, "
-            f"ρ={c.rho:.4f}"
-        )
-        print(f"   Vol / DTE     : {c.volatility:.2%} / {c.dte}")
+    else:
+        for idx, c in enumerate(candidates[:args.top], start=1):
+            print_candidate(idx, c)
 
     print()
+    print("Reports")
+    print("-------------------------------------------")
+    print(f"Output Dir      : {report_paths['output_dir']}")
+    print(f"CSV             : {report_paths['csv']}")
+    print(f"JSON            : {report_paths['json']}")
+    print(f"HTML            : {report_paths['html']}")
     print("===========================================")
     print()
 

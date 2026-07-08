@@ -1,0 +1,68 @@
+{
+  "metadata": {
+    "date": "2026-07-07",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "AMZN",
+      "NVDA",
+      "META",
+      "GOOGL",
+      "TSLA",
+      "AMD",
+      "SPY",
+      "QQQ"
+    ],
+    "symbols_scanned": 10,
+    "candidates": 2,
+    "live_profile": "aggressive",
+    "min_score": 60.0,
+    "pricing_dte": 30,
+    "start": "2026-01-01",
+    "end": "2026-06-01"
+  },
+  "candidates": [
+    {
+      "symbol": "AAPL",
+      "signal": "CALL",
+      "strategy": "LONG_CALL",
+      "close": 306.31,
+      "score": 65.0,
+      "call_score": 65.0,
+      "put_score": 0.0,
+      "market_regime": "BULL_TREND",
+      "strike": 306.31,
+      "expiry": "30DTE_PROXY",
+      "option_price": 4.0231630708713055,
+      "delta": 0.5513255237452326,
+      "gamma": 0.045052669824654834,
+      "theta": -0.07597164902249767,
+      "vega": 0.34743316551633563,
+      "rho": 0.13549591077331302,
+      "volatility": 0.1,
+      "dte": 30,
+      "final_score": 70.17681918245086
+    },
+    {
+      "symbol": "AMD",
+      "signal": "CALL",
+      "strategy": "LONG_CALL",
+      "close": 510.13,
+      "score": 80.0,
+      "call_score": 80.0,
+      "put_score": 0.0,
+      "market_regime": "BULL_TREND",
+      "strike": 510.13,
+      "expiry": "30DTE_PROXY",
+      "option_price": 6.700193194292012,
+      "delta": 0.5513255237452326,
+      "gamma": 0.027052091219865564,
+      "theta": -0.12652351315937038,
+      "vega": 0.5786166978709422,
+      "rho": 0.2256554763566001,
+      "volatility": 0.1,
+      "dte": 30,
+      "final_score": 69.08847811406244
+    }
+  ]
+}
