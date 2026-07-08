@@ -59,6 +59,34 @@ class BacktestReport:
 
         return html
 
+    def drawdown_rows(self, equity_curve):
+
+        rows = []
+        peak = None
+
+        for point in equity_curve:
+            equity = float(point["equity"])
+
+            if peak is None or equity > peak:
+                peak = equity
+
+            drawdown_dollars = equity - peak
+            drawdown_pct = (
+                drawdown_dollars / peak
+                if peak
+                else 0.0
+            )
+
+            rows.append({
+                "date": point.get("date", ""),
+                "equity": self.money(equity),
+                "peak_equity": self.money(peak),
+                "drawdown_dollars": self.money(drawdown_dollars),
+                "drawdown_pct": self.pct(drawdown_pct),
+            })
+
+        return rows
+
     def _metrics_row(self, label_key, label_value, trades):
         metrics = self.metrics.calculate(
             trades,
@@ -277,19 +305,7 @@ class BacktestReport:
 
         return rows
 
-#    def generate(self, trades, path="reports/backtest.html"):
-    def generate(self, trades, path="reports/backtest.html", rejected=None):
-
-#        rejected = rejected or []
-#        rejected_rows = self.rejected_rows(rejected)
-#
-#        accepted_count = len(trades)
-#        rejected_count = len(rejected)
-#        final_equity = (
-#            curve[-1]["equity"]
-#            if curve
-#            else self.initial_capital
-#        )
+    def generate(self, trades, path="reports/backtest.html", rejected=None, equity_curve=None):
 
         metrics = self.metrics.calculate(
             trades,
@@ -325,6 +341,12 @@ class BacktestReport:
         trade_rows = self.trade_rows(trades)
         best_trade_rows = self.trade_rows(self.best_trades(trades))
         worst_trade_rows = self.trade_rows(self.worst_trades(trades))
+#        drawdown_rows = self.drawdown_rows(equity_curve)
+        drawdown_rows = []
+
+        if equity_curve:
+            drawdown_rows = self.drawdown_rows(equity_curve)
+
 
         html = f"""
 <!DOCTYPE html>
@@ -628,6 +650,20 @@ class BacktestReport:
     <div class="metric"><strong>Largest Loss</strong>{self.money(metrics.get("largest_loss", 0.0))}</div>
     <div class="metric"><strong>Gross Profit</strong>{self.money(metrics.get("gross_profit", 0.0))}</div>
     <div class="metric"><strong>Gross Loss</strong>{self.money(metrics.get("gross_loss", 0.0))}</div>
+</div>
+
+<div class="card">
+    <h2>Drawdown Curve</h2>
+    {self.build_table(
+        drawdown_rows,
+        [
+            ("Date", "date"),
+            ("Equity", "equity"),
+            ("Peak Equity", "peak_equity"),
+            ("Drawdown $", "drawdown_dollars"),
+            ("Drawdown %", "drawdown_pct"),
+        ],
+    )}
 </div>
 
 <div class="card">

@@ -40,6 +40,7 @@ class BacktestEngine:
         self.report.generate(
             trades,
             path=report_path,
+            equity_curve=equity_curve,
             rejected=rejected or [],
         )
 
