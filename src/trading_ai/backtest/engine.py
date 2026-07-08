@@ -2,6 +2,7 @@ from trading_ai.backtest.metrics import BacktestMetrics
 from trading_ai.backtest.equity import EquityCurveBuilder
 from trading_ai.backtest.report import BacktestReport
 from trading_ai.backtest.exporter import BacktestExporter
+from trading_ai.risk.metrics import RiskMetricsEngine
 from pathlib import Path
 
 
@@ -26,6 +27,14 @@ class BacktestEngine:
             trades,
             initial_capital=self.initial_capital,
         )
+
+        risk_metrics = RiskMetricsEngine().compute(
+            equity_curve=equity_curve,
+            trades=trades,
+            initial_capital=self.initial_capital,
+        )
+
+        metrics.update(risk_metrics)
 
         self.report.generate(
             trades,

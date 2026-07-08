@@ -394,7 +394,12 @@ class BacktestReport:
     <div class="metric"><strong>Return</strong>{self.pct(metrics["return_pct"])}</div>
     <div class="metric"><strong>Profit Factor</strong>{metrics["profit_factor"]:.2f}</div>
     <div class="metric"><strong>Expectancy</strong>{self.money(metrics["expectancy"])}</div>
-    <div class="metric"><strong>Max Drawdown</strong>{self.money(max_dd)}</div>
+    <div class="metric"><strong>Max Drawdown</strong>{self.pct(metrics.get("max_drawdown_pct", 0.0))}</div>
+    <div class="metric"><strong>Max DD $</strong>{self.money(metrics.get("max_drawdown_dollars", 0.0))}</div>
+    <div class="metric"><strong>Sharpe</strong>{metrics.get("sharpe_ratio", 0.0):.2f}</div>
+    <div class="metric"><strong>Sortino</strong>{metrics.get("sortino_ratio", 0.0):.2f}</div>
+    <div class="metric"><strong>Calmar</strong>{metrics.get("calmar_ratio", 0.0):.2f}</div>
+    <div class="metric"><strong>Payoff Ratio</strong>{metrics.get("payoff_ratio", 0.0):.2f}</div>
 </div>
 
 <div class="card">
@@ -613,6 +618,16 @@ class BacktestReport:
             ("Exit Reason", "exit_reason"),
         ],
     )}
+</div>
+
+<div class="card">
+    <h2>Advanced Risk Metrics</h2>
+    <div class="metric"><strong>Average Win</strong>{self.money(metrics.get("avg_win", 0.0))}</div>
+    <div class="metric"><strong>Average Loss</strong>{self.money(metrics.get("avg_loss", 0.0))}</div>
+    <div class="metric"><strong>Largest Win</strong>{self.money(metrics.get("largest_win", 0.0))}</div>
+    <div class="metric"><strong>Largest Loss</strong>{self.money(metrics.get("largest_loss", 0.0))}</div>
+    <div class="metric"><strong>Gross Profit</strong>{self.money(metrics.get("gross_profit", 0.0))}</div>
+    <div class="metric"><strong>Gross Loss</strong>{self.money(metrics.get("gross_loss", 0.0))}</div>
 </div>
 
 <div class="card">
