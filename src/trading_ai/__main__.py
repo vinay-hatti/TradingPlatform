@@ -53,6 +53,7 @@ def main():
     sub.add_parser("show-live-profile")
     sub.add_parser("daily-scan")
     sub.add_parser("risk-metrics-test")
+    sub.add_parser("show-risk-metrics")
 
     paper = sub.add_parser("paper")
     paper_sub = paper.add_subparsers(dest="paper_command")
@@ -159,6 +160,9 @@ def main():
 
     elif args.command == "risk-metrics-test":
         run_script("scripts/test_risk_metrics.py", extra)
+
+    elif args.command == "show-risk-metrics":
+        run_script("scripts/show_risk_metrics.py", extra)
 
     elif args.command == "paper":
 
