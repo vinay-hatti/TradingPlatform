@@ -6,6 +6,7 @@ from trading_ai.backtest.datasource import HistoricalDataSource
 from trading_ai.daily.live_profile import LiveProfileLoader
 from trading_ai.daily.scanner import DailyScanner
 from trading_ai.daily.reporter import DailyRecommendationReporter
+from trading_ai.portfolio.awareness import PortfolioAwareness
 
 
 def parse_args():
@@ -26,6 +27,11 @@ def parse_args():
     parser.add_argument("--pricing-dte", type=int, default=30)
 
     parser.add_argument(
+        "--positions-file",
+        default="data/portfolio/current_positions.csv",
+    )
+
+    parser.add_argument(
         "--report-date",
         default=None,
         help="Report date folder, default today",
@@ -38,24 +44,33 @@ def print_candidate(idx, c):
 
     print()
     print(f"{idx}. {c.symbol} {c.signal}")
-    print(f"   Strategy      : {c.strategy}")
-    print(f"   Final Score   : {c.final_score:.2f}")
-    print(f"   Signal Score  : {c.score:.2f}")
-    print(f"   Call / Put    : {c.call_score:.2f} / {c.put_score:.2f}")
-    print(f"   Regime        : {c.market_regime}")
-    print(f"   Underlying    : ${c.close:.2f}")
-    print(f"   Strike        : ${c.strike:.2f}")
-    print(f"   Option Price  : ${c.option_price:.2f}")
-    print(f"   Expiry Proxy  : {c.expiry}")
+    print(f"   Strategy       : {c.strategy}")
+    print(f"   Sector         : {c.sector}")
+    print(f"   Adjusted Score : {c.adjusted_score:.2f}")
+    print(f"   Base Score     : {c.final_score:.2f}")
+    print(f"   Penalty        : {c.portfolio_penalty:.2f}")
+
+    if c.portfolio_notes:
+        print("   Portfolio Notes:")
+        for note in c.portfolio_notes:
+            print(f"     - {note}")
+
+    print(f"   Signal Score   : {c.score:.2f}")
+    print(f"   Call / Put     : {c.call_score:.2f} / {c.put_score:.2f}")
+    print(f"   Regime         : {c.market_regime}")
+    print(f"   Underlying     : ${c.close:.2f}")
+    print(f"   Strike         : ${c.strike:.2f}")
+    print(f"   Option Price   : ${c.option_price:.2f}")
+    print(f"   Expiry Proxy   : {c.expiry}")
     print(
-        f"   Greeks        : "
+        f"   Greeks         : "
         f"Δ={c.delta:.4f}, "
         f"Γ={c.gamma:.5f}, "
         f"Θ={c.theta:.4f}, "
         f"V={c.vega:.4f}, "
         f"ρ={c.rho:.4f}"
     )
-    print(f"   Vol / DTE     : {c.volatility:.2%} / {c.dte}")
+    print(f"   Vol / DTE      : {c.volatility:.2%} / {c.dte}")
 
 
 def main():
@@ -69,13 +84,17 @@ def main():
     ]
 
     live_profile = LiveProfileLoader().load()
-
     datasource = HistoricalDataSource(container.market)
+
+    portfolio = PortfolioAwareness(
+        positions_file=args.positions_file,
+    )
 
     scanner = DailyScanner(
         market_service=datasource,
         feature_pipeline=container.pipeline,
         live_profile=live_profile,
+        portfolio_awareness=portfolio,
         min_score=args.min_score,
         pricing_dte=args.pricing_dte,
         start=args.start,
@@ -83,6 +102,8 @@ def main():
     )
 
     candidates = scanner.scan(symbols)
+
+    portfolio_summary = portfolio.exposure_summary()
 
     metadata = {
         "date": args.report_date or date.today().isoformat(),
@@ -94,11 +115,13 @@ def main():
         "pricing_dte": args.pricing_dte,
         "start": args.start,
         "end": args.end,
+        "positions_file": args.positions_file,
     }
 
     report_paths = DailyRecommendationReporter().generate(
         candidates=candidates,
         metadata=metadata,
+        portfolio_summary=portfolio_summary,
         report_date=args.report_date,
     )
 
@@ -109,6 +132,13 @@ def main():
     print(f"Live Profile    : {live_profile.get('profile', 'unknown')}")
     print(f"Min Score       : {args.min_score}")
     print(f"Pricing DTE     : {args.pricing_dte}")
+    print(f"Positions       : {portfolio_summary.get('positions', 0)}")
+    print("-------------------------------------------")
+
+    print("Portfolio Exposure")
+    print("-------------------------------------------")
+    print(f"By Symbol : {portfolio_summary.get('by_symbol', {})}")
+    print(f"By Sector : {portfolio_summary.get('by_sector', {})}")
     print("-------------------------------------------")
 
     if not candidates:

@@ -31,14 +31,13 @@ class DailyRecommendationReporter:
 
     def candidate_dict(self, candidate):
 
-        row = asdict(candidate)
+        return asdict(candidate)
 
-        return row
-
-    def export_json(self, candidates, path, metadata):
+    def export_json(self, candidates, path, metadata, portfolio_summary):
 
         payload = {
             "metadata": metadata,
+            "portfolio": portfolio_summary,
             "candidates": [
                 self.candidate_dict(c)
                 for c in candidates
@@ -54,9 +53,13 @@ class DailyRecommendationReporter:
 
         fieldnames = [
             "symbol",
+            "sector",
             "signal",
             "strategy",
+            "adjusted_score",
             "final_score",
+            "portfolio_penalty",
+            "portfolio_notes",
             "score",
             "call_score",
             "put_score",
@@ -84,6 +87,10 @@ class DailyRecommendationReporter:
 
             for c in candidates:
                 row = self.candidate_dict(c)
+                row["portfolio_notes"] = " | ".join(
+                    row.get("portfolio_notes", [])
+                )
+
                 writer.writerow({
                     key: row.get(key, "")
                     for key in fieldnames
@@ -122,9 +129,13 @@ class DailyRecommendationReporter:
         for c in candidates:
             rows.append({
                 "symbol": c.symbol,
+                "sector": c.sector,
                 "signal": c.signal,
                 "strategy": c.strategy,
+                "adjusted_score": f"{c.adjusted_score:.2f}",
                 "final_score": f"{c.final_score:.2f}",
+                "portfolio_penalty": f"{c.portfolio_penalty:.2f}",
+                "portfolio_notes": " | ".join(c.portfolio_notes),
                 "signal_score": f"{c.score:.2f}",
                 "call_score": f"{c.call_score:.2f}",
                 "put_score": f"{c.put_score:.2f}",
@@ -144,13 +155,36 @@ class DailyRecommendationReporter:
 
         return rows
 
+    def portfolio_rows(self, portfolio_summary):
+
+        rows = []
+
+        for symbol, count in portfolio_summary.get("by_symbol", {}).items():
+            rows.append({
+                "type": "Symbol",
+                "name": symbol,
+                "positions": count,
+            })
+
+        for sector, count in portfolio_summary.get("by_sector", {}).items():
+            rows.append({
+                "type": "Sector",
+                "name": sector,
+                "positions": count,
+            })
+
+        return rows
+
     def generate_html(
         self,
         candidates,
         path,
         metadata,
+        portfolio_summary,
     ):
         rows = self.formatted_rows(candidates)
+
+        portfolio_rows = self.portfolio_rows(portfolio_summary)
 
         top_calls = [
             r for r in rows
@@ -225,6 +259,19 @@ class DailyRecommendationReporter:
     <div class="metric"><strong>Live Profile</strong>{metadata.get("live_profile", "")}</div>
     <div class="metric"><strong>Min Score</strong>{metadata.get("min_score", "")}</div>
     <div class="metric"><strong>Pricing DTE</strong>{metadata.get("pricing_dte", "")}</div>
+    <div class="metric"><strong>Open Positions</strong>{portfolio_summary.get("positions", 0)}</div>
+</div>
+
+<div class="card">
+    <h2>Portfolio Exposure</h2>
+    {self.build_table(
+        portfolio_rows,
+        [
+            ("Type", "type"),
+            ("Name", "name"),
+            ("Positions", "positions"),
+        ],
+    )}
 </div>
 
 <div class="card">
@@ -233,22 +280,21 @@ class DailyRecommendationReporter:
         rows,
         [
             ("Symbol", "symbol"),
+            ("Sector", "sector"),
             ("Signal", "signal"),
             ("Strategy", "strategy"),
-            ("Final Score", "final_score"),
+            ("Adjusted Score", "adjusted_score"),
+            ("Base Score", "final_score"),
+            ("Penalty", "portfolio_penalty"),
+            ("Portfolio Notes", "portfolio_notes"),
             ("Signal Score", "signal_score"),
-            ("Call", "call_score"),
-            ("Put", "put_score"),
             ("Regime", "regime"),
             ("Underlying", "underlying"),
             ("Strike", "strike"),
             ("Option Price", "option_price"),
-            ("Expiry", "expiry"),
             ("Delta", "delta"),
-            ("Gamma", "gamma"),
             ("Theta", "theta"),
             ("Vega", "vega"),
-            ("Rho", "rho"),
             ("Vol", "volatility"),
             ("DTE", "dte"),
         ],
@@ -261,9 +307,11 @@ class DailyRecommendationReporter:
         top_calls,
         [
             ("Symbol", "symbol"),
-            ("Final Score", "final_score"),
-            ("Signal Score", "signal_score"),
-            ("Regime", "regime"),
+            ("Sector", "sector"),
+            ("Adjusted Score", "adjusted_score"),
+            ("Base Score", "final_score"),
+            ("Penalty", "portfolio_penalty"),
+            ("Notes", "portfolio_notes"),
             ("Underlying", "underlying"),
             ("Option Price", "option_price"),
             ("Delta", "delta"),
@@ -279,9 +327,11 @@ class DailyRecommendationReporter:
         top_puts,
         [
             ("Symbol", "symbol"),
-            ("Final Score", "final_score"),
-            ("Signal Score", "signal_score"),
-            ("Regime", "regime"),
+            ("Sector", "sector"),
+            ("Adjusted Score", "adjusted_score"),
+            ("Base Score", "final_score"),
+            ("Penalty", "portfolio_penalty"),
+            ("Notes", "portfolio_notes"),
             ("Underlying", "underlying"),
             ("Option Price", "option_price"),
             ("Delta", "delta"),
@@ -304,6 +354,7 @@ class DailyRecommendationReporter:
         self,
         candidates,
         metadata,
+        portfolio_summary,
         report_date=None,
     ):
         output_dir = self.run_dir(report_date)
@@ -321,12 +372,14 @@ class DailyRecommendationReporter:
             candidates,
             json_path,
             metadata,
+            portfolio_summary,
         )
 
         self.generate_html(
             candidates,
             html_path,
             metadata,
+            portfolio_summary,
         )
 
         return {

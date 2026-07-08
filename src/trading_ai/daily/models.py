@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 
 @dataclass
@@ -25,3 +25,8 @@ class DailyCandidate:
     dte: int
 
     final_score: float
+
+    sector: str = "Unknown"
+    portfolio_penalty: float = 0.0
+    adjusted_score: float = 0.0
+    portfolio_notes: list = field(default_factory=list)

@@ -1,5 +1,7 @@
 from trading_ai.daily.models import DailyCandidate
+from trading_ai.daily.sectors import sector_for
 from trading_ai.options.pricing_service import OptionPricingService
+from trading_ai.portfolio.awareness import PortfolioAwareness
 
 
 class DailyScanner:
@@ -10,6 +12,7 @@ class DailyScanner:
         feature_pipeline,
         live_profile,
         pricing_service=None,
+        portfolio_awareness=None,
         min_score=60.0,
         pricing_dte=30,
         start="2026-01-01",
@@ -30,29 +33,7 @@ class DailyScanner:
             default_dte=self.pricing_dte,
         )
 
-    def _load_market_data(self, symbol, period="6mo"):
-
-        if hasattr(self.market_service, "get_price_history"):
-            return self.market_service.get_price_history(
-                symbol,
-                period=period,
-            )
-
-        if hasattr(self.market_service, "get_history"):
-            return self.market_service.get_history(
-                symbol,
-                period=period,
-            )
-
-        if hasattr(self.market_service, "load"):
-            return self.market_service.load(
-                symbol,
-                period=period,
-            )
-
-        raise AttributeError(
-            "Market data source does not support get_price_history/get_history/load"
-        )
+        self.portfolio = portfolio_awareness or PortfolioAwareness()
 
     def _latest_feature_row(self, symbol):
 
@@ -68,7 +49,6 @@ class DailyScanner:
             return None
 
         return features.iloc[-1]
-
 
     def _choose_signal(self, row):
 
@@ -186,9 +166,21 @@ class DailyScanner:
         if not self._passes_greek_filters(greeks):
             return None
 
-        final_score = self._final_score(
+        base_score = self._final_score(
             score,
             greeks,
+        )
+
+        sector = sector_for(symbol)
+
+        portfolio_result = self.portfolio.evaluate(
+            symbol=symbol,
+            sector=sector,
+        )
+
+        adjusted_score = max(
+            0.0,
+            base_score - float(portfolio_result["penalty"]),
         )
 
         return DailyCandidate(
@@ -214,7 +206,11 @@ class DailyScanner:
             rho=float(greeks["rho"]),
             volatility=float(greeks["volatility"]),
             dte=int(greeks["dte"]),
-            final_score=float(final_score),
+            final_score=float(base_score),
+            sector=sector,
+            portfolio_penalty=float(portfolio_result["penalty"]),
+            adjusted_score=float(adjusted_score),
+            portfolio_notes=portfolio_result["notes"],
         )
 
     def scan(self, symbols):
@@ -233,6 +229,6 @@ class DailyScanner:
 
         return sorted(
             candidates,
-            key=lambda c: c.final_score,
+            key=lambda c: c.adjusted_score,
             reverse=True,
         )
