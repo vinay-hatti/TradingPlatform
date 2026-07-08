@@ -33,6 +33,21 @@ def load_summary(csv_file):
         / len(rows)
     )
 
+    avg_sharpe = (
+        sum(float(r.get("sharpe_ratio", 0.0)) for r in rows)
+        / len(rows)
+    )
+
+    avg_sortino = (
+        sum(float(r.get("sortino_ratio", 0.0)) for r in rows)
+        / len(rows)
+    )
+
+    avg_drawdown = (
+        sum(float(r.get("max_drawdown_pct", 0.0)) for r in rows)
+        / len(rows)
+    )
+
     total_trades = sum(int(r["trades"]) for r in rows)
 
     winning_windows = sum(
@@ -47,6 +62,9 @@ def load_summary(csv_file):
         "total_trades": total_trades,
         "total_pnl": total_pnl,
         "avg_return": avg_return,
+        "avg_sharpe": avg_sharpe,
+        "avg_sortino": avg_sortino,
+        "avg_drawdown": avg_drawdown,
         "avg_pf": avg_pf,
     }
 
@@ -135,6 +153,9 @@ font-weight:bold;
 <th>Total PnL</th>
 <th>Average Return</th>
 <th>Average PF</th>
+<th>Avg Sharpe</th>
+<th>Avg Sortino</th>
+<th>Avg Drawdown</th>
 </tr>
 """
 
@@ -152,6 +173,9 @@ for i, p in enumerate(profiles):
 <td>{money(p['total_pnl'])}</td>
 <td>{pct(p['avg_return'])}</td>
 <td>{p['avg_pf']:.2f}</td>
+<td>{p['avg_sharpe']:.2f}</td>
+<td>{p['avg_sortino']:.2f}</td>
+<td>{pct(p['avg_drawdown'])}</td>
 </tr>
 """
 
@@ -181,6 +205,8 @@ for i, p in enumerate(profiles):
         f"PnL={money(p['total_pnl']):>12} "
         f"Return={pct(p['avg_return']):>8} "
         f"PF={p['avg_pf']:.2f}"
+        f"Sharpe={p['avg_sharpe']:.2f} "
+        f"DD={pct(p['avg_drawdown']):>8}"
     )
 
 print()

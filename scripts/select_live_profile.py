@@ -26,6 +26,9 @@ def summarize(path):
     avg_pf = sum(safe_float(r["profit_factor"]) for r in rows) / len(rows)
     total_trades = sum(int(float(r["trades"])) for r in rows)
     winning_windows = sum(safe_float(r["net_pnl"]) > 0 for r in rows)
+    avg_sharpe = sum(safe_float(r.get("sharpe_ratio", 0.0)) for r in rows) / len(rows)
+    avg_sortino = sum(safe_float(r.get("sortino_ratio", 0.0)) for r in rows) / len(rows)
+    avg_drawdown = sum(safe_float(r.get("max_drawdown_pct", 0.0)) for r in rows) / len(rows)
 
     consistency = winning_windows / len(rows)
 
@@ -46,6 +49,9 @@ def summarize(path):
         "avg_pf": avg_pf,
         "consistency": consistency,
         "score": score,
+        "avg_sharpe": avg_sharpe,
+        "avg_sortino": avg_sortino,
+        "avg_drawdown": avg_drawdown,
     }
 
 
@@ -84,6 +90,8 @@ def main():
             f"AvgPF={row['avg_pf']:>5.2f} | "
             f"Consistency={row['consistency']:>6.2%} | "
             f"Trades={row['total_trades']}"
+            f"Sharpe={row['avg_sharpe']:>5.2f} | "
+            f"DD={row['avg_drawdown']:>7.2%} | "
         )
 
     print()
@@ -95,6 +103,8 @@ def main():
     print(f"Avg Return   : {best['avg_return']:.2%}")
     print(f"Avg PF       : {best['avg_pf']:.2f}")
     print(f"Consistency  : {best['consistency']:.2%}")
+    print(f"Avg Sharpe  : {best['avg_sharpe']:.2f}")
+    print(f"Avg Drawdown: {best['avg_drawdown']:.2%}")
     print(f"Saved JSON   : {output}")
     print("================================================")
     print()
