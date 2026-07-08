@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trading AI Daily Recommendation Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background: #f7f7f7;
+            color: #222;
+        }
+        h1, h2 {
+            color: #111;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+            overflow-x: auto;
+        }
+        .metric {
+            display: inline-block;
+            margin-right: 30px;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        .metric strong {
+            display: block;
+            font-size: 13px;
+            color: #666;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            white-space: nowrap;
+        }
+        th, td {
+            border-bottom: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            font-size: 14px;
+        }
+        th {
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Trading AI Daily Recommendation Report</h1>
+
+<div class="card">
+    <h2>Summary</h2>
+    <div class="metric"><strong>Date</strong>2026-07-07-risk3</div>
+    <div class="metric"><strong>Symbols Scanned</strong>10</div>
+    <div class="metric"><strong>Candidates</strong>2</div>
+    <div class="metric"><strong>Live Profile</strong>aggressive</div>
+    <div class="metric"><strong>Min Score</strong>60.0</div>
+    <div class="metric"><strong>Pricing DTE</strong>30</div>
+    <div class="metric"><strong>Open Positions</strong>0</div>
+</div>
+
+<div class="card">
+    <h2>Portfolio Exposure</h2>
+    <p>No recommendations.</p>
+</div>
+
+<div class="card">
+    <h2>AI Ranked Recommendations</h2>
+    <table><thead><tr><th>Symbol</th><th>Sector</th><th>Signal</th><th>AI Score</th><th>Technical</th><th>Greeks</th><th>Regime</th><th>Volatility</th><th>Risk</th><th>Reason</th><th>Portfolio Notes</th><th>Underlying</th><th>Option Price</th><th>Delta</th><th>Theta</th><th>Vega</th></tr></thead><tbody><tr><td>AAPL</td><td>Technology</td><td>CALL</td><td>79.86</td><td>65.00</td><td>75.45</td><td>100.00</td><td>100.00</td><td>100.00</td><td>Technical=65.0 | Greeks=75.4 | Regime=100.0 | Volatility=100.0 | Risk=100.0 | Signal aligned with market regime.</td><td></td><td>$306.31</td><td>$4.02</td><td>0.5513</td><td>-0.0760</td><td>0.3474</td></tr><tr><td>AMD</td><td>Technology</td><td>CALL</td><td>79.55</td><td>80.00</td><td>50.20</td><td>100.00</td><td>100.00</td><td>100.00</td><td>Technical=80.0 | Greeks=50.2 | Regime=100.0 | Volatility=100.0 | Risk=100.0 | Signal aligned with market regime.</td><td></td><td>$510.13</td><td>$6.70</td><td>0.5513</td><td>-0.1265</td><td>0.5786</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>All Recommendation Details</h2>
+    <table><thead><tr><th>Symbol</th><th>Sector</th><th>Signal</th><th>Strategy</th><th>AI Score</th><th>Adjusted Score</th><th>Base Score</th><th>Penalty</th><th>Signal Score</th><th>Regime</th><th>Underlying</th><th>Strike</th><th>Option Price</th><th>Delta</th><th>Gamma</th><th>Theta</th><th>Vega</th><th>Rho</th><th>Vol</th><th>DTE</th></tr></thead><tbody><tr><td>AAPL</td><td>Technology</td><td>CALL</td><td>LONG_CALL</td><td>79.86</td><td>70.18</td><td>70.18</td><td>0.00</td><td>65.00</td><td>BULL_TREND</td><td>$306.31</td><td>$306.31</td><td>$4.02</td><td>0.5513</td><td>0.04505</td><td>-0.0760</td><td>0.3474</td><td>0.1355</td><td>10.00%</td><td>30</td></tr><tr><td>AMD</td><td>Technology</td><td>CALL</td><td>LONG_CALL</td><td>79.55</td><td>69.09</td><td>69.09</td><td>0.00</td><td>80.00</td><td>BULL_TREND</td><td>$510.13</td><td>$510.13</td><td>$6.70</td><td>0.5513</td><td>0.02705</td><td>-0.1265</td><td>0.5786</td><td>0.2257</td><td>10.00%</td><td>30</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Top Calls</h2>
+    <table><thead><tr><th>Symbol</th><th>AI Score</th><th>Technical</th><th>Greeks</th><th>Regime</th><th>Risk</th><th>Underlying</th><th>Option Price</th><th>Delta</th><th>Theta</th><th>Vega</th></tr></thead><tbody><tr><td>AAPL</td><td>79.86</td><td>65.00</td><td>75.45</td><td>100.00</td><td>100.00</td><td>$306.31</td><td>$4.02</td><td>0.5513</td><td>-0.0760</td><td>0.3474</td></tr><tr><td>AMD</td><td>79.55</td><td>80.00</td><td>50.20</td><td>100.00</td><td>100.00</td><td>$510.13</td><td>$6.70</td><td>0.5513</td><td>-0.1265</td><td>0.5786</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Top Puts</h2>
+    <p>No recommendations.</p>
+</div>
+
+</body>
+</html>
