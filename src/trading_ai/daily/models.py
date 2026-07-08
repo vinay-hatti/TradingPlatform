@@ -30,3 +30,11 @@ class DailyCandidate:
     portfolio_penalty: float = 0.0
     adjusted_score: float = 0.0
     portfolio_notes: list = field(default_factory=list)
+
+    ai_score: float = 0.0
+    technical_score: float = 0.0
+    greeks_score: float = 0.0
+    regime_score: float = 0.0
+    volatility_score: float = 0.0
+    risk_score: float = 0.0
+    ranking_reason: str = ""

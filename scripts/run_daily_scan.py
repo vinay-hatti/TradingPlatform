@@ -46,6 +46,13 @@ def print_candidate(idx, c):
     print(f"{idx}. {c.symbol} {c.signal}")
     print(f"   Strategy       : {c.strategy}")
     print(f"   Sector         : {c.sector}")
+    print(f"   AI Score       : {c.ai_score:.2f}")
+    print(f"   Technical      : {c.technical_score:.2f}")
+    print(f"   Greeks         : {c.greeks_score:.2f}")
+    print(f"   Regime         : {c.regime_score:.2f}")
+    print(f"   Volatility     : {c.volatility_score:.2f}")
+    print(f"   Risk           : {c.risk_score:.2f}")
+    print(f"   Ranking Reason : {c.ranking_reason}")
     print(f"   Adjusted Score : {c.adjusted_score:.2f}")
     print(f"   Base Score     : {c.final_score:.2f}")
     print(f"   Penalty        : {c.portfolio_penalty:.2f}")
@@ -57,13 +64,13 @@ def print_candidate(idx, c):
 
     print(f"   Signal Score   : {c.score:.2f}")
     print(f"   Call / Put     : {c.call_score:.2f} / {c.put_score:.2f}")
-    print(f"   Regime         : {c.market_regime}")
+    print(f"   Market Regime  : {c.market_regime}")
     print(f"   Underlying     : ${c.close:.2f}")
     print(f"   Strike         : ${c.strike:.2f}")
     print(f"   Option Price   : ${c.option_price:.2f}")
     print(f"   Expiry Proxy   : {c.expiry}")
     print(
-        f"   Greeks         : "
+        f"   Greeks Values  : "
         f"Δ={c.delta:.4f}, "
         f"Γ={c.gamma:.5f}, "
         f"Θ={c.theta:.4f}, "

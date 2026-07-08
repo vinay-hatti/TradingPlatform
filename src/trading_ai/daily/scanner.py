@@ -2,6 +2,7 @@ from trading_ai.daily.models import DailyCandidate
 from trading_ai.daily.sectors import sector_for
 from trading_ai.options.pricing_service import OptionPricingService
 from trading_ai.portfolio.awareness import PortfolioAwareness
+from trading_ai.ranking.ai_score import AITradeRanker
 
 
 class DailyScanner:
@@ -13,6 +14,7 @@ class DailyScanner:
         live_profile,
         pricing_service=None,
         portfolio_awareness=None,
+        ranker=None,
         min_score=60.0,
         pricing_dte=30,
         start="2026-01-01",
@@ -34,6 +36,7 @@ class DailyScanner:
         )
 
         self.portfolio = portfolio_awareness or PortfolioAwareness()
+        self.ranker = ranker or AITradeRanker()
 
     def _latest_feature_row(self, symbol):
 
@@ -92,7 +95,7 @@ class DailyScanner:
 
         return True
 
-    def _final_score(self, signal_score, greeks):
+    def _legacy_final_score(self, signal_score, greeks):
 
         delta = abs(float(greeks["delta"]))
         vega = float(greeks["vega"])
@@ -166,7 +169,7 @@ class DailyScanner:
         if not self._passes_greek_filters(greeks):
             return None
 
-        base_score = self._final_score(
+        legacy_score = self._legacy_final_score(
             score,
             greeks,
         )
@@ -180,7 +183,18 @@ class DailyScanner:
 
         adjusted_score = max(
             0.0,
-            base_score - float(portfolio_result["penalty"]),
+            legacy_score - float(portfolio_result["penalty"]),
+        )
+
+        ranking = self.ranker.score(
+            signal_score=score,
+            signal=signal,
+            market_regime=str(row.get("market_regime", "")),
+            delta=greeks["delta"],
+            theta=greeks["theta"],
+            vega=greeks["vega"],
+            volatility=greeks["volatility"],
+            portfolio_penalty=portfolio_result["penalty"],
         )
 
         return DailyCandidate(
@@ -206,11 +220,18 @@ class DailyScanner:
             rho=float(greeks["rho"]),
             volatility=float(greeks["volatility"]),
             dte=int(greeks["dte"]),
-            final_score=float(base_score),
+            final_score=float(legacy_score),
             sector=sector,
             portfolio_penalty=float(portfolio_result["penalty"]),
             adjusted_score=float(adjusted_score),
             portfolio_notes=portfolio_result["notes"],
+            ai_score=float(ranking["ai_score"]),
+            technical_score=float(ranking["technical_score"]),
+            greeks_score=float(ranking["greeks_score"]),
+            regime_score=float(ranking["regime_score"]),
+            volatility_score=float(ranking["volatility_score"]),
+            risk_score=float(ranking["risk_score"]),
+            ranking_reason=str(ranking["ranking_reason"]),
         )
 
     def scan(self, symbols):
@@ -229,6 +250,6 @@ class DailyScanner:
 
         return sorted(
             candidates,
-            key=lambda c: c.adjusted_score,
+            key=lambda c: c.ai_score,
             reverse=True,
         )

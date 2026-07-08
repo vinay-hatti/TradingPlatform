@@ -23,16 +23,43 @@
     "positions_file": "data/portfolio/current_positions.csv"
   },
   "portfolio": {
-    "positions": 2,
-    "by_symbol": {
-      "AAPL": 1,
-      "MSFT": 1
-    },
-    "by_sector": {
-      "Technology": 2
-    }
+    "positions": 0,
+    "by_symbol": {},
+    "by_sector": {}
   },
   "candidates": [
+    {
+      "symbol": "AAPL",
+      "signal": "CALL",
+      "strategy": "LONG_CALL",
+      "close": 306.31,
+      "score": 65.0,
+      "call_score": 65.0,
+      "put_score": 0.0,
+      "market_regime": "BULL_TREND",
+      "strike": 306.31,
+      "expiry": "30DTE_PROXY",
+      "option_price": 4.0231630708713055,
+      "delta": 0.5513255237452326,
+      "gamma": 0.045052669824654834,
+      "theta": -0.07597164902249767,
+      "vega": 0.34743316551633563,
+      "rho": 0.13549591077331302,
+      "volatility": 0.1,
+      "dte": 30,
+      "final_score": 70.17681918245086,
+      "sector": "Technology",
+      "portfolio_penalty": 0.0,
+      "adjusted_score": 70.17681918245086,
+      "portfolio_notes": [],
+      "ai_score": 79.86244253371855,
+      "technical_score": 65.0,
+      "greeks_score": 75.44977013487419,
+      "regime_score": 100.0,
+      "volatility_score": 100.0,
+      "risk_score": 100.0,
+      "ranking_reason": "Technical=65.0 | Greeks=75.4 | Regime=100.0 | Volatility=100.0 | Risk=100.0 | Signal aligned with market regime."
+    },
     {
       "symbol": "AMD",
       "signal": "CALL",
@@ -56,34 +83,14 @@
       "sector": "Technology",
       "portfolio_penalty": 0.0,
       "adjusted_score": 69.08847811406244,
-      "portfolio_notes": []
-    },
-    {
-      "symbol": "AAPL",
-      "signal": "CALL",
-      "strategy": "LONG_CALL",
-      "close": 306.31,
-      "score": 65.0,
-      "call_score": 65.0,
-      "put_score": 0.0,
-      "market_regime": "BULL_TREND",
-      "strike": 306.31,
-      "expiry": "30DTE_PROXY",
-      "option_price": 4.0231630708713055,
-      "delta": 0.5513255237452326,
-      "gamma": 0.045052669824654834,
-      "theta": -0.07597164902249767,
-      "vega": 0.34743316551633563,
-      "rho": 0.13549591077331302,
-      "volatility": 0.1,
-      "dte": 30,
-      "final_score": 70.17681918245086,
-      "sector": "Technology",
-      "portfolio_penalty": 25.0,
-      "adjusted_score": 45.176819182450856,
-      "portfolio_notes": [
-        "Existing position in AAPL; duplicate exposure penalty applied."
-      ]
+      "portfolio_notes": [],
+      "ai_score": 79.55115655958517,
+      "technical_score": 80.0,
+      "greeks_score": 50.20462623834067,
+      "regime_score": 100.0,
+      "volatility_score": 100.0,
+      "risk_score": 100.0,
+      "ranking_reason": "Technical=80.0 | Greeks=50.2 | Regime=100.0 | Volatility=100.0 | Risk=100.0 | Signal aligned with market regime."
     }
   ]
 }
