@@ -166,6 +166,12 @@ def main():
             "run_dir": result["run_dir"],
             "profile": args.profile,
             "selected_profile": selected_profile,
+            "max_drawdown_pct": metrics.get("max_drawdown_pct", 0.0),
+            "max_drawdown_dollars": metrics.get("max_drawdown_dollars", 0.0),
+            "sharpe_ratio": metrics.get("sharpe_ratio", 0.0),
+            "sortino_ratio": metrics.get("sortino_ratio", 0.0),
+            "calmar_ratio": metrics.get("calmar_ratio", 0.0),
+            "payoff_ratio": metrics.get("payoff_ratio", 0.0),
         })
 
         print(
@@ -173,14 +179,14 @@ def main():
             f"Trades={metrics['trades']} | "
             f"Return={metrics['return_pct']:.2%} | "
             f"PF={metrics['profit_factor']:.2f} | "
+            f"Sharpe={metrics.get('sharpe_ratio', 0.0):.2f} | "
+            f"DD={metrics.get('max_drawdown_pct', 0.0):.2%} | "
             f"PnL=${metrics['net_pnl']:,.2f}"
         )
-
 
     output_dir = Path("reports/walkforward")
     output_dir.mkdir(parents=True, exist_ok=True)
 
-#    output_file = output_dir / "summary.csv"
     output_file = output_dir / f"{args.output_name}.csv"
 
     fieldnames = [
@@ -206,6 +212,12 @@ def main():
         "min_vega",
         "max_vega",
         "max_theta",
+        "max_drawdown_pct",
+        "max_drawdown_dollars",
+        "sharpe_ratio",
+        "sortino_ratio",
+        "calmar_ratio",
+        "payoff_ratio",
     ]
 
     with open(output_file, "w", newline="") as f:

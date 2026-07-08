@@ -84,6 +84,12 @@ class WalkForwardReport:
                 "return_pct": self.pct(r["return_pct"]),
                 "profit_factor": f"{float(r['profit_factor']):.2f}",
                 "net_pnl": self.money(r["net_pnl"]),
+                "max_drawdown_pct": self.pct(r.get("max_drawdown_pct", 0.0)),
+                "max_drawdown_dollars": self.money(r.get("max_drawdown_dollars", 0.0)),
+                "sharpe_ratio": f"{float(r.get('sharpe_ratio', 0.0)):.2f}",
+                "sortino_ratio": f"{float(r.get('sortino_ratio', 0.0)):.2f}",
+                "calmar_ratio": f"{float(r.get('calmar_ratio', 0.0)):.2f}",
+                "payoff_ratio": f"{float(r.get('payoff_ratio', 0.0)):.2f}",
                 "run_dir": r["run_dir"],
             })
 
@@ -101,6 +107,9 @@ class WalkForwardReport:
                 "return_pct": self.pct(r["return_pct"]),
                 "profit_factor": f"{float(r['profit_factor']):.2f}",
                 "net_pnl": self.money(r["net_pnl"]),
+                "max_drawdown_pct": self.pct(r.get("max_drawdown_pct", 0.0)),
+                "sharpe_ratio": f"{float(r.get('sharpe_ratio', 0.0)):.2f}",
+                "sortino_ratio": f"{float(r.get('sortino_ratio', 0.0)):.2f}",
                 "run_dir": r["run_dir"],
             })
 
@@ -179,6 +188,9 @@ class WalkForwardReport:
             ("Return", "return_pct"),
             ("Profit Factor", "profit_factor"),
             ("Net PnL", "net_pnl"),
+            ("Sharpe", "sharpe_ratio"),
+            ("Sortino", "sortino_ratio"),
+            ("Max DD", "max_drawdown_pct"),
             ("Run Dir", "run_dir"),
         ],
     )}
@@ -208,6 +220,12 @@ class WalkForwardReport:
             ("Return", "return_pct"),
             ("Profit Factor", "profit_factor"),
             ("Net PnL", "net_pnl"),
+            ("Sharpe", "sharpe_ratio"),
+            ("Sortino", "sortino_ratio"),
+            ("Calmar", "calmar_ratio"),
+            ("Max DD", "max_drawdown_pct"),
+            ("Max DD $", "max_drawdown_dollars"),
+            ("Payoff", "payoff_ratio"),
             ("Run Dir", "run_dir"),
         ],
     )}
