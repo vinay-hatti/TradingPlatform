@@ -51,6 +51,7 @@ def main():
     sub.add_parser("profile-comparison")
     sub.add_parser("select-live-profile")
     sub.add_parser("show-live-profile")
+    sub.add_parser("daily-scan")
 
     paper = sub.add_parser("paper")
     paper_sub = paper.add_subparsers(dest="paper_command")
@@ -151,6 +152,9 @@ def main():
 
     elif args.command == "show-live-profile":
         run_script("scripts/show_live_profile.py", extra)
+
+    elif args.command == "daily-scan":
+        run_script("scripts/run_daily_scan.py", extra)
 
     elif args.command == "paper":
 
