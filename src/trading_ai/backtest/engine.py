@@ -3,6 +3,7 @@ from trading_ai.backtest.equity import EquityCurveBuilder
 from trading_ai.backtest.report import BacktestReport
 from trading_ai.backtest.exporter import BacktestExporter
 from trading_ai.risk.metrics import RiskMetricsEngine
+from trading_ai.risk.drawdown_report import DrawdownReporter
 from pathlib import Path
 
 
@@ -52,6 +53,16 @@ class BacktestEngine:
         self.exporter.export_equity(
             equity_curve,
             report_dir / "equity.csv",
+        )
+
+        drawdown_path = report_path.replace(
+            "report.html",
+            "drawdown.csv",
+        )
+
+        DrawdownReporter().export_csv(
+            equity_curve,
+            drawdown_path,
         )
 
         self.exporter.export_metrics(

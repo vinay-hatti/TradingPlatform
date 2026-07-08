@@ -43,6 +43,33 @@ class RiskMetricsEngine:
             "max_drawdown_dollars": max_dd_dollars,
         }
 
+    def drawdown_curve(self, equity_curve):
+
+        rows = []
+        peak = None
+
+        for point in equity_curve:
+            equity = float(point["equity"])
+
+            if peak is None or equity > peak:
+                peak = equity
+
+            drawdown_dollars = equity - peak
+            drawdown_pct = self._safe_div(
+                drawdown_dollars,
+                peak,
+            )
+
+            rows.append({
+                "date": point.get("date", ""),
+                "equity": equity,
+                "peak_equity": peak,
+                "drawdown_dollars": drawdown_dollars,
+                "drawdown_pct": drawdown_pct,
+            })
+
+        return rows
+
     def sharpe_ratio(self, returns, periods_per_year=252):
 
         if not returns:
