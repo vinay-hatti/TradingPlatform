@@ -306,6 +306,26 @@ class BacktestReport:
             for r in rows
         ]
 
+    def exit_reason_rows(self, trades):
+
+        from trading_ai.risk.exit_reason import ExitReasonAnalyzer
+
+        rows = ExitReasonAnalyzer().analyze(trades)
+
+        return [
+            {
+                "exit_reason": r["exit_reason"],
+                "trades": r["trades"],
+                "wins": r["wins"],
+                "losses": r["losses"],
+                "win_rate": self.pct(r["win_rate"]),
+                "net_pnl": self.money(r["net_pnl"]),
+                "avg_pnl": self.money(r["avg_pnl"]),
+                "profit_factor": f"{r['profit_factor']:.2f}",
+            }
+            for r in rows
+        ]
+
     def trade_rows(self, trades):
         rows = []
 
@@ -382,6 +402,7 @@ class BacktestReport:
         worst_trade_rows = self.trade_rows(self.worst_trades(trades))
         monthly_rows = self.monthly_rows(trades)
         symbol_rows = self.symbol_rows(trades)
+        exit_reason_rows = self.exit_reason_rows(trades)
 #        drawdown_rows = self.drawdown_rows(equity_curve)
         drawdown_rows = []
 
@@ -729,6 +750,23 @@ class BacktestReport:
         symbol_rows,
         [
             ("Symbol", "symbol"),
+            ("Trades", "trades"),
+            ("Wins", "wins"),
+            ("Losses", "losses"),
+            ("Win Rate", "win_rate"),
+            ("Net PnL", "net_pnl"),
+            ("Avg PnL", "avg_pnl"),
+            ("Profit Factor", "profit_factor"),
+        ],
+    )}
+</div>
+
+<div class="card">
+    <h2>Exit Reason Performance</h2>
+    {self.build_table(
+        exit_reason_rows,
+        [
+            ("Exit Reason", "exit_reason"),
             ("Trades", "trades"),
             ("Wins", "wins"),
             ("Losses", "losses"),
