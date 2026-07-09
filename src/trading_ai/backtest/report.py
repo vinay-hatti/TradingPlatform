@@ -87,6 +87,25 @@ class BacktestReport:
 
         return rows
 
+    def monthly_rows(self, trades):
+
+        from trading_ai.risk.monthly import MonthlyReturnAnalyzer
+
+        rows = MonthlyReturnAnalyzer().analyze(trades)
+
+        return [
+            {
+                "month": r["month"],
+                "trades": r["trades"],
+                "wins": r["wins"],
+                "losses": r["losses"],
+                "win_rate": self.pct(r["win_rate"]),
+                "net_pnl": self.money(r["net_pnl"]),
+                "avg_pnl": self.money(r["avg_pnl"]),
+            }
+            for r in rows
+        ]
+
     def _metrics_row(self, label_key, label_value, trades):
         metrics = self.metrics.calculate(
             trades,
@@ -341,6 +360,7 @@ class BacktestReport:
         trade_rows = self.trade_rows(trades)
         best_trade_rows = self.trade_rows(self.best_trades(trades))
         worst_trade_rows = self.trade_rows(self.worst_trades(trades))
+        monthly_rows = self.monthly_rows(trades)
 #        drawdown_rows = self.drawdown_rows(equity_curve)
         drawdown_rows = []
 
@@ -662,6 +682,22 @@ class BacktestReport:
             ("Peak Equity", "peak_equity"),
             ("Drawdown $", "drawdown_dollars"),
             ("Drawdown %", "drawdown_pct"),
+        ],
+    )}
+</div>
+
+<div class="card">
+    <h2>Monthly Returns</h2>
+    {self.build_table(
+        monthly_rows,
+        [
+            ("Month", "month"),
+            ("Trades", "trades"),
+            ("Wins", "wins"),
+            ("Losses", "losses"),
+            ("Win Rate", "win_rate"),
+            ("Net PnL", "net_pnl"),
+            ("Avg PnL", "avg_pnl"),
         ],
     )}
 </div>
