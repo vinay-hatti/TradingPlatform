@@ -1,120 +1,142 @@
 
 <html>
-
 <head>
-
 <title>Walk-Forward Profile Comparison</title>
-
 <style>
-
 body{
 font-family:Arial;
 margin:30px;
 background:#f5f5f5;
 }
-
 .card{
 background:white;
 padding:20px;
 margin-bottom:20px;
 border-radius:8px;
 box-shadow:0 0 4px rgba(0,0,0,.15);
+overflow-x:auto;
 }
-
 table{
 border-collapse:collapse;
 width:100%;
+white-space:nowrap;
 }
-
 th,td{
 padding:8px;
 border-bottom:1px solid #ddd;
 text-align:left;
+font-size:14px;
 }
-
 th{
 background:#eee;
 }
-
 .best{
 background:#dff0d8;
 font-weight:bold;
 }
-
+.negative{
+color:#b71c1c;
+font-weight:bold;
+}
+.positive{
+color:#1b5e20;
+font-weight:bold;
+}
 </style>
-
 </head>
-
 <body>
-
 <h1>Walk-Forward Profile Comparison</h1>
-
 <div class="card">
-
 <table>
-
 <tr>
 <th>Rank</th>
 <th>Profile</th>
+<th>Score</th>
 <th>Windows</th>
 <th>Winning Windows</th>
+<th>Consistency</th>
 <th>Total Trades</th>
 <th>Total PnL</th>
-<th>Average Return</th>
-<th>Average PF</th>
+<th>Avg Return</th>
+<th>Avg PF</th>
 <th>Avg Sharpe</th>
 <th>Avg Sortino</th>
 <th>Avg Drawdown</th>
+<th>Risk Score</th>
+<th>Train Sharpe</th>
+<th>Train Sortino</th>
+<th>Train DD</th>
+<th>Train Return</th>
+<th>Train PF</th>
 </tr>
 
 <tr class="best">
 <td>1</td>
 <td>aggressive</td>
+<td>46.99</td>
 <td>3</td>
 <td>1</td>
+<td>33.33%</td>
 <td>24</td>
 <td>$31,308.37</td>
 <td>10.44%</td>
 <td>1.76</td>
 <td>0.00</td>
 <td>0.00</td>
+<td class="positive">0.00%</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td class="positive">0.00%</td>
 <td>0.00%</td>
+<td>0.00</td>
 </tr>
 
 <tr class="">
 <td>2</td>
-<td>balanced</td>
-<td>3</td>
-<td>1</td>
-<td>7</td>
-<td>$15,866.15</td>
-<td>5.29%</td>
-<td>1.86</td>
-<td>0.00</td>
-<td>0.00</td>
-<td>0.00%</td>
-</tr>
-
-<tr class="">
-<td>3</td>
 <td>balanced_aggressive_fallback</td>
+<td>42.50</td>
 <td>3</td>
 <td>1</td>
+<td>33.33%</td>
 <td>15</td>
 <td>$15,193.20</td>
 <td>5.06%</td>
 <td>2.17</td>
 <td>0.00</td>
 <td>0.00</td>
+<td class="positive">0.00%</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td class="positive">0.00%</td>
 <td>0.00%</td>
+<td>0.00</td>
 </tr>
 
+<tr class="">
+<td>3</td>
+<td>balanced</td>
+<td>39.09</td>
+<td>3</td>
+<td>1</td>
+<td>33.33%</td>
+<td>7</td>
+<td>$15,866.15</td>
+<td>5.29%</td>
+<td>1.86</td>
+<td>0.00</td>
+<td>0.00</td>
+<td class="positive">0.00%</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td class="positive">0.00%</td>
+<td>0.00%</td>
+<td>0.00</td>
+</tr>
 
 </table>
-
 </div>
-
 </body>
-
 </html>
-

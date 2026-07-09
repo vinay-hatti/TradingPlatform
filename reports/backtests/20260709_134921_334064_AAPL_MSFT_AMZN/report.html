@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trading AI Backtest Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background: #f7f7f7;
+            color: #222;
+        }
+        h1, h2 {
+            color: #111;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+            overflow-x: auto;
+        }
+        .metric {
+            display: inline-block;
+            margin-right: 30px;
+            margin-bottom: 15px;
+            font-size: 18px;
+            vertical-align: top;
+        }
+        .metric strong {
+            display: block;
+            font-size: 13px;
+            color: #666;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            white-space: nowrap;
+        }
+        th, td {
+            border-bottom: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            font-size: 14px;
+        }
+        th {
+            background: #eee;
+        }
+        .positive {
+            color: #1b5e20;
+            font-weight: bold;
+        }
+        .negative {
+            color: #b71c1c;
+            font-weight: bold;
+        }
+        .warning {
+            color: #e65100;
+            font-weight: bold;
+        }
+        .section-note {
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Trading AI Backtest Report</h1>
+
+<div class="card">
+    <h2>Summary</h2>
+    <div class="metric"><strong>Trades</strong>7</div>
+    <div class="metric"><strong>Accepted</strong>7</div>
+    <div class="metric"><strong>Rejected</strong>0</div>
+    <div class="metric"><strong>Wins</strong>4</div>
+    <div class="metric"><strong>Losses</strong>3</div>
+    <div class="metric"><strong>Win Rate</strong>57.14%</div>
+    <div class="metric"><strong>Net PnL</strong>$15,866.15</div>
+    <div class="metric"><strong>Final Equity</strong>$115,866.15</div>
+    <div class="metric"><strong>Return</strong>15.87%</div>
+    <div class="metric"><strong>Profit Factor</strong>5.58</div>
+    <div class="metric"><strong>Expectancy</strong>$2,266.59</div>
+    <div class="metric"><strong>Max Drawdown</strong>-2.74%</div>
+    <div class="metric"><strong>Max DD $</strong>$-3,143.44</div>
+    <div class="metric"><strong>Sharpe</strong>7.29</div>
+    <div class="metric"><strong>Sortino</strong>21.88</div>
+    <div class="metric"><strong>Calmar</strong>5.78</div>
+    <div class="metric"><strong>Payoff Ratio</strong>4.18</div>
+</div>
+
+<div class="card">
+    <h2>Executive Risk Diagnostics</h2>
+    <div class="metric"><strong>VaR 95%</strong>$-2,014.67</div>
+    <div class="metric"><strong>CVaR 95%</strong>$-2,014.67</div>
+    <div class="metric"><strong>Kelly</strong>46.90%</div>
+    <div class="metric"><strong>Half Kelly</strong>23.45%</div>
+    <div class="metric"><strong>Ulcer Index</strong>1.24</div>
+    <div class="metric"><strong>Omega</strong>5.58</div>
+    <div class="metric"><strong>Tail Ratio</strong>0.00</div>
+    <div class="metric"><strong>Recovery Factor</strong>5.05</div>
+    <div class="metric"><strong>Time in Market</strong>100.00%</div>
+    <div class="metric"><strong>Longest DD Duration</strong>3 trades</div>
+</div>
+
+<div class="card">
+    <h2>Equity Curve Chart</h2>
+    
+<div>
+<h3>Equity Curve</h3>
+<svg width="100%" viewBox="0 0 1000 300" preserveAspectRatio="none">
+    <rect x="0" y="0" width="1000" height="260" fill="#fafafa" stroke="#ddd"/>
+    <polyline points="0.00,252.15 166.67,260.00 333.33,32.23 500.00,81.39 666.67,108.94 833.33,38.92 1000.00,0.00" fill="none" stroke="#111" stroke-width="2"/>
+    <text x="5" y="15" font-size="12">115,866.15</text>
+    <text x="5" y="255" font-size="12">105,212.86</text>
+</svg>
+</div>
+
+</div>
+
+<div class="card">
+    <h2>Underwater Drawdown Chart</h2>
+    
+<div>
+<h3>Underwater Drawdown Curve</h3>
+<svg width="100%" viewBox="0 0 1000 300" preserveAspectRatio="none">
+    <rect x="0" y="0" width="1000" height="260" fill="#fafafa" stroke="#ddd"/>
+    <polyline points="0.00,0.00 166.67,28.87 333.33,0.00 500.00,166.64 666.67,260.00 833.33,22.68 1000.00,0.00" fill="none" stroke="#111" stroke-width="2"/>
+    <text x="5" y="15" font-size="12">0.00</text>
+    <text x="5" y="255" font-size="12">-0.03</text>
+</svg>
+</div>
+
+</div>
+
+<div class="card">
+    <h2>Monthly Return Chart</h2>
+    
+<div>
+<h3>Monthly Return Bars</h3>
+<svg width="100%" viewBox="0 0 1000 340" preserveAspectRatio="none">
+    <rect x="0" y="0" width="1000" height="260" fill="#fafafa" stroke="#ddd"/>
+    <line x1="0" y1="130.0" x2="1000" y2="130.0" stroke="#333"/>
+    
+<rect x="4.00" y="130.00" width="75.33" height="0.00" fill="#c8e6c9" stroke="#999"/>
+<text x="4.00" y="275" font-size="10" transform="rotate(45 4.00,275)">2026-Jan</text>
+
+<rect x="87.33" y="130.00" width="75.33" height="0.00" fill="#c8e6c9" stroke="#999"/>
+<text x="87.33" y="275" font-size="10" transform="rotate(45 87.33,275)">2026-Feb</text>
+
+<rect x="170.67" y="130.00" width="75.33" height="0.00" fill="#c8e6c9" stroke="#999"/>
+<text x="170.67" y="275" font-size="10" transform="rotate(45 170.67,275)">2026-Mar</text>
+
+<rect x="254.00" y="20.00" width="75.33" height="110.00" fill="#c8e6c9" stroke="#999"/>
+<text x="254.00" y="275" font-size="10" transform="rotate(45 254.00,275)">2026-Apr</text>
+
+<rect x="337.33" y="130.00" width="75.33" height="0.00" fill="#c8e6c9" stroke="#999"/>
+<text x="337.33" y="275" font-size="10" transform="rotate(45 337.33,275)">2026-May</text>
+
+<rect x="420.67" y="130.00" width="75.33" height="0.00" fill="#c8e6c9" stroke="#999"/>
+<text x="420.67" y="275" font-size="10" transform="rotate(45 420.67,275)">2026-Jun</text>
+
+<rect x="504.00" y="130.00" width="75.33" height="0.00" fill="#c8e6c9" stroke="#999"/>
+<text x="504.00" y="275" font-size="10" transform="rotate(45 504.00,275)">2026-Jul</text>
+
+<rect x="587.33" y="130.00" width="75.33" height="0.00" fill="#c8e6c9" stroke="#999"/>
+<text x="587.33" y="275" font-size="10" transform="rotate(45 587.33,275)">2026-Aug</text>
+
+<rect x="670.67" y="130.00" width="75.33" height="0.00" fill="#c8e6c9" stroke="#999"/>
+<text x="670.67" y="275" font-size="10" transform="rotate(45 670.67,275)">2026-Sep</text>
+
+<rect x="754.00" y="130.00" width="75.33" height="0.00" fill="#c8e6c9" stroke="#999"/>
+<text x="754.00" y="275" font-size="10" transform="rotate(45 754.00,275)">2026-Oct</text>
+
+<rect x="837.33" y="130.00" width="75.33" height="0.00" fill="#c8e6c9" stroke="#999"/>
+<text x="837.33" y="275" font-size="10" transform="rotate(45 837.33,275)">2026-Nov</text>
+
+<rect x="920.67" y="130.00" width="75.33" height="0.00" fill="#c8e6c9" stroke="#999"/>
+<text x="920.67" y="275" font-size="10" transform="rotate(45 920.67,275)">2026-Dec</text>
+
+</svg>
+</div>
+
+</div>
+
+<div class="card">
+    <h2>Advanced Risk Metrics</h2>
+    <div class="metric"><strong>Average Win</strong>$4,832.80</div>
+    <div class="metric"><strong>Average Loss</strong>$1,155.01</div>
+    <div class="metric"><strong>Largest Win</strong>$9,332.89</div>
+    <div class="metric"><strong>Largest Loss</strong>$-2,014.67</div>
+    <div class="metric"><strong>Gross Profit</strong>$19,331.19</div>
+    <div class="metric"><strong>Gross Loss</strong>$3,465.04</div>
+    <div class="metric"><strong>Longest Win Streak</strong>2</div>
+    <div class="metric"><strong>Longest Loss Streak</strong>2</div>
+</div>
+
+<div class="card">
+    <h2>Monthly Return Heatmap</h2>
+    <table><thead><tr><th>Year</th><th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th><th>Jun</th><th>Jul</th><th>Aug</th><th>Sep</th><th>Oct</th><th>Nov</th><th>Dec</th></tr></thead><tbody><tr><td>2026</td><td><span class="">0.00%</span></td><td><span class="">0.00%</span></td><td><span class="">0.00%</span></td><td><span class="positive">15.87%</span></td><td><span class="">0.00%</span></td><td><span class="">0.00%</span></td><td><span class="">0.00%</span></td><td><span class="">0.00%</span></td><td><span class="">0.00%</span></td><td><span class="">0.00%</span></td><td><span class="">0.00%</span></td><td><span class="">0.00%</span></td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Performance by Symbol</h2>
+    <table><thead><tr><th>Symbol</th><th>Trades</th><th>Wins</th><th>Losses</th><th>Win Rate</th><th>Net PnL</th><th>Return</th><th>Profit Factor</th><th>Expectancy</th></tr></thead><tbody><tr><td>AMZN</td><td>7</td><td>4</td><td>3</td><td>57.14%</td><td>$15,866.15</td><td>15.87%</td><td>5.58</td><td>$2,266.59</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Performance by Exit Reason</h2>
+    <table><thead><tr><th>Exit Reason</th><th>Trades</th><th>Wins</th><th>Losses</th><th>Win Rate</th><th>Net PnL</th><th>Return</th><th>Profit Factor</th><th>Expectancy</th></tr></thead><tbody><tr><td>STOP_LOSS</td><td>3</td><td>0</td><td>3</td><td>0.00%</td><td>$-3,465.04</td><td>-3.47%</td><td>0.00</td><td>$-1,155.01</td></tr><tr><td>TAKE_PROFIT</td><td>4</td><td>4</td><td>0</td><td>100.00%</td><td>$19,331.19</td><td>19.33%</td><td>∞</td><td>$4,832.80</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Performance by Signal</h2>
+    <table><thead><tr><th>Signal</th><th>Trades</th><th>Wins</th><th>Losses</th><th>Win Rate</th><th>Net PnL</th><th>Return</th><th>Profit Factor</th><th>Expectancy</th></tr></thead><tbody><tr><td>CALL</td><td>7</td><td>4</td><td>3</td><td>57.14%</td><td>$15,866.15</td><td>15.87%</td><td>5.58</td><td>$2,266.59</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Strategy / Signal Performance</h2>
+    <table><thead><tr><th>Strategy / Signal</th><th>Trades</th><th>Wins</th><th>Losses</th><th>Win Rate</th><th>Net PnL</th><th>Return</th><th>Profit Factor</th><th>Expectancy</th></tr></thead><tbody><tr><td>LONG_CALL/CALL</td><td>7</td><td>4</td><td>3</td><td>57.14%</td><td>$15,866.15</td><td>15.87%</td><td>5.58</td><td>$2,266.59</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Regime Performance</h2>
+    <table><thead><tr><th>Regime</th><th>Trades</th><th>Wins</th><th>Losses</th><th>Win Rate</th><th>Net PnL</th><th>Avg PnL</th><th>Profit Factor</th><th>Expectancy</th></tr></thead><tbody><tr><td>UNKNOWN</td><td>7</td><td>4</td><td>3</td><td>57.14%</td><td>$15,866.15</td><td>$2,266.59</td><td>5.58</td><td>$2,266.59</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Score Calibration</h2>
+    <p class="section-note">Shows whether higher-ranked trades actually produce better results.</p>
+    <table><thead><tr><th>Score Bucket</th><th>Trades</th><th>Wins</th><th>Losses</th><th>Win Rate</th><th>Net PnL</th><th>Avg PnL</th><th>Profit Factor</th><th>Expectancy</th></tr></thead><tbody><tr><td>65-70</td><td>4</td><td>4</td><td>0</td><td>100.00%</td><td>$19,331.19</td><td>$4,832.80</td><td>0.00</td><td>$4,832.80</td></tr><tr><td>80-85</td><td>3</td><td>0</td><td>3</td><td>0.00%</td><td>$-3,465.04</td><td>$-1,155.01</td><td>0.00</td><td>$-1,155.01</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Performance by Score Bucket</h2>
+    <table><thead><tr><th>Score Bucket</th><th>Trades</th><th>Wins</th><th>Losses</th><th>Win Rate</th><th>Net PnL</th><th>Return</th><th>Profit Factor</th><th>Expectancy</th></tr></thead><tbody><tr><td>60-70</td><td>4</td><td>4</td><td>0</td><td>100.00%</td><td>$19,331.19</td><td>19.33%</td><td>∞</td><td>$4,832.80</td></tr><tr><td>80-90</td><td>3</td><td>0</td><td>3</td><td>0.00%</td><td>$-3,465.04</td><td>-3.47%</td><td>0.00</td><td>$-1,155.01</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Performance by Hold Days</h2>
+    <table><thead><tr><th>Hold Days</th><th>Trades</th><th>Wins</th><th>Losses</th><th>Win Rate</th><th>Net PnL</th><th>Return</th><th>Profit Factor</th><th>Expectancy</th></tr></thead><tbody><tr><td>0-1 days</td><td>6</td><td>4</td><td>2</td><td>66.67%</td><td>$17,880.83</td><td>17.88%</td><td>13.33</td><td>$2,980.14</td></tr><tr><td>2-3 days</td><td>1</td><td>0</td><td>1</td><td>0.00%</td><td>$-2,014.67</td><td>-2.01%</td><td>0.00</td><td>$-2,014.67</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Performance by Month</h2>
+    <table><thead><tr><th>Month</th><th>Trades</th><th>Wins</th><th>Losses</th><th>Win Rate</th><th>Net PnL</th><th>Return</th><th>Profit Factor</th><th>Expectancy</th></tr></thead><tbody><tr><td>2026-04</td><td>7</td><td>4</td><td>3</td><td>57.14%</td><td>$15,866.15</td><td>15.87%</td><td>5.58</td><td>$2,266.59</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Performance by Year</h2>
+    <table><thead><tr><th>Year</th><th>Trades</th><th>Wins</th><th>Losses</th><th>Win Rate</th><th>Net PnL</th><th>Return</th><th>Profit Factor</th><th>Expectancy</th></tr></thead><tbody><tr><td>2026</td><td>7</td><td>4</td><td>3</td><td>57.14%</td><td>$15,866.15</td><td>15.87%</td><td>5.58</td><td>$2,266.59</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Performance by Delta Bucket</h2>
+    <table><thead><tr><th>Delta Bucket</th><th>Trades</th><th>Wins</th><th>Losses</th><th>Win Rate</th><th>Net PnL</th><th>Return</th><th>Profit Factor</th><th>Expectancy</th></tr></thead><tbody><tr><td>0.45-0.60</td><td>7</td><td>4</td><td>3</td><td>57.14%</td><td>$15,866.15</td><td>15.87%</td><td>5.58</td><td>$2,266.59</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Gamma Bucket Performance</h2>
+    <table><thead><tr><th>Gamma Bucket</th><th>Trades</th><th>Win Rate</th><th>Net PnL</th><th>Profit Factor</th><th>Expectancy</th></tr></thead><tbody><tr><td>0.04-0.06</td><td>7</td><td>57.14%</td><td>$15,866.15</td><td>5.58</td><td>$2,266.59</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Theta Bucket Performance</h2>
+    <table><thead><tr><th>Theta Bucket</th><th>Trades</th><th>Win Rate</th><th>Net PnL</th><th>Profit Factor</th><th>Expectancy</th></tr></thead><tbody><tr><td>0.05-0.08</td><td>7</td><td>57.14%</td><td>$15,866.15</td><td>5.58</td><td>$2,266.59</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Vega Bucket Performance</h2>
+    <table><thead><tr><th>Vega Bucket</th><th>Trades</th><th>Win Rate</th><th>Net PnL</th><th>Profit Factor</th><th>Expectancy</th></tr></thead><tbody><tr><td>0.20-0.30</td><td>7</td><td>57.14%</td><td>$15,866.15</td><td>5.58</td><td>$2,266.59</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Volatility Bucket Performance</h2>
+    <table><thead><tr><th>Vol Bucket</th><th>Trades</th><th>Win Rate</th><th>Net PnL</th><th>Profit Factor</th><th>Expectancy</th></tr></thead><tbody><tr><td>0.10-0.20</td><td>7</td><td>57.14%</td><td>$15,866.15</td><td>5.58</td><td>$2,266.59</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Trade PnL Distribution</h2>
+    <table><thead><tr><th>PnL Bucket</th><th>Trades</th><th>Net PnL</th><th>Avg PnL</th></tr></thead><tbody><tr><td>< -10000</td><td>0</td><td>$0.00</td><td>$0.00</td></tr><tr><td>-10000 to -5000</td><td>0</td><td>$0.00</td><td>$0.00</td></tr><tr><td>-5000 to -1000</td><td>2</td><td>$-3,143.44</td><td>$-1,571.72</td></tr><tr><td>-1000 to 0</td><td>1</td><td>$-321.60</td><td>$-321.60</td></tr><tr><td>0 to 1000</td><td>0</td><td>$0.00</td><td>$0.00</td></tr><tr><td>1000 to 5000</td><td>2</td><td>$4,463.84</td><td>$2,231.92</td></tr><tr><td>5000 to 10000</td><td>2</td><td>$14,867.35</td><td>$7,433.67</td></tr><tr><td>> 10000</td><td>0</td><td>$0.00</td><td>$0.00</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Rolling 20-Trade Risk Metrics</h2>
+    <table><thead><tr><th>Date</th><th>Rolling Return</th><th>Rolling Sharpe</th><th>Rolling Volatility</th></tr></thead><tbody><tr><td>2026-04-22</td><td>-0.30%</td><td>0.00</td><td>0.00%</td></tr><tr><td>2026-04-23</td><td>8.57%</td><td>14.82</td><td>72.83%</td></tr><tr><td>2026-04-26</td><td>6.81%</td><td>7.65</td><td>74.70%</td></tr><tr><td>2026-04-27</td><td>5.80%</td><td>5.34</td><td>68.49%</td></tr><tr><td>2026-04-28</td><td>8.38%</td><td>6.85</td><td>61.67%</td></tr><tr><td>2026-04-29</td><td>9.77%</td><td>7.29</td><td>56.32%</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Drawdown Curve</h2>
+    <table><thead><tr><th>Date</th><th>Equity</th><th>Peak Equity</th><th>Drawdown $</th><th>Drawdown %</th></tr></thead><tbody><tr><td>2026-04-21</td><td>$105,534.46</td><td>$105,534.46</td><td>$0.00</td><td>0.00%</td></tr><tr><td>2026-04-22</td><td>$105,212.86</td><td>$105,534.46</td><td>$-321.60</td><td>-0.30%</td></tr><tr><td>2026-04-23</td><td>$114,545.75</td><td>$114,545.75</td><td>$0.00</td><td>0.00%</td></tr><tr><td>2026-04-26</td><td>$112,531.07</td><td>$114,545.75</td><td>$-2,014.67</td><td>-1.76%</td></tr><tr><td>2026-04-27</td><td>$111,402.31</td><td>$114,545.75</td><td>$-3,143.44</td><td>-2.74%</td></tr><tr><td>2026-04-28</td><td>$114,271.53</td><td>$114,545.75</td><td>$-274.22</td><td>-0.24%</td></tr><tr><td>2026-04-29</td><td>$115,866.15</td><td>$115,866.15</td><td>$0.00</td><td>0.00%</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Equity Curve</h2>
+    <table><thead><tr><th>Date</th><th>Equity</th><th>PnL</th><th>Symbol</th><th>Exit Reason</th></tr></thead><tbody><tr><td>2026-04-21</td><td>$105,534.46</td><td>$5,534.46</td><td>AMZN</td><td>TAKE_PROFIT</td></tr><tr><td>2026-04-22</td><td>$105,212.86</td><td>$-321.60</td><td>AMZN</td><td>STOP_LOSS</td></tr><tr><td>2026-04-23</td><td>$114,545.75</td><td>$9,332.89</td><td>AMZN</td><td>TAKE_PROFIT</td></tr><tr><td>2026-04-26</td><td>$112,531.07</td><td>$-2,014.67</td><td>AMZN</td><td>STOP_LOSS</td></tr><tr><td>2026-04-27</td><td>$111,402.31</td><td>$-1,128.77</td><td>AMZN</td><td>STOP_LOSS</td></tr><tr><td>2026-04-28</td><td>$114,271.53</td><td>$2,869.22</td><td>AMZN</td><td>TAKE_PROFIT</td></tr><tr><td>2026-04-29</td><td>$115,866.15</td><td>$1,594.63</td><td>AMZN</td><td>TAKE_PROFIT</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Best Trades</h2>
+    <table><thead><tr><th>Symbol</th><th>Entry</th><th>Exit</th><th>Signal</th><th>PnL</th><th>PnL %</th><th>Gross PnL</th><th>Fees</th><th>Net PnL</th><th>Exit Reason</th><th>Rank</th><th>Score</th></tr></thead><tbody><tr><td>AMZN</td><td>2026-04-22</td><td>2026-04-23</td><td>CALL</td><td>$9,332.89</td><td>198.98%</td><td>$9,352.49</td><td>$19.60</td><td>$9,332.89</td><td>TAKE_PROFIT</td><td>65.00</td><td>65.00</td></tr><tr><td>AMZN</td><td>2026-04-20</td><td>2026-04-21</td><td>CALL</td><td>$5,534.46</td><td>112.41%</td><td>$5,555.46</td><td>$21.00</td><td>$5,534.46</td><td>TAKE_PROFIT</td><td>65.00</td><td>65.00</td></tr><tr><td>AMZN</td><td>2026-04-27</td><td>2026-04-28</td><td>CALL</td><td>$2,869.22</td><td>60.08%</td><td>$2,888.82</td><td>$19.60</td><td>$2,869.22</td><td>TAKE_PROFIT</td><td>65.00</td><td>65.00</td></tr><tr><td>AMZN</td><td>2026-04-28</td><td>2026-04-29</td><td>CALL</td><td>$1,594.63</td><td>32.97%</td><td>$1,614.23</td><td>$19.60</td><td>$1,594.63</td><td>TAKE_PROFIT</td><td>65.00</td><td>65.00</td></tr><tr><td>AMZN</td><td>2026-04-21</td><td>2026-04-22</td><td>CALL</td><td>$-321.60</td><td>-6.85%</td><td>$-302.00</td><td>$19.60</td><td>$-321.60</td><td>STOP_LOSS</td><td>80.00</td><td>80.00</td></tr><tr><td>AMZN</td><td>2026-04-26</td><td>2026-04-27</td><td>CALL</td><td>$-1,128.77</td><td>-23.51%</td><td>$-1,109.17</td><td>$19.60</td><td>$-1,128.77</td><td>STOP_LOSS</td><td>80.00</td><td>80.00</td></tr><tr><td>AMZN</td><td>2026-04-23</td><td>2026-04-26</td><td>CALL</td><td>$-2,014.67</td><td>-41.50%</td><td>$-1,995.07</td><td>$19.60</td><td>$-2,014.67</td><td>STOP_LOSS</td><td>80.00</td><td>80.00</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Worst Trades</h2>
+    <table><thead><tr><th>Symbol</th><th>Entry</th><th>Exit</th><th>Signal</th><th>PnL</th><th>PnL %</th><th>Gross PnL</th><th>Fees</th><th>Net PnL</th><th>Exit Reason</th><th>Rank</th><th>Score</th></tr></thead><tbody><tr><td>AMZN</td><td>2026-04-23</td><td>2026-04-26</td><td>CALL</td><td>$-2,014.67</td><td>-41.50%</td><td>$-1,995.07</td><td>$19.60</td><td>$-2,014.67</td><td>STOP_LOSS</td><td>80.00</td><td>80.00</td></tr><tr><td>AMZN</td><td>2026-04-26</td><td>2026-04-27</td><td>CALL</td><td>$-1,128.77</td><td>-23.51%</td><td>$-1,109.17</td><td>$19.60</td><td>$-1,128.77</td><td>STOP_LOSS</td><td>80.00</td><td>80.00</td></tr><tr><td>AMZN</td><td>2026-04-21</td><td>2026-04-22</td><td>CALL</td><td>$-321.60</td><td>-6.85%</td><td>$-302.00</td><td>$19.60</td><td>$-321.60</td><td>STOP_LOSS</td><td>80.00</td><td>80.00</td></tr><tr><td>AMZN</td><td>2026-04-28</td><td>2026-04-29</td><td>CALL</td><td>$1,594.63</td><td>32.97%</td><td>$1,614.23</td><td>$19.60</td><td>$1,594.63</td><td>TAKE_PROFIT</td><td>65.00</td><td>65.00</td></tr><tr><td>AMZN</td><td>2026-04-27</td><td>2026-04-28</td><td>CALL</td><td>$2,869.22</td><td>60.08%</td><td>$2,888.82</td><td>$19.60</td><td>$2,869.22</td><td>TAKE_PROFIT</td><td>65.00</td><td>65.00</td></tr><tr><td>AMZN</td><td>2026-04-20</td><td>2026-04-21</td><td>CALL</td><td>$5,534.46</td><td>112.41%</td><td>$5,555.46</td><td>$21.00</td><td>$5,534.46</td><td>TAKE_PROFIT</td><td>65.00</td><td>65.00</td></tr><tr><td>AMZN</td><td>2026-04-22</td><td>2026-04-23</td><td>CALL</td><td>$9,332.89</td><td>198.98%</td><td>$9,352.49</td><td>$19.60</td><td>$9,332.89</td><td>TAKE_PROFIT</td><td>65.00</td><td>65.00</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Rejected Trades</h2>
+    <p>No data available.</p>
+</div>
+
+<div class="card">
+    <h2>Trade Log</h2>
+    <table><thead><tr><th>Symbol</th><th>Entry</th><th>Exit</th><th>Signal</th><th>Strategy</th><th>Strike</th><th>Expiry</th><th>Entry Price</th><th>Exit Price</th><th>Delta</th><th>Gamma</th><th>Theta</th><th>Vega</th><th>Rho</th><th>Vol</th><th>DTE</th><th>Contracts</th><th>PnL</th><th>PnL %</th><th>Gross PnL</th><th>Fees</th><th>Net PnL</th><th>Hold Days</th><th>Exit Reason</th><th>Rank</th><th>Option Score</th><th>POP</th><th>Liquidity</th><th>ATM</th></tr></thead><tbody><tr><td>AMZN</td><td>2026-04-20</td><td>2026-04-21</td><td>CALL</td><td>LONG_CALL</td><td>249.91</td><td>BS_ENTRY_PROXY_EXIT</td><td>3.28</td><td>6.99</td><td>0.5513</td><td>0.05522</td><td>-0.0620</td><td>0.2835</td><td>0.1105</td><td>10.00%</td><td>30</td><td>15</td><td>$5,534.46</td><td>112.41%</td><td>$5,555.46</td><td>$21.00</td><td>$5,534.46</td><td>1</td><td>TAKE_PROFIT</td><td>65.00</td><td>65.00</td><td>0.00%</td><td>0.00</td><td>100.00</td></tr><tr><td>AMZN</td><td>2026-04-21</td><td>2026-04-22</td><td>CALL</td><td>LONG_CALL</td><td>255.36</td><td>BS_ENTRY_PROXY_EXIT</td><td>3.35</td><td>3.14</td><td>0.5513</td><td>0.05404</td><td>-0.0633</td><td>0.2896</td><td>0.1130</td><td>10.00%</td><td>30</td><td>14</td><td>$-321.60</td><td>-6.85%</td><td>$-302.00</td><td>$19.60</td><td>$-321.60</td><td>1</td><td>STOP_LOSS</td><td>80.00</td><td>80.00</td><td>0.00%</td><td>0.00</td><td>100.00</td></tr><tr><td>AMZN</td><td>2026-04-22</td><td>2026-04-23</td><td>CALL</td><td>LONG_CALL</td><td>255.08</td><td>BS_ENTRY_PROXY_EXIT</td><td>3.35</td><td>10.03</td><td>0.5513</td><td>0.05410</td><td>-0.0633</td><td>0.2893</td><td>0.1128</td><td>10.00%</td><td>30</td><td>14</td><td>$9,332.89</td><td>198.98%</td><td>$9,352.49</td><td>$19.60</td><td>$9,332.89</td><td>1</td><td>TAKE_PROFIT</td><td>65.00</td><td>65.00</td><td>0.00%</td><td>0.00</td><td>100.00</td></tr><tr><td>AMZN</td><td>2026-04-23</td><td>2026-04-26</td><td>CALL</td><td>LONG_CALL</td><td>263.99</td><td>BS_ENTRY_PROXY_EXIT</td><td>3.47</td><td>2.04</td><td>0.5513</td><td>0.05228</td><td>-0.0655</td><td>0.2994</td><td>0.1168</td><td>10.00%</td><td>30</td><td>14</td><td>$-2,014.67</td><td>-41.50%</td><td>$-1,995.07</td><td>$19.60</td><td>$-2,014.67</td><td>3</td><td>STOP_LOSS</td><td>80.00</td><td>80.00</td><td>0.00%</td><td>0.00</td><td>100.00</td></tr><tr><td>AMZN</td><td>2026-04-26</td><td>2026-04-27</td><td>CALL</td><td>LONG_CALL</td><td>261.12</td><td>BS_ENTRY_PROXY_EXIT</td><td>3.43</td><td>2.64</td><td>0.5513</td><td>0.05285</td><td>-0.0648</td><td>0.2962</td><td>0.1155</td><td>10.00%</td><td>30</td><td>14</td><td>$-1,128.77</td><td>-23.51%</td><td>$-1,109.17</td><td>$19.60</td><td>$-1,128.77</td><td>1</td><td>STOP_LOSS</td><td>80.00</td><td>80.00</td><td>0.00%</td><td>0.00</td><td>100.00</td></tr><tr><td>AMZN</td><td>2026-04-27</td><td>2026-04-28</td><td>CALL</td><td>LONG_CALL</td><td>259.7</td><td>BS_ENTRY_PROXY_EXIT</td><td>3.41</td><td>5.47</td><td>0.5513</td><td>0.05314</td><td>-0.0644</td><td>0.2946</td><td>0.1149</td><td>10.00%</td><td>30</td><td>14</td><td>$2,869.22</td><td>60.08%</td><td>$2,888.82</td><td>$19.60</td><td>$2,869.22</td><td>1</td><td>TAKE_PROFIT</td><td>65.00</td><td>65.00</td><td>0.00%</td><td>0.00</td><td>100.00</td></tr><tr><td>AMZN</td><td>2026-04-28</td><td>2026-04-29</td><td>CALL</td><td>LONG_CALL</td><td>263.04</td><td>BS_ENTRY_PROXY_EXIT</td><td>3.45</td><td>4.61</td><td>0.5513</td><td>0.05246</td><td>-0.0652</td><td>0.2984</td><td>0.1164</td><td>10.00%</td><td>30</td><td>14</td><td>$1,594.63</td><td>32.97%</td><td>$1,614.23</td><td>$19.60</td><td>$1,594.63</td><td>1</td><td>TAKE_PROFIT</td><td>65.00</td><td>65.00</td><td>0.00%</td><td>0.00</td><td>100.00</td></tr></tbody></table>
+</div>
+
+</body>
+</html>

@@ -54,6 +54,8 @@ def main():
     sub.add_parser("daily-scan")
     sub.add_parser("risk-metrics-test")
     sub.add_parser("show-risk-metrics")
+    sub.add_parser("score-risk-aware")
+    sub.add_parser("risk-optimization-report")
 
     paper = sub.add_parser("paper")
     paper_sub = paper.add_subparsers(dest="paper_command")
@@ -163,6 +165,12 @@ def main():
 
     elif args.command == "show-risk-metrics":
         run_script("scripts/show_risk_metrics.py", extra)
+
+    elif args.command == "score-risk-aware":
+        run_script("scripts/score_risk_aware_strategies.py", extra)
+
+    elif args.command == "risk-optimization-report":
+        run_script("scripts/risk_optimization_report.py", extra)
 
     elif args.command == "paper":
 
