@@ -326,6 +326,26 @@ class BacktestReport:
             for r in rows
         ]
 
+    def strategy_rows(self, trades):
+
+        from trading_ai.risk.strategy_performance import StrategyPerformanceAnalyzer
+
+        rows = StrategyPerformanceAnalyzer().analyze(trades)
+
+        return [
+            {
+                "strategy_signal": r["strategy_signal"],
+                "trades": r["trades"],
+                "wins": r["wins"],
+                "losses": r["losses"],
+                "win_rate": self.pct(r["win_rate"]),
+                "net_pnl": self.money(r["net_pnl"]),
+                "avg_pnl": self.money(r["avg_pnl"]),
+                "profit_factor": f"{r['profit_factor']:.2f}",
+            }
+            for r in rows
+        ]
+
     def trade_rows(self, trades):
         rows = []
 
@@ -403,6 +423,7 @@ class BacktestReport:
         monthly_rows = self.monthly_rows(trades)
         symbol_rows = self.symbol_rows(trades)
         exit_reason_rows = self.exit_reason_rows(trades)
+        strategy_rows = self.strategy_rows(trades)
 #        drawdown_rows = self.drawdown_rows(equity_curve)
         drawdown_rows = []
 
@@ -767,6 +788,23 @@ class BacktestReport:
         exit_reason_rows,
         [
             ("Exit Reason", "exit_reason"),
+            ("Trades", "trades"),
+            ("Wins", "wins"),
+            ("Losses", "losses"),
+            ("Win Rate", "win_rate"),
+            ("Net PnL", "net_pnl"),
+            ("Avg PnL", "avg_pnl"),
+            ("Profit Factor", "profit_factor"),
+        ],
+    )}
+</div>
+
+<div class="card">
+    <h2>Strategy / Signal Performance</h2>
+    {self.build_table(
+        strategy_rows,
+        [
+            ("Strategy / Signal", "strategy_signal"),
             ("Trades", "trades"),
             ("Wins", "wins"),
             ("Losses", "losses"),
