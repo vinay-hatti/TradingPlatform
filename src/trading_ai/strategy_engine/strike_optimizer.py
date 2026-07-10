@@ -3,6 +3,7 @@ import math
 from trading_ai.strategy_engine.spread_candidate import SpreadCandidate
 from trading_ai.strategy_engine.strike_candidate import StrikeCandidate
 from trading_ai.strategy_engine.strike_scoring import StrikeScoring
+from trading_ai.strategy_engine.liquidity_engine import LiquidityEngine
 
 
 class StrikeOptimizer:
@@ -16,6 +17,7 @@ class StrikeOptimizer:
         self.min_open_interest = int(min_open_interest)
         self.max_spread_pct = float(max_spread_pct)
         self.scoring = StrikeScoring()
+        self.institutional_liquidity = LiquidityEngine()
 
     def optimize(
         self,
@@ -61,7 +63,20 @@ class StrikeOptimizer:
                 option_chain=option_chain,
             )
 
-        candidates.sort(key=lambda c: c.composite_score, reverse=True)
+        candidates = self.institutional_liquidity.attach_to_candidates(
+            candidates=candidates,
+            requested_contracts=1,
+        )
+
+        candidates.sort(
+            key=lambda c: getattr(
+                c,
+                "institutional_composite_score",
+                c.composite_score,
+            ),
+            reverse=True,
+        )
+
         return candidates[:top_n]
 
     def single_leg_candidates(
