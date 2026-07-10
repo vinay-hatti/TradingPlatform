@@ -48,3 +48,20 @@ class BacktestTrade:
     entry_iv: float = 0.0
     entry_dte: int = 0
     entry_volatility: float = 0.0
+
+    # Reporting / diagnostics metadata
+    market_regime: str = "UNKNOWN"
+    regime: str = "UNKNOWN"
+
+    pricing_source: str = ""
+    entry_pricing_source: str = ""
+    exit_pricing_source: str = "black_scholes_mark_to_model"
+    option_symbol: str = ""
+    option_volume: int = 0
+    option_open_interest: int = 0
+    option_spread_pct: float = 0.0
+
+    position_size: float = 0.0
+    initial_risk: float = 0.0
+    r_multiple: float = 0.0
+    model_exit_price: float = 0.0

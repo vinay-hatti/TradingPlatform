@@ -24,3 +24,11 @@ class BacktestConfig:
     max_open_positions: int = 2
     max_daily_loss_pct: float = 0.03
     max_drawdown_pct: float = 0.05
+
+    # Historical option-chain pricing controls
+    use_historical_options: bool = False
+    fallback_to_black_scholes: bool = True
+    min_option_volume: int = 0
+    min_open_interest: int = 0
+    max_spread_pct: float = 1.0
+

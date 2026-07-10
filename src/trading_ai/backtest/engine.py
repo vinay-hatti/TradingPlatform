@@ -9,12 +9,25 @@ from pathlib import Path
 
 class BacktestEngine:
 
-    def __init__(self, initial_capital=100000.0):
+    def __init__(
+        self,
+        initial_capital=100000.0,
+        use_historical_options=False,
+        fallback_to_black_scholes=True,
+        min_option_volume=0,
+        min_open_interest=0,
+        max_spread_pct=1.0,
+    ):
         self.initial_capital = initial_capital
         self.metrics = BacktestMetrics()
         self.equity = EquityCurveBuilder()
         self.report = BacktestReport(initial_capital=initial_capital)
         self.exporter = BacktestExporter()
+        self.use_historical_options = bool(use_historical_options)
+        self.fallback_to_black_scholes = bool(fallback_to_black_scholes)
+        self.min_option_volume = int(min_option_volume)
+        self.min_open_interest = int(min_open_interest)
+        self.max_spread_pct = float(max_spread_pct)
 
 #    def run(self, trades, report_path="reports/backtest.html"):
     def run(self, trades, report_path="reports/backtest.html", rejected=None):
@@ -82,4 +95,11 @@ class BacktestEngine:
             "metrics": metrics,
             "equity_curve": equity_curve,
             "report_path": report_path,
+            "pricing_config": {
+                "use_historical_options": self.use_historical_options,
+                "fallback_to_black_scholes": self.fallback_to_black_scholes,
+                "min_option_volume": self.min_option_volume,
+                "min_open_interest": self.min_open_interest,
+                "max_spread_pct": self.max_spread_pct,
+            },
         }

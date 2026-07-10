@@ -56,6 +56,9 @@ def main():
     sub.add_parser("show-risk-metrics")
     sub.add_parser("score-risk-aware")
     sub.add_parser("risk-optimization-report")
+    sub.add_parser("import-option-chain")
+    sub.add_parser("test-option-pricing")
+    sub.add_parser("compare-option-pricing")
 
     paper = sub.add_parser("paper")
     paper_sub = paper.add_subparsers(dest="paper_command")
@@ -171,6 +174,15 @@ def main():
 
     elif args.command == "risk-optimization-report":
         run_script("scripts/risk_optimization_report.py", extra)
+
+    elif args.command == "import-option-chain":
+        run_script("scripts/import_option_chain.py", extra)
+
+    elif args.command == "test-option-pricing":
+        run_script("scripts/test_option_pricing_service.py", extra)
+
+    elif args.command == "compare-option-pricing":
+        run_script("scripts/compare_option_pricing_sources.py", extra)
 
     elif args.command == "paper":
 

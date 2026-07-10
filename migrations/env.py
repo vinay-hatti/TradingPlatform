@@ -4,21 +4,14 @@ from sqlalchemy import engine_from_config, pool
 from alembic import context
 
 from trading_ai.database.base import Base
-from trading_ai.database import models  # ensure models are imported
-
+from trading_ai.database import models  # keep this so all models load
 from trading_ai.config.settings import settings
 
 
-# Alembic config object (MUST be first)
 config = context.config
 
-# Inject DB URL from settings (IMPORTANT FIX)
-config.set_main_option(
-    "sqlalchemy.url",
-    settings.database_url
-)
+config.set_main_option("sqlalchemy.url", settings.database_url)
 
-# logging setup
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 

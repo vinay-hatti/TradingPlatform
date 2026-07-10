@@ -10,6 +10,7 @@ class Settings(BaseSettings):
     db_name: str = "trading_ai"
     db_user: str = "vinay.hatti"
     db_password: str = "postgres"
+    database_url: str = "postgresql://vinay.hatti:postgres@localhost:5432/trading_ai"
 
     model_config = SettingsConfigDict(
         env_file=".env",

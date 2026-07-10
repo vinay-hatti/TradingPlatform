@@ -8,6 +8,10 @@ SessionLocal = sessionmaker(
 )
 
 
+def create_session():
+    return SessionLocal()
+
+
 def get_session():
     db = SessionLocal()
     try:

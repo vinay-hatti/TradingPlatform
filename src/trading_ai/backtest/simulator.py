@@ -45,8 +45,11 @@ class OptionTradeSimulator:
         entry_price = float(entry_price)
         contracts = int(contracts)
 
+        # future_prices contains OPTION PREMIUMS, not underlying stock prices.
+        # For long calls and long puts, PnL is based on option premium movement:
+        #   PnL = exit premium - entry premium
+        # Do not invert PUT trades here.
         signal = str(signal).upper()
-        direction = 1.0 if signal == "CALL" else -1.0
 
         max_profit = 0.0
         max_drawdown = 0.0
@@ -61,14 +64,12 @@ class OptionTradeSimulator:
 
             gross_pnl = (
                 (current_price - entry_price)
-                * direction
                 * contracts
                 * 100.0
             )
 
             pnl_pct = (
                 (current_price - entry_price)
-                * direction
                 / max(entry_price, 0.01)
             )
 
@@ -92,7 +93,6 @@ class OptionTradeSimulator:
 
         gross_pnl = (
             (exit_price - entry_price)
-            * direction
             * contracts
             * 100.0
         )

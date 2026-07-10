@@ -41,6 +41,11 @@ def parse_args():
     parser.add_argument("--min-vega", type=float, default=0.0)
     parser.add_argument("--max-vega", type=float, default=999.0)
     parser.add_argument("--max-theta", type=float, default=999.0)
+    parser.add_argument("--use-historical-options", action="store_true")
+    parser.add_argument("--no-bs-fallback", action="store_true")
+    parser.add_argument("--min-option-volume", type=int, default=0)
+    parser.add_argument("--min-open-interest", type=int, default=0)
+    parser.add_argument("--max-spread-pct", type=float, default=1.0)
 
     return parser.parse_args()
 
@@ -67,6 +72,11 @@ def main():
     pricing_service = OptionPricingService(
         risk_free_rate=args.risk_free_rate,
         default_dte=args.pricing_dte,
+        use_historical_options=args.use_historical_options,
+        fallback_to_black_scholes=not args.no_bs_fallback,
+        min_option_volume=args.min_option_volume,
+        min_open_interest=args.min_open_interest,
+        max_spread_pct=args.max_spread_pct,
     )
 
     generator = HistoricalTradeGenerator(
@@ -84,6 +94,11 @@ def main():
         min_vega=args.min_vega,
         max_vega=args.max_vega,
         max_theta=args.max_theta,
+        use_historical_options=args.use_historical_options,
+        fallback_to_black_scholes=not args.no_bs_fallback,
+        min_option_volume=args.min_option_volume,
+        min_open_interest=args.min_open_interest,
+        max_spread_pct=args.max_spread_pct,
     )
 
     symbols = [
@@ -93,6 +108,7 @@ def main():
     ]
 
     all_trades = []
+    generator_rejected = []
     total_trading_days = 0
     total_signals = 0
 
@@ -124,6 +140,7 @@ def main():
             price_history=price_history,
         )
 
+        generator_rejected.extend(generator.rejected)
         all_trades.extend(trades)
 
     portfolio = BacktestPortfolio(
@@ -135,7 +152,7 @@ def main():
     portfolio_result = portfolio.process_trades(all_trades)
 
     trades = portfolio_result["closed_trades"]
-    rejected_trades = portfolio_result["rejected"]
+    rejected_trades = generator_rejected + portfolio_result["rejected"]
 
 #    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
@@ -167,6 +184,11 @@ def main():
         "min_vega": args.min_vega,
         "max_vega": args.max_vega,
         "max_theta": args.max_theta,
+        "use_historical_options": args.use_historical_options,
+        "fallback_to_black_scholes": not args.no_bs_fallback,
+        "min_option_volume": args.min_option_volume,
+        "min_open_interest": args.min_open_interest,
+        "max_spread_pct": args.max_spread_pct,
     }
 
     with open(f"{run_dir}/config.json", "w") as f:
