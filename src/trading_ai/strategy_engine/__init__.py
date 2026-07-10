@@ -1,4 +1,7 @@
 from trading_ai.strategy_engine.strategy_candidate import StrategyCandidate
 from trading_ai.strategy_engine.strategy_selector import StrategySelector
+from trading_ai.strategy_engine.strike_candidate import StrikeCandidate
+from trading_ai.strategy_engine.strike_optimizer import StrikeOptimizer
+from trading_ai.strategy_engine.spread_candidate import SpreadCandidate
 from trading_ai.strategy_engine.volatility_engine import VolatilityEngine
 from trading_ai.strategy_engine.volatility_profile import VolatilityProfile
