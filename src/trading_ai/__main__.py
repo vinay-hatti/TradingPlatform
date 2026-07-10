@@ -59,6 +59,7 @@ def main():
     sub.add_parser("import-option-chain")
     sub.add_parser("test-option-pricing")
     sub.add_parser("compare-option-pricing")
+    sub.add_parser("volatility-test")
 
     paper = sub.add_parser("paper")
     paper_sub = paper.add_subparsers(dest="paper_command")
@@ -183,6 +184,9 @@ def main():
 
     elif args.command == "compare-option-pricing":
         run_script("scripts/compare_option_pricing_sources.py", extra)
+
+    elif args.command == "volatility-test":
+        run_script("scripts/test_volatility_engine.py", extra)
 
     elif args.command == "paper":
 
