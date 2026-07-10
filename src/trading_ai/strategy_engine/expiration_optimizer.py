@@ -22,6 +22,50 @@ class ExpirationOptimizer:
         self.scoring = ExpirationScoring()
         self.expected_move = ExpectedMoveEngine()
 
+    def expected_move_profile_for_expiry(
+        self,
+        symbol: str,
+        strategy: str,
+        underlying_price: float,
+        expiry: str,
+        dte: int,
+        option_chain,
+        volatility_profile=None,
+        atr: float = 0.0,
+    ):
+        historical_volatility = 0.0
+        implied_volatility = 0.0
+
+        if volatility_profile is not None:
+            historical_volatility = float(
+                getattr(
+                    volatility_profile,
+                    "hv30",
+                    0.0,
+                )
+                or 0.0
+            )
+
+            implied_volatility = float(
+                getattr(
+                    volatility_profile,
+                    "current_iv",
+                    0.0,
+                )
+                or 0.0
+            )
+
+        return self.expected_move.analyze_from_option_chain(
+            symbol=symbol,
+            underlying_price=underlying_price,
+            horizon_days=dte,
+            option_chain=option_chain,
+            implied_volatility=implied_volatility,
+            historical_volatility=historical_volatility,
+            atr=atr,
+            target_expiry=expiry,
+        )
+
     def optimize(
         self,
         symbol: str,

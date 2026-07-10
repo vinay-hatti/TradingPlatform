@@ -17,3 +17,19 @@ from trading_ai.strategy_engine.strike_optimizer import StrikeOptimizer
 from trading_ai.strategy_engine.spread_candidate import SpreadCandidate
 from trading_ai.strategy_engine.volatility_engine import VolatilityEngine
 from trading_ai.strategy_engine.volatility_profile import VolatilityProfile
+
+from trading_ai.strategy_engine.expected_move_engine import (
+    ExpectedMoveEngine,
+)
+from trading_ai.strategy_engine.expected_move_profile import (
+    ExpectedMoveProfile,
+)
+from trading_ai.strategy_engine.expected_move_scoring import (
+    ExpectedMoveScoring,
+)
+from trading_ai.strategy_engine.expected_move_source import (
+    ExpectedMoveSource,
+)
+from trading_ai.strategy_engine.expected_move_strategy_fit import (
+    ExpectedMoveStrategyFit,
+)

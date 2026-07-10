@@ -1,4 +1,7 @@
 from trading_ai.strategy_engine.strategy_candidate import StrategyCandidate
+from trading_ai.strategy_engine.expected_move_strategy_fit import (
+    ExpectedMoveStrategyFit,
+)
 
 
 class StrategySelector:
@@ -14,17 +17,52 @@ class StrategySelector:
       - ranked list of StrategyCandidate objects
     """
 
+    def __init__(self):
+        self.expected_move_fit = ExpectedMoveStrategyFit()
+
     def select(
         self,
         symbol: str,
         direction: str,
         market_regime: str,
         volatility_profile,
+        expected_move_profile=None,
     ) -> list[StrategyCandidate]:
         direction = str(direction or "NEUTRAL").upper()
         market_regime = str(market_regime or "UNKNOWN").upper()
         vol_regime = str(volatility_profile.volatility_regime or "NORMAL_VOL")
         vol_signal = str(volatility_profile.volatility_signal or "NEUTRAL_VOL")
+
+        if expected_move_profile is not None:
+            for candidate in candidates:
+                expected_move_score = (
+                    self.expected_move_fit.score(
+                        strategy=candidate.strategy,
+                        expected_move_profile=(
+                            expected_move_profile
+                        ),
+                    )
+                )
+
+                candidate.score = round(
+                    candidate.score * 0.80
+                    + expected_move_score * 0.20,
+                    2,
+                )
+
+                setattr(
+                    candidate,
+                    "expected_move_score",
+                    expected_move_score,
+                )
+
+                setattr(
+                    candidate,
+                    "expected_move_recommendation",
+                    self.expected_move_fit.recommendation(
+                        expected_move_profile
+                    ),
+                )
 
         candidates = []
 
@@ -66,21 +104,27 @@ class StrategySelector:
 
         return candidates
 
+
     def best(
         self,
         symbol: str,
         direction: str,
         market_regime: str,
         volatility_profile,
+        expected_move_profile=None,
     ) -> StrategyCandidate | None:
         candidates = self.select(
             symbol=symbol,
             direction=direction,
             market_regime=market_regime,
             volatility_profile=volatility_profile,
+            expected_move_profile=(
+                expected_move_profile
+            ),
         )
 
         return candidates[0] if candidates else None
+
 
     def _bullish_candidates(
         self,
