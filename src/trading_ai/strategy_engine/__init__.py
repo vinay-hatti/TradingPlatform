@@ -1,3 +1,5 @@
+from trading_ai.strategy_engine.expiration_candidate import ExpirationCandidate
+from trading_ai.strategy_engine.expiration_optimizer import ExpirationOptimizer
 from trading_ai.strategy_engine.strategy_candidate import StrategyCandidate
 from trading_ai.strategy_engine.strategy_selector import StrategySelector
 from trading_ai.strategy_engine.strike_candidate import StrikeCandidate

@@ -62,6 +62,8 @@ def main():
     sub.add_parser("volatility-test")
     sub.add_parser("strategy-selector-test")
     sub.add_parser("strike-optimizer-test")
+    sub.add_parser("expiration-optimizer-test")
+#    sub.add_parser("")
 
     paper = sub.add_parser("paper")
     paper_sub = paper.add_subparsers(dest="paper_command")
@@ -195,6 +197,12 @@ def main():
 
     elif args.command == "strike-optimizer-test":
         run_script("scripts/test_strike_optimizer.py", extra)
+
+    elif args.command == "expiration-optimizer-test":
+        run_script("scripts/test_expiration_optimizer.py", extra)
+
+#    elif args.command == "":
+#        run_script("", extra)
 
     elif args.command == "paper":
 
