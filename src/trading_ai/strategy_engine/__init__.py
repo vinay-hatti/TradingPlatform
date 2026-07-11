@@ -33,3 +33,21 @@ from trading_ai.strategy_engine.expected_move_source import (
 from trading_ai.strategy_engine.expected_move_strategy_fit import (
     ExpectedMoveStrategyFit,
 )
+from trading_ai.strategy_engine.strategy_score_breakdown import (
+    StrategyScoreBreakdown,
+)
+from trading_ai.strategy_engine.strategy_score_policy import (
+    StrategyScorePolicy,
+)
+from trading_ai.strategy_engine.strategy_score_weights import (
+    StrategyScoreWeights,
+)
+from trading_ai.strategy_engine.strategy_scoring_context import (
+    StrategyScoringContext,
+)
+from trading_ai.strategy_engine.strategy_scoring_engine import (
+    StrategyScoringEngine,
+)
+from trading_ai.strategy_engine.strategy_scoring_result import (
+    StrategyScoringResult,
+)
