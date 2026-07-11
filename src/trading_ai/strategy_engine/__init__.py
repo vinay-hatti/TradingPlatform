@@ -94,3 +94,25 @@ from trading_ai.strategy_engine.strategy_payoff_profile import (
 from trading_ai.strategy_engine.strategy_structure import (
     StrategyStructure,
 )
+from trading_ai.strategy_engine.portfolio_allocator import (
+    PortfolioAllocator,
+)
+from trading_ai.strategy_engine.portfolio_construction_result import (
+    PortfolioConstructionResult,
+    PortfolioRejection,
+)
+from trading_ai.strategy_engine.portfolio_constructor import (
+    PortfolioConstructor,
+)
+from trading_ai.strategy_engine.portfolio_exposure import (
+    PortfolioExposure,
+)
+from trading_ai.strategy_engine.portfolio_position import (
+    PortfolioPosition,
+)
+from trading_ai.strategy_engine.portfolio_risk_limits import (
+    PortfolioRiskLimits,
+)
+from trading_ai.strategy_engine.portfolio_service import (
+    PortfolioService,
+)
