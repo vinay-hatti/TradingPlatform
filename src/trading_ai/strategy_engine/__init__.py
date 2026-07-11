@@ -116,3 +116,29 @@ from trading_ai.strategy_engine.portfolio_risk_limits import (
 from trading_ai.strategy_engine.portfolio_service import (
     PortfolioService,
 )
+from trading_ai.strategy_engine.decision_candidate_bundle import (
+    DecisionCandidateBundle,
+)
+from trading_ai.strategy_engine.decision_policy import (
+    DecisionPolicy,
+)
+from trading_ai.strategy_engine.decision_request import (
+    DecisionRequest,
+)
+from trading_ai.strategy_engine.decision_run_result import (
+    DecisionRunResult,
+    SymbolDecisionDiagnostic,
+)
+from trading_ai.strategy_engine.decision_serialization import (
+    decision_run_to_dict,
+    decision_to_dict,
+)
+from trading_ai.strategy_engine.institutional_decision import (
+    InstitutionalDecision,
+)
+from trading_ai.strategy_engine.institutional_decision_engine import (
+    InstitutionalDecisionEngine,
+)
+from trading_ai.strategy_engine.institutional_decision_service import (
+    InstitutionalDecisionService,
+)
