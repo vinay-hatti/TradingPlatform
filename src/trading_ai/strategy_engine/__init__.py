@@ -69,3 +69,28 @@ from trading_ai.strategy_engine.institutional_ranking_policy import (
 from trading_ai.strategy_engine.opportunity_factory import (
     OpportunityFactory,
 )
+from trading_ai.strategy_engine.multi_strategy_builder import (
+    MultiStrategyBuilder,
+)
+from trading_ai.strategy_engine.multi_strategy_service import (
+    MultiStrategyService,
+)
+from trading_ai.strategy_engine.multi_strategy_validator import (
+    MultiStrategyValidator,
+    StrategyValidationResult,
+)
+from trading_ai.strategy_engine.option_leg import (
+    OptionLeg,
+)
+from trading_ai.strategy_engine.strategy_catalog import (
+    StrategyCatalog,
+)
+from trading_ai.strategy_engine.strategy_payoff_engine import (
+    StrategyPayoffEngine,
+)
+from trading_ai.strategy_engine.strategy_payoff_profile import (
+    StrategyPayoffProfile,
+)
+from trading_ai.strategy_engine.strategy_structure import (
+    StrategyStructure,
+)

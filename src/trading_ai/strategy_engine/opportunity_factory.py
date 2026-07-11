@@ -34,6 +34,7 @@ class OpportunityFactory:
         correlation_group: str = "",
         contracts: int = 1,
         metadata: dict | None = None,
+        payoff_profile=None,
     ) -> InstitutionalOpportunity:
         result = strategy_scoring_result
 
@@ -292,6 +293,47 @@ class OpportunityFactory:
             and not rejection_reasons
         )
 
+        if payoff_profile is not None:
+            if expected_profit is None:
+                expected_profit = float(
+                    getattr(
+                        payoff_profile,
+                        "expected_profit",
+                        0.0,
+                    )
+                    or 0.0
+                )
+
+            if maximum_loss is None:
+                maximum_loss = float(
+                    getattr(
+                        payoff_profile,
+                        "maximum_loss",
+                        0.0,
+                    )
+                    or 0.0
+                )
+
+            if capital_required is None:
+                capital_required = float(
+                    getattr(
+                        payoff_profile,
+                        "capital_required",
+                        0.0,
+                    )
+                    or 0.0
+                )
+
+            if expected_return_pct is None:
+                expected_return_pct = float(
+                    getattr(
+                        payoff_profile,
+                        "expected_return_pct",
+                        0.0,
+                    )
+                    or 0.0
+                )
+
         return InstitutionalOpportunity(
             symbol=symbol,
             strategy=strategy,
@@ -363,7 +405,10 @@ class OpportunityFactory:
             liquidity_profile=liquidity_profile,
             expected_move_profile=expected_move_profile,
             volatility_profile=volatility_profile,
-            metadata=dict(metadata or {}),
+            metadata={
+                **dict(metadata or {}),
+                "payoff_profile": payoff_profile,
+            },
         )
 
     def _derive_expected_return_pct(
