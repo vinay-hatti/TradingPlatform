@@ -51,3 +51,21 @@ from trading_ai.strategy_engine.strategy_scoring_engine import (
 from trading_ai.strategy_engine.strategy_scoring_result import (
     StrategyScoringResult,
 )
+from trading_ai.strategy_engine.institutional_opportunity import (
+    InstitutionalOpportunity,
+)
+from trading_ai.strategy_engine.institutional_rank_breakdown import (
+    InstitutionalRankBreakdown,
+)
+from trading_ai.strategy_engine.institutional_ranked_opportunity import (
+    InstitutionalRankedOpportunity,
+)
+from trading_ai.strategy_engine.institutional_ranking_engine import (
+    InstitutionalRankingEngine,
+)
+from trading_ai.strategy_engine.institutional_ranking_policy import (
+    InstitutionalRankingPolicy,
+)
+from trading_ai.strategy_engine.opportunity_factory import (
+    OpportunityFactory,
+)
