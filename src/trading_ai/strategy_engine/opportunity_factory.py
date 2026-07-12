@@ -8,8 +8,8 @@ from trading_ai.strategy_engine.institutional_opportunity import (
 
 class OpportunityFactory:
     """
-    Converts Phase 8 scoring output and Phase 1-7 analytics into a
-    complete InstitutionalOpportunity.
+    Converts strategy scoring and analytical profiles into a complete
+    InstitutionalOpportunity.
     """
 
     def create(
@@ -23,6 +23,8 @@ class OpportunityFactory:
         liquidity_profile=None,
         expected_move_profile=None,
         volatility_profile=None,
+        payoff_profile=None,
+        probability_profile=None,
         expected_return_pct: float | None = None,
         expected_profit: float | None = None,
         maximum_loss: float | None = None,
@@ -34,48 +36,79 @@ class OpportunityFactory:
         correlation_group: str = "",
         contracts: int = 1,
         metadata: dict | None = None,
-        payoff_profile=None,
     ) -> InstitutionalOpportunity:
         result = strategy_scoring_result
 
         strategy = str(
             getattr(result, "strategy", "")
-            or getattr(strategy_candidate, "strategy", "")
+            or getattr(
+                strategy_candidate,
+                "strategy",
+                "",
+            )
             or ""
         ).upper()
 
         direction = str(
             getattr(result, "direction", "")
-            or getattr(strategy_candidate, "direction", "")
+            or getattr(
+                strategy_candidate,
+                "direction",
+                "",
+            )
             or ""
         ).upper()
 
         market_regime = str(
-            getattr(result, "market_regime", "UNKNOWN")
+            getattr(
+                result,
+                "market_regime",
+                "UNKNOWN",
+            )
             or "UNKNOWN"
         ).upper()
 
         strategy_score = self._safe_float(
-            getattr(result, "composite_score", 0.0)
+            getattr(
+                result,
+                "composite_score",
+                0.0,
+            )
         )
 
         allowed = bool(
-            getattr(result, "allowed", False)
+            getattr(
+                result,
+                "allowed",
+                False,
+            )
         )
 
         readiness = str(
-            getattr(result, "readiness", "RESEARCH_ONLY")
+            getattr(
+                result,
+                "readiness",
+                "RESEARCH_ONLY",
+            )
             or "RESEARCH_ONLY"
         ).upper()
 
         recommendation = str(
-            getattr(result, "recommendation", "RESEARCH_ONLY")
+            getattr(
+                result,
+                "recommendation",
+                "RESEARCH_ONLY",
+            )
             or "RESEARCH_ONLY"
         ).upper()
 
-        breakdown = getattr(result, "breakdown", None)
+        breakdown = getattr(
+            result,
+            "breakdown",
+            None,
+        )
 
-        liquidity_score = self._first_score(
+        liquidity_score = self._first_value(
             liquidity_profile,
             [
                 "package_liquidity_score",
@@ -83,22 +116,24 @@ class OpportunityFactory:
             ],
         )
 
-        if liquidity_score <= 0 and breakdown is not None:
-            liquidity_score = self._safe_float(
-                getattr(breakdown, "liquidity_score", 0.0)
+        if liquidity_score <= 0:
+            liquidity_score = self._first_value(
+                breakdown,
+                ["liquidity_score"],
             )
 
-        execution_score = self._first_score(
+        execution_score = self._first_value(
             liquidity_profile,
             ["execution_score"],
         )
 
-        if execution_score <= 0 and breakdown is not None:
-            execution_score = self._safe_float(
-                getattr(breakdown, "execution_score", 0.0)
+        if execution_score <= 0:
+            execution_score = self._first_value(
+                breakdown,
+                ["execution_score"],
             )
 
-        greeks_score = self._first_score(
+        greeks_score = self._first_value(
             greeks_profile,
             [
                 "composite_score",
@@ -106,98 +141,243 @@ class OpportunityFactory:
             ],
         )
 
-        if greeks_score <= 0 and breakdown is not None:
-            greeks_score = self._safe_float(
-                getattr(breakdown, "greeks_score", 0.0)
+        if greeks_score <= 0:
+            greeks_score = self._first_value(
+                breakdown,
+                ["greeks_score"],
             )
 
-        expected_move_score = 0.0
+        expected_move_score = self._first_value(
+            strategy_candidate,
+            ["expected_move_score"],
+        )
 
-        if strategy_candidate is not None:
-            expected_move_score = self._safe_float(
+        if expected_move_score <= 0:
+            expected_move_score = self._first_value(
+                breakdown,
+                ["expected_move_score"],
+            )
+
+        data_confidence_score = self._first_value(
+            breakdown,
+            ["data_confidence_score"],
+        )
+
+        risk_reward_score = self._first_value(
+            breakdown,
+            ["risk_reward_score"],
+        )
+
+        # -------------------------------------------------
+        # Payoff profile values
+        # -------------------------------------------------
+
+        if payoff_profile is not None:
+            if expected_profit is None:
+                expected_profit = self._optional_numeric(
+                    getattr(
+                        payoff_profile,
+                        "expected_profit",
+                        None,
+                    )
+                )
+
+            if maximum_loss is None:
+                maximum_loss = self._optional_numeric(
+                    getattr(
+                        payoff_profile,
+                        "maximum_loss",
+                        None,
+                    )
+                )
+
+            if capital_required is None:
+                capital_required = self._optional_numeric(
+                    getattr(
+                        payoff_profile,
+                        "capital_required",
+                        None,
+                    )
+                )
+
+            if expected_return_pct is None:
+                expected_return_pct = self._optional_numeric(
+                    getattr(
+                        payoff_profile,
+                        "expected_return_pct",
+                        None,
+                    )
+                )
+
+        # -------------------------------------------------
+        # Probability profile values
+        # -------------------------------------------------
+
+        probability_valid = bool(
+            probability_profile is not None
+            and getattr(
+                probability_profile,
+                "valid",
+                False,
+            )
+        )
+
+        if (
+            probability_of_profit is None
+            and probability_valid
+        ):
+            probability_of_profit = getattr(
+                probability_profile,
+                "probability_of_profit",
+                None,
+            )
+
+        if (
+            probability_valid
+            and expected_profit is None
+        ):
+            expected_profit = self._optional_numeric(
                 getattr(
-                    strategy_candidate,
-                    "expected_move_score",
-                    0.0,
+                    probability_profile,
+                    "expected_value",
+                    None,
                 )
             )
 
-        if expected_move_score <= 0 and breakdown is not None:
-            expected_move_score = self._safe_float(
+        if (
+            probability_valid
+            and expected_return_pct is None
+        ):
+            expected_return_pct = self._optional_numeric(
                 getattr(
-                    breakdown,
-                    "expected_move_score",
-                    0.0,
+                    probability_profile,
+                    "expected_return_on_capital",
+                    None,
                 )
             )
 
-        data_confidence_score = 0.0
-
-        if breakdown is not None:
-            data_confidence_score = self._safe_float(
-                getattr(
-                    breakdown,
-                    "data_confidence_score",
-                    0.0,
-                )
-            )
-
-        risk_reward_score = 0.0
-
-        if breakdown is not None:
-            risk_reward_score = self._safe_float(
-                getattr(
-                    breakdown,
-                    "risk_reward_score",
-                    0.0,
-                )
-            )
-
-        if expected_return_pct is None:
-            expected_return_pct = self._derive_expected_return_pct(
-                expected_profit=expected_profit,
-                capital_required=capital_required,
-                strike_candidate=strike_candidate,
-            )
+        # -------------------------------------------------
+        # Candidate-derived fallbacks
+        # -------------------------------------------------
 
         if expected_profit is None:
-            expected_profit = self._derive_expected_profit(
-                strike_candidate
+            expected_profit = self._first_value(
+                strike_candidate,
+                [
+                    "expected_profit",
+                    "max_profit",
+                ],
+                bound=False,
             )
 
         if maximum_loss is None:
-            maximum_loss = self._derive_maximum_loss(
-                strike_candidate
+            maximum_loss = self._first_value(
+                strike_candidate,
+                [
+                    "maximum_loss",
+                    "max_loss",
+                    "initial_risk",
+                ],
+                bound=False,
             )
 
         if capital_required is None:
-            capital_required = self._derive_capital_required(
-                strike_candidate=strike_candidate,
-                maximum_loss=maximum_loss,
-                contracts=contracts,
+            capital_required = self._first_value(
+                strike_candidate,
+                [
+                    "capital_required",
+                    "position_size",
+                ],
+                bound=False,
             )
 
+        contracts = max(
+            int(contracts or 1),
+            1,
+        )
+
+        if (
+            not capital_required
+            and maximum_loss
+        ):
+            capital_required = float(
+                maximum_loss
+            )
+
+        if not capital_required:
+            mid = self._safe_float(
+                getattr(
+                    strike_candidate,
+                    "mid",
+                    0.0,
+                )
+                if strike_candidate is not None
+                else 0.0
+            )
+
+            if mid > 0:
+                capital_required = (
+                    mid
+                    * contracts
+                    * 100.0
+                )
+
+        if expected_return_pct is None:
+            if (
+                self._safe_float(
+                    expected_profit
+                )
+                != 0
+                and self._safe_float(
+                    capital_required
+                )
+                > 0
+            ):
+                expected_return_pct = (
+                    self._safe_float(
+                        expected_profit
+                    )
+                    / self._safe_float(
+                        capital_required
+                    )
+                )
+            else:
+                expected_return_pct = 0.0
+
         if probability_of_profit is None:
-            probability_of_profit = self._derive_probability_of_profit(
-                strategy_candidate=strategy_candidate,
-                expected_move_profile=expected_move_profile,
-                strike_candidate=strike_candidate,
+            probability_of_profit = (
+                self._derive_probability_of_profit(
+                    strategy_candidate,
+                    strike_candidate,
+                )
             )
 
         strike = self._optional_float(
-            getattr(strike_candidate, "strike", None)
+            getattr(
+                strike_candidate,
+                "strike",
+                None,
+            )
             if strike_candidate is not None
             else None
         )
 
         long_strike = self._optional_float(
-            getattr(strike_candidate, "long_strike", None)
+            getattr(
+                strike_candidate,
+                "long_strike",
+                None,
+            )
             if strike_candidate is not None
             else None
         )
 
         short_strike = self._optional_float(
-            getattr(strike_candidate, "short_strike", None)
+            getattr(
+                strike_candidate,
+                "short_strike",
+                None,
+            )
             if strike_candidate is not None
             else None
         )
@@ -206,13 +386,21 @@ class OpportunityFactory:
 
         if expiration_candidate is not None:
             expiry = str(
-                getattr(expiration_candidate, "expiry", "")
+                getattr(
+                    expiration_candidate,
+                    "expiry",
+                    "",
+                )
                 or ""
             )
 
         if not expiry and strike_candidate is not None:
             expiry = str(
-                getattr(strike_candidate, "expiry", "")
+                getattr(
+                    strike_candidate,
+                    "expiry",
+                    "",
+                )
                 or ""
             )
 
@@ -221,38 +409,53 @@ class OpportunityFactory:
         if expiration_candidate is not None:
             dte = int(
                 self._safe_float(
-                    getattr(expiration_candidate, "dte", 0)
+                    getattr(
+                        expiration_candidate,
+                        "dte",
+                        0,
+                    )
                 )
             )
 
         if dte <= 0 and strike_candidate is not None:
             dte = int(
                 self._safe_float(
-                    getattr(strike_candidate, "dte", 0)
+                    getattr(
+                        strike_candidate,
+                        "dte",
+                        0,
+                    )
                 )
             )
 
-        option_symbol = ""
-
-        if strike_candidate is not None:
-            option_symbol = str(
-                getattr(
-                    strike_candidate,
-                    "option_symbol",
-                    "",
-                )
-                or ""
+        option_symbol = str(
+            getattr(
+                strike_candidate,
+                "option_symbol",
+                "",
             )
+            or ""
+        ) if strike_candidate is not None else ""
 
-        result_metadata = getattr(
-            result,
-            "metadata",
-            {},
-        ) or {}
+        result_metadata = dict(
+            getattr(
+                result,
+                "metadata",
+                {},
+            )
+            or {}
+        )
 
         premium_type = str(
-            getattr(strategy_candidate, "premium_type", "")
-            or result_metadata.get("premium_type", "")
+            getattr(
+                strategy_candidate,
+                "premium_type",
+                "",
+            )
+            or result_metadata.get(
+                "premium_type",
+                "",
+            )
             or ""
         ).upper()
 
@@ -278,12 +481,20 @@ class OpportunityFactory:
         ).upper()
 
         rejection_reasons = list(
-            getattr(result, "rejection_reasons", [])
+            getattr(
+                result,
+                "rejection_reasons",
+                [],
+            )
             or []
         )
 
         warnings = list(
-            getattr(result, "warnings", [])
+            getattr(
+                result,
+                "warnings",
+                [],
+            )
             or []
         )
 
@@ -293,78 +504,65 @@ class OpportunityFactory:
             and not rejection_reasons
         )
 
-        if payoff_profile is not None:
-            if expected_profit is None:
-                expected_profit = float(
-                    getattr(
-                        payoff_profile,
-                        "expected_profit",
-                        0.0,
-                    )
-                    or 0.0
-                )
-
-            if maximum_loss is None:
-                maximum_loss = float(
-                    getattr(
-                        payoff_profile,
-                        "maximum_loss",
-                        0.0,
-                    )
-                    or 0.0
-                )
-
-            if capital_required is None:
-                capital_required = float(
-                    getattr(
-                        payoff_profile,
-                        "capital_required",
-                        0.0,
-                    )
-                    or 0.0
-                )
-
-            if expected_return_pct is None:
-                expected_return_pct = float(
-                    getattr(
-                        payoff_profile,
-                        "expected_return_pct",
-                        0.0,
-                    )
-                    or 0.0
-                )
+        combined_metadata = {
+            **dict(metadata or {}),
+            "payoff_profile": payoff_profile,
+            "probability_profile": probability_profile,
+        }
 
         return InstitutionalOpportunity(
             symbol=symbol,
             strategy=strategy,
             direction=direction,
             market_regime=market_regime,
-            strategy_score=round(strategy_score, 2),
+            strategy_score=round(
+                strategy_score,
+                2,
+            ),
             allowed=allowed,
             readiness=readiness,
             recommendation=recommendation,
             expected_return_pct=round(
-                self._safe_float(expected_return_pct),
+                self._safe_float(
+                    expected_return_pct
+                ),
                 4,
             ),
             expected_profit=round(
-                self._safe_float(expected_profit),
+                self._safe_float(
+                    expected_profit
+                ),
                 2,
             ),
             maximum_loss=round(
-                self._safe_float(maximum_loss),
+                self._safe_float(
+                    maximum_loss
+                ),
                 2,
             ),
             capital_required=round(
-                self._safe_float(capital_required),
+                self._safe_float(
+                    capital_required
+                ),
                 2,
             ),
-            probability_of_profit=self._normalize_probability(
-                probability_of_profit
+            probability_of_profit=(
+                self._normalize_probability(
+                    probability_of_profit
+                )
             ),
-            liquidity_score=round(liquidity_score, 2),
-            execution_score=round(execution_score, 2),
-            greeks_score=round(greeks_score, 2),
+            liquidity_score=round(
+                liquidity_score,
+                2,
+            ),
+            execution_score=round(
+                execution_score,
+                2,
+            ),
+            greeks_score=round(
+                greeks_score,
+                2,
+            ),
             expected_move_score=round(
                 expected_move_score,
                 2,
@@ -378,7 +576,9 @@ class OpportunityFactory:
                 2,
             ),
             portfolio_fit_score=round(
-                self._bound_score(portfolio_fit_score),
+                self._bound_score(
+                    portfolio_fit_score
+                ),
                 2,
             ),
             strike=strike,
@@ -405,101 +605,12 @@ class OpportunityFactory:
             liquidity_profile=liquidity_profile,
             expected_move_profile=expected_move_profile,
             volatility_profile=volatility_profile,
-            metadata={
-                **dict(metadata or {}),
-                "payoff_profile": payoff_profile,
-            },
+            metadata=combined_metadata,
         )
-
-    def _derive_expected_return_pct(
-        self,
-        expected_profit,
-        capital_required,
-        strike_candidate,
-    ) -> float:
-        direct_value = self._first_score(
-            strike_candidate,
-            [
-                "expected_return_pct",
-                "expected_return",
-            ],
-            bound=False,
-        )
-
-        if direct_value > 0:
-            return direct_value
-
-        profit = self._safe_float(expected_profit)
-        capital = self._safe_float(capital_required)
-
-        if profit > 0 and capital > 0:
-            return profit / capital
-
-        return 0.0
-
-    def _derive_expected_profit(self, strike_candidate) -> float:
-        return self._first_score(
-            strike_candidate,
-            [
-                "expected_profit",
-                "max_profit",
-            ],
-            bound=False,
-        )
-
-    def _derive_maximum_loss(self, strike_candidate) -> float:
-        return self._first_score(
-            strike_candidate,
-            [
-                "maximum_loss",
-                "max_loss",
-                "initial_risk",
-            ],
-            bound=False,
-        )
-
-    def _derive_capital_required(
-        self,
-        strike_candidate,
-        maximum_loss,
-        contracts,
-    ) -> float:
-        direct_value = self._first_score(
-            strike_candidate,
-            [
-                "capital_required",
-                "position_size",
-            ],
-            bound=False,
-        )
-
-        if direct_value > 0:
-            return direct_value
-
-        maximum_loss = self._safe_float(maximum_loss)
-
-        if maximum_loss > 0:
-            return maximum_loss * max(int(contracts or 1), 1)
-
-        mid = self._safe_float(
-            getattr(strike_candidate, "mid", 0.0)
-            if strike_candidate is not None
-            else 0.0
-        )
-
-        if mid > 0:
-            return (
-                mid
-                * max(int(contracts or 1), 1)
-                * 100.0
-            )
-
-        return 0.0
 
     def _derive_probability_of_profit(
         self,
         strategy_candidate,
-        expected_move_profile,
         strike_candidate,
     ) -> float | None:
         for obj in [
@@ -509,11 +620,15 @@ class OpportunityFactory:
             if obj is None:
                 continue
 
-            for field in [
+            for field_name in [
                 "probability_of_profit",
                 "pop",
             ]:
-                value = getattr(obj, field, None)
+                value = getattr(
+                    obj,
+                    field_name,
+                    None,
+                )
 
                 if value is not None:
                     return self._normalize_probability(
@@ -522,7 +637,7 @@ class OpportunityFactory:
 
         return None
 
-    def _first_score(
+    def _first_value(
         self,
         obj: Any,
         fields: list[str],
@@ -531,18 +646,30 @@ class OpportunityFactory:
         if obj is None:
             return 0.0
 
-        for field in fields:
-            value = (
-                obj.get(field)
-                if isinstance(obj, dict)
-                else getattr(obj, field, None)
-            )
+        for field_name in fields:
+            if isinstance(obj, dict):
+                value = obj.get(
+                    field_name
+                )
+            else:
+                value = getattr(
+                    obj,
+                    field_name,
+                    None,
+                )
 
-            parsed = self._safe_float(value)
+            if value is None:
+                continue
+
+            parsed = self._safe_float(
+                value
+            )
 
             if parsed != 0:
                 return (
-                    self._bound_score(parsed)
+                    self._bound_score(
+                        parsed
+                    )
                     if bound
                     else parsed
                 )
@@ -556,26 +683,58 @@ class OpportunityFactory:
         if value is None:
             return None
 
-        probability = self._safe_float(value)
+        probability = self._safe_float(
+            value
+        )
 
         if probability > 1.0:
             probability /= 100.0
 
         return round(
-            max(0.0, min(1.0, probability)),
+            max(
+                0.0,
+                min(
+                    1.0,
+                    probability,
+                ),
+            ),
             4,
         )
 
-    def _optional_float(self, value) -> float | None:
+    def _optional_numeric(
+        self,
+        value,
+    ) -> float | None:
         if value is None:
             return None
 
-        return self._safe_float(value)
+        return self._safe_float(
+            value
+        )
 
-    def _bound_score(self, value) -> float:
+    def _optional_float(
+        self,
+        value,
+    ) -> float | None:
+        if value is None:
+            return None
+
+        return self._safe_float(
+            value
+        )
+
+    def _bound_score(
+        self,
+        value,
+    ) -> float:
         return max(
             0.0,
-            min(100.0, self._safe_float(value)),
+            min(
+                100.0,
+                self._safe_float(
+                    value
+                ),
+            ),
         )
 
     def _safe_float(
@@ -584,12 +743,24 @@ class OpportunityFactory:
         default: float = 0.0,
     ) -> float:
         try:
-            result = float(value)
+            result = float(
+                value
+            )
 
-            if math.isnan(result) or math.isinf(result):
-                return float(default)
+            if (
+                math.isnan(result)
+                or math.isinf(result)
+            ):
+                return float(
+                    default
+                )
 
             return result
 
-        except (TypeError, ValueError):
-            return float(default)
+        except (
+            TypeError,
+            ValueError,
+        ):
+            return float(
+                default
+            )

@@ -75,19 +75,11 @@ class InstitutionalDecisionEngine:
         volatility_profile,
         expiration_candidate,
     ):
-        """Generate Monte Carlo POP and expected-value analytics."""
         structure = getattr(
             strike_candidate,
             "strategy_structure",
             None,
         )
-
-        if structure is None and payoff_profile is not None:
-            structure = getattr(
-                payoff_profile,
-                "strategy_structure",
-                None,
-            )
 
         if structure is None:
             return None
@@ -98,8 +90,6 @@ class InstitutionalDecisionEngine:
                 "current_iv",
                 0.0,
             )
-            if volatility_profile is not None
-            else 0.0
         )
 
         if volatility <= 0:
@@ -107,15 +97,6 @@ class InstitutionalDecisionEngine:
                 getattr(
                     strike_candidate,
                     "implied_volatility",
-                    0.0,
-                )
-            )
-
-        if volatility <= 0:
-            volatility = self._safe_float(
-                getattr(
-                    strike_candidate,
-                    "iv",
                     0.0,
                 )
             )
@@ -142,40 +123,36 @@ class InstitutionalDecisionEngine:
                 volatility=volatility,
                 horizon_days=dte,
                 maximum_profit=(
-                    getattr(payoff_profile, "maximum_profit", None)
+                    getattr(
+                        payoff_profile,
+                        "maximum_profit",
+                        None,
+                    )
                     if payoff_profile is not None
                     else None
                 ),
                 maximum_loss=(
-                    getattr(payoff_profile, "maximum_loss", None)
+                    getattr(
+                        payoff_profile,
+                        "maximum_loss",
+                        None,
+                    )
                     if payoff_profile is not None
                     else None
                 ),
                 capital_required=(
-                    getattr(payoff_profile, "capital_required", None)
+                    getattr(
+                        payoff_profile,
+                        "capital_required",
+                        None,
+                    )
                     if payoff_profile is not None
                     else None
                 ),
             )
-        except Exception as exc:
-            return SimpleNamespace(
-                valid=False,
-                probability_of_profit=None,
-                expected_value=0.0,
-                expected_return_on_capital=0.0,
-                expected_return_on_risk=0.0,
-                probability_of_max_profit=None,
-                probability_of_max_loss=None,
-                probability_profit_target=None,
-                probability_stop_loss=None,
-                value_at_risk_95=0.0,
-                conditional_value_at_risk_95=0.0,
-                simulation_count=0,
-                confidence_score=0.0,
-                confidence_grade="F",
-                method="UNAVAILABLE",
-                warnings=[f"Probability analysis failed: {exc}"],
-            )
+        except Exception:
+            return None
+
 
     def __init__(
         self,
@@ -191,9 +168,12 @@ class InstitutionalDecisionEngine:
         opportunity_factory=None,
         ranking_engine=None,
         multi_strategy_service=None,
-        probability_service=None,
         portfolio_service=None,
         portfolio_limits: PortfolioRiskLimits | None = None,
+        probability_service=None,
+        probability_profile=(
+            probability_profile
+        ),
     ):
         self.policy = (
             policy
@@ -1041,30 +1021,6 @@ class InstitutionalDecisionEngine:
             ),
         )
 
-        probability_profile_valid = bool(
-            probability_profile is not None
-            and getattr(
-                probability_profile,
-                "valid",
-                False,
-            )
-        )
-
-        if probability_profile_valid:
-            expected_profit = self._safe_float(
-                getattr(
-                    probability_profile,
-                    "expected_value",
-                    expected_profit,
-                )
-            )
-            expected_return_pct = self._safe_float(
-                getattr(
-                    probability_profile,
-                    "expected_return_on_capital",
-                    expected_return_pct,
-                )
-            )
 
         probability_of_profit = (
             getattr(
@@ -1072,7 +1028,12 @@ class InstitutionalDecisionEngine:
                 "probability_of_profit",
                 None,
             )
-            if probability_profile_valid
+            if probability_profile is not None
+            and getattr(
+                probability_profile,
+                "valid",
+                False,
+            )
             else self._probability_of_profit(
                 strategy_candidate=(
                     strategy_candidate
@@ -1114,9 +1075,6 @@ class InstitutionalDecisionEngine:
                     ),
                     payoff_profile=(
                         payoff_profile
-                    ),
-                    probability_profile=(
-                        probability_profile
                     ),
                     expected_return_pct=(
                         expected_return_pct
@@ -1229,8 +1187,6 @@ class InstitutionalDecisionEngine:
                             candidate_id,
                         "payoff_profile":
                             payoff_profile,
-                        "probability_profile":
-                            probability_profile,
                     },
                 )
             )
@@ -1329,14 +1285,6 @@ class InstitutionalDecisionEngine:
                     )
                     or []
                 )
-                + list(
-                    getattr(
-                        probability_profile,
-                        "warnings",
-                        [],
-                    )
-                    or []
-                )
             )
         )
 
@@ -1369,9 +1317,6 @@ class InstitutionalDecisionEngine:
             ),
             payoff_profile=(
                 payoff_profile
-            ),
-            probability_profile=(
-                probability_profile
             ),
             strategy_scoring_context=(
                 context
@@ -1755,7 +1700,6 @@ class InstitutionalDecisionEngine:
         greeks = bundle.greeks_profile
         liquidity = bundle.liquidity_profile
         payoff = bundle.payoff_profile
-        probability = bundle.probability_profile
 
         selected = bool(
             position is not None
@@ -2051,94 +1995,12 @@ class InstitutionalDecisionEngine:
             ),
             probability_of_profit=(
                 getattr(
-                    probability,
-                    "probability_of_profit",
-                    None,
-                )
-                if (
-                    probability is not None
-                    and getattr(probability, "valid", False)
-                )
-                else getattr(
                     opportunity,
                     "probability_of_profit",
                     None,
                 )
-            ),
-            expected_value=round(
-                self._profile_value(
-                    probability,
-                    "expected_value",
-                    0.0,
-                ),
-                2,
-            ),
-            expected_return_on_risk=round(
-                self._profile_value(
-                    probability,
-                    "expected_return_on_risk",
-                    0.0,
-                ),
-                4,
-            ),
-            probability_of_max_profit=(
-                getattr(probability, "probability_of_max_profit", None)
-                if probability is not None
+                if opportunity is not None
                 else None
-            ),
-            probability_of_max_loss=(
-                getattr(probability, "probability_of_max_loss", None)
-                if probability is not None
-                else None
-            ),
-            probability_profit_target=(
-                getattr(probability, "probability_profit_target", None)
-                if probability is not None
-                else None
-            ),
-            probability_stop_loss=(
-                getattr(probability, "probability_stop_loss", None)
-                if probability is not None
-                else None
-            ),
-            value_at_risk_95=round(
-                self._profile_value(
-                    probability,
-                    "value_at_risk_95",
-                    0.0,
-                ),
-                2,
-            ),
-            conditional_value_at_risk_95=round(
-                self._profile_value(
-                    probability,
-                    "conditional_value_at_risk_95",
-                    0.0,
-                ),
-                2,
-            ),
-            probability_method=str(
-                getattr(probability, "method", "UNAVAILABLE")
-                or "UNAVAILABLE"
-            ),
-            probability_simulation_count=int(
-                self._profile_value(
-                    probability,
-                    "simulation_count",
-                    0,
-                )
-            ),
-            probability_confidence_score=round(
-                self._profile_value(
-                    probability,
-                    "confidence_score",
-                    0.0,
-                ),
-                2,
-            ),
-            probability_confidence_grade=str(
-                getattr(probability, "confidence_grade", "N/A")
-                or "N/A"
             ),
             expected_move=round(
                 self._profile_value(
@@ -2387,7 +2249,6 @@ class InstitutionalDecisionEngine:
                 None,
             ),
             payoff_profile=payoff,
-            probability_profile=probability,
             portfolio_position=position,
             metadata={
                 "candidate_metadata":

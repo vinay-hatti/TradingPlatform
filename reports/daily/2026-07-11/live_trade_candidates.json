@@ -1,0 +1,32 @@
+{
+  "metadata": {
+    "date": "2026-07-11",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "AMZN",
+      "NVDA",
+      "META",
+      "GOOGL",
+      "TSLA",
+      "AMD",
+      "SPY",
+      "QQQ"
+    ],
+    "symbols_scanned": 10,
+    "candidates": 0,
+    "live_trade_candidates": 0,
+    "live_profile": "aggressive",
+    "min_score": 60.0,
+    "pricing_dte": 30,
+    "start": "2026-01-01",
+    "end": "2026-06-01",
+    "positions_file": "data/portfolio/current_positions.csv",
+    "capital": 100000.0,
+    "risk_per_trade_pct": 0.02,
+    "max_position_pct": 0.05,
+    "take_profit_pct": 0.3,
+    "stop_loss_pct": 0.15
+  },
+  "trades": []
+}

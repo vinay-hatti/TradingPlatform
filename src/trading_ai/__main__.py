@@ -69,6 +69,7 @@ def main():
     sub.add_parser("multi-strategy-test")
     sub.add_parser("portfolio-construction-test")
     sub.add_parser("institutional-decision-test")
+    sub.add_parser("probability-engine-test")
 
     paper = sub.add_parser("paper")
     paper_sub = paper.add_subparsers(dest="paper_command")
@@ -223,6 +224,9 @@ def main():
 
     elif args.command == "institutional-decision-test":
         run_script("scripts/test_institutional_decision_engine.py", extra)
+
+    elif args.command == "probability-engine-test":
+        run_script("scripts/test_probability_engine.py", extra)
 
     elif args.command == "paper":
 

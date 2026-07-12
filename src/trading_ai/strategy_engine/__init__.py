@@ -142,3 +142,24 @@ from trading_ai.strategy_engine.institutional_decision_engine import (
 from trading_ai.strategy_engine.institutional_decision_service import (
     InstitutionalDecisionService,
 )
+from trading_ai.strategy_engine.expected_value_engine import (
+    ExpectedValueEngine,
+)
+from trading_ai.strategy_engine.probability_engine import (
+    ProbabilityEngine,
+)
+from trading_ai.strategy_engine.probability_policy import (
+    ProbabilityPolicy,
+)
+from trading_ai.strategy_engine.probability_profile import (
+    ProbabilityProfile,
+)
+from trading_ai.strategy_engine.probability_serialization import (
+    probability_profile_to_dict,
+)
+from trading_ai.strategy_engine.probability_service import (
+    ProbabilityService,
+)
+from trading_ai.strategy_engine.terminal_price_model import (
+    TerminalPriceModel,
+)

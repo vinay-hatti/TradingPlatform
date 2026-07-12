@@ -5,7 +5,23 @@ from typing import Any
 @dataclass
 class DecisionCandidateBundle:
     """
-    Stores all intermediate Phase 1-10 results for one candidate.
+    Stores all intermediate analytical results for one complete
+    institutional strategy candidate.
+
+    The bundle connects:
+
+      - Volatility analysis
+      - Expected-move analysis
+      - Strategy selection
+      - Expiration optimization
+      - Strike optimization
+      - Greeks analysis
+      - Liquidity analysis
+      - Payoff analysis
+      - Probability and expected-value analysis
+      - Strategy scoring
+      - Institutional ranking
+      - Portfolio construction
     """
 
     symbol: str
@@ -24,6 +40,7 @@ class DecisionCandidateBundle:
     greeks_profile: Any = None
     liquidity_profile: Any = None
     payoff_profile: Any = None
+    probability_profile: Any = None
 
     strategy_scoring_context: Any = None
     strategy_scoring_result: Any = None
@@ -35,6 +52,7 @@ class DecisionCandidateBundle:
     candidate_id: str = ""
 
     allowed: bool = True
+
     rejection_reasons: list[str] = field(
         default_factory=list
     )
@@ -66,6 +84,18 @@ class DecisionCandidateBundle:
 
         self.underlying_price = float(
             self.underlying_price or 0.0
+        )
+
+        self.rejection_reasons = list(
+            self.rejection_reasons or []
+        )
+
+        self.warnings = list(
+            self.warnings or []
+        )
+
+        self.metadata = dict(
+            self.metadata or {}
         )
 
     @property
@@ -129,3 +159,14 @@ class DecisionCandidateBundle:
             )
 
         return 0
+
+    @property
+    def has_valid_probability_profile(self) -> bool:
+        return bool(
+            self.probability_profile is not None
+            and getattr(
+                self.probability_profile,
+                "valid",
+                False,
+            )
+        )
