@@ -43,6 +43,9 @@ class StrategyScoringContext:
     expected_move_profile: Any = None
     volatility_profile: Any = None
 
+    scenario_score: float = 50.0
+    scenario_allowed: bool = True
+
     notes: list[str] | None = None
 
     def __post_init__(self):

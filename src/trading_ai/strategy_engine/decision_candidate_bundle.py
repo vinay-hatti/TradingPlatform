@@ -41,6 +41,8 @@ class DecisionCandidateBundle:
     liquidity_profile: Any = None
     payoff_profile: Any = None
     probability_profile: Any = None
+    scenario_profile: Any = None
+    distribution_risk_profile: Any = None
 
     strategy_scoring_context: Any = None
     strategy_scoring_result: Any = None
@@ -166,6 +168,31 @@ class DecisionCandidateBundle:
             self.probability_profile is not None
             and getattr(
                 self.probability_profile,
+                "valid",
+                False,
+            )
+        )
+
+    @property
+    def has_valid_scenario_profile(self) -> bool:
+        return bool(
+            self.scenario_profile is not None
+            and getattr(
+                self.scenario_profile,
+                "valid",
+                False,
+            )
+        )
+
+    @property
+    def has_valid_distribution_risk_profile(
+        self,
+    ) -> bool:
+        return bool(
+            self.distribution_risk_profile
+            is not None
+            and getattr(
+                self.distribution_risk_profile,
                 "valid",
                 False,
             )

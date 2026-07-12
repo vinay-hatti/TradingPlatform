@@ -163,3 +163,55 @@ from trading_ai.strategy_engine.probability_service import (
 from trading_ai.strategy_engine.terminal_price_model import (
     TerminalPriceModel,
 )
+from trading_ai.strategy_engine.option_scenario_pricer import (
+    OptionScenarioPricer,
+)
+from trading_ai.strategy_engine.portfolio_scenario_engine import (
+    PortfolioScenarioEngine,
+)
+from trading_ai.strategy_engine.scenario_definition import (
+    ScenarioDefinition,
+)
+from trading_ai.strategy_engine.scenario_engine import (
+    ScenarioEngine,
+)
+from trading_ai.strategy_engine.scenario_policy import (
+    ScenarioPolicy,
+)
+from trading_ai.strategy_engine.scenario_result import (
+    PortfolioScenarioPoint,
+    PortfolioScenarioResult,
+    ScenarioAnalysisResult,
+    ScenarioPoint,
+)
+from trading_ai.strategy_engine.scenario_serialization import (
+    portfolio_scenario_result_to_dict,
+    scenario_result_to_dict,
+)
+from trading_ai.strategy_engine.scenario_service import (
+    ScenarioService,
+)
+from trading_ai.strategy_engine.distribution_risk_engine import (
+    DistributionRiskEngine,
+)
+from trading_ai.strategy_engine.distribution_risk_policy import (
+    DistributionRiskPolicy,
+)
+from trading_ai.strategy_engine.distribution_risk_profile import (
+    DistributionRiskProfile,
+    PortfolioRiskContribution,
+    PortfolioTailRiskProfile,
+)
+from trading_ai.strategy_engine.distribution_risk_serialization import (
+    distribution_risk_profile_to_dict,
+    portfolio_tail_risk_profile_to_dict,
+)
+from trading_ai.strategy_engine.distribution_risk_service import (
+    DistributionRiskService,
+)
+from trading_ai.strategy_engine.drawdown_risk_engine import (
+    DrawdownRiskEngine,
+)
+from trading_ai.strategy_engine.portfolio_tail_risk_engine import (
+    PortfolioTailRiskEngine,
+)

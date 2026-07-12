@@ -41,6 +41,41 @@ class InstitutionalDecision:
     expected_profit: float
     expected_return_pct: float
 
+    distribution_observation_count: int
+
+    historical_var_95: float
+    historical_expected_shortfall_95: float
+
+    parametric_var_95: float
+    parametric_expected_shortfall_95: float
+
+    historical_var_99: float
+    historical_expected_shortfall_99: float
+
+    downside_deviation: float
+    skewness: float
+    excess_kurtosis: float
+
+    probability_of_large_loss: float
+    probability_of_severe_loss: float
+    probability_of_critical_loss: float
+
+    drawdown_at_risk: float
+    expected_drawdown_shortfall: float
+
+    ulcer_index: float
+    pain_index: float
+
+    omega_ratio: float | None
+    sortino_ratio: float | None
+    gain_to_pain_ratio: float | None
+
+    tail_risk_score: float
+    tail_risk_grade: str
+    tail_risk_severity: str
+
+    distribution_risk_allowed: bool
+
     # -------------------------------------------------
     # Probability and expected-value analytics
     # -------------------------------------------------
@@ -63,6 +98,19 @@ class InstitutionalDecision:
     probability_simulation_count: int
     probability_confidence_score: float
     probability_confidence_grade: str
+
+    stress_score: float
+    stress_grade: str
+    stress_risk_severity: str
+
+    worst_scenario_name: str
+    worst_scenario_pnl: float
+
+    maximum_stress_loss: float
+    maximum_stress_loss_pct_of_capital: float
+    maximum_stress_loss_pct_of_maximum_loss: float | None
+
+    scenario_allowed: bool
 
     # -------------------------------------------------
     # Expected move
@@ -126,6 +174,8 @@ class InstitutionalDecision:
     payoff_profile: Any = None
     probability_profile: Any = None
     portfolio_position: Any = None
+    scenario_profile: Any = None
+    distribution_risk_profile: Any = None
 
     metadata: dict = field(
         default_factory=dict

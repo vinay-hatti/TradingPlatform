@@ -4,6 +4,12 @@ from uuid import uuid4
 from trading_ai.strategy_engine.probability_service import (
     ProbabilityService,
 )
+from trading_ai.strategy_engine.scenario_service import (
+    ScenarioService,
+)
+from trading_ai.strategy_engine.distribution_risk_service import (
+    DistributionRiskService,
+)
 from trading_ai.strategy_engine.decision_candidate_bundle import (
     DecisionCandidateBundle,
 )
@@ -177,6 +183,245 @@ class InstitutionalDecisionEngine:
                 warnings=[f"Probability analysis failed: {exc}"],
             )
 
+    def _scenario_profile(
+        self,
+        strike_candidate,
+        payoff_profile,
+        volatility_profile,
+        expiration_candidate,
+    ):
+        """Generate deterministic scenario and stress-test analytics."""
+        structure = getattr(
+            strike_candidate,
+            "strategy_structure",
+            None,
+        )
+
+        if structure is None and payoff_profile is not None:
+            structure = getattr(
+                payoff_profile,
+                "strategy_structure",
+                None,
+            )
+
+        if structure is None:
+            return None
+
+        volatility = self._safe_float(
+            getattr(
+                volatility_profile,
+                "current_iv",
+                0.0,
+            )
+            if volatility_profile is not None
+            else 0.0
+        )
+
+        if volatility <= 0:
+            volatility = self._safe_float(
+                getattr(
+                    strike_candidate,
+                    "implied_volatility",
+                    0.0,
+                )
+            )
+
+        if volatility <= 0:
+            volatility = self._safe_float(
+                getattr(
+                    strike_candidate,
+                    "iv",
+                    0.0,
+                )
+            )
+
+        dte = int(
+            getattr(
+                expiration_candidate,
+                "dte",
+                getattr(
+                    strike_candidate,
+                    "dte",
+                    0,
+                ),
+            )
+            or 0
+        )
+
+        capital_required = self._profile_value(
+            payoff_profile,
+            "capital_required",
+            self._profile_value(
+                strike_candidate,
+                "capital_required",
+                0.0,
+            ),
+        )
+
+        maximum_loss = self._profile_value(
+            payoff_profile,
+            "maximum_loss",
+            self._profile_value(
+                strike_candidate,
+                "max_loss",
+                0.0,
+            ),
+        )
+
+        if volatility <= 0 or dte <= 0:
+            return None
+
+        try:
+            return self.scenario_service.analyze_strategy(
+                structure=structure,
+                volatility=volatility,
+                days_to_expiry=dte,
+                capital_required=capital_required,
+                maximum_loss=maximum_loss,
+            )
+        except Exception as exc:
+            return SimpleNamespace(
+                valid=False,
+                allowed=False,
+                stress_score=0.0,
+                stress_grade="F",
+                risk_severity="UNKNOWN",
+                worst_scenario_name="",
+                worst_scenario_pnl=0.0,
+                maximum_stress_loss=0.0,
+                maximum_stress_loss_pct_of_capital=0.0,
+                maximum_stress_loss_pct_of_maximum_loss=None,
+                rejection_reasons=[
+                    "SCENARIO_ANALYSIS_FAILED"
+                ],
+                warnings=[
+                    f"Scenario analysis failed: {exc}"
+                ],
+            )
+
+
+    def _distribution_risk_profile(
+        self,
+        symbol,
+        strategy_candidate,
+        payoff_profile,
+        probability_profile,
+        scenario_profile,
+        strike_candidate,
+    ):
+        """
+        Build a PnL distribution from the best available source.
+
+        Preferred order:
+          1. Candidate historical PnL values
+          2. Scenario stressed PnL values
+          3. Monte Carlo PnL values retained in probability metadata
+        """
+        pnl_values = []
+
+        candidate_history = getattr(
+            strike_candidate,
+            "historical_pnl_values",
+            None,
+        )
+
+        if candidate_history is not None:
+            try:
+                pnl_values.extend(list(candidate_history))
+            except TypeError:
+                pass
+
+        scenario_points = getattr(
+            scenario_profile,
+            "scenario_points",
+            [],
+        ) or []
+
+        pnl_values.extend(
+            [
+                getattr(point, "stressed_pnl", 0.0)
+                for point in scenario_points
+            ]
+        )
+
+        probability_metadata = getattr(
+            probability_profile,
+            "metadata",
+            {},
+        ) or {}
+
+        monte_carlo_pnl_values = (
+            probability_metadata.get("pnl_values")
+            if isinstance(probability_metadata, dict)
+            else None
+        )
+
+        if not pnl_values and monte_carlo_pnl_values:
+            pnl_values = list(monte_carlo_pnl_values)
+
+        capital_required = self._profile_value(
+            payoff_profile,
+            "capital_required",
+            self._profile_value(
+                strike_candidate,
+                "capital_required",
+                self._profile_value(
+                    strike_candidate,
+                    "max_loss",
+                    0.0,
+                ),
+            ),
+        )
+
+        if len(pnl_values) < 2 or capital_required <= 0:
+            return None
+
+        try:
+            return self.distribution_risk_service.analyze_strategy(
+                pnl_values=pnl_values,
+                capital_required=capital_required,
+                symbol=symbol,
+                strategy=str(
+                    getattr(strategy_candidate, "strategy", "") or ""
+                ),
+                monte_carlo_pnl_values=monte_carlo_pnl_values,
+                initial_capital=capital_required,
+            )
+        except Exception as exc:
+            return SimpleNamespace(
+                valid=False,
+                allowed=False,
+                observation_count=0,
+                historical_var=0.0,
+                historical_expected_shortfall=0.0,
+                parametric_var=0.0,
+                parametric_expected_shortfall=0.0,
+                historical_var_99=0.0,
+                historical_expected_shortfall_99=0.0,
+                downside_deviation=0.0,
+                skewness=0.0,
+                excess_kurtosis=0.0,
+                probability_of_large_loss=0.0,
+                probability_of_severe_loss=0.0,
+                probability_of_critical_loss=0.0,
+                drawdown_at_risk=0.0,
+                expected_drawdown_shortfall=0.0,
+                ulcer_index=0.0,
+                pain_index=0.0,
+                omega_ratio=None,
+                sortino_ratio=None,
+                gain_to_pain_ratio=None,
+                tail_risk_score=0.0,
+                tail_risk_grade="F",
+                risk_severity="UNKNOWN",
+                rejection_reasons=[
+                    "DISTRIBUTION_RISK_ANALYSIS_FAILED"
+                ],
+                warnings=[
+                    f"Distribution-risk analysis failed: {exc}"
+                ],
+            )
+
     def __init__(
         self,
         policy: DecisionPolicy | None = None,
@@ -192,6 +437,8 @@ class InstitutionalDecisionEngine:
         ranking_engine=None,
         multi_strategy_service=None,
         probability_service=None,
+        scenario_service=None,
+        distribution_risk_service=None,
         portfolio_service=None,
         portfolio_limits: PortfolioRiskLimits | None = None,
     ):
@@ -260,6 +507,16 @@ class InstitutionalDecisionEngine:
         self.probability_service = (
             probability_service
             or ProbabilityService()
+        )
+
+        self.scenario_service = (
+            scenario_service
+            or ScenarioService()
+        )
+
+        self.distribution_risk_service = (
+            distribution_risk_service
+            or DistributionRiskService()
         )
 
         if portfolio_service is not None:
@@ -950,6 +1207,44 @@ class InstitutionalDecisionEngine:
             )
         )
 
+        scenario_profile = (
+            self._scenario_profile(
+                strike_candidate=(
+                    strike_candidate
+                ),
+                payoff_profile=(
+                    payoff_profile
+                ),
+                volatility_profile=(
+                    volatility_profile
+                ),
+                expiration_candidate=(
+                    expiration_candidate
+                ),
+            )
+        )
+
+        distribution_risk_profile = (
+            self._distribution_risk_profile(
+                symbol=symbol,
+                strategy_candidate=(
+                    strategy_candidate
+                ),
+                payoff_profile=(
+                    payoff_profile
+                ),
+                probability_profile=(
+                    probability_profile
+                ),
+                scenario_profile=(
+                    scenario_profile
+                ),
+                strike_candidate=(
+                    strike_candidate
+                ),
+            )
+        )
+
         context = (
             self.strategy_scoring_engine
             .build_context(
@@ -1262,6 +1557,60 @@ class InstitutionalDecisionEngine:
             )
         )
 
+        if (
+            scenario_profile is not None
+            and getattr(
+                scenario_profile,
+                "valid",
+                False,
+            )
+            and not getattr(
+                scenario_profile,
+                "allowed",
+                True,
+            )
+        ):
+            rejection_reasons.extend(
+                list(
+                    getattr(
+                        scenario_profile,
+                        "rejection_reasons",
+                        [],
+                    )
+                    or []
+                )
+            )
+
+        if (
+            distribution_risk_profile is not None
+            and getattr(
+                distribution_risk_profile,
+                "valid",
+                False,
+            )
+            and not getattr(
+                distribution_risk_profile,
+                "allowed",
+                True,
+            )
+        ):
+            rejection_reasons.extend(
+                list(
+                    getattr(
+                        distribution_risk_profile,
+                        "rejection_reasons",
+                        [],
+                    )
+                    or []
+                )
+            )
+
+        rejection_reasons = list(
+            dict.fromkeys(
+                rejection_reasons
+            )
+        )
+
         allowed = (
             not rejection_reasons
             and bool(
@@ -1337,6 +1686,22 @@ class InstitutionalDecisionEngine:
                     )
                     or []
                 )
+                + list(
+                    getattr(
+                        scenario_profile,
+                        "warnings",
+                        [],
+                    )
+                    or []
+                )
+                + list(
+                    getattr(
+                        distribution_risk_profile,
+                        "warnings",
+                        [],
+                    )
+                    or []
+                )
             )
         )
 
@@ -1372,6 +1737,12 @@ class InstitutionalDecisionEngine:
             ),
             probability_profile=(
                 probability_profile
+            ),
+            scenario_profile=(
+                scenario_profile
+            ),
+            distribution_risk_profile=(
+                distribution_risk_profile
             ),
             strategy_scoring_context=(
                 context
@@ -1756,6 +2127,8 @@ class InstitutionalDecisionEngine:
         liquidity = bundle.liquidity_profile
         payoff = bundle.payoff_profile
         probability = bundle.probability_profile
+        scenario = bundle.scenario_profile
+        distribution_risk = bundle.distribution_risk_profile
 
         selected = bool(
             position is not None
@@ -2140,6 +2513,251 @@ class InstitutionalDecisionEngine:
                 getattr(probability, "confidence_grade", "N/A")
                 or "N/A"
             ),
+            stress_score=round(
+                self._profile_value(
+                    scenario,
+                    "stress_score",
+                    0.0,
+                ),
+                2,
+            ),
+            stress_grade=str(
+                getattr(
+                    scenario,
+                    "stress_grade",
+                    "N/A",
+                )
+                or "N/A"
+            ),
+            stress_risk_severity=str(
+                getattr(
+                    scenario,
+                    "risk_severity",
+                    "UNKNOWN",
+                )
+                or "UNKNOWN"
+            ),
+            worst_scenario_name=str(
+                getattr(
+                    scenario,
+                    "worst_scenario_name",
+                    "",
+                )
+                or ""
+            ),
+            worst_scenario_pnl=round(
+                self._profile_value(
+                    scenario,
+                    "worst_scenario_pnl",
+                    0.0,
+                ),
+                2,
+            ),
+            maximum_stress_loss=round(
+                self._profile_value(
+                    scenario,
+                    "maximum_stress_loss",
+                    0.0,
+                ),
+                2,
+            ),
+            maximum_stress_loss_pct_of_capital=round(
+                self._profile_value(
+                    scenario,
+                    "maximum_stress_loss_pct_of_capital",
+                    0.0,
+                ),
+                4,
+            ),
+            maximum_stress_loss_pct_of_maximum_loss=(
+                getattr(
+                    scenario,
+                    "maximum_stress_loss_pct_of_maximum_loss",
+                    None,
+                )
+                if scenario is not None
+                else None
+            ),
+            scenario_allowed=bool(
+                getattr(
+                    scenario,
+                    "allowed",
+                    False,
+                )
+                if scenario is not None
+                else False
+            ),
+            distribution_observation_count=int(
+                self._profile_value(
+                    distribution_risk,
+                    "observation_count",
+                    0,
+                )
+            ),
+            historical_var_95=round(
+                self._profile_value(
+                    distribution_risk,
+                    "historical_var",
+                    0.0,
+                ),
+                2,
+            ),
+            historical_expected_shortfall_95=round(
+                self._profile_value(
+                    distribution_risk,
+                    "historical_expected_shortfall",
+                    0.0,
+                ),
+                2,
+            ),
+            parametric_var_95=round(
+                self._profile_value(
+                    distribution_risk,
+                    "parametric_var",
+                    0.0,
+                ),
+                2,
+            ),
+            parametric_expected_shortfall_95=round(
+                self._profile_value(
+                    distribution_risk,
+                    "parametric_expected_shortfall",
+                    0.0,
+                ),
+                2,
+            ),
+            historical_var_99=round(
+                self._profile_value(
+                    distribution_risk,
+                    "historical_var_99",
+                    0.0,
+                ),
+                2,
+            ),
+            historical_expected_shortfall_99=round(
+                self._profile_value(
+                    distribution_risk,
+                    "historical_expected_shortfall_99",
+                    0.0,
+                ),
+                2,
+            ),
+            downside_deviation=round(
+                self._profile_value(
+                    distribution_risk,
+                    "downside_deviation",
+                    0.0,
+                ),
+                6,
+            ),
+            skewness=round(
+                self._profile_value(
+                    distribution_risk,
+                    "skewness",
+                    0.0,
+                ),
+                4,
+            ),
+            excess_kurtosis=round(
+                self._profile_value(
+                    distribution_risk,
+                    "excess_kurtosis",
+                    0.0,
+                ),
+                4,
+            ),
+            probability_of_large_loss=round(
+                self._profile_value(
+                    distribution_risk,
+                    "probability_of_large_loss",
+                    0.0,
+                ),
+                4,
+            ),
+            probability_of_severe_loss=round(
+                self._profile_value(
+                    distribution_risk,
+                    "probability_of_severe_loss",
+                    0.0,
+                ),
+                4,
+            ),
+            probability_of_critical_loss=round(
+                self._profile_value(
+                    distribution_risk,
+                    "probability_of_critical_loss",
+                    0.0,
+                ),
+                4,
+            ),
+            drawdown_at_risk=round(
+                self._profile_value(
+                    distribution_risk,
+                    "drawdown_at_risk",
+                    0.0,
+                ),
+                4,
+            ),
+            expected_drawdown_shortfall=round(
+                self._profile_value(
+                    distribution_risk,
+                    "expected_drawdown_shortfall",
+                    0.0,
+                ),
+                4,
+            ),
+            ulcer_index=round(
+                self._profile_value(
+                    distribution_risk,
+                    "ulcer_index",
+                    0.0,
+                ),
+                4,
+            ),
+            pain_index=round(
+                self._profile_value(
+                    distribution_risk,
+                    "pain_index",
+                    0.0,
+                ),
+                4,
+            ),
+            omega_ratio=(
+                getattr(distribution_risk, "omega_ratio", None)
+                if distribution_risk is not None
+                else None
+            ),
+            sortino_ratio=(
+                getattr(distribution_risk, "sortino_ratio", None)
+                if distribution_risk is not None
+                else None
+            ),
+            gain_to_pain_ratio=(
+                getattr(distribution_risk, "gain_to_pain_ratio", None)
+                if distribution_risk is not None
+                else None
+            ),
+            tail_risk_score=round(
+                self._profile_value(
+                    distribution_risk,
+                    "tail_risk_score",
+                    0.0,
+                ),
+                2,
+            ),
+            tail_risk_grade=str(
+                getattr(distribution_risk, "tail_risk_grade", "N/A")
+                or "N/A"
+            ),
+            tail_risk_severity=str(
+                getattr(distribution_risk, "risk_severity", "UNKNOWN")
+                or "UNKNOWN"
+            ),
+            distribution_risk_allowed=bool(
+                getattr(distribution_risk, "allowed", False)
+                if distribution_risk is not None
+                else False
+            ),
             expected_move=round(
                 self._profile_value(
                     expected_move,
@@ -2388,6 +3006,8 @@ class InstitutionalDecisionEngine:
             ),
             payoff_profile=payoff,
             probability_profile=probability,
+            scenario_profile=scenario,
+            distribution_risk_profile=distribution_risk,
             portfolio_position=position,
             metadata={
                 "candidate_metadata":

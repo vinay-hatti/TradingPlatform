@@ -94,6 +94,479 @@ class BacktestReport:
             return "negative"
         return ""
 
+
+    # ------------------------------------------------------------
+    # Phase 3 distribution-risk helpers
+    # ------------------------------------------------------------
+    def distribution_risk_profile(self, item):
+        """
+        Return a valid distribution-risk profile from an object, dictionary,
+        or nested metadata. Invalid profiles are treated as unavailable.
+        """
+        profile = self.val(item, "distribution_risk_profile", None)
+
+        if profile is None:
+            metadata = self.val(item, "metadata", {}) or {}
+            if isinstance(metadata, dict):
+                profile = metadata.get("distribution_risk_profile")
+
+        if profile is None:
+            return None
+
+        return profile if bool(self.val(profile, "valid", False)) else None
+
+    def optional_money(self, value, na="N/A"):
+        if value in (None, "", "N/A"):
+            return na
+        try:
+            return f"${float(value):,.2f}"
+        except Exception:
+            return na
+
+    def optional_pct(self, value, na="N/A"):
+        if value in (None, "", "N/A"):
+            return na
+        try:
+            return f"{float(value) * 100:.2f}%"
+        except Exception:
+            return na
+
+    def optional_number(self, value, digits=2, na="N/A"):
+        if value in (None, "", "N/A"):
+            return na
+        try:
+            return f"{float(value):.{digits}f}"
+        except Exception:
+            return na
+
+    def distribution_risk_values(self, item):
+        """
+        Return formatted Phase 3 distribution-risk values.
+
+        Direct InstitutionalDecision fields are preferred. If they are absent,
+        values are read from distribution_risk_profile.
+        """
+        profile = self.distribution_risk_profile(item)
+
+        def pick(direct_name, profile_name=None, default=None):
+            value = self.val(item, direct_name, None)
+            if value is not None:
+                return value
+            if profile is not None:
+                return self.val(
+                    profile,
+                    profile_name or direct_name,
+                    default,
+                )
+            return default
+
+        available = bool(
+            profile is not None
+            or self.val(item, "distribution_observation_count", None) is not None
+            or self.val(item, "tail_risk_score", None) is not None
+        )
+
+        if not available:
+            return {
+                "available": False,
+                "observations": "N/A",
+                "historical_var_95": "N/A",
+                "historical_es_95": "N/A",
+                "parametric_var_95": "N/A",
+                "parametric_es_95": "N/A",
+                "historical_var_99": "N/A",
+                "historical_es_99": "N/A",
+                "downside_deviation": "N/A",
+                "skewness": "N/A",
+                "excess_kurtosis": "N/A",
+                "probability_large_loss": "N/A",
+                "probability_severe_loss": "N/A",
+                "probability_critical_loss": "N/A",
+                "drawdown_at_risk": "N/A",
+                "expected_drawdown_shortfall": "N/A",
+                "ulcer_index": "N/A",
+                "pain_index": "N/A",
+                "omega_ratio": "N/A",
+                "sortino_ratio": "N/A",
+                "gain_to_pain_ratio": "N/A",
+                "tail_risk_score": "N/A",
+                "tail_risk_grade": "N/A",
+                "tail_risk_severity": "N/A",
+                "approved": "N/A",
+                "approval_class": "neutral",
+            }
+
+        allowed = bool(
+            pick(
+                "distribution_risk_allowed",
+                "allowed",
+                False,
+            )
+        )
+
+        severity = str(
+            pick(
+                "tail_risk_severity",
+                "risk_severity",
+                "UNKNOWN",
+            )
+            or "UNKNOWN"
+        ).upper()
+
+        if allowed:
+            approval_class = "positive"
+        elif severity in {"CRITICAL", "SEVERE"}:
+            approval_class = "negative"
+        else:
+            approval_class = "warning"
+
+        return {
+            "available": True,
+            "observations": str(
+                self.safe_int(
+                    pick(
+                        "distribution_observation_count",
+                        "observation_count",
+                        0,
+                    )
+                )
+            ),
+            "historical_var_95": self.optional_money(
+                pick(
+                    "historical_var_95",
+                    "historical_var",
+                    None,
+                )
+            ),
+            "historical_es_95": self.optional_money(
+                pick(
+                    "historical_expected_shortfall_95",
+                    "historical_expected_shortfall",
+                    None,
+                )
+            ),
+            "parametric_var_95": self.optional_money(
+                pick(
+                    "parametric_var_95",
+                    "parametric_var",
+                    None,
+                )
+            ),
+            "parametric_es_95": self.optional_money(
+                pick(
+                    "parametric_expected_shortfall_95",
+                    "parametric_expected_shortfall",
+                    None,
+                )
+            ),
+            "historical_var_99": self.optional_money(
+                pick(
+                    "historical_var_99",
+                    "historical_var_99",
+                    None,
+                )
+            ),
+            "historical_es_99": self.optional_money(
+                pick(
+                    "historical_expected_shortfall_99",
+                    "historical_expected_shortfall_99",
+                    None,
+                )
+            ),
+            "downside_deviation": self.optional_pct(
+                pick(
+                    "downside_deviation",
+                    "downside_deviation",
+                    None,
+                )
+            ),
+            "skewness": self.optional_number(
+                pick(
+                    "skewness",
+                    "skewness",
+                    None,
+                ),
+                digits=4,
+            ),
+            "excess_kurtosis": self.optional_number(
+                pick(
+                    "excess_kurtosis",
+                    "excess_kurtosis",
+                    None,
+                ),
+                digits=4,
+            ),
+            "probability_large_loss": self.optional_pct(
+                pick(
+                    "probability_of_large_loss",
+                    "probability_of_large_loss",
+                    None,
+                )
+            ),
+            "probability_severe_loss": self.optional_pct(
+                pick(
+                    "probability_of_severe_loss",
+                    "probability_of_severe_loss",
+                    None,
+                )
+            ),
+            "probability_critical_loss": self.optional_pct(
+                pick(
+                    "probability_of_critical_loss",
+                    "probability_of_critical_loss",
+                    None,
+                )
+            ),
+            "drawdown_at_risk": self.optional_pct(
+                pick(
+                    "drawdown_at_risk",
+                    "drawdown_at_risk",
+                    None,
+                )
+            ),
+            "expected_drawdown_shortfall": self.optional_pct(
+                pick(
+                    "expected_drawdown_shortfall",
+                    "expected_drawdown_shortfall",
+                    None,
+                )
+            ),
+            "ulcer_index": self.optional_number(
+                pick(
+                    "ulcer_index",
+                    "ulcer_index",
+                    None,
+                ),
+                digits=4,
+            ),
+            "pain_index": self.optional_number(
+                pick(
+                    "pain_index",
+                    "pain_index",
+                    None,
+                ),
+                digits=4,
+            ),
+            "omega_ratio": self.ratio(
+                pick(
+                    "omega_ratio",
+                    "omega_ratio",
+                    None,
+                )
+            ),
+            "sortino_ratio": self.ratio(
+                pick(
+                    "sortino_ratio",
+                    "sortino_ratio",
+                    None,
+                )
+            ),
+            "gain_to_pain_ratio": self.ratio(
+                pick(
+                    "gain_to_pain_ratio",
+                    "gain_to_pain_ratio",
+                    None,
+                )
+            ),
+            "tail_risk_score": self.optional_number(
+                pick(
+                    "tail_risk_score",
+                    "tail_risk_score",
+                    None,
+                ),
+                digits=2,
+            ),
+            "tail_risk_grade": str(
+                pick(
+                    "tail_risk_grade",
+                    "tail_risk_grade",
+                    "N/A",
+                )
+                or "N/A"
+            ),
+            "tail_risk_severity": severity,
+            "approved": "YES" if allowed else "NO",
+            "approval_class": approval_class,
+        }
+
+    def aggregate_distribution_risk_values(self, trades):
+        """
+        Aggregate available Phase 3 profiles for the report-level summary.
+        Dollar risk fields are summed. Scores and shape statistics are averaged.
+        """
+        profiles = []
+        for trade in trades:
+            values = self.distribution_risk_values(trade)
+            if values["available"]:
+                profiles.append(trade)
+
+        if not profiles:
+            return {
+                "available": False,
+                "profile_count": 0,
+            }
+
+        def raw(item, direct_name, profile_name=None, default=0.0):
+            direct = self.val(item, direct_name, None)
+            if direct is not None:
+                return self.safe_float(direct, default)
+
+            profile = self.distribution_risk_profile(item)
+            if profile is None:
+                return default
+
+            return self.safe_float(
+                self.val(
+                    profile,
+                    profile_name or direct_name,
+                    default,
+                ),
+                default,
+            )
+
+        def average(direct_name, profile_name=None):
+            values = [
+                raw(item, direct_name, profile_name)
+                for item in profiles
+            ]
+            return sum(values) / len(values) if values else 0.0
+
+        approved_count = sum(
+            1
+            for item in profiles
+            if bool(
+                self.val(
+                    item,
+                    "distribution_risk_allowed",
+                    self.val(
+                        self.distribution_risk_profile(item),
+                        "allowed",
+                        False,
+                    ),
+                )
+            )
+        )
+
+        severities = Counter(
+            str(
+                self.val(
+                    item,
+                    "tail_risk_severity",
+                    self.val(
+                        self.distribution_risk_profile(item),
+                        "risk_severity",
+                        "UNKNOWN",
+                    ),
+                )
+                or "UNKNOWN"
+            ).upper()
+            for item in profiles
+        )
+
+        worst_severity = next(
+            (
+                severity
+                for severity in [
+                    "CRITICAL",
+                    "SEVERE",
+                    "MODERATE",
+                    "LOW",
+                    "UNKNOWN",
+                ]
+                if severities.get(severity, 0)
+            ),
+            "UNKNOWN",
+        )
+
+        return {
+            "available": True,
+            "profile_count": len(profiles),
+            "approved_count": approved_count,
+            "approval_rate": approved_count / len(profiles),
+            "historical_var_95": sum(
+                raw(item, "historical_var_95", "historical_var")
+                for item in profiles
+            ),
+            "historical_es_95": sum(
+                raw(
+                    item,
+                    "historical_expected_shortfall_95",
+                    "historical_expected_shortfall",
+                )
+                for item in profiles
+            ),
+            "historical_var_99": sum(
+                raw(item, "historical_var_99", "historical_var_99")
+                for item in profiles
+            ),
+            "historical_es_99": sum(
+                raw(
+                    item,
+                    "historical_expected_shortfall_99",
+                    "historical_expected_shortfall_99",
+                )
+                for item in profiles
+            ),
+            "avg_tail_risk_score": average(
+                "tail_risk_score",
+                "tail_risk_score",
+            ),
+            "avg_downside_deviation": average(
+                "downside_deviation",
+                "downside_deviation",
+            ),
+            "avg_skewness": average(
+                "skewness",
+                "skewness",
+            ),
+            "avg_excess_kurtosis": average(
+                "excess_kurtosis",
+                "excess_kurtosis",
+            ),
+            "avg_drawdown_at_risk": average(
+                "drawdown_at_risk",
+                "drawdown_at_risk",
+            ),
+            "avg_expected_drawdown_shortfall": average(
+                "expected_drawdown_shortfall",
+                "expected_drawdown_shortfall",
+            ),
+            "worst_severity": worst_severity,
+        }
+
+    def distribution_risk_summary_html(self, trades):
+        summary = self.aggregate_distribution_risk_values(trades)
+
+        if not summary["available"]:
+            return """
+<div class="card">
+<h2>Distribution Risk &amp; Tail Analytics</h2>
+<p class="section-note">
+No valid Phase 3 distribution-risk profiles are attached to these trades.
+</p>
+</div>
+"""
+
+        return f"""
+<div class="card">
+<h2>Distribution Risk &amp; Tail Analytics</h2>
+<div class="metric"><strong>Profiles</strong>{summary['profile_count']}</div>
+<div class="metric"><strong>Approved</strong>{summary['approved_count']}</div>
+<div class="metric"><strong>Approval Rate</strong>{self.pct(summary['approval_rate'])}</div>
+<div class="metric"><strong>Aggregate Historical VaR 95</strong>{self.money(summary['historical_var_95'])}</div>
+<div class="metric"><strong>Aggregate Historical ES 95</strong>{self.money(summary['historical_es_95'])}</div>
+<div class="metric"><strong>Aggregate Historical VaR 99</strong>{self.money(summary['historical_var_99'])}</div>
+<div class="metric"><strong>Aggregate Historical ES 99</strong>{self.money(summary['historical_es_99'])}</div>
+<div class="metric"><strong>Average Tail Risk Score</strong>{summary['avg_tail_risk_score']:.2f}</div>
+<div class="metric"><strong>Average Downside Deviation</strong>{self.pct(summary['avg_downside_deviation'])}</div>
+<div class="metric"><strong>Average Skewness</strong>{summary['avg_skewness']:.4f}</div>
+<div class="metric"><strong>Average Excess Kurtosis</strong>{summary['avg_excess_kurtosis']:.4f}</div>
+<div class="metric"><strong>Average Drawdown-at-Risk</strong>{self.pct(summary['avg_drawdown_at_risk'])}</div>
+<div class="metric"><strong>Average Expected DD Shortfall</strong>{self.pct(summary['avg_expected_drawdown_shortfall'])}</div>
+<div class="metric"><strong>Worst Tail Severity</strong>{summary['worst_severity']}</div>
+</div>
+"""
+
     # ------------------------------------------------------------
     # Table and chart helpers
     # ------------------------------------------------------------
@@ -112,29 +585,23 @@ class BacktestReport:
         html += "</tbody></table>"
         return html
 
-    def line_chart(self, rows, y_key, title, y_min=None, y_max=None):
+    def line_chart(self, rows, y_key, title):
         if not rows:
             return "<p class='section-note'>No chart data.</p>"
-
         values = [self.safe_float(r.get(y_key, 0.0)) for r in rows]
-        min_v = self.safe_float(y_min, min(values)) if y_min is not None else min(values)
-        max_v = self.safe_float(y_max, max(values)) if y_max is not None else max(values)
-
+        min_v = min(values)
+        max_v = max(values)
         if min_v == max_v:
-            pad = abs(min_v) * 0.05 or 1.0
-            min_v -= pad
-            max_v += pad
-
+            min_v -= 1.0
+            max_v += 1.0
         width = 1000
         height = 260
         step = width / max(len(rows) - 1, 1)
         points = []
-
         for i, value in enumerate(values):
             x = i * step
             y = height - ((value - min_v) / (max_v - min_v) * height)
             points.append(f"{x:.2f},{y:.2f}")
-
         return f"""
 <div>
 <h3>{title}</h3>
@@ -143,42 +610,6 @@ class BacktestReport:
     <polyline points="{' '.join(points)}" fill="none" stroke="#111" stroke-width="2"/>
     <text x="5" y="15" font-size="12">{max_v:,.2f}</text>
     <text x="5" y="{height - 5}" font-size="12">{min_v:,.2f}</text>
-</svg>
-</div>
-"""
-
-    def underwater_chart(self, rows, title="Underwater Drawdown Curve"):
-        """Drawdown chart with a fixed 0% baseline and negative drawdowns below it."""
-        if not rows:
-            return "<p class='section-note'>No drawdown data.</p>"
-
-        values = [self.safe_float(r.get("drawdown_pct", 0.0)) for r in rows]
-        min_v = min(values + [0.0])
-        max_v = 0.0
-
-        if min_v == max_v:
-            min_v = -0.01
-
-        width = 1000
-        height = 260
-        step = width / max(len(rows) - 1, 1)
-        zero_y = 0.0
-        points = []
-
-        for i, value in enumerate(values):
-            x = i * step
-            y = height - ((value - min_v) / (max_v - min_v) * height)
-            points.append(f"{x:.2f},{y:.2f}")
-
-        return f"""
-<div>
-<h3>{title}</h3>
-<svg width="100%" viewBox="0 0 {width} {height + 40}" preserveAspectRatio="none">
-    <rect x="0" y="0" width="{width}" height="{height}" fill="#fafafa" stroke="#ddd"/>
-    <line x1="0" y1="{zero_y:.2f}" x2="{width}" y2="{zero_y:.2f}" stroke="#666" stroke-dasharray="4 4"/>
-    <polyline points="{' '.join(points)}" fill="none" stroke="#b71c1c" stroke-width="2"/>
-    <text x="5" y="15" font-size="12">0.00%</text>
-    <text x="5" y="{height - 5}" font-size="12">{min_v * 100:.2f}%</text>
 </svg>
 </div>
 """
@@ -240,79 +671,6 @@ class BacktestReport:
                 "exit_reason": self.val(t, "exit_reason", ""),
             })
         return rows
-
-    def normalize_equity_curve(self, equity_curve):
-        """Ensure any externally supplied equity curve starts at initial capital."""
-        if not equity_curve:
-            return [{
-                "date": "START",
-                "equity": self.initial_capital,
-                "pnl": 0.0,
-                "symbol": "START",
-                "exit_reason": "INITIAL_CAPITAL",
-            }]
-
-        rows = [dict(r) for r in equity_curve]
-        first_equity = self.safe_float(rows[0].get("equity", None), None)
-        first_symbol = str(rows[0].get("symbol", ""))
-        first_reason = str(rows[0].get("exit_reason", ""))
-
-        already_has_start = (
-            first_symbol == "START"
-            or first_reason == "INITIAL_CAPITAL"
-            or abs(first_equity - self.initial_capital) < 0.0001
-        )
-
-        if not already_has_start:
-            rows.insert(0, {
-                "date": "START",
-                "equity": self.initial_capital,
-                "pnl": 0.0,
-                "symbol": "START",
-                "exit_reason": "INITIAL_CAPITAL",
-            })
-
-        return rows
-
-    def price_display(self, value):
-        value = self.safe_float(value, 0.0)
-        if value == 0.0:
-            return "0.00"
-        if abs(value) < 0.0001:
-            return "<$0.0001"
-        if abs(value) < 0.01:
-            return f"{value:.6f}"
-        return f"{value:.2f}"
-
-    def exit_price_display(self, trade):
-        """
-        Display the model-derived exit premium when available.
-
-        Black-Scholes can return an extremely small option value that rounds to
-        0.0000. In the report, show that as a near-zero modeled premium instead
-        of a literal zero so the trade log is not misleading.
-        """
-        model_exit = self.val(trade, "model_exit_price", None)
-        source = str(self.val(trade, "exit_pricing_source", "")).lower()
-
-        if model_exit not in (None, ""):
-            model_value = self.safe_float(model_exit, 0.0)
-            if model_value <= 0 and "black_scholes" in source:
-                return "<$0.0001"
-            return self.price_display(model_value)
-
-        exit_value = self.safe_float(self.val(trade, "exit_price", 0.0), 0.0)
-        if exit_value <= 0 and "black_scholes" in source:
-            return "<$0.0001"
-        return self.price_display(exit_value)
-
-    def pop_display(self, value):
-        if value in (None, "", "None"):
-            return "N/A"
-        value = self.safe_float(value, 0.0)
-        if value <= 0.0:
-            return "N/A"
-        return self.pct(value)
 
     def drawdown_curve(self, equity_curve):
         rows = []
@@ -710,7 +1068,7 @@ class BacktestReport:
                 "strike": self.val(t, "strike", ""),
                 "expiry": self.val(t, "expiry", ""),
                 "entry_price": f"{entry_price:.2f}",
-                "exit_price": self.exit_price_display(t),
+                "exit_price": f"{self.safe_float(self.val(t, 'exit_price', 0.0)):.2f}",
                 "entry_source": self.pricing_source(t, "entry"),
                 "exit_source": self.pricing_source(t, "exit"),
                 "option_symbol": self.val(t, "option_symbol", ""),
@@ -732,7 +1090,40 @@ class BacktestReport:
                 "theta": f"{self.safe_float(self.val(t, 'entry_theta', 0.0)):.4f}",
                 "vega": f"{self.safe_float(self.val(t, 'entry_vega', 0.0)):.4f}",
                 "vol": self.pct(self.val(t, "entry_volatility", 0.0)),
-                "pop": self.pop_display(self.val(t, "pop", None)),
+                "pop": self.pct(
+                    self.val(
+                        t,
+                        "probability_of_profit",
+                        self.val(t, "pop", 0.0),
+                    )
+                ),
+                "distribution_observations": self.distribution_risk_values(t)["observations"],
+                "historical_var_95": self.distribution_risk_values(t)["historical_var_95"],
+                "historical_es_95": self.distribution_risk_values(t)["historical_es_95"],
+                "parametric_var_95": self.distribution_risk_values(t)["parametric_var_95"],
+                "parametric_es_95": self.distribution_risk_values(t)["parametric_es_95"],
+                "historical_var_99": self.distribution_risk_values(t)["historical_var_99"],
+                "historical_es_99": self.distribution_risk_values(t)["historical_es_99"],
+                "downside_deviation": self.distribution_risk_values(t)["downside_deviation"],
+                "skewness": self.distribution_risk_values(t)["skewness"],
+                "excess_kurtosis": self.distribution_risk_values(t)["excess_kurtosis"],
+                "probability_large_loss": self.distribution_risk_values(t)["probability_large_loss"],
+                "probability_severe_loss": self.distribution_risk_values(t)["probability_severe_loss"],
+                "probability_critical_loss": self.distribution_risk_values(t)["probability_critical_loss"],
+                "drawdown_at_risk": self.distribution_risk_values(t)["drawdown_at_risk"],
+                "expected_drawdown_shortfall": self.distribution_risk_values(t)["expected_drawdown_shortfall"],
+                "ulcer_index_tail": self.distribution_risk_values(t)["ulcer_index"],
+                "pain_index": self.distribution_risk_values(t)["pain_index"],
+                "omega_ratio_tail": self.distribution_risk_values(t)["omega_ratio"],
+                "sortino_ratio_tail": self.distribution_risk_values(t)["sortino_ratio"],
+                "gain_to_pain_ratio": self.distribution_risk_values(t)["gain_to_pain_ratio"],
+                "tail_risk_score": self.distribution_risk_values(t)["tail_risk_score"],
+                "tail_risk_grade": self.distribution_risk_values(t)["tail_risk_grade"],
+                "tail_risk_severity": self.distribution_risk_values(t)["tail_risk_severity"],
+                "distribution_risk_allowed": (
+                    f"<span class='{self.distribution_risk_values(t)['approval_class']}'>"
+                    f"{self.distribution_risk_values(t)['approved']}</span>"
+                ),
             })
         return rows
 
@@ -786,7 +1177,7 @@ class BacktestReport:
     def generate(self, trades, path="reports/backtest.html", rejected=None, equity_curve=None):
         trades = trades or []
         rejected = rejected or []
-        curve = self.normalize_equity_curve(equity_curve) if equity_curve is not None else self.build_equity_curve(trades)
+        curve = equity_curve or self.build_equity_curve(trades)
         dd_curve, dd_metrics = self.drawdown_curve(curve)
         dd_metrics["curve"] = dd_curve
         metrics = self.trade_metrics(trades)
@@ -835,6 +1226,10 @@ class BacktestReport:
         distribution_rows = self.trade_distribution_rows(trades)
 
         risk_note_html = f"<p class='warning'>{metrics.get('risk_note')}</p>" if metrics.get("risk_note") else ""
+        distribution_risk_summary = (
+            self.distribution_risk_summary_html(trades)
+        )
+
         rolling_html = self.table(
             rolling,
             [("Date", "date"), ("Rolling Return", "rolling_return"), ("Rolling Sharpe", "rolling_sharpe"), ("Rolling Volatility", "rolling_volatility")],
@@ -858,6 +1253,7 @@ th {{ background: #eee; }}
 .positive {{ color: #1b5e20; font-weight: bold; }}
 .negative {{ color: #b71c1c; font-weight: bold; }}
 .warning {{ color: #e65100; font-weight: bold; }}
+.neutral {{ color: #455a64; font-weight: bold; }}
 .section-note {{ color: #555; font-size: 14px; margin-bottom: 10px; }}
 </style>
 </head>
@@ -907,10 +1303,12 @@ th {{ background: #eee; }}
 <div class="metric"><strong>Longest DD Duration</strong>{extended['longest_drawdown_duration']} trades</div>
 </div>
 
+{distribution_risk_summary}
+
 <div class="card"><h2>Drawdown Recovery</h2>{self.table(recovery_rows, [("Metric", "metric"), ("Value", "value")])}</div>
 
 <div class="card"><h2>Equity Curve Chart</h2>{self.line_chart(curve, 'equity', 'Equity Curve')}</div>
-<div class="card"><h2>Underwater Drawdown Chart</h2>{self.underwater_chart(dd_curve, 'Underwater Drawdown Curve')}</div>
+<div class="card"><h2>Underwater Drawdown Chart</h2>{self.line_chart(dd_curve, 'drawdown_pct', 'Underwater Drawdown Curve')}</div>
 <div class="card"><h2>Monthly Return Chart</h2>{self.bar_chart(monthly, 'month', 'return', 'Monthly Return Bars')}</div>
 
 <div class="card"><h2>Advanced Risk Metrics</h2>
@@ -940,7 +1338,40 @@ th {{ background: #eee; }}
 <div class="card"><h2>Best Trades</h2>{self.table(best_rows, [("Symbol", "symbol"), ("Entry", "entry_date"), ("Exit", "exit_date"), ("Signal", "signal"), ("Regime", "regime"), ("PnL", "pnl"), ("PnL %", "pnl_pct"), ("Net PnL", "net_pnl"), ("Exit Reason", "exit_reason"), ("Rank", "rank_score")])}</div>
 <div class="card"><h2>Worst Trades</h2>{self.table(worst_rows, [("Symbol", "symbol"), ("Entry", "entry_date"), ("Exit", "exit_date"), ("Signal", "signal"), ("Regime", "regime"), ("PnL", "pnl"), ("PnL %", "pnl_pct"), ("Net PnL", "net_pnl"), ("Exit Reason", "exit_reason"), ("Rank", "rank_score")])}</div>
 <div class="card"><h2>Rejected Trades</h2>{self.table(rejected_rows, [("Symbol", "symbol"), ("Entry", "entry_date"), ("Signal", "signal"), ("Strategy", "strategy"), ("Entry Price", "entry_price"), ("Contracts", "contracts"), ("Reason", "reason"), ("Rank", "rank_score"), ("Score", "option_score")])}</div>
-<div class="card"><h2>Trade Log</h2>{self.table(all_trade_rows, [("Symbol", "symbol"), ("Entry", "entry_date"), ("Exit", "exit_date"), ("Signal", "signal"), ("Regime", "regime"), ("Strategy", "strategy"), ("Strike", "strike"), ("Expiry", "expiry"), ("Option Symbol", "option_symbol"), ("Entry Source", "entry_source"), ("Exit Source", "exit_source"), ("Entry Price", "entry_price"), ("Exit Price", "exit_price"), ("Position Size", "position_size"), ("Initial Risk", "initial_risk"), ("R Multiple", "r_multiple"), ("Delta", "delta"), ("Gamma", "gamma"), ("Theta", "theta"), ("Vega", "vega"), ("Vol", "vol"), ("POP", "pop"), ("Contracts", "contracts"), ("Net PnL", "net_pnl"), ("Hold Days", "days_held"), ("Exit Reason", "exit_reason"), ("Rank", "rank_score")])}</div>
+<div class="card"><h2>Trade Log</h2>{self.table(all_trade_rows, [
+("Symbol", "symbol"), ("Entry", "entry_date"), ("Exit", "exit_date"),
+("Signal", "signal"), ("Regime", "regime"), ("Strategy", "strategy"),
+("Strike", "strike"), ("Expiry", "expiry"), ("Option Symbol", "option_symbol"),
+("Entry Source", "entry_source"), ("Exit Source", "exit_source"),
+("Entry Price", "entry_price"), ("Exit Price", "exit_price"),
+("Position Size", "position_size"), ("Initial Risk", "initial_risk"),
+("R Multiple", "r_multiple"), ("Delta", "delta"), ("Gamma", "gamma"),
+("Theta", "theta"), ("Vega", "vega"), ("Vol", "vol"), ("POP", "pop"),
+("Distribution Obs.", "distribution_observations"),
+("Historical VaR 95", "historical_var_95"),
+("Historical ES 95", "historical_es_95"),
+("Parametric VaR 95", "parametric_var_95"),
+("Parametric ES 95", "parametric_es_95"),
+("Historical VaR 99", "historical_var_99"),
+("Historical ES 99", "historical_es_99"),
+("Downside Deviation", "downside_deviation"),
+("Skewness", "skewness"), ("Excess Kurtosis", "excess_kurtosis"),
+("P(Large Loss)", "probability_large_loss"),
+("P(Severe Loss)", "probability_severe_loss"),
+("P(Critical Loss)", "probability_critical_loss"),
+("Drawdown-at-Risk", "drawdown_at_risk"),
+("Expected DD Shortfall", "expected_drawdown_shortfall"),
+("Ulcer Index", "ulcer_index_tail"), ("Pain Index", "pain_index"),
+("Omega", "omega_ratio_tail"), ("Sortino", "sortino_ratio_tail"),
+("Gain-to-Pain", "gain_to_pain_ratio"),
+("Tail Risk Score", "tail_risk_score"),
+("Tail Risk Grade", "tail_risk_grade"),
+("Tail Severity", "tail_risk_severity"),
+("Distribution Approved", "distribution_risk_allowed"),
+("Contracts", "contracts"), ("Net PnL", "net_pnl"),
+("Hold Days", "days_held"), ("Exit Reason", "exit_reason"),
+("Rank", "rank_score")
+])}</div>
 </body>
 </html>
 """

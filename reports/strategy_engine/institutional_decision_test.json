@@ -3,8 +3,9 @@
   "candidate_bundles": [
     {
       "allowed": true,
-      "candidate_id": "AAPL_BULL_PUT_SPREAD_2026-08-21_180.0-190.0_7bcc3d97",
+      "candidate_id": "AAPL_BULL_PUT_SPREAD_2026-08-21_180.0-190.0_48137aca",
       "direction": "CALL",
+      "distribution_risk_profile": null,
       "expected_move_profile": {
         "blended_move": 16.0,
         "blended_move_pct": 8.0,
@@ -101,7 +102,7 @@
         "market_regime": "BULL_TREND",
         "maximum_loss": 300.0,
         "metadata": {
-          "candidate_id": "AAPL_BULL_PUT_SPREAD_2026-08-21_180.0-190.0_7bcc3d97",
+          "candidate_id": "AAPL_BULL_PUT_SPREAD_2026-08-21_180.0-190.0_48137aca",
           "payoff_profile": {
             "capital_required": 300.0,
             "expected_profit": 70.0,
@@ -356,7 +357,7 @@
           "market_regime": "BULL_TREND",
           "maximum_loss": 300.0,
           "metadata": {
-            "candidate_id": "AAPL_BULL_PUT_SPREAD_2026-08-21_180.0-190.0_7bcc3d97",
+            "candidate_id": "AAPL_BULL_PUT_SPREAD_2026-08-21_180.0-190.0_48137aca",
             "payoff_profile": {
               "capital_required": 300.0,
               "expected_profit": 70.0,
@@ -596,7 +597,7 @@
             "market_regime": "BULL_TREND",
             "maximum_loss": 300.0,
             "metadata": {
-              "candidate_id": "AAPL_BULL_PUT_SPREAD_2026-08-21_180.0-190.0_7bcc3d97",
+              "candidate_id": "AAPL_BULL_PUT_SPREAD_2026-08-21_180.0-190.0_48137aca",
               "payoff_profile": {
                 "capital_required": 300.0,
                 "expected_profit": 70.0,
@@ -861,7 +862,7 @@
           "market_regime": "BULL_TREND",
           "maximum_loss": 300.0,
           "metadata": {
-            "candidate_id": "AAPL_BULL_PUT_SPREAD_2026-08-21_180.0-190.0_7bcc3d97",
+            "candidate_id": "AAPL_BULL_PUT_SPREAD_2026-08-21_180.0-190.0_48137aca",
             "payoff_profile": {
               "capital_required": 300.0,
               "expected_profit": 70.0,
@@ -1021,6 +1022,7 @@
         "weaknesses": []
       },
       "rejection_reasons": [],
+      "scenario_profile": null,
       "strategy_candidate": {
         "allowed": true,
         "confidence": 85.0,
@@ -1092,6 +1094,8 @@
         "premium_type": "CREDIT",
         "risk_profile": "DEFINED_RISK",
         "risk_reward_score": 75.0,
+        "scenario_allowed": true,
+        "scenario_score": 50.0,
         "strategy": "BULL_PUT_SPREAD",
         "strategy_allowed": true,
         "strategy_candidate": {
@@ -1263,8 +1267,9 @@
     },
     {
       "allowed": true,
-      "candidate_id": "MSFT_BULL_PUT_SPREAD_2026-08-21_405.0-427.5_cbd8272d",
+      "candidate_id": "MSFT_BULL_PUT_SPREAD_2026-08-21_405.0-427.5_97edf5a1",
       "direction": "CALL",
+      "distribution_risk_profile": null,
       "expected_move_profile": {
         "blended_move": 36.0,
         "blended_move_pct": 8.0,
@@ -1361,7 +1366,7 @@
         "market_regime": "BULL_TREND",
         "maximum_loss": 300.0,
         "metadata": {
-          "candidate_id": "MSFT_BULL_PUT_SPREAD_2026-08-21_405.0-427.5_cbd8272d",
+          "candidate_id": "MSFT_BULL_PUT_SPREAD_2026-08-21_405.0-427.5_97edf5a1",
           "payoff_profile": {
             "capital_required": 300.0,
             "expected_profit": 70.0,
@@ -1616,7 +1621,7 @@
           "market_regime": "BULL_TREND",
           "maximum_loss": 300.0,
           "metadata": {
-            "candidate_id": "MSFT_BULL_PUT_SPREAD_2026-08-21_405.0-427.5_cbd8272d",
+            "candidate_id": "MSFT_BULL_PUT_SPREAD_2026-08-21_405.0-427.5_97edf5a1",
             "payoff_profile": {
               "capital_required": 300.0,
               "expected_profit": 70.0,
@@ -1856,7 +1861,7 @@
             "market_regime": "BULL_TREND",
             "maximum_loss": 300.0,
             "metadata": {
-              "candidate_id": "MSFT_BULL_PUT_SPREAD_2026-08-21_405.0-427.5_cbd8272d",
+              "candidate_id": "MSFT_BULL_PUT_SPREAD_2026-08-21_405.0-427.5_97edf5a1",
               "payoff_profile": {
                 "capital_required": 300.0,
                 "expected_profit": 70.0,
@@ -2121,7 +2126,7 @@
           "market_regime": "BULL_TREND",
           "maximum_loss": 300.0,
           "metadata": {
-            "candidate_id": "MSFT_BULL_PUT_SPREAD_2026-08-21_405.0-427.5_cbd8272d",
+            "candidate_id": "MSFT_BULL_PUT_SPREAD_2026-08-21_405.0-427.5_97edf5a1",
             "payoff_profile": {
               "capital_required": 300.0,
               "expected_profit": 70.0,
@@ -2281,6 +2286,7 @@
         "weaknesses": []
       },
       "rejection_reasons": [],
+      "scenario_profile": null,
       "strategy_candidate": {
         "allowed": true,
         "confidence": 85.0,
@@ -2352,6 +2358,8 @@
         "premium_type": "CREDIT",
         "risk_profile": "DEFINED_RISK",
         "risk_reward_score": 75.0,
+        "scenario_allowed": true,
+        "scenario_score": 50.0,
         "strategy": "BULL_PUT_SPREAD",
         "strategy_allowed": true,
         "strategy_candidate": {
@@ -2523,8 +2531,9 @@
     },
     {
       "allowed": true,
-      "candidate_id": "JPM_BEAR_CALL_SPREAD_2026-08-21_242.0-231.0_9c2a9ffa",
+      "candidate_id": "JPM_BEAR_CALL_SPREAD_2026-08-21_242.0-231.0_8bfdf05c",
       "direction": "PUT",
+      "distribution_risk_profile": null,
       "expected_move_profile": {
         "blended_move": 17.6,
         "blended_move_pct": 8.0,
@@ -2621,7 +2630,7 @@
         "market_regime": "BEAR_TREND",
         "maximum_loss": 300.0,
         "metadata": {
-          "candidate_id": "JPM_BEAR_CALL_SPREAD_2026-08-21_242.0-231.0_9c2a9ffa",
+          "candidate_id": "JPM_BEAR_CALL_SPREAD_2026-08-21_242.0-231.0_8bfdf05c",
           "payoff_profile": {
             "capital_required": 300.0,
             "expected_profit": 70.0,
@@ -2876,7 +2885,7 @@
           "market_regime": "BEAR_TREND",
           "maximum_loss": 300.0,
           "metadata": {
-            "candidate_id": "JPM_BEAR_CALL_SPREAD_2026-08-21_242.0-231.0_9c2a9ffa",
+            "candidate_id": "JPM_BEAR_CALL_SPREAD_2026-08-21_242.0-231.0_8bfdf05c",
             "payoff_profile": {
               "capital_required": 300.0,
               "expected_profit": 70.0,
@@ -3116,7 +3125,7 @@
             "market_regime": "BEAR_TREND",
             "maximum_loss": 300.0,
             "metadata": {
-              "candidate_id": "JPM_BEAR_CALL_SPREAD_2026-08-21_242.0-231.0_9c2a9ffa",
+              "candidate_id": "JPM_BEAR_CALL_SPREAD_2026-08-21_242.0-231.0_8bfdf05c",
               "payoff_profile": {
                 "capital_required": 300.0,
                 "expected_profit": 70.0,
@@ -3381,7 +3390,7 @@
           "market_regime": "BEAR_TREND",
           "maximum_loss": 300.0,
           "metadata": {
-            "candidate_id": "JPM_BEAR_CALL_SPREAD_2026-08-21_242.0-231.0_9c2a9ffa",
+            "candidate_id": "JPM_BEAR_CALL_SPREAD_2026-08-21_242.0-231.0_8bfdf05c",
             "payoff_profile": {
               "capital_required": 300.0,
               "expected_profit": 70.0,
@@ -3541,6 +3550,7 @@
         "weaknesses": []
       },
       "rejection_reasons": [],
+      "scenario_profile": null,
       "strategy_candidate": {
         "allowed": true,
         "confidence": 85.0,
@@ -3612,6 +3622,8 @@
         "premium_type": "CREDIT",
         "risk_profile": "DEFINED_RISK",
         "risk_reward_score": 75.0,
+        "scenario_allowed": true,
+        "scenario_score": 50.0,
         "strategy": "BEAR_CALL_SPREAD",
         "strategy_allowed": true,
         "strategy_candidate": {
@@ -3792,10 +3804,17 @@
       "contracts": 6,
       "correlation_group": "MEGA_CAP_TECH",
       "data_confidence_score": 84.5,
-      "decision_id": "AAPL_BULL_PUT_SPREAD_2026-08-21_180.0-190.0_7bcc3d97",
+      "decision_id": "AAPL_BULL_PUT_SPREAD_2026-08-21_180.0-190.0_48137aca",
       "direction": "CALL",
+      "distribution_observation_count": 0,
+      "distribution_risk_allowed": false,
+      "distribution_risk_profile": null,
+      "downside_deviation": 0.0,
+      "drawdown_at_risk": 0.0,
       "dte": 30,
+      "excess_kurtosis": 0.0,
       "execution_score": 86.0,
+      "expected_drawdown_shortfall": 0.0,
       "expected_move": 16.0,
       "expected_move_pct": 8.0,
       "expected_profit": 420.0,
@@ -3805,12 +3824,20 @@
       "expected_return_pct": 0.2333,
       "expected_value": 0.0,
       "expiry": "2026-08-21",
+      "gain_to_pain_ratio": null,
       "greeks_score": 84.0,
+      "historical_expected_shortfall_95": 0.0,
+      "historical_expected_shortfall_99": 0.0,
+      "historical_var_95": 0.0,
+      "historical_var_99": 0.0,
       "industry": "CONSUMER_ELECTRONICS",
       "liquidity_score": 90.0,
       "long_strike": 180.0,
       "market_regime": "BULL_TREND",
       "maximum_loss": 1800.0,
+      "maximum_stress_loss": 0.0,
+      "maximum_stress_loss_pct_of_capital": 0.0,
+      "maximum_stress_loss_pct_of_maximum_loss": null,
       "metadata": {
         "candidate_metadata": {}
       },
@@ -3819,7 +3846,11 @@
       "net_rho": 0.06,
       "net_theta": 0.3,
       "net_vega": -1.2,
+      "omega_ratio": null,
       "option_symbol": "",
+      "pain_index": 0.0,
+      "parametric_expected_shortfall_95": 0.0,
+      "parametric_var_95": 0.0,
       "payoff_profile": {
         "capital_required": 300.0,
         "expected_profit": 70.0,
@@ -3924,7 +3955,7 @@
           "market_regime": "BULL_TREND",
           "maximum_loss": 300.0,
           "metadata": {
-            "candidate_id": "AAPL_BULL_PUT_SPREAD_2026-08-21_180.0-190.0_7bcc3d97",
+            "candidate_id": "AAPL_BULL_PUT_SPREAD_2026-08-21_180.0-190.0_48137aca",
             "payoff_profile": {
               "capital_required": 300.0,
               "expected_profit": 70.0,
@@ -4164,7 +4195,7 @@
             "market_regime": "BULL_TREND",
             "maximum_loss": 300.0,
             "metadata": {
-              "candidate_id": "AAPL_BULL_PUT_SPREAD_2026-08-21_180.0-190.0_7bcc3d97",
+              "candidate_id": "AAPL_BULL_PUT_SPREAD_2026-08-21_180.0-190.0_48137aca",
               "payoff_profile": {
                 "capital_required": 300.0,
                 "expected_profit": 70.0,
@@ -4336,9 +4367,12 @@
       "probability_confidence_grade": "N/A",
       "probability_confidence_score": 0.0,
       "probability_method": "UNAVAILABLE",
+      "probability_of_critical_loss": 0.0,
+      "probability_of_large_loss": 0.0,
       "probability_of_max_loss": null,
       "probability_of_max_profit": null,
       "probability_of_profit": 0.7,
+      "probability_of_severe_loss": 0.0,
       "probability_profile": null,
       "probability_profit_target": null,
       "probability_simulation_count": 0,
@@ -4375,6 +4409,8 @@
       "recommendation": "LIVE_CANDIDATE",
       "rejection_reasons": [],
       "risk_profile": "DEFINED_RISK",
+      "scenario_allowed": false,
+      "scenario_profile": null,
       "score_breakdown": {
         "data_confidence_score": 84.5,
         "execution_score": 86.0,
@@ -4407,6 +4443,8 @@
       "sector": "TECHNOLOGY",
       "selected": true,
       "short_strike": 190.0,
+      "skewness": 0.0,
+      "sortino_ratio": null,
       "strategy": "BULL_PUT_SPREAD",
       "strategy_score": 87.69,
       "strengths": [
@@ -4415,13 +4453,22 @@
         "Liquidity Execution",
         "Strategy Score"
       ],
+      "stress_grade": "N/A",
+      "stress_risk_severity": "UNKNOWN",
+      "stress_score": 0.0,
       "strike": null,
       "symbol": "AAPL",
+      "tail_risk_grade": "N/A",
+      "tail_risk_score": 0.0,
+      "tail_risk_severity": "UNKNOWN",
+      "ulcer_index": 0.0,
       "underlying_price": 200.0,
       "value_at_risk_95": 0.0,
       "volatility_regime": "HIGH_VOL",
       "warnings": [],
-      "weaknesses": []
+      "weaknesses": [],
+      "worst_scenario_name": "",
+      "worst_scenario_pnl": 0.0
     },
     {
       "action": "PAPER_TRADE_POSITION",
@@ -4432,10 +4479,17 @@
       "contracts": 6,
       "correlation_group": "BANKS",
       "data_confidence_score": 84.5,
-      "decision_id": "JPM_BEAR_CALL_SPREAD_2026-08-21_242.0-231.0_9c2a9ffa",
+      "decision_id": "JPM_BEAR_CALL_SPREAD_2026-08-21_242.0-231.0_8bfdf05c",
       "direction": "PUT",
+      "distribution_observation_count": 0,
+      "distribution_risk_allowed": false,
+      "distribution_risk_profile": null,
+      "downside_deviation": 0.0,
+      "drawdown_at_risk": 0.0,
       "dte": 30,
+      "excess_kurtosis": 0.0,
       "execution_score": 86.0,
+      "expected_drawdown_shortfall": 0.0,
       "expected_move": 17.6,
       "expected_move_pct": 8.0,
       "expected_profit": 420.0,
@@ -4445,12 +4499,20 @@
       "expected_return_pct": 0.2333,
       "expected_value": 0.0,
       "expiry": "2026-08-21",
+      "gain_to_pain_ratio": null,
       "greeks_score": 84.0,
+      "historical_expected_shortfall_95": 0.0,
+      "historical_expected_shortfall_99": 0.0,
+      "historical_var_95": 0.0,
+      "historical_var_99": 0.0,
       "industry": "BANKS",
       "liquidity_score": 90.0,
       "long_strike": 242.0,
       "market_regime": "BEAR_TREND",
       "maximum_loss": 1800.0,
+      "maximum_stress_loss": 0.0,
+      "maximum_stress_loss_pct_of_capital": 0.0,
+      "maximum_stress_loss_pct_of_maximum_loss": null,
       "metadata": {
         "candidate_metadata": {}
       },
@@ -4459,7 +4521,11 @@
       "net_rho": 0.06,
       "net_theta": 0.3,
       "net_vega": -1.2,
+      "omega_ratio": null,
       "option_symbol": "",
+      "pain_index": 0.0,
+      "parametric_expected_shortfall_95": 0.0,
+      "parametric_var_95": 0.0,
       "payoff_profile": {
         "capital_required": 300.0,
         "expected_profit": 70.0,
@@ -4564,7 +4630,7 @@
           "market_regime": "BEAR_TREND",
           "maximum_loss": 300.0,
           "metadata": {
-            "candidate_id": "JPM_BEAR_CALL_SPREAD_2026-08-21_242.0-231.0_9c2a9ffa",
+            "candidate_id": "JPM_BEAR_CALL_SPREAD_2026-08-21_242.0-231.0_8bfdf05c",
             "payoff_profile": {
               "capital_required": 300.0,
               "expected_profit": 70.0,
@@ -4804,7 +4870,7 @@
             "market_regime": "BEAR_TREND",
             "maximum_loss": 300.0,
             "metadata": {
-              "candidate_id": "JPM_BEAR_CALL_SPREAD_2026-08-21_242.0-231.0_9c2a9ffa",
+              "candidate_id": "JPM_BEAR_CALL_SPREAD_2026-08-21_242.0-231.0_8bfdf05c",
               "payoff_profile": {
                 "capital_required": 300.0,
                 "expected_profit": 70.0,
@@ -4976,9 +5042,12 @@
       "probability_confidence_grade": "N/A",
       "probability_confidence_score": 0.0,
       "probability_method": "UNAVAILABLE",
+      "probability_of_critical_loss": 0.0,
+      "probability_of_large_loss": 0.0,
       "probability_of_max_loss": null,
       "probability_of_max_profit": null,
       "probability_of_profit": 0.7,
+      "probability_of_severe_loss": 0.0,
       "probability_profile": null,
       "probability_profit_target": null,
       "probability_simulation_count": 0,
@@ -5015,6 +5084,8 @@
       "recommendation": "LIVE_CANDIDATE",
       "rejection_reasons": [],
       "risk_profile": "DEFINED_RISK",
+      "scenario_allowed": false,
+      "scenario_profile": null,
       "score_breakdown": {
         "data_confidence_score": 84.5,
         "execution_score": 86.0,
@@ -5047,6 +5118,8 @@
       "sector": "FINANCIALS",
       "selected": true,
       "short_strike": 231.0,
+      "skewness": 0.0,
+      "sortino_ratio": null,
       "strategy": "BEAR_CALL_SPREAD",
       "strategy_score": 86.84,
       "strengths": [
@@ -5055,13 +5128,22 @@
         "Liquidity Execution",
         "Portfolio Fit"
       ],
+      "stress_grade": "N/A",
+      "stress_risk_severity": "UNKNOWN",
+      "stress_score": 0.0,
       "strike": null,
       "symbol": "JPM",
+      "tail_risk_grade": "N/A",
+      "tail_risk_score": 0.0,
+      "tail_risk_severity": "UNKNOWN",
+      "ulcer_index": 0.0,
       "underlying_price": 220.0,
       "value_at_risk_95": 0.0,
       "volatility_regime": "HIGH_VOL",
       "warnings": [],
-      "weaknesses": []
+      "weaknesses": [],
+      "worst_scenario_name": "",
+      "worst_scenario_pnl": 0.0
     },
     {
       "action": "PAPER_TRADE_POSITION",
@@ -5072,10 +5154,17 @@
       "contracts": 6,
       "correlation_group": "MEGA_CAP_TECH",
       "data_confidence_score": 84.5,
-      "decision_id": "MSFT_BULL_PUT_SPREAD_2026-08-21_405.0-427.5_cbd8272d",
+      "decision_id": "MSFT_BULL_PUT_SPREAD_2026-08-21_405.0-427.5_97edf5a1",
       "direction": "CALL",
+      "distribution_observation_count": 0,
+      "distribution_risk_allowed": false,
+      "distribution_risk_profile": null,
+      "downside_deviation": 0.0,
+      "drawdown_at_risk": 0.0,
       "dte": 30,
+      "excess_kurtosis": 0.0,
       "execution_score": 86.0,
+      "expected_drawdown_shortfall": 0.0,
       "expected_move": 36.0,
       "expected_move_pct": 8.0,
       "expected_profit": 420.0,
@@ -5085,12 +5174,20 @@
       "expected_return_pct": 0.2333,
       "expected_value": 0.0,
       "expiry": "2026-08-21",
+      "gain_to_pain_ratio": null,
       "greeks_score": 84.0,
+      "historical_expected_shortfall_95": 0.0,
+      "historical_expected_shortfall_99": 0.0,
+      "historical_var_95": 0.0,
+      "historical_var_99": 0.0,
       "industry": "SOFTWARE",
       "liquidity_score": 90.0,
       "long_strike": 405.0,
       "market_regime": "BULL_TREND",
       "maximum_loss": 1800.0,
+      "maximum_stress_loss": 0.0,
+      "maximum_stress_loss_pct_of_capital": 0.0,
+      "maximum_stress_loss_pct_of_maximum_loss": null,
       "metadata": {
         "candidate_metadata": {}
       },
@@ -5099,7 +5196,11 @@
       "net_rho": 0.06,
       "net_theta": 0.3,
       "net_vega": -1.2,
+      "omega_ratio": null,
       "option_symbol": "",
+      "pain_index": 0.0,
+      "parametric_expected_shortfall_95": 0.0,
+      "parametric_var_95": 0.0,
       "payoff_profile": {
         "capital_required": 300.0,
         "expected_profit": 70.0,
@@ -5204,7 +5305,7 @@
           "market_regime": "BULL_TREND",
           "maximum_loss": 300.0,
           "metadata": {
-            "candidate_id": "MSFT_BULL_PUT_SPREAD_2026-08-21_405.0-427.5_cbd8272d",
+            "candidate_id": "MSFT_BULL_PUT_SPREAD_2026-08-21_405.0-427.5_97edf5a1",
             "payoff_profile": {
               "capital_required": 300.0,
               "expected_profit": 70.0,
@@ -5444,7 +5545,7 @@
             "market_regime": "BULL_TREND",
             "maximum_loss": 300.0,
             "metadata": {
-              "candidate_id": "MSFT_BULL_PUT_SPREAD_2026-08-21_405.0-427.5_cbd8272d",
+              "candidate_id": "MSFT_BULL_PUT_SPREAD_2026-08-21_405.0-427.5_97edf5a1",
               "payoff_profile": {
                 "capital_required": 300.0,
                 "expected_profit": 70.0,
@@ -5616,9 +5717,12 @@
       "probability_confidence_grade": "N/A",
       "probability_confidence_score": 0.0,
       "probability_method": "UNAVAILABLE",
+      "probability_of_critical_loss": 0.0,
+      "probability_of_large_loss": 0.0,
       "probability_of_max_loss": null,
       "probability_of_max_profit": null,
       "probability_of_profit": 0.7,
+      "probability_of_severe_loss": 0.0,
       "probability_profile": null,
       "probability_profit_target": null,
       "probability_simulation_count": 0,
@@ -5655,6 +5759,8 @@
       "recommendation": "LIVE_CANDIDATE",
       "rejection_reasons": [],
       "risk_profile": "DEFINED_RISK",
+      "scenario_allowed": false,
+      "scenario_profile": null,
       "score_breakdown": {
         "data_confidence_score": 84.5,
         "execution_score": 86.0,
@@ -5687,6 +5793,8 @@
       "sector": "TECHNOLOGY",
       "selected": true,
       "short_strike": 427.5,
+      "skewness": 0.0,
+      "sortino_ratio": null,
       "strategy": "BULL_PUT_SPREAD",
       "strategy_score": 87.14,
       "strengths": [
@@ -5695,13 +5803,22 @@
         "Liquidity Execution",
         "Strategy Score"
       ],
+      "stress_grade": "N/A",
+      "stress_risk_severity": "UNKNOWN",
+      "stress_score": 0.0,
       "strike": null,
       "symbol": "MSFT",
+      "tail_risk_grade": "N/A",
+      "tail_risk_score": 0.0,
+      "tail_risk_severity": "UNKNOWN",
+      "ulcer_index": 0.0,
       "underlying_price": 450.0,
       "value_at_risk_95": 0.0,
       "volatility_regime": "HIGH_VOL",
       "warnings": [],
-      "weaknesses": []
+      "weaknesses": [],
+      "worst_scenario_name": "",
+      "worst_scenario_pnl": 0.0
     }
   ],
   "errors": [],
@@ -5937,7 +6054,7 @@
           "market_regime": "BULL_TREND",
           "maximum_loss": 300.0,
           "metadata": {
-            "candidate_id": "AAPL_BULL_PUT_SPREAD_2026-08-21_180.0-190.0_7bcc3d97",
+            "candidate_id": "AAPL_BULL_PUT_SPREAD_2026-08-21_180.0-190.0_48137aca",
             "payoff_profile": {
               "capital_required": 300.0,
               "expected_profit": 70.0,
@@ -6177,7 +6294,7 @@
             "market_regime": "BULL_TREND",
             "maximum_loss": 300.0,
             "metadata": {
-              "candidate_id": "AAPL_BULL_PUT_SPREAD_2026-08-21_180.0-190.0_7bcc3d97",
+              "candidate_id": "AAPL_BULL_PUT_SPREAD_2026-08-21_180.0-190.0_48137aca",
               "payoff_profile": {
                 "capital_required": 300.0,
                 "expected_profit": 70.0,
@@ -6438,7 +6555,7 @@
           "market_regime": "BEAR_TREND",
           "maximum_loss": 300.0,
           "metadata": {
-            "candidate_id": "JPM_BEAR_CALL_SPREAD_2026-08-21_242.0-231.0_9c2a9ffa",
+            "candidate_id": "JPM_BEAR_CALL_SPREAD_2026-08-21_242.0-231.0_8bfdf05c",
             "payoff_profile": {
               "capital_required": 300.0,
               "expected_profit": 70.0,
@@ -6678,7 +6795,7 @@
             "market_regime": "BEAR_TREND",
             "maximum_loss": 300.0,
             "metadata": {
-              "candidate_id": "JPM_BEAR_CALL_SPREAD_2026-08-21_242.0-231.0_9c2a9ffa",
+              "candidate_id": "JPM_BEAR_CALL_SPREAD_2026-08-21_242.0-231.0_8bfdf05c",
               "payoff_profile": {
                 "capital_required": 300.0,
                 "expected_profit": 70.0,
@@ -6939,7 +7056,7 @@
           "market_regime": "BULL_TREND",
           "maximum_loss": 300.0,
           "metadata": {
-            "candidate_id": "MSFT_BULL_PUT_SPREAD_2026-08-21_405.0-427.5_cbd8272d",
+            "candidate_id": "MSFT_BULL_PUT_SPREAD_2026-08-21_405.0-427.5_97edf5a1",
             "payoff_profile": {
               "capital_required": 300.0,
               "expected_profit": 70.0,
@@ -7179,7 +7296,7 @@
             "market_regime": "BULL_TREND",
             "maximum_loss": 300.0,
             "metadata": {
-              "candidate_id": "MSFT_BULL_PUT_SPREAD_2026-08-21_405.0-427.5_cbd8272d",
+              "candidate_id": "MSFT_BULL_PUT_SPREAD_2026-08-21_405.0-427.5_97edf5a1",
               "payoff_profile": {
                 "capital_required": 300.0,
                 "expected_profit": 70.0,
@@ -7455,7 +7572,7 @@
         "market_regime": "BULL_TREND",
         "maximum_loss": 300.0,
         "metadata": {
-          "candidate_id": "AAPL_BULL_PUT_SPREAD_2026-08-21_180.0-190.0_7bcc3d97",
+          "candidate_id": "AAPL_BULL_PUT_SPREAD_2026-08-21_180.0-190.0_48137aca",
           "payoff_profile": {
             "capital_required": 300.0,
             "expected_profit": 70.0,
@@ -7711,7 +7828,7 @@
         "market_regime": "BEAR_TREND",
         "maximum_loss": 300.0,
         "metadata": {
-          "candidate_id": "JPM_BEAR_CALL_SPREAD_2026-08-21_242.0-231.0_9c2a9ffa",
+          "candidate_id": "JPM_BEAR_CALL_SPREAD_2026-08-21_242.0-231.0_8bfdf05c",
           "payoff_profile": {
             "capital_required": 300.0,
             "expected_profit": 70.0,
@@ -7967,7 +8084,7 @@
         "market_regime": "BULL_TREND",
         "maximum_loss": 300.0,
         "metadata": {
-          "candidate_id": "MSFT_BULL_PUT_SPREAD_2026-08-21_405.0-427.5_cbd8272d",
+          "candidate_id": "MSFT_BULL_PUT_SPREAD_2026-08-21_405.0-427.5_97edf5a1",
           "payoff_profile": {
             "capital_required": 300.0,
             "expected_profit": 70.0,
@@ -8140,10 +8257,17 @@
       "contracts": 6,
       "correlation_group": "MEGA_CAP_TECH",
       "data_confidence_score": 84.5,
-      "decision_id": "AAPL_BULL_PUT_SPREAD_2026-08-21_180.0-190.0_7bcc3d97",
+      "decision_id": "AAPL_BULL_PUT_SPREAD_2026-08-21_180.0-190.0_48137aca",
       "direction": "CALL",
+      "distribution_observation_count": 0,
+      "distribution_risk_allowed": false,
+      "distribution_risk_profile": null,
+      "downside_deviation": 0.0,
+      "drawdown_at_risk": 0.0,
       "dte": 30,
+      "excess_kurtosis": 0.0,
       "execution_score": 86.0,
+      "expected_drawdown_shortfall": 0.0,
       "expected_move": 16.0,
       "expected_move_pct": 8.0,
       "expected_profit": 420.0,
@@ -8153,12 +8277,20 @@
       "expected_return_pct": 0.2333,
       "expected_value": 0.0,
       "expiry": "2026-08-21",
+      "gain_to_pain_ratio": null,
       "greeks_score": 84.0,
+      "historical_expected_shortfall_95": 0.0,
+      "historical_expected_shortfall_99": 0.0,
+      "historical_var_95": 0.0,
+      "historical_var_99": 0.0,
       "industry": "CONSUMER_ELECTRONICS",
       "liquidity_score": 90.0,
       "long_strike": 180.0,
       "market_regime": "BULL_TREND",
       "maximum_loss": 1800.0,
+      "maximum_stress_loss": 0.0,
+      "maximum_stress_loss_pct_of_capital": 0.0,
+      "maximum_stress_loss_pct_of_maximum_loss": null,
       "metadata": {
         "candidate_metadata": {}
       },
@@ -8167,7 +8299,11 @@
       "net_rho": 0.06,
       "net_theta": 0.3,
       "net_vega": -1.2,
+      "omega_ratio": null,
       "option_symbol": "",
+      "pain_index": 0.0,
+      "parametric_expected_shortfall_95": 0.0,
+      "parametric_var_95": 0.0,
       "payoff_profile": {
         "capital_required": 300.0,
         "expected_profit": 70.0,
@@ -8272,7 +8408,7 @@
           "market_regime": "BULL_TREND",
           "maximum_loss": 300.0,
           "metadata": {
-            "candidate_id": "AAPL_BULL_PUT_SPREAD_2026-08-21_180.0-190.0_7bcc3d97",
+            "candidate_id": "AAPL_BULL_PUT_SPREAD_2026-08-21_180.0-190.0_48137aca",
             "payoff_profile": {
               "capital_required": 300.0,
               "expected_profit": 70.0,
@@ -8512,7 +8648,7 @@
             "market_regime": "BULL_TREND",
             "maximum_loss": 300.0,
             "metadata": {
-              "candidate_id": "AAPL_BULL_PUT_SPREAD_2026-08-21_180.0-190.0_7bcc3d97",
+              "candidate_id": "AAPL_BULL_PUT_SPREAD_2026-08-21_180.0-190.0_48137aca",
               "payoff_profile": {
                 "capital_required": 300.0,
                 "expected_profit": 70.0,
@@ -8684,9 +8820,12 @@
       "probability_confidence_grade": "N/A",
       "probability_confidence_score": 0.0,
       "probability_method": "UNAVAILABLE",
+      "probability_of_critical_loss": 0.0,
+      "probability_of_large_loss": 0.0,
       "probability_of_max_loss": null,
       "probability_of_max_profit": null,
       "probability_of_profit": 0.7,
+      "probability_of_severe_loss": 0.0,
       "probability_profile": null,
       "probability_profit_target": null,
       "probability_simulation_count": 0,
@@ -8723,6 +8862,8 @@
       "recommendation": "LIVE_CANDIDATE",
       "rejection_reasons": [],
       "risk_profile": "DEFINED_RISK",
+      "scenario_allowed": false,
+      "scenario_profile": null,
       "score_breakdown": {
         "data_confidence_score": 84.5,
         "execution_score": 86.0,
@@ -8755,6 +8896,8 @@
       "sector": "TECHNOLOGY",
       "selected": true,
       "short_strike": 190.0,
+      "skewness": 0.0,
+      "sortino_ratio": null,
       "strategy": "BULL_PUT_SPREAD",
       "strategy_score": 87.69,
       "strengths": [
@@ -8763,13 +8906,22 @@
         "Liquidity Execution",
         "Strategy Score"
       ],
+      "stress_grade": "N/A",
+      "stress_risk_severity": "UNKNOWN",
+      "stress_score": 0.0,
       "strike": null,
       "symbol": "AAPL",
+      "tail_risk_grade": "N/A",
+      "tail_risk_score": 0.0,
+      "tail_risk_severity": "UNKNOWN",
+      "ulcer_index": 0.0,
       "underlying_price": 200.0,
       "value_at_risk_95": 0.0,
       "volatility_regime": "HIGH_VOL",
       "warnings": [],
-      "weaknesses": []
+      "weaknesses": [],
+      "worst_scenario_name": "",
+      "worst_scenario_pnl": 0.0
     },
     {
       "action": "PAPER_TRADE_POSITION",
@@ -8780,10 +8932,17 @@
       "contracts": 6,
       "correlation_group": "BANKS",
       "data_confidence_score": 84.5,
-      "decision_id": "JPM_BEAR_CALL_SPREAD_2026-08-21_242.0-231.0_9c2a9ffa",
+      "decision_id": "JPM_BEAR_CALL_SPREAD_2026-08-21_242.0-231.0_8bfdf05c",
       "direction": "PUT",
+      "distribution_observation_count": 0,
+      "distribution_risk_allowed": false,
+      "distribution_risk_profile": null,
+      "downside_deviation": 0.0,
+      "drawdown_at_risk": 0.0,
       "dte": 30,
+      "excess_kurtosis": 0.0,
       "execution_score": 86.0,
+      "expected_drawdown_shortfall": 0.0,
       "expected_move": 17.6,
       "expected_move_pct": 8.0,
       "expected_profit": 420.0,
@@ -8793,12 +8952,20 @@
       "expected_return_pct": 0.2333,
       "expected_value": 0.0,
       "expiry": "2026-08-21",
+      "gain_to_pain_ratio": null,
       "greeks_score": 84.0,
+      "historical_expected_shortfall_95": 0.0,
+      "historical_expected_shortfall_99": 0.0,
+      "historical_var_95": 0.0,
+      "historical_var_99": 0.0,
       "industry": "BANKS",
       "liquidity_score": 90.0,
       "long_strike": 242.0,
       "market_regime": "BEAR_TREND",
       "maximum_loss": 1800.0,
+      "maximum_stress_loss": 0.0,
+      "maximum_stress_loss_pct_of_capital": 0.0,
+      "maximum_stress_loss_pct_of_maximum_loss": null,
       "metadata": {
         "candidate_metadata": {}
       },
@@ -8807,7 +8974,11 @@
       "net_rho": 0.06,
       "net_theta": 0.3,
       "net_vega": -1.2,
+      "omega_ratio": null,
       "option_symbol": "",
+      "pain_index": 0.0,
+      "parametric_expected_shortfall_95": 0.0,
+      "parametric_var_95": 0.0,
       "payoff_profile": {
         "capital_required": 300.0,
         "expected_profit": 70.0,
@@ -8912,7 +9083,7 @@
           "market_regime": "BEAR_TREND",
           "maximum_loss": 300.0,
           "metadata": {
-            "candidate_id": "JPM_BEAR_CALL_SPREAD_2026-08-21_242.0-231.0_9c2a9ffa",
+            "candidate_id": "JPM_BEAR_CALL_SPREAD_2026-08-21_242.0-231.0_8bfdf05c",
             "payoff_profile": {
               "capital_required": 300.0,
               "expected_profit": 70.0,
@@ -9152,7 +9323,7 @@
             "market_regime": "BEAR_TREND",
             "maximum_loss": 300.0,
             "metadata": {
-              "candidate_id": "JPM_BEAR_CALL_SPREAD_2026-08-21_242.0-231.0_9c2a9ffa",
+              "candidate_id": "JPM_BEAR_CALL_SPREAD_2026-08-21_242.0-231.0_8bfdf05c",
               "payoff_profile": {
                 "capital_required": 300.0,
                 "expected_profit": 70.0,
@@ -9324,9 +9495,12 @@
       "probability_confidence_grade": "N/A",
       "probability_confidence_score": 0.0,
       "probability_method": "UNAVAILABLE",
+      "probability_of_critical_loss": 0.0,
+      "probability_of_large_loss": 0.0,
       "probability_of_max_loss": null,
       "probability_of_max_profit": null,
       "probability_of_profit": 0.7,
+      "probability_of_severe_loss": 0.0,
       "probability_profile": null,
       "probability_profit_target": null,
       "probability_simulation_count": 0,
@@ -9363,6 +9537,8 @@
       "recommendation": "LIVE_CANDIDATE",
       "rejection_reasons": [],
       "risk_profile": "DEFINED_RISK",
+      "scenario_allowed": false,
+      "scenario_profile": null,
       "score_breakdown": {
         "data_confidence_score": 84.5,
         "execution_score": 86.0,
@@ -9395,6 +9571,8 @@
       "sector": "FINANCIALS",
       "selected": true,
       "short_strike": 231.0,
+      "skewness": 0.0,
+      "sortino_ratio": null,
       "strategy": "BEAR_CALL_SPREAD",
       "strategy_score": 86.84,
       "strengths": [
@@ -9403,13 +9581,22 @@
         "Liquidity Execution",
         "Portfolio Fit"
       ],
+      "stress_grade": "N/A",
+      "stress_risk_severity": "UNKNOWN",
+      "stress_score": 0.0,
       "strike": null,
       "symbol": "JPM",
+      "tail_risk_grade": "N/A",
+      "tail_risk_score": 0.0,
+      "tail_risk_severity": "UNKNOWN",
+      "ulcer_index": 0.0,
       "underlying_price": 220.0,
       "value_at_risk_95": 0.0,
       "volatility_regime": "HIGH_VOL",
       "warnings": [],
-      "weaknesses": []
+      "weaknesses": [],
+      "worst_scenario_name": "",
+      "worst_scenario_pnl": 0.0
     },
     {
       "action": "PAPER_TRADE_POSITION",
@@ -9420,10 +9607,17 @@
       "contracts": 6,
       "correlation_group": "MEGA_CAP_TECH",
       "data_confidence_score": 84.5,
-      "decision_id": "MSFT_BULL_PUT_SPREAD_2026-08-21_405.0-427.5_cbd8272d",
+      "decision_id": "MSFT_BULL_PUT_SPREAD_2026-08-21_405.0-427.5_97edf5a1",
       "direction": "CALL",
+      "distribution_observation_count": 0,
+      "distribution_risk_allowed": false,
+      "distribution_risk_profile": null,
+      "downside_deviation": 0.0,
+      "drawdown_at_risk": 0.0,
       "dte": 30,
+      "excess_kurtosis": 0.0,
       "execution_score": 86.0,
+      "expected_drawdown_shortfall": 0.0,
       "expected_move": 36.0,
       "expected_move_pct": 8.0,
       "expected_profit": 420.0,
@@ -9433,12 +9627,20 @@
       "expected_return_pct": 0.2333,
       "expected_value": 0.0,
       "expiry": "2026-08-21",
+      "gain_to_pain_ratio": null,
       "greeks_score": 84.0,
+      "historical_expected_shortfall_95": 0.0,
+      "historical_expected_shortfall_99": 0.0,
+      "historical_var_95": 0.0,
+      "historical_var_99": 0.0,
       "industry": "SOFTWARE",
       "liquidity_score": 90.0,
       "long_strike": 405.0,
       "market_regime": "BULL_TREND",
       "maximum_loss": 1800.0,
+      "maximum_stress_loss": 0.0,
+      "maximum_stress_loss_pct_of_capital": 0.0,
+      "maximum_stress_loss_pct_of_maximum_loss": null,
       "metadata": {
         "candidate_metadata": {}
       },
@@ -9447,7 +9649,11 @@
       "net_rho": 0.06,
       "net_theta": 0.3,
       "net_vega": -1.2,
+      "omega_ratio": null,
       "option_symbol": "",
+      "pain_index": 0.0,
+      "parametric_expected_shortfall_95": 0.0,
+      "parametric_var_95": 0.0,
       "payoff_profile": {
         "capital_required": 300.0,
         "expected_profit": 70.0,
@@ -9552,7 +9758,7 @@
           "market_regime": "BULL_TREND",
           "maximum_loss": 300.0,
           "metadata": {
-            "candidate_id": "MSFT_BULL_PUT_SPREAD_2026-08-21_405.0-427.5_cbd8272d",
+            "candidate_id": "MSFT_BULL_PUT_SPREAD_2026-08-21_405.0-427.5_97edf5a1",
             "payoff_profile": {
               "capital_required": 300.0,
               "expected_profit": 70.0,
@@ -9792,7 +9998,7 @@
             "market_regime": "BULL_TREND",
             "maximum_loss": 300.0,
             "metadata": {
-              "candidate_id": "MSFT_BULL_PUT_SPREAD_2026-08-21_405.0-427.5_cbd8272d",
+              "candidate_id": "MSFT_BULL_PUT_SPREAD_2026-08-21_405.0-427.5_97edf5a1",
               "payoff_profile": {
                 "capital_required": 300.0,
                 "expected_profit": 70.0,
@@ -9964,9 +10170,12 @@
       "probability_confidence_grade": "N/A",
       "probability_confidence_score": 0.0,
       "probability_method": "UNAVAILABLE",
+      "probability_of_critical_loss": 0.0,
+      "probability_of_large_loss": 0.0,
       "probability_of_max_loss": null,
       "probability_of_max_profit": null,
       "probability_of_profit": 0.7,
+      "probability_of_severe_loss": 0.0,
       "probability_profile": null,
       "probability_profit_target": null,
       "probability_simulation_count": 0,
@@ -10003,6 +10212,8 @@
       "recommendation": "LIVE_CANDIDATE",
       "rejection_reasons": [],
       "risk_profile": "DEFINED_RISK",
+      "scenario_allowed": false,
+      "scenario_profile": null,
       "score_breakdown": {
         "data_confidence_score": 84.5,
         "execution_score": 86.0,
@@ -10035,6 +10246,8 @@
       "sector": "TECHNOLOGY",
       "selected": true,
       "short_strike": 427.5,
+      "skewness": 0.0,
+      "sortino_ratio": null,
       "strategy": "BULL_PUT_SPREAD",
       "strategy_score": 87.14,
       "strengths": [
@@ -10043,13 +10256,22 @@
         "Liquidity Execution",
         "Strategy Score"
       ],
+      "stress_grade": "N/A",
+      "stress_risk_severity": "UNKNOWN",
+      "stress_score": 0.0,
       "strike": null,
       "symbol": "MSFT",
+      "tail_risk_grade": "N/A",
+      "tail_risk_score": 0.0,
+      "tail_risk_severity": "UNKNOWN",
+      "ulcer_index": 0.0,
       "underlying_price": 450.0,
       "value_at_risk_95": 0.0,
       "volatility_regime": "HIGH_VOL",
       "warnings": [],
-      "weaknesses": []
+      "weaknesses": [],
+      "worst_scenario_name": "",
+      "worst_scenario_pnl": 0.0
     }
   ],
   "symbol_diagnostics": [
