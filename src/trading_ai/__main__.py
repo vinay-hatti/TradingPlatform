@@ -72,6 +72,43 @@ def main():
     sub.add_parser("probability-engine-test")
     sub.add_parser("scenario-engine-test")
     sub.add_parser("distribution-risk-test")
+    sub.add_parser("risk-surface-test")
+    sub.add_parser("risk-surface-report-test")
+    sub.add_parser("portfolio-risk-surface-test")
+    sub.add_parser("phase4-regression-test")
+    sub.add_parser("portfolio-optimization-test")
+    sub.add_parser("portfolio-optimization-integration-test")
+    sub.add_parser("portfolio-optimization-report-test")
+    sub.add_parser("portfolio-optimization-frontier-test")
+    sub.add_parser("portfolio-optimization-frontier-report-test")
+    sub.add_parser("portfolio-optimization-recommendation-test")
+    sub.add_parser("phase5-regression-test")
+    sub.add_parser("probability-calibration-test")
+    sub.add_parser("segmented-probability-calibration-test")
+    sub.add_parser("probability-calibration-integration-test")
+    sub.add_parser("probability-calibration-ranking-test")
+    sub.add_parser("probability-calibration-report-test")
+    sub.add_parser("probability-calibration-governance-test")
+    sub.add_parser("phase6-regression-test")
+    sub.add_parser("institutional-walk-forward-test")
+    sub.add_parser("walk-forward-adapters-test")
+    sub.add_parser("walk-forward-calibration-test")
+    sub.add_parser("walk-forward-integration-test")
+    sub.add_parser("walk-forward-report-test")
+    sub.add_parser("walk-forward-governance-test")
+    sub.add_parser("phase7-regression-test")
+    sub.add_parser("market-regime-test")
+    sub.add_parser("market-regime-forecast-test")
+    sub.add_parser("market-breadth-test")
+    sub.add_parser("market-regime-integration-test")
+    sub.add_parser("market-regime-report-test")
+    sub.add_parser("market-regime-governance-test")
+    sub.add_parser("execution-analytics-test")
+    sub.add_parser("execution-aggregation-test")
+    sub.add_parser("execution-benchmark-routing-test")
+    sub.add_parser("execution-integration-test")
+    sub.add_parser("execution-report-test")
+    sub.add_parser("phase8-regression-test")
 
     paper = sub.add_parser("paper")
     paper_sub = paper.add_subparsers(dest="paper_command")
@@ -236,6 +273,118 @@ def main():
     elif args.command == "distribution-risk-test": 
         run_script("scripts/test_distribution_risk_engine.py", extra)
 
+    elif args.command == "risk-surface-test":
+        run_script("scripts/test_risk_surface_engine.py", extra)
+
+    elif args.command == "risk-surface-report-test":
+        run_script("scripts/test_risk_surface_reporting.py", extra)
+
+    elif args.command == "portfolio-risk-surface-test":
+        run_script("scripts/test_portfolio_risk_surface.py", extra)
+
+    elif args.command == "phase4-regression-test":
+        run_script("scripts/test_phase4_regression.py", extra)
+
+    elif args.command == "portfolio-optimization-test":
+        run_script("scripts/test_portfolio_optimization.py", extra)
+
+    elif args.command == "portfolio-optimization-integration-test":
+        run_script("scripts/test_portfolio_optimization_integration.py", extra)
+
+    elif args.command == "portfolio-optimization-report-test":
+        run_script("scripts/test_portfolio_optimization_reporting.py", extra)
+
+    elif args.command == "portfolio-optimization-frontier-test":
+        run_script("scripts/test_portfolio_optimization_frontier.py", extra)
+
+    elif args.command == "portfolio-optimization-frontier-report-test":
+        run_script("scripts/test_portfolio_optimization_frontier_reporting.py", extra)
+
+    elif args.command == "portfolio-optimization-recommendation-test":
+        run_script("scripts/test_portfolio_optimization_recommendation.py", extra)
+
+    elif args.command == "phase5-regression-test":
+        run_script("scripts/test_phase5_regression.py", extra)
+
+    elif args.command == "probability-calibration-test":
+        run_script("scripts/test_probability_calibration.py", extra)
+
+    elif args.command == "segmented-probability-calibration-test":
+        run_script("scripts/test_segmented_probability_calibration.py", extra)
+
+    elif args.command == "probability-calibration-integration-test":
+        run_script("scripts/test_probability_calibration_integration.py", extra)
+
+    elif args.command == "probability-calibration-ranking-test":
+        run_script("scripts/test_probability_calibration_ranking.py", extra)
+
+    elif args.command == "probability-calibration-report-test":
+        run_script("scripts/test_probability_calibration_reporting.py", extra)
+
+    elif args.command == "probability-calibration-governance-test":
+        run_script("scripts/test_probability_calibration_governance.py", extra)
+
+    elif args.command == "phase6-regression-test":
+        run_script("scripts/test_phase6_regression.py", extra)
+
+
+    elif args.command == "institutional-walk-forward-test":
+        run_script("scripts/test_institutional_walk_forward.py", extra)
+
+    elif args.command == "walk-forward-adapters-test":
+        run_script("scripts/test_walk_forward_adapters.py", extra)
+
+    elif args.command == "walk-forward-integration-test":
+        run_script("scripts/test_walk_forward_integration.py", extra)
+
+    elif args.command == "walk-forward-report-test":
+        run_script("scripts/test_walk_forward_reporting.py", extra)
+
+    elif args.command == "walk-forward-calibration-test":
+        run_script("scripts/test_walk_forward_probability_calibration.py", extra)
+
+    elif args.command == "walk-forward-governance-test":
+        run_script("scripts/test_walk_forward_governance.py", extra)
+
+    elif args.command == "phase7-regression-test":
+        run_script("scripts/test_phase7_regression.py", extra)
+
+    elif args.command == "market-regime-test":
+        run_script("scripts/test_market_regime_engine.py", extra)
+
+    elif args.command == "market-regime-forecast-test":
+        run_script("scripts/test_market_regime_forecast.py", extra)
+
+    elif args.command == "market-breadth-test":
+        run_script("scripts/test_market_breadth_engine.py", extra)
+
+    elif args.command == "market-regime-integration-test":
+        run_script("scripts/test_market_regime_integration.py", extra)
+
+    elif args.command == "market-regime-report-test":
+        run_script("scripts/test_market_regime_reporting.py", extra)
+
+    elif args.command == "market-regime-governance-test":
+        run_script("scripts/test_market_regime_governance.py", extra)
+
+    elif args.command == "phase8-regression-test":
+        run_script("scripts/test_phase8_regression.py", extra)
+
+
+    elif args.command == "execution-analytics-test":
+        run_script("scripts/test_execution_analytics.py", extra)
+
+    elif args.command == "execution-aggregation-test":
+        run_script("scripts/test_execution_aggregation.py", extra)
+
+    elif args.command == "execution-benchmark-routing-test":
+        run_script("scripts/test_execution_benchmark_routing.py", extra)
+
+    elif args.command == "execution-integration-test":
+        run_script("scripts/test_execution_integration.py", extra)
+
+    elif args.command == "execution-report-test":
+        run_script("scripts/test_execution_reporting.py", extra)
 
     elif args.command == "paper":
 

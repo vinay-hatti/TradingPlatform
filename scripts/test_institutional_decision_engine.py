@@ -15,6 +15,9 @@ from trading_ai.strategy_engine.institutional_decision_engine import (
 from trading_ai.strategy_engine.institutional_decision_service import (
     InstitutionalDecisionService,
 )
+from trading_ai.strategy_engine.decision_serialization import (
+    decision_run_to_dict,
+)
 from trading_ai.strategy_engine.portfolio_risk_limits import (
     PortfolioRiskLimits,
 )
@@ -463,6 +466,26 @@ def print_decision(
     )
 
     print(
+        f"Risk Surface Score : "
+        f"{decision.risk_surface_score:.2f}"
+    )
+
+    print(
+        f"Risk Surface Grade : "
+        f"{decision.risk_surface_grade}"
+    )
+
+    print(
+        f"Surface Severity   : "
+        f"{decision.risk_surface_severity}"
+    )
+
+    print(
+        f"Surface Worst PnL  : "
+        f"${decision.risk_surface_worst_case_pnl:,.2f}"
+    )
+
+    print(
         f"Rejections        : "
         f"{rejections}"
     )
@@ -618,6 +641,8 @@ def main():
             portfolio_limits
         ),
     )
+
+    assert_phase3_distribution_integration(engine)
 
     service = InstitutionalDecisionService(
         engine=engine
@@ -798,6 +823,39 @@ def main():
             + 0.01
         )
 
+    # ---------------------------------------------
+    # Phase 4 risk-surface integration assertions
+    # ---------------------------------------------
+
+    for bundle in result.candidate_bundles:
+        assert bundle.risk_surface_profile is not None
+        assert bundle.risk_surface_profile.valid is True
+        assert bundle.risk_surface_profile.point_count > 0
+        assert bundle.has_valid_risk_surface_profile is True
+
+    for decision in result.decisions:
+        assert decision.risk_surface_profile is not None
+        assert decision.risk_surface_point_count > 0
+        assert 0.0 <= decision.risk_surface_score <= 100.0
+        assert decision.risk_surface_grade in {"A", "B", "C", "D", "F"}
+        assert decision.risk_surface_severity in {
+            "LOW", "MODERATE", "SEVERE", "CRITICAL"
+        }
+        assert isinstance(decision.risk_surface_allowed, bool)
+        assert (
+            decision.risk_surface_worst_case_pnl
+            <= decision.risk_surface_best_case_pnl
+        )
+
+    serialized = decision_run_to_dict(result)
+    serialized_decision = serialized["decisions"][0]
+    assert "risk_surface_profile" in serialized_decision
+    assert "risk_surface_score" in serialized_decision
+    assert (
+        serialized_decision["risk_surface_profile"]["point_count"]
+        > 0
+    )
+
     print(
         "\nAll institutional-decision assertions passed."
     )
@@ -805,6 +863,83 @@ def main():
     print(
         "=================================================="
     )
+
+
+def assert_phase3_distribution_integration(engine):
+    """Validate source precedence and account-capital propagation."""
+    captured = {}
+
+    class CapturingDistributionService:
+        policy = SimpleNamespace(minimum_observations=30)
+
+        def analyze_strategy(self, **kwargs):
+            captured.update(kwargs)
+            return SimpleNamespace(
+                valid=True,
+                allowed=True,
+                observation_count=len(kwargs["pnl_values"]),
+                historical_var=100.0,
+                historical_expected_shortfall=125.0,
+                parametric_var=95.0,
+                parametric_expected_shortfall=120.0,
+                historical_var_99=150.0,
+                historical_expected_shortfall_99=175.0,
+                downside_deviation=0.02,
+                skewness=-0.25,
+                excess_kurtosis=1.5,
+                probability_of_large_loss=0.03,
+                probability_of_severe_loss=0.01,
+                probability_of_critical_loss=0.0,
+                drawdown_at_risk=0.05,
+                expected_drawdown_shortfall=0.07,
+                ulcer_index=2.0,
+                pain_index=1.0,
+                omega_ratio=1.2,
+                sortino_ratio=1.1,
+                gain_to_pain_ratio=1.3,
+                tail_risk_score=82.0,
+                tail_risk_grade="B",
+                risk_severity="LOW",
+                rejection_reasons=[],
+                warnings=[],
+                metadata={},
+            )
+
+    original_service = engine.distribution_risk_service
+    engine.distribution_risk_service = CapturingDistributionService()
+
+    try:
+        monte_carlo_values = [float(index - 50) for index in range(100)]
+        scenario_points = [
+            SimpleNamespace(stressed_pnl=-10.0),
+            SimpleNamespace(stressed_pnl=5.0),
+        ]
+
+        profile = engine._distribution_risk_profile(
+            symbol="AAPL",
+            strategy_candidate=SimpleNamespace(strategy="BULL_PUT_SPREAD"),
+            payoff_profile=SimpleNamespace(capital_required=2500.0),
+            probability_profile=SimpleNamespace(
+                metadata={"pnl_values": monte_carlo_values}
+            ),
+            scenario_profile=SimpleNamespace(
+                scenario_points=scenario_points
+            ),
+            strike_candidate=SimpleNamespace(),
+            initial_capital=100000.0,
+        )
+
+        assert profile.valid is True
+        assert captured["pnl_values"] == monte_carlo_values
+        assert captured["capital_required"] == 2500.0
+        assert captured["initial_capital"] == 100000.0
+        assert profile.metadata["distribution_source"] == (
+            "PROBABILITY_MONTE_CARLO_PNL"
+        )
+        assert profile.metadata["scenario_observation_count"] == 2
+        assert profile.metadata["monte_carlo_observation_count"] == 100
+    finally:
+        engine.distribution_risk_service = original_service
 
 
 if __name__ == "__main__":

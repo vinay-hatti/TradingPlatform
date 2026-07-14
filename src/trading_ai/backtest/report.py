@@ -1,5 +1,6 @@
 from pathlib import Path
 from collections import defaultdict, Counter
+from html import escape
 import math
 
 
@@ -376,15 +377,17 @@ class BacktestReport:
                 ),
                 digits=2,
             ),
-            "tail_risk_grade": str(
-                pick(
-                    "tail_risk_grade",
-                    "tail_risk_grade",
-                    "N/A",
+            "tail_risk_grade": escape(
+                str(
+                    pick(
+                        "tail_risk_grade",
+                        "tail_risk_grade",
+                        "N/A",
+                    )
+                    or "N/A"
                 )
-                or "N/A"
             ),
-            "tail_risk_severity": severity,
+            "tail_risk_severity": escape(severity),
             "approved": "YES" if allowed else "NO",
             "approval_class": approval_class,
         }
@@ -567,6 +570,517 @@ No valid Phase 3 distribution-risk profiles are attached to these trades.
 </div>
 """
 
+
+    # ------------------------------------------------------------
+    # Phase 4 risk-surface and sensitivity helpers
+    # ------------------------------------------------------------
+    def risk_surface_profile(self, item):
+        """Return a valid Phase 4 RiskSurfaceProfile from direct or metadata storage."""
+        profile = self.val(item, "risk_surface_profile", None)
+        if profile is None:
+            metadata = self.val(item, "metadata", {}) or {}
+            if isinstance(metadata, dict):
+                profile = metadata.get("risk_surface_profile")
+        if profile is None:
+            return None
+        return profile if bool(self.val(profile, "valid", False)) else None
+
+    def risk_surface_values(self, item):
+        profile = self.risk_surface_profile(item)
+
+        def pick(direct_name, profile_name=None, default=None):
+            value = self.val(item, direct_name, None)
+            if value is not None:
+                return value
+            if profile is not None:
+                return self.val(profile, profile_name or direct_name, default)
+            return default
+
+        available = bool(
+            profile is not None
+            or self.val(item, "risk_surface_point_count", None) is not None
+            or self.val(item, "risk_surface_score", None) is not None
+        )
+        if not available:
+            return {
+                "available": False, "point_count": "N/A", "worst_case_pnl": "N/A",
+                "best_case_pnl": "N/A", "base_case_pnl": "N/A",
+                "maximum_loss_pct": "N/A", "maximum_gain_pct": "N/A",
+                "worst_price_shock": "N/A", "worst_volatility_shock": "N/A",
+                "worst_time_offset": "N/A", "delta_gamma_error": "N/A",
+                "nonlinear_score": "N/A", "gamma_score": "N/A",
+                "vega_score": "N/A", "theta_score": "N/A", "surface_score": "N/A",
+                "surface_grade": "N/A", "severity": "N/A", "approved": "N/A",
+                "approval_class": "neutral",
+            }
+
+        allowed = bool(pick("risk_surface_allowed", "allowed", False))
+        severity = str(pick("risk_surface_severity", "risk_severity", "UNKNOWN") or "UNKNOWN").upper()
+        approval_class = "positive" if allowed else ("negative" if severity in {"CRITICAL", "SEVERE"} else "warning")
+        return {
+            "available": True,
+            "point_count": str(self.safe_int(pick("risk_surface_point_count", "point_count", 0))),
+            "worst_case_pnl": self.optional_money(pick("risk_surface_worst_case_pnl", "worst_case_pnl")),
+            "best_case_pnl": self.optional_money(pick("risk_surface_best_case_pnl", "best_case_pnl")),
+            "base_case_pnl": self.optional_money(pick("risk_surface_base_case_pnl", "base_case_pnl")),
+            "maximum_loss_pct": self.optional_pct(pick("risk_surface_maximum_loss_pct", "maximum_loss_pct_of_capital")),
+            "maximum_gain_pct": self.optional_pct(pick("risk_surface_maximum_gain_pct", "maximum_gain_pct_of_capital")),
+            "worst_price_shock": self.optional_pct(pick("risk_surface_worst_price_shock_pct", "worst_price_shock_pct")),
+            "worst_volatility_shock": self.optional_pct(pick("risk_surface_worst_volatility_shock", "worst_volatility_shock")),
+            "worst_time_offset": f"{self.safe_int(pick('risk_surface_worst_time_offset_days', 'worst_time_offset_days', 0))} days",
+            "delta_gamma_error": self.optional_number(pick("risk_surface_delta_gamma_error_estimate", "delta_gamma_error_estimate"), 4),
+            "nonlinear_score": self.optional_number(pick("risk_surface_nonlinear_exposure_score", "nonlinear_exposure_score"), 2),
+            "gamma_score": self.optional_number(pick("risk_surface_gamma_risk_score", "gamma_risk_score"), 2),
+            "vega_score": self.optional_number(pick("risk_surface_vega_risk_score", "vega_risk_score"), 2),
+            "theta_score": self.optional_number(pick("risk_surface_theta_risk_score", "theta_risk_score"), 2),
+            "surface_score": self.optional_number(pick("risk_surface_score", "surface_score"), 2),
+            "surface_grade": str(pick("risk_surface_grade", "surface_grade", "N/A") or "N/A"),
+            "severity": severity,
+            "approved": "YES" if allowed else "NO",
+            "approval_class": approval_class,
+        }
+
+    def aggregate_risk_surface_values(self, items):
+        profiles = [self.risk_surface_profile(item) for item in items]
+        profiles = [profile for profile in profiles if profile is not None]
+        if not profiles:
+            return {"available": False, "profile_count": 0}
+
+        def avg(name):
+            return sum(self.safe_float(self.val(p, name, 0.0)) for p in profiles) / len(profiles)
+
+        severity_order = ["CRITICAL", "SEVERE", "MODERATE", "LOW", "UNKNOWN"]
+        severities = Counter(str(self.val(p, "risk_severity", "UNKNOWN") or "UNKNOWN").upper() for p in profiles)
+        worst_severity = next((s for s in severity_order if severities.get(s)), "UNKNOWN")
+        worst_profile = min(profiles, key=lambda p: self.safe_float(self.val(p, "worst_case_pnl", 0.0)))
+        return {
+            "available": True,
+            "profile_count": len(profiles),
+            "approved_count": sum(bool(self.val(p, "allowed", False)) for p in profiles),
+            "approval_rate": sum(bool(self.val(p, "allowed", False)) for p in profiles) / len(profiles),
+            "aggregate_worst_case_pnl": sum(self.safe_float(self.val(p, "worst_case_pnl", 0.0)) for p in profiles),
+            "aggregate_best_case_pnl": sum(self.safe_float(self.val(p, "best_case_pnl", 0.0)) for p in profiles),
+            "average_surface_score": avg("surface_score"),
+            "average_gamma_score": avg("gamma_risk_score"),
+            "average_vega_score": avg("vega_risk_score"),
+            "average_theta_score": avg("theta_risk_score"),
+            "average_nonlinear_score": avg("nonlinear_exposure_score"),
+            "worst_severity": worst_severity,
+            "largest_surface_loss_symbol": str(self.val(worst_profile, "symbol", "UNKNOWN")),
+            "largest_surface_loss": self.safe_float(self.val(worst_profile, "worst_case_pnl", 0.0)),
+        }
+
+    def risk_surface_summary_html(self, items):
+        summary = self.aggregate_risk_surface_values(items)
+        if not summary["available"]:
+            return """
+<div class="card"><h2>Risk Surfaces &amp; Sensitivity Analytics</h2>
+<p class="section-note">No valid Phase 4 risk-surface profiles are attached to these trades.</p></div>
+"""
+        return f"""
+<div class="card"><h2>Risk Surfaces &amp; Sensitivity Analytics</h2>
+<div class="metric"><strong>Profiles</strong>{summary['profile_count']}</div>
+<div class="metric"><strong>Approved</strong>{summary['approved_count']}</div>
+<div class="metric"><strong>Approval Rate</strong>{self.pct(summary['approval_rate'])}</div>
+<div class="metric"><strong>Aggregate Worst-Case P/L</strong>{self.money(summary['aggregate_worst_case_pnl'])}</div>
+<div class="metric"><strong>Aggregate Best-Case P/L</strong>{self.money(summary['aggregate_best_case_pnl'])}</div>
+<div class="metric"><strong>Average Surface Score</strong>{summary['average_surface_score']:.2f}</div>
+<div class="metric"><strong>Average Gamma Score</strong>{summary['average_gamma_score']:.2f}</div>
+<div class="metric"><strong>Average Vega Score</strong>{summary['average_vega_score']:.2f}</div>
+<div class="metric"><strong>Average Theta Score</strong>{summary['average_theta_score']:.2f}</div>
+<div class="metric"><strong>Average Nonlinear Score</strong>{summary['average_nonlinear_score']:.2f}</div>
+<div class="metric"><strong>Worst Severity</strong>{summary['worst_severity']}</div>
+<div class="metric"><strong>Largest Surface Loss</strong>{summary['largest_surface_loss_symbol']} {self.money(summary['largest_surface_loss'])}</div>
+</div>
+"""
+
+    def risk_surface_attribution_rows(self, profile):
+        if profile is None:
+            return []
+        rows = []
+        for item in self.val(profile, "attributions", []) or []:
+            pnl = self.safe_float(self.val(item, "pnl", 0.0))
+            rows.append({
+                "factor": str(self.val(item, "factor", "UNKNOWN")),
+                "pnl": self.money(pnl),
+                "contribution": self.pct(self.val(item, "contribution_pct", 0.0)),
+                "direction": "ADVERSE" if bool(self.val(item, "adverse", pnl < 0.0)) else "FAVORABLE",
+                "class": "negative" if pnl < 0.0 else "positive",
+            })
+        return rows
+
+    def risk_surface_heatmap_html(self, profile, time_offset_days=None):
+        if profile is None:
+            return "<p class='section-note'>Risk surface unavailable.</p>"
+        points = list(self.val(profile, "points", []) or [])
+        if not points:
+            return "<p class='section-note'>Risk surface contains no points.</p>"
+        offsets = sorted({self.safe_int(self.val(p, "time_offset_days", 0)) for p in points})
+        selected = offsets[0] if time_offset_days is None else min(offsets, key=lambda value: abs(value - int(time_offset_days)))
+        subset = [p for p in points if self.safe_int(self.val(p, "time_offset_days", 0)) == selected]
+        price_shocks = sorted({self.safe_float(self.val(p, "price_shock_pct", 0.0)) for p in subset})
+        vol_shocks = sorted({self.safe_float(self.val(p, "volatility_shock", 0.0)) for p in subset})
+        lookup = {(self.safe_float(self.val(p, "price_shock_pct", 0.0)), self.safe_float(self.val(p, "volatility_shock", 0.0))): self.safe_float(self.val(p, "approximated_pnl", 0.0)) for p in subset}
+        values = list(lookup.values()) or [0.0]
+        scale = max(abs(min(values)), abs(max(values)), 1.0)
+
+        def cell_style(value):
+            intensity = min(abs(value) / scale, 1.0)
+            if value < 0:
+                return f"background:rgba(198,40,40,{0.12 + 0.55 * intensity:.3f});"
+            if value > 0:
+                return f"background:rgba(46,125,50,{0.12 + 0.55 * intensity:.3f});"
+            return "background:#f5f5f5;"
+
+        html = f"<h3>{self.val(profile, 'symbol', '')} {self.val(profile, 'strategy', '')} — P/L Heatmap at +{selected} Days</h3>"
+        html += "<div class='heatmap-wrap'><table class='heatmap'><thead><tr><th>Price Shock / IV Shock</th>"
+        for vol in vol_shocks:
+            html += f"<th>{self.pct(vol)}</th>"
+        html += "</tr></thead><tbody>"
+        for price in price_shocks:
+            html += f"<tr><th>{self.pct(price)}</th>"
+            for vol in vol_shocks:
+                value = lookup.get((price, vol), 0.0)
+                html += f"<td style='{cell_style(value)}'>{self.money(value)}</td>"
+            html += "</tr>"
+        html += "</tbody></table></div>"
+        return html
+
+    def risk_surface_details_html(self, items, limit=5):
+        profiles = [self.risk_surface_profile(item) for item in items]
+        profiles = [profile for profile in profiles if profile is not None][:limit]
+        if not profiles:
+            return ""
+        sections = []
+        for profile in profiles:
+            values = self.risk_surface_values(profile)
+            attribution = self.table(
+                self.risk_surface_attribution_rows(profile),
+                [("Factor", "factor"), ("P/L", "pnl"), ("Contribution", "contribution"), ("Direction", "direction")],
+                empty="No Greek attribution is available.",
+            )
+            offsets = sorted({self.safe_int(self.val(p, "time_offset_days", 0)) for p in (self.val(profile, "points", []) or [])})
+            heatmaps = self.risk_surface_heatmap_html(profile, offsets[0] if offsets else 0)
+            if len(offsets) > 1:
+                heatmaps += self.risk_surface_heatmap_html(profile, offsets[-1])
+            sections.append(f"""
+<div class="card"><h2>Risk Surface — {self.val(profile, 'symbol', '')} {self.val(profile, 'strategy', '')}</h2>
+<div class="metric"><strong>Points</strong>{values['point_count']}</div>
+<div class="metric"><strong>Worst Case</strong>{values['worst_case_pnl']}</div>
+<div class="metric"><strong>Best Case</strong>{values['best_case_pnl']}</div>
+<div class="metric"><strong>Maximum Loss</strong>{values['maximum_loss_pct']}</div>
+<div class="metric"><strong>Surface Score</strong>{values['surface_score']}</div>
+<div class="metric"><strong>Grade</strong>{values['surface_grade']}</div>
+<div class="metric"><strong>Severity</strong>{values['severity']}</div>
+<div class="metric"><strong>Approved</strong><span class="{values['approval_class']}">{values['approved']}</span></div>
+<h3>Worst-Point Greek Attribution</h3>{attribution}{heatmaps}</div>
+""")
+        return "".join(sections)
+
+    def portfolio_risk_surface_profile(self, items):
+        for item in items:
+            profile=self.val(item, "portfolio_risk_surface_profile", None)
+            if profile is None:
+                metadata=self.val(item, "metadata", {}) or {}
+                if isinstance(metadata, dict): profile=metadata.get("portfolio_risk_surface_profile")
+            if profile is not None and bool(self.val(profile, "valid", False)): return profile
+        return None
+
+    def portfolio_risk_surface_summary_html(self, items):
+        profile=self.portfolio_risk_surface_profile(items)
+        if profile is None:
+            return "<div class='card'><h2>Portfolio Risk Surface</h2><p class='section-note'>No valid portfolio risk-surface profile is attached.</p></div>"
+        contributions=self.val(profile, "position_contributions", []) or []
+        rows=[]
+        for item in contributions:
+            rows.append({
+                "symbol":self.val(item,"symbol",""),"strategy":self.val(item,"strategy",""),
+                "capital":self.money(self.val(item,"capital_required",0.0)),
+                "worst_pnl":self.money(self.val(item,"portfolio_worst_point_pnl",0.0)),
+                "loss_pct":self.pct(self.val(item,"loss_contribution_pct",0.0)),
+                "capital_pct":self.pct(self.val(item,"capital_weight_pct",0.0)),
+            })
+        table=self.table(rows,[("Symbol","symbol"),("Strategy","strategy"),("Allocated Capital","capital"),("Worst-Point P/L","worst_pnl"),("Loss Contribution","loss_pct"),("Capital Weight","capital_pct")])
+        return f"""<div class='card'><h2>Portfolio Risk Surface</h2>
+<div class='metric'><strong>Positions</strong>{self.val(profile,'position_count',0)}</div>
+<div class='metric'><strong>Worst-Case P/L</strong>{self.money(self.val(profile,'worst_case_pnl',0.0))}</div>
+<div class='metric'><strong>Maximum Loss / Capital</strong>{self.pct(self.val(profile,'maximum_loss_pct_of_capital',0.0))}</div>
+<div class='metric'><strong>Allocated Exposure</strong>{self.pct(self.val(profile,'portfolio_exposure_pct',0.0))}</div>
+<div class='metric'><strong>Diversification Benefit</strong>{self.pct(self.val(profile,'diversification_benefit',0.0))}</div>
+<div class='metric'><strong>Loss Concentration</strong>{self.optional_number(self.val(profile,'loss_concentration_score',0.0),4)}</div>
+<div class='metric'><strong>Effective Positions</strong>{self.optional_number(self.val(profile,'effective_position_count',0.0),2)}</div>
+<div class='metric'><strong>Surface Score</strong>{self.optional_number(self.val(profile,'surface_score',0.0),2)}</div>
+<div class='metric'><strong>Grade / Severity</strong>{self.val(profile,'surface_grade','N/A')} / {self.val(profile,'risk_severity','UNKNOWN')}</div>
+<h3>Position Risk Attribution</h3>{table}</div>"""
+
+
+    # ------------------------------------------------------------
+    # Phase 5 portfolio-optimization reporting
+    # ------------------------------------------------------------
+    def portfolio_optimization_profile(self, items):
+        """Return the first valid Phase 5 optimization profile attached to the report items."""
+        for item in items or []:
+            profile = self.val(item, "portfolio_optimization_profile", None)
+            if profile is None:
+                metadata = self.val(item, "metadata", {}) or {}
+                if isinstance(metadata, dict):
+                    profile = metadata.get("portfolio_optimization_profile")
+            if profile is not None and bool(self.val(profile, "valid", False)):
+                return profile
+        return None
+
+    def portfolio_optimization_summary_html(self, items):
+        profile = self.portfolio_optimization_profile(items)
+        if profile is None:
+            return """
+<div class="card">
+<h2>Portfolio Risk Optimization</h2>
+<p class="section-note">No valid Phase 5 portfolio-optimization profile is attached.</p>
+</div>
+"""
+
+        allowed = bool(self.val(profile, "allowed", False))
+        approval_class = "positive" if allowed else "negative"
+        binding = self.val(profile, "binding_constraints", []) or []
+        warnings = self.val(profile, "warnings", []) or []
+        rejections = self.val(profile, "rejection_reasons", []) or []
+
+        allocation_rows = []
+        for allocation in self.val(profile, "allocations", []) or []:
+            allocation_rows.append({
+                "symbol": self.val(allocation, "symbol", ""),
+                "strategy": self.val(allocation, "strategy", ""),
+                "allocation": self.money(self.val(allocation, "allocation_dollars", 0.0)),
+                "weight": self.pct(self.val(allocation, "allocation_weight_pct", 0.0)),
+                "multiplier": self.optional_number(self.val(allocation, "allocation_multiplier", 0.0), 2),
+                "expected_profit": self.money(self.val(allocation, "expected_profit", 0.0)),
+                "maximum_loss": self.money(self.val(allocation, "maximum_loss", 0.0)),
+                "expected_return": self.pct(self.val(allocation, "expected_return_pct", 0.0)),
+                "marginal_score": self.optional_number(self.val(allocation, "marginal_objective_score", 0.0), 2),
+                "ranking_score": self.optional_number(self.val(allocation, "ranking_score", 0.0), 2),
+                "surface_score": self.optional_number(self.val(allocation, "surface_score", 0.0), 2),
+                "sector": self.val(allocation, "sector", "UNKNOWN"),
+                "correlation_group": self.val(allocation, "correlation_group", "UNKNOWN"),
+            })
+
+        allocation_table = self.table(
+            allocation_rows,
+            [
+                ("Symbol", "symbol"), ("Strategy", "strategy"),
+                ("Allocation", "allocation"), ("Weight", "weight"),
+                ("Multiplier", "multiplier"), ("Expected Profit", "expected_profit"),
+                ("Maximum Loss", "maximum_loss"), ("Expected Return", "expected_return"),
+                ("Marginal Score", "marginal_score"), ("Ranking", "ranking_score"),
+                ("Surface", "surface_score"), ("Sector", "sector"),
+                ("Correlation Group", "correlation_group"),
+            ],
+            empty="No optimized allocations were selected.",
+        )
+
+        def group_table(values, label):
+            rows = []
+            for value in values or []:
+                if isinstance(value, dict):
+                    name = value.get("name", value.get("group", value.get(label.lower().replace(" ", "_"), "UNKNOWN")))
+                    weight = value.get("weight_pct", value.get("weight", value.get("allocation_weight_pct", 0.0)))
+                    dollars = value.get("allocation_dollars", value.get("capital", 0.0))
+                else:
+                    name = self.val(value, "name", self.val(value, "group", "UNKNOWN"))
+                    weight = self.val(value, "weight_pct", self.val(value, "weight", 0.0))
+                    dollars = self.val(value, "allocation_dollars", self.val(value, "capital", 0.0))
+                rows.append({"group": name, "weight": self.pct(weight), "capital": self.money(dollars)})
+            return self.table(rows, [(label, "group"), ("Weight", "weight"), ("Capital", "capital")])
+
+        diagnostics = []
+        if binding:
+            diagnostics.append("<p class='warning'><strong>Binding Constraints:</strong> " + ", ".join(map(str, binding)) + "</p>")
+        if warnings:
+            diagnostics.append("<p class='warning'><strong>Warnings:</strong> " + ", ".join(map(str, warnings)) + "</p>")
+        if rejections:
+            diagnostics.append("<p class='negative'><strong>Rejections:</strong> " + ", ".join(map(str, rejections)) + "</p>")
+
+        greek_totals = self.val(profile, "greek_totals", {}) or {}
+        greek_rows = [{"greek": str(k).upper(), "value": self.optional_number(v, 4)} for k, v in greek_totals.items()]
+
+        return f"""
+<div class="card">
+<h2>Portfolio Risk Optimization</h2>
+<div class="metric"><strong>Candidates</strong>{self.val(profile, 'candidate_count', 0)}</div>
+<div class="metric"><strong>Selected</strong>{self.val(profile, 'selected_count', 0)}</div>
+<div class="metric"><strong>Allocated Capital</strong>{self.money(self.val(profile, 'total_allocated_capital', 0.0))}</div>
+<div class="metric"><strong>Portfolio Exposure</strong>{self.pct(self.val(profile, 'portfolio_exposure_pct', 0.0))}</div>
+<div class="metric"><strong>Reserve Cash</strong>{self.money(self.val(profile, 'reserve_cash', 0.0))}</div>
+<div class="metric"><strong>Reserve Cash %</strong>{self.pct(self.val(profile, 'reserve_cash_pct', 0.0))}</div>
+<div class="metric"><strong>Total Maximum Loss</strong>{self.money(self.val(profile, 'total_maximum_loss', 0.0))}</div>
+<div class="metric"><strong>Total Risk</strong>{self.pct(self.val(profile, 'total_risk_pct', 0.0))}</div>
+<div class="metric"><strong>Expected Portfolio Profit</strong>{self.money(self.val(profile, 'expected_portfolio_profit', 0.0))}</div>
+<div class="metric"><strong>Expected Portfolio Return</strong>{self.pct(self.val(profile, 'expected_portfolio_return_pct', 0.0))}</div>
+<div class="metric"><strong>Objective Score</strong>{self.optional_number(self.val(profile, 'objective_score', 0.0), 2)}</div>
+<div class="metric"><strong>Grade</strong>{self.val(profile, 'optimization_grade', 'N/A')}</div>
+<div class="metric"><strong>Severity</strong>{self.val(profile, 'risk_severity', 'UNKNOWN')}</div>
+<div class="metric"><strong>Approved</strong><span class="{approval_class}">{'YES' if allowed else 'NO'}</span></div>
+<div class="metric"><strong>Weighted Ranking</strong>{self.optional_number(self.val(profile, 'weighted_ranking_score', 0.0), 2)}</div>
+<div class="metric"><strong>Weighted Strategy</strong>{self.optional_number(self.val(profile, 'weighted_strategy_score', 0.0), 2)}</div>
+<div class="metric"><strong>Weighted Surface</strong>{self.optional_number(self.val(profile, 'weighted_surface_score', 0.0), 2)}</div>
+<div class="metric"><strong>Diversification</strong>{self.optional_number(self.val(profile, 'diversification_score', 0.0), 2)}</div>
+<div class="metric"><strong>Capital Efficiency</strong>{self.optional_number(self.val(profile, 'capital_efficiency_score', 0.0), 2)}</div>
+<div class="metric"><strong>Concentration</strong>{self.optional_number(self.val(profile, 'concentration_score', 0.0), 2)}</div>
+<div class="metric"><strong>Greek Utilization</strong>{self.optional_number(self.val(profile, 'greek_utilization_score', 0.0), 2)}</div>
+{''.join(diagnostics)}
+<h3>Optimized Allocations</h3>{allocation_table}
+<h3>Sector Allocation</h3>{group_table(self.val(profile, 'sector_weights', []), 'Sector')}
+<h3>Strategy Allocation</h3>{group_table(self.val(profile, 'strategy_weights', []), 'Strategy')}
+<h3>Correlation-Group Allocation</h3>{group_table(self.val(profile, 'correlation_group_weights', []), 'Correlation Group')}
+<h3>Portfolio Greeks</h3>{self.table(greek_rows, [('Greek', 'greek'), ('Total', 'value')])}
+</div>
+"""
+
+    def portfolio_optimization_comparison_html(self, items):
+        profile = self.portfolio_optimization_profile(items)
+        if profile is None:
+            return ""
+        rows = []
+        for item in items or []:
+            legacy_selected = bool(self.val(item, "selected", False))
+            optimized_selected = bool(self.val(item, "optimization_selected", False))
+            status = str(self.val(item, "optimization_status", "UNAVAILABLE") or "UNAVAILABLE")
+            rows.append({
+                "symbol": self.val(item, "symbol", ""),
+                "strategy": self.val(item, "strategy", ""),
+                "legacy": "YES" if legacy_selected else "NO",
+                "optimized": "YES" if optimized_selected else "NO",
+                "status": status,
+                "allocation": self.optional_money(self.val(item, "optimized_allocation_dollars", None)),
+                "weight": self.optional_pct(self.val(item, "optimized_allocation_weight_pct", None)),
+                "expected_profit": self.optional_money(self.val(item, "optimized_expected_profit", None)),
+                "maximum_loss": self.optional_money(self.val(item, "optimized_maximum_loss", None)),
+                "marginal_score": self.optional_number(self.val(item, "optimization_marginal_score", None), 2),
+            })
+        return f"""
+<div class="card">
+<h2>Legacy vs Optimized Portfolio Selection</h2>
+<p class="section-note">Legacy selection remains authoritative unless apply_portfolio_optimization=True.</p>
+{self.table(rows, [
+    ('Symbol','symbol'), ('Strategy','strategy'), ('Legacy Selected','legacy'),
+    ('Optimized Selected','optimized'), ('Optimization Status','status'),
+    ('Optimized Allocation','allocation'), ('Optimized Weight','weight'),
+    ('Optimized Expected Profit','expected_profit'), ('Optimized Maximum Loss','maximum_loss'),
+    ('Marginal Score','marginal_score'),
+])}
+</div>
+"""
+
+    # ------------------------------------------------------------
+    # Phase 5 optimization-frontier reporting
+    # ------------------------------------------------------------
+    def portfolio_optimization_frontier_profile(self, items):
+        for item in items or []:
+            profile = self.val(item, "portfolio_optimization_frontier_profile", None)
+            if profile is None:
+                metadata = self.val(item, "metadata", {}) or {}
+                if isinstance(metadata, dict):
+                    profile = metadata.get("portfolio_optimization_frontier_profile")
+            if profile is not None and bool(self.val(profile, "valid", False)):
+                return profile
+        return None
+
+    def portfolio_optimization_frontier_summary_html(self, items):
+        profile = self.portfolio_optimization_frontier_profile(items)
+        if profile is None:
+            return """
+<div class="card">
+<h2>Portfolio Optimization Frontier &amp; Sensitivity</h2>
+<p class="section-note">No valid Phase 5 optimization-frontier profile is attached.</p>
+</div>
+"""
+
+        point_rows = []
+        points = self.val(profile, "points", []) or []
+        for point in sorted(
+            points,
+            key=lambda item: (
+                not bool(self.val(item, "pareto_efficient", False)),
+                -self.safe_float(self.val(item, "objective_score", 0.0)),
+            ),
+        ):
+            point_rows.append({
+                "point_id": self.val(point, "point_id", ""),
+                "pareto": "YES" if bool(self.val(point, "pareto_efficient", False)) else "NO",
+                "exposure_limit": self.pct(self.val(point, "maximum_exposure_pct", 0.0)),
+                "risk_limit": self.pct(self.val(point, "maximum_risk_pct", 0.0)),
+                "concentration_limit": self.pct(self.val(point, "maximum_concentration_pct", 0.0)),
+                "selected": self.safe_int(self.val(point, "selected_count", 0)),
+                "actual_exposure": self.pct(self.val(point, "exposure_pct", 0.0)),
+                "actual_risk": self.pct(self.val(point, "risk_pct", 0.0)),
+                "expected_return": self.pct(self.val(point, "expected_return_pct", 0.0)),
+                "objective": self.optional_number(self.val(point, "objective_score", 0.0), 2),
+                "diversification": self.optional_number(self.val(point, "diversification_score", 0.0), 2),
+                "concentration": self.optional_number(self.val(point, "concentration_score", 0.0), 2),
+                "grade": self.val(point, "optimization_grade", "N/A"),
+            })
+
+        point_table = self.table(
+            point_rows,
+            [
+                ("Point", "point_id"), ("Pareto", "pareto"),
+                ("Exposure Limit", "exposure_limit"), ("Risk Limit", "risk_limit"),
+                ("Concentration Limit", "concentration_limit"), ("Selected", "selected"),
+                ("Actual Exposure", "actual_exposure"), ("Actual Risk", "actual_risk"),
+                ("Expected Return", "expected_return"), ("Objective", "objective"),
+                ("Diversification", "diversification"), ("Concentration", "concentration"),
+                ("Grade", "grade"),
+            ],
+            empty="No frontier points are available.",
+        )
+
+        warnings = self.val(profile, "warnings", []) or []
+        warning_html = ""
+        if warnings:
+            warning_html = "<p class='warning'><strong>Warnings:</strong> " + ", ".join(map(str, warnings)) + "</p>"
+
+        return f"""
+<div class="card">
+<h2>Portfolio Optimization Frontier &amp; Sensitivity</h2>
+<div class="metric"><strong>Frontier Points</strong>{self.val(profile, 'point_count', 0)}</div>
+<div class="metric"><strong>Valid Points</strong>{self.val(profile, 'valid_point_count', 0)}</div>
+<div class="metric"><strong>Pareto-Efficient Points</strong>{self.val(profile, 'pareto_point_count', 0)}</div>
+<div class="metric"><strong>Best Point</strong>{self.val(profile, 'best_point_id', 'N/A')}</div>
+<div class="metric"><strong>Best Objective</strong>{self.optional_number(self.val(profile, 'best_objective_score', 0.0), 2)}</div>
+<div class="metric"><strong>Best Expected Return</strong>{self.pct(self.val(profile, 'best_expected_return_pct', 0.0))}</div>
+<div class="metric"><strong>Lowest Risk</strong>{self.pct(self.val(profile, 'lowest_risk_pct', 0.0))}</div>
+<div class="metric"><strong>Highest Expected Return</strong>{self.pct(self.val(profile, 'highest_expected_return_pct', 0.0))}</div>
+<div class="metric"><strong>Selection Stability</strong>{self.optional_number(self.val(profile, 'selection_stability_score', 0.0), 2)}</div>
+<div class="metric"><strong>Allocation Stability</strong>{self.optional_number(self.val(profile, 'allocation_stability_score', 0.0), 2)}</div>
+<div class="metric"><strong>Constraint Sensitivity</strong>{self.optional_number(self.val(profile, 'constraint_sensitivity_score', 0.0), 2)}</div>
+<div class="metric"><strong>Frontier Score</strong>{self.optional_number(self.val(profile, 'frontier_score', 0.0), 2)}</div>
+<div class="metric"><strong>Grade / Severity</strong>{self.val(profile, 'frontier_grade', 'N/A')} / {self.val(profile, 'risk_severity', 'UNKNOWN')}</div>
+{warning_html}
+<h3>Constraint Sweep and Efficient Frontier</h3>
+{point_table}
+</div>
+"""
+
+
+    def market_regime_summary_html(self, trades):
+        rows=[]
+        for item in trades:
+            profile=self.val(item,"market_regime_integration_profile",None)
+            if profile is None:
+                meta=self.val(item,"metadata",{}) or {}; profile=meta.get("market_regime_integration_profile") if isinstance(meta,dict) else None
+            if profile is None: continue
+            rows.append({
+                "symbol":self.val(item,"symbol",""), "strategy":self.val(item,"strategy",""),
+                "current":self.val(profile,"current_regime","UNKNOWN"), "forecast":self.val(profile,"forecast_regime","UNKNOWN"),
+                "portfolio":self.val(profile,"portfolio_regime","UNKNOWN"), "alignment":self.val(profile,"strategy_alignment","NEUTRAL"),
+                "score":self.optional_number(self.val(profile,"regime_score",None)), "confidence":self.optional_number(self.val(profile,"confidence_score",None)),
+                "strategy_adj":self.optional_number(self.val(profile,"strategy_score_adjustment",None)), "ranking_adj":self.optional_number(self.val(profile,"ranking_score_adjustment",None)),
+                "allowed":"YES" if self.val(profile,"allowed",True) else "NO",
+            })
+        if not rows:
+            return '<div class="card"><h2>Market Regime Analytics</h2><p class="section-note">No valid Phase 8 market-regime profiles are attached.</p></div>'
+        table=self.table(rows,[("Symbol","symbol"),("Strategy","strategy"),("Current Regime","current"),("Forecast Regime","forecast"),("Portfolio Regime","portfolio"),("Alignment","alignment"),("Regime Score","score"),("Confidence","confidence"),("Strategy Adj.","strategy_adj"),("Ranking Adj.","ranking_adj"),("Allowed","allowed")])
+        return '<div class="card"><h2>Market Regime Analytics &amp; Strategy Adaptation</h2>'+table+'</div>'
+
     # ------------------------------------------------------------
     # Table and chart helpers
     # ------------------------------------------------------------
@@ -643,6 +1157,43 @@ No valid Phase 3 distribution-risk profiles are attached to these trades.
     <line x1="0" y1="{zero_y}" x2="{width}" y2="{zero_y}" stroke="#333"/>
     {bars}
 </svg>
+</div>
+"""
+
+
+    def portfolio_optimization_recommendation_profile(self, items):
+        for item in items:
+            profile = self.val(item, "portfolio_optimization_recommendation", None)
+            if profile is None:
+                metadata = self.val(item, "metadata", {}) or {}
+                if isinstance(metadata, dict):
+                    profile = metadata.get("portfolio_optimization_recommendation")
+            if profile is not None:
+                return profile
+        return None
+
+    def portfolio_optimization_recommendation_summary_html(self, items):
+        profile = self.portfolio_optimization_recommendation_profile(items)
+        if profile is None or not bool(self.val(profile, "valid", False)):
+            return """
+<div class="card">
+<h2>Recommended Portfolio Optimization Policy</h2>
+<p class="section-note">No valid Phase 5 frontier policy recommendation is attached.</p>
+</div>
+"""
+        allowed = bool(self.val(profile, "allowed", False))
+        return f"""
+<div class="card">
+<h2>Recommended Portfolio Optimization Policy</h2>
+<div class="metric"><strong>Source Frontier Point</strong>{self.val(profile, 'source_point_id', 'N/A')}</div>
+<div class="metric"><strong>Maximum Exposure</strong>{self.pct(self.val(profile, 'maximum_portfolio_exposure_pct', 0.0))}</div>
+<div class="metric"><strong>Maximum Total Risk</strong>{self.pct(self.val(profile, 'maximum_total_risk_pct', 0.0))}</div>
+<div class="metric"><strong>Maximum Concentration</strong>{self.pct(self.val(profile, 'maximum_sector_weight_pct', 0.0))}</div>
+<div class="metric"><strong>Expected Return</strong>{self.pct(self.val(profile, 'expected_return_pct', 0.0))}</div>
+<div class="metric"><strong>Objective Score</strong>{self.optional_number(self.val(profile, 'objective_score', 0.0), 2)}</div>
+<div class="metric"><strong>Confidence Score</strong>{self.optional_number(self.val(profile, 'confidence_score', 0.0), 2)}</div>
+<div class="metric"><strong>Grade / Severity</strong>{self.val(profile, 'recommendation_grade', 'N/A')} / {self.val(profile, 'risk_severity', 'UNKNOWN')}</div>
+<div class="metric"><strong>Approved</strong><span class="{'positive' if allowed else 'negative'}">{'YES' if allowed else 'NO'}</span></div>
 </div>
 """
 
@@ -1124,6 +1675,24 @@ No valid Phase 3 distribution-risk profiles are attached to these trades.
                     f"<span class='{self.distribution_risk_values(t)['approval_class']}'>"
                     f"{self.distribution_risk_values(t)['approved']}</span>"
                 ),
+                "risk_surface_points": self.risk_surface_values(t)["point_count"],
+                "risk_surface_worst_case": self.risk_surface_values(t)["worst_case_pnl"],
+                "risk_surface_best_case": self.risk_surface_values(t)["best_case_pnl"],
+                "risk_surface_maximum_loss": self.risk_surface_values(t)["maximum_loss_pct"],
+                "risk_surface_price_shock": self.risk_surface_values(t)["worst_price_shock"],
+                "risk_surface_iv_shock": self.risk_surface_values(t)["worst_volatility_shock"],
+                "risk_surface_time_offset": self.risk_surface_values(t)["worst_time_offset"],
+                "risk_surface_gamma_score": self.risk_surface_values(t)["gamma_score"],
+                "risk_surface_vega_score": self.risk_surface_values(t)["vega_score"],
+                "risk_surface_theta_score": self.risk_surface_values(t)["theta_score"],
+                "risk_surface_nonlinear_score": self.risk_surface_values(t)["nonlinear_score"],
+                "risk_surface_score": self.risk_surface_values(t)["surface_score"],
+                "risk_surface_grade": self.risk_surface_values(t)["surface_grade"],
+                "risk_surface_severity": self.risk_surface_values(t)["severity"],
+                "risk_surface_allowed": (
+                    f"<span class='{self.risk_surface_values(t)['approval_class']}'>"
+                    f"{self.risk_surface_values(t)['approved']}</span>"
+                ),
             })
         return rows
 
@@ -1174,6 +1743,306 @@ No valid Phase 3 distribution-risk profiles are attached to these trades.
     # ------------------------------------------------------------
     # Main generator
     # ------------------------------------------------------------
+
+    # ------------------------------------------------------------
+    # Phase 6 probability-calibration reporting
+    # ------------------------------------------------------------
+    def probability_calibration_values(self, item):
+        profile = self.val(item, "probability_calibration_profile", None)
+        if profile is None:
+            metadata = self.val(item, "metadata", {}) or {}
+            if isinstance(metadata, dict):
+                profile = metadata.get("probability_calibration_profile")
+        raw = self.val(item, "raw_probability_of_profit", self.val(profile, "raw_probability", None))
+        calibrated = self.val(item, "calibrated_probability_of_profit", self.val(profile, "calibrated_probability", None))
+        available = bool(profile is not None and self.val(profile, "valid", False))
+        return {
+            "available": available, "raw": raw, "calibrated": calibrated,
+            "adjustment": self.val(item, "probability_calibration_adjustment", self.val(profile, "adjustment", 0.0)),
+            "segment": self.val(item, "probability_calibration_segment", self.val(profile, "segment_key", "UNAVAILABLE")),
+            "version": self.val(item, "probability_calibration_model_version", self.val(profile, "model_version", "UNAVAILABLE")),
+            "method": self.val(item, "probability_calibration_method", self.val(profile, "model_method", "IDENTITY")),
+            "score": self.val(item, "probability_calibration_score", self.val(profile, "model_score", 0.0)),
+            "grade": self.val(item, "probability_calibration_grade", self.val(profile, "model_grade", "N/A")),
+            "severity": self.val(item, "probability_calibration_severity", self.val(profile, "model_severity", "UNKNOWN")),
+            "allowed": self.val(item, "probability_calibration_allowed", self.val(profile, "allowed", True)),
+            "ranking_adjustment": self.val(item, "calibration_ranking_adjustment", 0.0),
+            "adjusted_ranking": self.val(item, "calibration_adjusted_ranking_score", self.val(item, "ranking_score", 0.0)),
+        }
+
+    def probability_calibration_summary_html(self, items):
+        rows=[]
+        for item in items:
+            v=self.probability_calibration_values(item)
+            if v["available"]:
+                rows.append((item,v))
+        if not rows:
+            return """<div class="card"><h2>Probability Calibration</h2><p class="section-note">No valid Phase 6 probability-calibration profiles are attached.</p></div>"""
+        avg_adj=sum(self.safe_float(v["adjustment"]) for _,v in rows)/len(rows)
+        avg_score=sum(self.safe_float(v["score"]) for _,v in rows)/len(rows)
+        table_rows=[]
+        for item,v in rows:
+            table_rows.append({
+                "symbol": self.val(item,"symbol",""), "strategy": self.val(item,"strategy",""),
+                "raw": self.optional_pct(v["raw"]), "calibrated": self.optional_pct(v["calibrated"]),
+                "adjustment": self.optional_pct(v["adjustment"]), "segment": v["segment"],
+                "method": v["method"], "version": v["version"], "score": self.optional_number(v["score"]),
+                "grade": v["grade"], "severity": v["severity"],
+                "rank_adj": self.optional_number(v["ranking_adjustment"]),
+                "adjusted_rank": self.optional_number(v["adjusted_ranking"]),
+            })
+        return f"""<div class="card"><h2>Probability Calibration</h2>
+<div class="metric"><strong>Calibrated Decisions</strong>{len(rows)}</div>
+<div class="metric"><strong>Average Probability Adjustment</strong>{self.pct(avg_adj)}</div>
+<div class="metric"><strong>Average Model Score</strong>{avg_score:.2f}</div>
+{self.table(table_rows, [("Symbol","symbol"),("Strategy","strategy"),("Raw POP","raw"),("Calibrated POP","calibrated"),("Adjustment","adjustment"),("Segment","segment"),("Method","method"),("Version","version"),("Score","score"),("Grade","grade"),("Severity","severity"),("Ranking Δ","rank_adj"),("Adjusted Ranking","adjusted_rank")])}
+</div>"""
+
+    def probability_reliability_diagram_html(self, items):
+        points=[]
+        for item in items:
+            profile=self.val(item,"probability_calibration_profile",None)
+            if profile is None:
+                metadata=self.val(item,"metadata",{}) or {}
+                if isinstance(metadata,dict): profile=metadata.get("probability_calibration_profile")
+            bins=self.val(profile,"metadata",{}).get("reliability_bins",[]) if profile is not None and isinstance(self.val(profile,"metadata",{}),dict) else []
+            for b in bins or []:
+                pred=self.safe_float(self.val(b,"mean_predicted_probability",self.val(b,"mean_probability",0.0)))
+                obs=self.safe_float(self.val(b,"observed_frequency",self.val(b,"success_rate",0.0)))
+                count=self.safe_int(self.val(b,"count",0))
+                if count: points.append((pred,obs,count))
+        if not points:
+            return """<div class="card"><h2>Calibration Reliability</h2><p class="section-note">Reliability-bin data is unavailable for this report.</p></div>"""
+        circles=''.join(f'<circle cx="{40+p*420:.2f}" cy="{460-o*420:.2f}" r="{max(3,min(10,3+c**0.5/3)):.2f}" fill="#333"><title>Predicted {p:.1%}; observed {o:.1%}; n={c}</title></circle>' for p,o,c in points)
+        return f"""<div class="card"><h2>Calibration Reliability</h2><svg viewBox="0 0 500 500" width="100%" style="max-width:650px"><rect x="40" y="40" width="420" height="420" fill="#fafafa" stroke="#aaa"/><line x1="40" y1="460" x2="460" y2="40" stroke="#777" stroke-dasharray="6 4"/>{circles}<text x="210" y="492" font-size="13">Predicted probability</text><text x="8" y="250" font-size="13" transform="rotate(-90 8,250)">Observed frequency</text></svg></div>"""
+
+
+    def probability_calibration_governance_summary_html(self, items):
+        governance = drift = None
+        for item in items:
+            metadata = self.val(item, "metadata", {}) or {}
+            if isinstance(metadata, dict):
+                governance = governance or metadata.get("probability_calibration_governance_profile")
+                drift = drift or metadata.get("probability_calibration_drift_profile")
+        if governance is None and drift is None:
+            return """<div class="card"><h2>Calibration Governance &amp; Drift</h2><p class="section-note">No Phase 6 governance or drift profile is attached.</p></div>"""
+        parts=['<div class="card"><h2>Calibration Governance &amp; Drift</h2>']
+        if drift is not None:
+            parts.append(f'<div class="metric"><strong>Drift Score</strong>{self.safe_float(self.val(drift,"drift_score",0)):.2f}</div>')
+            parts.append(f'<div class="metric"><strong>Drift Grade</strong>{self.val(drift,"drift_grade","N/A")}</div>')
+            parts.append(f'<div class="metric"><strong>Drift Severity</strong>{self.val(drift,"drift_severity","UNKNOWN")}</div>')
+            parts.append(f'<div class="metric"><strong>Probability PSI</strong>{self.safe_float(self.val(drift,"probability_psi",0)):.4f}</div>')
+            parts.append(f'<div class="metric"><strong>Brier Change</strong>{self.safe_float(self.val(drift,"brier_change",0)):.6f}</div>')
+            parts.append(f'<div class="metric"><strong>ECE Change</strong>{self.safe_float(self.val(drift,"ece_change",0)):.6f}</div>')
+        if governance is not None:
+            parts.append(f'<div class="metric"><strong>Champion</strong>{self.val(governance,"champion_version","N/A")}</div>')
+            parts.append(f'<div class="metric"><strong>Challenger</strong>{self.val(governance,"challenger_version","N/A")}</div>')
+            parts.append(f'<div class="metric"><strong>Recommendation</strong>{self.val(governance,"recommendation","N/A")}</div>')
+            parts.append(f'<div class="metric"><strong>Promotion Eligible</strong>{"YES" if self.val(governance,"promotion_eligible",False) else "NO"}</div>')
+            parts.append(f'<div class="metric"><strong>Governance Confidence</strong>{self.safe_float(self.val(governance,"confidence_score",0)):.2f}</div>')
+            parts.append(f'<div class="metric"><strong>Brier Improvement</strong>{self.safe_float(self.val(governance,"brier_improvement",0)):.6f}</div>')
+        parts.append('</div>')
+        return ''.join(parts)
+
+
+    # ------------------------------------------------------------
+    # Phase 7 walk-forward validation reporting
+    # ------------------------------------------------------------
+    def walk_forward_profile(self, items):
+        for item in items or []:
+            profile = self.val(item, "walk_forward_profile", None)
+            if profile is None:
+                metadata = self.val(item, "metadata", {}) or {}
+                if isinstance(metadata, dict):
+                    profile = metadata.get("walk_forward_profile")
+            if profile is not None:
+                return profile
+        return None
+
+    def walk_forward_summary_html(self, items):
+        profile = self.walk_forward_profile(items)
+        if profile is None or not bool(self.val(profile, "valid", False)):
+            return """<div class="card"><h2>Walk-Forward Validation</h2><p class="section-note">No valid Phase 7 walk-forward profile is attached.</p></div>"""
+        raw = self.val(profile, "raw_profile", None) or profile
+        results = list(self.val(raw, "results", []) or [])
+        rows = []
+        for result in results:
+            rows.append({
+                "window": self.val(result, "window_id", ""),
+                "train": self.optional_number(self.val(result, "train_score", None)),
+                "validation": self.optional_number(self.val(result, "validation_score", None)),
+                "test": self.optional_number(self.val(result, "test_score", None)),
+                "oos_return": self.optional_pct(self.val(result, "test_return", None)),
+                "oos_sharpe": self.optional_number(self.val(result, "test_sharpe", None)),
+                "drawdown": self.optional_pct(self.val(result, "test_max_drawdown_pct", None)),
+                "degradation": self.optional_pct(self.val(result, "degradation_pct", None)),
+                "parameters": str(self.val(result, "selected_parameters", {}) or {}),
+            })
+        chart_rows = [{"window": r.get("window", ""), "test_return": self.safe_float(self.val(x, "test_return", 0.0))} for r, x in zip(rows, results)]
+        table_html = self.table(rows, [
+            ("Window", "window"), ("Train Score", "train"),
+            ("Validation Score", "validation"), ("Test Score", "test"),
+            ("OOS Return", "oos_return"), ("OOS Sharpe", "oos_sharpe"),
+            ("Max Drawdown", "drawdown"), ("Degradation", "degradation"),
+            ("Selected Parameters", "parameters"),
+        ], empty="No completed walk-forward windows.")
+        chart = self.bar_chart(chart_rows, "window", "test_return", "Out-of-Sample Return by Window") if chart_rows else ""
+        return f"""<div class="card"><h2>Walk-Forward Validation</h2>
+<div class="metric"><strong>Windows</strong>{self.safe_int(self.val(profile, 'window_count', 0))}</div>
+<div class="metric"><strong>Completed</strong>{self.safe_int(self.val(profile, 'completed_window_count', 0))}</div>
+<div class="metric"><strong>Aggregate OOS Return</strong>{self.pct(self.val(profile, 'aggregate_oos_return', 0.0))}</div>
+<div class="metric"><strong>Average OOS Sharpe</strong>{self.optional_number(self.val(profile, 'average_oos_sharpe', None))}</div>
+<div class="metric"><strong>Worst OOS Drawdown</strong>{self.pct(self.val(profile, 'worst_oos_drawdown_pct', 0.0))}</div>
+<div class="metric"><strong>Average Degradation</strong>{self.pct(self.val(profile, 'average_degradation_pct', 0.0))}</div>
+<div class="metric"><strong>Parameter Stability</strong>{self.optional_number(self.val(profile, 'parameter_stability_score', None))}</div>
+<div class="metric"><strong>Consistency</strong>{self.optional_number(self.val(profile, 'window_consistency_score', None))}</div>
+<div class="metric"><strong>Walk-Forward Score</strong>{self.optional_number(self.val(profile, 'walk_forward_score', None))}</div>
+<div class="metric"><strong>Grade</strong>{self.val(profile, 'walk_forward_grade', 'N/A')}</div>
+<div class="metric"><strong>Severity</strong>{self.val(profile, 'risk_severity', 'UNKNOWN')}</div>
+<div class="metric"><strong>Approved</strong>{'YES' if self.val(profile, 'allowed', False) else 'NO'}</div>
+{chart}{table_html}</div>"""
+
+
+    # ------------------------------------------------------------
+    # Phase 7 walk-forward governance reporting (preserved)
+    # ------------------------------------------------------------
+    def walk_forward_governance_profile(self, items):
+        for item in items or []:
+            profile = self.val(item, "walk_forward_governance_profile", None)
+            if profile is None:
+                metadata = self.val(item, "metadata", {}) or {}
+                if isinstance(metadata, dict):
+                    profile = metadata.get("walk_forward_governance_profile")
+            if profile is not None:
+                return profile
+        return None
+
+    def walk_forward_governance_summary_html(self, items):
+        profile = self.walk_forward_governance_profile(items)
+        if profile is None or not bool(self.val(profile, "valid", False)):
+            return """<div class="card"><h2>Walk-Forward Parameter Governance</h2><p class="section-note">No valid Phase 7 walk-forward governance profile is attached.</p></div>"""
+        rejection_text = ", ".join(self.val(profile, "rejection_reasons", []) or []) or "-"
+        warning_text = ", ".join(self.val(profile, "warnings", []) or []) or "-"
+        return f"""<div class="card"><h2>Walk-Forward Parameter Governance</h2>
+<div class="metric"><strong>Champion Version</strong>{self.val(profile, 'champion_version', 'UNAVAILABLE')}</div>
+<div class="metric"><strong>Challenger Version</strong>{self.val(profile, 'challenger_version', 'UNAVAILABLE')}</div>
+<div class="metric"><strong>Recommendation</strong>{self.val(profile, 'recommendation', 'RETAIN_CHAMPION')}</div>
+<div class="metric"><strong>Champion Score</strong>{self.optional_number(self.val(profile, 'champion_score', None))}</div>
+<div class="metric"><strong>Challenger Score</strong>{self.optional_number(self.val(profile, 'challenger_score', None))}</div>
+<div class="metric"><strong>Score Improvement</strong>{self.optional_number(self.val(profile, 'score_improvement', None))}</div>
+<div class="metric"><strong>OOS Return Improvement</strong>{self.optional_pct(self.val(profile, 'oos_return_improvement', None))}</div>
+<div class="metric"><strong>Sharpe Improvement</strong>{self.optional_number(self.val(profile, 'sharpe_improvement', None))}</div>
+<div class="metric"><strong>Drawdown Deterioration</strong>{self.optional_pct(self.val(profile, 'drawdown_deterioration_pct', None))}</div>
+<div class="metric"><strong>Parameter Stability</strong>{self.optional_number(self.val(self.val(profile, 'challenger_profile', None), 'parameter_stability_score', None))}</div>
+<div class="metric"><strong>Promotion Eligible</strong>{'YES' if self.val(profile, 'promotion_eligible', False) else 'NO'}</div>
+<div class="metric"><strong>Promotion Applied</strong>{'YES' if self.val(profile, 'promotion_applied', False) else 'NO'}</div>
+<div class="metric"><strong>Confidence</strong>{self.optional_number(self.val(profile, 'confidence_score', None))}</div>
+<div class="metric"><strong>Grade</strong>{self.val(profile, 'governance_grade', 'N/A')}</div>
+<div class="metric"><strong>Severity</strong>{self.val(profile, 'risk_severity', 'UNKNOWN')}</div>
+<p class="section-note"><strong>Warnings:</strong> {warning_text}</p>
+<p class="section-note"><strong>Rejections:</strong> {rejection_text}</p></div>"""
+
+
+
+    # ------------------------------------------------------------
+    # Phase 8 market-regime governance and drift reporting
+    # ------------------------------------------------------------
+    def market_regime_governance_profile(self, items):
+        for item in items or []:
+            profile = self.val(item, "market_regime_governance_profile", None)
+            if profile is None:
+                metadata = self.val(item, "metadata", {}) or {}
+                if isinstance(metadata, dict):
+                    profile = metadata.get("market_regime_governance_profile")
+            if profile is not None:
+                return profile
+        return None
+
+    def market_regime_governance_summary_html(self, items):
+        profile = self.market_regime_governance_profile(items)
+        if profile is None or not bool(self.val(profile, "valid", False)):
+            return """<div class="card"><h2>Market Regime Model Governance &amp; Drift</h2><p class="section-note">No valid Phase 8 market-regime governance profile is attached.</p></div>"""
+        drift = self.val(profile, "drift_profile", None)
+        warning_text = ", ".join(self.val(profile, "warnings", []) or []) or "-"
+        rejection_text = ", ".join(self.val(profile, "rejection_reasons", []) or []) or "-"
+        return f"""<div class="card"><h2>Market Regime Model Governance &amp; Drift</h2>
+<div class="metric"><strong>Champion Version</strong>{self.val(profile, 'champion_version', 'UNAVAILABLE')}</div>
+<div class="metric"><strong>Challenger Version</strong>{self.val(profile, 'challenger_version', 'UNAVAILABLE')}</div>
+<div class="metric"><strong>Recommendation</strong>{self.val(profile, 'recommendation', 'RETAIN_CHAMPION')}</div>
+<div class="metric"><strong>Detection Accuracy Improvement</strong>{self.optional_pct(self.val(profile, 'accuracy_improvement', None))}</div>
+<div class="metric"><strong>Forecast Accuracy Improvement</strong>{self.optional_pct(self.val(profile, 'forecast_accuracy_improvement', None))}</div>
+<div class="metric"><strong>Transition F1 Improvement</strong>{self.optional_number(self.val(profile, 'transition_f1_improvement', None), digits=4)}</div>
+<div class="metric"><strong>Critical FP Deterioration</strong>{self.optional_pct(self.val(profile, 'critical_false_positive_deterioration', None))}</div>
+<div class="metric"><strong>Promotion Eligible</strong>{'YES' if self.val(profile, 'promotion_eligible', False) else 'NO'}</div>
+<div class="metric"><strong>Promotion Applied</strong>{'YES' if self.val(profile, 'promotion_applied', False) else 'NO'}</div>
+<div class="metric"><strong>Governance Confidence</strong>{self.optional_number(self.val(profile, 'confidence_score', None))}</div>
+<div class="metric"><strong>Governance Grade</strong>{self.val(profile, 'governance_grade', 'N/A')}</div>
+<div class="metric"><strong>Severity</strong>{self.val(profile, 'risk_severity', 'UNKNOWN')}</div>
+<div class="metric"><strong>Regime PSI</strong>{self.optional_number(self.val(drift, 'regime_population_stability_index', None), digits=4)}</div>
+<div class="metric"><strong>Drift Score</strong>{self.optional_number(self.val(drift, 'drift_score', None))}</div>
+<div class="metric"><strong>Drift Grade</strong>{self.val(drift, 'drift_grade', 'N/A')}</div>
+<div class="metric"><strong>Drift Severity</strong>{self.val(drift, 'drift_severity', 'UNKNOWN')}</div>
+<p class="section-note"><strong>Warnings:</strong> {warning_text}</p>
+<p class="section-note"><strong>Rejections:</strong> {rejection_text}</p></div>"""
+
+    # ------------------------------------------------------------
+    # Phase 9 execution analytics and routing reporting
+    # ------------------------------------------------------------
+    def execution_integration_profile(self, item):
+        profile = self.val(item, "execution_integration_profile", None)
+        if profile is None:
+            metadata = self.val(item, "metadata", {}) or {}
+            if isinstance(metadata, dict):
+                profile = metadata.get("execution_integration_profile")
+        return profile
+
+    def execution_analytics_summary_html(self, trades):
+        profiles = [self.execution_integration_profile(t) for t in trades]
+        profiles = [p for p in profiles if p is not None and bool(self.val(p, "valid", False))]
+        if not profiles:
+            return """<div class="card"><h2>Execution Analytics &amp; Routing Intelligence</h2><p class="section-note">No valid Phase 9 execution-analytics profile is attached.</p></div>"""
+        profile = profiles[0]
+        aggregation = self.val(profile, "aggregation_profile", None)
+        benchmark = self.val(profile, "benchmark_profile", None)
+        routing = self.val(profile, "routing_profile", None)
+        venue_rows=[]
+        for v in self.val(aggregation, "venues", ()) or ():
+            venue_rows.append({"rank": self.val(v,"rank",0), "venue": self.val(v,"venue","UNKNOWN"), "orders": self.val(v,"order_count",0), "shortfall": self.optional_number(self.val(v,"average_shortfall_bps",None)), "fill": self.optional_pct(self.val(v,"average_fill_ratio",None)), "latency": self.optional_number(self.val(v,"average_fill_delay_seconds",None)), "score": self.optional_number(self.val(v,"execution_score",None)), "grade": self.val(v,"execution_grade","N/A")})
+        benchmark_rows=[]
+        for b in self.val(benchmark, "summaries", ()) or ():
+            benchmark_rows.append({"name": self.val(b,"benchmark_name","UNKNOWN"), "orders": self.val(b,"order_count",0), "avg": self.optional_number(self.val(b,"average_shortfall_bps",None)), "median": self.optional_number(self.val(b,"median_shortfall_bps",None)), "p90": self.optional_number(self.val(b,"p90_shortfall_bps",None)), "score": self.optional_number(self.val(b,"benchmark_score",None)), "grade": self.val(b,"benchmark_grade","N/A")})
+        route_rows=[]
+        for r in self.val(routing, "venue_recommendations", ()) or ():
+            route_rows.append({"rank":self.val(r,"rank",0),"route":self.val(r,"route_name","UNKNOWN"),"orders":self.val(r,"order_count",0),"score":self.optional_number(self.val(r,"route_score",None)),"confidence":self.optional_number(self.val(r,"confidence_score",None)),"shortfall":self.optional_number(self.val(r,"average_shortfall_bps",None)),"recommended":"YES" if self.val(r,"recommended",False) else "NO"})
+        return f"""
+<div class="card"><h2>Execution Analytics &amp; Routing Intelligence</h2>
+<div class="metric"><strong>Orders</strong>{self.val(profile,'order_count',0)}</div>
+<div class="metric"><strong>Execution Score</strong>{self.optional_number(self.val(profile,'execution_score',None))}</div>
+<div class="metric"><strong>Execution Grade</strong>{self.val(profile,'execution_grade','N/A')}</div>
+<div class="metric"><strong>Severity</strong>{self.val(profile,'execution_severity','UNKNOWN')}</div>
+<div class="metric"><strong>Average Shortfall</strong>{self.optional_number(self.val(profile,'average_shortfall_bps',None))} bps</div>
+<div class="metric"><strong>Fill Ratio</strong>{self.optional_pct(self.val(profile,'average_fill_ratio',None))}</div>
+<div class="metric"><strong>Average Latency</strong>{self.optional_number(self.val(profile,'average_latency_seconds',None))} sec</div>
+<div class="metric"><strong>Best Benchmark</strong>{self.val(profile,'best_benchmark','UNAVAILABLE')}</div>
+<div class="metric"><strong>Recommended Venue</strong>{self.val(profile,'recommended_venue','UNAVAILABLE')}</div>
+<div class="metric"><strong>Recommended Broker</strong>{self.val(profile,'recommended_broker','UNAVAILABLE')}</div>
+<div class="metric"><strong>Routing Score</strong>{self.optional_number(self.val(profile,'routing_score',None))}</div>
+<h3>Venue Execution Comparison</h3>{self.table(venue_rows, [("Rank","rank"),("Venue","venue"),("Orders","orders"),("Shortfall bps","shortfall"),("Fill Ratio","fill"),("Latency sec","latency"),("Score","score"),("Grade","grade")])}
+<h3>Benchmark Comparison</h3>{self.table(benchmark_rows, [("Benchmark","name"),("Orders","orders"),("Average bps","avg"),("Median bps","median"),("P90 bps","p90"),("Score","score"),("Grade","grade")])}
+<h3>Venue Routing Recommendations</h3>{self.table(route_rows, [("Rank","rank"),("Route","route"),("Orders","orders"),("Score","score"),("Confidence","confidence"),("Shortfall bps","shortfall"),("Recommended","recommended")])}
+</div>
+"""
+
+    def execution_shortfall_chart_html(self, trades):
+        profile = next((self.execution_integration_profile(t) for t in trades if self.execution_integration_profile(t) is not None), None)
+        aggregation = self.val(profile, "aggregation_profile", None) if profile is not None else None
+        rows=[]
+        for order in self.val(aggregation, "orders", ()) or ():
+            rows.append({"order": self.val(order,"order_id",""), "shortfall": self.safe_float(self.val(order,"benchmark_shortfall_bps",0.0))})
+        if not rows:
+            return ""
+        return f'<div class="card"><h2>Execution Shortfall by Order</h2>{self.bar_chart(rows, "order", "shortfall", "Implementation Shortfall (bps)")}</div>'
+
     def generate(self, trades, path="reports/backtest.html", rejected=None, equity_curve=None):
         trades = trades or []
         rejected = rejected or []
@@ -1229,6 +2098,21 @@ No valid Phase 3 distribution-risk profiles are attached to these trades.
         distribution_risk_summary = (
             self.distribution_risk_summary_html(trades)
         )
+        risk_surface_summary = self.risk_surface_summary_html(trades)
+        portfolio_risk_surface_summary = self.portfolio_risk_surface_summary_html(trades)
+        risk_surface_details = self.risk_surface_details_html(trades)
+        portfolio_optimization_summary = self.portfolio_optimization_summary_html(trades)
+        portfolio_optimization_comparison = self.portfolio_optimization_comparison_html(trades)
+        portfolio_optimization_frontier = self.portfolio_optimization_frontier_summary_html(trades)
+        portfolio_optimization_recommendation = self.portfolio_optimization_recommendation_summary_html(trades)
+        probability_calibration_summary = self.probability_calibration_summary_html(trades)
+        probability_calibration_governance_summary = self.probability_calibration_governance_summary_html(trades)
+        walk_forward_summary = self.walk_forward_summary_html(trades)
+        walk_forward_governance_summary = self.walk_forward_governance_summary_html(trades)
+        market_regime_governance_summary = self.market_regime_governance_summary_html(trades)
+        probability_reliability_diagram = self.probability_reliability_diagram_html(trades)
+        execution_analytics_summary = self.execution_analytics_summary_html(trades)
+        execution_shortfall_chart = self.execution_shortfall_chart_html(trades)
 
         rolling_html = self.table(
             rolling,
@@ -1255,6 +2139,9 @@ th {{ background: #eee; }}
 .warning {{ color: #e65100; font-weight: bold; }}
 .neutral {{ color: #455a64; font-weight: bold; }}
 .section-note {{ color: #555; font-size: 14px; margin-bottom: 10px; }}
+.heatmap-wrap {{ overflow-x: auto; margin: 12px 0 20px; }}
+.heatmap th, .heatmap td {{ text-align: center; white-space: nowrap; }}
+.neutral {{ color: #555; }}
 </style>
 </head>
 <body>
@@ -1304,6 +2191,22 @@ th {{ background: #eee; }}
 </div>
 
 {distribution_risk_summary}
+
+{risk_surface_summary}
+{portfolio_risk_surface_summary}
+{risk_surface_details}
+{portfolio_optimization_summary}
+{portfolio_optimization_comparison}
+{portfolio_optimization_frontier}
+{portfolio_optimization_recommendation}
+{probability_calibration_summary}
+{probability_calibration_governance_summary}
+{walk_forward_summary}
+{walk_forward_governance_summary}
+{market_regime_governance_summary}
+{probability_reliability_diagram}
+{execution_analytics_summary}
+{execution_shortfall_chart}
 
 <div class="card"><h2>Drawdown Recovery</h2>{self.table(recovery_rows, [("Metric", "metric"), ("Value", "value")])}</div>
 
@@ -1368,13 +2271,32 @@ th {{ background: #eee; }}
 ("Tail Risk Grade", "tail_risk_grade"),
 ("Tail Severity", "tail_risk_severity"),
 ("Distribution Approved", "distribution_risk_allowed"),
+("Surface Points", "risk_surface_points"),
+("Surface Worst Case", "risk_surface_worst_case"),
+("Surface Best Case", "risk_surface_best_case"),
+("Surface Max Loss", "risk_surface_maximum_loss"),
+("Worst Price Shock", "risk_surface_price_shock"),
+("Worst IV Shock", "risk_surface_iv_shock"),
+("Worst Time Offset", "risk_surface_time_offset"),
+("Gamma Risk Score", "risk_surface_gamma_score"),
+("Vega Risk Score", "risk_surface_vega_score"),
+("Theta Risk Score", "risk_surface_theta_score"),
+("Nonlinear Score", "risk_surface_nonlinear_score"),
+("Surface Score", "risk_surface_score"),
+("Surface Grade", "risk_surface_grade"),
+("Surface Severity", "risk_surface_severity"),
+("Surface Approved", "risk_surface_allowed"),
 ("Contracts", "contracts"), ("Net PnL", "net_pnl"),
 ("Hold Days", "days_held"), ("Exit Reason", "exit_reason"),
 ("Rank", "rank_score")
 ])}</div>
+{self.market_regime_summary_html(trades)}
 </body>
 </html>
 """
         Path(path).parent.mkdir(parents=True, exist_ok=True)
-        Path(path).write_text(html)
+        Path(path).write_text(
+            html,
+            encoding="utf-8",
+        )
         return path

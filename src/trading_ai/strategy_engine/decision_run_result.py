@@ -58,6 +58,29 @@ class DecisionRunResult:
 
     valid: bool
 
+    portfolio_risk_surface_profile: Any = None
+
+    portfolio_optimization_profile: Any = None
+
+    portfolio_optimization_frontier_profile: Any = None
+
+    portfolio_optimization_recommendation: Any = None
+
+    probability_calibration_model_family: Any = None
+    probability_calibration_model_version: str = "UNAVAILABLE"
+
+    walk_forward_profile: Any = None
+    walk_forward_calibration_profile: Any = None
+
+    market_regime_profiles: Any = None
+    market_regime_forecast_profiles: Any = None
+    market_breadth_profile: Any = None
+
+    execution_integration_profile: Any = None
+    execution_aggregation_profile: Any = None
+    execution_benchmark_profile: Any = None
+    execution_routing_profile: Any = None
+
     warnings: list[str] = field(
         default_factory=list
     )

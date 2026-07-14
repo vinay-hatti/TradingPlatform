@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Trading AI Backtest Report</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 30px; background: #f7f7f7; color: #222; }
+h1, h2 { color: #111; }
+.card { background: white; padding: 20px; margin-bottom: 25px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.12); overflow-x: auto; }
+.metric { display: inline-block; margin-right: 30px; margin-bottom: 15px; font-size: 18px; vertical-align: top; }
+.metric strong { display: block; font-size: 13px; color: #666; }
+table { width: 100%; border-collapse: collapse; background: white; white-space: nowrap; }
+th, td { border-bottom: 1px solid #ddd; padding: 8px; text-align: left; font-size: 14px; }
+th { background: #eee; }
+.positive { color: #1b5e20; font-weight: bold; }
+.negative { color: #b71c1c; font-weight: bold; }
+.warning { color: #e65100; font-weight: bold; }
+.neutral { color: #455a64; font-weight: bold; }
+.section-note { color: #555; font-size: 14px; margin-bottom: 10px; }
+.heatmap-wrap { overflow-x: auto; margin: 12px 0 20px; }
+.heatmap th, .heatmap td { text-align: center; white-space: nowrap; }
+.neutral { color: #555; }
+</style>
+</head>
+<body>
+<h1>Trading AI Backtest Report</h1>
+
+<div class="card"><h2>Executive Assessment</h2><table><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody><tr><td>Overall rating</td><td>Good</td></tr><tr><td>Primary recommendation</td><td>Continue validation on larger windows.</td></tr><tr><td>Key weakness</td><td>Small sample size; risk ratios are hidden until enough trades exist.</td></tr></tbody></table></div>
+
+<div class="card">
+<h2>Summary</h2>
+<div class="metric"><strong>Trades</strong>1</div>
+<div class="metric"><strong>Accepted</strong>1</div>
+<div class="metric"><strong>Rejected</strong>0</div>
+<div class="metric"><strong>Wins</strong>1</div>
+<div class="metric"><strong>Losses</strong>0</div>
+<div class="metric"><strong>Win Rate</strong>100.00%</div>
+<div class="metric"><strong>Net PnL</strong>$125.00</div>
+<div class="metric"><strong>Final Equity</strong>$100,125.00</div>
+<div class="metric"><strong>Return</strong>0.12%</div>
+<div class="metric"><strong>Profit Factor</strong>N/A (No losses)</div>
+<div class="metric"><strong>Expectancy</strong>$125.00</div>
+<div class="metric"><strong>Max Drawdown</strong>0.00%</div>
+<div class="metric"><strong>Max DD $</strong>$0.00</div>
+<div class="metric"><strong>Sharpe</strong>N/A</div>
+<div class="metric"><strong>Sortino</strong>N/A</div>
+<div class="metric"><strong>Calmar</strong>N/A</div>
+<div class="metric"><strong>Payoff Ratio</strong>N/A</div>
+<p class='warning'>Insufficient data: 1 observations. Risk ratios require at least 20.</p>
+</div>
+
+<div class="card"><h2>Historical Option Coverage</h2><table><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody><tr><td>Signals evaluated</td><td>1</td></tr><tr><td>Accepted trades</td><td>1</td></tr><tr><td>Rejected trades</td><td>0</td></tr><tr><td>Historical contracts found</td><td>1</td></tr><tr><td>Historical option coverage</td><td>100.00%</td></tr><tr><td>Rejected: no historical contract</td><td>0</td></tr><tr><td>Rejected: liquidity</td><td>0</td></tr><tr><td>Rejected: spread</td><td>0</td></tr><tr><td>Rejected: volume</td><td>0</td></tr><tr><td>Rejected: open interest</td><td>0</td></tr><tr><td>Historical entry</td><td>1</td></tr><tr><td>Black-Scholes entry fallback</td><td>0</td></tr><tr><td>Historical exit</td><td>0</td></tr><tr><td>Black-Scholes exit</td><td>1</td></tr></tbody></table></div>
+<div class="card"><h2>Historical Coverage by Symbol</h2><table><thead><tr><th>Symbol</th><th>Signals</th><th>Historical</th><th>Accepted</th><th>Coverage</th></tr></thead><tbody><tr><td>AAPL</td><td>1</td><td>1</td><td>1</td><td>100.00%</td></tr></tbody></table></div>
+<div class="card"><h2>Historical Coverage by Month</h2><table><thead><tr><th>Month</th><th>Signals</th><th>Historical</th><th>Accepted</th><th>Coverage</th></tr></thead><tbody><tr><td>2026-01</td><td>1</td><td>1</td><td>1</td><td>100.00%</td></tr></tbody></table></div>
+<div class="card"><h2>Historical Coverage by Option Type</h2><table><thead><tr><th>Option Type</th><th>Signals</th><th>Historical</th><th>Accepted</th><th>Coverage</th></tr></thead><tbody><tr><td>UNKNOWN</td><td>1</td><td>1</td><td>1</td><td>100.00%</td></tr></tbody></table></div>
+
+<div class="card">
+<h2>Executive Risk Diagnostics</h2>
+<div class="metric"><strong>VaR 95%</strong>$125.00</div>
+<div class="metric"><strong>CVaR 95%</strong>$125.00</div>
+<div class="metric"><strong>Kelly</strong>0.00%</div>
+<div class="metric"><strong>Half Kelly</strong>0.00%</div>
+<div class="metric"><strong>Kelly Recommendation</strong>Do not increase position sizing</div>
+<div class="metric"><strong>Ulcer Index</strong>0.00</div>
+<div class="metric"><strong>Omega</strong>N/A</div>
+<div class="metric"><strong>Recovery Factor</strong>N/A</div>
+<div class="metric"><strong>Time in Market</strong>100.00%</div>
+<div class="metric"><strong>Longest DD Duration</strong>0 trades</div>
+</div>
+
+
+<div class="card">
+<h2>Distribution Risk &amp; Tail Analytics</h2>
+<p class="section-note">
+No valid Phase 3 distribution-risk profiles are attached to these trades.
+</p>
+</div>
+
+
+
+<div class="card"><h2>Risk Surfaces &amp; Sensitivity Analytics</h2>
+<p class="section-note">No valid Phase 4 risk-surface profiles are attached to these trades.</p></div>
+
+<div class='card'><h2>Portfolio Risk Surface</h2><p class='section-note'>No valid portfolio risk-surface profile is attached.</p></div>
+
+
+<div class="card">
+<h2>Portfolio Risk Optimization</h2>
+<p class="section-note">No valid Phase 5 portfolio-optimization profile is attached.</p>
+</div>
+
+
+
+<div class="card">
+<h2>Portfolio Optimization Frontier &amp; Sensitivity</h2>
+<p class="section-note">No valid Phase 5 optimization-frontier profile is attached.</p>
+</div>
+
+
+<div class="card">
+<h2>Recommended Portfolio Optimization Policy</h2>
+<p class="section-note">No valid Phase 5 frontier policy recommendation is attached.</p>
+</div>
+
+<div class="card"><h2>Probability Calibration</h2>
+<div class="metric"><strong>Calibrated Decisions</strong>1</div>
+<div class="metric"><strong>Average Probability Adjustment</strong>-5.00%</div>
+<div class="metric"><strong>Average Model Score</strong>88.00</div>
+<table><thead><tr><th>Symbol</th><th>Strategy</th><th>Raw POP</th><th>Calibrated POP</th><th>Adjustment</th><th>Segment</th><th>Method</th><th>Version</th><th>Score</th><th>Grade</th><th>Severity</th><th>Ranking Δ</th><th>Adjusted Ranking</th></tr></thead><tbody><tr><td>AAPL</td><td>BULL_PUT_SPREAD</td><td>62.00%</td><td>57.00%</td><td>-5.00%</td><td>STRATEGY=BULL_PUT_SPREAD</td><td>PLATT</td><td>v3</td><td>88.00</td><td>A</td><td>LOW</td><td>-1.25</td><td>76.50</td></tr></tbody></table>
+</div>
+<div class="card"><h2>Calibration Governance &amp; Drift</h2><p class="section-note">No Phase 6 governance or drift profile is attached.</p></div>
+<div class="card"><h2>Walk-Forward Validation</h2><p class="section-note">No valid Phase 7 walk-forward profile is attached.</p></div>
+<div class="card"><h2>Walk-Forward Parameter Governance</h2><p class="section-note">No valid Phase 7 walk-forward governance profile is attached.</p></div>
+<div class="card"><h2>Market Regime Model Governance &amp; Drift</h2><p class="section-note">No valid Phase 8 market-regime governance profile is attached.</p></div>
+<div class="card"><h2>Calibration Reliability</h2><p class="section-note">Reliability-bin data is unavailable for this report.</p></div>
+<div class="card"><h2>Execution Analytics &amp; Routing Intelligence</h2><p class="section-note">No valid Phase 9 execution-analytics profile is attached.</p></div>
+
+
+<div class="card"><h2>Drawdown Recovery</h2><table><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody><tr><td>Recovered</td><td>No drawdown</td></tr></tbody></table></div>
+
+<div class="card"><h2>Equity Curve Chart</h2>
+<div>
+<h3>Equity Curve</h3>
+<svg width="100%" viewBox="0 0 1000 300" preserveAspectRatio="none">
+    <rect x="0" y="0" width="1000" height="260" fill="#fafafa" stroke="#ddd"/>
+    <polyline points="0.00,260.00 1000.00,0.00" fill="none" stroke="#111" stroke-width="2"/>
+    <text x="5" y="15" font-size="12">100,125.00</text>
+    <text x="5" y="255" font-size="12">100,000.00</text>
+</svg>
+</div>
+</div>
+<div class="card"><h2>Underwater Drawdown Chart</h2>
+<div>
+<h3>Underwater Drawdown Curve</h3>
+<svg width="100%" viewBox="0 0 1000 300" preserveAspectRatio="none">
+    <rect x="0" y="0" width="1000" height="260" fill="#fafafa" stroke="#ddd"/>
+    <polyline points="0.00,130.00 1000.00,130.00" fill="none" stroke="#111" stroke-width="2"/>
+    <text x="5" y="15" font-size="12">1.00</text>
+    <text x="5" y="255" font-size="12">-1.00</text>
+</svg>
+</div>
+</div>
+<div class="card"><h2>Monthly Return Chart</h2>
+<div>
+<h3>Monthly Return Bars</h3>
+<svg width="100%" viewBox="0 0 1000 340" preserveAspectRatio="none">
+    <rect x="0" y="0" width="1000" height="260" fill="#fafafa" stroke="#ddd"/>
+    <line x1="0" y1="130.0" x2="1000" y2="130.0" stroke="#333"/>
+    
+<rect x="4.00" y="20.00" width="992.00" height="110.00" fill="#c8e6c9" stroke="#999"/>
+<text x="4.00" y="275" font-size="10" transform="rotate(45 4.00,275)">2026-01</text>
+
+</svg>
+</div>
+</div>
+
+<div class="card"><h2>Advanced Risk Metrics</h2>
+<div class="metric"><strong>Average Win</strong>$125.00</div>
+<div class="metric"><strong>Average Loss</strong>$0.00</div>
+<div class="metric"><strong>Largest Win</strong>$125.00</div>
+<div class="metric"><strong>Largest Loss</strong>$0.00</div>
+<div class="metric"><strong>Gross Profit</strong>$125.00</div>
+<div class="metric"><strong>Gross Loss</strong>$0.00</div>
+<div class="metric"><strong>Longest Win Streak</strong>1</div>
+<div class="metric"><strong>Longest Loss Streak</strong>0</div>
+</div>
+
+<div class="card"><h2>Monthly Return Heatmap</h2><table><thead><tr><th>Month</th><th>Return</th><th>Net PnL</th></tr></thead><tbody><tr><td>2026-01</td><td><span class='positive'>0.12%</span></td><td>$125.00</td></tr></tbody></table></div>
+<div class="card"><h2>Rejected Trade Summary</h2><p class='section-note'>No data available.</p></div>
+<div class="card"><h2>Performance by Symbol</h2><table><thead><tr><th>Symbol</th><th>Trades</th><th>Wins</th><th>Losses</th><th>Win Rate</th><th>Net PnL</th><th>Return</th><th>Profit Factor</th><th>Expectancy</th></tr></thead><tbody><tr><td>AAPL</td><td>1</td><td>1</td><td>0</td><td>100.00%</td><td>$125.00</td><td>0.12%</td><td>N/A (No losses)</td><td>$125.00</td></tr></tbody></table></div>
+<div class="card"><h2>Performance by Exit Reason</h2><table><thead><tr><th>Exit Reason</th><th>Trades</th><th>Wins</th><th>Losses</th><th>Win Rate</th><th>Net PnL</th><th>Return</th><th>Profit Factor</th><th>Expectancy</th></tr></thead><tbody><tr><td>UNKNOWN</td><td>1</td><td>1</td><td>0</td><td>100.00%</td><td>$125.00</td><td>0.12%</td><td>N/A (No losses)</td><td>$125.00</td></tr></tbody></table></div>
+<div class="card"><h2>Performance by Signal</h2><table><thead><tr><th>Signal</th><th>Trades</th><th>Wins</th><th>Losses</th><th>Win Rate</th><th>Net PnL</th><th>Return</th><th>Profit Factor</th><th>Expectancy</th></tr></thead><tbody><tr><td>UNKNOWN</td><td>1</td><td>1</td><td>0</td><td>100.00%</td><td>$125.00</td><td>0.12%</td><td>N/A (No losses)</td><td>$125.00</td></tr></tbody></table></div>
+<div class="card"><h2>Regime Performance</h2><table><thead><tr><th>Regime</th><th>Trades</th><th>Wins</th><th>Losses</th><th>Win Rate</th><th>Net PnL</th><th>Avg PnL</th><th>Profit Factor</th><th>Expectancy</th></tr></thead><tbody><tr><td>UNKNOWN</td><td>1</td><td>1</td><td>0</td><td>100.00%</td><td>$125.00</td><td>$125.00</td><td>N/A (No losses)</td><td>$125.00</td></tr></tbody></table></div>
+<div class="card"><h2>Score Calibration</h2><table><thead><tr><th>Score Bucket</th><th>Trades</th><th>Wins</th><th>Losses</th><th>Win Rate</th><th>Net PnL</th><th>Avg PnL</th><th>Profit Factor</th><th>Expectancy</th></tr></thead><tbody><tr><td>0-10</td><td>1</td><td>1</td><td>0</td><td>100.00%</td><td>$125.00</td><td>$125.00</td><td>N/A (No losses)</td><td>$125.00</td></tr></tbody></table></div>
+<div class="card"><h2>Performance by Month</h2><table><thead><tr><th>Month</th><th>Trades</th><th>Wins</th><th>Losses</th><th>Win Rate</th><th>Net PnL</th><th>Return</th><th>Profit Factor</th><th>Expectancy</th></tr></thead><tbody><tr><td>2026-01</td><td>1</td><td>1</td><td>0</td><td>100.00%</td><td>$125.00</td><td>0.12%</td><td>N/A (No losses)</td><td>$125.00</td></tr></tbody></table></div>
+<div class="card"><h2>Performance by Delta Bucket</h2><table><thead><tr><th>Delta Bucket</th><th>Trades</th><th>Wins</th><th>Losses</th><th>Win Rate</th><th>Net PnL</th><th>Return</th><th>Profit Factor</th><th>Expectancy</th></tr></thead><tbody><tr><td>0.00-0.30</td><td>1</td><td>1</td><td>0</td><td>100.00%</td><td>$125.00</td><td>0.12%</td><td>N/A (No losses)</td><td>$125.00</td></tr></tbody></table></div>
+<div class="card"><h2>Trade PnL Distribution</h2><table><thead><tr><th>PnL Bucket</th><th>Trades</th><th>Net PnL</th><th>Avg PnL</th></tr></thead><tbody><tr><td>< -10000</td><td>0</td><td>$0.00</td><td>$0.00</td></tr><tr><td>-10000 to -5000</td><td>0</td><td>$0.00</td><td>$0.00</td></tr><tr><td>-5000 to -1000</td><td>0</td><td>$0.00</td><td>$0.00</td></tr><tr><td>-1000 to 0</td><td>0</td><td>$0.00</td><td>$0.00</td></tr><tr><td>0 to 1000</td><td>1</td><td>$125.00</td><td>$125.00</td></tr><tr><td>1000 to 5000</td><td>0</td><td>$0.00</td><td>$0.00</td></tr><tr><td>5000 to 10000</td><td>0</td><td>$0.00</td><td>$0.00</td></tr><tr><td>> 10000</td><td>0</td><td>$0.00</td><td>$0.00</td></tr></tbody></table></div>
+<div class="card"><h2>Rolling 20-Trade Risk Metrics</h2><p class='section-note'>Insufficient data for rolling metrics. Requires at least 20 trades.</p></div>
+<div class="card"><h2>Drawdown Curve</h2><table><thead><tr><th>Date</th><th>Equity</th><th>Peak Equity</th><th>Drawdown $</th><th>Drawdown %</th></tr></thead><tbody><tr><td>START</td><td>$100,000.00</td><td>$100,000.00</td><td>$0.00</td><td>0.00%</td></tr><tr><td>2026-01-15</td><td>$100,125.00</td><td>$100,125.00</td><td>$0.00</td><td>0.00%</td></tr></tbody></table></div>
+<div class="card"><h2>Equity Curve</h2><table><thead><tr><th>Date</th><th>Equity</th><th>PnL</th><th>Symbol</th><th>Exit Reason</th></tr></thead><tbody><tr><td>START</td><td>$100,000.00</td><td>$0.00</td><td>START</td><td>INITIAL_CAPITAL</td></tr><tr><td>2026-01-15</td><td>$100,125.00</td><td>$125.00</td><td>AAPL</td><td></td></tr></tbody></table></div>
+<div class="card"><h2>Best Trades</h2><table><thead><tr><th>Symbol</th><th>Entry</th><th>Exit</th><th>Signal</th><th>Regime</th><th>PnL</th><th>PnL %</th><th>Net PnL</th><th>Exit Reason</th><th>Rank</th></tr></thead><tbody><tr><td>AAPL</td><td>2026-01-01</td><td>2026-01-15</td><td></td><td>UNKNOWN</td><td>$0.00</td><td>0.00%</td><td>$125.00</td><td></td><td>0.00</td></tr></tbody></table></div>
+<div class="card"><h2>Worst Trades</h2><table><thead><tr><th>Symbol</th><th>Entry</th><th>Exit</th><th>Signal</th><th>Regime</th><th>PnL</th><th>PnL %</th><th>Net PnL</th><th>Exit Reason</th><th>Rank</th></tr></thead><tbody><tr><td>AAPL</td><td>2026-01-01</td><td>2026-01-15</td><td></td><td>UNKNOWN</td><td>$0.00</td><td>0.00%</td><td>$125.00</td><td></td><td>0.00</td></tr></tbody></table></div>
+<div class="card"><h2>Rejected Trades</h2><p class='section-note'>No data available.</p></div>
+<div class="card"><h2>Trade Log</h2><table><thead><tr><th>Symbol</th><th>Entry</th><th>Exit</th><th>Signal</th><th>Regime</th><th>Strategy</th><th>Strike</th><th>Expiry</th><th>Option Symbol</th><th>Entry Source</th><th>Exit Source</th><th>Entry Price</th><th>Exit Price</th><th>Position Size</th><th>Initial Risk</th><th>R Multiple</th><th>Delta</th><th>Gamma</th><th>Theta</th><th>Vega</th><th>Vol</th><th>POP</th><th>Distribution Obs.</th><th>Historical VaR 95</th><th>Historical ES 95</th><th>Parametric VaR 95</th><th>Parametric ES 95</th><th>Historical VaR 99</th><th>Historical ES 99</th><th>Downside Deviation</th><th>Skewness</th><th>Excess Kurtosis</th><th>P(Large Loss)</th><th>P(Severe Loss)</th><th>P(Critical Loss)</th><th>Drawdown-at-Risk</th><th>Expected DD Shortfall</th><th>Ulcer Index</th><th>Pain Index</th><th>Omega</th><th>Sortino</th><th>Gain-to-Pain</th><th>Tail Risk Score</th><th>Tail Risk Grade</th><th>Tail Severity</th><th>Distribution Approved</th><th>Surface Points</th><th>Surface Worst Case</th><th>Surface Best Case</th><th>Surface Max Loss</th><th>Worst Price Shock</th><th>Worst IV Shock</th><th>Worst Time Offset</th><th>Gamma Risk Score</th><th>Vega Risk Score</th><th>Theta Risk Score</th><th>Nonlinear Score</th><th>Surface Score</th><th>Surface Grade</th><th>Surface Severity</th><th>Surface Approved</th><th>Contracts</th><th>Net PnL</th><th>Hold Days</th><th>Exit Reason</th><th>Rank</th></tr></thead><tbody><tr><td>AAPL</td><td>2026-01-01</td><td>2026-01-15</td><td></td><td>UNKNOWN</td><td>BULL_PUT_SPREAD</td><td></td><td></td><td></td><td>historical_chain</td><td>black_scholes_mark_to_model</td><td>0.00</td><td>0.00</td><td>$0.00</td><td>$0.00</td><td>N/A</td><td>0.0000</td><td>0.00000</td><td>0.0000</td><td>0.0000</td><td>0.00%</td><td>0.00%</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td><span class='neutral'>N/A</span></td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td><span class='neutral'>N/A</span></td><td></td><td>$125.00</td><td></td><td></td><td>0.00</td></tr></tbody></table></div>
+<div class="card"><h2>Market Regime Analytics</h2><p class="section-note">No valid Phase 8 market-regime profiles are attached.</p></div>
+</body>
+</html>

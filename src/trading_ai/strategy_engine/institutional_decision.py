@@ -41,41 +41,6 @@ class InstitutionalDecision:
     expected_profit: float
     expected_return_pct: float
 
-    distribution_observation_count: int
-
-    historical_var_95: float
-    historical_expected_shortfall_95: float
-
-    parametric_var_95: float
-    parametric_expected_shortfall_95: float
-
-    historical_var_99: float
-    historical_expected_shortfall_99: float
-
-    downside_deviation: float
-    skewness: float
-    excess_kurtosis: float
-
-    probability_of_large_loss: float
-    probability_of_severe_loss: float
-    probability_of_critical_loss: float
-
-    drawdown_at_risk: float
-    expected_drawdown_shortfall: float
-
-    ulcer_index: float
-    pain_index: float
-
-    omega_ratio: float | None
-    sortino_ratio: float | None
-    gain_to_pain_ratio: float | None
-
-    tail_risk_score: float
-    tail_risk_grade: str
-    tail_risk_severity: str
-
-    distribution_risk_allowed: bool
-
     # -------------------------------------------------
     # Probability and expected-value analytics
     # -------------------------------------------------
@@ -152,6 +117,159 @@ class InstitutionalDecision:
     primary_reason: str
     recommendation: str
 
+    # -------------------------------------------------
+    # Phase 3 distribution and tail-risk analytics
+    # Optional defaults preserve pre-Phase-3 construction APIs.
+    # -------------------------------------------------
+
+    distribution_observation_count: int = 0
+
+    historical_var_95: float = 0.0
+    historical_expected_shortfall_95: float = 0.0
+
+    parametric_var_95: float = 0.0
+    parametric_expected_shortfall_95: float = 0.0
+
+    historical_var_99: float = 0.0
+    historical_expected_shortfall_99: float = 0.0
+
+    downside_deviation: float = 0.0
+    skewness: float = 0.0
+    excess_kurtosis: float = 0.0
+
+    probability_of_large_loss: float = 0.0
+    probability_of_severe_loss: float = 0.0
+    probability_of_critical_loss: float = 0.0
+
+    drawdown_at_risk: float = 0.0
+    expected_drawdown_shortfall: float = 0.0
+
+    ulcer_index: float = 0.0
+    pain_index: float = 0.0
+
+    omega_ratio: float | None = None
+    sortino_ratio: float | None = None
+    gain_to_pain_ratio: float | None = None
+
+    tail_risk_score: float = 0.0
+    tail_risk_grade: str = "N/A"
+    tail_risk_severity: str = "UNKNOWN"
+
+    distribution_risk_allowed: bool = False
+
+    # -------------------------------------------------
+    # Phase 4 risk-surface and sensitivity analytics
+    # Optional defaults preserve all earlier construction APIs.
+    # -------------------------------------------------
+
+    risk_surface_point_count: int = 0
+    risk_surface_worst_case_pnl: float = 0.0
+    risk_surface_best_case_pnl: float = 0.0
+    risk_surface_base_case_pnl: float = 0.0
+    risk_surface_maximum_loss_pct_of_capital: float = 0.0
+    risk_surface_maximum_gain_pct_of_capital: float = 0.0
+
+    risk_surface_worst_price_shock_pct: float = 0.0
+    risk_surface_worst_volatility_shock: float = 0.0
+    risk_surface_worst_time_offset_days: int = 0
+
+    delta_gamma_error_estimate: float = 0.0
+    nonlinear_exposure_score: float = 0.0
+    gamma_risk_score: float = 0.0
+    vega_risk_score: float = 0.0
+    theta_risk_score: float = 0.0
+
+    risk_surface_score: float = 0.0
+    risk_surface_grade: str = "N/A"
+    risk_surface_severity: str = "UNKNOWN"
+    risk_surface_allowed: bool = False
+
+
+    # -------------------------------------------------
+    # Phase 5 portfolio optimization recommendation
+    # -------------------------------------------------
+
+    optimization_selected: bool = False
+    optimized_allocation_dollars: float = 0.0
+    optimized_allocation_weight_pct: float = 0.0
+    optimized_allocation_multiplier: float = 0.0
+    optimized_expected_profit: float = 0.0
+    optimized_maximum_loss: float = 0.0
+    optimization_marginal_score: float = 0.0
+    optimization_status: str = "UNAVAILABLE"
+
+    frontier_recommended: bool = False
+    frontier_point_id: str | None = None
+    frontier_confidence_score: float = 0.0
+    frontier_recommendation_grade: str = "N/A"
+    frontier_policy_applied: bool = False
+
+    # -------------------------------------------------
+    # Phase 7 walk-forward validation analytics
+    # -------------------------------------------------
+
+    walk_forward_validated: bool = False
+    walk_forward_allowed: bool = True
+    walk_forward_score: float = 0.0
+    walk_forward_grade: str = "N/A"
+    walk_forward_severity: str = "UNKNOWN"
+    walk_forward_oos_return: float = 0.0
+    walk_forward_oos_sharpe: float = 0.0
+    walk_forward_worst_drawdown_pct: float = 0.0
+    walk_forward_parameter_stability: float = 0.0
+    walk_forward_profile: Any = None
+
+    detected_market_regime: str = "UNKNOWN"
+    forecast_market_regime: str = "UNKNOWN"
+    portfolio_market_regime: str = "UNKNOWN"
+    market_regime_score: float = 0.0
+    market_regime_confidence: float = 0.0
+    market_regime_strategy_adjustment: float = 0.0
+    market_regime_ranking_adjustment: float = 0.0
+    market_regime_alignment: str = "NEUTRAL"
+    market_regime_allowed: bool = True
+    market_regime_integration_profile: Any = None
+
+    # -------------------------------------------------
+    # Phase 9 execution analytics and routing intelligence
+    # -------------------------------------------------
+
+    execution_analytics_valid: bool = False
+    execution_analytics_allowed: bool = True
+    execution_analytics_score: float = 0.0
+    execution_analytics_grade: str = "N/A"
+    execution_analytics_severity: str = "UNKNOWN"
+    execution_shortfall_bps: float = 0.0
+    execution_fill_ratio: float = 0.0
+    execution_latency_seconds: float = 0.0
+    execution_benchmark_score: float = 0.0
+    execution_best_benchmark: str = "UNAVAILABLE"
+    recommended_execution_venue: str = "UNAVAILABLE"
+    recommended_execution_broker: str = "UNAVAILABLE"
+    execution_routing_score: float = 0.0
+    execution_integration_profile: Any = None
+
+    # -------------------------------------------------
+    # Phase 6 probability calibration analytics
+    # -------------------------------------------------
+
+    raw_probability_of_profit: float | None = None
+    calibrated_probability_of_profit: float | None = None
+    probability_calibration_adjustment: float = 0.0
+    probability_calibration_segment: str = "UNAVAILABLE"
+    probability_calibration_model_version: str = "UNAVAILABLE"
+    probability_calibration_method: str = "IDENTITY"
+    probability_calibration_score: float = 0.0
+    probability_calibration_grade: str = "N/A"
+    probability_calibration_severity: str = "UNKNOWN"
+    probability_calibration_allowed: bool = True
+    probability_calibration_profile: Any = None
+
+    calibration_adjusted_ranking_score: float = 0.0
+    calibration_ranking_adjustment: float = 0.0
+    probability_calibration_ranking_allowed: bool = True
+    probability_calibration_ranking_profile: Any = None
+
     rejection_reasons: list[str] = field(
         default_factory=list
     )
@@ -176,6 +294,7 @@ class InstitutionalDecision:
     portfolio_position: Any = None
     scenario_profile: Any = None
     distribution_risk_profile: Any = None
+    risk_surface_profile: Any = None
 
     metadata: dict = field(
         default_factory=dict
@@ -216,6 +335,36 @@ class InstitutionalDecision:
 
         self.probability_confidence_grade = str(
             self.probability_confidence_grade or "N/A"
+        ).upper()
+
+        self.tail_risk_grade = str(
+            self.tail_risk_grade or "N/A"
+        ).upper()
+
+        self.tail_risk_severity = str(
+            self.tail_risk_severity or "UNKNOWN"
+        ).upper()
+
+        self.risk_surface_grade = str(
+            self.risk_surface_grade or "N/A"
+        ).upper()
+
+        self.optimization_status = str(
+            self.optimization_status or "UNAVAILABLE"
+        ).upper()
+
+        self.frontier_recommendation_grade = str(
+            self.frontier_recommendation_grade or "N/A"
+        ).upper()
+
+        self.walk_forward_grade = str(self.walk_forward_grade or "N/A").upper()
+        self.walk_forward_severity = str(self.walk_forward_severity or "UNKNOWN").upper()
+
+        self.execution_analytics_grade = str(self.execution_analytics_grade or "N/A").upper()
+        self.execution_analytics_severity = str(self.execution_analytics_severity or "UNKNOWN").upper()
+
+        self.risk_surface_severity = str(
+            self.risk_surface_severity or "UNKNOWN"
         ).upper()
 
         self.rejection_reasons = list(

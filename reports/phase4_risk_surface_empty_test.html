@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Trading AI Backtest Report</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 30px; background: #f7f7f7; color: #222; }
+h1, h2 { color: #111; }
+.card { background: white; padding: 20px; margin-bottom: 25px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.12); overflow-x: auto; }
+.metric { display: inline-block; margin-right: 30px; margin-bottom: 15px; font-size: 18px; vertical-align: top; }
+.metric strong { display: block; font-size: 13px; color: #666; }
+table { width: 100%; border-collapse: collapse; background: white; white-space: nowrap; }
+th, td { border-bottom: 1px solid #ddd; padding: 8px; text-align: left; font-size: 14px; }
+th { background: #eee; }
+.positive { color: #1b5e20; font-weight: bold; }
+.negative { color: #b71c1c; font-weight: bold; }
+.warning { color: #e65100; font-weight: bold; }
+.neutral { color: #455a64; font-weight: bold; }
+.section-note { color: #555; font-size: 14px; margin-bottom: 10px; }
+.heatmap-wrap { overflow-x: auto; margin: 12px 0 20px; }
+.heatmap th, .heatmap td { text-align: center; white-space: nowrap; }
+.neutral { color: #555; }
+</style>
+</head>
+<body>
+<h1>Trading AI Backtest Report</h1>
+
+<div class="card"><h2>Executive Assessment</h2><table><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody><tr><td>Overall rating</td><td>Inconclusive</td></tr><tr><td>Primary recommendation</td><td>Increase historical option-chain coverage before interpreting performance.</td></tr><tr><td>Key weakness</td><td>Small sample size; risk ratios are hidden until enough trades exist.</td></tr></tbody></table></div>
+
+<div class="card">
+<h2>Summary</h2>
+<div class="metric"><strong>Trades</strong>0</div>
+<div class="metric"><strong>Accepted</strong>0</div>
+<div class="metric"><strong>Rejected</strong>0</div>
+<div class="metric"><strong>Wins</strong>0</div>
+<div class="metric"><strong>Losses</strong>0</div>
+<div class="metric"><strong>Win Rate</strong>0.00%</div>
+<div class="metric"><strong>Net PnL</strong>$0.00</div>
+<div class="metric"><strong>Final Equity</strong>$100,000.00</div>
+<div class="metric"><strong>Return</strong>0.00%</div>
+<div class="metric"><strong>Profit Factor</strong>0.00</div>
+<div class="metric"><strong>Expectancy</strong>$0.00</div>
+<div class="metric"><strong>Max Drawdown</strong>0.00%</div>
+<div class="metric"><strong>Max DD $</strong>$0.00</div>
+<div class="metric"><strong>Sharpe</strong>N/A</div>
+<div class="metric"><strong>Sortino</strong>N/A</div>
+<div class="metric"><strong>Calmar</strong>N/A</div>
+<div class="metric"><strong>Payoff Ratio</strong>N/A</div>
+<p class='warning'>Insufficient data: 0 observations. Risk ratios require at least 20.</p>
+</div>
+
+<div class="card"><h2>Historical Option Coverage</h2><table><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody><tr><td>Signals evaluated</td><td>0</td></tr><tr><td>Accepted trades</td><td>0</td></tr><tr><td>Rejected trades</td><td>0</td></tr><tr><td>Historical contracts found</td><td>0</td></tr><tr><td>Historical option coverage</td><td>0.00%</td></tr><tr><td>Rejected: no historical contract</td><td>0</td></tr><tr><td>Rejected: liquidity</td><td>0</td></tr><tr><td>Rejected: spread</td><td>0</td></tr><tr><td>Rejected: volume</td><td>0</td></tr><tr><td>Rejected: open interest</td><td>0</td></tr><tr><td>Historical entry</td><td>0</td></tr><tr><td>Black-Scholes entry fallback</td><td>0</td></tr><tr><td>Historical exit</td><td>0</td></tr><tr><td>Black-Scholes exit</td><td>0</td></tr></tbody></table></div>
+<div class="card"><h2>Historical Coverage by Symbol</h2><p class='section-note'>No data available.</p></div>
+<div class="card"><h2>Historical Coverage by Month</h2><p class='section-note'>No data available.</p></div>
+<div class="card"><h2>Historical Coverage by Option Type</h2><p class='section-note'>No data available.</p></div>
+
+<div class="card">
+<h2>Executive Risk Diagnostics</h2>
+<div class="metric"><strong>VaR 95%</strong>$0.00</div>
+<div class="metric"><strong>CVaR 95%</strong>$0.00</div>
+<div class="metric"><strong>Kelly</strong>0.00%</div>
+<div class="metric"><strong>Half Kelly</strong>0.00%</div>
+<div class="metric"><strong>Kelly Recommendation</strong>Do not increase position sizing</div>
+<div class="metric"><strong>Ulcer Index</strong>0.00</div>
+<div class="metric"><strong>Omega</strong>N/A</div>
+<div class="metric"><strong>Recovery Factor</strong>N/A</div>
+<div class="metric"><strong>Time in Market</strong>0.00%</div>
+<div class="metric"><strong>Longest DD Duration</strong>0 trades</div>
+</div>
+
+
+<div class="card">
+<h2>Distribution Risk &amp; Tail Analytics</h2>
+<p class="section-note">
+No valid Phase 3 distribution-risk profiles are attached to these trades.
+</p>
+</div>
+
+
+
+<div class="card"><h2>Risk Surfaces &amp; Sensitivity Analytics</h2>
+<p class="section-note">No valid Phase 4 risk-surface profiles are attached to these trades.</p></div>
+
+<div class='card'><h2>Portfolio Risk Surface</h2><p class='section-note'>No valid portfolio risk-surface profile is attached.</p></div>
+
+
+<div class="card">
+<h2>Portfolio Risk Optimization</h2>
+<p class="section-note">No valid Phase 5 portfolio-optimization profile is attached.</p>
+</div>
+
+
+
+<div class="card">
+<h2>Portfolio Optimization Frontier &amp; Sensitivity</h2>
+<p class="section-note">No valid Phase 5 optimization-frontier profile is attached.</p>
+</div>
+
+
+<div class="card">
+<h2>Recommended Portfolio Optimization Policy</h2>
+<p class="section-note">No valid Phase 5 frontier policy recommendation is attached.</p>
+</div>
+
+<div class="card"><h2>Probability Calibration</h2><p class="section-note">No valid Phase 6 probability-calibration profiles are attached.</p></div>
+<div class="card"><h2>Calibration Reliability</h2><p class="section-note">Reliability-bin data is unavailable for this report.</p></div>
+
+<div class="card"><h2>Drawdown Recovery</h2><table><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody><tr><td>Recovered</td><td>No drawdown</td></tr></tbody></table></div>
+
+<div class="card"><h2>Equity Curve Chart</h2>
+<div>
+<h3>Equity Curve</h3>
+<svg width="100%" viewBox="0 0 1000 300" preserveAspectRatio="none">
+    <rect x="0" y="0" width="1000" height="260" fill="#fafafa" stroke="#ddd"/>
+    <polyline points="0.00,130.00" fill="none" stroke="#111" stroke-width="2"/>
+    <text x="5" y="15" font-size="12">100,001.00</text>
+    <text x="5" y="255" font-size="12">99,999.00</text>
+</svg>
+</div>
+</div>
+<div class="card"><h2>Underwater Drawdown Chart</h2>
+<div>
+<h3>Underwater Drawdown Curve</h3>
+<svg width="100%" viewBox="0 0 1000 300" preserveAspectRatio="none">
+    <rect x="0" y="0" width="1000" height="260" fill="#fafafa" stroke="#ddd"/>
+    <polyline points="0.00,130.00" fill="none" stroke="#111" stroke-width="2"/>
+    <text x="5" y="15" font-size="12">1.00</text>
+    <text x="5" y="255" font-size="12">-1.00</text>
+</svg>
+</div>
+</div>
+<div class="card"><h2>Monthly Return Chart</h2><p class='section-note'>No non-zero monthly returns.</p></div>
+
+<div class="card"><h2>Advanced Risk Metrics</h2>
+<div class="metric"><strong>Average Win</strong>$0.00</div>
+<div class="metric"><strong>Average Loss</strong>$0.00</div>
+<div class="metric"><strong>Largest Win</strong>$0.00</div>
+<div class="metric"><strong>Largest Loss</strong>$0.00</div>
+<div class="metric"><strong>Gross Profit</strong>$0.00</div>
+<div class="metric"><strong>Gross Loss</strong>$0.00</div>
+<div class="metric"><strong>Longest Win Streak</strong>0</div>
+<div class="metric"><strong>Longest Loss Streak</strong>0</div>
+</div>
+
+<div class="card"><h2>Monthly Return Heatmap</h2><p class='section-note'>No data available.</p></div>
+<div class="card"><h2>Rejected Trade Summary</h2><p class='section-note'>No data available.</p></div>
+<div class="card"><h2>Performance by Symbol</h2><p class='section-note'>No data available.</p></div>
+<div class="card"><h2>Performance by Exit Reason</h2><p class='section-note'>No data available.</p></div>
+<div class="card"><h2>Performance by Signal</h2><p class='section-note'>No data available.</p></div>
+<div class="card"><h2>Regime Performance</h2><p class='section-note'>No data available.</p></div>
+<div class="card"><h2>Score Calibration</h2><p class='section-note'>No data available.</p></div>
+<div class="card"><h2>Performance by Month</h2><p class='section-note'>No data available.</p></div>
+<div class="card"><h2>Performance by Delta Bucket</h2><p class='section-note'>No data available.</p></div>
+<div class="card"><h2>Trade PnL Distribution</h2><table><thead><tr><th>PnL Bucket</th><th>Trades</th><th>Net PnL</th><th>Avg PnL</th></tr></thead><tbody><tr><td>< -10000</td><td>0</td><td>$0.00</td><td>$0.00</td></tr><tr><td>-10000 to -5000</td><td>0</td><td>$0.00</td><td>$0.00</td></tr><tr><td>-5000 to -1000</td><td>0</td><td>$0.00</td><td>$0.00</td></tr><tr><td>-1000 to 0</td><td>0</td><td>$0.00</td><td>$0.00</td></tr><tr><td>0 to 1000</td><td>0</td><td>$0.00</td><td>$0.00</td></tr><tr><td>1000 to 5000</td><td>0</td><td>$0.00</td><td>$0.00</td></tr><tr><td>5000 to 10000</td><td>0</td><td>$0.00</td><td>$0.00</td></tr><tr><td>> 10000</td><td>0</td><td>$0.00</td><td>$0.00</td></tr></tbody></table></div>
+<div class="card"><h2>Rolling 20-Trade Risk Metrics</h2><p class='section-note'>Insufficient data for rolling metrics. Requires at least 20 trades.</p></div>
+<div class="card"><h2>Drawdown Curve</h2><table><thead><tr><th>Date</th><th>Equity</th><th>Peak Equity</th><th>Drawdown $</th><th>Drawdown %</th></tr></thead><tbody><tr><td>START</td><td>$100,000.00</td><td>$100,000.00</td><td>$0.00</td><td>0.00%</td></tr></tbody></table></div>
+<div class="card"><h2>Equity Curve</h2><table><thead><tr><th>Date</th><th>Equity</th><th>PnL</th><th>Symbol</th><th>Exit Reason</th></tr></thead><tbody><tr><td>START</td><td>$100,000.00</td><td>$0.00</td><td>START</td><td>INITIAL_CAPITAL</td></tr></tbody></table></div>
+<div class="card"><h2>Best Trades</h2><p class='section-note'>No data available.</p></div>
+<div class="card"><h2>Worst Trades</h2><p class='section-note'>No data available.</p></div>
+<div class="card"><h2>Rejected Trades</h2><p class='section-note'>No data available.</p></div>
+<div class="card"><h2>Trade Log</h2><p class='section-note'>No data available.</p></div>
+</body>
+</html>

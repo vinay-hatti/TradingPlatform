@@ -1,0 +1,5 @@
+from trading_ai.strategy_engine.probability_calibration_serialization import probability_calibration_to_dict
+
+
+def probability_calibration_dataset_to_dict(value):
+    return probability_calibration_to_dict(value)

@@ -43,6 +43,7 @@ class DecisionCandidateBundle:
     probability_profile: Any = None
     scenario_profile: Any = None
     distribution_risk_profile: Any = None
+    risk_surface_profile: Any = None
 
     strategy_scoring_context: Any = None
     strategy_scoring_result: Any = None
@@ -193,6 +194,18 @@ class DecisionCandidateBundle:
             is not None
             and getattr(
                 self.distribution_risk_profile,
+                "valid",
+                False,
+            )
+        )
+
+
+    @property
+    def has_valid_risk_surface_profile(self) -> bool:
+        return bool(
+            self.risk_surface_profile is not None
+            and getattr(
+                self.risk_surface_profile,
                 "valid",
                 False,
             )

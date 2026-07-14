@@ -4,11 +4,29 @@ from uuid import uuid4
 from trading_ai.strategy_engine.probability_service import (
     ProbabilityService,
 )
+from trading_ai.strategy_engine.probability_calibration_runtime_service import (
+    ProbabilityCalibrationRuntimeService,
+)
+from trading_ai.strategy_engine.probability_calibration_ranking_service import (
+    ProbabilityCalibrationRankingService,
+)
 from trading_ai.strategy_engine.scenario_service import (
     ScenarioService,
 )
 from trading_ai.strategy_engine.distribution_risk_service import (
     DistributionRiskService,
+)
+from trading_ai.strategy_engine.risk_surface_service import (
+    RiskSurfaceService,
+)
+from trading_ai.strategy_engine.portfolio_optimization_service import (
+    PortfolioOptimizationService,
+)
+from trading_ai.strategy_engine.portfolio_optimization_frontier_service import (
+    PortfolioOptimizationFrontierService,
+)
+from trading_ai.strategy_engine.portfolio_optimization_recommendation_service import (
+    PortfolioOptimizationRecommendationService,
 )
 from trading_ai.strategy_engine.decision_candidate_bundle import (
     DecisionCandidateBundle,
@@ -59,6 +77,14 @@ from trading_ai.strategy_engine.strategy_selector import (
 from trading_ai.strategy_engine.strike_optimizer import (
     StrikeOptimizer,
 )
+from trading_ai.strategy_engine.walk_forward_integration_service import (
+    WalkForwardIntegrationService,
+)
+from trading_ai.strategy_engine.market_regime_service import MarketRegimeService
+from trading_ai.strategy_engine.market_regime_forecast_service import MarketRegimeForecastService
+from trading_ai.strategy_engine.market_breadth_service import MarketBreadthService
+from trading_ai.strategy_engine.market_regime_integration_service import MarketRegimeIntegrationService
+from trading_ai.strategy_engine.execution_integration_service import ExecutionIntegrationService
 from trading_ai.strategy_engine.volatility_engine import (
     VolatilityEngine,
 )
@@ -182,6 +208,14 @@ class InstitutionalDecisionEngine:
                 method="UNAVAILABLE",
                 warnings=[f"Probability analysis failed: {exc}"],
             )
+
+    def _probability_calibration_profile(
+        self, raw_probability, *, symbol, strategy, market_regime, direction
+    ):
+        return self.probability_calibration_runtime_service.calibrate(
+            raw_probability, symbol=symbol, strategy=strategy,
+            market_regime=market_regime, direction=direction,
+        )
 
     def _scenario_profile(
         self,
@@ -308,40 +342,48 @@ class InstitutionalDecisionEngine:
         probability_profile,
         scenario_profile,
         strike_candidate,
+        initial_capital=None,
     ):
         """
-        Build a PnL distribution from the best available source.
+        Build institutional distribution-risk analytics from the best
+        available PnL distribution without changing existing candidate APIs.
 
-        Preferred order:
-          1. Candidate historical PnL values
-          2. Scenario stressed PnL values
-          3. Monte Carlo PnL values retained in probability metadata
+        Source precedence:
+          1. Candidate historical PnL observations when sufficient.
+          2. Monte Carlo PnL observations retained by ProbabilityService.
+          3. Scenario/stress PnL observations as a graceful fallback.
+
+        A smaller scenario grid must not replace a richer Monte Carlo sample.
+        The account initial capital is passed separately from position capital.
         """
-        pnl_values = []
 
-        candidate_history = getattr(
-            strike_candidate,
-            "historical_pnl_values",
-            None,
-        )
+        def finite_values(values):
+            if values is None:
+                return []
 
-        if candidate_history is not None:
             try:
-                pnl_values.extend(list(candidate_history))
+                raw_values = list(values)
             except TypeError:
-                pass
+                return []
 
-        scenario_points = getattr(
-            scenario_profile,
-            "scenario_points",
-            [],
-        ) or []
+            cleaned = []
+            for value in raw_values:
+                try:
+                    numeric = float(value)
+                except (TypeError, ValueError):
+                    continue
 
-        pnl_values.extend(
-            [
-                getattr(point, "stressed_pnl", 0.0)
-                for point in scenario_points
-            ]
+                if math.isfinite(numeric):
+                    cleaned.append(numeric)
+
+            return cleaned
+
+        historical_values = finite_values(
+            getattr(
+                strike_candidate,
+                "historical_pnl_values",
+                None,
+            )
         )
 
         probability_metadata = getattr(
@@ -350,14 +392,52 @@ class InstitutionalDecisionEngine:
             {},
         ) or {}
 
-        monte_carlo_pnl_values = (
+        monte_carlo_values = finite_values(
             probability_metadata.get("pnl_values")
             if isinstance(probability_metadata, dict)
             else None
         )
 
-        if not pnl_values and monte_carlo_pnl_values:
-            pnl_values = list(monte_carlo_pnl_values)
+        scenario_values = finite_values(
+            getattr(point, "stressed_pnl", None)
+            for point in (
+                getattr(
+                    scenario_profile,
+                    "scenario_points",
+                    [],
+                )
+                or []
+            )
+        )
+
+        minimum_observations = int(
+            getattr(
+                getattr(
+                    self.distribution_risk_service,
+                    "policy",
+                    None,
+                ),
+                "minimum_observations",
+                2,
+            )
+            or 2
+        )
+
+        if len(historical_values) >= minimum_observations:
+            pnl_values = historical_values
+            distribution_source = "HISTORICAL_CANDIDATE_PNL"
+        elif len(monte_carlo_values) >= minimum_observations:
+            pnl_values = monte_carlo_values
+            distribution_source = "PROBABILITY_MONTE_CARLO_PNL"
+        elif len(historical_values) >= 2:
+            pnl_values = historical_values
+            distribution_source = "HISTORICAL_CANDIDATE_PNL_LIMITED"
+        elif len(monte_carlo_values) >= 2:
+            pnl_values = monte_carlo_values
+            distribution_source = "PROBABILITY_MONTE_CARLO_PNL_LIMITED"
+        else:
+            pnl_values = scenario_values
+            distribution_source = "SCENARIO_STRESS_PNL"
 
         capital_required = self._profile_value(
             payoff_profile,
@@ -373,20 +453,41 @@ class InstitutionalDecisionEngine:
             ),
         )
 
+        account_capital = self._safe_float(initial_capital)
+        if account_capital <= 0:
+            account_capital = self._safe_float(capital_required)
+
         if len(pnl_values) < 2 or capital_required <= 0:
             return None
 
         try:
-            return self.distribution_risk_service.analyze_strategy(
+            profile = self.distribution_risk_service.analyze_strategy(
                 pnl_values=pnl_values,
                 capital_required=capital_required,
                 symbol=symbol,
                 strategy=str(
                     getattr(strategy_candidate, "strategy", "") or ""
                 ),
-                monte_carlo_pnl_values=monte_carlo_pnl_values,
-                initial_capital=capital_required,
+                monte_carlo_pnl_values=(
+                    monte_carlo_values or None
+                ),
+                initial_capital=account_capital,
             )
+
+            metadata = dict(
+                getattr(profile, "metadata", {}) or {}
+            )
+            metadata.update({
+                "distribution_source": distribution_source,
+                "distribution_observation_count": len(pnl_values),
+                "historical_observation_count": len(historical_values),
+                "monte_carlo_observation_count": len(monte_carlo_values),
+                "scenario_observation_count": len(scenario_values),
+                "capital_required": float(capital_required),
+                "initial_capital": float(account_capital),
+            })
+            profile.metadata = metadata
+            return profile
         except Exception as exc:
             return SimpleNamespace(
                 valid=False,
@@ -420,6 +521,123 @@ class InstitutionalDecisionEngine:
                 warnings=[
                     f"Distribution-risk analysis failed: {exc}"
                 ],
+                metadata={
+                    "distribution_source": distribution_source,
+                    "capital_required": float(capital_required),
+                    "initial_capital": float(account_capital),
+                },
+            )
+
+    def _risk_surface_profile(
+        self,
+        symbol,
+        strategy_candidate,
+        underlying_price,
+        volatility_profile,
+        expiration_candidate,
+        greeks_profile,
+        payoff_profile,
+        strike_candidate,
+        initial_capital=None,
+    ):
+        """Build Phase 4 price/IV/time and Greeks sensitivity surfaces."""
+        if greeks_profile is None:
+            return None
+
+        implied_volatility = self._safe_float(
+            getattr(volatility_profile, "current_iv", 0.0)
+            if volatility_profile is not None
+            else 0.0
+        )
+        if implied_volatility <= 0.0:
+            implied_volatility = self._safe_float(
+                getattr(strike_candidate, "implied_volatility", 0.0)
+            )
+        if implied_volatility <= 0.0:
+            implied_volatility = self._safe_float(
+                getattr(strike_candidate, "iv", 0.0)
+            )
+
+        days_to_expiration = int(
+            getattr(
+                expiration_candidate,
+                "dte",
+                getattr(strike_candidate, "dte", 0),
+            )
+            or 0
+        )
+        capital_required = self._profile_value(
+            payoff_profile,
+            "capital_required",
+            self._profile_value(
+                strike_candidate,
+                "capital_required",
+                self._profile_value(strike_candidate, "max_loss", 0.0),
+            ),
+        )
+        account_capital = self._safe_float(initial_capital)
+        if account_capital <= 0.0:
+            account_capital = self._safe_float(capital_required)
+
+        if (
+            self._safe_float(underlying_price) <= 0.0
+            or implied_volatility <= 0.0
+            or days_to_expiration <= 0
+            or account_capital <= 0.0
+        ):
+            return None
+
+        try:
+            return self.risk_surface_service.analyze_strategy(
+                symbol=symbol,
+                strategy=str(
+                    getattr(strategy_candidate, "strategy", "") or ""
+                ),
+                underlying_price=self._safe_float(underlying_price),
+                implied_volatility=implied_volatility,
+                days_to_expiration=days_to_expiration,
+                capital_required=self._safe_float(capital_required),
+                initial_capital=account_capital,
+                net_delta=self._safe_float(
+                    getattr(greeks_profile, "net_delta", 0.0)
+                ),
+                net_gamma=self._safe_float(
+                    getattr(greeks_profile, "net_gamma", 0.0)
+                ),
+                net_vega=self._safe_float(
+                    getattr(greeks_profile, "net_vega", 0.0)
+                ),
+                net_theta=self._safe_float(
+                    getattr(greeks_profile, "net_theta", 0.0)
+                ),
+                net_rho=self._safe_float(
+                    getattr(greeks_profile, "net_rho", 0.0)
+                ),
+            )
+        except Exception as exc:
+            return SimpleNamespace(
+                valid=False,
+                allowed=False,
+                point_count=0,
+                worst_case_pnl=0.0,
+                best_case_pnl=0.0,
+                base_case_pnl=0.0,
+                maximum_loss_pct_of_capital=0.0,
+                maximum_gain_pct_of_capital=0.0,
+                worst_price_shock_pct=0.0,
+                worst_volatility_shock=0.0,
+                worst_time_offset_days=0,
+                delta_gamma_error_estimate=0.0,
+                nonlinear_exposure_score=0.0,
+                gamma_risk_score=0.0,
+                vega_risk_score=0.0,
+                theta_risk_score=0.0,
+                surface_score=0.0,
+                surface_grade="F",
+                risk_severity="UNKNOWN",
+                rejection_reasons=["RISK_SURFACE_ANALYSIS_FAILED"],
+                warnings=[f"Risk-surface analysis failed: {exc}"],
+                metadata={"exception_type": type(exc).__name__},
             )
 
     def __init__(
@@ -437,10 +655,31 @@ class InstitutionalDecisionEngine:
         ranking_engine=None,
         multi_strategy_service=None,
         probability_service=None,
+        probability_calibration_runtime_service=None,
+        probability_calibration_registry=None,
+        probability_calibration_registry_path=None,
+        probability_calibration_profile=None,
+        probability_calibration_ranking_service=None,
         scenario_service=None,
         distribution_risk_service=None,
+        risk_surface_service=None,
+        portfolio_optimization_service=None,
+        portfolio_optimization_frontier_service=None,
+        portfolio_optimization_recommendation_service=None,
+        apply_portfolio_optimization=False,
+        apply_frontier_recommended_policy=False,
         portfolio_service=None,
         portfolio_limits: PortfolioRiskLimits | None = None,
+        walk_forward_profile=None,
+        walk_forward_calibration_profile=None,
+        walk_forward_integration_service=None,
+        market_regime_service=None,
+        market_regime_forecast_service=None,
+        market_breadth_service=None,
+        market_regime_integration_service=None,
+        execution_integration_service=None,
+        execution_fills=None,
+        execution_vwap_by_order=None,
     ):
         self.policy = (
             policy
@@ -509,6 +748,20 @@ class InstitutionalDecisionEngine:
             or ProbabilityService()
         )
 
+        self.probability_calibration_runtime_service = (
+            probability_calibration_runtime_service
+            or ProbabilityCalibrationRuntimeService(
+                registry=probability_calibration_registry,
+                registry_path=probability_calibration_registry_path,
+                profile=probability_calibration_profile,
+            )
+        )
+
+        self.probability_calibration_ranking_service = (
+            probability_calibration_ranking_service
+            or ProbabilityCalibrationRankingService()
+        )
+
         self.scenario_service = (
             scenario_service
             or ScenarioService()
@@ -517,6 +770,46 @@ class InstitutionalDecisionEngine:
         self.distribution_risk_service = (
             distribution_risk_service
             or DistributionRiskService()
+        )
+
+        self.risk_surface_service = (
+            risk_surface_service
+            or RiskSurfaceService()
+        )
+
+        self.walk_forward_profile = walk_forward_profile
+        self.walk_forward_calibration_profile = walk_forward_calibration_profile
+        self.walk_forward_integration_service = (
+            walk_forward_integration_service
+            or WalkForwardIntegrationService()
+        )
+        self.market_regime_service = market_regime_service or MarketRegimeService()
+        self.market_regime_forecast_service = market_regime_forecast_service or MarketRegimeForecastService()
+        self.market_breadth_service = market_breadth_service or MarketBreadthService()
+        self.market_regime_integration_service = market_regime_integration_service or MarketRegimeIntegrationService()
+        self.execution_integration_service = execution_integration_service or ExecutionIntegrationService()
+        self.execution_fills = list(execution_fills or [])
+        self.execution_vwap_by_order = dict(execution_vwap_by_order or {})
+
+        self.portfolio_optimization_service = (
+            portfolio_optimization_service
+            or PortfolioOptimizationService()
+        )
+        self.portfolio_optimization_frontier_service = (
+            portfolio_optimization_frontier_service
+            or PortfolioOptimizationFrontierService(
+                base_policy=self.portfolio_optimization_service.policy
+            )
+        )
+        self.portfolio_optimization_recommendation_service = (
+            portfolio_optimization_recommendation_service
+            or PortfolioOptimizationRecommendationService()
+        )
+        self.apply_portfolio_optimization = bool(
+            apply_portfolio_optimization
+        )
+        self.apply_frontier_recommended_policy = bool(
+            apply_frontier_recommended_policy
         )
 
         if portfolio_service is not None:
@@ -535,6 +828,50 @@ class InstitutionalDecisionEngine:
                 )
             )
 
+    def analyze_market_regimes(self, request):
+        profiles = {}
+        forecasts = {}
+        history_by_symbol = getattr(request, "price_history_by_symbol", {}) or {}
+        for symbol in getattr(request, "symbols", []):
+            try:
+                profile = self.market_regime_service.analyze(symbol=symbol, price_history=history_by_symbol.get(symbol))
+            except TypeError:
+                profile = self.market_regime_service.analyze(history_by_symbol.get(symbol), symbol=symbol)
+            profiles[symbol] = profile
+            try:
+                forecasts[symbol] = self.market_regime_forecast_service.forecast_profile(profile)
+            except Exception:
+                forecasts[symbol] = None
+        try:
+            breadth = self.market_breadth_service.analyze_portfolio(profiles)
+        except Exception:
+            breadth = None
+        return profiles, forecasts, breadth
+
+    def integrate_market_regime_decision(self, decision, regime_profile=None, forecast_profile=None, breadth_profile=None):
+        profile = self.market_regime_integration_service.integrate(
+            symbol=decision.symbol, direction=decision.direction, strategy=decision.strategy,
+            strategy_score=decision.strategy_score, ranking_score=decision.ranking_score,
+            regime_profile=regime_profile, forecast_profile=forecast_profile, breadth_profile=breadth_profile,
+        )
+        decision.detected_market_regime = profile.current_regime
+        decision.forecast_market_regime = profile.forecast_regime
+        decision.portfolio_market_regime = profile.portfolio_regime
+        decision.market_regime_score = profile.regime_score
+        decision.market_regime_confidence = profile.confidence_score
+        decision.market_regime_strategy_adjustment = profile.strategy_score_adjustment
+        decision.market_regime_ranking_adjustment = profile.ranking_score_adjustment
+        decision.market_regime_alignment = profile.strategy_alignment
+        decision.market_regime_allowed = profile.allowed
+        decision.market_regime_integration_profile = profile
+        decision.strategy_score = profile.adapted_strategy_score
+        decision.ranking_score = profile.adapted_ranking_score
+        decision.warnings.extend(x for x in profile.warnings if x not in decision.warnings)
+        decision.rejection_reasons.extend(x for x in profile.rejection_reasons if x not in decision.rejection_reasons)
+        if not profile.allowed: decision.allowed = False
+        decision.metadata["market_regime_integration_profile"] = profile
+        return decision
+
     # ---------------------------------------------------------
     # Public API
     # ---------------------------------------------------------
@@ -545,6 +882,7 @@ class InstitutionalDecisionEngine:
     ) -> DecisionRunResult:
         bundles = []
         diagnostics = []
+        market_regime_profiles, market_regime_forecast_profiles, market_breadth_profile = self.analyze_market_regimes(request)
 
         run_warnings = []
         run_errors = []
@@ -640,11 +978,86 @@ class InstitutionalDecisionEngine:
             reverse=True,
         )
 
+        portfolio_optimization_profile = (
+            self._portfolio_optimization_profile(
+                decisions=decisions,
+                initial_capital=request.initial_capital,
+            )
+        )
+
+        portfolio_optimization_frontier_profile = (
+            self._portfolio_optimization_frontier_profile(
+                decisions=decisions,
+                initial_capital=request.initial_capital,
+            )
+        )
+        portfolio_optimization_recommendation = (
+            self._portfolio_optimization_recommendation(
+                portfolio_optimization_frontier_profile
+            )
+        )
+        if (
+            self.apply_frontier_recommended_policy
+            and portfolio_optimization_recommendation is not None
+            and bool(getattr(portfolio_optimization_recommendation, "valid", False))
+            and bool(getattr(portfolio_optimization_recommendation, "allowed", False))
+        ):
+            recommended_service = PortfolioOptimizationService(
+                policy=portfolio_optimization_recommendation.recommended_policy
+            )
+            portfolio_optimization_profile = recommended_service.optimize(
+                candidates=[d for d in decisions if d.allowed],
+                initial_capital=float(request.initial_capital or 0.0),
+            )
+
+        self._attach_optimization_recommendations(
+            decisions=decisions,
+            profile=portfolio_optimization_profile,
+            apply_selection=self.apply_portfolio_optimization,
+        )
+        self._attach_frontier_recommendation(
+            decisions,
+            portfolio_optimization_frontier_profile,
+            portfolio_optimization_recommendation,
+            self.apply_frontier_recommended_policy,
+        )
+
+        walk_forward_integration_profile = (
+            self.walk_forward_integration_service.evaluate(
+                self.walk_forward_profile,
+                source="INSTITUTIONAL_WALK_FORWARD",
+            )
+        )
+        self.walk_forward_integration_service.attach(
+            decisions, walk_forward_integration_profile
+        )
+
+        for decision in decisions:
+            self.integrate_market_regime_decision(decision, market_regime_profiles.get(decision.symbol), market_regime_forecast_profiles.get(decision.symbol), market_breadth_profile)
+
+        execution_integration_profile = self.execution_integration_service.analyze(
+            self.execution_fills, vwap_by_order=self.execution_vwap_by_order
+        )
+        self.execution_integration_service.attach(decisions, execution_integration_profile)
+
         selected_decisions = [
             decision
             for decision in decisions
-            if decision.selected
+            if decision.selected and decision.allowed
         ]
+
+        portfolio_risk_surface_profile = (
+            self._portfolio_risk_surface_profile(
+                selected_decisions=selected_decisions,
+                initial_capital=request.initial_capital,
+            )
+        )
+
+        if portfolio_risk_surface_profile is not None:
+            for decision in selected_decisions:
+                decision.metadata["portfolio_risk_surface_profile"] = (
+                    portfolio_risk_surface_profile
+                )
 
         rejected_decisions = [
             decision
@@ -694,6 +1107,21 @@ class InstitutionalDecisionEngine:
             candidate_bundles=bundles,
             ranked_opportunities=ranked,
             portfolio_result=portfolio_result,
+            portfolio_risk_surface_profile=portfolio_risk_surface_profile,
+            portfolio_optimization_profile=portfolio_optimization_profile,
+            portfolio_optimization_frontier_profile=portfolio_optimization_frontier_profile,
+            portfolio_optimization_recommendation=portfolio_optimization_recommendation,
+            probability_calibration_model_family=(self.probability_calibration_runtime_service.active_family()[0]),
+            probability_calibration_model_version=(self.probability_calibration_runtime_service.active_family()[1]),
+            walk_forward_profile=walk_forward_integration_profile,
+            walk_forward_calibration_profile=self.walk_forward_calibration_profile,
+            market_regime_profiles=market_regime_profiles,
+            market_regime_forecast_profiles=market_regime_forecast_profiles,
+            market_breadth_profile=market_breadth_profile,
+            execution_integration_profile=execution_integration_profile,
+            execution_aggregation_profile=execution_integration_profile.aggregation_profile,
+            execution_benchmark_profile=execution_integration_profile.benchmark_profile,
+            execution_routing_profile=execution_integration_profile.routing_profile,
             symbol_diagnostics=diagnostics,
             total_symbols=len(
                 request.symbols
@@ -717,6 +1145,16 @@ class InstitutionalDecisionEngine:
                     self.ranking_engine.summary(
                         ranked
                     ),
+                "portfolio_optimization_applied":
+                    self.apply_portfolio_optimization,
+                "frontier_recommended_policy_applied":
+                    self.apply_frontier_recommended_policy,
+                "walk_forward_profile_available":
+                    walk_forward_integration_profile.valid,
+                "walk_forward_allowed":
+                    walk_forward_integration_profile.allowed,
+                "execution_profile_available": execution_integration_profile.valid,
+                "execution_allowed": execution_integration_profile.allowed,
             },
         )
 
@@ -1207,6 +1645,17 @@ class InstitutionalDecisionEngine:
             )
         )
 
+        raw_probability_value = (
+            getattr(probability_profile, "probability_of_profit", None)
+            if probability_profile is not None
+            else None
+        )
+        probability_calibration_profile = self._probability_calibration_profile(
+            raw_probability_value, symbol=symbol,
+            strategy=getattr(strategy_candidate, "strategy", ""),
+            market_regime=market_regime, direction=direction,
+        )
+
         scenario_profile = (
             self._scenario_profile(
                 strike_candidate=(
@@ -1241,6 +1690,31 @@ class InstitutionalDecisionEngine:
                 ),
                 strike_candidate=(
                     strike_candidate
+                ),
+                initial_capital=(
+                    getattr(
+                        request,
+                        "initial_capital",
+                        None,
+                    )
+                ),
+            )
+        )
+
+        risk_surface_profile = (
+            self._risk_surface_profile(
+                symbol=symbol,
+                strategy_candidate=strategy_candidate,
+                underlying_price=underlying_price,
+                volatility_profile=volatility_profile,
+                expiration_candidate=expiration_candidate,
+                greeks_profile=greeks_profile,
+                payoff_profile=payoff_profile,
+                strike_candidate=strike_candidate,
+                initial_capital=getattr(
+                    request,
+                    "initial_capital",
+                    None,
                 ),
             )
         )
@@ -1526,6 +2000,8 @@ class InstitutionalDecisionEngine:
                             payoff_profile,
                         "probability_profile":
                             probability_profile,
+                        "probability_calibration_profile":
+                            probability_calibration_profile,
                     },
                 )
             )
@@ -1598,6 +2074,22 @@ class InstitutionalDecisionEngine:
                 list(
                     getattr(
                         distribution_risk_profile,
+                        "rejection_reasons",
+                        [],
+                    )
+                    or []
+                )
+            )
+
+        if (
+            risk_surface_profile is not None
+            and getattr(risk_surface_profile, "valid", False)
+            and not getattr(risk_surface_profile, "allowed", True)
+        ):
+            rejection_reasons.extend(
+                list(
+                    getattr(
+                        risk_surface_profile,
                         "rejection_reasons",
                         [],
                     )
@@ -1702,6 +2194,14 @@ class InstitutionalDecisionEngine:
                     )
                     or []
                 )
+                + list(
+                    getattr(
+                        risk_surface_profile,
+                        "warnings",
+                        [],
+                    )
+                    or []
+                )
             )
         )
 
@@ -1743,6 +2243,9 @@ class InstitutionalDecisionEngine:
             ),
             distribution_risk_profile=(
                 distribution_risk_profile
+            ),
+            risk_surface_profile=(
+                risk_surface_profile
             ),
             strategy_scoring_context=(
                 context
@@ -2127,8 +2630,10 @@ class InstitutionalDecisionEngine:
         liquidity = bundle.liquidity_profile
         payoff = bundle.payoff_profile
         probability = bundle.probability_profile
+        probability_calibration = (bundle.metadata or {}).get("probability_calibration_profile")
         scenario = bundle.scenario_profile
         distribution_risk = bundle.distribution_risk_profile
+        risk_surface = bundle.risk_surface_profile
 
         selected = bool(
             position is not None
@@ -2160,6 +2665,16 @@ class InstitutionalDecisionEngine:
                 "ranking_score",
                 0.0,
             )
+        )
+
+        calibration_ranking = (
+            self.probability_calibration_ranking_service.evaluate(
+                raw_ranking_score=ranking_score,
+                calibration_profile=probability_calibration,
+            )
+        )
+        ranking_score = self._safe_float(
+            getattr(calibration_ranking, "adjusted_ranking_score", ranking_score)
         )
 
         strategy_score = self._safe_float(
@@ -2208,6 +2723,9 @@ class InstitutionalDecisionEngine:
                         [],
                     )
                     or []
+                )
+                + list(
+                    getattr(calibration_ranking, "rejection_reasons", []) or []
                 )
             )
         )
@@ -2423,20 +2941,11 @@ class InstitutionalDecisionEngine:
                 4,
             ),
             probability_of_profit=(
-                getattr(
-                    probability,
-                    "probability_of_profit",
-                    None,
-                )
-                if (
-                    probability is not None
-                    and getattr(probability, "valid", False)
-                )
-                else getattr(
-                    opportunity,
-                    "probability_of_profit",
-                    None,
-                )
+                getattr(probability_calibration, "calibrated_probability", None)
+                if probability_calibration is not None and getattr(probability_calibration, "valid", False)
+                else (getattr(probability, "probability_of_profit", None)
+                    if probability is not None and getattr(probability, "valid", False)
+                    else getattr(opportunity, "probability_of_profit", None))
             ),
             expected_value=round(
                 self._profile_value(
@@ -2758,6 +3267,80 @@ class InstitutionalDecisionEngine:
                 if distribution_risk is not None
                 else False
             ),
+            risk_surface_point_count=int(
+                self._profile_value(risk_surface, "point_count", 0)
+            ),
+            risk_surface_worst_case_pnl=round(
+                self._profile_value(risk_surface, "worst_case_pnl", 0.0), 2
+            ),
+            risk_surface_best_case_pnl=round(
+                self._profile_value(risk_surface, "best_case_pnl", 0.0), 2
+            ),
+            risk_surface_base_case_pnl=round(
+                self._profile_value(risk_surface, "base_case_pnl", 0.0), 2
+            ),
+            risk_surface_maximum_loss_pct_of_capital=round(
+                self._profile_value(
+                    risk_surface, "maximum_loss_pct_of_capital", 0.0
+                ),
+                4,
+            ),
+            risk_surface_maximum_gain_pct_of_capital=round(
+                self._profile_value(
+                    risk_surface, "maximum_gain_pct_of_capital", 0.0
+                ),
+                4,
+            ),
+            risk_surface_worst_price_shock_pct=round(
+                self._profile_value(risk_surface, "worst_price_shock_pct", 0.0),
+                4,
+            ),
+            risk_surface_worst_volatility_shock=round(
+                self._profile_value(
+                    risk_surface, "worst_volatility_shock", 0.0
+                ),
+                4,
+            ),
+            risk_surface_worst_time_offset_days=int(
+                self._profile_value(
+                    risk_surface, "worst_time_offset_days", 0
+                )
+            ),
+            delta_gamma_error_estimate=round(
+                self._profile_value(
+                    risk_surface, "delta_gamma_error_estimate", 0.0
+                ),
+                4,
+            ),
+            nonlinear_exposure_score=round(
+                self._profile_value(
+                    risk_surface, "nonlinear_exposure_score", 0.0
+                ),
+                2,
+            ),
+            gamma_risk_score=round(
+                self._profile_value(risk_surface, "gamma_risk_score", 0.0), 2
+            ),
+            vega_risk_score=round(
+                self._profile_value(risk_surface, "vega_risk_score", 0.0), 2
+            ),
+            theta_risk_score=round(
+                self._profile_value(risk_surface, "theta_risk_score", 0.0), 2
+            ),
+            risk_surface_score=round(
+                self._profile_value(risk_surface, "surface_score", 0.0), 2
+            ),
+            risk_surface_grade=str(
+                getattr(risk_surface, "surface_grade", "N/A") or "N/A"
+            ),
+            risk_surface_severity=str(
+                getattr(risk_surface, "risk_severity", "UNKNOWN") or "UNKNOWN"
+            ),
+            risk_surface_allowed=bool(
+                getattr(risk_surface, "allowed", False)
+                if risk_surface is not None
+                else False
+            ),
             expected_move=round(
                 self._profile_value(
                     expected_move,
@@ -3008,10 +3591,13 @@ class InstitutionalDecisionEngine:
             probability_profile=probability,
             scenario_profile=scenario,
             distribution_risk_profile=distribution_risk,
+            risk_surface_profile=risk_surface,
             portfolio_position=position,
             metadata={
                 "candidate_metadata":
                     dict(bundle.metadata),
+                "probability_calibration_profile": probability_calibration,
+                "probability_calibration_ranking_profile": calibration_ranking,
             },
         )
 
@@ -3219,6 +3805,128 @@ class InstitutionalDecisionEngine:
         return list(
             dict.fromkeys(reasons)
         )
+
+
+    def _portfolio_optimization_profile(self, decisions, initial_capital):
+        candidates = [
+            decision for decision in decisions
+            if bool(getattr(decision, "allowed", False))
+        ]
+        if not candidates:
+            return None
+        try:
+            return self.portfolio_optimization_service.optimize(
+                candidates=candidates,
+                initial_capital=float(initial_capital or 0.0),
+            )
+        except Exception as exc:
+            return SimpleNamespace(
+                valid=False, allowed=False, allocations=[],
+                rejection_reasons=["PORTFOLIO_OPTIMIZATION_FAILED"],
+                warnings=[f"Portfolio optimization failed: {exc}"],
+                metadata={"exception_type": type(exc).__name__},
+            )
+
+    def _attach_optimization_recommendations(
+        self, decisions, profile, apply_selection=False
+    ):
+        allocation_by_id = {}
+        if profile is not None:
+            allocation_by_id = {
+                str(item.candidate_id): item
+                for item in getattr(profile, "allocations", []) or []
+            }
+        for decision in decisions:
+            allocation = allocation_by_id.get(str(decision.decision_id))
+            selected = allocation is not None
+            decision.optimization_selected = selected
+            decision.optimization_status = (
+                "SELECTED" if selected else
+                "REJECTED" if profile is not None else "UNAVAILABLE"
+            )
+            if selected:
+                decision.optimized_allocation_dollars = float(
+                    allocation.allocation_dollars or 0.0
+                )
+                decision.optimized_allocation_weight_pct = float(
+                    allocation.allocation_weight_pct or 0.0
+                )
+                decision.optimized_allocation_multiplier = float(
+                    allocation.allocation_multiplier or 0.0
+                )
+                decision.optimized_expected_profit = float(
+                    allocation.expected_profit or 0.0
+                )
+                decision.optimized_maximum_loss = float(
+                    allocation.maximum_loss or 0.0
+                )
+                decision.optimization_marginal_score = float(
+                    allocation.marginal_objective_score or 0.0
+                )
+            decision.metadata["portfolio_optimization_profile"] = profile
+            decision.metadata["optimization_selected"] = selected
+            if apply_selection:
+                decision.selected = selected
+
+
+    def _portfolio_optimization_frontier_profile(self, decisions, initial_capital):
+        candidates = [decision for decision in decisions if bool(getattr(decision, "allowed", False))]
+        if not candidates:
+            return None
+        try:
+            return self.portfolio_optimization_frontier_service.analyze(
+                candidates=candidates, initial_capital=float(initial_capital or 0.0)
+            )
+        except Exception as exc:
+            return SimpleNamespace(valid=False, allowed=False, points=[], pareto_points=[], rejection_reasons=["PORTFOLIO_OPTIMIZATION_FRONTIER_FAILED"], warnings=[f"Portfolio optimization frontier failed: {exc}"], metadata={"exception_type": type(exc).__name__})
+
+    def _portfolio_optimization_recommendation(self, frontier_profile):
+        try:
+            return self.portfolio_optimization_recommendation_service.recommend(
+                frontier_profile=frontier_profile,
+                base_policy=self.portfolio_optimization_service.policy,
+            )
+        except Exception as exc:
+            return SimpleNamespace(valid=False, allowed=False, source_point_id=None, confidence_score=0.0, recommendation_grade="F", rejection_reasons=["PORTFOLIO_OPTIMIZATION_RECOMMENDATION_FAILED"], warnings=[f"Portfolio optimization recommendation failed: {exc}"], metadata={"exception_type": type(exc).__name__})
+
+    def _attach_frontier_recommendation(self, decisions, frontier_profile, recommendation, applied):
+        valid = bool(recommendation is not None and getattr(recommendation, "valid", False))
+        for decision in decisions:
+            decision.frontier_recommended = valid and bool(getattr(recommendation, "allowed", False))
+            decision.frontier_point_id = getattr(recommendation, "source_point_id", None)
+            decision.frontier_confidence_score = float(getattr(recommendation, "confidence_score", 0.0) or 0.0)
+            decision.frontier_recommendation_grade = str(getattr(recommendation, "recommendation_grade", "N/A") or "N/A")
+            decision.frontier_policy_applied = bool(applied and decision.frontier_recommended)
+            decision.metadata["portfolio_optimization_frontier_profile"] = frontier_profile
+            decision.metadata["portfolio_optimization_recommendation"] = recommendation
+            decision.metadata["frontier_policy_applied"] = decision.frontier_policy_applied
+
+    def _portfolio_risk_surface_profile(self, selected_decisions, initial_capital):
+        profiles=[]; allocations=[]; metadata=[]
+        for decision in selected_decisions:
+            profile=getattr(decision, "risk_surface_profile", None)
+            if profile is None or not getattr(profile, "valid", False):
+                continue
+            profiles.append(profile)
+            position=getattr(decision, "portfolio_position", None)
+            allocated=float(getattr(position, "capital_required", 0.0) or getattr(decision, "capital_required", 0.0) or 0.0)
+            profile_capital=float(getattr(profile, "capital_required", 0.0) or allocated or 1.0)
+            allocations.append(allocated / profile_capital if profile_capital > 0 else 1.0)
+            metadata.append({
+                "position_id": getattr(position, "position_id", decision.decision_id),
+                "strategy": decision.strategy,
+                "sector": decision.sector,
+                "correlation_group": decision.correlation_group,
+            })
+        if not profiles:
+            return None
+        try:
+            return self.risk_surface_service.analyze_portfolio(
+                profiles=profiles, initial_capital=float(initial_capital or 0.0),
+                allocations=allocations, position_metadata=metadata,
+            )
+        except Exception:
+            return None
 
     # ---------------------------------------------------------
     # General helpers
