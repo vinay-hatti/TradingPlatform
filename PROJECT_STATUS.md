@@ -1,35 +1,34 @@
-# Trading AI Platform
-## Project Status
+# PROJECT_STATUS.md
+
+# Institutional-Grade AI Options Trading Platform
+
 Last Updated: July 2026
 
 ---
 
-# Project Objective
+# Project Vision
 
-Build an institutional-grade AI options trading platform capable of:
+Build a fully autonomous institutional-grade options trading platform capable of:
 
-- Identifying high probability options trades
-- Selecting optimal strategy automatically
-- Selecting optimal strike
-- Selecting optimal expiration
+- Identifying high probability options opportunities
+- Selecting optimal strategy
+- Selecting strikes and expirations
+- Optimizing risk/reward
+- Portfolio optimization
 - Institutional risk management
-- Historical option chain backtesting
-- Institutional reporting
-- Portfolio construction
-- Probability analytics
-- Distribution and tail-risk analytics
-- Future ML-driven strategy optimization
+- Machine learning calibration
+- Walk-forward validation
+- Market regime adaptation
+- Execution analytics
+- Continuous learning
 
-Target users:
+Target quality:
 
-- Professional options traders
-- Portfolio managers
-- Quantitative researchers
-- Hedge funds
+Institutional / Hedge Fund grade
 
 ---
 
-# Technology Stack
+Technology Stack
 
 Python 3.13
 
@@ -57,10 +56,9 @@ matplotlib
 
 ---
 
-# Repository Layout
+Repository Layout
 
-src/
-    trading_ai/
+src/ trading_ai/
 
 scripts/
 
@@ -73,86 +71,84 @@ alembic/
 tests/
 
 ---
+# Overall Architecture
 
-# Current Architecture
-
+```
 Market Data
-
-↓
-
+        │
+        ▼
 Feature Engineering
-
-↓
-
-Signal Engine
-
-↓
-
-Volatility Intelligence
-
-↓
-
-Strategy Selector
-
-↓
-
-Strike Optimizer
-
-↓
-
-Expiration Optimizer
-
-↓
-
-Greeks Optimizer
-
-↓
-
-Liquidity Engine
-
-↓
-
+        │
+        ▼
+Technical Indicators
+        │
+        ▼
+Market Regime Detection
+        │
+        ▼
+Signal Generation
+        │
+        ▼
 Expected Move Engine
-
-↓
-
+        │
+        ▼
+Volatility Intelligence
+        │
+        ▼
+Strategy Selection
+        │
+        ▼
+Strike Optimization
+        │
+        ▼
+Expiration Optimization
+        │
+        ▼
+Greeks Optimization
+        │
+        ▼
+Liquidity Analysis
+        │
+        ▼
 Strategy Scoring
-
-↓
-
+        │
+        ▼
 Institutional Ranking
-
-↓
-
-Portfolio Construction
-
-↓
-
-Decision Engine
-
-↓
-
+        │
+        ▼
+Portfolio Optimization
+        │
+        ▼
 Probability Analytics
-
-↓
-
+        │
+        ▼
 Scenario Analytics
-
-↓
-
+        │
+        ▼
 Distribution Risk
-
-↓
-
-Backtest
-
-↓
-
-Institutional Reporting
+        │
+        ▼
+Risk Surface Analytics
+        │
+        ▼
+Probability Calibration
+        │
+        ▼
+Walk-Forward Validation
+        │
+        ▼
+Market Regime Analytics
+        │
+        ▼
+Execution Analytics
+        │
+        ▼
+Institutional Decision Engine
+```
 
 ---
 
-# Database
+Database
 
 Historical Price History
 
@@ -170,603 +166,955 @@ Alembic migrations operational
 
 ---
 
-# Milestones Completed
+# Overall Progress
 
-## Milestone 1-26
+| Milestone | Status |
+|------------|--------|
+| Milestone 1–28 | ✅ Complete |
+| Milestone 29 Phase 1 | ✅ Complete |
+| Milestone 29 Phase 2 | ✅ Complete |
+| Milestone 29 Phase 3 | ✅ Complete |
+| Milestone 29 Phase 4 | ✅ Complete |
+| Milestone 29 Phase 5 | ✅ Complete |
+| Milestone 29 Phase 6 | ✅ Complete |
+| Milestone 29 Phase 7 | ✅ Complete |
+| Milestone 29 Phase 8 | ✅ Complete |
+| Milestone 29 Phase 9 Step 1 | ✅ Complete |
+| Milestone 29 Phase 9 Step 2 | ✅ Complete |
+| Milestone 29 Phase 9 Step 3 | ✅ Complete |
+| Milestone 29 Phase 9 Step 4 | ✅ Complete |
+| Milestone 29 Phase 9 Step 5 | ⏳ Pending |
+| Milestone 29 Phase 10 | ⏳ Pending |
 
-Completed.
-
-Includes:
-
-Historical data
-
-Indicators
-
-Repository layer
-
-Feature engine
-
-Signal engine
-
-Backtesting
-
-Historical option chain
-
-Reporting
-
-Institutional reporting foundation
-
----
-
-# Milestone 27
-Historical Option Chain Foundation
-
-Status
-
-COMPLETE
-
-Includes
-
-Historical option pricing
-
-Historical option repository
-
-Historical trade generator
-
-Liquidity filters
-
-Historical pricing fallback removal
-
-Historical chain diagnostics
-
-Historical reporting
-
-Known fixes completed
-
-Exit price generation
-
-Historical option coverage
-
-Entry/Exit source reporting
-
-Market regime propagation
-
-Rejected trade reporting
-
-Backtest diagnostics
-
----
-
-# Milestone 28
-Institutional Options Strategy Engine
-
-Status
-
-COMPLETE
-
-Completed phases
-
-Volatility Intelligence
-
-Strategy Selector
-
-Strike Optimizer
-
-Expiration Optimizer
-
-Greeks Optimization
-
-Liquidity Engine
-
-Expected Move Engine
-
-Strategy Scoring
-
-Institutional Ranking
-
-Multi Strategy Support
-
-Portfolio Construction
-
-Institutional Decision Engine
-
-Produces
-
-InstitutionalDecision
-
-DecisionCandidateBundle
-
-Institutional rankings
-
-Portfolio allocations
-
-Strategy approval
-
-Warnings
-
-Rejections
-
-Confidence metrics
+Overall Completion:
+Approximately **94%**
 
 ---
 
 # Milestone 29
 
-Institutional Probability & Risk Analytics
+---
 
---------------------------------------------------
-
-Phase 1
-
-Probability Engine
+# Phase 1 — Institutional Probability Engine
 
 Status
 
-COMPLETE
+✅ COMPLETE
 
-Includes
+Completed Components
 
-Probability of Profit
+- Institutional Probability Engine
+- Probability Policy
+- Probability Profiles
+- Monte Carlo Engine
+- Probability of Profit
+- Expected Value
+- Expected Return
+- Kelly Criterion
+- Win/Loss Distribution
+- Confidence Score
+- Serialization
+- CLI Integration
+- Decision Engine Integration
+- Reporting Integration
+- Regression Tests
 
-Monte Carlo
+Deliverables
 
-Expected Value
-
-Expected Return
-
-Kelly
-
-Win Rate
-
-Confidence
-
-Risk Adjusted Return
-
---------------------------------------------------
-
-Phase 2
-
-Scenario Analytics
-
-Status
-
-COMPLETE
-
-Includes
-
-Stress Testing
-
-Bull
-
-Bear
-
-Crash
-
-Gap
-
-IV Expansion
-
-IV Crush
-
-Time Decay
-
-Scenario Score
-
-Scenario Approval
-
-Scenario Severity
-
-Scenario Reporting
-
-Scenario Service
-
-Scenario Engine
-
-Integrated into Decision Engine
-
---------------------------------------------------
-
-Phase 3
-
-Distribution Risk
+- Policy
+- Engine
+- Service
+- Dataclasses
+- Serialization
+- Tests
+- CLI
+- Reporting
+- Decision Engine Integration
 
 Status
 
-CODE COMPLETE
-
-Integration IN PROGRESS
-
-Includes
-
-Historical VaR
-
-Parametric VaR
-
-Expected Shortfall
-
-CVaR
-
-Skewness
-
-Kurtosis
-
-Drawdown at Risk
-
-Ulcer Index
-
-Pain Index
-
-Omega Ratio
-
-Sortino Ratio
-
-Gain to Pain
-
-Portfolio Tail Risk
-
-Risk Contributions
-
-Tail Risk Score
-
-Tail Risk Grade
-
-Distribution Risk Service
-
-Distribution Risk Engine
-
-Portfolio Tail Risk Engine
-
-Drawdown Risk Engine
-
-Current state
-
-Core engine implemented
-
-Report updated
-
-Decision Engine integration partially complete
-
-Remaining work
-
-Finish Decision Engine integration
-
-Run regression tests
-
-Verify report rendering
+Production Complete
 
 ---
 
-Reporting
-
-Institutional Reporting Engine
+# Phase 2 — Scenario Analytics
 
 Status
 
-Operational
+✅ COMPLETE
 
-Completed
+Completed Components
 
-Executive Dashboard
+- Scenario Engine
+- Scenario Policy
+- Scenario Profiles
+- Bull Scenario
+- Bear Scenario
+- Crash Scenario
+- Gap Scenario
+- High Volatility
+- Low Volatility
+- IV Expansion
+- IV Crush
+- Time Decay
+- Scenario Scoring
+- Decision Engine Integration
+- Reporting Integration
+- Serialization
+- CLI
+- Regression Tests
 
-Performance Metrics
+Deliverables
 
-Equity Curve
+- Policy
+- Engine
+- Service
+- Dataclasses
+- Serialization
+- Tests
+- CLI
+- Reporting
+- Decision Engine Integration
 
-Drawdown
+Status
 
-Rolling Metrics
-
-Sharpe
-
-Sortino
-
-Calmar
-
-Monthly Heatmap
-
-Trade Log
-
-Scenario Reporting
-
-Historical Option Diagnostics
-
-Institutional Decision Summary
-
-Distribution Risk report partially integrated
-
-Remaining
-
-Distribution Risk section validation
-
-Future Risk Surface section
-
-Portfolio Risk section
-
----
-
-Current Backtesting Status
-
-Historical backtesting operational
-
-Historical option pricing operational
-
-Signals generated
-
-Trades generated
-
-Reports generated
-
-Institutional report operational
-
-Known resolved issues
-
-Option price None
-
-Exit price zero
-
-Equity chart baseline
-
-Underwater chart baseline
-
-Market regime UNKNOWN
-
-Historical chain coverage
-
-POP reporting
-
-Historical diagnostics
-
-Remaining
-
-Distribution Risk integration testing
+Production Complete
 
 ---
 
-Major Components
+# Phase 3 — Distribution Risk & Tail Analytics
 
-Completed
+Status
 
-Feature Engine
+✅ COMPLETE
 
-Signal Engine
+Completed Components
 
-Volatility Engine
+Risk Statistics
 
-Strategy Selector
+- Historical VaR
+- Parametric VaR
+- Expected Shortfall
+- Conditional VaR
+- Tail Loss Distribution
+- VaR 95
+- VaR 99
+- ES 95
+- ES 99
 
-Strike Optimizer
+Distribution Analytics
 
-Expiration Optimizer
+- Downside Deviation
+- Semi Variance
+- Semi Deviation
+- Skewness
+- Excess Kurtosis
 
-Greeks
+Risk Ratios
 
-Liquidity
+- Sortino Ratio
+- Omega Ratio
+- Gain-to-Pain Ratio
+- Pain Index
+- Ulcer Index
 
-Expected Move
+Portfolio Risk
 
-Strategy Scoring
+- Portfolio VaR
+- Component VaR
+- Marginal VaR
 
-Institutional Ranking
+Platform Integration
 
-Portfolio Construction
+- Decision Engine Integration
+- Reporting Integration
+- Serialization
+- CLI
+- Regression Suite
 
-Decision Engine
+Deliverables
 
-Probability Engine
+- Policy
+- Engine
+- Service
+- Profiles
+- Serialization
+- Tests
+- CLI
+- Decision Engine Integration
+- Reporting Integration
 
-Scenario Engine
+Status
 
-Distribution Risk Engine
+Production Complete
 
-Historical Pricing
+---
 
-Reporting
+# Phase 4 — Risk Surfaces & Sensitivity Analytics
 
-Still Pending
+Status
 
-Risk Surfaces
+✅ COMPLETE
+
+Completed Components
+
+Risk Surface Analytics
+
+- Price Surface
+- Volatility Surface
+- Time Surface
+- Greeks Surface
 
 Sensitivity Analytics
 
-Portfolio Optimization v2
+- Delta Surface
+- Gamma Surface
+- Theta Surface
+- Vega Surface
+- Rho Surface
 
-Machine Learning
+Portfolio Analytics
 
-Walk Forward Validation
+- Portfolio Sensitivity
+- Portfolio Exposure
+- Nonlinear Risk Approximation
+- Stress Sensitivity
 
-Optimization Framework
+Governance
 
-Live Broker Integration
+- Risk Surface Policy
+- Institutional Validation
+- Serialization
+- Reporting
+- CLI
+- Regression Tests
 
-Paper Trading
+Deliverables
 
-Realtime Scanner
+- Policy
+- Engine
+- Service
+- Profiles
+- Serialization
+- Tests
+- CLI
+- Decision Engine Integration
+- Reporting Integration
 
-Dashboard
+Status
 
-REST API
+Production Complete
 
 ---
 
-Current Decision Engine Pipeline
+# Phase 5 — Portfolio Risk Optimization
+
+Status
+
+✅ COMPLETE
+
+Completed Components
+
+Portfolio Optimization
+
+- Portfolio Construction
+- Allocation Optimization
+- Risk Budgeting
+- Position Sizing
+- Exposure Optimization
+- Portfolio Constraints
+
+Risk Controls
+
+- Maximum Exposure
+- Sector Concentration
+- Strategy Concentration
+- Correlation Groups
+- Reserve Cash
+- Maximum Positions
+- Greek Constraints
+
+Optimization
+
+- Objective Function
+- Risk Penalties
+- Portfolio Scoring
+- Institutional Optimization
+
+Platform Integration
+
+- Decision Engine Integration
+- Reporting Integration
+- Serialization
+- CLI
+- Regression Tests
+
+Deliverables
+
+- Policy
+- Engine
+- Service
+- Profiles
+- Serialization
+- Tests
+- CLI
+- Decision Engine Integration
+- Reporting Integration
+
+Status
+
+Production Complete
+
+---
+
+# Current Platform Capabilities (through Phase 5)
+
+The platform now supports:
+
+- Institutional probability analytics
+- Advanced scenario analysis
+- Tail-risk and distribution analytics
+- Portfolio risk decomposition
+- Risk surface generation
+- Greeks sensitivity analytics
+- Portfolio optimization
+- Institutional scoring
+- Decision engine integration
+- Executive reporting
+- HTML report generation
+- CLI execution
+- Regression validation
+- Modular architecture
+- Policy-driven governance
+
+---
+
+# Phase 6 — Machine Learning Probability Calibration
+
+Status
+
+✅ COMPLETE
+
+Completed Components
+
+Calibration Models
+
+- Platt Scaling
+- Isotonic Regression
+- Identity Fallback
+- Reliability Diagrams
+- Calibration Score
+- Calibration Confidence
+
+Dataset Management
+
+- Historical Calibration Dataset Builder
+- Outcome Inference
+- Dataset Validation
+- Reliability Bins
+
+Segment Calibration
+
+- Global Calibration
+- Strategy Calibration
+- Direction Calibration
+- Market Regime Calibration
+- Multi-Dimensional Segments
+- Runtime Segment Selection
+
+Model Management
+
+- Calibration Registry
+- Version Management
+- Active Model Selection
+- JSON Serialization
+- Runtime Loading
+
+Decision Engine
+
+- Probability Calibration Integration
+- Calibrated Probability Propagation
+- Raw Probability Preservation
+- Calibration-Aware Ranking
+- Institutional Decision Integration
+
+Governance
+
+- Calibration Drift Monitoring
+- Population Stability Index
+- Champion–Challenger Evaluation
+- Controlled Model Promotion
+- Governance Reporting
+
+Platform Integration
+
+- Reporting Integration
+- CLI Integration
+- Regression Tests
+
+Deliverables
+
+- Policy
+- Engine
+- Service
+- Profiles
+- Serialization
+- Tests
+- CLI
+- Decision Engine Integration
+- Reporting Integration
+- Governance
+
+Status
+
+Production Complete
+
+---
+
+# Phase 7 — Walk-Forward Validation & Optimization
+
+Status
+
+✅ COMPLETE
+
+Completed Components
+
+Walk-Forward Engine
+
+- Rolling Walk-Forward
+- Anchored Windows
+- Sliding Windows
+- Purge Windows
+- Embargo Windows
+- Validation Windows
+- Out-of-Sample Testing
+
+Optimization
+
+- Parameter Grid Search
+- Parameter Stability
+- Validation Degradation
+- Out-of-Sample Analytics
+- Window Consistency
+
+Adapters
+
+- Backtest Adapter
+- Portfolio Optimization Adapter
+- Probability Calibration Adapter
+
+Decision Engine
+
+- Walk-Forward Integration
+- Walk-Forward Approval
+- Decision Engine Propagation
+
+Governance
+
+- Parameter Registry
+- Champion–Challenger Evaluation
+- Parameter Promotion
+- Governance Reporting
+
+Platform Integration
+
+- Reporting
+- Performance Charts
+- CLI
+- Regression Suite
+
+Deliverables
+
+- Policy
+- Engine
+- Service
+- Profiles
+- Serialization
+- Tests
+- CLI
+- Decision Engine Integration
+- Reporting Integration
+- Governance
+
+Status
+
+Production Complete
+
+---
+
+# Phase 8 — Market Regime Analytics & Detection
+
+Status
+
+✅ COMPLETE
+
+Completed Components
+
+Regime Detection
+
+- Trend Detection
+- Volatility Classification
+- Momentum Analytics
+- Drawdown Analytics
+- Stress Detection
+- Recovery Detection
+- Transition Detection
+
+Forecasting
+
+- Transition Probability Matrix
+- Persistence Forecasting
+- Multi-Horizon Forecasts
+- Transition Entropy
+
+Portfolio Analytics
+
+- Cross-Asset Breadth
+- Portfolio Regime
+- Regime Dispersion
+- Confidence Dispersion
+- Effective Symbol Count
+- Concentration Analytics
+
+Decision Engine
+
+- Market Regime Integration
+- Strategy Adaptation
+- Ranking Adjustment
+- Portfolio Regime Propagation
+
+Governance
+
+- Regime Drift Monitoring
+- Regime Population Stability Index
+- Champion–Challenger Governance
+- Model Registry
+- Controlled Promotion
+
+Platform Integration
+
+- Reporting
+- Charts
+- CLI
+- Regression Suite
+
+Deliverables
+
+- Policy
+- Engine
+- Service
+- Profiles
+- Serialization
+- Tests
+- CLI
+- Decision Engine Integration
+- Reporting Integration
+- Governance
+
+Status
+
+Production Complete
+
+---
+
+# Phase 9 — Execution Analytics
+
+Status
+
+🟡 IN PROGRESS
+
+---
+
+## Step 1
+
+Status
+
+✅ COMPLETE
+
+Completed
+
+- Execution Analytics Engine
+- Fill Analytics
+- Implementation Shortfall
+- Arrival Slippage
+- Effective Spread
+- Market Impact
+- Timing Cost
+- Fill Ratio
+- Latency Analytics
+- Execution Score
+- Estimated Execution Mode
+- Serialization
+- CLI
+- Tests
+
+---
+
+## Step 2
+
+Status
+
+✅ COMPLETE
+
+Completed
+
+- Order Aggregation
+- Partial Fill Aggregation
+- Venue Comparison
+- Broker Comparison
+- Aggregate Execution Profiles
+- Decision Price Benchmark
+- Benchmark Statistics
+- Serialization
+- CLI
+- Tests
+
+---
+
+## Step 3
+
+Status
+
+✅ COMPLETE
+
+Completed
+
+Benchmark Expansion
+
+- Decision Benchmark
+- Arrival Benchmark
+- Midpoint Benchmark
+- VWAP Benchmark
+
+Routing Intelligence
+
+- Venue Ranking
+- Broker Ranking
+- Routing Confidence
+- Historical Routing Analytics
+- Routing Recommendation
+
+Platform
+
+- Serialization
+- CLI
+- Tests
+
+---
+
+## Step 4
+
+Status
+
+✅ COMPLETE
+
+Completed
+
+Decision Engine
+
+- Execution Integration
+- Execution Profile Propagation
+- Institutional Decision Integration
+- DecisionRunResult Integration
+
+Reporting
+
+- Execution Analytics Section
+- Venue Comparison
+- Broker Comparison
+- Benchmark Comparison
+- Routing Recommendation
+- Execution Charts
+
+Platform
+
+- CLI Integration
+- Regression Tests
+- Backward Compatibility
+
+---
+
+## Step 5
+
+Status
+
+⏳ NOT STARTED
+
+Planned
+
+Execution Governance
+
+- Execution Drift Monitoring
+- Execution Population Stability Index
+- Champion–Challenger Routing Governance
+- Route Registry
+- Controlled Route Promotion
+- Governance Reporting
+- Final Regression Suite
+- Phase 9 Closure
+
+---
+
+# Current Decision Pipeline
 
 Market Data
 
 ↓
 
-Feature Pipeline
+Feature Engineering
 
 ↓
 
-Signal
+Technical Indicators
 
 ↓
 
-Volatility Profile
+Market Regime Detection
 
 ↓
 
-Strategy Candidate
+Signal Generation
 
 ↓
-
-Strike Candidate
-
-↓
-
-Expiration Candidate
-
-↓
-
-Greeks Profile
-
-↓
-
-Liquidity Profile
-
-↓
-
-Expected Move Profile
-
-↓
-
-Scoring Result
-
-↓
-
-Ranking Result
-
-↓
-
-Portfolio Position
-
-↓
-
-Probability Profile
-
-↓
-
-Scenario Profile
-
-↓
-
-Distribution Risk Profile
-
-↓
-
-Institutional Decision
-
----
-
-InstitutionalDecision currently contains
-
-Technical
-
-Volatility
-
-Strategy
-
-Strike
-
-Expiration
-
-Greeks
-
-Liquidity
 
 Expected Move
 
-Scoring
+↓
 
-Ranking
+Volatility Intelligence
 
-Portfolio
+↓
 
-Probability
+Strategy Selection
 
-Scenario
+↓
 
-Distribution Risk (integration in progress)
+Strike Optimization
 
----
+↓
 
-Reporting currently includes
+Expiration Optimization
 
-Executive Summary
+↓
 
-Trade Statistics
+Greeks Optimization
 
-Equity Curve
+↓
 
-Drawdown
+Liquidity Analysis
 
-Rolling Metrics
+↓
 
-Monthly Heatmap
+Strategy Scoring
 
-Institutional Decision
+↓
 
-Scenario Summary
+Institutional Ranking
 
-Scenario Matrix
-
-Historical Diagnostics
-
-Trade Log
-
-Distribution Risk (partial)
-
----
-
-Known TODO
-
-Finish Distribution Risk Decision Engine integration
-
-Validate Distribution Risk report
-
-Milestone 29 Phase 4
-
-Risk Surface Analytics
-
-Price Surface
-
-Volatility Surface
-
-Time Surface
-
-Greeks Shock Surface
-
-Delta Gamma approximation
-
-Portfolio Surface
-
-Risk Attribution
-
-Risk Heatmaps
-
-Phase 5
+↓
 
 Portfolio Optimization
 
-Phase 6
+↓
 
-Machine Learning Probability Calibration
+Probability Analytics
 
-Phase 7
+↓
 
-Walk Forward Optimization
+Scenario Analytics
 
-Phase 8
+↓
 
-Regime Detection
+Distribution Risk Analytics
 
-Phase 9
+↓
+
+Risk Surface Analytics
+
+↓
+
+Probability Calibration
+
+↓
+
+Walk-Forward Validation
+
+↓
+
+Market Regime Analytics
+
+↓
 
 Execution Analytics
 
-Phase 10
+↓
 
-Production Readiness
+Institutional Decision Engine
+
+---
+
+# Current Platform Status
+
+Core Trading Engine
+
+✅ Complete
+
+Portfolio Optimization
+
+✅ Complete
+
+Probability Analytics
+
+✅ Complete
+
+Scenario Analytics
+
+✅ Complete
+
+Distribution Risk
+
+✅ Complete
+
+Risk Surfaces
+
+✅ Complete
+
+Probability Calibration
+
+✅ Complete
+
+Walk-Forward Validation
+
+✅ Complete
+
+Market Regime Analytics
+
+✅ Complete
+
+Execution Analytics
+
+🟡 Complete through Step 4
+
+Execution Governance
+
+⏳ Pending
+
+Production Deployment
+
+⏳ Pending
+
+---
+
+# Overall Progress
+
+Completed
+
+- Milestones 1–28
+- Milestone 29 Phase 1
+- Milestone 29 Phase 2
+- Milestone 29 Phase 3
+- Milestone 29 Phase 4
+- Milestone 29 Phase 5
+- Milestone 29 Phase 6
+- Milestone 29 Phase 7
+- Milestone 29 Phase 8
+- Milestone 29 Phase 9 Step 1
+- Milestone 29 Phase 9 Step 2
+- Milestone 29 Phase 9 Step 3
+- Milestone 29 Phase 9 Step 4
+
+Current Active Work
+
+Milestone 29
+
+Phase 9
+
+Step 5
+
+Execution Governance
+
+Overall Completion
+
+Approximately **94%**
+
+---
+
+# Remaining Roadmap
+
+## Milestone 29 Phase 9
+
+- Execution Drift Monitoring
+- Venue Governance
+- Broker Governance
+- Champion–Challenger Routing
+- Route Registry
+- Governance Reporting
+- Final Regression
+- Phase Closure
+
+---
+
+## Milestone 29 Phase 10
+
+Adaptive Strategy Selection & Ensemble Decision Intelligence
+
+Planned Components
+
+- Adaptive Strategy Selection
+- Ensemble Decision Engine
+- Dynamic Strategy Weighting
+- Strategy Performance Learning
+- Meta-Model Confidence
+- Online Adaptation
+- Strategy Governance
+- Decision Fusion
+- Reporting
+- Institutional Dashboard
+- Final Regression Suite
+
+---
+
+# Production Readiness
+
+Current State
+
+Institutional Research Platform
+
+Capabilities
+
+- Multi-stage Institutional Decision Engine
+- Portfolio Optimization
+- Machine Learning Calibration
+- Walk-Forward Validation
+- Market Regime Analytics
+- Execution Analytics
+- Institutional Reporting
+- HTML Dashboards
+- CLI Automation
+- Full Regression Framework
+
+Remaining Before Production
+
+- Execution Governance
+- Ensemble Decision Intelligence
+- Live Broker Integration
+- Paper Trading Automation
+- Real-Time Monitoring
+- REST API
+- Production Deployment
+- Operational Hardening
+
+---
+
+# Next Milestone
+
+Milestone 29
+
+Phase 9
+
+Step 5
+
+Execution Drift Monitoring & Governance
 
 ---
 
@@ -858,561 +1206,5 @@ Metadata
 
 ---
 
-Next Milestone
 
-Milestone 29
-
-Phase 4
-
-Risk Surfaces and Sensitivity Analytics
-
-to implement
-
-Price Surface
-
-Volatility Surface
-
-Time Surface
-
-Greek Shock Surface
-
-Delta Gamma Approximation
-
-Risk Attribution
-
-Portfolio Risk Surface
-
-Risk Heatmaps
-
-Decision Engine Integration
-
-Institutional Reporting Integration
-
-Regression Tests
-
-
-
-
-------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-Based on everything we've completed together, here's the current milestone status.
-
-# Overall Progress
-
-| Milestone                                                 | Status         | Completion |
-| --------------------------------------------------------- | -------------- | ---------: |
-| Milestone 1–26                                            | ✅ Complete     |       100% |
-| Milestone 27 – Historical Option Chain Foundation         | ✅ Complete     |       100% |
-| Milestone 28 – Institutional Options Strategy Engine      | ✅ Complete     |       100% |
-| Milestone 29 – Institutional Probability & Risk Analytics | 🟡 In Progress |    ~35–40% |
-| Milestone 30+                                             | ⏳ Not Started  |         0% |
-
----
-
-# Milestone 1–26
-
-## Status: ✅ COMPLETE
-
-These milestones established the core trading platform.
-
-### Completed
-
-* Project architecture
-* Repository layer
-* PostgreSQL integration
-* Alembic migrations
-* Historical price storage
-* Technical indicators
-
-  * EMA
-  * RSI
-  * ATR
-  * MACD
-* Feature engineering
-* Signal generation
-* Scoring engine
-* Historical backtesting
-* HTML reporting
-* Experiment runner
-* Repository pattern
-* Configuration framework
-* CLI framework
-* Reporting framework
-
----
-
-# Milestone 27
-
-# Historical Option Chain Foundation
-
-## Status
-
-✅ COMPLETE
-
-### Completed
-
-* Historical option chain database
-* Historical option repository
-* Historical pricing service
-* Historical trade generator
-* Historical liquidity filters
-* Historical option selection
-* Historical pricing diagnostics
-* Historical option reporting
-* Historical backtesting
-* Historical pricing architecture cleanup
-
-### Major fixes completed
-
-* Entry pricing
-* Exit pricing
-* Historical coverage diagnostics
-* Historical option availability
-* Historical rejection reporting
-* Market regime propagation
-* Equity curve fixes
-* Underwater chart fixes
-* Exit price reporting
-* POP placeholder handling
-* Institutional reporting cleanup
-
----
-
-# Milestone 28
-
-# Institutional Options Strategy Engine
-
-## Status
-
-✅ COMPLETE
-
-### Phase 1
-
-Volatility Intelligence
-
-Completed
-
----
-
-### Phase 2
-
-Strategy Selector
-
-Completed
-
----
-
-### Phase 3
-
-Strike Optimizer
-
-Completed
-
----
-
-### Phase 4
-
-Expiration Optimizer
-
-Completed
-
----
-
-### Phase 5
-
-Greeks Optimization
-
-Completed
-
----
-
-### Phase 6
-
-Liquidity Engine
-
-Completed
-
----
-
-### Phase 7
-
-Expected Move Engine
-
-Completed
-
----
-
-### Phase 8
-
-Strategy Scoring Engine
-
-Completed
-
----
-
-### Phase 9
-
-Institutional Ranking Engine
-
-Completed
-
----
-
-### Phase 10
-
-Multi Strategy Support
-
-Completed
-
----
-
-### Phase 11
-
-Institutional Portfolio Construction
-
-Completed
-
----
-
-### Phase 12
-
-Institutional Decision Engine
-
-Completed
-
-Produces:
-
-* InstitutionalDecision
-* DecisionCandidateBundle
-* Strategy approval
-* Rankings
-* Portfolio allocation
-* Warnings
-* Rejections
-* Confidence metrics
-
----
-
-# Milestone 29
-
-# Institutional Probability & Risk Analytics
-
----
-
-## Phase 1
-
-Probability Engine
-
-Status
-
-✅ COMPLETE
-
-Implemented
-
-* Monte Carlo simulation
-* Probability of Profit
-* Expected Value
-* Expected Return
-* Kelly Criterion
-* Win Rate
-* Confidence Score
-* Risk Adjusted Return
-* Decision Engine integration
-
----
-
-## Phase 2
-
-Scenario Analytics
-
-Status
-
-✅ COMPLETE (core implementation)
-
-Implemented
-
-* Bull scenario
-* Bear scenario
-* Crash scenario
-* Gap scenarios
-* IV expansion
-* IV crush
-* Time decay
-* Stress testing
-* Scenario score
-* Scenario approval
-* Scenario severity
-* Scenario reporting
-* Decision Engine integration
-
-Remaining
-
-* Final regression validation after all Phase 3 integration
-
----
-
-## Phase 3
-
-Distribution Risk & Tail Analytics
-
-Status
-
-🟡 In Progress
-
-### Core engines completed
-
-* DistributionRiskPolicy
-* DistributionRiskProfile
-* DistributionRiskEngine
-* DrawdownRiskEngine
-* PortfolioTailRiskEngine
-* DistributionRiskService
-* Serialization
-* Test framework
-
-### Analytics implemented
-
-* Historical VaR
-* Parametric VaR
-* Expected Shortfall
-* CVaR
-* VaR 99
-* Expected Shortfall 99
-* Downside deviation
-* Semi-variance
-* Skewness
-* Excess kurtosis
-* Omega ratio
-* Sortino ratio
-* Gain-to-Pain ratio
-* Profit factor
-* Tail loss probability
-* Large loss probability
-* Drawdown-at-Risk
-* Ulcer Index
-* Pain Index
-* Portfolio VaR
-* Portfolio Expected Shortfall
-* Component VaR
-* Marginal VaR
-* Diversification benefit
-* Tail risk score
-* Tail risk grade
-* Tail risk severity
-
-### Reporting
-
-Partially integrated
-
-### Remaining
-
-* Finish Decision Engine integration
-* Finish report integration validation
-* Regression testing
-* Final commit
-
----
-
-## Phase 4
-
-Risk Surfaces & Sensitivity Analytics
-
-Status
-
-❌ Not Started
-
-Will include
-
-* Price surfaces
-* Volatility surfaces
-* Time decay surfaces
-* Delta/Gamma approximation
-* Greeks shock attribution
-* Nonlinear exposure
-* Portfolio sensitivity
-* Risk heatmaps
-* Decision Engine integration
-* Reporting integration
-
----
-
-## Phase 5
-
-Portfolio Risk Optimization
-
-Not started
-
----
-
-## Phase 6
-
-Probability Calibration
-
-Not started
-
----
-
-## Phase 7
-
-Walk-Forward Validation
-
-Not started
-
----
-
-## Phase 8
-
-Market Regime Analytics
-
-Not started
-
----
-
-## Phase 9
-
-Execution Analytics
-
-Not started
-
----
-
-## Phase 10
-
-Production Readiness
-
-Not started
-
-Includes
-
-* Monitoring
-* Health checks
-* Logging
-* Alerting
-* Performance tuning
-* Deployment automation
-
----
-
-# Reporting Engine Status
-
-## Completed
-
-* Executive Dashboard
-* Performance Metrics
-* Equity Curve
-* Drawdown
-* Underwater chart
-* Monthly Heatmap
-* Rolling Metrics
-* Sharpe
-* Sortino
-* Calmar
-* Historical Option Coverage
-* Scenario Reporting
-* Institutional Decision Summary
-* Rejected Trade Diagnostics
-* Trade Log
-
-## In Progress
-
-* Distribution Risk Summary
-* Tail Analytics Summary
-* Portfolio Risk Summary
-
-## Planned
-
-* Risk Surface Charts
-* Sensitivity Heatmaps
-* Portfolio Risk Dashboard
-* Probability Dashboard
-
----
-
-# Decision Engine Status
-
-Current pipeline:
-
-```
-Market Data
-      ↓
-Feature Engine
-      ↓
-Signal Engine
-      ↓
-Volatility Intelligence
-      ↓
-Strategy Selector
-      ↓
-Strike Optimizer
-      ↓
-Expiration Optimizer
-      ↓
-Greeks Engine
-      ↓
-Liquidity Engine
-      ↓
-Expected Move
-      ↓
-Strategy Scoring
-      ↓
-Institutional Ranking
-      ↓
-Portfolio Construction
-      ↓
-Probability Engine
-      ↓
-Scenario Engine
-      ↓
-Distribution Risk Engine (integration in progress)
-      ↓
-Institutional Decision
-```
-
----
-
-# Current Completion Estimate
-
-| Area                          | Status                      |
-| ----------------------------- | --------------------------- |
-| Core Trading Platform         | ✅ 100%                      |
-| Historical Backtesting        | ✅ 100%                      |
-| Historical Option Chain       | ✅ 100%                      |
-| Institutional Strategy Engine | ✅ 100%                      |
-| Institutional Reporting       | 🟡 ~95%                     |
-| Probability Analytics         | ✅ 100%                      |
-| Scenario Analytics            | ✅ 100% (pending regression) |
-| Distribution Risk Analytics   | 🟡 ~85%                     |
-| Risk Surface Analytics        | ❌ 0%                        |
-| Portfolio Optimization        | ❌ 0%                        |
-| ML Probability Calibration    | ❌ 0%                        |
-| Walk-Forward Optimization     | ❌ 0%                        |
-| Production Readiness          | ❌ 0%                        |
-
----
-
-# Remaining Roadmap
-
-### Immediate (Milestone 29)
-
-* Finish **Phase 3 — Distribution Risk & Tail Analytics**
-
-  * Complete Decision Engine integration
-  * Validate reporting
-  * Run regression tests
-* Build **Phase 4 — Risk Surfaces & Sensitivity Analytics**
-
-### Near-term
-
-* Phase 5 — Portfolio Risk Optimization
-* Phase 6 — Probability Calibration
-* Phase 7 — Walk-Forward Validation
-* Phase 8 — Market Regime Analytics
-* Phase 9 — Execution Analytics
-* Phase 10 — Production Readiness
-
----
-
-## Overall Progress
-
-Considering the planned institutional platform (through Milestone 29 and its phases), the project is approximately **75–80% complete**. The foundational trading engine, historical backtesting, option-chain support, institutional strategy selection, and core risk analytics are in place. The remaining work is concentrated in advanced institutional analytics, portfolio optimization, model calibration, and production hardening rather than core platform capabilities.
 
