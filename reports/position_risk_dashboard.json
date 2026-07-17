@@ -1,0 +1,24 @@
+{
+  "alerts": [],
+  "breaches": [],
+  "continuous_cycle": {},
+  "escalations": [],
+  "greeks_state": {},
+  "position_state": {},
+  "schema_version": "1.0",
+  "summary": {
+    "account_id": null,
+    "critical_breach_count": 0,
+    "current_equity": null,
+    "gross_exposure": null,
+    "intraday_drawdown": null,
+    "kill_switch_activated": false,
+    "monitoring_state": null,
+    "net_exposure": null,
+    "open_breach_count": 0,
+    "portfolio_delta": null,
+    "portfolio_gamma": null,
+    "total_pnl": null,
+    "worst_scenario_loss": null
+  }
+}

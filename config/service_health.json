@@ -1,0 +1,16 @@
+{
+  "heartbeat_stale_after_seconds": 30,
+  "heartbeat_dead_after_seconds": 120,
+  "dependency_stale_after_seconds": 60,
+  "maximum_consecutive_failures": 3,
+  "maximum_degraded_dependencies": 1,
+  "require_critical_services": true,
+  "require_critical_dependencies": true,
+  "reject_unknown_service_state": true,
+  "reject_unknown_dependency_state": true,
+  "persist_runtime_health": true,
+  "minimum_ready_score": 85.0,
+  "minimum_healthy_score": 95.0,
+  "registry_path": "data/operational_resilience/runtime_health_registry.json",
+  "fail_closed": true
+}

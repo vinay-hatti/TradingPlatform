@@ -1,0 +1,20 @@
+{
+  "maximum_order_notional": 100000.0,
+  "maximum_order_premium": 25000.0,
+  "maximum_contracts_per_order": 100,
+  "maximum_equity_quantity": 10000.0,
+  "maximum_order_pct_of_buying_power": 0.25,
+  "maximum_order_pct_of_net_liquidation": 0.1,
+  "minimum_available_buying_power": 0.0,
+  "require_positive_buying_power": true,
+  "require_positive_net_liquidation": true,
+  "require_defined_risk_for_multi_leg_options": false,
+  "reject_undefined_risk_option_orders": false,
+  "reject_zero_or_negative_price": true,
+  "reject_zero_or_negative_quantity": true,
+  "reject_missing_market_price": true,
+  "reject_missing_account_profile": true,
+  "option_contract_multiplier": 100,
+  "minimum_approval_score": 85.0,
+  "fail_closed": true
+}

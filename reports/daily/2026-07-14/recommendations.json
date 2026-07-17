@@ -1,0 +1,32 @@
+{
+  "metadata": {
+    "date": "2026-07-14",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "AMZN",
+      "NVDA",
+      "META",
+      "GOOGL",
+      "TSLA",
+      "AMD",
+      "SPY",
+      "QQQ"
+    ],
+    "symbols_scanned": 10,
+    "candidates": 0,
+    "live_trade_candidates": 0,
+    "live_profile": "aggressive",
+    "min_score": 60.0,
+    "pricing_dte": 30,
+    "start": "2026-01-01",
+    "end": "2026-06-01",
+    "positions_file": "data/portfolio/current_positions.csv"
+  },
+  "portfolio": {
+    "positions": 0,
+    "by_symbol": {},
+    "by_sector": {}
+  },
+  "candidates": []
+}

@@ -1,0 +1,10 @@
+{
+  "report_output": "reports/observability_report.html",
+  "dashboard_output": "reports/observability_dashboard.json",
+  "include_metrics": true,
+  "include_traces": true,
+  "include_slos": true,
+  "include_error_budgets": true,
+  "include_alerts": true,
+  "include_retention": true
+}

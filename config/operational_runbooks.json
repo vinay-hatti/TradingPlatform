@@ -1,0 +1,35 @@
+{
+  "runbooks": [
+    {
+      "runbook_id": "order-management-production",
+      "name": "Order Management Production Operations",
+      "service_name": "order-management",
+      "environment": "PRODUCTION",
+      "owner": "Trading Platform Operations",
+      "reviewer": "Engineering Lead",
+      "version": "1.0.0",
+      "last_reviewed_at": "2026-07-17T12:00:00+00:00",
+      "escalation_path": [
+        "primary-on-call",
+        "engineering-lead",
+        "operations-manager"
+      ],
+      "prerequisites": [
+        "Production access",
+        "Observability dashboard access",
+        "Validated rollback plan"
+      ],
+      "steps": [
+        {
+          "sequence": 1,
+          "title": "Validate runtime health",
+          "action": "Check health, SLO, and alert status.",
+          "validation": "All critical services healthy.",
+          "rollback_action": "Block production change.",
+          "owner_role": "Operations",
+          "estimated_minutes": 5
+        }
+      ]
+    }
+  ]
+}

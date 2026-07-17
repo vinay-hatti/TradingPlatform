@@ -1,0 +1,16 @@
+{
+  "targets": [
+    {
+      "environment": "STAGING",
+      "strategy": "BLUE_GREEN",
+      "active_slot": "blue",
+      "candidate_slot": "green"
+    },
+    {
+      "environment": "PRODUCTION",
+      "strategy": "CANARY",
+      "initial_traffic_percent": 5,
+      "increment_percent": 20
+    }
+  ]
+}

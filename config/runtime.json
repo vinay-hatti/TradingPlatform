@@ -1,0 +1,22 @@
+{
+  "debug": false,
+  "paths": {
+    "data": "data",
+    "reports": "reports",
+    "logs": "logs",
+    "audit": "logs/audit"
+  },
+  "providers": {
+    "broker": "paper",
+    "market_data": "yfinance"
+  },
+  "trading": {
+    "paper_enabled": true,
+    "live_enabled": false,
+    "kill_switch_enabled": true
+  },
+  "feature_flags": {
+    "runtime_safety": true
+  },
+  "required_secrets": []
+}

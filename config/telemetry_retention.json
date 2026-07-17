@@ -1,0 +1,26 @@
+{
+  "metrics": {
+    "telemetry_type": "METRIC",
+    "retention_seconds": 2592000,
+    "archive_before_delete": false,
+    "maximum_records": 100000
+  },
+  "logs": {
+    "telemetry_type": "LOG",
+    "retention_seconds": 1209600,
+    "archive_before_delete": true,
+    "maximum_records": 100000
+  },
+  "traces": {
+    "telemetry_type": "TRACE",
+    "retention_seconds": 604800,
+    "archive_before_delete": true,
+    "maximum_records": 50000
+  },
+  "exports": {
+    "telemetry_type": "EXPORT",
+    "retention_seconds": 259200,
+    "archive_before_delete": false,
+    "maximum_records": 50000
+  }
+}

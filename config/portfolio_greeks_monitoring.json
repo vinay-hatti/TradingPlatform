@@ -1,0 +1,41 @@
+{
+  "maximum_absolute_delta": 25000.0,
+  "maximum_absolute_gamma": 10000.0,
+  "maximum_absolute_vega": 500000.0,
+  "maximum_absolute_theta": 250000.0,
+  "maximum_absolute_rho": 250000.0,
+  "maximum_underlying_delta": 10000.0,
+  "maximum_underlying_gamma": 5000.0,
+  "maximum_underlying_vega": 200000.0,
+  "maximum_scenario_loss": 100000.0,
+  "maximum_scenario_loss_pct_of_equity": 0.25,
+  "maximum_underlying_scenario_loss": 50000.0,
+  "maximum_surface_points": 10000,
+  "require_greeks_for_option_positions": true,
+  "require_underlying_prices": true,
+  "reject_stale_greeks": true,
+  "maximum_greeks_age_seconds": 60,
+  "scenario_underlying_shocks_pct": [
+    -0.2,
+    -0.1,
+    -0.05,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "scenario_volatility_shocks": [
+    -0.2,
+    -0.1,
+    0.1,
+    0.2
+  ],
+  "scenario_time_decay_days": [
+    1,
+    5,
+    10,
+    20
+  ],
+  "minimum_monitoring_score": 85.0,
+  "repository_path": "data/position_monitoring/portfolio_greeks.json",
+  "fail_closed": true
+}

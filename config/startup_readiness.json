@@ -1,0 +1,14 @@
+{
+  "minimum_readiness_score": 90.0,
+  "require_runtime_safety": true,
+  "require_environment_registry": true,
+  "require_active_environment_version": true,
+  "require_secret_governance": true,
+  "require_configuration_fingerprint_match": true,
+  "fail_closed": true,
+  "weights": {
+    "runtime": 0.4,
+    "environment": 0.25,
+    "secrets": 0.35
+  }
+}

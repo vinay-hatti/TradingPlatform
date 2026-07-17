@@ -1,0 +1,36 @@
+{
+  "alerts": {
+    "warning_channels": [
+      "LOG"
+    ],
+    "severe_channels": [
+      "LOG",
+      "EMAIL"
+    ],
+    "critical_channels": [
+      "LOG",
+      "EMAIL",
+      "PAGER"
+    ],
+    "deduplication_window_seconds": 300.0,
+    "persist_alerts": true
+  },
+  "escalation": {
+    "severe_escalation_seconds": 900.0,
+    "critical_escalation_seconds": 300.0,
+    "maximum_escalation_level": 3,
+    "persist_escalations": true
+  },
+  "watchdog": {
+    "cycle_interval_seconds": 15.0,
+    "maximum_cycle_duration_seconds": 60.0,
+    "maximum_consecutive_cycle_failures": 3,
+    "invoke_recovery_on_not_ready": true,
+    "invoke_recovery_on_critical_health": true,
+    "create_incident_when_recovery_fails": true,
+    "require_health_state": true,
+    "persist_cycles": true,
+    "fail_closed": true
+  },
+  "watchdog_repository_path": "data/operational_resilience/watchdog_state.json"
+}

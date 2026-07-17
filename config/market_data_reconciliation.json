@@ -1,0 +1,9 @@
+{
+  "maximum_price_difference_pct": 0.01,
+  "warning_price_difference_pct": 0.005,
+  "maximum_volume_difference_pct": 0.2,
+  "warning_volume_difference_pct": 0.1,
+  "maximum_timestamp_difference_seconds": 60.0,
+  "minimum_reconciliation_score": 85.0,
+  "fail_closed": true
+}

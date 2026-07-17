@@ -1,0 +1,33 @@
+{
+  "maximum_absolute_delta": 10000.0,
+  "maximum_absolute_gamma": 5000.0,
+  "maximum_absolute_vega": 250000.0,
+  "maximum_absolute_theta": 100000.0,
+  "maximum_absolute_rho": 100000.0,
+  "maximum_scenario_loss": 50000.0,
+  "maximum_scenario_loss_pct_of_net_liquidation": 0.2,
+  "maximum_strategy_margin": 100000.0,
+  "maximum_margin_utilization": 0.5,
+  "require_defined_risk_for_multi_leg_options": true,
+  "reject_uncovered_short_options": true,
+  "reject_missing_greeks": true,
+  "reject_missing_underlying_price": true,
+  "option_contract_multiplier": 100,
+  "scenario_underlying_shocks_pct": [
+    -0.2,
+    -0.1,
+    0.1,
+    0.2
+  ],
+  "scenario_volatility_shocks": [
+    -0.1,
+    0.1
+  ],
+  "scenario_time_decay_days": [
+    1,
+    5,
+    20
+  ],
+  "minimum_approval_score": 85.0,
+  "fail_closed": true
+}

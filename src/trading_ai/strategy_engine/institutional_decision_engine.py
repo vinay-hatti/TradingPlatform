@@ -85,6 +85,8 @@ from trading_ai.strategy_engine.market_regime_forecast_service import MarketRegi
 from trading_ai.strategy_engine.market_breadth_service import MarketBreadthService
 from trading_ai.strategy_engine.market_regime_integration_service import MarketRegimeIntegrationService
 from trading_ai.strategy_engine.execution_integration_service import ExecutionIntegrationService
+from trading_ai.strategy_engine.execution_governance_integration_service import ExecutionGovernanceIntegrationService
+from trading_ai.strategy_engine.phase10_decision_integration_service import Phase10DecisionIntegrationService
 from trading_ai.strategy_engine.volatility_engine import (
     VolatilityEngine,
 )
@@ -680,6 +682,22 @@ class InstitutionalDecisionEngine:
         execution_integration_service=None,
         execution_fills=None,
         execution_vwap_by_order=None,
+        execution_governance_integration_service=None,
+        execution_governance_baseline=None,
+        execution_governance_current=None,
+        execution_governance_profile=None,
+        execution_route_registry_profile=None,
+        execution_champion_challenger_profile=None,
+        execution_governance_baseline_name="BASELINE",
+        execution_governance_current_name="CURRENT",
+        phase10_decision_integration_service=None,
+        adaptive_strategy_profiles=None,
+        strategy_learning_profiles=None,
+        dynamic_strategy_weighting_profile=None,
+        ensemble_decision_profiles=None,
+        online_adaptation_profile=None,
+        learning_state_registry_profile=None,
+        learning_state_promotion_profile=None,
     ):
         self.policy = (
             policy
@@ -790,6 +808,26 @@ class InstitutionalDecisionEngine:
         self.execution_integration_service = execution_integration_service or ExecutionIntegrationService()
         self.execution_fills = list(execution_fills or [])
         self.execution_vwap_by_order = dict(execution_vwap_by_order or {})
+        self.execution_governance_integration_service = (
+            execution_governance_integration_service or ExecutionGovernanceIntegrationService()
+        )
+        self.execution_governance_baseline = list(execution_governance_baseline or [])
+        self.execution_governance_current = list(execution_governance_current or [])
+        self.execution_governance_profile = execution_governance_profile
+        self.execution_route_registry_profile = execution_route_registry_profile
+        self.execution_champion_challenger_profile = execution_champion_challenger_profile
+        self.execution_governance_baseline_name = str(execution_governance_baseline_name or "BASELINE")
+        self.execution_governance_current_name = str(execution_governance_current_name or "CURRENT")
+        self.phase10_decision_integration_service = (
+            phase10_decision_integration_service or Phase10DecisionIntegrationService()
+        )
+        self.adaptive_strategy_profiles = adaptive_strategy_profiles or {}
+        self.strategy_learning_profiles = strategy_learning_profiles or {}
+        self.dynamic_strategy_weighting_profile = dynamic_strategy_weighting_profile
+        self.ensemble_decision_profiles = ensemble_decision_profiles or {}
+        self.online_adaptation_profile = online_adaptation_profile
+        self.learning_state_registry_profile = learning_state_registry_profile
+        self.learning_state_promotion_profile = learning_state_promotion_profile
 
         self.portfolio_optimization_service = (
             portfolio_optimization_service
@@ -1040,6 +1078,37 @@ class InstitutionalDecisionEngine:
         )
         self.execution_integration_service.attach(decisions, execution_integration_profile)
 
+        execution_governance_integration_profile = (
+            self.execution_governance_integration_service.analyze(
+                baseline_observations=self.execution_governance_baseline,
+                current_observations=self.execution_governance_current,
+                governance_profile=self.execution_governance_profile,
+                route_registry_profile=self.execution_route_registry_profile,
+                champion_challenger_profile=self.execution_champion_challenger_profile,
+                baseline_name=self.execution_governance_baseline_name,
+                current_name=self.execution_governance_current_name,
+            )
+        )
+        self.execution_governance_integration_service.attach(
+            decisions, execution_governance_integration_profile
+        )
+
+        phase10_decision_integration_profiles = (
+            self.phase10_decision_integration_service.analyze(
+                decisions,
+                adaptive_profiles=self.adaptive_strategy_profiles,
+                learning_profiles=self.strategy_learning_profiles,
+                dynamic_strategy_weighting_profile=self.dynamic_strategy_weighting_profile,
+                ensemble_profiles=self.ensemble_decision_profiles,
+                online_adaptation_profile=self.online_adaptation_profile,
+                learning_state_registry_profile=self.learning_state_registry_profile,
+                learning_state_promotion_profile=self.learning_state_promotion_profile,
+            )
+        )
+        self.phase10_decision_integration_service.attach(
+            decisions, phase10_decision_integration_profiles
+        )
+
         selected_decisions = [
             decision
             for decision in decisions
@@ -1122,6 +1191,18 @@ class InstitutionalDecisionEngine:
             execution_aggregation_profile=execution_integration_profile.aggregation_profile,
             execution_benchmark_profile=execution_integration_profile.benchmark_profile,
             execution_routing_profile=execution_integration_profile.routing_profile,
+            execution_governance_integration_profile=execution_governance_integration_profile,
+            execution_governance_profile=execution_governance_integration_profile.execution_governance_profile,
+            execution_route_registry_profile=execution_governance_integration_profile.execution_route_registry_profile,
+            execution_champion_challenger_profile=execution_governance_integration_profile.execution_champion_challenger_profile,
+            adaptive_strategy_profiles=self.adaptive_strategy_profiles,
+            strategy_learning_profiles=self.strategy_learning_profiles,
+            dynamic_strategy_weighting_profile=self.dynamic_strategy_weighting_profile,
+            ensemble_decision_profiles=self.ensemble_decision_profiles,
+            online_adaptation_profile=self.online_adaptation_profile,
+            learning_state_registry_profile=self.learning_state_registry_profile,
+            learning_state_promotion_profile=self.learning_state_promotion_profile,
+            phase10_decision_integration_profiles=phase10_decision_integration_profiles,
             symbol_diagnostics=diagnostics,
             total_symbols=len(
                 request.symbols
@@ -1155,6 +1236,15 @@ class InstitutionalDecisionEngine:
                     walk_forward_integration_profile.allowed,
                 "execution_profile_available": execution_integration_profile.valid,
                 "execution_allowed": execution_integration_profile.allowed,
+                "execution_governance_profile_available": execution_governance_integration_profile.governance_available,
+                "execution_governance_allowed": execution_governance_integration_profile.allowed,
+                "execution_governance_score": execution_governance_integration_profile.governance_score,
+                "execution_route_registry_available": execution_governance_integration_profile.route_registry_available,
+                "execution_route_promotion_recommended": execution_governance_integration_profile.route_promotion_recommended,
+                "phase10_profile_count": len(phase10_decision_integration_profiles),
+                "phase10_allowed_count": sum(1 for profile in phase10_decision_integration_profiles.values() if profile.allowed),
+                "phase10_ensemble_profile_count": len(self.ensemble_decision_profiles),
+                "phase10_learning_state_available": self.learning_state_registry_profile is not None,
             },
         )
 

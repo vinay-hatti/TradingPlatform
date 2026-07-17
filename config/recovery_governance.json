@@ -1,0 +1,29 @@
+{
+  "workflow": {
+    "maximum_recovery_attempts": 3,
+    "recovery_cooldown_seconds": 30.0,
+    "verification_timeout_seconds": 60.0,
+    "require_post_recovery_health_check": true,
+    "open_incident_on_exhaustion": true,
+    "persist_workflow_state": true,
+    "fail_closed": true
+  },
+  "restart": {
+    "maximum_restarts_per_window": 3,
+    "restart_window_seconds": 900.0,
+    "minimum_restart_interval_seconds": 60.0,
+    "require_manual_approval_for_critical_services": false,
+    "allow_automatic_restart": true,
+    "restart_timeout_seconds": 120.0,
+    "fail_closed": true
+  },
+  "incident": {
+    "default_severity": "SEVERE",
+    "critical_service_severity": "CRITICAL",
+    "auto_assign_role": "ON_CALL_OPERATIONS",
+    "acknowledge_timeout_seconds": 300.0,
+    "resolution_timeout_seconds": 3600.0,
+    "persist_incidents": true
+  },
+  "repository_path": "data/operational_resilience/recovery_state.json"
+}

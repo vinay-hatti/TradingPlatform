@@ -1,0 +1,9 @@
+{
+  "output": "reports/broker_operational_report.html",
+  "include_authentication": true,
+  "include_account_readiness": true,
+  "include_order_execution": true,
+  "include_fill_and_commission_summary": true,
+  "include_position_reconciliation": true,
+  "include_diagnostics": true
+}

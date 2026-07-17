@@ -1,0 +1,26 @@
+{
+  "benchmarks": [
+    {
+      "benchmark_id": "readiness-engine-throughput",
+      "category": "PERFORMANCE",
+      "comparison": "GREATER_THAN_OR_EQUAL",
+      "duration_seconds": 0.0002705829974729568,
+      "metric_name": "operations_per_second",
+      "notes": "Synthetic governance evaluation benchmark.",
+      "observed_value": 74142720.14362565,
+      "passed": true,
+      "threshold_value": 10000.0
+    },
+    {
+      "benchmark_id": "report-build-latency",
+      "category": "PERFORMANCE",
+      "comparison": "LESS_THAN_OR_EQUAL",
+      "duration_seconds": 4.287500632926822e-05,
+      "metric_name": "seconds",
+      "notes": "Synthetic final-report build latency.",
+      "observed_value": 3.9708014810457826e-05,
+      "passed": true,
+      "threshold_value": 1.0
+    }
+  ]
+}

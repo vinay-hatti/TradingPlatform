@@ -1,0 +1,16 @@
+{
+  "require_runbook_for_production": true,
+  "require_dr_plan_for_production": true,
+  "require_compliance_evidence": true,
+  "require_owner_and_reviewer": true,
+  "maximum_runbook_age_days": 180,
+  "maximum_dr_test_age_days": 90,
+  "maximum_unresolved_critical_findings": 0,
+  "minimum_compliance_score": 0.95,
+  "minimum_dr_readiness_score": 0.95,
+  "require_incident_escalation_path": true,
+  "require_backup_validation": true,
+  "require_restore_validation": true,
+  "require_rto_rpo": true,
+  "require_production_change_record": true
+}

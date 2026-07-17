@@ -1,0 +1,18 @@
+{
+  "timezone": "America/New_York",
+  "premarket_open": "04:00",
+  "regular_open": "09:30",
+  "regular_close": "16:00",
+  "afterhours_close": "20:00",
+  "weekdays": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "holidays": [],
+  "early_closes": {},
+  "allow_premarket": true,
+  "allow_afterhours": true
+}

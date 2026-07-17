@@ -1,0 +1,18 @@
+{
+  "benchmarks": [
+    {
+      "benchmark_id": "decision-engine-latency",
+      "category": "PERFORMANCE",
+      "metric_name": "p95_latency_ms",
+      "threshold_value": 250,
+      "comparison": "LESS_THAN_OR_EQUAL"
+    },
+    {
+      "benchmark_id": "deployment-readiness-evaluation",
+      "category": "PERFORMANCE",
+      "metric_name": "evaluation_seconds",
+      "threshold_value": 5,
+      "comparison": "LESS_THAN_OR_EQUAL"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "profiles": [
+    {
+      "name": "DEVELOPMENT",
+      "environment_type": "NON_PRODUCTION",
+      "deployment_url": "https://deploy.dev.example",
+      "health_endpoint": "https://dev.example/health",
+      "rollback_endpoint": "https://deploy.dev.example/rollback"
+    },
+    {
+      "name": "PRODUCTION",
+      "environment_type": "PRODUCTION",
+      "deployment_url": "https://deploy.prod.example",
+      "health_endpoint": "https://prod.example/health",
+      "rollback_endpoint": "https://deploy.prod.example/rollback",
+      "approval_chain": [
+        "engineering-lead",
+        "operations"
+      ]
+    }
+  ]
+}

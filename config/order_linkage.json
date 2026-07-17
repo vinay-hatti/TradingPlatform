@@ -1,0 +1,21 @@
+{
+  "allowed_group_types": [
+    "PARENT_CHILD",
+    "BRACKET",
+    "OCO"
+  ],
+  "activate_children_on_parent_fill": true,
+  "activate_children_on_parent_partial_fill": false,
+  "cancel_oco_siblings_on_fill": true,
+  "cancel_oco_siblings_on_partial_fill": false,
+  "cancel_children_when_parent_canceled": true,
+  "cancel_children_when_parent_rejected": true,
+  "require_same_account": true,
+  "require_same_root_aggregate": true,
+  "require_exactly_two_oco_members": true,
+  "require_bracket_entry_and_two_exits": true,
+  "maximum_children_per_parent": 16,
+  "maximum_group_members": 32,
+  "group_repository_path": "data/order_management/order_groups.json",
+  "recovery_checkpoint_path": "data/order_management/recovery_checkpoints.json"
+}

@@ -1,0 +1,19 @@
+{
+  "permitted_environments": [
+    "DEVELOPMENT",
+    "INTEGRATION",
+    "QA",
+    "UAT",
+    "PAPER",
+    "STAGING",
+    "PRODUCTION"
+  ],
+  "production_approval_count": 2,
+  "non_production_approval_count": 1,
+  "emergency_approval_count": 1,
+  "require_signed_artifact": true,
+  "require_release_tag": true,
+  "require_rollback_plan": true,
+  "deployment_timeout_seconds": 1800,
+  "minimum_health_score": 0.95
+}

@@ -1,0 +1,529 @@
+{
+  "active_environment_version": null,
+  "allowed": false,
+  "checks": [
+    {
+      "category": "runtime",
+      "message": "Runtime configuration and filesystem safety checks must pass.",
+      "metadata": {
+        "available": true
+      },
+      "name": "runtime_safety",
+      "passed": false,
+      "required": true,
+      "score": 84.62,
+      "severity": "CRITICAL"
+    },
+    {
+      "category": "environment",
+      "message": "Environment configuration must be registered and approved.",
+      "metadata": {
+        "available": false
+      },
+      "name": "environment_registry",
+      "passed": false,
+      "required": true,
+      "score": 0.0,
+      "severity": "CRITICAL"
+    },
+    {
+      "category": "environment",
+      "message": "An active configuration version is required for this environment.",
+      "metadata": {
+        "active_version": null
+      },
+      "name": "active_environment_version",
+      "passed": false,
+      "required": true,
+      "score": 0.0,
+      "severity": "CRITICAL"
+    },
+    {
+      "category": "environment",
+      "message": "Loaded configuration must match the active registered fingerprint.",
+      "metadata": {
+        "loaded": "7c58b7d20c04fee9cd6e7402c2b1b8906425e6a38461f3701580e0e626ebf67b",
+        "registered": null
+      },
+      "name": "configuration_fingerprint",
+      "passed": false,
+      "required": true,
+      "score": 0.0,
+      "severity": "CRITICAL"
+    },
+    {
+      "category": "secrets",
+      "message": "All required credentials must pass health and rotation governance.",
+      "metadata": {
+        "available": true
+      },
+      "name": "secret_governance",
+      "passed": false,
+      "required": true,
+      "score": 85.71,
+      "severity": "CRITICAL"
+    }
+  ],
+  "configuration_fingerprint": "7c58b7d20c04fee9cd6e7402c2b1b8906425e6a38461f3701580e0e626ebf67b",
+  "environment": "production",
+  "environment_profile": null,
+  "environment_score": 0.0,
+  "evaluated_at": "2026-07-14T19:20:15.562893+00:00",
+  "grade": "F",
+  "metadata": {
+    "minimum_readiness_score": 90.0,
+    "required_failure_count": 5,
+    "weights": {
+      "environment": 0.25,
+      "runtime": 0.4,
+      "secrets": 0.35
+    }
+  },
+  "recommendation": "BLOCK_STARTUP",
+  "registered_configuration_fingerprint": null,
+  "rejection_reasons": [
+    "RUNTIME_SAFETY",
+    "ENVIRONMENT_REGISTRY",
+    "ACTIVE_ENVIRONMENT_VERSION",
+    "CONFIGURATION_FINGERPRINT",
+    "SECRET_GOVERNANCE"
+  ],
+  "runtime_profile": {
+    "allowed": false,
+    "checks": [
+      {
+        "category": "configuration",
+        "message": "Environment 'production' is allowed.",
+        "metadata": {},
+        "name": "environment",
+        "passed": true,
+        "required": true,
+        "score": 100.0,
+        "severity": "LOW"
+      },
+      {
+        "category": "configuration",
+        "message": "Debug mode is safe for the selected environment.",
+        "metadata": {},
+        "name": "debug_mode",
+        "passed": true,
+        "required": true,
+        "score": 100.0,
+        "severity": "LOW"
+      },
+      {
+        "category": "trading",
+        "message": "Live trading is restricted to production.",
+        "metadata": {},
+        "name": "live_trading_environment",
+        "passed": true,
+        "required": true,
+        "score": 100.0,
+        "severity": "LOW"
+      },
+      {
+        "category": "trading",
+        "message": "Kill switch is enabled when required.",
+        "metadata": {},
+        "name": "kill_switch",
+        "passed": true,
+        "required": true,
+        "score": 100.0,
+        "severity": "LOW"
+      },
+      {
+        "category": "provider",
+        "message": "Database configuration is present when required.",
+        "metadata": {},
+        "name": "database",
+        "passed": true,
+        "required": true,
+        "score": 100.0,
+        "severity": "LOW"
+      },
+      {
+        "category": "provider",
+        "message": "Broker provider is present when required.",
+        "metadata": {},
+        "name": "broker_provider",
+        "passed": true,
+        "required": true,
+        "score": 100.0,
+        "severity": "LOW"
+      },
+      {
+        "category": "provider",
+        "message": "Market-data provider is present when required.",
+        "metadata": {},
+        "name": "market_data_provider",
+        "passed": true,
+        "required": true,
+        "score": 100.0,
+        "severity": "LOW"
+      },
+      {
+        "category": "filesystem",
+        "message": "Runtime directory is writable: /Users/vinay.hatti/TradingPlatform/data",
+        "metadata": {
+          "path": "/Users/vinay.hatti/TradingPlatform/data"
+        },
+        "name": "data_directory",
+        "passed": true,
+        "required": true,
+        "score": 100.0,
+        "severity": "LOW"
+      },
+      {
+        "category": "filesystem",
+        "message": "Runtime directory is writable: /Users/vinay.hatti/TradingPlatform/reports",
+        "metadata": {
+          "path": "/Users/vinay.hatti/TradingPlatform/reports"
+        },
+        "name": "reports_directory",
+        "passed": true,
+        "required": true,
+        "score": 100.0,
+        "severity": "LOW"
+      },
+      {
+        "category": "filesystem",
+        "message": "Runtime directory is writable: /Users/vinay.hatti/TradingPlatform/logs",
+        "metadata": {
+          "path": "/Users/vinay.hatti/TradingPlatform/logs"
+        },
+        "name": "logs_directory",
+        "passed": true,
+        "required": true,
+        "score": 100.0,
+        "severity": "LOW"
+      },
+      {
+        "category": "filesystem",
+        "message": "Runtime directory is writable: /Users/vinay.hatti/TradingPlatform/logs/audit",
+        "metadata": {
+          "path": "/Users/vinay.hatti/TradingPlatform/logs/audit"
+        },
+        "name": "audit_directory",
+        "passed": true,
+        "required": true,
+        "score": 100.0,
+        "severity": "LOW"
+      },
+      {
+        "category": "secrets",
+        "message": "No plaintext secrets are embedded in production configuration.",
+        "metadata": {
+          "sensitive_paths": [
+            "required_secrets"
+          ]
+        },
+        "name": "plaintext_secrets",
+        "passed": false,
+        "required": true,
+        "score": 0.0,
+        "severity": "CRITICAL"
+      },
+      {
+        "category": "secrets",
+        "message": "All required secrets are resolvable.",
+        "metadata": {
+          "unresolved": [
+            "DATABASE_URL",
+            "POLYGON_API_KEY"
+          ]
+        },
+        "name": "required_secrets",
+        "passed": false,
+        "required": true,
+        "score": 0.0,
+        "severity": "CRITICAL"
+      }
+    ],
+    "configuration": {
+      "audit_directory": "logs/audit",
+      "broker_provider": "paper",
+      "data_directory": "data",
+      "database_url": "<redacted>",
+      "debug": false,
+      "environment": "production",
+      "feature_flags": {
+        "runtime_safety": true
+      },
+      "kill_switch_enabled": true,
+      "live_trading_enabled": false,
+      "logs_directory": "logs",
+      "market_data_provider": "polygon",
+      "metadata": {
+        "project_root": "/Users/vinay.hatti/TradingPlatform"
+      },
+      "paper_trading_enabled": true,
+      "reports_directory": "reports",
+      "required_secrets": [
+        "DATABASE_URL",
+        "POLYGON_API_KEY"
+      ],
+      "source_files": [
+        "config/runtime.json",
+        "config/runtime.production.json"
+      ]
+    },
+    "environment": "production",
+    "evaluated_at": "2026-07-14T19:20:15.562524+00:00",
+    "grade": "C",
+    "metadata": {
+      "failed_required_check_count": 2,
+      "required_check_count": 13
+    },
+    "recommendation": "BLOCK_STARTUP",
+    "rejection_reasons": [
+      "PLAINTEXT_SECRETS",
+      "REQUIRED_SECRETS"
+    ],
+    "resolved_secrets": [
+      {
+        "error": null,
+        "metadata": {},
+        "name": "DATABASE_URL",
+        "provider": "unavailable",
+        "redacted_value": null,
+        "required": true,
+        "resolved": false
+      },
+      {
+        "error": null,
+        "metadata": {},
+        "name": "POLYGON_API_KEY",
+        "provider": "unavailable",
+        "redacted_value": null,
+        "required": true,
+        "resolved": false
+      }
+    ],
+    "score": 84.62,
+    "severity": "SEVERE",
+    "valid": true,
+    "warnings": []
+  },
+  "runtime_score": 84.62,
+  "score": 63.85,
+  "secret_profile": {
+    "allowed": false,
+    "credentials": [
+      {
+        "age_days": 13.8057,
+        "allowed": false,
+        "checks": [
+          {
+            "message": "Credential inventory entry is enabled.",
+            "metadata": {},
+            "name": "enabled",
+            "passed": true,
+            "required": true,
+            "score": 100.0,
+            "severity": "LOW"
+          },
+          {
+            "message": "Credential has an accountable rotation owner.",
+            "metadata": {},
+            "name": "owner",
+            "passed": true,
+            "required": true,
+            "score": 100.0,
+            "severity": "LOW"
+          },
+          {
+            "message": "Credential resolves through an approved secret provider.",
+            "metadata": {
+              "provider": "unavailable"
+            },
+            "name": "provider_resolution",
+            "passed": false,
+            "required": true,
+            "score": 0.0,
+            "severity": "CRITICAL"
+          },
+          {
+            "message": "Credential meets the minimum length policy.",
+            "metadata": {},
+            "name": "minimum_length",
+            "passed": true,
+            "required": true,
+            "score": 100.0,
+            "severity": "LOW"
+          },
+          {
+            "message": "Credential rotation age is within policy.",
+            "metadata": {
+              "age_days": 13.805735680289352
+            },
+            "name": "rotation_age",
+            "passed": true,
+            "required": true,
+            "score": 100.0,
+            "severity": "LOW"
+          },
+          {
+            "message": "Credential is not expired.",
+            "metadata": {
+              "days_until_expiry": 78.19426431971065
+            },
+            "name": "expiry",
+            "passed": true,
+            "required": true,
+            "score": 100.0,
+            "severity": "LOW"
+          },
+          {
+            "message": "Resolved credential matches the registered fingerprint.",
+            "metadata": {},
+            "name": "fingerprint",
+            "passed": true,
+            "required": true,
+            "score": 100.0,
+            "severity": "LOW"
+          }
+        ],
+        "days_until_expiry": 78.1943,
+        "environment": "production",
+        "evaluated_at": "2026-07-14T19:20:15.562802+00:00",
+        "grade": "B",
+        "metadata": {
+          "registered_provider": "environment",
+          "required": true,
+          "version": "1"
+        },
+        "name": "DATABASE_URL",
+        "provider": "unavailable",
+        "recommendation": "BLOCK_CREDENTIAL",
+        "rejection_reasons": [
+          "PROVIDER_RESOLUTION"
+        ],
+        "resolved": false,
+        "rotation_required": false,
+        "score": 85.71,
+        "severity": "MODERATE",
+        "valid": true,
+        "warnings": []
+      },
+      {
+        "age_days": 13.8057,
+        "allowed": false,
+        "checks": [
+          {
+            "message": "Credential inventory entry is enabled.",
+            "metadata": {},
+            "name": "enabled",
+            "passed": true,
+            "required": true,
+            "score": 100.0,
+            "severity": "LOW"
+          },
+          {
+            "message": "Credential has an accountable rotation owner.",
+            "metadata": {},
+            "name": "owner",
+            "passed": true,
+            "required": true,
+            "score": 100.0,
+            "severity": "LOW"
+          },
+          {
+            "message": "Credential resolves through an approved secret provider.",
+            "metadata": {
+              "provider": "unavailable"
+            },
+            "name": "provider_resolution",
+            "passed": false,
+            "required": true,
+            "score": 0.0,
+            "severity": "CRITICAL"
+          },
+          {
+            "message": "Credential meets the minimum length policy.",
+            "metadata": {},
+            "name": "minimum_length",
+            "passed": true,
+            "required": true,
+            "score": 100.0,
+            "severity": "LOW"
+          },
+          {
+            "message": "Credential rotation age is within policy.",
+            "metadata": {
+              "age_days": 13.805735680613425
+            },
+            "name": "rotation_age",
+            "passed": true,
+            "required": true,
+            "score": 100.0,
+            "severity": "LOW"
+          },
+          {
+            "message": "Credential is not expired.",
+            "metadata": {
+              "days_until_expiry": 78.19426431938658
+            },
+            "name": "expiry",
+            "passed": true,
+            "required": true,
+            "score": 100.0,
+            "severity": "LOW"
+          },
+          {
+            "message": "Resolved credential matches the registered fingerprint.",
+            "metadata": {},
+            "name": "fingerprint",
+            "passed": true,
+            "required": true,
+            "score": 100.0,
+            "severity": "LOW"
+          }
+        ],
+        "days_until_expiry": 78.1943,
+        "environment": "production",
+        "evaluated_at": "2026-07-14T19:20:15.562821+00:00",
+        "grade": "B",
+        "metadata": {
+          "registered_provider": "environment",
+          "required": true,
+          "version": "1"
+        },
+        "name": "POLYGON_API_KEY",
+        "provider": "unavailable",
+        "recommendation": "BLOCK_CREDENTIAL",
+        "rejection_reasons": [
+          "PROVIDER_RESOLUTION"
+        ],
+        "resolved": false,
+        "rotation_required": false,
+        "score": 85.71,
+        "severity": "MODERATE",
+        "valid": true,
+        "warnings": []
+      }
+    ],
+    "environment": "production",
+    "evaluated_at": "2026-07-14T19:20:15.562828+00:00",
+    "grade": "B",
+    "healthy_count": 0,
+    "metadata": {
+      "production_fail_closed": true
+    },
+    "recommendation": "BLOCK_STARTUP",
+    "rejected_count": 2,
+    "rejection_reasons": [
+      "DATABASE_URL:PROVIDER_RESOLUTION",
+      "POLYGON_API_KEY:PROVIDER_RESOLUTION"
+    ],
+    "score": 85.71,
+    "secret_count": 2,
+    "severity": "MODERATE",
+    "valid": true,
+    "warning_count": 0,
+    "warnings": []
+  },
+  "secret_score": 85.71,
+  "severity": "CRITICAL",
+  "valid": true,
+  "warnings": []
+}

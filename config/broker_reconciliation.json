@@ -1,0 +1,14 @@
+{
+  "maximum_quantity_difference": 1e-06,
+  "maximum_average_price_difference_pct": 0.01,
+  "maximum_position_quantity_difference": 1e-06,
+  "maximum_cost_basis_difference_pct": 0.01,
+  "maximum_event_age_seconds": 300.0,
+  "require_monotonic_fill_quantity": true,
+  "reject_overfills": true,
+  "reject_negative_fills": true,
+  "require_order_match": true,
+  "require_position_match": true,
+  "minimum_reconciliation_score": 85.0,
+  "fail_closed": true
+}

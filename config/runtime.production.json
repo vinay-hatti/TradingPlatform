@@ -1,0 +1,17 @@
+{
+  "debug": false,
+  "database_url": "${DATABASE_URL}",
+  "providers": {
+    "broker": "paper",
+    "market_data": "polygon"
+  },
+  "trading": {
+    "paper_enabled": true,
+    "live_enabled": false,
+    "kill_switch_enabled": true
+  },
+  "required_secrets": [
+    "DATABASE_URL",
+    "POLYGON_API_KEY"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "default_route": "paper",
+  "allowed_routes": [
+    "paper",
+    "live"
+  ],
+  "allow_route_fallback": false,
+  "require_validated_state_before_routing": true,
+  "require_routed_state_before_submission": true,
+  "require_broker_readiness": true,
+  "require_matching_account_id": true,
+  "require_matching_asset_capability": true,
+  "require_options_capability_for_option_orders": true,
+  "require_live_capability_for_live_orders": true,
+  "minimum_routing_score": 85.0,
+  "routes": [
+    {
+      "route_id": "paper",
+      "broker": "fake",
+      "environment": "paper",
+      "account_id": "PAPER-001",
+      "supports_equities": true,
+      "supports_options": true,
+      "supports_multi_leg_options": true,
+      "supports_live_trading": false,
+      "priority": 10,
+      "enabled": true
+    }
+  ]
+}

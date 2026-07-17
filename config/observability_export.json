@@ -1,0 +1,44 @@
+{
+  "aggregation": {
+    "retention_seconds": 86400.0,
+    "maximum_samples_per_series": 10000,
+    "histogram_boundaries": [
+      0.005,
+      0.01,
+      0.025,
+      0.05,
+      0.1,
+      0.25,
+      0.5,
+      1.0,
+      2.5,
+      5.0,
+      10.0
+    ],
+    "include_created_timestamp": true
+  },
+  "prometheus": {
+    "include_help": true,
+    "include_type": true,
+    "include_timestamps": false,
+    "openmetrics_eof": false,
+    "metric_name_prefix": ""
+  },
+  "logs": {
+    "batch_size": 100,
+    "maximum_buffer_size": 10000,
+    "flush_interval_seconds": 5.0,
+    "failure_mode": "RETAIN",
+    "persist_buffer": true,
+    "maximum_export_attempts": 3
+  },
+  "traces": {
+    "batch_size": 50,
+    "maximum_buffer_size": 5000,
+    "flush_interval_seconds": 5.0,
+    "failure_mode": "RETAIN",
+    "persist_buffer": true,
+    "maximum_export_attempts": 3
+  },
+  "buffer_path": "data/observability/export_buffer.json"
+}

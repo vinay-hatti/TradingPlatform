@@ -1,0 +1,31 @@
+{
+  "allowed_order_types": [
+    "MARKET",
+    "LIMIT",
+    "STOP",
+    "STOP_LIMIT"
+  ],
+  "allowed_time_in_force": [
+    "DAY",
+    "GTC",
+    "IOC",
+    "FOK"
+  ],
+  "default_latency_ms": 100,
+  "minimum_latency_ms": 0,
+  "maximum_latency_ms": 10000,
+  "default_slippage_bps": 2.0,
+  "maximum_slippage_bps": 100.0,
+  "option_contract_commission": 0.65,
+  "equity_per_share_commission": 0.0,
+  "minimum_commission_per_order": 0.0,
+  "maximum_fill_fraction_per_attempt": 1.0,
+  "allow_partial_fills": true,
+  "require_marketable_limit": true,
+  "reject_stale_quotes": true,
+  "maximum_quote_age_seconds": 30,
+  "reject_duplicate_execution_key": true,
+  "persist_execution_records": true,
+  "execution_repository_path": "data/paper_trading/executions.json",
+  "fail_closed": true
+}

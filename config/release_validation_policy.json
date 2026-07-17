@@ -1,0 +1,27 @@
+{
+  "minimum_readiness_score": 0.9,
+  "production_minimum_readiness_score": 0.97,
+  "block_on_critical_finding": true,
+  "require_artifact_exists": true,
+  "require_checksum_match": true,
+  "require_signature_verification": true,
+  "require_dependency_lock": true,
+  "require_zero_vulnerable_dependencies": false,
+  "require_database_compatibility": true,
+  "require_schema_compatibility": true,
+  "require_migration_forward_validation": true,
+  "require_migration_rollback_validation": true,
+  "require_configuration_schema_validation": true,
+  "require_secret_reference_validation": true,
+  "require_smoke_tests": true,
+  "smoke_test_timeout_seconds": 120,
+  "weights": {
+    "contract": 0.2,
+    "artifact": 0.2,
+    "dependencies": 0.2,
+    "compatibility": 0.15,
+    "migrations": 0.1,
+    "configuration": 0.05,
+    "smoke_tests": 0.1
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "decisions_json": "reports/risk_gateway_decisions.json",
+  "output": "reports/risk_gateway_operational_report.html",
+  "include_combined_decisions": true,
+  "include_order_level_risk": true,
+  "include_portfolio_risk": true,
+  "include_options_risk": true,
+  "include_trading_controls": true,
+  "include_diagnostics": true
+}

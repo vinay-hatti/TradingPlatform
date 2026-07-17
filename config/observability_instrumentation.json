@@ -1,0 +1,32 @@
+{
+  "operation": {
+    "record_duration_histogram": true,
+    "record_success_counter": true,
+    "record_failure_counter": true,
+    "emit_start_log": true,
+    "emit_completion_log": true,
+    "emit_failure_log": true,
+    "create_child_span": true,
+    "include_exception_details": true,
+    "metric_prefix": "trading_ai"
+  },
+  "runtime": {
+    "collect_process_uptime": true,
+    "collect_health_score": true,
+    "collect_service_readiness": true,
+    "collect_circuit_state": true,
+    "collect_bulkhead_state": true,
+    "collect_recovery_state": true,
+    "collect_incident_state": true,
+    "collect_watchdog_state": true,
+    "persist_samples": true
+  },
+  "propagation": {
+    "trace_header": "traceparent",
+    "baggage_header": "baggage",
+    "correlation_header": "x-correlation-id",
+    "request_header": "x-request-id",
+    "require_valid_traceparent": true,
+    "propagate_baggage": true
+  }
+}

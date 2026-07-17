@@ -1,0 +1,18 @@
+{
+  "maximum_positions_per_session": 100,
+  "allow_position_netting": true,
+  "allow_scale_in": true,
+  "allow_scale_out": true,
+  "require_positive_mark_price": true,
+  "default_profit_target_pct": 0.25,
+  "default_stop_loss_pct": 0.15,
+  "default_trailing_stop_pct": 0.1,
+  "enable_profit_target_exit": true,
+  "enable_stop_loss_exit": true,
+  "enable_trailing_stop_exit": false,
+  "allow_adjustments": true,
+  "maximum_adjustments_per_position": 3,
+  "position_repository_path": "data/paper_trading/positions.json",
+  "persist_positions": true,
+  "fail_closed": true
+}

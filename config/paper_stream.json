@@ -1,0 +1,22 @@
+{
+  "provider": "paper",
+  "maximum_queue_size": 10000,
+  "maximum_rejected_events": 1000,
+  "require_monotonic_sequence": true,
+  "maximum_sequence_gap": 1000,
+  "minimum_pipeline_score": 85.0,
+  "subscriptions": [
+    {
+      "subscription_id": "paper-core",
+      "symbols": [
+        "AAPL",
+        "MSFT",
+        "AMZN"
+      ],
+      "channels": [
+        "QUOTES",
+        "TRADES"
+      ]
+    }
+  ]
+}

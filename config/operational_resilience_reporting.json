@@ -1,0 +1,9 @@
+{
+  "environment": "paper",
+  "health_registry_path": "data/operational_resilience/runtime_health_registry.json",
+  "resilience_state_path": "data/operational_resilience/resilience_state.json",
+  "recovery_state_path": "data/operational_resilience/recovery_state.json",
+  "watchdog_state_path": "data/operational_resilience/watchdog_state.json",
+  "report_output": "reports/operational_resilience_report.html",
+  "dashboard_output": "reports/operational_resilience_dashboard.json"
+}

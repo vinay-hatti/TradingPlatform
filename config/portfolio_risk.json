@@ -1,0 +1,22 @@
+{
+  "maximum_gross_exposure": 500000.0,
+  "maximum_net_exposure_absolute": 300000.0,
+  "maximum_single_symbol_exposure": 100000.0,
+  "maximum_single_symbol_pct_of_net_liquidation": 0.2,
+  "maximum_sector_exposure": 200000.0,
+  "maximum_sector_pct_of_net_liquidation": 0.35,
+  "maximum_position_quantity_equity": 10000.0,
+  "maximum_position_contracts_option": 500,
+  "maximum_open_positions": 200,
+  "maximum_new_positions_per_order": 8,
+  "maximum_total_buying_power_utilization": 0.75,
+  "minimum_post_trade_buying_power": 0.0,
+  "minimum_post_trade_excess_liquidity": 0.0,
+  "require_account_match": true,
+  "require_sector_classification": false,
+  "require_position_limit_profile": true,
+  "reject_new_position_when_limit_reached": true,
+  "reject_concentration_limit_breaches": true,
+  "minimum_approval_score": 85.0,
+  "fail_closed": true
+}

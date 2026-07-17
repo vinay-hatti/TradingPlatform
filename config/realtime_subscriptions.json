@@ -1,0 +1,24 @@
+{
+  "subscriptions": [
+    {
+      "subscription_id": "core-equities",
+      "provider": "paper",
+      "symbols": [
+        "AAPL",
+        "MSFT",
+        "AMZN"
+      ],
+      "channels": [
+        "QUOTES",
+        "TRADES"
+      ],
+      "asset_class": "EQUITY",
+      "status": "REGISTERED",
+      "created_at": "2026-07-14T00:00:00+00:00",
+      "updated_at": "2026-07-14T00:00:00+00:00",
+      "warnings": [],
+      "rejection_reasons": [],
+      "metadata": {}
+    }
+  ]
+}

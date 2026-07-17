@@ -1,0 +1,31 @@
+{
+  "retry": {
+    "maximum_attempts": 4,
+    "initial_delay_seconds": 0.25,
+    "maximum_delay_seconds": 30.0,
+    "backoff_multiplier": 2.0,
+    "jitter_ratio": 0.1,
+    "retryable_exceptions": [
+      "TimeoutError",
+      "ConnectionError",
+      "OSError"
+    ]
+  },
+  "circuit_breaker": {
+    "failure_threshold": 5,
+    "success_threshold": 2,
+    "recovery_timeout_seconds": 30.0,
+    "rolling_window_seconds": 60.0,
+    "half_open_max_calls": 1
+  },
+  "isolation": {
+    "maximum_concurrent_calls": 10,
+    "maximum_queue_depth": 100,
+    "queue_timeout_seconds": 5.0,
+    "reject_when_saturated": true,
+    "isolate_by_dependency": true,
+    "persist_state": true,
+    "fail_closed": true
+  },
+  "state_repository_path": "data/operational_resilience/resilience_state.json"
+}

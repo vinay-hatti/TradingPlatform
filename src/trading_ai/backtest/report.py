@@ -1986,6 +1986,428 @@ No valid Phase 3 distribution-risk profiles are attached to these trades.
 <p class="section-note"><strong>Rejections:</strong> {rejection_text}</p></div>"""
 
     # ------------------------------------------------------------
+    # Phase 9 Step 5 execution-governance reporting
+    # ------------------------------------------------------------
+    def execution_governance_integration_profile(self, item):
+        profile = self.val(item, "execution_governance_integration_profile", None)
+        if profile is None:
+            metadata = self.val(item, "metadata", {}) or {}
+            if isinstance(metadata, dict):
+                profile = metadata.get("execution_governance_integration_profile")
+        return profile
+
+    def execution_governance_profile(self, item):
+        integration = self.execution_governance_integration_profile(item)
+        profile = self.val(item, "execution_governance_profile", None)
+        if profile is None and integration is not None:
+            profile = self.val(integration, "execution_governance_profile", None)
+        if profile is None:
+            metadata = self.val(item, "metadata", {}) or {}
+            if isinstance(metadata, dict):
+                profile = metadata.get("execution_governance_profile")
+        return profile
+
+    def execution_route_registry_profile(self, item):
+        integration = self.execution_governance_integration_profile(item)
+        profile = self.val(item, "execution_route_registry_profile", None)
+        if profile is None and integration is not None:
+            profile = self.val(integration, "execution_route_registry_profile", None)
+        if profile is None:
+            metadata = self.val(item, "metadata", {}) or {}
+            if isinstance(metadata, dict):
+                profile = metadata.get("execution_route_registry_profile")
+        return profile
+
+    def execution_champion_challenger_profile(self, item):
+        integration = self.execution_governance_integration_profile(item)
+        profile = self.val(item, "execution_champion_challenger_profile", None)
+        if profile is None and integration is not None:
+            profile = self.val(integration, "execution_champion_challenger_profile", None)
+        if profile is None:
+            metadata = self.val(item, "metadata", {}) or {}
+            if isinstance(metadata, dict):
+                profile = metadata.get("execution_champion_challenger_profile")
+        return profile
+
+    def _first_available_profile(self, items, resolver):
+        for item in items or []:
+            profile = resolver(item)
+            if profile is not None:
+                return profile
+        return None
+
+    def execution_governance_summary_html(self, items):
+        integration = self._first_available_profile(items, self.execution_governance_integration_profile)
+        governance = self._first_available_profile(items, self.execution_governance_profile)
+        registry = self._first_available_profile(items, self.execution_route_registry_profile)
+        comparison = self._first_available_profile(items, self.execution_champion_challenger_profile)
+
+        if all(profile is None for profile in (integration, governance, registry, comparison)):
+            return """<div class="card"><h2>Execution Governance</h2><p class="section-note">No valid Phase 9 Step 5 execution-governance profile is attached.</p></div>"""
+
+        valid = bool(self.val(integration, "valid", self.val(governance, "valid", False)))
+        allowed = bool(self.val(integration, "allowed", self.val(governance, "allowed", True)))
+        score = self.val(integration, "governance_score", self.val(governance, "governance_score", None))
+        grade = self.val(integration, "governance_grade", self.val(governance, "governance_grade", "N/A"))
+        severity = str(self.val(integration, "governance_severity", self.val(governance, "drift_severity", "UNKNOWN")) or "UNKNOWN").upper()
+        recommendation = self.val(integration, "governance_recommendation", self.val(governance, "recommendation", "UNAVAILABLE"))
+        aggregate_psi = self.val(integration, "aggregate_psi", self.val(governance, "aggregate_psi", None))
+        maximum_psi = self.val(integration, "maximum_metric_psi", self.val(governance, "maximum_metric_psi", None))
+        deteriorated = self.val(integration, "deteriorated_metric_count", self.val(governance, "deteriorated_metric_count", 0))
+        warnings = list(self.val(integration, "warnings", ()) or ()) + list(self.val(governance, "warnings", ()) or ())
+        rejections = list(self.val(integration, "rejection_reasons", ()) or ()) + list(self.val(governance, "rejection_reasons", ()) or ())
+
+        diagnostics = ""
+        if warnings:
+            diagnostics += "<p class='warning'><strong>Warnings:</strong> " + escape(", ".join(dict.fromkeys(map(str, warnings)))) + "</p>"
+        if rejections:
+            diagnostics += "<p class='negative'><strong>Rejections:</strong> " + escape(", ".join(dict.fromkeys(map(str, rejections)))) + "</p>"
+
+        approval_class = "positive" if allowed else ("negative" if severity in {"SEVERE", "CRITICAL"} else "warning")
+        route_promotion = bool(self.val(integration, "route_promotion_recommended", self.val(comparison, "allowed", False)))
+        return f"""
+<div class="card"><h2>Execution Governance</h2>
+<div class="metric"><strong>Profile Valid</strong>{'YES' if valid else 'NO'}</div>
+<div class="metric"><strong>Governance Score</strong>{self.optional_number(score, 2)}</div>
+<div class="metric"><strong>Grade</strong>{escape(str(grade or 'N/A'))}</div>
+<div class="metric"><strong>Severity</strong>{escape(severity)}</div>
+<div class="metric"><strong>Allowed</strong><span class="{approval_class}">{'YES' if allowed else 'NO'}</span></div>
+<div class="metric"><strong>Recommendation</strong>{escape(str(recommendation or 'UNAVAILABLE'))}</div>
+<div class="metric"><strong>Aggregate PSI</strong>{self.optional_number(aggregate_psi, 4)}</div>
+<div class="metric"><strong>Maximum Metric PSI</strong>{self.optional_number(maximum_psi, 4)}</div>
+<div class="metric"><strong>Deteriorated Metrics</strong>{self.safe_int(deteriorated, 0)}</div>
+<div class="metric"><strong>Registered Routes</strong>{self.safe_int(self.val(registry, 'route_count', self.val(integration, 'route_count', 0)), 0)}</div>
+<div class="metric"><strong>Active Route</strong>{escape(str(self.val(registry, 'active_version', self.val(integration, 'active_route_version', 'UNAVAILABLE'))))}</div>
+<div class="metric"><strong>Champion Route</strong>{escape(str(self.val(registry, 'champion_version', self.val(integration, 'champion_route_version', 'UNAVAILABLE'))))}</div>
+<div class="metric"><strong>Promotion Recommended</strong>{'YES' if route_promotion else 'NO'}</div>
+{diagnostics}</div>
+"""
+
+    def execution_governance_drift_html(self, items):
+        profile = self._first_available_profile(items, self.execution_governance_profile)
+        if profile is None:
+            return ""
+
+        metric_rows = []
+        for metric in self.val(profile, "metric_profiles", ()) or ():
+            metric_rows.append({
+                "metric": escape(str(self.val(metric, "metric_name", "UNKNOWN"))),
+                "baseline": self.optional_number(self.val(metric, "baseline_mean", None), 4),
+                "current": self.optional_number(self.val(metric, "current_mean", None), 4),
+                "relative": self.optional_pct(self.val(metric, "relative_change", None)),
+                "shift": self.optional_number(self.val(metric, "standardized_shift", None), 4),
+                "psi": self.optional_number(self.val(metric, "population_stability_index", None), 4),
+                "score": self.optional_number(self.val(metric, "drift_score", None), 2),
+                "grade": escape(str(self.val(metric, "drift_grade", "N/A"))),
+                "severity": escape(str(self.val(metric, "drift_severity", "UNKNOWN"))),
+                "deteriorated": "YES" if bool(self.val(metric, "deteriorated", False)) else "NO",
+                "allowed": "YES" if bool(self.val(metric, "allowed", True)) else "NO",
+            })
+
+        segment_rows = []
+        for segment in self.val(profile, "segment_profiles", ()) or ():
+            segment_rows.append({
+                "type": escape(str(self.val(segment, "segment_type", "UNKNOWN"))),
+                "name": escape(str(self.val(segment, "segment_name", "UNKNOWN"))),
+                "baseline": self.safe_int(self.val(segment, "baseline_observation_count", 0)),
+                "current": self.safe_int(self.val(segment, "current_observation_count", 0)),
+                "metrics": self.safe_int(self.val(segment, "metric_count", 0)),
+                "psi": self.optional_number(self.val(segment, "aggregate_psi", None), 4),
+                "maximum_psi": self.optional_number(self.val(segment, "maximum_psi", None), 4),
+                "score": self.optional_number(self.val(segment, "drift_score", None), 2),
+                "grade": escape(str(self.val(segment, "drift_grade", "N/A"))),
+                "severity": escape(str(self.val(segment, "drift_severity", "UNKNOWN"))),
+                "allowed": "YES" if bool(self.val(segment, "allowed", True)) else "NO",
+            })
+
+        return f"""
+<div class="card"><h2>Execution Drift Monitoring &amp; Population Stability</h2>
+<div class="metric"><strong>Baseline</strong>{escape(str(self.val(profile, 'baseline_name', 'UNAVAILABLE')))}</div>
+<div class="metric"><strong>Current</strong>{escape(str(self.val(profile, 'current_name', 'UNAVAILABLE')))}</div>
+<div class="metric"><strong>Baseline Observations</strong>{self.safe_int(self.val(profile, 'baseline_observation_count', 0))}</div>
+<div class="metric"><strong>Current Observations</strong>{self.safe_int(self.val(profile, 'current_observation_count', 0))}</div>
+<h3>Metric Drift and PSI</h3>
+{self.table(metric_rows, [('Metric','metric'),('Baseline Mean','baseline'),('Current Mean','current'),('Relative Change','relative'),('Standardized Shift','shift'),('PSI','psi'),('Score','score'),('Grade','grade'),('Severity','severity'),('Deteriorated','deteriorated'),('Allowed','allowed')], empty='No metric-level execution drift profiles are available.')}
+<h3>Venue and Broker Segment Drift</h3>
+{self.table(segment_rows, [('Segment Type','type'),('Segment','name'),('Baseline Obs.','baseline'),('Current Obs.','current'),('Metrics','metrics'),('Aggregate PSI','psi'),('Maximum PSI','maximum_psi'),('Score','score'),('Grade','grade'),('Severity','severity'),('Allowed','allowed')], empty='No segment-level execution drift profiles are available.')}
+</div>
+"""
+
+    def execution_route_registry_html(self, items):
+        profile = self._first_available_profile(items, self.execution_route_registry_profile)
+        if profile is None:
+            return ""
+        rows = []
+        for route in self.val(profile, "versions", ()) or ():
+            flags = []
+            if bool(self.val(route, "active", False)): flags.append("ACTIVE")
+            if bool(self.val(route, "champion", False)): flags.append("CHAMPION")
+            if bool(self.val(route, "challenger", False)): flags.append("CHALLENGER")
+            rows.append({
+                "version": escape(str(self.val(route, "version", "UNAVAILABLE"))),
+                "type": escape(str(self.val(route, "route_type", "UNKNOWN"))),
+                "name": escape(str(self.val(route, "route_name", "UNKNOWN"))),
+                "status": escape(str(self.val(route, "status", "REGISTERED"))),
+                "role": ", ".join(flags) or "REGISTERED",
+                "observations": self.safe_int(self.val(route, "observation_count", 0)),
+                "route_score": self.optional_number(self.val(route, "route_score", None), 2),
+                "shortfall": self.optional_number(self.val(route, "average_shortfall_bps", None), 4),
+                "fill": self.optional_pct(self.val(route, "average_fill_ratio", None)),
+                "latency": self.optional_number(self.val(route, "average_latency_seconds", None), 4),
+                "spread": self.optional_number(self.val(route, "average_spread_bps", None), 4),
+                "governance": self.optional_number(self.val(route, "governance_score", None), 2),
+                "grade": escape(str(self.val(route, "governance_grade", "N/A"))),
+                "allowed": "YES" if bool(self.val(route, "governance_allowed", True)) else "NO",
+            })
+        return f"""
+<div class="card"><h2>Execution Route Registry</h2>
+<div class="metric"><strong>Routes</strong>{self.safe_int(self.val(profile, 'route_count', 0))}</div>
+<div class="metric"><strong>Active</strong>{escape(str(self.val(profile, 'active_version', 'UNAVAILABLE')))}</div>
+<div class="metric"><strong>Champion</strong>{escape(str(self.val(profile, 'champion_version', 'UNAVAILABLE')))}</div>
+<div class="metric"><strong>Challengers</strong>{escape(', '.join(map(str, self.val(profile, 'challenger_versions', ()) or ())) or 'NONE')}</div>
+<div class="metric"><strong>Retired</strong>{escape(', '.join(map(str, self.val(profile, 'retired_versions', ()) or ())) or 'NONE')}</div>
+<div class="metric"><strong>Audit Events</strong>{self.safe_int(self.val(profile, 'audit_event_count', 0))}</div>
+{self.table(rows, [('Version','version'),('Type','type'),('Route','name'),('Status','status'),('Role','role'),('Observations','observations'),('Route Score','route_score'),('Shortfall bps','shortfall'),('Fill Ratio','fill'),('Latency sec.','latency'),('Spread bps','spread'),('Governance','governance'),('Grade','grade'),('Allowed','allowed')], empty='No route versions are registered.')}
+</div>
+"""
+
+    def execution_champion_challenger_html(self, items):
+        profile = self._first_available_profile(items, self.execution_champion_challenger_profile)
+        if profile is None:
+            return ""
+        rows = []
+        for metric in self.val(profile, "metric_comparisons", ()) or ():
+            rows.append({
+                "metric": escape(str(self.val(metric, "metric", "UNKNOWN"))),
+                "champion": self.optional_number(self.val(metric, "champion_value", None), 4),
+                "challenger": self.optional_number(self.val(metric, "challenger_value", None), 4),
+                "change": self.optional_number(self.val(metric, "absolute_change", None), 4),
+                "relative": self.optional_pct(self.val(metric, "relative_change", None)),
+                "improvement": self.optional_number(self.val(metric, "improvement", None), 4),
+                "favorable": "YES" if bool(self.val(metric, "favorable", False)) else "NO",
+                "weighted": self.optional_number(self.val(metric, "weighted_score", None), 2),
+                "severity": escape(str(self.val(metric, "severity", "UNKNOWN"))),
+            })
+        allowed = bool(self.val(profile, "allowed", False))
+        return f"""
+<div class="card"><h2>Champion–Challenger Routing Governance</h2>
+<div class="metric"><strong>Champion</strong>{escape(str(self.val(profile, 'champion_version', 'UNAVAILABLE')))} — {escape(str(self.val(profile, 'champion_route_name', 'UNKNOWN')))}</div>
+<div class="metric"><strong>Challenger</strong>{escape(str(self.val(profile, 'challenger_version', 'UNAVAILABLE')))} — {escape(str(self.val(profile, 'challenger_route_name', 'UNKNOWN')))}</div>
+<div class="metric"><strong>Evaluation Score</strong>{self.optional_number(self.val(profile, 'evaluation_score', None), 2)}</div>
+<div class="metric"><strong>Confidence</strong>{self.optional_number(self.val(profile, 'confidence_score', None), 2)}</div>
+<div class="metric"><strong>Grade</strong>{escape(str(self.val(profile, 'evaluation_grade', 'N/A')))}</div>
+<div class="metric"><strong>Severity</strong>{escape(str(self.val(profile, 'governance_severity', 'UNKNOWN')))}</div>
+<div class="metric"><strong>Recommendation</strong>{escape(str(self.val(profile, 'recommendation', 'HOLD_CHAMPION')))}</div>
+<div class="metric"><strong>Promotion Eligible</strong><span class="{'positive' if allowed else 'warning'}">{'YES' if allowed else 'NO'}</span></div>
+<div class="metric"><strong>Promoted</strong>{'YES' if bool(self.val(profile, 'promoted', False)) else 'NO'}</div>
+{self.table(rows, [('Metric','metric'),('Champion','champion'),('Challenger','challenger'),('Change','change'),('Relative','relative'),('Improvement','improvement'),('Favorable','favorable'),('Weighted Score','weighted'),('Severity','severity')], empty='No champion–challenger metric comparisons are available.')}
+</div>
+"""
+
+
+    # ------------------------------------------------------------
+    # Phase 10 adaptive strategy and ensemble intelligence reporting
+    # ------------------------------------------------------------
+    def phase10_integration_profile(self, item):
+        # Return a Phase 10 integration profile from direct or metadata storage.
+        profile = self.val(item, "phase10_decision_integration_profile", None)
+        if profile is None:
+            metadata = self.val(item, "metadata", {}) or {}
+            if isinstance(metadata, dict):
+                profile = metadata.get("phase10_decision_integration_profile")
+        return profile
+
+    def phase10_profiles(self, items):
+        profiles = []
+        seen = set()
+        for item in items or []:
+            profile = self.phase10_integration_profile(item)
+            if profile is None:
+                continue
+            key = id(profile)
+            if key not in seen:
+                profiles.append(profile)
+                seen.add(key)
+        return profiles
+
+    def phase10_adaptive_selection_html(self, items):
+        profiles = self.phase10_profiles(items)
+        if not profiles:
+            return '<div class="card"><h2>Adaptive Strategy Selection</h2><p class="section-note">No valid Phase 10 adaptive-strategy integration profile is attached.</p></div>'
+        rows=[]
+        for profile in profiles:
+            adaptive=self.val(profile,"adaptive_strategy_profile",None)
+            rows.append({
+                "symbol":escape(str(self.val(profile,"symbol",""))),
+                "selected":escape(str(self.val(profile,"selected_strategy",self.val(adaptive,"selected_strategy","UNAVAILABLE")) or "UNAVAILABLE")),
+                "score":self.optional_number(self.val(profile,"adaptive_score",self.val(adaptive,"selected_score",None))),
+                "confidence":self.optional_number(self.val(profile,"adaptive_confidence_score",self.val(adaptive,"selection_confidence_score",None))),
+                "weight":self.optional_pct(self.val(profile,"strategy_weight",None)),
+                "grade":escape(str(self.val(profile,"grade",self.val(adaptive,"grade","N/A")))),
+                "severity":escape(str(self.val(profile,"severity",self.val(adaptive,"severity","UNKNOWN")))),
+                "allowed":"YES" if bool(self.val(profile,"allowed",False)) else "NO",
+                "recommendation":escape(str(self.val(profile,"recommendation",self.val(adaptive,"recommendation","UNAVAILABLE")))),
+            })
+        return f'''<div class="card"><h2>Adaptive Strategy Selection</h2>
+{self.table(rows,[("Symbol","symbol"),("Selected Strategy","selected"),("Adaptive Score","score"),("Confidence","confidence"),("Dynamic Weight","weight"),("Grade","grade"),("Severity","severity"),("Allowed","allowed"),("Recommendation","recommendation")])}</div>'''
+
+    def phase10_ensemble_dashboard_html(self, items):
+        profiles=self.phase10_profiles(items)
+        ensemble_profiles=[self.val(p,"ensemble_decision_profile",None) for p in profiles]
+        ensemble_profiles=[p for p in ensemble_profiles if p is not None]
+        if not ensemble_profiles:
+            return '<div class="card"><h2>Ensemble Decision Intelligence</h2><p class="section-note">No Phase 10 ensemble-decision profile is attached.</p></div>'
+        summary=[]; strategy_rows=[]; component_rows=[]
+        for ensemble in ensemble_profiles:
+            summary.append({
+                "symbol":escape(str(self.val(ensemble,"symbol",""))),
+                "strategy":escape(str(self.val(ensemble,"selected_strategy","UNAVAILABLE") or "UNAVAILABLE")),
+                "direction":escape(str(self.val(ensemble,"selected_direction","UNKNOWN") or "UNKNOWN")),
+                "score":self.optional_number(self.val(ensemble,"ensemble_score",None)),
+                "confidence":self.optional_number(self.val(ensemble,"meta_confidence_score",None)),
+                "consensus":self.optional_pct(self.val(ensemble,"consensus_ratio",None)),
+                "grade":escape(str(self.val(ensemble,"grade","N/A"))),
+                "severity":escape(str(self.val(ensemble,"severity","UNKNOWN"))),
+                "allowed":"YES" if bool(self.val(ensemble,"allowed",False)) else "NO",
+            })
+            for strategy in self.val(ensemble,"strategies",()) or ():
+                strategy_rows.append({
+                    "symbol":escape(str(self.val(strategy,"symbol",self.val(ensemble,"symbol","")))),
+                    "strategy":escape(str(self.val(strategy,"strategy","UNKNOWN"))),
+                    "direction":escape(str(self.val(strategy,"direction","UNKNOWN"))),
+                    "score":self.optional_number(self.val(strategy,"ensemble_score",None)),
+                    "confidence":self.optional_number(self.val(strategy,"meta_confidence_score",None)),
+                    "consensus":self.optional_pct(self.val(strategy,"consensus_ratio",None)),
+                    "dispersion":self.optional_number(self.val(strategy,"score_dispersion",None),4),
+                    "components":self.safe_int(self.val(strategy,"component_count",0)),
+                    "allowed_components":self.safe_int(self.val(strategy,"allowed_component_count",0)),
+                    "allowed":"YES" if bool(self.val(strategy,"allowed",False)) else "NO",
+                })
+                for component in self.val(strategy,"components",()) or ():
+                    component_rows.append({
+                        "symbol":escape(str(self.val(strategy,"symbol",self.val(ensemble,"symbol","")))),
+                        "strategy":escape(str(self.val(strategy,"strategy","UNKNOWN"))),
+                        "component":escape(str(self.val(component,"name","UNKNOWN"))),
+                        "direction":escape(str(self.val(component,"direction","UNKNOWN"))),
+                        "score":self.optional_number(self.val(component,"score",None)),
+                        "confidence":self.optional_number(self.val(component,"confidence_score",None)),
+                        "weight":self.optional_pct(self.val(component,"weight",None)),
+                        "weighted":self.optional_number(self.val(component,"weighted_score",None)),
+                        "available":"YES" if bool(self.val(component,"available",False)) else "NO",
+                        "allowed":"YES" if bool(self.val(component,"allowed",False)) else "NO",
+                    })
+        return f'''<div class="card"><h2>Ensemble Decision Intelligence</h2>
+<h3>Ensemble Summary</h3>{self.table(summary,[("Symbol","symbol"),("Selected Strategy","strategy"),("Direction","direction"),("Ensemble Score","score"),("Meta Confidence","confidence"),("Consensus","consensus"),("Grade","grade"),("Severity","severity"),("Allowed","allowed")])}
+<h3>Strategy Fusion Results</h3>{self.table(strategy_rows,[("Symbol","symbol"),("Strategy","strategy"),("Direction","direction"),("Score","score"),("Meta Confidence","confidence"),("Consensus","consensus"),("Dispersion","dispersion"),("Components","components"),("Allowed Components","allowed_components"),("Allowed","allowed")],empty="No ensemble strategy details are available.")}
+<h3>Component Attribution</h3>{self.table(component_rows,[("Symbol","symbol"),("Strategy","strategy"),("Component","component"),("Direction","direction"),("Score","score"),("Confidence","confidence"),("Weight","weight"),("Weighted Score","weighted"),("Available","available"),("Allowed","allowed")],empty="No component-level attribution is available.")}</div>'''
+
+    def phase10_learning_weights_html(self, items):
+        profiles=self.phase10_profiles(items)
+        weighting=next((self.val(p,"dynamic_strategy_weighting_profile",None) for p in profiles if self.val(p,"dynamic_strategy_weighting_profile",None) is not None),None)
+        learning=[]
+        for p in profiles:
+            lp=self.val(p,"strategy_learning_profile",None)
+            if lp is not None: learning.append(lp)
+        if weighting is None and not learning:
+            return '<div class="card"><h2>Strategy Learning &amp; Dynamic Weighting</h2><p class="section-note">No Phase 10 learning or dynamic-weighting profile is attached.</p></div>'
+        learning_rows=[]
+        for p in learning:
+            learning_rows.append({
+                "strategy":escape(str(self.val(p,"strategy","UNKNOWN"))),
+                "observations":self.safe_int(self.val(p,"observation_count",0)),
+                "effective":self.optional_number(self.val(p,"effective_sample_size",None)),
+                "win_rate":self.optional_pct(self.val(p,"weighted_win_rate",None)),
+                "return":self.optional_pct(self.val(p,"weighted_average_return",None)),
+                "profit_factor":self.ratio(self.val(p,"profit_factor",None)),
+                "drawdown":self.optional_pct(self.val(p,"maximum_drawdown_pct",None)),
+                "performance":self.optional_number(self.val(p,"performance_score",None)),
+                "stability":self.optional_number(self.val(p,"stability_score",None)),
+                "confidence":self.optional_number(self.val(p,"confidence_score",None)),
+                "allowed":"YES" if bool(self.val(p,"allowed",False)) else "NO",
+            })
+        weight_rows=[]
+        candidates=self.val(weighting,"weights",None)
+        if candidates is None: candidates=self.val(weighting,"strategies",())
+        for w in candidates or ():
+            weight_rows.append({
+                "strategy":escape(str(self.val(w,"strategy","UNKNOWN"))),
+                "prior":self.optional_pct(self.val(w,"prior_weight",None)),
+                "performance":self.optional_number(self.val(w,"performance_component",None)),
+                "stability":self.optional_number(self.val(w,"stability_component",None)),
+                "recency":self.optional_number(self.val(w,"recency_component",None)),
+                "raw":self.optional_number(self.val(w,"raw_weight",None),4),
+                "normalized":self.optional_pct(self.val(w,"normalized_weight",None)),
+                "confidence":self.optional_number(self.val(w,"confidence_score",None)),
+                "allowed":"YES" if bool(self.val(w,"allowed",False)) else "NO",
+            })
+        return f'''<div class="card"><h2>Strategy Learning &amp; Dynamic Weighting</h2>
+<div class="metric"><strong>Strategy Count</strong>{self.val(weighting,'strategy_count',len(weight_rows)) if weighting is not None else len(learning_rows)}</div>
+<div class="metric"><strong>Weight Concentration</strong>{self.optional_number(self.val(weighting,'concentration_score',None),4) if weighting is not None else 'N/A'}</div>
+<div class="metric"><strong>Effective Strategy Count</strong>{self.optional_number(self.val(weighting,'effective_strategy_count',None),2) if weighting is not None else 'N/A'}</div>
+<h3>Learned Performance</h3>{self.table(learning_rows,[("Strategy","strategy"),("Observations","observations"),("Effective Sample","effective"),("Win Rate","win_rate"),("Average Return","return"),("Profit Factor","profit_factor"),("Max Drawdown","drawdown"),("Performance","performance"),("Stability","stability"),("Confidence","confidence"),("Allowed","allowed")],empty="No learned strategy profiles are available.")}
+<h3>Dynamic Strategy Weights</h3>{self.table(weight_rows,[("Strategy","strategy"),("Prior Weight","prior"),("Performance","performance"),("Stability","stability"),("Recency","recency"),("Raw Weight","raw"),("Normalized Weight","normalized"),("Confidence","confidence"),("Allowed","allowed")],empty="No dynamic strategy weights are available.")}</div>'''
+
+    def phase10_online_adaptation_html(self, items):
+        profiles=self.phase10_profiles(items)
+        adaptation=next((self.val(p,"online_adaptation_profile",None) for p in profiles if self.val(p,"online_adaptation_profile",None) is not None),None)
+        registry=next((self.val(p,"learning_state_registry_profile",None) for p in profiles if self.val(p,"learning_state_registry_profile",None) is not None),None)
+        promotion=next((self.val(p,"learning_state_promotion_profile",None) for p in profiles if self.val(p,"learning_state_promotion_profile",None) is not None),None)
+        if adaptation is None and registry is None and promotion is None:
+            return '<div class="card"><h2>Online Adaptation &amp; Learning-State Governance</h2><p class="section-note">No Phase 10 online-adaptation or learning-state profile is attached.</p></div>'
+        update_rows=[]
+        for u in self.val(adaptation,"updates",()) or ():
+            update_rows.append({
+                "strategy":escape(str(self.val(u,"strategy","UNKNOWN"))),
+                "current":self.optional_pct(self.val(u,"current_weight",None)),
+                "target":self.optional_pct(self.val(u,"target_weight",None)),
+                "proposed":self.optional_pct(self.val(u,"proposed_weight",None)),
+                "applied":self.optional_pct(self.val(u,"applied_weight",None)),
+                "change":self.optional_pct(self.val(u,"absolute_change",None)),
+                "score":self.optional_number(self.val(u,"update_score",None)),
+                "grade":escape(str(self.val(u,"grade","N/A"))),
+                "allowed":"YES" if bool(self.val(u,"allowed",False)) else "NO",
+            })
+        version_rows=[]
+        for v in self.val(registry,"versions",()) or ():
+            version_rows.append({
+                "version":escape(str(self.val(v,"version",""))),
+                "status":escape(str(self.val(v,"status","UNKNOWN"))),
+                "score":self.optional_number(self.val(v,"adaptation_score",None)),
+                "source":escape(str(self.val(v,"source_version","") or "")),
+                "actor":escape(str(self.val(v,"actor","system"))),
+                "reason":escape(str(self.val(v,"reason",""))),
+                "created":escape(str(self.val(v,"created_at",""))),
+            })
+        return f'''<div class="card"><h2>Online Adaptation &amp; Learning-State Governance</h2>
+<div class="metric"><strong>Adaptation Score</strong>{self.optional_number(self.val(adaptation,'adaptation_score',None))}</div>
+<div class="metric"><strong>Applied Updates</strong>{self.val(adaptation,'applied_update_count',0)}</div>
+<div class="metric"><strong>Total Absolute Change</strong>{self.optional_pct(self.val(adaptation,'total_absolute_change',None))}</div>
+<div class="metric"><strong>Concentration Before / After</strong>{self.optional_number(self.val(adaptation,'concentration_before',None),4)} / {self.optional_number(self.val(adaptation,'concentration_after',None),4)}</div>
+<div class="metric"><strong>Active State</strong>{escape(str(self.val(registry,'active_version','UNAVAILABLE') or 'UNAVAILABLE'))}</div>
+<div class="metric"><strong>Champion State</strong>{escape(str(self.val(registry,'champion_version','UNAVAILABLE') or 'UNAVAILABLE'))}</div>
+<div class="metric"><strong>Challenger State</strong>{escape(str(self.val(registry,'challenger_version','UNAVAILABLE') or 'UNAVAILABLE'))}</div>
+<div class="metric"><strong>Promotion Recommendation</strong>{escape(str(self.val(promotion,'recommendation','UNAVAILABLE') or 'UNAVAILABLE'))}</div>
+<div class="metric"><strong>Promotion Score</strong>{self.optional_number(self.val(promotion,'promotion_score',None))}</div>
+<div class="metric"><strong>Promotion Allowed</strong>{'YES' if bool(self.val(promotion,'allowed',False)) else 'NO'}</div>
+<h3>Strategy Weight Updates</h3>{self.table(update_rows,[("Strategy","strategy"),("Current","current"),("Target","target"),("Proposed","proposed"),("Applied","applied"),("Absolute Change","change"),("Update Score","score"),("Grade","grade"),("Allowed","allowed")],empty="No strategy-weight updates are available.")}
+<h3>Learning-State Registry</h3>{self.table(version_rows,[("Version","version"),("Status","status"),("Adaptation Score","score"),("Source","source"),("Actor","actor"),("Reason","reason"),("Created","created")],empty="No learning-state versions are available.")}</div>'''
+
+    def phase10_governance_messages_html(self, items):
+        warnings=[]; rejections=[]
+        for p in self.phase10_profiles(items):
+            warnings.extend(str(x) for x in (self.val(p,"warnings",()) or ()))
+            rejections.extend(str(x) for x in (self.val(p,"rejection_reasons",()) or ()))
+            for nested_name in ("adaptive_strategy_profile","ensemble_decision_profile","online_adaptation_profile","learning_state_promotion_profile"):
+                nested=self.val(p,nested_name,None)
+                warnings.extend(str(x) for x in (self.val(nested,"warnings",()) or ()))
+                rejections.extend(str(x) for x in (self.val(nested,"rejection_reasons",()) or ()))
+        warnings=list(dict.fromkeys(warnings)); rejections=list(dict.fromkeys(rejections))
+        if not warnings and not rejections: return ""
+        warning_html="<p class='warning'><strong>Warnings:</strong> "+", ".join(escape(x) for x in warnings)+"</p>" if warnings else ""
+        rejection_html="<p class='negative'><strong>Rejections:</strong> "+", ".join(escape(x) for x in rejections)+"</p>" if rejections else ""
+        return f"<div class='card'><h2>Phase 10 Governance Diagnostics</h2>{warning_html}{rejection_html}</div>"
+
+    # ------------------------------------------------------------
     # Phase 9 execution analytics and routing reporting
     # ------------------------------------------------------------
     def execution_integration_profile(self, item):
@@ -2113,6 +2535,15 @@ No valid Phase 3 distribution-risk profiles are attached to these trades.
         probability_reliability_diagram = self.probability_reliability_diagram_html(trades)
         execution_analytics_summary = self.execution_analytics_summary_html(trades)
         execution_shortfall_chart = self.execution_shortfall_chart_html(trades)
+        execution_governance_summary = self.execution_governance_summary_html(trades)
+        execution_governance_drift = self.execution_governance_drift_html(trades)
+        execution_route_registry = self.execution_route_registry_html(trades)
+        execution_champion_challenger = self.execution_champion_challenger_html(trades)
+        phase10_adaptive_selection = self.phase10_adaptive_selection_html(trades)
+        phase10_learning_weights = self.phase10_learning_weights_html(trades)
+        phase10_ensemble_dashboard = self.phase10_ensemble_dashboard_html(trades)
+        phase10_online_adaptation = self.phase10_online_adaptation_html(trades)
+        phase10_governance_messages = self.phase10_governance_messages_html(trades)
 
         rolling_html = self.table(
             rolling,
@@ -2207,6 +2638,15 @@ th {{ background: #eee; }}
 {probability_reliability_diagram}
 {execution_analytics_summary}
 {execution_shortfall_chart}
+{execution_governance_summary}
+{execution_governance_drift}
+{execution_route_registry}
+{execution_champion_challenger}
+{phase10_adaptive_selection}
+{phase10_learning_weights}
+{phase10_ensemble_dashboard}
+{phase10_online_adaptation}
+{phase10_governance_messages}
 
 <div class="card"><h2>Drawdown Recovery</h2>{self.table(recovery_rows, [("Metric", "metric"), ("Value", "value")])}</div>
 

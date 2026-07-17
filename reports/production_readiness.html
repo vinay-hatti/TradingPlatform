@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Production Readiness Report</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 24px; background:#f4f6f8; color:#1d2733; }
+h1 { margin-bottom:4px; }
+.card { background:white; border:1px solid #d9e0e7; border-radius:8px; padding:18px; margin:16px 0; }
+.metric { display:inline-block; min-width:220px; margin:8px 14px 8px 0; vertical-align:top; }
+.metric strong { display:block; color:#52606d; margin-bottom:4px; }
+table { border-collapse:collapse; width:100%; margin-top:12px; }
+th,td { border:1px solid #d9e0e7; padding:8px; text-align:left; }
+th { background:#eef2f6; }
+.positive { color:#147d3f; font-weight:bold; }
+.negative { color:#b42318; font-weight:bold; }
+.warning { color:#9a6700; }
+.section-note { color:#66788a; }
+code { word-break:break-all; }
+</style>
+</head>
+<body>
+<h1>Production Configuration and Runtime Safety</h1>
+<p>Milestone 30, Phase 1 operational readiness report.</p>
+
+<div class="card">
+<h2>Startup Readiness Gate</h2>
+<div class="metric"><strong>Environment</strong>production</div>
+<div class="metric"><strong>Allowed</strong><span class="negative">NO</span></div>
+<div class="metric"><strong>Score</strong>63.85</div>
+<div class="metric"><strong>Grade</strong>F</div>
+<div class="metric"><strong>Severity</strong>CRITICAL</div>
+<div class="metric"><strong>Decision</strong>BLOCK_STARTUP</div>
+<div class="metric"><strong>Active Version</strong>N/A</div>
+<div class="metric"><strong>Runtime Score</strong>84.62</div>
+<div class="metric"><strong>Environment Score</strong>0.00</div>
+<div class="metric"><strong>Secret Score</strong>85.71</div>
+</div>
+
+
+<div class="card">
+<h2>Startup Gate Controls</h2>
+<table><thead><tr><th>Control</th><th>Category</th><th>Required</th><th>Passed</th><th>Score</th><th>Severity</th><th>Message</th></tr></thead><tbody><tr><td>runtime_safety</td><td>runtime</td><td>YES</td><td><span class='negative'>NO</span></td><td>84.62</td><td>CRITICAL</td><td>Runtime configuration and filesystem safety checks must pass.</td></tr><tr><td>environment_registry</td><td>environment</td><td>YES</td><td><span class='negative'>NO</span></td><td>0.00</td><td>CRITICAL</td><td>Environment configuration must be registered and approved.</td></tr><tr><td>active_environment_version</td><td>environment</td><td>YES</td><td><span class='negative'>NO</span></td><td>0.00</td><td>CRITICAL</td><td>An active configuration version is required for this environment.</td></tr><tr><td>configuration_fingerprint</td><td>environment</td><td>YES</td><td><span class='negative'>NO</span></td><td>0.00</td><td>CRITICAL</td><td>Loaded configuration must match the active registered fingerprint.</td></tr><tr><td>secret_governance</td><td>secrets</td><td>YES</td><td><span class='negative'>NO</span></td><td>85.71</td><td>CRITICAL</td><td>All required credentials must pass health and rotation governance.</td></tr></tbody></table>
+</div>
+
+
+<div class="card">
+<h2>Runtime Safety Controls</h2>
+<table><thead><tr><th>Control</th><th>Category</th><th>Passed</th><th>Severity</th><th>Message</th></tr></thead><tbody><tr><td>environment</td><td>configuration</td><td><span class='positive'>YES</span></td><td>LOW</td><td>Environment &#x27;production&#x27; is allowed.</td></tr><tr><td>debug_mode</td><td>configuration</td><td><span class='positive'>YES</span></td><td>LOW</td><td>Debug mode is safe for the selected environment.</td></tr><tr><td>live_trading_environment</td><td>trading</td><td><span class='positive'>YES</span></td><td>LOW</td><td>Live trading is restricted to production.</td></tr><tr><td>kill_switch</td><td>trading</td><td><span class='positive'>YES</span></td><td>LOW</td><td>Kill switch is enabled when required.</td></tr><tr><td>database</td><td>provider</td><td><span class='positive'>YES</span></td><td>LOW</td><td>Database configuration is present when required.</td></tr><tr><td>broker_provider</td><td>provider</td><td><span class='positive'>YES</span></td><td>LOW</td><td>Broker provider is present when required.</td></tr><tr><td>market_data_provider</td><td>provider</td><td><span class='positive'>YES</span></td><td>LOW</td><td>Market-data provider is present when required.</td></tr><tr><td>data_directory</td><td>filesystem</td><td><span class='positive'>YES</span></td><td>LOW</td><td>Runtime directory is writable: /Users/vinay.hatti/TradingPlatform/data</td></tr><tr><td>reports_directory</td><td>filesystem</td><td><span class='positive'>YES</span></td><td>LOW</td><td>Runtime directory is writable: /Users/vinay.hatti/TradingPlatform/reports</td></tr><tr><td>logs_directory</td><td>filesystem</td><td><span class='positive'>YES</span></td><td>LOW</td><td>Runtime directory is writable: /Users/vinay.hatti/TradingPlatform/logs</td></tr><tr><td>audit_directory</td><td>filesystem</td><td><span class='positive'>YES</span></td><td>LOW</td><td>Runtime directory is writable: /Users/vinay.hatti/TradingPlatform/logs/audit</td></tr><tr><td>plaintext_secrets</td><td>secrets</td><td><span class='negative'>NO</span></td><td>CRITICAL</td><td>No plaintext secrets are embedded in production configuration.</td></tr><tr><td>required_secrets</td><td>secrets</td><td><span class='negative'>NO</span></td><td>CRITICAL</td><td>All required secrets are resolvable.</td></tr></tbody></table>
+</div>
+
+
+<div class="card">
+<h2>Environment Configuration Registry</h2>
+<p class="section-note">No active environment registry profile is available.</p>
+</div>
+
+
+<div class="card">
+<h2>Credential Health and Rotation Governance</h2>
+<table><thead><tr><th>Credential</th><th>Provider</th><th>Resolved</th><th>Age Days</th><th>Days to Expiry</th><th>Score</th><th>Grade</th><th>Allowed</th><th>Recommendation</th></tr></thead><tbody><tr><td>DATABASE_URL</td><td>unavailable</td><td>NO</td><td>13.81</td><td>78.19</td><td>85.71</td><td>B</td><td><span class='negative'>NO</span></td><td>BLOCK_CREDENTIAL</td></tr><tr><td>POLYGON_API_KEY</td><td>unavailable</td><td>NO</td><td>13.81</td><td>78.19</td><td>85.71</td><td>B</td><td><span class='negative'>NO</span></td><td>BLOCK_CREDENTIAL</td></tr></tbody></table>
+</div>
+
+
+<div class="card">
+<h2>Operational Diagnostics</h2>
+<p class='section-note'>No startup warnings.</p>
+<p class='negative'><strong>Rejections:</strong> RUNTIME_SAFETY, ENVIRONMENT_REGISTRY, ACTIVE_ENVIRONMENT_VERSION, CONFIGURATION_FINGERPRINT, SECRET_GOVERNANCE</p>
+</div>
+
+</body>
+</html>

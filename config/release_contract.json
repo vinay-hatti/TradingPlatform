@@ -1,0 +1,22 @@
+{
+  "release_id": "release-1.0.0",
+  "version": "1.0.0",
+  "git_commit": "0123456789abcdef",
+  "build_timestamp": "2026-07-17T12:00:00+00:00",
+  "artifact_checksum": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "artifact_location": "artifacts/trading-ai-1.0.0.tar.gz",
+  "migration_version": "20260717_01",
+  "configuration_version": "1.0.0",
+  "rollback_supported": true,
+  "deployment_targets": [
+    "DEVELOPMENT",
+    "INTEGRATION",
+    "QA",
+    "UAT",
+    "PAPER",
+    "STAGING",
+    "PRODUCTION"
+  ],
+  "release_tag": "v1.0.0",
+  "artifact_signed": true
+}

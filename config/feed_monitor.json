@@ -1,0 +1,13 @@
+{
+  "maximum_event_silence_seconds": 10.0,
+  "maximum_heartbeat_silence_seconds": 30.0,
+  "degraded_event_silence_seconds": 5.0,
+  "degraded_heartbeat_silence_seconds": 15.0,
+  "maximum_reconnect_attempts": 10,
+  "reconnect_initial_delay_seconds": 1.0,
+  "reconnect_max_delay_seconds": 60.0,
+  "reconnect_multiplier": 2.0,
+  "reconnect_cooldown_seconds": 1.0,
+  "reconnect_only_when_market_open": true,
+  "minimum_health_score": 85.0
+}

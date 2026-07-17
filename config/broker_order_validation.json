@@ -1,0 +1,29 @@
+{
+  "allowed_sides": [
+    "BUY",
+    "SELL",
+    "BUY_TO_OPEN",
+    "SELL_TO_OPEN",
+    "BUY_TO_CLOSE",
+    "SELL_TO_CLOSE"
+  ],
+  "allowed_order_types": [
+    "MARKET",
+    "LIMIT",
+    "STOP",
+    "STOP_LIMIT"
+  ],
+  "allowed_time_in_force": [
+    "DAY",
+    "GTC",
+    "IOC",
+    "FOK"
+  ],
+  "minimum_quantity": 1,
+  "maximum_quantity": 1000000,
+  "maximum_legs": 8,
+  "reject_market_multi_leg_orders": true,
+  "require_same_underlying_for_multi_leg": true,
+  "require_unique_client_order_id": true,
+  "minimum_validation_score": 85.0
+}

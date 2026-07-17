@@ -1,0 +1,12 @@
+{
+  "require_broker_readiness": true,
+  "require_order_validation": true,
+  "require_idempotency_key": true,
+  "allow_idempotent_replay": true,
+  "reject_payload_mismatch_on_replay": true,
+  "allow_cancel_terminal_orders": false,
+  "allow_replace_terminal_orders": false,
+  "maximum_replace_count": 20,
+  "minimum_execution_score": 85.0,
+  "idempotency_registry_path": "config/broker_idempotency_registry.json"
+}

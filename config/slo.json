@@ -1,0 +1,24 @@
+{
+  "policy": {
+    "evaluation_window_seconds": 3600.0,
+    "minimum_sample_count": 5,
+    "default_target": 0.99,
+    "fail_closed_on_insufficient_data": true
+  },
+  "slos": [
+    {
+      "slo_id": "order-submission-availability",
+      "service_name": "order-management",
+      "environment": "paper",
+      "indicator_type": "AVAILABILITY",
+      "target": 0.99,
+      "metric_name": "trading_ai_operation_success",
+      "good_when": "GREATER_THAN_OR_EQUAL",
+      "threshold": 1.0,
+      "window_seconds": 3600.0,
+      "labels": {
+        "operation": "submit_order"
+      }
+    }
+  ]
+}

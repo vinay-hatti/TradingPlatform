@@ -1,0 +1,17 @@
+{
+  "maximum_quote_age_seconds": 30,
+  "maximum_snapshot_age_seconds": 60,
+  "require_positive_mark_price": true,
+  "reject_missing_quotes": true,
+  "reject_stale_quotes": true,
+  "reject_duplicate_position_ids": true,
+  "require_account_consistency": true,
+  "require_non_negative_starting_equity": true,
+  "calculate_gross_and_net_exposure": true,
+  "calculate_intraday_drawdown": true,
+  "persist_snapshots": true,
+  "maximum_positions_per_snapshot": 1000,
+  "minimum_snapshot_score": 85.0,
+  "snapshot_repository_path": "data/position_monitoring/snapshots.json",
+  "fail_closed": true
+}

@@ -1,0 +1,16 @@
+{
+  "release_id": "trading-ai-production-release",
+  "release_version": "1.0.0",
+  "approved_by": [
+    "Engineering Lead",
+    "Operations Manager",
+    "Product Owner"
+  ],
+  "approval_roles": [
+    "ENGINEERING",
+    "OPERATIONS",
+    "BUSINESS"
+  ],
+  "final_decision": "APPROVED",
+  "comments": "Approved after all production-readiness gates pass."
+}

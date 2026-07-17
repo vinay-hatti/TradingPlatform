@@ -1,0 +1,14 @@
+{
+  "minimum_overall_score": 0.98,
+  "require_all_critical_gates": true,
+  "require_end_to_end_regression": true,
+  "require_performance_benchmark": true,
+  "require_operational_governance": true,
+  "require_observability_readiness": true,
+  "require_deployment_rollback_validation": true,
+  "maximum_critical_findings": 0,
+  "maximum_high_findings": 0,
+  "minimum_regression_pass_rate": 1.0,
+  "minimum_benchmark_pass_rate": 1.0,
+  "minimum_release_documentation_score": 1.0
+}

@@ -1,0 +1,38 @@
+{
+  "logging": {
+    "minimum_level": "INFO",
+    "include_timestamp": true,
+    "include_service_context": true,
+    "include_trace_context": true,
+    "redact_sensitive_fields": true,
+    "sensitive_field_names": [
+      "password",
+      "secret",
+      "token",
+      "api_key",
+      "authorization",
+      "cookie"
+    ],
+    "maximum_message_length": 8192,
+    "fail_closed_on_serialization_error": true
+  },
+  "metrics": {
+    "maximum_unique_series": 10000,
+    "maximum_label_count": 12,
+    "maximum_label_value_length": 128,
+    "allow_dynamic_metric_registration": true,
+    "reject_invalid_values": true,
+    "persist_registry": true,
+    "registry_path": "data/observability/metrics_registry.json"
+  },
+  "tracing": {
+    "sampling_rate": 1.0,
+    "maximum_span_attributes": 32,
+    "maximum_span_events": 64,
+    "maximum_attribute_value_length": 512,
+    "propagate_baggage": true,
+    "persist_completed_traces": true,
+    "fail_closed_on_invalid_parent": true,
+    "trace_path": "data/observability/traces.json"
+  }
+}

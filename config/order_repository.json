@@ -1,0 +1,15 @@
+{
+  "repository_path": "data/order_management/orders.json",
+  "event_journal_path": "data/order_management/order_events.jsonl",
+  "audit_ledger_path": "data/order_management/order_audit_ledger.jsonl",
+  "require_optimistic_concurrency": true,
+  "reject_duplicate_aggregate_id": true,
+  "reject_duplicate_event_id": true,
+  "require_contiguous_event_versions": true,
+  "require_event_aggregate_match": true,
+  "require_event_version_match": true,
+  "require_audit_hash_chain": true,
+  "fsync_on_write": false,
+  "maximum_events_per_aggregate": 100000,
+  "fail_closed": true
+}

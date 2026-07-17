@@ -1,0 +1,23 @@
+{
+  "allowed_environments": [
+    "paper",
+    "simulation"
+  ],
+  "maximum_orders_per_cycle": 20,
+  "maximum_orders_per_session": 500,
+  "maximum_open_positions": 100,
+  "maximum_cycles_per_session": 10000,
+  "minimum_cycle_interval_seconds": 5,
+  "maximum_cycle_interval_seconds": 3600,
+  "default_cycle_interval_seconds": 60,
+  "require_risk_gateway_approval": true,
+  "require_market_data_readiness": true,
+  "require_broker_readiness": true,
+  "require_persistent_runtime_state": true,
+  "require_unique_session_id": true,
+  "allow_restart_recovery": true,
+  "allow_pause_resume": true,
+  "allow_manual_stop": true,
+  "runtime_state_path": "data/paper_trading/runtime_states.json",
+  "fail_closed": true
+}

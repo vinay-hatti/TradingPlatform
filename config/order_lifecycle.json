@@ -1,0 +1,26 @@
+{
+  "allowed_order_types": [
+    "MARKET",
+    "LIMIT",
+    "STOP",
+    "STOP_LIMIT"
+  ],
+  "allowed_time_in_force": [
+    "DAY",
+    "GTC",
+    "IOC",
+    "FOK"
+  ],
+  "maximum_legs": 8,
+  "minimum_quantity": 1,
+  "maximum_quantity": 1000000,
+  "require_client_order_id": true,
+  "require_account_id": true,
+  "require_idempotency_key": true,
+  "reject_market_multi_leg_orders": true,
+  "reject_transitions_from_terminal_states": true,
+  "reject_fill_quantity_regression": true,
+  "reject_overfills": true,
+  "allow_partial_fill_cancel": true,
+  "fail_closed": true
+}

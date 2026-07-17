@@ -1,0 +1,46 @@
+{
+  "policy": {
+    "breach_deduplication_window_seconds": 300,
+    "severe_escalation_after_seconds": 900,
+    "critical_escalation_after_seconds": 300,
+    "maximum_escalation_level": 3,
+    "persist_breaches": true,
+    "persist_alerts": true,
+    "fail_closed": true
+  },
+  "profiles": [
+    {
+      "profile_id": "account-gross",
+      "scope_type": "ACCOUNT",
+      "scope_value": "PAPER-001",
+      "metric": "GROSS_EXPOSURE",
+      "warning_limit": 75000,
+      "severe_limit": 90000,
+      "critical_limit": 100000,
+      "direction": "ABSOLUTE_MAX",
+      "precedence": 100
+    },
+    {
+      "profile_id": "account-delta",
+      "scope_type": "ACCOUNT",
+      "scope_value": "PAPER-001",
+      "metric": "DELTA",
+      "warning_limit": 5000,
+      "severe_limit": 8000,
+      "critical_limit": 10000,
+      "direction": "ABSOLUTE_MAX",
+      "precedence": 100
+    },
+    {
+      "profile_id": "aapl-delta",
+      "scope_type": "UNDERLYING",
+      "scope_value": "AAPL",
+      "metric": "UNDERLYING_DELTA",
+      "warning_limit": 2500,
+      "severe_limit": 4000,
+      "critical_limit": 5000,
+      "direction": "ABSOLUTE_MAX",
+      "precedence": 300
+    }
+  ]
+}

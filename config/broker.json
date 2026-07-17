@@ -1,0 +1,16 @@
+{
+  "broker": "fake",
+  "environment": "paper",
+  "account_id": "PAPER-001",
+  "live_trading_requested": false,
+  "manual_live_approval": false,
+  "require_options_permission": true,
+  "require_market_data_permission": true,
+  "minimum_readiness_score": 85.0,
+  "secrets": {
+    "client_id": "BROKER_CLIENT_ID",
+    "client_secret": "BROKER_CLIENT_SECRET",
+    "access_token": "BROKER_ACCESS_TOKEN",
+    "refresh_token": "BROKER_REFRESH_TOKEN"
+  }
+}

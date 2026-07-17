@@ -1,0 +1,16 @@
+{
+  "maximum_candidates_per_cycle": 100,
+  "maximum_approved_candidates_per_cycle": 20,
+  "maximum_orders_created_per_cycle": 20,
+  "minimum_candidate_score": 70.0,
+  "minimum_decision_probability": 0.55,
+  "require_decision_approval": true,
+  "require_risk_gateway_approval": true,
+  "reject_duplicate_symbol_strategy": true,
+  "reject_missing_market_price": true,
+  "reject_missing_expiration_for_options": true,
+  "reject_missing_strike_for_options": true,
+  "default_option_multiplier": 100,
+  "default_equity_multiplier": 1,
+  "fail_closed": true
+}

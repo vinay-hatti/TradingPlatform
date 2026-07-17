@@ -108,7 +108,87 @@ def main():
     sub.add_parser("execution-benchmark-routing-test")
     sub.add_parser("execution-integration-test")
     sub.add_parser("execution-report-test")
+    sub.add_parser("execution-governance-test")
+    sub.add_parser("execution-route-registry-test")
+    sub.add_parser("execution-champion-challenger-test")
+    sub.add_parser("execution-governance-integration-test")
+    sub.add_parser("execution-governance-decision-contract-test")
+    sub.add_parser("execution-governance-report-test")
+    sub.add_parser("phase9-regression-test")
+    sub.add_parser("phase9-closure-test")
+    sub.add_parser("adaptive-strategy-test")
+    sub.add_parser("strategy-learning-test")
+    sub.add_parser("ensemble-decision-test")
+    sub.add_parser("online-adaptation-test")
+    sub.add_parser("phase10-decision-integration-test")
+    sub.add_parser("phase10-decision-contract-test")
+    sub.add_parser("phase10-report-test")
+    sub.add_parser("phase10-cli-test")
+    sub.add_parser("phase10-regression-test")
+    sub.add_parser("phase10-closure-test")
     sub.add_parser("phase8-regression-test")
+
+    sub.add_parser("production-runtime-safety-test")
+    sub.add_parser("environment-registry-test")
+    sub.add_parser("secret-governance-test")
+    sub.add_parser("startup-readiness-check")
+    sub.add_parser("startup-readiness-test")
+
+    sub.add_parser("production-readiness-report")
+    sub.add_parser("milestone30-phase1-regression-test")
+    sub.add_parser("milestone30-phase1-closure-test")
+
+    sub.add_parser("realtime-market-data-test")
+    sub.add_parser("realtime-provider-test")
+    sub.add_parser("paper-streaming-test")
+    sub.add_parser("market-hours-feed-test")
+    sub.add_parser("market-data-reconciliation-test")
+    sub.add_parser("market-data-quality-report")
+    sub.add_parser("milestone30-phase2-regression-test")
+    sub.add_parser("milestone30-phase2-closure-test")
+
+    sub.add_parser("broker-authentication-test")
+    sub.add_parser("broker-contract-mapping-test")
+    sub.add_parser("broker-order-execution-test")
+    sub.add_parser("broker-status-reconciliation-test")
+    sub.add_parser("broker-operational-report")
+    sub.add_parser("milestone30-phase3-regression-test")
+    sub.add_parser("milestone30-phase3-closure-test")
+
+    sub.add_parser("canonical-order-lifecycle-test")
+    sub.add_parser("order-repository-test")
+    sub.add_parser("order-routing-workflow-test")
+    sub.add_parser("order-linkage-recovery-test")
+    sub.add_parser("order-management-report")
+    sub.add_parser("milestone30-phase4-regression-test")
+    sub.add_parser("milestone30-phase4-closure-test")
+
+    sub.add_parser("pretrade-risk-test")
+    sub.add_parser("portfolio-risk-controls-test")
+    sub.add_parser("options-risk-test")
+    sub.add_parser("trading-controls-risk-gateway-test")
+    sub.add_parser("risk-gateway-decision-integration-test")
+    sub.add_parser("risk-gateway-report")
+    sub.add_parser("milestone30-phase5-regression-test")
+    sub.add_parser("milestone30-phase5-closure-test")
+
+    sub.add_parser("paper-trading-session-test")
+    sub.add_parser("paper-scan-pipeline-test")
+    sub.add_parser("paper-execution-test")
+    sub.add_parser("paper-position-test")
+    sub.add_parser("paper-automation-recovery-test")
+    sub.add_parser("paper-trading-report")
+    sub.add_parser("milestone30-phase6-regression-test")
+    sub.add_parser("milestone30-phase6-closure-test")
+
+    sub.add_parser("realtime-position-monitoring-test")
+    sub.add_parser("portfolio-greeks-monitoring-test")
+    sub.add_parser("dynamic-risk-limits-test")
+    sub.add_parser("continuous-monitoring-test")
+    sub.add_parser("position-risk-report")
+    sub.add_parser("position-risk-dashboard")
+    sub.add_parser("milestone30-phase7-regression-test")
+    sub.add_parser("milestone30-phase7-closure-test")
 
     paper = sub.add_parser("paper")
     paper_sub = paper.add_subparsers(dest="paper_command")
@@ -385,6 +465,216 @@ def main():
 
     elif args.command == "execution-report-test":
         run_script("scripts/test_execution_reporting.py", extra)
+
+    elif args.command == "execution-governance-test":
+        run_script("scripts/test_execution_governance.py", extra)
+
+    elif args.command == "execution-route-registry-test":
+        run_script("scripts/test_execution_route_registry.py", extra)
+
+    elif args.command == "execution-champion-challenger-test":
+        run_script("scripts/test_execution_champion_challenger.py", extra)
+
+    elif args.command == "execution-governance-integration-test":
+        run_script("scripts/test_execution_governance_integration.py", extra)
+
+    elif args.command == "execution-governance-decision-contract-test":
+        run_script("scripts/test_execution_governance_decision_contract.py", extra)
+
+    elif args.command == "execution-governance-report-test":
+        run_script("scripts/test_execution_governance_reporting.py", extra)
+
+    elif args.command == "phase9-regression-test":
+        run_script("scripts/test_phase9_regression.py", extra)
+
+    elif args.command == "phase9-closure-test":
+        run_script("scripts/test_phase9_closure.py", extra)
+
+    elif args.command == "adaptive-strategy-test":
+        run_script("scripts/test_adaptive_strategy_foundation.py", extra)
+
+    elif args.command == "strategy-learning-test":
+        run_script("scripts/test_strategy_learning.py", extra)
+
+    elif args.command == "ensemble-decision-test":
+        run_script("scripts/test_ensemble_decision.py", extra)
+
+    elif args.command == "online-adaptation-test":
+        run_script("scripts/test_online_adaptation.py", extra)
+
+    elif args.command == "phase10-decision-integration-test":
+        run_script("scripts/test_phase10_decision_integration.py", extra)
+
+    elif args.command == "phase10-decision-contract-test":
+        run_script("scripts/test_phase10_decision_contract.py", extra)
+
+    elif args.command == "phase10-report-test":
+        run_script("scripts/test_phase10_reporting.py", extra)
+
+    elif args.command == "phase10-cli-test":
+        run_script("scripts/test_phase10_cli.py", extra)
+
+    elif args.command == "phase10-regression-test":
+        run_script("scripts/test_phase10_regression.py", extra)
+
+    elif args.command == "phase10-closure-test":
+        run_script("scripts/test_phase10_closure.py", extra)
+
+
+    elif args.command == "production-runtime-safety-test":
+        run_script("scripts/test_production_runtime_safety.py", extra)
+
+    elif args.command == "environment-registry-test":
+        run_script("scripts/test_environment_configuration_registry.py", extra)
+
+    elif args.command == "secret-governance-test":
+        run_script("scripts/test_secret_governance.py", extra)
+
+    elif args.command == "startup-readiness-check":
+        run_script("scripts/run_startup_readiness_check.py", extra)
+
+    elif args.command == "startup-readiness-test":
+        run_script("scripts/test_startup_readiness_gate.py", extra)
+
+    elif args.command == "production-readiness-report":
+        run_script("scripts/build_production_readiness_report.py", extra)
+
+    elif args.command == "milestone30-phase1-regression-test":
+        run_script("scripts/test_milestone30_phase1_regression.py", extra)
+
+    elif args.command == "milestone30-phase1-closure-test":
+        run_script("scripts/test_milestone30_phase1_closure.py", extra)
+
+    elif args.command == "realtime-market-data-test":
+        run_script("scripts/test_realtime_market_data_foundation.py", extra)
+
+    elif args.command == "realtime-provider-test":
+        run_script("scripts/test_realtime_provider_lifecycle.py", extra)
+
+    elif args.command == "paper-streaming-test":
+        run_script("scripts/test_paper_streaming_pipeline.py", extra)
+
+    elif args.command == "market-hours-feed-test":
+        run_script("scripts/test_market_hours_feed_recovery.py", extra)
+
+    elif args.command == "market-data-reconciliation-test":
+        run_script("scripts/test_market_data_reconciliation.py", extra)
+
+    elif args.command == "market-data-quality-report":
+        run_script("scripts/build_market_data_quality_report.py", extra)
+
+    elif args.command == "milestone30-phase2-regression-test":
+        run_script("scripts/test_milestone30_phase2_regression.py", extra)
+
+    elif args.command == "milestone30-phase2-closure-test":
+        run_script("scripts/test_milestone30_phase2_closure.py", extra)
+
+    elif args.command == "broker-authentication-test":
+        run_script("scripts/test_broker_authentication_foundation.py", extra)
+
+    elif args.command == "broker-contract-mapping-test":
+        run_script("scripts/test_broker_contract_mapping_orders.py", extra)
+
+    elif args.command == "broker-order-execution-test":
+        run_script("scripts/test_broker_order_execution_idempotency.py", extra)
+
+    elif args.command == "broker-status-reconciliation-test":
+        run_script("scripts/test_broker_status_fill_position_reconciliation.py", extra)
+
+    elif args.command == "broker-operational-report":
+        run_script("scripts/build_broker_operational_report.py", extra)
+
+    elif args.command == "milestone30-phase3-regression-test":
+        run_script("scripts/test_milestone30_phase3_regression.py", extra)
+
+    elif args.command == "milestone30-phase3-closure-test":
+        run_script("scripts/test_milestone30_phase3_closure.py", extra)
+
+    elif args.command == "canonical-order-lifecycle-test":
+        run_script("scripts/test_canonical_order_aggregate_lifecycle.py", extra)
+
+    elif args.command == "order-repository-test":
+        run_script("scripts/test_order_repository_journal_audit.py", extra)
+
+    elif args.command == "order-routing-workflow-test":
+        run_script("scripts/test_order_routing_workflow.py", extra)
+
+    elif args.command == "order-linkage-recovery-test":
+        run_script("scripts/test_parent_child_bracket_oco_recovery.py", extra)
+
+    elif args.command == "order-management-report":
+        run_script("scripts/build_order_management_report.py", extra)
+
+    elif args.command == "milestone30-phase4-regression-test":
+        run_script("scripts/test_milestone30_phase4_regression.py", extra)
+
+    elif args.command == "milestone30-phase4-closure-test":
+        run_script("scripts/test_milestone30_phase4_closure.py", extra)
+
+    elif args.command == "pretrade-risk-test":
+        run_script("scripts/test_pretrade_risk_foundation.py", extra)
+
+    elif args.command == "portfolio-risk-controls-test":
+        run_script("scripts/test_portfolio_exposure_controls.py", extra)
+
+    elif args.command == "options-risk-test":
+        run_script("scripts/test_options_greeks_scenario_margin.py", extra)
+
+    elif args.command == "trading-controls-risk-gateway-test":
+        run_script("scripts/test_trading_controls_risk_gateway_workflow.py", extra)
+
+    elif args.command == "risk-gateway-decision-integration-test":
+        run_script("scripts/test_risk_gateway_decision_integration.py", extra)
+
+    elif args.command == "risk-gateway-report":
+        run_script("scripts/build_risk_gateway_report.py", extra)
+
+    elif args.command == "milestone30-phase5-regression-test":
+        run_script("scripts/test_milestone30_phase5_regression.py", extra)
+
+    elif args.command == "milestone30-phase5-closure-test":
+        run_script("scripts/test_milestone30_phase5_closure.py", extra)
+
+    elif args.command == "realtime-position-monitoring-test":
+        run_script("scripts/test_realtime_position_mtm_foundation.py", extra)
+
+    elif args.command == "portfolio-greeks-monitoring-test":
+        run_script("scripts/test_realtime_portfolio_greeks_scenario_monitoring.py", extra)
+
+    elif args.command == "dynamic-risk-limits-test":
+        run_script("scripts/test_dynamic_risk_limits_breach_alerts.py", extra)
+
+    elif args.command == "continuous-monitoring-test":
+        run_script("scripts/test_continuous_monitoring_killswitch_reconciliation.py", extra)
+
+    elif args.command == "position-risk-report":
+        run_script("scripts/build_position_risk_monitoring_report.py", extra)
+
+    elif args.command == "position-risk-dashboard":
+        run_script("scripts/build_position_risk_dashboard.py", extra)
+
+    elif args.command == "milestone30-phase7-regression-test":
+        run_script("scripts/test_milestone30_phase7_regression.py", extra)
+
+    elif args.command == "milestone30-phase7-closure-test":
+        run_script("scripts/test_milestone30_phase7_closure.py", extra)
+
+    elif args.command == "paper-trading-session-test":
+        run_script("scripts/test_paper_trading_session_foundation.py", extra)
+    elif args.command == "paper-scan-pipeline-test":
+        run_script("scripts/test_paper_scan_signal_decision_pipeline.py", extra)
+    elif args.command == "paper-execution-test":
+        run_script("scripts/test_paper_execution_fill_models.py", extra)
+    elif args.command == "paper-position-test":
+        run_script("scripts/test_paper_position_lifecycle_pnl_exits.py", extra)
+    elif args.command == "paper-automation-recovery-test":
+        run_script("scripts/test_paper_automation_orchestration_recovery.py", extra)
+    elif args.command == "paper-trading-report":
+        run_script("scripts/build_paper_trading_report.py", extra)
+    elif args.command == "milestone30-phase6-regression-test":
+        run_script("scripts/test_milestone30_phase6_regression.py", extra)
+    elif args.command == "milestone30-phase6-closure-test":
+        run_script("scripts/test_milestone30_phase6_closure.py", extra)
 
     elif args.command == "paper":
 

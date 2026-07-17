@@ -1,0 +1,11 @@
+{
+  "output": "reports/order_management_operational_report.html",
+  "include_aggregates": true,
+  "include_workflow_routing": true,
+  "include_repository_replay": true,
+  "include_audit_integrity": true,
+  "include_parent_child_groups": true,
+  "include_bracket_and_oco_groups": true,
+  "include_recovery_checkpoints": true,
+  "include_diagnostics": true
+}

@@ -1,0 +1,54 @@
+{
+  "alerts": {
+    "count": 0,
+    "items": []
+  },
+  "environment": "paper",
+  "escalations": {
+    "count": 0,
+    "items": []
+  },
+  "generated_at": "2026-07-17T01:16:06.955201+00:00",
+  "health": {
+    "overall": {},
+    "services": []
+  },
+  "incidents": {
+    "critical_open_count": 0,
+    "items": [],
+    "open_count": 0
+  },
+  "recovery": {
+    "failed_count": 0,
+    "workflows": []
+  },
+  "resilience": {
+    "bulkheads": [],
+    "circuits": []
+  },
+  "schema_version": "1.0",
+  "summary": {
+    "active_bulkhead_calls": 0,
+    "alert_count": 0,
+    "critical_open_incident_count": 0,
+    "escalation_count": 0,
+    "failed_recovery_count": 0,
+    "failed_service_count": 0,
+    "latest_watchdog_recommendation": "UNKNOWN",
+    "latest_watchdog_status": "UNKNOWN",
+    "open_circuit_count": 0,
+    "open_incident_count": 0,
+    "recovery_workflow_count": 0,
+    "rejected_bulkhead_calls": 0,
+    "runtime_healthy": false,
+    "runtime_ready": false,
+    "runtime_score": 0.0,
+    "runtime_status": "UNKNOWN",
+    "service_count": 0
+  },
+  "watchdog": {
+    "cycles": [],
+    "latest_recommendation": "UNKNOWN",
+    "latest_status": "UNKNOWN"
+  }
+}

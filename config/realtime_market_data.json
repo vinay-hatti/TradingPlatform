@@ -1,0 +1,17 @@
+{
+  "maximum_quote_age_seconds": 5.0,
+  "maximum_trade_age_seconds": 10.0,
+  "maximum_future_skew_seconds": 2.0,
+  "maximum_out_of_order_seconds": 1.0,
+  "maximum_spread_pct": 0.25,
+  "warning_spread_pct": 0.1,
+  "minimum_quote_size": 0.0,
+  "minimum_trade_size": 0.0,
+  "reject_crossed_quotes": true,
+  "reject_locked_quotes": false,
+  "reject_stale_quotes": true,
+  "reject_stale_trades": false,
+  "reject_future_timestamps": true,
+  "reject_out_of_order_events": true,
+  "minimum_quality_score": 80.0
+}

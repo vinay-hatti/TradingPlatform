@@ -1,0 +1,9 @@
+{
+  "position_snapshots": "data/position_monitoring/snapshots.json",
+  "portfolio_greeks": "data/position_monitoring/portfolio_greeks.json",
+  "risk_breaches": "data/position_monitoring/risk_breaches.json",
+  "risk_alerts": "data/position_monitoring/risk_alerts.json",
+  "continuous_cycles": "data/position_monitoring/continuous_cycles.json",
+  "report_output": "reports/position_risk_monitoring_report.html",
+  "dashboard_output": "reports/position_risk_dashboard.json"
+}

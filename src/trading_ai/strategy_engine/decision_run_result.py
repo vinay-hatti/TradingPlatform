@@ -81,6 +81,20 @@ class DecisionRunResult:
     execution_benchmark_profile: Any = None
     execution_routing_profile: Any = None
 
+    execution_governance_integration_profile: Any = None
+    execution_governance_profile: Any = None
+    execution_route_registry_profile: Any = None
+    execution_champion_challenger_profile: Any = None
+
+    adaptive_strategy_profiles: Any = None
+    strategy_learning_profiles: Any = None
+    dynamic_strategy_weighting_profile: Any = None
+    ensemble_decision_profiles: Any = None
+    online_adaptation_profile: Any = None
+    learning_state_registry_profile: Any = None
+    learning_state_promotion_profile: Any = None
+    phase10_decision_integration_profiles: Any = None
+
     warnings: list[str] = field(
         default_factory=list
     )

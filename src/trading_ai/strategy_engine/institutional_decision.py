@@ -250,6 +250,48 @@ class InstitutionalDecision:
     execution_integration_profile: Any = None
 
     # -------------------------------------------------
+    # Phase 9 Step 5 execution governance
+    # -------------------------------------------------
+
+    execution_governance_valid: bool = False
+    execution_governance_allowed: bool = True
+    execution_governance_score: float = 0.0
+    execution_governance_grade: str = "N/A"
+    execution_governance_severity: str = "UNKNOWN"
+    execution_governance_aggregate_psi: float = 0.0
+    execution_governance_recommendation: str = "UNAVAILABLE"
+    execution_route_registry_available: bool = False
+    execution_active_route_version: str = "UNAVAILABLE"
+    execution_champion_route_version: str = "UNAVAILABLE"
+    execution_challenger_route_version: str = "UNAVAILABLE"
+    execution_route_promotion_recommended: bool = False
+    execution_governance_integration_profile: Any = None
+
+    # -------------------------------------------------
+    # Phase 10 adaptive strategy and ensemble intelligence
+    # -------------------------------------------------
+
+    phase10_valid: bool = False
+    phase10_allowed: bool = True
+    adaptive_strategy_selected: str = "UNAVAILABLE"
+    adaptive_strategy_score: float = 0.0
+    adaptive_strategy_confidence: float = 0.0
+    ensemble_selected_strategy: str = "UNAVAILABLE"
+    ensemble_selected_direction: str = "NEUTRAL"
+    ensemble_decision_score: float = 0.0
+    ensemble_meta_confidence: float = 0.0
+    ensemble_consensus_ratio: float = 0.0
+    dynamic_strategy_weight: float = 0.0
+    online_adaptation_score: float = 0.0
+    learning_state_version: str = "UNAVAILABLE"
+    learning_state_champion_version: str = "UNAVAILABLE"
+    learning_state_challenger_version: str = "UNAVAILABLE"
+    phase10_grade: str = "N/A"
+    phase10_severity: str = "UNKNOWN"
+    phase10_recommendation: str = "UNAVAILABLE"
+    phase10_decision_integration_profile: Any = None
+
+    # -------------------------------------------------
     # Phase 6 probability calibration analytics
     # -------------------------------------------------
 
@@ -362,6 +404,12 @@ class InstitutionalDecision:
 
         self.execution_analytics_grade = str(self.execution_analytics_grade or "N/A").upper()
         self.execution_analytics_severity = str(self.execution_analytics_severity or "UNKNOWN").upper()
+
+        self.adaptive_strategy_selected = str(self.adaptive_strategy_selected or "UNAVAILABLE").upper()
+        self.ensemble_selected_strategy = str(self.ensemble_selected_strategy or "UNAVAILABLE").upper()
+        self.ensemble_selected_direction = str(self.ensemble_selected_direction or "NEUTRAL").upper()
+        self.phase10_grade = str(self.phase10_grade or "N/A").upper()
+        self.phase10_severity = str(self.phase10_severity or "UNKNOWN").upper()
 
         self.risk_surface_severity = str(
             self.risk_surface_severity or "UNKNOWN"

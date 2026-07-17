@@ -1,0 +1,29 @@
+{
+  "controls": [
+    {
+      "control_id": "DEPLOY-001",
+      "framework": "INTERNAL",
+      "title": "Production deployment approval",
+      "description": "Production releases require governed approval.",
+      "severity": "CRITICAL",
+      "required": true,
+      "evidence_types": [
+        "approval-record",
+        "release-readiness-result"
+      ],
+      "owner_role": "Release Manager"
+    },
+    {
+      "control_id": "DR-001",
+      "framework": "INTERNAL",
+      "title": "Disaster recovery validation",
+      "description": "Recovery plans must be tested and evidenced.",
+      "severity": "CRITICAL",
+      "required": true,
+      "evidence_types": [
+        "dr-test-result"
+      ],
+      "owner_role": "Operations"
+    }
+  ]
+}

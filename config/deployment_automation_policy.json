@@ -1,0 +1,13 @@
+{
+  "default_strategy": "BLUE_GREEN",
+  "require_health_gate": true,
+  "minimum_health_score": 0.95,
+  "canary_initial_traffic_percent": 5,
+  "canary_increment_percent": 20,
+  "canary_max_traffic_percent": 100,
+  "canary_observation_seconds": 60,
+  "rollback_on_health_failure": true,
+  "rollback_on_timeout": true,
+  "max_stage_seconds": 900,
+  "require_audit_events": true
+}

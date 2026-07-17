@@ -1,0 +1,19 @@
+{
+  "cycle_interval_seconds": 15,
+  "maximum_cycle_duration_seconds": 60,
+  "maximum_consecutive_cycle_failures": 3,
+  "reconciliation_quantity_tolerance": 1e-06,
+  "reconciliation_cost_tolerance_pct": 0.01,
+  "activate_kill_switch_on_critical_breach": true,
+  "activate_kill_switch_on_reconciliation_failure": true,
+  "activate_kill_switch_on_monitoring_failure": true,
+  "add_account_halt_on_kill_switch": true,
+  "allow_reduce_only_after_activation": true,
+  "require_position_snapshot": true,
+  "require_greeks_snapshot_for_options": true,
+  "require_dynamic_limit_evaluation": true,
+  "require_broker_reconciliation": true,
+  "persist_cycle_state": true,
+  "repository_path": "data/position_monitoring/continuous_cycles.json",
+  "fail_closed": true
+}

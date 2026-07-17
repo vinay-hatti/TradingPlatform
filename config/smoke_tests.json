@@ -1,0 +1,24 @@
+{
+  "tests": [
+    {
+      "test_id": "python-runtime",
+      "command": [
+        "python",
+        "-c",
+        "print('runtime-ok')"
+      ],
+      "required": true,
+      "timeout_seconds": 30
+    },
+    {
+      "test_id": "trading-ai-import",
+      "command": [
+        "python",
+        "-c",
+        "import trading_ai"
+      ],
+      "required": true,
+      "timeout_seconds": 30
+    }
+  ]
+}
