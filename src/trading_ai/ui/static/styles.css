@@ -1,0 +1,59 @@
+:root{
+  --bg:#090e14;--panel:#111922;--panel2:#17212d;--panel3:#1c2835;
+  --border:#273444;--text:#edf4fb;--muted:#8fa1b5;--accent:#67d7c5;
+  --positive:#5fd39a;--warning:#efbd68;--critical:#ff7b84;--info:#72a8ff
+}
+html[data-theme=light]{
+  --bg:#eef2f7;--panel:#fff;--panel2:#f6f8fb;--panel3:#edf2f7;
+  --border:#dce3ea;--text:#18212c;--muted:#68798b
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:14px Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.shell{display:grid;grid-template-columns:240px 1fr;min-height:100vh}
+aside{padding:25px 18px;background:var(--panel);border-right:1px solid var(--border);position:sticky;top:0;height:100vh}
+.brand{font-size:25px;font-weight:900;color:var(--accent);margin-bottom:35px}
+.brand span{font-size:14px;color:var(--text);margin-left:8px}
+nav{display:grid;gap:7px}
+nav button{padding:11px 13px;border:0;border-radius:9px;background:transparent;color:var(--muted);text-align:left;cursor:pointer}
+nav button:hover,nav button.active{background:var(--panel2);color:var(--text)}
+main{padding:28px 34px;min-width:0}
+header,.panel-head,.row-head{display:flex;justify-content:space-between;align-items:center;gap:16px}
+h1,h2,h3{margin:4px 0}
+small,.muted,.card span,.card small{color:var(--muted)}
+.actions{display:flex;gap:8px;align-items:center}
+.pill,.badge{padding:6px 10px;border:1px solid var(--border);border-radius:999px;color:var(--muted);white-space:nowrap}
+button{padding:9px 12px;border:0;border-radius:8px;background:var(--accent);font-weight:800;cursor:pointer}
+.notice{margin:20px 0;padding:11px 14px;border:1px solid var(--border);border-radius:10px;color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.card,.panel{background:var(--panel);border:1px solid var(--border);border-radius:14px}
+.card{padding:18px;min-width:0}
+.card strong{display:block;font-size:25px;margin:10px 0 5px;overflow-wrap:anywhere}
+.panel{padding:18px;margin-top:18px;min-width:0}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.stack,.timeline{display:grid;gap:10px;margin-top:14px}
+.item,.event,.permission,.module{padding:12px;background:var(--panel2);border-radius:9px;border-left:4px solid var(--accent);min-width:0}
+.item.WARNING,.item.DEGRADED,.item.WARN,.event.WARNING{border-left-color:var(--warning)}
+.item.FAIL,.item.FAILED,.item.NOT_READY,.item.ERROR,.event.FAILED,.event.DENIED,.permission.DENIED{border-left-color:var(--critical)}
+.item.PASS,.item.READY,.item.HEALTHY,.item.ACTIVE,.permission.ALLOWED{border-left-color:var(--positive)}
+.item-head,.event-head,.permission-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.item p,.event p,.permission p{color:var(--muted);line-height:1.45}
+.table-wrap{overflow:auto;margin-top:14px;border:1px solid var(--border);border-radius:10px}
+table{width:100%;border-collapse:collapse;min-width:720px}
+th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+th{background:var(--panel2);color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+tr:last-child td{border-bottom:0}
+.status-positive{color:var(--positive)}
+.status-warning{color:var(--warning)}
+.status-critical{color:var(--critical)}
+.status-info{color:var(--info)}
+.metric{font-variant-numeric:tabular-nums}
+.empty{padding:24px;text-align:center;color:var(--muted);background:var(--panel2);border-radius:10px}
+.kv{display:grid;grid-template-columns:minmax(130px,.5fr) 1fr;gap:8px 14px;margin-top:14px}
+.kv div:nth-child(odd){color:var(--muted)}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.toolbar input,.toolbar select{background:var(--panel2);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:9px 10px}
+.sparkline{height:8px;background:var(--panel3);border-radius:999px;overflow:hidden;margin-top:10px}
+.sparkline span{display:block;height:100%;background:var(--accent)}
+@media(max-width:1100px){.cards,.grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:800px){.shell{grid-template-columns:1fr}aside{position:static;height:auto}.cards,.grid,.grid-3{grid-template-columns:1fr}main{padding:20px}}

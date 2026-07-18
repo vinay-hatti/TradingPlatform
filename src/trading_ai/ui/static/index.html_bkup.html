@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Trading AI Workstation</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">TA</div>
+        <div><strong>Trading AI</strong><span>Institutional Workstation</span></div>
+      </div>
+      <nav>
+        <button class="nav-item" data-view="dashboard">Dashboard</button>
+        <button class="nav-item active" data-view="signals">Opportunities</button>
+        <button class="nav-item" data-view="portfolio">Portfolio</button>
+        <button class="nav-item" data-view="risk">Risk</button>
+        <button class="nav-item" data-view="market">Market</button>
+        <button class="nav-item" data-view="backtests">Backtests</button>
+        <button class="nav-item" data-view="execution">Execution</button>
+        <button class="nav-item" data-view="reports">Reports</button>
+      </nav>
+      <div class="sidebar-footer">
+        <span id="environmentBadge" class="status-pill">development</span>
+        <button id="themeToggle" class="icon-button">◐</button>
+      </div>
+    </aside>
+
+    <main class="workspace">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Milestone 31 · Phase 3</p>
+          <h1>AI Opportunity Screener</h1>
+        </div>
+        <div class="topbar-actions">
+          <span id="sourceStatus" class="status-pill warning">Loading</span>
+          <button id="exportButton" class="secondary-button">Export CSV</button>
+          <button id="refreshButton" class="primary-button">Refresh</button>
+        </div>
+      </header>
+
+      <section class="panel filter-panel">
+        <div class="filter-grid">
+          <label>Search<input id="searchInput" placeholder="Symbol, strategy, regime, contract"></label>
+          <label>Direction<select id="directionFilter"><option value="">All</option><option>CALL</option><option>PUT</option><option>WATCH</option></select></label>
+          <label>Minimum Score<input id="minScore" type="number" min="0" max="100" value="0"></label>
+          <label>Minimum POP %<input id="minPop" type="number" min="0" max="100" value="0"></label>
+          <label>Sort By<select id="sortBy"><option value="score">Score</option><option value="probability_of_profit">POP</option><option value="expected_value">Expected Value</option><option value="liquidity_score">Liquidity</option><option value="open_interest">Open Interest</option><option value="volume">Volume</option><option value="spread_pct">Spread</option></select></label>
+          <label>Order<select id="sortOrder"><option value="desc">Descending</option><option value="asc">Ascending</option></select></label>
+        </div>
+        <div class="filter-actions">
+          <button id="applyFilters" class="primary-button">Apply Filters</button>
+          <button id="clearFilters" class="secondary-button">Clear</button>
+        </div>
+      </section>
+
+      <section class="summary-grid">
+        <article class="metric-card"><span>Total</span><strong id="totalRecords">0</strong><small>Available opportunities</small></article>
+        <article class="metric-card"><span>Filtered</span><strong id="filteredRecords">0</strong><small>Matching current filters</small></article>
+        <article class="metric-card"><span>Top Score</span><strong id="topScore">—</strong><small>Highest ranked result</small></article>
+        <article class="metric-card"><span>Average POP</span><strong id="averagePop">—</strong><small>Filtered opportunities</small></article>
+      </section>
+
+      <section class="panel">
+        <div class="table-toolbar">
+          <div><p class="eyebrow">Ranked Intelligence</p><h2>Current Opportunities</h2></div>
+          <span id="freshnessText" class="muted">—</span>
+        </div>
+        <div class="table-wrap">
+          <table class="opportunity-table">
+            <thead>
+              <tr>
+                <th>Rank</th><th>Symbol</th><th>Direction</th><th>Strategy</th>
+                <th>Score</th><th>POP</th><th>EV</th><th>Regime</th>
+                <th>Contract</th><th>Liquidity</th><th>OI</th><th>Volume</th>
+                <th>Spread</th><th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="opportunityRows"></tbody>
+          </table>
+        </div>
+        <div class="pagination">
+          <button id="prevPage" class="secondary-button">Previous</button>
+          <span id="pageText">Page 1 of 1</span>
+          <button id="nextPage" class="secondary-button">Next</button>
+        </div>
+      </section>
+
+      <section id="detailPanel" class="panel detail-panel hidden">
+        <div class="table-toolbar">
+          <div><p class="eyebrow">Selected Opportunity</p><h2 id="detailTitle">—</h2></div>
+          <button id="closeDetail" class="secondary-button">Close</button>
+        </div>
+        <div id="detailGrid" class="detail-grid"></div>
+        <div id="detailNotes" class="notice-list"></div>
+      </section>
+    </main>
+  </div>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>

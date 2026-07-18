@@ -21,6 +21,8 @@ scikit-learn
 alembic
 matplotlib>=3.11.0
 certifi>=2025.11.12
+fastapi>=0.139.2
+uvicorn>=0.49.0
 
 [dev]
 pytest

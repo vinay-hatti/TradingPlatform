@@ -1,0 +1,30 @@
+{
+  "alerts": [
+    {
+      "acknowledged": false,
+      "acknowledged_at": null,
+      "acknowledged_by": null,
+      "alert_id": "alert-ca19982a410e4921",
+      "first_seen_at": "2026-07-18T22:48:02.523465Z",
+      "last_seen_at": "2026-07-18T22:53:08.361353Z",
+      "message": "Paper command state has not been created yet.",
+      "rule_name": "health.paper_command_state",
+      "severity": "WARNING",
+      "source": "paper_command_state",
+      "status": "ACTIVE"
+    },
+    {
+      "acknowledged": false,
+      "acknowledged_at": null,
+      "acknowledged_by": null,
+      "alert_id": "alert-34225e113cfd43f6",
+      "first_seen_at": "2026-07-18T22:48:02.523465Z",
+      "last_seen_at": "2026-07-18T22:53:08.361353Z",
+      "message": "Paper broker state has not been created yet.",
+      "rule_name": "health.paper_broker_state",
+      "severity": "WARNING",
+      "source": "paper_broker_state",
+      "status": "ACTIVE"
+    }
+  ]
+}

@@ -27,6 +27,8 @@ Requires-Dist: scikit-learn
 Requires-Dist: alembic
 Requires-Dist: matplotlib>=3.11.0
 Requires-Dist: certifi>=2025.11.12
+Requires-Dist: fastapi>=0.139.2
+Requires-Dist: uvicorn>=0.49.0
 Provides-Extra: dev
 Requires-Dist: pytest; extra == "dev"
 Requires-Dist: pytest-cov; extra == "dev"

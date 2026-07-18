@@ -1,1 +1,1 @@
-"""Local interactive UI for the Trading AI Platform."""
+"""Milestone 31 institutional workstation UI."""

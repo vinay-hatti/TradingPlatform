@@ -1,0 +1,27 @@
+{
+  "backups": [],
+  "packages": [],
+  "promotions": [],
+  "runtime_components": [
+    {
+      "command": [
+        "uv",
+        "run",
+        "uvicorn",
+        "trading_ai.ui.app:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8080"
+      ],
+      "last_error": null,
+      "log_path": "reports/runtime/institutional-workstation.log",
+      "name": "institutional-workstation",
+      "pid": null,
+      "restart_count": 0,
+      "started_at": null,
+      "status": "STOPPED",
+      "stopped_at": null
+    }
+  ]
+}
