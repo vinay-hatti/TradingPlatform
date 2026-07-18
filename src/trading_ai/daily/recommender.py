@@ -11,6 +11,8 @@ class LiveTradeRecommender:
         take_profit_pct=0.30,
         stop_loss_pct=0.15,
         contract_multiplier=100,
+        minimum_option_price=0.25,
+        maximum_contracts=50,
     ):
         self.capital = float(capital)
         self.risk_per_trade_pct = float(risk_per_trade_pct)
@@ -18,6 +20,8 @@ class LiveTradeRecommender:
         self.take_profit_pct = float(take_profit_pct)
         self.stop_loss_pct = float(stop_loss_pct)
         self.contract_multiplier = int(contract_multiplier)
+        self.minimum_option_price = float(minimum_option_price)
+        self.maximum_contracts = int(maximum_contracts)
 
     def confidence(self, ai_score):
 
@@ -60,8 +64,19 @@ class LiveTradeRecommender:
         target = entry * (1.0 + self.take_profit_pct)
         stop = entry * (1.0 - self.stop_loss_pct)
 
-        contracts = self._contracts(entry)
+        if entry < self.minimum_option_price:
 
+            contracts = 0
+
+        else:
+
+            contracts = min(
+
+                self._contracts(entry),
+
+                self.maximum_contracts,
+
+            )
         estimated_cost = (
             contracts
             * entry
@@ -87,6 +102,16 @@ class LiveTradeRecommender:
         )
 
         notes = []
+        if getattr(candidate, "contract_ticker", ""):
+            notes.append(f"Live contract: {candidate.contract_ticker}.")
+            notes.append(f"Entry source: {candidate.price_source}; quote time: {candidate.quote_timestamp or 'unavailable'}.")
+        else:
+            notes.append("Synthetic proxy data; not a live listed contract.")
+        if entry < self.minimum_option_price:
+            notes.append(
+                "Rejected for sizing: option proxy price "
+                "is below the minimum tradable proxy premium."
+            )
 
         if contracts <= 0:
             notes.append("Position size is zero under current risk limits.")
@@ -106,6 +131,12 @@ class LiveTradeRecommender:
         elif candidate.signal == "PUT":
             notes.append("Bearish options candidate.")
 
+        if getattr(candidate, "expiry_source", "") == "STANDARD_FRIDAY_PROXY":
+            notes.append(
+                "Expiration is a standard-Friday proxy; "
+                "verify the listed contract with the broker."
+            )
+
         return LiveTradeCandidate(
             symbol=candidate.symbol,
             signal=candidate.signal,
@@ -118,6 +149,11 @@ class LiveTradeRecommender:
             strike=float(candidate.strike),
             expiry=candidate.expiry,
             dte=int(candidate.dte),
+            expiry_source=getattr(
+                candidate,
+                "expiry_source",
+                "STANDARD_FRIDAY_PROXY",
+            ),
             option_entry=entry,
             target_price=target,
             stop_price=stop,
@@ -138,6 +174,24 @@ class LiveTradeRecommender:
             regime_score=float(candidate.regime_score),
             volatility_score=float(candidate.volatility_score),
             risk_score=float(candidate.risk_score),
+            contract_ticker=getattr(candidate, "contract_ticker", ""),
+            bid=float(getattr(candidate, "bid", 0.0)),
+            ask=float(getattr(candidate, "ask", 0.0)),
+            last_price=float(getattr(candidate, "last_price", 0.0)),
+            price_source=getattr(candidate, "price_source", ""),
+            option_data_source=getattr(candidate, "option_data_source", ""),
+            quote_timestamp=getattr(candidate, "quote_timestamp", ""),
+            open_interest=int(getattr(candidate, "open_interest", 0)),
+            option_volume=int(getattr(candidate, "option_volume", 0)),
+            spread_pct=float(getattr(candidate, "spread_pct", 0.0)),
+            contract_selection_score=float(getattr(candidate, "contract_selection_score", 0.0)),
+            liquidity_score=float(getattr(candidate, "liquidity_score", 0.0)),
+            delta_selection_score=float(getattr(candidate, "delta_selection_score", 0.0)),
+            expiration_selection_score=float(getattr(candidate, "expiration_selection_score", 0.0)),
+            strike_selection_score=float(getattr(candidate, "strike_selection_score", 0.0)),
+            spread_selection_score=float(getattr(candidate, "spread_selection_score", 0.0)),
+            open_interest_selection_score=float(getattr(candidate, "open_interest_selection_score", 0.0)),
+            volume_selection_score=float(getattr(candidate, "volume_selection_score", 0.0)),
             portfolio_penalty=float(candidate.portfolio_penalty),
             portfolio_notes=list(candidate.portfolio_notes),
             trade_notes=notes,

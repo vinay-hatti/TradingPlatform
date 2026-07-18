@@ -107,12 +107,14 @@ src/trading_ai/core/exceptions.py
 src/trading_ai/core/logger.py
 src/trading_ai/core/logging.py
 src/trading_ai/daily/__init__.py
+src/trading_ai/daily/expiry_selector.py
 src/trading_ai/daily/live_profile.py
 src/trading_ai/daily/models.py
 src/trading_ai/daily/recommender.py
 src/trading_ai/daily/reporter.py
 src/trading_ai/daily/scanner.py
 src/trading_ai/daily/sectors.py
+src/trading_ai/daily/strike_selector.py
 src/trading_ai/daily/trade_candidate.py
 src/trading_ai/daily/trade_reporter.py
 src/trading_ai/database/__init__.py
@@ -198,6 +200,7 @@ src/trading_ai/execution/position.py
 src/trading_ai/feature_store/pipeline.py
 src/trading_ai/feature_store/regime.py
 src/trading_ai/feature_store/schema.py
+src/trading_ai/indicators/_frame.py
 src/trading_ai/indicators/atr.py
 src/trading_ai/indicators/base.py
 src/trading_ai/indicators/bollinger.py
@@ -344,6 +347,8 @@ src/trading_ai/options/greeks.py
 src/trading_ai/options/importer.py
 src/trading_ai/options/iv.py
 src/trading_ai/options/liquidity.py
+src/trading_ai/options/live_contract_selector.py
+src/trading_ai/options/live_snapshot.py
 src/trading_ai/options/polygon.py
 src/trading_ai/options/pricing.py
 src/trading_ai/options/pricing_adapter.py
@@ -361,6 +366,7 @@ src/trading_ai/options/strategies.py
 src/trading_ai/options/strike_selector.py
 src/trading_ai/options/strikes.py
 src/trading_ai/options/thinkorswim.py
+src/trading_ai/options/tls_context.py
 src/trading_ai/options/tradier.py
 src/trading_ai/options/volatility.py
 src/trading_ai/options/providers/base.py
@@ -820,6 +826,10 @@ src/trading_ai/strategy_engine/walk_forward_profile.py
 src/trading_ai/strategy_engine/walk_forward_serialization.py
 src/trading_ai/strategy_engine/walk_forward_service.py
 src/trading_ai/strategy_engine/walk_forward_splitter.py
+src/trading_ai/ui/__init__.py
+src/trading_ai/ui/command_runner.py
+src/trading_ai/ui/control_center.py
+src/trading_ai/ui/report_browser.py
 src/trading_ai/utils/__init__.py
 src/trading_ai/utils/logger.py
 src/trading_ai/utils/math.py

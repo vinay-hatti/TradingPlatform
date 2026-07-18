@@ -53,6 +53,17 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         help="Maximum ranked candidates converted into trade ideas.",
     )
     parser.add_argument("--pricing-dte", type=int, default=30)
+    parser.add_argument("--option-data-mode", choices=["live", "auto", "proxy"], default="live")
+    parser.add_argument("--max-option-spread-pct", type=float, default=0.25)
+    parser.add_argument("--min-option-open-interest", type=int, default=100)
+    parser.add_argument("--min-option-volume", type=int, default=10)
+    parser.add_argument("--option-delta-weight", type=float, default=0.25)
+    parser.add_argument("--option-expiration-weight", type=float, default=0.15)
+    parser.add_argument("--option-strike-weight", type=float, default=0.10)
+    parser.add_argument("--option-spread-weight", type=float, default=0.15)
+    parser.add_argument("--option-oi-weight", type=float, default=0.20)
+    parser.add_argument("--option-volume-weight", type=float, default=0.15)
+    parser.add_argument("--liquidity-data-mode", choices=["adaptive", "strict"], default="adaptive")
     parser.add_argument("--capital", type=float, default=100000.0)
     parser.add_argument("--risk-per-trade-pct", type=float, default=0.02)
     parser.add_argument("--max-position-pct", type=float, default=0.05)
@@ -110,8 +121,16 @@ def print_candidate(index: int, candidate) -> None:
     print(f"   Market Regime  : {candidate.market_regime}")
     print(f"   Underlying     : ${candidate.close:.2f}")
     print(f"   Strike         : ${candidate.strike:.2f}")
+    print(f"   Contract       : {candidate.contract_ticker or 'PROXY'}")
+    print(f"   Expiration     : {candidate.expiry}")
+    print(f"   Bid / Ask      : ${candidate.bid:.2f} / ${candidate.ask:.2f}")
+    print(f"   Price Source   : {candidate.price_source}")
+    print(f"   Data Source    : {candidate.option_data_source}")
+    print(f"   Quote Time     : {candidate.quote_timestamp or 'unavailable'}")
     print(f"   Option Price   : ${candidate.option_price:.2f}")
-    print(f"   Expiry Proxy   : {candidate.expiry}")
+    print(f"   Expiration   : {candidate.expiry}")
+    print(f"   DTE            : {candidate.dte}")
+    print(f"   Expiry Source  : {candidate.expiry_source}")
     print(f"   Ranking Reason : {candidate.ranking_reason}")
     if candidate.portfolio_notes:
         print("   Portfolio Notes:")
@@ -127,6 +146,14 @@ def print_trade(index: int, trade) -> None:
     print(f"   Strategy    : {trade.strategy}")
     print(f"   Underlying  : ${trade.underlying_price:.2f}")
     print(f"   Strike      : ${trade.strike:.2f}")
+    print(f"   Contract    : {trade.contract_ticker or 'PROXY'}")
+    print(f"   Expiration  : {trade.expiry}")
+    print(f"   Bid / Ask   : ${trade.bid:.2f} / ${trade.ask:.2f}")
+    print(f"   Price Src   : {trade.price_source}")
+    print(f"   Quote Time  : {trade.quote_timestamp or 'unavailable'}")
+    print(f"   Expiration  : {trade.expiry}")
+    print(f"   DTE         : {trade.dte}")
+    print(f"   Expiry Src  : {trade.expiry_source}")
     print(f"   Entry       : ${trade.option_entry:.2f}")
     print(f"   Target      : ${trade.target_price:.2f}")
     print(f"   Stop        : ${trade.stop_price:.2f}")
@@ -172,6 +199,17 @@ def main(argv: list[str] | None = None) -> int:
         pricing_dte=args.pricing_dte,
         start=args.start,
         end=args.end,
+        option_data_mode=args.option_data_mode,
+        maximum_option_spread_pct=args.max_option_spread_pct,
+        minimum_option_open_interest=args.min_option_open_interest,
+        minimum_option_volume=args.min_option_volume,
+        delta_weight=args.option_delta_weight,
+        expiration_weight=args.option_expiration_weight,
+        strike_weight=args.option_strike_weight,
+        spread_weight=args.option_spread_weight,
+        open_interest_weight=args.option_oi_weight,
+        volume_weight=args.option_volume_weight,
+        liquidity_data_mode=args.liquidity_data_mode,
     )
 
     print()
@@ -180,6 +218,7 @@ def main(argv: list[str] | None = None) -> int:
     print(f"Symbols Selected: {len(symbols)}")
     print(f"History         : {args.start} -> {args.end}")
     print(f"Minimum Score   : {args.min_score}")
+    print(f"Option Data     : {args.option_data_mode}")
     print(
         f"Data Mode       : "
         f"{'network allowed' if args.allow_network else 'cache only'}"

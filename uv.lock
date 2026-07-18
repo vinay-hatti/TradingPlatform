@@ -1952,6 +1952,7 @@ source = { editable = "." }
 dependencies = [
     { name = "alembic" },
     { name = "apscheduler" },
+    { name = "certifi" },
     { name = "httpx" },
     { name = "loguru" },
     { name = "matplotlib" },
@@ -1994,6 +1995,7 @@ dev = [
 requires-dist = [
     { name = "alembic" },
     { name = "apscheduler" },
+    { name = "certifi", specifier = ">=2025.11.12" },
     { name = "httpx" },
     { name = "loguru" },
     { name = "matplotlib", specifier = ">=3.11.0" },

@@ -20,6 +20,7 @@ xgboost
 scikit-learn
 alembic
 matplotlib>=3.11.0
+certifi>=2025.11.12
 
 [dev]
 pytest
