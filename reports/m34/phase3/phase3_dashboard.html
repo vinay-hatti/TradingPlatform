@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Milestone 34 Phase 3 Dashboard</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f6f8;
+  color: #1f2933;
+}
+header {
+  background: #102a43;
+  color: white;
+  padding: 24px 32px;
+}
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+.panel {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.summary-grid div {
+  background: #eef2f6;
+  padding: 12px;
+  border-radius: 8px;
+}
+.summary-grid strong, .summary-grid span {
+  display: block;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #d9e2ec;
+}
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 14px;
+  background: #d9e2ec;
+  color: #102a43;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Milestone 34 Phase 3 — Institutional Trade Construction</h1>
+  <p>TRADE-001 · AAPL · BULL_PUT_SPREAD</p>
+</header>
+<main>
+<section class="panel">
+  <h2>Executive Summary</h2>
+  <div class="summary-grid">
+    <div><strong>Overall Status</strong><span>READY</span></div>
+    <div><strong>Overall Score</strong><span>92.12</span></div>
+    <div><strong>Overall Grade</strong><span>A</span></div>
+    <div><strong>Risk Severity</strong><span>NONE</span></div>
+    <div><strong>Execution Allowed</strong><span>True</span></div>
+    <div><strong>Approval</strong><span>AUTO_APPROVED</span></div>
+  </div>
+  <p><strong>Recommendation:</strong> Trade may proceed automatically.</p>
+</section>
+<section class='panel'><h2>Trade Construction</h2><div class='summary-grid'><div><strong>Status</strong><span>READY</span></div><div><strong>Score</strong><span>100.00</span></div><div><strong>Grade</strong><span>A</span></div></div><table><thead><tr><th>Metric</th><th>Value</th><th>Status</th><th>Severity</th><th>Description</th></tr></thead><tbody><tr><td>Ticket Status</td><td>READY</td><td>PASS</td><td>NONE</td><td>Final executable trade-ticket state.</td></tr><tr><td>Defined Risk</td><td>True</td><td>PASS</td><td>NONE</td><td>Whether maximum loss is bounded.</td></tr><tr><td>Reward/Risk</td><td>1.25</td><td>INFO</td><td>NONE</td><td>Maximum reward divided by maximum risk.</td></tr><tr><td>Position Risk</td><td>0.64%</td><td>INFO</td><td>NONE</td><td>Position risk as a percentage of equity.</td></tr></tbody></table><div class='two-column'><div><h3>Warnings</h3><ul><li>None</li></ul></div><div><h3>Rejections</h3><ul><li>None</li></ul></div></div></section><section class='panel'><h2>Position Sizing and Portfolio Allocation</h2><div class='summary-grid'><div><strong>Status</strong><span>READY</span></div><div><strong>Score</strong><span>68.50</span></div><div><strong>Grade</strong><span>D</span></div></div><table><thead><tr><th>Metric</th><th>Value</th><th>Status</th><th>Severity</th><th>Description</th></tr></thead><tbody><tr><td>Positions Allocated</td><td>1</td><td>INFO</td><td>NONE</td><td>Number of approved portfolio positions.</td></tr><tr><td>Portfolio Risk</td><td>0.32%</td><td>INFO</td><td>NONE</td><td>Total portfolio risk as percentage of equity.</td></tr><tr><td>Capital Utilization</td><td>0.32%</td><td>INFO</td><td>NONE</td><td>Buying power consumed by proposed positions.</td></tr><tr><td>Portfolio Delta</td><td>12.00</td><td>INFO</td><td>NONE</td><td>Aggregate directional exposure.</td></tr></tbody></table><div class='two-column'><div><h3>Warnings</h3><ul><li>None</li></ul></div><div><h3>Rejections</h3><ul><li>None</li></ul></div></div></section><section class='panel'><h2>Trade Lifecycle</h2><div class='summary-grid'><div><strong>Status</strong><span>READY</span></div><div><strong>Score</strong><span>100.00</span></div><div><strong>Grade</strong><span>A</span></div></div><table><thead><tr><th>Metric</th><th>Value</th><th>Status</th><th>Severity</th><th>Description</th></tr></thead><tbody><tr><td>Entry Status</td><td>READY</td><td>PASS</td><td>NONE</td><td>Lifecycle entry readiness.</td></tr><tr><td>Days to Expiration</td><td>33</td><td>INFO</td><td>NONE</td><td>Remaining duration at planned entry.</td></tr><tr><td>Profit Target</td><td>400.00</td><td>INFO</td><td>NONE</td><td>Planned profit-taking threshold.</td></tr><tr><td>Stop Loss</td><td>347.20</td><td>INFO</td><td>NONE</td><td>Planned loss-control threshold.</td></tr></tbody></table><div class='two-column'><div><h3>Warnings</h3><ul><li>None</li></ul></div><div><h3>Rejections</h3><ul><li>None</li></ul></div></div></section><section class='panel'><h2>Pre-Trade Governance</h2><div class='summary-grid'><div><strong>Status</strong><span>READY</span></div><div><strong>Score</strong><span>100.00</span></div><div><strong>Grade</strong><span>A</span></div></div><table><thead><tr><th>Metric</th><th>Value</th><th>Status</th><th>Severity</th><th>Description</th></tr></thead><tbody><tr><td>Approval Status</td><td>AUTO_APPROVED</td><td>PASS</td><td>NONE</td><td>Final institutional approval state.</td></tr><tr><td>Confidence Score</td><td>89.50</td><td>INFO</td><td>NONE</td><td>Integrated confidence across Phase 3.</td></tr><tr><td>Rules Evaluated</td><td>22</td><td>INFO</td><td>NONE</td><td>Number of governance rules evaluated.</td></tr><tr><td>Audit Records</td><td>22</td><td>INFO</td><td>NONE</td><td>Immutable governance audit records.</td></tr></tbody></table><div class='two-column'><div><h3>Warnings</h3><ul><li>None</li></ul></div><div><h3>Rejections</h3><ul><li>None</li></ul></div></div></section>
+<section class="panel">
+  <h2>Consolidated Governance Outcome</h2>
+  <div class="two-column">
+    <div><h3>Warnings</h3><ul><li>None</li></ul></div>
+    <div><h3>Rejection Reasons</h3><ul><li>None</li></ul></div>
+  </div>
+  <h3>Remediation Actions</h3>
+  <ul><li>None</li></ul>
+</section>
+</main>
+</body>
+</html>

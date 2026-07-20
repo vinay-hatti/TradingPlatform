@@ -1,0 +1,94 @@
+{
+  "attribution_factors": [
+    {
+      "category": "FORECAST",
+      "contribution_score": 1,
+      "factor_name": "directional_call",
+      "favorable": true
+    },
+    {
+      "category": "SCENARIO",
+      "contribution_score": 1,
+      "factor_name": "scenario_selection",
+      "favorable": true
+    },
+    {
+      "category": "RISK",
+      "contribution_score": -1,
+      "factor_name": "risk_control",
+      "favorable": false
+    }
+  ],
+  "attribution_id": "ATTRIBUTION-001",
+  "case_id": "CASE-001",
+  "data_completeness_score": 1.0,
+  "decision_quality_grade": "B",
+  "decision_quality_score": 0.801833,
+  "evaluated_at": "2026-07-20T04:56:46.515547+00:00",
+  "exit_reason": "Position closed at planned profit target",
+  "expected_drawdown_pct": 0.03,
+  "expected_return_pct": 0.22,
+  "expected_volatility_pct": 0.28,
+  "forecast_accuracy": {
+    "brier_score": 0.5625,
+    "confidence_calibration_error": 0.18,
+    "directional_accuracy": 1.0,
+    "drawdown_error_pct": 0.01,
+    "forecast_grade": "D",
+    "overall_forecast_accuracy": 0.636667,
+    "probability_error": 0.75,
+    "return_error_pct": 0.08,
+    "volatility_error_pct": 0.01
+  },
+  "holding_period_days": 18,
+  "journal_id": "JOURNAL-001",
+  "metadata": {
+    "milestone": 34,
+    "phase": 4,
+    "step": 4
+  },
+  "outcome_status": "PROFITABLE",
+  "pnl_amount": 1400.0,
+  "positive_factors": [
+    "Realized outcome data meets completeness policy"
+  ],
+  "realized_drawdown_pct": 0.04,
+  "realized_return_pct": 0.14,
+  "realized_volatility_pct": 0.27,
+  "rejection_reasons": [],
+  "remediation_actions": [],
+  "research_feedback": {
+    "lessons": [
+      {
+        "category": "FORECAST",
+        "lesson": "Forecast aligned with outcome.",
+        "lesson_id": "ATTRIBUTION-001-LESSON-001"
+      }
+    ],
+    "recommendations": [],
+    "strengths": [
+      "Directional forecast was accurate.",
+      "Scenario selection was accurate."
+    ],
+    "weaknesses": []
+  },
+  "scenario_calibration": {
+    "calibration_grade": "F",
+    "calibration_score": 0.5625,
+    "realized_scenario_id": "BULL",
+    "scenario_match": true,
+    "selected_scenario_id": "BULL",
+    "selected_scenario_probability": 0.25
+  },
+  "strategy_name": "BULL_PUT_SPREAD",
+  "symbol": "AAPL",
+  "thesis_validation": {
+    "assumption_validity_score": 1.0,
+    "confirmation_score": 0.81,
+    "evidence_quality_score": 0.85,
+    "invalidation_reasons": [],
+    "invalidation_triggered": false,
+    "validation_status": "CONFIRMED"
+  },
+  "warnings": []
+}

@@ -1,0 +1,66 @@
+{
+  "analyst_count": 1,
+  "dashboard_id": "M34-PHASE5-KNOWLEDGE-DASHBOARD-001",
+  "generated_at": "2026-07-20T06:31:55.706440+00:00",
+  "governance_status": "REVIEW",
+  "highlights": [
+    "Research knowledge base contains 1 case(s).",
+    "Pattern discovery produced 0 cluster(s).",
+    "Institutional learning incorporated 1 case(s).",
+    "Analyst performance includes 1 scorecard(s)."
+  ],
+  "institutional_learning_case_count": 1,
+  "metadata": {
+    "milestone_complete": false,
+    "phase_complete": false
+  },
+  "metrics": [
+    {
+      "detail": "1 research case(s) available.",
+      "name": "Knowledge Quality",
+      "status": "DEVELOPING",
+      "value": 0.1
+    },
+    {
+      "detail": "0 pattern cluster(s) available.",
+      "name": "Pattern Confidence",
+      "status": "DEVELOPING",
+      "value": 0.0
+    },
+    {
+      "detail": "1 case(s) incorporated into learning.",
+      "name": "Learning Maturity",
+      "status": "DEVELOPING",
+      "value": 0.1
+    },
+    {
+      "detail": "1 analyst scorecard(s) available.",
+      "name": "Analyst Discipline",
+      "status": "READY",
+      "value": 0.747775
+    },
+    {
+      "detail": "2 of 4 source domains ready.",
+      "name": "Governance",
+      "status": "REVIEW",
+      "value": 0.5
+    }
+  ],
+  "milestone": 34,
+  "pattern_cluster_count": 0,
+  "phase": 5,
+  "readiness_grade": "NOT_READY",
+  "readiness_score": 0.289555,
+  "research_case_count": 1,
+  "risks": [
+    "Research history remains limited.",
+    "No stable pattern clusters are available.",
+    "One or more source domains require governance review."
+  ],
+  "source_status": {
+    "analyst_performance": "READY",
+    "institutional_learning": "INSUFFICIENT_HISTORY",
+    "knowledge_base": "READY",
+    "pattern_discovery": "INSUFFICIENT_HISTORY"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "account": {
+    "account_equity": 100000.0
+  },
+  "governance": {
+    "broker_ready": true,
+    "compliance_cleared": true,
+    "event_risk_present": false,
+    "override_approved": false,
+    "override_requested": false,
+    "override_scope": []
+  },
+  "lifecycle": {
+    "as_of_date": "2026-07-19",
+    "confidence": 0.82,
+    "event_date": null
+  },
+  "portfolio_planning": {
+    "annualized_volatility_pct": 0.24,
+    "candidate_id": "TRADE-001-CANDIDATE",
+    "expected_return_pct": 0.1,
+    "expected_shortfall_per_contract": 160.0,
+    "greeks_per_contract": {
+      "delta": 12.0,
+      "gamma": -1.0,
+      "theta": 3.0,
+      "vega": -4.0
+    },
+    "liquidity_score": 92.0,
+    "maximum_contracts": 2
+  },
+  "trade": {
+    "breakeven_points": [
+      198.2
+    ],
+    "direction": "BULLISH",
+    "legs": [
+      {
+        "ask": 2.55,
+        "bid": 2.45,
+        "delta": -0.28,
+        "expiration": "2026-08-21",
+        "gamma": 0.04,
+        "mark": 2.5,
+        "open_interest": 8500,
+        "option_type": "PUT",
+        "side": "SHORT",
+        "strike": 200.0,
+        "theta": -0.08,
+        "vega": 0.12,
+        "volume": 1400
+      },
+      {
+        "ask": 0.75,
+        "bid": 0.65,
+        "delta": -0.16,
+        "expiration": "2026-08-21",
+        "gamma": 0.03,
+        "mark": 0.7,
+        "open_interest": 6200,
+        "option_type": "PUT",
+        "side": "LONG",
+        "strike": 195.0,
+        "theta": -0.05,
+        "vega": 0.09,
+        "volume": 900
+      }
+    ],
+    "maximum_loss_per_contract": 320.0,
+    "maximum_profit_per_contract": 400.0,
+    "probability_of_profit": 0.72,
+    "quantity_ratios": [
+      1,
+      1
+    ],
+    "requested_contracts": 2,
+    "sector": "TECHNOLOGY",
+    "strategy_name": "BULL_PUT_SPREAD",
+    "symbol": "AAPL",
+    "trade_id": "TRADE-001"
+  }
+}

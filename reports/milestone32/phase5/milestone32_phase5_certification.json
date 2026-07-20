@@ -1,0 +1,191 @@
+{
+  "certification_decision": "MILESTONE_32_CERTIFIED_AND_CLOSED",
+  "certified": true,
+  "controls": [
+    {
+      "category": "SOFTWARE",
+      "control_id": "software-regression",
+      "evidence": {
+        "severity": "CRITICAL",
+        "source": "pytest"
+      },
+      "passed": true,
+      "recommendation": "",
+      "required": true,
+      "score": 1.0,
+      "title": "Full regression suite passes"
+    },
+    {
+      "category": "DEPLOYMENT",
+      "control_id": "deployment-rollback",
+      "evidence": {
+        "severity": "CRITICAL",
+        "source": "deployment governance"
+      },
+      "passed": true,
+      "recommendation": "",
+      "required": true,
+      "score": 1.0,
+      "title": "Deployment and rollback validated"
+    },
+    {
+      "category": "OBSERVABILITY",
+      "control_id": "observability-ready",
+      "evidence": {
+        "severity": "CRITICAL",
+        "source": "observability"
+      },
+      "passed": true,
+      "recommendation": "",
+      "required": true,
+      "score": 1.0,
+      "title": "Metrics, logs, traces, SLOs, and alerts ready"
+    },
+    {
+      "category": "OPERATIONAL_GOVERNANCE",
+      "control_id": "operational-governance",
+      "evidence": {
+        "severity": "CRITICAL",
+        "source": "governance report"
+      },
+      "passed": true,
+      "recommendation": "",
+      "required": true,
+      "score": 1.0,
+      "title": "Operational governance passes"
+    },
+    {
+      "category": "SECURITY_AND_RISK",
+      "control_id": "risk-controls",
+      "evidence": {
+        "severity": "CRITICAL",
+        "source": "risk gateway"
+      },
+      "passed": true,
+      "recommendation": "",
+      "required": true,
+      "score": 1.0,
+      "title": "Kill switch and risk controls validated"
+    },
+    {
+      "category": "SECURITY_AND_RISK",
+      "control_id": "live-trading-disabled",
+      "evidence": {
+        "severity": "CRITICAL",
+        "source": "runtime policy"
+      },
+      "passed": true,
+      "recommendation": "",
+      "required": true,
+      "score": 1.0,
+      "title": "Live trading remains disabled"
+    }
+  ],
+  "critical_findings": 0,
+  "dr_exercises": [
+    {
+      "backup_verified": true,
+      "completed_at": "2026-07-18T23:16:16.419116+00:00",
+      "evidence": [
+        "backup-checksum-verification",
+        "isolated-restore-validation",
+        "reconciliation-pass"
+      ],
+      "exercise_id": "m32-phase5-dr-exercise",
+      "failback_verified": true,
+      "failover_verified": true,
+      "notes": "Non-destructive paper-environment exercise.",
+      "observed_rpo_minutes": 2.0,
+      "observed_rto_minutes": 12.0,
+      "plan_id": "m32-phase5-dr-plan",
+      "restore_verified": true,
+      "scenario": "Primary runtime unavailable; restore validated paper state.",
+      "started_at": "2026-07-18T23:04:16.419116+00:00",
+      "target_rpo_minutes": 5,
+      "target_rto_minutes": 30
+    }
+  ],
+  "environment": "PAPER",
+  "generated_at": "2026-07-18T23:04:16.420790+00:00",
+  "high_findings": 0,
+  "milestone": "Milestone 32",
+  "overall_score": 1.0,
+  "phase": "Phase 5",
+  "project_name": "Trading AI Platform",
+  "release_version": "32.5.0",
+  "runbooks": [
+    {
+      "findings": [],
+      "name": "Startup",
+      "ready": true,
+      "runbook_id": "m32-startup",
+      "score": 1.0
+    },
+    {
+      "findings": [],
+      "name": "Shutdown",
+      "ready": true,
+      "runbook_id": "m32-shutdown",
+      "score": 1.0
+    },
+    {
+      "findings": [],
+      "name": "Incident Response",
+      "ready": true,
+      "runbook_id": "m32-incident_response",
+      "score": 1.0
+    },
+    {
+      "findings": [],
+      "name": "Market Data Failure",
+      "ready": true,
+      "runbook_id": "m32-market_data_failure",
+      "score": 1.0
+    },
+    {
+      "findings": [],
+      "name": "Broker Failure",
+      "ready": true,
+      "runbook_id": "m32-broker_failure",
+      "score": 1.0
+    },
+    {
+      "findings": [],
+      "name": "Database Recovery",
+      "ready": true,
+      "runbook_id": "m32-database_recovery",
+      "score": 1.0
+    },
+    {
+      "findings": [],
+      "name": "Disaster Recovery",
+      "ready": true,
+      "runbook_id": "m32-disaster_recovery",
+      "score": 1.0
+    },
+    {
+      "findings": [],
+      "name": "Security Incident",
+      "ready": true,
+      "runbook_id": "m32-security_incident",
+      "score": 1.0
+    }
+  ],
+  "sign_off": {
+    "approval_roles": [
+      "OWNER",
+      "RISK",
+      "OPERATIONS"
+    ],
+    "approved_by": [
+      "Platform Owner",
+      "Risk Reviewer",
+      "Operations Reviewer"
+    ],
+    "comments": "Approved for governed paper operation; live capital remains disabled.",
+    "decision": "APPROVED",
+    "release_id": "milestone32-phase5",
+    "release_version": "32.5.0",
+    "signed_at": "2026-07-18T23:04:16.420763+00:00"
+  }
+}

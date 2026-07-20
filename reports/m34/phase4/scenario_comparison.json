@@ -1,0 +1,163 @@
+{
+  "best_scenario_id": "BULL",
+  "case_id": "CASE-001",
+  "comparison_grade": "F",
+  "comparison_score": 56.737908,
+  "expected_value_breakdown": [
+    {
+      "expected_return_pct": 0.1,
+      "probability": 0.5,
+      "scenario_id": "BASE",
+      "scenario_name": "Base Case",
+      "weighted_drawdown_pct": 0.025,
+      "weighted_return_pct": 0.05,
+      "weighted_volatility_pct": 0.12
+    },
+    {
+      "expected_return_pct": 0.22,
+      "probability": 0.25,
+      "scenario_id": "BULL",
+      "scenario_name": "Bull Case",
+      "weighted_drawdown_pct": 0.0075,
+      "weighted_return_pct": 0.055,
+      "weighted_volatility_pct": 0.07
+    },
+    {
+      "expected_return_pct": -0.12,
+      "probability": 0.25,
+      "scenario_id": "BEAR",
+      "scenario_name": "Bear Case",
+      "weighted_drawdown_pct": 0.045,
+      "weighted_return_pct": -0.03,
+      "weighted_volatility_pct": 0.09
+    }
+  ],
+  "metadata": {
+    "milestone": 34,
+    "phase": 4,
+    "source": "SCENARIO_COMPARISON_SENSITIVITY",
+    "step": 2
+  },
+  "positive_factors": [
+    "Scenario count within policy",
+    "Scenario probabilities normalized",
+    "Sensitivity remains controlled",
+    "Weighted expected return is positive"
+  ],
+  "probability_total": 1.0,
+  "rankings": [
+    {
+      "composite_score": 84.8,
+      "confidence_adjusted_score": 69.536,
+      "expected_drawdown_pct": 0.03,
+      "expected_return_pct": 0.22,
+      "expected_volatility_pct": 0.28,
+      "probability": 0.25,
+      "rank": 1,
+      "rank_reason": "Ranked using return, volatility, drawdown, confidence, and probability.",
+      "scenario_id": "BULL",
+      "scenario_name": "Bull Case",
+      "scenario_type": "BULL"
+    },
+    {
+      "composite_score": 76.613725,
+      "confidence_adjusted_score": 62.823255,
+      "expected_drawdown_pct": 0.05,
+      "expected_return_pct": 0.1,
+      "expected_volatility_pct": 0.24,
+      "probability": 0.5,
+      "rank": 2,
+      "rank_reason": "Ranked using return, volatility, drawdown, confidence, and probability.",
+      "scenario_id": "BASE",
+      "scenario_name": "Base Case",
+      "scenario_type": "BASE"
+    },
+    {
+      "composite_score": 14.8,
+      "confidence_adjusted_score": 12.136,
+      "expected_drawdown_pct": 0.18,
+      "expected_return_pct": -0.12,
+      "expected_volatility_pct": 0.36,
+      "probability": 0.25,
+      "rank": 3,
+      "rank_reason": "Ranked using return, volatility, drawdown, confidence, and probability.",
+      "scenario_id": "BEAR",
+      "scenario_name": "Bear Case",
+      "scenario_type": "BEAR"
+    }
+  ],
+  "recommendation": {
+    "action": "MONITOR",
+    "confidence": 0.82,
+    "key_risks": [],
+    "monitoring_requirements": [],
+    "primary_drivers": [
+      "Probability-weighted expected return is positive.",
+      "Top-ranked scenario is Bull Case.",
+      "Probability-weighted drawdown remains controlled."
+    ],
+    "rationale": "Scenario evidence is mixed and requires continued review.",
+    "recommendation_score": 56.737908
+  },
+  "rejection_reasons": [],
+  "remediation_actions": [],
+  "scenario_deltas": [
+    {
+      "dominance": "NON_DOMINATED",
+      "drawdown_delta_pct": 0.02,
+      "left_scenario_id": "BASE",
+      "probability_delta": 0.25,
+      "return_delta_pct": -0.12,
+      "right_scenario_id": "BULL",
+      "volatility_delta_pct": -0.04
+    },
+    {
+      "dominance": "LEFT_DOMINATES",
+      "drawdown_delta_pct": -0.13,
+      "left_scenario_id": "BASE",
+      "probability_delta": 0.25,
+      "return_delta_pct": 0.22,
+      "right_scenario_id": "BEAR",
+      "volatility_delta_pct": -0.12
+    },
+    {
+      "dominance": "LEFT_DOMINATES",
+      "drawdown_delta_pct": -0.15,
+      "left_scenario_id": "BULL",
+      "probability_delta": 0.0,
+      "return_delta_pct": 0.34,
+      "right_scenario_id": "BEAR",
+      "volatility_delta_pct": -0.08
+    }
+  ],
+  "sensitivities": [
+    {
+      "absolute_change": 0.01,
+      "baseline_value": 0.24,
+      "classification": "LOW",
+      "dimension": "implied_volatility",
+      "notes": "Evaluate a controlled volatility expansion.",
+      "relative_change": 0.041667,
+      "score_impact": -1.0,
+      "stressed_value": 0.25
+    },
+    {
+      "absolute_change": 10.0,
+      "baseline_value": 200.0,
+      "classification": "LOW",
+      "dimension": "underlying_price",
+      "notes": "Evaluate an upside price scenario.",
+      "relative_change": 0.05,
+      "score_impact": -1.0,
+      "stressed_value": 210.0
+    }
+  ],
+  "status": "READY",
+  "strategy_name": "BULL_PUT_SPREAD",
+  "symbol": "AAPL",
+  "warnings": [],
+  "weighted_expected_drawdown_pct": 0.0775,
+  "weighted_expected_return_pct": 0.075,
+  "weighted_expected_volatility_pct": 0.28,
+  "worst_scenario_id": "BEAR"
+}

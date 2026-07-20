@@ -1,0 +1,196 @@
+{
+  "approval_recommendation": "Trade may proceed automatically.",
+  "approval_status": "AUTO_APPROVED",
+  "execution_allowed": true,
+  "metadata": {
+    "milestone": 34,
+    "phase": 3,
+    "phase_status": "COMPLETE",
+    "source": "PHASE3_DASHBOARD_REPORTING",
+    "step": 5
+  },
+  "overall_grade": "A",
+  "overall_score": 92.125,
+  "overall_status": "READY",
+  "rejection_reasons": [],
+  "remediation_actions": [],
+  "risk_severity": "NONE",
+  "sections": [
+    {
+      "grade": "A",
+      "metrics": [
+        {
+          "description": "Final executable trade-ticket state.",
+          "key": "ticket_status",
+          "label": "Ticket Status",
+          "severity": "NONE",
+          "status": "PASS",
+          "value": "READY"
+        },
+        {
+          "description": "Whether maximum loss is bounded.",
+          "key": "defined_risk",
+          "label": "Defined Risk",
+          "severity": "NONE",
+          "status": "PASS",
+          "value": "True"
+        },
+        {
+          "description": "Maximum reward divided by maximum risk.",
+          "key": "reward_risk_ratio",
+          "label": "Reward/Risk",
+          "severity": "NONE",
+          "status": "INFO",
+          "value": "1.25"
+        },
+        {
+          "description": "Position risk as a percentage of equity.",
+          "key": "position_risk_pct",
+          "label": "Position Risk",
+          "severity": "NONE",
+          "status": "INFO",
+          "value": "0.64%"
+        }
+      ],
+      "rejection_reasons": [],
+      "score": 100.0,
+      "section_id": "TRADE_CONSTRUCTION",
+      "status": "READY",
+      "title": "Trade Construction",
+      "warnings": []
+    },
+    {
+      "grade": "D",
+      "metrics": [
+        {
+          "description": "Number of approved portfolio positions.",
+          "key": "positions_allocated",
+          "label": "Positions Allocated",
+          "severity": "NONE",
+          "status": "INFO",
+          "value": "1"
+        },
+        {
+          "description": "Total portfolio risk as percentage of equity.",
+          "key": "portfolio_risk_pct",
+          "label": "Portfolio Risk",
+          "severity": "NONE",
+          "status": "INFO",
+          "value": "0.32%"
+        },
+        {
+          "description": "Buying power consumed by proposed positions.",
+          "key": "capital_utilization_pct",
+          "label": "Capital Utilization",
+          "severity": "NONE",
+          "status": "INFO",
+          "value": "0.32%"
+        },
+        {
+          "description": "Aggregate directional exposure.",
+          "key": "portfolio_delta",
+          "label": "Portfolio Delta",
+          "severity": "NONE",
+          "status": "INFO",
+          "value": "12.00"
+        }
+      ],
+      "rejection_reasons": [],
+      "score": 68.5,
+      "section_id": "PORTFOLIO_ALLOCATION",
+      "status": "READY",
+      "title": "Position Sizing and Portfolio Allocation",
+      "warnings": []
+    },
+    {
+      "grade": "A",
+      "metrics": [
+        {
+          "description": "Lifecycle entry readiness.",
+          "key": "entry_status",
+          "label": "Entry Status",
+          "severity": "NONE",
+          "status": "PASS",
+          "value": "READY"
+        },
+        {
+          "description": "Remaining duration at planned entry.",
+          "key": "days_to_expiration",
+          "label": "Days to Expiration",
+          "severity": "NONE",
+          "status": "INFO",
+          "value": "33"
+        },
+        {
+          "description": "Planned profit-taking threshold.",
+          "key": "profit_target",
+          "label": "Profit Target",
+          "severity": "NONE",
+          "status": "INFO",
+          "value": "400.00"
+        },
+        {
+          "description": "Planned loss-control threshold.",
+          "key": "stop_loss",
+          "label": "Stop Loss",
+          "severity": "NONE",
+          "status": "INFO",
+          "value": "347.20"
+        }
+      ],
+      "rejection_reasons": [],
+      "score": 100.0,
+      "section_id": "TRADE_LIFECYCLE",
+      "status": "READY",
+      "title": "Trade Lifecycle",
+      "warnings": []
+    },
+    {
+      "grade": "A",
+      "metrics": [
+        {
+          "description": "Final institutional approval state.",
+          "key": "approval_status",
+          "label": "Approval Status",
+          "severity": "NONE",
+          "status": "PASS",
+          "value": "AUTO_APPROVED"
+        },
+        {
+          "description": "Integrated confidence across Phase 3.",
+          "key": "confidence_score",
+          "label": "Confidence Score",
+          "severity": "NONE",
+          "status": "INFO",
+          "value": "89.50"
+        },
+        {
+          "description": "Number of governance rules evaluated.",
+          "key": "rule_count",
+          "label": "Rules Evaluated",
+          "severity": "NONE",
+          "status": "INFO",
+          "value": "22"
+        },
+        {
+          "description": "Immutable governance audit records.",
+          "key": "audit_count",
+          "label": "Audit Records",
+          "severity": "NONE",
+          "status": "INFO",
+          "value": "22"
+        }
+      ],
+      "rejection_reasons": [],
+      "score": 100.0,
+      "section_id": "PRETRADE_GOVERNANCE",
+      "status": "READY",
+      "title": "Pre-Trade Governance",
+      "warnings": []
+    }
+  ],
+  "strategy_name": "BULL_PUT_SPREAD",
+  "symbol": "AAPL",
+  "trade_id": "TRADE-001",
+  "warnings": []
+}

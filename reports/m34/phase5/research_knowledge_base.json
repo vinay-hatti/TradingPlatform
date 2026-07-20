@@ -1,0 +1,243 @@
+{
+  "case_count": 1,
+  "cases": [
+    {
+      "case_completeness_score": 1.0,
+      "case_id": "CASE-001",
+      "decision_action": "MONITOR",
+      "decision_status": "MONITORING",
+      "evidence_quality_score": 0.85,
+      "industry": "UNSPECIFIED",
+      "institutional_score": 0.801833,
+      "knowledge_case_id": "KNOWLEDGE-CASE-001",
+      "metadata": {
+        "milestone": 34,
+        "phase": 5,
+        "source": "RESEARCH_KNOWLEDGE_ENGINE",
+        "step": 1
+      },
+      "outcome_status": "PROFITABLE",
+      "positive_factors": [
+        "Case completeness meets policy.",
+        "Evidence quality meets policy."
+      ],
+      "primary_thesis": "Constructive market structure, controlled downside, and favorable scenario-weighted return support a defined-risk options position.",
+      "records": [
+        {
+          "metadata": {},
+          "quality_score": 0.85,
+          "record_id": "CASE-001-THESIS",
+          "record_type": "THESIS",
+          "source_reference": "research_case.json",
+          "summary": "Constructive market structure, controlled downside, and favorable scenario-weighted return support a defined-risk options position.",
+          "tags": [
+            "thesis",
+            "aapl",
+            "bull_put_spread"
+          ],
+          "title": "Primary Research Thesis"
+        },
+        {
+          "metadata": {},
+          "quality_score": 0.85,
+          "record_id": "CASE-001-EVIDENCE-001",
+          "record_type": "EVIDENCE",
+          "source_reference": "FeaturePipeline",
+          "summary": "Price remains above trend support.",
+          "tags": [
+            "evidence",
+            "aapl"
+          ],
+          "title": "Evidence 1"
+        },
+        {
+          "metadata": {},
+          "quality_score": 0.85,
+          "record_id": "CASE-001-SCENARIO-COMPARISON",
+          "record_type": "SCENARIO_COMPARISON",
+          "source_reference": "scenario_comparison.json",
+          "summary": "Best scenario: BULL",
+          "tags": [
+            "scenario",
+            "aapl"
+          ],
+          "title": "Scenario Comparison"
+        },
+        {
+          "metadata": {},
+          "quality_score": 0.82,
+          "record_id": "CASE-001-DECISION",
+          "record_type": "DECISION_JOURNAL",
+          "source_reference": "decision_journal.json",
+          "summary": "Action=MONITOR; Status=MONITORING",
+          "tags": [
+            "decision",
+            "monitor"
+          ],
+          "title": "Decision Journal"
+        },
+        {
+          "metadata": {},
+          "quality_score": 0.801833,
+          "record_id": "CASE-001-OUTCOME",
+          "record_type": "OUTCOME_ATTRIBUTION",
+          "source_reference": "outcome_attribution.json",
+          "summary": "Outcome=PROFITABLE; Realized return=0.14",
+          "tags": [
+            "outcome",
+            "profitable",
+            "confirmed"
+          ],
+          "title": "Outcome Attribution"
+        }
+      ],
+      "rejection_reasons": [],
+      "remediation_actions": [],
+      "sector": "UNSPECIFIED",
+      "strategy_name": "BULL_PUT_SPREAD",
+      "symbol": "AAPL",
+      "tags": [
+        {
+          "category": "SYMBOL",
+          "confidence": 1.0,
+          "source": "RESEARCH_CASE",
+          "tag": "aapl"
+        },
+        {
+          "category": "STRATEGY",
+          "confidence": 1.0,
+          "source": "RESEARCH_CASE",
+          "tag": "bull_put_spread"
+        },
+        {
+          "category": "SECTOR",
+          "confidence": 0.95,
+          "source": "RESEARCH_CASE",
+          "tag": "unspecified"
+        },
+        {
+          "category": "INDUSTRY",
+          "confidence": 0.9,
+          "source": "RESEARCH_CASE",
+          "tag": "unspecified"
+        },
+        {
+          "category": "DECISION_ACTION",
+          "confidence": 0.9,
+          "source": "DECISION_JOURNAL",
+          "tag": "monitor"
+        },
+        {
+          "category": "OUTCOME",
+          "confidence": 0.9,
+          "source": "OUTCOME_ATTRIBUTION",
+          "tag": "profitable"
+        },
+        {
+          "category": "THESIS_STATUS",
+          "confidence": 0.9,
+          "source": "THESIS_VALIDATION",
+          "tag": "confirmed"
+        },
+        {
+          "category": "SCENARIO",
+          "confidence": 0.5,
+          "source": "RESEARCH_CASE",
+          "tag": "base_case"
+        },
+        {
+          "category": "CATALYST",
+          "confidence": 0.75,
+          "source": "RESEARCH_CASE",
+          "tag": "stable_earnings_expectations"
+        },
+        {
+          "category": "CATALYST",
+          "confidence": 0.75,
+          "source": "RESEARCH_CASE",
+          "tag": "positive_guidance"
+        },
+        {
+          "category": "CATALYST",
+          "confidence": 0.75,
+          "source": "RESEARCH_CASE",
+          "tag": "risk-off_repricing"
+        }
+      ],
+      "thesis_validation_status": "CONFIRMED",
+      "warnings": []
+    }
+  ],
+  "generated_at": "2026-07-20T05:22:14.271578+00:00",
+  "governance_status": "READY",
+  "index": {
+    "outcomes": {
+      "PROFITABLE": [
+        "CASE-001"
+      ]
+    },
+    "sectors": {
+      "UNSPECIFIED": [
+        "CASE-001"
+      ]
+    },
+    "strategies": {
+      "BULL_PUT_SPREAD": [
+        "CASE-001"
+      ]
+    },
+    "symbols": {
+      "AAPL": [
+        "CASE-001"
+      ]
+    },
+    "tags": {
+      "aapl": [
+        "CASE-001"
+      ],
+      "base_case": [
+        "CASE-001"
+      ],
+      "bull_put_spread": [
+        "CASE-001"
+      ],
+      "confirmed": [
+        "CASE-001"
+      ],
+      "monitor": [
+        "CASE-001"
+      ],
+      "positive_guidance": [
+        "CASE-001"
+      ],
+      "profitable": [
+        "CASE-001"
+      ],
+      "risk-off_repricing": [
+        "CASE-001"
+      ],
+      "stable_earnings_expectations": [
+        "CASE-001"
+      ],
+      "unspecified": [
+        "CASE-001"
+      ]
+    },
+    "thesis_statuses": {
+      "CONFIRMED": [
+        "CASE-001"
+      ]
+    }
+  },
+  "knowledge_base_id": "M34-PHASE5-KB-001",
+  "metadata": {
+    "milestone": 34,
+    "phase": 5,
+    "source": "RESEARCH_KNOWLEDGE_ENGINE",
+    "step": 1
+  },
+  "record_count": 5,
+  "rejection_reasons": [],
+  "tag_count": 11,
+  "warnings": []
+}

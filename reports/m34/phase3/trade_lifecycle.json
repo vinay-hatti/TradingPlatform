@@ -1,0 +1,112 @@
+{
+  "adjustments": [
+    {
+      "action": "ROLL_OUT",
+      "allowed": true,
+      "priority": 1,
+      "rationale": "Extend duration before gamma acceleration becomes dominant.",
+      "target": "Restore preferred duration and improve basis.",
+      "trigger": "DTE <= 14 and thesis remains valid"
+    },
+    {
+      "action": "REDUCE_SIZE",
+      "allowed": true,
+      "priority": 2,
+      "rationale": "De-risk while retaining partial thesis exposure.",
+      "target": "Reduce portfolio and position risk.",
+      "trigger": "Loss >= 35% of maximum loss"
+    },
+    {
+      "action": "DELTA_HEDGE",
+      "allowed": true,
+      "priority": 3,
+      "rationale": "Control directional drift and tail acceleration.",
+      "target": "Return delta exposure toward neutral.",
+      "trigger": "Absolute delta exposure >= 0.30"
+    },
+    {
+      "action": "CLOSE_POSITION",
+      "allowed": true,
+      "priority": 4,
+      "rationale": "Preserve capital and avoid unmanaged expiration risk.",
+      "target": "Terminate exposure according to governance.",
+      "trigger": "Profit target, stop loss, event-risk exit, or time exit is reached"
+    }
+  ],
+  "allowed": true,
+  "checkpoints": [
+    {
+      "mandatory": true,
+      "name": "ENTRY_CONFIRMATION",
+      "recommended_action": "Revalidate liquidity, confidence, event risk, and defined-risk status.",
+      "severity": "HIGH",
+      "trigger_condition": "Before order submission"
+    },
+    {
+      "mandatory": false,
+      "name": "PROFIT_TARGET",
+      "recommended_action": "Close or scale out.",
+      "severity": "MEDIUM",
+      "trigger_condition": "Open profit >= 400.00"
+    },
+    {
+      "mandatory": true,
+      "name": "LOSS_REVIEW",
+      "recommended_action": "Close, reduce, or adjust immediately.",
+      "severity": "HIGH",
+      "trigger_condition": "Open loss >= 347.20"
+    },
+    {
+      "mandatory": true,
+      "name": "TIME_EXIT",
+      "recommended_action": "Close before expiration-risk window.",
+      "severity": "HIGH",
+      "trigger_condition": "DTE <= 7"
+    },
+    {
+      "mandatory": true,
+      "name": "EVENT_RISK",
+      "recommended_action": "Close, hedge, or explicitly approve risk.",
+      "severity": "HIGH",
+      "trigger_condition": "Material event within 2 days"
+    }
+  ],
+  "entry": {
+    "blockers": [],
+    "confidence": 0.82,
+    "days_to_expiration": 33,
+    "entry_allowed": true,
+    "entry_status": "READY",
+    "entry_window": "PREFERRED",
+    "maximum_acceptable_price": 1.736,
+    "minimum_credit_or_maximum_debit": 1.70128,
+    "order_type": "LIMIT",
+    "rationale": [],
+    "target_limit_price": 1.736,
+    "time_in_force": "DAY"
+  },
+  "exit": {
+    "close_order_type": "LIMIT",
+    "event_risk_exit_days": 2,
+    "expiration_exit_required": true,
+    "maximum_loss_value": 640.0,
+    "monitoring_frequency": "DAILY",
+    "profit_target_pct": 0.5,
+    "profit_target_value": 400.0,
+    "stop_loss_value": 347.2,
+    "time_exit_dte": 7
+  },
+  "lifecycle_grade": "A",
+  "lifecycle_score": 100.0,
+  "metadata": {
+    "milestone": 34,
+    "phase": 3,
+    "source": "TRADE_LIFECYCLE_PLANNING",
+    "step": 3
+  },
+  "rejection_reasons": [],
+  "risk_severity": "NONE",
+  "strategy_name": "BULL_PUT_SPREAD",
+  "symbol": "AAPL",
+  "warnings": []
+}

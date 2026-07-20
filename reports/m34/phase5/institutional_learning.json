@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-07-20T06:31:55.644620+00:00",
+  "governance_status": "INSUFFICIENT_HISTORY",
+  "metadata": {
+    "milestone": 34,
+    "phase": 5,
+    "step": 3
+  },
+  "outcome_learning": [],
+  "recommendations": [
+    "Increase future confidence modestly when supported by matching learned factors.",
+    "Use historically strong factors as bounded supporting priors: TAG:unspecified"
+  ],
+  "report_id": "M34-PHASE5-LEARNING-001",
+  "sector_learning": [],
+  "strategy_learning": [],
+  "summary": {
+    "brier_score": 0.03927,
+    "calibration_error": 0.198167,
+    "empirical_success_rate": 1.0,
+    "failed_cases": 0,
+    "recommended_global_adjustment": 0.15,
+    "strongest_negative_factors": [],
+    "strongest_positive_factors": [
+      "TAG:unspecified"
+    ],
+    "successful_cases": 1,
+    "total_cases": 1
+  },
+  "tag_learning": [
+    {
+      "average_institutional_score": 0.801833,
+      "confidence_adjustment": 0.15,
+      "factor_key": "unspecified",
+      "factor_type": "TAG",
+      "failures": 0,
+      "metadata": {},
+      "occurrences": 2,
+      "posterior_success_probability": 0.75,
+      "recommendation": "INCREASE_CONFIDENCE",
+      "successes": 2
+    }
+  ],
+  "warnings": [
+    "At least 2 completed cases are required."
+  ]
+}

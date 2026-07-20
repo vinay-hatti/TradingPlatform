@@ -1,0 +1,89 @@
+.visually-hidden {
+  position:absolute !important;
+  width:1px !important;
+  height:1px !important;
+  padding:0 !important;
+  margin:-1px !important;
+  overflow:hidden !important;
+  clip:rect(0,0,0,0) !important;
+  white-space:nowrap !important;
+  border:0 !important;
+}
+
+.skip-link {
+  position:fixed;
+  left:1rem;
+  top:-5rem;
+  z-index:10000;
+  padding:.75rem 1rem;
+  background:Canvas;
+  color:CanvasText;
+  border:2px solid currentColor;
+  border-radius:.375rem;
+}
+
+.skip-link:focus {
+  top:1rem;
+}
+
+:focus-visible {
+  outline:3px solid currentColor;
+  outline-offset:3px;
+}
+
+button,
+input,
+select,
+textarea,
+a {
+  min-height:2.25rem;
+}
+
+table {
+  width:100%;
+  border-collapse:collapse;
+}
+
+th {
+  text-align:left;
+}
+
+[data-offline-fallback="true"]::before {
+  content:"Offline fallback active — cached read-only data may be stale.";
+  display:block;
+  padding:.5rem 1rem;
+  font-weight:600;
+  border-bottom:1px solid currentColor;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    scroll-behavior:auto !important;
+    transition-duration:.01ms !important;
+  }
+}
+
+@media (forced-colors: active) {
+  button,
+  input,
+  select,
+  textarea,
+  .card,
+  .option-chain-card {
+    border:1px solid CanvasText;
+  }
+}
+
+@media (max-width: 760px) {
+  .option-chain-summary {
+    grid-template-columns:1fr !important;
+  }
+
+  table {
+    font-size:.875rem;
+  }
+}

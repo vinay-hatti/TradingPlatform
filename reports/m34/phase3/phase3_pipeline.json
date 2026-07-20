@@ -1,0 +1,22 @@
+{
+  "approval_status": "AUTO_APPROVED",
+  "dashboard_html_report": "reports/m34/phase3/phase3_dashboard.html",
+  "dashboard_json_report": "reports/m34/phase3/phase3_dashboard.json",
+  "execution_allowed": true,
+  "metadata": {
+    "milestone": 34,
+    "phase": 3,
+    "source": "PHASE3_END_TO_END_PIPELINE",
+    "step": 5
+  },
+  "output_directory": "reports/m34/phase3",
+  "overall_status": "READY",
+  "pipeline_report": "reports/m34/phase3/phase3_pipeline.json",
+  "portfolio_allocation_report": "reports/m34/phase3/portfolio_allocation.json",
+  "pretrade_governance_report": "reports/m34/phase3/pretrade_governance.json",
+  "strategy_name": "BULL_PUT_SPREAD",
+  "symbol": "AAPL",
+  "trade_construction_report": "reports/m34/phase3/trade_construction.json",
+  "trade_id": "TRADE-001",
+  "trade_lifecycle_report": "reports/m34/phase3/trade_lifecycle.json"
+}

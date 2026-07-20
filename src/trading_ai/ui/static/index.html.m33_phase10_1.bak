@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Trading AI Institutional Workstation</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="/static/workspace.css">
+  <link rel="stylesheet" href="/static/option_chain.css">
+  <link rel="stylesheet" href="/static/ui_hardening.css">
+</head>
+<body>
+<div class="shell">
+  <aside>
+    <div class="brand">TA <span>Trading AI</span></div>
+    <nav id="nav">
+      <button data-view="release" class="active">Release Overview</button>
+      <button data-view="dashboard">Dashboard</button>
+      <button data-view="opportunities">Opportunities</button>
+      <button data-view="symbols">Symbol Intelligence</button>
+      <button data-view="portfolio-risk">Portfolio & Risk</button>
+      <button data-view="execution">Execution</button>
+      <button data-view="reporting-audit">Reports & Audit</button>
+      <button data-view="admin-runtime">Administration</button>
+      <button data-view="auth-session">Identity & Sessions</button>
+    </nav>
+  </aside>
+  <main>
+    <header>
+      <div>
+        <small>Milestone 32 · Deployment & Recovery</small>
+        <h1 id="pageTitle">Workstation Release Overview</h1>
+      </div>
+      <div class="actions">
+        <span id="status" class="pill">Loading</span>
+        <button id="refresh">Refresh</button>
+        <button id="theme">◐</button>
+      </div>
+    </header>
+    <section id="notice" class="notice">Loading workstation data…</section>
+    <section id="content"></section>
+  </main>
+</div>
+<script src="/static/app.js"></script>
+<script src="/static/paper_commands.js"></script>
+<script src="/static/paper_execution.js"></script>
+<script src="/static/observability.js"></script>
+<script src="/static/deployment_recovery.js"></script>
+  <script src="/static/workspace.js"></script>
+  <script src="/static/option_chain.js"></script>
+  <script src="/static/professional_order_entry.js"></script>
+  <script src="/static/interactive_portfolio.js"></script>
+  <script src="/static/research_workbench.js"></script>
+  <script src="/static/strategy_studio.js"></script>
+  <script src="/static/operations_command_center.js"></script>
+  <script src="/static/security_compliance_center.js"></script>
+  <script src="/static/executive_reporting.js"></script>
+  <script src="/static/ui_hardening.js"></script>
+</body>
+</html>

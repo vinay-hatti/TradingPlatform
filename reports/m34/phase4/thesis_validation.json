@@ -1,0 +1,51 @@
+{
+  "attribution_id": "ATTRIBUTION-001",
+  "case_id": "CASE-001",
+  "decision_quality_grade": "B",
+  "decision_quality_score": 0.801833,
+  "forecast_accuracy": {
+    "brier_score": 0.5625,
+    "confidence_calibration_error": 0.18,
+    "directional_accuracy": 1.0,
+    "drawdown_error_pct": 0.01,
+    "forecast_grade": "D",
+    "overall_forecast_accuracy": 0.636667,
+    "probability_error": 0.75,
+    "return_error_pct": 0.08,
+    "volatility_error_pct": 0.01
+  },
+  "journal_id": "JOURNAL-001",
+  "research_feedback": {
+    "lessons": [
+      {
+        "category": "FORECAST",
+        "lesson": "Forecast aligned with outcome.",
+        "lesson_id": "ATTRIBUTION-001-LESSON-001"
+      }
+    ],
+    "recommendations": [],
+    "strengths": [
+      "Directional forecast was accurate.",
+      "Scenario selection was accurate."
+    ],
+    "weaknesses": []
+  },
+  "scenario_calibration": {
+    "calibration_grade": "F",
+    "calibration_score": 0.5625,
+    "realized_scenario_id": "BULL",
+    "scenario_match": true,
+    "selected_scenario_id": "BULL",
+    "selected_scenario_probability": 0.25
+  },
+  "strategy_name": "BULL_PUT_SPREAD",
+  "symbol": "AAPL",
+  "thesis_validation": {
+    "assumption_validity_score": 1.0,
+    "confirmation_score": 0.81,
+    "evidence_quality_score": 0.85,
+    "invalidation_reasons": [],
+    "invalidation_triggered": false,
+    "validation_status": "CONFIRMED"
+  }
+}

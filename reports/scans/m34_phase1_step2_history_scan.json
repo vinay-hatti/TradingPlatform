@@ -1,0 +1,50 @@
+{
+  "completed_at": "2026-07-19T16:30:29.407630+00:00",
+  "evaluated_count": 1,
+  "ranked_candidates": [
+    {
+      "composite_score": 49.410622,
+      "edge_score": 0.0,
+      "expected_return": 0.0,
+      "probability_score": 50.0,
+      "rank": 1,
+      "regime": "TREND_DOWN",
+      "reward_risk_ratio": 0.0,
+      "risk_score": 50.0,
+      "signal": "PUT",
+      "source": {
+        "atr_pct": 3.248495,
+        "average_volume": 66991390,
+        "decision_confidence": 50.0,
+        "expected_return": 0.0,
+        "iv_percentile": 0.0,
+        "iv_rank": 0.0,
+        "liquidity_score": 100.0,
+        "metadata": {
+          "atr": 9.218578,
+          "bars_used": 121,
+          "latest_date": "2026-06-26",
+          "momentum_reference": 295.630005,
+          "trend_reference": 298.288501
+        },
+        "momentum_score": 29.958046,
+        "open_interest": 0,
+        "option_volume": 0,
+        "price": 283.7799987792969,
+        "regime": "TREND_DOWN",
+        "regime_score": 85.0,
+        "reward_risk_ratio": 0.0,
+        "risk_score": 50.0,
+        "signal": "PUT",
+        "spread_pct": 1.0,
+        "symbol": "AAPL",
+        "trend_score": 25.68042,
+        "volatility_score": 81.212364
+      },
+      "symbol": "AAPL"
+    }
+  ],
+  "rejected_count": 0,
+  "scan_id": "scan-ab9889f084bf",
+  "universe_size": 9
+}

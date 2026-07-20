@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Milestone 32 Production Readiness Certification</title>
+<style>
+body{font-family:Arial,sans-serif;margin:32px;color:#172033}
+h1,h2{color:#0b3b66}
+.badge{display:inline-block;padding:8px 12px;border-radius:6px;background:#e8eef5}
+table{width:100%;border-collapse:collapse;margin:16px 0 28px}
+th,td{border:1px solid #ccd5df;padding:8px;text-align:left;vertical-align:top}
+th{background:#eef3f8}
+</style>
+</head>
+<body>
+<h1>Milestone 32 — Production Readiness Certification & Closure</h1>
+<p class="badge">MILESTONE_32_CERTIFIED_AND_CLOSED</p>
+<p><strong>Project:</strong> Trading AI Platform</p>
+<p><strong>Release:</strong> 32.5.0</p>
+<p><strong>Environment:</strong> PAPER</p>
+<p><strong>Overall score:</strong> 1.0000</p>
+<p><strong>Certified:</strong> True</p>
+<p><strong>Critical findings:</strong> 0</p>
+<p><strong>High findings:</strong> 0</p>
+
+<h2>Production Certification Controls</h2>
+<table><thead><tr><th>ID</th><th>Category</th><th>Control</th><th>Required</th><th>Passed</th><th>Score</th><th>Recommendation</th></tr></thead>
+<tbody><tr><td>software-regression</td><td>SOFTWARE</td><td>Full regression suite passes</td><td>True</td><td>True</td><td>1.000</td><td></td></tr><tr><td>deployment-rollback</td><td>DEPLOYMENT</td><td>Deployment and rollback validated</td><td>True</td><td>True</td><td>1.000</td><td></td></tr><tr><td>observability-ready</td><td>OBSERVABILITY</td><td>Metrics, logs, traces, SLOs, and alerts ready</td><td>True</td><td>True</td><td>1.000</td><td></td></tr><tr><td>operational-governance</td><td>OPERATIONAL_GOVERNANCE</td><td>Operational governance passes</td><td>True</td><td>True</td><td>1.000</td><td></td></tr><tr><td>risk-controls</td><td>SECURITY_AND_RISK</td><td>Kill switch and risk controls validated</td><td>True</td><td>True</td><td>1.000</td><td></td></tr><tr><td>live-trading-disabled</td><td>SECURITY_AND_RISK</td><td>Live trading remains disabled</td><td>True</td><td>True</td><td>1.000</td><td></td></tr></tbody></table>
+
+<h2>Operational Runbooks</h2>
+<table><thead><tr><th>ID</th><th>Name</th><th>Ready</th><th>Score</th><th>Findings</th></tr></thead>
+<tbody><tr><td>m32-startup</td><td>Startup</td><td>True</td><td>1.000</td><td>0</td></tr><tr><td>m32-shutdown</td><td>Shutdown</td><td>True</td><td>1.000</td><td>0</td></tr><tr><td>m32-incident_response</td><td>Incident Response</td><td>True</td><td>1.000</td><td>0</td></tr><tr><td>m32-market_data_failure</td><td>Market Data Failure</td><td>True</td><td>1.000</td><td>0</td></tr><tr><td>m32-broker_failure</td><td>Broker Failure</td><td>True</td><td>1.000</td><td>0</td></tr><tr><td>m32-database_recovery</td><td>Database Recovery</td><td>True</td><td>1.000</td><td>0</td></tr><tr><td>m32-disaster_recovery</td><td>Disaster Recovery</td><td>True</td><td>1.000</td><td>0</td></tr><tr><td>m32-security_incident</td><td>Security Incident</td><td>True</td><td>1.000</td><td>0</td></tr></tbody></table>
+
+<h2>Disaster Recovery Exercises</h2>
+<table><thead><tr><th>ID</th><th>Scenario</th><th>RTO Observed / Target</th><th>RPO Observed / Target</th><th>Passed</th></tr></thead>
+<tbody><tr><td>m32-phase5-dr-exercise</td><td>Primary runtime unavailable; restore validated paper state.</td><td>12.00 / 30</td><td>2.00 / 5</td><td>True</td></tr></tbody></table>
+
+<h2>Final Sign-Off</h2>
+<pre>{&quot;approval_roles&quot;: [&quot;OWNER&quot;, &quot;RISK&quot;, &quot;OPERATIONS&quot;], &quot;approved_by&quot;: [&quot;Platform Owner&quot;, &quot;Risk Reviewer&quot;, &quot;Operations Reviewer&quot;], &quot;comments&quot;: &quot;Approved for governed paper operation; live capital remains disabled.&quot;, &quot;decision&quot;: &quot;APPROVED&quot;, &quot;release_id&quot;: &quot;milestone32-phase5&quot;, &quot;release_version&quot;: &quot;32.5.0&quot;, &quot;signed_at&quot;: &quot;2026-07-18T23:04:16.420763+00:00&quot;}</pre>
+
+<h2>Milestone Closure</h2>
+<p>Milestone 32 closure decision: <strong>MILESTONE_32_CERTIFIED_AND_CLOSED</strong></p>
+</body></html>

@@ -1,0 +1,207 @@
+{
+  "allowed": true,
+  "blueprint": {
+    "breakeven_points": [
+      198.2
+    ],
+    "defined_risk": true,
+    "direction": "BULLISH",
+    "legs": [
+      {
+        "ask": 2.55,
+        "bid": 2.45,
+        "delta": -0.28,
+        "expiration": "2026-08-21",
+        "gamma": 0.04,
+        "limit_price": 2.45,
+        "mark": 2.5,
+        "open_interest": 8500,
+        "option_type": "PUT",
+        "quantity_ratio": 1,
+        "side": "SHORT",
+        "spread_pct": 0.04,
+        "strike": 200.0,
+        "symbol": "AAPL",
+        "theta": -0.08,
+        "vega": 0.12,
+        "volume": 1400
+      },
+      {
+        "ask": 0.75,
+        "bid": 0.65,
+        "delta": -0.16,
+        "expiration": "2026-08-21",
+        "gamma": 0.03,
+        "limit_price": 0.714,
+        "mark": 0.7,
+        "open_interest": 6200,
+        "option_type": "PUT",
+        "quantity_ratio": 1,
+        "side": "LONG",
+        "spread_pct": 0.142857,
+        "strike": 195.0,
+        "symbol": "AAPL",
+        "theta": -0.05,
+        "vega": 0.09,
+        "volume": 900
+      }
+    ],
+    "maximum_loss_per_contract": 320.0,
+    "maximum_profit_per_contract": 400.0,
+    "net_credit_debit": 173.6,
+    "net_limit_price": 1.736,
+    "order_side": "CREDIT",
+    "order_type": "LIMIT",
+    "probability_of_profit": 0.72,
+    "reward_risk_ratio": 1.25,
+    "strategy_name": "BULL_PUT_SPREAD",
+    "symbol": "AAPL",
+    "time_in_force": "DAY"
+  },
+  "capital": {
+    "account_equity": 100000.0,
+    "buying_power_limited_contracts": 62,
+    "buying_power_pct": 0.0064,
+    "buying_power_per_contract": 320.0,
+    "estimated_buying_power": 640.0,
+    "policy_limited_contracts": 2,
+    "position_risk_pct": 0.0064,
+    "recommended_contracts": 2,
+    "requested_buying_power_budget": 20000.0,
+    "requested_risk_budget": 5000.0,
+    "risk_limited_contracts": 15,
+    "risk_per_contract": 320.0,
+    "total_maximum_risk": 640.0
+  },
+  "checks": [
+    {
+      "actual": "True",
+      "limit": "True",
+      "message": "Strategy risk must be explicitly bounded.",
+      "name": "DEFINED_RISK",
+      "passed": true,
+      "severity": "ERROR"
+    },
+    {
+      "actual": "0.0064",
+      "limit": "0.0500",
+      "message": "Position maximum risk must fit policy.",
+      "name": "POSITION_RISK",
+      "passed": true,
+      "severity": "ERROR"
+    },
+    {
+      "actual": "0.0064",
+      "limit": "0.2000",
+      "message": "Estimated buying power must fit policy.",
+      "name": "BUYING_POWER",
+      "passed": true,
+      "severity": "ERROR"
+    },
+    {
+      "actual": "1.2500",
+      "limit": "1.0000",
+      "message": "Reward/risk must meet the minimum.",
+      "name": "REWARD_RISK",
+      "passed": true,
+      "severity": "WARNING"
+    },
+    {
+      "actual": "0.7200",
+      "limit": "0.5000",
+      "message": "Probability of profit must meet policy.",
+      "name": "PROBABILITY_OF_PROFIT",
+      "passed": true,
+      "severity": "WARNING"
+    },
+    {
+      "actual": "0.1429",
+      "limit": "0.2500",
+      "message": "Every leg must satisfy spread policy.",
+      "name": "BID_ASK_SPREAD",
+      "passed": true,
+      "severity": "WARNING"
+    },
+    {
+      "actual": "6200",
+      "limit": "100",
+      "message": "Every leg must satisfy open-interest policy.",
+      "name": "OPEN_INTEREST",
+      "passed": true,
+      "severity": "WARNING"
+    },
+    {
+      "actual": "900",
+      "limit": "25",
+      "message": "Every leg must satisfy volume policy.",
+      "name": "OPTION_VOLUME",
+      "passed": true,
+      "severity": "WARNING"
+    }
+  ],
+  "construction_grade": "A",
+  "construction_score": 100.0,
+  "metadata": {
+    "milestone": 34,
+    "phase": 3,
+    "source": "STRATEGY_BLUEPRINT_TRADE_TICKET",
+    "step": 1
+  },
+  "rejection_reasons": [],
+  "risk_severity": "NONE",
+  "ticket": {
+    "contracts": 2,
+    "estimated_buying_power": 640.0,
+    "estimated_entry_value": 347.2,
+    "executable": true,
+    "legs": [
+      {
+        "ask": 2.55,
+        "bid": 2.45,
+        "delta": -0.28,
+        "expiration": "2026-08-21",
+        "gamma": 0.04,
+        "limit_price": 2.45,
+        "mark": 2.5,
+        "open_interest": 8500,
+        "option_type": "PUT",
+        "quantity_ratio": 1,
+        "side": "SHORT",
+        "spread_pct": 0.04,
+        "strike": 200.0,
+        "symbol": "AAPL",
+        "theta": -0.08,
+        "vega": 0.12,
+        "volume": 1400
+      },
+      {
+        "ask": 0.75,
+        "bid": 0.65,
+        "delta": -0.16,
+        "expiration": "2026-08-21",
+        "gamma": 0.03,
+        "limit_price": 0.714,
+        "mark": 0.7,
+        "open_interest": 6200,
+        "option_type": "PUT",
+        "quantity_ratio": 1,
+        "side": "LONG",
+        "spread_pct": 0.142857,
+        "strike": 195.0,
+        "symbol": "AAPL",
+        "theta": -0.05,
+        "vega": 0.09,
+        "volume": 900
+      }
+    ],
+    "maximum_loss": 640.0,
+    "maximum_profit": 800.0,
+    "net_limit_price": 1.736,
+    "order_type": "LIMIT",
+    "strategy_name": "BULL_PUT_SPREAD",
+    "symbol": "AAPL",
+    "ticket_status": "READY",
+    "time_in_force": "DAY"
+  },
+  "warnings": []
+}

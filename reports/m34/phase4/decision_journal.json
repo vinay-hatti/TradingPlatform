@@ -1,0 +1,81 @@
+{
+  "approval_status": "APPROVED",
+  "case_id": "CASE-001",
+  "current_thesis": "Constructive market structure, controlled downside, and favorable scenario-weighted return support a defined-risk options position.",
+  "decision_action": "MONITOR",
+  "decision_confidence": 0.82,
+  "decision_rationale": "The scenario comparison supports continued monitoring with execution contingent on independent approval.",
+  "decision_status": "MONITORING",
+  "entries": [
+    {
+      "actor": "Research Analyst",
+      "details": "The scenario comparison supports continued monitoring with execution contingent on independent approval.",
+      "entry_id": "JOURNAL-001-ENTRY-001",
+      "entry_type": "DECISION_CREATED",
+      "metadata": {
+        "approval_status": "APPROVED",
+        "selected_scenario_id": "BULL"
+      },
+      "prior_status": null,
+      "recorded_at": "2026-07-20T04:56:46.482223+00:00",
+      "resulting_status": "MONITORING",
+      "summary": "Decision journal created with action MONITOR."
+    },
+    {
+      "actor": "Independent Reviewer",
+      "details": "Research evidence and scenario structure are sufficient for the recommended action.",
+      "entry_id": "JOURNAL-001-ENTRY-002",
+      "entry_type": "REVIEW_RECORDED",
+      "metadata": {
+        "execution_approved": true,
+        "reviewer_confidence": 0.8
+      },
+      "prior_status": "MONITORING",
+      "recorded_at": "2026-07-19T12:00:00+00:00",
+      "resulting_status": "MONITORING",
+      "summary": "Review REVIEW-001: APPROVED."
+    }
+  ],
+  "execution_allowed": false,
+  "journal_id": "JOURNAL-001",
+  "metadata": {
+    "milestone": 34,
+    "phase": 4,
+    "source": "DECISION_JOURNAL_REVIEW_WORKFLOW",
+    "step": 3
+  },
+  "monitoring_plan": [
+    "Review scenario probabilities daily",
+    "Monitor implied volatility and liquidity"
+  ],
+  "positive_factors": [
+    "Decision rationale documented",
+    "Primary risks documented",
+    "Monitoring plan documented",
+    "Decision confidence meets policy",
+    "Independent review approved"
+  ],
+  "primary_risks": [
+    "Unexpected volatility expansion",
+    "Breakdown below primary support"
+  ],
+  "rejection_reasons": [],
+  "remediation_actions": [],
+  "reviews": [
+    {
+      "comments": "Research evidence and scenario structure are sufficient for the recommended action.",
+      "execution_approved": true,
+      "required_actions": [],
+      "review_id": "REVIEW-001",
+      "review_status": "APPROVED",
+      "reviewed_at": "2026-07-19T12:00:00+00:00",
+      "reviewer": "Independent Reviewer",
+      "reviewer_confidence": 0.8
+    }
+  ],
+  "selected_scenario_id": "BULL",
+  "strategy_name": "BULL_PUT_SPREAD",
+  "symbol": "AAPL",
+  "thesis_revisions": [],
+  "warnings": []
+}

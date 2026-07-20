@@ -1,0 +1,124 @@
+{
+  "assumptions": [
+    {
+      "assumption_id": "A-001",
+      "confidence": 0.75,
+      "description": "No material deterioration in earnings outlook.",
+      "importance": "HIGH",
+      "invalidation_condition": "Consensus earnings estimate falls materially.",
+      "validation_method": "Monitor earnings revisions and guidance."
+    }
+  ],
+  "case_id": "CASE-001",
+  "confidence_score": 0.82,
+  "evidence": [
+    {
+      "category": "TECHNICAL",
+      "description": "Price remains above trend support.",
+      "evidence_id": "E-001",
+      "notes": "Deterministic demo evidence; replace with production research data.",
+      "observed_at": "2026-07-20T04:56:46.447244+00:00",
+      "reliability_score": 0.85,
+      "source": "FeaturePipeline",
+      "supports_thesis": true
+    }
+  ],
+  "expected_drawdown_pct": 0.0775,
+  "expected_return_pct": 0.075,
+  "expected_volatility_pct": 0.28,
+  "metadata": {
+    "milestone": 34,
+    "phase": 4,
+    "source": "PHASE4_PIPELINE",
+    "step": 1
+  },
+  "positive_factors": [
+    "Primary thesis documented",
+    "Time horizon documented",
+    "Scenario count within policy",
+    "Required scenarios present",
+    "Scenario probabilities normalized",
+    "Evidence attached",
+    "Assumptions documented",
+    "Invalidation conditions documented",
+    "Research confidence meets policy"
+  ],
+  "primary_thesis": "Constructive market structure, controlled downside, and favorable scenario-weighted return support a defined-risk options position.",
+  "rejection_reasons": [],
+  "remediation_actions": [],
+  "research_grade": "A",
+  "research_score": 100.0,
+  "review_date": "2026-07-26",
+  "scenario_probability_total": 1.0,
+  "scenarios": [
+    {
+      "catalysts": [
+        "Stable earnings expectations"
+      ],
+      "expected_drawdown_pct": 0.05,
+      "expected_holding_days": 21,
+      "expected_return_pct": 0.1,
+      "expected_volatility_pct": 0.24,
+      "invalidation_conditions": [
+        "Daily close below primary support"
+      ],
+      "name": "Base Case",
+      "probability": 0.5,
+      "recommended_action": "ENTER",
+      "risks": [
+        "Broad market weakness"
+      ],
+      "scenario_id": "BASE",
+      "scenario_type": "BASE",
+      "thesis": "Price remains above primary support."
+    },
+    {
+      "catalysts": [
+        "Positive guidance"
+      ],
+      "expected_drawdown_pct": 0.03,
+      "expected_holding_days": 14,
+      "expected_return_pct": 0.22,
+      "expected_volatility_pct": 0.28,
+      "invalidation_conditions": [
+        "Momentum confirmation fails"
+      ],
+      "name": "Bull Case",
+      "probability": 0.25,
+      "recommended_action": "ENTER",
+      "risks": [
+        "Volatility compression"
+      ],
+      "scenario_id": "BULL",
+      "scenario_type": "BULL",
+      "thesis": "Upside momentum accelerates."
+    },
+    {
+      "catalysts": [
+        "Risk-off repricing"
+      ],
+      "expected_drawdown_pct": 0.18,
+      "expected_holding_days": 10,
+      "expected_return_pct": -0.12,
+      "expected_volatility_pct": 0.36,
+      "invalidation_conditions": [
+        "Price reclaims failed support"
+      ],
+      "name": "Bear Case",
+      "probability": 0.25,
+      "recommended_action": "AVOID",
+      "risks": [
+        "Gap risk"
+      ],
+      "scenario_id": "BEAR",
+      "scenario_type": "BEAR",
+      "thesis": "Support fails after a macro shock."
+    }
+  ],
+  "status": "READY",
+  "strategy_name": "BULL_PUT_SPREAD",
+  "symbol": "AAPL",
+  "time_horizon": "30-45 DAYS",
+  "title": "AAPL BULL_PUT_SPREAD institutional research case",
+  "warnings": []
+}

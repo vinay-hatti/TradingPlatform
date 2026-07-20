@@ -1,0 +1,168 @@
+{
+  "case_id": "CASE-001",
+  "dashboard_id": "M34-P4-DASHBOARD-001",
+  "executive_summary": {
+    "confidence_summary": "Recommendation confidence 82.0%; institutional score 83.2%.",
+    "executive_conclusion": "AAPL BULL_PUT_SPREAD research workflow is institutionally ready.",
+    "key_risks": [
+      "Unexpected volatility expansion",
+      "Breakdown below primary support"
+    ],
+    "key_strengths": [
+      "Realized outcome data meets completeness policy"
+    ],
+    "recommendation": "MONITOR",
+    "required_actions": [],
+    "research_status": "COMPLETE"
+  },
+  "generated_at": "2026-07-20T04:56:46.551269+00:00",
+  "journal_id": "JOURNAL-001",
+  "metadata": {
+    "milestone": 34,
+    "phase": 4,
+    "source": "RESEARCH_DASHBOARD_ENGINE",
+    "step": 5
+  },
+  "phase_completion": {
+    "completeness_score": 1.0,
+    "consistency_errors": [],
+    "missing_artifacts": [],
+    "phase_status": "COMPLETE",
+    "regression_ready": true,
+    "required_artifacts_present": [
+      "research_case",
+      "scenario_comparison",
+      "decision_journal",
+      "outcome_attribution",
+      "thesis_validation"
+    ]
+  },
+  "scorecard": {
+    "institutional_ready": true,
+    "kpis": [
+      {
+        "explanation": "Evidence, confidence, and thesis quality.",
+        "grade": "B",
+        "name": "Research Quality",
+        "score": 0.826667,
+        "status": "PASS"
+      },
+      {
+        "explanation": "Average source reliability.",
+        "grade": "B",
+        "name": "Evidence Quality",
+        "score": 0.85,
+        "status": "PASS"
+      },
+      {
+        "explanation": "Realized forecast performance.",
+        "grade": "D",
+        "name": "Forecast Accuracy",
+        "score": 0.636667,
+        "status": "PASS"
+      },
+      {
+        "explanation": "Aggregate decision quality.",
+        "grade": "B",
+        "name": "Decision Quality",
+        "score": 0.801833,
+        "status": "PASS"
+      },
+      {
+        "explanation": "Scenario ranking and probability calibration.",
+        "grade": "F",
+        "name": "Scenario Calibration",
+        "score": 0.5625,
+        "status": "ATTENTION"
+      },
+      {
+        "explanation": "Realized thesis confirmation.",
+        "grade": "B",
+        "name": "Thesis Confirmation",
+        "score": 0.81,
+        "status": "PASS"
+      },
+      {
+        "explanation": "Independent review completion.",
+        "grade": "A",
+        "name": "Review Governance",
+        "score": 1.0,
+        "status": "PASS"
+      },
+      {
+        "explanation": "Risk and monitoring documentation.",
+        "grade": "A",
+        "name": "Risk Governance",
+        "score": 1.0,
+        "status": "PASS"
+      },
+      {
+        "explanation": "Realized outcome quality.",
+        "grade": "A",
+        "name": "Outcome Quality",
+        "score": 1.0,
+        "status": "PASS"
+      }
+    ],
+    "overall_grade": "B",
+    "overall_score": 0.831963
+  },
+  "sections": [
+    {
+      "metrics": {
+        "case_id": "CASE-001"
+      },
+      "section_id": "research-case",
+      "status": "COMPLETE",
+      "summary": "Constructive market structure, controlled downside, and favorable scenario-weighted return support a defined-risk options position.",
+      "title": "Research Case"
+    },
+    {
+      "metrics": {
+        "confidence": 0.82,
+        "recommendation": "MONITOR"
+      },
+      "section_id": "scenario-comparison",
+      "status": "COMPLETE",
+      "summary": "Selected scenario: BULL.",
+      "title": "Scenario Comparison"
+    },
+    {
+      "metrics": {
+        "approval_status": "APPROVED"
+      },
+      "section_id": "decision-journal",
+      "status": "MONITORING",
+      "summary": "The scenario comparison supports continued monitoring with execution contingent on independent approval.",
+      "title": "Decision Journal"
+    },
+    {
+      "metrics": {
+        "decision_quality_score": 0.801833
+      },
+      "section_id": "outcome-attribution",
+      "status": "PROFITABLE",
+      "summary": "Decision quality grade: B.",
+      "title": "Outcome Attribution"
+    },
+    {
+      "metrics": {
+        "confirmation_score": 0.81
+      },
+      "section_id": "thesis-validation",
+      "status": "CONFIRMED",
+      "summary": "",
+      "title": "Thesis Validation"
+    }
+  ],
+  "source_artifacts": {
+    "decision_journal": "reports/m34/phase4/decision_journal.json",
+    "outcome_attribution": "reports/m34/phase4/outcome_attribution.json",
+    "research_case": "reports/m34/phase4/research_case.json",
+    "scenario_comparison": "reports/m34/phase4/scenario_comparison.json",
+    "thesis_validation": "reports/m34/phase4/thesis_validation.json"
+  },
+  "strategy_name": "BULL_PUT_SPREAD",
+  "symbol": "AAPL",
+  "warnings": []
+}

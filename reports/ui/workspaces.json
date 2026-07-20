@@ -1,0 +1,68 @@
+[
+  {
+    "active_view": "dashboard",
+    "command_palette_enabled": true,
+    "density": "compact",
+    "keyboard_shortcuts_enabled": true,
+    "name": "Default Trading Workspace",
+    "owner": "local-operator",
+    "panels": [
+      {
+        "collapsed": false,
+        "height": null,
+        "metadata": {},
+        "order": 0,
+        "panel_id": "opportunities",
+        "size": "medium",
+        "title": "Opportunities",
+        "view": "opportunities",
+        "visible": true,
+        "width": null,
+        "zone": "left"
+      },
+      {
+        "collapsed": false,
+        "height": null,
+        "metadata": {},
+        "order": 1,
+        "panel_id": "paper-order-entry",
+        "size": "large",
+        "title": "Paper Order Entry",
+        "view": "paper-commands",
+        "visible": true,
+        "width": null,
+        "zone": "center"
+      },
+      {
+        "collapsed": false,
+        "height": null,
+        "metadata": {},
+        "order": 2,
+        "panel_id": "positions",
+        "size": "medium",
+        "title": "Positions & Risk",
+        "view": "portfolio-risk",
+        "visible": true,
+        "width": null,
+        "zone": "right"
+      },
+      {
+        "collapsed": false,
+        "height": null,
+        "metadata": {},
+        "order": 3,
+        "panel_id": "execution",
+        "size": "full",
+        "title": "Execution Blotter",
+        "view": "paper-execution",
+        "visible": true,
+        "width": null,
+        "zone": "bottom"
+      }
+    ],
+    "theme": "dark",
+    "updated_at": "2026-07-18T23:22:58.210150Z",
+    "version": 1,
+    "workspace_id": "ws-18472e05d1d748ee"
+  }
+]

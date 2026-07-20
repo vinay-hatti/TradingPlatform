@@ -1,0 +1,33 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>Institutional Research Workstation</title>
+<style>
+body{margin:0;background:#08111f;color:#edf4ff;font-family:system-ui}header,main{padding:28px 5vw}
+header{border-bottom:1px solid #263a52}h1{font-size:40px}.panel,.metric{background:#111d2d;border:1px solid #263a52;border-radius:14px;padding:20px;margin-bottom:20px}
+form{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}label{display:grid;gap:6px;color:#8fa4bf}
+input{padding:10px;background:#17263a;color:white;border:1px solid #263a52;border-radius:8px}
+button{background:#43d7a4;border:0;padding:12px;border-radius:8px;font-weight:800}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.metric strong{display:block;font-size:26px}
+table{width:100%;border-collapse:collapse;white-space:nowrap}th,td{padding:10px;border-bottom:1px solid #263a52;text-align:right}th{color:#8fa4bf}
+.wrap{overflow:auto}.warning{color:#ff7885}.symbol{color:#67a7ff;font-weight:800}
+</style></head><body>
+<header><p>TRADING AI · MILESTONE 34</p><h1>Institutional Research Workstation</h1><p id="health">Checking service…</p></header>
+<main><section class="panel"><h2>Market Scan</h2><form id="form">
+<label>Universe<input id="universe" value="core_options"></label>
+<label>Maximum results<input id="max" type="number" value="20"></label>
+<label>Minimum stock volume<input id="stockvol" type="number" value="500000"></label>
+<label>Minimum option volume<input id="optvol" type="number" value="100"></label>
+<label>Minimum open interest<input id="oi" type="number" value="100"></label>
+<label>Maximum spread %<input id="spread" type="number" step=".01" value=".20"></label>
+<label>Minimum IV rank<input id="iv" type="number" value="0"></label>
+<label>Minimum ATR %<input id="atr" type="number" step=".1" value=".5"></label>
+<button type="submit">Run Institutional Scan</button></form></section>
+<section class="metrics"><div class="metric">Requested<strong id="requested">—</strong></div><div class="metric">Candidates<strong id="candidates">—</strong></div><div class="metric">Rejected<strong id="rejected">—</strong></div><div class="metric">Ranked<strong id="ranked">—</strong></div></section>
+<section class="panel"><h2>Ranked Trade Candidates</h2><div id="warnings"></div><div class="wrap"><table><thead><tr><th>Rank</th><th>Symbol</th><th>Score</th><th>Signal</th><th>Regime</th><th>Price</th><th>IV Rank</th><th>Option Vol</th><th>OI</th><th>Spread</th><th>Confidence</th><th>Exp Return</th><th>R/R</th><th>Strategy</th></tr></thead><tbody id="rows"><tr><td colspan="14">No results yet.</td></tr></tbody></table></div></section></main>
+<script>
+const g=id=>document.getElementById(id),n=id=>Number(g(id).value),f=v=>Number(v||0).toFixed(2);
+fetch('/api/research-scanner/health').then(r=>r.json()).then(()=>g('health').textContent='Scanner service online').catch(()=>g('health').textContent='Scanner unavailable');
+g('form').onsubmit=async e=>{e.preventDefault();const body={universe:g('universe').value,maximum_results:n('max'),minimum_average_volume:n('stockvol'),minimum_option_volume:n('optvol'),minimum_open_interest:n('oi'),maximum_spread_pct:n('spread'),minimum_iv_rank:n('iv'),minimum_atr_pct:n('atr'),required_signals:['CALL','PUT']};
+const r=await fetch('/api/research-scanner/scan',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});const d=await r.json();if(!r.ok){g('warnings').innerHTML='<p class="warning">'+d.detail+'</p>';return}
+g('requested').textContent=d.requested_count;g('candidates').textContent=d.candidate_count;g('rejected').textContent=d.rejected_count;g('ranked').textContent=d.results.length;g('warnings').innerHTML=d.warnings.map(x=>'<p class="warning">'+x+'</p>').join('');
+g('rows').innerHTML=d.results.length?d.results.map(x=>`<tr><td>${x.rank}</td><td class="symbol">${x.symbol}</td><td>${f(x.composite_score)}</td><td>${x.signal}</td><td>${x.regime}</td><td>${f(x.price)}</td><td>${f(x.iv_rank)}</td><td>${x.option_volume}</td><td>${x.open_interest}</td><td>${f(x.spread_pct)}</td><td>${f(x.decision_confidence)}</td><td>${f(x.expected_return*100)}%</td><td>${f(x.reward_risk_ratio)}</td><td>${x.institutional.strategy||'—'}</td></tr>`).join(''):'<tr><td colspan="14">No candidates passed.</td></tr>'};
+</script></body></html>

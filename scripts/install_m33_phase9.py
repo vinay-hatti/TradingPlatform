@@ -1,0 +1,47 @@
+from pathlib import Path
+import shutil
+
+ROOT=Path(__file__).resolve().parents[1]
+APP=ROOT/"src/trading_ai/ui/app.py"
+INDEX=ROOT/"src/trading_ai/ui/static/index.html"
+
+def backup(path):
+    target=path.with_suffix(path.suffix+".m33_phase9.bak")
+    if not target.exists():
+        shutil.copy2(path,target)
+
+def main():
+    text=APP.read_text(encoding="utf-8")
+    imp="from trading_ai.ui.api.executive_reporting import router as executive_reporting_router\n"
+    if imp not in text:
+        anchors=[
+            "from trading_ai.ui.api.security_compliance_center import router as security_compliance_center_router\n",
+            "from trading_ai.ui.api.operations_command_center import router as operations_command_center_router\n",
+        ]
+        marker=next((x for x in anchors if x in text),None)
+        if not marker:
+            raise RuntimeError("Unable to locate UI router import anchor.")
+        text=text.replace(marker,marker+imp)
+    if "executive_reporting_router," not in text:
+        anchors=[
+            "  security_compliance_center_router,\n",
+            "  operations_command_center_router,\n",
+        ]
+        marker=next((x for x in anchors if x in text),None)
+        if not marker:
+            raise RuntimeError("Unable to locate router registration anchor.")
+        text=text.replace(marker,marker+"  executive_reporting_router,\n")
+    text=text.replace('version="33.8.0"','version="33.9.0"')
+    backup(APP)
+    APP.write_text(text,encoding="utf-8")
+
+    html=INDEX.read_text(encoding="utf-8")
+    js='<script src="/static/executive_reporting.js"></script>'
+    if js not in html:
+        html=html.replace("</body>",f"  {js}\n</body>")
+    backup(INDEX)
+    INDEX.write_text(html,encoding="utf-8")
+    print("Milestone 33 Phase 9 integration completed.")
+
+if __name__=="__main__":
+    main()

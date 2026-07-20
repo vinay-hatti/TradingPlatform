@@ -1,0 +1,19 @@
+{
+  "brier_score": 0.03927,
+  "calibration_error": 0.198167,
+  "empirical_success_rate": 1.0,
+  "failed_cases": 0,
+  "governance_status": "INSUFFICIENT_HISTORY",
+  "recommendations": [
+    "Increase future confidence modestly when supported by matching learned factors.",
+    "Use historically strong factors as bounded supporting priors: TAG:unspecified"
+  ],
+  "recommended_global_adjustment": 0.15,
+  "report_id": "M34-PHASE5-LEARNING-001",
+  "strongest_negative_factors": [],
+  "strongest_positive_factors": [
+    "TAG:unspecified"
+  ],
+  "successful_cases": 1,
+  "total_cases": 1
+}

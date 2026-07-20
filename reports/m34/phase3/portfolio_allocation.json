@@ -1,0 +1,79 @@
+{
+  "account_equity": 100000.0,
+  "allowed": true,
+  "candidates_evaluated": 1,
+  "decisions": [
+    {
+      "allocated_buying_power": 320.0,
+      "allocated_contracts": 1,
+      "allocated_risk": 320.0,
+      "allocation_status": "ALLOCATED",
+      "candidate_id": "TRADE-001-CANDIDATE",
+      "expected_profit": 198.4,
+      "expected_return_pct": 0.1,
+      "rejection_reasons": [],
+      "sector": "TECHNOLOGY",
+      "strategy_name": "BULL_PUT_SPREAD",
+      "symbol": "AAPL",
+      "warnings": []
+    }
+  ],
+  "exposure": {
+    "gross_directional_exposure": 12.0,
+    "net_directional_exposure": 12.0,
+    "portfolio_delta": 12.0,
+    "portfolio_gamma": -1.0,
+    "portfolio_theta": 3.0,
+    "portfolio_vega": -4.0,
+    "sector_exposure": {
+      "TECHNOLOGY": 320.0
+    },
+    "strategy_exposure": {
+      "BULL_PUT_SPREAD": 320.0
+    },
+    "symbol_exposure": {
+      "AAPL": 320.0
+    },
+    "total_buying_power": 320.0,
+    "total_expected_profit": 198.4,
+    "total_risk": 320.0
+  },
+  "health": {
+    "capital_utilization_pct": 0.0032,
+    "concentration_score": 0.0,
+    "diversification_score": 100.0,
+    "expected_return_score": 62.0,
+    "liquidity_score": 92.0,
+    "portfolio_health_grade": "D",
+    "portfolio_health_score": 68.5,
+    "portfolio_risk_pct": 0.0032,
+    "remaining_buying_power": 64680.0,
+    "risk_severity": "NONE"
+  },
+  "metadata": {
+    "milestone": 34,
+    "phase": 3,
+    "source": "POSITION_SIZING_PORTFOLIO_ALLOCATION",
+    "step": 2
+  },
+  "positions_allocated": 1,
+  "rejection_reasons": [],
+  "sizing_profiles": [
+    {
+      "binding_constraint": "LIQUIDITY",
+      "candidate_id": "TRADE-001-CANDIDATE",
+      "expected_shortfall_contracts": 2,
+      "fixed_fractional_contracts": 2,
+      "kelly_contracts": 2,
+      "kelly_fraction": 0.248,
+      "liquidity_adjusted_contracts": 1,
+      "liquidity_haircut": 0.92,
+      "maximum_position_buying_power": 320.0,
+      "maximum_position_risk": 320.0,
+      "recommended_contracts": 1,
+      "risk_budget_contracts": 2,
+      "volatility_target_contracts": 2
+    }
+  ],
+  "warnings": []
+}

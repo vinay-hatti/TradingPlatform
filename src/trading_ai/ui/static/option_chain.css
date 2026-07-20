@@ -1,0 +1,13 @@
+.option-chain-controls{display:flex;gap:8px;align-items:end;flex-wrap:wrap;margin-bottom:12px}
+.option-chain-controls label{display:grid;gap:4px;font-size:12px}.option-chain-controls input,.option-chain-controls select{min-width:110px}
+.option-chain-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-bottom:12px}
+.option-chain-card{padding:10px;border:1px solid var(--border,#334155);border-radius:8px;background:rgba(15,23,42,.25)}
+.option-chain-layout{display:grid;grid-template-columns:minmax(0,2fr) minmax(300px,1fr);gap:12px}
+.option-chain-table-wrap{overflow:auto;max-height:620px;border:1px solid var(--border,#334155);border-radius:8px}
+.option-chain-table{width:100%;border-collapse:collapse;font-size:12px;white-space:nowrap}
+.option-chain-table th{position:sticky;top:0;background:var(--panel,#111827);z-index:2}.option-chain-table th,.option-chain-table td{padding:6px;border-bottom:1px solid var(--border,#334155);text-align:right}
+.option-chain-table td.strike,.option-chain-table th.strike{text-align:center;background:rgba(59,130,246,.10)}
+.option-chain-table tr:hover{background:rgba(59,130,246,.08)}.contract-good{border-left:3px solid #16a34a}.contract-fair{border-left:3px solid #ca8a04}.contract-poor{border-left:3px solid #dc2626}
+.option-chain-side{display:grid;gap:12px}.option-chain-chart{border:1px solid var(--border,#334155);border-radius:8px;padding:10px}.option-chain-chart canvas{width:100%;height:230px}
+.chain-action{padding:3px 7px}
+@media(max-width:1100px){.option-chain-layout{grid-template-columns:1fr}}

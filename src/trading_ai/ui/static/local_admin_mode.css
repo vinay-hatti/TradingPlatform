@@ -1,0 +1,5 @@
+.local-admin-badge{display:block;padding:.45rem .85rem;margin:0;border-bottom:2px solid currentColor;
+font-size:.82rem;font-weight:800;letter-spacing:.05em;text-align:center}
+.local-admin-badge.read-only{font-weight:700}
+html[data-local-admin-mode="true"] [data-admin-only]{display:initial}
+html[data-local-admin-mode="false"] [data-admin-only]{display:none!important}
