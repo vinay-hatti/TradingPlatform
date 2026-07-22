@@ -1,0 +1,26 @@
+"""Milestone 36 Phase 1 Step 5 portfolio management persistence.
+
+Revision ID: f36a1s5
+Revises: 1b0a35cdc5fb
+"""
+from alembic import op
+import sqlalchemy as sa
+
+revision = "f36a1s5"
+down_revision = "1b0a35cdc5fb"
+branch_labels = None
+depends_on = None
+
+
+def upgrade() -> None:
+    op.create_table("portfolio_accounts", sa.Column("portfolio_id", sa.String(64), primary_key=True), sa.Column("name", sa.String(255), nullable=False), sa.Column("base_currency", sa.String(8), nullable=False), sa.Column("initial_capital", sa.Float(), nullable=False), sa.Column("status", sa.String(32), nullable=False), sa.Column("created_at", sa.String(64), nullable=False), sa.Column("metadata_json", sa.JSON(), nullable=False))
+    op.create_table("portfolio_positions", sa.Column("position_id", sa.String(128), primary_key=True), sa.Column("portfolio_id", sa.String(64), nullable=False, index=True), sa.Column("symbol", sa.String(32), nullable=False, index=True), sa.Column("strategy_id", sa.String(255), nullable=False, index=True), sa.Column("strategy_type", sa.String(64), nullable=False), sa.Column("direction", sa.String(16), nullable=False), sa.Column("status", sa.String(32), nullable=False, index=True), sa.Column("quantity", sa.Integer(), nullable=False), sa.Column("entry_price", sa.Float(), nullable=False), sa.Column("current_price", sa.Float(), nullable=False), sa.Column("capital_committed", sa.Float(), nullable=False), sa.Column("maximum_loss", sa.Float()), sa.Column("maximum_profit", sa.Float()), sa.Column("realized_pnl", sa.Float(), nullable=False), sa.Column("unrealized_pnl", sa.Float(), nullable=False), sa.Column("opened_at", sa.String(64), nullable=False), sa.Column("updated_at", sa.String(64), nullable=False), sa.Column("closed_at", sa.String(64)), sa.Column("sector", sa.String(128), nullable=False), sa.Column("industry", sa.String(128), nullable=False), sa.Column("correlation_group", sa.String(128), nullable=False), sa.Column("delta", sa.Float(), nullable=False), sa.Column("gamma", sa.Float(), nullable=False), sa.Column("theta", sa.Float(), nullable=False), sa.Column("vega", sa.Float(), nullable=False), sa.Column("rho", sa.Float(), nullable=False), sa.Column("source_artifact", sa.Text(), nullable=False), sa.Column("metadata_json", sa.JSON(), nullable=False), sa.UniqueConstraint("portfolio_id", "position_id", name="uq_portfolio_position"))
+    op.create_table("portfolio_cash_ledger", sa.Column("entry_id", sa.String(128), primary_key=True), sa.Column("portfolio_id", sa.String(64), nullable=False, index=True), sa.Column("event_type", sa.String(64), nullable=False), sa.Column("amount", sa.Float(), nullable=False), sa.Column("balance_after", sa.Float(), nullable=False), sa.Column("occurred_at", sa.String(64), nullable=False), sa.Column("reference_id", sa.String(128), nullable=False), sa.Column("notes", sa.Text(), nullable=False))
+    op.create_table("portfolio_snapshots", sa.Column("snapshot_id", sa.String(128), primary_key=True), sa.Column("portfolio_id", sa.String(64), nullable=False, index=True), sa.Column("generated_at", sa.String(64), nullable=False), sa.Column("registry_fingerprint", sa.String(128), nullable=False, index=True), sa.Column("registry_json", sa.JSON(), nullable=False), sa.Column("exposure_json", sa.JSON(), nullable=False), sa.Column("warnings_json", sa.JSON(), nullable=False))
+    op.create_table("portfolio_audit_history", sa.Column("audit_id", sa.String(128), primary_key=True), sa.Column("portfolio_id", sa.String(64), nullable=False, index=True), sa.Column("snapshot_id", sa.String(128), nullable=False, index=True), sa.Column("event_type", sa.String(64), nullable=False), sa.Column("occurred_at", sa.String(64), nullable=False), sa.Column("registry_fingerprint", sa.String(128), nullable=False, index=True), sa.Column("open_position_count", sa.Integer(), nullable=False), sa.Column("closed_position_count", sa.Integer(), nullable=False), sa.Column("cash_balance", sa.Float(), nullable=False), sa.Column("net_liquidation_value", sa.Float(), nullable=False), sa.Column("capital_committed", sa.Float(), nullable=False), sa.Column("realized_pnl", sa.Float(), nullable=False), sa.Column("unrealized_pnl", sa.Float(), nullable=False), sa.Column("source_registry", sa.Text(), nullable=False), sa.Column("metadata_json", sa.JSON(), nullable=False))
+    op.create_table("portfolio_sync_runs", sa.Column("sync_id", sa.String(128), primary_key=True), sa.Column("portfolio_id", sa.String(64), nullable=False, index=True), sa.Column("started_at", sa.String(64), nullable=False), sa.Column("completed_at", sa.String(64), nullable=False), sa.Column("status", sa.String(32), nullable=False), sa.Column("registry_fingerprint", sa.String(128), nullable=False), sa.Column("accounts_upserted", sa.Integer(), nullable=False), sa.Column("positions_upserted", sa.Integer(), nullable=False), sa.Column("ledger_entries_upserted", sa.Integer(), nullable=False), sa.Column("snapshots_upserted", sa.Integer(), nullable=False), sa.Column("audit_records_upserted", sa.Integer(), nullable=False), sa.Column("warnings_json", sa.JSON(), nullable=False))
+
+
+def downgrade() -> None:
+    for table in ["portfolio_sync_runs", "portfolio_audit_history", "portfolio_snapshots", "portfolio_cash_ledger", "portfolio_positions", "portfolio_accounts"]:
+        op.drop_table(table)

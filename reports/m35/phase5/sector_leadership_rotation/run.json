@@ -1,0 +1,68 @@
+{
+  "as_of_date": "2026-07-20",
+  "confidence": 0.17533642856718437,
+  "generated_at": "2026-07-21T12:58:07.435490+00:00",
+  "governance_status": "READY",
+  "input_path": "reports/m35/phase5/cross_asset_data_foundation/cross_asset_features.jsonl",
+  "leadership_state": "DEFENSIVE",
+  "metadata": {
+    "available_sectors": [
+      "XLB",
+      "XLC",
+      "XLE",
+      "XLF",
+      "XLI",
+      "XLK",
+      "XLP",
+      "XLRE",
+      "XLU",
+      "XLV",
+      "XLY"
+    ],
+    "expected_sectors": [
+      "XLB",
+      "XLC",
+      "XLE",
+      "XLF",
+      "XLI",
+      "XLK",
+      "XLP",
+      "XLRE",
+      "XLU",
+      "XLV",
+      "XLY"
+    ],
+    "feature_version": "m35.phase5.step3.v1",
+    "laggards": [
+      "XLK",
+      "XLY",
+      "XLB"
+    ],
+    "leaders": [
+      "XLV",
+      "XLF",
+      "XLRE"
+    ],
+    "missing_sectors": [],
+    "policy": {
+      "benchmark_symbol": "SPY",
+      "broad_participation_threshold": 0.6,
+      "laggard_count": 3,
+      "leader_count": 3,
+      "minimum_sectors_ready": 9,
+      "minimum_sectors_review": 6,
+      "narrow_participation_threshold": 0.4,
+      "relative_strength_21d_weight": 0.5,
+      "return_5d_weight": 0.25,
+      "risk_off_leadership_threshold": -0.1,
+      "risk_on_leadership_threshold": 0.1,
+      "trend_direction_weight": 0.15,
+      "trend_strength_weight": 0.1
+    }
+  },
+  "output_path": "reports/m35/phase5/sector_leadership_rotation/sector_leadership_profile.json",
+  "records_read": 28,
+  "rotation_state": "MIXED_ROTATION",
+  "sectors_available": 11,
+  "sectors_missing": 0
+}

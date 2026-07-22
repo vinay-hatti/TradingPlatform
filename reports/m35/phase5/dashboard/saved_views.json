@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "views": [
+    {
+      "description": "High-conviction liquid bullish candidates",
+      "filters": {
+        "directions": [
+          "CALL"
+        ],
+        "exclude_symbols": [],
+        "max_institutional_score": null,
+        "max_probability_of_profit": null,
+        "max_spread_pct": 0.1,
+        "min_institutional_score": 80.0,
+        "min_liquidity_score": null,
+        "min_open_interest": 1000,
+        "min_probability_of_profit": 0.6,
+        "min_volume": null,
+        "sectors": [],
+        "strategy_types": [],
+        "symbols": []
+      },
+      "name": "Institutional Calls",
+      "page_size": 25,
+      "sort_direction": "DESC",
+      "sort_field": "institutional_score",
+      "top_n": 50
+    }
+  ]
+}

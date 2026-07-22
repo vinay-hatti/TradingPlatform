@@ -1,0 +1,108 @@
+TradingPlatform v1.0 RC1 validation
+Alembic graph: 12 revisions, head=m42ops
+Production API: 19 routes
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m36_phase1_compatibility.py
+Milestone 36 Phase 1 compatibility assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m36_phase1_duplicate_governance.py
+Milestone 36 Phase 1 duplicate-governance assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m36_phase1_portfolio_registry.py
+Milestone 36 Phase 1 portfolio registry assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m36_phase1_step2_decision_ingestion.py
+Milestone 36 Phase 1 Step 2 decision-ingestion assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m36_phase1_step2_lifecycle_ingestion.py
+Milestone 36 Phase 1 Step 2 lifecycle-ingestion assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m36_phase1_step2_performance_ingestion.py
+Milestone 36 Phase 1 Step 2 performance-ingestion assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m36_phase1_step2_repository_artifacts.py
+Milestone 36 Phase 1 Step 2 repository-artifact assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m36_phase1_step3_conflict_governance.py
+Milestone 36 Phase 1 Step 3 conflict-governance assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m36_phase1_step3_reconciliation.py
+Milestone 36 Phase 1 Step 3 reconciliation assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m36_phase1_step3_repository_reconciliation.py
+Milestone 36 Phase 1 Step 3 repository reconciliation assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m36_phase1_step4_audit_idempotency.py
+Milestone 36 Phase 1 Step 4 audit-idempotency assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m36_phase1_step4_exposure_views.py
+Milestone 36 Phase 1 Step 4 exposure-view assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m36_phase1_step4_snapshots.py
+Milestone 36 Phase 1 Step 4 snapshot assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m36_phase1_step5_database_models.py
+Milestone 36 Phase 1 Step 5 database-model assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m36_phase1_step5_database_sync.py
+Milestone 36 Phase 1 Step 5 database-sync assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m36_phase1_step5_repository_compatibility.py
+Milestone 36 Phase 1 Step 5 repository-compatibility assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m36_phase1_step6_readiness_governance.py
+Milestone 36 Phase 1 Step 6 readiness-governance assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m36_phase1_step6_reporting.py
+Milestone 36 Phase 1 Step 6 reporting assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m36_phase1_step6_unified_workflow.py
+Milestone 36 Phase 1 Step 6 unified-workflow assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m36_phase2_step1_candidate_normalization.py
+Milestone 36 Phase 2 Step 1 candidate-normalization assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m36_phase2_step1_constraint_governance.py
+Milestone 36 Phase 2 Step 1 constraint-governance assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m36_phase2_step1_portfolio_construction.py
+Milestone 36 Phase 2 Step 1 portfolio-construction assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m36_phase2_step2_allocation.py
+Milestone 36 Phase 2 Step 2 allocation assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m36_phase2_step3_constraints.py
+Milestone 36 Phase 2 Step 3 constraint assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m36_phase2_step4_scenarios.py
+Milestone 36 Phase 2 Step 4 scenario assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m36_phase2_step5_handoff.py
+Milestone 36 Phase 2 Step 5 handoff assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m36_phase2_step6_workflow.py
+Milestone 36 Phase 2 Step 6 workflow assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m37_database_models.py
+Milestone 37 database model assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m37_database_sync.py
+Milestone 37 database synchronization assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m37_persistence_and_idempotency.py
+Milestone 37 persistence and idempotency assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m37_policy_and_exposure.py
+Milestone 37 policy and exposure assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m37_stress_and_breaches.py
+Milestone 37 stress and breach assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m37_workflow_and_reporting.py
+Milestone 37 workflow and reporting assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m38_broker_reconciliation.py
+Milestone 38 broker reconciliation assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m38_database_models.py
+Milestone 38 database model assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m38_idempotency_and_approval.py
+Milestone 38 idempotency and approval assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m38_reporting.py
+Milestone 38 reporting assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m38_risk_gating.py
+Milestone 38 risk-gating assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m39_instructions_and_workflow.py
+M39 instructions and workflow assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m39_migration_contract.py
+M39 migration contract assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m39_policy_and_assessment.py
+M39 policy and assessment assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m39_risk_and_stale_governance.py
+M39 risk and stale-data governance assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m40_artifact_contracts.py
+Milestone 40 artifact contract assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m40_health_and_readiness.py
+Milestone 40 health and readiness assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m40_migration_contract.py
+Milestone 40 migration contract assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m40_security_and_mutations.py
+Milestone 40 security and mutation assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m41_backend_mount.py
+Milestone 41 backend mount assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m41_frontend_contract.py
+Milestone 41 frontend contract assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m42_api_contract.py
+Milestone 42 API contract assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m42_migration_contract.py
+Milestone 42 migration assertions passed.
++ /opt/pyvenv/bin/python /mnt/data/rc1_work/base/TradingPlatform/scripts/test_m42_realtime_monitoring.py
+Milestone 42 realtime monitoring assertions passed.
+Python regression scripts: 51 passed
+Frontend dependency validation skipped: run npm install in ui/workstation first.
+TradingPlatform v1.0 RC1 validation passed.

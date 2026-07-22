@@ -1,0 +1,58 @@
+{
+  "MARKET_SCAN": {
+    "selected_path": null,
+    "valid_payload": false,
+    "candidate_paths": []
+  },
+  "CANDIDATE_INSPECTION": {
+    "selected_path": "/Users/vinay.hatti/TradingPlatform/reports/m35/phase5/dashboard/candidate_inspection/lly_candidate_inspection.json",
+    "valid_payload": true,
+    "candidate_paths": [
+      "/Users/vinay.hatti/TradingPlatform/reports/m35/phase5/dashboard/candidate_inspection/lly_candidate_inspection.json",
+      "/Users/vinay.hatti/TradingPlatform/reports/m35/phase5/dashboard/candidate_inspection/amzn_candidate_inspection.json"
+    ]
+  },
+  "OPTION_CHAIN": {
+    "selected_path": "/Users/vinay.hatti/TradingPlatform/reports/m35/phase5/dashboard/option_chain/amzn_option_chain_inspection.json",
+    "valid_payload": true,
+    "candidate_paths": [
+      "/Users/vinay.hatti/TradingPlatform/reports/m35/phase5/dashboard/option_chain/amzn_option_chain_inspection.json",
+      "/Users/vinay.hatti/TradingPlatform/reports/m35/phase5/dashboard/option_chain/googl_option_chain_inspection.json"
+    ]
+  },
+  "STRATEGY_COMPARISON": {
+    "selected_path": "/Users/vinay.hatti/TradingPlatform/reports/m35/phase5/dashboard/strategy_comparison/amzn_call_strategy_comparison.json",
+    "valid_payload": true,
+    "candidate_paths": [
+      "/Users/vinay.hatti/TradingPlatform/reports/m35/phase5/dashboard/strategy_comparison/amzn_call_strategy_comparison.json"
+    ]
+  },
+  "INSTITUTIONAL_DECISION": {
+    "selected_path": "/Users/vinay.hatti/TradingPlatform/reports/m35/phase5/dashboard/institutional_decision/amzn_call_institutional_decision.json",
+    "valid_payload": true,
+    "candidate_paths": [
+      "/Users/vinay.hatti/TradingPlatform/reports/m35/phase5/dashboard/institutional_decision/amzn_call_institutional_decision.json"
+    ]
+  },
+  "PAPER_TRADE_PREPARATION": {
+    "selected_path": "/Users/vinay.hatti/TradingPlatform/reports/m35/phase5/dashboard/paper_trade_preparation/amzn_call_paper_trade_preparation.json",
+    "valid_payload": true,
+    "candidate_paths": [
+      "/Users/vinay.hatti/TradingPlatform/reports/m35/phase5/dashboard/paper_trade_preparation/amzn_call_paper_trade_preparation.json"
+    ]
+  },
+  "PAPER_TRADE_LIFECYCLE": {
+    "selected_path": "/Users/vinay.hatti/TradingPlatform/reports/m35/phase5/dashboard/paper_trade/amzn_paper-f91616edd57044c8_lifecycle.json",
+    "valid_payload": true,
+    "candidate_paths": [
+      "/Users/vinay.hatti/TradingPlatform/reports/m35/phase5/dashboard/paper_trade/amzn_paper-f91616edd57044c8_lifecycle.json"
+    ]
+  },
+  "PERFORMANCE": {
+    "selected_path": "/Users/vinay.hatti/TradingPlatform/reports/m35/phase5/dashboard/performance/paper_trade_performance.json",
+    "valid_payload": true,
+    "candidate_paths": [
+      "/Users/vinay.hatti/TradingPlatform/reports/m35/phase5/dashboard/performance/paper_trade_performance.json"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "as_of_date": "2026-07-20",
+  "blocked_count": 0,
+  "eligible_count": 69,
+  "generated_at": "2026-07-21T06:44:23.604244+00:00",
+  "input_path": "reports/m35/phase4/option_surface_persistence/symbol_surface_profiles.csv",
+  "metadata": {
+    "feature_version": "m35.phase4.step4.v1",
+    "policy": {
+      "allowed_surface_statuses": [
+        "READY",
+        "REVIEW"
+      ],
+      "block_missing_liquidity": true,
+      "maximum_absolute_term_structure_slope": 0.02,
+      "maximum_put_call_open_interest_ratio": 10.0,
+      "maximum_put_call_volume_ratio": 10.0,
+      "minimum_expiration_count": 1,
+      "minimum_total_open_interest": 1000,
+      "minimum_total_volume": 1,
+      "review_missing_term_structure": true
+    }
+  },
+  "output_path": "reports/m35/phase4/option_surface_decision_integration/surface_decision_features.jsonl",
+  "records_generated": 98,
+  "records_read": 98,
+  "review_count": 29
+}

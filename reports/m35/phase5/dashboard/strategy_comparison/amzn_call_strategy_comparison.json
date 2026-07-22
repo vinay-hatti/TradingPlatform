@@ -1,0 +1,973 @@
+{
+  "symbol": "AMZN",
+  "direction": "CALL",
+  "source_contracts": 91,
+  "generated_strategies": 175,
+  "ranked_strategies": [
+    {
+      "strategy_id": "AMZN:2026-08-21:CALL:270.0-275.0:VERTICAL",
+      "symbol": "AMZN",
+      "expiry": "2026-08-21",
+      "direction": "CALL",
+      "strategy_type": "BULL_CALL_SPREAD",
+      "legs": [
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-08-21",
+          "strike": 270.0,
+          "option_type": "CALL",
+          "action": "BUY",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 5.56,
+          "delta": 0.29505896839258866,
+          "implied_volatility": 0.4290108025248415
+        },
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-08-21",
+          "strike": 275.0,
+          "option_type": "CALL",
+          "action": "SELL",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 4.4,
+          "delta": 0.24631976112204138,
+          "implied_volatility": 0.4310376222288663
+        }
+      ],
+      "debit": 1.1599999999999993,
+      "credit": null,
+      "max_profit": 3.8400000000000007,
+      "max_loss": 1.1599999999999993,
+      "breakeven": 271.16,
+      "reward_risk_ratio": 3.3103448275862095,
+      "probability_proxy": 0.29505896839258866,
+      "liquidity_score": 100.0,
+      "institutional_score": 55.7777,
+      "quote_quality": "HISTORICAL_LAST_ONLY",
+      "warnings": [
+        "INCOMPLETE_SPREAD_QUOTES"
+      ],
+      "metadata": {
+        "width": 5.0
+      }
+    },
+    {
+      "strategy_id": "AMZN:2026-08-21:CALL:265.0-270.0:VERTICAL",
+      "symbol": "AMZN",
+      "expiry": "2026-08-21",
+      "direction": "CALL",
+      "strategy_type": "BULL_CALL_SPREAD",
+      "legs": [
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-08-21",
+          "strike": 265.0,
+          "option_type": "CALL",
+          "action": "BUY",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 6.98,
+          "delta": 0.34864492689628157,
+          "implied_volatility": 0.42934377448261957
+        },
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-08-21",
+          "strike": 270.0,
+          "option_type": "CALL",
+          "action": "SELL",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 5.56,
+          "delta": 0.29505896839258866,
+          "implied_volatility": 0.4290108025248415
+        }
+      ],
+      "debit": 1.4200000000000008,
+      "credit": null,
+      "max_profit": 3.579999999999999,
+      "max_loss": 1.4200000000000008,
+      "breakeven": 266.42,
+      "reward_risk_ratio": 2.5211267605633783,
+      "probability_proxy": 0.34864492689628157,
+      "liquidity_score": 100.0,
+      "institutional_score": 54.9965,
+      "quote_quality": "HISTORICAL_LAST_ONLY",
+      "warnings": [
+        "INCOMPLETE_SPREAD_QUOTES"
+      ],
+      "metadata": {
+        "width": 5.0
+      }
+    },
+    {
+      "strategy_id": "AMZN:2026-08-21:CALL:250.0-255.0:VERTICAL",
+      "symbol": "AMZN",
+      "expiry": "2026-08-21",
+      "direction": "CALL",
+      "strategy_type": "BULL_CALL_SPREAD",
+      "legs": [
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-08-21",
+          "strike": 250.0,
+          "option_type": "CALL",
+          "action": "BUY",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 12.95,
+          "delta": 0.5286572009596128,
+          "implied_volatility": 0.44236267883702496
+        },
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-08-21",
+          "strike": 255.0,
+          "option_type": "CALL",
+          "action": "SELL",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 10.69,
+          "delta": 0.4673187337858134,
+          "implied_volatility": 0.4356063625172785
+        }
+      ],
+      "debit": 2.26,
+      "credit": null,
+      "max_profit": 2.74,
+      "max_loss": 2.26,
+      "breakeven": 252.26,
+      "reward_risk_ratio": 1.2123893805309736,
+      "probability_proxy": 0.5286572009596128,
+      "liquidity_score": 100.0,
+      "institutional_score": 54.3722,
+      "quote_quality": "HISTORICAL_LAST_ONLY",
+      "warnings": [
+        "INCOMPLETE_SPREAD_QUOTES"
+      ],
+      "metadata": {
+        "width": 5.0
+      }
+    },
+    {
+      "strategy_id": "AMZN:2026-08-21:CALL:260.0-265.0:VERTICAL",
+      "symbol": "AMZN",
+      "expiry": "2026-08-21",
+      "direction": "CALL",
+      "strategy_type": "BULL_CALL_SPREAD",
+      "legs": [
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-08-21",
+          "strike": 260.0,
+          "option_type": "CALL",
+          "action": "BUY",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 8.65,
+          "delta": 0.4060898191777088,
+          "implied_volatility": 0.43489167156838177
+        },
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-08-21",
+          "strike": 265.0,
+          "option_type": "CALL",
+          "action": "SELL",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 6.98,
+          "delta": 0.34864492689628157,
+          "implied_volatility": 0.42934377448261957
+        }
+      ],
+      "debit": 1.67,
+      "credit": null,
+      "max_profit": 3.33,
+      "max_loss": 1.67,
+      "breakeven": 261.67,
+      "reward_risk_ratio": 1.9940119760479043,
+      "probability_proxy": 0.4060898191777088,
+      "liquidity_score": 100.0,
+      "institutional_score": 54.0675,
+      "quote_quality": "HISTORICAL_LAST_ONLY",
+      "warnings": [
+        "INCOMPLETE_SPREAD_QUOTES"
+      ],
+      "metadata": {
+        "width": 5.0
+      }
+    },
+    {
+      "strategy_id": "AMZN:2026-08-21:CALL:275.0-280.0:VERTICAL",
+      "symbol": "AMZN",
+      "expiry": "2026-08-21",
+      "direction": "CALL",
+      "strategy_type": "BULL_CALL_SPREAD",
+      "legs": [
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-08-21",
+          "strike": 275.0,
+          "option_type": "CALL",
+          "action": "BUY",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 4.4,
+          "delta": 0.24631976112204138,
+          "implied_volatility": 0.4310376222288663
+        },
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-08-21",
+          "strike": 280.0,
+          "option_type": "CALL",
+          "action": "SELL",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 3.39,
+          "delta": 0.20246583137007504,
+          "implied_volatility": 0.42512468246407104
+        }
+      ],
+      "debit": 1.0100000000000002,
+      "credit": null,
+      "max_profit": 3.9899999999999998,
+      "max_loss": 1.0100000000000002,
+      "breakeven": 276.01,
+      "reward_risk_ratio": 3.9504950495049496,
+      "probability_proxy": 0.24631976112204138,
+      "liquidity_score": 100.0,
+      "institutional_score": 53.5844,
+      "quote_quality": "HISTORICAL_LAST_ONLY",
+      "warnings": [
+        "INCOMPLETE_SPREAD_QUOTES"
+      ],
+      "metadata": {
+        "width": 5.0
+      }
+    },
+    {
+      "strategy_id": "AMZN:2026-09-18:CALL:275.0-280.0:VERTICAL",
+      "symbol": "AMZN",
+      "expiry": "2026-09-18",
+      "direction": "CALL",
+      "strategy_type": "BULL_CALL_SPREAD",
+      "legs": [
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-09-18",
+          "strike": 275.0,
+          "option_type": "CALL",
+          "action": "BUY",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 7.05,
+          "delta": 0.30522693989692123,
+          "implied_volatility": 0.3863633118160985
+        },
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-09-18",
+          "strike": 280.0,
+          "option_type": "CALL",
+          "action": "SELL",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 5.9,
+          "delta": 0.2657555429419833,
+          "implied_volatility": 0.39123137383820583
+        }
+      ],
+      "debit": 1.1499999999999995,
+      "credit": null,
+      "max_profit": 3.8500000000000005,
+      "max_loss": 1.1499999999999995,
+      "breakeven": 276.15,
+      "reward_risk_ratio": 3.3478260869565237,
+      "probability_proxy": 0.30522693989692123,
+      "liquidity_score": 91.44,
+      "institutional_score": 53.2392,
+      "quote_quality": "HISTORICAL_LAST_ONLY",
+      "warnings": [
+        "INCOMPLETE_SPREAD_QUOTES"
+      ],
+      "metadata": {
+        "width": 5.0
+      }
+    },
+    {
+      "strategy_id": "AMZN:2026-08-21:CALL:255.0-260.0:VERTICAL",
+      "symbol": "AMZN",
+      "expiry": "2026-08-21",
+      "direction": "CALL",
+      "strategy_type": "BULL_CALL_SPREAD",
+      "legs": [
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-08-21",
+          "strike": 255.0,
+          "option_type": "CALL",
+          "action": "BUY",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 10.69,
+          "delta": 0.4673187337858134,
+          "implied_volatility": 0.4356063625172785
+        },
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-08-21",
+          "strike": 260.0,
+          "option_type": "CALL",
+          "action": "SELL",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 8.65,
+          "delta": 0.4060898191777088,
+          "implied_volatility": 0.43489167156838177
+        }
+      ],
+      "debit": 2.039999999999999,
+      "credit": null,
+      "max_profit": 2.960000000000001,
+      "max_loss": 2.039999999999999,
+      "breakeven": 257.04,
+      "reward_risk_ratio": 1.4509803921568638,
+      "probability_proxy": 0.4673187337858134,
+      "liquidity_score": 100.0,
+      "institutional_score": 53.2025,
+      "quote_quality": "HISTORICAL_LAST_ONLY",
+      "warnings": [
+        "INCOMPLETE_SPREAD_QUOTES"
+      ],
+      "metadata": {
+        "width": 5.0
+      }
+    },
+    {
+      "strategy_id": "AMZN:2026-08-21:CALL:280.0-285.0:VERTICAL",
+      "symbol": "AMZN",
+      "expiry": "2026-08-21",
+      "direction": "CALL",
+      "strategy_type": "BULL_CALL_SPREAD",
+      "legs": [
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-08-21",
+          "strike": 280.0,
+          "option_type": "CALL",
+          "action": "BUY",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 3.39,
+          "delta": 0.20246583137007504,
+          "implied_volatility": 0.42512468246407104
+        },
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-08-21",
+          "strike": 285.0,
+          "option_type": "CALL",
+          "action": "SELL",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 2.64,
+          "delta": 0.16497791239475923,
+          "implied_volatility": 0.42944890106226885
+        }
+      ],
+      "debit": 0.75,
+      "credit": null,
+      "max_profit": 4.25,
+      "max_loss": 0.75,
+      "breakeven": 280.75,
+      "reward_risk_ratio": 5.666666666666667,
+      "probability_proxy": 0.20246583137007504,
+      "liquidity_score": 100.0,
+      "institutional_score": 51.611,
+      "quote_quality": "HISTORICAL_LAST_ONLY",
+      "warnings": [
+        "INCOMPLETE_SPREAD_QUOTES"
+      ],
+      "metadata": {
+        "width": 5.0
+      }
+    },
+    {
+      "strategy_id": "AMZN:2026-09-18:CALL:270.0-275.0:VERTICAL",
+      "symbol": "AMZN",
+      "expiry": "2026-09-18",
+      "direction": "CALL",
+      "strategy_type": "BULL_CALL_SPREAD",
+      "legs": [
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-09-18",
+          "strike": 270.0,
+          "option_type": "CALL",
+          "action": "BUY",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 8.4,
+          "delta": 0.34855786998551425,
+          "implied_volatility": 0.3867965931572
+        },
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-09-18",
+          "strike": 275.0,
+          "option_type": "CALL",
+          "action": "SELL",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 7.05,
+          "delta": 0.30522693989692123,
+          "implied_volatility": 0.3863633118160985
+        }
+      ],
+      "debit": 1.3500000000000005,
+      "credit": null,
+      "max_profit": 3.6499999999999995,
+      "max_loss": 1.3500000000000005,
+      "breakeven": 271.35,
+      "reward_risk_ratio": 2.7037037037037024,
+      "probability_proxy": 0.34855786998551425,
+      "liquidity_score": 83.4,
+      "institutional_score": 50.3998,
+      "quote_quality": "HISTORICAL_LAST_ONLY",
+      "warnings": [
+        "INCOMPLETE_SPREAD_QUOTES"
+      ],
+      "metadata": {
+        "width": 5.0
+      }
+    },
+    {
+      "strategy_id": "AMZN:2026-08-21:CALL:200.0:LONG",
+      "symbol": "AMZN",
+      "expiry": "2026-08-21",
+      "direction": "CALL",
+      "strategy_type": "LONG_CALL",
+      "legs": [
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-08-21",
+          "strike": 200.0,
+          "option_type": "CALL",
+          "action": "BUY",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 50.9,
+          "delta": 0.9239253836237714,
+          "implied_volatility": 0.5643588173735511
+        }
+      ],
+      "debit": 50.9,
+      "credit": null,
+      "max_profit": null,
+      "max_loss": 50.9,
+      "breakeven": 250.9,
+      "reward_risk_ratio": null,
+      "probability_proxy": 0.9239253836237714,
+      "liquidity_score": 59.196,
+      "institutional_score": 49.7952,
+      "quote_quality": "HISTORICAL_LAST_ONLY",
+      "warnings": [
+        "INCOMPLETE_ENTRY_QUOTE"
+      ],
+      "metadata": {}
+    },
+    {
+      "strategy_id": "AMZN:2026-08-21:CALL:285.0-290.0:VERTICAL",
+      "symbol": "AMZN",
+      "expiry": "2026-08-21",
+      "direction": "CALL",
+      "strategy_type": "BULL_CALL_SPREAD",
+      "legs": [
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-08-21",
+          "strike": 285.0,
+          "option_type": "CALL",
+          "action": "BUY",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 2.64,
+          "delta": 0.16497791239475923,
+          "implied_volatility": 0.42944890106226885
+        },
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-08-21",
+          "strike": 290.0,
+          "option_type": "CALL",
+          "action": "SELL",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 2.08,
+          "delta": 0.13331105633846452,
+          "implied_volatility": 0.428075864546806
+        }
+      ],
+      "debit": 0.56,
+      "credit": null,
+      "max_profit": 4.4399999999999995,
+      "max_loss": 0.56,
+      "breakeven": 285.56,
+      "reward_risk_ratio": 7.928571428571427,
+      "probability_proxy": 0.16497791239475923,
+      "liquidity_score": 98.24,
+      "institutional_score": 49.308,
+      "quote_quality": "HISTORICAL_LAST_ONLY",
+      "warnings": [
+        "INCOMPLETE_SPREAD_QUOTES"
+      ],
+      "metadata": {
+        "width": 5.0
+      }
+    },
+    {
+      "strategy_id": "AMZN:2026-08-21:CALL:290.0-295.0:VERTICAL",
+      "symbol": "AMZN",
+      "expiry": "2026-08-21",
+      "direction": "CALL",
+      "strategy_type": "BULL_CALL_SPREAD",
+      "legs": [
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-08-21",
+          "strike": 290.0,
+          "option_type": "CALL",
+          "action": "BUY",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 2.08,
+          "delta": 0.13331105633846452,
+          "implied_volatility": 0.428075864546806
+        },
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-08-21",
+          "strike": 295.0,
+          "option_type": "CALL",
+          "action": "SELL",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 1.55,
+          "delta": 0.10683210696943327,
+          "implied_volatility": 0.42819141257563964
+        }
+      ],
+      "debit": 0.53,
+      "credit": null,
+      "max_profit": 4.47,
+      "max_loss": 0.53,
+      "breakeven": 290.53,
+      "reward_risk_ratio": 8.433962264150942,
+      "probability_proxy": 0.13331105633846452,
+      "liquidity_score": 98.24,
+      "institutional_score": 47.883,
+      "quote_quality": "HISTORICAL_LAST_ONLY",
+      "warnings": [
+        "INCOMPLETE_SPREAD_QUOTES"
+      ],
+      "metadata": {
+        "width": 5.0
+      }
+    },
+    {
+      "strategy_id": "AMZN:2026-08-21:CALL:200.0-230.0:VERTICAL",
+      "symbol": "AMZN",
+      "expiry": "2026-08-21",
+      "direction": "CALL",
+      "strategy_type": "BULL_CALL_SPREAD",
+      "legs": [
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-08-21",
+          "strike": 200.0,
+          "option_type": "CALL",
+          "action": "BUY",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 50.9,
+          "delta": 0.9239253836237714,
+          "implied_volatility": 0.5643588173735511
+        },
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-08-21",
+          "strike": 230.0,
+          "option_type": "CALL",
+          "action": "SELL",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 25.12,
+          "delta": 0.754869425451312,
+          "implied_volatility": 0.45898280911336564
+        }
+      ],
+      "debit": 25.779999999999998,
+      "credit": null,
+      "max_profit": 4.220000000000002,
+      "max_loss": 25.779999999999998,
+      "breakeven": 225.78,
+      "reward_risk_ratio": 0.16369278510473245,
+      "probability_proxy": 0.9239253836237714,
+      "liquidity_score": 49.832,
+      "institutional_score": 47.6091,
+      "quote_quality": "HISTORICAL_LAST_ONLY",
+      "warnings": [
+        "INCOMPLETE_SPREAD_QUOTES"
+      ],
+      "metadata": {
+        "width": 30.0
+      }
+    },
+    {
+      "strategy_id": "AMZN:2026-08-21:CALL:295.0-300.0:VERTICAL",
+      "symbol": "AMZN",
+      "expiry": "2026-08-21",
+      "direction": "CALL",
+      "strategy_type": "BULL_CALL_SPREAD",
+      "legs": [
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-08-21",
+          "strike": 295.0,
+          "option_type": "CALL",
+          "action": "BUY",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 1.55,
+          "delta": 0.10683210696943327,
+          "implied_volatility": 0.42819141257563964
+        },
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-08-21",
+          "strike": 300.0,
+          "option_type": "CALL",
+          "action": "SELL",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 1.2,
+          "delta": 0.08504675200446572,
+          "implied_volatility": 0.43510278608870706
+        }
+      ],
+      "debit": 0.3500000000000001,
+      "credit": null,
+      "max_profit": 4.65,
+      "max_loss": 0.3500000000000001,
+      "breakeven": 295.35,
+      "reward_risk_ratio": 13.285714285714283,
+      "probability_proxy": 0.10683210696943327,
+      "liquidity_score": 100.0,
+      "institutional_score": 47.3074,
+      "quote_quality": "HISTORICAL_LAST_ONLY",
+      "warnings": [
+        "INCOMPLETE_SPREAD_QUOTES"
+      ],
+      "metadata": {
+        "width": 5.0
+      }
+    },
+    {
+      "strategy_id": "AMZN:2026-09-18:CALL:250.0:LONG",
+      "symbol": "AMZN",
+      "expiry": "2026-09-18",
+      "direction": "CALL",
+      "strategy_type": "LONG_CALL",
+      "legs": [
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-09-18",
+          "strike": 250.0,
+          "option_type": "CALL",
+          "action": "BUY",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 16.45,
+          "delta": 0.5410140292283713,
+          "implied_volatility": 0.4004421487548877
+        }
+      ],
+      "debit": 16.45,
+      "credit": null,
+      "max_profit": null,
+      "max_loss": 16.45,
+      "breakeven": 266.45,
+      "reward_risk_ratio": null,
+      "probability_proxy": 0.5410140292283713,
+      "liquidity_score": 100.0,
+      "institutional_score": 46.8456,
+      "quote_quality": "HISTORICAL_LAST_ONLY",
+      "warnings": [
+        "INCOMPLETE_ENTRY_QUOTE"
+      ],
+      "metadata": {}
+    },
+    {
+      "strategy_id": "AMZN:2026-08-21:CALL:250.0:LONG",
+      "symbol": "AMZN",
+      "expiry": "2026-08-21",
+      "direction": "CALL",
+      "strategy_type": "LONG_CALL",
+      "legs": [
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-08-21",
+          "strike": 250.0,
+          "option_type": "CALL",
+          "action": "BUY",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 12.95,
+          "delta": 0.5286572009596128,
+          "implied_volatility": 0.44236267883702496
+        }
+      ],
+      "debit": 12.95,
+      "credit": null,
+      "max_profit": null,
+      "max_loss": 12.95,
+      "breakeven": 262.95,
+      "reward_risk_ratio": null,
+      "probability_proxy": 0.5286572009596128,
+      "liquidity_score": 100.0,
+      "institutional_score": 46.2896,
+      "quote_quality": "HISTORICAL_LAST_ONLY",
+      "warnings": [
+        "INCOMPLETE_ENTRY_QUOTE"
+      ],
+      "metadata": {}
+    },
+    {
+      "strategy_id": "AMZN:2026-09-18:CALL:255.0-260.0:VERTICAL",
+      "symbol": "AMZN",
+      "expiry": "2026-09-18",
+      "direction": "CALL",
+      "strategy_type": "BULL_CALL_SPREAD",
+      "legs": [
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-09-18",
+          "strike": 255.0,
+          "option_type": "CALL",
+          "action": "BUY",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 14.0,
+          "delta": 0.49140276959599066,
+          "implied_volatility": 0.39271948405962326
+        },
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-09-18",
+          "strike": 260.0,
+          "option_type": "CALL",
+          "action": "SELL",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 11.95,
+          "delta": 0.4416019478427175,
+          "implied_volatility": 0.3907173293415176
+        }
+      ],
+      "debit": 2.0500000000000007,
+      "credit": null,
+      "max_profit": 2.9499999999999993,
+      "max_loss": 2.0500000000000007,
+      "breakeven": 257.05,
+      "reward_risk_ratio": 1.4390243902439015,
+      "probability_proxy": 0.49140276959599066,
+      "liquidity_score": 76.36,
+      "institutional_score": 45.9326,
+      "quote_quality": "HISTORICAL_LAST_ONLY",
+      "warnings": [
+        "INCOMPLETE_SPREAD_QUOTES"
+      ],
+      "metadata": {
+        "width": 5.0
+      }
+    },
+    {
+      "strategy_id": "AMZN:2026-07-31:CALL:250.0:LONG",
+      "symbol": "AMZN",
+      "expiry": "2026-07-31",
+      "direction": "CALL",
+      "strategy_type": "LONG_CALL",
+      "legs": [
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-07-31",
+          "strike": 250.0,
+          "option_type": "CALL",
+          "action": "BUY",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 9.9,
+          "delta": 0.5157161719737611,
+          "implied_volatility": 0.5906269170926792
+        }
+      ],
+      "debit": 9.9,
+      "credit": null,
+      "max_profit": null,
+      "max_loss": 9.9,
+      "breakeven": 259.9,
+      "reward_risk_ratio": null,
+      "probability_proxy": 0.5157161719737611,
+      "liquidity_score": 100.0,
+      "institutional_score": 45.7072,
+      "quote_quality": "HISTORICAL_LAST_ONLY",
+      "warnings": [
+        "INCOMPLETE_ENTRY_QUOTE"
+      ],
+      "metadata": {}
+    },
+    {
+      "strategy_id": "AMZN:2026-09-18:CALL:250.0-255.0:VERTICAL",
+      "symbol": "AMZN",
+      "expiry": "2026-09-18",
+      "direction": "CALL",
+      "strategy_type": "BULL_CALL_SPREAD",
+      "legs": [
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-09-18",
+          "strike": 250.0,
+          "option_type": "CALL",
+          "action": "BUY",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 16.45,
+          "delta": 0.5410140292283713,
+          "implied_volatility": 0.4004421487548877
+        },
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-09-18",
+          "strike": 255.0,
+          "option_type": "CALL",
+          "action": "SELL",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 14.0,
+          "delta": 0.49140276959599066,
+          "implied_volatility": 0.39271948405962326
+        }
+      ],
+      "debit": 2.4499999999999993,
+      "credit": null,
+      "max_profit": 2.5500000000000007,
+      "max_loss": 2.4499999999999993,
+      "breakeven": 252.45,
+      "reward_risk_ratio": 1.0408163265306127,
+      "probability_proxy": 0.5410140292283713,
+      "liquidity_score": 76.36,
+      "institutional_score": 45.5104,
+      "quote_quality": "HISTORICAL_LAST_ONLY",
+      "warnings": [
+        "INCOMPLETE_SPREAD_QUOTES"
+      ],
+      "metadata": {
+        "width": 5.0
+      }
+    },
+    {
+      "strategy_id": "AMZN:2026-07-31:CALL:270.0-275.0:VERTICAL",
+      "symbol": "AMZN",
+      "expiry": "2026-07-31",
+      "direction": "CALL",
+      "strategy_type": "BULL_CALL_SPREAD",
+      "legs": [
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-07-31",
+          "strike": 270.0,
+          "option_type": "CALL",
+          "action": "BUY",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 3.15,
+          "delta": 0.2288011059283286,
+          "implied_volatility": 0.5761611427555325
+        },
+        {
+          "symbol": "AMZN",
+          "expiry": "2026-07-31",
+          "strike": 275.0,
+          "option_type": "CALL",
+          "action": "SELL",
+          "quantity": 1,
+          "bid": null,
+          "ask": null,
+          "last": 2.26,
+          "delta": 0.1773341582943357,
+          "implied_volatility": 0.5763758404292373
+        }
+      ],
+      "debit": 0.8900000000000001,
+      "credit": null,
+      "max_profit": 4.109999999999999,
+      "max_loss": 0.8900000000000001,
+      "breakeven": 270.89,
+      "reward_risk_ratio": 4.617977528089886,
+      "probability_proxy": 0.2288011059283286,
+      "liquidity_score": 77.992,
+      "institutional_score": 45.0932,
+      "quote_quality": "HISTORICAL_LAST_ONLY",
+      "warnings": [
+        "INCOMPLETE_SPREAD_QUOTES"
+      ],
+      "metadata": {
+        "width": 5.0
+      }
+    }
+  ],
+  "warnings": [
+    "ONE_OR_MORE_STRATEGIES_USE_INCOMPLETE_QUOTES",
+    "HISTORICAL_QUOTE_POLICY_ACTIVE"
+  ],
+  "comparison_policy": "INSTITUTIONAL_DEFAULT"
+}

@@ -1,0 +1,14 @@
+{
+  "minimum_price": 5.0,
+  "maximum_price": 5000.0,
+  "minimum_average_daily_volume": 200000,
+  "minimum_average_daily_dollar_volume": 10000000.0,
+  "maximum_bid_ask_spread_pct": 0.05,
+  "minimum_market_cap": 300000000.0,
+  "minimum_option_volume": 0,
+  "minimum_option_open_interest": 0,
+  "require_options_eligible": false,
+  "allow_etfs": true,
+  "maximum_market_data_age_hours": 48,
+  "missing_metric_action": "REJECT"
+}

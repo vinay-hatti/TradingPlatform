@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-07-22T22:17:59.305173Z",
+  "service_status": "UP",
+  "connected_clients": 0,
+  "events_published": 0,
+  "open_alerts": 0,
+  "critical_alerts": 0,
+  "watched_artifacts": {
+    "risk": {
+      "path": "reports/m37/execution_risk_control.json",
+      "exists": false,
+      "age_seconds": null
+    },
+    "execution": {
+      "path": "reports/m38/execution_queue.json",
+      "exists": false,
+      "age_seconds": null
+    },
+    "positions": {
+      "path": "reports/m39/position_assessments.json",
+      "exists": false,
+      "age_seconds": null
+    },
+    "exits": {
+      "path": "reports/m39/exit_instructions.json",
+      "exists": false,
+      "age_seconds": null
+    }
+  }
+}

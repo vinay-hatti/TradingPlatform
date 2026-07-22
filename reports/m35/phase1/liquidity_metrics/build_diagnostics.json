@@ -1,0 +1,6124 @@
+{
+  "diagnostics": [
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "A"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "A"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "AAPL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "AAPL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ABBV"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ABBV"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ABNB"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ABNB"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ABT"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ABT"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ACGL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ACGL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ACN"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ACN"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ADBE"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ADBE"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ADI"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ADI"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ADM"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ADM"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ADP"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ADP"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ADSK"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ADSK"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "AEE"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "AEE"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "AEP"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "AEP"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "AES"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "AES"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "AFL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "AFL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "AGG"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "AGG"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "AIG"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "AIG"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "AIZ"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "AIZ"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "AJG"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "AJG"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "AKAM"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "AKAM"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ALAB"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ALAB"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ALB"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ALB"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ALGN"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ALGN"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ALL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ALL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ALLE"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ALLE"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ALNY"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ALNY"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "AMAT"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "AMAT"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "AMCR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "AMCR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "AMD"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "AMD"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "AME"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "AME"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "AMGN"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "AMGN"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "AMP"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "AMP"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "AMT"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "AMT"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "AMZN"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "AMZN"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ANET"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ANET"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "AON"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "AON"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "AOS"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "AOS"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "APA"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "APA"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "APD"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "APD"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "APH"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "APH"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "APO"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "APO"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "APP"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "APP"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "APTV"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "APTV"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ARE"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ARE"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ARES"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ARES"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ARKK"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ARKK"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ARM"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ARM"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ASML"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ASML"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ATO"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ATO"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "AVB"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "AVB"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "AVGO"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "AVGO"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "AVY"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "AVY"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "AWK"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "AWK"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "AXON"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "AXON"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "AXP"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "AXP"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "AZO"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "AZO"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "BA"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "BA"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "BAC"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "BAC"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "BALL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "BALL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "BAX"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "BAX"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "BBY"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "BBY"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "BDX"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "BDX"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "BEN"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "BEN"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "BF-B"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "BF-B"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "BG"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "BG"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "BIIB"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "BIIB"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "BITO"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "BITO"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "BKNG"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "BKNG"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "BKR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "BKR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "BLDR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "BLDR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "BLK"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "BLK"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "BMY"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "BMY"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "BND"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "BND"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "BNY"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "BNY"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "BR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "BR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "BRK-B"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "BRK-B"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "BRO"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "BRO"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "BSX"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "BSX"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "BX"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "BX"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "BXP"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "BXP"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "C"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "C"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CAH"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CAH"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CARR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CARR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CASY"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CASY"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CAT"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CAT"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CB"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CB"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CBOE"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CBOE"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CBRE"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CBRE"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CCEP"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CCEP"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CCI"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CCI"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CCL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CCL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CDNS"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CDNS"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CDW"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CDW"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CEG"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CEG"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CF"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CF"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CFG"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CFG"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CHD"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CHD"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CHRW"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CHRW"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CHTR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CHTR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CI"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CI"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CIBR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CIBR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CIEN"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CIEN"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CINF"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CINF"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CLX"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CLX"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CMCSA"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CMCSA"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CME"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CME"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CMG"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CMG"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CMI"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CMI"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CMS"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CMS"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CNC"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CNC"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CNP"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CNP"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "COF"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "COF"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "COHR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "COHR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "COIN"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "COIN"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "COO"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "COO"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "COP"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "COP"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "COR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "COR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "COST"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "COST"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CPAY"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CPAY"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CPRT"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CPRT"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CPT"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CPT"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CRH"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CRH"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CRL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CRL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CRM"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CRM"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CRWD"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CRWD"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CRWV"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CRWV"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CSCO"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CSCO"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CSGP"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CSGP"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CSX"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CSX"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CTAS"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CTAS"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CTSH"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CTSH"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CTVA"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CTVA"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CVNA"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CVNA"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CVS"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CVS"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "CVX"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "CVX"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "D"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "D"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "DAL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "DAL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "DASH"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "DASH"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "DBA"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "DBA"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "DD"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "DD"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "DDOG"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "DDOG"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "DE"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "DE"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "DECK"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "DECK"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "DELL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "DELL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "DG"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "DG"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "DGX"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "DGX"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "DHI"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "DHI"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "DHR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "DHR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "DIA"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "DIA"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "DIS"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "DIS"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "DLR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "DLR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "DLTR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "DLTR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "DOC"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "DOC"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "DOV"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "DOV"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "DOW"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "DOW"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "DPZ"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "DPZ"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "DRI"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "DRI"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "DTE"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "DTE"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "DUK"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "DUK"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "DVA"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "DVA"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "DVN"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "DVN"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "DXCM"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "DXCM"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "EA"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "EA"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "EBAY"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "EBAY"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ECHO"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ECHO"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ECL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ECL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ED"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ED"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "EEM"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "EEM"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "EFA"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "EFA"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "EFX"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "EFX"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "EG"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "EG"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "EIX"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "EIX"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "EL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "EL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ELV"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ELV"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "EME"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "EME"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "EMR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "EMR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "EOG"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "EOG"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "EQIX"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "EQIX"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "EQR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "EQR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "EQT"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "EQT"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ERIE"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ERIE"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ES"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ES"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ESS"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ESS"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ETHA"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ETHA"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ETN"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ETN"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ETR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ETR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "EVRG"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "EVRG"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "EW"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "EW"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "EWJ"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "EWJ"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "EWZ"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "EWZ"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "EXC"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "EXC"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "EXE"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "EXE"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "EXPD"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "EXPD"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "EXPE"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "EXPE"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "EXR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "EXR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "F"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "F"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "FANG"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "FANG"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "FAST"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "FAST"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "FBTC"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "FBTC"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "FCX"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "FCX"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "FDS"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "FDS"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "FDX"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "FDX"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "FDXF"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "FDXF"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "FE"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "FE"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "FER"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "FER"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "FFIV"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "FFIV"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "FICO"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "FICO"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "FIS"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "FIS"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "FISV"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "FISV"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "FITB"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "FITB"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "FIX"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "FIX"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "FLEX"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "FLEX"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "FOX"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "FOX"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "FOXA"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "FOXA"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "FRT"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "FRT"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "FSLR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "FSLR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "FTNT"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "FTNT"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "FTV"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "FTV"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "FXI"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "FXI"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "GD"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "GD"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "GDDY"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "GDDY"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "GDX"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "GDX"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "GDXJ"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "GDXJ"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "GE"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "GE"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "GEHC"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "GEHC"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "GEN"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "GEN"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "GEV"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "GEV"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "GILD"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "GILD"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "GIS"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "GIS"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "GL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "GL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "GLD"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "GLD"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "GLW"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "GLW"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "GM"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "GM"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "GNRC"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "GNRC"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "GOOG"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "GOOG"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "GOOGL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "GOOGL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "GPC"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "GPC"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "GPN"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "GPN"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "GRMN"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "GRMN"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "GS"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "GS"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "GWW"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "GWW"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "HACK"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "HACK"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "HAL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "HAL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "HAS"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "HAS"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "HBAN"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "HBAN"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "HCA"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "HCA"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "HD"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "HD"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "HIG"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "HIG"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "HII"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "HII"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "HLT"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "HLT"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "HON"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "HON"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "HONA"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "HONA"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "HOOD"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "HOOD"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "HPE"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "HPE"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "HPQ"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "HPQ"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "HRL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "HRL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "HSIC"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "HSIC"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "HST"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "HST"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "HSY"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "HSY"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "HUBB"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "HUBB"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "HUM"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "HUM"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "HWM"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "HWM"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "HYG"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "HYG"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "IAU"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "IAU"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "IBB"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "IBB"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "IBIT"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "IBIT"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "IBKR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "IBKR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "IBM"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "IBM"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ICE"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ICE"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ICLN"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ICLN"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "IDXX"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "IDXX"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "IEF"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "IEF"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "IEX"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "IEX"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "IFF"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "IFF"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "IGV"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "IGV"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "IHI"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "IHI"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "INCY"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "INCY"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "INDA"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "INDA"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "INTC"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "INTC"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "INTU"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "INTU"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "INVH"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "INVH"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "IP"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "IP"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "IQV"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "IQV"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "IR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "IR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "IRM"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "IRM"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ISRG"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ISRG"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "IT"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "IT"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ITB"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ITB"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ITOT"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ITOT"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ITW"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ITW"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "IVV"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "IVV"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "IVZ"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "IVZ"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "IWD"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "IWD"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "IWF"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "IWF"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "IWM"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "IWM"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "IYR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "IYR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "J"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "J"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "JBHT"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "JBHT"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "JBL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "JBL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "JCI"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "JCI"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "JEPI"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "JEPI"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "JEPQ"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "JEPQ"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "JETS"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "JETS"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "JKHY"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "JKHY"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "JNJ"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "JNJ"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "JPM"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "JPM"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "KBE"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "KBE"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "KDP"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "KDP"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "KEY"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "KEY"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "KEYS"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "KEYS"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "KHC"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "KHC"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "KIM"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "KIM"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "KKR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "KKR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "KLAC"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "KLAC"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "KMB"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "KMB"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "KMI"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "KMI"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "KO"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "KO"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "KR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "KR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "KRE"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "KRE"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "KVUE"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "KVUE"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "KWEB"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "KWEB"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "L"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "L"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "LDOS"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "LDOS"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "LEN"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "LEN"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "LH"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "LH"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "LHX"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "LHX"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "LII"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "LII"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "LIN"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "LIN"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "LITE"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "LITE"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "LLY"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "LLY"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "LMT"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "LMT"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "LNT"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "LNT"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "LOW"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "LOW"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "LQD"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "LQD"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "LRCX"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "LRCX"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "LULU"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "LULU"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "LUV"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "LUV"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "LVS"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "LVS"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "LYB"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "LYB"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "LYV"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "LYV"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MA"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MA"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MAA"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MAA"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MAR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MAR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MAS"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MAS"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MCD"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MCD"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MCHP"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MCHP"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MCK"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MCK"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MCO"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MCO"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MDLZ"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MDLZ"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MDT"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MDT"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MELI"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MELI"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MET"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MET"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "META"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "META"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MGM"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MGM"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MKC"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MKC"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MLM"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MLM"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MMM"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MMM"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MNST"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MNST"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MO"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MO"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MOS"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MOS"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MPC"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MPC"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MPWR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MPWR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MRK"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MRK"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MRNA"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MRNA"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MRSH"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MRSH"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MRVL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MRVL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MS"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MS"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MSCI"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MSCI"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MSFT"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MSFT"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MSI"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MSI"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MSTR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MSTR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MTB"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MTB"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MTD"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MTD"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MTUM"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MTUM"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "MU"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "MU"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "NBIS"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "NBIS"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "NCLH"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "NCLH"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "NDAQ"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "NDAQ"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "NDSN"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "NDSN"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "NEE"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "NEE"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "NEM"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "NEM"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "NFLX"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "NFLX"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "NI"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "NI"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "NKE"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "NKE"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "NOC"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "NOC"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "NOW"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "NOW"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "NRG"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "NRG"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "NSC"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "NSC"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "NTAP"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "NTAP"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "NTRS"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "NTRS"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "NUE"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "NUE"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "NVDA"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "NVDA"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "NVR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "NVR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "NWS"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "NWS"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "NWSA"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "NWSA"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "NXPI"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "NXPI"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "O"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "O"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ODFL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ODFL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "OIH"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "OIH"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "OKE"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "OKE"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "OMC"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "OMC"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ON"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ON"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ORCL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ORCL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ORLY"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ORLY"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "OTIS"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "OTIS"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "OXY"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "OXY"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "PANW"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "PANW"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "PAYX"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "PAYX"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "PCAR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "PCAR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "PCG"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "PCG"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "PDD"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "PDD"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "PEG"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "PEG"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "PEP"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "PEP"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "PFE"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "PFE"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "PFG"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "PFG"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "PG"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "PG"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "PGR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "PGR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "PH"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "PH"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "PHM"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "PHM"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "PKG"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "PKG"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "PLD"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "PLD"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "PLTR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "PLTR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "PM"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "PM"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "PNC"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "PNC"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "PNR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "PNR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "PNW"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "PNW"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "PODD"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "PODD"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "PPG"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "PPG"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "PPL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "PPL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "PRU"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "PRU"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "PSA"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "PSA"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "PSKY"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "PSKY"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "PSX"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "PSX"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "PTC"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "PTC"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "PWR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "PWR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "PYPL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "PYPL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "Q"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "Q"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "QCOM"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "QCOM"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "QQQ"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "QQQ"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "QQQM"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "QQQM"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "QUAL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "QUAL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "RCL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "RCL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "REG"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "REG"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "REGN"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "REGN"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "RF"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "RF"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "RJF"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "RJF"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "RKLB"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "RKLB"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "RL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "RL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "RMD"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "RMD"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ROK"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ROK"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ROL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ROL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ROP"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ROP"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ROST"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ROST"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "RSG"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "RSG"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "RSP"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "RSP"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "RTX"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "RTX"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "RVTY"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "RVTY"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "SBAC"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "SBAC"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "SBUX"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "SBUX"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "SCHB"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "SCHB"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "SCHD"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "SCHD"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "SCHW"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "SCHW"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "SHOP"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "SHOP"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "SHW"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "SHW"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "SHY"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "SHY"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "SJM"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "SJM"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "SKYY"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "SKYY"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "SLB"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "SLB"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "SLV"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "SLV"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "SMCI"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "SMCI"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "SMH"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "SMH"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "SNA"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "SNA"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "SNDK"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "SNDK"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "SNPS"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "SNPS"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "SO"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "SO"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "SOLV"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "SOLV"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "SOXX"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "SOXX"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "SPG"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "SPG"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "SPGI"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "SPGI"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "SPXU"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "SPXU"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "SPY"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "SPY"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "SQQQ"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "SQQQ"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "SRE"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "SRE"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "STE"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "STE"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "STLD"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "STLD"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "STT"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "STT"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "STX"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "STX"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "STZ"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "STZ"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "SW"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "SW"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "SWK"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "SWK"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "SWKS"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "SWKS"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "SYF"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "SYF"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "SYK"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "SYK"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "SYY"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "SYY"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "T"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "T"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "TAN"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "TAN"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "TAP"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "TAP"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "TDG"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "TDG"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "TDY"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "TDY"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "TECH"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "TECH"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "TEL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "TEL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "TER"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "TER"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "TFC"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "TFC"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "TGT"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "TGT"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "TIP"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "TIP"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "TJX"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "TJX"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "TKO"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "TKO"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "TLT"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "TLT"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "TMO"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "TMO"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "TMUS"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "TMUS"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "TPL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "TPL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "TPR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "TPR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "TQQQ"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "TQQQ"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "TRGP"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "TRGP"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "TRI"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "TRI"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "TRMB"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "TRMB"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "TROW"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "TROW"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "TRV"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "TRV"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "TSCO"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "TSCO"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "TSLA"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "TSLA"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "TSN"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "TSN"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "TT"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "TT"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "TTD"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "TTD"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "TTWO"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "TTWO"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "TXN"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "TXN"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "TXT"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "TXT"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "TYL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "TYL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "UAL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "UAL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "UBER"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "UBER"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "UDR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "UDR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "UHS"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "UHS"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ULTA"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ULTA"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "UNG"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "UNG"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "UNH"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "UNH"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "UNP"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "UNP"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "UPRO"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "UPRO"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "UPS"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "UPS"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "URI"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "URI"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "USB"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "USB"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "USMV"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "USMV"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "USO"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "USO"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "UVXY"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "UVXY"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "V"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "V"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "VEA"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "VEA"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "VEEV"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "VEEV"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "VICI"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "VICI"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "VIG"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "VIG"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "VIXY"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "VIXY"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "VLO"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "VLO"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "VLTO"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "VLTO"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "VLUE"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "VLUE"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "VMC"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "VMC"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "VNQ"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "VNQ"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "VOO"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "VOO"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "VRSK"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "VRSK"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "VRSN"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "VRSN"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "VRT"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "VRT"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "VRTX"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "VRTX"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "VST"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "VST"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "VTI"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "VTI"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "VTR"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "VTR"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "VTRS"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "VTRS"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "VTV"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "VTV"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "VUG"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "VUG"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "VWO"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "VWO"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "VYM"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "VYM"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "VZ"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "VZ"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "WAB"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "WAB"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "WAT"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "WAT"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "WBD"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "WBD"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "WDAY"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "WDAY"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "WDC"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "WDC"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "WEC"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "WEC"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "WELL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "WELL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "WFC"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "WFC"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "WM"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "WM"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "WMB"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "WMB"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "WMT"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "WMT"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "WRB"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "WRB"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "WSM"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "WSM"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "WST"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "WST"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "WTW"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "WTW"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "WY"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "WY"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "WYNN"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "WYNN"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "XBI"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "XBI"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "XEL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "XEL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "XHB"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "XHB"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "XLB"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "XLB"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "XLC"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "XLC"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "XLE"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "XLE"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "XLF"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "XLF"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "XLI"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "XLI"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "XLK"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "XLK"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "XLP"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "XLP"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "XLRE"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "XLRE"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "XLU"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "XLU"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "XLV"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "XLV"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "XLY"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "XLY"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "XOM"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "XOM"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "XOP"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "XOP"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "XPH"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "XPH"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "XRT"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "XRT"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "XYL"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "XYL"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "XYZ"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "XYZ"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "YUM"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "YUM"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ZBH"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ZBH"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ZBRA"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ZBRA"
+    },
+    {
+      "code": "MISSING_MARKET_CAP",
+      "severity": "WARNING",
+      "symbol": "ZTS"
+    },
+    {
+      "code": "MISSING_OPTION_SNAPSHOT",
+      "severity": "INFO",
+      "symbol": "ZTS"
+    }
+  ],
+  "manifest": {
+    "as_of": "2026-07-20",
+    "generated_at": "2026-07-20T23:41:41.248746+00:00",
+    "lookback_trading_days": 20,
+    "metrics_count": 610,
+    "missing_option_count": 610,
+    "missing_price_count": 0,
+    "missing_reference_count": 610,
+    "output_csv": "data/market/liquidity_metrics.csv",
+    "schema_version": "m35.phase1.liquidity_metrics.v1",
+    "sha256": "c3dbd7cf384156b3ebc313ccc4b3c1e46df000fc1898b2cdc3354b2de1681ee9",
+    "sources": {
+      "option_chain": "database",
+      "price_history": "database",
+      "quote_csv": "",
+      "reference_csv": ""
+    },
+    "status": "READY",
+    "universe_count": 610
+  }
+}

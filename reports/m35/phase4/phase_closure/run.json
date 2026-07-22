@@ -1,0 +1,297 @@
+{
+  "as_of_date": "2026-07-20",
+  "consolidated_metrics": {
+    "step1": {
+      "as_of_date": "2026-07-20",
+      "contracts_read": 11762,
+      "features_generated": 11762,
+      "generated_at": "2026-07-21T06:44:23.334757+00:00",
+      "metadata": {
+        "policy": {
+          "allowed_readiness_statuses": [
+            "READY",
+            "REVIEW"
+          ],
+          "maximum_days_to_expiration": 365,
+          "minimum_days_to_expiration": 1,
+          "minimum_open_interest": 1,
+          "minimum_volume": 0,
+          "require_delta": true,
+          "require_implied_volatility": true,
+          "review_missing_optional_greeks": true
+        },
+        "readiness_report_path": "reports/m35/phase3/readiness/run.json",
+        "records_with_underlying_price_features": 11762,
+        "records_without_underlying_price_features": 0,
+        "source_table": "option_contract_history",
+        "underlying_price_source": "price_history.close"
+      },
+      "output_path": "reports/m35/phase4/historical_options_feature_store/features.jsonl",
+      "records_excluded": 1212,
+      "records_ready": 10550,
+      "records_review": 0,
+      "symbols_considered": 610,
+      "symbols_excluded": 416,
+      "symbols_included": 194
+    },
+    "step2": {
+      "as_of_date": "2026-07-20",
+      "contracts_eligible": 10550,
+      "contracts_excluded": 1212,
+      "contracts_read": 11762,
+      "expiration_excluded": 688,
+      "expiration_output_path": "reports/m35/phase4/option_surface_analytics/expiration_surfaces.jsonl",
+      "expiration_ready": 255,
+      "expiration_review": 44,
+      "expirations_evaluated": 987,
+      "generated_at": "2026-07-21T06:44:23.502163+00:00",
+      "input_path": "reports/m35/phase4/historical_options_feature_store/features.jsonl",
+      "metadata": {
+        "policy": {
+          "allowed_feature_statuses": [
+            "READY",
+            "REVIEW"
+          ],
+          "concentration_top_n": 5,
+          "downside_put_absolute_delta_maximum": 0.35,
+          "downside_put_absolute_delta_minimum": 0.15,
+          "maximum_ready_open_interest_concentration": 0.8,
+          "maximum_review_open_interest_concentration": 0.95,
+          "minimum_atm_term_points_for_ready": 2,
+          "minimum_contracts_per_expiration": 10,
+          "minimum_expirations_per_symbol": 1,
+          "minimum_open_interest_per_expiration": 100,
+          "minimum_strikes_per_expiration": 5,
+          "near_money_absolute_delta_maximum": 0.6,
+          "near_money_absolute_delta_minimum": 0.4,
+          "upside_call_absolute_delta_maximum": 0.35,
+          "upside_call_absolute_delta_minimum": 0.15
+        }
+      },
+      "symbol_excluded": 96,
+      "symbol_output_path": "reports/m35/phase4/option_surface_analytics/symbol_surface_profiles.jsonl",
+      "symbol_ready": 45,
+      "symbol_review": 53,
+      "symbols_evaluated": 194
+    },
+    "step3": {
+      "as_of_date": "2026-07-20",
+      "duplicate_expiration_keys": 0,
+      "duplicate_symbol_keys": 0,
+      "expiration_csv_path": "reports/m35/phase4/option_surface_persistence/expiration_surfaces.csv",
+      "expiration_excluded": 688,
+      "expiration_input_path": "reports/m35/phase4/option_surface_analytics/expiration_surfaces.jsonl",
+      "expiration_ready": 255,
+      "expiration_records_filtered": 688,
+      "expiration_records_persisted": 299,
+      "expiration_records_read": 987,
+      "expiration_review": 44,
+      "generated_at": "2026-07-21T06:44:23.557473+00:00",
+      "governance_summary_path": "reports/m35/phase4/option_surface_persistence/governance_summary.json",
+      "metadata": {
+        "expiration_fields": [
+          "underlying_symbol",
+          "quote_date",
+          "expiry",
+          "days_to_expiration",
+          "contract_count",
+          "call_contract_count",
+          "put_contract_count",
+          "strike_count",
+          "total_volume",
+          "total_open_interest",
+          "call_volume",
+          "put_volume",
+          "call_open_interest",
+          "put_open_interest",
+          "call_put_volume_ratio",
+          "call_put_open_interest_ratio",
+          "weighted_implied_volatility",
+          "call_weighted_implied_volatility",
+          "put_weighted_implied_volatility",
+          "atm_implied_volatility",
+          "downside_put_implied_volatility",
+          "upside_call_implied_volatility",
+          "put_skew_25d_minus_atm",
+          "call_skew_25d_minus_atm",
+          "risk_reversal_25d",
+          "near_money_contract_count",
+          "downside_put_contract_count",
+          "upside_call_contract_count",
+          "top_5_open_interest_concentration",
+          "top_5_volume_concentration",
+          "governance_status",
+          "governance_reasons"
+        ],
+        "symbol_fields": [
+          "underlying_symbol",
+          "quote_date",
+          "expiration_count",
+          "ready_expiration_count",
+          "review_expiration_count",
+          "excluded_expiration_count",
+          "nearest_expiry",
+          "farthest_expiry",
+          "nearest_atm_implied_volatility",
+          "farthest_atm_implied_volatility",
+          "atm_term_structure_slope",
+          "total_contract_count",
+          "total_volume",
+          "total_open_interest",
+          "aggregate_put_call_volume_ratio",
+          "aggregate_put_call_open_interest_ratio",
+          "governance_status",
+          "governance_reasons"
+        ]
+      },
+      "symbol_csv_path": "reports/m35/phase4/option_surface_persistence/symbol_surface_profiles.csv",
+      "symbol_excluded": 96,
+      "symbol_input_path": "reports/m35/phase4/option_surface_analytics/symbol_surface_profiles.jsonl",
+      "symbol_ready": 45,
+      "symbol_records_filtered": 96,
+      "symbol_records_persisted": 98,
+      "symbol_records_read": 194,
+      "symbol_review": 53
+    },
+    "step4": {
+      "as_of_date": "2026-07-20",
+      "blocked_count": 0,
+      "eligible_count": 69,
+      "generated_at": "2026-07-21T06:44:23.604244+00:00",
+      "input_path": "reports/m35/phase4/option_surface_persistence/symbol_surface_profiles.csv",
+      "metadata": {
+        "feature_version": "m35.phase4.step4.v1",
+        "policy": {
+          "allowed_surface_statuses": [
+            "READY",
+            "REVIEW"
+          ],
+          "block_missing_liquidity": true,
+          "maximum_absolute_term_structure_slope": 0.02,
+          "maximum_put_call_open_interest_ratio": 10.0,
+          "maximum_put_call_volume_ratio": 10.0,
+          "minimum_expiration_count": 1,
+          "minimum_total_open_interest": 1000,
+          "minimum_total_volume": 1,
+          "review_missing_term_structure": true
+        }
+      },
+      "output_path": "reports/m35/phase4/option_surface_decision_integration/surface_decision_features.jsonl",
+      "records_generated": 98,
+      "records_read": 98,
+      "review_count": 29
+    }
+  },
+  "execution_results": [
+    {
+      "command": [
+        "uv",
+        "run",
+        "python",
+        "scripts/run_m35_phase4_historical_options_feature_store.py",
+        "--as-of-date",
+        "2026-07-20",
+        "--readiness-report",
+        "reports/m35/phase3/readiness/run.json",
+        "--include-review"
+      ],
+      "completed_at": "2026-07-21T06:44:23.374343+00:00",
+      "return_code": 0,
+      "started_at": "2026-07-21T06:44:22.763346+00:00",
+      "status": "PASSED",
+      "stderr": "",
+      "stdout": "========================================================================\nMilestone 35 Phase 4 Step 1 \u2014 Historical Options Feature Store\n========================================================================\nAs-of date            : 2026-07-20\nSymbols considered    : 610\nSymbols included      : 194\nSymbols excluded      : 416\nContracts read        : 11762\nFeatures generated    : 11762\nREADY records         : 10550\nREVIEW records        : 0\nEXCLUDED records      : 1212\nUnderlying price src  : price_history.close\nWith price features   : 11762\nWithout price features: 0\nFeature output        : reports/m35/phase4/historical_options_feature_store/features.jsonl\nRun report            : reports/m35/phase4/historical_options_feature_store/run.json\n",
+      "step_name": "Phase 4 Step 1"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "python",
+        "scripts/run_m35_phase4_option_surface_analytics.py",
+        "--as-of-date",
+        "2026-07-20",
+        "--feature-input",
+        "reports/m35/phase4/historical_options_feature_store/features.jsonl",
+        "--include-review-features"
+      ],
+      "completed_at": "2026-07-21T06:44:23.508369+00:00",
+      "return_code": 0,
+      "started_at": "2026-07-21T06:44:23.374437+00:00",
+      "status": "PASSED",
+      "stderr": "",
+      "stdout": "========================================================================\nMilestone 35 Phase 4 Step 2 \u2014 Option Surface and Volatility Analytics\n========================================================================\nAs-of date            : 2026-07-20\nContracts read        : 11762\nContracts eligible    : 10550\nContracts excluded    : 1212\nSymbols evaluated     : 194\nExpirations evaluated : 987\nExpiration READY      : 255\nExpiration REVIEW     : 44\nExpiration EXCLUDED   : 688\nSymbol READY          : 45\nSymbol REVIEW         : 53\nSymbol EXCLUDED       : 96\nExpiration output     : reports/m35/phase4/option_surface_analytics/expiration_surfaces.jsonl\nSymbol output         : reports/m35/phase4/option_surface_analytics/symbol_surface_profiles.jsonl\nRun report            : reports/m35/phase4/option_surface_analytics/run.json\n",
+      "step_name": "Phase 4 Step 2"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "python",
+        "scripts/run_m35_phase4_surface_persistence.py",
+        "--as-of-date",
+        "2026-07-20"
+      ],
+      "completed_at": "2026-07-21T06:44:23.562651+00:00",
+      "return_code": 0,
+      "started_at": "2026-07-21T06:44:23.508400+00:00",
+      "status": "PASSED",
+      "stderr": "",
+      "stdout": "========================================================================\nMilestone 35 Phase 4 Step 3 \u2014 Surface Persistence and Reporting\n========================================================================\nAs-of date                 : 2026-07-20\nExpiration records read    : 987\nExpiration persisted       : 299\nExpiration filtered        : 688\nExpiration duplicates      : 0\nExpiration READY           : 255\nExpiration REVIEW          : 44\nExpiration EXCLUDED        : 688\nSymbol records read        : 194\nSymbol persisted           : 98\nSymbol filtered            : 96\nSymbol duplicates          : 0\nSymbol READY               : 45\nSymbol REVIEW              : 53\nSymbol EXCLUDED            : 96\nExpiration CSV             : reports/m35/phase4/option_surface_persistence/expiration_surfaces.csv\nSymbol CSV                 : reports/m35/phase4/option_surface_persistence/symbol_surface_profiles.csv\nGovernance summary         : reports/m35/phase4/option_surface_persistence/governance_summary.json\nRun report                 : reports/m35/phase4/option_surface_persistence/run.json\n",
+      "step_name": "Phase 4 Step 3"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "python",
+        "scripts/run_m35_phase4_surface_decision_integration.py",
+        "--as-of-date",
+        "2026-07-20",
+        "--include-review-surfaces"
+      ],
+      "completed_at": "2026-07-21T06:44:23.608841+00:00",
+      "return_code": 0,
+      "started_at": "2026-07-21T06:44:23.562681+00:00",
+      "status": "PASSED",
+      "stderr": "",
+      "stdout": "========================================================================\nMilestone 35 Phase 4 Step 4 \u2014 Option Surface Decision Integration\n========================================================================\nAs-of date            : 2026-07-20\nRecords read          : 98\nRecords generated     : 98\nELIGIBLE               : 69\nREVIEW                 : 29\nBLOCKED                : 0\nDecision feature output: reports/m35/phase4/option_surface_decision_integration/surface_decision_features.jsonl\nRun report             : reports/m35/phase4/option_surface_decision_integration/run.json\n",
+      "step_name": "Phase 4 Step 4"
+    }
+  ],
+  "existing_artifacts": [
+    "reports/m35/phase4/historical_options_feature_store/run.json",
+    "reports/m35/phase4/historical_options_feature_store/features.jsonl",
+    "reports/m35/phase4/option_surface_analytics/run.json",
+    "reports/m35/phase4/option_surface_analytics/expiration_surfaces.jsonl",
+    "reports/m35/phase4/option_surface_analytics/symbol_surface_profiles.jsonl",
+    "reports/m35/phase4/option_surface_persistence/run.json",
+    "reports/m35/phase4/option_surface_persistence/expiration_surfaces.csv",
+    "reports/m35/phase4/option_surface_persistence/symbol_surface_profiles.csv",
+    "reports/m35/phase4/option_surface_persistence/governance_summary.json",
+    "reports/m35/phase4/option_surface_decision_integration/run.json",
+    "reports/m35/phase4/option_surface_decision_integration/surface_decision_features.jsonl"
+  ],
+  "generated_at": "2026-07-21T06:44:23.609407+00:00",
+  "metadata": {
+    "execute_pipeline": true,
+    "include_review": true,
+    "phase": "Milestone 35 Phase 4"
+  },
+  "missing_artifacts": [],
+  "phase_reasons": [],
+  "phase_status": "COMPLETE",
+  "required_artifacts": [
+    "reports/m35/phase4/historical_options_feature_store/run.json",
+    "reports/m35/phase4/historical_options_feature_store/features.jsonl",
+    "reports/m35/phase4/option_surface_analytics/run.json",
+    "reports/m35/phase4/option_surface_analytics/expiration_surfaces.jsonl",
+    "reports/m35/phase4/option_surface_analytics/symbol_surface_profiles.jsonl",
+    "reports/m35/phase4/option_surface_persistence/run.json",
+    "reports/m35/phase4/option_surface_persistence/expiration_surfaces.csv",
+    "reports/m35/phase4/option_surface_persistence/symbol_surface_profiles.csv",
+    "reports/m35/phase4/option_surface_persistence/governance_summary.json",
+    "reports/m35/phase4/option_surface_decision_integration/run.json",
+    "reports/m35/phase4/option_surface_decision_integration/surface_decision_features.jsonl"
+  ]
+}

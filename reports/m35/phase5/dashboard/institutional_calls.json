@@ -1,0 +1,23 @@
+{
+  "rankings_input": "reports/daily/2026-07-21/live_trade_candidates.json",
+  "input_records": 8,
+  "filtered_records": 0,
+  "filters": {
+    "min_institutional_score": 80.0,
+    "max_institutional_score": null,
+    "min_probability_of_profit": 0.6,
+    "max_probability_of_profit": null,
+    "min_liquidity_score": null,
+    "min_open_interest": 1000,
+    "min_volume": null,
+    "max_spread_pct": 0.1,
+    "sectors": [],
+    "directions": [
+      "CALL"
+    ],
+    "strategy_types": [],
+    "symbols": [],
+    "exclude_symbols": []
+  },
+  "records": []
+}

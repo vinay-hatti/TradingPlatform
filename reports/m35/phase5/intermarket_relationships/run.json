@@ -1,0 +1,55 @@
+{
+  "as_of_date": "2026-07-20",
+  "confidence": 0.5384615384615384,
+  "generated_at": "2026-07-21T12:51:17.183151+00:00",
+  "governance_status": "READY",
+  "input_path": "reports/m35/phase5/cross_asset_data_foundation/cross_asset_features.jsonl",
+  "market_state": "RISK_ON",
+  "metadata": {
+    "available_symbols": [
+      "GLD",
+      "HYG",
+      "IEF",
+      "IWM",
+      "LQD",
+      "QQQ",
+      "SPY",
+      "TLT",
+      "USO",
+      "UUP",
+      "^VIX"
+    ],
+    "feature_version": "m35.phase5.step2.v1",
+    "missing_symbols": [],
+    "policy": {
+      "credit_risk_on_threshold": 0.0,
+      "dollar_headwind_threshold": 0.03,
+      "equity_positive_threshold": 0.0,
+      "minimum_required_relationships_ready": 7,
+      "minimum_required_relationships_review": 4,
+      "positive_signal_weight": 1.0,
+      "relative_strength_threshold": 0.0,
+      "risk_off_state_threshold": -0.2,
+      "risk_on_state_threshold": 0.2,
+      "strong_signal_weight": 1.5,
+      "volatility_risk_off_threshold": 0.05
+    },
+    "required_symbols": [
+      "GLD",
+      "HYG",
+      "IEF",
+      "IWM",
+      "LQD",
+      "QQQ",
+      "SPY",
+      "TLT",
+      "USO",
+      "UUP",
+      "^VIX"
+    ]
+  },
+  "output_path": "reports/m35/phase5/intermarket_relationships/intermarket_profile.json",
+  "records_read": 28,
+  "symbols_available": 11,
+  "symbols_missing": 0
+}

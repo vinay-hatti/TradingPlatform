@@ -1,0 +1,40 @@
+{
+  "as_of_date": "2026-07-20",
+  "contracts_eligible": 10550,
+  "contracts_excluded": 1212,
+  "contracts_read": 11762,
+  "expiration_excluded": 688,
+  "expiration_output_path": "reports/m35/phase4/option_surface_analytics/expiration_surfaces.jsonl",
+  "expiration_ready": 255,
+  "expiration_review": 44,
+  "expirations_evaluated": 987,
+  "generated_at": "2026-07-21T06:44:23.502163+00:00",
+  "input_path": "reports/m35/phase4/historical_options_feature_store/features.jsonl",
+  "metadata": {
+    "policy": {
+      "allowed_feature_statuses": [
+        "READY",
+        "REVIEW"
+      ],
+      "concentration_top_n": 5,
+      "downside_put_absolute_delta_maximum": 0.35,
+      "downside_put_absolute_delta_minimum": 0.15,
+      "maximum_ready_open_interest_concentration": 0.8,
+      "maximum_review_open_interest_concentration": 0.95,
+      "minimum_atm_term_points_for_ready": 2,
+      "minimum_contracts_per_expiration": 10,
+      "minimum_expirations_per_symbol": 1,
+      "minimum_open_interest_per_expiration": 100,
+      "minimum_strikes_per_expiration": 5,
+      "near_money_absolute_delta_maximum": 0.6,
+      "near_money_absolute_delta_minimum": 0.4,
+      "upside_call_absolute_delta_maximum": 0.35,
+      "upside_call_absolute_delta_minimum": 0.15
+    }
+  },
+  "symbol_excluded": 96,
+  "symbol_output_path": "reports/m35/phase4/option_surface_analytics/symbol_surface_profiles.jsonl",
+  "symbol_ready": 45,
+  "symbol_review": 53,
+  "symbols_evaluated": 194
+}

@@ -2,9 +2,13 @@ import csv
 from datetime import datetime
 
 from trading_ai.options.contract import OptionContract
+from trading_ai.universe import CANONICAL_UNIVERSE_CSV, CanonicalUniverse
 
 
 class OptionChainCSVImporter:
+
+    def __init__(self, universe_csv=CANONICAL_UNIVERSE_CSV):
+        self.universe = CanonicalUniverse(universe_csv)
 
     def parse_date(self, value):
         if hasattr(value, "date"):
@@ -34,11 +38,15 @@ class OptionChainCSVImporter:
 
     def load(self, path):
         contracts = []
+        allowed = self.universe.symbol_set()
 
         with open(path, "r") as f:
             reader = csv.DictReader(f)
 
             for row in reader:
+                underlying_symbol = str(row.get("underlying_symbol", "")).strip().upper()
+                if underlying_symbol not in allowed:
+                    continue
                 bid = self.safe_float(row, "bid")
                 ask = self.safe_float(row, "ask")
                 mid = self.safe_float(row, "mid")
@@ -48,7 +56,7 @@ class OptionChainCSVImporter:
 
                 contracts.append(
                     OptionContract(
-                        underlying_symbol=row["underlying_symbol"].upper(),
+                        underlying_symbol=underlying_symbol,
                         option_symbol=row.get("option_symbol", ""),
                         quote_date=self.parse_date(row["quote_date"]),
                         expiry=self.parse_date(row["expiry"]),

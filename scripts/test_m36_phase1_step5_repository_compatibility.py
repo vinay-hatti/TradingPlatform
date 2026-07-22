@@ -1,0 +1,6 @@
+from trading_ai.database.repositories.portfolio_management import PortfolioManagementRepository
+from trading_ai.portfolio_management.database_service import PortfolioDatabaseSyncService
+from trading_ai.portfolio_management.service import PortfolioRegistryService
+from trading_ai.portfolio_management.snapshot_service import PortfolioSnapshotService
+assert PortfolioManagementRepository and PortfolioDatabaseSyncService and PortfolioRegistryService and PortfolioSnapshotService
+print("Milestone 36 Phase 1 Step 5 repository-compatibility assertions passed.")

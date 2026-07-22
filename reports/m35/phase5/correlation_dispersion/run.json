@@ -1,0 +1,35 @@
+{
+  "as_of_date": "2026-07-20",
+  "confidence": 0.769587901419216,
+  "correlation_regime": "NORMAL_CORRELATION",
+  "dispersion_regime": "HIGH_DISPERSION",
+  "generated_at": "2026-07-21T13:03:44.223291+00:00",
+  "governance_status": "READY",
+  "input_path": "reports/m35/phase5/cross_asset_data_foundation/cross_asset_features.jsonl",
+  "market_structure_state": "ROTATION",
+  "metadata": {
+    "correlation_breakdown_count": 39,
+    "correlation_breakdown_ratio": 0.14130434782608695,
+    "diversification_score": 0.6796337103337412,
+    "feature_version": "m35.phase5.step4.v1",
+    "history_path": "reports/m35/phase5/correlation_dispersion/return_history.jsonl",
+    "policy": {
+      "breakdown_change_threshold": 0.35,
+      "high_correlation_threshold": 0.65,
+      "high_dispersion_threshold": 0.025,
+      "low_correlation_threshold": 0.25,
+      "low_dispersion_threshold": 0.01,
+      "maximum_breakdown_ratio_ready": 0.3,
+      "maximum_breakdown_ratio_review": 0.6,
+      "minimum_pair_observations_21d": 15,
+      "minimum_pair_observations_63d": 40,
+      "minimum_symbols_ready": 8,
+      "minimum_symbols_review": 5,
+      "strongest_pair_count": 5
+    }
+  },
+  "output_path": "reports/m35/phase5/correlation_dispersion/correlation_dispersion_profile.json",
+  "pair_count": 276,
+  "records_read": 28,
+  "symbols_available": 24
+}

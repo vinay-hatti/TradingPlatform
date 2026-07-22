@@ -11,10 +11,11 @@ def main():
     )
 
     parser.add_argument("--file", required=True)
+    parser.add_argument("--universe-csv", default="data/universe/us_listed_equities_etfs.csv")
 
     args = parser.parse_args()
 
-    contracts = OptionChainCSVImporter().load(args.file)
+    contracts = OptionChainCSVImporter(args.universe_csv).load(args.file)
 
     session = create_session()
     try:

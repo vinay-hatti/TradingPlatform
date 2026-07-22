@@ -1,0 +1,242 @@
+{
+  "columns": [
+    {
+      "column_type": "INTEGER",
+      "key": "rank",
+      "label": "Rank",
+      "sortable": true,
+      "visible": true,
+      "width": 72
+    },
+    {
+      "column_type": "TEXT",
+      "key": "symbol",
+      "label": "Symbol",
+      "sortable": true,
+      "visible": true,
+      "width": 100
+    },
+    {
+      "column_type": "DECIMAL",
+      "key": "institutional_score",
+      "label": "Institutional Score",
+      "sortable": true,
+      "visible": true,
+      "width": null
+    },
+    {
+      "column_type": "PERCENTAGE",
+      "key": "probability_score",
+      "label": "Probability",
+      "sortable": true,
+      "visible": true,
+      "width": null
+    },
+    {
+      "column_type": "PERCENTAGE",
+      "key": "expected_move",
+      "label": "Expected Move",
+      "sortable": true,
+      "visible": true,
+      "width": null
+    },
+    {
+      "column_type": "TEXT",
+      "key": "regime",
+      "label": "Regime",
+      "sortable": true,
+      "visible": true,
+      "width": null
+    },
+    {
+      "column_type": "TEXT",
+      "key": "sector",
+      "label": "Sector",
+      "sortable": true,
+      "visible": true,
+      "width": null
+    },
+    {
+      "column_type": "TEXT",
+      "key": "exchange",
+      "label": "Exchange",
+      "sortable": true,
+      "visible": true,
+      "width": null
+    },
+    {
+      "column_type": "BOOLEAN",
+      "key": "optionable",
+      "label": "Optionable",
+      "sortable": true,
+      "visible": true,
+      "width": null
+    },
+    {
+      "column_type": "BOOLEAN",
+      "key": "is_etf",
+      "label": "ETF",
+      "sortable": true,
+      "visible": true,
+      "width": null
+    },
+    {
+      "column_type": "DECIMAL",
+      "key": "cross_asset_score",
+      "label": "Cross-Asset",
+      "sortable": true,
+      "visible": true,
+      "width": null
+    }
+  ],
+  "filtered_records": 8,
+  "generated_at": "2026-07-21T17:00:16.490546+00:00",
+  "has_next": false,
+  "has_previous": false,
+  "metadata": {
+    "available_top_n": [
+      10,
+      25,
+      50,
+      100
+    ]
+  },
+  "query": {
+    "page": 1,
+    "page_size": 25,
+    "search_text": "",
+    "sort": {
+      "direction": "ASC",
+      "field": "rank"
+    },
+    "top_n": 50
+  },
+  "records": [
+    {
+      "cross_asset_score": null,
+      "exchange": null,
+      "expected_move": null,
+      "institutional_score": 0.0,
+      "is_etf": null,
+      "metadata": {},
+      "optionable": null,
+      "probability_score": 0.0,
+      "rank": 1,
+      "regime": "BULL_TREND",
+      "sector": "Unknown",
+      "symbol": "JPM"
+    },
+    {
+      "cross_asset_score": null,
+      "exchange": null,
+      "expected_move": null,
+      "institutional_score": 0.0,
+      "is_etf": null,
+      "metadata": {},
+      "optionable": null,
+      "probability_score": 0.0,
+      "rank": 2,
+      "regime": "BULL_TREND",
+      "sector": "Communication Services",
+      "symbol": "META"
+    },
+    {
+      "cross_asset_score": null,
+      "exchange": null,
+      "expected_move": null,
+      "institutional_score": 0.0,
+      "is_etf": null,
+      "metadata": {},
+      "optionable": null,
+      "probability_score": 0.0,
+      "rank": 3,
+      "regime": "BEAR_TREND",
+      "sector": "Consumer Discretionary",
+      "symbol": "TSLA"
+    },
+    {
+      "cross_asset_score": null,
+      "exchange": null,
+      "expected_move": null,
+      "institutional_score": 0.0,
+      "is_etf": null,
+      "metadata": {},
+      "optionable": null,
+      "probability_score": 0.0,
+      "rank": 4,
+      "regime": "BULL_TREND",
+      "sector": "Unknown",
+      "symbol": "BRK.B"
+    },
+    {
+      "cross_asset_score": null,
+      "exchange": null,
+      "expected_move": null,
+      "institutional_score": 0.0,
+      "is_etf": null,
+      "metadata": {},
+      "optionable": null,
+      "probability_score": 0.0,
+      "rank": 5,
+      "regime": "BEAR_TREND",
+      "sector": "Unknown",
+      "symbol": "AVGO"
+    },
+    {
+      "cross_asset_score": null,
+      "exchange": null,
+      "expected_move": null,
+      "institutional_score": 0.0,
+      "is_etf": null,
+      "metadata": {},
+      "optionable": null,
+      "probability_score": 0.0,
+      "rank": 6,
+      "regime": "VOLATILE",
+      "sector": "Unknown",
+      "symbol": "LLY"
+    },
+    {
+      "cross_asset_score": null,
+      "exchange": null,
+      "expected_move": null,
+      "institutional_score": 0.0,
+      "is_etf": null,
+      "metadata": {},
+      "optionable": null,
+      "probability_score": 0.0,
+      "rank": 7,
+      "regime": "BEAR_TREND",
+      "sector": "Consumer Discretionary",
+      "symbol": "AMZN"
+    },
+    {
+      "cross_asset_score": null,
+      "exchange": null,
+      "expected_move": null,
+      "institutional_score": 0.0,
+      "is_etf": null,
+      "metadata": {},
+      "optionable": null,
+      "probability_score": 0.0,
+      "rank": 8,
+      "regime": "BEAR_TREND",
+      "sector": "Communication Services",
+      "symbol": "GOOGL"
+    }
+  ],
+  "selected_symbol": "AMZN,AVGO,LLY,META,TSLA,JPM",
+  "summary": {
+    "average_institutional_score": 0.0,
+    "average_probability_score": 0.0,
+    "bearish_count": 4,
+    "bullish_count": 3,
+    "etf_count": 0,
+    "neutral_count": 1,
+    "optionable_count": 0,
+    "total_records": 8,
+    "visible_records": 8
+  },
+  "total_pages": 1,
+  "total_records": 8
+}

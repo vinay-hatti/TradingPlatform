@@ -1,0 +1,33 @@
+{
+  "as_of_date": "2026-07-20",
+  "contracts_read": 11762,
+  "features_generated": 11762,
+  "generated_at": "2026-07-21T06:44:23.334757+00:00",
+  "metadata": {
+    "policy": {
+      "allowed_readiness_statuses": [
+        "READY",
+        "REVIEW"
+      ],
+      "maximum_days_to_expiration": 365,
+      "minimum_days_to_expiration": 1,
+      "minimum_open_interest": 1,
+      "minimum_volume": 0,
+      "require_delta": true,
+      "require_implied_volatility": true,
+      "review_missing_optional_greeks": true
+    },
+    "readiness_report_path": "reports/m35/phase3/readiness/run.json",
+    "records_with_underlying_price_features": 11762,
+    "records_without_underlying_price_features": 0,
+    "source_table": "option_contract_history",
+    "underlying_price_source": "price_history.close"
+  },
+  "output_path": "reports/m35/phase4/historical_options_feature_store/features.jsonl",
+  "records_excluded": 1212,
+  "records_ready": 10550,
+  "records_review": 0,
+  "symbols_considered": 610,
+  "symbols_excluded": 416,
+  "symbols_included": 194
+}

@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trading AI Live Trade Candidates</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background: #f7f7f7;
+            color: #222;
+        }
+        h1, h2 {
+            color: #111;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+            overflow-x: auto;
+        }
+        .metric {
+            display: inline-block;
+            margin-right: 30px;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        .metric strong {
+            display: block;
+            font-size: 13px;
+            color: #666;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            white-space: nowrap;
+        }
+        th, td {
+            border-bottom: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            font-size: 14px;
+        }
+        th {
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Trading AI Live Trade Candidates</h1>
+
+<div class="card">
+    <h2>Summary</h2>
+    <div class="metric"><strong>Date</strong>2026-07-21</div>
+    <div class="metric"><strong>Trade Candidates</strong>8</div>
+    <div class="metric"><strong>Capital</strong>$100,000.00</div>
+    <div class="metric"><strong>Risk / Trade</strong>2.00%</div>
+    <div class="metric"><strong>Max Position</strong>5.00%</div>
+    <div class="metric"><strong>Take Profit</strong>30.00%</div>
+    <div class="metric"><strong>Stop Loss</strong>15.00%</div>
+</div>
+
+<div class="card">
+    <h2>Recommended Live Trade Cards</h2>
+    <table><thead><tr><th>Symbol</th><th>Signal</th><th>Confidence</th><th>AI Score</th><th>Underlying</th><th>Strike</th><th>Expiration</th><th>DTE</th><th>Expiry Source</th><th>Entry</th><th>Target</th><th>Stop</th><th>Contracts</th><th>Cost</th><th>Max Risk</th><th>Reward</th><th>R/R</th><th>Delta</th><th>Theta</th><th>Vega</th><th>Regime</th><th>Notes</th></tr></thead><tbody><tr><td>JPM</td><td>CALL</td><td>MEDIUM</td><td>76.96</td><td>$338.87</td><td>$350.00</td><td>2026-10-16</td><td>87</td><td>STANDARD_FRIDAY_PROXY</td><td>$15.10</td><td>$19.63</td><td>$12.83</td><td>1</td><td>$1,510.00</td><td>$226.50</td><td>$453.00</td><td>2.00</td><td>0.4876</td><td>-0.1029</td><td>0.6684</td><td>BULL_TREND</td><td>Live contract: O:JPM261016C00350000. | Entry source: DAY_CLOSE; quote time: unavailable. | Medium AI score candidate. | Bullish options candidate. | Expiration is a standard-Friday proxy; verify the listed contract with the broker.</td></tr><tr><td>META</td><td>CALL</td><td>MEDIUM</td><td>70.52</td><td>$645.85</td><td>$660.00</td><td>2026-10-16</td><td>87</td><td>STANDARD_FRIDAY_PROXY</td><td>$54.75</td><td>$71.17</td><td>$46.54</td><td>0</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>0.00</td><td>0.5241</td><td>-0.3601</td><td>1.2539</td><td>BULL_TREND</td><td>Live contract: O:META261016C00660000. | Entry source: DAY_CLOSE; quote time: unavailable. | Position size is zero under current risk limits. | Medium AI score candidate. | Bullish options candidate. | Expiration is a standard-Friday proxy; verify the listed contract with the broker.</td></tr><tr><td>TSLA</td><td>PUT</td><td>LOW</td><td>62.14</td><td>$369.57</td><td>$380.00</td><td>2026-10-16</td><td>87</td><td>STANDARD_FRIDAY_PROXY</td><td>$31.42</td><td>$40.85</td><td>$26.71</td><td>0</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>0.00</td><td>-0.4394</td><td>-0.1800</td><td>0.7284</td><td>BEAR_TREND</td><td>Live contract: O:TSLA261016P00380000. | Entry source: DAY_CLOSE; quote time: unavailable. | Position size is zero under current risk limits. | Lower-confidence candidate; review carefully. | Bearish options candidate. | Expiration is a standard-Friday proxy; verify the listed contract with the broker.</td></tr><tr><td>BRK.B</td><td>CALL</td><td>LOW</td><td>59.10</td><td>$491.25</td><td>$540.00</td><td>2026-10-16</td><td>87</td><td>STANDARD_FRIDAY_PROXY</td><td>$2.41</td><td>$3.13</td><td>$2.05</td><td>8</td><td>$1,928.00</td><td>$289.20</td><td>$578.40</td><td>2.00</td><td>0.1272</td><td>-0.0495</td><td>0.5094</td><td>BULL_TREND</td><td>Live contract: O:BRKB261016C00540000. | Entry source: DAY_CLOSE; quote time: unavailable. | Lower-confidence candidate; review carefully. | Bullish options candidate. | Expiration is a standard-Friday proxy; verify the listed contract with the broker.</td></tr><tr><td>AVGO</td><td>PUT</td><td>AVOID</td><td>51.46</td><td>$378.16</td><td>$380.00</td><td>2026-10-16</td><td>87</td><td>STANDARD_FRIDAY_PROXY</td><td>$35.60</td><td>$46.28</td><td>$30.26</td><td>0</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>0.00</td><td>-0.4152</td><td>-0.2155</td><td>0.7305</td><td>BEAR_TREND</td><td>Live contract: O:AVGO261016P00380000. | Entry source: DAY_CLOSE; quote time: unavailable. | Position size is zero under current risk limits. | Lower-confidence candidate; review carefully. | Bearish options candidate. | Expiration is a standard-Friday proxy; verify the listed contract with the broker.</td></tr><tr><td>LLY</td><td>CALL</td><td>AVOID</td><td>51.04</td><td>$1,146.90</td><td>$1,240.00</td><td>2026-10-16</td><td>87</td><td>STANDARD_FRIDAY_PROXY</td><td>$66.68</td><td>$86.68</td><td>$56.68</td><td>0</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>0.00</td><td>0.4183</td><td>-0.5445</td><td>2.3264</td><td>VOLATILE</td><td>Live contract: O:LLY261016C01240000. | Entry source: DAY_CLOSE; quote time: unavailable. | Position size is zero under current risk limits. | Lower-confidence candidate; review carefully. | Bullish options candidate. | Expiration is a standard-Friday proxy; verify the listed contract with the broker.</td></tr><tr><td>AMZN</td><td>CALL</td><td>AVOID</td><td>48.23</td><td>$249.99</td><td>$260.00</td><td>2026-10-16</td><td>87</td><td>STANDARD_FRIDAY_PROXY</td><td>$13.50</td><td>$17.55</td><td>$11.47</td><td>1</td><td>$1,350.00</td><td>$202.50</td><td>$405.00</td><td>2.00</td><td>0.4443</td><td>-0.1120</td><td>0.4924</td><td>BEAR_TREND</td><td>Live contract: O:AMZN261016C00260000. | Entry source: DAY_CLOSE; quote time: unavailable. | Lower-confidence candidate; review carefully. | Bullish options candidate. | Expiration is a standard-Friday proxy; verify the listed contract with the broker.</td></tr><tr><td>GOOGL</td><td>CALL</td><td>AVOID</td><td>42.64</td><td>$351.99</td><td>$370.00</td><td>2026-10-16</td><td>87</td><td>STANDARD_FRIDAY_PROXY</td><td>$17.00</td><td>$22.10</td><td>$14.45</td><td>1</td><td>$1,700.00</td><td>$255.00</td><td>$510.00</td><td>2.00</td><td>0.4218</td><td>-0.1505</td><td>0.6997</td><td>BEAR_TREND</td><td>Live contract: O:GOOGL261016C00370000. | Entry source: DAY_CLOSE; quote time: unavailable. | Lower-confidence candidate; review carefully. | Bullish options candidate. | Expiration is a standard-Friday proxy; verify the listed contract with the broker.</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Ranking Details</h2>
+    <table><thead><tr><th>Symbol</th><th>AI Score</th><th>Technical</th><th>Greeks</th><th>Regime</th><th>Volatility</th><th>Risk</th><th>Portfolio Penalty</th><th>Ranking Reason</th><th>Portfolio Notes</th></tr></thead><tbody><tr><td>JPM</td><td>76.96</td><td>80.00</td><td>39.83</td><td>100.00</td><td>100.00</td><td>100.00</td><td>0.00</td><td>Technical=80.0 | Greeks=39.8 | Regime=100.0 | Volatility=100.0 | Risk=100.0 | Signal aligned with market regime. | Target-delta strike=350.00; spot=338.87; target |delta|=0.45; estimated delta=0.2452; moneyness=1.81%.</td><td></td></tr><tr><td>META</td><td>70.52</td><td>70.00</td><td>42.09</td><td>100.00</td><td>70.00</td><td>100.00</td><td>0.00</td><td>Technical=70.0 | Greeks=42.1 | Regime=100.0 | Volatility=70.0 | Risk=100.0 | Signal aligned with market regime. | Target-delta strike=660.00; spot=645.85; target |delta|=0.45; estimated delta=0.5734; moneyness=0.64%.</td><td></td></tr><tr><td>TSLA</td><td>62.14</td><td>55.00</td><td>32.56</td><td>100.00</td><td>70.00</td><td>100.00</td><td>0.00</td><td>Technical=55.0 | Greeks=32.6 | Regime=100.0 | Volatility=70.0 | Risk=100.0 | Signal aligned with market regime. | Target-delta strike=380.00; spot=369.57; target |delta|=0.45; estimated delta=-0.1602; moneyness=-1.24%.</td><td></td></tr><tr><td>BRK.B</td><td>59.10</td><td>45.00</td><td>24.41</td><td>100.00</td><td>100.00</td><td>100.00</td><td>0.00</td><td>Technical=45.0 | Greeks=24.4 | Regime=100.0 | Volatility=100.0 | Risk=100.0 | Signal aligned with market regime. | Target-delta strike=540.00; spot=491.25; target |delta|=0.45; estimated delta=0.6272; moneyness=0.76%.</td><td></td></tr><tr><td>AVGO</td><td>51.46</td><td>30.00</td><td>29.83</td><td>100.00</td><td>70.00</td><td>100.00</td><td>0.00</td><td>Technical=30.0 | Greeks=29.8 | Regime=100.0 | Volatility=70.0 | Risk=100.0 | Signal aligned with market regime. | Target-delta strike=380.00; spot=378.16; target |delta|=0.45; estimated delta=-0.2040; moneyness=-0.84%.</td><td></td></tr><tr><td>LLY</td><td>51.04</td><td>40.00</td><td>30.18</td><td>50.00</td><td>100.00</td><td>100.00</td><td>0.00</td><td>Technical=40.0 | Greeks=30.2 | Regime=50.0 | Volatility=100.0 | Risk=100.0 | Target-delta strike=1240.00; spot=1146.90; target |delta|=0.45; estimated delta=0.1968; moneyness=2.45%.</td><td></td></tr><tr><td>AMZN</td><td>48.23</td><td>35.00</td><td>44.93</td><td>20.00</td><td>100.00</td><td>100.00</td><td>0.00</td><td>Technical=35.0 | Greeks=44.9 | Regime=20.0 | Volatility=100.0 | Risk=100.0 | Target-delta strike=260.00; spot=249.99; target |delta|=0.45; estimated delta=0.2525; moneyness=2.00%.</td><td></td></tr><tr><td>GOOGL</td><td>42.64</td><td>30.00</td><td>30.57</td><td>20.00</td><td>100.00</td><td>100.00</td><td>0.00</td><td>Technical=30.0 | Greeks=30.6 | Regime=20.0 | Volatility=100.0 | Risk=100.0 | Target-delta strike=370.00; spot=351.99; target |delta|=0.45; estimated delta=0.5356; moneyness=0.86%.</td><td></td></tr></tbody></table>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+{
+  "accepted_count": 3,
+  "duplicate_count": 0,
+  "received_count": 3,
+  "rejected_count": 0,
+  "rejection_reasons": {},
+  "universe": {
+    "generated_at": "2026-07-20T13:38:19.028613+00:00",
+    "governance_status": "READY",
+    "metadata": {
+      "minimum_symbol_count": 1,
+      "options_eligible_count": 3
+    },
+    "name": "US Listed Equity and ETF Universe",
+    "securities": [
+      {
+        "active": true,
+        "asset_type": "EQUITY",
+        "average_daily_volume": 55000000.0,
+        "exchange": "NASDAQ",
+        "industry": "Consumer Electronics",
+        "market_cap": 3000000000000.0,
+        "metadata": {},
+        "name": "Apple Inc.",
+        "options_eligible": true,
+        "sector": "Technology",
+        "source": "SAMPLE",
+        "symbol": "AAPL",
+        "tradable": true
+      },
+      {
+        "active": true,
+        "asset_type": "EQUITY",
+        "average_daily_volume": 22000000.0,
+        "exchange": "NASDAQ",
+        "industry": "Software",
+        "market_cap": 3100000000000.0,
+        "metadata": {},
+        "name": "Microsoft Corporation",
+        "options_eligible": true,
+        "sector": "Technology",
+        "source": "SAMPLE",
+        "symbol": "MSFT",
+        "tradable": true
+      },
+      {
+        "active": true,
+        "asset_type": "ETF",
+        "average_daily_volume": 75000000.0,
+        "exchange": "NYSE_ARCA",
+        "industry": "Large Cap Blend",
+        "market_cap": null,
+        "metadata": {},
+        "name": "SPDR S&P 500 ETF Trust",
+        "options_eligible": true,
+        "sector": "ETF",
+        "source": "SAMPLE",
+        "symbol": "SPY",
+        "tradable": true
+      }
+    ],
+    "source_names": [
+      "SAMPLE"
+    ],
+    "universe_id": "US-LISTED-PRIMARY",
+    "warnings": []
+  }
+}

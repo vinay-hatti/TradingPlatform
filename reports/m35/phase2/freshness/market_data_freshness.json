@@ -1,0 +1,5508 @@
+{
+  "canonical_symbol_count": 610,
+  "evaluated_at": "2026-07-20T22:46:11.649656+00:00",
+  "expected_latest_trading_date": "2026-07-20",
+  "fresh_percentage": 99.6721,
+  "fresh_symbol_count": 608,
+  "missing_symbol_count": 2,
+  "reasons": [],
+  "stale_symbol_count": 0,
+  "status": "READY",
+  "symbol_profiles": [
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "A"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "AAPL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ABBV"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ABNB"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ABT"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ACGL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ACN"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ADBE"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ADI"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ADM"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ADP"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ADSK"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "AEE"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "AEP"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "AES"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "AFL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "AGG"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "AIG"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "AIZ"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "AJG"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "AKAM"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ALAB"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ALB"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ALGN"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ALL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ALLE"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ALNY"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "AMAT"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "AMCR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "AMD"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "AME"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "AMGN"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "AMP"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "AMT"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "AMZN"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ANET"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "AON"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "AOS"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "APA"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "APD"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "APH"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "APO"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "APP"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "APTV"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ARE"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ARES"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ARKK"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ARM"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ASML"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ATO"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "AVB"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "AVGO"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "AVY"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "AWK"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "AXON"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "AXP"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "AZO"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "BA"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "BAC"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "BALL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "BAX"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "BBY"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "BDX"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "BEN"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": true,
+      "latest_bar_date": null,
+      "reasons": [
+        "NO_PRICE_HISTORY"
+      ],
+      "staleness_days": null,
+      "status": "FAILED",
+      "symbol": "BF.B"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "BG"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "BIIB"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "BITO"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "BKNG"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "BKR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "BLDR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "BLK"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "BMY"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "BND"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "BNY"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "BR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": true,
+      "latest_bar_date": null,
+      "reasons": [
+        "NO_PRICE_HISTORY"
+      ],
+      "staleness_days": null,
+      "status": "FAILED",
+      "symbol": "BRK.B"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "BRO"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "BSX"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "BX"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "BXP"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "C"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CAH"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CARR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CASY"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CAT"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CB"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CBOE"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CBRE"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CCEP"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CCI"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CCL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CDNS"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CDW"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CEG"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CF"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CFG"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CHD"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CHRW"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CHTR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CI"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CIBR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CIEN"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CINF"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CLX"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CMCSA"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CME"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CMG"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CMI"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CMS"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CNC"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CNP"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "COF"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "COHR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "COIN"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "COO"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "COP"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "COR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "COST"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CPAY"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CPRT"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CPT"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CRH"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CRL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CRM"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CRWD"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CRWV"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CSCO"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CSGP"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CSX"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CTAS"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CTSH"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CTVA"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CVNA"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CVS"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "CVX"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "D"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "DAL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "DASH"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "DBA"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "DD"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "DDOG"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "DE"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "DECK"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "DELL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "DG"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "DGX"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "DHI"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "DHR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "DIA"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "DIS"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "DLR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "DLTR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "DOC"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "DOV"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "DOW"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "DPZ"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "DRI"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "DTE"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "DUK"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "DVA"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "DVN"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "DXCM"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "EA"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "EBAY"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ECHO"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ECL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ED"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "EEM"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "EFA"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "EFX"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "EG"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "EIX"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "EL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ELV"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "EME"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "EMR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "EOG"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "EQIX"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "EQR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "EQT"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ERIE"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ES"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ESS"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ETHA"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ETN"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ETR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "EVRG"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "EW"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "EWJ"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "EWZ"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "EXC"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "EXE"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "EXPD"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "EXPE"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "EXR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "F"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "FANG"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "FAST"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "FBTC"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "FCX"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "FDS"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "FDX"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "FDXF"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "FE"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "FER"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "FFIV"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "FICO"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "FIS"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "FISV"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "FITB"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "FIX"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "FLEX"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "FOX"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "FOXA"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "FRT"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "FSLR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "FTNT"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "FTV"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "FXI"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "GD"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "GDDY"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "GDX"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "GDXJ"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "GE"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "GEHC"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "GEN"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "GEV"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "GILD"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "GIS"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "GL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "GLD"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "GLW"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "GM"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "GNRC"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "GOOG"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "GOOGL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "GPC"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "GPN"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "GRMN"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "GS"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "GWW"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "HACK"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "HAL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "HAS"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "HBAN"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "HCA"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "HD"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "HIG"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "HII"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "HLT"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "HON"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "HONA"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "HOOD"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "HPE"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "HPQ"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "HRL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "HSIC"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "HST"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "HSY"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "HUBB"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "HUM"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "HWM"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "HYG"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "IAU"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "IBB"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "IBIT"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "IBKR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "IBM"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ICE"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ICLN"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "IDXX"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "IEF"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "IEX"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "IFF"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "IGV"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "IHI"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "INCY"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "INDA"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "INTC"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "INTU"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "INVH"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "IP"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "IQV"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "IR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "IRM"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ISRG"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "IT"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ITB"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ITOT"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ITW"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "IVV"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "IVZ"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "IWD"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "IWF"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "IWM"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "IYR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "J"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "JBHT"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "JBL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "JCI"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "JEPI"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "JEPQ"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "JETS"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "JKHY"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "JNJ"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "JPM"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "KBE"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "KDP"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "KEY"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "KEYS"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "KHC"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "KIM"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "KKR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "KLAC"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "KMB"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "KMI"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "KO"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "KR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "KRE"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "KVUE"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "KWEB"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "L"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "LDOS"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "LEN"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "LH"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "LHX"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "LII"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "LIN"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "LITE"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "LLY"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "LMT"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "LNT"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "LOW"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "LQD"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "LRCX"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "LULU"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "LUV"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "LVS"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "LYB"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "LYV"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MA"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MAA"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MAR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MAS"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MCD"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MCHP"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MCK"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MCO"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MDLZ"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MDT"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MELI"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MET"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "META"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MGM"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MKC"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MLM"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MMM"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MNST"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MO"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MOS"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MPC"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MPWR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MRK"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MRNA"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MRSH"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MRVL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MS"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MSCI"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MSFT"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MSI"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MSTR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MTB"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MTD"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MTUM"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "MU"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "NBIS"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "NCLH"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "NDAQ"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "NDSN"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "NEE"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "NEM"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "NFLX"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "NI"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "NKE"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "NOC"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "NOW"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "NRG"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "NSC"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "NTAP"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "NTRS"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "NUE"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "NVDA"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "NVR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "NWS"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "NWSA"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "NXPI"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "O"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ODFL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "OIH"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "OKE"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "OMC"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ON"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ORCL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ORLY"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "OTIS"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "OXY"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "PANW"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "PAYX"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "PCAR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "PCG"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "PDD"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "PEG"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "PEP"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "PFE"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "PFG"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "PG"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "PGR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "PH"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "PHM"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "PKG"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "PLD"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "PLTR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "PM"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "PNC"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "PNR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "PNW"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "PODD"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "PPG"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "PPL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "PRU"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "PSA"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "PSKY"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "PSX"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "PTC"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "PWR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "PYPL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "Q"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "QCOM"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "QQQ"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "QQQM"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "QUAL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "RCL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "REG"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "REGN"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "RF"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "RJF"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "RKLB"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "RL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "RMD"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ROK"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ROL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ROP"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ROST"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "RSG"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "RSP"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "RTX"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "RVTY"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "SBAC"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "SBUX"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "SCHB"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "SCHD"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "SCHW"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "SHOP"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "SHW"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "SHY"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "SJM"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "SKYY"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "SLB"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "SLV"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "SMCI"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "SMH"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "SNA"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "SNDK"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "SNPS"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "SO"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "SOLV"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "SOXX"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "SPG"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "SPGI"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "SPXU"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "SPY"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "SQQQ"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "SRE"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "STE"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "STLD"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "STT"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "STX"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "STZ"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "SW"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "SWK"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "SWKS"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "SYF"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "SYK"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "SYY"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "T"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "TAN"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "TAP"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "TDG"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "TDY"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "TECH"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "TEL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "TER"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "TFC"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "TGT"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "TIP"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "TJX"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "TKO"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "TLT"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "TMO"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "TMUS"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "TPL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "TPR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "TQQQ"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "TRGP"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "TRI"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "TRMB"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "TROW"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "TRV"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "TSCO"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "TSLA"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "TSN"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "TT"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "TTD"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "TTWO"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "TXN"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "TXT"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "TYL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "UAL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "UBER"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "UDR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "UHS"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ULTA"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "UNG"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "UNH"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "UNP"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "UPRO"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "UPS"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "URI"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "USB"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "USMV"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "USO"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "UVXY"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "V"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "VEA"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "VEEV"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "VICI"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "VIG"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "VIXY"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "VLO"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "VLTO"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "VLUE"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "VMC"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "VNQ"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "VOO"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "VRSK"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "VRSN"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "VRT"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "VRTX"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "VST"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "VTI"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "VTR"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "VTRS"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "VTV"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "VUG"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "VWO"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "VYM"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "VZ"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "WAB"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "WAT"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "WBD"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "WDAY"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "WDC"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "WEC"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "WELL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "WFC"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "WM"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "WMB"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "WMT"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "WRB"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "WSM"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "WST"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "WTW"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "WY"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "WYNN"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "XBI"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "XEL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "XHB"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "XLB"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "XLC"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "XLE"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "XLF"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "XLI"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "XLK"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "XLP"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "XLRE"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "XLU"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "XLV"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "XLY"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "XOM"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "XOP"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "XPH"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "XRT"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "XYL"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "XYZ"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "YUM"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ZBH"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ZBRA"
+    },
+    {
+      "expected_latest_trading_date": "2026-07-20",
+      "is_stale": false,
+      "latest_bar_date": "2026-07-20",
+      "reasons": [],
+      "staleness_days": 0,
+      "status": "READY",
+      "symbol": "ZTS"
+    }
+  ],
+  "symbols_with_history": 608
+}

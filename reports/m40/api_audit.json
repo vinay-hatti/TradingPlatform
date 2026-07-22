@@ -1,0 +1,132 @@
+[
+  {
+    "actor": null,
+    "duration_ms": 21.588,
+    "event_id": "602467dedadd465ab146ab65585ea7e0",
+    "metadata": {
+      "client": "127.0.0.1"
+    },
+    "method": "GET",
+    "occurred_at": "2026-07-22T22:13:40.795568+00:00",
+    "path": "/",
+    "request_id": "fc876ebff7af49c5af1bc89667eaccb2",
+    "status_code": 200
+  },
+  {
+    "actor": null,
+    "duration_ms": 2.799,
+    "event_id": "9bd0ed1a155e443195adf9a7b3cb9378",
+    "metadata": {
+      "client": "127.0.0.1"
+    },
+    "method": "GET",
+    "occurred_at": "2026-07-22T22:13:41.240244+00:00",
+    "path": "/assets/index-C9tJj8nW.js",
+    "request_id": "f178225c94824da09630e455dfe76a9f",
+    "status_code": 200
+  },
+  {
+    "actor": null,
+    "duration_ms": 3.664,
+    "event_id": "e7598556d17d4e1c9bade7a2d0336aec",
+    "metadata": {
+      "client": "127.0.0.1"
+    },
+    "method": "GET",
+    "occurred_at": "2026-07-22T22:13:41.242423+00:00",
+    "path": "/assets/index-DNfbKLz3.css",
+    "request_id": "038a55061708458eba45a4b9f42e6ba1",
+    "status_code": 200
+  },
+  {
+    "actor": null,
+    "duration_ms": 2.193,
+    "event_id": "bc3fd773ecde4a7c9b3791d36c84cf28",
+    "metadata": {
+      "client": "127.0.0.1"
+    },
+    "method": "GET",
+    "occurred_at": "2026-07-22T22:13:41.288640+00:00",
+    "path": "/api/v1/platform/overview",
+    "request_id": "2cb1f9ee2e134955951a7976002ac092",
+    "status_code": 200
+  },
+  {
+    "actor": null,
+    "duration_ms": 1.15,
+    "event_id": "6a35583bcd0048baae50d3a4fd903acd",
+    "metadata": {
+      "client": "127.0.0.1"
+    },
+    "method": "GET",
+    "occurred_at": "2026-07-22T22:13:48.551326+00:00",
+    "path": "//docs",
+    "request_id": "c6cda8c5267e42f083194ddff71ae7d3",
+    "status_code": 200
+  },
+  {
+    "actor": null,
+    "duration_ms": 1.849,
+    "event_id": "0f887b8351ce468da3f7759fbe4aa672",
+    "metadata": {
+      "client": "127.0.0.1"
+    },
+    "method": "GET",
+    "occurred_at": "2026-07-22T22:13:48.842210+00:00",
+    "path": "/assets/index-C9tJj8nW.js",
+    "request_id": "7c15c289c0da4508a5dec8ad077cb755",
+    "status_code": 200
+  },
+  {
+    "actor": null,
+    "duration_ms": 3.156,
+    "event_id": "66cdb4e2fff045df8fec39d8d87a7368",
+    "metadata": {
+      "client": "127.0.0.1"
+    },
+    "method": "GET",
+    "occurred_at": "2026-07-22T22:13:48.845104+00:00",
+    "path": "/assets/index-DNfbKLz3.css",
+    "request_id": "0ebdb1aa0feb4b859a04ea056be55152",
+    "status_code": 200
+  },
+  {
+    "actor": null,
+    "duration_ms": 1.32,
+    "event_id": "54e0dacc115945ea889a8c14189e6b85",
+    "metadata": {
+      "client": "127.0.0.1"
+    },
+    "method": "GET",
+    "occurred_at": "2026-07-22T22:13:48.876156+00:00",
+    "path": "/api/v1/platform/overview",
+    "request_id": "c363ad07ffdd414da3704a4672a1ce36",
+    "status_code": 200
+  },
+  {
+    "actor": null,
+    "duration_ms": 1.224,
+    "event_id": "a237554ea9cc4c0d9ab12d897aaf8d4e",
+    "metadata": {
+      "client": "127.0.0.1"
+    },
+    "method": "GET",
+    "occurred_at": "2026-07-22T22:14:19.471333+00:00",
+    "path": "/api/v1/platform/health",
+    "request_id": "9b4c84487e8f437999b099568267568e",
+    "status_code": 200
+  },
+  {
+    "actor": null,
+    "duration_ms": 4.194,
+    "event_id": "097d8118c4db4958b484f62f53872100",
+    "metadata": {
+      "client": "127.0.0.1"
+    },
+    "method": "GET",
+    "occurred_at": "2026-07-22T22:14:37.250504+00:00",
+    "path": "/api/v1/realtime/snapshot",
+    "request_id": "e3d596e123bd4546834b4daf2a94d8c5",
+    "status_code": 200
+  }
+]

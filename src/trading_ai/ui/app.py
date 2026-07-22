@@ -29,16 +29,17 @@ from trading_ai.ui.api.security_compliance_center import router as security_comp
 from trading_ai.ui.api.executive_reporting import router as executive_reporting_router
 from trading_ai.ui.api.ui_resilience import router as ui_resilience_router
 from trading_ai.ui.api.local_admin_session import router as local_admin_session_router
+from trading_ai.ui.api.production_platform import router as production_platform_router
 from trading_ai.ui.observability.middleware import ObservabilityMiddleware
 
 
 def create_app() -> FastAPI:
     app = FastAPI(
         title="Trading AI Institutional Workstation",
-        version="33.10.1",
+        version="40.0.0",
         description=(
-            "Milestone 32 Phase 4 Deployment Packaging, Environment Promotion, "
-            "Runtime Supervision, Backup, and Recovery."
+            "Milestone 40 governed production service layer for portfolio, risk, "
+            "execution, and position management."
         ),
     )
     app.add_middleware(ObservabilityMiddleware)

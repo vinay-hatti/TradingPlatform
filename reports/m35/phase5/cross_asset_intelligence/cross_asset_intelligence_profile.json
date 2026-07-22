@@ -1,0 +1,48 @@
+{
+  "as_of_date": "2026-07-20",
+  "composite_confidence": 0.4873055962326516,
+  "composite_risk_off_score": 0.0,
+  "composite_risk_on_score": 0.44326851506028575,
+  "correlation_regime": "NORMAL_CORRELATION",
+  "decision_adjustment": {
+    "allow_new_risk": true,
+    "call_score_adjustment": 0.12309583943489774,
+    "confidence_multiplier": 1.0,
+    "position_size_multiplier": 1.0,
+    "preferred_direction": "CALL",
+    "put_score_adjustment": -0.07873055962326517,
+    "rationale": [
+      "cross-asset intelligence favors bullish exposure"
+    ]
+  },
+  "dispersion_regime": "HIGH_DISPERSION",
+  "feature_version": "m35.phase5.step5.v1",
+  "governance_reasons": [],
+  "governance_status": "READY",
+  "intermarket_confidence": 0.5384615384615384,
+  "intermarket_state": "RISK_ON",
+  "macro_regime": "RISK_ON",
+  "market_structure_state": "ROTATION",
+  "opportunity_regime": "ROTATION",
+  "sector_confidence": 0.17533642856718437,
+  "sector_laggards": [
+    "XLK",
+    "XLY",
+    "XLB"
+  ],
+  "sector_leaders": [
+    "XLV",
+    "XLF",
+    "XLRE"
+  ],
+  "sector_leadership_state": "DEFENSIVE",
+  "sector_rotation_state": "MIXED_ROTATION",
+  "source_governance": {
+    "correlation": "READY",
+    "intermarket": "READY",
+    "sector": "READY"
+  },
+  "structure_confidence": 0.769587901419216,
+  "systemic_risk_level": "NORMAL",
+  "tactical_bias": "BULLISH"
+}

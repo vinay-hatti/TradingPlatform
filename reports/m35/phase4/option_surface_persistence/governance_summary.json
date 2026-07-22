@@ -1,0 +1,39 @@
+{
+  "as_of_date": "2026-07-20",
+  "expiration_surfaces": {
+    "duplicate_keys": 0,
+    "filtered": 688,
+    "persisted": 299,
+    "read": 987,
+    "status_counts": {
+      "EXCLUDED": 688,
+      "READY": 255,
+      "REVIEW": 44
+    }
+  },
+  "generated_at": "2026-07-21T06:44:23.557201+00:00",
+  "policy": {
+    "allowed_expiration_statuses": [
+      "READY",
+      "REVIEW"
+    ],
+    "allowed_symbol_statuses": [
+      "READY",
+      "REVIEW"
+    ],
+    "fail_on_duplicate_expiration_key": true,
+    "fail_on_duplicate_symbol_key": true,
+    "require_matching_as_of_date": true
+  },
+  "symbol_surfaces": {
+    "duplicate_keys": 0,
+    "filtered": 96,
+    "persisted": 98,
+    "read": 194,
+    "status_counts": {
+      "EXCLUDED": 96,
+      "READY": 45,
+      "REVIEW": 53
+    }
+  }
+}

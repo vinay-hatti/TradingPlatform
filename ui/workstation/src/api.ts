@@ -1,0 +1,6 @@
+import type { Envelope, Health, Overview, Readiness } from './types';
+const API_ROOT=(import.meta.env.VITE_API_ROOT||'/api/v1/platform').replace(/\/$/,'');
+export class ApiError extends Error { constructor(public status:number,message:string,public payload?:unknown){super(message)} }
+function headers(){const h:Record<string,string>={'Accept':'application/json'};const key=sessionStorage.getItem('trading-ai-api-key');if(key)h['X-API-Key']=key;return h;}
+export async function apiGet<T>(path:string,signal?:AbortSignal):Promise<Envelope<T>>{const r=await fetch(`${API_ROOT}${path}`,{headers:headers(),signal});let body:unknown;try{body=await r.json()}catch{body={detail:r.statusText}}if(!r.ok)throw new ApiError(r.status,(body as any)?.detail||r.statusText,body);return body as Envelope<T>}
+export const platformApi={health:(s?:AbortSignal)=>apiGet<Health>('/health',s),readiness:(s?:AbortSignal)=>apiGet<Readiness>('/readiness',s),overview:(s?:AbortSignal)=>apiGet<Overview>('/overview',s),portfolio:(s?:AbortSignal)=>apiGet<any>('/portfolio',s),risk:(s?:AbortSignal)=>apiGet<any>('/risk',s),execution:(s?:AbortSignal)=>apiGet<any>('/execution',s),positions:(s?:AbortSignal)=>apiGet<any>('/positions',s),exits:(s?:AbortSignal)=>apiGet<any>('/exit-instructions',s)};

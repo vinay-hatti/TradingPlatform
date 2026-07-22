@@ -1,0 +1,10 @@
+import type {ReactNode} from 'react';
+import {AlertTriangle,CheckCircle2,Clock3,RefreshCw,ShieldAlert} from 'lucide-react';
+import {statusTone} from './model';
+export function Badge({value}:{value:any}){return <span className={`badge ${statusTone(value)}`}>{String(value??'UNKNOWN')}</span>}
+export function Card({title,children,action}:{title:string;children:ReactNode;action?:ReactNode}){return <section className="card"><header><h3>{title}</h3>{action}</header>{children}</section>}
+export function Metric({label,value,detail}:{label:string;value:ReactNode;detail?:ReactNode}){return <div className="metric"><span>{label}</span><strong>{value}</strong>{detail&&<small>{detail}</small>}</div>}
+export function State({loading,error,onRetry,children}:{loading:boolean;error:Error|null;onRetry:()=>void;children:ReactNode}){if(loading)return <div className="state"><Clock3/>Loading platform state…</div>;if(error)return <div className="state error"><ShieldAlert/><div><b>Unable to load data</b><p>{error.message}</p></div><button onClick={onRetry}><RefreshCw size={15}/>Retry</button></div>;return <>{children}</>}
+export function Freshness({stale,age}:{stale?:boolean;age?:number|null}){return <span className={`freshness ${stale?'stale':''}`}>{stale?<AlertTriangle size={14}/>:<CheckCircle2 size={14}/>} {stale?'Stale':'Fresh'}{age!=null?` · ${Math.round(age)}s`:''}</span>}
+export function JsonView({value}:{value:any}){return <details className="json"><summary>Raw artifact</summary><pre>{JSON.stringify(value,null,2)}</pre></details>}
+export function Table({rows,columns}:{rows:any[];columns:{key:string;label:string;render?:(r:any)=>ReactNode}[]}){return <div className="table-wrap"><table><thead><tr>{columns.map(c=><th key={c.key}>{c.label}</th>)}</tr></thead><tbody>{rows.length?rows.map((r,i)=><tr key={r.id||r.position_id||r.order_id||i}>{columns.map(c=><td key={c.key}>{c.render?c.render(r):String(r?.[c.key]??'—')}</td>)}</tr>):<tr><td colSpan={columns.length} className="empty">No records available</td></tr>}</tbody></table></div>}

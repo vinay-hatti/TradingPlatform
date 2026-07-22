@@ -1,0 +1,117 @@
+{
+  "order": {
+    "order_id": "PAPER-F91616EDD57044C8",
+    "idempotency_key": "PAPER-780e9cd622d5999ac80157d695818cc9",
+    "strategy_id": "AMZN:2026-08-21:CALL:270.0-275.0:VERTICAL",
+    "symbol": "AMZN",
+    "direction": "CALL",
+    "strategy_type": "BULL_CALL_SPREAD",
+    "status": "FILLED",
+    "order_type": "LIMIT_DEBIT",
+    "limit_debit": 1.3,
+    "quantity": 1,
+    "legs": [
+      {
+        "symbol": "AMZN",
+        "expiry": "2026-08-21",
+        "strike": 270.0,
+        "option_type": "CALL",
+        "action": "BUY",
+        "quantity": 1,
+        "limit_price": 5.6
+      },
+      {
+        "symbol": "AMZN",
+        "expiry": "2026-08-21",
+        "strike": 275.0,
+        "option_type": "CALL",
+        "action": "SELL",
+        "quantity": 1,
+        "limit_price": 4.3
+      }
+    ],
+    "submitted_at": "2026-07-21T18:35:07.923272+00:00",
+    "filled_at": "2026-07-21T18:35:07.923435+00:00",
+    "average_fill_debit": 1.3,
+    "rejection_reason": null,
+    "metadata": {
+      "source": "M35_PHASE5_STEP10_PAPER_TRADE_LIFECYCLE"
+    }
+  },
+  "position": {
+    "position_id": "POSITION-D4C13F8328754609",
+    "order_id": "PAPER-F91616EDD57044C8",
+    "strategy_id": "AMZN:2026-08-21:CALL:270.0-275.0:VERTICAL",
+    "symbol": "AMZN",
+    "direction": "CALL",
+    "strategy_type": "BULL_CALL_SPREAD",
+    "status": "OPEN",
+    "quantity": 1,
+    "entry_debit": 1.3,
+    "max_profit": 3.7,
+    "max_loss": 1.3,
+    "breakeven": 271.3,
+    "reward_risk_ratio": 2.8461538461538463,
+    "opened_at": "2026-07-21T18:35:07.923435+00:00",
+    "closed_at": null,
+    "realized_pnl": null,
+    "unrealized_pnl": null,
+    "legs": [
+      {
+        "symbol": "AMZN",
+        "expiry": "2026-08-21",
+        "strike": 270.0,
+        "option_type": "CALL",
+        "action": "BUY",
+        "quantity": 1,
+        "limit_price": 5.6
+      },
+      {
+        "symbol": "AMZN",
+        "expiry": "2026-08-21",
+        "strike": 275.0,
+        "option_type": "CALL",
+        "action": "SELL",
+        "quantity": 1,
+        "limit_price": 4.3
+      }
+    ]
+  },
+  "events": [
+    {
+      "event_id": "EVENT-C4C9A2BDF95F4E7A",
+      "order_id": "PAPER-F91616EDD57044C8",
+      "event_type": "ORDER_SUBMITTED",
+      "occurred_at": "2026-07-21T18:35:07.923432+00:00",
+      "payload": {
+        "status": "SUBMITTED",
+        "limit_debit": 1.3,
+        "quantity": 1
+      }
+    },
+    {
+      "event_id": "EVENT-8462192C17CB446A",
+      "order_id": "PAPER-F91616EDD57044C8",
+      "event_type": "ORDER_FILLED",
+      "occurred_at": "2026-07-21T18:35:07.923461+00:00",
+      "payload": {
+        "average_fill_debit": 1.3,
+        "quantity": 1
+      }
+    },
+    {
+      "event_id": "EVENT-E17801438D62481B",
+      "order_id": "PAPER-F91616EDD57044C8",
+      "event_type": "POSITION_OPENED",
+      "occurred_at": "2026-07-21T18:35:07.923465+00:00",
+      "payload": {
+        "position_id": "POSITION-D4C13F8328754609",
+        "entry_debit": 1.3
+      }
+    }
+  ],
+  "duplicate_submission": true,
+  "warnings": [
+    "DUPLICATE_SUBMISSION_RETURNED_EXISTING_ORDER"
+  ]
+}

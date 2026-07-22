@@ -69,6 +69,13 @@ SCRIPT_COMMANDS: dict[str, str] = {
     "dashboard-server": "run_dashboard.py",
     "local-doctor": "local_setup_check.py",
     "start": "run_local_platform.py",
+    "universe-reconcile": "run_m35_phase1_universe_reconciliation.py",
+    "update-universe": "run_m35_phase1_update_universe.py",
+    "liquidity-screen": "run_m35_phase1_liquidity_screen.py",
+    "build-liquidity-metrics": "run_m35_phase1_build_liquidity_metrics.py",
+    "populate-market-data": "run_m35_phase1_populate_market_data.py",
+    "refresh-market-universe": "run_m35_phase1_refresh_market_universe.py",
+    "enforce-canonical-universe": "run_m35_phase1_enforce_canonical_universe.py",
 }
 
 PAPER_COMMANDS: dict[str, str] = {

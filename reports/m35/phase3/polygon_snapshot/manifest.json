@@ -1,0 +1,4021 @@
+{
+  "completed_batches": {
+    "polygon:2026-07-20:A:1": {
+      "completed_at": "2026-07-21T04:43:33.276063+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:AAPL:1": {
+      "completed_at": "2026-07-21T04:43:34.463477+00:00",
+      "metadata": {
+        "input_records": 233,
+        "rejected_records": 0,
+        "valid_records": 233
+      }
+    },
+    "polygon:2026-07-20:ABBV:1": {
+      "completed_at": "2026-07-21T04:43:35.158711+00:00",
+      "metadata": {
+        "input_records": 8,
+        "rejected_records": 0,
+        "valid_records": 8
+      }
+    },
+    "polygon:2026-07-20:ABNB:1": {
+      "completed_at": "2026-07-21T04:43:35.919279+00:00",
+      "metadata": {
+        "input_records": 22,
+        "rejected_records": 0,
+        "valid_records": 22
+      }
+    },
+    "polygon:2026-07-20:ABT:1": {
+      "completed_at": "2026-07-21T04:43:36.465048+00:00",
+      "metadata": {
+        "input_records": 17,
+        "rejected_records": 0,
+        "valid_records": 17
+      }
+    },
+    "polygon:2026-07-20:ACGL:1": {
+      "completed_at": "2026-07-21T04:43:36.682595+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:ACN:1": {
+      "completed_at": "2026-07-21T04:43:37.697987+00:00",
+      "metadata": {
+        "input_records": 14,
+        "rejected_records": 0,
+        "valid_records": 14
+      }
+    },
+    "polygon:2026-07-20:ADBE:1": {
+      "completed_at": "2026-07-21T04:43:38.528418+00:00",
+      "metadata": {
+        "input_records": 49,
+        "rejected_records": 0,
+        "valid_records": 49
+      }
+    },
+    "polygon:2026-07-20:ADI:1": {
+      "completed_at": "2026-07-21T04:43:39.544761+00:00",
+      "metadata": {
+        "input_records": 6,
+        "rejected_records": 0,
+        "valid_records": 6
+      }
+    },
+    "polygon:2026-07-20:ADM:1": {
+      "completed_at": "2026-07-21T04:43:39.742866+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:ADP:1": {
+      "completed_at": "2026-07-21T04:43:40.582270+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:ADSK:1": {
+      "completed_at": "2026-07-21T04:43:41.253069+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:AEP:1": {
+      "completed_at": "2026-07-21T04:43:41.769496+00:00",
+      "metadata": {
+        "input_records": 5,
+        "rejected_records": 0,
+        "valid_records": 5
+      }
+    },
+    "polygon:2026-07-20:AES:1": {
+      "completed_at": "2026-07-21T04:43:42.089331+00:00",
+      "metadata": {
+        "input_records": 17,
+        "rejected_records": 1,
+        "valid_records": 16
+      }
+    },
+    "polygon:2026-07-20:AFL:1": {
+      "completed_at": "2026-07-21T04:43:42.620535+00:00",
+      "metadata": {
+        "input_records": 5,
+        "rejected_records": 0,
+        "valid_records": 5
+      }
+    },
+    "polygon:2026-07-20:AGG:1": {
+      "completed_at": "2026-07-21T04:43:42.776332+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:AIG:1": {
+      "completed_at": "2026-07-21T04:43:43.301187+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:AIZ:1": {
+      "completed_at": "2026-07-21T04:43:43.557686+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:AJG:1": {
+      "completed_at": "2026-07-21T04:43:43.801176+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:AKAM:1": {
+      "completed_at": "2026-07-21T04:43:44.563750+00:00",
+      "metadata": {
+        "input_records": 6,
+        "rejected_records": 0,
+        "valid_records": 6
+      }
+    },
+    "polygon:2026-07-20:ALAB:1": {
+      "completed_at": "2026-07-21T04:43:45.865323+00:00",
+      "metadata": {
+        "input_records": 6,
+        "rejected_records": 0,
+        "valid_records": 6
+      }
+    },
+    "polygon:2026-07-20:ALB:1": {
+      "completed_at": "2026-07-21T04:43:46.628315+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:ALGN:1": {
+      "completed_at": "2026-07-21T04:43:47.139052+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:ALL:1": {
+      "completed_at": "2026-07-21T04:43:47.408901+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:ALLE:1": {
+      "completed_at": "2026-07-21T04:43:47.621750+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:ALNY:1": {
+      "completed_at": "2026-07-21T04:43:47.935635+00:00",
+      "metadata": {
+        "input_records": 6,
+        "rejected_records": 0,
+        "valid_records": 6
+      }
+    },
+    "polygon:2026-07-20:AMAT:1": {
+      "completed_at": "2026-07-21T04:43:49.451950+00:00",
+      "metadata": {
+        "input_records": 28,
+        "rejected_records": 0,
+        "valid_records": 28
+      }
+    },
+    "polygon:2026-07-20:AMD:1": {
+      "completed_at": "2026-07-21T04:43:52.603622+00:00",
+      "metadata": {
+        "input_records": 146,
+        "rejected_records": 0,
+        "valid_records": 146
+      }
+    },
+    "polygon:2026-07-20:AME:1": {
+      "completed_at": "2026-07-21T04:43:52.761702+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:AMGN:1": {
+      "completed_at": "2026-07-21T04:43:53.726739+00:00",
+      "metadata": {
+        "input_records": 12,
+        "rejected_records": 0,
+        "valid_records": 12
+      }
+    },
+    "polygon:2026-07-20:AMT:1": {
+      "completed_at": "2026-07-21T04:43:54.236158+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:AMZN:1": {
+      "completed_at": "2026-07-21T04:43:55.303997+00:00",
+      "metadata": {
+        "input_records": 152,
+        "rejected_records": 0,
+        "valid_records": 152
+      }
+    },
+    "polygon:2026-07-20:ANET:1": {
+      "completed_at": "2026-07-21T04:43:56.075531+00:00",
+      "metadata": {
+        "input_records": 25,
+        "rejected_records": 0,
+        "valid_records": 25
+      }
+    },
+    "polygon:2026-07-20:AOS:1": {
+      "completed_at": "2026-07-21T04:43:56.773837+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:APA:1": {
+      "completed_at": "2026-07-21T04:43:57.132248+00:00",
+      "metadata": {
+        "input_records": 13,
+        "rejected_records": 0,
+        "valid_records": 13
+      }
+    },
+    "polygon:2026-07-20:APD:1": {
+      "completed_at": "2026-07-21T04:43:57.388574+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:APH:1": {
+      "completed_at": "2026-07-21T04:43:57.658940+00:00",
+      "metadata": {
+        "input_records": 8,
+        "rejected_records": 0,
+        "valid_records": 8
+      }
+    },
+    "polygon:2026-07-20:APO:1": {
+      "completed_at": "2026-07-21T04:43:58.424907+00:00",
+      "metadata": {
+        "input_records": 7,
+        "rejected_records": 0,
+        "valid_records": 7
+      }
+    },
+    "polygon:2026-07-20:APP:1": {
+      "completed_at": "2026-07-21T04:44:00.110614+00:00",
+      "metadata": {
+        "input_records": 5,
+        "rejected_records": 0,
+        "valid_records": 5
+      }
+    },
+    "polygon:2026-07-20:APTV:1": {
+      "completed_at": "2026-07-21T04:44:00.288789+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:ARE:1": {
+      "completed_at": "2026-07-21T04:44:00.538140+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:ARES:1": {
+      "completed_at": "2026-07-21T04:44:01.301569+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:ARKK:1": {
+      "completed_at": "2026-07-21T04:44:02.088210+00:00",
+      "metadata": {
+        "input_records": 31,
+        "rejected_records": 0,
+        "valid_records": 31
+      }
+    },
+    "polygon:2026-07-20:ARM:1": {
+      "completed_at": "2026-07-21T04:44:03.344974+00:00",
+      "metadata": {
+        "input_records": 15,
+        "rejected_records": 0,
+        "valid_records": 15
+      }
+    },
+    "polygon:2026-07-20:ASML:1": {
+      "completed_at": "2026-07-21T04:44:06.510699+00:00",
+      "metadata": {
+        "input_records": 10,
+        "rejected_records": 0,
+        "valid_records": 10
+      }
+    },
+    "polygon:2026-07-20:ATO:1": {
+      "completed_at": "2026-07-21T04:44:06.726943+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:AVB:1": {
+      "completed_at": "2026-07-21T04:44:06.997285+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:AVGO:1": {
+      "completed_at": "2026-07-21T04:44:08.619394+00:00",
+      "metadata": {
+        "input_records": 90,
+        "rejected_records": 0,
+        "valid_records": 90
+      }
+    },
+    "polygon:2026-07-20:AWK:1": {
+      "completed_at": "2026-07-21T04:44:09.022100+00:00",
+      "metadata": {
+        "input_records": 5,
+        "rejected_records": 0,
+        "valid_records": 5
+      }
+    },
+    "polygon:2026-07-20:AXON:1": {
+      "completed_at": "2026-07-21T04:44:10.070107+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:AXP:1": {
+      "completed_at": "2026-07-21T04:44:10.828213+00:00",
+      "metadata": {
+        "input_records": 20,
+        "rejected_records": 0,
+        "valid_records": 20
+      }
+    },
+    "polygon:2026-07-20:AZO:1": {
+      "completed_at": "2026-07-21T04:44:11.304431+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:BA:1": {
+      "completed_at": "2026-07-21T04:44:12.076243+00:00",
+      "metadata": {
+        "input_records": 59,
+        "rejected_records": 0,
+        "valid_records": 59
+      }
+    },
+    "polygon:2026-07-20:BAC:1": {
+      "completed_at": "2026-07-21T04:44:12.597305+00:00",
+      "metadata": {
+        "input_records": 52,
+        "rejected_records": 0,
+        "valid_records": 52
+      }
+    },
+    "polygon:2026-07-20:BALL:1": {
+      "completed_at": "2026-07-21T04:44:12.832814+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:BBY:1": {
+      "completed_at": "2026-07-21T04:44:13.870857+00:00",
+      "metadata": {
+        "input_records": 7,
+        "rejected_records": 0,
+        "valid_records": 7
+      }
+    },
+    "polygon:2026-07-20:BDX:1": {
+      "completed_at": "2026-07-21T04:44:14.151899+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:BEN:1": {
+      "completed_at": "2026-07-21T04:44:14.353051+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:BIIB:1": {
+      "completed_at": "2026-07-21T04:44:15.709984+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:BITO:1": {
+      "completed_at": "2026-07-21T04:44:16.239958+00:00",
+      "metadata": {
+        "input_records": 10,
+        "rejected_records": 0,
+        "valid_records": 10
+      }
+    },
+    "polygon:2026-07-20:BKNG:1": {
+      "completed_at": "2026-07-21T04:44:16.987700+00:00",
+      "metadata": {
+        "input_records": 14,
+        "rejected_records": 0,
+        "valid_records": 14
+      }
+    },
+    "polygon:2026-07-20:BKR:1": {
+      "completed_at": "2026-07-21T04:44:17.215079+00:00",
+      "metadata": {
+        "input_records": 5,
+        "rejected_records": 0,
+        "valid_records": 5
+      }
+    },
+    "polygon:2026-07-20:BLDR:1": {
+      "completed_at": "2026-07-21T04:44:17.487783+00:00",
+      "metadata": {
+        "input_records": 9,
+        "rejected_records": 0,
+        "valid_records": 9
+      }
+    },
+    "polygon:2026-07-20:BLK:1": {
+      "completed_at": "2026-07-21T04:44:18.794566+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:BMY:1": {
+      "completed_at": "2026-07-21T04:44:19.211181+00:00",
+      "metadata": {
+        "input_records": 18,
+        "rejected_records": 0,
+        "valid_records": 18
+      }
+    },
+    "polygon:2026-07-20:BNY:1": {
+      "completed_at": "2026-07-21T04:44:19.734314+00:00",
+      "metadata": {
+        "input_records": 6,
+        "rejected_records": 0,
+        "valid_records": 6
+      }
+    },
+    "polygon:2026-07-20:BRO:1": {
+      "completed_at": "2026-07-21T04:44:20.558725+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:BSX:1": {
+      "completed_at": "2026-07-21T04:44:20.996766+00:00",
+      "metadata": {
+        "input_records": 12,
+        "rejected_records": 0,
+        "valid_records": 12
+      }
+    },
+    "polygon:2026-07-20:BX:1": {
+      "completed_at": "2026-07-21T04:44:21.745464+00:00",
+      "metadata": {
+        "input_records": 18,
+        "rejected_records": 0,
+        "valid_records": 18
+      }
+    },
+    "polygon:2026-07-20:BXP:1": {
+      "completed_at": "2026-07-21T04:44:22.009633+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:C:1": {
+      "completed_at": "2026-07-21T04:44:22.766225+00:00",
+      "metadata": {
+        "input_records": 32,
+        "rejected_records": 0,
+        "valid_records": 32
+      }
+    },
+    "polygon:2026-07-20:CAH:1": {
+      "completed_at": "2026-07-21T04:44:23.579804+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:CARR:1": {
+      "completed_at": "2026-07-21T04:44:24.116848+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:CASY:1": {
+      "completed_at": "2026-07-21T04:44:24.612511+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:CAT:1": {
+      "completed_at": "2026-07-21T04:44:26.489498+00:00",
+      "metadata": {
+        "input_records": 7,
+        "rejected_records": 0,
+        "valid_records": 7
+      }
+    },
+    "polygon:2026-07-20:CB:1": {
+      "completed_at": "2026-07-21T04:44:26.848680+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:CBRE:1": {
+      "completed_at": "2026-07-21T04:44:27.781805+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:CCI:1": {
+      "completed_at": "2026-07-21T04:44:28.309673+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:CCL:1": {
+      "completed_at": "2026-07-21T04:44:28.838617+00:00",
+      "metadata": {
+        "input_records": 24,
+        "rejected_records": 0,
+        "valid_records": 24
+      }
+    },
+    "polygon:2026-07-20:CDNS:1": {
+      "completed_at": "2026-07-21T04:44:29.909910+00:00",
+      "metadata": {
+        "input_records": 7,
+        "rejected_records": 0,
+        "valid_records": 7
+      }
+    },
+    "polygon:2026-07-20:CDW:1": {
+      "completed_at": "2026-07-21T04:44:30.069854+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:CEG:1": {
+      "completed_at": "2026-07-21T04:44:30.929056+00:00",
+      "metadata": {
+        "input_records": 7,
+        "rejected_records": 0,
+        "valid_records": 7
+      }
+    },
+    "polygon:2026-07-20:CF:1": {
+      "completed_at": "2026-07-21T04:44:31.649806+00:00",
+      "metadata": {
+        "input_records": 11,
+        "rejected_records": 0,
+        "valid_records": 11
+      }
+    },
+    "polygon:2026-07-20:CFG:1": {
+      "completed_at": "2026-07-21T04:44:31.965450+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:CHD:1": {
+      "completed_at": "2026-07-21T04:44:32.161728+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:CHRW:1": {
+      "completed_at": "2026-07-21T04:44:32.422641+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:CHTR:1": {
+      "completed_at": "2026-07-21T04:44:33.469607+00:00",
+      "metadata": {
+        "input_records": 8,
+        "rejected_records": 0,
+        "valid_records": 8
+      }
+    },
+    "polygon:2026-07-20:CI:1": {
+      "completed_at": "2026-07-21T04:44:34.184115+00:00",
+      "metadata": {
+        "input_records": 5,
+        "rejected_records": 0,
+        "valid_records": 5
+      }
+    },
+    "polygon:2026-07-20:CIEN:1": {
+      "completed_at": "2026-07-21T04:44:35.763541+00:00",
+      "metadata": {
+        "input_records": 6,
+        "rejected_records": 0,
+        "valid_records": 6
+      }
+    },
+    "polygon:2026-07-20:CINF:1": {
+      "completed_at": "2026-07-21T04:44:35.953641+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:CL:1": {
+      "completed_at": "2026-07-21T04:44:36.464680+00:00",
+      "metadata": {
+        "input_records": 7,
+        "rejected_records": 0,
+        "valid_records": 7
+      }
+    },
+    "polygon:2026-07-20:CLX:1": {
+      "completed_at": "2026-07-21T04:44:36.717848+00:00",
+      "metadata": {
+        "input_records": 10,
+        "rejected_records": 0,
+        "valid_records": 10
+      }
+    },
+    "polygon:2026-07-20:CMCSA:1": {
+      "completed_at": "2026-07-21T04:44:37.228035+00:00",
+      "metadata": {
+        "input_records": 20,
+        "rejected_records": 0,
+        "valid_records": 20
+      }
+    },
+    "polygon:2026-07-20:CME:1": {
+      "completed_at": "2026-07-21T04:44:37.992075+00:00",
+      "metadata": {
+        "input_records": 5,
+        "rejected_records": 0,
+        "valid_records": 5
+      }
+    },
+    "polygon:2026-07-20:CMG:1": {
+      "completed_at": "2026-07-21T04:44:38.501971+00:00",
+      "metadata": {
+        "input_records": 30,
+        "rejected_records": 0,
+        "valid_records": 30
+      }
+    },
+    "polygon:2026-07-20:CMI:1": {
+      "completed_at": "2026-07-21T04:44:38.993460+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:CMS:1": {
+      "completed_at": "2026-07-21T04:44:39.309378+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:CNC:1": {
+      "completed_at": "2026-07-21T04:44:39.868609+00:00",
+      "metadata": {
+        "input_records": 6,
+        "rejected_records": 0,
+        "valid_records": 6
+      }
+    },
+    "polygon:2026-07-20:CNP:1": {
+      "completed_at": "2026-07-21T04:44:40.034306+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:COF:1": {
+      "completed_at": "2026-07-21T04:44:40.814945+00:00",
+      "metadata": {
+        "input_records": 10,
+        "rejected_records": 0,
+        "valid_records": 10
+      }
+    },
+    "polygon:2026-07-20:COHR:1": {
+      "completed_at": "2026-07-21T04:44:41.864619+00:00",
+      "metadata": {
+        "input_records": 19,
+        "rejected_records": 0,
+        "valid_records": 19
+      }
+    },
+    "polygon:2026-07-20:COIN:1": {
+      "completed_at": "2026-07-21T04:44:42.920959+00:00",
+      "metadata": {
+        "input_records": 77,
+        "rejected_records": 0,
+        "valid_records": 77
+      }
+    },
+    "polygon:2026-07-20:COO:1": {
+      "completed_at": "2026-07-21T04:44:43.099071+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:COP:1": {
+      "completed_at": "2026-07-21T04:44:43.828362+00:00",
+      "metadata": {
+        "input_records": 21,
+        "rejected_records": 0,
+        "valid_records": 21
+      }
+    },
+    "polygon:2026-07-20:COR:1": {
+      "completed_at": "2026-07-21T04:44:44.148002+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:COST:1": {
+      "completed_at": "2026-07-21T04:44:45.633324+00:00",
+      "metadata": {
+        "input_records": 45,
+        "rejected_records": 0,
+        "valid_records": 45
+      }
+    },
+    "polygon:2026-07-20:CPRT:1": {
+      "completed_at": "2026-07-21T04:44:46.123288+00:00",
+      "metadata": {
+        "input_records": 7,
+        "rejected_records": 0,
+        "valid_records": 7
+      }
+    },
+    "polygon:2026-07-20:CRH:1": {
+      "completed_at": "2026-07-21T04:44:47.171169+00:00",
+      "metadata": {
+        "input_records": 7,
+        "rejected_records": 0,
+        "valid_records": 7
+      }
+    },
+    "polygon:2026-07-20:CRL:1": {
+      "completed_at": "2026-07-21T04:44:47.398744+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:CRM:1": {
+      "completed_at": "2026-07-21T04:44:48.226059+00:00",
+      "metadata": {
+        "input_records": 47,
+        "rejected_records": 0,
+        "valid_records": 47
+      }
+    },
+    "polygon:2026-07-20:CRWD:1": {
+      "completed_at": "2026-07-21T04:44:49.494388+00:00",
+      "metadata": {
+        "input_records": 59,
+        "rejected_records": 0,
+        "valid_records": 59
+      }
+    },
+    "polygon:2026-07-20:CRWV:1": {
+      "completed_at": "2026-07-21T04:44:50.465538+00:00",
+      "metadata": {
+        "input_records": 98,
+        "rejected_records": 0,
+        "valid_records": 98
+      }
+    },
+    "polygon:2026-07-20:CSCO:1": {
+      "completed_at": "2026-07-21T04:44:51.153440+00:00",
+      "metadata": {
+        "input_records": 21,
+        "rejected_records": 0,
+        "valid_records": 21
+      }
+    },
+    "polygon:2026-07-20:CSGP:1": {
+      "completed_at": "2026-07-21T04:44:51.493566+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:CSX:1": {
+      "completed_at": "2026-07-21T04:44:51.916757+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:CTAS:1": {
+      "completed_at": "2026-07-21T04:44:52.545117+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 1,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:CTSH:1": {
+      "completed_at": "2026-07-21T04:44:52.681222+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:CTVA:1": {
+      "completed_at": "2026-07-21T04:44:52.937564+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:CVNA:1": {
+      "completed_at": "2026-07-21T04:44:54.115883+00:00",
+      "metadata": {
+        "input_records": 26,
+        "rejected_records": 0,
+        "valid_records": 26
+      }
+    },
+    "polygon:2026-07-20:CVS:1": {
+      "completed_at": "2026-07-21T04:44:54.853640+00:00",
+      "metadata": {
+        "input_records": 12,
+        "rejected_records": 0,
+        "valid_records": 12
+      }
+    },
+    "polygon:2026-07-20:CVX:1": {
+      "completed_at": "2026-07-21T04:44:55.397712+00:00",
+      "metadata": {
+        "input_records": 39,
+        "rejected_records": 0,
+        "valid_records": 39
+      }
+    },
+    "polygon:2026-07-20:D:1": {
+      "completed_at": "2026-07-21T04:44:55.688425+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:DAL:1": {
+      "completed_at": "2026-07-21T04:44:56.210408+00:00",
+      "metadata": {
+        "input_records": 15,
+        "rejected_records": 0,
+        "valid_records": 15
+      }
+    },
+    "polygon:2026-07-20:DASH:1": {
+      "completed_at": "2026-07-21T04:44:56.876355+00:00",
+      "metadata": {
+        "input_records": 11,
+        "rejected_records": 0,
+        "valid_records": 11
+      }
+    },
+    "polygon:2026-07-20:DD:1": {
+      "completed_at": "2026-07-21T04:44:57.395439+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:DDOG:1": {
+      "completed_at": "2026-07-21T04:44:58.198333+00:00",
+      "metadata": {
+        "input_records": 14,
+        "rejected_records": 0,
+        "valid_records": 14
+      }
+    },
+    "polygon:2026-07-20:DE:1": {
+      "completed_at": "2026-07-21T04:44:59.236902+00:00",
+      "metadata": {
+        "input_records": 5,
+        "rejected_records": 0,
+        "valid_records": 5
+      }
+    },
+    "polygon:2026-07-20:DECK:1": {
+      "completed_at": "2026-07-21T04:44:59.968710+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:DELL:1": {
+      "completed_at": "2026-07-21T04:45:01.349287+00:00",
+      "metadata": {
+        "input_records": 43,
+        "rejected_records": 0,
+        "valid_records": 43
+      }
+    },
+    "polygon:2026-07-20:DG:1": {
+      "completed_at": "2026-07-21T04:45:02.047488+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:DGX:1": {
+      "completed_at": "2026-07-21T04:45:02.310019+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:DHI:1": {
+      "completed_at": "2026-07-21T04:45:03.088359+00:00",
+      "metadata": {
+        "input_records": 5,
+        "rejected_records": 0,
+        "valid_records": 5
+      }
+    },
+    "polygon:2026-07-20:DHR:1": {
+      "completed_at": "2026-07-21T04:45:03.650047+00:00",
+      "metadata": {
+        "input_records": 6,
+        "rejected_records": 0,
+        "valid_records": 6
+      }
+    },
+    "polygon:2026-07-20:DIA:1": {
+      "completed_at": "2026-07-21T04:45:04.828264+00:00",
+      "metadata": {
+        "input_records": 48,
+        "rejected_records": 0,
+        "valid_records": 48
+      }
+    },
+    "polygon:2026-07-20:DIS:1": {
+      "completed_at": "2026-07-21T04:45:05.458477+00:00",
+      "metadata": {
+        "input_records": 24,
+        "rejected_records": 0,
+        "valid_records": 24
+      }
+    },
+    "polygon:2026-07-20:DLR:1": {
+      "completed_at": "2026-07-21T04:45:05.885361+00:00",
+      "metadata": {
+        "input_records": 5,
+        "rejected_records": 0,
+        "valid_records": 5
+      }
+    },
+    "polygon:2026-07-20:DLTR:1": {
+      "completed_at": "2026-07-21T04:45:06.614018+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 1,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:DOC:1": {
+      "completed_at": "2026-07-21T04:45:06.855608+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:DOV:1": {
+      "completed_at": "2026-07-21T04:45:07.119078+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:DOW:1": {
+      "completed_at": "2026-07-21T04:45:07.636921+00:00",
+      "metadata": {
+        "input_records": 11,
+        "rejected_records": 0,
+        "valid_records": 11
+      }
+    },
+    "polygon:2026-07-20:DPZ:1": {
+      "completed_at": "2026-07-21T04:45:07.887398+00:00",
+      "metadata": {
+        "input_records": 8,
+        "rejected_records": 0,
+        "valid_records": 8
+      }
+    },
+    "polygon:2026-07-20:DRI:1": {
+      "completed_at": "2026-07-21T04:45:08.148667+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:DUK:1": {
+      "completed_at": "2026-07-21T04:45:08.670642+00:00",
+      "metadata": {
+        "input_records": 7,
+        "rejected_records": 0,
+        "valid_records": 7
+      }
+    },
+    "polygon:2026-07-20:DVN:1": {
+      "completed_at": "2026-07-21T04:45:09.429825+00:00",
+      "metadata": {
+        "input_records": 23,
+        "rejected_records": 0,
+        "valid_records": 22
+      }
+    },
+    "polygon:2026-07-20:DXCM:1": {
+      "completed_at": "2026-07-21T04:45:09.931474+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:EA:1": {
+      "completed_at": "2026-07-21T04:45:10.775709+00:00",
+      "metadata": {
+        "input_records": 10,
+        "rejected_records": 2,
+        "valid_records": 8
+      }
+    },
+    "polygon:2026-07-20:EBAY:1": {
+      "completed_at": "2026-07-21T04:45:11.484216+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:ECHO:1": {
+      "completed_at": "2026-07-21T04:45:12.267005+00:00",
+      "metadata": {
+        "input_records": 15,
+        "rejected_records": 0,
+        "valid_records": 15
+      }
+    },
+    "polygon:2026-07-20:ECL:1": {
+      "completed_at": "2026-07-21T04:45:12.460667+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:EEM:1": {
+      "completed_at": "2026-07-21T04:45:13.501877+00:00",
+      "metadata": {
+        "input_records": 47,
+        "rejected_records": 0,
+        "valid_records": 47
+      }
+    },
+    "polygon:2026-07-20:EFA:1": {
+      "completed_at": "2026-07-21T04:45:14.380970+00:00",
+      "metadata": {
+        "input_records": 53,
+        "rejected_records": 0,
+        "valid_records": 53
+      }
+    },
+    "polygon:2026-07-20:EFX:1": {
+      "completed_at": "2026-07-21T04:45:14.503856+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:EIX:1": {
+      "completed_at": "2026-07-21T04:45:15.020371+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:EL:1": {
+      "completed_at": "2026-07-21T04:45:15.555129+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:ELV:1": {
+      "completed_at": "2026-07-21T04:45:15.817288+00:00",
+      "metadata": {
+        "input_records": 7,
+        "rejected_records": 0,
+        "valid_records": 7
+      }
+    },
+    "polygon:2026-07-20:EMR:1": {
+      "completed_at": "2026-07-21T04:45:16.831921+00:00",
+      "metadata": {
+        "input_records": 10,
+        "rejected_records": 0,
+        "valid_records": 10
+      }
+    },
+    "polygon:2026-07-20:EOG:1": {
+      "completed_at": "2026-07-21T04:45:17.595975+00:00",
+      "metadata": {
+        "input_records": 6,
+        "rejected_records": 0,
+        "valid_records": 6
+      }
+    },
+    "polygon:2026-07-20:EQIX:1": {
+      "completed_at": "2026-07-21T04:45:18.117375+00:00",
+      "metadata": {
+        "input_records": 5,
+        "rejected_records": 0,
+        "valid_records": 5
+      }
+    },
+    "polygon:2026-07-20:EQR:1": {
+      "completed_at": "2026-07-21T04:45:18.352863+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:EQT:1": {
+      "completed_at": "2026-07-21T04:45:18.871338+00:00",
+      "metadata": {
+        "input_records": 13,
+        "rejected_records": 0,
+        "valid_records": 13
+      }
+    },
+    "polygon:2026-07-20:ES:1": {
+      "completed_at": "2026-07-21T04:45:19.369947+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:ETHA:1": {
+      "completed_at": "2026-07-21T04:45:20.230744+00:00",
+      "metadata": {
+        "input_records": 67,
+        "rejected_records": 0,
+        "valid_records": 67
+      }
+    },
+    "polygon:2026-07-20:ETN:1": {
+      "completed_at": "2026-07-21T04:45:21.180821+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:ETR:1": {
+      "completed_at": "2026-07-21T04:45:21.413112+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:EVRG:1": {
+      "completed_at": "2026-07-21T04:45:21.707323+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:EW:1": {
+      "completed_at": "2026-07-21T04:45:21.921206+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:EWJ:1": {
+      "completed_at": "2026-07-21T04:45:22.752031+00:00",
+      "metadata": {
+        "input_records": 7,
+        "rejected_records": 0,
+        "valid_records": 7
+      }
+    },
+    "polygon:2026-07-20:EWZ:1": {
+      "completed_at": "2026-07-21T04:45:23.308566+00:00",
+      "metadata": {
+        "input_records": 46,
+        "rejected_records": 0,
+        "valid_records": 46
+      }
+    },
+    "polygon:2026-07-20:EXC:1": {
+      "completed_at": "2026-07-21T04:45:23.438045+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:EXE:1": {
+      "completed_at": "2026-07-21T04:45:23.704223+00:00",
+      "metadata": {
+        "input_records": 7,
+        "rejected_records": 0,
+        "valid_records": 7
+      }
+    },
+    "polygon:2026-07-20:EXPD:1": {
+      "completed_at": "2026-07-21T04:45:23.957005+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:EXPE:1": {
+      "completed_at": "2026-07-21T04:45:24.720483+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:EXR:1": {
+      "completed_at": "2026-07-21T04:45:24.975971+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:F:1": {
+      "completed_at": "2026-07-21T04:45:25.506903+00:00",
+      "metadata": {
+        "input_records": 42,
+        "rejected_records": 0,
+        "valid_records": 42
+      }
+    },
+    "polygon:2026-07-20:FANG:1": {
+      "completed_at": "2026-07-21T04:45:25.748474+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:FAST:1": {
+      "completed_at": "2026-07-21T04:45:25.992027+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:FBTC:1": {
+      "completed_at": "2026-07-21T04:45:26.752828+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:FCX:1": {
+      "completed_at": "2026-07-21T04:45:27.287557+00:00",
+      "metadata": {
+        "input_records": 19,
+        "rejected_records": 0,
+        "valid_records": 19
+      }
+    },
+    "polygon:2026-07-20:FDS:1": {
+      "completed_at": "2026-07-21T04:45:27.553929+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:FDX:1": {
+      "completed_at": "2026-07-21T04:45:28.275036+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:FDXF:1": {
+      "completed_at": "2026-07-21T04:45:28.596178+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:FE:1": {
+      "completed_at": "2026-07-21T04:45:28.772356+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:FICO:1": {
+      "completed_at": "2026-07-21T04:45:29.802355+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:FIS:1": {
+      "completed_at": "2026-07-21T04:45:30.306919+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:FISV:1": {
+      "completed_at": "2026-07-21T04:45:30.823504+00:00",
+      "metadata": {
+        "input_records": 9,
+        "rejected_records": 0,
+        "valid_records": 9
+      }
+    },
+    "polygon:2026-07-20:FITB:1": {
+      "completed_at": "2026-07-21T04:45:31.139046+00:00",
+      "metadata": {
+        "input_records": 5,
+        "rejected_records": 0,
+        "valid_records": 5
+      }
+    },
+    "polygon:2026-07-20:FLEX:1": {
+      "completed_at": "2026-07-21T04:45:31.852919+00:00",
+      "metadata": {
+        "input_records": 8,
+        "rejected_records": 0,
+        "valid_records": 8
+      }
+    },
+    "polygon:2026-07-20:FOXA:1": {
+      "completed_at": "2026-07-21T04:45:32.335407+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:FRT:1": {
+      "completed_at": "2026-07-21T04:45:32.593411+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:FSLR:1": {
+      "completed_at": "2026-07-21T04:45:33.376167+00:00",
+      "metadata": {
+        "input_records": 17,
+        "rejected_records": 0,
+        "valid_records": 17
+      }
+    },
+    "polygon:2026-07-20:FTNT:1": {
+      "completed_at": "2026-07-21T04:45:34.117827+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:FXI:1": {
+      "completed_at": "2026-07-21T04:45:34.903264+00:00",
+      "metadata": {
+        "input_records": 34,
+        "rejected_records": 0,
+        "valid_records": 34
+      }
+    },
+    "polygon:2026-07-20:GD:1": {
+      "completed_at": "2026-07-21T04:45:35.652451+00:00",
+      "metadata": {
+        "input_records": 5,
+        "rejected_records": 0,
+        "valid_records": 5
+      }
+    },
+    "polygon:2026-07-20:GDDY:1": {
+      "completed_at": "2026-07-21T04:45:36.459070+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:GDX:1": {
+      "completed_at": "2026-07-21T04:45:37.545252+00:00",
+      "metadata": {
+        "input_records": 48,
+        "rejected_records": 0,
+        "valid_records": 48
+      }
+    },
+    "polygon:2026-07-20:GDXJ:1": {
+      "completed_at": "2026-07-21T04:45:38.488848+00:00",
+      "metadata": {
+        "input_records": 18,
+        "rejected_records": 0,
+        "valid_records": 18
+      }
+    },
+    "polygon:2026-07-20:GE:1": {
+      "completed_at": "2026-07-21T04:45:39.251816+00:00",
+      "metadata": {
+        "input_records": 14,
+        "rejected_records": 0,
+        "valid_records": 14
+      }
+    },
+    "polygon:2026-07-20:GEHC:1": {
+      "completed_at": "2026-07-21T04:45:39.731558+00:00",
+      "metadata": {
+        "input_records": 10,
+        "rejected_records": 0,
+        "valid_records": 10
+      }
+    },
+    "polygon:2026-07-20:GEV:1": {
+      "completed_at": "2026-07-21T04:45:42.167133+00:00",
+      "metadata": {
+        "input_records": 11,
+        "rejected_records": 0,
+        "valid_records": 11
+      }
+    },
+    "polygon:2026-07-20:GILD:1": {
+      "completed_at": "2026-07-21T04:45:42.904643+00:00",
+      "metadata": {
+        "input_records": 5,
+        "rejected_records": 0,
+        "valid_records": 5
+      }
+    },
+    "polygon:2026-07-20:GIS:1": {
+      "completed_at": "2026-07-21T04:45:43.206563+00:00",
+      "metadata": {
+        "input_records": 8,
+        "rejected_records": 0,
+        "valid_records": 8
+      }
+    },
+    "polygon:2026-07-20:GLD:1": {
+      "completed_at": "2026-07-21T04:45:46.233823+00:00",
+      "metadata": {
+        "input_records": 93,
+        "rejected_records": 0,
+        "valid_records": 93
+      }
+    },
+    "polygon:2026-07-20:GLW:1": {
+      "completed_at": "2026-07-21T04:45:47.235728+00:00",
+      "metadata": {
+        "input_records": 42,
+        "rejected_records": 0,
+        "valid_records": 42
+      }
+    },
+    "polygon:2026-07-20:GM:1": {
+      "completed_at": "2026-07-21T04:45:47.771967+00:00",
+      "metadata": {
+        "input_records": 26,
+        "rejected_records": 0,
+        "valid_records": 26
+      }
+    },
+    "polygon:2026-07-20:GNRC:1": {
+      "completed_at": "2026-07-21T04:45:48.535141+00:00",
+      "metadata": {
+        "input_records": 10,
+        "rejected_records": 0,
+        "valid_records": 10
+      }
+    },
+    "polygon:2026-07-20:GOOG:1": {
+      "completed_at": "2026-07-21T04:45:49.594861+00:00",
+      "metadata": {
+        "input_records": 93,
+        "rejected_records": 1,
+        "valid_records": 92
+      }
+    },
+    "polygon:2026-07-20:GOOGL:1": {
+      "completed_at": "2026-07-21T04:45:51.335181+00:00",
+      "metadata": {
+        "input_records": 147,
+        "rejected_records": 0,
+        "valid_records": 147
+      }
+    },
+    "polygon:2026-07-20:GPC:1": {
+      "completed_at": "2026-07-21T04:45:51.598323+00:00",
+      "metadata": {
+        "input_records": 7,
+        "rejected_records": 0,
+        "valid_records": 7
+      }
+    },
+    "polygon:2026-07-20:GPN:1": {
+      "completed_at": "2026-07-21T04:45:51.813746+00:00",
+      "metadata": {
+        "input_records": 6,
+        "rejected_records": 0,
+        "valid_records": 6
+      }
+    },
+    "polygon:2026-07-20:GS:1": {
+      "completed_at": "2026-07-21T04:45:54.744211+00:00",
+      "metadata": {
+        "input_records": 23,
+        "rejected_records": 0,
+        "valid_records": 23
+      }
+    },
+    "polygon:2026-07-20:HACK:1": {
+      "completed_at": "2026-07-21T04:45:55.161515+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:HAL:1": {
+      "completed_at": "2026-07-21T04:45:55.656335+00:00",
+      "metadata": {
+        "input_records": 13,
+        "rejected_records": 0,
+        "valid_records": 13
+      }
+    },
+    "polygon:2026-07-20:HAS:1": {
+      "completed_at": "2026-07-21T04:45:55.923208+00:00",
+      "metadata": {
+        "input_records": 7,
+        "rejected_records": 0,
+        "valid_records": 7
+      }
+    },
+    "polygon:2026-07-20:HBAN:1": {
+      "completed_at": "2026-07-21T04:45:56.166947+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:HCA:1": {
+      "completed_at": "2026-07-21T04:45:56.676667+00:00",
+      "metadata": {
+        "input_records": 7,
+        "rejected_records": 0,
+        "valid_records": 7
+      }
+    },
+    "polygon:2026-07-20:HD:1": {
+      "completed_at": "2026-07-21T04:45:57.464969+00:00",
+      "metadata": {
+        "input_records": 20,
+        "rejected_records": 0,
+        "valid_records": 20
+      }
+    },
+    "polygon:2026-07-20:HIG:1": {
+      "completed_at": "2026-07-21T04:45:57.686230+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:HLT:1": {
+      "completed_at": "2026-07-21T04:45:58.711168+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:HON:1": {
+      "completed_at": "2026-07-21T04:45:59.709841+00:00",
+      "metadata": {
+        "input_records": 6,
+        "rejected_records": 0,
+        "valid_records": 6
+      }
+    },
+    "polygon:2026-07-20:HONA:1": {
+      "completed_at": "2026-07-21T04:46:00.062917+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:HOOD:1": {
+      "completed_at": "2026-07-21T04:46:00.786707+00:00",
+      "metadata": {
+        "input_records": 93,
+        "rejected_records": 0,
+        "valid_records": 93
+      }
+    },
+    "polygon:2026-07-20:HPE:1": {
+      "completed_at": "2026-07-21T04:46:01.552038+00:00",
+      "metadata": {
+        "input_records": 20,
+        "rejected_records": 0,
+        "valid_records": 20
+      }
+    },
+    "polygon:2026-07-20:HPQ:1": {
+      "completed_at": "2026-07-21T04:46:02.078539+00:00",
+      "metadata": {
+        "input_records": 15,
+        "rejected_records": 0,
+        "valid_records": 15
+      }
+    },
+    "polygon:2026-07-20:HST:1": {
+      "completed_at": "2026-07-21T04:46:03.021673+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:HSY:1": {
+      "completed_at": "2026-07-21T04:46:03.652723+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:HUBB:1": {
+      "completed_at": "2026-07-21T04:46:03.816770+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:HUM:1": {
+      "completed_at": "2026-07-21T04:46:04.845101+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:HWM:1": {
+      "completed_at": "2026-07-21T04:46:05.580394+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:HYG:1": {
+      "completed_at": "2026-07-21T04:46:06.134436+00:00",
+      "metadata": {
+        "input_records": 35,
+        "rejected_records": 0,
+        "valid_records": 35
+      }
+    },
+    "polygon:2026-07-20:IAU:1": {
+      "completed_at": "2026-07-21T04:46:07.079568+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:IBB:1": {
+      "completed_at": "2026-07-21T04:46:07.207387+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:IBIT:1": {
+      "completed_at": "2026-07-21T04:46:08.147008+00:00",
+      "metadata": {
+        "input_records": 162,
+        "rejected_records": 0,
+        "valid_records": 162
+      }
+    },
+    "polygon:2026-07-20:IBM:1": {
+      "completed_at": "2026-07-21T04:46:09.645401+00:00",
+      "metadata": {
+        "input_records": 88,
+        "rejected_records": 0,
+        "valid_records": 88
+      }
+    },
+    "polygon:2026-07-20:ICE:1": {
+      "completed_at": "2026-07-21T04:46:10.470135+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:IEF:1": {
+      "completed_at": "2026-07-21T04:46:11.697204+00:00",
+      "metadata": {
+        "input_records": 19,
+        "rejected_records": 0,
+        "valid_records": 19
+      }
+    },
+    "polygon:2026-07-20:IEX:1": {
+      "completed_at": "2026-07-21T04:46:11.918228+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:IFF:1": {
+      "completed_at": "2026-07-21T04:46:12.167649+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:IGV:1": {
+      "completed_at": "2026-07-21T04:46:12.941479+00:00",
+      "metadata": {
+        "input_records": 29,
+        "rejected_records": 0,
+        "valid_records": 29
+      }
+    },
+    "polygon:2026-07-20:IHI:1": {
+      "completed_at": "2026-07-21T04:46:13.178734+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:INCY:1": {
+      "completed_at": "2026-07-21T04:46:13.436324+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:INDA:1": {
+      "completed_at": "2026-07-21T04:46:13.687083+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:INTC:1": {
+      "completed_at": "2026-07-21T04:46:15.297491+00:00",
+      "metadata": {
+        "input_records": 157,
+        "rejected_records": 0,
+        "valid_records": 157
+      }
+    },
+    "polygon:2026-07-20:INTU:1": {
+      "completed_at": "2026-07-21T04:46:16.302601+00:00",
+      "metadata": {
+        "input_records": 11,
+        "rejected_records": 0,
+        "valid_records": 11
+      }
+    },
+    "polygon:2026-07-20:INVH:1": {
+      "completed_at": "2026-07-21T04:46:16.479985+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:IP:1": {
+      "completed_at": "2026-07-21T04:46:16.990314+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:IQV:1": {
+      "completed_at": "2026-07-21T04:46:17.285847+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:IRM:1": {
+      "completed_at": "2026-07-21T04:46:18.337868+00:00",
+      "metadata": {
+        "input_records": 7,
+        "rejected_records": 0,
+        "valid_records": 7
+      }
+    },
+    "polygon:2026-07-20:ISRG:1": {
+      "completed_at": "2026-07-21T04:46:19.535527+00:00",
+      "metadata": {
+        "input_records": 11,
+        "rejected_records": 0,
+        "valid_records": 11
+      }
+    },
+    "polygon:2026-07-20:ITB:1": {
+      "completed_at": "2026-07-21T04:46:20.045761+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:ITW:1": {
+      "completed_at": "2026-07-21T04:46:20.552992+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:IVV:1": {
+      "completed_at": "2026-07-21T04:46:22.070168+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:IVZ:1": {
+      "completed_at": "2026-07-21T04:46:22.322842+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:IWD:1": {
+      "completed_at": "2026-07-21T04:46:22.594882+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:IWF:1": {
+      "completed_at": "2026-07-21T04:46:22.836982+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:IWM:1": {
+      "completed_at": "2026-07-21T04:46:25.373534+00:00",
+      "metadata": {
+        "input_records": 243,
+        "rejected_records": 0,
+        "valid_records": 243
+      }
+    },
+    "polygon:2026-07-20:IYR:1": {
+      "completed_at": "2026-07-21T04:46:26.079110+00:00",
+      "metadata": {
+        "input_records": 6,
+        "rejected_records": 0,
+        "valid_records": 6
+      }
+    },
+    "polygon:2026-07-20:JBHT:1": {
+      "completed_at": "2026-07-21T04:46:26.589201+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:JBL:1": {
+      "completed_at": "2026-07-21T04:46:27.601782+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:JCI:1": {
+      "completed_at": "2026-07-21T04:46:27.860809+00:00",
+      "metadata": {
+        "input_records": 5,
+        "rejected_records": 0,
+        "valid_records": 5
+      }
+    },
+    "polygon:2026-07-20:JEPI:1": {
+      "completed_at": "2026-07-21T04:46:28.113063+00:00",
+      "metadata": {
+        "input_records": 6,
+        "rejected_records": 0,
+        "valid_records": 6
+      }
+    },
+    "polygon:2026-07-20:JEPQ:1": {
+      "completed_at": "2026-07-21T04:46:28.373542+00:00",
+      "metadata": {
+        "input_records": 7,
+        "rejected_records": 0,
+        "valid_records": 7
+      }
+    },
+    "polygon:2026-07-20:JETS:1": {
+      "completed_at": "2026-07-21T04:46:28.897117+00:00",
+      "metadata": {
+        "input_records": 10,
+        "rejected_records": 0,
+        "valid_records": 10
+      }
+    },
+    "polygon:2026-07-20:JNJ:1": {
+      "completed_at": "2026-07-21T04:46:29.935674+00:00",
+      "metadata": {
+        "input_records": 24,
+        "rejected_records": 0,
+        "valid_records": 24
+      }
+    },
+    "polygon:2026-07-20:JPM:1": {
+      "completed_at": "2026-07-21T04:46:30.710216+00:00",
+      "metadata": {
+        "input_records": 47,
+        "rejected_records": 0,
+        "valid_records": 47
+      }
+    },
+    "polygon:2026-07-20:KDP:1": {
+      "completed_at": "2026-07-21T04:46:31.169597+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:KEY:1": {
+      "completed_at": "2026-07-21T04:46:31.438759+00:00",
+      "metadata": {
+        "input_records": 11,
+        "rejected_records": 0,
+        "valid_records": 11
+      }
+    },
+    "polygon:2026-07-20:KHC:1": {
+      "completed_at": "2026-07-21T04:46:32.186384+00:00",
+      "metadata": {
+        "input_records": 8,
+        "rejected_records": 0,
+        "valid_records": 8
+      }
+    },
+    "polygon:2026-07-20:KKR:1": {
+      "completed_at": "2026-07-21T04:46:33.199249+00:00",
+      "metadata": {
+        "input_records": 8,
+        "rejected_records": 0,
+        "valid_records": 8
+      }
+    },
+    "polygon:2026-07-20:KLAC:1": {
+      "completed_at": "2026-07-21T04:46:34.066273+00:00",
+      "metadata": {
+        "input_records": 36,
+        "rejected_records": 0,
+        "valid_records": 36
+      }
+    },
+    "polygon:2026-07-20:KMB:1": {
+      "completed_at": "2026-07-21T04:46:34.587132+00:00",
+      "metadata": {
+        "input_records": 6,
+        "rejected_records": 0,
+        "valid_records": 6
+      }
+    },
+    "polygon:2026-07-20:KMI:1": {
+      "completed_at": "2026-07-21T04:46:35.113798+00:00",
+      "metadata": {
+        "input_records": 18,
+        "rejected_records": 0,
+        "valid_records": 18
+      }
+    },
+    "polygon:2026-07-20:KO:1": {
+      "completed_at": "2026-07-21T04:46:35.632608+00:00",
+      "metadata": {
+        "input_records": 30,
+        "rejected_records": 0,
+        "valid_records": 30
+      }
+    },
+    "polygon:2026-07-20:KR:1": {
+      "completed_at": "2026-07-21T04:46:36.154340+00:00",
+      "metadata": {
+        "input_records": 9,
+        "rejected_records": 0,
+        "valid_records": 9
+      }
+    },
+    "polygon:2026-07-20:KRE:1": {
+      "completed_at": "2026-07-21T04:46:36.682871+00:00",
+      "metadata": {
+        "input_records": 32,
+        "rejected_records": 0,
+        "valid_records": 32
+      }
+    },
+    "polygon:2026-07-20:KVUE:1": {
+      "completed_at": "2026-07-21T04:46:37.075176+00:00",
+      "metadata": {
+        "input_records": 8,
+        "rejected_records": 0,
+        "valid_records": 8
+      }
+    },
+    "polygon:2026-07-20:KWEB:1": {
+      "completed_at": "2026-07-21T04:46:37.629187+00:00",
+      "metadata": {
+        "input_records": 46,
+        "rejected_records": 0,
+        "valid_records": 46
+      }
+    },
+    "polygon:2026-07-20:LEN:1": {
+      "completed_at": "2026-07-21T04:46:38.625770+00:00",
+      "metadata": {
+        "input_records": 5,
+        "rejected_records": 0,
+        "valid_records": 5
+      }
+    },
+    "polygon:2026-07-20:LHX:1": {
+      "completed_at": "2026-07-21T04:46:39.625922+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:LIN:1": {
+      "completed_at": "2026-07-21T04:46:40.414486+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:LITE:1": {
+      "completed_at": "2026-07-21T04:46:42.668665+00:00",
+      "metadata": {
+        "input_records": 9,
+        "rejected_records": 0,
+        "valid_records": 9
+      }
+    },
+    "polygon:2026-07-20:LLY:1": {
+      "completed_at": "2026-07-21T04:46:44.557512+00:00",
+      "metadata": {
+        "input_records": 29,
+        "rejected_records": 0,
+        "valid_records": 29
+      }
+    },
+    "polygon:2026-07-20:LMT:1": {
+      "completed_at": "2026-07-21T04:46:45.749837+00:00",
+      "metadata": {
+        "input_records": 25,
+        "rejected_records": 0,
+        "valid_records": 25
+      }
+    },
+    "polygon:2026-07-20:LOW:1": {
+      "completed_at": "2026-07-21T04:46:46.743021+00:00",
+      "metadata": {
+        "input_records": 10,
+        "rejected_records": 0,
+        "valid_records": 10
+      }
+    },
+    "polygon:2026-07-20:LQD:1": {
+      "completed_at": "2026-07-21T04:46:47.511522+00:00",
+      "metadata": {
+        "input_records": 30,
+        "rejected_records": 0,
+        "valid_records": 30
+      }
+    },
+    "polygon:2026-07-20:LRCX:1": {
+      "completed_at": "2026-07-21T04:46:48.563023+00:00",
+      "metadata": {
+        "input_records": 58,
+        "rejected_records": 0,
+        "valid_records": 58
+      }
+    },
+    "polygon:2026-07-20:LULU:1": {
+      "completed_at": "2026-07-21T04:46:49.340577+00:00",
+      "metadata": {
+        "input_records": 19,
+        "rejected_records": 0,
+        "valid_records": 19
+      }
+    },
+    "polygon:2026-07-20:LUV:1": {
+      "completed_at": "2026-07-21T04:46:49.874875+00:00",
+      "metadata": {
+        "input_records": 16,
+        "rejected_records": 0,
+        "valid_records": 16
+      }
+    },
+    "polygon:2026-07-20:LVS:1": {
+      "completed_at": "2026-07-21T04:46:50.395023+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:LYB:1": {
+      "completed_at": "2026-07-21T04:46:50.553185+00:00",
+      "metadata": {
+        "input_records": 5,
+        "rejected_records": 0,
+        "valid_records": 5
+      }
+    },
+    "polygon:2026-07-20:LYV:1": {
+      "completed_at": "2026-07-21T04:46:51.360095+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:MA:1": {
+      "completed_at": "2026-07-21T04:46:52.589664+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:MAA:1": {
+      "completed_at": "2026-07-21T04:46:52.927117+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:MAR:1": {
+      "completed_at": "2026-07-21T04:46:53.634542+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:MAS:1": {
+      "completed_at": "2026-07-21T04:46:53.862051+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:MCD:1": {
+      "completed_at": "2026-07-21T04:46:54.641606+00:00",
+      "metadata": {
+        "input_records": 25,
+        "rejected_records": 0,
+        "valid_records": 25
+      }
+    },
+    "polygon:2026-07-20:MCHP:1": {
+      "completed_at": "2026-07-21T04:46:55.384361+00:00",
+      "metadata": {
+        "input_records": 17,
+        "rejected_records": 0,
+        "valid_records": 17
+      }
+    },
+    "polygon:2026-07-20:MCK:1": {
+      "completed_at": "2026-07-21T04:46:55.892644+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:MCO:1": {
+      "completed_at": "2026-07-21T04:46:56.156428+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:MDLZ:1": {
+      "completed_at": "2026-07-21T04:46:56.685769+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:MDT:1": {
+      "completed_at": "2026-07-21T04:46:57.213213+00:00",
+      "metadata": {
+        "input_records": 21,
+        "rejected_records": 0,
+        "valid_records": 21
+      }
+    },
+    "polygon:2026-07-20:MET:1": {
+      "completed_at": "2026-07-21T04:46:59.408861+00:00",
+      "metadata": {
+        "input_records": 5,
+        "rejected_records": 0,
+        "valid_records": 5
+      }
+    },
+    "polygon:2026-07-20:META:1": {
+      "completed_at": "2026-07-21T04:47:01.865761+00:00",
+      "metadata": {
+        "input_records": 120,
+        "rejected_records": 0,
+        "valid_records": 120
+      }
+    },
+    "polygon:2026-07-20:MGM:1": {
+      "completed_at": "2026-07-21T04:47:02.379284+00:00",
+      "metadata": {
+        "input_records": 5,
+        "rejected_records": 0,
+        "valid_records": 5
+      }
+    },
+    "polygon:2026-07-20:MKC:1": {
+      "completed_at": "2026-07-21T04:47:02.561539+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:MMM:1": {
+      "completed_at": "2026-07-21T04:47:03.424946+00:00",
+      "metadata": {
+        "input_records": 12,
+        "rejected_records": 0,
+        "valid_records": 12
+      }
+    },
+    "polygon:2026-07-20:MNST:1": {
+      "completed_at": "2026-07-21T04:47:03.581297+00:00",
+      "metadata": {
+        "input_records": 6,
+        "rejected_records": 0,
+        "valid_records": 6
+      }
+    },
+    "polygon:2026-07-20:MO:1": {
+      "completed_at": "2026-07-21T04:47:04.101830+00:00",
+      "metadata": {
+        "input_records": 14,
+        "rejected_records": 0,
+        "valid_records": 14
+      }
+    },
+    "polygon:2026-07-20:MOS:1": {
+      "completed_at": "2026-07-21T04:47:04.605785+00:00",
+      "metadata": {
+        "input_records": 15,
+        "rejected_records": 0,
+        "valid_records": 15
+      }
+    },
+    "polygon:2026-07-20:MPC:1": {
+      "completed_at": "2026-07-21T04:47:04.867981+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:MRK:1": {
+      "completed_at": "2026-07-21T04:47:06.134446+00:00",
+      "metadata": {
+        "input_records": 14,
+        "rejected_records": 0,
+        "valid_records": 14
+      }
+    },
+    "polygon:2026-07-20:MRNA:1": {
+      "completed_at": "2026-07-21T04:47:06.892789+00:00",
+      "metadata": {
+        "input_records": 17,
+        "rejected_records": 0,
+        "valid_records": 17
+      }
+    },
+    "polygon:2026-07-20:MRSH:1": {
+      "completed_at": "2026-07-21T04:47:07.163862+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:MRVL:1": {
+      "completed_at": "2026-07-21T04:47:08.265529+00:00",
+      "metadata": {
+        "input_records": 123,
+        "rejected_records": 0,
+        "valid_records": 123
+      }
+    },
+    "polygon:2026-07-20:MS:1": {
+      "completed_at": "2026-07-21T04:47:08.929353+00:00",
+      "metadata": {
+        "input_records": 20,
+        "rejected_records": 0,
+        "valid_records": 20
+      }
+    },
+    "polygon:2026-07-20:MSCI:1": {
+      "completed_at": "2026-07-21T04:47:09.291399+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:MSFT:1": {
+      "completed_at": "2026-07-21T04:47:10.497785+00:00",
+      "metadata": {
+        "input_records": 180,
+        "rejected_records": 0,
+        "valid_records": 180
+      }
+    },
+    "polygon:2026-07-20:MSI:1": {
+      "completed_at": "2026-07-21T04:47:10.757897+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:MSTR:1": {
+      "completed_at": "2026-07-21T04:47:12.010766+00:00",
+      "metadata": {
+        "input_records": 151,
+        "rejected_records": 0,
+        "valid_records": 151
+      }
+    },
+    "polygon:2026-07-20:MTB:1": {
+      "completed_at": "2026-07-21T04:47:12.336483+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:MTUM:1": {
+      "completed_at": "2026-07-21T04:47:13.261235+00:00",
+      "metadata": {
+        "input_records": 8,
+        "rejected_records": 0,
+        "valid_records": 8
+      }
+    },
+    "polygon:2026-07-20:MU:1": {
+      "completed_at": "2026-07-21T04:47:18.236544+00:00",
+      "metadata": {
+        "input_records": 332,
+        "rejected_records": 2,
+        "valid_records": 330
+      }
+    },
+    "polygon:2026-07-20:NBIS:1": {
+      "completed_at": "2026-07-21T04:47:19.165734+00:00",
+      "metadata": {
+        "input_records": 108,
+        "rejected_records": 0,
+        "valid_records": 108
+      }
+    },
+    "polygon:2026-07-20:NCLH:1": {
+      "completed_at": "2026-07-21T04:47:19.668281+00:00",
+      "metadata": {
+        "input_records": 17,
+        "rejected_records": 0,
+        "valid_records": 17
+      }
+    },
+    "polygon:2026-07-20:NDAQ:1": {
+      "completed_at": "2026-07-21T04:47:20.194105+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:NEE:1": {
+      "completed_at": "2026-07-21T04:47:20.907536+00:00",
+      "metadata": {
+        "input_records": 17,
+        "rejected_records": 0,
+        "valid_records": 17
+      }
+    },
+    "polygon:2026-07-20:NEM:1": {
+      "completed_at": "2026-07-21T04:47:21.666280+00:00",
+      "metadata": {
+        "input_records": 18,
+        "rejected_records": 0,
+        "valid_records": 18
+      }
+    },
+    "polygon:2026-07-20:NFLX:1": {
+      "completed_at": "2026-07-21T04:47:22.724593+00:00",
+      "metadata": {
+        "input_records": 221,
+        "rejected_records": 0,
+        "valid_records": 221
+      }
+    },
+    "polygon:2026-07-20:NI:1": {
+      "completed_at": "2026-07-21T04:47:22.924758+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:NKE:1": {
+      "completed_at": "2026-07-21T04:47:23.478874+00:00",
+      "metadata": {
+        "input_records": 42,
+        "rejected_records": 0,
+        "valid_records": 42
+      }
+    },
+    "polygon:2026-07-20:NOC:1": {
+      "completed_at": "2026-07-21T04:47:23.951217+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:NOW:1": {
+      "completed_at": "2026-07-21T04:47:24.983708+00:00",
+      "metadata": {
+        "input_records": 62,
+        "rejected_records": 0,
+        "valid_records": 62
+      }
+    },
+    "polygon:2026-07-20:NRG:1": {
+      "completed_at": "2026-07-21T04:47:25.593920+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:NSC:1": {
+      "completed_at": "2026-07-21T04:47:25.850574+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:NTAP:1": {
+      "completed_at": "2026-07-21T04:47:26.104113+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:NTRS:1": {
+      "completed_at": "2026-07-21T04:47:26.354335+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:NUE:1": {
+      "completed_at": "2026-07-21T04:47:26.610624+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:NVDA:1": {
+      "completed_at": "2026-07-21T04:47:27.960045+00:00",
+      "metadata": {
+        "input_records": 275,
+        "rejected_records": 0,
+        "valid_records": 275
+      }
+    },
+    "polygon:2026-07-20:NXPI:1": {
+      "completed_at": "2026-07-21T04:47:28.972237+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:O:1": {
+      "completed_at": "2026-07-21T04:47:29.212808+00:00",
+      "metadata": {
+        "input_records": 11,
+        "rejected_records": 0,
+        "valid_records": 11
+      }
+    },
+    "polygon:2026-07-20:OKE:1": {
+      "completed_at": "2026-07-21T04:47:29.924770+00:00",
+      "metadata": {
+        "input_records": 10,
+        "rejected_records": 0,
+        "valid_records": 10
+      }
+    },
+    "polygon:2026-07-20:ON:1": {
+      "completed_at": "2026-07-21T04:47:30.960661+00:00",
+      "metadata": {
+        "input_records": 5,
+        "rejected_records": 0,
+        "valid_records": 5
+      }
+    },
+    "polygon:2026-07-20:ORCL:1": {
+      "completed_at": "2026-07-21T04:47:31.991254+00:00",
+      "metadata": {
+        "input_records": 162,
+        "rejected_records": 0,
+        "valid_records": 162
+      }
+    },
+    "polygon:2026-07-20:ORLY:1": {
+      "completed_at": "2026-07-21T04:47:32.250067+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:OTIS:1": {
+      "completed_at": "2026-07-21T04:47:32.461987+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:OXY:1": {
+      "completed_at": "2026-07-21T04:47:33.004530+00:00",
+      "metadata": {
+        "input_records": 29,
+        "rejected_records": 0,
+        "valid_records": 29
+      }
+    },
+    "polygon:2026-07-20:PANW:1": {
+      "completed_at": "2026-07-21T04:47:34.246869+00:00",
+      "metadata": {
+        "input_records": 24,
+        "rejected_records": 0,
+        "valid_records": 24
+      }
+    },
+    "polygon:2026-07-20:PAYX:1": {
+      "completed_at": "2026-07-21T04:47:34.518549+00:00",
+      "metadata": {
+        "input_records": 6,
+        "rejected_records": 0,
+        "valid_records": 6
+      }
+    },
+    "polygon:2026-07-20:PCG:1": {
+      "completed_at": "2026-07-21T04:47:35.272851+00:00",
+      "metadata": {
+        "input_records": 13,
+        "rejected_records": 0,
+        "valid_records": 13
+      }
+    },
+    "polygon:2026-07-20:PDD:1": {
+      "completed_at": "2026-07-21T04:47:35.816266+00:00",
+      "metadata": {
+        "input_records": 34,
+        "rejected_records": 0,
+        "valid_records": 34
+      }
+    },
+    "polygon:2026-07-20:PEG:1": {
+      "completed_at": "2026-07-21T04:47:36.029731+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:PEP:1": {
+      "completed_at": "2026-07-21T04:47:36.805234+00:00",
+      "metadata": {
+        "input_records": 30,
+        "rejected_records": 0,
+        "valid_records": 30
+      }
+    },
+    "polygon:2026-07-20:PFE:1": {
+      "completed_at": "2026-07-21T04:47:37.319147+00:00",
+      "metadata": {
+        "input_records": 50,
+        "rejected_records": 0,
+        "valid_records": 50
+      }
+    },
+    "polygon:2026-07-20:PFG:1": {
+      "completed_at": "2026-07-21T04:47:37.576403+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:PG:1": {
+      "completed_at": "2026-07-21T04:47:38.319318+00:00",
+      "metadata": {
+        "input_records": 18,
+        "rejected_records": 0,
+        "valid_records": 18
+      }
+    },
+    "polygon:2026-07-20:PGR:1": {
+      "completed_at": "2026-07-21T04:47:39.138634+00:00",
+      "metadata": {
+        "input_records": 8,
+        "rejected_records": 0,
+        "valid_records": 8
+      }
+    },
+    "polygon:2026-07-20:PH:1": {
+      "completed_at": "2026-07-21T04:47:39.365150+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:PHM:1": {
+      "completed_at": "2026-07-21T04:47:40.117278+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:PKG:1": {
+      "completed_at": "2026-07-21T04:47:40.361645+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:PLD:1": {
+      "completed_at": "2026-07-21T04:47:40.637737+00:00",
+      "metadata": {
+        "input_records": 5,
+        "rejected_records": 0,
+        "valid_records": 5
+      }
+    },
+    "polygon:2026-07-20:PLTR:1": {
+      "completed_at": "2026-07-21T04:47:41.727425+00:00",
+      "metadata": {
+        "input_records": 154,
+        "rejected_records": 0,
+        "valid_records": 154
+      }
+    },
+    "polygon:2026-07-20:PM:1": {
+      "completed_at": "2026-07-21T04:47:42.217255+00:00",
+      "metadata": {
+        "input_records": 10,
+        "rejected_records": 0,
+        "valid_records": 10
+      }
+    },
+    "polygon:2026-07-20:PNC:1": {
+      "completed_at": "2026-07-21T04:47:42.885472+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:PNR:1": {
+      "completed_at": "2026-07-21T04:47:43.140623+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:PPG:1": {
+      "completed_at": "2026-07-21T04:47:44.412499+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:PPL:1": {
+      "completed_at": "2026-07-21T04:47:44.666883+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:PRU:1": {
+      "completed_at": "2026-07-21T04:47:44.920683+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:PSA:1": {
+      "completed_at": "2026-07-21T04:47:45.176738+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:PSKY:1": {
+      "completed_at": "2026-07-21T04:47:45.678382+00:00",
+      "metadata": {
+        "input_records": 24,
+        "rejected_records": 0,
+        "valid_records": 24
+      }
+    },
+    "polygon:2026-07-20:PSX:1": {
+      "completed_at": "2026-07-21T04:47:46.222231+00:00",
+      "metadata": {
+        "input_records": 5,
+        "rejected_records": 0,
+        "valid_records": 5
+      }
+    },
+    "polygon:2026-07-20:PWR:1": {
+      "completed_at": "2026-07-21T04:47:47.009022+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:PYPL:1": {
+      "completed_at": "2026-07-21T04:47:47.730205+00:00",
+      "metadata": {
+        "input_records": 49,
+        "rejected_records": 0,
+        "valid_records": 49
+      }
+    },
+    "polygon:2026-07-20:Q:1": {
+      "completed_at": "2026-07-21T04:47:48.075802+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:QCOM:1": {
+      "completed_at": "2026-07-21T04:47:48.755349+00:00",
+      "metadata": {
+        "input_records": 53,
+        "rejected_records": 0,
+        "valid_records": 53
+      }
+    },
+    "polygon:2026-07-20:QQQ:1": {
+      "completed_at": "2026-07-21T04:47:53.452137+00:00",
+      "metadata": {
+        "input_records": 572,
+        "rejected_records": 0,
+        "valid_records": 572
+      }
+    },
+    "polygon:2026-07-20:QQQM:1": {
+      "completed_at": "2026-07-21T04:47:53.652215+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:RCL:1": {
+      "completed_at": "2026-07-21T04:47:54.671587+00:00",
+      "metadata": {
+        "input_records": 6,
+        "rejected_records": 0,
+        "valid_records": 6
+      }
+    },
+    "polygon:2026-07-20:REGN:1": {
+      "completed_at": "2026-07-21T04:47:56.170545+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:RF:1": {
+      "completed_at": "2026-07-21T04:47:56.448421+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:RKLB:1": {
+      "completed_at": "2026-07-21T04:47:57.548527+00:00",
+      "metadata": {
+        "input_records": 72,
+        "rejected_records": 0,
+        "valid_records": 72
+      }
+    },
+    "polygon:2026-07-20:RMD:1": {
+      "completed_at": "2026-07-21T04:47:58.014853+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:ROL:1": {
+      "completed_at": "2026-07-21T04:47:58.466966+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:ROST:1": {
+      "completed_at": "2026-07-21T04:47:59.521900+00:00",
+      "metadata": {
+        "input_records": 5,
+        "rejected_records": 0,
+        "valid_records": 5
+      }
+    },
+    "polygon:2026-07-20:RSG:1": {
+      "completed_at": "2026-07-21T04:47:59.721254+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:RSP:1": {
+      "completed_at": "2026-07-21T04:48:00.265517+00:00",
+      "metadata": {
+        "input_records": 15,
+        "rejected_records": 0,
+        "valid_records": 15
+      }
+    },
+    "polygon:2026-07-20:RTX:1": {
+      "completed_at": "2026-07-21T04:48:00.776647+00:00",
+      "metadata": {
+        "input_records": 20,
+        "rejected_records": 0,
+        "valid_records": 20
+      }
+    },
+    "polygon:2026-07-20:SBUX:1": {
+      "completed_at": "2026-07-21T04:48:01.790491+00:00",
+      "metadata": {
+        "input_records": 11,
+        "rejected_records": 0,
+        "valid_records": 11
+      }
+    },
+    "polygon:2026-07-20:SCHB:1": {
+      "completed_at": "2026-07-21T04:48:02.006826+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:SCHD:1": {
+      "completed_at": "2026-07-21T04:48:02.520815+00:00",
+      "metadata": {
+        "input_records": 16,
+        "rejected_records": 0,
+        "valid_records": 16
+      }
+    },
+    "polygon:2026-07-20:SCHW:1": {
+      "completed_at": "2026-07-21T04:48:03.062396+00:00",
+      "metadata": {
+        "input_records": 14,
+        "rejected_records": 0,
+        "valid_records": 14
+      }
+    },
+    "polygon:2026-07-20:SHOP:1": {
+      "completed_at": "2026-07-21T04:48:03.797664+00:00",
+      "metadata": {
+        "input_records": 24,
+        "rejected_records": 1,
+        "valid_records": 23
+      }
+    },
+    "polygon:2026-07-20:SHW:1": {
+      "completed_at": "2026-07-21T04:48:04.044227+00:00",
+      "metadata": {
+        "input_records": 5,
+        "rejected_records": 0,
+        "valid_records": 5
+      }
+    },
+    "polygon:2026-07-20:SHY:1": {
+      "completed_at": "2026-07-21T04:48:04.314192+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:SLB:1": {
+      "completed_at": "2026-07-21T04:48:05.367514+00:00",
+      "metadata": {
+        "input_records": 18,
+        "rejected_records": 0,
+        "valid_records": 18
+      }
+    },
+    "polygon:2026-07-20:SLV:1": {
+      "completed_at": "2026-07-21T04:48:07.125308+00:00",
+      "metadata": {
+        "input_records": 150,
+        "rejected_records": 0,
+        "valid_records": 150
+      }
+    },
+    "polygon:2026-07-20:SMCI:1": {
+      "completed_at": "2026-07-21T04:48:07.922009+00:00",
+      "metadata": {
+        "input_records": 102,
+        "rejected_records": 0,
+        "valid_records": 102
+      }
+    },
+    "polygon:2026-07-20:SMH:1": {
+      "completed_at": "2026-07-21T04:48:10.433584+00:00",
+      "metadata": {
+        "input_records": 105,
+        "rejected_records": 0,
+        "valid_records": 105
+      }
+    },
+    "polygon:2026-07-20:SNDK:1": {
+      "completed_at": "2026-07-21T04:48:15.012044+00:00",
+      "metadata": {
+        "input_records": 100,
+        "rejected_records": 0,
+        "valid_records": 100
+      }
+    },
+    "polygon:2026-07-20:SNPS:1": {
+      "completed_at": "2026-07-21T04:48:16.406211+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:SO:1": {
+      "completed_at": "2026-07-21T04:48:16.924488+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:SOXX:1": {
+      "completed_at": "2026-07-21T04:48:19.061584+00:00",
+      "metadata": {
+        "input_records": 34,
+        "rejected_records": 0,
+        "valid_records": 34
+      }
+    },
+    "polygon:2026-07-20:SPXU:1": {
+      "completed_at": "2026-07-21T04:48:20.737490+00:00",
+      "metadata": {
+        "input_records": 12,
+        "rejected_records": 0,
+        "valid_records": 12
+      }
+    },
+    "polygon:2026-07-20:SPY:1": {
+      "completed_at": "2026-07-21T04:48:25.473071+00:00",
+      "metadata": {
+        "input_records": 1097,
+        "rejected_records": 0,
+        "valid_records": 1097
+      }
+    },
+    "polygon:2026-07-20:SQQQ:1": {
+      "completed_at": "2026-07-21T04:48:26.084569+00:00",
+      "metadata": {
+        "input_records": 36,
+        "rejected_records": 0,
+        "valid_records": 36
+      }
+    },
+    "polygon:2026-07-20:STLD:1": {
+      "completed_at": "2026-07-21T04:48:26.873995+00:00",
+      "metadata": {
+        "input_records": 6,
+        "rejected_records": 0,
+        "valid_records": 6
+      }
+    },
+    "polygon:2026-07-20:STT:1": {
+      "completed_at": "2026-07-21T04:48:27.114050+00:00",
+      "metadata": {
+        "input_records": 7,
+        "rejected_records": 0,
+        "valid_records": 7
+      }
+    },
+    "polygon:2026-07-20:STX:1": {
+      "completed_at": "2026-07-21T04:48:29.508410+00:00",
+      "metadata": {
+        "input_records": 8,
+        "rejected_records": 0,
+        "valid_records": 8
+      }
+    },
+    "polygon:2026-07-20:STZ:1": {
+      "completed_at": "2026-07-21T04:48:30.172585+00:00",
+      "metadata": {
+        "input_records": 5,
+        "rejected_records": 0,
+        "valid_records": 5
+      }
+    },
+    "polygon:2026-07-20:SWKS:1": {
+      "completed_at": "2026-07-21T04:48:30.975868+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:SYF:1": {
+      "completed_at": "2026-07-21T04:48:31.183671+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:SYK:1": {
+      "completed_at": "2026-07-21T04:48:31.502321+00:00",
+      "metadata": {
+        "input_records": 6,
+        "rejected_records": 0,
+        "valid_records": 6
+      }
+    },
+    "polygon:2026-07-20:T:1": {
+      "completed_at": "2026-07-21T04:48:32.205154+00:00",
+      "metadata": {
+        "input_records": 33,
+        "rejected_records": 0,
+        "valid_records": 33
+      }
+    },
+    "polygon:2026-07-20:TAN:1": {
+      "completed_at": "2026-07-21T04:48:32.693247+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:TAP:1": {
+      "completed_at": "2026-07-21T04:48:32.951607+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:TDG:1": {
+      "completed_at": "2026-07-21T04:48:33.458627+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:TECH:1": {
+      "completed_at": "2026-07-21T04:48:33.970114+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:TEL:1": {
+      "completed_at": "2026-07-21T04:48:34.228330+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:TER:1": {
+      "completed_at": "2026-07-21T04:48:35.489659+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:TFC:1": {
+      "completed_at": "2026-07-21T04:48:35.760740+00:00",
+      "metadata": {
+        "input_records": 7,
+        "rejected_records": 0,
+        "valid_records": 7
+      }
+    },
+    "polygon:2026-07-20:TGT:1": {
+      "completed_at": "2026-07-21T04:48:36.508551+00:00",
+      "metadata": {
+        "input_records": 10,
+        "rejected_records": 0,
+        "valid_records": 10
+      }
+    },
+    "polygon:2026-07-20:TJX:1": {
+      "completed_at": "2026-07-21T04:48:37.365621+00:00",
+      "metadata": {
+        "input_records": 9,
+        "rejected_records": 0,
+        "valid_records": 9
+      }
+    },
+    "polygon:2026-07-20:TLT:1": {
+      "completed_at": "2026-07-21T04:48:38.569764+00:00",
+      "metadata": {
+        "input_records": 168,
+        "rejected_records": 0,
+        "valid_records": 168
+      }
+    },
+    "polygon:2026-07-20:TMO:1": {
+      "completed_at": "2026-07-21T04:48:39.363949+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:TMUS:1": {
+      "completed_at": "2026-07-21T04:48:39.895101+00:00",
+      "metadata": {
+        "input_records": 5,
+        "rejected_records": 0,
+        "valid_records": 5
+      }
+    },
+    "polygon:2026-07-20:TPR:1": {
+      "completed_at": "2026-07-21T04:48:40.833711+00:00",
+      "metadata": {
+        "input_records": 12,
+        "rejected_records": 0,
+        "valid_records": 12
+      }
+    },
+    "polygon:2026-07-20:TQQQ:1": {
+      "completed_at": "2026-07-21T04:48:41.762221+00:00",
+      "metadata": {
+        "input_records": 134,
+        "rejected_records": 0,
+        "valid_records": 134
+      }
+    },
+    "polygon:2026-07-20:TRI:1": {
+      "completed_at": "2026-07-21T04:48:42.213505+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:TRV:1": {
+      "completed_at": "2026-07-21T04:48:43.026466+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:TSCO:1": {
+      "completed_at": "2026-07-21T04:48:43.554135+00:00",
+      "metadata": {
+        "input_records": 5,
+        "rejected_records": 0,
+        "valid_records": 5
+      }
+    },
+    "polygon:2026-07-20:TSLA:1": {
+      "completed_at": "2026-07-21T04:48:45.864880+00:00",
+      "metadata": {
+        "input_records": 350,
+        "rejected_records": 3,
+        "valid_records": 347
+      }
+    },
+    "polygon:2026-07-20:TSN:1": {
+      "completed_at": "2026-07-21T04:48:46.032648+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:TTD:1": {
+      "completed_at": "2026-07-21T04:48:46.828990+00:00",
+      "metadata": {
+        "input_records": 31,
+        "rejected_records": 0,
+        "valid_records": 31
+      }
+    },
+    "polygon:2026-07-20:TTWO:1": {
+      "completed_at": "2026-07-21T04:48:47.592424+00:00",
+      "metadata": {
+        "input_records": 10,
+        "rejected_records": 0,
+        "valid_records": 10
+      }
+    },
+    "polygon:2026-07-20:TXN:1": {
+      "completed_at": "2026-07-21T04:48:48.641994+00:00",
+      "metadata": {
+        "input_records": 16,
+        "rejected_records": 0,
+        "valid_records": 16
+      }
+    },
+    "polygon:2026-07-20:TXT:1": {
+      "completed_at": "2026-07-21T04:48:48.873386+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:UAL:1": {
+      "completed_at": "2026-07-21T04:48:49.949364+00:00",
+      "metadata": {
+        "input_records": 17,
+        "rejected_records": 0,
+        "valid_records": 17
+      }
+    },
+    "polygon:2026-07-20:UBER:1": {
+      "completed_at": "2026-07-21T04:48:50.487135+00:00",
+      "metadata": {
+        "input_records": 55,
+        "rejected_records": 0,
+        "valid_records": 55
+      }
+    },
+    "polygon:2026-07-20:UDR:1": {
+      "completed_at": "2026-07-21T04:48:50.682502+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:UHS:1": {
+      "completed_at": "2026-07-21T04:48:50.966816+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:ULTA:1": {
+      "completed_at": "2026-07-21T04:48:52.048920+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:UNG:1": {
+      "completed_at": "2026-07-21T04:48:52.554317+00:00",
+      "metadata": {
+        "input_records": 17,
+        "rejected_records": 0,
+        "valid_records": 17
+      }
+    },
+    "polygon:2026-07-20:UNH:1": {
+      "completed_at": "2026-07-21T04:48:53.605245+00:00",
+      "metadata": {
+        "input_records": 61,
+        "rejected_records": 0,
+        "valid_records": 61
+      }
+    },
+    "polygon:2026-07-20:UNP:1": {
+      "completed_at": "2026-07-21T04:48:54.310588+00:00",
+      "metadata": {
+        "input_records": 5,
+        "rejected_records": 0,
+        "valid_records": 5
+      }
+    },
+    "polygon:2026-07-20:UPRO:1": {
+      "completed_at": "2026-07-21T04:48:55.111119+00:00",
+      "metadata": {
+        "input_records": 25,
+        "rejected_records": 0,
+        "valid_records": 25
+      }
+    },
+    "polygon:2026-07-20:UPS:1": {
+      "completed_at": "2026-07-21T04:48:55.859757+00:00",
+      "metadata": {
+        "input_records": 20,
+        "rejected_records": 0,
+        "valid_records": 20
+      }
+    },
+    "polygon:2026-07-20:URI:1": {
+      "completed_at": "2026-07-21T04:48:57.185970+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:USB:1": {
+      "completed_at": "2026-07-21T04:48:57.714002+00:00",
+      "metadata": {
+        "input_records": 6,
+        "rejected_records": 0,
+        "valid_records": 6
+      }
+    },
+    "polygon:2026-07-20:USO:1": {
+      "completed_at": "2026-07-21T04:48:59.309376+00:00",
+      "metadata": {
+        "input_records": 97,
+        "rejected_records": 2,
+        "valid_records": 95
+      }
+    },
+    "polygon:2026-07-20:UVXY:1": {
+      "completed_at": "2026-07-21T04:49:00.338239+00:00",
+      "metadata": {
+        "input_records": 36,
+        "rejected_records": 0,
+        "valid_records": 36
+      }
+    },
+    "polygon:2026-07-20:V:1": {
+      "completed_at": "2026-07-21T04:49:01.069426+00:00",
+      "metadata": {
+        "input_records": 36,
+        "rejected_records": 0,
+        "valid_records": 36
+      }
+    },
+    "polygon:2026-07-20:VEA:1": {
+      "completed_at": "2026-07-21T04:49:01.287801+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:VEEV:1": {
+      "completed_at": "2026-07-21T04:49:01.555804+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:VICI:1": {
+      "completed_at": "2026-07-21T04:49:01.803111+00:00",
+      "metadata": {
+        "input_records": 5,
+        "rejected_records": 0,
+        "valid_records": 5
+      }
+    },
+    "polygon:2026-07-20:VIXY:1": {
+      "completed_at": "2026-07-21T04:49:02.319102+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:VLO:1": {
+      "completed_at": "2026-07-21T04:49:03.100767+00:00",
+      "metadata": {
+        "input_records": 8,
+        "rejected_records": 0,
+        "valid_records": 8
+      }
+    },
+    "polygon:2026-07-20:VLTO:1": {
+      "completed_at": "2026-07-21T04:49:03.353784+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:VLUE:1": {
+      "completed_at": "2026-07-21T04:49:03.608745+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:VNQ:1": {
+      "completed_at": "2026-07-21T04:49:04.137499+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:VOO:1": {
+      "completed_at": "2026-07-21T04:49:05.188999+00:00",
+      "metadata": {
+        "input_records": 13,
+        "rejected_records": 0,
+        "valid_records": 13
+      }
+    },
+    "polygon:2026-07-20:VRT:1": {
+      "completed_at": "2026-07-21T04:49:06.710834+00:00",
+      "metadata": {
+        "input_records": 17,
+        "rejected_records": 0,
+        "valid_records": 17
+      }
+    },
+    "polygon:2026-07-20:VRTX:1": {
+      "completed_at": "2026-07-21T04:49:07.805220+00:00",
+      "metadata": {
+        "input_records": 8,
+        "rejected_records": 0,
+        "valid_records": 8
+      }
+    },
+    "polygon:2026-07-20:VST:1": {
+      "completed_at": "2026-07-21T04:49:08.558395+00:00",
+      "metadata": {
+        "input_records": 23,
+        "rejected_records": 0,
+        "valid_records": 23
+      }
+    },
+    "polygon:2026-07-20:VTI:1": {
+      "completed_at": "2026-07-21T04:49:08.826628+00:00",
+      "metadata": {
+        "input_records": 5,
+        "rejected_records": 0,
+        "valid_records": 5
+      }
+    },
+    "polygon:2026-07-20:VTRS:1": {
+      "completed_at": "2026-07-21T04:49:09.325629+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:VTV:1": {
+      "completed_at": "2026-07-21T04:49:09.599340+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:VUG:1": {
+      "completed_at": "2026-07-21T04:49:09.908599+00:00",
+      "metadata": {
+        "input_records": 7,
+        "rejected_records": 0,
+        "valid_records": 7
+      }
+    },
+    "polygon:2026-07-20:VWO:1": {
+      "completed_at": "2026-07-21T04:49:10.100669+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:VYM:1": {
+      "completed_at": "2026-07-21T04:49:10.374745+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:VZ:1": {
+      "completed_at": "2026-07-21T04:49:10.901252+00:00",
+      "metadata": {
+        "input_records": 31,
+        "rejected_records": 0,
+        "valid_records": 31
+      }
+    },
+    "polygon:2026-07-20:WBD:1": {
+      "completed_at": "2026-07-21T04:49:11.948508+00:00",
+      "metadata": {
+        "input_records": 33,
+        "rejected_records": 0,
+        "valid_records": 33
+      }
+    },
+    "polygon:2026-07-20:WDAY:1": {
+      "completed_at": "2026-07-21T04:49:12.680570+00:00",
+      "metadata": {
+        "input_records": 7,
+        "rejected_records": 0,
+        "valid_records": 7
+      }
+    },
+    "polygon:2026-07-20:WDC:1": {
+      "completed_at": "2026-07-21T04:49:14.502935+00:00",
+      "metadata": {
+        "input_records": 20,
+        "rejected_records": 0,
+        "valid_records": 20
+      }
+    },
+    "polygon:2026-07-20:WEC:1": {
+      "completed_at": "2026-07-21T04:49:14.711504+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:WELL:1": {
+      "completed_at": "2026-07-21T04:49:15.018626+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:WFC:1": {
+      "completed_at": "2026-07-21T04:49:15.541701+00:00",
+      "metadata": {
+        "input_records": 30,
+        "rejected_records": 0,
+        "valid_records": 30
+      }
+    },
+    "polygon:2026-07-20:WM:1": {
+      "completed_at": "2026-07-21T04:49:15.741281+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:WMB:1": {
+      "completed_at": "2026-07-21T04:49:16.252857+00:00",
+      "metadata": {
+        "input_records": 5,
+        "rejected_records": 0,
+        "valid_records": 5
+      }
+    },
+    "polygon:2026-07-20:WMT:1": {
+      "completed_at": "2026-07-21T04:49:17.029019+00:00",
+      "metadata": {
+        "input_records": 57,
+        "rejected_records": 0,
+        "valid_records": 57
+      }
+    },
+    "polygon:2026-07-20:WSM:1": {
+      "completed_at": "2026-07-21T04:49:17.633593+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:WST:1": {
+      "completed_at": "2026-07-21T04:49:17.800159+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:WY:1": {
+      "completed_at": "2026-07-21T04:49:18.313741+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:WYNN:1": {
+      "completed_at": "2026-07-21T04:49:19.064000+00:00",
+      "metadata": {
+        "input_records": 6,
+        "rejected_records": 0,
+        "valid_records": 6
+      }
+    },
+    "polygon:2026-07-20:XBI:1": {
+      "completed_at": "2026-07-21T04:49:20.117303+00:00",
+      "metadata": {
+        "input_records": 27,
+        "rejected_records": 0,
+        "valid_records": 27
+      }
+    },
+    "polygon:2026-07-20:XEL:1": {
+      "completed_at": "2026-07-21T04:49:20.365592+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:XHB:1": {
+      "completed_at": "2026-07-21T04:49:21.144253+00:00",
+      "metadata": {
+        "input_records": 2,
+        "rejected_records": 0,
+        "valid_records": 2
+      }
+    },
+    "polygon:2026-07-20:XLB:1": {
+      "completed_at": "2026-07-21T04:49:21.676777+00:00",
+      "metadata": {
+        "input_records": 15,
+        "rejected_records": 0,
+        "valid_records": 15
+      }
+    },
+    "polygon:2026-07-20:XLC:1": {
+      "completed_at": "2026-07-21T04:49:22.197796+00:00",
+      "metadata": {
+        "input_records": 7,
+        "rejected_records": 0,
+        "valid_records": 7
+      }
+    },
+    "polygon:2026-07-20:XLE:1": {
+      "completed_at": "2026-07-21T04:49:22.960293+00:00",
+      "metadata": {
+        "input_records": 47,
+        "rejected_records": 0,
+        "valid_records": 47
+      }
+    },
+    "polygon:2026-07-20:XLF:1": {
+      "completed_at": "2026-07-21T04:49:23.765912+00:00",
+      "metadata": {
+        "input_records": 60,
+        "rejected_records": 0,
+        "valid_records": 60
+      }
+    },
+    "polygon:2026-07-20:XLI:1": {
+      "completed_at": "2026-07-21T04:49:24.558996+00:00",
+      "metadata": {
+        "input_records": 6,
+        "rejected_records": 0,
+        "valid_records": 6
+      }
+    },
+    "polygon:2026-07-20:XLK:1": {
+      "completed_at": "2026-07-21T04:49:25.600157+00:00",
+      "metadata": {
+        "input_records": 24,
+        "rejected_records": 0,
+        "valid_records": 24
+      }
+    },
+    "polygon:2026-07-20:XLP:1": {
+      "completed_at": "2026-07-21T04:49:26.307499+00:00",
+      "metadata": {
+        "input_records": 26,
+        "rejected_records": 0,
+        "valid_records": 26
+      }
+    },
+    "polygon:2026-07-20:XLRE:1": {
+      "completed_at": "2026-07-21T04:49:26.625197+00:00",
+      "metadata": {
+        "input_records": 3,
+        "rejected_records": 0,
+        "valid_records": 3
+      }
+    },
+    "polygon:2026-07-20:XLU:1": {
+      "completed_at": "2026-07-21T04:49:27.156006+00:00",
+      "metadata": {
+        "input_records": 20,
+        "rejected_records": 0,
+        "valid_records": 20
+      }
+    },
+    "polygon:2026-07-20:XLV:1": {
+      "completed_at": "2026-07-21T04:49:27.855929+00:00",
+      "metadata": {
+        "input_records": 18,
+        "rejected_records": 0,
+        "valid_records": 18
+      }
+    },
+    "polygon:2026-07-20:XLY:1": {
+      "completed_at": "2026-07-21T04:49:28.648687+00:00",
+      "metadata": {
+        "input_records": 9,
+        "rejected_records": 0,
+        "valid_records": 9
+      }
+    },
+    "polygon:2026-07-20:XOM:1": {
+      "completed_at": "2026-07-21T04:49:29.409312+00:00",
+      "metadata": {
+        "input_records": 49,
+        "rejected_records": 0,
+        "valid_records": 49
+      }
+    },
+    "polygon:2026-07-20:XOP:1": {
+      "completed_at": "2026-07-21T04:49:30.424109+00:00",
+      "metadata": {
+        "input_records": 21,
+        "rejected_records": 0,
+        "valid_records": 21
+      }
+    },
+    "polygon:2026-07-20:XRT:1": {
+      "completed_at": "2026-07-21T04:49:31.265745+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:XYZ:1": {
+      "completed_at": "2026-07-21T04:49:32.011640+00:00",
+      "metadata": {
+        "input_records": 14,
+        "rejected_records": 0,
+        "valid_records": 14
+      }
+    },
+    "polygon:2026-07-20:YUM:1": {
+      "completed_at": "2026-07-21T04:49:32.320211+00:00",
+      "metadata": {
+        "input_records": 4,
+        "rejected_records": 0,
+        "valid_records": 4
+      }
+    },
+    "polygon:2026-07-20:ZBRA:1": {
+      "completed_at": "2026-07-21T04:49:32.836100+00:00",
+      "metadata": {
+        "input_records": 1,
+        "rejected_records": 0,
+        "valid_records": 1
+      }
+    },
+    "polygon:2026-07-20:ZTS:1": {
+      "completed_at": "2026-07-21T04:49:33.205558+00:00",
+      "metadata": {
+        "input_records": 9,
+        "rejected_records": 0,
+        "valid_records": 9
+      }
+    }
+  },
+  "updated_at": "2026-07-21T04:49:33.205578+00:00"
+}

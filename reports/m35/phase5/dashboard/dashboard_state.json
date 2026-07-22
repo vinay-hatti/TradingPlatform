@@ -1,0 +1,1071 @@
+{
+  "configuration": {
+    "autosave": true,
+    "default_view": "HOME",
+    "metadata": {},
+    "persist_events": true,
+    "refresh_interval_seconds": 5,
+    "top_n": 50
+  },
+  "events": [
+    {
+      "event_type": "SESSION_CREATED",
+      "occurred_at": "2026-07-21T14:59:16.774570+00:00",
+      "payload": {
+        "session_id": "999bf8038edd4f6b91cd11a52bc0b78d"
+      }
+    },
+    {
+      "event_type": "UNIVERSE_LOADED",
+      "occurred_at": "2026-07-21T14:59:16.775577+00:00",
+      "payload": {
+        "universe_name": "US_ACTIVE_EQUITIES_ETFS",
+        "universe_size": 100
+      }
+    },
+    {
+      "event_type": "SCANNER_STARTED",
+      "occurred_at": "2026-07-21T14:59:16.776343+00:00",
+      "payload": {}
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777094+00:00",
+      "payload": {
+        "message": null,
+        "processed": 1,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0001"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777097+00:00",
+      "payload": {
+        "message": null,
+        "processed": 2,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0002"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777099+00:00",
+      "payload": {
+        "message": null,
+        "processed": 3,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0003"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777100+00:00",
+      "payload": {
+        "message": null,
+        "processed": 4,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0004"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777101+00:00",
+      "payload": {
+        "message": null,
+        "processed": 5,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0005"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777102+00:00",
+      "payload": {
+        "message": null,
+        "processed": 6,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0006"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777103+00:00",
+      "payload": {
+        "message": null,
+        "processed": 7,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0007"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777104+00:00",
+      "payload": {
+        "message": null,
+        "processed": 8,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0008"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777104+00:00",
+      "payload": {
+        "message": null,
+        "processed": 9,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0009"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777105+00:00",
+      "payload": {
+        "message": null,
+        "processed": 10,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0010"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777106+00:00",
+      "payload": {
+        "message": null,
+        "processed": 11,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0011"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777107+00:00",
+      "payload": {
+        "message": null,
+        "processed": 12,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0012"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777108+00:00",
+      "payload": {
+        "message": null,
+        "processed": 13,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0013"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777109+00:00",
+      "payload": {
+        "message": null,
+        "processed": 14,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0014"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777110+00:00",
+      "payload": {
+        "message": null,
+        "processed": 15,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0015"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777110+00:00",
+      "payload": {
+        "message": null,
+        "processed": 16,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0016"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777111+00:00",
+      "payload": {
+        "message": null,
+        "processed": 17,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0017"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777112+00:00",
+      "payload": {
+        "message": null,
+        "processed": 18,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0018"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777113+00:00",
+      "payload": {
+        "message": null,
+        "processed": 19,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0019"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777114+00:00",
+      "payload": {
+        "message": null,
+        "processed": 20,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0020"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777115+00:00",
+      "payload": {
+        "message": null,
+        "processed": 21,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0021"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777116+00:00",
+      "payload": {
+        "message": null,
+        "processed": 22,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0022"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777116+00:00",
+      "payload": {
+        "message": null,
+        "processed": 23,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0023"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777117+00:00",
+      "payload": {
+        "message": null,
+        "processed": 24,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0024"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777118+00:00",
+      "payload": {
+        "message": null,
+        "processed": 25,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0025"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777245+00:00",
+      "payload": {
+        "message": null,
+        "processed": 26,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0026"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777246+00:00",
+      "payload": {
+        "message": null,
+        "processed": 27,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0027"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777247+00:00",
+      "payload": {
+        "message": null,
+        "processed": 28,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0028"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777248+00:00",
+      "payload": {
+        "message": null,
+        "processed": 29,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0029"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777248+00:00",
+      "payload": {
+        "message": null,
+        "processed": 30,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0030"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777249+00:00",
+      "payload": {
+        "message": null,
+        "processed": 31,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0031"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777250+00:00",
+      "payload": {
+        "message": null,
+        "processed": 32,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0032"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777252+00:00",
+      "payload": {
+        "message": null,
+        "processed": 33,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0033"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777253+00:00",
+      "payload": {
+        "message": null,
+        "processed": 34,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0034"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777254+00:00",
+      "payload": {
+        "message": null,
+        "processed": 35,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0035"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777255+00:00",
+      "payload": {
+        "message": null,
+        "processed": 36,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0036"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777256+00:00",
+      "payload": {
+        "message": null,
+        "processed": 37,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0037"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777257+00:00",
+      "payload": {
+        "message": null,
+        "processed": 38,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0038"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777258+00:00",
+      "payload": {
+        "message": null,
+        "processed": 39,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0039"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777258+00:00",
+      "payload": {
+        "message": null,
+        "processed": 40,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0040"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777259+00:00",
+      "payload": {
+        "message": null,
+        "processed": 41,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0041"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777260+00:00",
+      "payload": {
+        "message": null,
+        "processed": 42,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0042"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777261+00:00",
+      "payload": {
+        "message": null,
+        "processed": 43,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0043"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777262+00:00",
+      "payload": {
+        "message": null,
+        "processed": 44,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0044"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777262+00:00",
+      "payload": {
+        "message": null,
+        "processed": 45,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0045"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777263+00:00",
+      "payload": {
+        "message": null,
+        "processed": 46,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0046"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777264+00:00",
+      "payload": {
+        "message": null,
+        "processed": 47,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0047"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777265+00:00",
+      "payload": {
+        "message": null,
+        "processed": 48,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0048"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777266+00:00",
+      "payload": {
+        "message": null,
+        "processed": 49,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0049"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777266+00:00",
+      "payload": {
+        "message": null,
+        "processed": 50,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0050"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777267+00:00",
+      "payload": {
+        "message": null,
+        "processed": 51,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0051"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777268+00:00",
+      "payload": {
+        "message": null,
+        "processed": 52,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0052"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777269+00:00",
+      "payload": {
+        "message": null,
+        "processed": 53,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0053"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777270+00:00",
+      "payload": {
+        "message": null,
+        "processed": 54,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0054"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777270+00:00",
+      "payload": {
+        "message": null,
+        "processed": 55,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0055"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777271+00:00",
+      "payload": {
+        "message": null,
+        "processed": 56,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0056"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777272+00:00",
+      "payload": {
+        "message": null,
+        "processed": 57,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0057"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777273+00:00",
+      "payload": {
+        "message": null,
+        "processed": 58,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0058"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777274+00:00",
+      "payload": {
+        "message": null,
+        "processed": 59,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0059"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777275+00:00",
+      "payload": {
+        "message": null,
+        "processed": 60,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0060"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777276+00:00",
+      "payload": {
+        "message": null,
+        "processed": 61,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0061"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777277+00:00",
+      "payload": {
+        "message": null,
+        "processed": 62,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0062"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777278+00:00",
+      "payload": {
+        "message": null,
+        "processed": 63,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0063"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777279+00:00",
+      "payload": {
+        "message": null,
+        "processed": 64,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0064"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777279+00:00",
+      "payload": {
+        "message": null,
+        "processed": 65,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0065"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777280+00:00",
+      "payload": {
+        "message": null,
+        "processed": 66,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0066"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777281+00:00",
+      "payload": {
+        "message": null,
+        "processed": 67,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0067"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777282+00:00",
+      "payload": {
+        "message": null,
+        "processed": 68,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0068"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777283+00:00",
+      "payload": {
+        "message": null,
+        "processed": 69,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0069"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777283+00:00",
+      "payload": {
+        "message": null,
+        "processed": 70,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0070"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777284+00:00",
+      "payload": {
+        "message": null,
+        "processed": 71,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0071"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777285+00:00",
+      "payload": {
+        "message": null,
+        "processed": 72,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0072"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777286+00:00",
+      "payload": {
+        "message": null,
+        "processed": 73,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0073"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777287+00:00",
+      "payload": {
+        "message": null,
+        "processed": 74,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0074"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777287+00:00",
+      "payload": {
+        "message": null,
+        "processed": 75,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0075"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777288+00:00",
+      "payload": {
+        "message": null,
+        "processed": 76,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0076"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777289+00:00",
+      "payload": {
+        "message": null,
+        "processed": 77,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0077"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777290+00:00",
+      "payload": {
+        "message": null,
+        "processed": 78,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0078"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777291+00:00",
+      "payload": {
+        "message": null,
+        "processed": 79,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0079"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777292+00:00",
+      "payload": {
+        "message": null,
+        "processed": 80,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0080"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777292+00:00",
+      "payload": {
+        "message": null,
+        "processed": 81,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0081"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777293+00:00",
+      "payload": {
+        "message": null,
+        "processed": 82,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0082"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777294+00:00",
+      "payload": {
+        "message": null,
+        "processed": 83,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0083"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777295+00:00",
+      "payload": {
+        "message": null,
+        "processed": 84,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0084"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777295+00:00",
+      "payload": {
+        "message": null,
+        "processed": 85,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0085"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777296+00:00",
+      "payload": {
+        "message": null,
+        "processed": 86,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0086"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777297+00:00",
+      "payload": {
+        "message": null,
+        "processed": 87,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0087"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777298+00:00",
+      "payload": {
+        "message": null,
+        "processed": 88,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0088"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777299+00:00",
+      "payload": {
+        "message": null,
+        "processed": 89,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0089"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777299+00:00",
+      "payload": {
+        "message": null,
+        "processed": 90,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0090"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777300+00:00",
+      "payload": {
+        "message": null,
+        "processed": 91,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0091"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777301+00:00",
+      "payload": {
+        "message": null,
+        "processed": 92,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0092"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777302+00:00",
+      "payload": {
+        "message": null,
+        "processed": 93,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0093"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777303+00:00",
+      "payload": {
+        "message": null,
+        "processed": 94,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0094"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777303+00:00",
+      "payload": {
+        "message": null,
+        "processed": 95,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0095"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777304+00:00",
+      "payload": {
+        "message": null,
+        "processed": 96,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0096"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777305+00:00",
+      "payload": {
+        "message": null,
+        "processed": 97,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0097"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777306+00:00",
+      "payload": {
+        "message": null,
+        "processed": 98,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0098"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777307+00:00",
+      "payload": {
+        "message": null,
+        "processed": 99,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0099"
+      }
+    },
+    {
+      "event_type": "PROGRESS_UPDATED",
+      "occurred_at": "2026-07-21T14:59:16.777309+00:00",
+      "payload": {
+        "message": null,
+        "processed": 100,
+        "progress_event_type": "SYMBOL_COMPLETED",
+        "symbol": "DEMO0100"
+      }
+    },
+    {
+      "event_type": "SCAN_COMPLETED",
+      "occurred_at": "2026-07-21T14:59:16.777310+00:00",
+      "payload": {
+        "message": null,
+        "processed": 100,
+        "progress_event_type": "SCAN_COMPLETED",
+        "symbol": null
+      }
+    }
+  ],
+  "generated_at": "2026-07-21T14:59:16.777310+00:00",
+  "navigation": {
+    "breadcrumbs": [],
+    "current_view": "HOME",
+    "previous_view": null,
+    "selected_symbol": null
+  },
+  "progress": {
+    "elapsed_seconds": 5.0,
+    "eta_seconds": 0.0,
+    "symbols_completed": 100,
+    "symbols_failed": 0,
+    "symbols_per_second": 20.0,
+    "symbols_skipped": 0,
+    "universe_size": 100
+  },
+  "rankings": [],
+  "schema_version": "m35.phase5.step1.v1",
+  "session": {
+    "completed_at": "2026-07-21T14:59:16.777310+00:00",
+    "created_at": "2026-07-21T14:59:16.774471+00:00",
+    "failed_at": null,
+    "failure_reason": null,
+    "last_refresh_at": "2026-07-21T14:59:16.777310+00:00",
+    "session_id": "999bf8038edd4f6b91cd11a52bc0b78d",
+    "started_at": "2026-07-21T14:59:16.776338+00:00",
+    "status": "COMPLETED",
+    "universe_name": "US_ACTIVE_EQUITIES_ETFS"
+  }
+}

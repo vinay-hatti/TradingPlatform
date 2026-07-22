@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Opportunity Rankings</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 2rem; }
+.toolbar { display:flex; gap:.75rem; align-items:center; flex-wrap:wrap; margin-bottom:1rem; }
+.cards { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1rem; margin-bottom:1rem; }
+.card { border:1px solid #ddd; border-radius:8px; padding:1rem; }
+table { border-collapse:collapse; width:100%; }
+th,td { border-bottom:1px solid #ddd; padding:.65rem; text-align:left; }
+th { cursor:pointer; }
+.ranking-row { cursor:pointer; }
+.ranking-row:hover { background:#f4f4f4; }
+.ranking-row.selected { outline:2px solid currentColor; }
+</style>
+</head>
+<body>
+<h1>Institutional Opportunity Rankings</h1>
+<div class="toolbar">
+<input id="search" placeholder="Search symbol, sector, exchange, or regime">
+<span>Top 50</span>
+<span>Page 1 of 1</span>
+<span id="selection">Selected: AMZN,AVGO,LLY,META,TSLA,JPM</span>
+</div>
+<div class="cards">
+<div class="card"><strong>Visible</strong><br>8</div>
+<div class="card"><strong>Avg Institutional</strong><br>0.0000</div>
+<div class="card"><strong>Avg Probability</strong><br>0.0000</div>
+<div class="card"><strong>Optionable</strong><br>0</div>
+</div>
+<table id="rankings"><thead><tr><th data-sort="rank">Rank</th><th data-sort="symbol">Symbol</th><th data-sort="institutional_score">Institutional Score</th><th data-sort="probability_score">Probability</th><th data-sort="expected_move">Expected Move</th><th data-sort="regime">Regime</th><th data-sort="sector">Sector</th><th data-sort="exchange">Exchange</th><th data-sort="optionable">Optionable</th><th data-sort="is_etf">ETF</th><th data-sort="cross_asset_score">Cross-Asset</th></tr></thead><tbody><tr class="ranking-row" data-symbol="JPM"><td>1</td><td>JPM</td><td>0.0000</td><td>0.0000</td><td></td><td>BULL_TREND</td><td>Unknown</td><td></td><td></td><td></td><td></td></tr>
+<tr class="ranking-row" data-symbol="META"><td>2</td><td>META</td><td>0.0000</td><td>0.0000</td><td></td><td>BULL_TREND</td><td>Communication Services</td><td></td><td></td><td></td><td></td></tr>
+<tr class="ranking-row" data-symbol="TSLA"><td>3</td><td>TSLA</td><td>0.0000</td><td>0.0000</td><td></td><td>BEAR_TREND</td><td>Consumer Discretionary</td><td></td><td></td><td></td><td></td></tr>
+<tr class="ranking-row" data-symbol="BRK.B"><td>4</td><td>BRK.B</td><td>0.0000</td><td>0.0000</td><td></td><td>BULL_TREND</td><td>Unknown</td><td></td><td></td><td></td><td></td></tr>
+<tr class="ranking-row" data-symbol="AVGO"><td>5</td><td>AVGO</td><td>0.0000</td><td>0.0000</td><td></td><td>BEAR_TREND</td><td>Unknown</td><td></td><td></td><td></td><td></td></tr>
+<tr class="ranking-row" data-symbol="LLY"><td>6</td><td>LLY</td><td>0.0000</td><td>0.0000</td><td></td><td>VOLATILE</td><td>Unknown</td><td></td><td></td><td></td><td></td></tr>
+<tr class="ranking-row" data-symbol="AMZN"><td>7</td><td>AMZN</td><td>0.0000</td><td>0.0000</td><td></td><td>BEAR_TREND</td><td>Consumer Discretionary</td><td></td><td></td><td></td><td></td></tr>
+<tr class="ranking-row" data-symbol="GOOGL"><td>8</td><td>GOOGL</td><td>0.0000</td><td>0.0000</td><td></td><td>BEAR_TREND</td><td>Communication Services</td><td></td><td></td><td></td><td></td></tr></tbody></table>
+<script>
+const search = document.getElementById('search');
+search.addEventListener('input', () => {
+  const token = search.value.toLowerCase();
+  document.querySelectorAll('.ranking-row').forEach(row => {
+    row.style.display = row.innerText.toLowerCase().includes(token) ? '' : 'none';
+  });
+});
+document.querySelectorAll('.ranking-row').forEach(row => row.addEventListener('click', () => {
+  document.querySelectorAll('.ranking-row').forEach(item => item.classList.remove('selected'));
+  row.classList.add('selected');
+  document.getElementById('selection').innerText = 'Selected: ' + row.dataset.symbol;
+}));
+</script>
+</body>
+</html>
