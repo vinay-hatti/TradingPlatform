@@ -1,11 +1,12 @@
 import { useEffect, useState, type ChangeEvent, type ComponentType } from 'react';
 import { KeyRound, Menu, RefreshCw } from 'lucide-react';
 import type { WorkspaceKey } from './types';
-import { CommandCenter, Execution, Exits, nav, Overview, Portfolio, Positions, Risk } from './pages';
+import { CommandCenter, DailyScannerPage, Execution, Exits, nav, Overview, Portfolio, Positions, Risk } from './pages';
 import './styles.css';
 
 const pages: Record<WorkspaceKey, ComponentType> = {
   overview: Overview,
+  scanner: DailyScannerPage,
   portfolio: Portfolio,
   risk: Risk,
   execution: Execution,
@@ -64,7 +65,7 @@ export default function App() {
       <main>
         <header className="topbar">
           <button className="menu" onClick={() => setOpen(!open)}><Menu /></button>
-          <div><span className="eyebrow">MILESTONE 42</span><h1>Operational Command Center</h1></div>
+          <div><span className="eyebrow">MILESTONE 43</span><h1>Trading Operations Workstation</h1></div>
           <button className="refresh" onClick={() => location.reload()}><RefreshCw size={16} />Refresh</button>
         </header>
         <div className="content"><Page /></div>

@@ -1,0 +1,86 @@
+from __future__ import annotations
+
+from datetime import date
+import math
+
+from trading_ai.database import SessionLocal
+from trading_ai.database.repositories.option_chain import OptionChainRepository
+from trading_ai.options.live_snapshot import LiveOptionContract, LiveOptionDataError
+
+
+class RepositoryOptionSnapshotProvider:
+    """Read Polygon-origin option snapshots from PostgreSQL only."""
+
+    source_name = "POLYGON_PERSISTED"
+
+    def __init__(self, session_factory=SessionLocal, table_name: str | None = None):
+        self.session_factory = session_factory
+        self.table_name = table_name
+
+    @staticmethod
+    def _f(value, default=0.0):
+        return default if value is None else float(value)
+
+    @staticmethod
+    def _i(value, default=0):
+        return default if value is None else int(float(value))
+
+    def chain(self, underlying, *, signal, target_expiration, target_strike, as_of,
+              expiration_window_days=10, strike_window_pct=0.15):
+        symbol = str(underlying).upper().strip()
+        option_type = "call" if str(signal).upper() == "CALL" else "put"
+        with self.session_factory() as session:
+            repo = OptionChainRepository(session, table_name=self.table_name)
+            rows = repo.get_latest_snapshot(symbol, as_of=as_of)
+
+        contracts = []
+        for row in rows:
+            row_type = str(row.get("option_type", "")).lower()
+            if row_type not in {option_type, option_type[0]}:
+                continue
+            expiry = date.fromisoformat(str(row["expiry"])[:10])
+            if abs((expiry - target_expiration).days) > expiration_window_days:
+                continue
+            strike = self._f(row.get("strike"))
+            if target_strike > 0 and abs(strike - target_strike) / target_strike > strike_window_pct:
+                continue
+            bid = self._f(row.get("bid"))
+            ask = self._f(row.get("ask"))
+            last = self._f(row.get("last"))
+            midpoint = (bid + ask) / 2 if bid > 0 and ask >= bid else 0.0
+            entry = midpoint or last
+            if entry <= 0:
+                continue
+            spread = ((ask - bid) / midpoint) if midpoint > 0 else math.inf
+            dte = (expiry - as_of).days
+            contracts.append(LiveOptionContract(
+                underlying=symbol,
+                contract_ticker=str(row.get("contract_ticker") or "").strip(),
+                contract_type=option_type,
+                expiration_date=expiry.isoformat(),
+                strike=strike,
+                dte=dte,
+                bid=bid,
+                ask=ask,
+                midpoint=midpoint,
+                last_price=last,
+                entry_price=entry,
+                price_source="POLYGON_PERSISTED_QUOTE",
+                delta=self._f(row.get("delta"), float("nan")),
+                gamma=self._f(row.get("gamma"), float("nan")),
+                theta=self._f(row.get("theta"), float("nan")),
+                vega=self._f(row.get("vega"), float("nan")),
+                rho=0.0,
+                implied_volatility=self._f(row.get("implied_volatility")),
+                open_interest=self._i(row.get("open_interest")),
+                volume=self._i(row.get("volume")),
+                quote_timestamp=str(row.get("quote_date") or as_of),
+                data_source=self.source_name,
+                spread_pct=spread,
+            ))
+        if not contracts:
+            raise LiveOptionDataError(
+                f"No persisted Polygon option snapshot found for {symbol} on or before {as_of}. "
+                "Run scripts/run_market_ingestion.py --data-scope options or all."
+            )
+        return contracts

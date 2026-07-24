@@ -5,6 +5,7 @@ from trading_ai.options.live_contract_selector import (
     LiveOptionContractSelector,
 )
 from trading_ai.options.live_snapshot import LiveOptionDataError
+from trading_ai.options.repository_snapshot_provider import RepositoryOptionSnapshotProvider
 
 from trading_ai.daily.models import DailyCandidate
 from trading_ai.daily.expiry_selector import StandardFridayExpirySelector
@@ -27,6 +28,11 @@ class DailyScanner:
         strike_selector=None,
         min_score=60.0,
         pricing_dte=30,
+        expiration_mode="automatic",
+        minimum_dte=14,
+        maximum_dte=90,
+        maximum_expirations_per_symbol=4,
+        maximum_trades_per_expiration=3,
         start="2026-01-01",
         end="2026-06-01",
         target_delta=None,
@@ -49,6 +55,13 @@ class DailyScanner:
         self.live_profile = live_profile
         self.min_score = float(min_score)
         self.pricing_dte = int(pricing_dte)
+        self.expiration_mode = str(expiration_mode).lower()
+        self.minimum_dte = int(minimum_dte)
+        self.maximum_dte = int(maximum_dte)
+        self.maximum_expirations_per_symbol = int(maximum_expirations_per_symbol)
+        self.maximum_trades_per_expiration = int(maximum_trades_per_expiration)
+        if self.minimum_dte <= 0 or self.minimum_dte > self.maximum_dte:
+            raise ValueError("invalid DTE range")
         self.start = start
         self.end = end
         self.option_data_mode = str(option_data_mode).lower()
@@ -82,6 +95,7 @@ class DailyScanner:
         self.live_selector = None
         if self.option_data_mode in {"live", "auto"}:
             self.live_selector = LiveOptionContractSelector(
+                provider=RepositoryOptionSnapshotProvider(),
                 policy=LiveContractSelectionPolicy(
                     target_abs_delta=float(configured_target_delta),
                     maximum_spread_pct=float(maximum_option_spread_pct),
@@ -198,6 +212,96 @@ class DailyScanner:
             + theta_score * 0.10
         )
 
+    def _target_dtes(self):
+        presets = {
+            "short": (7, 21), "swing": (22, 45),
+            "medium": (46, 75), "long": (76, 120),
+        }
+        if self.expiration_mode == "fixed":
+            return [self.pricing_dte]
+        lo, hi = presets.get(self.expiration_mode, (self.minimum_dte, self.maximum_dte))
+        lo, hi = max(lo, self.minimum_dte), min(hi, self.maximum_dte)
+        if lo > hi:
+            lo, hi = self.minimum_dte, self.maximum_dte
+        count = max(1, self.maximum_expirations_per_symbol)
+        if count == 1 or lo == hi:
+            return [round((lo + hi) / 2)]
+        return sorted(set(round(lo + i * (hi - lo) / (count - 1)) for i in range(count)))
+
+    def _select_live_across_horizons(self, *, symbol, signal, close, hv20):
+        ranked = []
+        errors = []
+        as_of = date.fromisoformat(self.end[:10])
+        for target_dte in self._target_dtes():
+            strike_selection = self.strike_selector.select(
+                signal=signal, spot=close, volatility=hv20, dte=target_dte
+            )
+            try:
+                live = self.live_selector.select(
+                    underlying=symbol, signal=signal,
+                    target_expiration=as_of + timedelta(days=target_dte),
+                    target_strike=float(strike_selection.strike), as_of=as_of,
+                )
+                theta_efficiency = max(0.0, 100.0 - abs(float(live.theta)) * 1000.0)
+                horizon_score = live.score.total_score * 0.90 + theta_efficiency * 0.10
+                ranked.append((horizon_score, live, strike_selection, target_dte))
+            except LiveOptionDataError as exc:
+                errors.append(str(exc))
+        if not ranked:
+            raise LiveOptionDataError("No eligible contracts across configured DTE horizons. " + " | ".join(errors[-3:]))
+        return max(ranked, key=lambda item: (item[0], item[1].score.liquidity_score))
+
+    @staticmethod
+    def _resolve_candidate_expiry(*, symbol, as_of, selected_live_contract, option_data_source, expiry_selector, valuation_date, proxy_dte):
+        if selected_live_contract is not None:
+            contract_ticker = str(selected_live_contract.contract_ticker or "").strip()
+            candidate_expiry = str(selected_live_contract.expiration_date)
+            try:
+                expiration_date = date.fromisoformat(candidate_expiry[:10])
+            except ValueError as exc:
+                raise LiveOptionDataError(
+                    f"Persisted option contract for {symbol} has invalid expiration "
+                    f"{candidate_expiry!r}."
+                ) from exc
+
+            candidate_dte = (expiration_date - as_of).days
+            if candidate_dte <= 0:
+                raise LiveOptionDataError(
+                    f"Persisted option contract for {symbol} is expired: "
+                    f"{candidate_expiry}."
+                )
+            if not contract_ticker:
+                raise LiveOptionDataError(
+                    f"Persisted option contract for {symbol} is missing its contract "
+                    "ticker. Verify OptionChainRepository contract_ticker mapping."
+                )
+            if str(option_data_source).upper() not in {
+                "POLYGON_PERSISTED",
+                "POLYGON",
+                "LIVE",
+            }:
+                raise LiveOptionDataError(
+                    f"Selected listed contract for {symbol} has inconsistent data "
+                    f"source {option_data_source!r}."
+                )
+            return (
+                contract_ticker,
+                candidate_expiry,
+                candidate_dte,
+                "LIVE_LISTED_CONTRACT",
+            )
+
+        expiry_selection = expiry_selector.select(
+            valuation_date=valuation_date,
+            target_dte=proxy_dte,
+        )
+        return (
+            "",
+            expiry_selection.expiration_iso,
+            int(expiry_selection.actual_dte),
+            expiry_selection.source,
+        )
+
     def scan_symbol(self, symbol):
         row = self._latest_feature_row(symbol)
         if row is None:
@@ -219,18 +323,10 @@ class DailyScanner:
             or 0.30
         )
 
-        selection = self.strike_selector.select(
-            signal=signal,
-            spot=close,
-            volatility=hv20,
-            dte=self.pricing_dte,
-        )
+        proxy_dte = self.pricing_dte if self.expiration_mode == "fixed" else round((self.minimum_dte + self.maximum_dte) / 2)
+        selection = self.strike_selector.select(signal=signal, spot=close, volatility=hv20, dte=proxy_dte)
         strike = float(selection.strike)
-
-        target_expiration = (
-            date.fromisoformat(self.end[:10])
-            + timedelta(days=self.pricing_dte)
-        )
+        target_expiration = date.fromisoformat(self.end[:10]) + timedelta(days=proxy_dte)
         contract_ticker = ""
         bid = ask = last_price = 0.0
         price_source = "BLACK_SCHOLES_PROXY"
@@ -247,16 +343,14 @@ class DailyScanner:
         open_interest_selection_score = 0.0
         volume_selection_score = 0.0
         live_error = None
+        selected_live_contract = None
 
         if self.live_selector is not None:
             try:
-                live = self.live_selector.select(
-                    underlying=symbol,
-                    signal=signal,
-                    target_expiration=target_expiration,
-                    target_strike=strike,
-                    as_of=date.today(),
+                _, live, selection, _ = self._select_live_across_horizons(
+                    symbol=symbol, signal=signal, close=close, hv20=hv20
                 )
+                selected_live_contract = live
                 strike = live.strike
                 expiry = live.expiration_date
                 option_price = live.entry_price
@@ -293,20 +387,20 @@ class DailyScanner:
                     raise
 
         if self.live_selector is None or live_error is not None:
-            expiry = f"{self.pricing_dte}DTE_PROXY"
+            expiry = f"{proxy_dte}DTE_PROXY"
             option_price = self.pricing.option_price(
                 signal=signal,
                 spot=close,
                 strike=strike,
                 hv20=hv20,
-                dte=self.pricing_dte,
+                dte=proxy_dte,
             )
             greeks = self.pricing.greeks(
                 signal=signal,
                 spot=close,
                 strike=strike,
                 hv20=hv20,
-                dte=self.pricing_dte,
+                dte=proxy_dte,
             )
             if live_error is not None:
                 option_data_source = "PROXY_FALLBACK"
@@ -346,6 +440,25 @@ class DailyScanner:
             portfolio_penalty=portfolio_result["penalty"],
         )
 
+        as_of = date.fromisoformat(self.end[:10])
+        (
+            resolved_contract_ticker,
+            candidate_expiry,
+            candidate_dte,
+            candidate_expiry_source,
+        ) = self._resolve_candidate_expiry(
+            symbol=symbol,
+            as_of=as_of,
+            selected_live_contract=selected_live_contract,
+            option_data_source=option_data_source,
+            expiry_selector=self.expiry_selector,
+            valuation_date=self.end,
+            proxy_dte=proxy_dte,
+        )
+        if selected_live_contract is not None:
+            contract_ticker = resolved_contract_ticker
+            greeks["dte"] = candidate_dte
+
         strike_note = (
             f"Target-delta strike={strike:.2f}; "
             f"spot={close:.2f}; "
@@ -354,12 +467,8 @@ class DailyScanner:
             f"moneyness={selection.moneyness_pct:.2%}."
         )
         ranking_reason = (
-            f"{ranking['ranking_reason']} | {strike_note}"
-        )
-
-        expiry_selection = self.expiry_selector.select(
-            valuation_date=self.end,
-            target_dte=self.pricing_dte,
+            f"{ranking['ranking_reason']} | {strike_note} | "
+            f"expiration_mode={self.expiration_mode}; selected_dte={candidate_dte}."
         )
 
         return DailyCandidate(
@@ -382,8 +491,8 @@ class DailyScanner:
                 row.get("market_regime", "")
             ),
             strike=strike,
-            expiry=expiry_selection.expiration_iso,
-            expiry_source=expiry_selection.source,
+            expiry=candidate_expiry,
+            expiry_source=candidate_expiry_source,
             option_price=float(option_price),
             delta=float(greeks["delta"]),
             gamma=float(greeks["gamma"]),
@@ -391,7 +500,7 @@ class DailyScanner:
             vega=float(greeks["vega"]),
             rho=float(greeks["rho"]),
             volatility=float(greeks["volatility"]),
-            dte=int(expiry_selection.actual_dte),
+            dte=candidate_dte,
             final_score=float(legacy_score),
             contract_ticker=contract_ticker,
             bid=float(bid),
@@ -436,8 +545,22 @@ class DailyScanner:
             ranking_reason=ranking_reason,
         )
 
+    @staticmethod
+    def _scan_failure_category(exc: Exception) -> str:
+        message = str(exc).lower()
+        if any(token in message for token in ("429", "too many requests", "rate limit", "ratelimit")):
+            return "PROVIDER_RATE_LIMIT"
+        if "cached market data" in message or "run ingest-market" in message or "cache" in message and "cover" in message:
+            return "CACHE_COVERAGE"
+        if "no price data" in message or "no data" in message or "possibly delisted" in message:
+            return "NO_DATA"
+        if "timeout" in message or "connection" in message:
+            return "TRANSIENT_PROVIDER"
+        return "OTHER"
+
     def scan(self, symbols):
         candidates = []
+        failures = {}
 
         for symbol in symbols:
             try:
@@ -445,10 +568,34 @@ class DailyScanner:
                 if candidate is not None:
                     candidates.append(candidate)
             except Exception as exc:
-                print(f"Skipping {symbol}: {exc}")
+                category = self._scan_failure_category(exc)
+                bucket = failures.setdefault(category, {"symbols": [], "example": ""})
+                bucket["symbols"].append(symbol)
+                if not bucket["example"]:
+                    bucket["example"] = f"{type(exc).__name__}: {exc}"
 
-        return sorted(
-            candidates,
-            key=lambda candidate: candidate.ai_score,
-            reverse=True,
-        )
+        if failures:
+            total = sum(len(value["symbols"]) for value in failures.values())
+            print("-------------------------------------------")
+            print("Scan Exclusion Summary")
+            print("-------------------------------------------")
+            print(f"Scan Skipped Symbols             {total:>10}")
+            for category, value in sorted(failures.items()):
+                symbols_for_category = value["symbols"]
+                preview = ",".join(symbols_for_category[:20])
+                print(f"Scan {category.replace('_', ' ').title():<25} {len(symbols_for_category):>10}")
+                print(f"  Symbols: {preview}{' ...' if len(symbols_for_category) > 20 else ''}")
+                print(f"  Example: {value['example'][:500]}")
+
+        ranked = sorted(candidates, key=lambda candidate: candidate.ai_score, reverse=True)
+        if self.maximum_trades_per_expiration <= 0:
+            return ranked
+        diversified = []
+        counts = {}
+        for candidate in ranked:
+            expiry = candidate.expiry
+            if counts.get(expiry, 0) >= self.maximum_trades_per_expiration:
+                continue
+            diversified.append(candidate)
+            counts[expiry] = counts.get(expiry, 0) + 1
+        return diversified

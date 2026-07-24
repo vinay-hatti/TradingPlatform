@@ -2,7 +2,7 @@ import type {ReactNode} from 'react';
 import {AlertTriangle,CheckCircle2,Clock3,RefreshCw,ShieldAlert} from 'lucide-react';
 import {statusTone} from './model';
 export function Badge({value}:{value:any}){return <span className={`badge ${statusTone(value)}`}>{String(value??'UNKNOWN')}</span>}
-export function Card({title,children,action}:{title:string;children:ReactNode;action?:ReactNode}){return <section className="card"><header><h3>{title}</h3>{action}</header>{children}</section>}
+export function Card({title,children,action,compact=false}:{title:string;children:ReactNode;action?:ReactNode;compact?:boolean}){return <section className={`card${compact?' compact-card':''}`}><header><h3>{title}</h3>{action}</header>{children}</section>}
 export function Metric({label,value,detail}:{label:string;value:ReactNode;detail?:ReactNode}){return <div className="metric"><span>{label}</span><strong>{value}</strong>{detail&&<small>{detail}</small>}</div>}
 export function State({loading,error,onRetry,children}:{loading:boolean;error:Error|null;onRetry:()=>void;children:ReactNode}){if(loading)return <div className="state"><Clock3/>Loading platform state…</div>;if(error)return <div className="state error"><ShieldAlert/><div><b>Unable to load data</b><p>{error.message}</p></div><button onClick={onRetry}><RefreshCw size={15}/>Retry</button></div>;return <>{children}</>}
 export function Freshness({stale,age}:{stale?:boolean;age?:number|null}){return <span className={`freshness ${stale?'stale':''}`}>{stale?<AlertTriangle size={14}/>:<CheckCircle2 size={14}/>} {stale?'Stale':'Fresh'}{age!=null?` · ${Math.round(age)}s`:''}</span>}

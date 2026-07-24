@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+<key>Label</key><string>com.tradingplatform.market-ingestion</string>
+<key>ProgramArguments</key><array><string>__PROJECT_DIR__/.venv/bin/python</string><string>__PROJECT_DIR__/scripts/run_market_ingestion.py</string><string>--data-scope</string><string>all</string><string>--continue-on-error</string></array>
+<key>WorkingDirectory</key><string>__PROJECT_DIR__</string>
+<key>StartCalendarInterval</key><array><dict><key>Hour</key><integer>7</integer><key>Minute</key><integer>30</integer></dict><dict><key>Hour</key><integer>16</integer><key>Minute</key><integer>30</integer></dict></array>
+<key>StandardOutPath</key><string>__PROJECT_DIR__/reports/market_ingestion/launchd.out.log</string>
+<key>StandardErrorPath</key><string>__PROJECT_DIR__/reports/market_ingestion/launchd.err.log</string>
+<key>RunAtLoad</key><false/>
+</dict></plist>

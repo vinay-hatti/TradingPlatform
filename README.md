@@ -1,66 +1,34 @@
-# Trading AI Platform
+# Daily Scanner UI panel-order update
 
-Institutional options research, backtesting, paper-trading, risk, and portfolio platform.
+## Change
 
-## Local Mac bootstrap
+Moves the existing **Run history** panel immediately before the existing **Best trade candidates** panel on the Daily Scanner page.
 
-```bash
-cd /Users/vinay.hatti/TradingPlatform
-brew services start postgresql@17
-uv sync
-uv run alembic upgrade head
-uv run python -m trading_ai local-doctor
-```
+No sizing or styling was changed:
 
-After `uv sync`, either command form works:
+- `Run history` retains `compact` and `run-history-scroll`.
+- `Best trade candidates` retains its existing non-compact `Card`.
+- No CSS, grid, width, height, table, or responsive classes were modified.
 
-```bash
-uv run python -m trading_ai --help
-uv run trading-ai --help
-```
+## Install
 
-## Local workflows
-
-Run a one-time paper workflow:
+From the TradingPlatform project root:
 
 ```bash
-uv run python -m trading_ai start --mode paper
+cp ui/workstation/src/pages.tsx \
+  ui/workstation/src/pages.tsx.before_panel_order_fix
+
+tar -xzf ~/Downloads/daily_scanner_ui_panel_order_dropin.tar.gz \
+  --strip-components=1
 ```
 
-Research workflow:
+## Validate on macOS
 
 ```bash
-uv run python -m trading_ai start --mode research
+cd ui/workstation
+npm test
+npm run typecheck
+npm run build
 ```
 
-Daily workflow already provided by the repository:
-
-```bash
-uv run python -m trading_ai daily
-```
-
-Run each stage independently:
-
-```bash
-uv run python -m trading_ai ingest-market
-uv run python -m trading_ai build-features
-uv run python -m trading_ai generate-signals
-uv run python -m trading_ai full-system
-uv run python -m trading_ai paper run
-uv run python -m trading_ai paper mark
-uv run python -m trading_ai paper status
-uv run python -m trading_ai dashboard
-```
-
-Start the Streamlit dashboard runner:
-
-```bash
-uv run python -m trading_ai dashboard-server
-```
-
-## Important behavior
-
-`start` runs existing repository scripts in sequence. It is a one-time local
-workflow, not a permanently running server. External market-data calls still
-require the provider credentials and configuration expected by the existing
-scripts.
+Restart the UI process if it is already running.

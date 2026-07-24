@@ -118,6 +118,11 @@ src/trading_ai/daily/sectors.py
 src/trading_ai/daily/strike_selector.py
 src/trading_ai/daily/trade_candidate.py
 src/trading_ai/daily/trade_reporter.py
+src/trading_ai/daily_scan_workstation/__init__.py
+src/trading_ai/daily_scan_workstation/models.py
+src/trading_ai/daily_scan_workstation/refresh_governance.py
+src/trading_ai/daily_scan_workstation/router.py
+src/trading_ai/daily_scan_workstation/service.py
 src/trading_ai/database/__init__.py
 src/trading_ai/database/base.py
 src/trading_ai/database/engine.py
@@ -250,6 +255,7 @@ src/trading_ai/market/models.py
 src/trading_ai/market/option_models.py
 src/trading_ai/market/paper_streaming_adapter.py
 src/trading_ai/market/provider.py
+src/trading_ai/market/provider_routing.py
 src/trading_ai/market/realtime_connection_lifecycle.py
 src/trading_ai/market/realtime_event_dispatcher.py
 src/trading_ai/market/realtime_market_data_normalizer.py
@@ -279,6 +285,7 @@ src/trading_ai/market/updater.py
 src/trading_ai/market/yahoo.py
 src/trading_ai/market/providers/base.py
 src/trading_ai/market/providers/polygon.py
+src/trading_ai/market/providers/yahoo.py
 src/trading_ai/models/trade_recommendation.py
 src/trading_ai/observability/__init__.py
 src/trading_ai/observability/alert_rule_engine.py

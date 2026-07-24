@@ -1,0 +1,23 @@
+{
+  "final": {
+    "hard_limit": 9223372036854775807,
+    "open_file_descriptors": 17,
+    "soft_limit": 256,
+    "utilization_pct": 6.640625
+  },
+  "samples": [
+    {
+      "hard_limit": 9223372036854775807,
+      "open_file_descriptors": 7,
+      "soft_limit": 256,
+      "utilization_pct": 2.734375
+    },
+    {
+      "hard_limit": 9223372036854775807,
+      "open_file_descriptors": 17,
+      "soft_limit": 256,
+      "utilization_pct": 6.640625
+    }
+  ],
+  "schema_version": "m35.phase1.step4c1.resources.v1"
+}

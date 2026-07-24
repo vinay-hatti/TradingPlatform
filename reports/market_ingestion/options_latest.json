@@ -1,0 +1,42 @@
+{
+  "batch_count": 2,
+  "batch_results": [
+    {
+      "batch_id": "polygon:2026-07-23:I:SPX:1",
+      "error_messages": [],
+      "input_records": 5000,
+      "inserted_records": 4198,
+      "rejected_records": 107,
+      "skipped_records": 695,
+      "updated_records": 0,
+      "valid_records": 4198
+    },
+    {
+      "batch_id": "polygon:2026-07-23:I:SPX:2",
+      "error_messages": [],
+      "input_records": 4116,
+      "inserted_records": 3155,
+      "rejected_records": 100,
+      "skipped_records": 861,
+      "updated_records": 0,
+      "valid_records": 3155
+    }
+  ],
+  "completed_at": "2026-07-24T02:58:33.363224+00:00",
+  "failed_batches": 0,
+  "input_records": 9116,
+  "inserted_records": 7353,
+  "metadata": {
+    "batch_size": 5000,
+    "end_date": null,
+    "resume": true,
+    "start_date": null
+  },
+  "rejected_records": 207,
+  "resumed_batches": 0,
+  "skipped_records": 1556,
+  "source_name": "polygon_option_chain_snapshot",
+  "started_at": "2026-07-24T02:58:19.729429+00:00",
+  "updated_records": 0,
+  "valid_records": 7353
+}

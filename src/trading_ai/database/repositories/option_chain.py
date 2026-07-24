@@ -3,7 +3,7 @@ from __future__ import annotations
 from datetime import date
 from typing import Any, Iterable
 
-from sqlalchemy import MetaData, Table, inspect, select
+from sqlalchemy import MetaData, Table, func, inspect, select
 
 from trading_ai.database.repositories.base import BaseRepository
 
@@ -30,6 +30,13 @@ class OptionChainRepository(BaseRepository):
     }
 
     OPTIONAL_COLUMN_GROUPS = {
+        "contract_ticker": (
+            "option_symbol",
+            "contract_ticker",
+            "ticker",
+            "option_ticker",
+            "contract_symbol",
+        ),
         "last": ("last", "last_price", "mark"),
         "delta": ("delta",),
         "gamma": ("gamma",),
@@ -106,6 +113,56 @@ class OptionChainRepository(BaseRepository):
     @property
     def resolved_table_name(self) -> str | None:
         return self._resolved_table_name
+
+    def get_latest_snapshot(
+        self,
+        symbol: str,
+        as_of: date,
+    ) -> list[dict[str, Any]]:
+        """Return the newest available snapshot on or before ``as_of``.
+
+        Option ingestion commonly completes after the market close while a scan
+        can run on the following calendar day. An exact-date lookup therefore
+        incorrectly reports no data even though the prior trading-day snapshot
+        is valid and is the latest persisted information available.
+        """
+        normalized_symbol = str(symbol or "").strip().upper()
+        if not normalized_symbol:
+            return []
+
+        resolved = self._resolve_table()
+        if resolved is None:
+            return []
+        table, mapping = resolved
+
+        quote_date_column = table.c[mapping["quote_date"]]
+        symbol_column = table.c[mapping["symbol"]]
+
+        latest_quote_date = self.session.execute(
+            select(func.max(quote_date_column)).where(
+                symbol_column == normalized_symbol,
+                quote_date_column <= as_of,
+            )
+        ).scalar_one_or_none()
+        if latest_quote_date is None:
+            return []
+
+        selected_columns = [
+            table.c[actual].label(canonical)
+            for canonical, actual in mapping.items()
+        ]
+        statement = (
+            select(*selected_columns)
+            .where(
+                symbol_column == normalized_symbol,
+                quote_date_column == latest_quote_date,
+            )
+            .order_by(
+                table.c[mapping["expiry"]],
+                table.c[mapping["strike"]],
+            )
+        )
+        return [dict(row._mapping) for row in self.session.execute(statement)]
 
     def get_range(
         self,

@@ -26,8 +26,8 @@ class MarketService:
         cache_dir: str | Path = ".cache/market",
     ) -> None:
         if provider is None:
-            from trading_ai.market.providers.polygon import PolygonProvider
-            provider = PolygonProvider()
+            from trading_ai.market.providers.yahoo import YahooHistoricalProvider
+            provider = YahooHistoricalProvider()
 
         self.provider = provider
         self.cache_dir = Path(cache_dir)
@@ -117,7 +117,7 @@ class MarketService:
         Load any non-empty cache file whose requested range covers the scan.
 
         The requested range comes from the filename, not the final returned bar.
-        Polygon may not return today's bar until after the session closes, and
+        The OHLCV provider may not return today's bar until after the session closes, and
         weekends/holidays naturally have no bar even when the request itself
         covered that date.
         """

@@ -9,6 +9,9 @@ from trading_ai.volatility.iv_rank import IVRankEngine
 
 class PolygonOptionsProvider:
 
+    name = "polygon"
+    capability = "option_chain"
+
     def __init__(self):
         self.client = RESTClient(settings.polygon_api_key)
 

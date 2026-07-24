@@ -52,7 +52,12 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         default=10,
         help="Maximum ranked candidates converted into trade ideas.",
     )
-    parser.add_argument("--pricing-dte", type=int, default=30)
+    parser.add_argument("--pricing-dte", type=int, default=30, help="Fixed/proxy target DTE; retained for compatibility.")
+    parser.add_argument("--expiration-mode", choices=["automatic","short","swing","medium","long","custom","fixed"], default="automatic")
+    parser.add_argument("--minimum-dte", type=int, default=14)
+    parser.add_argument("--maximum-dte", type=int, default=90)
+    parser.add_argument("--maximum-expirations-per-symbol", type=int, default=4)
+    parser.add_argument("--maximum-trades-per-expiration", type=int, default=3, help="0 disables expiry diversification.")
     parser.add_argument("--option-data-mode", choices=["live", "auto", "proxy"], default="live")
     parser.add_argument("--max-option-spread-pct", type=float, default=0.25)
     parser.add_argument("--min-option-open-interest", type=int, default=100)
@@ -178,6 +183,10 @@ def main(argv: list[str] | None = None) -> int:
         raise ValueError("--top must be positive")
     if args.pricing_dte <= 0:
         raise ValueError("--pricing-dte must be positive")
+    if args.minimum_dte <= 0 or args.maximum_dte <= 0 or args.minimum_dte > args.maximum_dte:
+        raise ValueError("DTE range must be positive and minimum-dte cannot exceed maximum-dte")
+    if args.maximum_expirations_per_symbol <= 0:
+        raise ValueError("--maximum-expirations-per-symbol must be positive")
     if args.start > args.end:
         raise ValueError("--start cannot be after --end")
 
@@ -197,6 +206,11 @@ def main(argv: list[str] | None = None) -> int:
         portfolio_awareness=portfolio,
         min_score=args.min_score,
         pricing_dte=args.pricing_dte,
+        expiration_mode=args.expiration_mode,
+        minimum_dte=args.minimum_dte,
+        maximum_dte=args.maximum_dte,
+        maximum_expirations_per_symbol=args.maximum_expirations_per_symbol,
+        maximum_trades_per_expiration=args.maximum_trades_per_expiration,
         start=args.start,
         end=args.end,
         option_data_mode=args.option_data_mode,
@@ -219,6 +233,9 @@ def main(argv: list[str] | None = None) -> int:
     print(f"History         : {args.start} -> {args.end}")
     print(f"Minimum Score   : {args.min_score}")
     print(f"Option Data     : {args.option_data_mode}")
+    print(f"Expiry Mode     : {args.expiration_mode}")
+    print(f"DTE Range       : {args.minimum_dte} -> {args.maximum_dte}")
+    print(f"Expiry Limit    : {args.maximum_trades_per_expiration or 'disabled'} trades per expiration")
     print(
         f"Data Mode       : "
         f"{'network allowed' if args.allow_network else 'cache only'}"
@@ -247,6 +264,11 @@ def main(argv: list[str] | None = None) -> int:
         "live_profile": live_profile.get("profile", "unknown"),
         "min_score": args.min_score,
         "pricing_dte": args.pricing_dte,
+        "expiration_mode": args.expiration_mode,
+        "minimum_dte": args.minimum_dte,
+        "maximum_dte": args.maximum_dte,
+        "maximum_expirations_per_symbol": args.maximum_expirations_per_symbol,
+        "maximum_trades_per_expiration": args.maximum_trades_per_expiration,
         "start": args.start,
         "end": args.end,
         "positions_file": args.positions_file,

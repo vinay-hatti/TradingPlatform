@@ -1,0 +1,49 @@
+{
+  "run_id": "bbc8d59b4b844344b8aa0cae679ac40e",
+  "kind": "DATA_REFRESH",
+  "status": "SUCCEEDED",
+  "created_at": "2026-07-23T00:21:26.674443Z",
+  "started_at": "2026-07-23T00:21:26.675478Z",
+  "completed_at": "2026-07-23T00:21:27.582935Z",
+  "requested_by": "anonymous",
+  "request": {
+    "lookback_days": 90,
+    "minimum_bars": 20,
+    "stale_after_days": 7,
+    "minimum_coverage_pct": 70.0,
+    "batch_size": 100,
+    "limit": null,
+    "resume": true,
+    "force_refresh": false
+  },
+  "command": [
+    "/Users/vinay.hatti/TradingPlatform/.venv/bin/python3",
+    "scripts/run_m35_phase1_populate_market_data.py",
+    "--lookback-days",
+    "90",
+    "--minimum-bars",
+    "20",
+    "--stale-after-days",
+    "7",
+    "--minimum-coverage-pct",
+    "70.0",
+    "--batch-size",
+    "100",
+    "--resume"
+  ],
+  "exit_code": 0,
+  "stdout": "=========================================================\nBulk Market Data Population\n=========================================================\nProvider                         YFINANCE\nRequested Symbols                       610\nAttempted Symbols                         0\nSucceeded Symbols                         0\nFailed Symbols                            0\nSkipped Fresh Symbols                   610\nRows Upserted                             0\nCoverage                            100.00%\nStatus                                READY\nReports                          reports/m35/phase1/market_data_population\n",
+  "stderr": "",
+  "report_date": null,
+  "artifacts": {},
+  "summary": {
+    "requested_symbols": "610",
+    "attempted_symbols": "0",
+    "succeeded_symbols": "0",
+    "failed_symbols": "0",
+    "skipped_fresh_symbols": "610",
+    "rows_upserted": "0",
+    "coverage": "100.00%",
+    "population_status": "READY"
+  }
+}

@@ -106,6 +106,8 @@ def validate_routes() -> None:
         "/api/v1/platform/overview",
         "/api/v1/realtime/snapshot",
         "/api/v1/realtime/stream",
+        "/api/v1/scanner/runs",
+        "/api/v1/scanner/data-refresh",
     }
 
     missing_routes = required_routes - actual_routes
@@ -126,7 +128,7 @@ def validate_routes() -> None:
 
 
 def main() -> None:
-    print("TradingPlatform v1.0 RC1 validation")
+    print("TradingPlatform v1.0 RC1 + Milestone 43 validation")
     if not compileall.compile_dir(SRC, quiet=1):
         raise RuntimeError("src compilation failed")
     if not compileall.compile_dir(ROOT / "scripts", quiet=1):
@@ -135,7 +137,7 @@ def main() -> None:
     validate_routes()
 
     tests = []
-    for milestone in range(36, 43):
+    for milestone in range(36, 44):
         tests.extend(sorted(ROOT.glob(f"scripts/test_m{milestone}*.py")))
     for test in tests:
         run([sys.executable, str(test)])
@@ -149,7 +151,7 @@ def main() -> None:
     else:
         print("Frontend dependency validation skipped: run npm install in ui/workstation first.")
 
-    print("TradingPlatform v1.0 RC1 validation passed.")
+    print("TradingPlatform v1.0 RC1 + Milestone 43 validation passed.")
 
 
 if __name__ == "__main__":
