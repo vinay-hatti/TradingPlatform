@@ -29,3 +29,8 @@ from trading_ai.execution_orchestration.database_models import (  # noqa: E402,F
     ExecutionOrderModel,
     ExecutionRunModel,
 )
+
+# Import Milestone 44 dealer-positioning persistence model.
+from trading_ai.institutional_market_structure.database_models import (  # noqa: E402,F401
+    DealerPositionSnapshotModel, DealerStrikeProfileModel, DealerExpirationProfileModel, IVSurfaceSnapshotModel,
+)

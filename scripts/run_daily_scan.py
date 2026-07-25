@@ -86,6 +86,12 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
             "Default is cache-only."
         ),
     )
+    dealer_group = parser.add_mutually_exclusive_group()
+    dealer_group.add_argument("--enable-dealer-positioning", dest="enable_dealer_positioning", action="store_true", default=True)
+    dealer_group.add_argument("--disable-dealer-positioning", dest="enable_dealer_positioning", action="store_false")
+    parser.add_argument("--dealer-positioning-max-age-days", type=int, default=1)
+    parser.add_argument("--dealer-positioning-weight", type=float, default=1.0)
+    parser.add_argument("--dealer-positioning-max-adjustment", type=float, default=15.0)
     parser.add_argument(
         "--report-date",
         default=None,
@@ -116,6 +122,9 @@ def print_candidate(index: int, candidate) -> None:
     print(f"   Strategy       : {candidate.strategy}")
     print(f"   Sector         : {candidate.sector}")
     print(f"   AI Score       : {candidate.ai_score:.2f}")
+    print(f"   Base AI Score  : {candidate.base_ai_score:.2f}")
+    print(f"   Dealer Adj.    : {candidate.dealer_score_adjustment:+.2f}")
+    print(f"   Dealer Context : {candidate.dealer_context_status} / {candidate.positioning_label}")
     print(f"   Adjusted Score : {candidate.adjusted_score:.2f}")
     print(f"   Base Score     : {candidate.final_score:.2f}")
     print(f"   Signal Score   : {candidate.score:.2f}")
@@ -148,6 +157,9 @@ def print_trade(index: int, trade) -> None:
     print(f"{index}. LIVE TRADE CANDIDATE — {trade.symbol} {trade.signal}")
     print(f"   Confidence  : {trade.confidence}")
     print(f"   AI Score    : {trade.ai_score:.2f}")
+    print(f"   Base AI     : {trade.base_ai_score:.2f}")
+    print(f"   Dealer Adj. : {trade.dealer_score_adjustment:+.2f}")
+    print(f"   Dealer      : {trade.dealer_context_status} / {trade.positioning_label}")
     print(f"   Strategy    : {trade.strategy}")
     print(f"   Underlying  : ${trade.underlying_price:.2f}")
     print(f"   Strike      : ${trade.strike:.2f}")
@@ -224,6 +236,10 @@ def main(argv: list[str] | None = None) -> int:
         open_interest_weight=args.option_oi_weight,
         volume_weight=args.option_volume_weight,
         liquidity_data_mode=args.liquidity_data_mode,
+        enable_dealer_positioning=args.enable_dealer_positioning,
+        maximum_dealer_snapshot_age_days=args.dealer_positioning_max_age_days,
+        dealer_positioning_weight=args.dealer_positioning_weight,
+        maximum_dealer_score_adjustment=args.dealer_positioning_max_adjustment,
     )
 
     print()
@@ -272,6 +288,10 @@ def main(argv: list[str] | None = None) -> int:
         "start": args.start,
         "end": args.end,
         "positions_file": args.positions_file,
+        "dealer_positioning_enabled": args.enable_dealer_positioning,
+        "dealer_positioning_max_age_days": args.dealer_positioning_max_age_days,
+        "dealer_positioning_weight": args.dealer_positioning_weight,
+        "dealer_positioning_max_adjustment": args.dealer_positioning_max_adjustment,
         "data_mode": (
             "network_allowed" if args.allow_network else "cache_only"
         ),

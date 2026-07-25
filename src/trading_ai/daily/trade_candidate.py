@@ -55,3 +55,25 @@ class LiveTradeCandidate:
     portfolio_penalty: float = 0.0
     portfolio_notes: list = field(default_factory=list)
     trade_notes: list = field(default_factory=list)
+    base_ai_score: float = 0.0
+    dealer_context_status: str = "DISABLED"
+    dealer_snapshot_date: str = ""
+    dealer_snapshot_age_days: int = -1
+    institutional_positioning_score: float = 0.0
+    positioning_label: str = "UNAVAILABLE"
+    gamma_regime: str = "UNAVAILABLE"
+    gamma_flip: float | None = None
+    spot_vs_gamma_flip_pct: float | None = None
+    primary_call_wall: float | None = None
+    primary_put_wall: float | None = None
+    distance_to_call_wall_pct: float | None = None
+    distance_to_put_wall_pct: float | None = None
+    dealer_hedging_pressure: float = 0.0
+    range_probability: float = 0.0
+    breakout_probability: float = 0.0
+    breakdown_probability: float = 0.0
+    volatility_expansion_probability: float = 0.0
+    market_structure_confidence: float = 0.0
+    directional_alignment_probability: float = 0.0
+    dealer_score_adjustment: float = 0.0
+    dealer_context_warning: str = ""

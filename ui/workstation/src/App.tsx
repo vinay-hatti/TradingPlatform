@@ -65,7 +65,7 @@ export default function App() {
       <main>
         <header className="topbar">
           <button className="menu" onClick={() => setOpen(!open)}><Menu /></button>
-          <div><span className="eyebrow">MILESTONE 43</span><h1>Trading Operations Workstation</h1></div>
+          <div><h1>Trading Operations Workstation</h1></div>
           <button className="refresh" onClick={() => location.reload()}><RefreshCw size={16} />Refresh</button>
         </header>
         <div className="content"><Page /></div>

@@ -76,6 +76,7 @@ SCRIPT_COMMANDS: dict[str, str] = {
     "populate-market-data": "run_m35_phase1_populate_market_data.py",
     "refresh-market-universe": "run_m35_phase1_refresh_market_universe.py",
     "enforce-canonical-universe": "run_m35_phase1_enforce_canonical_universe.py",
+    "institutional-market-structure": "run_m44_institutional_market_structure.py",
 }
 
 PAPER_COMMANDS: dict[str, str] = {

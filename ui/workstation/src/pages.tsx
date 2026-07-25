@@ -1,5 +1,5 @@
-import { useEffect, useState, type ReactNode } from 'react';
-import { Activity, BriefcaseBusiness, ShieldCheck, Waypoints, ScanLine, LogOut, RadioTower, Search } from 'lucide-react';
+import { Fragment, useEffect, useState, type ReactNode } from 'react';
+import { Activity, BriefcaseBusiness, ShieldCheck, Waypoints, ScanLine, LogOut, RadioTower, Search, ChevronDown, ChevronRight } from 'lucide-react';
 import { platformApi } from './api';
 import { useRemote } from './hooks';
 import { asArray, firstNumber, money, pct } from './model';
@@ -7,6 +7,61 @@ import { Badge, Card, Freshness, JsonView, Metric, State, Table } from './compon
 
 type ArtifactEnvelope = { data: any; metadata?: { stale?: boolean; age_seconds?: number | null } };
 type Loader = (signal?: AbortSignal) => Promise<any>;
+
+const numeric = (value: any, fallback = 0) => {
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed : fallback;
+};
+
+function candidateRankingReason(candidate: any) {
+  const signal = String(candidate.signal || candidate.option_type || '').toUpperCase();
+  const isCall = signal.includes('CALL') || signal.includes('BULL');
+  const adjustment = numeric(candidate.dealer_score_adjustment);
+  const positives: string[] = [];
+  const constraints: string[] = [];
+  const contractReasons: string[] = [];
+
+  if (adjustment > 0.05) positives.push(`Dealer positioning added ${adjustment.toFixed(2)} points.`);
+  if (adjustment < -0.05) constraints.push(`Dealer positioning reduced the score by ${Math.abs(adjustment).toFixed(2)} points.`);
+
+  const positioning = String(candidate.positioning_label || '').replaceAll('_', ' ');
+  if (positioning && positioning !== '—') {
+    const bullish = positioning.includes('BULL');
+    const bearish = positioning.includes('BEAR');
+    if ((isCall && bullish) || (!isCall && bearish)) positives.push(`${positioning.toLowerCase()} positioning aligns with the trade direction.`);
+    else if ((isCall && bearish) || (!isCall && bullish)) constraints.push(`${positioning.toLowerCase()} positioning conflicts with the trade direction.`);
+  }
+
+  const gammaRegime = String(candidate.gamma_regime || '').replaceAll('_', ' ');
+  const rangeProbability = numeric(candidate.range_probability, -1);
+  const breakoutProbability = numeric(isCall ? candidate.breakout_probability : candidate.breakdown_probability, -1);
+  const volatilityExpansion = numeric(candidate.volatility_expansion_probability, -1);
+  const hedgePressure = numeric(candidate.dealer_hedging_pressure);
+  const wallDistance = numeric(isCall ? candidate.distance_to_call_wall_pct : candidate.distance_to_put_wall_pct, Number.NaN);
+
+  if (gammaRegime.includes('NEGATIVE')) positives.push('Negative gamma can amplify directional movement.');
+  if (gammaRegime.includes('POSITIVE')) constraints.push('Positive gamma can suppress long-premium breakout velocity.');
+  if (rangeProbability >= 0.6) constraints.push(`Range probability is elevated at ${(rangeProbability * 100).toFixed(0)}%.`);
+  else if (rangeProbability >= 0 && rangeProbability <= 0.4) positives.push(`Range probability is contained at ${(rangeProbability * 100).toFixed(0)}%.`);
+  if (breakoutProbability >= 0.55) positives.push(`${isCall ? 'Breakout' : 'Breakdown'} probability is ${(breakoutProbability * 100).toFixed(0)}%.`);
+  if (volatilityExpansion >= 0.55) positives.push(`Volatility-expansion probability is ${(volatilityExpansion * 100).toFixed(0)}%.`);
+  if ((isCall && hedgePressure > 0.15) || (!isCall && hedgePressure < -0.15)) positives.push('Dealer hedging pressure supports the selected direction.');
+  if ((isCall && hedgePressure < -0.15) || (!isCall && hedgePressure > 0.15)) constraints.push('Dealer hedging pressure opposes the selected direction.');
+  if (Number.isFinite(wallDistance)) {
+    if (Math.abs(wallDistance) <= 2) constraints.push(`${isCall ? 'Call' : 'Put'} wall is only ${Math.abs(wallDistance).toFixed(1)}% from spot.`);
+    else positives.push(`${isCall ? 'Call' : 'Put'} wall leaves ${Math.abs(wallDistance).toFixed(1)}% of directional room.`);
+  }
+
+  if (candidate.expiry) contractReasons.push(`${candidate.dte ?? '—'} DTE contract expiring ${candidate.expiry}.`);
+  if (candidate.contract_ticker || candidate.option_symbol || candidate.contract_symbol) contractReasons.push(`Selected contract: ${candidate.contract_ticker || candidate.option_symbol || candidate.contract_symbol}.`);
+  if (numeric(candidate.reward_risk_ratio) > 0) contractReasons.push(`Modeled reward/risk is ${numeric(candidate.reward_risk_ratio).toFixed(2)}.`);
+  if (numeric(candidate.option_entry) > 0) contractReasons.push(`Entry premium is ${money(candidate.option_entry)} with target ${money(candidate.target_price)} and stop ${money(candidate.stop_price)}.`);
+
+  if (!positives.length) positives.push('Technical and contract-selection inputs produced a qualifying base score.');
+  if (!constraints.length) constraints.push('No material ranking penalty was identified in the persisted dealer context.');
+
+  return { positives, constraints, contractReasons };
+}
 
 const artifact = (name: string, loader: Loader, render: (value: any) => ReactNode) =>
   function ArtifactPage() {
@@ -87,7 +142,7 @@ export const nav = [
 export function CommandCenter(){const [data,setData]=useState<any>(null);const [events,setEvents]=useState<any[]>([]);useEffect(()=>{fetch('/api/v1/realtime/snapshot',{headers:{'X-API-Key':sessionStorage.getItem('trading-ai-api-key')??''}}).then(r=>r.json()).then(setData);const key=sessionStorage.getItem('trading-ai-api-key')??'';const ws=new WebSocket(`${location.protocol==='https:'?'wss':'ws'}://${location.host}/api/v1/realtime/stream?api_key=${encodeURIComponent(key)}`);ws.onmessage=e=>setEvents(v=>[JSON.parse(e.data),...v].slice(0,50));return()=>ws.close()},[]);return <section><h2>Operational Command Center</h2><div className="metrics"><article><b>{data?.connected_clients??0}</b><span>Live clients</span></article><article><b>{data?.open_alerts??0}</b><span>Open alerts</span></article><article><b>{data?.critical_alerts??0}</b><span>Critical alerts</span></article><article><b>{data?.events_published??0}</b><span>Events</span></article></div><div className="panel"><h3>Live event stream</h3><pre>{JSON.stringify(events,null,2)}</pre></div></section>}
 
 export function DailyScannerPage(){
-  const [runs,setRuns]=useState<any[]>([]);const [selected,setSelected]=useState<any>(null);const [results,setResults]=useState<any>(null);const [busy,setBusy]=useState(false);const [error,setError]=useState('');
+  const [runs,setRuns]=useState<any[]>([]);const [selected,setSelected]=useState<any>(null);const [results,setResults]=useState<any>(null);const [busy,setBusy]=useState(false);const [error,setError]=useState('');const [expandedTrade,setExpandedTrade]=useState<string|null>(null);
   const [universe,setUniverse]=useState('liquid-us-700');const [universes,setUniverses]=useState<any[]>([]);const [symbols,setSymbols]=useState('');const [minimumScore,setMinimumScore]=useState(60);const [top,setTop]=useState(10);const [expirationMode,setExpirationMode]=useState<'automatic'|'short'|'swing'|'medium'|'long'|'custom'|'fixed'>('automatic');const [minimumDte,setMinimumDte]=useState(14);const [maximumDte,setMaximumDte]=useState(90);const [maxPerExpiry,setMaxPerExpiry]=useState(3);const [refreshMode,setRefreshMode]=useState<'cache_only'|'refresh_missing'|'force_full'>('refresh_missing');const [ingestionScope,setIngestionScope]=useState<'underlying'|'options'|'all'>('all');const [autoRefresh,setAutoRefresh]=useState(true);const [minimumCoverage,setMinimumCoverage]=useState(98);const [maximumFailedSymbols,setMaximumFailedSymbols]=useState(10);const [continueOnDegraded,setContinueOnDegraded]=useState(true);
   const selectedSymbols=()=>symbols.split(',').map(x=>x.trim().toUpperCase()).filter(Boolean);
   const dates=()=>{const today=new Date().toISOString().slice(0,10);const start=new Date(Date.now()-365*86400000).toISOString().slice(0,10);return {today,start}};
@@ -100,13 +155,34 @@ export function DailyScannerPage(){
   return <section>
     <div className="page-title"><div><h2>Daily scanner</h2><p>Ingest governed market data, then analyze only persisted PostgreSQL/cache data.</p></div><Badge value={selected?.status||'IDLE'}/></div>
     {error&&<div className="scanner-error">{error}</div>}
-    <Card title="Data architecture" compact><div className="grid metrics compact-metrics"><Metric label="Underlying OHLCV" value="Yahoo → PostgreSQL"/><Metric label="Options data" value="Polygon → PostgreSQL"/><Metric label="Scanner access" value="Database / cache only"/><Metric label="Direct provider calls during scan" value="Disabled"/></div></Card>
     <Card title="Market ingestion"><div className="scanner-form"><label>Ingestion scope<select value={ingestionScope} onChange={e=>setIngestionScope(e.target.value as any)}><option value="all">Full ingestion — Yahoo OHLCV + Polygon options</option><option value="underlying">Underlying only — Yahoo OHLCV</option><option value="options">Options only — Polygon</option></select></label><label>Ingestion mode<select value={refreshMode} onChange={e=>setRefreshMode(e.target.value as any)}><option value="cache_only">Validate persisted data only</option><option value="refresh_missing">Refresh missing / stale</option><option value="force_full">Force full rebuild</option></select><small>{modeHelp}</small></label><label>Minimum OHLCV coverage %<input type="number" min="0" max="100" step="0.1" value={minimumCoverage} onChange={e=>setMinimumCoverage(Number(e.target.value))}/></label><label>Maximum failed symbols<input type="number" min="0" max="1000" value={maximumFailedSymbols} onChange={e=>setMaximumFailedSymbols(Number(e.target.value))}/></label><label className="check"><input type="checkbox" checked={continueOnDegraded} onChange={e=>setContinueOnDegraded(e.target.checked)}/>Continue when degraded thresholds pass</label><div className="scanner-actions"><button disabled={busy} onClick={ingest}>Run market ingestion</button></div></div><div className="grid metrics"><Metric label="Last ingestion" value={latestIngestion?new Date(latestIngestion.created_at).toLocaleString():'—'}/><Metric label="Ingestion scope" value={latestIngestion?.request?.data_scope||'—'}/><Metric label="Ingestion status" value={<Badge value={latestIngestion?.status||'UNKNOWN'}/>}/><Metric label="Coverage" value={latestIngestion?.summary?.coverage||'—'}/></div></Card>
     <Card title="Scan controls"><div className="scanner-form"><label>Universe<select value={universe} onChange={e=>setUniverse(e.target.value)}>{universes.length?universes.map((u:any)=><option key={u.id} value={u.id}>{u.label} — {u.symbol_count}</option>):<option value="liquid-us-700">Highly Liquid U.S. Equities & ETFs</option>}</select><small>{universes.find((u:any)=>u.id===universe)?.description||'Loaded from the governed backend registry.'}</small></label><label>Custom symbols<input value={symbols} onChange={e=>setSymbols(e.target.value)} placeholder="AAPL,MSFT,SPY"/></label><label>Minimum score<input type="number" value={minimumScore} onChange={e=>setMinimumScore(Number(e.target.value))}/></label><label>Top trades<input type="number" value={top} onChange={e=>setTop(Number(e.target.value))}/></label><label>Expiration selection<select value={expirationMode} onChange={e=>setExpirationMode(e.target.value as any)}><option value="automatic">Automatic — all eligible horizons</option><option value="short">Short — 7 to 21 DTE</option><option value="swing">Swing — 22 to 45 DTE</option><option value="medium">Medium — 46 to 75 DTE</option><option value="long">Long — 76 to 120 DTE</option><option value="custom">Custom DTE range</option><option value="fixed">Fixed — legacy 30 DTE</option></select></label><label>Minimum DTE<input type="number" min="1" max="730" value={minimumDte} onChange={e=>setMinimumDte(Number(e.target.value))}/></label><label>Maximum DTE<input type="number" min="1" max="730" value={maximumDte} onChange={e=>setMaximumDte(Number(e.target.value))}/></label><label>Max trades per expiry<input type="number" min="0" max="100" value={maxPerExpiry} onChange={e=>setMaxPerExpiry(Number(e.target.value))}/><small>Use 0 to disable expiry diversification.</small></label><label className="check"><input type="checkbox" checked={autoRefresh} onChange={e=>setAutoRefresh(e.target.checked)}/>Run governed ingestion before scanning</label><div className="scanner-actions"><button className="primary" disabled={busy} onClick={scan}>Run database-only daily scan</button></div></div></Card>
     <div className="grid metrics"><Metric label="Symbols scanned" value={selected?.summary?.symbols_scanned||0}/><Metric label="Candidates" value={candidates.length||selected?.summary?.candidate_count||0}/><Metric label="Best trades" value={trades.length||selected?.summary?.trade_count||0}/><Metric label="Top score" value={selected?.summary?.top_score?Number(selected.summary.top_score).toFixed(2):'—'}/></div>
-    <Card title="Provider health and lineage" compact><div className="grid metrics compact-metrics"><Metric label="OHLCV provider" value="Yahoo"/><Metric label="Options provider" value="Polygon"/><Metric label="Scan source" value="Persisted data"/><Metric label="Provider status" value={<Badge value={selected?.summary?.provider_status||'UNKNOWN'}/>}/><Metric label="Rate limits" value={selected?.summary?.provider_rate_limits||0}/><Metric label="Retries" value={selected?.summary?.provider_retries||0}/></div></Card>
+    <Card title="Data readiness" compact><div className="grid metrics compact-metrics readiness-metrics"><Metric label="Scanner source" value="PostgreSQL"/><Metric label="Underlying data" value={<Badge value={selected?.summary?.underlying_data_status||latestIngestion?.summary?.underlying_status||'READY'}/>}/><Metric label="Options snapshot" value={<Badge value={selected?.summary?.options_data_status||latestIngestion?.summary?.options_status||'READY'}/>}/><Metric label="Dealer analytics" value={<Badge value={trades.some((trade:any)=>trade.dealer_context_status==='FRESH')?'FRESH':trades.length?'MISSING':'UNKNOWN'}/>}/><Metric label="Last refresh" value={latestIngestion?new Date(latestIngestion.created_at).toLocaleString():'—'}/></div></Card>
     <Card title="Run history" compact><div className="run-history-scroll"><Table rows={runs} columns={[{key:'created_at',label:'Created',render:r=>new Date(r.created_at).toLocaleString()},{key:'kind',label:'Workflow'},{key:'status',label:'Status',render:r=><Badge value={r.status}/>},{key:'scope',label:'Scope',render:r=>r.request?.data_scope??(r.kind==='DAILY_SCAN'?'scan':'—')},{key:'refresh_mode',label:'Ingestion mode',render:r=>r.request?.refresh_mode==='refresh_missing'?'Refresh missing / stale':r.request?.refresh_mode==='force_full'?'Force full rebuild':r.request?.refresh_mode==='cache_only'?'Persisted data only':'—'},{key:'candidate_count',label:'Candidates',render:r=>r.summary?.candidate_count??'—'},{key:'coverage',label:'Coverage',render:r=>r.summary?.coverage??'—'},{key:'excluded_symbols',label:'Excluded',render:r=>r.summary?.excluded_symbols&&r.summary.excluded_symbols!=='NONE'?r.summary.excluded_symbols:'—'},{key:'trade_count',label:'Trades',render:r=>r.summary?.trade_count??'—'}]}/></div></Card>
-    <Card title="Best trade candidates"><Table rows={trades} columns={[{key:'symbol',label:'Symbol'},{key:'signal',label:'Signal',render:r=><Badge value={r.signal}/>},{key:'strategy',label:'Strategy'},{key:'ai_score',label:'AI score',render:r=>Number(r.ai_score||0).toFixed(2)},{key:'contract_ticker',label:'Contract',render:r=>r.contract_ticker||r.option_symbol||r.contract_symbol||'—'},{key:'expiry',label:'Expiry'},{key:'dte',label:'DTE'},{key:'strike',label:'Strike',render:r=>money(r.strike)},{key:'option_entry',label:'Entry',render:r=>money(r.option_entry)},{key:'target_price',label:'Target',render:r=>money(r.target_price)},{key:'stop_price',label:'Stop',render:r=>money(r.stop_price)},{key:'reward_risk_ratio',label:'R/R',render:r=>Number(r.reward_risk_ratio||0).toFixed(2)}]}/></Card>
+    <Card title="Best trade candidates">
+      <div className="candidate-table-scroll">
+        <table className="candidate-table">
+          <thead><tr><th aria-label="Expand ranking reason"></th><th>Symbol</th><th>Signal</th><th>Strategy</th><th>Final AI</th><th>Base AI</th><th>Dealer adj.</th><th>Dealer data</th><th>Positioning</th><th>Gamma regime</th><th>MS confidence</th><th>Contract</th><th>Expiry</th><th>DTE</th><th>Strike</th><th>Entry</th><th>Target</th><th>Stop</th><th>R/R</th></tr></thead>
+          <tbody>{trades.length?trades.map((trade:any,index:number)=>{
+            const tradeKey=String(trade.id||trade.trade_id||trade.contract_ticker||`${trade.symbol}-${trade.expiry}-${trade.strike}-${index}`);
+            const expanded=expandedTrade===tradeKey;
+            const reason=candidateRankingReason(trade);
+            return <Fragment key={tradeKey}>
+              <tr className={`candidate-row${expanded?' expanded':''}`} onClick={()=>setExpandedTrade(expanded?null:tradeKey)} aria-expanded={expanded}>
+                <td className="expand-cell">{expanded?<ChevronDown size={16}/>:<ChevronRight size={16}/>}</td><td><strong>{trade.symbol||'—'}</strong></td><td><Badge value={trade.signal}/></td><td>{trade.strategy||'—'}</td><td>{numeric(trade.ai_score).toFixed(2)}</td><td>{numeric(trade.base_ai_score, numeric(trade.ai_score)).toFixed(2)}</td><td className={numeric(trade.dealer_score_adjustment)>=0?'positive-value':'negative-value'}>{numeric(trade.dealer_score_adjustment)>=0?'+':''}{numeric(trade.dealer_score_adjustment).toFixed(2)}</td><td><Badge value={trade.dealer_context_status||'MISSING'}/></td><td>{String(trade.positioning_label||'—').replaceAll('_',' ')}</td><td>{String(trade.gamma_regime||'—').replaceAll('_',' ')}</td><td>{numeric(trade.market_structure_confidence).toFixed(2)}</td><td>{trade.contract_ticker||trade.option_symbol||trade.contract_symbol||'—'}</td><td>{trade.expiry||'—'}</td><td>{trade.dte??'—'}</td><td>{money(trade.strike)}</td><td>{money(trade.option_entry)}</td><td>{money(trade.target_price)}</td><td>{money(trade.stop_price)}</td><td>{numeric(trade.reward_risk_ratio).toFixed(2)}</td>
+              </tr>
+              {expanded&&<tr className="candidate-detail-row"><td colSpan={19}>
+                <div className="ranking-reason">
+                  <div className="ranking-score-strip"><div><span>Base AI</span><strong>{numeric(trade.base_ai_score,numeric(trade.ai_score)).toFixed(2)}</strong></div><div><span>Dealer adjustment</span><strong className={numeric(trade.dealer_score_adjustment)>=0?'positive-value':'negative-value'}>{numeric(trade.dealer_score_adjustment)>=0?'+':''}{numeric(trade.dealer_score_adjustment).toFixed(2)}</strong></div><div><span>Final AI</span><strong>{numeric(trade.ai_score).toFixed(2)}</strong></div><div><span>Dealer snapshot</span><strong>{trade.dealer_snapshot_date||'—'}</strong></div></div>
+                  <div className="ranking-reason-grid"><div><h4>Positive contributors</h4><ul>{reason.positives.map(item=><li key={item}>{item}</li>)}</ul></div><div><h4>Constraints and penalties</h4><ul>{reason.constraints.map(item=><li key={item}>{item}</li>)}</ul></div><div><h4>Contract selection</h4><ul>{reason.contractReasons.map(item=><li key={item}>{item}</li>)}</ul></div><div><h4>Data freshness</h4><ul><li>Dealer context: {trade.dealer_context_status||'MISSING'}</li><li>Dealer snapshot: {trade.dealer_snapshot_date||'—'}</li><li>Snapshot age: {trade.dealer_snapshot_age_days??'—'} day(s)</li><li>Market-structure confidence: {numeric(trade.market_structure_confidence).toFixed(2)}</li>{trade.dealer_context_warning&&<li>{trade.dealer_context_warning}</li>}</ul></div></div>
+                </div>
+              </td></tr>}
+            </Fragment>
+          }):<tr><td colSpan={19} className="empty">No trade candidates available</td></tr>}</tbody>
+        </table>
+      </div>
+    </Card>
     {selected&&(selected.stdout||selected.stderr)&&<Card title="Execution log"><pre className="run-log">{selected.stdout}{selected.stderr&&`\n${selected.stderr}`}</pre></Card>}
   </section>
 }

@@ -232,6 +232,13 @@ src/trading_ai/indicators/feature_engine.py
 src/trading_ai/indicators/macd.py
 src/trading_ai/indicators/rsi.py
 src/trading_ai/indicators/vwap.py
+src/trading_ai/institutional_market_structure/__init__.py
+src/trading_ai/institutional_market_structure/contracts.py
+src/trading_ai/institutional_market_structure/database_models.py
+src/trading_ai/institutional_market_structure/engine.py
+src/trading_ai/institutional_market_structure/reporting.py
+src/trading_ai/institutional_market_structure/serialization.py
+src/trading_ai/institutional_market_structure/service.py
 src/trading_ai/market/__init__.py
 src/trading_ai/market/bulk_updater.py
 src/trading_ai/market/downloader.py
@@ -382,6 +389,7 @@ src/trading_ai/options/probability.py
 src/trading_ai/options/quality.py
 src/trading_ai/options/ranker.py
 src/trading_ai/options/repository.py
+src/trading_ai/options/repository_snapshot_provider.py
 src/trading_ai/options/risk.py
 src/trading_ai/options/scoring.py
 src/trading_ai/options/selector.py
@@ -1305,6 +1313,7 @@ src/trading_ai/ui/api/deployment_recovery.py
 src/trading_ai/ui/api/execution_console.py
 src/trading_ai/ui/api/executive_reporting.py
 src/trading_ai/ui/api/health.py
+src/trading_ai/ui/api/institutional_market_structure.py
 src/trading_ai/ui/api/interactive_portfolio.py
 src/trading_ai/ui/api/local_admin_session.py
 src/trading_ai/ui/api/observability.py

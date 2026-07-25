@@ -14,6 +14,8 @@ from trading_ai.daily.strike_selector import TargetDeltaStrikeSelector
 from trading_ai.options.pricing_service import OptionPricingService
 from trading_ai.portfolio.awareness import PortfolioAwareness
 from trading_ai.ranking.ai_score import AITradeRanker
+from trading_ai.institutional_market_structure import scanner_context
+from trading_ai.institutional_market_structure.scanner_repository import DealerPositioningScannerRepository
 
 
 class DailyScanner:
@@ -49,6 +51,11 @@ class DailyScanner:
         open_interest_weight=0.20,
         volume_weight=0.15,
         liquidity_data_mode="adaptive",
+        enable_dealer_positioning=True,
+        dealer_positioning_repository=None,
+        maximum_dealer_snapshot_age_days=1,
+        dealer_positioning_weight=1.0,
+        maximum_dealer_score_adjustment=15.0,
     ):
         self.market_service = market_service
         self.feature_pipeline = feature_pipeline
@@ -124,6 +131,13 @@ class DailyScanner:
             portfolio_awareness or PortfolioAwareness()
         )
         self.ranker = ranker or AITradeRanker()
+        self.enable_dealer_positioning = bool(enable_dealer_positioning)
+        self.dealer_positioning_repository = (
+            dealer_positioning_repository or DealerPositioningScannerRepository()
+        )
+        self.maximum_dealer_snapshot_age_days = int(maximum_dealer_snapshot_age_days)
+        self.dealer_positioning_weight = max(0.0, float(dealer_positioning_weight))
+        self.maximum_dealer_score_adjustment = max(0.0, float(maximum_dealer_score_adjustment))
 
     def _latest_feature_row(self, symbol):
         df = self.market_service.get_price_history(
@@ -302,6 +316,75 @@ class DailyScanner:
             expiry_selection.source,
         )
 
+    def _dealer_positioning_context(self, *, symbol, signal, scan_date):
+        neutral = {
+            "dealer_context_status": "DISABLED" if not self.enable_dealer_positioning else "MISSING",
+            "dealer_snapshot_date": "",
+            "dealer_snapshot_age_days": -1,
+            "institutional_positioning_score": 0.0,
+            "positioning_label": "UNAVAILABLE",
+            "gamma_regime": "UNAVAILABLE",
+            "gamma_flip": None,
+            "spot_vs_gamma_flip_pct": None,
+            "primary_call_wall": None,
+            "primary_put_wall": None,
+            "distance_to_call_wall_pct": None,
+            "distance_to_put_wall_pct": None,
+            "dealer_hedging_pressure": 0.0,
+            "range_probability": 0.0,
+            "breakout_probability": 0.0,
+            "breakdown_probability": 0.0,
+            "volatility_expansion_probability": 0.0,
+            "market_structure_confidence": 0.0,
+            "directional_alignment_probability": 0.0,
+            "dealer_score_adjustment": 0.0,
+            "dealer_context_warning": "",
+        }
+        if not self.enable_dealer_positioning:
+            return neutral
+        result = self.dealer_positioning_repository.load_latest(
+            symbol=symbol,
+            scan_date=scan_date,
+            maximum_age_days=self.maximum_dealer_snapshot_age_days,
+        )
+        neutral["dealer_context_status"] = result.status
+        neutral["dealer_snapshot_age_days"] = result.snapshot_age_days if result.snapshot_age_days is not None else -1
+        neutral["dealer_context_warning"] = result.error or ""
+        if result.status != "FRESH" or result.snapshot is None:
+            return neutral
+        snapshot = result.snapshot
+        context = scanner_context(snapshot, option_type=signal, strategy_family="LONG_PREMIUM")
+        raw_adjustment = float(context.get("scanner_score_adjustment", 0.0) or 0.0)
+        weighted_adjustment = raw_adjustment * self.dealer_positioning_weight
+        capped_adjustment = max(
+            -self.maximum_dealer_score_adjustment,
+            min(self.maximum_dealer_score_adjustment, weighted_adjustment),
+        )
+        call_distance = None if snapshot.primary_call_wall is None else (snapshot.primary_call_wall-snapshot.spot)/snapshot.spot*100
+        put_distance = None if snapshot.primary_put_wall is None else (snapshot.primary_put_wall-snapshot.spot)/snapshot.spot*100
+        neutral.update({
+            "dealer_context_status": "FRESH",
+            "dealer_snapshot_date": snapshot.option_snapshot_date,
+            "institutional_positioning_score": float(snapshot.institutional_positioning_score),
+            "positioning_label": snapshot.positioning_label,
+            "gamma_regime": snapshot.gamma_regime,
+            "gamma_flip": snapshot.gamma_flip,
+            "spot_vs_gamma_flip_pct": snapshot.gamma_flip_distance_pct,
+            "primary_call_wall": snapshot.primary_call_wall,
+            "primary_put_wall": snapshot.primary_put_wall,
+            "distance_to_call_wall_pct": call_distance,
+            "distance_to_put_wall_pct": put_distance,
+            "dealer_hedging_pressure": float(snapshot.dealer_hedging_pressure),
+            "range_probability": float(snapshot.range_probability),
+            "breakout_probability": float(snapshot.breakout_probability),
+            "breakdown_probability": float(snapshot.breakdown_probability),
+            "volatility_expansion_probability": float(snapshot.volatility_expansion_probability),
+            "market_structure_confidence": float(snapshot.confidence_score),
+            "directional_alignment_probability": float(context.get("directional_alignment_probability", 0.0) or 0.0),
+            "dealer_score_adjustment": float(capped_adjustment),
+        })
+        return neutral
+
     def scan_symbol(self, symbol):
         row = self._latest_feature_row(symbol)
         if row is None:
@@ -441,6 +524,12 @@ class DailyScanner:
         )
 
         as_of = date.fromisoformat(self.end[:10])
+        dealer_context = self._dealer_positioning_context(
+            symbol=symbol, signal=signal, scan_date=as_of
+        )
+        base_ai_score = float(ranking["ai_score"])
+        dealer_adjustment = float(dealer_context["dealer_score_adjustment"])
+        final_ai_score = max(0.0, min(100.0, base_ai_score + dealer_adjustment))
         (
             resolved_contract_ticker,
             candidate_expiry,
@@ -470,6 +559,18 @@ class DailyScanner:
             f"{ranking['ranking_reason']} | {strike_note} | "
             f"expiration_mode={self.expiration_mode}; selected_dte={candidate_dte}."
         )
+        if dealer_context["dealer_context_status"] == "FRESH":
+            ranking_reason += (
+                f" | Dealer positioning {dealer_context['positioning_label']} "
+                f"({dealer_context['gamma_regime']}), adjustment="
+                f"{dealer_adjustment:+.2f}, confidence="
+                f"{dealer_context['market_structure_confidence']:.2f}."
+            )
+        elif self.enable_dealer_positioning:
+            ranking_reason += (
+                f" | Dealer positioning {dealer_context['dealer_context_status']}; "
+                "neutral score adjustment."
+            )
 
         return DailyCandidate(
             symbol=symbol,
@@ -526,7 +627,8 @@ class DailyScanner:
             ),
             adjusted_score=float(adjusted_score),
             portfolio_notes=portfolio_result["notes"],
-            ai_score=float(ranking["ai_score"]),
+            ai_score=float(final_ai_score),
+            base_ai_score=float(base_ai_score),
             technical_score=float(
                 ranking["technical_score"]
             ),
@@ -543,6 +645,7 @@ class DailyScanner:
                 ranking["risk_score"]
             ),
             ranking_reason=ranking_reason,
+            **dealer_context,
         )
 
     @staticmethod

@@ -29,6 +29,7 @@ from trading_ai.ui.api.security_compliance_center import router as security_comp
 from trading_ai.ui.api.executive_reporting import router as executive_reporting_router
 from trading_ai.ui.api.ui_resilience import router as ui_resilience_router
 from trading_ai.ui.api.local_admin_session import router as local_admin_session_router
+from trading_ai.ui.api.institutional_market_structure import router as institutional_market_structure_router
 from trading_ai.ui.api.production_platform import router as production_platform_router
 from trading_ai.ui.observability.middleware import ObservabilityMiddleware
 
@@ -36,7 +37,7 @@ from trading_ai.ui.observability.middleware import ObservabilityMiddleware
 def create_app() -> FastAPI:
     app = FastAPI(
         title="Trading AI Institutional Workstation",
-        version="40.0.0",
+        version="44.0.0",
         description=(
             "Milestone 40 governed production service layer for portfolio, risk, "
             "execution, and position management."
@@ -66,6 +67,7 @@ def create_app() -> FastAPI:
   executive_reporting_router,
   ui_resilience_router,
   local_admin_session_router,
+  institutional_market_structure_router,
         paper_commands_router,
         paper_execution_router,
         observability_router,

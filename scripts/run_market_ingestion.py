@@ -78,6 +78,15 @@ def build_parser():
     p.add_argument("--options-maximum-strike-distance-pct",type=float,default=.40); p.add_argument("--polygon-requests-per-second",type=float,default=4.0)
     p.add_argument("--options-batch-size",type=int,default=5000); p.add_argument("--options-manifest",default="reports/market_ingestion/options_manifest.json")
     p.add_argument("--options-report",default="reports/market_ingestion/options_latest.json")
+    p.add_argument("--skip-dealer-positioning",action="store_true",help="Do not refresh Milestone 44 derived tables after options ingestion.")
+    p.add_argument("--dealer-positioning-output-dir",default="reports/m44")
+    p.add_argument("--dealer-positioning-report",default="reports/market_ingestion/dealer_positioning_latest.json")
+    p.add_argument("--dealer-positioning-minimum-dte",type=int,default=1)
+    p.add_argument("--dealer-positioning-maximum-dte",type=int,default=365)
+    p.add_argument("--dealer-positioning-maximum-snapshot-age-days",type=int,default=0,help="Default 0 requires the just-ingested trading-date snapshot.")
+    p.add_argument("--dealer-sign-convention",choices=["street_proxy","customer_long_proxy","unsigned_market_exposure"],default="street_proxy")
+    p.add_argument("--dealer-positioning-write-reports",action="store_true",help="Also write per-symbol JSON/CSV/HTML reports. Disabled by default for fast intraday refreshes.")
+    p.add_argument("--dealer-positioning-fail-fast",action="store_true",help="Abort ingestion when a symbol-level Milestone 44 refresh fails. Default is non-blocking.")
     return p
 
 def main(argv=None):
@@ -103,6 +112,31 @@ def main(argv=None):
         write_ingestion_profile_json(profile,args.options_report)
         failed += profile.failed_batches
         print(f"Options ingestion: {profile.valid_records} valid, {profile.inserted_records} inserted, {profile.updated_records} updated, {profile.failed_batches} failed batches")
+
+        if not args.skip_dealer_positioning:
+            from trading_ai.institutional_market_structure.contracts import DealerPositioningPolicy
+            from trading_ai.institutional_market_structure.refresh import DealerPositionRefreshOrchestrator, write_refresh_profile
+
+            positioning_policy = DealerPositioningPolicy(
+                minimum_dte=args.dealer_positioning_minimum_dte,
+                maximum_dte=args.dealer_positioning_maximum_dte,
+                maximum_snapshot_age_days=args.dealer_positioning_maximum_snapshot_age_days,
+                dealer_sign_convention=args.dealer_sign_convention,
+            )
+            positioning_profile = DealerPositionRefreshOrchestrator(
+                positioning_policy,
+                output_dir=Path(args.dealer_positioning_output_dir),
+                write_reports=args.dealer_positioning_write_reports,
+            ).run(symbols, capture_date, continue_on_error=not args.dealer_positioning_fail_fast)
+            write_refresh_profile(positioning_profile, args.dealer_positioning_report)
+            if args.dealer_positioning_fail_fast:
+                failed += positioning_profile.failed_symbols
+            print(
+                "Dealer positioning refresh: "
+                f"{positioning_profile.refreshed_symbols} refreshed, "
+                f"{positioning_profile.skipped_symbols} skipped, "
+                f"{positioning_profile.failed_symbols} failed"
+            )
     return 0 if failed==0 or args.continue_on_error else 1
 
 if __name__ == "__main__": raise SystemExit(main())
