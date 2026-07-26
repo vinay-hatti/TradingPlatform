@@ -56,6 +56,7 @@ class DailyScanner:
         maximum_dealer_snapshot_age_days=1,
         dealer_positioning_weight=1.0,
         maximum_dealer_score_adjustment=15.0,
+        published_state_context=None,
     ):
         self.market_service = market_service
         self.feature_pipeline = feature_pipeline
@@ -138,6 +139,7 @@ class DailyScanner:
         self.maximum_dealer_snapshot_age_days = int(maximum_dealer_snapshot_age_days)
         self.dealer_positioning_weight = max(0.0, float(dealer_positioning_weight))
         self.maximum_dealer_score_adjustment = max(0.0, float(maximum_dealer_score_adjustment))
+        self.published_state_context = published_state_context
 
     def _latest_feature_row(self, symbol):
         df = self.market_service.get_price_history(
@@ -646,6 +648,7 @@ class DailyScanner:
             ),
             ranking_reason=ranking_reason,
             **dealer_context,
+            **(self.published_state_context.candidate_fields() if self.published_state_context else {}),
         )
 
     @staticmethod

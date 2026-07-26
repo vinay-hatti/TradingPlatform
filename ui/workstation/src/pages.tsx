@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useState, type ReactNode } from 'react';
-import { Activity, BriefcaseBusiness, ShieldCheck, Waypoints, ScanLine, LogOut, RadioTower, Search, ChevronDown, ChevronRight } from 'lucide-react';
+import { Activity, BriefcaseBusiness, ShieldCheck, Waypoints, ScanLine, LogOut, RadioTower, Search, ChevronDown, ChevronRight, Globe2 } from 'lucide-react';
 import { platformApi } from './api';
 import { useRemote } from './hooks';
 import { asArray, firstNumber, money, pct } from './model';
@@ -130,6 +130,7 @@ export const Exits = artifact('Exit intelligence', platformApi.exits, (data: any
 
 export const nav = [
   ['overview', 'Overview', Activity],
+  ['market', 'Market overview', Globe2],
   ['scanner', 'Daily scanner', Search],
   ['portfolio', 'Portfolio', BriefcaseBusiness],
   ['risk', 'Risk', ShieldCheck],
@@ -187,3 +188,45 @@ export function DailyScannerPage(){
   </section>
 }
 
+
+const scoreTone=(value:number)=>value>=65?'good':value<40?'bad':'warn';
+const fmt=(value:any,digits=1)=>Number(value??0).toFixed(digits);
+const signed=(value:any)=>`${Number(value??0)>=0?'+':''}${fmt(value,2)}%`;
+function ScoreBar({label,value}:{label:string;value:any}){const n=Math.max(0,Math.min(100,Number(value??0)));return <div className="score-bar"><div><span>{label}</span><b>{n.toFixed(1)}</b></div><div className="score-track"><i style={{width:`${n}%`}}/></div></div>}
+
+export function MarketOverviewPage(){
+  const [data,setData]=useState<any>(null);const [loading,setLoading]=useState(true);const [error,setError]=useState('');const [refreshing,setRefreshing]=useState(false);
+  const headers=()=>{const h:Record<string,string>={'Accept':'application/json'};const key=sessionStorage.getItem('trading-ai-api-key');if(key){h['X-API-Key']=key;h['X-Actor']='workstation-user'}return h};
+  const load=async()=>{setLoading(true);setError('');try{const r=await fetch('/api/v1/market-overview/latest',{headers:headers()});const p=await r.json();if(!r.ok)throw new Error(p.detail||r.statusText);setData(p.data)}catch(e:any){setError(e.message)}finally{setLoading(false)}};
+  const refresh=async()=>{setRefreshing(true);setError('');try{const h=headers();h['Content-Type']='application/json';const r=await fetch('/api/v1/market-overview/refresh',{method:'POST',headers:h});const p=await r.json();if(!r.ok)throw new Error(p.detail||r.statusText);setData(p.data)}catch(e:any){setError(e.message)}finally{setRefreshing(false)}};
+  useEffect(()=>{load()},[]);
+  if(loading)return <State loading error={null} onRetry={load}>{null}</State>;if(error&&!data)return <State loading={false} error={new Error(error)} onRetry={load}>{null}</State>;
+  const b=data?.breadth||{},tm=data?.trend_momentum||{},rs=data?.regime_sentiment||{},vol=data?.volatility_options||{},liq=data?.liquidity_participation||{};
+  const opp=data?.opportunity_map||{};
+  return <section className="market-overview-page">
+    <div className="page-title"><div><h2>Market overview</h2><p>Top-down market health, regime, sector rotation, options structure, and trading opportunity context from persisted data.</p></div><div className="overview-actions"><Badge value={data?.market_bias||'UNKNOWN'}/><button disabled={refreshing} onClick={refresh}>{refreshing?'Refreshing…':'Refresh analytics'}</button></div></div>
+    {error&&<div className="scanner-error">{error}</div>}
+    <div className="market-status-grid">
+      <Metric label="Market bias" value={<Badge value={data?.market_bias}/>} detail={`Confidence ${fmt(data?.confidence_score)}%`}/>
+      <Metric label="Preferred strategy" value={String(data?.preferred_strategy||'—').replaceAll('_',' ')} detail={data?.volatility_regime}/>
+      <Metric label="Market health" value={fmt(data?.market_health_score)} detail={data?.breadth_regime}/>
+      <Metric label="Regime transition" value={<Badge value={data?.regime_transition_risk}/>} detail={data?.trend_regime}/>
+      <Metric label="Snapshot" value={data?.as_of_date||'—'} detail={data?.snapshot_timestamp?new Date(data.snapshot_timestamp).toLocaleString():'—'}/>
+    </div>
+    <div className="overview-two-column">
+      <Card title="Market health & breadth"><div className="score-stack"><ScoreBar label="Breadth score" value={data?.breadth_score}/><ScoreBar label="Above EMA 20" value={b.pct_above_ema20}/><ScoreBar label="Above SMA 50" value={b.pct_above_sma50}/><ScoreBar label="Above SMA 200" value={b.pct_above_sma200}/></div><div className="mini-metrics"><span>Advancers <b>{b.advancers??0}</b></span><span>Decliners <b>{b.decliners??0}</b></span><span>A/D ratio <b>{fmt(b.advance_decline_ratio,2)}</b></span><span>20D highs/lows <b>{b.new_highs_20d??0}/{b.new_lows_20d??0}</b></span><span>Up/down volume <b>{fmt(b.up_down_volume_ratio,2)}</b></span><span>Regime <Badge value={b.breadth_regime}/></span></div></Card>
+      <Card title="Trend, momentum & regime"><div className="score-stack"><ScoreBar label="Trend" value={data?.trend_score}/><ScoreBar label="Momentum" value={data?.momentum_score}/><ScoreBar label="Risk-on" value={data?.risk_on_score}/><ScoreBar label="Sentiment" value={data?.sentiment_score}/></div><div className="regime-grid"><span>Trend <Badge value={data?.trend_regime}/></span><span>Volatility <Badge value={data?.volatility_regime}/></span><span>Liquidity <Badge value={data?.liquidity_regime}/></span><span>Correlation <Badge value={data?.correlation_regime}/></span></div></Card>
+    </div>
+    <Card title="Benchmark index context"><div className="overview-table-scroll"><Table rows={data?.index_context||[]} columns={[{key:'symbol',label:'Symbol'},{key:'asset_type',label:'Type',render:r=><Badge value={r.asset_type||'UNKNOWN'}/>},{key:'name',label:'Benchmark'},{key:'close',label:'Close',render:r=>money(r.close)},{key:'return_1d',label:'1D',render:r=><span className={Number(r.return_1d)>=0?'positive-value':'negative-value'}>{signed(r.return_1d)}</span>},{key:'return_5d',label:'5D',render:r=>signed(r.return_5d)},{key:'return_20d',label:'20D',render:r=>signed(r.return_20d)},{key:'above_20',label:'EMA20',render:r=><Badge value={r.above_20?'ABOVE':'BELOW'}/>},{key:'above_50',label:'SMA50',render:r=><Badge value={r.above_50?'ABOVE':'BELOW'}/>},{key:'above_200',label:'SMA200',render:r=><Badge value={r.above_200?'ABOVE':'BELOW'}/>},{key:'realized_vol_20d',label:'RV20',render:r=>`${fmt(r.realized_vol_20d)}%`},{key:'proxy_symbol',label:'ETF proxy',render:r=>r.proxy_symbol||'—'},{key:'proxy_return_spread_20d',label:'Index−ETF 20D',render:r=>r.proxy_return_spread_20d==null?'—':signed(r.proxy_return_spread_20d)}]}/></div><p className="overview-note">SPX, NDX, and RUT are cash indices. SPY, QQQ, and IWM remain ETF proxies. Cash-index volume is intentionally excluded from breadth and participation analytics.</p></Card>
+    <Card title="Sector performance & rotation"><div className="sector-heatmap">{(data?.sectors||[]).map((s:any)=><article key={s.sector_etf} className={`sector-tile ${scoreTone(Number(s.momentum_score))}`}><div><b>{s.sector_etf}</b><span>{s.sector}</span></div><Badge value={s.rotation_label}/><strong className={Number(s.return_20d)>=0?'positive-value':'negative-value'}>{signed(s.return_20d)}</strong><small>5D {signed(s.return_5d)} · RS {signed(s.relative_strength)}</small><small>Momentum {fmt(s.momentum_score)} · Dealer {s.dealer_positioning_score==null?'—':fmt(s.dealer_positioning_score)}</small></article>)}</div></Card>
+    <Card title="Dealer positioning & options structure"><div className="overview-table-scroll"><Table rows={data?.dealer_positioning||[]} columns={[{key:'symbol',label:'Symbol'},{key:'positioning_label',label:'Positioning',render:r=><Badge value={r.positioning_label}/>},{key:'gamma_regime',label:'Gamma',render:r=><Badge value={r.gamma_regime}/>},{key:'institutional_positioning_score',label:'Score',render:r=>fmt(r.institutional_positioning_score)},{key:'gamma_flip',label:'Gamma flip',render:r=>money(r.gamma_flip)},{key:'primary_call_wall',label:'Call wall',render:r=>money(r.primary_call_wall)},{key:'primary_put_wall',label:'Put wall',render:r=>money(r.primary_put_wall)},{key:'range_probability',label:'Range',render:r=>pct(r.range_probability)},{key:'breakout_probability',label:'Breakout',render:r=>pct(r.breakout_probability)},{key:'breakdown_probability',label:'Breakdown',render:r=>pct(r.breakdown_probability)},{key:'confidence_score',label:'Confidence',render:r=>pct(r.confidence_score)}]}/></div><p className="overview-note">Dealer positioning is explicitly model-derived from open interest and Greeks; it is not observed dealer inventory.</p></Card>
+    <div className="overview-three-column">
+      <Card title="Volatility & options environment"><div className="detail-list"><span>Average ATM IV <b>{fmt(vol.average_atm_iv)}%</b></span><span>Realized volatility <b>{fmt(vol.average_realized_volatility_20d)}%</b></span><span>Volatility risk premium <b>{fmt(vol.volatility_risk_premium)} pts</b></span><span>Long-premium attractiveness <b>{fmt(vol.long_premium_attractiveness)}</b></span><span>Short-premium attractiveness <b>{fmt(vol.short_premium_attractiveness)}</b></span><span>Regime <Badge value={vol.volatility_regime}/></span></div></Card>
+      <Card title="Liquidity & participation"><div className="detail-list"><span>Evaluated symbols <b>{liq.evaluated_symbols??0}</b></span><span>Relative volume <b>{fmt(liq.relative_volume_composite,2)}</b></span><span>A/D ratio <b>{fmt(liq.advance_decline_ratio,2)}</b></span><span>Up/down volume <b>{fmt(liq.up_down_volume_ratio,2)}</b></span><span>Liquidity regime <Badge value={liq.liquidity_regime}/></span></div></Card>
+      <Card title="Opportunity map"><div className="detail-list"><span>Best bullish sector <b>{opp.best_bullish_sector?.sector||'—'} ({opp.best_bullish_sector?.sector_etf||'—'})</b></span><span>Best bearish sector <b>{opp.best_bearish_sector?.sector||'—'} ({opp.best_bearish_sector?.sector_etf||'—'})</b></span><span>Strongest cash index <b>{opp.strongest_cash_index?.symbol||'—'} {opp.strongest_cash_index?`(${signed(opp.strongest_cash_index.return_20d)})`:''}</b></span><span>Weakest cash index <b>{opp.weakest_cash_index?.symbol||'—'} {opp.weakest_cash_index?`(${signed(opp.weakest_cash_index.return_20d)})`:''}</b></span><span>Breakout market <b>{opp.best_breakout_market?.symbol||'—'}</b></span><span>Range market <b>{opp.best_range_market?.symbol||'—'}</b></span><span>Strategy fit <b>{data?.preferred_strategy?.replaceAll('_',' ')||'—'}</b></span></div></Card>
+    </div>
+    <Card title="Cross-asset confirmation"><div className="overview-table-scroll"><Table rows={data?.cross_asset||[]} columns={[{key:'symbol',label:'Symbol'},{key:'name',label:'Asset'},{key:'return_1d',label:'1D',render:r=>signed(r.return_1d)},{key:'return_5d',label:'5D',render:r=>signed(r.return_5d)},{key:'return_20d',label:'20D',render:r=>signed(r.return_20d)},{key:'trend',label:'Trend',render:r=><Badge value={r.trend}/>} ]}/></div></Card>
+    <Card title="Risk dashboard"><div className="risk-alert-grid">{(data?.risk_alerts||[]).length?(data.risk_alerts||[]).map((a:any,i:number)=><article key={`${a.title}-${i}`} className={`risk-alert ${String(a.severity).toLowerCase()}`}><Badge value={a.severity}/><h4>{a.title}</h4><p>{a.evidence}</p><small>{a.trading_implication}</small></article>):<p className="empty">No active market-level risk alerts.</p>}</div></Card>
+    <Card title="Data freshness" compact><div className="grid metrics compact-metrics"><Metric label="Source" value={data?.data_freshness?.source||'PostgreSQL'}/><Metric label="Price history" value={data?.data_freshness?.price_history_as_of||'—'}/><Metric label="Cash indices" value={data?.data_freshness?.cash_indices_as_of||'—'}/><Metric label="Dealer snapshot" value={data?.data_freshness?.dealer_snapshot_as_of||'—'}/><Metric label="Generated" value={data?.data_freshness?.generated_at?new Date(data.data_freshness.generated_at).toLocaleString():'—'}/></div></Card>
+  </section>
+}

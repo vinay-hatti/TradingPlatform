@@ -15,6 +15,10 @@ from trading_ai.realtime_monitoring.service import RealtimeMonitoringService
 from trading_ai.realtime_monitoring.router import router as realtime_router
 from trading_ai.daily_scan_workstation.router import router as scanner_router
 from trading_ai.daily_scan_workstation.service import DailyScanWorkstationService
+from trading_ai.market_overview.service import MarketOverviewService
+from trading_ai.market_overview.router import router as market_overview_router
+from trading_ai.market_intelligence.service import MarketIntelligenceService
+from trading_ai.market_intelligence.router import router as market_intelligence_router
 
 
 def create_production_app(settings: ProductionApiSettings | None = None) -> FastAPI:
@@ -29,6 +33,8 @@ def create_production_app(settings: ProductionApiSettings | None = None) -> Fast
     app.state.m40_audit = JsonApiAuditStore(resolved.artifact_root / "m40/api_audit.json")
     app.state.m42_service = RealtimeMonitoringService(resolved.artifact_root)
     app.state.m43_service = DailyScanWorkstationService(Path(__file__).resolve().parents[3], resolved.artifact_root)
+    app.state.m45_market_overview_service = MarketOverviewService()
+    app.state.m46_market_intelligence_service = MarketIntelligenceService()
 
     @app.middleware("http")
     async def request_governance(request: Request, call_next):
@@ -58,6 +64,8 @@ def create_production_app(settings: ProductionApiSettings | None = None) -> Fast
     app.include_router(router)
     app.include_router(realtime_router)
     app.include_router(scanner_router)
+    app.include_router(market_overview_router)
+    app.include_router(market_intelligence_router)
 
     @app.on_event("startup")
     async def start_m42(): await app.state.m42_service.start()

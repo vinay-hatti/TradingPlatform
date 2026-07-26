@@ -110,6 +110,7 @@ class PolygonOptionChainSnapshotProvider:
         session: requests.Session | None = None,
         mapper: PolygonOptionSnapshotMapper | None = None,
         sleep: Callable[[float], None] = time.sleep,
+        symbol_resolver: Callable[[str], str] | None = None,
     ) -> None:
         if not api_key or not api_key.strip():
             raise ValueError("Polygon API key is required")
@@ -120,6 +121,7 @@ class PolygonOptionChainSnapshotProvider:
         self.session = session or requests.Session()
         self.mapper = mapper or PolygonOptionSnapshotMapper()
         self.sleep = sleep
+        self.symbol_resolver = symbol_resolver or (lambda symbol: symbol.strip().upper())
         self._last_request_time = 0.0
 
     @property
@@ -170,7 +172,10 @@ class PolygonOptionChainSnapshotProvider:
                 )
 
     def _iter_symbol_payloads(self, symbol: str) -> Iterable[Mapping[str, Any]]:
-        url = f"{self.BASE_URL}/{symbol}"
+        provider_symbol = self.symbol_resolver(symbol)
+        if not provider_symbol:
+            raise ValueError(f"No Polygon options snapshot ticker resolved for {symbol}")
+        url = f"{self.BASE_URL}/{provider_symbol}"
         params: dict[str, Any] | None = {
             "expiration_date.gte": date.fromordinal(self.as_of_date.toordinal() + self.policy.minimum_dte).isoformat(),
             "expiration_date.lte": date.fromordinal(self.as_of_date.toordinal() + self.policy.maximum_dte).isoformat(),

@@ -1,11 +1,12 @@
 import { useEffect, useState, type ChangeEvent, type ComponentType } from 'react';
 import { KeyRound, Menu, RefreshCw } from 'lucide-react';
 import type { WorkspaceKey } from './types';
-import { CommandCenter, DailyScannerPage, Execution, Exits, nav, Overview, Portfolio, Positions, Risk } from './pages';
+import { CommandCenter, DailyScannerPage, Execution, Exits, MarketOverviewPage, nav, Overview, Portfolio, Positions, Risk } from './pages';
 import './styles.css';
 
 const pages: Record<WorkspaceKey, ComponentType> = {
   overview: Overview,
+  market: MarketOverviewPage,
   scanner: DailyScannerPage,
   portfolio: Portfolio,
   risk: Risk,

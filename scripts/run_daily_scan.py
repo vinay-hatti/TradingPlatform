@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import argparse
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta, timezone
 
 from trading_ai.app.bootstrap import container
 from trading_ai.backtest.datasource import HistoricalDataSource
@@ -10,8 +10,12 @@ from trading_ai.daily.recommender import LiveTradeRecommender
 from trading_ai.daily.reporter import DailyRecommendationReporter
 from trading_ai.daily.scanner import DailyScanner
 from trading_ai.daily.trade_reporter import LiveTradeCandidateReporter
+from trading_ai.daily.published_context import ScannerPublishedStateContext
+from trading_ai.database import SessionLocal
+from trading_ai.published_state import PublishedMarketStateResolver, PublishedStatePolicy
 from trading_ai.market.universe import get_universe
 from trading_ai.portfolio.awareness import PortfolioAwareness
+from trading_ai.lineage import LineagePersistenceService, ScannerRunLineage, new_run_id
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
@@ -92,6 +96,10 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--dealer-positioning-max-age-days", type=int, default=1)
     parser.add_argument("--dealer-positioning-weight", type=float, default=1.0)
     parser.add_argument("--dealer-positioning-max-adjustment", type=float, default=15.0)
+    parser.add_argument("--published-state-maximum-age-hours", type=float, default=36.0)
+    parser.add_argument("--published-state-warning-age-hours", type=float, default=24.0)
+    parser.add_argument("--require-ready-published-state", action="store_true")
+    parser.add_argument("--allow-unpublished-state", action="store_true", help="Emergency compatibility override; disables published-state governance.")
     parser.add_argument(
         "--report-date",
         default=None,
@@ -99,6 +107,20 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     )
     return parser.parse_args(argv)
 
+
+
+def resolve_scanner_published_state(args: argparse.Namespace) -> ScannerPublishedStateContext | None:
+    if args.allow_unpublished_state:
+        return None
+    policy = PublishedStatePolicy.for_consumer(
+        "scanner",
+        maximum_age_seconds=max(1, int(float(args.published_state_maximum_age_hours) * 3600.0)),
+        warning_age_seconds=max(1, int(float(args.published_state_warning_age_hours) * 3600.0)),
+        allow_degraded=not bool(args.require_ready_published_state),
+    )
+    with SessionLocal() as session:
+        state = PublishedMarketStateResolver(session, policy).require()
+    return ScannerPublishedStateContext.from_state(state)
 
 def resolve_symbols(args: argparse.Namespace) -> list[str]:
     if args.symbols:
@@ -190,6 +212,9 @@ def print_trade(index: int, trade) -> None:
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
     symbols = resolve_symbols(args)
+    published_state_context = resolve_scanner_published_state(args)
+    scanner_run_id = new_run_id("scanner")
+    scanner_started_at = datetime.now(timezone.utc)
 
     if args.top <= 0:
         raise ValueError("--top must be positive")
@@ -240,6 +265,7 @@ def main(argv: list[str] | None = None) -> int:
         maximum_dealer_snapshot_age_days=args.dealer_positioning_max_age_days,
         dealer_positioning_weight=args.dealer_positioning_weight,
         maximum_dealer_score_adjustment=args.dealer_positioning_max_adjustment,
+        published_state_context=published_state_context,
     )
 
     print()
@@ -256,6 +282,14 @@ def main(argv: list[str] | None = None) -> int:
         f"Data Mode       : "
         f"{'network allowed' if args.allow_network else 'cache only'}"
     )
+    if published_state_context:
+        print(f"Published State : {published_state_context.publication_status}")
+        print(f"Ingestion Run   : {published_state_context.ingestion_run_id}")
+        print(f"Market As-Of    : {published_state_context.market_as_of_date}")
+        print(f"Option Snapshot : {published_state_context.option_snapshot_id}")
+        print(f"Coverage        : {published_state_context.option_snapshot_completeness_pct if published_state_context.option_snapshot_completeness_pct is not None else 'unavailable'}")
+    else:
+        print("Published State : BYPASSED (override)")
     print("-------------------------------------------")
 
     candidates = scanner.scan(symbols)
@@ -268,6 +302,37 @@ def main(argv: list[str] | None = None) -> int:
         stop_loss_pct=args.stop_loss_pct,
     )
     live_trades = recommender.build_many(candidates[: args.top])
+
+    lineage_values = published_state_context.to_dict() if published_state_context else {}
+    scanner_lineage = ScannerRunLineage(
+        scanner_run_id=scanner_run_id,
+        publication_name=lineage_values.get("publication_name"),
+        ingestion_run_id=lineage_values.get("ingestion_run_id"),
+        publication_status=lineage_values.get("publication_status", "BYPASSED"),
+        published_at=lineage_values.get("published_at"),
+        market_as_of_date=lineage_values.get("market_as_of_date"),
+        market_intelligence_snapshot_timestamp=lineage_values.get("market_intelligence_snapshot_timestamp"),
+        option_snapshot_timestamp=lineage_values.get("option_snapshot_timestamp"),
+        option_snapshot_id=lineage_values.get("option_snapshot_id"),
+        option_snapshot_completeness_pct=lineage_values.get("option_snapshot_completeness_pct"),
+        published_state_degraded=bool(lineage_values.get("degraded", False)),
+        scanner_version="m47.phase6.v1",
+        started_at=scanner_started_at,
+    )
+    lineage_summary = LineagePersistenceService().persist_scanner_run(
+        scanner_lineage,
+        candidates,
+        metadata={"symbols": symbols, "top": args.top, "allow_unpublished_state": args.allow_unpublished_state},
+    )
+    candidate_by_symbol = {getattr(candidate, "symbol", None): candidate for candidate in candidates}
+    for trade in live_trades:
+        source = candidate_by_symbol.get(getattr(trade, "symbol", None))
+        if source is not None:
+            for field_name in ("scanner_run_id", "candidate_id", "market_state_hash", "scanner_version"):
+                try:
+                    setattr(trade, field_name, getattr(source, field_name, ""))
+                except Exception:
+                    pass
 
     portfolio_summary = portfolio.exposure_summary()
     metadata = {
@@ -295,6 +360,10 @@ def main(argv: list[str] | None = None) -> int:
         "data_mode": (
             "network_allowed" if args.allow_network else "cache_only"
         ),
+        "published_state": published_state_context.to_dict() if published_state_context else {"bypassed": True},
+        "scanner_run_id": scanner_run_id,
+        "scanner_version": "m47.phase6.v1",
+        "lineage_persistence": {"status": lineage_summary.status, "candidate_rows": lineage_summary.item_rows, **lineage_summary.metadata},
     }
 
     recommendation_paths = DailyRecommendationReporter().generate(
@@ -325,6 +394,8 @@ def main(argv: list[str] | None = None) -> int:
     print(f"Candidates      : {len(candidates)}")
     print(f"Live Trades     : {len(live_trades)}")
     print(f"Live Profile    : {live_profile.get('profile', 'unknown')}")
+    print(f"Scanner Run     : {scanner_run_id}")
+    print(f"Lineage Rows    : {lineage_summary.item_rows}")
     print("-------------------------------------------")
 
     if not candidates:
@@ -351,9 +422,11 @@ def main(argv: list[str] | None = None) -> int:
     print(f"Recommendations CSV  : {recommendation_paths['csv']}")
     print(f"Recommendations JSON : {recommendation_paths['json']}")
     print(f"Recommendations HTML : {recommendation_paths['html']}")
+    print(f"Recommendations Manifest: {recommendation_paths['manifest']}")
     print(f"Live Trades CSV       : {trade_paths['csv']}")
     print(f"Live Trades JSON      : {trade_paths['json']}")
     print(f"Live Trades HTML      : {trade_paths['html']}")
+    print(f"Live Trades Manifest  : {trade_paths['manifest']}")
     print("===========================================")
     print()
 

@@ -4,6 +4,13 @@ from dataclasses import asdict
 from datetime import date
 from pathlib import Path
 
+from trading_ai.reporting import (
+    ReportingContext,
+    governance_summary_html,
+    published_state_html,
+    write_report_manifest,
+)
+
 
 class DailyRecommendationReporter:
 
@@ -35,7 +42,10 @@ class DailyRecommendationReporter:
 
     def export_json(self, candidates, path, metadata, portfolio_summary):
 
+        context = ReportingContext.from_metadata(metadata)
         payload = {
+            "report_version": context.report_version,
+            "reporting_context": context.to_dict(),
             "metadata": metadata,
             "portfolio": portfolio_summary,
             "candidates": [
@@ -52,6 +62,20 @@ class DailyRecommendationReporter:
     def export_csv(self, candidates, path):
 
         fieldnames = [
+            "scanner_run_id",
+            "candidate_id",
+            "market_state_hash",
+            "scanner_version",
+            "publication_name",
+            "ingestion_run_id",
+            "publication_status",
+            "published_at",
+            "market_as_of_date",
+            "market_intelligence_snapshot_timestamp",
+            "option_snapshot_timestamp",
+            "option_snapshot_id",
+            "option_snapshot_completeness_pct",
+            "published_state_degraded",
             "symbol",
             "sector",
             "signal",
@@ -314,6 +338,17 @@ class DailyRecommendationReporter:
 </div>
 
 <div class="card">
+    <h2>Published Market State</h2>
+    {published_state_html(ReportingContext.from_metadata(metadata))}
+</div>
+    <div class="metric"><strong>Ingestion Run</strong>{metadata.get("published_state", {}).get("ingestion_run_id", "")}</div>
+    <div class="metric"><strong>Market As-Of</strong>{metadata.get("published_state", {}).get("market_as_of_date", "")}</div>
+    <div class="metric"><strong>Market Intelligence</strong>{metadata.get("published_state", {}).get("market_intelligence_snapshot_timestamp", "")}</div>
+    <div class="metric"><strong>Option Snapshot</strong>{metadata.get("published_state", {}).get("option_snapshot_id", "")}</div>
+    <div class="metric"><strong>Option Coverage</strong>{metadata.get("published_state", {}).get("option_snapshot_completeness_pct", "")}</div>
+</div>
+
+<div class="card">
     <h2>Portfolio Exposure</h2>
     {self.build_table(
         portfolio_rows,
@@ -422,6 +457,11 @@ class DailyRecommendationReporter:
     )}
 </div>
 
+<div class="card">
+    <h2>Governance Summary</h2>
+    {governance_summary_html(ReportingContext.from_metadata(metadata))}
+</div>
+
 </body>
 </html>
 """
@@ -463,9 +503,19 @@ class DailyRecommendationReporter:
             portfolio_summary,
         )
 
+        context = ReportingContext.from_metadata(metadata)
+        manifest_path = write_report_manifest(
+            output_dir / "report_manifest.json",
+            context=context,
+            artifacts=[csv_path, json_path, html_path],
+            report_type="daily_recommendations",
+            extra={"candidate_count": len(candidates)},
+        )
+
         return {
             "output_dir": str(output_dir),
             "csv": str(csv_path),
             "json": str(json_path),
             "html": str(html_path),
+            "manifest": str(manifest_path),
         }

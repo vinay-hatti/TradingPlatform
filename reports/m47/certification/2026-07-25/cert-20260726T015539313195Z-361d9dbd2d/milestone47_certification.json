@@ -1,0 +1,180 @@
+{
+  "certification_run_id": "cert-20260726T015539313195Z-361d9dbd2d",
+  "checks": [
+    {
+      "blocking": false,
+      "code": "MIGRATION_HEAD",
+      "details": {
+        "actual": "m47_002",
+        "expected": "m47_002"
+      },
+      "message": "Alembic head is 'm47_002'; expected 'm47_002'.",
+      "name": "Alembic migration head",
+      "severity": "INFO",
+      "status": "PASSED"
+    },
+    {
+      "blocking": false,
+      "code": "PUBLICATION_AVAILABLE",
+      "details": {
+        "as_of_date": "2026-07-23",
+        "decision_context_ready": true,
+        "market_intelligence_timestamp": "2026-07-25T18:49:40.593600-05:00",
+        "option_snapshot_id": "polygon-20260725T174507270627Z-ed7dec67",
+        "option_snapshot_timestamp": "2026-07-25T12:45:07.270627-05:00",
+        "publication_name": "current_market_state",
+        "published_at": "2026-07-25T18:52:16.732201-05:00",
+        "readiness_status": "DEGRADED",
+        "run_id": "readiness-20260725T235216499119Z",
+        "scanner_ready": true
+      },
+      "message": "Authoritative publication exists and is usable.",
+      "name": "Published market state",
+      "severity": "INFO",
+      "status": "PASSED"
+    },
+    {
+      "blocking": false,
+      "code": "SCANNER_READINESS",
+      "details": {},
+      "message": "Publication is scanner-ready.",
+      "name": "Scanner readiness",
+      "severity": "INFO",
+      "status": "PASSED"
+    },
+    {
+      "blocking": false,
+      "code": "DECISION_READINESS",
+      "details": {},
+      "message": "Publication is decision-context-ready.",
+      "name": "Decision readiness",
+      "severity": "INFO",
+      "status": "PASSED"
+    },
+    {
+      "blocking": false,
+      "code": "OPTION_SNAPSHOT_LINEAGE",
+      "details": {
+        "option_snapshot_id": "polygon-20260725T174507270627Z-ed7dec67"
+      },
+      "message": "Publication references an option snapshot ID and timestamp.",
+      "name": "Option snapshot lineage",
+      "severity": "INFO",
+      "status": "PASSED"
+    },
+    {
+      "blocking": false,
+      "code": "SCANNER_LINEAGE",
+      "details": {
+        "candidate_count": 2,
+        "completed_at": "2026-07-25T20:29:22.712664-05:00",
+        "ingestion_run_id": "readiness-20260725T235216499119Z",
+        "market_state_hash": "47aeb04d50fd5c756468f88e44c3edb6e94c61bcbcfca861a4407f5025b4b44a",
+        "option_snapshot_id": "polygon-20260725T174507270627Z-ed7dec67",
+        "publication_name": "current_market_state",
+        "publication_status": "DEGRADED",
+        "scanner_run_id": "scanner-20260726T012922372378Z-e336b19f36",
+        "scanner_version": "m47.phase6.v1",
+        "status": "READY"
+      },
+      "message": "Latest scanner lineage run is READY.",
+      "name": "Scanner-run lineage",
+      "severity": "INFO",
+      "status": "PASSED"
+    },
+    {
+      "blocking": false,
+      "code": "CANDIDATE_LINEAGE",
+      "details": {
+        "declared_count": 2,
+        "persisted_count": 2
+      },
+      "message": "Persisted candidate rows=2; scanner-run candidate_count=2.",
+      "name": "Candidate lineage consistency",
+      "severity": "INFO",
+      "status": "PASSED"
+    },
+    {
+      "blocking": false,
+      "code": "DECISION_LINEAGE",
+      "details": {},
+      "message": "No READY decision lineage run was found; optional under current policy.",
+      "name": "Institutional-decision lineage",
+      "severity": "INFO",
+      "status": "PASSED"
+    },
+    {
+      "blocking": false,
+      "code": "HISTORICAL_REPLAY",
+      "details": {
+        "completed_at": "2026-07-25T20:53:25.767438-05:00",
+        "mismatch_count": 0,
+        "replay_mode": "SNAPSHOT",
+        "replay_run_id": "replay-20260726T015325740707Z-7454bc7d54",
+        "source_decision_run_id": null,
+        "source_scanner_run_id": "scanner-20260726T011108326684Z-b17179b3e4",
+        "status": "READY"
+      },
+      "message": "Latest replay is READY with zero mismatches.",
+      "name": "Historical replay determinism",
+      "severity": "INFO",
+      "status": "PASSED"
+    },
+    {
+      "blocking": false,
+      "code": "REPORT_MANIFEST_INTEGRITY",
+      "details": {
+        "artifact_count": 0,
+        "errors": [],
+        "manifest_count": 0
+      },
+      "message": "Validated 0 manifest(s) and 0 artifact(s).",
+      "name": "Report manifest integrity",
+      "severity": "INFO",
+      "status": "PASSED"
+    }
+  ],
+  "completed_at": "2026-07-26T01:55:39.313190+00:00",
+  "metadata": {
+    "blocking_failure_count": 0,
+    "check_count": 10,
+    "failed_count": 0,
+    "latest_decision_run": {},
+    "latest_replay_run": {
+      "completed_at": "2026-07-25T20:53:25.767438-05:00",
+      "mismatch_count": 0,
+      "replay_mode": "SNAPSHOT",
+      "replay_run_id": "replay-20260726T015325740707Z-7454bc7d54",
+      "source_decision_run_id": null,
+      "source_scanner_run_id": "scanner-20260726T011108326684Z-b17179b3e4",
+      "status": "READY"
+    },
+    "latest_scanner_run": {
+      "candidate_count": 2,
+      "completed_at": "2026-07-25T20:29:22.712664-05:00",
+      "ingestion_run_id": "readiness-20260725T235216499119Z",
+      "market_state_hash": "47aeb04d50fd5c756468f88e44c3edb6e94c61bcbcfca861a4407f5025b4b44a",
+      "option_snapshot_id": "polygon-20260725T174507270627Z-ed7dec67",
+      "publication_name": "current_market_state",
+      "publication_status": "DEGRADED",
+      "scanner_run_id": "scanner-20260726T012922372378Z-e336b19f36",
+      "scanner_version": "m47.phase6.v1",
+      "status": "READY"
+    },
+    "passed_count": 10,
+    "publication": {
+      "as_of_date": "2026-07-23",
+      "decision_context_ready": true,
+      "market_intelligence_timestamp": "2026-07-25T18:49:40.593600-05:00",
+      "option_snapshot_id": "polygon-20260725T174507270627Z-ed7dec67",
+      "option_snapshot_timestamp": "2026-07-25T12:45:07.270627-05:00",
+      "publication_name": "current_market_state",
+      "published_at": "2026-07-25T18:52:16.732201-05:00",
+      "readiness_status": "DEGRADED",
+      "run_id": "readiness-20260725T235216499119Z",
+      "scanner_ready": true
+    }
+  },
+  "started_at": "2026-07-26T01:55:39.287099+00:00",
+  "status": "CERTIFIED"
+}

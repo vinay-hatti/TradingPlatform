@@ -1,0 +1,81 @@
+{
+  "artifacts": [
+    {
+      "name": "milestone47_certification.json",
+      "path": "reports/m47/certification/2026-07-25/cert-20260726T020109362145Z-0e6ac91370/milestone47_certification.json",
+      "sha256": "2b52808bac875857418bd44c474fcc4fab214ee4991803fd3b51432cbfc3aa1d"
+    },
+    {
+      "name": "milestone47_certification.html",
+      "path": "reports/m47/certification/2026-07-25/cert-20260726T020109362145Z-0e6ac91370/milestone47_certification.html",
+      "sha256": "5114076ea406485c23639407c9b7be7dc57036bf273b6c9090ecc8bd35cc42d8"
+    }
+  ],
+  "generated_at": "2026-07-26T02:01:09.362875+00:00",
+  "metadata": {
+    "blocking_failure_count": 0,
+    "certification_run_id": "cert-20260726T020109362145Z-0e6ac91370",
+    "check_count": 10,
+    "failed_count": 0,
+    "latest_decision_run": {},
+    "latest_replay_run": {
+      "completed_at": "2026-07-25T20:53:25.767438-05:00",
+      "mismatch_count": 0,
+      "replay_mode": "SNAPSHOT",
+      "replay_run_id": "replay-20260726T015325740707Z-7454bc7d54",
+      "source_decision_run_id": null,
+      "source_scanner_run_id": "scanner-20260726T011108326684Z-b17179b3e4",
+      "status": "READY"
+    },
+    "latest_scanner_run": {
+      "candidate_count": 2,
+      "completed_at": "2026-07-25T20:29:22.712664-05:00",
+      "ingestion_run_id": "readiness-20260725T235216499119Z",
+      "market_state_hash": "47aeb04d50fd5c756468f88e44c3edb6e94c61bcbcfca861a4407f5025b4b44a",
+      "option_snapshot_id": "polygon-20260725T174507270627Z-ed7dec67",
+      "publication_name": "current_market_state",
+      "publication_status": "DEGRADED",
+      "scanner_run_id": "scanner-20260726T012922372378Z-e336b19f36",
+      "scanner_version": "m47.phase6.v1",
+      "status": "READY"
+    },
+    "passed_count": 10,
+    "publication": {
+      "as_of_date": "2026-07-23",
+      "decision_context_ready": true,
+      "market_intelligence_timestamp": "2026-07-25T18:49:40.593600-05:00",
+      "option_snapshot_id": "polygon-20260725T174507270627Z-ed7dec67",
+      "option_snapshot_timestamp": "2026-07-25T12:45:07.270627-05:00",
+      "publication_name": "current_market_state",
+      "published_at": "2026-07-25T18:52:16.732201-05:00",
+      "readiness_status": "DEGRADED",
+      "run_id": "readiness-20260725T235216499119Z",
+      "scanner_ready": true
+    },
+    "status": "CERTIFIED"
+  },
+  "report_type": "milestone47_end_to_end_certification",
+  "report_version": "m47.phase6.v1",
+  "reporting_context": {
+    "decision_context_ready": true,
+    "decision_engine_version": null,
+    "decision_run_id": null,
+    "generated_at": "2026-07-26T02:01:09.362882+00:00",
+    "ingestion_run_id": "readiness-20260725T235216499119Z",
+    "market_as_of_date": "2026-07-23",
+    "market_intelligence_snapshot_timestamp": "2026-07-25 18:49:40.593600-05:00",
+    "market_state_hash": "47aeb04d50fd5c756468f88e44c3edb6e94c61bcbcfca861a4407f5025b4b44a",
+    "option_snapshot_completeness_pct": null,
+    "option_snapshot_id": "polygon-20260725T174507270627Z-ed7dec67",
+    "option_snapshot_timestamp": "2026-07-25 12:45:07.270627-05:00",
+    "policy_version": null,
+    "publication_name": "current_market_state",
+    "publication_status": "DEGRADED",
+    "published_at": "2026-07-25 18:52:16.732201-05:00",
+    "published_state_degraded": true,
+    "report_version": "m47.phase8.v1",
+    "scanner_ready": true,
+    "scanner_run_id": "scanner-20260726T012922372378Z-e336b19f36",
+    "scanner_version": "m47.phase6.v1"
+  }
+}

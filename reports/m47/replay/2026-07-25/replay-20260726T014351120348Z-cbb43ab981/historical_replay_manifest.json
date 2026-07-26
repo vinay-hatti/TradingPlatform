@@ -1,0 +1,42 @@
+{
+  "artifacts": [
+    {
+      "name": "historical_replay.json",
+      "path": "reports/m47/replay/2026-07-25/replay-20260726T014351120348Z-cbb43ab981/historical_replay.json",
+      "sha256": "53cbb6a95689f0b916d0ce7b856da9ed7557405d6e65df3250bf594b23cb80b1"
+    }
+  ],
+  "generated_at": "2026-07-26T01:43:51.150064+00:00",
+  "metadata": {
+    "candidate_count": 2,
+    "decision_count": 0,
+    "mismatch_count": 0,
+    "mode": "SNAPSHOT",
+    "replay_run_id": "replay-20260726T014351120348Z-cbb43ab981",
+    "status": "READY"
+  },
+  "report_type": "historical_replay",
+  "report_version": "m47.phase6.v1",
+  "reporting_context": {
+    "decision_context_ready": null,
+    "decision_engine_version": null,
+    "decision_run_id": null,
+    "generated_at": "2026-07-26T01:43:51.150071+00:00",
+    "ingestion_run_id": "readiness-20260725T235216499119Z",
+    "market_as_of_date": "2026-07-23",
+    "market_intelligence_snapshot_timestamp": "2026-07-25 18:49:40.593600-05:00",
+    "market_state_hash": "47aeb04d50fd5c756468f88e44c3edb6e94c61bcbcfca861a4407f5025b4b44a",
+    "option_snapshot_completeness_pct": null,
+    "option_snapshot_id": "polygon-20260725T174507270627Z-ed7dec67",
+    "option_snapshot_timestamp": "2026-07-25 12:45:07.270627-05:00",
+    "policy_version": null,
+    "publication_name": "current_market_state",
+    "publication_status": "DEGRADED",
+    "published_at": null,
+    "published_state_degraded": false,
+    "report_version": "m47.phase7.v1",
+    "scanner_ready": null,
+    "scanner_run_id": "scanner-20260726T012922372378Z-e336b19f36",
+    "scanner_version": "m47.phase6.v1"
+  }
+}

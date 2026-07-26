@@ -184,6 +184,21 @@ class InstitutionalDecision:
     risk_surface_severity: str = "UNKNOWN"
     risk_surface_allowed: bool = False
 
+    # -------------------------------------------------
+    # Milestone 47 published-state lineage
+    # -------------------------------------------------
+
+    publication_name: str | None = None
+    ingestion_run_id: str | None = None
+    publication_status: str | None = None
+    published_at: str | None = None
+    market_as_of_date: str | None = None
+    market_intelligence_snapshot_timestamp: str | None = None
+    option_snapshot_timestamp: str | None = None
+    option_snapshot_id: str | None = None
+    option_snapshot_completeness_pct: float | None = None
+    published_state_degraded: bool = False
+
 
     # -------------------------------------------------
     # Phase 5 portfolio optimization recommendation

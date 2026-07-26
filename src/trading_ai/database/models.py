@@ -34,3 +34,6 @@ from trading_ai.execution_orchestration.database_models import (  # noqa: E402,F
 from trading_ai.institutional_market_structure.database_models import (  # noqa: E402,F401
     DealerPositionSnapshotModel, DealerStrikeProfileModel, DealerExpirationProfileModel, IVSurfaceSnapshotModel,
 )
+
+# Import Milestone 46 market intelligence models.
+from trading_ai.market_intelligence.database_models import *  # noqa: E402,F401,F403

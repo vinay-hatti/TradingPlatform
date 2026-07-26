@@ -217,6 +217,16 @@ class LiveTradeRecommender:
             directional_alignment_probability=getattr(candidate, "directional_alignment_probability", 0.0),
             dealer_score_adjustment=getattr(candidate, "dealer_score_adjustment", 0.0),
             dealer_context_warning=getattr(candidate, "dealer_context_warning", ''),
+            publication_name=getattr(candidate, "publication_name", ""),
+            ingestion_run_id=getattr(candidate, "ingestion_run_id", ""),
+            publication_status=getattr(candidate, "publication_status", ""),
+            published_at=getattr(candidate, "published_at", ""),
+            market_as_of_date=getattr(candidate, "market_as_of_date", ""),
+            market_intelligence_snapshot_timestamp=getattr(candidate, "market_intelligence_snapshot_timestamp", ""),
+            option_snapshot_timestamp=getattr(candidate, "option_snapshot_timestamp", ""),
+            option_snapshot_id=getattr(candidate, "option_snapshot_id", ""),
+            option_snapshot_completeness_pct=getattr(candidate, "option_snapshot_completeness_pct", None),
+            published_state_degraded=getattr(candidate, "published_state_degraded", False),
         )
 
     def build_many(self, candidates):

@@ -77,3 +77,17 @@ class LiveTradeCandidate:
     directional_alignment_probability: float = 0.0
     dealer_score_adjustment: float = 0.0
     dealer_context_warning: str = ""
+    publication_name: str = ""
+    ingestion_run_id: str = ""
+    publication_status: str = ""
+    published_at: str = ""
+    market_as_of_date: str = ""
+    market_intelligence_snapshot_timestamp: str = ""
+    option_snapshot_timestamp: str = ""
+    option_snapshot_id: str = ""
+    option_snapshot_completeness_pct: float | None = None
+    published_state_degraded: bool = False
+    scanner_run_id: str = ""
+    candidate_id: str = ""
+    market_state_hash: str = ""
+    scanner_version: str = "m47.phase5.v1"
