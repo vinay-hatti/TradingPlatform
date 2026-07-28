@@ -1,0 +1,21 @@
+{
+  "candidate_id": "M51-DEMO-AAPL-001",
+  "portfolio_id": "PAPER-PRIMARY",
+  "symbol": "AAPL",
+  "asset_class": "EQUITY",
+  "side": "BUY",
+  "quantity": 1,
+  "order_type": "LIMIT",
+  "time_in_force": "DAY",
+  "limit_price": 1.0,
+  "primary_exchange": "NASDAQ",
+  "currency": "USD",
+  "institutional_allowed": true,
+  "risk_gateway_allowed": true,
+  "decision_score": 80.0,
+  "probability": 0.7,
+  "strategy_name": "M51_CONTROLLED_HANDOFF",
+  "metadata": {
+    "purpose": "controlled paper-only validation"
+  }
+}

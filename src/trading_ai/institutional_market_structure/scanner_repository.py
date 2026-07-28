@@ -1,7 +1,19 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from datetime import date
+from datetime import date, timedelta
+
+
+def _business_day_age(snapshot_date: date, valuation_date: date) -> int:
+    if valuation_date <= snapshot_date:
+        return 0
+    cursor = snapshot_date + timedelta(days=1)
+    age = 0
+    while cursor <= valuation_date:
+        if cursor.weekday() < 5:
+            age += 1
+        cursor += timedelta(days=1)
+    return age
 
 
 @dataclass(frozen=True)
@@ -43,9 +55,12 @@ class DealerPositioningScannerRepository:
                     .limit(1)
                 )
                 if row is None:
-                    return DealerScannerLoadResult(status="MISSING")
+                    return DealerScannerLoadResult(
+                        status="MISSING",
+                        error=f"No persisted dealer snapshot for {symbol.upper()} on or before {scan_date}.",
+                    )
 
-                age_days = (scan_date - row.quote_date).days
+                age_days = _business_day_age(row.quote_date, scan_date)
                 if age_days > int(maximum_age_days):
                     return DealerScannerLoadResult(
                         status="STALE",

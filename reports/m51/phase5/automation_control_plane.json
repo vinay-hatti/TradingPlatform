@@ -1,0 +1,181 @@
+{
+  "audit_events": [
+    {
+      "allowed": true,
+      "event_id": "M51-CYCLE-9AE22CCE8269760FC3FC9D27-CONTROL",
+      "event_type": "CONTROL_DECISION",
+      "mode": "DRY_RUN",
+      "occurred_at": "2026-07-28T14:35:08.673206+00:00",
+      "reason_codes": []
+    },
+    {
+      "errors": [],
+      "event_id": "M51-CYCLE-9AE22CCE8269760FC3FC9D27-PHASE-1",
+      "event_type": "PHASE_DEPENDENCY",
+      "name": "INSTITUTIONAL_ORDER_HANDOFF",
+      "occurred_at": "2026-07-28T14:35:08.673206+00:00",
+      "phase": 1,
+      "status": "READY",
+      "warnings": []
+    },
+    {
+      "errors": [],
+      "event_id": "M51-CYCLE-9AE22CCE8269760FC3FC9D27-PHASE-2",
+      "event_type": "PHASE_DEPENDENCY",
+      "name": "ORDER_LIFECYCLE",
+      "occurred_at": "2026-07-28T14:35:08.673206+00:00",
+      "phase": 2,
+      "status": "READY",
+      "warnings": [
+        "NO_BROKER_EXECUTIONS_AVAILABLE"
+      ]
+    },
+    {
+      "errors": [],
+      "event_id": "M51-CYCLE-9AE22CCE8269760FC3FC9D27-PHASE-3",
+      "event_type": "PHASE_DEPENDENCY",
+      "name": "POSITION_MANAGEMENT",
+      "occurred_at": "2026-07-28T14:35:08.673206+00:00",
+      "phase": 3,
+      "status": "READY",
+      "warnings": []
+    },
+    {
+      "errors": [],
+      "event_id": "M51-CYCLE-9AE22CCE8269760FC3FC9D27-PHASE-4",
+      "event_type": "PHASE_DEPENDENCY",
+      "name": "PORTFOLIO_MANAGEMENT",
+      "occurred_at": "2026-07-28T14:35:08.673206+00:00",
+      "phase": 4,
+      "status": "READY",
+      "warnings": []
+    }
+  ],
+  "completed_at": "2026-07-28T14:35:08.673212+00:00",
+  "consolidated_summary": {
+    "phase1": {
+      "handoff_rejected": 0,
+      "handoff_succeeded": 1
+    },
+    "phase2": {
+      "active_orders": 4,
+      "execution_count": 0,
+      "stale_orders": 0,
+      "terminal_orders": 0
+    },
+    "phase3": {
+      "exit_candidates": 0,
+      "submitted_exits": 0,
+      "total_positions": 0
+    },
+    "phase4": {
+      "daily_pnl": -500.0,
+      "health_grade": "A",
+      "health_score": 100.0,
+      "net_liquidation_value": 100000.0,
+      "recommendation_count": 0,
+      "risk_breach_count": 0
+    }
+  },
+  "control_decision": {
+    "allowed": true,
+    "kill_switch_active": false,
+    "live_trading_enabled": false,
+    "metadata": {
+      "environment": "PAPER",
+      "portfolio_health_score": 100.0,
+      "risk_breach_count": 0
+    },
+    "mode": "DRY_RUN",
+    "paper_routing_enabled": true,
+    "reason_codes": [],
+    "required_confirmation": ""
+  },
+  "cycle_id": "M51-CYCLE-9AE22CCE8269760FC3FC9D27",
+  "duration_seconds": 0.000172,
+  "errors": [],
+  "metadata": {
+    "environment": "PAPER",
+    "execution_note": "Phase 5 authorizes and audits the cycle. Existing phase CLIs remain the execution surfaces.",
+    "kill_switch_active": false,
+    "live_trading_enabled": false,
+    "paper_routing_enabled": true
+  },
+  "milestone": 51,
+  "mode": "DRY_RUN",
+  "phase": 5,
+  "phases": [
+    {
+      "completed_at": "",
+      "duration_seconds": 0.0,
+      "errors": [],
+      "input_path": "",
+      "metadata": {
+        "source_status": "PHASE1_AUTOMATED_PAPER_HANDOFF_COMPLETED"
+      },
+      "name": "INSTITUTIONAL_ORDER_HANDOFF",
+      "output_path": "",
+      "phase": 1,
+      "required": true,
+      "started_at": "",
+      "status": "READY",
+      "warnings": []
+    },
+    {
+      "completed_at": "",
+      "duration_seconds": 0.0,
+      "errors": [],
+      "input_path": "",
+      "metadata": {
+        "source_status": "PHASE2_LIFECYCLE_SYNCHRONIZED"
+      },
+      "name": "ORDER_LIFECYCLE",
+      "output_path": "",
+      "phase": 2,
+      "required": true,
+      "started_at": "",
+      "status": "READY",
+      "warnings": [
+        "NO_BROKER_EXECUTIONS_AVAILABLE"
+      ]
+    },
+    {
+      "completed_at": "",
+      "duration_seconds": 0.0,
+      "errors": [],
+      "input_path": "",
+      "metadata": {
+        "source_status": "NO_OPEN_POSITIONS"
+      },
+      "name": "POSITION_MANAGEMENT",
+      "output_path": "",
+      "phase": 3,
+      "required": true,
+      "started_at": "",
+      "status": "READY",
+      "warnings": []
+    },
+    {
+      "completed_at": "",
+      "duration_seconds": 0.0,
+      "errors": [],
+      "input_path": "",
+      "metadata": {
+        "source_status": "PHASE4_NO_OPEN_POSITIONS"
+      },
+      "name": "PORTFOLIO_MANAGEMENT",
+      "output_path": "",
+      "phase": 4,
+      "required": true,
+      "started_at": "",
+      "status": "READY",
+      "warnings": []
+    }
+  ],
+  "portfolio_id": "PAPER-PRIMARY",
+  "started_at": "2026-07-28T14:35:08.673040+00:00",
+  "status": "PHASE5_AUTOMATION_READY_WITH_WARNINGS",
+  "warnings": [
+    "NO_BROKER_EXECUTIONS_AVAILABLE"
+  ]
+}

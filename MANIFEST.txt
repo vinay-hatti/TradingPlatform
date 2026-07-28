@@ -1,0 +1,16 @@
+Milestone 49 — Authoritative Paper Trading Data Model
+
+Drop-in paths:
+PROJECT_STATUS.md
+migrations/versions/m49_001_authoritative_paper_trading.py
+src/trading_ai/database/models.py
+src/trading_ai/authoritative_paper_trading/__init__.py
+src/trading_ai/authoritative_paper_trading/database_models.py
+src/trading_ai/authoritative_paper_trading/repositories.py
+src/trading_ai/authoritative_paper_trading/service.py
+tests/milestone49/test_m49_authoritative_persistence.py
+scripts/run_m49_authoritative_paper_trading_validation.py
+scripts/test_m49_migration_contract.py
+docs/milestone49/README.md
+docs/milestone49/VALIDATION.md
+APPLY_MILESTONE49.sh

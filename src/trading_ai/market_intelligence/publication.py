@@ -51,12 +51,33 @@ class ScannerReadinessService:
              ORDER BY snapshot_timestamp DESC
              LIMIT 1
         """)).mappings().one_or_none()
-        option = self.session.execute(text("""
-            SELECT snapshot_id, snapshot_timestamp, as_of_date, capture_status,
+        latest_option = self.session.execute(text("""
+            SELECT id, snapshot_id, snapshot_timestamp, as_of_date, capture_status,
                    contracts_persisted, completeness_score
               FROM option_snapshot_run
              WHERE provider='POLYGON' AND contracts_persisted > 0
              ORDER BY snapshot_timestamp DESC
+             LIMIT 1
+        """)).mappings().one_or_none()
+        option = self.session.execute(text("""
+            SELECT run.id, run.snapshot_id, run.snapshot_timestamp, run.as_of_date,
+                   run.capture_status, run.contracts_persisted, run.completeness_score
+              FROM option_snapshot_run run
+             WHERE run.provider='POLYGON'
+               AND run.contracts_persisted > 0
+               AND EXISTS (
+                    SELECT 1 FROM option_contract_snapshot contract
+                     WHERE contract.snapshot_run_id = run.id
+               )
+               AND EXISTS (
+                    SELECT 1 FROM underlying_volatility_snapshot volatility
+                     WHERE volatility.snapshot_timestamp = run.snapshot_timestamp
+               )
+               AND EXISTS (
+                    SELECT 1 FROM microstructure_liquidity_snapshot liquidity
+                     WHERE liquidity.snapshot_timestamp = run.snapshot_timestamp
+               )
+             ORDER BY run.snapshot_timestamp DESC
              LIMIT 1
         """)).mappings().one_or_none()
 
@@ -88,6 +109,25 @@ class ScannerReadinessService:
                 rows, latest, status = 0, None, "FAILED"
                 message = f"{type(exc).__name__}: {exc}"
             checks.append(ReadinessCheck(name, status, rows, str(latest) if latest is not None else None, required, message))
+
+        latest_option_id = str(latest_option["snapshot_id"]) if latest_option else None
+        coherent_option_id = str(option["snapshot_id"]) if option else None
+        lineage_current = bool(latest_option and option and latest_option_id == coherent_option_id)
+        checks.append(ReadinessCheck(
+            "option_snapshot_lineage",
+            "READY" if lineage_current else "FAILED",
+            int(option["contracts_persisted"] or 0) if option else 0,
+            coherent_option_id,
+            True,
+            (
+                "Latest Polygon option cycle has matching contract, volatility, and liquidity snapshots."
+                if lineage_current
+                else (
+                    "Latest Polygon option cycle is missing matching governed derived snapshots; "
+                    f"latest={latest_option_id or 'NONE'}, coherent={coherent_option_id or 'NONE'}."
+                )
+            ),
+        ))
 
         if option:
             option_status = "READY" if option["capture_status"] == "READY" else "DEGRADED"

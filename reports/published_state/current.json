@@ -11,116 +11,124 @@
     }
   ],
   "state": {
-    "age_seconds": 3759.627868,
-    "as_of_date": "2026-07-23",
+    "age_seconds": 629.509742,
+    "as_of_date": "2026-07-24",
     "decision_context_ready": true,
     "degraded": true,
     "details": {
-      "as_of_date": "2026-07-23",
+      "as_of_date": "2026-07-24",
       "checks": [
         {
-          "latest_value": "2026-07-23",
+          "latest_value": "2026-07-27",
           "message": "Data is available.",
           "name": "price_history",
           "required": true,
-          "rows": 168389,
+          "rows": 170502,
           "status": "READY"
         },
         {
-          "latest_value": "2026-07-25",
+          "latest_value": "2026-07-28",
           "message": "Data is available.",
           "name": "option_contract_history",
           "required": true,
-          "rows": 473179,
+          "rows": 1038970,
           "status": "READY"
         },
         {
-          "latest_value": "2026-07-25 12:45:07.270627-05",
+          "latest_value": "2026-07-28 08:57:45.062074-05",
           "message": "Data is available.",
           "name": "option_contract_snapshot",
           "required": true,
-          "rows": 470584,
+          "rows": 1572715,
           "status": "READY"
         },
         {
-          "latest_value": "2026-07-25 12:45:07.270627-05",
+          "latest_value": "2026-07-28 08:57:45.062074-05",
           "message": "Data is available.",
           "name": "underlying_volatility_snapshot",
           "required": true,
-          "rows": 1214,
+          "rows": 3657,
           "status": "READY"
         },
         {
-          "latest_value": "2026-07-25 12:45:07.270627-05",
+          "latest_value": "2026-07-28 08:57:45.062074-05",
           "message": "Data is available.",
           "name": "microstructure_liquidity_snapshot",
           "required": true,
-          "rows": 1214,
+          "rows": 3657,
           "status": "READY"
         },
         {
-          "latest_value": "2026-07-25",
+          "latest_value": "2026-07-28",
           "message": "Data is available.",
           "name": "dealer_position_snapshot",
           "required": true,
-          "rows": 1214,
+          "rows": 2437,
           "status": "READY"
         },
         {
-          "latest_value": "2026-07-25 18:49:40.000461-05",
+          "latest_value": "2026-07-28 08:59:31.64243-05",
           "message": "Data is available.",
           "name": "market_overview_snapshot",
           "required": true,
-          "rows": 5,
+          "rows": 36,
           "status": "READY"
         },
         {
-          "latest_value": "2026-07-25 18:49:40.5936-05",
+          "latest_value": "2026-07-28 08:59:32.266607-05",
           "message": "Data is available.",
           "name": "market_intelligence_snapshot",
           "required": true,
-          "rows": 6,
+          "rows": 20,
           "status": "READY"
         },
         {
-          "latest_value": "2026-07-25 18:49:40.5936-05",
+          "latest_value": "2026-07-28 08:59:32.266607-05",
           "message": "Data is available.",
           "name": "market_sentiment_snapshot",
           "required": true,
-          "rows": 6,
+          "rows": 20,
           "status": "READY"
         },
         {
-          "latest_value": "2026-07-25 18:49:40.5936-05",
+          "latest_value": "2026-07-28 08:59:32.266607-05",
           "message": "Data is available.",
           "name": "market_risk_snapshot",
           "required": true,
-          "rows": 6,
+          "rows": 20,
           "status": "READY"
         },
         {
-          "latest_value": "99.50819672131146",
+          "latest_value": "options-20260728T134658785923Z",
+          "message": "Latest Polygon option cycle has matching contract, volatility, and liquidity snapshots.",
+          "name": "option_snapshot_lineage",
+          "required": true,
+          "rows": 272360,
+          "status": "READY"
+        },
+        {
+          "latest_value": "99.510603588907",
           "message": "Snapshot is usable but partial.",
           "name": "option_snapshot_completeness",
           "required": false,
-          "rows": 235292,
+          "rows": 272360,
           "status": "DEGRADED"
         }
       ],
       "decision_context_ready": true,
-      "market_intelligence_timestamp": "2026-07-25T18:49:40.593600-05:00",
-      "option_snapshot_id": "polygon-20260725T174507270627Z-ed7dec67",
-      "option_snapshot_timestamp": "2026-07-25T12:45:07.270627-05:00",
+      "market_intelligence_timestamp": "2026-07-28T08:59:32.266607-05:00",
+      "option_snapshot_id": "options-20260728T134658785923Z",
+      "option_snapshot_timestamp": "2026-07-28T08:57:45.062074-05:00",
       "scanner_ready": true,
       "status": "DEGRADED"
     },
-    "market_intelligence_timestamp": "2026-07-25T23:49:40.593600+00:00",
-    "option_snapshot_id": "polygon-20260725T174507270627Z-ed7dec67",
-    "option_snapshot_timestamp": "2026-07-25T17:45:07.270627+00:00",
+    "market_intelligence_timestamp": "2026-07-28T13:59:32.266607+00:00",
+    "option_snapshot_id": "options-20260728T134658785923Z",
+    "option_snapshot_timestamp": "2026-07-28T13:57:45.062074+00:00",
     "publication_name": "current_market_state",
-    "published_at": "2026-07-25T23:52:16.732201+00:00",
+    "published_at": "2026-07-28T13:59:35.293004+00:00",
     "readiness_status": "DEGRADED",
-    "run_id": "readiness-20260725T235216499119Z",
+    "run_id": "market-ingestion-20260728T135935088677Z",
     "scanner_ready": true
   },
   "status": "DEGRADED",

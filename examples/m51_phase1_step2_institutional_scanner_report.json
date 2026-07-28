@@ -1,0 +1,84 @@
+{
+  "run": {
+    "scan_id": "M51-STEP2-DEMO",
+    "total_symbols": 2,
+    "processed_symbols": 2,
+    "selected_count": 1,
+    "valid": true,
+    "overall_readiness": "READY",
+    "overall_action": "TRADE",
+    "decisions_by_symbol": {
+      "AAPL": {
+        "symbol": "AAPL",
+        "available": true,
+        "allowed": true,
+        "selected": true,
+        "action": "BUY",
+        "readiness": "READY",
+        "strategy": "M51_INSTITUTIONAL_EQUITY_DEMO",
+        "decision_confidence": 82.0,
+        "probability_of_profit": 0.68,
+        "calibrated_probability": 0.66,
+        "expected_return": 0.04,
+        "reward_risk_ratio": 2.0,
+        "warnings": [],
+        "rejection_reasons": []
+      },
+      "MSFT": {
+        "symbol": "MSFT",
+        "available": true,
+        "allowed": false,
+        "selected": false,
+        "action": "HOLD",
+        "readiness": "REVIEW",
+        "strategy": "NO_TRADE",
+        "decision_confidence": 51.0,
+        "probability_of_profit": 0.45,
+        "calibrated_probability": 0.44,
+        "expected_return": 0.0,
+        "reward_risk_ratio": 0.0,
+        "warnings": [],
+        "rejection_reasons": [
+          "LOW_CONFIDENCE"
+        ]
+      }
+    },
+    "metadata": {
+      "scan_id": "M51-STEP2-DEMO"
+    }
+  },
+  "candidates": [
+    {
+      "rank": 1,
+      "symbol": "AAPL",
+      "composite_score": 82.0,
+      "source": {
+        "symbol": "AAPL",
+        "price": 220.0,
+        "signal": "CALL",
+        "regime": "TREND_UP",
+        "metadata": {
+          "asset_class": "EQUITY",
+          "primary_exchange": "NASDAQ",
+          "risk_gateway_allowed": true
+        }
+      }
+    },
+    {
+      "rank": 2,
+      "symbol": "MSFT",
+      "composite_score": 51.0,
+      "source": {
+        "symbol": "MSFT",
+        "price": 500.0,
+        "signal": "HOLD",
+        "regime": "CHOP",
+        "metadata": {
+          "asset_class": "EQUITY",
+          "primary_exchange": "NASDAQ",
+          "risk_gateway_allowed": false
+        }
+      }
+    }
+  ]
+}

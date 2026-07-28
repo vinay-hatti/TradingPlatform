@@ -76,18 +76,6 @@ class DailyScanRequest(BaseModel):
     max_position_pct: float = Field(default=0.05, gt=0, le=1)
     take_profit_pct: float = Field(default=0.30, gt=0, le=10)
     stop_loss_pct: float = Field(default=0.15, gt=0, le=1)
-    refresh_mode: RefreshMode = RefreshMode.REFRESH_MISSING
-    auto_refresh: bool = True
-    minimum_refresh_coverage_pct: float = Field(default=98.0, ge=0, le=100)
-    maximum_failed_refresh_symbols: int = Field(default=10, ge=0, le=1000)
-    continue_on_degraded_refresh: bool = True
-    refresh_max_retries: int = Field(default=3, ge=0, le=10)
-    refresh_retry_backoff_seconds: float = Field(default=2.0, ge=0, le=300)
-    refresh_maximum_retry_backoff_seconds: float = Field(default=60.0, ge=0, le=900)
-    refresh_retry_jitter_ratio: float = Field(default=0.20, ge=0, le=1)
-    refresh_rate_limit_cooldown_seconds: float = Field(default=15.0, ge=0, le=900)
-    refresh_circuit_breaker_threshold: int = Field(default=3, ge=1, le=100)
-    refresh_circuit_breaker_cooldown_seconds: float = Field(default=30.0, ge=0, le=1800)
 
     @model_validator(mode="after")
     def validate_dates(self):

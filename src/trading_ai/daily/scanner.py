@@ -1,5 +1,6 @@
 from __future__ import annotations
 from datetime import date, timedelta
+import math
 from trading_ai.options.live_contract_selector import (
     LiveContractSelectionPolicy,
     LiveOptionContractSelector,
@@ -57,6 +58,7 @@ class DailyScanner:
         dealer_positioning_weight=1.0,
         maximum_dealer_score_adjustment=15.0,
         published_state_context=None,
+        option_snapshot_as_of=None,
     ):
         self.market_service = market_service
         self.feature_pipeline = feature_pipeline
@@ -84,6 +86,12 @@ class DailyScanner:
             default_dte=self.pricing_dte,
         )
 
+        self.option_snapshot_as_of = (
+            date.fromisoformat(str(option_snapshot_as_of)[:10])
+            if option_snapshot_as_of
+            else date.fromisoformat(str(end)[:10])
+        )
+
         configured_target_delta = (
             target_delta
             if target_delta is not None
@@ -103,7 +111,7 @@ class DailyScanner:
         self.live_selector = None
         if self.option_data_mode in {"live", "auto"}:
             self.live_selector = LiveOptionContractSelector(
-                provider=RepositoryOptionSnapshotProvider(),
+                provider=RepositoryOptionSnapshotProvider(snapshot_as_of=self.option_snapshot_as_of),
                 policy=LiveContractSelectionPolicy(
                     target_abs_delta=float(configured_target_delta),
                     maximum_spread_pct=float(maximum_option_spread_pct),
@@ -247,7 +255,7 @@ class DailyScanner:
     def _select_live_across_horizons(self, *, symbol, signal, close, hv20):
         ranked = []
         errors = []
-        as_of = date.fromisoformat(self.end[:10])
+        as_of = self.option_snapshot_as_of
         for target_dte in self._target_dtes():
             strike_selection = self.strike_selector.select(
                 signal=signal, spot=close, volatility=hv20, dte=target_dte
@@ -429,6 +437,7 @@ class DailyScanner:
         volume_selection_score = 0.0
         live_error = None
         selected_live_contract = None
+        greek_source = "PERSISTED"
 
         if self.live_selector is not None:
             try:
@@ -448,6 +457,18 @@ class DailyScanner:
                     "volatility": live.implied_volatility,
                     "dte": live.dte,
                 }
+                required = ("delta", "gamma", "theta", "vega")
+                invalid_persisted_greeks = any(
+                    not math.isfinite(float(greeks[name])) for name in required
+                ) or abs(float(greeks["delta"])) < 1e-9
+                if invalid_persisted_greeks:
+                    fallback = self.pricing.greeks(
+                        signal=signal, spot=close, strike=float(live.strike),
+                        hv20=hv20, dte=max(int(live.dte), 1),
+                    )
+                    for name in ("delta", "gamma", "theta", "vega", "rho", "volatility"):
+                        greeks[name] = float(fallback[name])
+                    greek_source = "BLACK_SCHOLES_FALLBACK"
                 contract_ticker = live.contract_ticker
                 bid = live.bid
                 ask = live.ask
@@ -527,7 +548,7 @@ class DailyScanner:
 
         as_of = date.fromisoformat(self.end[:10])
         dealer_context = self._dealer_positioning_context(
-            symbol=symbol, signal=signal, scan_date=as_of
+            symbol=symbol, signal=signal, scan_date=self.option_snapshot_as_of
         )
         base_ai_score = float(ranking["ai_score"])
         dealer_adjustment = float(dealer_context["dealer_score_adjustment"])
@@ -539,7 +560,7 @@ class DailyScanner:
             candidate_expiry_source,
         ) = self._resolve_candidate_expiry(
             symbol=symbol,
-            as_of=as_of,
+            as_of=(self.option_snapshot_as_of if selected_live_contract is not None else as_of),
             selected_live_contract=selected_live_contract,
             option_data_source=option_data_source,
             expiry_selector=self.expiry_selector,
@@ -550,11 +571,13 @@ class DailyScanner:
             contract_ticker = resolved_contract_ticker
             greeks["dte"] = candidate_dte
 
+        resolved_delta = float(greeks["delta"])
         strike_note = (
             f"Target-delta strike={strike:.2f}; "
             f"spot={close:.2f}; "
             f"target |delta|={selection.target_delta:.2f}; "
-            f"estimated delta={selection.estimated_delta:.4f}; "
+            f"resolved delta={resolved_delta:.4f}; "
+            f"Greek source={greek_source}; "
             f"moneyness={selection.moneyness_pct:.2%}."
         )
         ranking_reason = (

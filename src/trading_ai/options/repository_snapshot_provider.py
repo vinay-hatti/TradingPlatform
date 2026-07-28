@@ -13,9 +13,15 @@ class RepositoryOptionSnapshotProvider:
 
     source_name = "POLYGON_PERSISTED"
 
-    def __init__(self, session_factory=SessionLocal, table_name: str | None = None):
+    def __init__(
+        self,
+        session_factory=SessionLocal,
+        table_name: str | None = None,
+        snapshot_as_of: date | None = None,
+    ):
         self.session_factory = session_factory
         self.table_name = table_name
+        self.snapshot_as_of = snapshot_as_of
 
     @staticmethod
     def _f(value, default=0.0):
@@ -31,7 +37,8 @@ class RepositoryOptionSnapshotProvider:
         option_type = "call" if str(signal).upper() == "CALL" else "put"
         with self.session_factory() as session:
             repo = OptionChainRepository(session, table_name=self.table_name)
-            rows = repo.get_latest_snapshot(symbol, as_of=as_of)
+            snapshot_cutoff = self.snapshot_as_of or as_of
+            rows = repo.get_latest_snapshot(symbol, as_of=snapshot_cutoff)
 
         contracts = []
         for row in rows:
@@ -53,6 +60,8 @@ class RepositoryOptionSnapshotProvider:
                 continue
             spread = ((ask - bid) / midpoint) if midpoint > 0 else math.inf
             dte = (expiry - as_of).days
+            if dte <= 0:
+                continue
             contracts.append(LiveOptionContract(
                 underlying=symbol,
                 contract_ticker=str(row.get("contract_ticker") or "").strip(),
@@ -80,7 +89,7 @@ class RepositoryOptionSnapshotProvider:
             ))
         if not contracts:
             raise LiveOptionDataError(
-                f"No persisted Polygon option snapshot found for {symbol} on or before {as_of}. "
-                "Run scripts/run_market_ingestion.py --data-scope options or all."
+                f"No persisted Polygon option snapshot found for {symbol} on or before "
+                f"{self.snapshot_as_of or as_of}. The Daily Scanner is read-only. No eligible persisted contract was available for this valuation date."
             )
         return contracts

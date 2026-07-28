@@ -4,7 +4,7 @@ import argparse
 from datetime import date, datetime, timedelta, timezone
 
 from trading_ai.app.bootstrap import container
-from trading_ai.backtest.datasource import HistoricalDataSource
+from trading_ai.daily.database_market_data import DatabaseHistoricalDataSource
 from trading_ai.daily.live_profile import LiveProfileLoader
 from trading_ai.daily.recommender import LiveTradeRecommender
 from trading_ai.daily.reporter import DailyRecommendationReporter
@@ -85,10 +85,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument(
         "--allow-network",
         action="store_true",
-        help=(
-            "Allow Polygon fallback when cache is missing. "
-            "Default is cache-only."
-        ),
+        help=argparse.SUPPRESS,
     )
     dealer_group = parser.add_mutually_exclusive_group()
     dealer_group.add_argument("--enable-dealer-positioning", dest="enable_dealer_positioning", action="store_true", default=True)
@@ -147,6 +144,8 @@ def print_candidate(index: int, candidate) -> None:
     print(f"   Base AI Score  : {candidate.base_ai_score:.2f}")
     print(f"   Dealer Adj.    : {candidate.dealer_score_adjustment:+.2f}")
     print(f"   Dealer Context : {candidate.dealer_context_status} / {candidate.positioning_label}")
+    if getattr(candidate, "dealer_context_warning", ""):
+        print(f"   Dealer Warning : {candidate.dealer_context_warning}")
     print(f"   Adjusted Score : {candidate.adjusted_score:.2f}")
     print(f"   Base Score     : {candidate.final_score:.2f}")
     print(f"   Signal Score   : {candidate.score:.2f}")
@@ -164,7 +163,6 @@ def print_candidate(index: int, candidate) -> None:
     print(f"   Data Source    : {candidate.option_data_source}")
     print(f"   Quote Time     : {candidate.quote_timestamp or 'unavailable'}")
     print(f"   Option Price   : ${candidate.option_price:.2f}")
-    print(f"   Expiration   : {candidate.expiry}")
     print(f"   DTE            : {candidate.dte}")
     print(f"   Expiry Source  : {candidate.expiry_source}")
     print(f"   Ranking Reason : {candidate.ranking_reason}")
@@ -182,11 +180,12 @@ def print_trade(index: int, trade) -> None:
     print(f"   Base AI     : {trade.base_ai_score:.2f}")
     print(f"   Dealer Adj. : {trade.dealer_score_adjustment:+.2f}")
     print(f"   Dealer      : {trade.dealer_context_status} / {trade.positioning_label}")
+    if getattr(trade, "dealer_context_warning", ""):
+        print(f"   Dealer Warn : {trade.dealer_context_warning}")
     print(f"   Strategy    : {trade.strategy}")
     print(f"   Underlying  : ${trade.underlying_price:.2f}")
     print(f"   Strike      : ${trade.strike:.2f}")
     print(f"   Contract    : {trade.contract_ticker or 'PROXY'}")
-    print(f"   Expiration  : {trade.expiry}")
     print(f"   Bid / Ask   : ${trade.bid:.2f} / ${trade.ask:.2f}")
     print(f"   Price Src   : {trade.price_source}")
     print(f"   Quote Time  : {trade.quote_timestamp or 'unavailable'}")
@@ -227,10 +226,20 @@ def main(argv: list[str] | None = None) -> int:
     if args.start > args.end:
         raise ValueError("--start cannot be after --end")
 
+    if args.allow_network:
+        raise ValueError(
+            "--allow-network is not supported by the Daily Scanner. "
+            "Run the governed ingestion workflow separately, then scan PostgreSQL."
+        )
+
     live_profile = LiveProfileLoader().load()
-    datasource = HistoricalDataSource(
-        container.market,
-        cache_only=not args.allow_network,
+    effective_market_end = (
+        published_state_context.market_as_of_date
+        if published_state_context is not None
+        else args.end
+    )
+    datasource = DatabaseHistoricalDataSource(
+        maximum_as_of_date=effective_market_end,
     )
     portfolio = PortfolioAwareness(
         positions_file=args.positions_file,
@@ -249,7 +258,7 @@ def main(argv: list[str] | None = None) -> int:
         maximum_expirations_per_symbol=args.maximum_expirations_per_symbol,
         maximum_trades_per_expiration=args.maximum_trades_per_expiration,
         start=args.start,
-        end=args.end,
+        end=min(args.end, effective_market_end),
         option_data_mode=args.option_data_mode,
         maximum_option_spread_pct=args.max_option_spread_pct,
         minimum_option_open_interest=args.min_option_open_interest,
@@ -266,27 +275,30 @@ def main(argv: list[str] | None = None) -> int:
         dealer_positioning_weight=args.dealer_positioning_weight,
         maximum_dealer_score_adjustment=args.dealer_positioning_max_adjustment,
         published_state_context=published_state_context,
+        option_snapshot_as_of=args.end,
     )
 
     print()
     print("========== Daily AI Trading Scan ==========")
     print(f"Universe        : {args.universe if not args.symbols else 'custom'}")
     print(f"Symbols Selected: {len(symbols)}")
-    print(f"History         : {args.start} -> {args.end}")
+    effective_end = min(args.end, effective_market_end)
+    print(f"History Requested: {args.start} -> {args.end}")
+    print(f"History Effective: {args.start} -> {effective_end}")
     print(f"Minimum Score   : {args.min_score}")
     print(f"Option Data     : {args.option_data_mode}")
     print(f"Expiry Mode     : {args.expiration_mode}")
     print(f"DTE Range       : {args.minimum_dte} -> {args.maximum_dte}")
     print(f"Expiry Limit    : {args.maximum_trades_per_expiration or 'disabled'} trades per expiration")
     print(
-        f"Data Mode       : "
-        f"{'network allowed' if args.allow_network else 'cache only'}"
+        "Data Mode       : PostgreSQL database only"
     )
     if published_state_context:
         print(f"Published State : {published_state_context.publication_status}")
         print(f"Ingestion Run   : {published_state_context.ingestion_run_id}")
         print(f"Market As-Of    : {published_state_context.market_as_of_date}")
         print(f"Option Snapshot : {published_state_context.option_snapshot_id}")
+        print(f"Option As-Of    : {args.end}")
         print(f"Coverage        : {published_state_context.option_snapshot_completeness_pct if published_state_context.option_snapshot_completeness_pct is not None else 'unavailable'}")
     else:
         print("Published State : BYPASSED (override)")
@@ -350,16 +362,19 @@ def main(argv: list[str] | None = None) -> int:
         "maximum_dte": args.maximum_dte,
         "maximum_expirations_per_symbol": args.maximum_expirations_per_symbol,
         "maximum_trades_per_expiration": args.maximum_trades_per_expiration,
-        "start": args.start,
-        "end": args.end,
+        "requested_start": args.start,
+        "requested_end": args.end,
+        "effective_start": args.start,
+        "effective_end": effective_end,
         "positions_file": args.positions_file,
         "dealer_positioning_enabled": args.enable_dealer_positioning,
         "dealer_positioning_max_age_days": args.dealer_positioning_max_age_days,
         "dealer_positioning_weight": args.dealer_positioning_weight,
         "dealer_positioning_max_adjustment": args.dealer_positioning_max_adjustment,
-        "data_mode": (
-            "network_allowed" if args.allow_network else "cache_only"
-        ),
+        "data_mode": "database_only",
+        "market_data_source": "PostgreSQL.price_history",
+        "network_access": False,
+        "ingestion_allowed": False,
         "published_state": published_state_context.to_dict() if published_state_context else {"bypassed": True},
         "scanner_run_id": scanner_run_id,
         "scanner_version": "m47.phase6.v1",

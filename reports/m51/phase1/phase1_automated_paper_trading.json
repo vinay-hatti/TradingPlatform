@@ -1,0 +1,240 @@
+{
+  "connection": {
+    "environment": "PAPER",
+    "live_trading_enabled": false,
+    "status": "NOT_CONNECTED_DRY_RUN"
+  },
+  "conversion_accepted": 1,
+  "conversion_rejected": 1,
+  "exposure_accepted": 1,
+  "exposure_rejected": 0,
+  "handoff_rejected": 0,
+  "handoff_succeeded": 1,
+  "metadata": {
+    "environment": "PAPER",
+    "live_trading_enabled": false,
+    "maximum_orders": 1,
+    "orders_truncated": 0,
+    "workflow": [
+      "INSTITUTIONAL_DECISION",
+      "CANDIDATE_CONVERSION",
+      "PORTFOLIO_EXPOSURE_GATE",
+      "CANONICAL_ORDER",
+      "IBKR_PAPER_HANDOFF"
+    ]
+  },
+  "milestone": 51,
+  "mode": "DRY_RUN",
+  "phase": 1,
+  "results": [
+    {
+      "candidate_id": "M51-INST-00DF5AD62B4CBBBF231C",
+      "conversion": {
+        "accepted": true,
+        "metadata": {
+          "asset_class": "EQUITY",
+          "decision_confidence": 82.0,
+          "probability": 0.66,
+          "scan_id": "M51-STEP2-DEMO"
+        },
+        "warnings": []
+      },
+      "exposure_assessment": {
+        "allowed": true,
+        "candidate_id": "M51-INST-00DF5AD62B4CBBBF231C",
+        "estimated_order_notional": 218.9,
+        "metadata": {
+          "live_trading_enabled": false,
+          "paper_only": true,
+          "sector": "UNKNOWN"
+        },
+        "net_liquidation_value": 100000.0,
+        "open_position_count": 2,
+        "projected_capital_utilization_pct": 10.2189,
+        "projected_cash_pct": 89.7811,
+        "projected_sector_exposure_pct": 0.2189,
+        "projected_symbol_exposure_pct": 0.2189,
+        "rejection_reasons": [],
+        "symbol": "AAPL",
+        "warnings": [
+          "SECTOR_NOT_AVAILABLE"
+        ]
+      },
+      "handoff": {
+        "aggregate_id": "M51-AUTO-A4CBE5E05F0BDEA82DBCACEA",
+        "assessment": {
+          "allowed": true,
+          "estimated_notional": 218.9,
+          "grade": "A",
+          "metadata": {
+            "asset_class": "EQUITY",
+            "live_trading_enabled": false,
+            "normalized_order_type": "LIMIT",
+            "paper_only": true
+          },
+          "recommendation": "CREATE_CANONICAL_ORDER",
+          "rejection_reasons": [],
+          "score": 100.0,
+          "severity": "LOW",
+          "warnings": []
+        },
+        "broker_submission": null,
+        "candidate_id": "M51-INST-00DF5AD62B4CBBBF231C",
+        "canonical_order": {
+          "account_id": "PAPER-PRIMARY",
+          "aggregate_id": "M51-AUTO-A4CBE5E05F0BDEA82DBCACEA",
+          "average_fill_price": null,
+          "broker_order_id": null,
+          "client_order_id": "M51-CLIENT-A4CBE5E05F0BDEA82DBCACEA",
+          "created_at": "2026-07-26T20:50:00.336028+00:00",
+          "filled_quantity": 0.0,
+          "idempotency_key": "M51-IDEM-A4CBE5E05F0BDEA82DBCACEA",
+          "last_event_id": "evt-0bdf8192b4434222a6fcb56ce31cb9e6",
+          "legs": [
+            {
+              "asset_class": "EQUITY",
+              "broker_symbol": null,
+              "leg_id": "LEG-1",
+              "metadata": {
+                "asset_class": "EQUITY",
+                "contract_id": 0,
+                "currency": "USD",
+                "expiry": "",
+                "institutional_action": "BUY",
+                "institutional_expected_return": 0.04,
+                "institutional_readiness": "READY",
+                "institutional_reward_risk_ratio": 2.0,
+                "multiplier": "1",
+                "primary_exchange": "NASDAQ",
+                "right": "",
+                "risk_gateway_allowed": true,
+                "scan_id": "M51-STEP2-DEMO",
+                "source": "INSTITUTIONAL_SCANNER_REPORT",
+                "strike": null
+              },
+              "position_effect": "OPEN",
+              "quantity": 1.0,
+              "ratio": 1,
+              "side": "BUY",
+              "symbol": "AAPL"
+            }
+          ],
+          "limit_price": 218.9,
+          "metadata": {
+            "candidate_id": "M51-INST-00DF5AD62B4CBBBF231C",
+            "decision_score": 82.0,
+            "institutional_allowed": true,
+            "live_trading_enabled": false,
+            "milestone": 51,
+            "paper_only": true,
+            "phase": 1,
+            "probability": 0.66,
+            "risk_gateway_allowed": true,
+            "step": 1
+          },
+          "order_type": "LIMIT",
+          "outside_regular_hours": false,
+          "parent_aggregate_id": null,
+          "remaining_quantity": 1.0,
+          "replace_count": 0,
+          "root_aggregate_id": "M51-AUTO-A4CBE5E05F0BDEA82DBCACEA",
+          "state": "NEW",
+          "stop_price": null,
+          "strategy_name": "M51_INSTITUTIONAL_EQUITY_DEMO",
+          "terminal_at": null,
+          "time_in_force": "DAY",
+          "total_quantity": 1.0,
+          "updated_at": "2026-07-26T20:50:00.336028+00:00",
+          "version": 1
+        },
+        "canonical_order_created": false,
+        "client_order_id": "M51-CLIENT-A4CBE5E05F0BDEA82DBCACEA",
+        "created_at": "2026-07-26T21:07:43.438551+00:00",
+        "errors": [],
+        "ibkr_request": {
+          "aggregate_id": "M51-AUTO-A4CBE5E05F0BDEA82DBCACEA",
+          "broker_account_id": "DUR156044",
+          "client_order_id": "M51-CLIENT-A4CBE5E05F0BDEA82DBCACEA",
+          "contract_id": 0,
+          "currency": "USD",
+          "exchange": "SMART",
+          "expiry": "",
+          "limit_price": 218.9,
+          "local_symbol": "",
+          "metadata": {
+            "asset_class": "EQUITY",
+            "candidate_id": "M51-INST-00DF5AD62B4CBBBF231C",
+            "institutional_action": "BUY",
+            "institutional_expected_return": 0.04,
+            "institutional_readiness": "READY",
+            "institutional_reward_risk_ratio": 2.0,
+            "milestone": 51,
+            "paper_only": true,
+            "phase": 1,
+            "primary_exchange": "NASDAQ",
+            "risk_gateway_allowed": true,
+            "scan_id": "M51-STEP2-DEMO",
+            "source": "INSTITUTIONAL_SCANNER_REPORT",
+            "step": 1
+          },
+          "multiplier": "",
+          "order_type": "LMT",
+          "outside_regular_hours": false,
+          "portfolio_id": "PAPER-PRIMARY",
+          "primary_exchange": "NASDAQ",
+          "quantity": 1.0,
+          "right": "",
+          "security_type": "STK",
+          "side": "BUY",
+          "stop_price": null,
+          "strike": null,
+          "symbol": "AAPL",
+          "time_in_force": "DAY",
+          "transmit": true
+        },
+        "idempotency_key": "M51-IDEM-A4CBE5E05F0BDEA82DBCACEA",
+        "metadata": {
+          "broker_account_masked": "DU*****44",
+          "environment": "PAPER",
+          "live_trading_enabled": false
+        },
+        "milestone": 51,
+        "mode": "DRY_RUN",
+        "phase": "AUTOMATED_PAPER_ORDER_HANDOFF",
+        "portfolio_id": "PAPER-PRIMARY",
+        "replayed": true,
+        "status": "DRY_RUN_READY",
+        "step": 1,
+        "warnings": []
+      },
+      "symbol": "AAPL"
+    },
+    {
+      "candidate_id": null,
+      "conversion": {
+        "accepted": false,
+        "metadata": {
+          "action": "HOLD",
+          "decision_confidence": 51.0,
+          "probability": 0.44,
+          "readiness": "REVIEW",
+          "scan_id": "M51-STEP2-DEMO"
+        },
+        "rejection_reasons": [
+          "INSTITUTIONAL_DECISION_NOT_ALLOWED",
+          "INSTITUTIONAL_DECISION_NOT_SELECTED",
+          "INSTITUTIONAL_ACTION_NOT_EXECUTABLE",
+          "INSTITUTIONAL_READINESS_NOT_APPROVED",
+          "INSTITUTIONAL_CONFIDENCE_BELOW_MINIMUM",
+          "INSTITUTIONAL_PROBABILITY_BELOW_MINIMUM"
+        ],
+        "warnings": []
+      },
+      "exposure_assessment": null,
+      "handoff": null,
+      "symbol": "MSFT"
+    }
+  ],
+  "status": "PHASE1_AUTOMATED_PAPER_HANDOFF_COMPLETED",
+  "total_decisions": 2
+}

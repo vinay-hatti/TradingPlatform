@@ -1,0 +1,28 @@
+{
+  "assessments": [],
+  "blocked_exits": 0,
+  "connection": {
+    "environment": "PAPER",
+    "live_trading_enabled": false,
+    "status": "NOT_CONNECTED_DRY_RUN"
+  },
+  "created_at": "2026-07-28T14:34:05.863069+00:00",
+  "errors": [],
+  "exit_candidates": 0,
+  "intents": [],
+  "metadata": {
+    "environment": "PAPER",
+    "live_trading_enabled": false,
+    "maximum_exit_orders_per_run": 10
+  },
+  "milestone": 51,
+  "mode": "DRY_RUN",
+  "monitor_only": 0,
+  "phase": 3,
+  "portfolio_id": "PAPER-PRIMARY",
+  "status": "NO_OPEN_POSITIONS",
+  "submissions": [],
+  "submitted_exits": 0,
+  "total_positions": 0,
+  "warnings": []
+}

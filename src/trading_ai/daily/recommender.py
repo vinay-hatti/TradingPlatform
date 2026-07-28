@@ -231,7 +231,5 @@ class LiveTradeRecommender:
 
     def build_many(self, candidates):
 
-        return [
-            self.build(candidate)
-            for candidate in candidates
-        ]
+        trades = [self.build(candidate) for candidate in candidates]
+        return [trade for trade in trades if int(trade.contracts) > 0]

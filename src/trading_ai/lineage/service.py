@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import math
 import uuid
 from dataclasses import asdict, is_dataclass
 from datetime import datetime, timezone
@@ -13,8 +14,19 @@ from trading_ai.lineage.profile import DecisionRunLineage, PersistenceSummary, S
 
 
 def _native(value: Any) -> Any:
-    if value is None or isinstance(value, (str, int, float, bool)):
+    """Convert arbitrary payloads into strict, deterministic JSON values.
+
+    Non-finite numeric values are represented as ``None`` rather than allowing
+    NaN or Infinity into lineage payloads. This preserves strict JSON
+    compliance and prevents one anomalous analytics field from aborting an
+    otherwise valid scanner run.
+    """
+    if value is None or isinstance(value, (str, bool)):
         return value
+    if isinstance(value, int):
+        return value
+    if isinstance(value, float):
+        return value if math.isfinite(value) else None
     if isinstance(value, datetime):
         return value.isoformat()
     if is_dataclass(value):
@@ -30,6 +42,14 @@ def _native(value: Any) -> Any:
             pass
     return str(value)
 
+
+def _finite_float(value: Any, default: float = 0.0) -> float:
+    """Return a finite database-safe float for scalar lineage columns."""
+    try:
+        resolved = float(value or 0.0)
+    except (TypeError, ValueError, OverflowError):
+        return default
+    return resolved if math.isfinite(resolved) else default
 
 def _json(value: Any) -> str:
     return json.dumps(_native(value), sort_keys=True, separators=(",", ":"), allow_nan=False)
@@ -114,7 +134,7 @@ class LineagePersistenceService:
                     "candidate_id": candidate_id, "scanner_run_id": lineage.scanner_run_id,
                     "rank": rank, "symbol": getattr(item, "symbol", None),
                     "signal": getattr(item, "signal", None), "strategy": getattr(item, "strategy", None),
-                    "score": float(getattr(item, "ai_score", getattr(item, "final_score", 0.0)) or 0.0),
+                    "score": _finite_float(getattr(item, "ai_score", getattr(item, "final_score", 0.0))),
                     "accepted": True, "publication_name": lineage.publication_name,
                     "ingestion_run_id": lineage.ingestion_run_id,
                     "market_intelligence_snapshot_timestamp": lineage.market_intelligence_snapshot_timestamp,
@@ -193,7 +213,7 @@ class LineagePersistenceService:
                     "symbol": getattr(decision, "symbol", None),
                     "strategy": getattr(decision, "strategy_name", getattr(decision, "strategy", None)),
                     "action": getattr(decision, "action", getattr(decision, "recommendation", None)),
-                    "confidence": float(getattr(decision, "confidence_score", getattr(decision, "confidence", 0.0)) or 0.0),
+                    "confidence": _finite_float(getattr(decision, "confidence_score", getattr(decision, "confidence", 0.0))),
                     "accepted": bool(getattr(decision, "accepted", getattr(decision, "allowed", True))),
                     "publication_name": lineage.publication_name, "ingestion_run_id": lineage.ingestion_run_id,
                     "market_intelligence_snapshot_timestamp": lineage.market_intelligence_snapshot_timestamp,

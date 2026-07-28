@@ -1,0 +1,384 @@
+{
+  "acceptance_summary": {
+    "control_count": 17,
+    "error_count": 0,
+    "failed": 0,
+    "passed": 17,
+    "warned": 0,
+    "warning_count": 0
+  },
+  "category_scores": [
+    {
+      "category": "BROKER",
+      "control_count": 1,
+      "failed": 0,
+      "passed": 1,
+      "score": 100.0,
+      "status": "PASS",
+      "warned": 0
+    },
+    {
+      "category": "DATA",
+      "control_count": 2,
+      "failed": 0,
+      "passed": 2,
+      "score": 100.0,
+      "status": "PASS",
+      "warned": 0
+    },
+    {
+      "category": "ENVIRONMENT",
+      "control_count": 1,
+      "failed": 0,
+      "passed": 1,
+      "score": 100.0,
+      "status": "PASS",
+      "warned": 0
+    },
+    {
+      "category": "GOVERNANCE",
+      "control_count": 5,
+      "failed": 0,
+      "passed": 5,
+      "score": 100.0,
+      "status": "PASS",
+      "warned": 0
+    },
+    {
+      "category": "INTEGRATION",
+      "control_count": 8,
+      "failed": 0,
+      "passed": 8,
+      "score": 100.0,
+      "status": "PASS",
+      "warned": 0
+    }
+  ],
+  "controls": [
+    {
+      "category": "ENVIRONMENT",
+      "control_id": "ENV-REPOSITORY-STRUCTURE",
+      "errors": [],
+      "evidence": [
+        "pyproject.toml",
+        "src/trading_ai",
+        "scripts",
+        "reports"
+      ],
+      "metadata": {},
+      "recommendation": "",
+      "score": 100.0,
+      "status": "PASS",
+      "title": "Repository structure",
+      "warnings": [],
+      "weight": 1.0
+    },
+    {
+      "category": "DATA",
+      "control_id": "ENV-DATABASE-CONFIGURATION",
+      "errors": [],
+      "evidence": [
+        "DATABASE_CONFIGURATION_PRESENT",
+        ".env"
+      ],
+      "metadata": {
+        "configuration_sources": [
+          ".env"
+        ]
+      },
+      "recommendation": "",
+      "score": 100.0,
+      "status": "PASS",
+      "title": "Database configuration",
+      "warnings": [],
+      "weight": 1.0
+    },
+    {
+      "category": "DATA",
+      "control_id": "ENV-POLYGON-CONFIGURATION",
+      "errors": [],
+      "evidence": [
+        "POLYGON_CONFIGURATION_PRESENT",
+        ".env"
+      ],
+      "metadata": {
+        "configuration_sources": [
+          ".env"
+        ]
+      },
+      "recommendation": "",
+      "score": 100.0,
+      "status": "PASS",
+      "title": "Polygon configuration",
+      "warnings": [],
+      "weight": 1.0
+    },
+    {
+      "category": "BROKER",
+      "control_id": "ENV-BROKER-MODE",
+      "errors": [],
+      "evidence": [
+        "BROKER_MODE=PAPER"
+      ],
+      "metadata": {},
+      "recommendation": "",
+      "score": 100.0,
+      "status": "PASS",
+      "title": "Paper broker mode",
+      "warnings": [],
+      "weight": 2.0
+    },
+    {
+      "category": "INTEGRATION",
+      "control_id": "DEP-PHASE-1",
+      "errors": [],
+      "evidence": [
+        "PHASE1_AUTOMATED_PAPER_HANDOFF_COMPLETED",
+        "EXPLICIT_ACCEPTED_STATUS"
+      ],
+      "metadata": {
+        "disposition": "PASS"
+      },
+      "recommendation": "",
+      "score": 100.0,
+      "status": "PASS",
+      "title": "Phase 1 report",
+      "warnings": [],
+      "weight": 1.0
+    },
+    {
+      "category": "INTEGRATION",
+      "control_id": "DEP-PHASE-2",
+      "errors": [],
+      "evidence": [
+        "PHASE2_LIFECYCLE_SYNCHRONIZED",
+        "EXPLICIT_ACCEPTED_STATUS"
+      ],
+      "metadata": {
+        "disposition": "PASS"
+      },
+      "recommendation": "",
+      "score": 100.0,
+      "status": "PASS",
+      "title": "Phase 2 report",
+      "warnings": [],
+      "weight": 1.0
+    },
+    {
+      "category": "INTEGRATION",
+      "control_id": "DEP-PHASE-3",
+      "errors": [],
+      "evidence": [
+        "NO_OPEN_POSITIONS",
+        "EXPLICIT_ACCEPTED_STATUS"
+      ],
+      "metadata": {
+        "disposition": "PASS"
+      },
+      "recommendation": "",
+      "score": 100.0,
+      "status": "PASS",
+      "title": "Phase 3 report",
+      "warnings": [],
+      "weight": 1.0
+    },
+    {
+      "category": "INTEGRATION",
+      "control_id": "DEP-PHASE-4",
+      "errors": [],
+      "evidence": [
+        "PHASE4_NO_OPEN_POSITIONS",
+        "EXPLICIT_ACCEPTED_STATUS"
+      ],
+      "metadata": {
+        "disposition": "PASS"
+      },
+      "recommendation": "",
+      "score": 100.0,
+      "status": "PASS",
+      "title": "Phase 4 report",
+      "warnings": [],
+      "weight": 1.0
+    },
+    {
+      "category": "INTEGRATION",
+      "control_id": "DEP-PHASE-5",
+      "errors": [],
+      "evidence": [
+        "PHASE5_AUTOMATION_READY_WITH_WARNINGS",
+        "EXPLICIT_ACCEPTED_STATUS"
+      ],
+      "metadata": {
+        "disposition": "PASS"
+      },
+      "recommendation": "",
+      "score": 100.0,
+      "status": "PASS",
+      "title": "Phase 5 report",
+      "warnings": [],
+      "weight": 1.0
+    },
+    {
+      "category": "INTEGRATION",
+      "control_id": "DEP-PHASE-6",
+      "errors": [],
+      "evidence": [
+        "PHASE6_SCHEDULED_RUN_COMPLETED",
+        "EXPLICIT_ACCEPTED_STATUS"
+      ],
+      "metadata": {
+        "disposition": "PASS"
+      },
+      "recommendation": "",
+      "score": 100.0,
+      "status": "PASS",
+      "title": "Phase 6 report",
+      "warnings": [],
+      "weight": 1.0
+    },
+    {
+      "category": "INTEGRATION",
+      "control_id": "DEP-PHASE-7",
+      "errors": [],
+      "evidence": [
+        "PHASE7_AUTOMATION_HEALTHY",
+        "EXPLICIT_ACCEPTED_STATUS"
+      ],
+      "metadata": {
+        "disposition": "PASS"
+      },
+      "recommendation": "",
+      "score": 100.0,
+      "status": "PASS",
+      "title": "Phase 7 report",
+      "warnings": [],
+      "weight": 1.0
+    },
+    {
+      "category": "INTEGRATION",
+      "control_id": "DEP-PHASE-8",
+      "errors": [],
+      "evidence": [
+        "PHASE8_RECOVERY_NOT_REQUIRED",
+        "EXPLICIT_ACCEPTED_STATUS"
+      ],
+      "metadata": {
+        "disposition": "PASS"
+      },
+      "recommendation": "",
+      "score": 100.0,
+      "status": "PASS",
+      "title": "Phase 8 report",
+      "warnings": [],
+      "weight": 1.0
+    },
+    {
+      "category": "GOVERNANCE",
+      "control_id": "GOV-PAPER-ONLY",
+      "errors": [],
+      "evidence": [
+        "CONTROL_PRESENT"
+      ],
+      "metadata": {},
+      "recommendation": "",
+      "score": 100.0,
+      "status": "PASS",
+      "title": "Paper-only enforcement",
+      "warnings": [],
+      "weight": 1.5
+    },
+    {
+      "category": "GOVERNANCE",
+      "control_id": "GOV-KILL-SWITCH",
+      "errors": [],
+      "evidence": [
+        "CONTROL_PRESENT"
+      ],
+      "metadata": {},
+      "recommendation": "",
+      "score": 100.0,
+      "status": "PASS",
+      "title": "Kill-switch control",
+      "warnings": [],
+      "weight": 1.5
+    },
+    {
+      "category": "GOVERNANCE",
+      "control_id": "GOV-DUPLICATE-RUN",
+      "errors": [],
+      "evidence": [
+        "CONTROL_PRESENT"
+      ],
+      "metadata": {},
+      "recommendation": "",
+      "score": 100.0,
+      "status": "PASS",
+      "title": "Duplicate-run prevention",
+      "warnings": [],
+      "weight": 1.5
+    },
+    {
+      "category": "GOVERNANCE",
+      "control_id": "GOV-RESTART-SAFE",
+      "errors": [],
+      "evidence": [
+        "CONTROL_PRESENT"
+      ],
+      "metadata": {},
+      "recommendation": "",
+      "score": 100.0,
+      "status": "PASS",
+      "title": "Restart-safe scheduler state",
+      "warnings": [],
+      "weight": 1.5
+    },
+    {
+      "category": "GOVERNANCE",
+      "control_id": "GOV-RECOVERY",
+      "errors": [],
+      "evidence": [
+        "PHASE8_RECOVERY_NOT_REQUIRED"
+      ],
+      "metadata": {},
+      "recommendation": "",
+      "score": 100.0,
+      "status": "PASS",
+      "title": "Recovery governance",
+      "warnings": [],
+      "weight": 1.5
+    }
+  ],
+  "created_at": "2026-07-28T14:36:40.983602+00:00",
+  "errors": [],
+  "metadata": {
+    "environment": "PAPER",
+    "live_trading_enabled": false,
+    "milestone_complete": true,
+    "required_phases": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  "milestone": 51,
+  "mode": "FULL",
+  "overall_score": 100.0,
+  "overall_status": "PHASE9_OPERATIONALLY_READY",
+  "phase": 9,
+  "portfolio_id": "PAPER-PRIMARY",
+  "recommendation": "Milestone 51 paper-trading automation is ready for formal sign-off.",
+  "sign_off": {
+    "conditional": false,
+    "eligible": true,
+    "signed": false,
+    "signed_at": "",
+    "signed_by": "",
+    "statement": "Milestone 51 paper-trading automation has completed operational readiness evaluation."
+  },
+  "warnings": []
+}

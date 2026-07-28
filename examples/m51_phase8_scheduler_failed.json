@@ -1,0 +1,26 @@
+{
+  "run_key": "2026-07-27-AM",
+  "status": "PHASE6_SCHEDULED_RUN_FAILED",
+  "executions": [
+    {
+      "phase": 2,
+      "name": "ORDER_LIFECYCLE_MONITOR",
+      "status": "COMPLETED",
+      "attempt_count": 1,
+      "exit_code": 0,
+      "metadata": {
+        "required": true
+      }
+    },
+    {
+      "phase": 4,
+      "name": "PORTFOLIO_RISK_REFRESH",
+      "status": "FAILED",
+      "attempt_count": 2,
+      "exit_code": 2,
+      "metadata": {
+        "required": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "actions": [
+    {
+      "action": "VERIFY_COMPLETED_RUN",
+      "action_code": "NO_REPLAY_REQUIRED",
+      "command": [],
+      "metadata": {},
+      "phase": null,
+      "reason": "all recorded phases completed",
+      "requires_confirmation": false,
+      "safe_to_replay": true,
+      "sequence": 1
+    },
+    {
+      "action": "RUN_PHASE5_DRY_RUN",
+      "action_code": "REVALIDATE_CONTROL_PLANE",
+      "command": [
+        "uv",
+        "run",
+        "python",
+        "scripts/run_m51_phase5_automation_control_plane.py"
+      ],
+      "metadata": {},
+      "phase": 5,
+      "reason": "recovery must re-evaluate portfolio and routing gates",
+      "requires_confirmation": false,
+      "safe_to_replay": true,
+      "sequence": 2
+    },
+    {
+      "action": "RUN_PHASE7_HEALTH_CHECK",
+      "action_code": "VERIFY_OBSERVABILITY",
+      "command": [
+        "uv",
+        "run",
+        "python",
+        "scripts/run_m51_phase7_automation_observability.py"
+      ],
+      "metadata": {},
+      "phase": 7,
+      "reason": "post-recovery health must be verified",
+      "requires_confirmation": false,
+      "safe_to_replay": true,
+      "sequence": 3
+    }
+  ],
+  "authorization": {
+    "allowed": true,
+    "kill_switch_active": false,
+    "live_trading_enabled": false,
+    "metadata": {
+      "environment": "PAPER"
+    },
+    "mode": "ANALYZE",
+    "reason_codes": [],
+    "required_confirmation": ""
+  },
+  "checkpoints": [
+    {
+      "checkpoint_id": "2026-07-28-CLOSURE-01-PHASE-2",
+      "checksum": "",
+      "completed": true,
+      "metadata": {
+        "attempt_count": 1,
+        "exit_code": 0,
+        "required": true
+      },
+      "phase": 2,
+      "report_path": "",
+      "run_key": "2026-07-28-CLOSURE-01",
+      "status": "COMPLETED"
+    },
+    {
+      "checkpoint_id": "2026-07-28-CLOSURE-01-PHASE-4",
+      "checksum": "",
+      "completed": true,
+      "metadata": {
+        "attempt_count": 1,
+        "exit_code": 0,
+        "required": true
+      },
+      "phase": 4,
+      "report_path": "",
+      "run_key": "2026-07-28-CLOSURE-01",
+      "status": "COMPLETED"
+    },
+    {
+      "checkpoint_id": "2026-07-28-CLOSURE-01-PHASE-5",
+      "checksum": "",
+      "completed": true,
+      "metadata": {
+        "attempt_count": 1,
+        "exit_code": 0,
+        "required": true
+      },
+      "phase": 5,
+      "report_path": "",
+      "run_key": "2026-07-28-CLOSURE-01",
+      "status": "COMPLETED"
+    }
+  ],
+  "created_at": "2026-07-28T14:35:49.169471+00:00",
+  "errors": [],
+  "metadata": {
+    "action_count": 3,
+    "automatic_submit_replay": false,
+    "environment": "PAPER",
+    "live_trading_enabled": false
+  },
+  "milestone": 51,
+  "phase": 8,
+  "portfolio_id": "PAPER-PRIMARY",
+  "recovery_id": "M51-RECOVERY-2DB671C02F88E76A624349E5",
+  "source_run_key": "2026-07-28-CLOSURE-01",
+  "status": "PHASE8_RECOVERY_NOT_REQUIRED",
+  "verification": {
+    "incident_count": 0,
+    "observability_healthy": true,
+    "observability_status": "PHASE7_AUTOMATION_HEALTHY",
+    "recovery_verified": true,
+    "scheduler_completed": true,
+    "scheduler_status": "PHASE6_SCHEDULED_RUN_COMPLETED"
+  },
+  "warnings": []
+}

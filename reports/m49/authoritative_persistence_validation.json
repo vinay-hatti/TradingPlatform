@@ -1,0 +1,26 @@
+{
+  "account": null,
+  "account_id": "PAPER-PRIMARY",
+  "expected_tables": [
+    "canonical_order_events",
+    "canonical_orders",
+    "paper_automation_checkpoints",
+    "paper_executions",
+    "paper_fills",
+    "paper_position_lifecycle_events",
+    "paper_position_marks",
+    "paper_trading_controls",
+    "paper_trading_sessions",
+    "portfolio_cash_reservations"
+  ],
+  "governance": {
+    "database_authoritative": true,
+    "json_runtime_state_authoritative": false,
+    "live_trading_enabled": false,
+    "paper_only": true
+  },
+  "milestone": 49,
+  "missing_tables": [],
+  "reconciliation": null,
+  "status": "READY"
+}

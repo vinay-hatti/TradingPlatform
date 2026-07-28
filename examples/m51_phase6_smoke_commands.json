@@ -1,0 +1,18 @@
+{
+  "commands": [
+    {
+      "phase": 1,
+      "name": "SCHEDULER_SMOKE_TEST",
+      "command": [
+        "uv",
+        "run",
+        "python",
+        "-c",
+        "print('Milestone 51 Phase 6 scheduler smoke test passed')"
+      ],
+      "required": true,
+      "timeout_seconds": 60,
+      "retry_limit": 0
+    }
+  ]
+}

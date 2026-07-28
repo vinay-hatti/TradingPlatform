@@ -1,0 +1,45 @@
+{
+  "portfolio_id": "PAPER-PRIMARY",
+  "positions": [
+    {
+      "position_id": "M51-POS-DEMO-AAPL",
+      "aggregate_id": "M51-AUTO-DEMO-AAPL",
+      "symbol": "AAPL",
+      "security_type": "STK",
+      "direction": "LONG",
+      "quantity": 1.0,
+      "average_entry_price": 100.0,
+      "currency": "USD",
+      "opened_at": "2026-07-20T14:30:00+00:00",
+      "last_execution_at": "2026-07-20T14:30:00+00:00",
+      "execution_ids": [
+        "DEMO-EXEC-1"
+      ],
+      "status": "OPEN",
+      "metadata": {
+        "sector": "TECHNOLOGY",
+        "paper_only": true
+      }
+    },
+    {
+      "position_id": "M51-POS-DEMO-MSFT",
+      "aggregate_id": "M51-AUTO-DEMO-MSFT",
+      "symbol": "MSFT",
+      "security_type": "STK",
+      "direction": "LONG",
+      "quantity": 1.0,
+      "average_entry_price": 500.0,
+      "currency": "USD",
+      "opened_at": "2026-07-26T14:30:00+00:00",
+      "last_execution_at": "2026-07-26T14:30:00+00:00",
+      "execution_ids": [
+        "DEMO-EXEC-2"
+      ],
+      "status": "OPEN",
+      "metadata": {
+        "sector": "TECHNOLOGY",
+        "paper_only": true
+      }
+    }
+  ]
+}

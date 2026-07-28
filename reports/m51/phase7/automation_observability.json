@@ -1,0 +1,153 @@
+{
+  "alert_summary": {
+    "by_severity": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "LOW": 0,
+      "MODERATE": 0
+    },
+    "highest_severity": "NONE",
+    "incident_count": 0,
+    "requires_immediate_attention": false
+  },
+  "checks": [
+    {
+      "actual": 100.0,
+      "code": "PORTFOLIO_HEALTH",
+      "component": "PORTFOLIO",
+      "expected": 70.0,
+      "message": "portfolio health score meets minimum",
+      "metadata": {},
+      "severity": "INFO",
+      "status": "PASS"
+    },
+    {
+      "actual": 0,
+      "code": "RISK_BREACH_COUNT",
+      "component": "PORTFOLIO",
+      "expected": 0,
+      "message": "portfolio risk breach count is within limit",
+      "metadata": {},
+      "severity": "INFO",
+      "status": "PASS"
+    },
+    {
+      "actual": 0,
+      "code": "STALE_ORDER_COUNT",
+      "component": "ORDER_LIFECYCLE",
+      "expected": 0,
+      "message": "stale broker order count is within limit",
+      "metadata": {},
+      "severity": "INFO",
+      "status": "PASS"
+    },
+    {
+      "actual": 0,
+      "code": "FAILED_PHASE_COUNT",
+      "component": "SCHEDULER",
+      "expected": 0,
+      "message": "scheduled phase failure count is within limit",
+      "metadata": {},
+      "severity": "INFO",
+      "status": "PASS"
+    },
+    {
+      "actual": 0,
+      "code": "CYCLE_ERROR_COUNT",
+      "component": "SCHEDULER",
+      "expected": 0,
+      "message": "scheduled cycle error count is within limit",
+      "metadata": {},
+      "severity": "INFO",
+      "status": "PASS"
+    },
+    {
+      "actual": 0,
+      "code": "CYCLE_WARNING_COUNT",
+      "component": "SCHEDULER",
+      "expected": 20,
+      "message": "scheduled cycle warning count is within limit",
+      "metadata": {},
+      "severity": "INFO",
+      "status": "PASS"
+    },
+    {
+      "actual": 0,
+      "code": "RETRY_PRESSURE",
+      "component": "SCHEDULER",
+      "expected": 3,
+      "message": "phase retry count is within limit",
+      "metadata": {},
+      "severity": "INFO",
+      "status": "PASS"
+    },
+    {
+      "actual": 0.5,
+      "code": "DAILY_LOSS",
+      "component": "PORTFOLIO",
+      "expected": 3.0,
+      "message": "daily loss is within limit",
+      "metadata": {},
+      "severity": "INFO",
+      "status": "PASS"
+    },
+    {
+      "actual": "PHASE5_AUTOMATION_READY_WITH_WARNINGS",
+      "code": "CONTROL_PLANE_READY",
+      "component": "CONTROL_PLANE",
+      "expected": "READY_OR_AUTHORIZED",
+      "message": "control plane is operational",
+      "metadata": {},
+      "severity": "INFO",
+      "status": "PASS"
+    },
+    {
+      "actual": "PHASE6_SCHEDULED_RUN_COMPLETED",
+      "code": "SCHEDULER_COMPLETED",
+      "component": "SCHEDULER",
+      "expected": "COMPLETED",
+      "message": "scheduler completed without blocking failure",
+      "metadata": {},
+      "severity": "INFO",
+      "status": "PASS"
+    }
+  ],
+  "created_at": "2026-07-28T14:35:41.080848+00:00",
+  "errors": [],
+  "health_score": 100.0,
+  "incidents": [],
+  "metadata": {
+    "environment": "PAPER",
+    "incident_count": 0,
+    "live_trading_enabled": false
+  },
+  "milestone": 51,
+  "overall_status": "PHASE7_AUTOMATION_HEALTHY",
+  "phase": 7,
+  "portfolio_id": "PAPER-PRIMARY",
+  "recovery_actions": [],
+  "telemetry": {
+    "active_orders": 4,
+    "completed_phases": 3,
+    "control_plane_status": "PHASE5_AUTOMATION_READY_WITH_WARNINGS",
+    "cycle_error_count": 0,
+    "cycle_warning_count": 0,
+    "daily_pnl": -500.0,
+    "exit_candidates": 0,
+    "failed_phases": 0,
+    "metadata": {
+      "live_trading_enabled": false,
+      "paper_only": true
+    },
+    "net_liquidation_value": 100000.0,
+    "open_positions": 0,
+    "portfolio_health_grade": "A",
+    "portfolio_health_score": 100.0,
+    "portfolio_id": "PAPER-PRIMARY",
+    "retried_phases": 0,
+    "risk_breach_count": 0,
+    "scheduler_status": "PHASE6_SCHEDULED_RUN_COMPLETED",
+    "stale_orders": 0
+  },
+  "warnings": []
+}

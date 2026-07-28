@@ -82,7 +82,6 @@ class DailyScanWorkstationService:
         report_date = date.today().isoformat()
         args = [
             "scripts/run_m43_daily_scan_workflow.py",
-            "--refresh-mode", payload.refresh_mode.value,
             "--universe", payload.universe,
             "--start", payload.start.isoformat(),
             "--end", payload.end.isoformat(),
@@ -104,28 +103,25 @@ class DailyScanWorkstationService:
             "--max-position-pct", str(payload.max_position_pct),
             "--take-profit-pct", str(payload.take_profit_pct),
             "--stop-loss-pct", str(payload.stop_loss_pct),
-            "--minimum-refresh-coverage-pct", str(payload.minimum_refresh_coverage_pct),
-            "--maximum-failed-refresh-symbols", str(payload.maximum_failed_refresh_symbols),
-            "--refresh-max-retries", str(payload.refresh_max_retries),
-            "--refresh-retry-backoff-seconds", str(payload.refresh_retry_backoff_seconds),
-            "--refresh-maximum-retry-backoff-seconds", str(payload.refresh_maximum_retry_backoff_seconds),
-            "--refresh-retry-jitter-ratio", str(payload.refresh_retry_jitter_ratio),
-            "--refresh-rate-limit-cooldown-seconds", str(payload.refresh_rate_limit_cooldown_seconds),
-            "--refresh-circuit-breaker-threshold", str(payload.refresh_circuit_breaker_threshold),
-            "--refresh-circuit-breaker-cooldown-seconds", str(payload.refresh_circuit_breaker_cooldown_seconds),
             "--report-date", report_date,
         ]
         symbols = [symbol.strip().upper() for symbol in payload.symbols if symbol.strip()]
         if symbols:
             args += ["--symbols", ",".join(dict.fromkeys(symbols))]
-        if payload.auto_refresh:
-            args.append("--auto-refresh")
-        if payload.continue_on_degraded_refresh:
-            args.append("--continue-on-degraded-refresh")
-        else:
-            args.append("--block-on-degraded-refresh")
-        return self._start(RunKind.DAILY_SCAN, payload.model_dump(mode="json"), args, requested_by, report_date)
-
+        request_payload = payload.model_dump(mode="json")
+        request_payload["data_access"] = {
+            "mode": "DATABASE_ONLY",
+            "read_only": True,
+            "network_access": False,
+            "ingestion_allowed": False,
+        }
+        return self._start(
+            RunKind.DAILY_SCAN,
+            request_payload,
+            args,
+            requested_by,
+            report_date,
+        )
     def _start(self, kind: RunKind, request: dict, args: list[str], requested_by: str, report_date: str | None) -> ScannerRun:
         run = ScannerRun(
             run_id=uuid4().hex,

@@ -10,6 +10,10 @@ SECTOR_MAP = {
     "TSLA": "Consumer Discretionary",
     "SPY": "ETF",
     "QQQ": "ETF",
+    "VIX": "Volatility Index",
+    "NDX": "Technology Index",
+    "SPX": "Broad Market Index",
+    "UPS": "Industrials",
 }
 
 

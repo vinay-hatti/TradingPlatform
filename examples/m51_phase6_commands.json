@@ -1,0 +1,65 @@
+{
+  "commands": [
+    {
+      "phase": 2,
+      "name": "ORDER_LIFECYCLE_MONITOR",
+      "command": [
+        "uv",
+        "run",
+        "python",
+        "scripts/run_m51_phase2_automated_order_lifecycle.py",
+        "--account-id",
+        "PAPER-PRIMARY",
+        "--mode",
+        "MONITOR"
+      ],
+      "required": true,
+      "timeout_seconds": 900,
+      "retry_limit": 1
+    },
+    {
+      "phase": 4,
+      "name": "PORTFOLIO_RISK_REFRESH",
+      "command": [
+        "uv",
+        "run",
+        "python",
+        "scripts/run_m51_phase4_automated_portfolio_management.py",
+        "--lifecycle-report",
+        "reports/m51/phase2/automated_order_lifecycle.json",
+        "--market-data-json",
+        "data/market/m51_portfolio_market_data.json",
+        "--account-snapshot-json",
+        "data/portfolio/m51_paper_account_snapshot.json"
+      ],
+      "required": true,
+      "timeout_seconds": 900,
+      "retry_limit": 1
+    },
+    {
+      "phase": 5,
+      "name": "CONTROL_PLANE_AUTHORIZATION",
+      "command": [
+        "uv",
+        "run",
+        "python",
+        "scripts/run_m51_phase5_automation_control_plane.py",
+        "--portfolio-id",
+        "PAPER-PRIMARY",
+        "--phase1-report",
+        "reports/m51/phase1/phase1_automated_paper_trading.json",
+        "--phase2-report",
+        "reports/m51/phase2/automated_order_lifecycle.json",
+        "--phase3-report",
+        "reports/m51/phase3/automated_position_management.json",
+        "--phase4-report",
+        "reports/m51/phase4/automated_portfolio_management.json",
+        "--mode",
+        "DRY_RUN"
+      ],
+      "required": true,
+      "timeout_seconds": 900,
+      "retry_limit": 0
+    }
+  ]
+}

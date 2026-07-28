@@ -1,0 +1,147 @@
+{
+  "completed_at": "2026-07-28T14:03:25.083844+00:00",
+  "decision": {
+    "allowed": true,
+    "duplicate_run": false,
+    "kill_switch_active": false,
+    "market_window_allowed": true,
+    "metadata": {
+      "environment": "PAPER",
+      "evaluated_at": "2026-07-28T14:03:23.101240+00:00",
+      "mode": "SUBMIT"
+    },
+    "reason_codes": [],
+    "run_key": "2026-07-28-AM-VALIDATION-01",
+    "schedule_name": "DAILY-PAPER-CYCLE"
+  },
+  "duration_seconds": 1.982604,
+  "errors": [],
+  "executions": [
+    {
+      "attempt_count": 1,
+      "completed_at": "2026-07-28T14:03:24.886616+00:00",
+      "duration_seconds": 1.784893,
+      "errors": [],
+      "exit_code": 0,
+      "metadata": {
+        "command": [
+          "uv",
+          "run",
+          "python",
+          "scripts/run_m51_phase2_automated_order_lifecycle.py",
+          "--account-id",
+          "PAPER-PRIMARY",
+          "--mode",
+          "MONITOR"
+        ],
+        "required": true,
+        "retry_limit": 1,
+        "timeout_seconds": 900
+      },
+      "name": "ORDER_LIFECYCLE_MONITOR",
+      "phase": 2,
+      "report_path": "",
+      "started_at": "2026-07-28T14:03:23.101723+00:00",
+      "status": "COMPLETED",
+      "stderr_tail": "",
+      "stdout_tail": "26-07-28T14:03:23.762549+00:00\",\n  \"errors\": [],\n  \"metadata\": {\n    \"automatic_cancellation_enabled\": false,\n    \"control\": {\n      \"binding_status\": \"VERIFIED_PAPER_TRADING\",\n      \"environment\": \"PAPER\",\n      \"live_trading_enabled\": false,\n      \"paper_order_submission_enabled\": true,\n      \"portfolio_id\": \"PAPER-PRIMARY\",\n      \"read_only\": false,\n      \"status\": \"PAPER_ORDER_ROUTING_ENABLED\"\n    },\n    \"environment\": \"PAPER\",\n    \"live_trading_enabled\": false\n  },\n  \"milestone\": 51,\n  \"mode\": \"MONITOR\",\n  \"orders\": [\n    {\n      \"aggregate_id\": \"M50-SMOKE-FA4E346027F4\",\n      \"average_fill_price\": 0.0,\n      \"broker_order_id\": 2,\n      \"canonical_state\": \"SUBMITTED\",\n      \"canonical_terminal_at\": \"\",\n      \"filled_quantity\": 0.0,\n      \"metadata\": {\n        \"broker_order_record_id\": \"IBKR-ORD-4147847AFC1F74C756F53D13\",\n        \"client_order_id\": \"M50-SMOKE-CLIENT-FA4E346027F4\",\n        \"permanent_id\": 0\n      },\n      \"quantity\": 1.0,\n      \"remaining_quantity\": 1.0,\n      \"security_type\": \"STK\",\n      \"side\": \"BUY\",\n      \"status\": \"CANCEL_REQUESTED\",\n      \"submitted_at\": \"2026-07-26T19:28:17.121141+00:00\",\n      \"symbol\": \"AAPL\",\n      \"updated_at\": \"2026-07-27T01:56:07.452583+00:00\"\n    },\n    {\n      \"aggregate_id\": \"M50-SMOKE-C5A2071876A2\",\n      \"average_fill_price\": 0.0,\n      \"broker_order_id\": 1,\n      \"canonical_state\": \"SUBMITTED\",\n      \"canonical_terminal_at\": \"\",\n      \"filled_quantity\": 0.0,\n      \"metadata\": {\n        \"broker_order_record_id\": \"IBKR-ORD-F84E686DA98247C9E3DC9797\",\n        \"client_order_id\": \"M50-SMOKE-CLIENT-C5A2071876A2\",\n        \"permanent_id\": 0\n      },\n      \"quantity\": 1.0,\n      \"remaining_quantity\": 1.0,\n      \"security_type\": \"STK\",\n      \"side\": \"BUY\",\n      \"status\": \"CANCEL_REQUESTED\",\n      \"submitted_at\": \"2026-07-26T19:22:30.081778+00:00\",\n      \"symbol\": \"AAPL\",\n      \"updated_at\": \"2026-07-27T01:56:07.450499+00:00\"\n    },\n    {\n      \"aggregate_id\": \"M50-SMOKE-38BAE0731A92\",\n      \"average_fill_price\": 0.0,\n      \"broker_order_id\": 3,\n      \"canonical_state\": \"SUBMITTED\",\n      \"canonical_terminal_at\": \"\",\n      \"filled_quantity\": 0.0,\n      \"metadata\": {\n        \"broker_order_record_id\": \"IBKR-ORD-35271B6914200886A751F96A\",\n        \"client_order_id\": \"M50-SMOKE-CLIENT-38BAE0731A92\",\n        \"permanent_id\": 0\n      },\n      \"quantity\": 1.0,\n      \"remaining_quantity\": 1.0,\n      \"security_type\": \"STK\",\n      \"side\": \"BUY\",\n      \"status\": \"CANCEL_REQUESTED\",\n      \"submitted_at\": \"2026-07-26T19:44:14.071070+00:00\",\n      \"symbol\": \"AAPL\",\n      \"updated_at\": \"2026-07-27T01:56:07.448062+00:00\"\n    },\n    {\n      \"aggregate_id\": \"M51-AUTO-2116AF70DB41BD570D8C079B\",\n      \"average_fill_price\": 0.0,\n      \"broker_order_id\": 4,\n      \"canonical_state\": \"SUBMITTED\",\n      \"canonical_terminal_at\": \"\",\n      \"filled_quantity\": 0.0,\n      \"metadata\": {\n        \"broker_order_record_id\": \"IBKR-ORD-972BEFC8DF80168DAEF889B3\",\n        \"client_order_id\": \"M51-CLIENT-2116AF70DB41BD570D8C079B\",\n        \"permanent_id\": 0\n      },\n      \"quantity\": 1.0,\n      \"remaining_quantity\": 1.0,\n      \"security_type\": \"STK\",\n      \"side\": \"BUY\",\n      \"status\": \"CANCEL_REQUESTED\",\n      \"submitted_at\": \"2026-07-26T20:44:02.743148+00:00\",\n      \"symbol\": \"AAPL\",\n      \"updated_at\": \"2026-07-27T01:56:07.443828+00:00\"\n    }\n  ],\n  \"phase\": 2,\n  \"portfolio_id\": \"PAPER-PRIMARY\",\n  \"positions\": [],\n  \"report_path\": \"reports/m51/phase2/automated_order_lifecycle.json\",\n  \"status\": \"PHASE2_LIFECYCLE_SYNCHRONIZED\",\n  \"summary\": {\n    \"active_orders\": 4,\n    \"cancellations_requested\": 0,\n    \"closed_positions\": 0,\n    \"execution_count\": 0,\n    \"open_positions\": 0,\n    \"order_count\": 4,\n    \"position_count\": 0,\n    \"stale_orders\": 4,\n    \"terminal_orders\": 0\n  },\n  \"synchronization\": {\n    \"executions_imported\": 0,\n    \"orders_updated\": 0,\n    \"portfolio_id\": \"PAPER-PRIMARY\",\n    \"status\": \"SYNCHRONIZED\"\n  },\n  \"warnings\": [\n    \"STALE_ORDERS_REQUIRE_OPERATOR_REVIEW\",\n    \"NO_BROKER_EXECUTIONS_AVAILABLE\"\n  ]\n}\n",
+      "warnings": []
+    },
+    {
+      "attempt_count": 1,
+      "completed_at": "2026-07-28T14:03:24.990652+00:00",
+      "duration_seconds": 0.103928,
+      "errors": [],
+      "exit_code": 0,
+      "metadata": {
+        "command": [
+          "uv",
+          "run",
+          "python",
+          "scripts/run_m51_phase4_automated_portfolio_management.py",
+          "--lifecycle-report",
+          "reports/m51/phase2/automated_order_lifecycle.json",
+          "--market-data-json",
+          "data/market/m51_portfolio_market_data.json",
+          "--account-snapshot-json",
+          "data/portfolio/m51_paper_account_snapshot.json"
+        ],
+        "required": true,
+        "retry_limit": 1,
+        "timeout_seconds": 900
+      },
+      "name": "PORTFOLIO_RISK_REFRESH",
+      "phase": 4,
+      "report_path": "",
+      "started_at": "2026-07-28T14:03:24.886724+00:00",
+      "status": "COMPLETED",
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"created_at\": \"2026-07-28T14:03:24.982730+00:00\",\n  \"daily_snapshot\": {\n    \"beginning_equity\": 100500.0,\n    \"cash_pct\": 80.0,\n    \"daily_pnl\": -500.0,\n    \"daily_return_pct\": -0.497512,\n    \"drawdown_pct\": 0.0,\n    \"ending_equity\": 100000.0,\n    \"gross_exposure_pct\": 0.0,\n    \"health_grade\": \"A\",\n    \"health_score\": 100.0,\n    \"net_exposure_pct\": 0.0,\n    \"open_positions\": 0,\n    \"option_contracts\": 0,\n    \"portfolio_beta\": 0.0,\n    \"realized_pnl\": 1250.0,\n    \"unrealized_pnl\": 0\n  },\n  \"errors\": [],\n  \"exposure_by_asset_class\": [],\n  \"exposure_by_industry\": [],\n  \"exposure_by_sector\": [],\n  \"exposure_by_symbol\": [],\n  \"greeks\": {\n    \"delta\": 0,\n    \"delta_notional\": 0.0,\n    \"gamma\": 0,\n    \"gamma_notional\": 0.0,\n    \"metadata\": {\n      \"delta_notional_pct\": 0.0,\n      \"gamma_notional_pct\": 0.0,\n      \"vega_notional_pct\": 0.0\n    },\n    \"rho\": 0,\n    \"theta\": 0,\n    \"vega\": 0,\n    \"vega_notional\": 0.0\n  },\n  \"health\": {\n    \"diversification\": 100.0,\n    \"drawdown\": 100.0,\n    \"execution\": 100.0,\n    \"grade\": \"A\",\n    \"greeks\": 100.0,\n    \"liquidity\": 100.0,\n    \"metadata\": {\n      \"healthy\": true,\n      \"minimum_health_score\": 70.0\n    },\n    \"overall\": 100.0,\n    \"risk\": 100.0\n  },\n  \"metadata\": {\n    \"environment\": \"PAPER\",\n    \"live_trading_enabled\": false,\n    \"position_count\": 0\n  },\n  \"milestone\": 51,\n  \"phase\": 4,\n  \"portfolio_id\": \"PAPER-PRIMARY\",\n  \"recommendations\": [],\n  \"report_paths\": {\n    \"json\": \"reports/m51/phase4/automated_portfolio_management.json\",\n    \"markdown\": \"reports/m51/phase4/automated_portfolio_management.md\",\n    \"sector_csv\": \"reports/m51/phase4/portfolio_sector_exposure.csv\"\n  },\n  \"risk_breaches\": [],\n  \"state\": {\n    \"buying_power\": 160000.0,\n    \"capital_utilization_pct\": 0.0,\n    \"cash\": 80000.0,\n    \"daily_pnl\": -500.0,\n    \"gross_exposure_pct\": 0.0,\n    \"gross_market_value\": 0,\n    \"long_market_value\": 0,\n    \"margin_utilization_pct\": 0.0,\n    \"metadata\": {\n      \"cash_pct\": 80.0,\n      \"live_trading_enabled\": false,\n      \"paper_only\": true\n    },\n    \"net_exposure_pct\": 0.0,\n    \"net_liquidation_value\": 100000.0,\n    \"net_market_value\": 0,\n    \"open_position_count\": 0,\n    \"option_contract_count\": 0,\n    \"portfolio_beta\": 0.0,\n    \"portfolio_id\": \"PAPER-PRIMARY\",\n    \"realized_pnl\": 1250.0,\n    \"short_market_value\": 0,\n    \"unrealized_pnl\": 0\n  },\n  \"status\": \"PHASE4_NO_OPEN_POSITIONS\",\n  \"warnings\": []\n}\n",
+      "warnings": []
+    },
+    {
+      "attempt_count": 1,
+      "completed_at": "2026-07-28T14:03:25.083771+00:00",
+      "duration_seconds": 0.093073,
+      "errors": [],
+      "exit_code": 0,
+      "metadata": {
+        "command": [
+          "uv",
+          "run",
+          "python",
+          "scripts/run_m51_phase5_automation_control_plane.py",
+          "--portfolio-id",
+          "PAPER-PRIMARY",
+          "--phase1-report",
+          "reports/m51/phase1/phase1_automated_paper_trading.json",
+          "--phase2-report",
+          "reports/m51/phase2/automated_order_lifecycle.json",
+          "--phase3-report",
+          "reports/m51/phase3/automated_position_management.json",
+          "--phase4-report",
+          "reports/m51/phase4/automated_portfolio_management.json",
+          "--mode",
+          "DRY_RUN"
+        ],
+        "required": true,
+        "retry_limit": 0,
+        "timeout_seconds": 900
+      },
+      "name": "CONTROL_PLANE_AUTHORIZATION",
+      "phase": 5,
+      "report_path": "",
+      "started_at": "2026-07-28T14:03:24.990698+00:00",
+      "status": "COMPLETED",
+      "stderr_tail": "",
+      "stdout_tail": "  ]\n    },\n    {\n      \"errors\": [],\n      \"event_id\": \"M51-CYCLE-178FE9CEFA6B45BFBEE53E14-PHASE-3\",\n      \"event_type\": \"PHASE_DEPENDENCY\",\n      \"name\": \"POSITION_MANAGEMENT\",\n      \"occurred_at\": \"2026-07-28T14:03:25.076826+00:00\",\n      \"phase\": 3,\n      \"status\": \"READY\",\n      \"warnings\": []\n    },\n    {\n      \"errors\": [],\n      \"event_id\": \"M51-CYCLE-178FE9CEFA6B45BFBEE53E14-PHASE-4\",\n      \"event_type\": \"PHASE_DEPENDENCY\",\n      \"name\": \"PORTFOLIO_MANAGEMENT\",\n      \"occurred_at\": \"2026-07-28T14:03:25.076826+00:00\",\n      \"phase\": 4,\n      \"status\": \"READY\",\n      \"warnings\": []\n    }\n  ],\n  \"completed_at\": \"2026-07-28T14:03:25.076831+00:00\",\n  \"consolidated_summary\": {\n    \"phase1\": {\n      \"handoff_rejected\": 0,\n      \"handoff_succeeded\": 1\n    },\n    \"phase2\": {\n      \"active_orders\": 4,\n      \"execution_count\": 0,\n      \"stale_orders\": 4,\n      \"terminal_orders\": 0\n    },\n    \"phase3\": {\n      \"exit_candidates\": 0,\n      \"submitted_exits\": 0,\n      \"total_positions\": 0\n    },\n    \"phase4\": {\n      \"daily_pnl\": -500.0,\n      \"health_grade\": \"A\",\n      \"health_score\": 100.0,\n      \"net_liquidation_value\": 100000.0,\n      \"recommendation_count\": 0,\n      \"risk_breach_count\": 0\n    }\n  },\n  \"control_decision\": {\n    \"allowed\": true,\n    \"kill_switch_active\": false,\n    \"live_trading_enabled\": false,\n    \"metadata\": {\n      \"environment\": \"PAPER\",\n      \"portfolio_health_score\": 100.0,\n      \"risk_breach_count\": 0\n    },\n    \"mode\": \"DRY_RUN\",\n    \"paper_routing_enabled\": true,\n    \"reason_codes\": [],\n    \"required_confirmation\": \"\"\n  },\n  \"cycle_id\": \"M51-CYCLE-178FE9CEFA6B45BFBEE53E14\",\n  \"duration_seconds\": 0.000146,\n  \"errors\": [],\n  \"metadata\": {\n    \"environment\": \"PAPER\",\n    \"execution_note\": \"Phase 5 authorizes and audits the cycle. Existing phase CLIs remain the execution surfaces.\",\n    \"kill_switch_active\": false,\n    \"live_trading_enabled\": false,\n    \"paper_routing_enabled\": true\n  },\n  \"milestone\": 51,\n  \"mode\": \"DRY_RUN\",\n  \"phase\": 5,\n  \"phases\": [\n    {\n      \"completed_at\": \"\",\n      \"duration_seconds\": 0.0,\n      \"errors\": [],\n      \"input_path\": \"\",\n      \"metadata\": {\n        \"source_status\": \"PHASE1_AUTOMATED_PAPER_HANDOFF_COMPLETED\"\n      },\n      \"name\": \"INSTITUTIONAL_ORDER_HANDOFF\",\n      \"output_path\": \"\",\n      \"phase\": 1,\n      \"required\": true,\n      \"started_at\": \"\",\n      \"status\": \"READY\",\n      \"warnings\": []\n    },\n    {\n      \"completed_at\": \"\",\n      \"duration_seconds\": 0.0,\n      \"errors\": [],\n      \"input_path\": \"\",\n      \"metadata\": {\n        \"source_status\": \"PHASE2_LIFECYCLE_SYNCHRONIZED\"\n      },\n      \"name\": \"ORDER_LIFECYCLE\",\n      \"output_path\": \"\",\n      \"phase\": 2,\n      \"required\": true,\n      \"started_at\": \"\",\n      \"status\": \"READY\",\n      \"warnings\": [\n        \"STALE_ORDERS_REQUIRE_OPERATOR_REVIEW\",\n        \"NO_BROKER_EXECUTIONS_AVAILABLE\"\n      ]\n    },\n    {\n      \"completed_at\": \"\",\n      \"duration_seconds\": 0.0,\n      \"errors\": [],\n      \"input_path\": \"\",\n      \"metadata\": {\n        \"source_status\": \"NO_OPEN_POSITIONS\"\n      },\n      \"name\": \"POSITION_MANAGEMENT\",\n      \"output_path\": \"\",\n      \"phase\": 3,\n      \"required\": true,\n      \"started_at\": \"\",\n      \"status\": \"READY\",\n      \"warnings\": []\n    },\n    {\n      \"completed_at\": \"\",\n      \"duration_seconds\": 0.0,\n      \"errors\": [],\n      \"input_path\": \"\",\n      \"metadata\": {\n        \"source_status\": \"PHASE4_NO_OPEN_POSITIONS\"\n      },\n      \"name\": \"PORTFOLIO_MANAGEMENT\",\n      \"output_path\": \"\",\n      \"phase\": 4,\n      \"required\": true,\n      \"started_at\": \"\",\n      \"status\": \"READY\",\n      \"warnings\": []\n    }\n  ],\n  \"portfolio_id\": \"PAPER-PRIMARY\",\n  \"report_paths\": {\n    \"json\": \"reports/m51/phase5/automation_control_plane.json\",\n    \"markdown\": \"reports/m51/phase5/automation_control_plane.md\"\n  },\n  \"started_at\": \"2026-07-28T14:03:25.076685+00:00\",\n  \"status\": \"PHASE5_AUTOMATION_READY_WITH_WARNINGS\",\n  \"warnings\": [\n    \"STALE_ORDERS_REQUIRE_OPERATOR_REVIEW\",\n    \"NO_BROKER_EXECUTIONS_AVAILABLE\"\n  ]\n}\n",
+      "warnings": []
+    }
+  ],
+  "metadata": {
+    "duplicate_run_prevention": true,
+    "environment": "PAPER",
+    "live_trading_enabled": false,
+    "restart_safe": true
+  },
+  "milestone": 51,
+  "mode": "SUBMIT",
+  "phase": 6,
+  "portfolio_id": "PAPER-PRIMARY",
+  "run_id": "M51-SCHEDULE-C3811B5AAFEB5B8B8F210328",
+  "run_key": "2026-07-28-AM-VALIDATION-01",
+  "schedule_name": "DAILY-PAPER-CYCLE",
+  "started_at": "2026-07-28T14:03:23.101240+00:00",
+  "status": "PHASE6_SCHEDULED_RUN_COMPLETED",
+  "summary": {
+    "completed": 3,
+    "duration_seconds": 1.981894,
+    "failed": 0,
+    "phase_count": 3,
+    "retried": 0,
+    "skipped": 0,
+    "total_errors": 0,
+    "total_warnings": 0
+  },
+  "warnings": []
+}

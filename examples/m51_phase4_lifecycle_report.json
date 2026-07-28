@@ -1,0 +1,56 @@
+{
+  "portfolio_id": "PAPER-PRIMARY",
+  "positions": [
+    {
+      "position_id": "P-AAPL",
+      "aggregate_id": "A-AAPL",
+      "symbol": "AAPL",
+      "security_type": "STK",
+      "direction": "LONG",
+      "quantity": 40,
+      "average_entry_price": 190,
+      "currency": "USD",
+      "status": "OPEN",
+      "metadata": {
+        "sector": "TECHNOLOGY",
+        "industry": "CONSUMER ELECTRONICS"
+      }
+    },
+    {
+      "position_id": "P-MSFT",
+      "aggregate_id": "A-MSFT",
+      "symbol": "MSFT",
+      "security_type": "STK",
+      "direction": "LONG",
+      "quantity": 15,
+      "average_entry_price": 480,
+      "currency": "USD",
+      "status": "OPEN",
+      "metadata": {
+        "sector": "TECHNOLOGY",
+        "industry": "SOFTWARE"
+      }
+    },
+    {
+      "position_id": "P-JPM",
+      "aggregate_id": "A-JPM",
+      "symbol": "JPM",
+      "security_type": "OPT",
+      "direction": "LONG",
+      "quantity": 2,
+      "average_entry_price": 5,
+      "currency": "USD",
+      "status": "OPEN",
+      "metadata": {
+        "sector": "FINANCIALS",
+        "industry": "BANKS",
+        "multiplier": 100,
+        "delta": 0.55,
+        "gamma": 0.03,
+        "theta": -0.08,
+        "vega": 0.12,
+        "rho": 0.02
+      }
+    }
+  ]
+}

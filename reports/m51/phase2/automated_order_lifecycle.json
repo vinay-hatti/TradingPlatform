@@ -1,0 +1,193 @@
+{
+  "actions": [
+    {
+      "action": "MONITOR",
+      "aggregate_id": "M51-AUTO-2116AF70DB41BD570D8C079B",
+      "allowed": true,
+      "broker_order_id": 4,
+      "confirmation_required": false,
+      "metadata": {
+        "age_minutes": 1.781,
+        "normalized_status": "CANCEL_REQUESTED",
+        "threshold_minutes": 30
+      },
+      "reason": "ORDER_ACTIVE_WITHIN_THRESHOLD"
+    },
+    {
+      "action": "MONITOR",
+      "aggregate_id": "M50-SMOKE-38BAE0731A92",
+      "allowed": true,
+      "broker_order_id": 3,
+      "confirmation_required": false,
+      "metadata": {
+        "age_minutes": 1.7811,
+        "normalized_status": "CANCEL_REQUESTED",
+        "threshold_minutes": 30
+      },
+      "reason": "ORDER_ACTIVE_WITHIN_THRESHOLD"
+    },
+    {
+      "action": "MONITOR",
+      "aggregate_id": "M50-SMOKE-C5A2071876A2",
+      "allowed": true,
+      "broker_order_id": 1,
+      "confirmation_required": false,
+      "metadata": {
+        "age_minutes": 1.7811,
+        "normalized_status": "CANCEL_REQUESTED",
+        "threshold_minutes": 30
+      },
+      "reason": "ORDER_ACTIVE_WITHIN_THRESHOLD"
+    },
+    {
+      "action": "MONITOR",
+      "aggregate_id": "M50-SMOKE-FA4E346027F4",
+      "allowed": true,
+      "broker_order_id": 2,
+      "confirmation_required": false,
+      "metadata": {
+        "age_minutes": 1.7812,
+        "normalized_status": "CANCEL_REQUESTED",
+        "threshold_minutes": 30
+      },
+      "reason": "ORDER_ACTIVE_WITHIN_THRESHOLD"
+    }
+  ],
+  "cancellations": [],
+  "connection": {
+    "live_trading_enabled": false,
+    "managed_accounts": [
+      "DUR156044"
+    ],
+    "server_version": 157,
+    "status": "CONNECTED_PAPER_ORDER_CAPABLE"
+  },
+  "created_at": "2026-07-28T14:35:07.365720+00:00",
+  "errors": [],
+  "metadata": {
+    "automatic_cancellation_enabled": false,
+    "control": {
+      "binding_status": "VERIFIED_PAPER_TRADING",
+      "environment": "PAPER",
+      "live_trading_enabled": false,
+      "paper_order_submission_enabled": true,
+      "portfolio_id": "PAPER-PRIMARY",
+      "read_only": false,
+      "status": "PAPER_ORDER_ROUTING_ENABLED"
+    },
+    "environment": "PAPER",
+    "live_trading_enabled": false
+  },
+  "milestone": 51,
+  "mode": "MONITOR",
+  "orders": [
+    {
+      "aggregate_id": "M51-AUTO-2116AF70DB41BD570D8C079B",
+      "average_fill_price": 0.0,
+      "broker_order_id": 4,
+      "canonical_state": "SUBMITTED",
+      "canonical_terminal_at": "",
+      "filled_quantity": 0.0,
+      "metadata": {
+        "broker_order_record_id": "IBKR-ORD-972BEFC8DF80168DAEF889B3",
+        "client_order_id": "M51-CLIENT-2116AF70DB41BD570D8C079B",
+        "permanent_id": 0
+      },
+      "quantity": 1.0,
+      "remaining_quantity": 1.0,
+      "security_type": "STK",
+      "side": "BUY",
+      "status": "CANCEL_REQUESTED",
+      "submitted_at": "2026-07-26T20:44:02.743148+00:00",
+      "symbol": "AAPL",
+      "updated_at": "2026-07-28T14:33:20.503369+00:00"
+    },
+    {
+      "aggregate_id": "M50-SMOKE-38BAE0731A92",
+      "average_fill_price": 0.0,
+      "broker_order_id": 3,
+      "canonical_state": "SUBMITTED",
+      "canonical_terminal_at": "",
+      "filled_quantity": 0.0,
+      "metadata": {
+        "broker_order_record_id": "IBKR-ORD-35271B6914200886A751F96A",
+        "client_order_id": "M50-SMOKE-CLIENT-38BAE0731A92",
+        "permanent_id": 0
+      },
+      "quantity": 1.0,
+      "remaining_quantity": 1.0,
+      "security_type": "STK",
+      "side": "BUY",
+      "status": "CANCEL_REQUESTED",
+      "submitted_at": "2026-07-26T19:44:14.071070+00:00",
+      "symbol": "AAPL",
+      "updated_at": "2026-07-28T14:33:20.501425+00:00"
+    },
+    {
+      "aggregate_id": "M50-SMOKE-C5A2071876A2",
+      "average_fill_price": 0.0,
+      "broker_order_id": 1,
+      "canonical_state": "SUBMITTED",
+      "canonical_terminal_at": "",
+      "filled_quantity": 0.0,
+      "metadata": {
+        "broker_order_record_id": "IBKR-ORD-F84E686DA98247C9E3DC9797",
+        "client_order_id": "M50-SMOKE-CLIENT-C5A2071876A2",
+        "permanent_id": 0
+      },
+      "quantity": 1.0,
+      "remaining_quantity": 1.0,
+      "security_type": "STK",
+      "side": "BUY",
+      "status": "CANCEL_REQUESTED",
+      "submitted_at": "2026-07-26T19:22:30.081778+00:00",
+      "symbol": "AAPL",
+      "updated_at": "2026-07-28T14:33:20.499188+00:00"
+    },
+    {
+      "aggregate_id": "M50-SMOKE-FA4E346027F4",
+      "average_fill_price": 0.0,
+      "broker_order_id": 2,
+      "canonical_state": "SUBMITTED",
+      "canonical_terminal_at": "",
+      "filled_quantity": 0.0,
+      "metadata": {
+        "broker_order_record_id": "IBKR-ORD-4147847AFC1F74C756F53D13",
+        "client_order_id": "M50-SMOKE-CLIENT-FA4E346027F4",
+        "permanent_id": 0
+      },
+      "quantity": 1.0,
+      "remaining_quantity": 1.0,
+      "security_type": "STK",
+      "side": "BUY",
+      "status": "CANCEL_REQUESTED",
+      "submitted_at": "2026-07-26T19:28:17.121141+00:00",
+      "symbol": "AAPL",
+      "updated_at": "2026-07-28T14:33:20.493773+00:00"
+    }
+  ],
+  "phase": 2,
+  "portfolio_id": "PAPER-PRIMARY",
+  "positions": [],
+  "status": "PHASE2_LIFECYCLE_SYNCHRONIZED",
+  "summary": {
+    "active_orders": 4,
+    "cancellations_requested": 0,
+    "closed_positions": 0,
+    "execution_count": 0,
+    "open_positions": 0,
+    "order_count": 4,
+    "position_count": 0,
+    "stale_orders": 0,
+    "terminal_orders": 0
+  },
+  "synchronization": {
+    "executions_imported": 0,
+    "orders_updated": 0,
+    "portfolio_id": "PAPER-PRIMARY",
+    "status": "SYNCHRONIZED"
+  },
+  "warnings": [
+    "NO_BROKER_EXECUTIONS_AVAILABLE"
+  ]
+}

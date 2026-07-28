@@ -1,0 +1,33 @@
+{
+  "portfolio_id": "PAPER-PRIMARY",
+  "generated_at": "2026-07-26T00:00:00+00:00",
+  "net_liquidation_value": 100000.0,
+  "cash_balance": 90000.0,
+  "capital_committed": 10000.0,
+  "capital_utilization_pct": 10.0,
+  "cash_pct": 90.0,
+  "open_position_count": 2,
+  "largest_symbol_pct": 6.0,
+  "largest_sector_pct": 10.0,
+  "by_symbol": [
+    {
+      "key": "MSFT",
+      "capital_pct": 6.0
+    },
+    {
+      "key": "JPM",
+      "capital_pct": 4.0
+    }
+  ],
+  "by_sector": [
+    {
+      "key": "TECHNOLOGY",
+      "capital_pct": 6.0
+    },
+    {
+      "key": "FINANCIALS",
+      "capital_pct": 4.0
+    }
+  ],
+  "warnings": []
+}

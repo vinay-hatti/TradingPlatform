@@ -1,21 +1,6183 @@
 {
-  "batch_count": 0,
-  "batch_results": [],
-  "completed_at": "2026-07-26T06:13:02.165719+00:00",
+  "batch_count": 616,
+  "batch_results": [
+    {
+      "batch_id": "polygon:2026-07-28:A:1",
+      "error_messages": [],
+      "input_records": 184,
+      "inserted_records": 183,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 183
+    },
+    {
+      "batch_id": "polygon:2026-07-28:AAPL:1",
+      "error_messages": [],
+      "input_records": 1235,
+      "inserted_records": 1229,
+      "rejected_records": 6,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 1229
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ABBV:1",
+      "error_messages": [],
+      "input_records": 492,
+      "inserted_records": 492,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 492
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ABNB:1",
+      "error_messages": [],
+      "input_records": 496,
+      "inserted_records": 492,
+      "rejected_records": 4,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 492
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ABT:1",
+      "error_messages": [],
+      "input_records": 553,
+      "inserted_records": 552,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 552
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ACGL:1",
+      "error_messages": [],
+      "input_records": 77,
+      "inserted_records": 70,
+      "rejected_records": 7,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 70
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ACN:1",
+      "error_messages": [],
+      "input_records": 638,
+      "inserted_records": 638,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 638
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ADBE:1",
+      "error_messages": [],
+      "input_records": 755,
+      "inserted_records": 748,
+      "rejected_records": 7,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 748
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ADI:1",
+      "error_messages": [],
+      "input_records": 600,
+      "inserted_records": 599,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 599
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ADM:1",
+      "error_messages": [],
+      "input_records": 182,
+      "inserted_records": 181,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 181
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ADP:1",
+      "error_messages": [],
+      "input_records": 366,
+      "inserted_records": 366,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 366
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ADSK:1",
+      "error_messages": [],
+      "input_records": 398,
+      "inserted_records": 398,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 398
+    },
+    {
+      "batch_id": "polygon:2026-07-28:AEE:1",
+      "error_messages": [],
+      "input_records": 64,
+      "inserted_records": 63,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 63
+    },
+    {
+      "batch_id": "polygon:2026-07-28:AEP:1",
+      "error_messages": [],
+      "input_records": 149,
+      "inserted_records": 149,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 149
+    },
+    {
+      "batch_id": "polygon:2026-07-28:AES:1",
+      "error_messages": [],
+      "input_records": 91,
+      "inserted_records": 91,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 91
+    },
+    {
+      "batch_id": "polygon:2026-07-28:AFL:1",
+      "error_messages": [],
+      "input_records": 293,
+      "inserted_records": 288,
+      "rejected_records": 5,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 288
+    },
+    {
+      "batch_id": "polygon:2026-07-28:AGG:1",
+      "error_messages": [],
+      "input_records": 55,
+      "inserted_records": 55,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 55
+    },
+    {
+      "batch_id": "polygon:2026-07-28:AIG:1",
+      "error_messages": [],
+      "input_records": 292,
+      "inserted_records": 292,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 292
+    },
+    {
+      "batch_id": "polygon:2026-07-28:AIZ:1",
+      "error_messages": [],
+      "input_records": 44,
+      "inserted_records": 40,
+      "rejected_records": 4,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 40
+    },
+    {
+      "batch_id": "polygon:2026-07-28:AJG:1",
+      "error_messages": [],
+      "input_records": 153,
+      "inserted_records": 153,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 153
+    },
+    {
+      "batch_id": "polygon:2026-07-28:AKAM:1",
+      "error_messages": [],
+      "input_records": 429,
+      "inserted_records": 429,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 429
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ALAB:1",
+      "error_messages": [],
+      "input_records": 727,
+      "inserted_records": 727,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 727
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ALB:1",
+      "error_messages": [],
+      "input_records": 553,
+      "inserted_records": 553,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 553
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ALGN:1",
+      "error_messages": [],
+      "input_records": 333,
+      "inserted_records": 333,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 333
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ALL:1",
+      "error_messages": [],
+      "input_records": 169,
+      "inserted_records": 169,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 169
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ALLE:1",
+      "error_messages": [],
+      "input_records": 71,
+      "inserted_records": 69,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 69
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ALNY:1",
+      "error_messages": [],
+      "input_records": 155,
+      "inserted_records": 155,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 155
+    },
+    {
+      "batch_id": "polygon:2026-07-28:AMAT:1",
+      "error_messages": [],
+      "input_records": 1182,
+      "inserted_records": 1182,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 1182
+    },
+    {
+      "batch_id": "polygon:2026-07-28:AMCR:1",
+      "error_messages": [],
+      "input_records": 118,
+      "inserted_records": 118,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 118
+    },
+    {
+      "batch_id": "polygon:2026-07-28:AMD:1",
+      "error_messages": [],
+      "input_records": 1966,
+      "inserted_records": 1960,
+      "rejected_records": 6,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 1960
+    },
+    {
+      "batch_id": "polygon:2026-07-28:AME:1",
+      "error_messages": [],
+      "input_records": 127,
+      "inserted_records": 126,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 126
+    },
+    {
+      "batch_id": "polygon:2026-07-28:AMGN:1",
+      "error_messages": [],
+      "input_records": 702,
+      "inserted_records": 702,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 702
+    },
+    {
+      "batch_id": "polygon:2026-07-28:AMP:1",
+      "error_messages": [],
+      "input_records": 170,
+      "inserted_records": 168,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 168
+    },
+    {
+      "batch_id": "polygon:2026-07-28:AMT:1",
+      "error_messages": [],
+      "input_records": 198,
+      "inserted_records": 198,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 198
+    },
+    {
+      "batch_id": "polygon:2026-07-28:AMZN:1",
+      "error_messages": [],
+      "input_records": 1096,
+      "inserted_records": 1096,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 1096
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ANET:1",
+      "error_messages": [],
+      "input_records": 592,
+      "inserted_records": 592,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 592
+    },
+    {
+      "batch_id": "polygon:2026-07-28:AON:1",
+      "error_messages": [],
+      "input_records": 125,
+      "inserted_records": 125,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 125
+    },
+    {
+      "batch_id": "polygon:2026-07-28:AOS:1",
+      "error_messages": [],
+      "input_records": 70,
+      "inserted_records": 70,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 70
+    },
+    {
+      "batch_id": "polygon:2026-07-28:APA:1",
+      "error_messages": [],
+      "input_records": 319,
+      "inserted_records": 319,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 319
+    },
+    {
+      "batch_id": "polygon:2026-07-28:APD:1",
+      "error_messages": [],
+      "input_records": 149,
+      "inserted_records": 149,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 149
+    },
+    {
+      "batch_id": "polygon:2026-07-28:APH:1",
+      "error_messages": [],
+      "input_records": 265,
+      "inserted_records": 265,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 265
+    },
+    {
+      "batch_id": "polygon:2026-07-28:APO:1",
+      "error_messages": [],
+      "input_records": 412,
+      "inserted_records": 412,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 412
+    },
+    {
+      "batch_id": "polygon:2026-07-28:APP:1",
+      "error_messages": [],
+      "input_records": 935,
+      "inserted_records": 935,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 935
+    },
+    {
+      "batch_id": "polygon:2026-07-28:APTV:1",
+      "error_messages": [],
+      "input_records": 185,
+      "inserted_records": 121,
+      "rejected_records": 1,
+      "skipped_records": 63,
+      "updated_records": 0,
+      "valid_records": 121
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ARE:1",
+      "error_messages": [],
+      "input_records": 103,
+      "inserted_records": 103,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 103
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ARES:1",
+      "error_messages": [],
+      "input_records": 335,
+      "inserted_records": 335,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 335
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ARKK:1",
+      "error_messages": [],
+      "input_records": 748,
+      "inserted_records": 748,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 748
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ARM:1",
+      "error_messages": [],
+      "input_records": 785,
+      "inserted_records": 785,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 785
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ASML:1",
+      "error_messages": [],
+      "input_records": 2316,
+      "inserted_records": 2316,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 2316
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ATO:1",
+      "error_messages": [],
+      "input_records": 75,
+      "inserted_records": 75,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 75
+    },
+    {
+      "batch_id": "polygon:2026-07-28:AVB:1",
+      "error_messages": [],
+      "input_records": 88,
+      "inserted_records": 88,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 88
+    },
+    {
+      "batch_id": "polygon:2026-07-28:AVGO:1",
+      "error_messages": [],
+      "input_records": 1310,
+      "inserted_records": 1306,
+      "rejected_records": 4,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 1306
+    },
+    {
+      "batch_id": "polygon:2026-07-28:AVY:1",
+      "error_messages": [],
+      "input_records": 74,
+      "inserted_records": 74,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 74
+    },
+    {
+      "batch_id": "polygon:2026-07-28:AWK:1",
+      "error_messages": [],
+      "input_records": 84,
+      "inserted_records": 84,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 84
+    },
+    {
+      "batch_id": "polygon:2026-07-28:AXON:1",
+      "error_messages": [],
+      "input_records": 644,
+      "inserted_records": 643,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 643
+    },
+    {
+      "batch_id": "polygon:2026-07-28:AXP:1",
+      "error_messages": [],
+      "input_records": 674,
+      "inserted_records": 673,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 673
+    },
+    {
+      "batch_id": "polygon:2026-07-28:AZO:1",
+      "error_messages": [],
+      "input_records": 483,
+      "inserted_records": 483,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 483
+    },
+    {
+      "batch_id": "polygon:2026-07-28:BA:1",
+      "error_messages": [],
+      "input_records": 696,
+      "inserted_records": 689,
+      "rejected_records": 7,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 689
+    },
+    {
+      "batch_id": "polygon:2026-07-28:BAC:1",
+      "error_messages": [],
+      "input_records": 516,
+      "inserted_records": 516,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 516
+    },
+    {
+      "batch_id": "polygon:2026-07-28:BALL:1",
+      "error_messages": [],
+      "input_records": 146,
+      "inserted_records": 141,
+      "rejected_records": 5,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 141
+    },
+    {
+      "batch_id": "polygon:2026-07-28:BAX:1",
+      "error_messages": [],
+      "input_records": 203,
+      "inserted_records": 202,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 202
+    },
+    {
+      "batch_id": "polygon:2026-07-28:BBY:1",
+      "error_messages": [],
+      "input_records": 420,
+      "inserted_records": 420,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 420
+    },
+    {
+      "batch_id": "polygon:2026-07-28:BDX:1",
+      "error_messages": [],
+      "input_records": 252,
+      "inserted_records": 170,
+      "rejected_records": 0,
+      "skipped_records": 82,
+      "updated_records": 0,
+      "valid_records": 170
+    },
+    {
+      "batch_id": "polygon:2026-07-28:BEN:1",
+      "error_messages": [],
+      "input_records": 100,
+      "inserted_records": 100,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 100
+    },
+    {
+      "batch_id": "polygon:2026-07-28:BG:1",
+      "error_messages": [],
+      "input_records": 115,
+      "inserted_records": 115,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 115
+    },
+    {
+      "batch_id": "polygon:2026-07-28:BIIB:1",
+      "error_messages": [],
+      "input_records": 333,
+      "inserted_records": 333,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 333
+    },
+    {
+      "batch_id": "polygon:2026-07-28:BITO:1",
+      "error_messages": [],
+      "input_records": 151,
+      "inserted_records": 132,
+      "rejected_records": 19,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 132
+    },
+    {
+      "batch_id": "polygon:2026-07-28:BKNG:1",
+      "error_messages": [],
+      "input_records": 1002,
+      "inserted_records": 975,
+      "rejected_records": 27,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 975
+    },
+    {
+      "batch_id": "polygon:2026-07-28:BKR:1",
+      "error_messages": [],
+      "input_records": 102,
+      "inserted_records": 102,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 102
+    },
+    {
+      "batch_id": "polygon:2026-07-28:BLDR:1",
+      "error_messages": [],
+      "input_records": 112,
+      "inserted_records": 112,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 112
+    },
+    {
+      "batch_id": "polygon:2026-07-28:BLK:1",
+      "error_messages": [],
+      "input_records": 899,
+      "inserted_records": 899,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 899
+    },
+    {
+      "batch_id": "polygon:2026-07-28:BMY:1",
+      "error_messages": [],
+      "input_records": 348,
+      "inserted_records": 348,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 348
+    },
+    {
+      "batch_id": "polygon:2026-07-28:BND:1",
+      "error_messages": [],
+      "input_records": 57,
+      "inserted_records": 57,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 57
+    },
+    {
+      "batch_id": "polygon:2026-07-28:BNY:1",
+      "error_messages": [],
+      "input_records": 144,
+      "inserted_records": 144,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 144
+    },
+    {
+      "batch_id": "polygon:2026-07-28:BR:1",
+      "error_messages": [],
+      "input_records": 105,
+      "inserted_records": 105,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 105
+    },
+    {
+      "batch_id": "polygon:2026-07-28:BRO:1",
+      "error_messages": [],
+      "input_records": 53,
+      "inserted_records": 53,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 53
+    },
+    {
+      "batch_id": "polygon:2026-07-28:BSX:1",
+      "error_messages": [],
+      "input_records": 365,
+      "inserted_records": 362,
+      "rejected_records": 3,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 362
+    },
+    {
+      "batch_id": "polygon:2026-07-28:BX:1",
+      "error_messages": [],
+      "input_records": 606,
+      "inserted_records": 606,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 606
+    },
+    {
+      "batch_id": "polygon:2026-07-28:BXP:1",
+      "error_messages": [],
+      "input_records": 93,
+      "inserted_records": 93,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 93
+    },
+    {
+      "batch_id": "polygon:2026-07-28:C:1",
+      "error_messages": [],
+      "input_records": 645,
+      "inserted_records": 641,
+      "rejected_records": 4,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 641
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CAH:1",
+      "error_messages": [],
+      "input_records": 248,
+      "inserted_records": 247,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 247
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CARR:1",
+      "error_messages": [],
+      "input_records": 297,
+      "inserted_records": 295,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 295
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CASY:1",
+      "error_messages": [],
+      "input_records": 229,
+      "inserted_records": 221,
+      "rejected_records": 8,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 221
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CAT:1",
+      "error_messages": [],
+      "input_records": 1506,
+      "inserted_records": 1504,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 1504
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CB:1",
+      "error_messages": [],
+      "input_records": 307,
+      "inserted_records": 307,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 307
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CBOE:1",
+      "error_messages": [],
+      "input_records": 391,
+      "inserted_records": 390,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 390
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CBRE:1",
+      "error_messages": [],
+      "input_records": 138,
+      "inserted_records": 137,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 137
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CCEP:1",
+      "error_messages": [],
+      "input_records": 43,
+      "inserted_records": 43,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 43
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CCI:1",
+      "error_messages": [],
+      "input_records": 160,
+      "inserted_records": 160,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 160
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CCL:1",
+      "error_messages": [],
+      "input_records": 450,
+      "inserted_records": 448,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 448
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CDNS:1",
+      "error_messages": [],
+      "input_records": 734,
+      "inserted_records": 730,
+      "rejected_records": 4,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 730
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CDW:1",
+      "error_messages": [],
+      "input_records": 127,
+      "inserted_records": 127,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 127
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CEG:1",
+      "error_messages": [],
+      "input_records": 568,
+      "inserted_records": 567,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 567
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CF:1",
+      "error_messages": [],
+      "input_records": 543,
+      "inserted_records": 543,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 543
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CFG:1",
+      "error_messages": [],
+      "input_records": 120,
+      "inserted_records": 120,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 120
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CHD:1",
+      "error_messages": [],
+      "input_records": 85,
+      "inserted_records": 85,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 85
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CHRW:1",
+      "error_messages": [],
+      "input_records": 146,
+      "inserted_records": 146,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 146
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CHTR:1",
+      "error_messages": [],
+      "input_records": 635,
+      "inserted_records": 635,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 635
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CI:1",
+      "error_messages": [],
+      "input_records": 415,
+      "inserted_records": 415,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 415
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CIBR:1",
+      "error_messages": [],
+      "input_records": 132,
+      "inserted_records": 132,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 132
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CIEN:1",
+      "error_messages": [],
+      "input_records": 757,
+      "inserted_records": 757,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 757
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CINF:1",
+      "error_messages": [],
+      "input_records": 120,
+      "inserted_records": 119,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 119
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CL:1",
+      "error_messages": [],
+      "input_records": 295,
+      "inserted_records": 295,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 295
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CLX:1",
+      "error_messages": [],
+      "input_records": 120,
+      "inserted_records": 120,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 120
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CMCSA:1",
+      "error_messages": [],
+      "input_records": 366,
+      "inserted_records": 318,
+      "rejected_records": 3,
+      "skipped_records": 45,
+      "updated_records": 0,
+      "valid_records": 318
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CME:1",
+      "error_messages": [],
+      "input_records": 386,
+      "inserted_records": 386,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 386
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CMG:1",
+      "error_messages": [],
+      "input_records": 388,
+      "inserted_records": 388,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 388
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CMI:1",
+      "error_messages": [],
+      "input_records": 248,
+      "inserted_records": 248,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 248
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CMS:1",
+      "error_messages": [],
+      "input_records": 35,
+      "inserted_records": 35,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 35
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CNC:1",
+      "error_messages": [],
+      "input_records": 377,
+      "inserted_records": 376,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 376
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CNP:1",
+      "error_messages": [],
+      "input_records": 130,
+      "inserted_records": 128,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 128
+    },
+    {
+      "batch_id": "polygon:2026-07-28:COF:1",
+      "error_messages": [],
+      "input_records": 460,
+      "inserted_records": 411,
+      "rejected_records": 8,
+      "skipped_records": 41,
+      "updated_records": 0,
+      "valid_records": 411
+    },
+    {
+      "batch_id": "polygon:2026-07-28:COHR:1",
+      "error_messages": [],
+      "input_records": 650,
+      "inserted_records": 650,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 650
+    },
+    {
+      "batch_id": "polygon:2026-07-28:COIN:1",
+      "error_messages": [],
+      "input_records": 688,
+      "inserted_records": 688,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 688
+    },
+    {
+      "batch_id": "polygon:2026-07-28:COO:1",
+      "error_messages": [],
+      "input_records": 57,
+      "inserted_records": 52,
+      "rejected_records": 5,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 52
+    },
+    {
+      "batch_id": "polygon:2026-07-28:COP:1",
+      "error_messages": [],
+      "input_records": 556,
+      "inserted_records": 556,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 556
+    },
+    {
+      "batch_id": "polygon:2026-07-28:COR:1",
+      "error_messages": [],
+      "input_records": 192,
+      "inserted_records": 189,
+      "rejected_records": 3,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 189
+    },
+    {
+      "batch_id": "polygon:2026-07-28:COST:1",
+      "error_messages": [],
+      "input_records": 1396,
+      "inserted_records": 1395,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 1395
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CPAY:1",
+      "error_messages": [],
+      "input_records": 100,
+      "inserted_records": 99,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 99
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CPRT:1",
+      "error_messages": [],
+      "input_records": 91,
+      "inserted_records": 90,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 90
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CPT:1",
+      "error_messages": [],
+      "input_records": 45,
+      "inserted_records": 45,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 45
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CRH:1",
+      "error_messages": [],
+      "input_records": 274,
+      "inserted_records": 274,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 274
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CRL:1",
+      "error_messages": [],
+      "input_records": 115,
+      "inserted_records": 112,
+      "rejected_records": 3,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 112
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CRM:1",
+      "error_messages": [],
+      "input_records": 593,
+      "inserted_records": 590,
+      "rejected_records": 3,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 590
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CRWD:1",
+      "error_messages": [],
+      "input_records": 1154,
+      "inserted_records": 1153,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 1153
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CRWV:1",
+      "error_messages": [],
+      "input_records": 632,
+      "inserted_records": 631,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 631
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CSCO:1",
+      "error_messages": [],
+      "input_records": 577,
+      "inserted_records": 574,
+      "rejected_records": 3,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 574
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CSGP:1",
+      "error_messages": [],
+      "input_records": 54,
+      "inserted_records": 52,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 52
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CSX:1",
+      "error_messages": [],
+      "input_records": 290,
+      "inserted_records": 287,
+      "rejected_records": 3,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 287
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CTAS:1",
+      "error_messages": [],
+      "input_records": 328,
+      "inserted_records": 319,
+      "rejected_records": 9,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 319
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CTSH:1",
+      "error_messages": [],
+      "input_records": 146,
+      "inserted_records": 146,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 146
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CTVA:1",
+      "error_messages": [],
+      "input_records": 68,
+      "inserted_records": 65,
+      "rejected_records": 3,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 65
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CVNA:1",
+      "error_messages": [],
+      "input_records": 664,
+      "inserted_records": 663,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 663
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CVS:1",
+      "error_messages": [],
+      "input_records": 495,
+      "inserted_records": 495,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 495
+    },
+    {
+      "batch_id": "polygon:2026-07-28:CVX:1",
+      "error_messages": [],
+      "input_records": 495,
+      "inserted_records": 460,
+      "rejected_records": 0,
+      "skipped_records": 35,
+      "updated_records": 0,
+      "valid_records": 460
+    },
+    {
+      "batch_id": "polygon:2026-07-28:D:1",
+      "error_messages": [],
+      "input_records": 133,
+      "inserted_records": 133,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 133
+    },
+    {
+      "batch_id": "polygon:2026-07-28:DAL:1",
+      "error_messages": [],
+      "input_records": 466,
+      "inserted_records": 466,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 466
+    },
+    {
+      "batch_id": "polygon:2026-07-28:DASH:1",
+      "error_messages": [],
+      "input_records": 460,
+      "inserted_records": 460,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 460
+    },
+    {
+      "batch_id": "polygon:2026-07-28:DBA:1",
+      "error_messages": [],
+      "input_records": 84,
+      "inserted_records": 84,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 84
+    },
+    {
+      "batch_id": "polygon:2026-07-28:DD:1",
+      "error_messages": [],
+      "input_records": 98,
+      "inserted_records": 98,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 98
+    },
+    {
+      "batch_id": "polygon:2026-07-28:DDOG:1",
+      "error_messages": [],
+      "input_records": 701,
+      "inserted_records": 701,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 701
+    },
+    {
+      "batch_id": "polygon:2026-07-28:DE:1",
+      "error_messages": [],
+      "input_records": 696,
+      "inserted_records": 696,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 696
+    },
+    {
+      "batch_id": "polygon:2026-07-28:DECK:1",
+      "error_messages": [],
+      "input_records": 442,
+      "inserted_records": 437,
+      "rejected_records": 5,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 437
+    },
+    {
+      "batch_id": "polygon:2026-07-28:DELL:1",
+      "error_messages": [],
+      "input_records": 1064,
+      "inserted_records": 1060,
+      "rejected_records": 4,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 1060
+    },
+    {
+      "batch_id": "polygon:2026-07-28:DG:1",
+      "error_messages": [],
+      "input_records": 497,
+      "inserted_records": 496,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 496
+    },
+    {
+      "batch_id": "polygon:2026-07-28:DGX:1",
+      "error_messages": [],
+      "input_records": 82,
+      "inserted_records": 82,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 82
+    },
+    {
+      "batch_id": "polygon:2026-07-28:DHI:1",
+      "error_messages": [],
+      "input_records": 370,
+      "inserted_records": 370,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 370
+    },
+    {
+      "batch_id": "polygon:2026-07-28:DHR:1",
+      "error_messages": [],
+      "input_records": 378,
+      "inserted_records": 368,
+      "rejected_records": 10,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 368
+    },
+    {
+      "batch_id": "polygon:2026-07-28:DIA:1",
+      "error_messages": [],
+      "input_records": 1526,
+      "inserted_records": 1519,
+      "rejected_records": 7,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 1519
+    },
+    {
+      "batch_id": "polygon:2026-07-28:DIS:1",
+      "error_messages": [],
+      "input_records": 470,
+      "inserted_records": 468,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 468
+    },
+    {
+      "batch_id": "polygon:2026-07-28:DLR:1",
+      "error_messages": [],
+      "input_records": 342,
+      "inserted_records": 342,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 342
+    },
+    {
+      "batch_id": "polygon:2026-07-28:DLTR:1",
+      "error_messages": [],
+      "input_records": 448,
+      "inserted_records": 446,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 446
+    },
+    {
+      "batch_id": "polygon:2026-07-28:DOC:1",
+      "error_messages": [],
+      "input_records": 50,
+      "inserted_records": 49,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 49
+    },
+    {
+      "batch_id": "polygon:2026-07-28:DOV:1",
+      "error_messages": [],
+      "input_records": 143,
+      "inserted_records": 143,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 143
+    },
+    {
+      "batch_id": "polygon:2026-07-28:DOW:1",
+      "error_messages": [],
+      "input_records": 333,
+      "inserted_records": 332,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 332
+    },
+    {
+      "batch_id": "polygon:2026-07-28:DPZ:1",
+      "error_messages": [],
+      "input_records": 182,
+      "inserted_records": 182,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 182
+    },
+    {
+      "batch_id": "polygon:2026-07-28:DRI:1",
+      "error_messages": [],
+      "input_records": 168,
+      "inserted_records": 168,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 168
+    },
+    {
+      "batch_id": "polygon:2026-07-28:DTE:1",
+      "error_messages": [],
+      "input_records": 78,
+      "inserted_records": 78,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 78
+    },
+    {
+      "batch_id": "polygon:2026-07-28:DUK:1",
+      "error_messages": [],
+      "input_records": 150,
+      "inserted_records": 150,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 150
+    },
+    {
+      "batch_id": "polygon:2026-07-28:DVA:1",
+      "error_messages": [],
+      "input_records": 169,
+      "inserted_records": 169,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 169
+    },
+    {
+      "batch_id": "polygon:2026-07-28:DVN:1",
+      "error_messages": [],
+      "input_records": 447,
+      "inserted_records": 419,
+      "rejected_records": 1,
+      "skipped_records": 27,
+      "updated_records": 0,
+      "valid_records": 419
+    },
+    {
+      "batch_id": "polygon:2026-07-28:DXCM:1",
+      "error_messages": [],
+      "input_records": 279,
+      "inserted_records": 277,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 277
+    },
+    {
+      "batch_id": "polygon:2026-07-28:EA:1",
+      "error_messages": [],
+      "input_records": 179,
+      "inserted_records": 139,
+      "rejected_records": 40,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 139
+    },
+    {
+      "batch_id": "polygon:2026-07-28:EBAY:1",
+      "error_messages": [],
+      "input_records": 463,
+      "inserted_records": 461,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 461
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ECHO:1",
+      "error_messages": [],
+      "input_records": 412,
+      "inserted_records": 412,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 412
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ECL:1",
+      "error_messages": [],
+      "input_records": 151,
+      "inserted_records": 151,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 151
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ED:1",
+      "error_messages": [],
+      "input_records": 97,
+      "inserted_records": 97,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 97
+    },
+    {
+      "batch_id": "polygon:2026-07-28:EEM:1",
+      "error_messages": [],
+      "input_records": 940,
+      "inserted_records": 939,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 939
+    },
+    {
+      "batch_id": "polygon:2026-07-28:EFA:1",
+      "error_messages": [],
+      "input_records": 626,
+      "inserted_records": 626,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 626
+    },
+    {
+      "batch_id": "polygon:2026-07-28:EFX:1",
+      "error_messages": [],
+      "input_records": 162,
+      "inserted_records": 162,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 162
+    },
+    {
+      "batch_id": "polygon:2026-07-28:EG:1",
+      "error_messages": [],
+      "input_records": 93,
+      "inserted_records": 93,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 93
+    },
+    {
+      "batch_id": "polygon:2026-07-28:EIX:1",
+      "error_messages": [],
+      "input_records": 104,
+      "inserted_records": 104,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 104
+    },
+    {
+      "batch_id": "polygon:2026-07-28:EL:1",
+      "error_messages": [],
+      "input_records": 369,
+      "inserted_records": 369,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 369
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ELV:1",
+      "error_messages": [],
+      "input_records": 279,
+      "inserted_records": 279,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 279
+    },
+    {
+      "batch_id": "polygon:2026-07-28:EME:1",
+      "error_messages": [],
+      "input_records": 311,
+      "inserted_records": 311,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 311
+    },
+    {
+      "batch_id": "polygon:2026-07-28:EMR:1",
+      "error_messages": [],
+      "input_records": 331,
+      "inserted_records": 328,
+      "rejected_records": 3,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 328
+    },
+    {
+      "batch_id": "polygon:2026-07-28:EOG:1",
+      "error_messages": [],
+      "input_records": 421,
+      "inserted_records": 421,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 421
+    },
+    {
+      "batch_id": "polygon:2026-07-28:EQIX:1",
+      "error_messages": [],
+      "input_records": 330,
+      "inserted_records": 330,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 330
+    },
+    {
+      "batch_id": "polygon:2026-07-28:EQR:1",
+      "error_messages": [],
+      "input_records": 95,
+      "inserted_records": 95,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 95
+    },
+    {
+      "batch_id": "polygon:2026-07-28:EQT:1",
+      "error_messages": [],
+      "input_records": 335,
+      "inserted_records": 333,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 333
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ERIE:1",
+      "error_messages": [],
+      "input_records": 86,
+      "inserted_records": 86,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 86
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ES:1",
+      "error_messages": [],
+      "input_records": 49,
+      "inserted_records": 49,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 49
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ESS:1",
+      "error_messages": [],
+      "input_records": 75,
+      "inserted_records": 75,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 75
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ETHA:1",
+      "error_messages": [],
+      "input_records": 292,
+      "inserted_records": 292,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 292
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ETN:1",
+      "error_messages": [],
+      "input_records": 609,
+      "inserted_records": 608,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 608
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ETR:1",
+      "error_messages": [],
+      "input_records": 105,
+      "inserted_records": 105,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 105
+    },
+    {
+      "batch_id": "polygon:2026-07-28:EVRG:1",
+      "error_messages": [],
+      "input_records": 64,
+      "inserted_records": 64,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 64
+    },
+    {
+      "batch_id": "polygon:2026-07-28:EW:1",
+      "error_messages": [],
+      "input_records": 166,
+      "inserted_records": 164,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 164
+    },
+    {
+      "batch_id": "polygon:2026-07-28:EWJ:1",
+      "error_messages": [],
+      "input_records": 376,
+      "inserted_records": 376,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 376
+    },
+    {
+      "batch_id": "polygon:2026-07-28:EWZ:1",
+      "error_messages": [],
+      "input_records": 555,
+      "inserted_records": 555,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 555
+    },
+    {
+      "batch_id": "polygon:2026-07-28:EXC:1",
+      "error_messages": [],
+      "input_records": 128,
+      "inserted_records": 128,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 128
+    },
+    {
+      "batch_id": "polygon:2026-07-28:EXE:1",
+      "error_messages": [],
+      "input_records": 112,
+      "inserted_records": 112,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 112
+    },
+    {
+      "batch_id": "polygon:2026-07-28:EXPD:1",
+      "error_messages": [],
+      "input_records": 81,
+      "inserted_records": 81,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 81
+    },
+    {
+      "batch_id": "polygon:2026-07-28:EXPE:1",
+      "error_messages": [],
+      "input_records": 462,
+      "inserted_records": 462,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 462
+    },
+    {
+      "batch_id": "polygon:2026-07-28:EXR:1",
+      "error_messages": [],
+      "input_records": 73,
+      "inserted_records": 73,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 73
+    },
+    {
+      "batch_id": "polygon:2026-07-28:F:1",
+      "error_messages": [],
+      "input_records": 353,
+      "inserted_records": 353,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 353
+    },
+    {
+      "batch_id": "polygon:2026-07-28:FANG:1",
+      "error_messages": [],
+      "input_records": 165,
+      "inserted_records": 165,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 165
+    },
+    {
+      "batch_id": "polygon:2026-07-28:FAST:1",
+      "error_messages": [],
+      "input_records": 144,
+      "inserted_records": 143,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 143
+    },
+    {
+      "batch_id": "polygon:2026-07-28:FBTC:1",
+      "error_messages": [],
+      "input_records": 317,
+      "inserted_records": 317,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 317
+    },
+    {
+      "batch_id": "polygon:2026-07-28:FCX:1",
+      "error_messages": [],
+      "input_records": 448,
+      "inserted_records": 448,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 448
+    },
+    {
+      "batch_id": "polygon:2026-07-28:FDS:1",
+      "error_messages": [],
+      "input_records": 152,
+      "inserted_records": 152,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 152
+    },
+    {
+      "batch_id": "polygon:2026-07-28:FDX:1",
+      "error_messages": [],
+      "input_records": 684,
+      "inserted_records": 526,
+      "rejected_records": 1,
+      "skipped_records": 157,
+      "updated_records": 0,
+      "valid_records": 526
+    },
+    {
+      "batch_id": "polygon:2026-07-28:FDXF:1",
+      "error_messages": [],
+      "input_records": 98,
+      "inserted_records": 98,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 98
+    },
+    {
+      "batch_id": "polygon:2026-07-28:FE:1",
+      "error_messages": [],
+      "input_records": 120,
+      "inserted_records": 120,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 120
+    },
+    {
+      "batch_id": "polygon:2026-07-28:FER:1",
+      "error_messages": [],
+      "input_records": 34,
+      "inserted_records": 34,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 34
+    },
+    {
+      "batch_id": "polygon:2026-07-28:FFIV:1",
+      "error_messages": [],
+      "input_records": 246,
+      "inserted_records": 243,
+      "rejected_records": 3,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 243
+    },
+    {
+      "batch_id": "polygon:2026-07-28:FICO:1",
+      "error_messages": [],
+      "input_records": 567,
+      "inserted_records": 565,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 565
+    },
+    {
+      "batch_id": "polygon:2026-07-28:FIS:1",
+      "error_messages": [],
+      "input_records": 238,
+      "inserted_records": 238,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 238
+    },
+    {
+      "batch_id": "polygon:2026-07-28:FISV:1",
+      "error_messages": [],
+      "input_records": 310,
+      "inserted_records": 306,
+      "rejected_records": 4,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 306
+    },
+    {
+      "batch_id": "polygon:2026-07-28:FITB:1",
+      "error_messages": [],
+      "input_records": 190,
+      "inserted_records": 163,
+      "rejected_records": 1,
+      "skipped_records": 26,
+      "updated_records": 0,
+      "valid_records": 163
+    },
+    {
+      "batch_id": "polygon:2026-07-28:FIX:1",
+      "error_messages": [],
+      "input_records": 619,
+      "inserted_records": 618,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 618
+    },
+    {
+      "batch_id": "polygon:2026-07-28:FLEX:1",
+      "error_messages": [],
+      "input_records": 179,
+      "inserted_records": 179,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 179
+    },
+    {
+      "batch_id": "polygon:2026-07-28:FOX:1",
+      "error_messages": [],
+      "input_records": 41,
+      "inserted_records": 41,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 41
+    },
+    {
+      "batch_id": "polygon:2026-07-28:FOXA:1",
+      "error_messages": [],
+      "input_records": 89,
+      "inserted_records": 89,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 89
+    },
+    {
+      "batch_id": "polygon:2026-07-28:FRT:1",
+      "error_messages": [],
+      "input_records": 41,
+      "inserted_records": 41,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 41
+    },
+    {
+      "batch_id": "polygon:2026-07-28:FSLR:1",
+      "error_messages": [],
+      "input_records": 536,
+      "inserted_records": 536,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 536
+    },
+    {
+      "batch_id": "polygon:2026-07-28:FTNT:1",
+      "error_messages": [],
+      "input_records": 480,
+      "inserted_records": 479,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 479
+    },
+    {
+      "batch_id": "polygon:2026-07-28:FTV:1",
+      "error_messages": [],
+      "input_records": 39,
+      "inserted_records": 38,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 38
+    },
+    {
+      "batch_id": "polygon:2026-07-28:FXI:1",
+      "error_messages": [],
+      "input_records": 453,
+      "inserted_records": 452,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 452
+    },
+    {
+      "batch_id": "polygon:2026-07-28:GD:1",
+      "error_messages": [],
+      "input_records": 346,
+      "inserted_records": 346,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 346
+    },
+    {
+      "batch_id": "polygon:2026-07-28:GDDY:1",
+      "error_messages": [],
+      "input_records": 298,
+      "inserted_records": 297,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 297
+    },
+    {
+      "batch_id": "polygon:2026-07-28:GDX:1",
+      "error_messages": [],
+      "input_records": 1086,
+      "inserted_records": 1086,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 1086
+    },
+    {
+      "batch_id": "polygon:2026-07-28:GDXJ:1",
+      "error_messages": [],
+      "input_records": 833,
+      "inserted_records": 833,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 833
+    },
+    {
+      "batch_id": "polygon:2026-07-28:GE:1",
+      "error_messages": [],
+      "input_records": 676,
+      "inserted_records": 667,
+      "rejected_records": 9,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 667
+    },
+    {
+      "batch_id": "polygon:2026-07-28:GEHC:1",
+      "error_messages": [],
+      "input_records": 315,
+      "inserted_records": 315,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 315
+    },
+    {
+      "batch_id": "polygon:2026-07-28:GEN:1",
+      "error_messages": [],
+      "input_records": 124,
+      "inserted_records": 124,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 124
+    },
+    {
+      "batch_id": "polygon:2026-07-28:GEV:1",
+      "error_messages": [],
+      "input_records": 1712,
+      "inserted_records": 1710,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 1710
+    },
+    {
+      "batch_id": "polygon:2026-07-28:GILD:1",
+      "error_messages": [],
+      "input_records": 484,
+      "inserted_records": 484,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 484
+    },
+    {
+      "batch_id": "polygon:2026-07-28:GIS:1",
+      "error_messages": [],
+      "input_records": 112,
+      "inserted_records": 111,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 111
+    },
+    {
+      "batch_id": "polygon:2026-07-28:GL:1",
+      "error_messages": [],
+      "input_records": 112,
+      "inserted_records": 112,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 112
+    },
+    {
+      "batch_id": "polygon:2026-07-28:GLD:1",
+      "error_messages": [],
+      "input_records": 2918,
+      "inserted_records": 2899,
+      "rejected_records": 19,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 2899
+    },
+    {
+      "batch_id": "polygon:2026-07-28:GLW:1",
+      "error_messages": [],
+      "input_records": 595,
+      "inserted_records": 595,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 595
+    },
+    {
+      "batch_id": "polygon:2026-07-28:GM:1",
+      "error_messages": [],
+      "input_records": 445,
+      "inserted_records": 441,
+      "rejected_records": 4,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 441
+    },
+    {
+      "batch_id": "polygon:2026-07-28:GNRC:1",
+      "error_messages": [],
+      "input_records": 431,
+      "inserted_records": 431,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 431
+    },
+    {
+      "batch_id": "polygon:2026-07-28:GOOG:1",
+      "error_messages": [],
+      "input_records": 1058,
+      "inserted_records": 1050,
+      "rejected_records": 8,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 1050
+    },
+    {
+      "batch_id": "polygon:2026-07-28:GOOGL:1",
+      "error_messages": [],
+      "input_records": 1424,
+      "inserted_records": 1418,
+      "rejected_records": 6,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 1418
+    },
+    {
+      "batch_id": "polygon:2026-07-28:GPC:1",
+      "error_messages": [],
+      "input_records": 132,
+      "inserted_records": 132,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 132
+    },
+    {
+      "batch_id": "polygon:2026-07-28:GPN:1",
+      "error_messages": [],
+      "input_records": 181,
+      "inserted_records": 181,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 181
+    },
+    {
+      "batch_id": "polygon:2026-07-28:GRMN:1",
+      "error_messages": [],
+      "input_records": 152,
+      "inserted_records": 152,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 152
+    },
+    {
+      "batch_id": "polygon:2026-07-28:GS:1",
+      "error_messages": [],
+      "input_records": 2260,
+      "inserted_records": 2259,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 2259
+    },
+    {
+      "batch_id": "polygon:2026-07-28:GWW:1",
+      "error_messages": [],
+      "input_records": 320,
+      "inserted_records": 319,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 319
+    },
+    {
+      "batch_id": "polygon:2026-07-28:HACK:1",
+      "error_messages": [],
+      "input_records": 145,
+      "inserted_records": 145,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 145
+    },
+    {
+      "batch_id": "polygon:2026-07-28:HAL:1",
+      "error_messages": [],
+      "input_records": 364,
+      "inserted_records": 364,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 364
+    },
+    {
+      "batch_id": "polygon:2026-07-28:HAS:1",
+      "error_messages": [],
+      "input_records": 186,
+      "inserted_records": 186,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 186
+    },
+    {
+      "batch_id": "polygon:2026-07-28:HBAN:1",
+      "error_messages": [],
+      "input_records": 115,
+      "inserted_records": 115,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 115
+    },
+    {
+      "batch_id": "polygon:2026-07-28:HCA:1",
+      "error_messages": [],
+      "input_records": 373,
+      "inserted_records": 373,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 373
+    },
+    {
+      "batch_id": "polygon:2026-07-28:HD:1",
+      "error_messages": [],
+      "input_records": 802,
+      "inserted_records": 800,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 800
+    },
+    {
+      "batch_id": "polygon:2026-07-28:HIG:1",
+      "error_messages": [],
+      "input_records": 61,
+      "inserted_records": 60,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 60
+    },
+    {
+      "batch_id": "polygon:2026-07-28:HII:1",
+      "error_messages": [],
+      "input_records": 121,
+      "inserted_records": 121,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 121
+    },
+    {
+      "batch_id": "polygon:2026-07-28:HLT:1",
+      "error_messages": [],
+      "input_records": 328,
+      "inserted_records": 325,
+      "rejected_records": 3,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 325
+    },
+    {
+      "batch_id": "polygon:2026-07-28:HON:1",
+      "error_messages": [],
+      "input_records": 541,
+      "inserted_records": 388,
+      "rejected_records": 0,
+      "skipped_records": 153,
+      "updated_records": 0,
+      "valid_records": 388
+    },
+    {
+      "batch_id": "polygon:2026-07-28:HONA:1",
+      "error_messages": [],
+      "input_records": 246,
+      "inserted_records": 168,
+      "rejected_records": 3,
+      "skipped_records": 75,
+      "updated_records": 0,
+      "valid_records": 168
+    },
+    {
+      "batch_id": "polygon:2026-07-28:HOOD:1",
+      "error_messages": [],
+      "input_records": 671,
+      "inserted_records": 671,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 671
+    },
+    {
+      "batch_id": "polygon:2026-07-28:HPE:1",
+      "error_messages": [],
+      "input_records": 568,
+      "inserted_records": 567,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 567
+    },
+    {
+      "batch_id": "polygon:2026-07-28:HPQ:1",
+      "error_messages": [],
+      "input_records": 423,
+      "inserted_records": 421,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 421
+    },
+    {
+      "batch_id": "polygon:2026-07-28:HRL:1",
+      "error_messages": [],
+      "input_records": 193,
+      "inserted_records": 193,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 193
+    },
+    {
+      "batch_id": "polygon:2026-07-28:HSIC:1",
+      "error_messages": [],
+      "input_records": 63,
+      "inserted_records": 63,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 63
+    },
+    {
+      "batch_id": "polygon:2026-07-28:HST:1",
+      "error_messages": [],
+      "input_records": 71,
+      "inserted_records": 71,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 71
+    },
+    {
+      "batch_id": "polygon:2026-07-28:HSY:1",
+      "error_messages": [],
+      "input_records": 335,
+      "inserted_records": 335,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 335
+    },
+    {
+      "batch_id": "polygon:2026-07-28:HUBB:1",
+      "error_messages": [],
+      "input_records": 157,
+      "inserted_records": 157,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 157
+    },
+    {
+      "batch_id": "polygon:2026-07-28:HUM:1",
+      "error_messages": [],
+      "input_records": 652,
+      "inserted_records": 652,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 652
+    },
+    {
+      "batch_id": "polygon:2026-07-28:HWM:1",
+      "error_messages": [],
+      "input_records": 389,
+      "inserted_records": 389,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 389
+    },
+    {
+      "batch_id": "polygon:2026-07-28:HYG:1",
+      "error_messages": [],
+      "input_records": 309,
+      "inserted_records": 305,
+      "rejected_records": 4,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 305
+    },
+    {
+      "batch_id": "polygon:2026-07-28:IAU:1",
+      "error_messages": [],
+      "input_records": 588,
+      "inserted_records": 586,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 586
+    },
+    {
+      "batch_id": "polygon:2026-07-28:IBB:1",
+      "error_messages": [],
+      "input_records": 287,
+      "inserted_records": 287,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 287
+    },
+    {
+      "batch_id": "polygon:2026-07-28:IBIT:1",
+      "error_messages": [],
+      "input_records": 768,
+      "inserted_records": 766,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 766
+    },
+    {
+      "batch_id": "polygon:2026-07-28:IBKR:1",
+      "error_messages": [],
+      "input_records": 369,
+      "inserted_records": 369,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 369
+    },
+    {
+      "batch_id": "polygon:2026-07-28:IBM:1",
+      "error_messages": [],
+      "input_records": 803,
+      "inserted_records": 803,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 803
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ICE:1",
+      "error_messages": [],
+      "input_records": 371,
+      "inserted_records": 370,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 370
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ICLN:1",
+      "error_messages": [],
+      "input_records": 161,
+      "inserted_records": 161,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 161
+    },
+    {
+      "batch_id": "polygon:2026-07-28:IDXX:1",
+      "error_messages": [],
+      "input_records": 188,
+      "inserted_records": 188,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 188
+    },
+    {
+      "batch_id": "polygon:2026-07-28:IEF:1",
+      "error_messages": [],
+      "input_records": 313,
+      "inserted_records": 313,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 313
+    },
+    {
+      "batch_id": "polygon:2026-07-28:IEX:1",
+      "error_messages": [],
+      "input_records": 54,
+      "inserted_records": 54,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 54
+    },
+    {
+      "batch_id": "polygon:2026-07-28:IFF:1",
+      "error_messages": [],
+      "input_records": 119,
+      "inserted_records": 119,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 119
+    },
+    {
+      "batch_id": "polygon:2026-07-28:IGV:1",
+      "error_messages": [],
+      "input_records": 764,
+      "inserted_records": 764,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 764
+    },
+    {
+      "batch_id": "polygon:2026-07-28:IHI:1",
+      "error_messages": [],
+      "input_records": 120,
+      "inserted_records": 114,
+      "rejected_records": 6,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 114
+    },
+    {
+      "batch_id": "polygon:2026-07-28:INCY:1",
+      "error_messages": [],
+      "input_records": 123,
+      "inserted_records": 123,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 123
+    },
+    {
+      "batch_id": "polygon:2026-07-28:INDA:1",
+      "error_messages": [],
+      "input_records": 146,
+      "inserted_records": 144,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 144
+    },
+    {
+      "batch_id": "polygon:2026-07-28:INTC:1",
+      "error_messages": [],
+      "input_records": 1169,
+      "inserted_records": 1169,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 1169
+    },
+    {
+      "batch_id": "polygon:2026-07-28:INTU:1",
+      "error_messages": [],
+      "input_records": 681,
+      "inserted_records": 680,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 680
+    },
+    {
+      "batch_id": "polygon:2026-07-28:INVH:1",
+      "error_messages": [],
+      "input_records": 61,
+      "inserted_records": 61,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 61
+    },
+    {
+      "batch_id": "polygon:2026-07-28:IP:1",
+      "error_messages": [],
+      "input_records": 271,
+      "inserted_records": 271,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 271
+    },
+    {
+      "batch_id": "polygon:2026-07-28:IQV:1",
+      "error_messages": [],
+      "input_records": 124,
+      "inserted_records": 123,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 123
+    },
+    {
+      "batch_id": "polygon:2026-07-28:IR:1",
+      "error_messages": [],
+      "input_records": 75,
+      "inserted_records": 74,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 74
+    },
+    {
+      "batch_id": "polygon:2026-07-28:IRM:1",
+      "error_messages": [],
+      "input_records": 307,
+      "inserted_records": 307,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 307
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ISRG:1",
+      "error_messages": [],
+      "input_records": 932,
+      "inserted_records": 932,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 932
+    },
+    {
+      "batch_id": "polygon:2026-07-28:IT:1",
+      "error_messages": [],
+      "input_records": 118,
+      "inserted_records": 117,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 117
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ITB:1",
+      "error_messages": [],
+      "input_records": 230,
+      "inserted_records": 228,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 228
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ITOT:1",
+      "error_messages": [],
+      "input_records": 135,
+      "inserted_records": 135,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 135
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ITW:1",
+      "error_messages": [],
+      "input_records": 160,
+      "inserted_records": 159,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 159
+    },
+    {
+      "batch_id": "polygon:2026-07-28:IVV:1",
+      "error_messages": [],
+      "input_records": 522,
+      "inserted_records": 522,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 522
+    },
+    {
+      "batch_id": "polygon:2026-07-28:IVZ:1",
+      "error_messages": [],
+      "input_records": 113,
+      "inserted_records": 113,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 113
+    },
+    {
+      "batch_id": "polygon:2026-07-28:IWD:1",
+      "error_messages": [],
+      "input_records": 100,
+      "inserted_records": 97,
+      "rejected_records": 3,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 97
+    },
+    {
+      "batch_id": "polygon:2026-07-28:IWF:1",
+      "error_messages": [],
+      "input_records": 193,
+      "inserted_records": 193,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 193
+    },
+    {
+      "batch_id": "polygon:2026-07-28:IWM:1",
+      "error_messages": [],
+      "input_records": 2253,
+      "inserted_records": 2252,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 2252
+    },
+    {
+      "batch_id": "polygon:2026-07-28:IYR:1",
+      "error_messages": [],
+      "input_records": 375,
+      "inserted_records": 374,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 374
+    },
+    {
+      "batch_id": "polygon:2026-07-28:J:1",
+      "error_messages": [],
+      "input_records": 127,
+      "inserted_records": 126,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 126
+    },
+    {
+      "batch_id": "polygon:2026-07-28:JBHT:1",
+      "error_messages": [],
+      "input_records": 151,
+      "inserted_records": 151,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 151
+    },
+    {
+      "batch_id": "polygon:2026-07-28:JBL:1",
+      "error_messages": [],
+      "input_records": 471,
+      "inserted_records": 471,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 471
+    },
+    {
+      "batch_id": "polygon:2026-07-28:JCI:1",
+      "error_messages": [],
+      "input_records": 179,
+      "inserted_records": 179,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 179
+    },
+    {
+      "batch_id": "polygon:2026-07-28:JEPI:1",
+      "error_messages": [],
+      "input_records": 102,
+      "inserted_records": 101,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 101
+    },
+    {
+      "batch_id": "polygon:2026-07-28:JEPQ:1",
+      "error_messages": [],
+      "input_records": 143,
+      "inserted_records": 136,
+      "rejected_records": 7,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 136
+    },
+    {
+      "batch_id": "polygon:2026-07-28:JETS:1",
+      "error_messages": [],
+      "input_records": 325,
+      "inserted_records": 325,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 325
+    },
+    {
+      "batch_id": "polygon:2026-07-28:JKHY:1",
+      "error_messages": [],
+      "input_records": 90,
+      "inserted_records": 88,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 88
+    },
+    {
+      "batch_id": "polygon:2026-07-28:JNJ:1",
+      "error_messages": [],
+      "input_records": 510,
+      "inserted_records": 509,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 509
+    },
+    {
+      "batch_id": "polygon:2026-07-28:JPM:1",
+      "error_messages": [],
+      "input_records": 810,
+      "inserted_records": 810,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 810
+    },
+    {
+      "batch_id": "polygon:2026-07-28:KBE:1",
+      "error_messages": [],
+      "input_records": 162,
+      "inserted_records": 162,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 162
+    },
+    {
+      "batch_id": "polygon:2026-07-28:KDP:1",
+      "error_messages": [],
+      "input_records": 142,
+      "inserted_records": 142,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 142
+    },
+    {
+      "batch_id": "polygon:2026-07-28:KEY:1",
+      "error_messages": [],
+      "input_records": 135,
+      "inserted_records": 135,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 135
+    },
+    {
+      "batch_id": "polygon:2026-07-28:KEYS:1",
+      "error_messages": [],
+      "input_records": 223,
+      "inserted_records": 223,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 223
+    },
+    {
+      "batch_id": "polygon:2026-07-28:KHC:1",
+      "error_messages": [],
+      "input_records": 280,
+      "inserted_records": 280,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 280
+    },
+    {
+      "batch_id": "polygon:2026-07-28:KIM:1",
+      "error_messages": [],
+      "input_records": 37,
+      "inserted_records": 37,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 37
+    },
+    {
+      "batch_id": "polygon:2026-07-28:KKR:1",
+      "error_messages": [],
+      "input_records": 420,
+      "inserted_records": 419,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 419
+    },
+    {
+      "batch_id": "polygon:2026-07-28:KLAC:1",
+      "error_messages": [],
+      "input_records": 815,
+      "inserted_records": 815,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 815
+    },
+    {
+      "batch_id": "polygon:2026-07-28:KMB:1",
+      "error_messages": [],
+      "input_records": 389,
+      "inserted_records": 389,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 389
+    },
+    {
+      "batch_id": "polygon:2026-07-28:KMI:1",
+      "error_messages": [],
+      "input_records": 269,
+      "inserted_records": 269,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 269
+    },
+    {
+      "batch_id": "polygon:2026-07-28:KO:1",
+      "error_messages": [],
+      "input_records": 471,
+      "inserted_records": 468,
+      "rejected_records": 3,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 468
+    },
+    {
+      "batch_id": "polygon:2026-07-28:KR:1",
+      "error_messages": [],
+      "input_records": 320,
+      "inserted_records": 320,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 320
+    },
+    {
+      "batch_id": "polygon:2026-07-28:KRE:1",
+      "error_messages": [],
+      "input_records": 673,
+      "inserted_records": 672,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 672
+    },
+    {
+      "batch_id": "polygon:2026-07-28:KVUE:1",
+      "error_messages": [],
+      "input_records": 157,
+      "inserted_records": 157,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 157
+    },
+    {
+      "batch_id": "polygon:2026-07-28:KWEB:1",
+      "error_messages": [],
+      "input_records": 383,
+      "inserted_records": 371,
+      "rejected_records": 12,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 371
+    },
+    {
+      "batch_id": "polygon:2026-07-28:L:1",
+      "error_messages": [],
+      "input_records": 53,
+      "inserted_records": 52,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 52
+    },
+    {
+      "batch_id": "polygon:2026-07-28:LDOS:1",
+      "error_messages": [],
+      "input_records": 146,
+      "inserted_records": 146,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 146
+    },
+    {
+      "batch_id": "polygon:2026-07-28:LEN:1",
+      "error_messages": [],
+      "input_records": 382,
+      "inserted_records": 361,
+      "rejected_records": 0,
+      "skipped_records": 21,
+      "updated_records": 0,
+      "valid_records": 361
+    },
+    {
+      "batch_id": "polygon:2026-07-28:LH:1",
+      "error_messages": [],
+      "input_records": 90,
+      "inserted_records": 89,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 89
+    },
+    {
+      "batch_id": "polygon:2026-07-28:LHX:1",
+      "error_messages": [],
+      "input_records": 288,
+      "inserted_records": 288,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 288
+    },
+    {
+      "batch_id": "polygon:2026-07-28:LII:1",
+      "error_messages": [],
+      "input_records": 105,
+      "inserted_records": 105,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 105
+    },
+    {
+      "batch_id": "polygon:2026-07-28:LIN:1",
+      "error_messages": [],
+      "input_records": 516,
+      "inserted_records": 513,
+      "rejected_records": 3,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 513
+    },
+    {
+      "batch_id": "polygon:2026-07-28:LITE:1",
+      "error_messages": [],
+      "input_records": 1351,
+      "inserted_records": 1351,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 1351
+    },
+    {
+      "batch_id": "polygon:2026-07-28:LLY:1",
+      "error_messages": [],
+      "input_records": 1694,
+      "inserted_records": 1694,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 1694
+    },
+    {
+      "batch_id": "polygon:2026-07-28:LMT:1",
+      "error_messages": [],
+      "input_records": 1080,
+      "inserted_records": 1079,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 1079
+    },
+    {
+      "batch_id": "polygon:2026-07-28:LNT:1",
+      "error_messages": [],
+      "input_records": 63,
+      "inserted_records": 63,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 63
+    },
+    {
+      "batch_id": "polygon:2026-07-28:LOW:1",
+      "error_messages": [],
+      "input_records": 410,
+      "inserted_records": 410,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 410
+    },
+    {
+      "batch_id": "polygon:2026-07-28:LQD:1",
+      "error_messages": [],
+      "input_records": 363,
+      "inserted_records": 363,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 363
+    },
+    {
+      "batch_id": "polygon:2026-07-28:LRCX:1",
+      "error_messages": [],
+      "input_records": 768,
+      "inserted_records": 768,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 768
+    },
+    {
+      "batch_id": "polygon:2026-07-28:LULU:1",
+      "error_messages": [],
+      "input_records": 543,
+      "inserted_records": 543,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 543
+    },
+    {
+      "batch_id": "polygon:2026-07-28:LUV:1",
+      "error_messages": [],
+      "input_records": 373,
+      "inserted_records": 373,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 373
+    },
+    {
+      "batch_id": "polygon:2026-07-28:LVS:1",
+      "error_messages": [],
+      "input_records": 335,
+      "inserted_records": 335,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 335
+    },
+    {
+      "batch_id": "polygon:2026-07-28:LYB:1",
+      "error_messages": [],
+      "input_records": 135,
+      "inserted_records": 135,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 135
+    },
+    {
+      "batch_id": "polygon:2026-07-28:LYV:1",
+      "error_messages": [],
+      "input_records": 294,
+      "inserted_records": 290,
+      "rejected_records": 4,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 290
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MA:1",
+      "error_messages": [],
+      "input_records": 1028,
+      "inserted_records": 1028,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 1028
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MAA:1",
+      "error_messages": [],
+      "input_records": 69,
+      "inserted_records": 69,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 69
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MAR:1",
+      "error_messages": [],
+      "input_records": 422,
+      "inserted_records": 416,
+      "rejected_records": 6,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 416
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MAS:1",
+      "error_messages": [],
+      "input_records": 71,
+      "inserted_records": 69,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 69
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MCD:1",
+      "error_messages": [],
+      "input_records": 642,
+      "inserted_records": 642,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 642
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MCHP:1",
+      "error_messages": [],
+      "input_records": 499,
+      "inserted_records": 499,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 499
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MCK:1",
+      "error_messages": [],
+      "input_records": 370,
+      "inserted_records": 370,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 370
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MCO:1",
+      "error_messages": [],
+      "input_records": 189,
+      "inserted_records": 189,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 189
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MDLZ:1",
+      "error_messages": [],
+      "input_records": 241,
+      "inserted_records": 241,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 241
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MDT:1",
+      "error_messages": [],
+      "input_records": 416,
+      "inserted_records": 416,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 416
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MELI:1",
+      "error_messages": [],
+      "input_records": 1709,
+      "inserted_records": 1684,
+      "rejected_records": 25,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 1684
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MET:1",
+      "error_messages": [],
+      "input_records": 183,
+      "inserted_records": 183,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 183
+    },
+    {
+      "batch_id": "polygon:2026-07-28:META:1",
+      "error_messages": [],
+      "input_records": 2159,
+      "inserted_records": 2151,
+      "rejected_records": 8,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 2151
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MGM:1",
+      "error_messages": [],
+      "input_records": 291,
+      "inserted_records": 291,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 291
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MKC:1",
+      "error_messages": [],
+      "input_records": 60,
+      "inserted_records": 60,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 60
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MLM:1",
+      "error_messages": [],
+      "input_records": 195,
+      "inserted_records": 194,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 194
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MMM:1",
+      "error_messages": [],
+      "input_records": 399,
+      "inserted_records": 390,
+      "rejected_records": 9,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 390
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MNST:1",
+      "error_messages": [],
+      "input_records": 152,
+      "inserted_records": 147,
+      "rejected_records": 5,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 147
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MO:1",
+      "error_messages": [],
+      "input_records": 338,
+      "inserted_records": 338,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 338
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MOS:1",
+      "error_messages": [],
+      "input_records": 291,
+      "inserted_records": 291,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 291
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MPC:1",
+      "error_messages": [],
+      "input_records": 209,
+      "inserted_records": 204,
+      "rejected_records": 5,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 204
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MPWR:1",
+      "error_messages": [],
+      "input_records": 557,
+      "inserted_records": 557,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 557
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MRK:1",
+      "error_messages": [],
+      "input_records": 514,
+      "inserted_records": 514,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 514
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MRNA:1",
+      "error_messages": [],
+      "input_records": 526,
+      "inserted_records": 526,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 526
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MRSH:1",
+      "error_messages": [],
+      "input_records": 110,
+      "inserted_records": 110,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 110
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MRVL:1",
+      "error_messages": [],
+      "input_records": 663,
+      "inserted_records": 663,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 663
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MS:1",
+      "error_messages": [],
+      "input_records": 518,
+      "inserted_records": 518,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 518
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MSCI:1",
+      "error_messages": [],
+      "input_records": 217,
+      "inserted_records": 217,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 217
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MSFT:1",
+      "error_messages": [],
+      "input_records": 1565,
+      "inserted_records": 1563,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 1563
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MSI:1",
+      "error_messages": [],
+      "input_records": 141,
+      "inserted_records": 141,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 141
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MSTR:1",
+      "error_messages": [],
+      "input_records": 688,
+      "inserted_records": 688,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 688
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MTB:1",
+      "error_messages": [],
+      "input_records": 122,
+      "inserted_records": 122,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 122
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MTD:1",
+      "error_messages": [],
+      "input_records": 185,
+      "inserted_records": 185,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 185
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MTUM:1",
+      "error_messages": [],
+      "input_records": 417,
+      "inserted_records": 417,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 417
+    },
+    {
+      "batch_id": "polygon:2026-07-28:MU:1",
+      "error_messages": [],
+      "input_records": 2772,
+      "inserted_records": 2772,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 2772
+    },
+    {
+      "batch_id": "polygon:2026-07-28:NBIS:1",
+      "error_messages": [],
+      "input_records": 713,
+      "inserted_records": 713,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 713
+    },
+    {
+      "batch_id": "polygon:2026-07-28:NCLH:1",
+      "error_messages": [],
+      "input_records": 265,
+      "inserted_records": 262,
+      "rejected_records": 3,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 262
+    },
+    {
+      "batch_id": "polygon:2026-07-28:NDAQ:1",
+      "error_messages": [],
+      "input_records": 330,
+      "inserted_records": 327,
+      "rejected_records": 3,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 327
+    },
+    {
+      "batch_id": "polygon:2026-07-28:NDSN:1",
+      "error_messages": [],
+      "input_records": 77,
+      "inserted_records": 77,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 77
+    },
+    {
+      "batch_id": "polygon:2026-07-28:NDX:1",
+      "error_messages": [],
+      "input_records": 5000,
+      "inserted_records": 4673,
+      "rejected_records": 207,
+      "skipped_records": 120,
+      "updated_records": 0,
+      "valid_records": 4673
+    },
+    {
+      "batch_id": "polygon:2026-07-28:NDX:2",
+      "error_messages": [],
+      "input_records": 9,
+      "inserted_records": 9,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 9
+    },
+    {
+      "batch_id": "polygon:2026-07-28:NEE:1",
+      "error_messages": [],
+      "input_records": 363,
+      "inserted_records": 361,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 361
+    },
+    {
+      "batch_id": "polygon:2026-07-28:NEM:1",
+      "error_messages": [],
+      "input_records": 532,
+      "inserted_records": 532,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 532
+    },
+    {
+      "batch_id": "polygon:2026-07-28:NFLX:1",
+      "error_messages": [],
+      "input_records": 796,
+      "inserted_records": 784,
+      "rejected_records": 12,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 784
+    },
+    {
+      "batch_id": "polygon:2026-07-28:NI:1",
+      "error_messages": [],
+      "input_records": 48,
+      "inserted_records": 48,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 48
+    },
+    {
+      "batch_id": "polygon:2026-07-28:NKE:1",
+      "error_messages": [],
+      "input_records": 452,
+      "inserted_records": 452,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 452
+    },
+    {
+      "batch_id": "polygon:2026-07-28:NOC:1",
+      "error_messages": [],
+      "input_records": 469,
+      "inserted_records": 469,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 469
+    },
+    {
+      "batch_id": "polygon:2026-07-28:NOW:1",
+      "error_messages": [],
+      "input_records": 851,
+      "inserted_records": 851,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 851
+    },
+    {
+      "batch_id": "polygon:2026-07-28:NRG:1",
+      "error_messages": [],
+      "input_records": 401,
+      "inserted_records": 401,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 401
+    },
+    {
+      "batch_id": "polygon:2026-07-28:NSC:1",
+      "error_messages": [],
+      "input_records": 138,
+      "inserted_records": 134,
+      "rejected_records": 4,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 134
+    },
+    {
+      "batch_id": "polygon:2026-07-28:NTAP:1",
+      "error_messages": [],
+      "input_records": 204,
+      "inserted_records": 204,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 204
+    },
+    {
+      "batch_id": "polygon:2026-07-28:NTRS:1",
+      "error_messages": [],
+      "input_records": 127,
+      "inserted_records": 127,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 127
+    },
+    {
+      "batch_id": "polygon:2026-07-28:NUE:1",
+      "error_messages": [],
+      "input_records": 206,
+      "inserted_records": 204,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 204
+    },
+    {
+      "batch_id": "polygon:2026-07-28:NVDA:1",
+      "error_messages": [],
+      "input_records": 1112,
+      "inserted_records": 1110,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 1110
+    },
+    {
+      "batch_id": "polygon:2026-07-28:NWS:1",
+      "error_messages": [],
+      "input_records": 15,
+      "inserted_records": 15,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 15
+    },
+    {
+      "batch_id": "polygon:2026-07-28:NWSA:1",
+      "error_messages": [],
+      "input_records": 22,
+      "inserted_records": 22,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 22
+    },
+    {
+      "batch_id": "polygon:2026-07-28:NXPI:1",
+      "error_messages": [],
+      "input_records": 232,
+      "inserted_records": 232,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 232
+    },
+    {
+      "batch_id": "polygon:2026-07-28:O:1",
+      "error_messages": [],
+      "input_records": 115,
+      "inserted_records": 115,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 115
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ODFL:1",
+      "error_messages": [],
+      "input_records": 210,
+      "inserted_records": 209,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 209
+    },
+    {
+      "batch_id": "polygon:2026-07-28:OIH:1",
+      "error_messages": [],
+      "input_records": 274,
+      "inserted_records": 274,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 274
+    },
+    {
+      "batch_id": "polygon:2026-07-28:OKE:1",
+      "error_messages": [],
+      "input_records": 125,
+      "inserted_records": 125,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 125
+    },
+    {
+      "batch_id": "polygon:2026-07-28:OMC:1",
+      "error_messages": [],
+      "input_records": 158,
+      "inserted_records": 158,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 158
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ON:1",
+      "error_messages": [],
+      "input_records": 486,
+      "inserted_records": 486,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 486
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ORCL:1",
+      "error_messages": [],
+      "input_records": 784,
+      "inserted_records": 784,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 784
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ORLY:1",
+      "error_messages": [],
+      "input_records": 188,
+      "inserted_records": 185,
+      "rejected_records": 3,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 185
+    },
+    {
+      "batch_id": "polygon:2026-07-28:OTIS:1",
+      "error_messages": [],
+      "input_records": 81,
+      "inserted_records": 81,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 81
+    },
+    {
+      "batch_id": "polygon:2026-07-28:OXY:1",
+      "error_messages": [],
+      "input_records": 431,
+      "inserted_records": 430,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 430
+    },
+    {
+      "batch_id": "polygon:2026-07-28:PANW:1",
+      "error_messages": [],
+      "input_records": 949,
+      "inserted_records": 870,
+      "rejected_records": 8,
+      "skipped_records": 71,
+      "updated_records": 0,
+      "valid_records": 870
+    },
+    {
+      "batch_id": "polygon:2026-07-28:PAYX:1",
+      "error_messages": [],
+      "input_records": 120,
+      "inserted_records": 120,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 120
+    },
+    {
+      "batch_id": "polygon:2026-07-28:PCAR:1",
+      "error_messages": [],
+      "input_records": 250,
+      "inserted_records": 250,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 250
+    },
+    {
+      "batch_id": "polygon:2026-07-28:PCG:1",
+      "error_messages": [],
+      "input_records": 225,
+      "inserted_records": 223,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 223
+    },
+    {
+      "batch_id": "polygon:2026-07-28:PDD:1",
+      "error_messages": [],
+      "input_records": 405,
+      "inserted_records": 400,
+      "rejected_records": 5,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 400
+    },
+    {
+      "batch_id": "polygon:2026-07-28:PEG:1",
+      "error_messages": [],
+      "input_records": 125,
+      "inserted_records": 125,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 125
+    },
+    {
+      "batch_id": "polygon:2026-07-28:PEP:1",
+      "error_messages": [],
+      "input_records": 552,
+      "inserted_records": 552,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 552
+    },
+    {
+      "batch_id": "polygon:2026-07-28:PFE:1",
+      "error_messages": [],
+      "input_records": 411,
+      "inserted_records": 405,
+      "rejected_records": 6,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 405
+    },
+    {
+      "batch_id": "polygon:2026-07-28:PFG:1",
+      "error_messages": [],
+      "input_records": 64,
+      "inserted_records": 64,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 64
+    },
+    {
+      "batch_id": "polygon:2026-07-28:PG:1",
+      "error_messages": [],
+      "input_records": 458,
+      "inserted_records": 458,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 458
+    },
+    {
+      "batch_id": "polygon:2026-07-28:PGR:1",
+      "error_messages": [],
+      "input_records": 388,
+      "inserted_records": 388,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 388
+    },
+    {
+      "batch_id": "polygon:2026-07-28:PH:1",
+      "error_messages": [],
+      "input_records": 222,
+      "inserted_records": 217,
+      "rejected_records": 5,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 217
+    },
+    {
+      "batch_id": "polygon:2026-07-28:PHM:1",
+      "error_messages": [],
+      "input_records": 332,
+      "inserted_records": 326,
+      "rejected_records": 6,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 326
+    },
+    {
+      "batch_id": "polygon:2026-07-28:PKG:1",
+      "error_messages": [],
+      "input_records": 86,
+      "inserted_records": 86,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 86
+    },
+    {
+      "batch_id": "polygon:2026-07-28:PLD:1",
+      "error_messages": [],
+      "input_records": 187,
+      "inserted_records": 187,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 187
+    },
+    {
+      "batch_id": "polygon:2026-07-28:PLTR:1",
+      "error_messages": [],
+      "input_records": 806,
+      "inserted_records": 806,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 806
+    },
+    {
+      "batch_id": "polygon:2026-07-28:PM:1",
+      "error_messages": [],
+      "input_records": 399,
+      "inserted_records": 399,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 399
+    },
+    {
+      "batch_id": "polygon:2026-07-28:PNC:1",
+      "error_messages": [],
+      "input_records": 315,
+      "inserted_records": 315,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 315
+    },
+    {
+      "batch_id": "polygon:2026-07-28:PNR:1",
+      "error_messages": [],
+      "input_records": 117,
+      "inserted_records": 117,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 117
+    },
+    {
+      "batch_id": "polygon:2026-07-28:PNW:1",
+      "error_messages": [],
+      "input_records": 78,
+      "inserted_records": 78,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 78
+    },
+    {
+      "batch_id": "polygon:2026-07-28:PODD:1",
+      "error_messages": [],
+      "input_records": 111,
+      "inserted_records": 110,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 110
+    },
+    {
+      "batch_id": "polygon:2026-07-28:PPG:1",
+      "error_messages": [],
+      "input_records": 250,
+      "inserted_records": 250,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 250
+    },
+    {
+      "batch_id": "polygon:2026-07-28:PPL:1",
+      "error_messages": [],
+      "input_records": 95,
+      "inserted_records": 95,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 95
+    },
+    {
+      "batch_id": "polygon:2026-07-28:PRU:1",
+      "error_messages": [],
+      "input_records": 144,
+      "inserted_records": 144,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 144
+    },
+    {
+      "batch_id": "polygon:2026-07-28:PSA:1",
+      "error_messages": [],
+      "input_records": 82,
+      "inserted_records": 82,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 82
+    },
+    {
+      "batch_id": "polygon:2026-07-28:PSKY:1",
+      "error_messages": [],
+      "input_records": 183,
+      "inserted_records": 183,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 183
+    },
+    {
+      "batch_id": "polygon:2026-07-28:PSX:1",
+      "error_messages": [],
+      "input_records": 403,
+      "inserted_records": 403,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 403
+    },
+    {
+      "batch_id": "polygon:2026-07-28:PTC:1",
+      "error_messages": [],
+      "input_records": 139,
+      "inserted_records": 139,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 139
+    },
+    {
+      "batch_id": "polygon:2026-07-28:PWR:1",
+      "error_messages": [],
+      "input_records": 416,
+      "inserted_records": 416,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 416
+    },
+    {
+      "batch_id": "polygon:2026-07-28:PYPL:1",
+      "error_messages": [],
+      "input_records": 549,
+      "inserted_records": 549,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 549
+    },
+    {
+      "batch_id": "polygon:2026-07-28:Q:1",
+      "error_messages": [],
+      "input_records": 254,
+      "inserted_records": 230,
+      "rejected_records": 1,
+      "skipped_records": 23,
+      "updated_records": 0,
+      "valid_records": 230
+    },
+    {
+      "batch_id": "polygon:2026-07-28:QCOM:1",
+      "error_messages": [],
+      "input_records": 640,
+      "inserted_records": 640,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 640
+    },
+    {
+      "batch_id": "polygon:2026-07-28:QQQ:1",
+      "error_messages": [],
+      "input_records": 5000,
+      "inserted_records": 4986,
+      "rejected_records": 14,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 4986
+    },
+    {
+      "batch_id": "polygon:2026-07-28:QQQ:2",
+      "error_messages": [],
+      "input_records": 703,
+      "inserted_records": 703,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 703
+    },
+    {
+      "batch_id": "polygon:2026-07-28:QQQM:1",
+      "error_messages": [],
+      "input_records": 276,
+      "inserted_records": 276,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 276
+    },
+    {
+      "batch_id": "polygon:2026-07-28:QUAL:1",
+      "error_messages": [],
+      "input_records": 42,
+      "inserted_records": 42,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 42
+    },
+    {
+      "batch_id": "polygon:2026-07-28:RCL:1",
+      "error_messages": [],
+      "input_records": 551,
+      "inserted_records": 551,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 551
+    },
+    {
+      "batch_id": "polygon:2026-07-28:REG:1",
+      "error_messages": [],
+      "input_records": 26,
+      "inserted_records": 26,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 26
+    },
+    {
+      "batch_id": "polygon:2026-07-28:REGN:1",
+      "error_messages": [],
+      "input_records": 710,
+      "inserted_records": 710,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 710
+    },
+    {
+      "batch_id": "polygon:2026-07-28:RF:1",
+      "error_messages": [],
+      "input_records": 148,
+      "inserted_records": 148,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 148
+    },
+    {
+      "batch_id": "polygon:2026-07-28:RJF:1",
+      "error_messages": [],
+      "input_records": 123,
+      "inserted_records": 123,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 123
+    },
+    {
+      "batch_id": "polygon:2026-07-28:RKLB:1",
+      "error_messages": [],
+      "input_records": 509,
+      "inserted_records": 509,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 509
+    },
+    {
+      "batch_id": "polygon:2026-07-28:RL:1",
+      "error_messages": [],
+      "input_records": 185,
+      "inserted_records": 185,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 185
+    },
+    {
+      "batch_id": "polygon:2026-07-28:RMD:1",
+      "error_messages": [],
+      "input_records": 136,
+      "inserted_records": 136,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 136
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ROK:1",
+      "error_messages": [],
+      "input_records": 225,
+      "inserted_records": 225,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 225
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ROL:1",
+      "error_messages": [],
+      "input_records": 58,
+      "inserted_records": 58,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 58
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ROP:1",
+      "error_messages": [],
+      "input_records": 108,
+      "inserted_records": 108,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 108
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ROST:1",
+      "error_messages": [],
+      "input_records": 349,
+      "inserted_records": 337,
+      "rejected_records": 12,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 337
+    },
+    {
+      "batch_id": "polygon:2026-07-28:RSG:1",
+      "error_messages": [],
+      "input_records": 91,
+      "inserted_records": 91,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 91
+    },
+    {
+      "batch_id": "polygon:2026-07-28:RSP:1",
+      "error_messages": [],
+      "input_records": 351,
+      "inserted_records": 348,
+      "rejected_records": 3,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 348
+    },
+    {
+      "batch_id": "polygon:2026-07-28:RTX:1",
+      "error_messages": [],
+      "input_records": 460,
+      "inserted_records": 459,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 459
+    },
+    {
+      "batch_id": "polygon:2026-07-28:RUT:1",
+      "error_messages": [],
+      "input_records": 4304,
+      "inserted_records": 3807,
+      "rejected_records": 104,
+      "skipped_records": 393,
+      "updated_records": 0,
+      "valid_records": 3807
+    },
+    {
+      "batch_id": "polygon:2026-07-28:RVTY:1",
+      "error_messages": [],
+      "input_records": 59,
+      "inserted_records": 59,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 59
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SBAC:1",
+      "error_messages": [],
+      "input_records": 104,
+      "inserted_records": 104,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 104
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SBUX:1",
+      "error_messages": [],
+      "input_records": 472,
+      "inserted_records": 472,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 472
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SCHB:1",
+      "error_messages": [],
+      "input_records": 55,
+      "inserted_records": 55,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 55
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SCHD:1",
+      "error_messages": [],
+      "input_records": 264,
+      "inserted_records": 263,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 263
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SCHW:1",
+      "error_messages": [],
+      "input_records": 519,
+      "inserted_records": 508,
+      "rejected_records": 11,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 508
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SHOP:1",
+      "error_messages": [],
+      "input_records": 689,
+      "inserted_records": 689,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 689
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SHW:1",
+      "error_messages": [],
+      "input_records": 168,
+      "inserted_records": 168,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 168
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SHY:1",
+      "error_messages": [],
+      "input_records": 76,
+      "inserted_records": 76,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 76
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SJM:1",
+      "error_messages": [],
+      "input_records": 110,
+      "inserted_records": 110,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 110
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SKYY:1",
+      "error_messages": [],
+      "input_records": 114,
+      "inserted_records": 114,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 114
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SLB:1",
+      "error_messages": [],
+      "input_records": 415,
+      "inserted_records": 415,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 415
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SLV:1",
+      "error_messages": [],
+      "input_records": 1749,
+      "inserted_records": 1734,
+      "rejected_records": 15,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 1734
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SMCI:1",
+      "error_messages": [],
+      "input_records": 538,
+      "inserted_records": 538,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 538
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SMH:1",
+      "error_messages": [],
+      "input_records": 2327,
+      "inserted_records": 2327,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 2327
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SNA:1",
+      "error_messages": [],
+      "input_records": 100,
+      "inserted_records": 98,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 98
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SNDK:1",
+      "error_messages": [],
+      "input_records": 2173,
+      "inserted_records": 2173,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 2173
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SNPS:1",
+      "error_messages": [],
+      "input_records": 710,
+      "inserted_records": 710,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 710
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SO:1",
+      "error_messages": [],
+      "input_records": 307,
+      "inserted_records": 307,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 307
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SOLV:1",
+      "error_messages": [],
+      "input_records": 69,
+      "inserted_records": 66,
+      "rejected_records": 3,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 66
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SOXX:1",
+      "error_messages": [],
+      "input_records": 1568,
+      "inserted_records": 1568,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 1568
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SPG:1",
+      "error_messages": [],
+      "input_records": 169,
+      "inserted_records": 169,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 169
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SPGI:1",
+      "error_messages": [],
+      "input_records": 829,
+      "inserted_records": 592,
+      "rejected_records": 0,
+      "skipped_records": 237,
+      "updated_records": 0,
+      "valid_records": 592
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SPX:1",
+      "error_messages": [],
+      "input_records": 5000,
+      "inserted_records": 4780,
+      "rejected_records": 220,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 4780
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SPX:2",
+      "error_messages": [],
+      "input_records": 5000,
+      "inserted_records": 4035,
+      "rejected_records": 155,
+      "skipped_records": 810,
+      "updated_records": 0,
+      "valid_records": 4035
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SPX:3",
+      "error_messages": [],
+      "input_records": 5000,
+      "inserted_records": 4116,
+      "rejected_records": 131,
+      "skipped_records": 753,
+      "updated_records": 0,
+      "valid_records": 4116
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SPX:4",
+      "error_messages": [],
+      "input_records": 1201,
+      "inserted_records": 1168,
+      "rejected_records": 33,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 1168
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SPXU:1",
+      "error_messages": [],
+      "input_records": 293,
+      "inserted_records": 279,
+      "rejected_records": 0,
+      "skipped_records": 14,
+      "updated_records": 0,
+      "valid_records": 279
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SPY:1",
+      "error_messages": [],
+      "input_records": 5000,
+      "inserted_records": 4997,
+      "rejected_records": 3,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 4997
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SPY:2",
+      "error_messages": [],
+      "input_records": 1242,
+      "inserted_records": 1242,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 1242
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SQQQ:1",
+      "error_messages": [],
+      "input_records": 640,
+      "inserted_records": 628,
+      "rejected_records": 0,
+      "skipped_records": 12,
+      "updated_records": 0,
+      "valid_records": 628
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SRE:1",
+      "error_messages": [],
+      "input_records": 91,
+      "inserted_records": 91,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 91
+    },
+    {
+      "batch_id": "polygon:2026-07-28:STE:1",
+      "error_messages": [],
+      "input_records": 57,
+      "inserted_records": 57,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 57
+    },
+    {
+      "batch_id": "polygon:2026-07-28:STLD:1",
+      "error_messages": [],
+      "input_records": 218,
+      "inserted_records": 217,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 217
+    },
+    {
+      "batch_id": "polygon:2026-07-28:STT:1",
+      "error_messages": [],
+      "input_records": 182,
+      "inserted_records": 182,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 182
+    },
+    {
+      "batch_id": "polygon:2026-07-28:STX:1",
+      "error_messages": [],
+      "input_records": 1614,
+      "inserted_records": 1614,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 1614
+    },
+    {
+      "batch_id": "polygon:2026-07-28:STZ:1",
+      "error_messages": [],
+      "input_records": 418,
+      "inserted_records": 418,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 418
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SW:1",
+      "error_messages": [],
+      "input_records": 41,
+      "inserted_records": 41,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 41
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SWK:1",
+      "error_messages": [],
+      "input_records": 135,
+      "inserted_records": 135,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 135
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SWKS:1",
+      "error_messages": [],
+      "input_records": 190,
+      "inserted_records": 190,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 190
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SYF:1",
+      "error_messages": [],
+      "input_records": 137,
+      "inserted_records": 136,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 136
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SYK:1",
+      "error_messages": [],
+      "input_records": 174,
+      "inserted_records": 172,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 172
+    },
+    {
+      "batch_id": "polygon:2026-07-28:SYY:1",
+      "error_messages": [],
+      "input_records": 160,
+      "inserted_records": 159,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 159
+    },
+    {
+      "batch_id": "polygon:2026-07-28:T:1",
+      "error_messages": [],
+      "input_records": 407,
+      "inserted_records": 407,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 407
+    },
+    {
+      "batch_id": "polygon:2026-07-28:TAN:1",
+      "error_messages": [],
+      "input_records": 318,
+      "inserted_records": 318,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 318
+    },
+    {
+      "batch_id": "polygon:2026-07-28:TAP:1",
+      "error_messages": [],
+      "input_records": 76,
+      "inserted_records": 76,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 76
+    },
+    {
+      "batch_id": "polygon:2026-07-28:TDG:1",
+      "error_messages": [],
+      "input_records": 288,
+      "inserted_records": 288,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 288
+    },
+    {
+      "batch_id": "polygon:2026-07-28:TDY:1",
+      "error_messages": [],
+      "input_records": 185,
+      "inserted_records": 185,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 185
+    },
+    {
+      "batch_id": "polygon:2026-07-28:TECH:1",
+      "error_messages": [],
+      "input_records": 58,
+      "inserted_records": 43,
+      "rejected_records": 15,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 43
+    },
+    {
+      "batch_id": "polygon:2026-07-28:TEL:1",
+      "error_messages": [],
+      "input_records": 210,
+      "inserted_records": 210,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 210
+    },
+    {
+      "batch_id": "polygon:2026-07-28:TER:1",
+      "error_messages": [],
+      "input_records": 701,
+      "inserted_records": 701,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 701
+    },
+    {
+      "batch_id": "polygon:2026-07-28:TFC:1",
+      "error_messages": [],
+      "input_records": 142,
+      "inserted_records": 142,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 142
+    },
+    {
+      "batch_id": "polygon:2026-07-28:TGT:1",
+      "error_messages": [],
+      "input_records": 582,
+      "inserted_records": 582,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 582
+    },
+    {
+      "batch_id": "polygon:2026-07-28:TIP:1",
+      "error_messages": [],
+      "input_records": 116,
+      "inserted_records": 116,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 116
+    },
+    {
+      "batch_id": "polygon:2026-07-28:TJX:1",
+      "error_messages": [],
+      "input_records": 309,
+      "inserted_records": 304,
+      "rejected_records": 5,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 304
+    },
+    {
+      "batch_id": "polygon:2026-07-28:TKO:1",
+      "error_messages": [],
+      "input_records": 110,
+      "inserted_records": 110,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 110
+    },
+    {
+      "batch_id": "polygon:2026-07-28:TLT:1",
+      "error_messages": [],
+      "input_records": 1094,
+      "inserted_records": 1094,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 1094
+    },
+    {
+      "batch_id": "polygon:2026-07-28:TMO:1",
+      "error_messages": [],
+      "input_records": 496,
+      "inserted_records": 484,
+      "rejected_records": 12,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 484
+    },
+    {
+      "batch_id": "polygon:2026-07-28:TMUS:1",
+      "error_messages": [],
+      "input_records": 447,
+      "inserted_records": 447,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 447
+    },
+    {
+      "batch_id": "polygon:2026-07-28:TPL:1",
+      "error_messages": [],
+      "input_records": 174,
+      "inserted_records": 174,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 174
+    },
+    {
+      "batch_id": "polygon:2026-07-28:TPR:1",
+      "error_messages": [],
+      "input_records": 378,
+      "inserted_records": 378,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 378
+    },
+    {
+      "batch_id": "polygon:2026-07-28:TQQQ:1",
+      "error_messages": [],
+      "input_records": 830,
+      "inserted_records": 830,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 830
+    },
+    {
+      "batch_id": "polygon:2026-07-28:TRGP:1",
+      "error_messages": [],
+      "input_records": 173,
+      "inserted_records": 172,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 172
+    },
+    {
+      "batch_id": "polygon:2026-07-28:TRI:1",
+      "error_messages": [],
+      "input_records": 162,
+      "inserted_records": 120,
+      "rejected_records": 0,
+      "skipped_records": 42,
+      "updated_records": 0,
+      "valid_records": 120
+    },
+    {
+      "batch_id": "polygon:2026-07-28:TRMB:1",
+      "error_messages": [],
+      "input_records": 67,
+      "inserted_records": 65,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 65
+    },
+    {
+      "batch_id": "polygon:2026-07-28:TROW:1",
+      "error_messages": [],
+      "input_records": 134,
+      "inserted_records": 134,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 134
+    },
+    {
+      "batch_id": "polygon:2026-07-28:TRV:1",
+      "error_messages": [],
+      "input_records": 143,
+      "inserted_records": 138,
+      "rejected_records": 5,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 138
+    },
+    {
+      "batch_id": "polygon:2026-07-28:TSCO:1",
+      "error_messages": [],
+      "input_records": 306,
+      "inserted_records": 306,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 306
+    },
+    {
+      "batch_id": "polygon:2026-07-28:TSLA:1",
+      "error_messages": [],
+      "input_records": 1586,
+      "inserted_records": 1583,
+      "rejected_records": 3,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 1583
+    },
+    {
+      "batch_id": "polygon:2026-07-28:TSN:1",
+      "error_messages": [],
+      "input_records": 136,
+      "inserted_records": 136,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 136
+    },
+    {
+      "batch_id": "polygon:2026-07-28:TT:1",
+      "error_messages": [],
+      "input_records": 280,
+      "inserted_records": 276,
+      "rejected_records": 4,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 276
+    },
+    {
+      "batch_id": "polygon:2026-07-28:TTD:1",
+      "error_messages": [],
+      "input_records": 320,
+      "inserted_records": 320,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 320
+    },
+    {
+      "batch_id": "polygon:2026-07-28:TTWO:1",
+      "error_messages": [],
+      "input_records": 502,
+      "inserted_records": 502,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 502
+    },
+    {
+      "batch_id": "polygon:2026-07-28:TXN:1",
+      "error_messages": [],
+      "input_records": 807,
+      "inserted_records": 806,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 806
+    },
+    {
+      "batch_id": "polygon:2026-07-28:TXT:1",
+      "error_messages": [],
+      "input_records": 119,
+      "inserted_records": 119,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 119
+    },
+    {
+      "batch_id": "polygon:2026-07-28:TYL:1",
+      "error_messages": [],
+      "input_records": 121,
+      "inserted_records": 121,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 121
+    },
+    {
+      "batch_id": "polygon:2026-07-28:UAL:1",
+      "error_messages": [],
+      "input_records": 669,
+      "inserted_records": 662,
+      "rejected_records": 7,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 662
+    },
+    {
+      "batch_id": "polygon:2026-07-28:UBER:1",
+      "error_messages": [],
+      "input_records": 540,
+      "inserted_records": 540,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 540
+    },
+    {
+      "batch_id": "polygon:2026-07-28:UDR:1",
+      "error_messages": [],
+      "input_records": 40,
+      "inserted_records": 40,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 40
+    },
+    {
+      "batch_id": "polygon:2026-07-28:UHS:1",
+      "error_messages": [],
+      "input_records": 129,
+      "inserted_records": 129,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 129
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ULTA:1",
+      "error_messages": [],
+      "input_records": 797,
+      "inserted_records": 787,
+      "rejected_records": 10,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 787
+    },
+    {
+      "batch_id": "polygon:2026-07-28:UNG:1",
+      "error_messages": [],
+      "input_records": 202,
+      "inserted_records": 202,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 202
+    },
+    {
+      "batch_id": "polygon:2026-07-28:UNH:1",
+      "error_messages": [],
+      "input_records": 802,
+      "inserted_records": 802,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 802
+    },
+    {
+      "batch_id": "polygon:2026-07-28:UNP:1",
+      "error_messages": [],
+      "input_records": 536,
+      "inserted_records": 536,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 536
+    },
+    {
+      "batch_id": "polygon:2026-07-28:UPRO:1",
+      "error_messages": [],
+      "input_records": 682,
+      "inserted_records": 682,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 682
+    },
+    {
+      "batch_id": "polygon:2026-07-28:UPS:1",
+      "error_messages": [],
+      "input_records": 542,
+      "inserted_records": 540,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 540
+    },
+    {
+      "batch_id": "polygon:2026-07-28:URI:1",
+      "error_messages": [],
+      "input_records": 697,
+      "inserted_records": 693,
+      "rejected_records": 4,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 693
+    },
+    {
+      "batch_id": "polygon:2026-07-28:USB:1",
+      "error_messages": [],
+      "input_records": 298,
+      "inserted_records": 298,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 298
+    },
+    {
+      "batch_id": "polygon:2026-07-28:USMV:1",
+      "error_messages": [],
+      "input_records": 68,
+      "inserted_records": 67,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 67
+    },
+    {
+      "batch_id": "polygon:2026-07-28:USO:1",
+      "error_messages": [],
+      "input_records": 1678,
+      "inserted_records": 1637,
+      "rejected_records": 41,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 1637
+    },
+    {
+      "batch_id": "polygon:2026-07-28:UVXY:1",
+      "error_messages": [],
+      "input_records": 477,
+      "inserted_records": 423,
+      "rejected_records": 3,
+      "skipped_records": 51,
+      "updated_records": 0,
+      "valid_records": 423
+    },
+    {
+      "batch_id": "polygon:2026-07-28:V:1",
+      "error_messages": [],
+      "input_records": 849,
+      "inserted_records": 825,
+      "rejected_records": 24,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 825
+    },
+    {
+      "batch_id": "polygon:2026-07-28:VEA:1",
+      "error_messages": [],
+      "input_records": 114,
+      "inserted_records": 114,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 114
+    },
+    {
+      "batch_id": "polygon:2026-07-28:VEEV:1",
+      "error_messages": [],
+      "input_records": 184,
+      "inserted_records": 179,
+      "rejected_records": 5,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 179
+    },
+    {
+      "batch_id": "polygon:2026-07-28:VICI:1",
+      "error_messages": [],
+      "input_records": 63,
+      "inserted_records": 57,
+      "rejected_records": 0,
+      "skipped_records": 6,
+      "updated_records": 0,
+      "valid_records": 57
+    },
+    {
+      "batch_id": "polygon:2026-07-28:VIG:1",
+      "error_messages": [],
+      "input_records": 126,
+      "inserted_records": 121,
+      "rejected_records": 5,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 121
+    },
+    {
+      "batch_id": "polygon:2026-07-28:VIXY:1",
+      "error_messages": [],
+      "input_records": 132,
+      "inserted_records": 119,
+      "rejected_records": 2,
+      "skipped_records": 11,
+      "updated_records": 0,
+      "valid_records": 119
+    },
+    {
+      "batch_id": "polygon:2026-07-28:VLO:1",
+      "error_messages": [],
+      "input_records": 493,
+      "inserted_records": 493,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 493
+    },
+    {
+      "batch_id": "polygon:2026-07-28:VLTO:1",
+      "error_messages": [],
+      "input_records": 53,
+      "inserted_records": 53,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 53
+    },
+    {
+      "batch_id": "polygon:2026-07-28:VLUE:1",
+      "error_messages": [],
+      "input_records": 65,
+      "inserted_records": 65,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 65
+    },
+    {
+      "batch_id": "polygon:2026-07-28:VMC:1",
+      "error_messages": [],
+      "input_records": 96,
+      "inserted_records": 95,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 95
+    },
+    {
+      "batch_id": "polygon:2026-07-28:VNQ:1",
+      "error_messages": [],
+      "input_records": 202,
+      "inserted_records": 202,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 202
+    },
+    {
+      "batch_id": "polygon:2026-07-28:VOO:1",
+      "error_messages": [],
+      "input_records": 952,
+      "inserted_records": 952,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 952
+    },
+    {
+      "batch_id": "polygon:2026-07-28:VRSK:1",
+      "error_messages": [],
+      "input_records": 104,
+      "inserted_records": 104,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 104
+    },
+    {
+      "batch_id": "polygon:2026-07-28:VRSN:1",
+      "error_messages": [],
+      "input_records": 188,
+      "inserted_records": 188,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 188
+    },
+    {
+      "batch_id": "polygon:2026-07-28:VRT:1",
+      "error_messages": [],
+      "input_records": 759,
+      "inserted_records": 759,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 759
+    },
+    {
+      "batch_id": "polygon:2026-07-28:VRTX:1",
+      "error_messages": [],
+      "input_records": 584,
+      "inserted_records": 584,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 584
+    },
+    {
+      "batch_id": "polygon:2026-07-28:VST:1",
+      "error_messages": [],
+      "input_records": 529,
+      "inserted_records": 524,
+      "rejected_records": 5,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 524
+    },
+    {
+      "batch_id": "polygon:2026-07-28:VTI:1",
+      "error_messages": [],
+      "input_records": 282,
+      "inserted_records": 282,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 282
+    },
+    {
+      "batch_id": "polygon:2026-07-28:VTR:1",
+      "error_messages": [],
+      "input_records": 109,
+      "inserted_records": 109,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 109
+    },
+    {
+      "batch_id": "polygon:2026-07-28:VTRS:1",
+      "error_messages": [],
+      "input_records": 82,
+      "inserted_records": 82,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 82
+    },
+    {
+      "batch_id": "polygon:2026-07-28:VTV:1",
+      "error_messages": [],
+      "input_records": 113,
+      "inserted_records": 106,
+      "rejected_records": 7,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 106
+    },
+    {
+      "batch_id": "polygon:2026-07-28:VUG:1",
+      "error_messages": [],
+      "input_records": 238,
+      "inserted_records": 238,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 238
+    },
+    {
+      "batch_id": "polygon:2026-07-28:VWO:1",
+      "error_messages": [],
+      "input_records": 145,
+      "inserted_records": 145,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 145
+    },
+    {
+      "batch_id": "polygon:2026-07-28:VYM:1",
+      "error_messages": [],
+      "input_records": 188,
+      "inserted_records": 184,
+      "rejected_records": 4,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 184
+    },
+    {
+      "batch_id": "polygon:2026-07-28:VZ:1",
+      "error_messages": [],
+      "input_records": 440,
+      "inserted_records": 439,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 439
+    },
+    {
+      "batch_id": "polygon:2026-07-28:WAB:1",
+      "error_messages": [],
+      "input_records": 116,
+      "inserted_records": 113,
+      "rejected_records": 3,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 113
+    },
+    {
+      "batch_id": "polygon:2026-07-28:WAT:1",
+      "error_messages": [],
+      "input_records": 108,
+      "inserted_records": 108,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 108
+    },
+    {
+      "batch_id": "polygon:2026-07-28:WBD:1",
+      "error_messages": [],
+      "input_records": 301,
+      "inserted_records": 301,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 301
+    },
+    {
+      "batch_id": "polygon:2026-07-28:WDAY:1",
+      "error_messages": [],
+      "input_records": 526,
+      "inserted_records": 526,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 526
+    },
+    {
+      "batch_id": "polygon:2026-07-28:WDC:1",
+      "error_messages": [],
+      "input_records": 1118,
+      "inserted_records": 1117,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 1117
+    },
+    {
+      "batch_id": "polygon:2026-07-28:WEC:1",
+      "error_messages": [],
+      "input_records": 94,
+      "inserted_records": 94,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 94
+    },
+    {
+      "batch_id": "polygon:2026-07-28:WELL:1",
+      "error_messages": [],
+      "input_records": 133,
+      "inserted_records": 133,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 133
+    },
+    {
+      "batch_id": "polygon:2026-07-28:WFC:1",
+      "error_messages": [],
+      "input_records": 473,
+      "inserted_records": 471,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 471
+    },
+    {
+      "batch_id": "polygon:2026-07-28:WM:1",
+      "error_messages": [],
+      "input_records": 183,
+      "inserted_records": 178,
+      "rejected_records": 5,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 178
+    },
+    {
+      "batch_id": "polygon:2026-07-28:WMB:1",
+      "error_messages": [],
+      "input_records": 244,
+      "inserted_records": 244,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 244
+    },
+    {
+      "batch_id": "polygon:2026-07-28:WMT:1",
+      "error_messages": [],
+      "input_records": 592,
+      "inserted_records": 582,
+      "rejected_records": 10,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 582
+    },
+    {
+      "batch_id": "polygon:2026-07-28:WRB:1",
+      "error_messages": [],
+      "input_records": 71,
+      "inserted_records": 70,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 70
+    },
+    {
+      "batch_id": "polygon:2026-07-28:WSM:1",
+      "error_messages": [],
+      "input_records": 185,
+      "inserted_records": 185,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 185
+    },
+    {
+      "batch_id": "polygon:2026-07-28:WST:1",
+      "error_messages": [],
+      "input_records": 143,
+      "inserted_records": 142,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 142
+    },
+    {
+      "batch_id": "polygon:2026-07-28:WTW:1",
+      "error_messages": [],
+      "input_records": 75,
+      "inserted_records": 75,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 75
+    },
+    {
+      "batch_id": "polygon:2026-07-28:WY:1",
+      "error_messages": [],
+      "input_records": 96,
+      "inserted_records": 96,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 96
+    },
+    {
+      "batch_id": "polygon:2026-07-28:WYNN:1",
+      "error_messages": [],
+      "input_records": 433,
+      "inserted_records": 433,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 433
+    },
+    {
+      "batch_id": "polygon:2026-07-28:XBI:1",
+      "error_messages": [],
+      "input_records": 926,
+      "inserted_records": 918,
+      "rejected_records": 8,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 918
+    },
+    {
+      "batch_id": "polygon:2026-07-28:XEL:1",
+      "error_messages": [],
+      "input_records": 95,
+      "inserted_records": 95,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 95
+    },
+    {
+      "batch_id": "polygon:2026-07-28:XHB:1",
+      "error_messages": [],
+      "input_records": 457,
+      "inserted_records": 456,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 456
+    },
+    {
+      "batch_id": "polygon:2026-07-28:XLB:1",
+      "error_messages": [],
+      "input_records": 373,
+      "inserted_records": 373,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 373
+    },
+    {
+      "batch_id": "polygon:2026-07-28:XLC:1",
+      "error_messages": [],
+      "input_records": 374,
+      "inserted_records": 372,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 372
+    },
+    {
+      "batch_id": "polygon:2026-07-28:XLE:1",
+      "error_messages": [],
+      "input_records": 837,
+      "inserted_records": 837,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 837
+    },
+    {
+      "batch_id": "polygon:2026-07-28:XLF:1",
+      "error_messages": [],
+      "input_records": 795,
+      "inserted_records": 795,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 795
+    },
+    {
+      "batch_id": "polygon:2026-07-28:XLI:1",
+      "error_messages": [],
+      "input_records": 807,
+      "inserted_records": 807,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 807
+    },
+    {
+      "batch_id": "polygon:2026-07-28:XLK:1",
+      "error_messages": [],
+      "input_records": 982,
+      "inserted_records": 982,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 982
+    },
+    {
+      "batch_id": "polygon:2026-07-28:XLP:1",
+      "error_messages": [],
+      "input_records": 464,
+      "inserted_records": 461,
+      "rejected_records": 3,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 461
+    },
+    {
+      "batch_id": "polygon:2026-07-28:XLRE:1",
+      "error_messages": [],
+      "input_records": 108,
+      "inserted_records": 108,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 108
+    },
+    {
+      "batch_id": "polygon:2026-07-28:XLU:1",
+      "error_messages": [],
+      "input_records": 394,
+      "inserted_records": 394,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 394
+    },
+    {
+      "batch_id": "polygon:2026-07-28:XLV:1",
+      "error_messages": [],
+      "input_records": 610,
+      "inserted_records": 610,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 610
+    },
+    {
+      "batch_id": "polygon:2026-07-28:XLY:1",
+      "error_messages": [],
+      "input_records": 568,
+      "inserted_records": 568,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 568
+    },
+    {
+      "batch_id": "polygon:2026-07-28:XOM:1",
+      "error_messages": [],
+      "input_records": 650,
+      "inserted_records": 643,
+      "rejected_records": 7,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 643
+    },
+    {
+      "batch_id": "polygon:2026-07-28:XOP:1",
+      "error_messages": [],
+      "input_records": 751,
+      "inserted_records": 750,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 750
+    },
+    {
+      "batch_id": "polygon:2026-07-28:XPH:1",
+      "error_messages": [],
+      "input_records": 34,
+      "inserted_records": 34,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 34
+    },
+    {
+      "batch_id": "polygon:2026-07-28:XRT:1",
+      "error_messages": [],
+      "input_records": 342,
+      "inserted_records": 331,
+      "rejected_records": 11,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 331
+    },
+    {
+      "batch_id": "polygon:2026-07-28:XYL:1",
+      "error_messages": [],
+      "input_records": 131,
+      "inserted_records": 130,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 130
+    },
+    {
+      "batch_id": "polygon:2026-07-28:XYZ:1",
+      "error_messages": [],
+      "input_records": 464,
+      "inserted_records": 463,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 463
+    },
+    {
+      "batch_id": "polygon:2026-07-28:YUM:1",
+      "error_messages": [],
+      "input_records": 155,
+      "inserted_records": 155,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 155
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ZBH:1",
+      "error_messages": [],
+      "input_records": 89,
+      "inserted_records": 88,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 88
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ZBRA:1",
+      "error_messages": [],
+      "input_records": 130,
+      "inserted_records": 129,
+      "rejected_records": 1,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 129
+    },
+    {
+      "batch_id": "polygon:2026-07-28:ZTS:1",
+      "error_messages": [],
+      "input_records": 126,
+      "inserted_records": 126,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 126
+    }
+  ],
+  "completed_at": "2026-07-28T13:57:45.062074+00:00",
   "failed_batches": 0,
-  "input_records": 0,
-  "inserted_records": 0,
+  "input_records": 273792,
+  "inserted_records": 268810,
   "metadata": {
     "batch_size": 5000,
     "end_date": null,
+    "manifest_cycle_id": "options-20260728T134658785923Z",
     "resume": true,
     "start_date": null
   },
-  "rejected_records": 0,
-  "resumed_batches": 5,
-  "skipped_records": 0,
+  "rejected_records": 1714,
+  "resumed_batches": 0,
+  "skipped_records": 3268,
   "source_name": "polygon_option_chain_snapshot",
-  "started_at": "2026-07-26T06:12:30.102221+00:00",
+  "started_at": "2026-07-28T13:46:58.787981+00:00",
   "updated_records": 0,
-  "valid_records": 0
+  "valid_records": 268810
 }

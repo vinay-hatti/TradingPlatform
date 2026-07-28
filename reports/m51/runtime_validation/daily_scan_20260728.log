@@ -1,0 +1,761 @@
+
+========== Daily AI Trading Scan ==========
+Universe        : sp500
+Symbols Selected: 503
+History Requested: 2025-07-28 -> 2026-07-28
+History Effective: 2025-07-28 -> 2026-07-24
+Minimum Score   : 60.0
+Option Data     : live
+Expiry Mode     : automatic
+DTE Range       : 1 -> 180
+Expiry Limit    : 3 trades per expiration
+Data Mode       : PostgreSQL database only
+Published State : DEGRADED
+Ingestion Run   : market-ingestion-20260728T135935088677Z
+Market As-Of    : 2026-07-24
+Option Snapshot : options-20260728T134658785923Z
+Option As-Of    : 2026-07-28
+Coverage        : 99.510603588907
+-------------------------------------------
+-------------------------------------------
+Scan Exclusion Summary
+-------------------------------------------
+Scan Skipped Symbols                     69
+Scan Other                             69
+  Symbols: HWM,AEP,EQIX,TECH,PH,URI,GWW,CASY,EXC,CFG,PCAR,TRGP,ODFL,HBAN,CCI,DXCM,ETR,RF,CNP,NSC ...
+  Example: LiveOptionDataError: No eligible contracts across configured DTE horizons. No listed CALL contracts for HWM passed filters. Mode=adaptive; OI>=100, volume>=10, spread<=25.0%. Diagnostics: total=8, accepted=0, no_price=0, expired=0, missing_greeks=0, low_OI=1, low_volume=6, wide_spread=1, missing_OI=0, missing_volume=0, missing_spread=0. | No persisted Polygon option snapshot found for HWM on or before 2026-07-28. The Daily Scanner is read-only. No eligible persisted contract was available for th
+
+Symbols Scanned : 503
+Candidates      : 13
+Live Trades     : 12
+Live Profile    : aggressive
+Scanner Run     : scanner-20260728T141206478660Z-e71e93bcff
+Lineage Rows    : 13
+-------------------------------------------
+Ranked Candidates
+-------------------------------------------
+
+1. DUK CALL
+   Strategy       : LONG_CALL
+   Sector         : Unknown
+   AI Score       : 94.01
+   Base AI Score  : 89.02
+   Dealer Adj.    : +4.98
+   Dealer Context : FRESH / MODERATELY_BEARISH
+   Adjusted Score : 84.08
+   Base Score     : 84.08
+   Signal Score   : 80.00
+   Call / Put     : 80.00 / 0.00
+   Market Regime  : BULL_TREND
+   Underlying     : $130.52
+   Strike         : $130.00
+   Contract       : O:DUK270115C00130000
+   Expiration     : 2027-01-15
+   Bid / Ask      : $6.40 / $8.20
+   Price Source   : POLYGON_PERSISTED_QUOTE
+   Data Source    : POLYGON_PERSISTED
+   Quote Time     : 2026-07-28
+   Option Price   : $7.30
+   DTE            : 171
+   Expiry Source  : LIVE_LISTED_CONTRACT
+   Ranking Reason : Technical=80.0 | Greeks=88.1 | Regime=100.0 | Volatility=100.0 | Risk=100.0 | Signal aligned with market regime. | Greeks are in preferred range. | Target-delta strike=130.00; spot=130.52; target |delta|=0.45; resolved delta=0.5535; Greek source=PERSISTED; moneyness=1.52%. | expiration_mode=automatic; selected_dte=171. | Dealer positioning MODERATELY_BEARISH (NEGATIVE_GAMMA), adjustment=+4.98, confidence=90.00.
+
+2. UPS CALL
+   Strategy       : LONG_CALL
+   Sector         : Industrials
+   AI Score       : 92.80
+   Base AI Score  : 87.60
+   Dealer Adj.    : +5.20
+   Dealer Context : FRESH / NEUTRAL
+   Adjusted Score : 82.17
+   Base Score     : 82.17
+   Signal Score   : 80.00
+   Call / Put     : 80.00 / 0.00
+   Market Regime  : BULL_TREND
+   Underlying     : $114.79
+   Strike         : $110.00
+   Contract       : O:UPS270115C00110000
+   Expiration     : 2027-01-15
+   Bid / Ask      : $6.70 / $7.70
+   Price Source   : POLYGON_PERSISTED_QUOTE
+   Data Source    : POLYGON_PERSISTED
+   Quote Time     : 2026-07-28
+   Option Price   : $7.20
+   DTE            : 171
+   Expiry Source  : LIVE_LISTED_CONTRACT
+   Ranking Reason : Technical=80.0 | Greeks=82.4 | Regime=100.0 | Volatility=100.0 | Risk=100.0 | Signal aligned with market regime. | Greeks are in preferred range. | Target-delta strike=110.00; spot=114.79; target |delta|=0.45; resolved delta=0.4625; Greek source=PERSISTED; moneyness=2.36%. | expiration_mode=automatic; selected_dte=171. | Dealer positioning NEUTRAL (NEGATIVE_GAMMA), adjustment=+5.20, confidence=90.00.
+
+3. SO CALL
+   Strategy       : LONG_CALL
+   Sector         : Unknown
+   AI Score       : 92.25
+   Base AI Score  : 87.93
+   Dealer Adj.    : +4.32
+   Dealer Context : FRESH / MODERATELY_BEARISH
+   Adjusted Score : 82.74
+   Base Score     : 82.74
+   Signal Score   : 80.00
+   Call / Put     : 80.00 / 0.00
+   Market Regime  : BULL_TREND
+   Underlying     : $97.25
+   Strike         : $100.00
+   Contract       : O:SO261120C00100000
+   Expiration     : 2026-11-20
+   Bid / Ask      : $3.40 / $4.00
+   Price Source   : POLYGON_PERSISTED_QUOTE
+   Data Source    : POLYGON_PERSISTED
+   Quote Time     : 2026-07-28
+   Option Price   : $3.70
+   DTE            : 115
+   Expiry Source  : LIVE_LISTED_CONTRACT
+   Ranking Reason : Technical=80.0 | Greeks=83.7 | Regime=100.0 | Volatility=100.0 | Risk=100.0 | Signal aligned with market regime. | Greeks are in preferred range. | Target-delta strike=100.00; spot=97.25; target |delta|=0.45; resolved delta=0.4636; Greek source=PERSISTED; moneyness=1.80%. | expiration_mode=automatic; selected_dte=115. | Dealer positioning MODERATELY_BEARISH (NEGATIVE_GAMMA), adjustment=+4.32, confidence=90.00.
+
+4. EIX CALL
+   Strategy       : LONG_CALL
+   Sector         : Unknown
+   AI Score       : 92.21
+   Base AI Score  : 86.89
+   Dealer Adj.    : +5.32
+   Dealer Context : FRESH / MODERATELY_BEARISH
+   Adjusted Score : 81.25
+   Base Score     : 81.25
+   Signal Score   : 80.00
+   Call / Put     : 80.00 / 0.00
+   Market Regime  : BULL_TREND
+   Underlying     : $79.75
+   Strike         : $75.00
+   Contract       : O:EIX270115C00075000
+   Expiration     : 2027-01-15
+   Bid / Ask      : $7.80 / $10.00
+   Price Source   : POLYGON_PERSISTED_QUOTE
+   Data Source    : POLYGON_PERSISTED
+   Quote Time     : 2026-07-28
+   Option Price   : $8.90
+   DTE            : 171
+   Expiry Source  : LIVE_LISTED_CONTRACT
+   Ranking Reason : Technical=80.0 | Greeks=79.5 | Regime=100.0 | Volatility=100.0 | Risk=100.0 | Signal aligned with market regime. | Target-delta strike=75.00; spot=79.75; target |delta|=0.45; resolved delta=0.6653; Greek source=PERSISTED; moneyness=2.82%. | expiration_mode=automatic; selected_dte=171. | Dealer positioning MODERATELY_BEARISH (NEGATIVE_GAMMA), adjustment=+5.32, confidence=89.16.
+
+5. BMY CALL
+   Strategy       : LONG_CALL
+   Sector         : Unknown
+   AI Score       : 89.61
+   Base AI Score  : 85.78
+   Dealer Adj.    : +3.82
+   Dealer Context : FRESH / MODERATELY_BEARISH
+   Adjusted Score : 79.08
+   Base Score     : 79.08
+   Signal Score   : 80.00
+   Call / Put     : 80.00 / 0.00
+   Market Regime  : BULL_TREND
+   Underlying     : $62.09
+   Strike         : $65.00
+   Contract       : O:BMY260918C00065000
+   Expiration     : 2026-09-18
+   Bid / Ask      : $2.66 / $2.83
+   Price Source   : POLYGON_PERSISTED_QUOTE
+   Data Source    : POLYGON_PERSISTED
+   Quote Time     : 2026-07-28
+   Option Price   : $2.75
+   DTE            : 52
+   Expiry Source  : LIVE_LISTED_CONTRACT
+   Ranking Reason : Technical=80.0 | Greeks=75.1 | Regime=100.0 | Volatility=100.0 | Risk=100.0 | Signal aligned with market regime. | Target-delta strike=65.00; spot=62.09; target |delta|=0.45; resolved delta=0.4880; Greek source=PERSISTED; moneyness=1.47%. | expiration_mode=automatic; selected_dte=52. | Dealer positioning MODERATELY_BEARISH (NEGATIVE_GAMMA), adjustment=+3.82, confidence=90.00.
+
+6. CF CALL
+   Strategy       : LONG_CALL
+   Sector         : Unknown
+   AI Score       : 89.03
+   Base AI Score  : 84.55
+   Dealer Adj.    : +4.48
+   Dealer Context : FRESH / MODERATELY_BEARISH
+   Adjusted Score : 81.49
+   Base Score     : 81.49
+   Signal Score   : 80.00
+   Call / Put     : 80.00 / 0.00
+   Market Regime  : BULL_TREND
+   Underlying     : $125.07
+   Strike         : $125.00
+   Contract       : O:CF261120C00125000
+   Expiration     : 2026-11-20
+   Bid / Ask      : $10.10 / $12.40
+   Price Source   : POLYGON_PERSISTED_QUOTE
+   Data Source    : POLYGON_PERSISTED
+   Quote Time     : 2026-07-28
+   Option Price   : $11.25
+   DTE            : 115
+   Expiry Source  : LIVE_LISTED_CONTRACT
+   Ranking Reason : Technical=80.0 | Greeks=82.2 | Regime=100.0 | Volatility=70.0 | Risk=100.0 | Signal aligned with market regime. | Greeks are in preferred range. | Target-delta strike=125.00; spot=125.07; target |delta|=0.45; resolved delta=0.5161; Greek source=PERSISTED; moneyness=1.94%. | expiration_mode=automatic; selected_dte=115. | Dealer positioning MODERATELY_BEARISH (NEGATIVE_GAMMA), adjustment=+4.48, confidence=89.85.
+
+7. STT CALL
+   Strategy       : LONG_CALL
+   Sector         : Unknown
+   AI Score       : 88.70
+   Base AI Score  : 84.11
+   Dealer Adj.    : +4.59
+   Dealer Context : FRESH / NEUTRAL
+   Adjusted Score : 76.07
+   Base Score     : 76.07
+   Signal Score   : 80.00
+   Call / Put     : 80.00 / 0.00
+   Market Regime  : BULL_TREND
+   Underlying     : $185.40
+   Strike         : $185.00
+   Contract       : O:STT261120C00185000
+   Expiration     : 2026-11-20
+   Bid / Ask      : $10.50 / $13.10
+   Price Source   : POLYGON_PERSISTED_QUOTE
+   Data Source    : POLYGON_PERSISTED
+   Quote Time     : 2026-07-28
+   Option Price   : $11.80
+   DTE            : 115
+   Expiry Source  : LIVE_LISTED_CONTRACT
+   Ranking Reason : Technical=80.0 | Greeks=68.5 | Regime=100.0 | Volatility=100.0 | Risk=100.0 | Signal aligned with market regime. | Target-delta strike=185.00; spot=185.40; target |delta|=0.45; resolved delta=0.4914; Greek source=PERSISTED; moneyness=1.13%. | expiration_mode=automatic; selected_dte=115. | Dealer positioning NEUTRAL (NEGATIVE_GAMMA), adjustment=+4.59, confidence=89.78.
+
+8. FAST CALL
+   Strategy       : LONG_CALL
+   Sector         : Unknown
+   AI Score       : 88.48
+   Base AI Score  : 84.31
+   Dealer Adj.    : +4.17
+   Dealer Context : FRESH / MODERATELY_BEARISH
+   Adjusted Score : 77.11
+   Base Score     : 77.11
+   Signal Score   : 80.00
+   Call / Put     : 80.00 / 0.00
+   Market Regime  : BULL_TREND
+   Underlying     : $47.02
+   Strike         : $50.00
+   Contract       : O:FAST260918C00050000
+   Expiration     : 2026-09-18
+   Bid / Ask      : $1.25 / $1.60
+   Price Source   : POLYGON_PERSISTED_QUOTE
+   Data Source    : POLYGON_PERSISTED
+   Quote Time     : 2026-07-28
+   Option Price   : $1.43
+   DTE            : 52
+   Expiry Source  : LIVE_LISTED_CONTRACT
+   Ranking Reason : Technical=80.0 | Greeks=69.2 | Regime=100.0 | Volatility=100.0 | Risk=100.0 | Signal aligned with market regime. | Target-delta strike=50.00; spot=47.02; target |delta|=0.45; resolved delta=0.4303; Greek source=PERSISTED; moneyness=2.08%. | expiration_mode=automatic; selected_dte=52. | Dealer positioning MODERATELY_BEARISH (NEGATIVE_GAMMA), adjustment=+4.17, confidence=90.00.
+
+9. PM CALL
+   Strategy       : LONG_CALL
+   Sector         : Unknown
+   AI Score       : 87.47
+   Base AI Score  : 82.94
+   Dealer Adj.    : +4.53
+   Dealer Context : FRESH / MODERATELY_BEARISH
+   Adjusted Score : 74.17
+   Base Score     : 74.17
+   Signal Score   : 80.00
+   Call / Put     : 80.00 / 0.00
+   Market Regime  : BULL_TREND
+   Underlying     : $193.00
+   Strike         : $210.00
+   Contract       : O:PM260918C00210000
+   Expiration     : 2026-09-18
+   Bid / Ask      : $6.80 / $7.50
+   Price Source   : POLYGON_PERSISTED_QUOTE
+   Data Source    : POLYGON_PERSISTED
+   Quote Time     : 2026-07-28
+   Option Price   : $7.15
+   DTE            : 52
+   Expiry Source  : LIVE_LISTED_CONTRACT
+   Ranking Reason : Technical=80.0 | Greeks=63.8 | Regime=100.0 | Volatility=100.0 | Risk=100.0 | Signal aligned with market regime. | Target-delta strike=210.00; spot=193.00; target |delta|=0.45; resolved delta=0.4428; Greek source=PERSISTED; moneyness=1.04%. | expiration_mode=automatic; selected_dte=52. | Dealer positioning MODERATELY_BEARISH (NEGATIVE_GAMMA), adjustment=+4.53, confidence=89.69.
+
+10. PCG CALL
+   Strategy       : LONG_CALL
+   Sector         : Unknown
+   AI Score       : 85.85
+   Base AI Score  : 82.33
+   Dealer Adj.    : +3.52
+   Dealer Context : FRESH / MODERATELY_BEARISH
+   Adjusted Score : 73.82
+   Base Score     : 73.82
+   Signal Score   : 80.00
+   Call / Put     : 80.00 / 0.00
+   Market Regime  : BULL_TREND
+   Underlying     : $17.85
+   Strike         : $18.50
+   Contract       : O:PCG260731C00018500
+   Expiration     : 2026-07-31
+   Bid / Ask      : $0.16 / $0.17
+   Price Source   : POLYGON_PERSISTED_QUOTE
+   Data Source    : POLYGON_PERSISTED
+   Quote Time     : 2026-07-28
+   Option Price   : $0.17
+   DTE            : 3
+   Expiry Source  : LIVE_LISTED_CONTRACT
+   Ranking Reason : Technical=80.0 | Greeks=61.3 | Regime=100.0 | Volatility=100.0 | Risk=100.0 | Signal aligned with market regime. | Target-delta strike=18.50; spot=17.85; target |delta|=0.45; resolved delta=0.4300; Greek source=PERSISTED; moneyness=0.84%. | expiration_mode=automatic; selected_dte=3. | Dealer positioning MODERATELY_BEARISH (NEGATIVE_GAMMA), adjustment=+3.52, confidence=89.78.
+
+11. MRK CALL
+   Strategy       : LONG_CALL
+   Sector         : Unknown
+   AI Score       : 79.99
+   Base AI Score  : 75.83
+   Dealer Adj.    : +4.16
+   Dealer Context : FRESH / MODERATELY_BEARISH
+   Adjusted Score : 64.51
+   Base Score     : 64.51
+   Signal Score   : 65.00
+   Call / Put     : 65.00 / 0.00
+   Market Regime  : BULL_TREND
+   Underlying     : $131.07
+   Strike         : $133.00
+   Contract       : O:MRK260731C00133000
+   Expiration     : 2026-07-31
+   Bid / Ask      : $2.10 / $2.40
+   Price Source   : POLYGON_PERSISTED_QUOTE
+   Data Source    : POLYGON_PERSISTED
+   Quote Time     : 2026-07-28
+   Option Price   : $2.25
+   DTE            : 3
+   Expiry Source  : LIVE_LISTED_CONTRACT
+   Ranking Reason : Technical=65.0 | Greeks=59.3 | Regime=100.0 | Volatility=100.0 | Risk=100.0 | Signal aligned with market regime. | Target-delta strike=133.00; spot=131.07; target |delta|=0.45; resolved delta=0.5567; Greek source=PERSISTED; moneyness=1.09%. | expiration_mode=automatic; selected_dte=3. | Dealer positioning MODERATELY_BEARISH (NEGATIVE_GAMMA), adjustment=+4.16, confidence=90.00.
+
+12. V CALL
+   Strategy       : LONG_CALL
+   Sector         : Unknown
+   AI Score       : 79.96
+   Base AI Score  : 76.49
+   Dealer Adj.    : +3.47
+   Dealer Context : FRESH / NEUTRAL
+   Adjusted Score : 65.75
+   Base Score     : 65.75
+   Signal Score   : 65.00
+   Call / Put     : 65.00 / 0.00
+   Market Regime  : BULL_TREND
+   Underlying     : $355.74
+   Strike         : $365.00
+   Contract       : O:V260731C00365000
+   Expiration     : 2026-07-31
+   Bid / Ask      : $5.95 / $6.45
+   Price Source   : POLYGON_PERSISTED_QUOTE
+   Data Source    : POLYGON_PERSISTED
+   Quote Time     : 2026-07-28
+   Option Price   : $6.20
+   DTE            : 3
+   Expiry Source  : LIVE_LISTED_CONTRACT
+   Ranking Reason : Technical=65.0 | Greeks=62.0 | Regime=100.0 | Volatility=100.0 | Risk=100.0 | Signal aligned with market regime. | Target-delta strike=365.00; spot=355.74; target |delta|=0.45; resolved delta=0.5077; Greek source=PERSISTED; moneyness=1.20%. | expiration_mode=automatic; selected_dte=3. | Dealer positioning NEUTRAL (NEGATIVE_GAMMA), adjustment=+3.47, confidence=89.92.
+
+13. AAPL CALL
+   Strategy       : LONG_CALL
+   Sector         : Technology
+   AI Score       : 67.71
+   Base AI Score  : 63.21
+   Dealer Adj.    : +4.49
+   Dealer Context : FRESH / NEUTRAL
+   Adjusted Score : 57.44
+   Base Score     : 57.44
+   Signal Score   : 60.00
+   Call / Put     : 60.00 / 0.00
+   Market Regime  : VOLATILE
+   Underlying     : $333.02
+   Strike         : $340.00
+   Contract       : O:AAPL260729C00340000
+   Expiration     : 2026-07-29
+   Bid / Ask      : $2.05 / $2.10
+   Price Source   : POLYGON_PERSISTED_QUOTE
+   Data Source    : POLYGON_PERSISTED
+   Quote Time     : 2026-07-28
+   Option Price   : $2.08
+   DTE            : 1
+   Expiry Source  : LIVE_LISTED_CONTRACT
+   Ranking Reason : Technical=60.0 | Greeks=46.9 | Regime=50.0 | Volatility=100.0 | Risk=100.0 | Target-delta strike=340.00; spot=333.02; target |delta|=0.45; resolved delta=0.4105; Greek source=PERSISTED; moneyness=0.59%. | expiration_mode=automatic; selected_dte=1. | Dealer positioning NEUTRAL (NEGATIVE_GAMMA), adjustment=+4.49, confidence=90.00.
+
+Live Trade Candidates
+-------------------------------------------
+
+1. LIVE TRADE CANDIDATE — DUK CALL
+   Confidence  : HIGH
+   AI Score    : 94.01
+   Base AI     : 89.02
+   Dealer Adj. : +4.98
+   Dealer      : FRESH / MODERATELY_BEARISH
+   Strategy    : LONG_CALL
+   Underlying  : $130.52
+   Strike      : $130.00
+   Contract    : O:DUK270115C00130000
+   Bid / Ask   : $6.40 / $8.20
+   Price Src   : POLYGON_PERSISTED_QUOTE
+   Quote Time  : 2026-07-28
+   Expiration  : 2027-01-15
+   DTE         : 171
+   Expiry Src  : LIVE_LISTED_CONTRACT
+   Entry       : $7.30
+   Target      : $9.49
+   Stop        : $6.21
+   Contracts   : 2
+   Est. Cost   : $1,460.00
+   Max Risk    : $219.00
+   Est. Reward : $438.00
+   Reward/Risk : 2.00
+   Regime      : BULL_TREND
+   Reason      : Technical=80.0 | Greeks=88.1 | Regime=100.0 | Volatility=100.0 | Risk=100.0 | Signal aligned with market regime. | Greeks are in preferred range. | Target-delta strike=130.00; spot=130.52; target |delta|=0.45; resolved delta=0.5535; Greek source=PERSISTED; moneyness=1.52%. | expiration_mode=automatic; selected_dte=171. | Dealer positioning MODERATELY_BEARISH (NEGATIVE_GAMMA), adjustment=+4.98, confidence=90.00.
+   Notes:
+     - Live contract: O:DUK270115C00130000.
+     - Entry source: POLYGON_PERSISTED_QUOTE; quote time: 2026-07-28.
+     - High AI score candidate.
+     - Bullish options candidate.
+
+2. LIVE TRADE CANDIDATE — UPS CALL
+   Confidence  : HIGH
+   AI Score    : 92.80
+   Base AI     : 87.60
+   Dealer Adj. : +5.20
+   Dealer      : FRESH / NEUTRAL
+   Strategy    : LONG_CALL
+   Underlying  : $114.79
+   Strike      : $110.00
+   Contract    : O:UPS270115C00110000
+   Bid / Ask   : $6.70 / $7.70
+   Price Src   : POLYGON_PERSISTED_QUOTE
+   Quote Time  : 2026-07-28
+   Expiration  : 2027-01-15
+   DTE         : 171
+   Expiry Src  : LIVE_LISTED_CONTRACT
+   Entry       : $7.20
+   Target      : $9.36
+   Stop        : $6.12
+   Contracts   : 2
+   Est. Cost   : $1,440.00
+   Max Risk    : $216.00
+   Est. Reward : $432.00
+   Reward/Risk : 2.00
+   Regime      : BULL_TREND
+   Reason      : Technical=80.0 | Greeks=82.4 | Regime=100.0 | Volatility=100.0 | Risk=100.0 | Signal aligned with market regime. | Greeks are in preferred range. | Target-delta strike=110.00; spot=114.79; target |delta|=0.45; resolved delta=0.4625; Greek source=PERSISTED; moneyness=2.36%. | expiration_mode=automatic; selected_dte=171. | Dealer positioning NEUTRAL (NEGATIVE_GAMMA), adjustment=+5.20, confidence=90.00.
+   Notes:
+     - Live contract: O:UPS270115C00110000.
+     - Entry source: POLYGON_PERSISTED_QUOTE; quote time: 2026-07-28.
+     - High AI score candidate.
+     - Bullish options candidate.
+
+3. LIVE TRADE CANDIDATE — SO CALL
+   Confidence  : HIGH
+   AI Score    : 92.25
+   Base AI     : 87.93
+   Dealer Adj. : +4.32
+   Dealer      : FRESH / MODERATELY_BEARISH
+   Strategy    : LONG_CALL
+   Underlying  : $97.25
+   Strike      : $100.00
+   Contract    : O:SO261120C00100000
+   Bid / Ask   : $3.40 / $4.00
+   Price Src   : POLYGON_PERSISTED_QUOTE
+   Quote Time  : 2026-07-28
+   Expiration  : 2026-11-20
+   DTE         : 115
+   Expiry Src  : LIVE_LISTED_CONTRACT
+   Entry       : $3.70
+   Target      : $4.81
+   Stop        : $3.15
+   Contracts   : 5
+   Est. Cost   : $1,850.00
+   Max Risk    : $277.50
+   Est. Reward : $555.00
+   Reward/Risk : 2.00
+   Regime      : BULL_TREND
+   Reason      : Technical=80.0 | Greeks=83.7 | Regime=100.0 | Volatility=100.0 | Risk=100.0 | Signal aligned with market regime. | Greeks are in preferred range. | Target-delta strike=100.00; spot=97.25; target |delta|=0.45; resolved delta=0.4636; Greek source=PERSISTED; moneyness=1.80%. | expiration_mode=automatic; selected_dte=115. | Dealer positioning MODERATELY_BEARISH (NEGATIVE_GAMMA), adjustment=+4.32, confidence=90.00.
+   Notes:
+     - Live contract: O:SO261120C00100000.
+     - Entry source: POLYGON_PERSISTED_QUOTE; quote time: 2026-07-28.
+     - High AI score candidate.
+     - Bullish options candidate.
+
+4. LIVE TRADE CANDIDATE — EIX CALL
+   Confidence  : HIGH
+   AI Score    : 92.21
+   Base AI     : 86.89
+   Dealer Adj. : +5.32
+   Dealer      : FRESH / MODERATELY_BEARISH
+   Strategy    : LONG_CALL
+   Underlying  : $79.75
+   Strike      : $75.00
+   Contract    : O:EIX270115C00075000
+   Bid / Ask   : $7.80 / $10.00
+   Price Src   : POLYGON_PERSISTED_QUOTE
+   Quote Time  : 2026-07-28
+   Expiration  : 2027-01-15
+   DTE         : 171
+   Expiry Src  : LIVE_LISTED_CONTRACT
+   Entry       : $8.90
+   Target      : $11.57
+   Stop        : $7.57
+   Contracts   : 2
+   Est. Cost   : $1,780.00
+   Max Risk    : $267.00
+   Est. Reward : $534.00
+   Reward/Risk : 2.00
+   Regime      : BULL_TREND
+   Reason      : Technical=80.0 | Greeks=79.5 | Regime=100.0 | Volatility=100.0 | Risk=100.0 | Signal aligned with market regime. | Target-delta strike=75.00; spot=79.75; target |delta|=0.45; resolved delta=0.6653; Greek source=PERSISTED; moneyness=2.82%. | expiration_mode=automatic; selected_dte=171. | Dealer positioning MODERATELY_BEARISH (NEGATIVE_GAMMA), adjustment=+5.32, confidence=89.16.
+   Notes:
+     - Live contract: O:EIX270115C00075000.
+     - Entry source: POLYGON_PERSISTED_QUOTE; quote time: 2026-07-28.
+     - High AI score candidate.
+     - Bullish options candidate.
+
+5. LIVE TRADE CANDIDATE — BMY CALL
+   Confidence  : HIGH
+   AI Score    : 89.61
+   Base AI     : 85.78
+   Dealer Adj. : +3.82
+   Dealer      : FRESH / MODERATELY_BEARISH
+   Strategy    : LONG_CALL
+   Underlying  : $62.09
+   Strike      : $65.00
+   Contract    : O:BMY260918C00065000
+   Bid / Ask   : $2.66 / $2.83
+   Price Src   : POLYGON_PERSISTED_QUOTE
+   Quote Time  : 2026-07-28
+   Expiration  : 2026-09-18
+   DTE         : 52
+   Expiry Src  : LIVE_LISTED_CONTRACT
+   Entry       : $2.75
+   Target      : $3.57
+   Stop        : $2.33
+   Contracts   : 7
+   Est. Cost   : $1,921.50
+   Max Risk    : $288.23
+   Est. Reward : $576.45
+   Reward/Risk : 2.00
+   Regime      : BULL_TREND
+   Reason      : Technical=80.0 | Greeks=75.1 | Regime=100.0 | Volatility=100.0 | Risk=100.0 | Signal aligned with market regime. | Target-delta strike=65.00; spot=62.09; target |delta|=0.45; resolved delta=0.4880; Greek source=PERSISTED; moneyness=1.47%. | expiration_mode=automatic; selected_dte=52. | Dealer positioning MODERATELY_BEARISH (NEGATIVE_GAMMA), adjustment=+3.82, confidence=90.00.
+   Notes:
+     - Live contract: O:BMY260918C00065000.
+     - Entry source: POLYGON_PERSISTED_QUOTE; quote time: 2026-07-28.
+     - High AI score candidate.
+     - Bullish options candidate.
+
+6. LIVE TRADE CANDIDATE — CF CALL
+   Confidence  : HIGH
+   AI Score    : 89.03
+   Base AI     : 84.55
+   Dealer Adj. : +4.48
+   Dealer      : FRESH / MODERATELY_BEARISH
+   Strategy    : LONG_CALL
+   Underlying  : $125.07
+   Strike      : $125.00
+   Contract    : O:CF261120C00125000
+   Bid / Ask   : $10.10 / $12.40
+   Price Src   : POLYGON_PERSISTED_QUOTE
+   Quote Time  : 2026-07-28
+   Expiration  : 2026-11-20
+   DTE         : 115
+   Expiry Src  : LIVE_LISTED_CONTRACT
+   Entry       : $11.25
+   Target      : $14.62
+   Stop        : $9.56
+   Contracts   : 1
+   Est. Cost   : $1,125.00
+   Max Risk    : $168.75
+   Est. Reward : $337.50
+   Reward/Risk : 2.00
+   Regime      : BULL_TREND
+   Reason      : Technical=80.0 | Greeks=82.2 | Regime=100.0 | Volatility=70.0 | Risk=100.0 | Signal aligned with market regime. | Greeks are in preferred range. | Target-delta strike=125.00; spot=125.07; target |delta|=0.45; resolved delta=0.5161; Greek source=PERSISTED; moneyness=1.94%. | expiration_mode=automatic; selected_dte=115. | Dealer positioning MODERATELY_BEARISH (NEGATIVE_GAMMA), adjustment=+4.48, confidence=89.85.
+   Notes:
+     - Live contract: O:CF261120C00125000.
+     - Entry source: POLYGON_PERSISTED_QUOTE; quote time: 2026-07-28.
+     - High AI score candidate.
+     - Bullish options candidate.
+
+7. LIVE TRADE CANDIDATE — STT CALL
+   Confidence  : HIGH
+   AI Score    : 88.70
+   Base AI     : 84.11
+   Dealer Adj. : +4.59
+   Dealer      : FRESH / NEUTRAL
+   Strategy    : LONG_CALL
+   Underlying  : $185.40
+   Strike      : $185.00
+   Contract    : O:STT261120C00185000
+   Bid / Ask   : $10.50 / $13.10
+   Price Src   : POLYGON_PERSISTED_QUOTE
+   Quote Time  : 2026-07-28
+   Expiration  : 2026-11-20
+   DTE         : 115
+   Expiry Src  : LIVE_LISTED_CONTRACT
+   Entry       : $11.80
+   Target      : $15.34
+   Stop        : $10.03
+   Contracts   : 1
+   Est. Cost   : $1,180.00
+   Max Risk    : $177.00
+   Est. Reward : $354.00
+   Reward/Risk : 2.00
+   Regime      : BULL_TREND
+   Reason      : Technical=80.0 | Greeks=68.5 | Regime=100.0 | Volatility=100.0 | Risk=100.0 | Signal aligned with market regime. | Target-delta strike=185.00; spot=185.40; target |delta|=0.45; resolved delta=0.4914; Greek source=PERSISTED; moneyness=1.13%. | expiration_mode=automatic; selected_dte=115. | Dealer positioning NEUTRAL (NEGATIVE_GAMMA), adjustment=+4.59, confidence=89.78.
+   Notes:
+     - Live contract: O:STT261120C00185000.
+     - Entry source: POLYGON_PERSISTED_QUOTE; quote time: 2026-07-28.
+     - High AI score candidate.
+     - Bullish options candidate.
+
+8. LIVE TRADE CANDIDATE — FAST CALL
+   Confidence  : HIGH
+   AI Score    : 88.48
+   Base AI     : 84.31
+   Dealer Adj. : +4.17
+   Dealer      : FRESH / MODERATELY_BEARISH
+   Strategy    : LONG_CALL
+   Underlying  : $47.02
+   Strike      : $50.00
+   Contract    : O:FAST260918C00050000
+   Bid / Ask   : $1.25 / $1.60
+   Price Src   : POLYGON_PERSISTED_QUOTE
+   Quote Time  : 2026-07-28
+   Expiration  : 2026-09-18
+   DTE         : 52
+   Expiry Src  : LIVE_LISTED_CONTRACT
+   Entry       : $1.43
+   Target      : $1.85
+   Stop        : $1.21
+   Contracts   : 14
+   Est. Cost   : $1,995.00
+   Max Risk    : $299.25
+   Est. Reward : $598.50
+   Reward/Risk : 2.00
+   Regime      : BULL_TREND
+   Reason      : Technical=80.0 | Greeks=69.2 | Regime=100.0 | Volatility=100.0 | Risk=100.0 | Signal aligned with market regime. | Target-delta strike=50.00; spot=47.02; target |delta|=0.45; resolved delta=0.4303; Greek source=PERSISTED; moneyness=2.08%. | expiration_mode=automatic; selected_dte=52. | Dealer positioning MODERATELY_BEARISH (NEGATIVE_GAMMA), adjustment=+4.17, confidence=90.00.
+   Notes:
+     - Live contract: O:FAST260918C00050000.
+     - Entry source: POLYGON_PERSISTED_QUOTE; quote time: 2026-07-28.
+     - High AI score candidate.
+     - Bullish options candidate.
+
+9. LIVE TRADE CANDIDATE — PM CALL
+   Confidence  : HIGH
+   AI Score    : 87.47
+   Base AI     : 82.94
+   Dealer Adj. : +4.53
+   Dealer      : FRESH / MODERATELY_BEARISH
+   Strategy    : LONG_CALL
+   Underlying  : $193.00
+   Strike      : $210.00
+   Contract    : O:PM260918C00210000
+   Bid / Ask   : $6.80 / $7.50
+   Price Src   : POLYGON_PERSISTED_QUOTE
+   Quote Time  : 2026-07-28
+   Expiration  : 2026-09-18
+   DTE         : 52
+   Expiry Src  : LIVE_LISTED_CONTRACT
+   Entry       : $7.15
+   Target      : $9.29
+   Stop        : $6.08
+   Contracts   : 2
+   Est. Cost   : $1,430.00
+   Max Risk    : $214.50
+   Est. Reward : $429.00
+   Reward/Risk : 2.00
+   Regime      : BULL_TREND
+   Reason      : Technical=80.0 | Greeks=63.8 | Regime=100.0 | Volatility=100.0 | Risk=100.0 | Signal aligned with market regime. | Target-delta strike=210.00; spot=193.00; target |delta|=0.45; resolved delta=0.4428; Greek source=PERSISTED; moneyness=1.04%. | expiration_mode=automatic; selected_dte=52. | Dealer positioning MODERATELY_BEARISH (NEGATIVE_GAMMA), adjustment=+4.53, confidence=89.69.
+   Notes:
+     - Live contract: O:PM260918C00210000.
+     - Entry source: POLYGON_PERSISTED_QUOTE; quote time: 2026-07-28.
+     - High AI score candidate.
+     - Bullish options candidate.
+
+10. LIVE TRADE CANDIDATE — MRK CALL
+   Confidence  : MEDIUM
+   AI Score    : 79.99
+   Base AI     : 75.83
+   Dealer Adj. : +4.16
+   Dealer      : FRESH / MODERATELY_BEARISH
+   Strategy    : LONG_CALL
+   Underlying  : $131.07
+   Strike      : $133.00
+   Contract    : O:MRK260731C00133000
+   Bid / Ask   : $2.10 / $2.40
+   Price Src   : POLYGON_PERSISTED_QUOTE
+   Quote Time  : 2026-07-28
+   Expiration  : 2026-07-31
+   DTE         : 3
+   Expiry Src  : LIVE_LISTED_CONTRACT
+   Entry       : $2.25
+   Target      : $2.93
+   Stop        : $1.91
+   Contracts   : 8
+   Est. Cost   : $1,800.00
+   Max Risk    : $270.00
+   Est. Reward : $540.00
+   Reward/Risk : 2.00
+   Regime      : BULL_TREND
+   Reason      : Technical=65.0 | Greeks=59.3 | Regime=100.0 | Volatility=100.0 | Risk=100.0 | Signal aligned with market regime. | Target-delta strike=133.00; spot=131.07; target |delta|=0.45; resolved delta=0.5567; Greek source=PERSISTED; moneyness=1.09%. | expiration_mode=automatic; selected_dte=3. | Dealer positioning MODERATELY_BEARISH (NEGATIVE_GAMMA), adjustment=+4.16, confidence=90.00.
+   Notes:
+     - Live contract: O:MRK260731C00133000.
+     - Entry source: POLYGON_PERSISTED_QUOTE; quote time: 2026-07-28.
+     - Medium AI score candidate.
+     - Bullish options candidate.
+
+11. LIVE TRADE CANDIDATE — V CALL
+   Confidence  : MEDIUM
+   AI Score    : 79.96
+   Base AI     : 76.49
+   Dealer Adj. : +3.47
+   Dealer      : FRESH / NEUTRAL
+   Strategy    : LONG_CALL
+   Underlying  : $355.74
+   Strike      : $365.00
+   Contract    : O:V260731C00365000
+   Bid / Ask   : $5.95 / $6.45
+   Price Src   : POLYGON_PERSISTED_QUOTE
+   Quote Time  : 2026-07-28
+   Expiration  : 2026-07-31
+   DTE         : 3
+   Expiry Src  : LIVE_LISTED_CONTRACT
+   Entry       : $6.20
+   Target      : $8.06
+   Stop        : $5.27
+   Contracts   : 3
+   Est. Cost   : $1,860.00
+   Max Risk    : $279.00
+   Est. Reward : $558.00
+   Reward/Risk : 2.00
+   Regime      : BULL_TREND
+   Reason      : Technical=65.0 | Greeks=62.0 | Regime=100.0 | Volatility=100.0 | Risk=100.0 | Signal aligned with market regime. | Target-delta strike=365.00; spot=355.74; target |delta|=0.45; resolved delta=0.5077; Greek source=PERSISTED; moneyness=1.20%. | expiration_mode=automatic; selected_dte=3. | Dealer positioning NEUTRAL (NEGATIVE_GAMMA), adjustment=+3.47, confidence=89.92.
+   Notes:
+     - Live contract: O:V260731C00365000.
+     - Entry source: POLYGON_PERSISTED_QUOTE; quote time: 2026-07-28.
+     - Medium AI score candidate.
+     - Bullish options candidate.
+
+12. LIVE TRADE CANDIDATE — AAPL CALL
+   Confidence  : LOW
+   AI Score    : 67.71
+   Base AI     : 63.21
+   Dealer Adj. : +4.49
+   Dealer      : FRESH / NEUTRAL
+   Strategy    : LONG_CALL
+   Underlying  : $333.02
+   Strike      : $340.00
+   Contract    : O:AAPL260729C00340000
+   Bid / Ask   : $2.05 / $2.10
+   Price Src   : POLYGON_PERSISTED_QUOTE
+   Quote Time  : 2026-07-28
+   Expiration  : 2026-07-29
+   DTE         : 1
+   Expiry Src  : LIVE_LISTED_CONTRACT
+   Entry       : $2.08
+   Target      : $2.70
+   Stop        : $1.76
+   Contracts   : 9
+   Est. Cost   : $1,867.50
+   Max Risk    : $280.13
+   Est. Reward : $560.25
+   Reward/Risk : 2.00
+   Regime      : VOLATILE
+   Reason      : Technical=60.0 | Greeks=46.9 | Regime=50.0 | Volatility=100.0 | Risk=100.0 | Target-delta strike=340.00; spot=333.02; target |delta|=0.45; resolved delta=0.4105; Greek source=PERSISTED; moneyness=0.59%. | expiration_mode=automatic; selected_dte=1. | Dealer positioning NEUTRAL (NEGATIVE_GAMMA), adjustment=+4.49, confidence=90.00.
+   Notes:
+     - Live contract: O:AAPL260729C00340000.
+     - Entry source: POLYGON_PERSISTED_QUOTE; quote time: 2026-07-28.
+     - Lower-confidence candidate; review carefully.
+     - Bullish options candidate.
+
+Reports
+-------------------------------------------
+Recommendations CSV  : reports/daily/2026-07-28/recommendations.csv
+Recommendations JSON : reports/daily/2026-07-28/recommendations.json
+Recommendations HTML : reports/daily/2026-07-28/report.html
+Recommendations Manifest: reports/daily/2026-07-28/report_manifest.json
+Live Trades CSV       : reports/daily/2026-07-28/live_trade_candidates.csv
+Live Trades JSON      : reports/daily/2026-07-28/live_trade_candidates.json
+Live Trades HTML      : reports/daily/2026-07-28/live_trade_candidates.html
+Live Trades Manifest  : reports/daily/2026-07-28/live_trade_report_manifest.json
+===========================================
+

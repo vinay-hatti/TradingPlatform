@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trading AI Daily Recommendation Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background: #f7f7f7;
+            color: #222;
+        }
+        h1, h2 {
+            color: #111;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+            overflow-x: auto;
+        }
+        .metric {
+            display: inline-block;
+            margin-right: 30px;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        .metric strong {
+            display: block;
+            font-size: 13px;
+            color: #666;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            white-space: nowrap;
+        }
+        th, td {
+            border-bottom: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            font-size: 14px;
+        }
+        th {
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Trading AI Daily Recommendation Report</h1>
+
+<div class="card">
+    <h2>Summary</h2>
+    <div class="metric"><strong>Date</strong>2026-07-28</div>
+    <div class="metric"><strong>Symbols Scanned</strong>1</div>
+    <div class="metric"><strong>Candidates</strong>1</div>
+    <div class="metric"><strong>Live Profile</strong>aggressive</div>
+    <div class="metric"><strong>Min Score</strong>60.0</div>
+    <div class="metric"><strong>Pricing DTE</strong>30</div>
+    <div class="metric"><strong>Open Positions</strong>0</div>
+</div>
+
+<div class="card">
+    <h2>Published Market State</h2>
+    <div class="metric"><strong>Publication</strong>current_market_state</div>
+<div class="metric"><strong>Status</strong>DEGRADED</div>
+<div class="metric"><strong>Published</strong>2026-07-28T13:59:35.293004+00:00</div>
+<div class="metric"><strong>Market Date</strong>2026-07-24</div>
+<div class="metric"><strong>Ingestion Run</strong>market-ingestion-20260728T135935088677Z</div>
+<div class="metric"><strong>Scanner Run</strong>scanner-20260728T150716979814Z-4e400be4c3</div>
+<div class="metric"><strong>Decision Run</strong>—</div>
+<div class="metric"><strong>Scanner Ready</strong>TRUE</div>
+<div class="metric"><strong>Decision Ready</strong>TRUE</div>
+<div class="metric"><strong>Option Snapshot</strong>options-20260728T134658785923Z</div>
+<div class="metric"><strong>Option Snapshot Time</strong>2026-07-28T13:57:45.062074+00:00</div>
+<div class="metric"><strong>Market Intelligence</strong>2026-07-28T13:59:32.266607+00:00</div>
+<div class="metric"><strong>Option Coverage %</strong>99.510603588907</div>
+<div class="metric"><strong>Market State Hash</strong>b694533f26579231b6e4da13800f34fe463dcd1ca501dadfffbb419c84393f17</div>
+</div>
+    <div class="metric"><strong>Ingestion Run</strong>market-ingestion-20260728T135935088677Z</div>
+    <div class="metric"><strong>Market As-Of</strong>2026-07-24</div>
+    <div class="metric"><strong>Market Intelligence</strong>2026-07-28T13:59:32.266607+00:00</div>
+    <div class="metric"><strong>Option Snapshot</strong>options-20260728T134658785923Z</div>
+    <div class="metric"><strong>Option Coverage</strong>99.510603588907</div>
+</div>
+
+<div class="card">
+    <h2>Portfolio Exposure</h2>
+    <p>No recommendations.</p>
+</div>
+
+<div class="card">
+    <h2>AI Ranked Recommendations</h2>
+    <table><thead><tr><th>Symbol</th><th>Sector</th><th>Signal</th><th>AI Score</th><th>Technical</th><th>Greeks</th><th>Regime</th><th>Volatility</th><th>Risk</th><th>Reason</th><th>Portfolio Notes</th><th>Underlying</th><th>Option Price</th><th>Delta</th><th>Theta</th><th>Vega</th></tr></thead><tbody><tr><td>USO</td><td>Unknown</td><td>CALL</td><td>70.91</td><td>60.00</td><td>73.53</td><td>50.00</td><td>70.00</td><td>100.00</td><td>Technical=60.0 | Greeks=73.5 | Regime=50.0 | Volatility=70.0 | Risk=100.0 | Target-delta strike=130.00; spot=136.69; target |delta|=0.45; resolved delta=0.4872; Greek source=PERSISTED; moneyness=0.59%. | expiration_mode=automatic; selected_dte=80. | Dealer positioning NEUTRAL (NEGATIVE_GAMMA), adjustment=+4.03, confidence=89.44.</td><td></td><td>$136.69</td><td>$10.18</td><td>0.4872</td><td>-0.0810</td><td>0.2345</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>All Recommendation Details</h2>
+    <table><thead><tr><th>Symbol</th><th>Sector</th><th>Signal</th><th>Strategy</th><th>AI Score</th><th>Adjusted Score</th><th>Base Score</th><th>Penalty</th><th>Signal Score</th><th>Regime</th><th>Underlying</th><th>Strike</th><th>Expiration</th><th>DTE</th><th>Expiry Source</th><th>Option Price</th><th>Delta</th><th>Gamma</th><th>Theta</th><th>Vega</th><th>Rho</th><th>Vol</th><th>DTE</th></tr></thead><tbody><tr><td>USO</td><td>Unknown</td><td>CALL</td><td>LONG_CALL</td><td>70.91</td><td>66.92</td><td>66.92</td><td>0.00</td><td>60.00</td><td>VOLATILE</td><td>$136.69</td><td>$130.00</td><td>2026-10-16</td><td>80</td><td>LIVE_LISTED_CONTRACT</td><td>$10.18</td><td>0.4872</td><td>0.01321</td><td>-0.0810</td><td>0.2345</td><td>0.0000</td><td>52.18%</td><td>80</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Top Calls</h2>
+    <table><thead><tr><th>Symbol</th><th>AI Score</th><th>Technical</th><th>Greeks</th><th>Regime</th><th>Risk</th><th>Underlying</th><th>Option Price</th><th>Delta</th><th>Theta</th><th>Vega</th></tr></thead><tbody><tr><td>USO</td><td>70.91</td><td>60.00</td><td>73.53</td><td>50.00</td><td>100.00</td><td>$136.69</td><td>$10.18</td><td>0.4872</td><td>-0.0810</td><td>0.2345</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Top Puts</h2>
+    <p>No recommendations.</p>
+</div>
+
+<div class="card">
+    <h2>Governance Summary</h2>
+    <div class="metric"><strong>Report Version</strong>m47.phase6.v1</div>
+<div class="metric"><strong>Scanner Version</strong>m47.phase6.v1</div>
+<div class="metric"><strong>Decision Version</strong>—</div>
+<div class="metric"><strong>Policy Version</strong>—</div>
+<div class="metric"><strong>Degraded State</strong>TRUE</div>
+<div class="metric"><strong>Generated At</strong>2026-07-28T15:07:17.168763+00:00</div>
+</div>
+
+</body>
+</html>

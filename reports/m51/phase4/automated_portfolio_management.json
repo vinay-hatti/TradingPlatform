@@ -1,0 +1,91 @@
+{
+  "created_at": "2026-07-28T14:35:08.580153+00:00",
+  "daily_snapshot": {
+    "beginning_equity": 100500.0,
+    "cash_pct": 80.0,
+    "daily_pnl": -500.0,
+    "daily_return_pct": -0.497512,
+    "drawdown_pct": 0.0,
+    "ending_equity": 100000.0,
+    "gross_exposure_pct": 0.0,
+    "health_grade": "A",
+    "health_score": 100.0,
+    "net_exposure_pct": 0.0,
+    "open_positions": 0,
+    "option_contracts": 0,
+    "portfolio_beta": 0.0,
+    "realized_pnl": 1250.0,
+    "unrealized_pnl": 0
+  },
+  "errors": [],
+  "exposure_by_asset_class": [],
+  "exposure_by_industry": [],
+  "exposure_by_sector": [],
+  "exposure_by_symbol": [],
+  "greeks": {
+    "delta": 0,
+    "delta_notional": 0.0,
+    "gamma": 0,
+    "gamma_notional": 0.0,
+    "metadata": {
+      "delta_notional_pct": 0.0,
+      "gamma_notional_pct": 0.0,
+      "vega_notional_pct": 0.0
+    },
+    "rho": 0,
+    "theta": 0,
+    "vega": 0,
+    "vega_notional": 0.0
+  },
+  "health": {
+    "diversification": 100.0,
+    "drawdown": 100.0,
+    "execution": 100.0,
+    "grade": "A",
+    "greeks": 100.0,
+    "liquidity": 100.0,
+    "metadata": {
+      "healthy": true,
+      "minimum_health_score": 70.0
+    },
+    "overall": 100.0,
+    "risk": 100.0
+  },
+  "metadata": {
+    "environment": "PAPER",
+    "live_trading_enabled": false,
+    "position_count": 0
+  },
+  "milestone": 51,
+  "phase": 4,
+  "portfolio_id": "PAPER-PRIMARY",
+  "recommendations": [],
+  "risk_breaches": [],
+  "state": {
+    "buying_power": 160000.0,
+    "capital_utilization_pct": 0.0,
+    "cash": 80000.0,
+    "daily_pnl": -500.0,
+    "gross_exposure_pct": 0.0,
+    "gross_market_value": 0,
+    "long_market_value": 0,
+    "margin_utilization_pct": 0.0,
+    "metadata": {
+      "cash_pct": 80.0,
+      "live_trading_enabled": false,
+      "paper_only": true
+    },
+    "net_exposure_pct": 0.0,
+    "net_liquidation_value": 100000.0,
+    "net_market_value": 0,
+    "open_position_count": 0,
+    "option_contract_count": 0,
+    "portfolio_beta": 0.0,
+    "portfolio_id": "PAPER-PRIMARY",
+    "realized_pnl": 1250.0,
+    "short_market_value": 0,
+    "unrealized_pnl": 0
+  },
+  "status": "PHASE4_NO_OPEN_POSITIONS",
+  "warnings": []
+}

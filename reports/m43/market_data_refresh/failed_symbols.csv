@@ -1,1 +1,2 @@
 symbol,status,failure_category,attempts,message
+SPX,FAILED,NO_PRICE_DATA,1,"No price bars returned; symbol may be unsupported, inactive, or delisted"

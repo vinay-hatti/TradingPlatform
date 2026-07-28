@@ -37,3 +37,6 @@ from trading_ai.institutional_market_structure.database_models import (  # noqa:
 
 # Import Milestone 46 market intelligence models.
 from trading_ai.market_intelligence.database_models import *  # noqa: E402,F401,F403
+
+# Import Milestone 49 authoritative paper-trading models for Alembic metadata.
+from trading_ai.authoritative_paper_trading.database_models import *  # noqa: E402,F401,F403

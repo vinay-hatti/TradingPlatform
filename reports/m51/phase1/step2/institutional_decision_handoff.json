@@ -1,0 +1,25 @@
+{
+  "accepted_conversions": 0,
+  "connection": {
+    "environment": "PAPER",
+    "live_trading_enabled": false,
+    "status": "NOT_CONNECTED_DRY_RUN"
+  },
+  "conversion_results": [],
+  "handoff_rejected": 0,
+  "handoff_results": [],
+  "handoff_succeeded": 0,
+  "metadata": {
+    "environment": "PAPER",
+    "live_trading_enabled": false,
+    "maximum_orders": 10,
+    "orders_truncated": 0
+  },
+  "milestone": 51,
+  "mode": "DRY_RUN",
+  "phase": 1,
+  "rejected_conversions": 0,
+  "status": "NO_APPROVED_INSTITUTIONAL_DECISIONS",
+  "step": 2,
+  "total_decisions": 0
+}

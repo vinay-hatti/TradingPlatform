@@ -1,0 +1,25 @@
+{
+  "AAPL": {
+    "price": 210,
+    "sector": "TECHNOLOGY",
+    "industry": "CONSUMER ELECTRONICS",
+    "beta": 1.2
+  },
+  "MSFT": {
+    "price": 500,
+    "sector": "TECHNOLOGY",
+    "industry": "SOFTWARE",
+    "beta": 1.0
+  },
+  "JPM": {
+    "price": 6.5,
+    "sector": "FINANCIALS",
+    "industry": "BANKS",
+    "beta": 1.1,
+    "delta": 0.55,
+    "gamma": 0.03,
+    "theta": -0.08,
+    "vega": 0.12,
+    "rho": 0.02
+  }
+}

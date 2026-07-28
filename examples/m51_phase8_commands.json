@@ -1,0 +1,40 @@
+{
+  "commands": [
+    {
+      "phase": 2,
+      "command": [
+        "uv",
+        "run",
+        "python",
+        "scripts/run_m51_phase2_automated_order_lifecycle.py"
+      ]
+    },
+    {
+      "phase": 4,
+      "command": [
+        "uv",
+        "run",
+        "python",
+        "scripts/run_m51_phase4_automated_portfolio_management.py"
+      ]
+    },
+    {
+      "phase": 5,
+      "command": [
+        "uv",
+        "run",
+        "python",
+        "scripts/run_m51_phase5_automation_control_plane.py"
+      ]
+    },
+    {
+      "phase": 7,
+      "command": [
+        "uv",
+        "run",
+        "python",
+        "scripts/run_m51_phase7_automation_observability.py"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "completed_at": "2026-07-27T02:21:53.898270+00:00",
+  "decision": {
+    "allowed": true,
+    "duplicate_run": false,
+    "kill_switch_active": false,
+    "market_window_allowed": true,
+    "metadata": {
+      "environment": "PAPER",
+      "evaluated_at": "2026-07-27T02:21:53.857067+00:00",
+      "mode": "DRY_RUN"
+    },
+    "reason_codes": [],
+    "run_key": "PHASE6-INSTALL-SMOKE",
+    "schedule_name": "PHASE6-SMOKE"
+  },
+  "duration_seconds": 0.041203,
+  "errors": [],
+  "executions": [
+    {
+      "attempt_count": 1,
+      "completed_at": "2026-07-27T02:21:53.898212+00:00",
+      "duration_seconds": 0.040939,
+      "errors": [],
+      "exit_code": 0,
+      "metadata": {
+        "command": [
+          "uv",
+          "run",
+          "python",
+          "-c",
+          "print('Milestone 51 Phase 6 scheduler smoke test passed')"
+        ],
+        "required": true,
+        "retry_limit": 0,
+        "timeout_seconds": 60
+      },
+      "name": "SCHEDULER_SMOKE_TEST",
+      "phase": 1,
+      "report_path": "",
+      "started_at": "2026-07-27T02:21:53.857273+00:00",
+      "status": "COMPLETED",
+      "stderr_tail": "",
+      "stdout_tail": "Milestone 51 Phase 6 scheduler smoke test passed\n",
+      "warnings": []
+    }
+  ],
+  "metadata": {
+    "duplicate_run_prevention": true,
+    "environment": "PAPER",
+    "live_trading_enabled": false,
+    "restart_safe": true
+  },
+  "milestone": 51,
+  "mode": "DRY_RUN",
+  "phase": 6,
+  "portfolio_id": "PAPER-PRIMARY",
+  "run_id": "M51-SCHEDULE-CD8A15EF6E624CC10FA46687",
+  "run_key": "PHASE6-INSTALL-SMOKE",
+  "schedule_name": "PHASE6-SMOKE",
+  "started_at": "2026-07-27T02:21:53.857067+00:00",
+  "status": "PHASE6_SCHEDULED_RUN_COMPLETED",
+  "summary": {
+    "completed": 1,
+    "duration_seconds": 0.040939,
+    "failed": 0,
+    "phase_count": 1,
+    "retried": 0,
+    "skipped": 0,
+    "total_errors": 0,
+    "total_warnings": 0
+  },
+  "warnings": []
+}

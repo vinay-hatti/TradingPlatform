@@ -67,7 +67,7 @@ def main() -> int:
             "--data-scope", "options", "--end", args.end, "--continue-on-error",
         ]
         if args.refresh_mode == "force_full":
-            command.append("--force-refresh")
+            command.append("--force-options-refresh")
         if args.symbols:
             command += ["--symbols", args.symbols]
         print("========== Polygon Options Ingestion ==========")
