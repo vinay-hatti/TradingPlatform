@@ -3,22 +3,22 @@
     {
       "name": "recommendations.csv",
       "path": "reports/daily/2026-07-28/recommendations.csv",
-      "sha256": "4bef0f43b40668ab96434b2d4ce193b51462fbae8ec0fcf7f3bf704da6aca8e4"
+      "sha256": "3185c2b173ee5f3609d63ddb7589b883fa2b52f813bcbe107f63a6df7b1ae131"
     },
     {
       "name": "recommendations.json",
       "path": "reports/daily/2026-07-28/recommendations.json",
-      "sha256": "f327f5a8692c4f6db89190f6c749dbdf872f19249514d52002ff268950e9fd67"
+      "sha256": "3828c8e5cb95adb1bffcc75a7292ed789aabafc8f3010f89c55a30fdc64826e3"
     },
     {
       "name": "report.html",
       "path": "reports/daily/2026-07-28/report.html",
-      "sha256": "f86dbcab20503f2658ab90f397db4b743c5c79bc5faf6c21c58d601cf2af4c37"
+      "sha256": "a583332867b9c694a609e893baea322cd2274402724cf08043ad931351198ffb"
     }
   ],
-  "generated_at": "2026-07-28T23:17:19.689938+00:00",
+  "generated_at": "2026-07-29T01:29:34.277870+00:00",
   "metadata": {
-    "candidate_count": 1
+    "candidate_count": 19
   },
   "report_type": "daily_recommendations",
   "report_version": "m47.phase6.v1",
@@ -26,7 +26,7 @@
     "decision_context_ready": true,
     "decision_engine_version": null,
     "decision_run_id": null,
-    "generated_at": "2026-07-28T23:17:19.689818+00:00",
+    "generated_at": "2026-07-29T01:29:34.277639+00:00",
     "ingestion_run_id": "market-ingestion-20260728T222641727899Z",
     "market_as_of_date": "2026-07-24",
     "market_intelligence_snapshot_timestamp": "2026-07-28T22:26:38.883051+00:00",
@@ -41,7 +41,7 @@
     "published_state_degraded": true,
     "report_version": "m47.phase6.v1",
     "scanner_ready": true,
-    "scanner_run_id": "scanner-20260728T231719506209Z-e3891f83b0",
+    "scanner_run_id": "scanner-20260729T012905952077Z-5ea80d4f9f",
     "scanner_version": "m47.phase6.v1"
   }
 }

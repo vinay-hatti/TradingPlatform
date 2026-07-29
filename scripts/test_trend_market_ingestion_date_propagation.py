@@ -44,10 +44,13 @@ def main() -> None:
     args.end = "2026-07-28"
     assert module._run_trend_intelligence_pipeline(args, ("AAPL", "MSFT")) is True
     stage_commands = {name: command for name, command in captured}
-    for name in ("trend state", "trend transitions", "trend forecasts", "institutional participation"):
+    for name in ("trend forecasts", "institutional participation"):
         command = stage_commands[name]
         end_index = command.index("--end")
         assert command[end_index + 1] == "2026-07-28"
+
+    for name in ("trend state", "trend transitions"):
+        assert "--end" not in stage_commands[name]
 
     print("All Trend Market Ingestion date propagation assertions passed.")
 

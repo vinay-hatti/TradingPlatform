@@ -8,8 +8,9 @@ import subprocess
 import sys
 from contextlib import contextmanager
 from collections import Counter
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
+from time import perf_counter
 from typing import Iterable
 
 DEFAULT_UNIVERSE_FILE = Path("data/universe/us_listed_equities_etfs.csv")
@@ -110,8 +111,8 @@ def resolve_symbols(symbols, symbols_file, universe_file=DEFAULT_UNIVERSE_FILE):
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description=(
-            "Authoritative market ingestion pipeline: Yahoo equity/ETF OHLCV, "
-            "Polygon index OHLC, and Polygon options snapshots."
+            "Authoritative Polygon-only market ingestion pipeline: equity/ETF OHLCV, "
+            "index OHLC, option chains, and option quotes."
         )
     )
     group = parser.add_mutually_exclusive_group()
@@ -135,7 +136,56 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--end")
     parser.add_argument("--lookback-days", type=int, default=730)
     parser.add_argument("--max-workers", type=int, default=4, help="Concurrent equity/ETF OHLCV workers. Default: 4")
-    parser.add_argument("--request-interval", type=float, default=1.0, help="Global minimum seconds between Yahoo requests. Default: 1.0")
+    parser.add_argument(
+        "--request-interval",
+        type=float,
+        default=15.0,
+        help=(
+            "Global minimum seconds between Polygon equity/ETF requests. "
+            "Default: 15.0; lower only when your Polygon plan permits it."
+        ),
+    )
+    parser.add_argument("--polygon-connect-timeout", type=float, default=5.0, help="Polygon equity/ETF connection timeout in seconds. Default: 5.0")
+    parser.add_argument("--polygon-read-timeout", type=float, default=30.0, help="Polygon equity/ETF read timeout in seconds. Default: 30.0")
+    parser.add_argument("--polygon-sdk-retries", type=int, default=0, help="Retries inside the Polygon SDK. Default: 0 so paced application retries remain authoritative.")
+    parser.add_argument("--polygon-pools-per-worker", type=int, default=1, help="urllib3 pools per worker-local Polygon client. Default: 1")
+    parser.add_argument(
+        "--underlying-fetch-mode",
+        choices=["auto", "grouped", "per-symbol"],
+        default="auto",
+        help=(
+            "Equity/ETF OHLCV strategy. auto uses Polygon grouped daily market summaries "
+            "for recent sessions and ticker-specific requests only for stale symbols; "
+            "grouped never performs stale repairs; per-symbol preserves legacy behavior."
+        ),
+    )
+    parser.add_argument(
+        "--underlying-incremental-sessions",
+        type=int,
+        default=3,
+        help="Recent grouped market sessions refreshed during a normal non-force run. Default: 3.",
+    )
+    parser.add_argument(
+        "--underlying-stale-threshold-days",
+        type=int,
+        default=10,
+        help="Auto mode repairs symbols whose latest stored bar is older than this many calendar days. Default: 10.",
+    )
+    parser.add_argument(
+        "--enable-underlying-cache",
+        action="store_true",
+        help="Opt in to legacy underlying pickle cache writes. Disabled by default; PostgreSQL is authoritative.",
+    )
+    parser.add_argument("--network-backoff", type=float, default=5.0, help="Initial backoff for connection/timeout failures. Default: 5.0")
+    parser.add_argument(
+        "--polygon-rate-limit-floor",
+        type=float,
+        default=15.0,
+        help=(
+            "After the first Polygon 429, enforce at least this many seconds "
+            "between all equity/ETF requests for the remainder of the run. Default: 15."
+        ),
+    )
     parser.add_argument("--max-retries", type=int, default=5)
     parser.add_argument("--initial-backoff", type=float, default=30.0)
     parser.add_argument("--max-backoff", type=float, default=300.0)
@@ -150,7 +200,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--force-underlying-refresh",
         action="store_true",
-        help="Re-fetch the requested Yahoo/Polygon underlying history without incremental reuse.",
+        help="Re-fetch the requested Polygon underlying history without incremental reuse.",
     )
     parser.add_argument(
         "--force-options-refresh",
@@ -225,6 +275,15 @@ def build_parser() -> argparse.ArgumentParser:
         help="Force execution of all Milestone 52 trend stages even when only reused market data is requested.",
     )
     parser.add_argument(
+        "--trend-execution-mode",
+        choices=["in-process", "subprocess"],
+        default="in-process",
+        help=(
+            "Trend orchestration mode. in-process loads price_history once and uses bulk "
+            "platform-context queries; subprocess preserves the legacy diagnostic path."
+        ),
+    )
+    parser.add_argument(
         "--trend-platform-report",
         default="reports/trend_intelligence/platform_integration_latest.json",
         help="Unified Trend Intelligence platform-context report path.",
@@ -250,22 +309,60 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def _run_underlying_ingestion(args: argparse.Namespace, instruments) -> int:
+    from trading_ai.config import settings
+    from trading_ai.database import SessionLocal
     from trading_ai.market.downloader import MarketDownloader
+    from trading_ai.market.index_ingestion import IndexHistoryIngestionService
+    from trading_ai.market.providers.polygon import PolygonHistoricalProvider
     from trading_ai.market.providers.polygon_index import PolygonIndexHistoricalProvider
+    from trading_ai.market.service import MarketService
+
+    api_key = getattr(settings, "polygon_api_key", None)
+    if not api_key:
+        raise RuntimeError("POLYGON_API_KEY is not configured")
 
     failed = 0
-    equity_symbols = tuple(i.canonical_symbol for i in instruments if i.asset_class in {"EQUITY", "ETF"})
-    index_instruments = tuple(i for i in instruments if i.asset_class == "INDEX")
+    equity_instruments = tuple(
+        instrument for instrument in instruments
+        if instrument.asset_class in {"EQUITY", "ETF"}
+    )
+    index_instruments = tuple(
+        instrument for instrument in instruments
+        if instrument.asset_class == "INDEX"
+    )
 
-    if equity_symbols:
+    if equity_instruments:
+        equity_provider = PolygonHistoricalProvider(
+            {
+                instrument.canonical_symbol: instrument.price_ticker
+                for instrument in equity_instruments
+            },
+            api_key=str(api_key),
+            connect_timeout_seconds=args.polygon_connect_timeout,
+            read_timeout_seconds=args.polygon_read_timeout,
+            sdk_retries=args.polygon_sdk_retries,
+            pools_per_worker=args.polygon_pools_per_worker,
+        )
+        equity_service = MarketService(
+            provider=equity_provider,
+            cache_dir=".cache/market/polygon",
+            session_factory=SessionLocal,
+            cache_enabled=args.enable_underlying_cache,
+        )
         results = MarketDownloader(
+            service=equity_service,
             max_workers=args.max_workers,
             request_interval_seconds=args.request_interval,
             max_retries=args.max_retries,
             initial_backoff_seconds=args.initial_backoff,
+            network_backoff_seconds=args.network_backoff,
             max_backoff_seconds=args.max_backoff,
+            rate_limit_floor_seconds=args.polygon_rate_limit_floor,
+            fetch_mode=args.underlying_fetch_mode,
+            incremental_sessions=args.underlying_incremental_sessions,
+            stale_threshold_days=args.underlying_stale_threshold_days,
         ).run_bulk_download(
-            symbols=equity_symbols,
+            symbols=tuple(i.canonical_symbol for i in equity_instruments),
             start=args.start,
             end=args.end,
             lookback_days=args.lookback_days,
@@ -275,11 +372,12 @@ def _run_underlying_ingestion(args: argparse.Namespace, instruments) -> int:
         failed += sum(not result.success for result in results)
 
     if index_instruments:
-        from trading_ai.database import SessionLocal
-        from trading_ai.market.index_ingestion import IndexHistoryIngestionService
-
         index_provider = PolygonIndexHistoricalProvider(
-            {instrument.canonical_symbol: instrument.price_ticker for instrument in index_instruments}
+            {
+                instrument.canonical_symbol: instrument.price_ticker
+                for instrument in index_instruments
+            },
+            api_key=str(api_key),
         )
         profile = IndexHistoryIngestionService(
             provider=index_provider,
@@ -300,7 +398,7 @@ def _run_underlying_ingestion(args: argparse.Namespace, instruments) -> int:
                     f"[OK] {result.symbol}: {result.downloaded_rows} downloaded; "
                     f"{result.persisted_rows} persisted "
                     f"({result.inserted_rows} inserted, {result.updated_rows} updated); "
-                    f"attempts={result.attempts}"
+                    f"provider=PolygonIndexHistoricalProvider; attempts={result.attempts}"
                 )
             else:
                 print(
@@ -309,8 +407,6 @@ def _run_underlying_ingestion(args: argparse.Namespace, instruments) -> int:
                 )
         failed += profile.failed_count
     return failed
-
-
 
 
 def _apply_mode_preset(args: argparse.Namespace) -> argparse.Namespace:
@@ -346,7 +442,11 @@ def _write_lifecycle_report(args: argparse.Namespace, *, started_at: datetime, c
             "underlying": {"requested": args.data_scope in {"underlying", "all"}, "refreshed": underlying_refreshed},
             "options": {"requested": args.data_scope in {"options", "all"}, "mode": "REUSED" if args.reuse_options_snapshot else ("FORCE_REBUILD" if args.force_options_refresh else "FRESH"), "refreshed": options_refreshed},
             "dealer_positioning": {"skipped": args.skip_dealer_positioning, "refreshed": dealer_refreshed},
-            "trend_intelligence": {"skipped": args.skip_trend_intelligence, "refreshed": trend_refreshed},
+            "trend_intelligence": {
+                "skipped": args.skip_trend_intelligence,
+                "refreshed": trend_refreshed,
+                "metrics": getattr(args, "_trend_pipeline_metrics", None),
+            },
             "market_overview": {"skipped": args.skip_market_overview},
             "market_intelligence": {"skipped": args.skip_market_intelligence},
             "publication": {
@@ -650,46 +750,71 @@ def _run_command_stage(name: str, command: list[str]) -> None:
 
 
 def _run_trend_intelligence_pipeline(args: argparse.Namespace, symbols: tuple[str, ...]) -> bool:
-    """Compute and persist all Milestone 52 analytics from database-backed OHLCV.
-
-    Standalone scripts remain diagnostic entry points; this orchestrator is the normal
-    operational path and deliberately performs no provider requests itself.
-    """
+    """Compute and persist all Milestone 52 analytics without changing phase semantics."""
     if args.skip_trend_intelligence:
         print("Trend Intelligence refresh: skipped")
         return False
 
-    symbol_args: list[str] = []
-    if args.symbols or args.symbols_file:
-        symbol_args.extend(["--symbols", ",".join(symbols)])
-
     effective_end = args.end or date.today().isoformat()
-    dated_args: list[str] = [*symbol_args]
-    if args.start:
-        dated_args.extend(["--start", args.start])
-    dated_args.extend(["--end", effective_end])
+    # Preserve compatibility with tests and internal callers that construct a
+    # reduced argparse.Namespace instead of using build_parser().
+    lookback_days = int(getattr(args, "lookback_days", 730))
+    effective_start = args.start or (
+        date.fromisoformat(effective_end[:10]) - timedelta(days=lookback_days)
+    ).isoformat()
 
-    # Each standalone phase has its own CLI contract. Phases 1 and 2 do not
-    # accept date arguments; Phases 3 and 4 do. Keep orchestration explicit so
-    # future parser changes are caught by the contract regression test.
-    stages = (
-        ("trend state", "scripts/run_trend_intelligence.py", symbol_args),
-        ("trend transitions", "scripts/run_trend_transition_intelligence.py", symbol_args),
-        ("trend forecasts", "scripts/run_trend_forecasting.py", dated_args),
-        ("institutional participation", "scripts/run_institutional_trend_intelligence.py", dated_args),
-    )
-    for name, script, stage_args in stages:
-        _run_command_stage(name, [sys.executable, script, *stage_args])
+    # Reduced Namespace objects used by tests and internal callers may not
+    # include recently added orchestration arguments.
+    # The command-line parser always supplies trend_execution_mode and uses
+    # the optimized in-process default. Legacy tests and internal callers may
+    # construct a reduced Namespace; preserve their historical subprocess
+    # behavior when the attribute is absent.
+    trend_execution_mode = getattr(args, "trend_execution_mode", "subprocess")
 
-    integration_command = [
-        sys.executable,
-        "scripts/run_trend_platform_integration.py",
-        "--symbols",
-        ",".join(symbols),
-        "--output",
-        args.trend_platform_report,
-    ]
-    _run_command_stage("platform context", integration_command)
+    if trend_execution_mode == "subprocess":
+        symbol_args: list[str] = []
+        if args.symbols or args.symbols_file:
+            symbol_args.extend(["--symbols", ",".join(symbols)])
+        dated_args: list[str] = [*symbol_args]
+        if args.start:
+            dated_args.extend(["--start", args.start])
+        dated_args.extend(["--end", effective_end])
+        stages = (
+            ("trend state", "scripts/run_trend_intelligence.py", symbol_args),
+            ("trend transitions", "scripts/run_trend_transition_intelligence.py", symbol_args),
+            ("trend forecasts", "scripts/run_trend_forecasting.py", dated_args),
+            ("institutional participation", "scripts/run_institutional_trend_intelligence.py", dated_args),
+        )
+        started = perf_counter()
+        for name, script, stage_args in stages:
+            _run_command_stage(name, [sys.executable, script, *stage_args])
+        _run_command_stage(
+            "platform context",
+            [sys.executable, "scripts/run_trend_platform_integration.py", "--symbols", ",".join(symbols), "--output", args.trend_platform_report],
+        )
+        args._trend_pipeline_metrics = {
+            "execution_mode": "subprocess",
+            "duration_seconds": round(perf_counter() - started, 3),
+            "stages": [],
+        }
+    else:
+        from trading_ai.trend_intelligence.pipeline_service import TrendIntelligencePipelineService
+
+        result = TrendIntelligencePipelineService().run(
+            symbols=symbols,
+            start=effective_start,
+            end=effective_end,
+            platform_report=args.trend_platform_report,
+        )
+        args._trend_pipeline_metrics = {"execution_mode": "in-process", **result}
+        for stage in result["stages"]:
+            print(
+                f"Trend Intelligence stage: {stage['name']}; status={stage['status']}; "
+                f"duration={stage['duration_seconds']:.3f}s; symbols={stage['symbol_count']}; "
+                f"skipped={stage['skipped_count']}; errors={stage['error_count']}"
+            )
+            if stage["status"] == "FAILED" or stage["error_count"]:
+                raise RuntimeError(f"{stage['name']} failed or produced errors")
     print("Trend Intelligence refresh: READY")
     return True
 
@@ -789,6 +914,16 @@ def main(argv=None) -> int:
                 f"options_reference={instrument.options_reference_ticker}"
             )
     print(f"OHLCV concurrency: workers={args.max_workers}, request_interval={args.request_interval:.2f}s")
+    print(
+        "Polygon equity/ETF transport: "
+        f"thread_local_clients=true, connect_timeout={args.polygon_connect_timeout:.1f}s, "
+        f"read_timeout={args.polygon_read_timeout:.1f}s, "
+        f"sdk_retries={args.polygon_sdk_retries}, "
+        f"pools_per_worker={args.polygon_pools_per_worker}, "
+        f"network_backoff={args.network_backoff:.1f}s, "
+        f"rate_limit_floor={args.polygon_rate_limit_floor:.1f}s, "
+        "global_429_circuit_breaker=true"
+    )
 
     failed = 0
     underlying_refreshed = False

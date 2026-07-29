@@ -1,0 +1,99 @@
+{
+  "completed_at": "2026-07-29T20:18:41.945265+00:00",
+  "data_scope": "all",
+  "duration_seconds": 842.721,
+  "failed_ingestion_units": 0,
+  "mode": "daily",
+  "stages": {
+    "dealer_positioning": {
+      "refreshed": true,
+      "skipped": false
+    },
+    "market_intelligence": {
+      "skipped": false
+    },
+    "market_overview": {
+      "skipped": false
+    },
+    "options": {
+      "mode": "FORCE_REBUILD",
+      "refreshed": true,
+      "requested": true
+    },
+    "publication": {
+      "decision_context_ready": true,
+      "scanner_ready": true,
+      "skipped": false
+    },
+    "trend_intelligence": {
+      "metrics": {
+        "duration_seconds": 6.162,
+        "execution_mode": "in-process",
+        "loaded_price_symbol_count": 613,
+        "requested_symbol_count": 613,
+        "snapshot_timestamp": "2026-07-29T20:18:36.832973+00:00",
+        "stages": [
+          {
+            "duration_seconds": 1.043,
+            "error_count": 0,
+            "name": "trend state",
+            "report_path": "reports/trend_intelligence/latest.json",
+            "requested_symbol_count": 613,
+            "skipped_count": 0,
+            "status": "READY",
+            "symbol_count": 613
+          },
+          {
+            "duration_seconds": 0.826,
+            "error_count": 0,
+            "name": "trend transitions",
+            "report_path": "reports/trend_intelligence/transitions_latest.json",
+            "requested_symbol_count": 613,
+            "skipped_count": 2,
+            "status": "READY",
+            "symbol_count": 611
+          },
+          {
+            "duration_seconds": 1.462,
+            "error_count": 0,
+            "name": "trend forecasts",
+            "report_path": "reports/trend_intelligence/forecasts_latest.json",
+            "requested_symbol_count": 613,
+            "skipped_count": 2,
+            "status": "READY",
+            "symbol_count": 611
+          },
+          {
+            "duration_seconds": 1.436,
+            "error_count": 0,
+            "name": "institutional participation",
+            "report_path": "reports/trend_intelligence/institutional_latest.json",
+            "requested_symbol_count": 613,
+            "skipped_count": 2,
+            "status": "READY",
+            "symbol_count": 611
+          },
+          {
+            "duration_seconds": 0.285,
+            "error_count": 0,
+            "name": "platform context",
+            "report_path": "reports/trend_intelligence/platform_integration_eod_latest.json",
+            "requested_symbol_count": 613,
+            "skipped_count": 0,
+            "status": "DEGRADED",
+            "symbol_count": 613
+          }
+        ],
+        "status": "READY"
+      },
+      "refreshed": true,
+      "skipped": false
+    },
+    "underlying": {
+      "refreshed": true,
+      "requested": true
+    }
+  },
+  "started_at": "2026-07-29T20:04:39.224407+00:00",
+  "status": "READY"
+}

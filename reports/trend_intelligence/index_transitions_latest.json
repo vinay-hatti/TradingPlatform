@@ -1,0 +1,108 @@
+{
+  "status": "READY",
+  "snapshot_timestamp": "2026-07-29T06:12:55.867797+00:00",
+  "requested_symbol_count": 3,
+  "symbol_count": 3,
+  "skipped_count": 0,
+  "error_count": 0,
+  "results": [
+    {
+      "symbol": "SPX",
+      "as_of_date": "2026-07-28",
+      "snapshot_timestamp": "2026-07-29T06:12:55.862687+00:00",
+      "transition_state": "CONTINUATION",
+      "transition_direction": "NEUTRAL",
+      "breakout_state": "IN_CHANNEL",
+      "channel_position_pct": 61.8,
+      "breakout_distance_pct": 0.0,
+      "momentum_acceleration_score": 46.26,
+      "volatility_state": "COMPRESSION",
+      "volatility_percentile": 2.38,
+      "compression_score": 97.62,
+      "reversal_risk_score": 20.57,
+      "exhaustion_risk_score": 0.0,
+      "confirmation_score": 39.28,
+      "signal_adjustment": {
+        "CALL": -0.43,
+        "PUT": 0.0
+      },
+      "status": "READY",
+      "calculation_version": "trend_transition.v1",
+      "warnings": [],
+      "metadata": {
+        "fast_momentum_pct": -0.2138,
+        "slow_momentum_pct": -0.0061,
+        "channel_high": 7609.78,
+        "channel_low": 7135.95,
+        "phase1_alignment": 67.88,
+        "phase1_quality": 65.23
+      }
+    },
+    {
+      "symbol": "NDX",
+      "as_of_date": "2026-07-28",
+      "snapshot_timestamp": "2026-07-29T06:12:55.863814+00:00",
+      "transition_state": "CONTINUATION",
+      "transition_direction": "NEUTRAL",
+      "breakout_state": "IN_CHANNEL",
+      "channel_position_pct": 20.21,
+      "breakout_distance_pct": 0.0,
+      "momentum_acceleration_score": 38.64,
+      "volatility_state": "NORMAL",
+      "volatility_percentile": 58.73,
+      "compression_score": 41.27,
+      "reversal_risk_score": 29.97,
+      "exhaustion_risk_score": 0.0,
+      "confirmation_score": 42.15,
+      "signal_adjustment": {
+        "CALL": -0.31,
+        "PUT": 0.0
+      },
+      "status": "READY",
+      "calculation_version": "trend_transition.v1",
+      "warnings": [],
+      "metadata": {
+        "fast_momentum_pct": -0.9722,
+        "slow_momentum_pct": -0.341,
+        "channel_high": 30660.60064905076,
+        "channel_low": 27029.01163902745,
+        "phase1_alignment": 61.58,
+        "phase1_quality": 76.33
+      }
+    },
+    {
+      "symbol": "RUT",
+      "as_of_date": "2026-07-28",
+      "snapshot_timestamp": "2026-07-29T06:12:55.864889+00:00",
+      "transition_state": "CONTINUATION",
+      "transition_direction": "NEUTRAL",
+      "breakout_state": "IN_CHANNEL",
+      "channel_position_pct": 75.23,
+      "breakout_distance_pct": 0.0,
+      "momentum_acceleration_score": 47.63,
+      "volatility_state": "COMPRESSION",
+      "volatility_percentile": 4.76,
+      "compression_score": 95.24,
+      "reversal_risk_score": 18.91,
+      "exhaustion_risk_score": 0.0,
+      "confirmation_score": 40.05,
+      "signal_adjustment": {
+        "CALL": -0.4,
+        "PUT": 0.0
+      },
+      "status": "READY",
+      "calculation_version": "trend_transition.v1",
+      "warnings": [],
+      "metadata": {
+        "fast_momentum_pct": -0.2244,
+        "slow_momentum_pct": -0.0924,
+        "channel_high": 3024.3671,
+        "channel_low": 2739.4718000000003,
+        "phase1_alignment": 68.97,
+        "phase1_quality": 68.43
+      }
+    }
+  ],
+  "skipped": [],
+  "errors": []
+}

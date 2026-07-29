@@ -1,0 +1,303 @@
+{
+  "status": "READY",
+  "snapshot_timestamp": "2026-07-29T06:12:55.888590+00:00",
+  "requested_symbol_count": 3,
+  "symbol_count": 3,
+  "forecast_count": 9,
+  "skipped_count": 0,
+  "error_count": 0,
+  "start_date": "2025-01-01",
+  "end_date": "2026-07-28",
+  "results": [
+    {
+      "symbol": "SPX",
+      "as_of_date": "2026-07-28",
+      "snapshot_timestamp": "2026-07-29T06:12:55.877279+00:00",
+      "horizon_days": 5,
+      "continuation_probability": 50.883,
+      "reversal_probability": 49.117,
+      "bullish_probability": 50.883,
+      "bearish_probability": 49.117,
+      "expected_return_pct": -0.233142,
+      "expected_volatility_pct": 1.935251,
+      "confidence_score": 37.5936,
+      "confidence_grade": "D",
+      "persistence_days_estimate": 5,
+      "forecast_direction": "NEUTRAL",
+      "regime_transition_probabilities": {
+        "CONTINUATION": 50.883,
+        "REVERSAL": 49.117
+      },
+      "signal_adjustment": {
+        "CALL": 0.0,
+        "PUT": -0.0
+      },
+      "status": "READY",
+      "calculation_version": "trend_forecast.v1",
+      "warnings": [],
+      "metadata": {
+        "ema20": 7466.6458457279405,
+        "ema50": 7413.10696506002,
+        "signal_to_noise": 0.12047119152607466
+      }
+    },
+    {
+      "symbol": "SPX",
+      "as_of_date": "2026-07-28",
+      "snapshot_timestamp": "2026-07-29T06:12:55.877599+00:00",
+      "horizon_days": 10,
+      "continuation_probability": 50.5883,
+      "reversal_probability": 49.4117,
+      "bullish_probability": 50.5883,
+      "bearish_probability": 49.4117,
+      "expected_return_pct": -0.466284,
+      "expected_volatility_pct": 2.736858,
+      "confidence_score": 37.8092,
+      "confidence_grade": "D",
+      "persistence_days_estimate": 10,
+      "forecast_direction": "NEUTRAL",
+      "regime_transition_probabilities": {
+        "CONTINUATION": 50.5883,
+        "REVERSAL": 49.4117
+      },
+      "signal_adjustment": {
+        "CALL": 0.0,
+        "PUT": -0.0
+      },
+      "status": "READY",
+      "calculation_version": "trend_forecast.v1",
+      "warnings": [],
+      "metadata": {
+        "ema20": 7466.6458457279405,
+        "ema50": 7413.10696506002,
+        "signal_to_noise": 0.17037199293142144
+      }
+    },
+    {
+      "symbol": "SPX",
+      "as_of_date": "2026-07-28",
+      "snapshot_timestamp": "2026-07-29T06:12:55.877898+00:00",
+      "horizon_days": 20,
+      "continuation_probability": 59.9211,
+      "reversal_probability": 40.0789,
+      "bullish_probability": 59.9211,
+      "bearish_probability": 40.0789,
+      "expected_return_pct": 3.118545,
+      "expected_volatility_pct": 3.612158,
+      "confidence_score": 58.2576,
+      "confidence_grade": "C",
+      "persistence_days_estimate": 24,
+      "forecast_direction": "BULLISH",
+      "regime_transition_probabilities": {
+        "CONTINUATION": 59.9211,
+        "REVERSAL": 40.0789
+      },
+      "signal_adjustment": {
+        "CALL": 0.5953,
+        "PUT": -0.5953
+      },
+      "status": "READY",
+      "calculation_version": "trend_forecast.v1",
+      "warnings": [],
+      "metadata": {
+        "ema20": 7466.6458457279405,
+        "ema50": 7413.10696506002,
+        "signal_to_noise": 0.8633467202935355
+      }
+    },
+    {
+      "symbol": "NDX",
+      "as_of_date": "2026-07-28",
+      "snapshot_timestamp": "2026-07-29T06:12:55.883157+00:00",
+      "horizon_days": 5,
+      "continuation_probability": 45.0756,
+      "reversal_probability": 54.9244,
+      "bullish_probability": 45.0756,
+      "bearish_probability": 54.9244,
+      "expected_return_pct": -1.034089,
+      "expected_volatility_pct": 3.771561,
+      "confidence_score": 44.6918,
+      "confidence_grade": "D",
+      "persistence_days_estimate": 5,
+      "forecast_direction": "NEUTRAL",
+      "regime_transition_probabilities": {
+        "CONTINUATION": 45.0756,
+        "REVERSAL": 54.9244
+      },
+      "signal_adjustment": {
+        "CALL": 0.0,
+        "PUT": -0.0
+      },
+      "status": "READY",
+      "calculation_version": "trend_forecast.v1",
+      "warnings": [],
+      "metadata": {
+        "ema20": 28892.009708121586,
+        "ema50": 28881.418532795466,
+        "signal_to_noise": 0.27418047513888477
+      }
+    },
+    {
+      "symbol": "NDX",
+      "as_of_date": "2026-07-28",
+      "snapshot_timestamp": "2026-07-29T06:12:55.883445+00:00",
+      "horizon_days": 10,
+      "continuation_probability": 43.7692,
+      "reversal_probability": 56.2308,
+      "bullish_probability": 43.7692,
+      "bearish_probability": 56.2308,
+      "expected_return_pct": -2.068177,
+      "expected_volatility_pct": 5.333793,
+      "confidence_score": 47.753,
+      "confidence_grade": "D",
+      "persistence_days_estimate": 9,
+      "forecast_direction": "NEUTRAL",
+      "regime_transition_probabilities": {
+        "CONTINUATION": 43.7692,
+        "REVERSAL": 56.2308
+      },
+      "signal_adjustment": {
+        "CALL": 0.0,
+        "PUT": -0.0
+      },
+      "status": "READY",
+      "calculation_version": "trend_forecast.v1",
+      "warnings": [],
+      "metadata": {
+        "ema20": 28892.009708121586,
+        "ema50": 28881.418532795466,
+        "signal_to_noise": 0.38774974647931004
+      }
+    },
+    {
+      "symbol": "NDX",
+      "as_of_date": "2026-07-28",
+      "snapshot_timestamp": "2026-07-29T06:12:55.883725+00:00",
+      "horizon_days": 20,
+      "continuation_probability": 44.8156,
+      "reversal_probability": 55.1844,
+      "bullish_probability": 44.8156,
+      "bearish_probability": 55.1844,
+      "expected_return_pct": 3.830186,
+      "expected_volatility_pct": 6.416506,
+      "confidence_score": 48.9028,
+      "confidence_grade": "D",
+      "persistence_days_estimate": 18,
+      "forecast_direction": "NEUTRAL",
+      "regime_transition_probabilities": {
+        "CONTINUATION": 44.8156,
+        "REVERSAL": 55.1844
+      },
+      "signal_adjustment": {
+        "CALL": 0.0,
+        "PUT": -0.0
+      },
+      "status": "READY",
+      "calculation_version": "trend_forecast.v1",
+      "warnings": [],
+      "metadata": {
+        "ema20": 28892.009708121586,
+        "ema50": 28881.418532795466,
+        "signal_to_noise": 0.5969270778049502
+      }
+    },
+    {
+      "symbol": "RUT",
+      "as_of_date": "2026-07-28",
+      "snapshot_timestamp": "2026-07-29T06:12:55.886036+00:00",
+      "horizon_days": 5,
+      "continuation_probability": 51.3608,
+      "reversal_probability": 48.6392,
+      "bullish_probability": 51.3608,
+      "bearish_probability": 48.6392,
+      "expected_return_pct": 0.176129,
+      "expected_volatility_pct": 2.424239,
+      "confidence_score": 37.6409,
+      "confidence_grade": "D",
+      "persistence_days_estimate": 5,
+      "forecast_direction": "NEUTRAL",
+      "regime_transition_probabilities": {
+        "CONTINUATION": 51.3608,
+        "REVERSAL": 48.6392
+      },
+      "signal_adjustment": {
+        "CALL": 0.0,
+        "PUT": -0.0
+      },
+      "status": "READY",
+      "calculation_version": "trend_forecast.v1",
+      "warnings": [],
+      "metadata": {
+        "ema20": 2959.684545951803,
+        "ema50": 2920.6197271500528,
+        "signal_to_noise": 0.07265310158779553
+      }
+    },
+    {
+      "symbol": "RUT",
+      "as_of_date": "2026-07-28",
+      "snapshot_timestamp": "2026-07-29T06:12:55.886324+00:00",
+      "horizon_days": 10,
+      "continuation_probability": 52.9901,
+      "reversal_probability": 47.0099,
+      "bullish_probability": 52.9901,
+      "bearish_probability": 47.0099,
+      "expected_return_pct": 0.352257,
+      "expected_volatility_pct": 3.428392,
+      "confidence_score": 40.1201,
+      "confidence_grade": "D",
+      "persistence_days_estimate": 11,
+      "forecast_direction": "NEUTRAL",
+      "regime_transition_probabilities": {
+        "CONTINUATION": 52.9901,
+        "REVERSAL": 47.0099
+      },
+      "signal_adjustment": {
+        "CALL": 0.0,
+        "PUT": -0.0
+      },
+      "status": "READY",
+      "calculation_version": "trend_forecast.v1",
+      "warnings": [],
+      "metadata": {
+        "ema20": 2959.684545951803,
+        "ema50": 2920.6197271500528,
+        "signal_to_noise": 0.10274700161393069
+      }
+    },
+    {
+      "symbol": "RUT",
+      "as_of_date": "2026-07-28",
+      "snapshot_timestamp": "2026-07-29T06:12:55.886600+00:00",
+      "horizon_days": 20,
+      "continuation_probability": 57.6199,
+      "reversal_probability": 42.3801,
+      "bullish_probability": 57.6199,
+      "bearish_probability": 42.3801,
+      "expected_return_pct": 4.176676,
+      "expected_volatility_pct": 5.022209,
+      "confidence_score": 54.8856,
+      "confidence_grade": "C",
+      "persistence_days_estimate": 23,
+      "forecast_direction": "NEUTRAL",
+      "regime_transition_probabilities": {
+        "CONTINUATION": 57.6199,
+        "REVERSAL": 42.3801
+      },
+      "signal_adjustment": {
+        "CALL": 0.0,
+        "PUT": -0.0
+      },
+      "status": "READY",
+      "calculation_version": "trend_forecast.v1",
+      "warnings": [],
+      "metadata": {
+        "ema20": 2959.684545951803,
+        "ema50": 2920.6197271500528,
+        "signal_to_noise": 0.8316411566616465
+      }
+    }
+  ],
+  "skipped": [],
+  "errors": []
+}

@@ -1,0 +1,6111 @@
+{
+  "started_at": "2026-07-29T05:54:00.272027+00:00",
+  "completed_at": "2026-07-29T05:55:16.468436+00:00",
+  "as_of_date": "2026-07-28",
+  "requested_symbols": 610,
+  "refreshed_symbols": 610,
+  "failed_symbols": 0,
+  "skipped_symbols": 0,
+  "results": [
+    {
+      "symbol": "A",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 183,
+      "executable_contract_count": 109,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "AAPL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 1147,
+      "executable_contract_count": 948,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "ABBV",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 488,
+      "executable_contract_count": 294,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "ABNB",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 466,
+      "executable_contract_count": 240,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "ABT",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 539,
+      "executable_contract_count": 311,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "ACGL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 77,
+      "executable_contract_count": 25,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 91.03399999999999,
+      "error": null
+    },
+    {
+      "symbol": "ACN",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 630,
+      "executable_contract_count": 376,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.27777777777774,
+      "error": null
+    },
+    {
+      "symbol": "ADBE",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 759,
+      "executable_contract_count": 536,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "ADI",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 590,
+      "executable_contract_count": 354,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "ADM",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 179,
+      "executable_contract_count": 133,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "ADP",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 366,
+      "executable_contract_count": 173,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "ADSK",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 404,
+      "executable_contract_count": 203,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.20297029702971,
+      "error": null
+    },
+    {
+      "symbol": "AEE",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 64,
+      "executable_contract_count": 19,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 75.97999999999999,
+      "error": null
+    },
+    {
+      "symbol": "AEP",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 145,
+      "executable_contract_count": 72,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "AES",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 70,
+      "executable_contract_count": 11,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "AFL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 258,
+      "executable_contract_count": 127,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "AGG",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 46,
+      "executable_contract_count": 19,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 71.26500000000001,
+      "error": null
+    },
+    {
+      "symbol": "AIG",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 277,
+      "executable_contract_count": 99,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "AIZ",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 44,
+      "executable_contract_count": 20,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 58.176,
+      "error": null
+    },
+    {
+      "symbol": "AJG",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 155,
+      "executable_contract_count": 82,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.11290322580645,
+      "error": null
+    },
+    {
+      "symbol": "AKAM",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 440,
+      "executable_contract_count": 275,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "ALAB",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 740,
+      "executable_contract_count": 632,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 98.71621621621621,
+      "error": null
+    },
+    {
+      "symbol": "ALB",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 531,
+      "executable_contract_count": 336,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "ALGN",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 338,
+      "executable_contract_count": 195,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "ALL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 169,
+      "executable_contract_count": 105,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "ALLE",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 71,
+      "executable_contract_count": 34,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 89.18899999999998,
+      "error": null
+    },
+    {
+      "symbol": "ALNY",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 162,
+      "executable_contract_count": 120,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "AMAT",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 1177,
+      "executable_contract_count": 862,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.43203058623618,
+      "error": null
+    },
+    {
+      "symbol": "AMCR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 110,
+      "executable_contract_count": 58,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "AMD",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 1983,
+      "executable_contract_count": 1565,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.19742813918306,
+      "error": null
+    },
+    {
+      "symbol": "AME",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 129,
+      "executable_contract_count": 63,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "AMGN",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 707,
+      "executable_contract_count": 418,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.27369165487978,
+      "error": null
+    },
+    {
+      "symbol": "AMP",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 166,
+      "executable_contract_count": 77,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 74.685,
+      "error": null
+    },
+    {
+      "symbol": "AMT",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 198,
+      "executable_contract_count": 113,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000003,
+      "error": null
+    },
+    {
+      "symbol": "AMZN",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 1090,
+      "executable_contract_count": 912,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.24311926605503,
+      "error": null
+    },
+    {
+      "symbol": "ANET",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 605,
+      "executable_contract_count": 477,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "AON",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 125,
+      "executable_contract_count": 57,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 94.082,
+      "error": null
+    },
+    {
+      "symbol": "AOS",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 65,
+      "executable_contract_count": 35,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 91.646,
+      "error": null
+    },
+    {
+      "symbol": "APA",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 317,
+      "executable_contract_count": 193,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "APD",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 149,
+      "executable_contract_count": 73,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "APH",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 264,
+      "executable_contract_count": 212,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "APO",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 414,
+      "executable_contract_count": 215,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.21014492753625,
+      "error": null
+    },
+    {
+      "symbol": "APP",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 951,
+      "executable_contract_count": 772,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "APTV",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 116,
+      "executable_contract_count": 69,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 82.113,
+      "error": null
+    },
+    {
+      "symbol": "ARE",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 107,
+      "executable_contract_count": 56,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "ARES",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 340,
+      "executable_contract_count": 195,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "ARKK",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 745,
+      "executable_contract_count": 369,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "ARM",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 804,
+      "executable_contract_count": 726,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 98.9776119402985,
+      "error": null
+    },
+    {
+      "symbol": "ASML",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 2300,
+      "executable_contract_count": 1748,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "ATO",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 75,
+      "executable_contract_count": 27,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 74.32100000000001,
+      "error": null
+    },
+    {
+      "symbol": "AVB",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 88,
+      "executable_contract_count": 26,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 81.896,
+      "error": null
+    },
+    {
+      "symbol": "AVGO",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 1296,
+      "executable_contract_count": 907,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "AVY",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 75,
+      "executable_contract_count": 34,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 74.82533333333335,
+      "error": null
+    },
+    {
+      "symbol": "AWK",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 83,
+      "executable_contract_count": 45,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "AXON",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 646,
+      "executable_contract_count": 435,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "AXP",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 673,
+      "executable_contract_count": 359,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "AZO",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 483,
+      "executable_contract_count": 294,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 92.22500000000001,
+      "error": null
+    },
+    {
+      "symbol": "BA",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 689,
+      "executable_contract_count": 414,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "BAC",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 498,
+      "executable_contract_count": 355,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "BALL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 141,
+      "executable_contract_count": 55,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "BAX",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 198,
+      "executable_contract_count": 67,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000003,
+      "error": null
+    },
+    {
+      "symbol": "BBY",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 417,
+      "executable_contract_count": 229,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "BDX",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 148,
+      "executable_contract_count": 82,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 92.606,
+      "error": null
+    },
+    {
+      "symbol": "BEN",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 93,
+      "executable_contract_count": 21,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "BG",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 115,
+      "executable_contract_count": 51,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "BIIB",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 333,
+      "executable_contract_count": 127,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "BITO",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 132,
+      "executable_contract_count": 17,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 89.69696969696969,
+      "error": null
+    },
+    {
+      "symbol": "BKNG",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 940,
+      "executable_contract_count": 421,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.43617021276597,
+      "error": null
+    },
+    {
+      "symbol": "BKR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 102,
+      "executable_contract_count": 58,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 98.51960784313727,
+      "error": null
+    },
+    {
+      "symbol": "BLDR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 112,
+      "executable_contract_count": 81,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "BLK",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 908,
+      "executable_contract_count": 471,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "BMY",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 333,
+      "executable_contract_count": 194,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "BND",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 48,
+      "executable_contract_count": 19,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 73.05100000000002,
+      "error": null
+    },
+    {
+      "symbol": "BNY",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 146,
+      "executable_contract_count": 80,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000003,
+      "error": null
+    },
+    {
+      "symbol": "BR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 105,
+      "executable_contract_count": 44,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 85.41499999999999,
+      "error": null
+    },
+    {
+      "symbol": "BRO",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 46,
+      "executable_contract_count": 11,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 96.30000000000001,
+      "error": null
+    },
+    {
+      "symbol": "BSX",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 366,
+      "executable_contract_count": 186,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "BX",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 602,
+      "executable_contract_count": 423,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "BXP",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 92,
+      "executable_contract_count": 29,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "C",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 629,
+      "executable_contract_count": 454,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "CAH",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 247,
+      "executable_contract_count": 122,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "CARR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 294,
+      "executable_contract_count": 135,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "CASY",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 230,
+      "executable_contract_count": 131,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 91.928,
+      "error": null
+    },
+    {
+      "symbol": "CAT",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 1500,
+      "executable_contract_count": 1037,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.47333333333333,
+      "error": null
+    },
+    {
+      "symbol": "CB",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 307,
+      "executable_contract_count": 145,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "CBOE",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 389,
+      "executable_contract_count": 207,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.24293059125964,
+      "error": null
+    },
+    {
+      "symbol": "CBRE",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 138,
+      "executable_contract_count": 78,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "CCEP",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 39,
+      "executable_contract_count": 9,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 76.42900000000002,
+      "error": null
+    },
+    {
+      "symbol": "CCI",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 156,
+      "executable_contract_count": 86,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.24358974358975,
+      "error": null
+    },
+    {
+      "symbol": "CCL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 437,
+      "executable_contract_count": 301,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "CDNS",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 730,
+      "executable_contract_count": 409,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.44520547945206,
+      "error": null
+    },
+    {
+      "symbol": "CDW",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 133,
+      "executable_contract_count": 78,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 89.54887218045113,
+      "error": null
+    },
+    {
+      "symbol": "CEG",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 577,
+      "executable_contract_count": 319,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.15337954939339,
+      "error": null
+    },
+    {
+      "symbol": "CF",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 497,
+      "executable_contract_count": 274,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.33903420523139,
+      "error": null
+    },
+    {
+      "symbol": "CFG",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 107,
+      "executable_contract_count": 28,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "CHD",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 87,
+      "executable_contract_count": 31,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 81.035,
+      "error": null
+    },
+    {
+      "symbol": "CHRW",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 151,
+      "executable_contract_count": 100,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 89.33774834437087,
+      "error": null
+    },
+    {
+      "symbol": "CHTR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 670,
+      "executable_contract_count": 315,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.20149253731341,
+      "error": null
+    },
+    {
+      "symbol": "CI",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 400,
+      "executable_contract_count": 263,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "CIBR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 134,
+      "executable_contract_count": 62,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "CIEN",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 769,
+      "executable_contract_count": 555,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.18790637191155,
+      "error": null
+    },
+    {
+      "symbol": "CINF",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 119,
+      "executable_contract_count": 54,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 85.545,
+      "error": null
+    },
+    {
+      "symbol": "CL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 292,
+      "executable_contract_count": 113,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "CLX",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 123,
+      "executable_contract_count": 68,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "CMCSA",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 299,
+      "executable_contract_count": 113,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999997,
+      "error": null
+    },
+    {
+      "symbol": "CME",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 386,
+      "executable_contract_count": 167,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.34455958549222,
+      "error": null
+    },
+    {
+      "symbol": "CMG",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 389,
+      "executable_contract_count": 275,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "CMI",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 255,
+      "executable_contract_count": 187,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.421568627451,
+      "error": null
+    },
+    {
+      "symbol": "CMS",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 34,
+      "executable_contract_count": 12,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 68.17800000000001,
+      "error": null
+    },
+    {
+      "symbol": "CNC",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 375,
+      "executable_contract_count": 196,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "CNP",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 125,
+      "executable_contract_count": 32,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "COF",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 391,
+      "executable_contract_count": 236,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "COHR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 670,
+      "executable_contract_count": 500,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 89.55223880597015,
+      "error": null
+    },
+    {
+      "symbol": "COIN",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 694,
+      "executable_contract_count": 602,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "COO",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 56,
+      "executable_contract_count": 22,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 83.93299999999999,
+      "error": null
+    },
+    {
+      "symbol": "COP",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 549,
+      "executable_contract_count": 343,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "COR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 188,
+      "executable_contract_count": 99,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "COST",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 1395,
+      "executable_contract_count": 794,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "CPAY",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 101,
+      "executable_contract_count": 50,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 75.18200000000002,
+      "error": null
+    },
+    {
+      "symbol": "CPRT",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 89,
+      "executable_contract_count": 64,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "CPT",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 45,
+      "executable_contract_count": 13,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 68.88700000000001,
+      "error": null
+    },
+    {
+      "symbol": "CRH",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 273,
+      "executable_contract_count": 139,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "CRL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 119,
+      "executable_contract_count": 80,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 70.73986554621848,
+      "error": null
+    },
+    {
+      "symbol": "CRM",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 548,
+      "executable_contract_count": 411,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000003,
+      "error": null
+    },
+    {
+      "symbol": "CRWD",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 1149,
+      "executable_contract_count": 933,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "CRWV",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 673,
+      "executable_contract_count": 605,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 89.13818722139673,
+      "error": null
+    },
+    {
+      "symbol": "CSCO",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 570,
+      "executable_contract_count": 377,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "CSGP",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 54,
+      "executable_contract_count": 45,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "CSX",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 270,
+      "executable_contract_count": 112,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "CTAS",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 319,
+      "executable_contract_count": 123,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "CTSH",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 154,
+      "executable_contract_count": 127,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "CTVA",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 69,
+      "executable_contract_count": 38,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "CVNA",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 690,
+      "executable_contract_count": 656,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "CVS",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 471,
+      "executable_contract_count": 306,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "CVX",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 453,
+      "executable_contract_count": 277,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "D",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 133,
+      "executable_contract_count": 64,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 98.8984962406015,
+      "error": null
+    },
+    {
+      "symbol": "DAL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 434,
+      "executable_contract_count": 288,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "DASH",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 455,
+      "executable_contract_count": 281,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "DBA",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 76,
+      "executable_contract_count": 37,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "DD",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 98,
+      "executable_contract_count": 35,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 73.08,
+      "error": null
+    },
+    {
+      "symbol": "DDOG",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 712,
+      "executable_contract_count": 577,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "DE",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 691,
+      "executable_contract_count": 340,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.29739507959479,
+      "error": null
+    },
+    {
+      "symbol": "DECK",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 441,
+      "executable_contract_count": 219,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.046485260771,
+      "error": null
+    },
+    {
+      "symbol": "DELL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 1129,
+      "executable_contract_count": 965,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 98.93312666076173,
+      "error": null
+    },
+    {
+      "symbol": "DG",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 496,
+      "executable_contract_count": 263,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.25806451612904,
+      "error": null
+    },
+    {
+      "symbol": "DGX",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 84,
+      "executable_contract_count": 36,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.02380952380952,
+      "error": null
+    },
+    {
+      "symbol": "DHI",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 374,
+      "executable_contract_count": 162,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.2326203208556,
+      "error": null
+    },
+    {
+      "symbol": "DHR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 368,
+      "executable_contract_count": 205,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "DIA",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 1525,
+      "executable_contract_count": 1176,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "DIS",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 454,
+      "executable_contract_count": 308,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "DLR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 333,
+      "executable_contract_count": 149,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "DLTR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 438,
+      "executable_contract_count": 145,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "DOC",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 41,
+      "executable_contract_count": 11,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 82.8,
+      "error": null
+    },
+    {
+      "symbol": "DOV",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 143,
+      "executable_contract_count": 65,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 97.316,
+      "error": null
+    },
+    {
+      "symbol": "DOW",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 331,
+      "executable_contract_count": 180,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "DPZ",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 187,
+      "executable_contract_count": 98,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 98.96524064171123,
+      "error": null
+    },
+    {
+      "symbol": "DRI",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 172,
+      "executable_contract_count": 94,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "DTE",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 78,
+      "executable_contract_count": 18,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 79.55,
+      "error": null
+    },
+    {
+      "symbol": "DUK",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 137,
+      "executable_contract_count": 65,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "DVA",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 169,
+      "executable_contract_count": 106,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "DVN",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 374,
+      "executable_contract_count": 219,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "DXCM",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 281,
+      "executable_contract_count": 92,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999997,
+      "error": null
+    },
+    {
+      "symbol": "EA",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 148,
+      "executable_contract_count": 33,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 99.0945945945946,
+      "error": null
+    },
+    {
+      "symbol": "EBAY",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 439,
+      "executable_contract_count": 159,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "ECHO",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 422,
+      "executable_contract_count": 214,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 98.93127962085308,
+      "error": null
+    },
+    {
+      "symbol": "ECL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 152,
+      "executable_contract_count": 65,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 89.86842105263158,
+      "error": null
+    },
+    {
+      "symbol": "ED",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 91,
+      "executable_contract_count": 31,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "EEM",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 921,
+      "executable_contract_count": 512,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "EFA",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 615,
+      "executable_contract_count": 266,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "EFX",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 164,
+      "executable_contract_count": 88,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 93.41900000000001,
+      "error": null
+    },
+    {
+      "symbol": "EG",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 93,
+      "executable_contract_count": 46,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 74.648,
+      "error": null
+    },
+    {
+      "symbol": "EIX",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 107,
+      "executable_contract_count": 46,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 98.75233644859814,
+      "error": null
+    },
+    {
+      "symbol": "EL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 365,
+      "executable_contract_count": 183,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999997,
+      "error": null
+    },
+    {
+      "symbol": "ELV",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 286,
+      "executable_contract_count": 154,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "EME",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 318,
+      "executable_contract_count": 219,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 72.59442767295597,
+      "error": null
+    },
+    {
+      "symbol": "EMR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 312,
+      "executable_contract_count": 123,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.43589743589743,
+      "error": null
+    },
+    {
+      "symbol": "EOG",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 420,
+      "executable_contract_count": 196,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "EQIX",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 338,
+      "executable_contract_count": 199,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.14497041420117,
+      "error": null
+    },
+    {
+      "symbol": "EQR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 96,
+      "executable_contract_count": 10,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "EQT",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 313,
+      "executable_contract_count": 140,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "ERIE",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 88,
+      "executable_contract_count": 35,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 74.14099999999999,
+      "error": null
+    },
+    {
+      "symbol": "ES",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 50,
+      "executable_contract_count": 23,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 87.101,
+      "error": null
+    },
+    {
+      "symbol": "ESS",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 77,
+      "executable_contract_count": 17,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 75.22051948051949,
+      "error": null
+    },
+    {
+      "symbol": "ETHA",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 296,
+      "executable_contract_count": 209,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "ETN",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 615,
+      "executable_contract_count": 378,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "ETR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 105,
+      "executable_contract_count": 26,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "EVRG",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 63,
+      "executable_contract_count": 14,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 85.943,
+      "error": null
+    },
+    {
+      "symbol": "EW",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 164,
+      "executable_contract_count": 69,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "EWJ",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 370,
+      "executable_contract_count": 145,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "EWZ",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 501,
+      "executable_contract_count": 159,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.26047904191618,
+      "error": null
+    },
+    {
+      "symbol": "EXC",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 124,
+      "executable_contract_count": 47,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "EXE",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 107,
+      "executable_contract_count": 70,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "EXPD",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 81,
+      "executable_contract_count": 31,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 86.702,
+      "error": null
+    },
+    {
+      "symbol": "EXPE",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 449,
+      "executable_contract_count": 251,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "EXR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 73,
+      "executable_contract_count": 22,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 85.64,
+      "error": null
+    },
+    {
+      "symbol": "F",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 343,
+      "executable_contract_count": 247,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "FANG",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 169,
+      "executable_contract_count": 102,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "FAST",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 142,
+      "executable_contract_count": 26,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "FBTC",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 312,
+      "executable_contract_count": 119,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "FCX",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 448,
+      "executable_contract_count": 269,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "FDS",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 157,
+      "executable_contract_count": 87,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 94.87283439490447,
+      "error": null
+    },
+    {
+      "symbol": "FDX",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 505,
+      "executable_contract_count": 253,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "FDXF",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 100,
+      "executable_contract_count": 61,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 85.88899999999998,
+      "error": null
+    },
+    {
+      "symbol": "FE",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 112,
+      "executable_contract_count": 26,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "FER",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 32,
+      "executable_contract_count": 6,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 59.60600000000001,
+      "error": null
+    },
+    {
+      "symbol": "FFIV",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 252,
+      "executable_contract_count": 177,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.143,
+      "error": null
+    },
+    {
+      "symbol": "FICO",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 614,
+      "executable_contract_count": 428,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 98.65309446254074,
+      "error": null
+    },
+    {
+      "symbol": "FIS",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 229,
+      "executable_contract_count": 123,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "FISV",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 303,
+      "executable_contract_count": 141,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "FITB",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 148,
+      "executable_contract_count": 74,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "FIX",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 649,
+      "executable_contract_count": 568,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 98.94530046224962,
+      "error": null
+    },
+    {
+      "symbol": "FLEX",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 187,
+      "executable_contract_count": 113,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "FOX",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 41,
+      "executable_contract_count": 10,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 58.878,
+      "error": null
+    },
+    {
+      "symbol": "FOXA",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 88,
+      "executable_contract_count": 32,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "FRT",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 41,
+      "executable_contract_count": 8,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 76.71799999999999,
+      "error": null
+    },
+    {
+      "symbol": "FSLR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 539,
+      "executable_contract_count": 398,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "FTNT",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 493,
+      "executable_contract_count": 319,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.3377281947262,
+      "error": null
+    },
+    {
+      "symbol": "FTV",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 39,
+      "executable_contract_count": 9,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 73.249,
+      "error": null
+    },
+    {
+      "symbol": "FXI",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 432,
+      "executable_contract_count": 141,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "GD",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 344,
+      "executable_contract_count": 170,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "GDDY",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 301,
+      "executable_contract_count": 192,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.43355481727575,
+      "error": null
+    },
+    {
+      "symbol": "GDX",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 1065,
+      "executable_contract_count": 844,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "GDXJ",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 819,
+      "executable_contract_count": 413,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "GE",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 674,
+      "executable_contract_count": 406,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "GEHC",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 315,
+      "executable_contract_count": 61,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.24603174603175,
+      "error": null
+    },
+    {
+      "symbol": "GEN",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 119,
+      "executable_contract_count": 19,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "GEV",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 1695,
+      "executable_contract_count": 1189,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "GILD",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 472,
+      "executable_contract_count": 208,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "GIS",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 107,
+      "executable_contract_count": 71,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 98.75233644859813,
+      "error": null
+    },
+    {
+      "symbol": "GL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 115,
+      "executable_contract_count": 58,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 80.06426086956522,
+      "error": null
+    },
+    {
+      "symbol": "GLD",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 2858,
+      "executable_contract_count": 2394,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.48600419874037,
+      "error": null
+    },
+    {
+      "symbol": "GLW",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 600,
+      "executable_contract_count": 485,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "GM",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 396,
+      "executable_contract_count": 229,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000003,
+      "error": null
+    },
+    {
+      "symbol": "GNRC",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 423,
+      "executable_contract_count": 274,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "GOOG",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 1053,
+      "executable_contract_count": 834,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "GOOGL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 1413,
+      "executable_contract_count": 1036,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "GPC",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 131,
+      "executable_contract_count": 55,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "GPN",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 175,
+      "executable_contract_count": 137,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "GRMN",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 155,
+      "executable_contract_count": 84,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 79.224,
+      "error": null
+    },
+    {
+      "symbol": "GS",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 2250,
+      "executable_contract_count": 1483,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.42888888888889,
+      "error": null
+    },
+    {
+      "symbol": "GWW",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 323,
+      "executable_contract_count": 212,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 89.93808049535603,
+      "error": null
+    },
+    {
+      "symbol": "HACK",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 145,
+      "executable_contract_count": 66,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 80.369,
+      "error": null
+    },
+    {
+      "symbol": "HAL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 351,
+      "executable_contract_count": 135,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "HAS",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 191,
+      "executable_contract_count": 72,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 98.87172774869109,
+      "error": null
+    },
+    {
+      "symbol": "HBAN",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 113,
+      "executable_contract_count": 45,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "HCA",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 386,
+      "executable_contract_count": 247,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.3445595854922,
+      "error": null
+    },
+    {
+      "symbol": "HD",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 791,
+      "executable_contract_count": 412,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "HIG",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 62,
+      "executable_contract_count": 22,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 94.39841935483872,
+      "error": null
+    },
+    {
+      "symbol": "HII",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 125,
+      "executable_contract_count": 72,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 81.33199999999998,
+      "error": null
+    },
+    {
+      "symbol": "HLT",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 322,
+      "executable_contract_count": 135,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "HON",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 364,
+      "executable_contract_count": 145,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "HONA",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 171,
+      "executable_contract_count": 94,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "HOOD",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 687,
+      "executable_contract_count": 575,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.47088791848618,
+      "error": null
+    },
+    {
+      "symbol": "HPE",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 572,
+      "executable_contract_count": 356,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 89.5104895104895,
+      "error": null
+    },
+    {
+      "symbol": "HPQ",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 387,
+      "executable_contract_count": 175,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.03488372093021,
+      "error": null
+    },
+    {
+      "symbol": "HRL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 175,
+      "executable_contract_count": 44,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "HSIC",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 63,
+      "executable_contract_count": 11,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "HST",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 62,
+      "executable_contract_count": 1,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "HSY",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 342,
+      "executable_contract_count": 158,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.38304093567253,
+      "error": null
+    },
+    {
+      "symbol": "HUBB",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 166,
+      "executable_contract_count": 71,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 83.0680361445783,
+      "error": null
+    },
+    {
+      "symbol": "HUM",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 663,
+      "executable_contract_count": 325,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "HWM",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 385,
+      "executable_contract_count": 187,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "HYG",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 288,
+      "executable_contract_count": 97,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "IAU",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 541,
+      "executable_contract_count": 253,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "IBB",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 285,
+      "executable_contract_count": 121,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "IBIT",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 753,
+      "executable_contract_count": 675,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "IBKR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 355,
+      "executable_contract_count": 85,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "IBM",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 816,
+      "executable_contract_count": 594,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "ICE",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 365,
+      "executable_contract_count": 159,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "ICLN",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 134,
+      "executable_contract_count": 20,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "IDXX",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 190,
+      "executable_contract_count": 96,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 73.70847368421053,
+      "error": null
+    },
+    {
+      "symbol": "IEF",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 295,
+      "executable_contract_count": 173,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "IEX",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 55,
+      "executable_contract_count": 12,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 74.726,
+      "error": null
+    },
+    {
+      "symbol": "IFF",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 118,
+      "executable_contract_count": 28,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 98.77999999999999,
+      "error": null
+    },
+    {
+      "symbol": "IGV",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 749,
+      "executable_contract_count": 362,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "IHI",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 115,
+      "executable_contract_count": 40,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "INCY",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 126,
+      "executable_contract_count": 58,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.1825396825397,
+      "error": null
+    },
+    {
+      "symbol": "INDA",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 131,
+      "executable_contract_count": 18,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "INTC",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 1129,
+      "executable_contract_count": 872,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "INTU",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 669,
+      "executable_contract_count": 402,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.23094170403584,
+      "error": null
+    },
+    {
+      "symbol": "INVH",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 57,
+      "executable_contract_count": 14,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "IP",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 267,
+      "executable_contract_count": 148,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "IQV",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 129,
+      "executable_contract_count": 71,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "IR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 75,
+      "executable_contract_count": 39,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "IRM",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 307,
+      "executable_contract_count": 135,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "ISRG",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 918,
+      "executable_contract_count": 454,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "IT",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 121,
+      "executable_contract_count": 92,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "ITB",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 233,
+      "executable_contract_count": 117,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.32832618025752,
+      "error": null
+    },
+    {
+      "symbol": "ITOT",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 135,
+      "executable_contract_count": 51,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 70.245,
+      "error": null
+    },
+    {
+      "symbol": "ITW",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 154,
+      "executable_contract_count": 63,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "IVV",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 520,
+      "executable_contract_count": 247,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "IVZ",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 117,
+      "executable_contract_count": 47,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "IWD",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 100,
+      "executable_contract_count": 45,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 86.19200000000001,
+      "error": null
+    },
+    {
+      "symbol": "IWF",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 186,
+      "executable_contract_count": 49,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "IWM",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 2229,
+      "executable_contract_count": 2012,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "IYR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 362,
+      "executable_contract_count": 128,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "J",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 125,
+      "executable_contract_count": 55,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 74.196,
+      "error": null
+    },
+    {
+      "symbol": "JBHT",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 152,
+      "executable_contract_count": 80,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 98.80526315789476,
+      "error": null
+    },
+    {
+      "symbol": "JBL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 472,
+      "executable_contract_count": 281,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "JCI",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 183,
+      "executable_contract_count": 93,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "JEPI",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 77,
+      "executable_contract_count": 15,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "JEPQ",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 132,
+      "executable_contract_count": 30,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "JETS",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 280,
+      "executable_contract_count": 70,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "JKHY",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 91,
+      "executable_contract_count": 32,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 75.239,
+      "error": null
+    },
+    {
+      "symbol": "JNJ",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 505,
+      "executable_contract_count": 254,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "JPM",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 789,
+      "executable_contract_count": 482,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.4493029150824,
+      "error": null
+    },
+    {
+      "symbol": "KBE",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 159,
+      "executable_contract_count": 45,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "KDP",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 141,
+      "executable_contract_count": 33,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "KEY",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 131,
+      "executable_contract_count": 70,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "KEYS",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 225,
+      "executable_contract_count": 168,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.23333333333333,
+      "error": null
+    },
+    {
+      "symbol": "KHC",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 259,
+      "executable_contract_count": 63,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "KIM",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 36,
+      "executable_contract_count": 9,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 87.59800000000001,
+      "error": null
+    },
+    {
+      "symbol": "KKR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 417,
+      "executable_contract_count": 230,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "KLAC",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 824,
+      "executable_contract_count": 791,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "KMB",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 382,
+      "executable_contract_count": 85,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "KMI",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 249,
+      "executable_contract_count": 119,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "KO",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 463,
+      "executable_contract_count": 288,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "KR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 307,
+      "executable_contract_count": 136,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "KRE",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 665,
+      "executable_contract_count": 389,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "KVUE",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 150,
+      "executable_contract_count": 18,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "KWEB",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 357,
+      "executable_contract_count": 92,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "L",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 51,
+      "executable_contract_count": 12,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 73.04599999999999,
+      "error": null
+    },
+    {
+      "symbol": "LDOS",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 150,
+      "executable_contract_count": 78,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "LEN",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 352,
+      "executable_contract_count": 154,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "LH",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 93,
+      "executable_contract_count": 43,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 75.8088387096774,
+      "error": null
+    },
+    {
+      "symbol": "LHX",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 287,
+      "executable_contract_count": 131,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.36062717770037,
+      "error": null
+    },
+    {
+      "symbol": "LII",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 105,
+      "executable_contract_count": 48,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 71.942,
+      "error": null
+    },
+    {
+      "symbol": "LIN",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 516,
+      "executable_contract_count": 285,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "LITE",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 1429,
+      "executable_contract_count": 1161,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 98.77221833449964,
+      "error": null
+    },
+    {
+      "symbol": "LLY",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 1695,
+      "executable_contract_count": 1115,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.4646017699115,
+      "error": null
+    },
+    {
+      "symbol": "LMT",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 1059,
+      "executable_contract_count": 454,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.44334277620396,
+      "error": null
+    },
+    {
+      "symbol": "LNT",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 61,
+      "executable_contract_count": 5,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 74.309,
+      "error": null
+    },
+    {
+      "symbol": "LOW",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 398,
+      "executable_contract_count": 192,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.29899497487436,
+      "error": null
+    },
+    {
+      "symbol": "LQD",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 356,
+      "executable_contract_count": 198,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "LRCX",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 803,
+      "executable_contract_count": 666,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 89.47696139476962,
+      "error": null
+    },
+    {
+      "symbol": "LULU",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 529,
+      "executable_contract_count": 356,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "LUV",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 352,
+      "executable_contract_count": 165,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "LVS",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 326,
+      "executable_contract_count": 127,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "LYB",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 141,
+      "executable_contract_count": 97,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "LYV",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 292,
+      "executable_contract_count": 146,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999997,
+      "error": null
+    },
+    {
+      "symbol": "MA",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 1000,
+      "executable_contract_count": 618,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999997,
+      "error": null
+    },
+    {
+      "symbol": "MAA",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 69,
+      "executable_contract_count": 20,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 87.91399999999999,
+      "error": null
+    },
+    {
+      "symbol": "MAR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 419,
+      "executable_contract_count": 188,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "MAS",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 71,
+      "executable_contract_count": 33,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 87.824,
+      "error": null
+    },
+    {
+      "symbol": "MCD",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 640,
+      "executable_contract_count": 386,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "MCHP",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 486,
+      "executable_contract_count": 350,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "MCK",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 377,
+      "executable_contract_count": 220,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.23474801061008,
+      "error": null
+    },
+    {
+      "symbol": "MCO",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 190,
+      "executable_contract_count": 88,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "MDLZ",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 227,
+      "executable_contract_count": 58,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "MDT",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 407,
+      "executable_contract_count": 173,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999997,
+      "error": null
+    },
+    {
+      "symbol": "MELI",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 1694,
+      "executable_contract_count": 995,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.4409681227863,
+      "error": null
+    },
+    {
+      "symbol": "MET",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 169,
+      "executable_contract_count": 81,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "META",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 2142,
+      "executable_contract_count": 1901,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "MGM",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 289,
+      "executable_contract_count": 57,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "MKC",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 57,
+      "executable_contract_count": 37,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "MLM",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 195,
+      "executable_contract_count": 83,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 77.673,
+      "error": null
+    },
+    {
+      "symbol": "MMM",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 386,
+      "executable_contract_count": 186,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "MNST",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 150,
+      "executable_contract_count": 76,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "MO",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 336,
+      "executable_contract_count": 150,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "MOS",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 263,
+      "executable_contract_count": 150,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "MPC",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 219,
+      "executable_contract_count": 160,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 89.90867579908675,
+      "error": null
+    },
+    {
+      "symbol": "MPWR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 577,
+      "executable_contract_count": 502,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 97.44499999999998,
+      "error": null
+    },
+    {
+      "symbol": "MRK",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 489,
+      "executable_contract_count": 272,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "MRNA",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 523,
+      "executable_contract_count": 250,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.23231357552581,
+      "error": null
+    },
+    {
+      "symbol": "MRSH",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 112,
+      "executable_contract_count": 43,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 98.78571428571428,
+      "error": null
+    },
+    {
+      "symbol": "MRVL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 673,
+      "executable_contract_count": 593,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 98.96508172362556,
+      "error": null
+    },
+    {
+      "symbol": "MS",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 494,
+      "executable_contract_count": 304,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.45951417004048,
+      "error": null
+    },
+    {
+      "symbol": "MSCI",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 217,
+      "executable_contract_count": 107,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 94.58300000000003,
+      "error": null
+    },
+    {
+      "symbol": "MSFT",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 1552,
+      "executable_contract_count": 1305,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "MSI",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 142,
+      "executable_contract_count": 87,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "MSTR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 703,
+      "executable_contract_count": 646,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "MTB",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 128,
+      "executable_contract_count": 56,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 88.47649999999999,
+      "error": null
+    },
+    {
+      "symbol": "MTD",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 188,
+      "executable_contract_count": 108,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 67.2512340425532,
+      "error": null
+    },
+    {
+      "symbol": "MTUM",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 404,
+      "executable_contract_count": 204,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 98.9059405940594,
+      "error": null
+    },
+    {
+      "symbol": "MU",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 2815,
+      "executable_contract_count": 2557,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.00976909413856,
+      "error": null
+    },
+    {
+      "symbol": "NBIS",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 742,
+      "executable_contract_count": 676,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 98.58355795148249,
+      "error": null
+    },
+    {
+      "symbol": "NCLH",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 239,
+      "executable_contract_count": 123,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.16527196652721,
+      "error": null
+    },
+    {
+      "symbol": "NDAQ",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 314,
+      "executable_contract_count": 111,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "NDSN",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 79,
+      "executable_contract_count": 31,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 74.95767088607595,
+      "error": null
+    },
+    {
+      "symbol": "NDX",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 4881,
+      "executable_contract_count": 3415,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.43443966400329,
+      "error": null
+    },
+    {
+      "symbol": "NEE",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 352,
+      "executable_contract_count": 164,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "NEM",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 526,
+      "executable_contract_count": 295,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "NFLX",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 748,
+      "executable_contract_count": 625,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000003,
+      "error": null
+    },
+    {
+      "symbol": "NI",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 44,
+      "executable_contract_count": 10,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 90.6439090909091,
+      "error": null
+    },
+    {
+      "symbol": "NKE",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 433,
+      "executable_contract_count": 275,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "NOC",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 468,
+      "executable_contract_count": 261,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "NOW",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 849,
+      "executable_contract_count": 706,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.17020023557126,
+      "error": null
+    },
+    {
+      "symbol": "NRG",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 410,
+      "executable_contract_count": 211,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 89.07317073170732,
+      "error": null
+    },
+    {
+      "symbol": "NSC",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 137,
+      "executable_contract_count": 58,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "NTAP",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 210,
+      "executable_contract_count": 145,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "NTRS",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 127,
+      "executable_contract_count": 57,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 84.21000000000001,
+      "error": null
+    },
+    {
+      "symbol": "NUE",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 216,
+      "executable_contract_count": 120,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 89.07407407407408,
+      "error": null
+    },
+    {
+      "symbol": "NVDA",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 1077,
+      "executable_contract_count": 940,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "NWS",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 15,
+      "executable_contract_count": 0,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 32.183,
+      "error": null
+    },
+    {
+      "symbol": "NWSA",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 22,
+      "executable_contract_count": 6,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 67.6,
+      "error": null
+    },
+    {
+      "symbol": "NXPI",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 232,
+      "executable_contract_count": 189,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "O",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 101,
+      "executable_contract_count": 48,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "ODFL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 212,
+      "executable_contract_count": 94,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 94.75298113207548,
+      "error": null
+    },
+    {
+      "symbol": "OIH",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 281,
+      "executable_contract_count": 161,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.21530249110322,
+      "error": null
+    },
+    {
+      "symbol": "OKE",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 117,
+      "executable_contract_count": 70,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "OMC",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 159,
+      "executable_contract_count": 51,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999997,
+      "error": null
+    },
+    {
+      "symbol": "ON",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 486,
+      "executable_contract_count": 312,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.417695473251,
+      "error": null
+    },
+    {
+      "symbol": "ORCL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 777,
+      "executable_contract_count": 655,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000003,
+      "error": null
+    },
+    {
+      "symbol": "ORLY",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 191,
+      "executable_contract_count": 88,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "OTIS",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 80,
+      "executable_contract_count": 22,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.25000000000003,
+      "error": null
+    },
+    {
+      "symbol": "OXY",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 416,
+      "executable_contract_count": 260,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "PANW",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 882,
+      "executable_contract_count": 600,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "PAYX",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 119,
+      "executable_contract_count": 52,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 98.99579831932775,
+      "error": null
+    },
+    {
+      "symbol": "PCAR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 255,
+      "executable_contract_count": 74,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "PCG",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 216,
+      "executable_contract_count": 56,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "PDD",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 410,
+      "executable_contract_count": 219,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "PEG",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 122,
+      "executable_contract_count": 30,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "PEP",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 522,
+      "executable_contract_count": 211,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "PFE",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 365,
+      "executable_contract_count": 207,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 98.95205479452055,
+      "error": null
+    },
+    {
+      "symbol": "PFG",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 64,
+      "executable_contract_count": 20,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 77.936,
+      "error": null
+    },
+    {
+      "symbol": "PG",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 447,
+      "executable_contract_count": 218,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "PGR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 385,
+      "executable_contract_count": 151,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "PH",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 223,
+      "executable_contract_count": 126,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 95.081,
+      "error": null
+    },
+    {
+      "symbol": "PHM",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 326,
+      "executable_contract_count": 110,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.25460122699386,
+      "error": null
+    },
+    {
+      "symbol": "PKG",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 86,
+      "executable_contract_count": 33,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 66.015,
+      "error": null
+    },
+    {
+      "symbol": "PLD",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 183,
+      "executable_contract_count": 82,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "PLTR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 798,
+      "executable_contract_count": 736,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.17418546365914,
+      "error": null
+    },
+    {
+      "symbol": "PM",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 402,
+      "executable_contract_count": 198,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.20149253731343,
+      "error": null
+    },
+    {
+      "symbol": "PNC",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 313,
+      "executable_contract_count": 106,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.11661341853033,
+      "error": null
+    },
+    {
+      "symbol": "PNR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 120,
+      "executable_contract_count": 49,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 89.66866666666667,
+      "error": null
+    },
+    {
+      "symbol": "PNW",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 78,
+      "executable_contract_count": 15,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 77.525,
+      "error": null
+    },
+    {
+      "symbol": "PODD",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 111,
+      "executable_contract_count": 47,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 87.785,
+      "error": null
+    },
+    {
+      "symbol": "PPG",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 248,
+      "executable_contract_count": 68,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "PPL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 93,
+      "executable_contract_count": 30,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "PRU",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 138,
+      "executable_contract_count": 78,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "PSA",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 82,
+      "executable_contract_count": 34,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 87.638,
+      "error": null
+    },
+    {
+      "symbol": "PSKY",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 180,
+      "executable_contract_count": 44,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "PSX",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 413,
+      "executable_contract_count": 215,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "PTC",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 138,
+      "executable_contract_count": 52,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "PWR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 437,
+      "executable_contract_count": 307,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 98.76773455377572,
+      "error": null
+    },
+    {
+      "symbol": "PYPL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 483,
+      "executable_contract_count": 214,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999997,
+      "error": null
+    },
+    {
+      "symbol": "Q",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 222,
+      "executable_contract_count": 144,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "QCOM",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 616,
+      "executable_contract_count": 505,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "QQQ",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 5435,
+      "executable_contract_count": 4705,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "QQQM",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 267,
+      "executable_contract_count": 140,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "QUAL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 42,
+      "executable_contract_count": 17,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 54.215,
+      "error": null
+    },
+    {
+      "symbol": "RCL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 542,
+      "executable_contract_count": 289,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "REG",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 26,
+      "executable_contract_count": 3,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 41.928,
+      "error": null
+    },
+    {
+      "symbol": "REGN",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 718,
+      "executable_contract_count": 362,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.36072423398329,
+      "error": null
+    },
+    {
+      "symbol": "RF",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 134,
+      "executable_contract_count": 52,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "RJF",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 118,
+      "executable_contract_count": 44,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.05599999999998,
+      "error": null
+    },
+    {
+      "symbol": "RKLB",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 533,
+      "executable_contract_count": 388,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.34990619136958,
+      "error": null
+    },
+    {
+      "symbol": "RL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 194,
+      "executable_contract_count": 105,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 80.15762886597939,
+      "error": null
+    },
+    {
+      "symbol": "RMD",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 138,
+      "executable_contract_count": 57,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.21014492753625,
+      "error": null
+    },
+    {
+      "symbol": "ROK",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 225,
+      "executable_contract_count": 151,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "ROL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 55,
+      "executable_contract_count": 30,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "ROP",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 112,
+      "executable_contract_count": 43,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 80.29985714285712,
+      "error": null
+    },
+    {
+      "symbol": "ROST",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 350,
+      "executable_contract_count": 177,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "RSG",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 90,
+      "executable_contract_count": 31,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 91.77500000000002,
+      "error": null
+    },
+    {
+      "symbol": "RSP",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 341,
+      "executable_contract_count": 154,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.14809384164224,
+      "error": null
+    },
+    {
+      "symbol": "RTX",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 404,
+      "executable_contract_count": 176,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "RUT",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 3883,
+      "executable_contract_count": 3199,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.47939737316507,
+      "error": null
+    },
+    {
+      "symbol": "RVTY",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 59,
+      "executable_contract_count": 19,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 64.041,
+      "error": null
+    },
+    {
+      "symbol": "SBAC",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 104,
+      "executable_contract_count": 31,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 87.15499999999999,
+      "error": null
+    },
+    {
+      "symbol": "SBUX",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 460,
+      "executable_contract_count": 265,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "SCHB",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 48,
+      "executable_contract_count": 2,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 79.33,
+      "error": null
+    },
+    {
+      "symbol": "SCHD",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 222,
+      "executable_contract_count": 72,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "SCHW",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 471,
+      "executable_contract_count": 227,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "SHOP",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 694,
+      "executable_contract_count": 501,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "SHW",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 168,
+      "executable_contract_count": 102,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "SHY",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 39,
+      "executable_contract_count": 13,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 90.7,
+      "error": null
+    },
+    {
+      "symbol": "SJM",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 110,
+      "executable_contract_count": 65,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "SKYY",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 114,
+      "executable_contract_count": 28,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 72.188,
+      "error": null
+    },
+    {
+      "symbol": "SLB",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 390,
+      "executable_contract_count": 226,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "SLV",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 1752,
+      "executable_contract_count": 1488,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "SMCI",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 553,
+      "executable_contract_count": 475,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 98.95750452079565,
+      "error": null
+    },
+    {
+      "symbol": "SMH",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 2310,
+      "executable_contract_count": 1787,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.46536796536796,
+      "error": null
+    },
+    {
+      "symbol": "SNA",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 98,
+      "executable_contract_count": 41,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 83.35399999999998,
+      "error": null
+    },
+    {
+      "symbol": "SNDK",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 2347,
+      "executable_contract_count": 2146,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 88.50873455475075,
+      "error": null
+    },
+    {
+      "symbol": "SNPS",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 714,
+      "executable_contract_count": 394,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "SO",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 292,
+      "executable_contract_count": 100,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "SOLV",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 68,
+      "executable_contract_count": 45,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 72.41988235294117,
+      "error": null
+    },
+    {
+      "symbol": "SOXX",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 1524,
+      "executable_contract_count": 1150,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.36876640419949,
+      "error": null
+    },
+    {
+      "symbol": "SPG",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 173,
+      "executable_contract_count": 87,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.03757225433526,
+      "error": null
+    },
+    {
+      "symbol": "SPGI",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 573,
+      "executable_contract_count": 221,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "SPX",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 14027,
+      "executable_contract_count": 12702,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.45722535110858,
+      "error": null
+    },
+    {
+      "symbol": "SPXU",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 255,
+      "executable_contract_count": 85,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "SPY",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 6110,
+      "executable_contract_count": 5446,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "SQQQ",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 569,
+      "executable_contract_count": 369,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "SRE",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 89,
+      "executable_contract_count": 38,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "STE",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 57,
+      "executable_contract_count": 22,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 71.68112280701754,
+      "error": null
+    },
+    {
+      "symbol": "STLD",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 223,
+      "executable_contract_count": 135,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "STT",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 181,
+      "executable_contract_count": 113,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 89.77900552486187,
+      "error": null
+    },
+    {
+      "symbol": "STX",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 1742,
+      "executable_contract_count": 1373,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.0292766934558,
+      "error": null
+    },
+    {
+      "symbol": "STZ",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 422,
+      "executable_contract_count": 217,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000003,
+      "error": null
+    },
+    {
+      "symbol": "SW",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 41,
+      "executable_contract_count": 25,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 82.8,
+      "error": null
+    },
+    {
+      "symbol": "SWK",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 135,
+      "executable_contract_count": 62,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "SWKS",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 197,
+      "executable_contract_count": 144,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "SYF",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 128,
+      "executable_contract_count": 66,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "SYK",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 174,
+      "executable_contract_count": 120,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "SYY",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 160,
+      "executable_contract_count": 86,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "T",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 374,
+      "executable_contract_count": 183,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "TAN",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 298,
+      "executable_contract_count": 170,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.09731543624163,
+      "error": null
+    },
+    {
+      "symbol": "TAP",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 78,
+      "executable_contract_count": 51,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "TDG",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 286,
+      "executable_contract_count": 181,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 83.876,
+      "error": null
+    },
+    {
+      "symbol": "TDY",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 185,
+      "executable_contract_count": 87,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 75.161,
+      "error": null
+    },
+    {
+      "symbol": "TECH",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 55,
+      "executable_contract_count": 9,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 99.13636363636365,
+      "error": null
+    },
+    {
+      "symbol": "TEL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 216,
+      "executable_contract_count": 150,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000003,
+      "error": null
+    },
+    {
+      "symbol": "TER",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 727,
+      "executable_contract_count": 552,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.47248968363135,
+      "error": null
+    },
+    {
+      "symbol": "TFC",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 135,
+      "executable_contract_count": 82,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "TGT",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 579,
+      "executable_contract_count": 423,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "TIP",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 106,
+      "executable_contract_count": 15,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 84.37099999999998,
+      "error": null
+    },
+    {
+      "symbol": "TJX",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 283,
+      "executable_contract_count": 146,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.2173144876325,
+      "error": null
+    },
+    {
+      "symbol": "TKO",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 113,
+      "executable_contract_count": 66,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 91.72100884955752,
+      "error": null
+    },
+    {
+      "symbol": "TLT",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 1057,
+      "executable_contract_count": 830,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "TMO",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 503,
+      "executable_contract_count": 231,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "TMUS",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 444,
+      "executable_contract_count": 239,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "TPL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 175,
+      "executable_contract_count": 106,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.04285714285716,
+      "error": null
+    },
+    {
+      "symbol": "TPR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 353,
+      "executable_contract_count": 154,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "TQQQ",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 779,
+      "executable_contract_count": 594,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.37163029525031,
+      "error": null
+    },
+    {
+      "symbol": "TRGP",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 179,
+      "executable_contract_count": 101,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 89.3296089385475,
+      "error": null
+    },
+    {
+      "symbol": "TRI",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 127,
+      "executable_contract_count": 60,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 98.71259842519684,
+      "error": null
+    },
+    {
+      "symbol": "TRMB",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 65,
+      "executable_contract_count": 36,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "TROW",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 135,
+      "executable_contract_count": 60,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "TRV",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 143,
+      "executable_contract_count": 94,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "TSCO",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 274,
+      "executable_contract_count": 103,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "TSLA",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 1539,
+      "executable_contract_count": 1411,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.2920727745289,
+      "error": null
+    },
+    {
+      "symbol": "TSN",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 134,
+      "executable_contract_count": 52,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "TT",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 284,
+      "executable_contract_count": 183,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.21830985915494,
+      "error": null
+    },
+    {
+      "symbol": "TTD",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 323,
+      "executable_contract_count": 203,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "TTWO",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 502,
+      "executable_contract_count": 321,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "TXN",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 764,
+      "executable_contract_count": 512,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "TXT",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 112,
+      "executable_contract_count": 38,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "TYL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 122,
+      "executable_contract_count": 66,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 77.0560655737705,
+      "error": null
+    },
+    {
+      "symbol": "UAL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 664,
+      "executable_contract_count": 373,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "UBER",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 533,
+      "executable_contract_count": 423,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "UDR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 38,
+      "executable_contract_count": 2,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 79.72699999999999,
+      "error": null
+    },
+    {
+      "symbol": "UHS",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 131,
+      "executable_contract_count": 68,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.19465648854963,
+      "error": null
+    },
+    {
+      "symbol": "ULTA",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 791,
+      "executable_contract_count": 408,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "UNG",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 181,
+      "executable_contract_count": 91,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 89.00552486187846,
+      "error": null
+    },
+    {
+      "symbol": "UNH",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 764,
+      "executable_contract_count": 530,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.4738219895288,
+      "error": null
+    },
+    {
+      "symbol": "UNP",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 536,
+      "executable_contract_count": 265,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "UPRO",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 673,
+      "executable_contract_count": 323,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "UPS",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 510,
+      "executable_contract_count": 258,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "URI",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 704,
+      "executable_contract_count": 341,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "USB",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 281,
+      "executable_contract_count": 175,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "USMV",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 59,
+      "executable_contract_count": 7,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 71.20400000000001,
+      "error": null
+    },
+    {
+      "symbol": "USO",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 1636,
+      "executable_contract_count": 1214,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.45110024449879,
+      "error": null
+    },
+    {
+      "symbol": "UVXY",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 423,
+      "executable_contract_count": 192,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "V",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 777,
+      "executable_contract_count": 457,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "VEA",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 113,
+      "executable_contract_count": 31,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "VEEV",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 186,
+      "executable_contract_count": 143,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "VICI",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 50,
+      "executable_contract_count": 29,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "VIG",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 122,
+      "executable_contract_count": 48,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 84.608,
+      "error": null
+    },
+    {
+      "symbol": "VIXY",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 114,
+      "executable_contract_count": 15,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "VLO",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 502,
+      "executable_contract_count": 321,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "VLTO",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 43,
+      "executable_contract_count": 9,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 61.21,
+      "error": null
+    },
+    {
+      "symbol": "VLUE",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 62,
+      "executable_contract_count": 25,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 72.70400000000001,
+      "error": null
+    },
+    {
+      "symbol": "VMC",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 94,
+      "executable_contract_count": 45,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 83.435,
+      "error": null
+    },
+    {
+      "symbol": "VNQ",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 196,
+      "executable_contract_count": 76,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "VOO",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 951,
+      "executable_contract_count": 511,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "VRSK",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 108,
+      "executable_contract_count": 51,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 85.77144444444444,
+      "error": null
+    },
+    {
+      "symbol": "VRSN",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 192,
+      "executable_contract_count": 89,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 98.97916666666667,
+      "error": null
+    },
+    {
+      "symbol": "VRT",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 768,
+      "executable_contract_count": 611,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.00520833333334,
+      "error": null
+    },
+    {
+      "symbol": "VRTX",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 582,
+      "executable_contract_count": 236,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "VST",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 532,
+      "executable_contract_count": 377,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 98.67293233082707,
+      "error": null
+    },
+    {
+      "symbol": "VTI",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 281,
+      "executable_contract_count": 170,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "VTR",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 112,
+      "executable_contract_count": 41,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 89.64285714285714,
+      "error": null
+    },
+    {
+      "symbol": "VTRS",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 78,
+      "executable_contract_count": 15,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "VTV",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 111,
+      "executable_contract_count": 54,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 73.05,
+      "error": null
+    },
+    {
+      "symbol": "VUG",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 221,
+      "executable_contract_count": 94,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "VWO",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 143,
+      "executable_contract_count": 25,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "VYM",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 188,
+      "executable_contract_count": 80,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "VZ",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 357,
+      "executable_contract_count": 158,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "WAB",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 113,
+      "executable_contract_count": 68,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 65.84700000000001,
+      "error": null
+    },
+    {
+      "symbol": "WAT",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 110,
+      "executable_contract_count": 44,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 76.25299999999999,
+      "error": null
+    },
+    {
+      "symbol": "WBD",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 288,
+      "executable_contract_count": 17,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "WDAY",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 517,
+      "executable_contract_count": 307,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "WDC",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 1212,
+      "executable_contract_count": 976,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.35148514851487,
+      "error": null
+    },
+    {
+      "symbol": "WEC",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 90,
+      "executable_contract_count": 17,
+      "positioning_label": "MODERATELY_BEARISH",
+      "confidence_score": 83.99300000000001,
+      "error": null
+    },
+    {
+      "symbol": "WELL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 136,
+      "executable_contract_count": 70,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "WFC",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 446,
+      "executable_contract_count": 287,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "WM",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 185,
+      "executable_contract_count": 94,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "WMB",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 238,
+      "executable_contract_count": 105,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "WMT",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 569,
+      "executable_contract_count": 358,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "WRB",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 67,
+      "executable_contract_count": 24,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 80.16499999999999,
+      "error": null
+    },
+    {
+      "symbol": "WSM",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 185,
+      "executable_contract_count": 114,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "WST",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 147,
+      "executable_contract_count": 83,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 82.59872789115647,
+      "error": null
+    },
+    {
+      "symbol": "WTW",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 78,
+      "executable_contract_count": 31,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 74.6421794871795,
+      "error": null
+    },
+    {
+      "symbol": "WY",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 86,
+      "executable_contract_count": 21,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "WYNN",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 432,
+      "executable_contract_count": 137,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "XBI",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 890,
+      "executable_contract_count": 408,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999997,
+      "error": null
+    },
+    {
+      "symbol": "XEL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 91,
+      "executable_contract_count": 26,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "XHB",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 447,
+      "executable_contract_count": 71,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "XLB",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 337,
+      "executable_contract_count": 36,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "XLC",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 339,
+      "executable_contract_count": 48,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "XLE",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 824,
+      "executable_contract_count": 528,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "XLF",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 747,
+      "executable_contract_count": 352,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "XLI",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 802,
+      "executable_contract_count": 223,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "XLK",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 957,
+      "executable_contract_count": 375,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.41640543364682,
+      "error": null
+    },
+    {
+      "symbol": "XLP",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 416,
+      "executable_contract_count": 53,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "XLRE",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 101,
+      "executable_contract_count": 27,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "XLU",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 376,
+      "executable_contract_count": 126,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.50000000000001,
+      "error": null
+    },
+    {
+      "symbol": "XLV",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 601,
+      "executable_contract_count": 164,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.36688851913478,
+      "error": null
+    },
+    {
+      "symbol": "XLY",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 547,
+      "executable_contract_count": 80,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 90.0,
+      "error": null
+    },
+    {
+      "symbol": "XOM",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 643,
+      "executable_contract_count": 406,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "XOP",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 755,
+      "executable_contract_count": 380,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "XPH",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 33,
+      "executable_contract_count": 6,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 57.06100000000001,
+      "error": null
+    },
+    {
+      "symbol": "XRT",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 313,
+      "executable_contract_count": 38,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.37220447284344,
+      "error": null
+    },
+    {
+      "symbol": "XYL",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 135,
+      "executable_contract_count": 48,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.49999999999999,
+      "error": null
+    },
+    {
+      "symbol": "XYZ",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 469,
+      "executable_contract_count": 362,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    },
+    {
+      "symbol": "YUM",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 154,
+      "executable_contract_count": 67,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.24025974025976,
+      "error": null
+    },
+    {
+      "symbol": "ZBH",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 86,
+      "executable_contract_count": 38,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 96.365,
+      "error": null
+    },
+    {
+      "symbol": "ZBRA",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 131,
+      "executable_contract_count": 53,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 92.5763282442748,
+      "error": null
+    },
+    {
+      "symbol": "ZTS",
+      "status": "REFRESHED",
+      "option_snapshot_date": "2026-07-28",
+      "source_contract_count": 115,
+      "executable_contract_count": 69,
+      "positioning_label": "NEUTRAL",
+      "confidence_score": 99.5,
+      "error": null
+    }
+  ]
+}

@@ -1,12 +1,12 @@
 {
-  "completed_at": "2026-07-28T22:26:42.009914+00:00",
+  "completed_at": "2026-07-29T17:23:51.673989+00:00",
   "data_scope": "all",
-  "duration_seconds": 12.47,
+  "duration_seconds": 815.632,
   "failed_ingestion_units": 0,
-  "mode": "analytics",
+  "mode": "daily",
   "stages": {
     "dealer_positioning": {
-      "refreshed": false,
+      "refreshed": true,
       "skipped": false
     },
     "market_intelligence": {
@@ -16,8 +16,8 @@
       "skipped": false
     },
     "options": {
-      "mode": "REUSED",
-      "refreshed": false,
+      "mode": "FORCE_REBUILD",
+      "refreshed": true,
       "requested": true
     },
     "publication": {
@@ -34,6 +34,6 @@
       "requested": true
     }
   },
-  "started_at": "2026-07-28T22:26:29.540414+00:00",
+  "started_at": "2026-07-29T17:10:16.042394+00:00",
   "status": "READY"
 }

@@ -1,0 +1,162 @@
+{
+  "status": "READY",
+  "snapshot_timestamp": "2026-07-29T06:12:55.915467+00:00",
+  "requested_symbol_count": 3,
+  "symbol_count": 3,
+  "skipped_count": 0,
+  "error_count": 0,
+  "start_date": "2025-01-01",
+  "end_date": "2026-07-28",
+  "market_overview": {
+    "status": "READY",
+    "symbol_count": 3,
+    "average_participation_score": 37.9427,
+    "average_leadership_score": 42.8932,
+    "average_trend_quality_score": 40.833,
+    "average_deterioration_risk_score": 62.4011,
+    "participation_breadth_pct": 0.0,
+    "leadership_breadth_pct": 0.0,
+    "deterioration_watch_pct": 66.6667,
+    "participation_state_distribution": {
+      "MIXED": 3
+    },
+    "leadership_state_distribution": {
+      "NEUTRAL": 3
+    },
+    "deterioration_state_distribution": {
+      "STABLE": 1,
+      "WATCH": 1,
+      "HIGH_RISK": 1
+    }
+  },
+  "results": [
+    {
+      "symbol": "SPX",
+      "as_of_date": "2026-07-24",
+      "snapshot_timestamp": "2026-07-29T06:12:55.904010+00:00",
+      "participation_score": 43.6628,
+      "participation_grade": "D",
+      "participation_confidence": 75.9686,
+      "institutional_conviction_score": 52.8183,
+      "relative_volume_20d": 0.930962,
+      "volume_trend_score": 38.3042,
+      "volume_thrust_score": 46.9804,
+      "price_volume_confirmation_score": 44.2191,
+      "accumulation_distribution_score": 45.203,
+      "distribution_risk_score": 55.7809,
+      "leadership_score": 50.3292,
+      "leadership_grade": "C",
+      "market_relative_strength_20d": 0.110073,
+      "market_relative_strength_60d": -0.000814,
+      "leadership_persistence_score": 85.0,
+      "breadth_confirmation_score": 50.0,
+      "cross_asset_confirmation_score": 50.0,
+      "trend_quality_score": 52.275,
+      "deterioration_risk_score": 44.7112,
+      "participation_state": "MIXED",
+      "leadership_state": "NEUTRAL",
+      "deterioration_state": "STABLE",
+      "status": "READY",
+      "calculation_version": "institutional_trend.v1",
+      "warnings": [
+        "INDEX_VOLUME_PROXY:SPY"
+      ],
+      "metadata": {
+        "history_rows": 278,
+        "benchmark_symbol": "SPY",
+        "analytics_basis": "persisted_ohlcv_proxy",
+        "institutional_identity_claimed": false,
+        "asset_class": "INDEX",
+        "native_volume_applicable": false,
+        "volume_proxy_symbol": "SPY",
+        "volume_proxy_basis": "listed_index_etf_volume"
+      }
+    },
+    {
+      "symbol": "NDX",
+      "as_of_date": "2026-07-24",
+      "snapshot_timestamp": "2026-07-29T06:12:55.911622+00:00",
+      "participation_score": 35.1509,
+      "participation_grade": "D",
+      "participation_confidence": 80.2246,
+      "institutional_conviction_score": 23.6911,
+      "relative_volume_20d": 1.125376,
+      "volume_trend_score": 33.521,
+      "volume_thrust_score": 52.7951,
+      "price_volume_confirmation_score": 16.4552,
+      "accumulation_distribution_score": 41.8595,
+      "distribution_risk_score": 83.5448,
+      "leadership_score": 35.0268,
+      "leadership_grade": "D",
+      "market_relative_strength_20d": -5.086941,
+      "market_relative_strength_60d": 0.239716,
+      "leadership_persistence_score": 20.0,
+      "breadth_confirmation_score": 50.0,
+      "cross_asset_confirmation_score": 50.0,
+      "trend_quality_score": 30.593,
+      "deterioration_risk_score": 68.7736,
+      "participation_state": "MIXED",
+      "leadership_state": "NEUTRAL",
+      "deterioration_state": "WATCH",
+      "status": "READY",
+      "calculation_version": "institutional_trend.v1",
+      "warnings": [
+        "INDEX_VOLUME_PROXY:QQQ"
+      ],
+      "metadata": {
+        "history_rows": 278,
+        "benchmark_symbol": "SPY",
+        "analytics_basis": "persisted_ohlcv_proxy",
+        "institutional_identity_claimed": false,
+        "asset_class": "INDEX",
+        "native_volume_applicable": false,
+        "volume_proxy_symbol": "QQQ",
+        "volume_proxy_basis": "listed_index_etf_volume"
+      }
+    },
+    {
+      "symbol": "RUT",
+      "as_of_date": "2026-07-24",
+      "snapshot_timestamp": "2026-07-29T06:12:55.914671+00:00",
+      "participation_score": 35.0144,
+      "participation_grade": "D",
+      "participation_confidence": 80.2928,
+      "institutional_conviction_score": 35.8519,
+      "relative_volume_20d": 0.903403,
+      "volume_trend_score": 27.8037,
+      "volume_thrust_score": 45.5464,
+      "price_volume_confirmation_score": 17.7286,
+      "accumulation_distribution_score": 51.3742,
+      "distribution_risk_score": 82.2714,
+      "leadership_score": 43.3237,
+      "leadership_grade": "D",
+      "market_relative_strength_20d": -3.219047,
+      "market_relative_strength_60d": 2.483995,
+      "leadership_persistence_score": 65.0,
+      "breadth_confirmation_score": 50.0,
+      "cross_asset_confirmation_score": 50.0,
+      "trend_quality_score": 39.631,
+      "deterioration_risk_score": 73.7184,
+      "participation_state": "MIXED",
+      "leadership_state": "NEUTRAL",
+      "deterioration_state": "HIGH_RISK",
+      "status": "READY",
+      "calculation_version": "institutional_trend.v1",
+      "warnings": [
+        "INDEX_VOLUME_PROXY:IWM"
+      ],
+      "metadata": {
+        "history_rows": 278,
+        "benchmark_symbol": "SPY",
+        "analytics_basis": "persisted_ohlcv_proxy",
+        "institutional_identity_claimed": false,
+        "asset_class": "INDEX",
+        "native_volume_applicable": false,
+        "volume_proxy_symbol": "IWM",
+        "volume_proxy_basis": "listed_index_etf_volume"
+      }
+    }
+  ],
+  "skipped": [],
+  "errors": []
+}
