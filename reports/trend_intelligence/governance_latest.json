@@ -1,0 +1,42 @@
+{
+  "findings": [],
+  "metrics": {
+    "checks": [
+      {
+        "name": "base",
+        "observed_status": "READY",
+        "status": "PASS"
+      },
+      {
+        "name": "transition",
+        "observed_status": "READY",
+        "status": "PASS"
+      },
+      {
+        "name": "forecast",
+        "observed_status": "READY",
+        "status": "PASS"
+      },
+      {
+        "name": "institutional",
+        "observed_status": "READY",
+        "status": "PASS"
+      },
+      {
+        "name": "platform",
+        "observed_status": "READY",
+        "status": "PASS"
+      },
+      {
+        "name": "symbol_identity",
+        "status": "PASS",
+        "symbol_count": 7
+      }
+    ],
+    "schema_version": "m52.phase6.v1"
+  },
+  "name": "governance",
+  "score": 100.0,
+  "snapshot_timestamp": "2026-07-28T23:12:42.522999+00:00",
+  "status": "READY"
+}

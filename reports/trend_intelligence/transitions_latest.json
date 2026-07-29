@@ -1,0 +1,236 @@
+{
+  "status": "READY",
+  "snapshot_timestamp": "2026-07-28T22:26:36.933013+00:00",
+  "requested_symbol_count": 7,
+  "symbol_count": 7,
+  "skipped_count": 0,
+  "error_count": 0,
+  "results": [
+    {
+      "symbol": "AAPL",
+      "as_of_date": "2026-07-24",
+      "snapshot_timestamp": "2026-07-28T22:26:36.919182+00:00",
+      "transition_state": "CONTINUATION",
+      "transition_direction": "UP",
+      "breakout_state": "BREAKOUT_WATCH",
+      "channel_position_pct": 98.91,
+      "breakout_distance_pct": 0.2157,
+      "momentum_acceleration_score": 32.0,
+      "volatility_state": "NORMAL",
+      "volatility_percentile": 73.02,
+      "compression_score": 26.98,
+      "reversal_risk_score": 16.87,
+      "exhaustion_risk_score": 1.85,
+      "confirmation_score": 67.39,
+      "signal_adjustment": {
+        "CALL": 0.7,
+        "PUT": -1.2
+      },
+      "status": "READY",
+      "calculation_version": "trend_transition.v1",
+      "warnings": [],
+      "metadata": {
+        "fast_momentum_pct": -0.0242,
+        "slow_momentum_pct": 0.9758,
+        "channel_high": 333.739990234375,
+        "channel_low": 267.6099853515625,
+        "phase1_alignment": 94.78,
+        "phase1_quality": 81.89
+      }
+    },
+    {
+      "symbol": "MSFT",
+      "as_of_date": "2026-07-24",
+      "snapshot_timestamp": "2026-07-28T22:26:36.920480+00:00",
+      "transition_state": "CONTINUATION",
+      "transition_direction": "NEUTRAL",
+      "breakout_state": "IN_CHANNEL",
+      "channel_position_pct": 26.81,
+      "breakout_distance_pct": 0.0,
+      "momentum_acceleration_score": 31.56,
+      "volatility_state": "NORMAL",
+      "volatility_percentile": 45.24,
+      "compression_score": 54.76,
+      "reversal_risk_score": 19.49,
+      "exhaustion_risk_score": 0.0,
+      "confirmation_score": 55.86,
+      "signal_adjustment": {
+        "CALL": 0.23,
+        "PUT": 0.0
+      },
+      "status": "READY",
+      "calculation_version": "trend_transition.v1",
+      "warnings": [],
+      "metadata": {
+        "fast_momentum_pct": -0.6107,
+        "slow_momentum_pct": 0.4135,
+        "channel_high": 460.5199890136719,
+        "channel_low": 352.8299865722656,
+        "phase1_alignment": 90.64,
+        "phase1_quality": 72.72
+      }
+    },
+    {
+      "symbol": "NVDA",
+      "as_of_date": "2026-07-24",
+      "snapshot_timestamp": "2026-07-28T22:26:36.921589+00:00",
+      "transition_state": "CONTINUATION",
+      "transition_direction": "NEUTRAL",
+      "breakout_state": "IN_CHANNEL",
+      "channel_position_pct": 33.12,
+      "breakout_distance_pct": 0.0,
+      "momentum_acceleration_score": 51.91,
+      "volatility_state": "NORMAL",
+      "volatility_percentile": 31.75,
+      "compression_score": 68.25,
+      "reversal_risk_score": 7.77,
+      "exhaustion_risk_score": 0.0,
+      "confirmation_score": 47.32,
+      "signal_adjustment": {
+        "CALL": -0.11,
+        "PUT": 0.0
+      },
+      "status": "READY",
+      "calculation_version": "trend_transition.v1",
+      "warnings": [],
+      "metadata": {
+        "fast_momentum_pct": 0.4059,
+        "slow_momentum_pct": 0.3,
+        "channel_high": 235.74000549316406,
+        "channel_low": 192.52999877929688,
+        "phase1_alignment": 88.57,
+        "phase1_quality": 65.57
+      }
+    },
+    {
+      "symbol": "AMZN",
+      "as_of_date": "2026-07-24",
+      "snapshot_timestamp": "2026-07-28T22:26:36.922635+00:00",
+      "transition_state": "CONTINUATION",
+      "transition_direction": "NEUTRAL",
+      "breakout_state": "IN_CHANNEL",
+      "channel_position_pct": 10.63,
+      "breakout_distance_pct": 0.0,
+      "momentum_acceleration_score": 25.45,
+      "volatility_state": "NORMAL",
+      "volatility_percentile": 46.83,
+      "compression_score": 53.17,
+      "reversal_risk_score": 35.6,
+      "exhaustion_risk_score": 0.0,
+      "confirmation_score": 50.45,
+      "signal_adjustment": {
+        "CALL": 0.02,
+        "PUT": 0.0
+      },
+      "status": "READY",
+      "calculation_version": "trend_transition.v1",
+      "warnings": [],
+      "metadata": {
+        "fast_momentum_pct": -1.2368,
+        "slow_momentum_pct": 0.1269,
+        "channel_high": 274.989990234375,
+        "channel_low": 227.00999450683594,
+        "phase1_alignment": 69.98,
+        "phase1_quality": 76.73
+      }
+    },
+    {
+      "symbol": "META",
+      "as_of_date": "2026-07-24",
+      "snapshot_timestamp": "2026-07-28T22:26:36.923979+00:00",
+      "transition_state": "CONTINUATION",
+      "transition_direction": "NEUTRAL",
+      "breakout_state": "IN_CHANNEL",
+      "channel_position_pct": 37.79,
+      "breakout_distance_pct": 0.0,
+      "momentum_acceleration_score": 11.58,
+      "volatility_state": "EXPANSION",
+      "volatility_percentile": 95.24,
+      "compression_score": 4.76,
+      "reversal_risk_score": 46.48,
+      "exhaustion_risk_score": 0.0,
+      "confirmation_score": 55.35,
+      "signal_adjustment": {
+        "CALL": 0.21,
+        "PUT": 0.0
+      },
+      "status": "READY",
+      "calculation_version": "trend_transition.v1",
+      "warnings": [],
+      "metadata": {
+        "fast_momentum_pct": -1.617,
+        "slow_momentum_pct": 0.5173,
+        "channel_high": 681.3099975585938,
+        "channel_low": 542.8699951171875,
+        "phase1_alignment": 69.82,
+        "phase1_quality": 76.83
+      }
+    },
+    {
+      "symbol": "SPY",
+      "as_of_date": "2026-07-24",
+      "snapshot_timestamp": "2026-07-28T22:26:36.925341+00:00",
+      "transition_state": "CONTINUATION",
+      "transition_direction": "NEUTRAL",
+      "breakout_state": "IN_CHANNEL",
+      "channel_position_pct": 59.62,
+      "breakout_distance_pct": 0.0,
+      "momentum_acceleration_score": 47.31,
+      "volatility_state": "NORMAL",
+      "volatility_percentile": 29.37,
+      "compression_score": 70.63,
+      "reversal_risk_score": 19.95,
+      "exhaustion_risk_score": 0.0,
+      "confirmation_score": 38.83,
+      "signal_adjustment": {
+        "CALL": -0.45,
+        "PUT": 0.0
+      },
+      "status": "READY",
+      "calculation_version": "trend_transition.v1",
+      "warnings": [],
+      "metadata": {
+        "fast_momentum_pct": -0.1154,
+        "slow_momentum_pct": 0.034,
+        "channel_high": 759.5700073242188,
+        "channel_low": 708.4500122070312,
+        "phase1_alignment": 67.53,
+        "phase1_quality": 65.51
+      }
+    },
+    {
+      "symbol": "QQQ",
+      "as_of_date": "2026-07-24",
+      "snapshot_timestamp": "2026-07-28T22:26:36.926764+00:00",
+      "transition_state": "CONTINUATION",
+      "transition_direction": "NEUTRAL",
+      "breakout_state": "IN_CHANNEL",
+      "channel_position_pct": 34.63,
+      "breakout_distance_pct": 0.0,
+      "momentum_acceleration_score": 48.3,
+      "volatility_state": "NORMAL",
+      "volatility_percentile": 73.81,
+      "compression_score": 26.19,
+      "reversal_risk_score": 23.01,
+      "exhaustion_risk_score": 0.0,
+      "confirmation_score": 37.23,
+      "signal_adjustment": {
+        "CALL": -0.51,
+        "PUT": 0.0
+      },
+      "status": "READY",
+      "calculation_version": "trend_transition.v1",
+      "warnings": [],
+      "metadata": {
+        "fast_momentum_pct": -0.3133,
+        "slow_momentum_pct": -0.2188,
+        "channel_high": 746.1599731445312,
+        "channel_low": 651.4199829101562,
+        "phase1_alignment": 60.56,
+        "phase1_quality": 72.12
+      }
+    }
+  ],
+  "skipped": [],
+  "errors": []
+}

@@ -93,6 +93,12 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--dealer-positioning-max-age-days", type=int, default=1)
     parser.add_argument("--dealer-positioning-weight", type=float, default=1.0)
     parser.add_argument("--dealer-positioning-max-adjustment", type=float, default=15.0)
+    transition_group = parser.add_mutually_exclusive_group()
+    transition_group.add_argument("--enable-trend-transition-intelligence", dest="enable_trend_transition_intelligence", action="store_true", default=True)
+    transition_group.add_argument("--disable-trend-transition-intelligence", dest="enable_trend_transition_intelligence", action="store_false")
+    parser.add_argument("--trend-transition-max-age-days", type=int, default=3)
+    parser.add_argument("--trend-transition-weight", type=float, default=1.0)
+    parser.add_argument("--trend-transition-max-adjustment", type=float, default=2.0)
     parser.add_argument("--published-state-maximum-age-hours", type=float, default=36.0)
     parser.add_argument("--published-state-warning-age-hours", type=float, default=24.0)
     parser.add_argument("--require-ready-published-state", action="store_true")
@@ -140,14 +146,20 @@ def print_candidate(index: int, candidate) -> None:
     print(f"{index}. {candidate.symbol} {candidate.signal}")
     print(f"   Strategy       : {candidate.strategy}")
     print(f"   Sector         : {candidate.sector}")
-    print(f"   AI Score       : {candidate.ai_score:.2f}")
+    print(f"   Final AI Score : {candidate.ai_score:.2f}")
+    print(f"   Raw AI Score   : {getattr(candidate, 'raw_ai_score', candidate.ai_score):.2f}")
     print(f"   Base AI Score  : {candidate.base_ai_score:.2f}")
     print(f"   Dealer Adj.    : {candidate.dealer_score_adjustment:+.2f}")
+    print(f"   Trend Base Adj.: {getattr(candidate, 'base_trend_score_adjustment', getattr(candidate, 'trend_score_adjustment', 0.0)):+.2f}")
+    print(f"   Transition Adj.: {getattr(candidate, 'transition_score_adjustment', 0.0):+.2f}")
+    print(f"   Trend Total Adj: {getattr(candidate, 'combined_trend_score_adjustment', getattr(candidate, 'trend_score_adjustment', 0.0)):+.2f}")
+    print(f"   Transition     : {getattr(candidate, 'transition_context_status', 'MISSING')} / {getattr(candidate, 'transition_state', 'UNAVAILABLE')} / {getattr(candidate, 'breakout_state', 'UNAVAILABLE')}")
+    print(f"   Score Capped   : {'YES' if getattr(candidate, 'score_capped', False) else 'NO'}")
     print(f"   Dealer Context : {candidate.dealer_context_status} / {candidate.positioning_label}")
     if getattr(candidate, "dealer_context_warning", ""):
         print(f"   Dealer Warning : {candidate.dealer_context_warning}")
-    print(f"   Adjusted Score : {candidate.adjusted_score:.2f}")
-    print(f"   Base Score     : {candidate.final_score:.2f}")
+    print(f"   Portfolio Adj. : {candidate.adjusted_score:.2f}")
+    print(f"   Legacy Score   : {candidate.final_score:.2f}")
     print(f"   Signal Score   : {candidate.score:.2f}")
     print(
         f"   Call / Put     : "
@@ -176,9 +188,14 @@ def print_trade(index: int, trade) -> None:
     print()
     print(f"{index}. LIVE TRADE CANDIDATE — {trade.symbol} {trade.signal}")
     print(f"   Confidence  : {trade.confidence}")
-    print(f"   AI Score    : {trade.ai_score:.2f}")
+    print(f"   Final AI    : {trade.ai_score:.2f}")
+    print(f"   Raw AI      : {getattr(trade, 'raw_ai_score', trade.ai_score):.2f}")
     print(f"   Base AI     : {trade.base_ai_score:.2f}")
     print(f"   Dealer Adj. : {trade.dealer_score_adjustment:+.2f}")
+    print(f"   Trend Base  : {getattr(trade, 'base_trend_score_adjustment', getattr(trade, 'trend_score_adjustment', 0.0)):+.2f}")
+    print(f"   Transition : {getattr(trade, 'transition_score_adjustment', 0.0):+.2f}")
+    print(f"   Trend Total: {getattr(trade, 'combined_trend_score_adjustment', getattr(trade, 'trend_score_adjustment', 0.0)):+.2f}")
+    print(f"   Score Cap   : {'YES' if getattr(trade, 'score_capped', False) else 'NO'}")
     print(f"   Dealer      : {trade.dealer_context_status} / {trade.positioning_label}")
     if getattr(trade, "dealer_context_warning", ""):
         print(f"   Dealer Warn : {trade.dealer_context_warning}")
@@ -276,6 +293,10 @@ def main(argv: list[str] | None = None) -> int:
         maximum_dealer_score_adjustment=args.dealer_positioning_max_adjustment,
         published_state_context=published_state_context,
         option_snapshot_as_of=args.end,
+        enable_trend_transition_intelligence=args.enable_trend_transition_intelligence,
+        maximum_transition_snapshot_age_days=args.trend_transition_max_age_days,
+        transition_intelligence_weight=args.trend_transition_weight,
+        maximum_transition_score_adjustment=args.trend_transition_max_adjustment,
     )
 
     print()
@@ -371,6 +392,10 @@ def main(argv: list[str] | None = None) -> int:
         "dealer_positioning_max_age_days": args.dealer_positioning_max_age_days,
         "dealer_positioning_weight": args.dealer_positioning_weight,
         "dealer_positioning_max_adjustment": args.dealer_positioning_max_adjustment,
+        "trend_transition_enabled": args.enable_trend_transition_intelligence,
+        "trend_transition_max_age_days": args.trend_transition_max_age_days,
+        "trend_transition_weight": args.trend_transition_weight,
+        "trend_transition_max_adjustment": args.trend_transition_max_adjustment,
         "data_mode": "database_only",
         "market_data_source": "PostgreSQL.price_history",
         "network_access": False,

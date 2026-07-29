@@ -1,12 +1,12 @@
 {
-  "completed_at": "2026-07-28T13:59:35.297846+00:00",
-  "data_scope": "options",
-  "duration_seconds": 756.533,
+  "completed_at": "2026-07-28T22:26:42.009914+00:00",
+  "data_scope": "all",
+  "duration_seconds": 12.47,
   "failed_ingestion_units": 0,
-  "mode": "intraday",
+  "mode": "analytics",
   "stages": {
     "dealer_positioning": {
-      "refreshed": true,
+      "refreshed": false,
       "skipped": false
     },
     "market_intelligence": {
@@ -16,8 +16,8 @@
       "skipped": false
     },
     "options": {
-      "mode": "FRESH",
-      "refreshed": true,
+      "mode": "REUSED",
+      "refreshed": false,
       "requested": true
     },
     "publication": {
@@ -25,11 +25,15 @@
       "scanner_ready": true,
       "skipped": false
     },
+    "trend_intelligence": {
+      "refreshed": true,
+      "skipped": false
+    },
     "underlying": {
-      "refreshed": false,
-      "requested": false
+      "refreshed": true,
+      "requested": true
     }
   },
-  "started_at": "2026-07-28T13:46:58.764614+00:00",
+  "started_at": "2026-07-28T22:26:29.540414+00:00",
   "status": "READY"
 }

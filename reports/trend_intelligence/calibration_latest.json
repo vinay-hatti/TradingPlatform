@@ -1,0 +1,21 @@
+{
+  "findings": [
+    {
+      "blocking": false,
+      "code": "INSUFFICIENT_REALIZED_OUTCOMES",
+      "component": "calibration",
+      "details": {},
+      "message": "0 realized forecast outcomes; 30 required.",
+      "severity": "INFO"
+    }
+  ],
+  "metrics": {
+    "fabricated_metrics": false,
+    "minimum_samples": 30,
+    "sample_count": 0
+  },
+  "name": "calibration",
+  "score": 100.0,
+  "snapshot_timestamp": "2026-07-28T23:12:42.522945+00:00",
+  "status": "NOT_ENOUGH_HISTORY"
+}

@@ -17,6 +17,8 @@ from trading_ai.portfolio.awareness import PortfolioAwareness
 from trading_ai.ranking.ai_score import AITradeRanker
 from trading_ai.institutional_market_structure import scanner_context
 from trading_ai.institutional_market_structure.scanner_repository import DealerPositioningScannerRepository
+from trading_ai.trend_intelligence.repository import TrendIntelligenceRepository
+from trading_ai.trend_intelligence.transition_repository import TrendTransitionRepository
 
 
 class DailyScanner:
@@ -59,6 +61,16 @@ class DailyScanner:
         maximum_dealer_score_adjustment=15.0,
         published_state_context=None,
         option_snapshot_as_of=None,
+        enable_trend_intelligence=True,
+        trend_intelligence_repository=None,
+        maximum_trend_snapshot_age_days=3,
+        trend_intelligence_weight=1.0,
+        maximum_trend_score_adjustment=6.0,
+        enable_trend_transition_intelligence=True,
+        trend_transition_repository=None,
+        maximum_transition_snapshot_age_days=3,
+        transition_intelligence_weight=1.0,
+        maximum_transition_score_adjustment=2.0,
     ):
         self.market_service = market_service
         self.feature_pipeline = feature_pipeline
@@ -148,6 +160,16 @@ class DailyScanner:
         self.dealer_positioning_weight = max(0.0, float(dealer_positioning_weight))
         self.maximum_dealer_score_adjustment = max(0.0, float(maximum_dealer_score_adjustment))
         self.published_state_context = published_state_context
+        self.enable_trend_intelligence = bool(enable_trend_intelligence)
+        self.trend_intelligence_repository = trend_intelligence_repository or TrendIntelligenceRepository()
+        self.maximum_trend_snapshot_age_days = int(maximum_trend_snapshot_age_days)
+        self.trend_intelligence_weight = max(0.0, float(trend_intelligence_weight))
+        self.maximum_trend_score_adjustment = max(0.0, float(maximum_trend_score_adjustment))
+        self.enable_trend_transition_intelligence = bool(enable_trend_transition_intelligence)
+        self.trend_transition_repository = trend_transition_repository or TrendTransitionRepository()
+        self.maximum_transition_snapshot_age_days = int(maximum_transition_snapshot_age_days)
+        self.transition_intelligence_weight = max(0.0, float(transition_intelligence_weight))
+        self.maximum_transition_score_adjustment = max(0.0, float(maximum_transition_score_adjustment))
 
     def _latest_feature_row(self, symbol):
         df = self.market_service.get_price_history(
@@ -395,6 +417,63 @@ class DailyScanner:
         })
         return neutral
 
+    def _trend_intelligence_context(self, *, symbol, signal):
+        neutral = {
+            "trend_context_status": "DISABLED" if not self.enable_trend_intelligence else "MISSING",
+            "trend_snapshot_date": "", "trend_snapshot_age_days": -1,
+            "short_term_trend": "UNAVAILABLE", "intermediate_term_trend": "UNAVAILABLE", "long_term_trend": "UNAVAILABLE",
+            "trend_alignment_score": 50.0, "signal_trend_alignment_score": 50.0, "trend_quality_score": 50.0,
+            "trend_confidence": 0.0, "trend_stage": "UNAVAILABLE", "trend_age_days": 0,
+            "relative_strength_vs_spy": 0.0, "relative_strength_vs_sector": 0.0, "relative_strength_grade": "UNAVAILABLE",
+            "sector_trend_alignment_score": 50.0, "market_trend_alignment_score": 50.0,
+            "trend_score_adjustment": 0.0, "trend_context_warning": "",
+            "trend_sector": "Unknown", "trend_sector_etf": "", "relative_strength_multiplier": 1.0,
+        }
+        if not self.enable_trend_intelligence:
+            return neutral
+        try:
+            context = self.trend_intelligence_repository.scanner_context(
+                symbol, signal, maximum_age_days=self.maximum_trend_snapshot_age_days, reference_date=self.end
+            )
+        except Exception as exc:
+            neutral["trend_context_status"] = "ERROR"
+            neutral["trend_context_warning"] = str(exc)
+            return neutral
+        neutral.update(context)
+        raw = float(neutral.get("trend_score_adjustment", 0.0) or 0.0) * self.trend_intelligence_weight
+        neutral["trend_score_adjustment"] = max(-self.maximum_trend_score_adjustment, min(self.maximum_trend_score_adjustment, raw))
+        return neutral
+
+    def _trend_transition_context(self, *, symbol, signal):
+        neutral = {
+            "transition_context_status": "DISABLED" if not self.enable_trend_transition_intelligence else "MISSING",
+            "transition_snapshot_date": "", "transition_snapshot_age_days": -1,
+            "transition_state": "UNAVAILABLE", "transition_direction": "UNAVAILABLE",
+            "breakout_state": "UNAVAILABLE", "channel_position_pct": 50.0,
+            "momentum_acceleration_score": 0.0, "volatility_state": "UNAVAILABLE",
+            "volatility_percentile": 50.0, "reversal_risk_score": 0.0,
+            "exhaustion_risk_score": 0.0, "transition_confirmation_score": 50.0,
+            "transition_score_adjustment": 0.0, "transition_context_warning": "",
+        }
+        if not self.enable_trend_transition_intelligence:
+            return neutral
+        try:
+            context = self.trend_transition_repository.scanner_context(
+                symbol, signal, maximum_age_days=self.maximum_transition_snapshot_age_days,
+                reference_date=self.end,
+            )
+        except Exception as exc:
+            neutral["transition_context_status"] = "ERROR"
+            neutral["transition_context_warning"] = str(exc)
+            return neutral
+        neutral.update(context)
+        raw = float(neutral.get("transition_score_adjustment", 0.0) or 0.0) * self.transition_intelligence_weight
+        neutral["transition_score_adjustment"] = max(
+            -self.maximum_transition_score_adjustment,
+            min(self.maximum_transition_score_adjustment, raw),
+        )
+        return neutral
+
     def scan_symbol(self, symbol):
         row = self._latest_feature_row(symbol)
         if row is None:
@@ -522,7 +601,10 @@ class DailyScanner:
             greeks,
         )
 
-        sector = sector_for(symbol)
+        trend_context = self._trend_intelligence_context(symbol=symbol, signal=signal)
+        transition_context = self._trend_transition_context(symbol=symbol, signal=signal)
+        trend_sector = str(trend_context.get("trend_sector", "") or "").strip()
+        sector = trend_sector if trend_sector and trend_sector != "Unknown" else sector_for(symbol)
         portfolio_result = self.portfolio.evaluate(
             symbol=symbol,
             sector=sector,
@@ -552,7 +634,19 @@ class DailyScanner:
         )
         base_ai_score = float(ranking["ai_score"])
         dealer_adjustment = float(dealer_context["dealer_score_adjustment"])
-        final_ai_score = max(0.0, min(100.0, base_ai_score + dealer_adjustment))
+        base_trend_adjustment = float(trend_context["trend_score_adjustment"])
+        transition_adjustment = float(transition_context["transition_score_adjustment"])
+        combined_trend_adjustment = max(
+            -self.maximum_trend_score_adjustment,
+            min(self.maximum_trend_score_adjustment, base_trend_adjustment + transition_adjustment),
+        )
+        trend_context["base_trend_score_adjustment"] = base_trend_adjustment
+        trend_context["combined_trend_score_adjustment"] = combined_trend_adjustment
+        trend_context["trend_score_adjustment"] = combined_trend_adjustment
+        trend_adjustment = combined_trend_adjustment
+        raw_ai_score = base_ai_score + dealer_adjustment + combined_trend_adjustment
+        final_ai_score = max(0.0, min(100.0, raw_ai_score))
+        score_capped = not math.isclose(raw_ai_score, final_ai_score, abs_tol=1e-9)
         (
             resolved_contract_ticker,
             candidate_expiry,
@@ -596,6 +690,25 @@ class DailyScanner:
                 f" | Dealer positioning {dealer_context['dealer_context_status']}; "
                 "neutral score adjustment."
             )
+        if trend_context["trend_context_status"] == "FRESH":
+            ranking_reason += (
+                f" | Trend {trend_context['long_term_trend']}/"
+                f"{trend_context['intermediate_term_trend']}/{trend_context['short_term_trend']}; "
+                f"signal alignment={trend_context['signal_trend_alignment_score']:.1f}, "
+                f"base adjustment={base_trend_adjustment:+.2f}, total trend adjustment={combined_trend_adjustment:+.2f}, RS={trend_context['relative_strength_grade']}."
+            )
+        elif self.enable_trend_intelligence:
+            ranking_reason += f" | Trend intelligence {trend_context['trend_context_status']}; neutral adjustment."
+        if transition_context["transition_context_status"] == "FRESH":
+            ranking_reason += (
+                f" | Transition {transition_context['transition_state']}/{transition_context['breakout_state']}; "
+                f"confirmation={transition_context['transition_confirmation_score']:.1f}, "
+                f"reversal risk={transition_context['reversal_risk_score']:.1f}, "
+                f"exhaustion risk={transition_context['exhaustion_risk_score']:.1f}, "
+                f"adjustment={transition_adjustment:+.2f}."
+            )
+        elif self.enable_trend_transition_intelligence:
+            ranking_reason += f" | Transition intelligence {transition_context['transition_context_status']}; neutral adjustment."
 
         return DailyCandidate(
             symbol=symbol,
@@ -654,6 +767,8 @@ class DailyScanner:
             portfolio_notes=portfolio_result["notes"],
             ai_score=float(final_ai_score),
             base_ai_score=float(base_ai_score),
+            raw_ai_score=float(raw_ai_score),
+            score_capped=bool(score_capped),
             technical_score=float(
                 ranking["technical_score"]
             ),
@@ -671,6 +786,8 @@ class DailyScanner:
             ),
             ranking_reason=ranking_reason,
             **dealer_context,
+            **trend_context,
+            **transition_context,
             **(self.published_state_context.candidate_fields() if self.published_state_context else {}),
         )
 

@@ -1,0 +1,437 @@
+[
+  {
+    "assessments": {
+      "attribution": {
+        "findings": [],
+        "metrics": {
+          "symbol_count": 7,
+          "symbols": [
+            {
+              "component_total": 0.0,
+              "components": {
+                "base_trend": 0.0,
+                "forecast": 0.0,
+                "institutional": 0.0,
+                "transition": 0.0
+              },
+              "final_adjustment": 0.2808,
+              "residual": 0.2808,
+              "symbol": "AAPL"
+            },
+            {
+              "component_total": 0.0,
+              "components": {
+                "base_trend": 0.0,
+                "forecast": 0.0,
+                "institutional": 0.0,
+                "transition": 0.0
+              },
+              "final_adjustment": 0.103,
+              "residual": 0.103,
+              "symbol": "MSFT"
+            },
+            {
+              "component_total": 0.0,
+              "components": {
+                "base_trend": 0.0,
+                "forecast": 0.0,
+                "institutional": 0.0,
+                "transition": 0.0
+              },
+              "final_adjustment": 0.0389,
+              "residual": 0.0389,
+              "symbol": "NVDA"
+            },
+            {
+              "component_total": 0.0,
+              "components": {
+                "base_trend": 0.0,
+                "forecast": 0.0,
+                "institutional": 0.0,
+                "transition": 0.0
+              },
+              "final_adjustment": 0.0511,
+              "residual": 0.0511,
+              "symbol": "AMZN"
+            },
+            {
+              "component_total": 0.0,
+              "components": {
+                "base_trend": 0.0,
+                "forecast": 0.0,
+                "institutional": 0.0,
+                "transition": 0.0
+              },
+              "final_adjustment": 0.1147,
+              "residual": 0.1147,
+              "symbol": "META"
+            },
+            {
+              "component_total": 0.0,
+              "components": {
+                "base_trend": 0.0,
+                "forecast": 0.0,
+                "institutional": 0.0,
+                "transition": 0.0
+              },
+              "final_adjustment": -0.0921,
+              "residual": -0.0921,
+              "symbol": "SPY"
+            },
+            {
+              "component_total": 0.0,
+              "components": {
+                "base_trend": 0.0,
+                "forecast": 0.0,
+                "institutional": 0.0,
+                "transition": 0.0
+              },
+              "final_adjustment": -0.1703,
+              "residual": -0.1703,
+              "symbol": "QQQ"
+            }
+          ]
+        },
+        "name": "attribution",
+        "score": 100.0,
+        "snapshot_timestamp": "2026-07-28T23:12:20.716723+00:00",
+        "status": "READY"
+      },
+      "calibration": {
+        "findings": [
+          {
+            "blocking": false,
+            "code": "INSUFFICIENT_REALIZED_OUTCOMES",
+            "component": "calibration",
+            "details": {},
+            "message": "0 realized forecast outcomes; 30 required.",
+            "severity": "INFO"
+          }
+        ],
+        "metrics": {
+          "fabricated_metrics": false,
+          "minimum_samples": 30,
+          "sample_count": 0
+        },
+        "name": "calibration",
+        "score": 100.0,
+        "snapshot_timestamp": "2026-07-28T23:12:20.716700+00:00",
+        "status": "NOT_ENOUGH_HISTORY"
+      },
+      "drift": {
+        "findings": [
+          {
+            "blocking": false,
+            "code": "BASELINE_BUILDING",
+            "component": "drift",
+            "details": {},
+            "message": "No prior Phase 6 drift baseline; current snapshot establishes it.",
+            "severity": "INFO"
+          }
+        ],
+        "metrics": {
+          "adjustment_values": [
+            0.2808,
+            0.103,
+            0.0389,
+            0.0511,
+            0.1147,
+            -0.0921,
+            -0.1703
+          ],
+          "baseline_snapshot_count": 0,
+          "jensen_shannon": 0.34657359027997264,
+          "psi": 0.0,
+          "transition_distribution": {
+            "UNKNOWN": 7
+          }
+        },
+        "name": "drift",
+        "score": 100.0,
+        "snapshot_timestamp": "2026-07-28T23:12:20.716714+00:00",
+        "status": "READY"
+      },
+      "governance": {
+        "findings": [],
+        "metrics": {
+          "checks": [
+            {
+              "name": "base",
+              "observed_status": "READY",
+              "status": "PASS"
+            },
+            {
+              "name": "transition",
+              "observed_status": "READY",
+              "status": "PASS"
+            },
+            {
+              "name": "forecast",
+              "observed_status": "READY",
+              "status": "PASS"
+            },
+            {
+              "name": "institutional",
+              "observed_status": "READY",
+              "status": "PASS"
+            },
+            {
+              "name": "platform",
+              "observed_status": "READY",
+              "status": "PASS"
+            },
+            {
+              "name": "symbol_identity",
+              "status": "PASS",
+              "symbol_count": 7
+            }
+          ],
+          "schema_version": "m52.phase6.v1"
+        },
+        "name": "governance",
+        "score": 100.0,
+        "snapshot_timestamp": "2026-07-28T23:12:20.716732+00:00",
+        "status": "READY"
+      },
+      "health": {
+        "findings": [],
+        "metrics": {
+          "components": {
+            "base": "READY",
+            "forecast": "READY",
+            "institutional": "READY",
+            "lifecycle": "READY",
+            "platform": "READY",
+            "publication": "DEGRADED_USABLE",
+            "transition": "READY"
+          },
+          "publication_usable": true
+        },
+        "name": "health",
+        "score": 98.0,
+        "snapshot_timestamp": "2026-07-28T23:12:20.716688+00:00",
+        "status": "READY"
+      }
+    },
+    "blocking_findings": [],
+    "degraded_components": [],
+    "milestone_52_closure_eligible": true,
+    "schema_version": "m52.phase6.v1",
+    "score": 99.6,
+    "snapshot_timestamp": "2026-07-28T23:12:20.716748+00:00",
+    "status": "READY"
+  },
+  {
+    "assessments": {
+      "attribution": {
+        "findings": [],
+        "metrics": {
+          "symbol_count": 7,
+          "symbols": [
+            {
+              "component_total": 0.0,
+              "components": {
+                "base_trend": 0.0,
+                "forecast": 0.0,
+                "institutional": 0.0,
+                "transition": 0.0
+              },
+              "final_adjustment": 0.2808,
+              "residual": 0.2808,
+              "symbol": "AAPL"
+            },
+            {
+              "component_total": 0.0,
+              "components": {
+                "base_trend": 0.0,
+                "forecast": 0.0,
+                "institutional": 0.0,
+                "transition": 0.0
+              },
+              "final_adjustment": 0.103,
+              "residual": 0.103,
+              "symbol": "MSFT"
+            },
+            {
+              "component_total": 0.0,
+              "components": {
+                "base_trend": 0.0,
+                "forecast": 0.0,
+                "institutional": 0.0,
+                "transition": 0.0
+              },
+              "final_adjustment": 0.0389,
+              "residual": 0.0389,
+              "symbol": "NVDA"
+            },
+            {
+              "component_total": 0.0,
+              "components": {
+                "base_trend": 0.0,
+                "forecast": 0.0,
+                "institutional": 0.0,
+                "transition": 0.0
+              },
+              "final_adjustment": 0.0511,
+              "residual": 0.0511,
+              "symbol": "AMZN"
+            },
+            {
+              "component_total": 0.0,
+              "components": {
+                "base_trend": 0.0,
+                "forecast": 0.0,
+                "institutional": 0.0,
+                "transition": 0.0
+              },
+              "final_adjustment": 0.1147,
+              "residual": 0.1147,
+              "symbol": "META"
+            },
+            {
+              "component_total": 0.0,
+              "components": {
+                "base_trend": 0.0,
+                "forecast": 0.0,
+                "institutional": 0.0,
+                "transition": 0.0
+              },
+              "final_adjustment": -0.0921,
+              "residual": -0.0921,
+              "symbol": "SPY"
+            },
+            {
+              "component_total": 0.0,
+              "components": {
+                "base_trend": 0.0,
+                "forecast": 0.0,
+                "institutional": 0.0,
+                "transition": 0.0
+              },
+              "final_adjustment": -0.1703,
+              "residual": -0.1703,
+              "symbol": "QQQ"
+            }
+          ]
+        },
+        "name": "attribution",
+        "score": 100.0,
+        "snapshot_timestamp": "2026-07-28T23:12:42.522992+00:00",
+        "status": "READY"
+      },
+      "calibration": {
+        "findings": [
+          {
+            "blocking": false,
+            "code": "INSUFFICIENT_REALIZED_OUTCOMES",
+            "component": "calibration",
+            "details": {},
+            "message": "0 realized forecast outcomes; 30 required.",
+            "severity": "INFO"
+          }
+        ],
+        "metrics": {
+          "fabricated_metrics": false,
+          "minimum_samples": 30,
+          "sample_count": 0
+        },
+        "name": "calibration",
+        "score": 100.0,
+        "snapshot_timestamp": "2026-07-28T23:12:42.522945+00:00",
+        "status": "NOT_ENOUGH_HISTORY"
+      },
+      "drift": {
+        "findings": [],
+        "metrics": {
+          "adjustment_values": [
+            0.2808,
+            0.103,
+            0.0389,
+            0.0511,
+            0.1147,
+            -0.0921,
+            -0.1703
+          ],
+          "baseline_snapshot_count": 1,
+          "jensen_shannon": 0.0,
+          "psi": 0.0,
+          "transition_distribution": {
+            "UNKNOWN": 7
+          }
+        },
+        "name": "drift",
+        "score": 100.0,
+        "snapshot_timestamp": "2026-07-28T23:12:42.522982+00:00",
+        "status": "READY"
+      },
+      "governance": {
+        "findings": [],
+        "metrics": {
+          "checks": [
+            {
+              "name": "base",
+              "observed_status": "READY",
+              "status": "PASS"
+            },
+            {
+              "name": "transition",
+              "observed_status": "READY",
+              "status": "PASS"
+            },
+            {
+              "name": "forecast",
+              "observed_status": "READY",
+              "status": "PASS"
+            },
+            {
+              "name": "institutional",
+              "observed_status": "READY",
+              "status": "PASS"
+            },
+            {
+              "name": "platform",
+              "observed_status": "READY",
+              "status": "PASS"
+            },
+            {
+              "name": "symbol_identity",
+              "status": "PASS",
+              "symbol_count": 7
+            }
+          ],
+          "schema_version": "m52.phase6.v1"
+        },
+        "name": "governance",
+        "score": 100.0,
+        "snapshot_timestamp": "2026-07-28T23:12:42.522999+00:00",
+        "status": "READY"
+      },
+      "health": {
+        "findings": [],
+        "metrics": {
+          "components": {
+            "base": "READY",
+            "forecast": "READY",
+            "institutional": "READY",
+            "lifecycle": "READY",
+            "platform": "READY",
+            "publication": "DEGRADED_USABLE",
+            "transition": "READY"
+          },
+          "publication_usable": true
+        },
+        "name": "health",
+        "score": 98.0,
+        "snapshot_timestamp": "2026-07-28T23:12:42.522930+00:00",
+        "status": "READY"
+      }
+    },
+    "blocking_findings": [],
+    "degraded_components": [],
+    "milestone_52_closure_eligible": true,
+    "schema_version": "m52.phase6.v1",
+    "score": 99.6,
+    "snapshot_timestamp": "2026-07-28T23:12:42.523015+00:00",
+    "status": "READY"
+  }
+]

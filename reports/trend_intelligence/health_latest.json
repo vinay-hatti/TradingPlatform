@@ -1,0 +1,19 @@
+{
+  "findings": [],
+  "metrics": {
+    "components": {
+      "base": "READY",
+      "forecast": "READY",
+      "institutional": "READY",
+      "lifecycle": "READY",
+      "platform": "READY",
+      "publication": "DEGRADED_USABLE",
+      "transition": "READY"
+    },
+    "publication_usable": true
+  },
+  "name": "health",
+  "score": 98.0,
+  "snapshot_timestamp": "2026-07-28T23:12:42.522930+00:00",
+  "status": "READY"
+}

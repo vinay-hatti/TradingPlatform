@@ -1,0 +1,96 @@
+{
+  "findings": [],
+  "metrics": {
+    "symbol_count": 7,
+    "symbols": [
+      {
+        "component_total": 0.0,
+        "components": {
+          "base_trend": 0.0,
+          "forecast": 0.0,
+          "institutional": 0.0,
+          "transition": 0.0
+        },
+        "final_adjustment": 0.2808,
+        "residual": 0.2808,
+        "symbol": "AAPL"
+      },
+      {
+        "component_total": 0.0,
+        "components": {
+          "base_trend": 0.0,
+          "forecast": 0.0,
+          "institutional": 0.0,
+          "transition": 0.0
+        },
+        "final_adjustment": 0.103,
+        "residual": 0.103,
+        "symbol": "MSFT"
+      },
+      {
+        "component_total": 0.0,
+        "components": {
+          "base_trend": 0.0,
+          "forecast": 0.0,
+          "institutional": 0.0,
+          "transition": 0.0
+        },
+        "final_adjustment": 0.0389,
+        "residual": 0.0389,
+        "symbol": "NVDA"
+      },
+      {
+        "component_total": 0.0,
+        "components": {
+          "base_trend": 0.0,
+          "forecast": 0.0,
+          "institutional": 0.0,
+          "transition": 0.0
+        },
+        "final_adjustment": 0.0511,
+        "residual": 0.0511,
+        "symbol": "AMZN"
+      },
+      {
+        "component_total": 0.0,
+        "components": {
+          "base_trend": 0.0,
+          "forecast": 0.0,
+          "institutional": 0.0,
+          "transition": 0.0
+        },
+        "final_adjustment": 0.1147,
+        "residual": 0.1147,
+        "symbol": "META"
+      },
+      {
+        "component_total": 0.0,
+        "components": {
+          "base_trend": 0.0,
+          "forecast": 0.0,
+          "institutional": 0.0,
+          "transition": 0.0
+        },
+        "final_adjustment": -0.0921,
+        "residual": -0.0921,
+        "symbol": "SPY"
+      },
+      {
+        "component_total": 0.0,
+        "components": {
+          "base_trend": 0.0,
+          "forecast": 0.0,
+          "institutional": 0.0,
+          "transition": 0.0
+        },
+        "final_adjustment": -0.1703,
+        "residual": -0.1703,
+        "symbol": "QQQ"
+      }
+    ]
+  },
+  "name": "attribution",
+  "score": 100.0,
+  "snapshot_timestamp": "2026-07-28T23:12:42.522992+00:00",
+  "status": "READY"
+}

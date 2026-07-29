@@ -1,0 +1,59 @@
+[
+  {
+    "findings": [
+      {
+        "blocking": false,
+        "code": "BASELINE_BUILDING",
+        "component": "drift",
+        "details": {},
+        "message": "No prior Phase 6 drift baseline; current snapshot establishes it.",
+        "severity": "INFO"
+      }
+    ],
+    "metrics": {
+      "adjustment_values": [
+        0.2808,
+        0.103,
+        0.0389,
+        0.0511,
+        0.1147,
+        -0.0921,
+        -0.1703
+      ],
+      "baseline_snapshot_count": 0,
+      "jensen_shannon": 0.34657359027997264,
+      "psi": 0.0,
+      "transition_distribution": {
+        "UNKNOWN": 7
+      }
+    },
+    "name": "drift",
+    "score": 100.0,
+    "snapshot_timestamp": "2026-07-28T23:12:20.716714+00:00",
+    "status": "READY"
+  },
+  {
+    "findings": [],
+    "metrics": {
+      "adjustment_values": [
+        0.2808,
+        0.103,
+        0.0389,
+        0.0511,
+        0.1147,
+        -0.0921,
+        -0.1703
+      ],
+      "baseline_snapshot_count": 1,
+      "jensen_shannon": 0.0,
+      "psi": 0.0,
+      "transition_distribution": {
+        "UNKNOWN": 7
+      }
+    },
+    "name": "drift",
+    "score": 100.0,
+    "snapshot_timestamp": "2026-07-28T23:12:42.522982+00:00",
+    "status": "READY"
+  }
+]

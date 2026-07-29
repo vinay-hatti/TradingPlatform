@@ -15,11 +15,11 @@
       "batch_id": "polygon:2026-07-28:AAPL:1",
       "error_messages": [],
       "input_records": 1235,
-      "inserted_records": 1229,
-      "rejected_records": 6,
+      "inserted_records": 1190,
+      "rejected_records": 45,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 1229
+      "valid_records": 1190
     },
     {
       "batch_id": "polygon:2026-07-28:ABBV:1",
@@ -34,89 +34,89 @@
     {
       "batch_id": "polygon:2026-07-28:ABNB:1",
       "error_messages": [],
-      "input_records": 496,
-      "inserted_records": 492,
-      "rejected_records": 4,
+      "input_records": 491,
+      "inserted_records": 475,
+      "rejected_records": 16,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 492
+      "valid_records": 475
     },
     {
       "batch_id": "polygon:2026-07-28:ABT:1",
       "error_messages": [],
-      "input_records": 553,
-      "inserted_records": 552,
-      "rejected_records": 1,
+      "input_records": 557,
+      "inserted_records": 557,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 552
+      "valid_records": 557
     },
     {
       "batch_id": "polygon:2026-07-28:ACGL:1",
       "error_messages": [],
       "input_records": 77,
-      "inserted_records": 70,
-      "rejected_records": 7,
+      "inserted_records": 76,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 70
+      "valid_records": 76
     },
     {
       "batch_id": "polygon:2026-07-28:ACN:1",
       "error_messages": [],
-      "input_records": 638,
-      "inserted_records": 638,
+      "input_records": 644,
+      "inserted_records": 644,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 638
+      "valid_records": 644
     },
     {
       "batch_id": "polygon:2026-07-28:ADBE:1",
       "error_messages": [],
-      "input_records": 755,
-      "inserted_records": 748,
-      "rejected_records": 7,
+      "input_records": 760,
+      "inserted_records": 760,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 748
+      "valid_records": 760
     },
     {
       "batch_id": "polygon:2026-07-28:ADI:1",
       "error_messages": [],
-      "input_records": 600,
-      "inserted_records": 599,
+      "input_records": 592,
+      "inserted_records": 591,
       "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 599
+      "valid_records": 591
     },
     {
       "batch_id": "polygon:2026-07-28:ADM:1",
       "error_messages": [],
       "input_records": 182,
-      "inserted_records": 181,
-      "rejected_records": 1,
+      "inserted_records": 182,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 181
+      "valid_records": 182
     },
     {
       "batch_id": "polygon:2026-07-28:ADP:1",
       "error_messages": [],
-      "input_records": 366,
-      "inserted_records": 366,
+      "input_records": 368,
+      "inserted_records": 368,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 366
+      "valid_records": 368
     },
     {
       "batch_id": "polygon:2026-07-28:ADSK:1",
       "error_messages": [],
-      "input_records": 398,
+      "input_records": 405,
       "inserted_records": 398,
-      "rejected_records": 0,
+      "rejected_records": 7,
       "skipped_records": 0,
       "updated_records": 0,
       "valid_records": 398
@@ -125,11 +125,11 @@
       "batch_id": "polygon:2026-07-28:AEE:1",
       "error_messages": [],
       "input_records": 64,
-      "inserted_records": 63,
-      "rejected_records": 1,
+      "inserted_records": 64,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 63
+      "valid_records": 64
     },
     {
       "batch_id": "polygon:2026-07-28:AEP:1",
@@ -185,31 +185,31 @@
       "batch_id": "polygon:2026-07-28:AIZ:1",
       "error_messages": [],
       "input_records": 44,
-      "inserted_records": 40,
-      "rejected_records": 4,
+      "inserted_records": 41,
+      "rejected_records": 3,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 40
+      "valid_records": 41
     },
     {
       "batch_id": "polygon:2026-07-28:AJG:1",
       "error_messages": [],
       "input_records": 153,
-      "inserted_records": 153,
-      "rejected_records": 0,
+      "inserted_records": 151,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 153
+      "valid_records": 151
     },
     {
       "batch_id": "polygon:2026-07-28:AKAM:1",
       "error_messages": [],
-      "input_records": 429,
-      "inserted_records": 429,
+      "input_records": 442,
+      "inserted_records": 442,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 429
+      "valid_records": 442
     },
     {
       "batch_id": "polygon:2026-07-28:ALAB:1",
@@ -224,32 +224,32 @@
     {
       "batch_id": "polygon:2026-07-28:ALB:1",
       "error_messages": [],
-      "input_records": 553,
-      "inserted_records": 553,
+      "input_records": 538,
+      "inserted_records": 538,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 553
+      "valid_records": 538
     },
     {
       "batch_id": "polygon:2026-07-28:ALGN:1",
       "error_messages": [],
-      "input_records": 333,
-      "inserted_records": 333,
-      "rejected_records": 0,
+      "input_records": 343,
+      "inserted_records": 341,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 333
+      "valid_records": 341
     },
     {
       "batch_id": "polygon:2026-07-28:ALL:1",
       "error_messages": [],
-      "input_records": 169,
-      "inserted_records": 169,
-      "rejected_records": 0,
+      "input_records": 161,
+      "inserted_records": 160,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 169
+      "valid_records": 160
     },
     {
       "batch_id": "polygon:2026-07-28:ALLE:1",
@@ -264,72 +264,72 @@
     {
       "batch_id": "polygon:2026-07-28:ALNY:1",
       "error_messages": [],
-      "input_records": 155,
-      "inserted_records": 155,
+      "input_records": 162,
+      "inserted_records": 162,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 155
+      "valid_records": 162
     },
     {
       "batch_id": "polygon:2026-07-28:AMAT:1",
       "error_messages": [],
-      "input_records": 1182,
-      "inserted_records": 1182,
+      "input_records": 1166,
+      "inserted_records": 1166,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 1182
+      "valid_records": 1166
     },
     {
       "batch_id": "polygon:2026-07-28:AMCR:1",
       "error_messages": [],
-      "input_records": 118,
-      "inserted_records": 118,
+      "input_records": 119,
+      "inserted_records": 119,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 118
+      "valid_records": 119
     },
     {
       "batch_id": "polygon:2026-07-28:AMD:1",
       "error_messages": [],
-      "input_records": 1966,
-      "inserted_records": 1960,
+      "input_records": 1937,
+      "inserted_records": 1931,
       "rejected_records": 6,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 1960
+      "valid_records": 1931
     },
     {
       "batch_id": "polygon:2026-07-28:AME:1",
       "error_messages": [],
-      "input_records": 127,
-      "inserted_records": 126,
-      "rejected_records": 1,
+      "input_records": 124,
+      "inserted_records": 124,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 126
+      "valid_records": 124
     },
     {
       "batch_id": "polygon:2026-07-28:AMGN:1",
       "error_messages": [],
-      "input_records": 702,
-      "inserted_records": 702,
+      "input_records": 694,
+      "inserted_records": 694,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 702
+      "valid_records": 694
     },
     {
       "batch_id": "polygon:2026-07-28:AMP:1",
       "error_messages": [],
       "input_records": 170,
-      "inserted_records": 168,
-      "rejected_records": 2,
+      "inserted_records": 167,
+      "rejected_records": 3,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 168
+      "valid_records": 167
     },
     {
       "batch_id": "polygon:2026-07-28:AMT:1",
@@ -354,12 +354,12 @@
     {
       "batch_id": "polygon:2026-07-28:ANET:1",
       "error_messages": [],
-      "input_records": 592,
-      "inserted_records": 592,
-      "rejected_records": 0,
+      "input_records": 596,
+      "inserted_records": 594,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 592
+      "valid_records": 594
     },
     {
       "batch_id": "polygon:2026-07-28:AON:1",
@@ -425,31 +425,31 @@
       "batch_id": "polygon:2026-07-28:APP:1",
       "error_messages": [],
       "input_records": 935,
-      "inserted_records": 935,
-      "rejected_records": 0,
+      "inserted_records": 933,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 935
+      "valid_records": 933
     },
     {
       "batch_id": "polygon:2026-07-28:APTV:1",
       "error_messages": [],
-      "input_records": 185,
-      "inserted_records": 121,
-      "rejected_records": 1,
-      "skipped_records": 63,
+      "input_records": 187,
+      "inserted_records": 123,
+      "rejected_records": 0,
+      "skipped_records": 64,
       "updated_records": 0,
-      "valid_records": 121
+      "valid_records": 123
     },
     {
       "batch_id": "polygon:2026-07-28:ARE:1",
       "error_messages": [],
-      "input_records": 103,
-      "inserted_records": 103,
+      "input_records": 108,
+      "inserted_records": 108,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 103
+      "valid_records": 108
     },
     {
       "batch_id": "polygon:2026-07-28:ARES:1",
@@ -464,32 +464,32 @@
     {
       "batch_id": "polygon:2026-07-28:ARKK:1",
       "error_messages": [],
-      "input_records": 748,
-      "inserted_records": 748,
-      "rejected_records": 0,
+      "input_records": 760,
+      "inserted_records": 754,
+      "rejected_records": 6,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 748
+      "valid_records": 754
     },
     {
       "batch_id": "polygon:2026-07-28:ARM:1",
       "error_messages": [],
-      "input_records": 785,
-      "inserted_records": 785,
+      "input_records": 775,
+      "inserted_records": 775,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 785
+      "valid_records": 775
     },
     {
       "batch_id": "polygon:2026-07-28:ASML:1",
       "error_messages": [],
-      "input_records": 2316,
-      "inserted_records": 2316,
+      "input_records": 2324,
+      "inserted_records": 2324,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 2316
+      "valid_records": 2324
     },
     {
       "batch_id": "polygon:2026-07-28:ATO:1",
@@ -514,12 +514,12 @@
     {
       "batch_id": "polygon:2026-07-28:AVGO:1",
       "error_messages": [],
-      "input_records": 1310,
-      "inserted_records": 1306,
-      "rejected_records": 4,
+      "input_records": 1307,
+      "inserted_records": 1300,
+      "rejected_records": 7,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 1306
+      "valid_records": 1300
     },
     {
       "batch_id": "polygon:2026-07-28:AVY:1",
@@ -544,22 +544,22 @@
     {
       "batch_id": "polygon:2026-07-28:AXON:1",
       "error_messages": [],
-      "input_records": 644,
-      "inserted_records": 643,
-      "rejected_records": 1,
+      "input_records": 658,
+      "inserted_records": 656,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 643
+      "valid_records": 656
     },
     {
       "batch_id": "polygon:2026-07-28:AXP:1",
       "error_messages": [],
-      "input_records": 674,
-      "inserted_records": 673,
-      "rejected_records": 1,
+      "input_records": 680,
+      "inserted_records": 677,
+      "rejected_records": 3,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 673
+      "valid_records": 677
     },
     {
       "batch_id": "polygon:2026-07-28:AZO:1",
@@ -574,32 +574,32 @@
     {
       "batch_id": "polygon:2026-07-28:BA:1",
       "error_messages": [],
-      "input_records": 696,
-      "inserted_records": 689,
-      "rejected_records": 7,
+      "input_records": 698,
+      "inserted_records": 686,
+      "rejected_records": 12,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 689
+      "valid_records": 686
     },
     {
       "batch_id": "polygon:2026-07-28:BAC:1",
       "error_messages": [],
       "input_records": 516,
-      "inserted_records": 516,
-      "rejected_records": 0,
+      "inserted_records": 509,
+      "rejected_records": 7,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 516
+      "valid_records": 509
     },
     {
       "batch_id": "polygon:2026-07-28:BALL:1",
       "error_messages": [],
-      "input_records": 146,
-      "inserted_records": 141,
-      "rejected_records": 5,
+      "input_records": 139,
+      "inserted_records": 138,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 141
+      "valid_records": 138
     },
     {
       "batch_id": "polygon:2026-07-28:BAX:1",
@@ -614,22 +614,22 @@
     {
       "batch_id": "polygon:2026-07-28:BBY:1",
       "error_messages": [],
-      "input_records": 420,
-      "inserted_records": 420,
+      "input_records": 423,
+      "inserted_records": 423,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 420
+      "valid_records": 423
     },
     {
       "batch_id": "polygon:2026-07-28:BDX:1",
       "error_messages": [],
-      "input_records": 252,
-      "inserted_records": 170,
+      "input_records": 259,
+      "inserted_records": 175,
       "rejected_records": 0,
-      "skipped_records": 82,
+      "skipped_records": 84,
       "updated_records": 0,
-      "valid_records": 170
+      "valid_records": 175
     },
     {
       "batch_id": "polygon:2026-07-28:BEN:1",
@@ -644,19 +644,19 @@
     {
       "batch_id": "polygon:2026-07-28:BG:1",
       "error_messages": [],
-      "input_records": 115,
-      "inserted_records": 115,
+      "input_records": 113,
+      "inserted_records": 113,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 115
+      "valid_records": 113
     },
     {
       "batch_id": "polygon:2026-07-28:BIIB:1",
       "error_messages": [],
-      "input_records": 333,
+      "input_records": 334,
       "inserted_records": 333,
-      "rejected_records": 0,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
       "valid_records": 333
@@ -664,22 +664,22 @@
     {
       "batch_id": "polygon:2026-07-28:BITO:1",
       "error_messages": [],
-      "input_records": 151,
-      "inserted_records": 132,
-      "rejected_records": 19,
+      "input_records": 168,
+      "inserted_records": 148,
+      "rejected_records": 20,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 132
+      "valid_records": 148
     },
     {
       "batch_id": "polygon:2026-07-28:BKNG:1",
       "error_messages": [],
-      "input_records": 1002,
-      "inserted_records": 975,
-      "rejected_records": 27,
+      "input_records": 998,
+      "inserted_records": 991,
+      "rejected_records": 7,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 975
+      "valid_records": 991
     },
     {
       "batch_id": "polygon:2026-07-28:BKR:1",
@@ -704,12 +704,12 @@
     {
       "batch_id": "polygon:2026-07-28:BLK:1",
       "error_messages": [],
-      "input_records": 899,
-      "inserted_records": 899,
+      "input_records": 897,
+      "inserted_records": 897,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 899
+      "valid_records": 897
     },
     {
       "batch_id": "polygon:2026-07-28:BMY:1",
@@ -734,12 +734,12 @@
     {
       "batch_id": "polygon:2026-07-28:BNY:1",
       "error_messages": [],
-      "input_records": 144,
-      "inserted_records": 144,
-      "rejected_records": 0,
+      "input_records": 146,
+      "inserted_records": 145,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 144
+      "valid_records": 145
     },
     {
       "batch_id": "polygon:2026-07-28:BR:1",
@@ -765,21 +765,21 @@
       "batch_id": "polygon:2026-07-28:BSX:1",
       "error_messages": [],
       "input_records": 365,
-      "inserted_records": 362,
-      "rejected_records": 3,
+      "inserted_records": 363,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 362
+      "valid_records": 363
     },
     {
       "batch_id": "polygon:2026-07-28:BX:1",
       "error_messages": [],
-      "input_records": 606,
-      "inserted_records": 606,
+      "input_records": 605,
+      "inserted_records": 605,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 606
+      "valid_records": 605
     },
     {
       "batch_id": "polygon:2026-07-28:BXP:1",
@@ -795,51 +795,51 @@
       "batch_id": "polygon:2026-07-28:C:1",
       "error_messages": [],
       "input_records": 645,
-      "inserted_records": 641,
-      "rejected_records": 4,
+      "inserted_records": 644,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 641
+      "valid_records": 644
     },
     {
       "batch_id": "polygon:2026-07-28:CAH:1",
       "error_messages": [],
-      "input_records": 248,
-      "inserted_records": 247,
-      "rejected_records": 1,
+      "input_records": 242,
+      "inserted_records": 242,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 247
+      "valid_records": 242
     },
     {
       "batch_id": "polygon:2026-07-28:CARR:1",
       "error_messages": [],
-      "input_records": 297,
-      "inserted_records": 295,
-      "rejected_records": 2,
+      "input_records": 293,
+      "inserted_records": 293,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 295
+      "valid_records": 293
     },
     {
       "batch_id": "polygon:2026-07-28:CASY:1",
       "error_messages": [],
-      "input_records": 229,
-      "inserted_records": 221,
-      "rejected_records": 8,
+      "input_records": 228,
+      "inserted_records": 223,
+      "rejected_records": 5,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 221
+      "valid_records": 223
     },
     {
       "batch_id": "polygon:2026-07-28:CAT:1",
       "error_messages": [],
-      "input_records": 1506,
-      "inserted_records": 1504,
-      "rejected_records": 2,
+      "input_records": 1492,
+      "inserted_records": 1482,
+      "rejected_records": 10,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 1504
+      "valid_records": 1482
     },
     {
       "batch_id": "polygon:2026-07-28:CB:1",
@@ -855,11 +855,11 @@
       "batch_id": "polygon:2026-07-28:CBOE:1",
       "error_messages": [],
       "input_records": 391,
-      "inserted_records": 390,
-      "rejected_records": 1,
+      "inserted_records": 389,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 390
+      "valid_records": 389
     },
     {
       "batch_id": "polygon:2026-07-28:CBRE:1",
@@ -875,91 +875,91 @@
       "batch_id": "polygon:2026-07-28:CCEP:1",
       "error_messages": [],
       "input_records": 43,
-      "inserted_records": 43,
-      "rejected_records": 0,
+      "inserted_records": 41,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 43
+      "valid_records": 41
     },
     {
       "batch_id": "polygon:2026-07-28:CCI:1",
       "error_messages": [],
       "input_records": 160,
-      "inserted_records": 160,
-      "rejected_records": 0,
+      "inserted_records": 159,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 160
+      "valid_records": 159
     },
     {
       "batch_id": "polygon:2026-07-28:CCL:1",
       "error_messages": [],
-      "input_records": 450,
-      "inserted_records": 448,
-      "rejected_records": 2,
+      "input_records": 468,
+      "inserted_records": 468,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 448
+      "valid_records": 468
     },
     {
       "batch_id": "polygon:2026-07-28:CDNS:1",
       "error_messages": [],
-      "input_records": 734,
-      "inserted_records": 730,
-      "rejected_records": 4,
+      "input_records": 732,
+      "inserted_records": 732,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 730
+      "valid_records": 732
     },
     {
       "batch_id": "polygon:2026-07-28:CDW:1",
       "error_messages": [],
-      "input_records": 127,
-      "inserted_records": 127,
+      "input_records": 130,
+      "inserted_records": 130,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 127
+      "valid_records": 130
     },
     {
       "batch_id": "polygon:2026-07-28:CEG:1",
       "error_messages": [],
-      "input_records": 568,
-      "inserted_records": 567,
-      "rejected_records": 1,
+      "input_records": 565,
+      "inserted_records": 565,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 567
+      "valid_records": 565
     },
     {
       "batch_id": "polygon:2026-07-28:CF:1",
       "error_messages": [],
       "input_records": 543,
-      "inserted_records": 543,
-      "rejected_records": 0,
+      "inserted_records": 540,
+      "rejected_records": 3,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 543
+      "valid_records": 540
     },
     {
       "batch_id": "polygon:2026-07-28:CFG:1",
       "error_messages": [],
-      "input_records": 120,
-      "inserted_records": 120,
+      "input_records": 121,
+      "inserted_records": 121,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 120
+      "valid_records": 121
     },
     {
       "batch_id": "polygon:2026-07-28:CHD:1",
       "error_messages": [],
-      "input_records": 85,
-      "inserted_records": 85,
+      "input_records": 87,
+      "inserted_records": 87,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 85
+      "valid_records": 87
     },
     {
       "batch_id": "polygon:2026-07-28:CHRW:1",
@@ -974,52 +974,52 @@
     {
       "batch_id": "polygon:2026-07-28:CHTR:1",
       "error_messages": [],
-      "input_records": 635,
-      "inserted_records": 635,
+      "input_records": 650,
+      "inserted_records": 650,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 635
+      "valid_records": 650
     },
     {
       "batch_id": "polygon:2026-07-28:CI:1",
       "error_messages": [],
-      "input_records": 415,
-      "inserted_records": 415,
+      "input_records": 414,
+      "inserted_records": 414,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 415
+      "valid_records": 414
     },
     {
       "batch_id": "polygon:2026-07-28:CIBR:1",
       "error_messages": [],
-      "input_records": 132,
-      "inserted_records": 132,
+      "input_records": 134,
+      "inserted_records": 134,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 132
+      "valid_records": 134
     },
     {
       "batch_id": "polygon:2026-07-28:CIEN:1",
       "error_messages": [],
-      "input_records": 757,
-      "inserted_records": 757,
-      "rejected_records": 0,
+      "input_records": 756,
+      "inserted_records": 755,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 757
+      "valid_records": 755
     },
     {
       "batch_id": "polygon:2026-07-28:CINF:1",
       "error_messages": [],
       "input_records": 120,
-      "inserted_records": 119,
-      "rejected_records": 1,
+      "inserted_records": 120,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 119
+      "valid_records": 120
     },
     {
       "batch_id": "polygon:2026-07-28:CL:1",
@@ -1034,22 +1034,22 @@
     {
       "batch_id": "polygon:2026-07-28:CLX:1",
       "error_messages": [],
-      "input_records": 120,
-      "inserted_records": 120,
+      "input_records": 119,
+      "inserted_records": 119,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 120
+      "valid_records": 119
     },
     {
       "batch_id": "polygon:2026-07-28:CMCSA:1",
       "error_messages": [],
-      "input_records": 366,
-      "inserted_records": 318,
-      "rejected_records": 3,
+      "input_records": 373,
+      "inserted_records": 328,
+      "rejected_records": 0,
       "skipped_records": 45,
       "updated_records": 0,
-      "valid_records": 318
+      "valid_records": 328
     },
     {
       "batch_id": "polygon:2026-07-28:CME:1",
@@ -1064,22 +1064,22 @@
     {
       "batch_id": "polygon:2026-07-28:CMG:1",
       "error_messages": [],
-      "input_records": 388,
-      "inserted_records": 388,
-      "rejected_records": 0,
+      "input_records": 383,
+      "inserted_records": 380,
+      "rejected_records": 3,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 388
+      "valid_records": 380
     },
     {
       "batch_id": "polygon:2026-07-28:CMI:1",
       "error_messages": [],
-      "input_records": 248,
-      "inserted_records": 248,
+      "input_records": 251,
+      "inserted_records": 251,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 248
+      "valid_records": 251
     },
     {
       "batch_id": "polygon:2026-07-28:CMS:1",
@@ -1094,112 +1094,112 @@
     {
       "batch_id": "polygon:2026-07-28:CNC:1",
       "error_messages": [],
-      "input_records": 377,
-      "inserted_records": 376,
-      "rejected_records": 1,
+      "input_records": 386,
+      "inserted_records": 384,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 376
+      "valid_records": 384
     },
     {
       "batch_id": "polygon:2026-07-28:CNP:1",
       "error_messages": [],
       "input_records": 130,
-      "inserted_records": 128,
-      "rejected_records": 2,
+      "inserted_records": 130,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 128
+      "valid_records": 130
     },
     {
       "batch_id": "polygon:2026-07-28:COF:1",
       "error_messages": [],
       "input_records": 460,
-      "inserted_records": 411,
-      "rejected_records": 8,
+      "inserted_records": 401,
+      "rejected_records": 18,
       "skipped_records": 41,
       "updated_records": 0,
-      "valid_records": 411
+      "valid_records": 401
     },
     {
       "batch_id": "polygon:2026-07-28:COHR:1",
       "error_messages": [],
-      "input_records": 650,
-      "inserted_records": 650,
+      "input_records": 638,
+      "inserted_records": 638,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 650
+      "valid_records": 638
     },
     {
       "batch_id": "polygon:2026-07-28:COIN:1",
       "error_messages": [],
-      "input_records": 688,
-      "inserted_records": 688,
-      "rejected_records": 0,
+      "input_records": 707,
+      "inserted_records": 704,
+      "rejected_records": 3,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 688
+      "valid_records": 704
     },
     {
       "batch_id": "polygon:2026-07-28:COO:1",
       "error_messages": [],
       "input_records": 57,
-      "inserted_records": 52,
-      "rejected_records": 5,
+      "inserted_records": 55,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 52
+      "valid_records": 55
     },
     {
       "batch_id": "polygon:2026-07-28:COP:1",
       "error_messages": [],
-      "input_records": 556,
-      "inserted_records": 556,
+      "input_records": 550,
+      "inserted_records": 550,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 556
+      "valid_records": 550
     },
     {
       "batch_id": "polygon:2026-07-28:COR:1",
       "error_messages": [],
-      "input_records": 192,
-      "inserted_records": 189,
-      "rejected_records": 3,
+      "input_records": 188,
+      "inserted_records": 188,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 189
+      "valid_records": 188
     },
     {
       "batch_id": "polygon:2026-07-28:COST:1",
       "error_messages": [],
-      "input_records": 1396,
-      "inserted_records": 1395,
-      "rejected_records": 1,
+      "input_records": 1390,
+      "inserted_records": 1390,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 1395
+      "valid_records": 1390
     },
     {
       "batch_id": "polygon:2026-07-28:CPAY:1",
       "error_messages": [],
       "input_records": 100,
-      "inserted_records": 99,
-      "rejected_records": 1,
+      "inserted_records": 100,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 99
+      "valid_records": 100
     },
     {
       "batch_id": "polygon:2026-07-28:CPRT:1",
       "error_messages": [],
       "input_records": 91,
-      "inserted_records": 90,
-      "rejected_records": 1,
+      "inserted_records": 91,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 90
+      "valid_records": 91
     },
     {
       "batch_id": "polygon:2026-07-28:CPT:1",
@@ -1214,22 +1214,22 @@
     {
       "batch_id": "polygon:2026-07-28:CRH:1",
       "error_messages": [],
-      "input_records": 274,
-      "inserted_records": 274,
+      "input_records": 271,
+      "inserted_records": 271,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 274
+      "valid_records": 271
     },
     {
       "batch_id": "polygon:2026-07-28:CRL:1",
       "error_messages": [],
-      "input_records": 115,
-      "inserted_records": 112,
-      "rejected_records": 3,
+      "input_records": 117,
+      "inserted_records": 117,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 112
+      "valid_records": 117
     },
     {
       "batch_id": "polygon:2026-07-28:CRM:1",
@@ -1244,62 +1244,62 @@
     {
       "batch_id": "polygon:2026-07-28:CRWD:1",
       "error_messages": [],
-      "input_records": 1154,
-      "inserted_records": 1153,
-      "rejected_records": 1,
+      "input_records": 1175,
+      "inserted_records": 1175,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 1153
+      "valid_records": 1175
     },
     {
       "batch_id": "polygon:2026-07-28:CRWV:1",
       "error_messages": [],
-      "input_records": 632,
-      "inserted_records": 631,
-      "rejected_records": 1,
+      "input_records": 622,
+      "inserted_records": 622,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 631
+      "valid_records": 622
     },
     {
       "batch_id": "polygon:2026-07-28:CSCO:1",
       "error_messages": [],
-      "input_records": 577,
-      "inserted_records": 574,
-      "rejected_records": 3,
+      "input_records": 586,
+      "inserted_records": 584,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 574
+      "valid_records": 584
     },
     {
       "batch_id": "polygon:2026-07-28:CSGP:1",
       "error_messages": [],
       "input_records": 54,
-      "inserted_records": 52,
-      "rejected_records": 2,
+      "inserted_records": 54,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 52
+      "valid_records": 54
     },
     {
       "batch_id": "polygon:2026-07-28:CSX:1",
       "error_messages": [],
       "input_records": 290,
-      "inserted_records": 287,
-      "rejected_records": 3,
+      "inserted_records": 290,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 287
+      "valid_records": 290
     },
     {
       "batch_id": "polygon:2026-07-28:CTAS:1",
       "error_messages": [],
-      "input_records": 328,
-      "inserted_records": 319,
-      "rejected_records": 9,
+      "input_records": 325,
+      "inserted_records": 317,
+      "rejected_records": 8,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 319
+      "valid_records": 317
     },
     {
       "batch_id": "polygon:2026-07-28:CTSH:1",
@@ -1314,42 +1314,42 @@
     {
       "batch_id": "polygon:2026-07-28:CTVA:1",
       "error_messages": [],
-      "input_records": 68,
-      "inserted_records": 65,
-      "rejected_records": 3,
+      "input_records": 69,
+      "inserted_records": 68,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 65
+      "valid_records": 68
     },
     {
       "batch_id": "polygon:2026-07-28:CVNA:1",
       "error_messages": [],
-      "input_records": 664,
-      "inserted_records": 663,
-      "rejected_records": 1,
+      "input_records": 680,
+      "inserted_records": 680,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 663
+      "valid_records": 680
     },
     {
       "batch_id": "polygon:2026-07-28:CVS:1",
       "error_messages": [],
-      "input_records": 495,
-      "inserted_records": 495,
+      "input_records": 484,
+      "inserted_records": 484,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 495
+      "valid_records": 484
     },
     {
       "batch_id": "polygon:2026-07-28:CVX:1",
       "error_messages": [],
-      "input_records": 495,
-      "inserted_records": 460,
+      "input_records": 506,
+      "inserted_records": 469,
       "rejected_records": 0,
-      "skipped_records": 35,
+      "skipped_records": 37,
       "updated_records": 0,
-      "valid_records": 460
+      "valid_records": 469
     },
     {
       "batch_id": "polygon:2026-07-28:D:1",
@@ -1364,22 +1364,22 @@
     {
       "batch_id": "polygon:2026-07-28:DAL:1",
       "error_messages": [],
-      "input_records": 466,
-      "inserted_records": 466,
-      "rejected_records": 0,
+      "input_records": 464,
+      "inserted_records": 463,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 466
+      "valid_records": 463
     },
     {
       "batch_id": "polygon:2026-07-28:DASH:1",
       "error_messages": [],
-      "input_records": 460,
-      "inserted_records": 460,
-      "rejected_records": 0,
+      "input_records": 455,
+      "inserted_records": 453,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 460
+      "valid_records": 453
     },
     {
       "batch_id": "polygon:2026-07-28:DBA:1",
@@ -1404,16 +1404,6 @@
     {
       "batch_id": "polygon:2026-07-28:DDOG:1",
       "error_messages": [],
-      "input_records": 701,
-      "inserted_records": 701,
-      "rejected_records": 0,
-      "skipped_records": 0,
-      "updated_records": 0,
-      "valid_records": 701
-    },
-    {
-      "batch_id": "polygon:2026-07-28:DE:1",
-      "error_messages": [],
       "input_records": 696,
       "inserted_records": 696,
       "rejected_records": 0,
@@ -1422,34 +1412,44 @@
       "valid_records": 696
     },
     {
-      "batch_id": "polygon:2026-07-28:DECK:1",
+      "batch_id": "polygon:2026-07-28:DE:1",
       "error_messages": [],
-      "input_records": 442,
-      "inserted_records": 437,
-      "rejected_records": 5,
+      "input_records": 695,
+      "inserted_records": 687,
+      "rejected_records": 8,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 437
+      "valid_records": 687
+    },
+    {
+      "batch_id": "polygon:2026-07-28:DECK:1",
+      "error_messages": [],
+      "input_records": 451,
+      "inserted_records": 448,
+      "rejected_records": 3,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 448
     },
     {
       "batch_id": "polygon:2026-07-28:DELL:1",
       "error_messages": [],
-      "input_records": 1064,
-      "inserted_records": 1060,
-      "rejected_records": 4,
+      "input_records": 1079,
+      "inserted_records": 1078,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 1060
+      "valid_records": 1078
     },
     {
       "batch_id": "polygon:2026-07-28:DG:1",
       "error_messages": [],
       "input_records": 497,
-      "inserted_records": 496,
-      "rejected_records": 1,
+      "inserted_records": 495,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 496
+      "valid_records": 495
     },
     {
       "batch_id": "polygon:2026-07-28:DGX:1",
@@ -1465,41 +1465,41 @@
       "batch_id": "polygon:2026-07-28:DHI:1",
       "error_messages": [],
       "input_records": 370,
-      "inserted_records": 370,
-      "rejected_records": 0,
+      "inserted_records": 369,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 370
+      "valid_records": 369
     },
     {
       "batch_id": "polygon:2026-07-28:DHR:1",
       "error_messages": [],
-      "input_records": 378,
-      "inserted_records": 368,
-      "rejected_records": 10,
+      "input_records": 382,
+      "inserted_records": 378,
+      "rejected_records": 4,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 368
+      "valid_records": 378
     },
     {
       "batch_id": "polygon:2026-07-28:DIA:1",
       "error_messages": [],
-      "input_records": 1526,
-      "inserted_records": 1519,
-      "rejected_records": 7,
+      "input_records": 1520,
+      "inserted_records": 1520,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 1519
+      "valid_records": 1520
     },
     {
       "batch_id": "polygon:2026-07-28:DIS:1",
       "error_messages": [],
       "input_records": 470,
-      "inserted_records": 468,
-      "rejected_records": 2,
+      "inserted_records": 469,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 468
+      "valid_records": 469
     },
     {
       "batch_id": "polygon:2026-07-28:DLR:1",
@@ -1515,21 +1515,21 @@
       "batch_id": "polygon:2026-07-28:DLTR:1",
       "error_messages": [],
       "input_records": 448,
-      "inserted_records": 446,
-      "rejected_records": 2,
+      "inserted_records": 445,
+      "rejected_records": 3,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 446
+      "valid_records": 445
     },
     {
       "batch_id": "polygon:2026-07-28:DOC:1",
       "error_messages": [],
       "input_records": 50,
-      "inserted_records": 49,
-      "rejected_records": 1,
+      "inserted_records": 50,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 49
+      "valid_records": 50
     },
     {
       "batch_id": "polygon:2026-07-28:DOV:1",
@@ -1544,12 +1544,12 @@
     {
       "batch_id": "polygon:2026-07-28:DOW:1",
       "error_messages": [],
-      "input_records": 333,
-      "inserted_records": 332,
-      "rejected_records": 1,
+      "input_records": 341,
+      "inserted_records": 341,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 332
+      "valid_records": 341
     },
     {
       "batch_id": "polygon:2026-07-28:DPZ:1",
@@ -1564,12 +1564,12 @@
     {
       "batch_id": "polygon:2026-07-28:DRI:1",
       "error_messages": [],
-      "input_records": 168,
-      "inserted_records": 168,
+      "input_records": 172,
+      "inserted_records": 172,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 168
+      "valid_records": 172
     },
     {
       "batch_id": "polygon:2026-07-28:DTE:1",
@@ -1595,61 +1595,61 @@
       "batch_id": "polygon:2026-07-28:DVA:1",
       "error_messages": [],
       "input_records": 169,
-      "inserted_records": 169,
-      "rejected_records": 0,
+      "inserted_records": 168,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 169
+      "valid_records": 168
     },
     {
       "batch_id": "polygon:2026-07-28:DVN:1",
       "error_messages": [],
-      "input_records": 447,
-      "inserted_records": 419,
-      "rejected_records": 1,
+      "input_records": 441,
+      "inserted_records": 414,
+      "rejected_records": 0,
       "skipped_records": 27,
       "updated_records": 0,
-      "valid_records": 419
+      "valid_records": 414
     },
     {
       "batch_id": "polygon:2026-07-28:DXCM:1",
       "error_messages": [],
-      "input_records": 279,
-      "inserted_records": 277,
-      "rejected_records": 2,
+      "input_records": 276,
+      "inserted_records": 276,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 277
+      "valid_records": 276
     },
     {
       "batch_id": "polygon:2026-07-28:EA:1",
       "error_messages": [],
       "input_records": 179,
-      "inserted_records": 139,
-      "rejected_records": 40,
+      "inserted_records": 156,
+      "rejected_records": 23,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 139
+      "valid_records": 156
     },
     {
       "batch_id": "polygon:2026-07-28:EBAY:1",
       "error_messages": [],
-      "input_records": 463,
-      "inserted_records": 461,
-      "rejected_records": 2,
+      "input_records": 451,
+      "inserted_records": 451,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 461
+      "valid_records": 451
     },
     {
       "batch_id": "polygon:2026-07-28:ECHO:1",
       "error_messages": [],
-      "input_records": 412,
-      "inserted_records": 412,
-      "rejected_records": 0,
+      "input_records": 413,
+      "inserted_records": 411,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 412
+      "valid_records": 411
     },
     {
       "batch_id": "polygon:2026-07-28:ECL:1",
@@ -1675,11 +1675,11 @@
       "batch_id": "polygon:2026-07-28:EEM:1",
       "error_messages": [],
       "input_records": 940,
-      "inserted_records": 939,
-      "rejected_records": 1,
+      "inserted_records": 940,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 939
+      "valid_records": 940
     },
     {
       "batch_id": "polygon:2026-07-28:EFA:1",
@@ -1694,12 +1694,12 @@
     {
       "batch_id": "polygon:2026-07-28:EFX:1",
       "error_messages": [],
-      "input_records": 162,
-      "inserted_records": 162,
+      "input_records": 160,
+      "inserted_records": 160,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 162
+      "valid_records": 160
     },
     {
       "batch_id": "polygon:2026-07-28:EG:1",
@@ -1734,72 +1734,72 @@
     {
       "batch_id": "polygon:2026-07-28:ELV:1",
       "error_messages": [],
-      "input_records": 279,
-      "inserted_records": 279,
+      "input_records": 280,
+      "inserted_records": 280,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 279
+      "valid_records": 280
     },
     {
       "batch_id": "polygon:2026-07-28:EME:1",
       "error_messages": [],
-      "input_records": 311,
-      "inserted_records": 311,
+      "input_records": 306,
+      "inserted_records": 306,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 311
+      "valid_records": 306
     },
     {
       "batch_id": "polygon:2026-07-28:EMR:1",
       "error_messages": [],
-      "input_records": 331,
-      "inserted_records": 328,
-      "rejected_records": 3,
+      "input_records": 324,
+      "inserted_records": 322,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 328
+      "valid_records": 322
     },
     {
       "batch_id": "polygon:2026-07-28:EOG:1",
       "error_messages": [],
-      "input_records": 421,
-      "inserted_records": 421,
+      "input_records": 427,
+      "inserted_records": 427,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 421
+      "valid_records": 427
     },
     {
       "batch_id": "polygon:2026-07-28:EQIX:1",
       "error_messages": [],
-      "input_records": 330,
-      "inserted_records": 330,
+      "input_records": 332,
+      "inserted_records": 332,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 330
+      "valid_records": 332
     },
     {
       "batch_id": "polygon:2026-07-28:EQR:1",
       "error_messages": [],
-      "input_records": 95,
-      "inserted_records": 95,
+      "input_records": 96,
+      "inserted_records": 96,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 95
+      "valid_records": 96
     },
     {
       "batch_id": "polygon:2026-07-28:EQT:1",
       "error_messages": [],
-      "input_records": 335,
-      "inserted_records": 333,
+      "input_records": 331,
+      "inserted_records": 329,
       "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 333
+      "valid_records": 329
     },
     {
       "batch_id": "polygon:2026-07-28:ERIE:1",
@@ -1834,22 +1834,22 @@
     {
       "batch_id": "polygon:2026-07-28:ETHA:1",
       "error_messages": [],
-      "input_records": 292,
-      "inserted_records": 292,
-      "rejected_records": 0,
+      "input_records": 307,
+      "inserted_records": 306,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 292
+      "valid_records": 306
     },
     {
       "batch_id": "polygon:2026-07-28:ETN:1",
       "error_messages": [],
-      "input_records": 609,
-      "inserted_records": 608,
-      "rejected_records": 1,
+      "input_records": 606,
+      "inserted_records": 606,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 608
+      "valid_records": 606
     },
     {
       "batch_id": "polygon:2026-07-28:ETR:1",
@@ -1875,11 +1875,11 @@
       "batch_id": "polygon:2026-07-28:EW:1",
       "error_messages": [],
       "input_records": 166,
-      "inserted_records": 164,
-      "rejected_records": 2,
+      "inserted_records": 166,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 164
+      "valid_records": 166
     },
     {
       "batch_id": "polygon:2026-07-28:EWJ:1",
@@ -1914,42 +1914,42 @@
     {
       "batch_id": "polygon:2026-07-28:EXE:1",
       "error_messages": [],
-      "input_records": 112,
-      "inserted_records": 112,
+      "input_records": 107,
+      "inserted_records": 107,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 112
+      "valid_records": 107
     },
     {
       "batch_id": "polygon:2026-07-28:EXPD:1",
       "error_messages": [],
       "input_records": 81,
-      "inserted_records": 81,
-      "rejected_records": 0,
+      "inserted_records": 80,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 81
+      "valid_records": 80
     },
     {
       "batch_id": "polygon:2026-07-28:EXPE:1",
       "error_messages": [],
-      "input_records": 462,
-      "inserted_records": 462,
-      "rejected_records": 0,
+      "input_records": 445,
+      "inserted_records": 443,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 462
+      "valid_records": 443
     },
     {
       "batch_id": "polygon:2026-07-28:EXR:1",
       "error_messages": [],
-      "input_records": 73,
-      "inserted_records": 73,
+      "input_records": 72,
+      "inserted_records": 72,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 73
+      "valid_records": 72
     },
     {
       "batch_id": "polygon:2026-07-28:F:1",
@@ -1975,71 +1975,71 @@
       "batch_id": "polygon:2026-07-28:FAST:1",
       "error_messages": [],
       "input_records": 144,
-      "inserted_records": 143,
-      "rejected_records": 1,
+      "inserted_records": 144,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 143
+      "valid_records": 144
     },
     {
       "batch_id": "polygon:2026-07-28:FBTC:1",
       "error_messages": [],
-      "input_records": 317,
-      "inserted_records": 317,
-      "rejected_records": 0,
+      "input_records": 320,
+      "inserted_records": 319,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 317
+      "valid_records": 319
     },
     {
       "batch_id": "polygon:2026-07-28:FCX:1",
       "error_messages": [],
-      "input_records": 448,
-      "inserted_records": 448,
+      "input_records": 446,
+      "inserted_records": 446,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 448
+      "valid_records": 446
     },
     {
       "batch_id": "polygon:2026-07-28:FDS:1",
       "error_messages": [],
-      "input_records": 152,
-      "inserted_records": 152,
+      "input_records": 151,
+      "inserted_records": 151,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 152
+      "valid_records": 151
     },
     {
       "batch_id": "polygon:2026-07-28:FDX:1",
       "error_messages": [],
-      "input_records": 684,
-      "inserted_records": 526,
-      "rejected_records": 1,
-      "skipped_records": 157,
+      "input_records": 690,
+      "inserted_records": 529,
+      "rejected_records": 2,
+      "skipped_records": 159,
       "updated_records": 0,
-      "valid_records": 526
+      "valid_records": 529
     },
     {
       "batch_id": "polygon:2026-07-28:FDXF:1",
       "error_messages": [],
-      "input_records": 98,
-      "inserted_records": 98,
+      "input_records": 100,
+      "inserted_records": 100,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 98
+      "valid_records": 100
     },
     {
       "batch_id": "polygon:2026-07-28:FE:1",
       "error_messages": [],
-      "input_records": 120,
-      "inserted_records": 120,
+      "input_records": 118,
+      "inserted_records": 118,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 120
+      "valid_records": 118
     },
     {
       "batch_id": "polygon:2026-07-28:FER:1",
@@ -2054,62 +2054,62 @@
     {
       "batch_id": "polygon:2026-07-28:FFIV:1",
       "error_messages": [],
-      "input_records": 246,
-      "inserted_records": 243,
-      "rejected_records": 3,
+      "input_records": 241,
+      "inserted_records": 241,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 243
+      "valid_records": 241
     },
     {
       "batch_id": "polygon:2026-07-28:FICO:1",
       "error_messages": [],
-      "input_records": 567,
-      "inserted_records": 565,
-      "rejected_records": 2,
+      "input_records": 574,
+      "inserted_records": 574,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 565
+      "valid_records": 574
     },
     {
       "batch_id": "polygon:2026-07-28:FIS:1",
       "error_messages": [],
-      "input_records": 238,
-      "inserted_records": 238,
+      "input_records": 244,
+      "inserted_records": 244,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 238
+      "valid_records": 244
     },
     {
       "batch_id": "polygon:2026-07-28:FISV:1",
       "error_messages": [],
-      "input_records": 310,
-      "inserted_records": 306,
-      "rejected_records": 4,
+      "input_records": 318,
+      "inserted_records": 316,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 306
+      "valid_records": 316
     },
     {
       "batch_id": "polygon:2026-07-28:FITB:1",
       "error_messages": [],
-      "input_records": 190,
-      "inserted_records": 163,
-      "rejected_records": 1,
+      "input_records": 193,
+      "inserted_records": 167,
+      "rejected_records": 0,
       "skipped_records": 26,
       "updated_records": 0,
-      "valid_records": 163
+      "valid_records": 167
     },
     {
       "batch_id": "polygon:2026-07-28:FIX:1",
       "error_messages": [],
       "input_records": 619,
-      "inserted_records": 618,
-      "rejected_records": 1,
+      "inserted_records": 619,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 618
+      "valid_records": 619
     },
     {
       "batch_id": "polygon:2026-07-28:FLEX:1",
@@ -2135,11 +2135,11 @@
       "batch_id": "polygon:2026-07-28:FOXA:1",
       "error_messages": [],
       "input_records": 89,
-      "inserted_records": 89,
-      "rejected_records": 0,
+      "inserted_records": 88,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 89
+      "valid_records": 88
     },
     {
       "batch_id": "polygon:2026-07-28:FRT:1",
@@ -2164,32 +2164,32 @@
     {
       "batch_id": "polygon:2026-07-28:FTNT:1",
       "error_messages": [],
-      "input_records": 480,
-      "inserted_records": 479,
-      "rejected_records": 1,
+      "input_records": 481,
+      "inserted_records": 481,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 479
+      "valid_records": 481
     },
     {
       "batch_id": "polygon:2026-07-28:FTV:1",
       "error_messages": [],
       "input_records": 39,
-      "inserted_records": 38,
-      "rejected_records": 1,
+      "inserted_records": 39,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 38
+      "valid_records": 39
     },
     {
       "batch_id": "polygon:2026-07-28:FXI:1",
       "error_messages": [],
       "input_records": 453,
-      "inserted_records": 452,
-      "rejected_records": 1,
+      "inserted_records": 449,
+      "rejected_records": 4,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 452
+      "valid_records": 449
     },
     {
       "batch_id": "polygon:2026-07-28:GD:1",
@@ -2204,42 +2204,42 @@
     {
       "batch_id": "polygon:2026-07-28:GDDY:1",
       "error_messages": [],
-      "input_records": 298,
-      "inserted_records": 297,
+      "input_records": 295,
+      "inserted_records": 294,
       "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 297
+      "valid_records": 294
     },
     {
       "batch_id": "polygon:2026-07-28:GDX:1",
       "error_messages": [],
-      "input_records": 1086,
-      "inserted_records": 1086,
+      "input_records": 1076,
+      "inserted_records": 1076,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 1086
+      "valid_records": 1076
     },
     {
       "batch_id": "polygon:2026-07-28:GDXJ:1",
       "error_messages": [],
-      "input_records": 833,
-      "inserted_records": 833,
+      "input_records": 837,
+      "inserted_records": 837,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 833
+      "valid_records": 837
     },
     {
       "batch_id": "polygon:2026-07-28:GE:1",
       "error_messages": [],
-      "input_records": 676,
-      "inserted_records": 667,
-      "rejected_records": 9,
+      "input_records": 677,
+      "inserted_records": 674,
+      "rejected_records": 3,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 667
+      "valid_records": 674
     },
     {
       "batch_id": "polygon:2026-07-28:GEHC:1",
@@ -2264,25 +2264,35 @@
     {
       "batch_id": "polygon:2026-07-28:GEV:1",
       "error_messages": [],
-      "input_records": 1712,
-      "inserted_records": 1710,
-      "rejected_records": 2,
+      "input_records": 1695,
+      "inserted_records": 1676,
+      "rejected_records": 19,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 1710
+      "valid_records": 1676
     },
     {
       "batch_id": "polygon:2026-07-28:GILD:1",
       "error_messages": [],
-      "input_records": 484,
-      "inserted_records": 484,
+      "input_records": 476,
+      "inserted_records": 476,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 484
+      "valid_records": 476
     },
     {
       "batch_id": "polygon:2026-07-28:GIS:1",
+      "error_messages": [],
+      "input_records": 112,
+      "inserted_records": 104,
+      "rejected_records": 8,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 104
+    },
+    {
+      "batch_id": "polygon:2026-07-28:GL:1",
       "error_messages": [],
       "input_records": 112,
       "inserted_records": 111,
@@ -2292,44 +2302,34 @@
       "valid_records": 111
     },
     {
-      "batch_id": "polygon:2026-07-28:GL:1",
-      "error_messages": [],
-      "input_records": 112,
-      "inserted_records": 112,
-      "rejected_records": 0,
-      "skipped_records": 0,
-      "updated_records": 0,
-      "valid_records": 112
-    },
-    {
       "batch_id": "polygon:2026-07-28:GLD:1",
       "error_messages": [],
       "input_records": 2918,
-      "inserted_records": 2899,
-      "rejected_records": 19,
+      "inserted_records": 2900,
+      "rejected_records": 18,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 2899
+      "valid_records": 2900
     },
     {
       "batch_id": "polygon:2026-07-28:GLW:1",
       "error_messages": [],
-      "input_records": 595,
-      "inserted_records": 595,
+      "input_records": 602,
+      "inserted_records": 602,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 595
+      "valid_records": 602
     },
     {
       "batch_id": "polygon:2026-07-28:GM:1",
       "error_messages": [],
-      "input_records": 445,
-      "inserted_records": 441,
-      "rejected_records": 4,
+      "input_records": 448,
+      "inserted_records": 439,
+      "rejected_records": 9,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 441
+      "valid_records": 439
     },
     {
       "batch_id": "polygon:2026-07-28:GNRC:1",
@@ -2344,22 +2344,22 @@
     {
       "batch_id": "polygon:2026-07-28:GOOG:1",
       "error_messages": [],
-      "input_records": 1058,
-      "inserted_records": 1050,
-      "rejected_records": 8,
+      "input_records": 1055,
+      "inserted_records": 1055,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 1050
+      "valid_records": 1055
     },
     {
       "batch_id": "polygon:2026-07-28:GOOGL:1",
       "error_messages": [],
-      "input_records": 1424,
-      "inserted_records": 1418,
-      "rejected_records": 6,
+      "input_records": 1421,
+      "inserted_records": 1420,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 1418
+      "valid_records": 1420
     },
     {
       "batch_id": "polygon:2026-07-28:GPC:1",
@@ -2394,22 +2394,22 @@
     {
       "batch_id": "polygon:2026-07-28:GS:1",
       "error_messages": [],
-      "input_records": 2260,
-      "inserted_records": 2259,
-      "rejected_records": 1,
+      "input_records": 2264,
+      "inserted_records": 2264,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 2259
+      "valid_records": 2264
     },
     {
       "batch_id": "polygon:2026-07-28:GWW:1",
       "error_messages": [],
-      "input_records": 320,
-      "inserted_records": 319,
-      "rejected_records": 1,
+      "input_records": 323,
+      "inserted_records": 323,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 319
+      "valid_records": 323
     },
     {
       "batch_id": "polygon:2026-07-28:HACK:1",
@@ -2424,22 +2424,22 @@
     {
       "batch_id": "polygon:2026-07-28:HAL:1",
       "error_messages": [],
-      "input_records": 364,
-      "inserted_records": 364,
+      "input_records": 357,
+      "inserted_records": 357,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 364
+      "valid_records": 357
     },
     {
       "batch_id": "polygon:2026-07-28:HAS:1",
       "error_messages": [],
-      "input_records": 186,
-      "inserted_records": 186,
+      "input_records": 183,
+      "inserted_records": 183,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 186
+      "valid_records": 183
     },
     {
       "batch_id": "polygon:2026-07-28:HBAN:1",
@@ -2454,22 +2454,22 @@
     {
       "batch_id": "polygon:2026-07-28:HCA:1",
       "error_messages": [],
-      "input_records": 373,
-      "inserted_records": 373,
+      "input_records": 382,
+      "inserted_records": 382,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 373
+      "valid_records": 382
     },
     {
       "batch_id": "polygon:2026-07-28:HD:1",
       "error_messages": [],
       "input_records": 802,
-      "inserted_records": 800,
-      "rejected_records": 2,
+      "inserted_records": 801,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 800
+      "valid_records": 801
     },
     {
       "batch_id": "polygon:2026-07-28:HIG:1",
@@ -2484,72 +2484,72 @@
     {
       "batch_id": "polygon:2026-07-28:HII:1",
       "error_messages": [],
-      "input_records": 121,
-      "inserted_records": 121,
+      "input_records": 124,
+      "inserted_records": 124,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 121
+      "valid_records": 124
     },
     {
       "batch_id": "polygon:2026-07-28:HLT:1",
       "error_messages": [],
-      "input_records": 328,
-      "inserted_records": 325,
-      "rejected_records": 3,
+      "input_records": 326,
+      "inserted_records": 326,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 325
+      "valid_records": 326
     },
     {
       "batch_id": "polygon:2026-07-28:HON:1",
       "error_messages": [],
-      "input_records": 541,
-      "inserted_records": 388,
+      "input_records": 550,
+      "inserted_records": 397,
       "rejected_records": 0,
       "skipped_records": 153,
       "updated_records": 0,
-      "valid_records": 388
+      "valid_records": 397
     },
     {
       "batch_id": "polygon:2026-07-28:HONA:1",
       "error_messages": [],
-      "input_records": 246,
-      "inserted_records": 168,
-      "rejected_records": 3,
-      "skipped_records": 75,
+      "input_records": 256,
+      "inserted_records": 178,
+      "rejected_records": 0,
+      "skipped_records": 78,
       "updated_records": 0,
-      "valid_records": 168
+      "valid_records": 178
     },
     {
       "batch_id": "polygon:2026-07-28:HOOD:1",
       "error_messages": [],
-      "input_records": 671,
-      "inserted_records": 671,
-      "rejected_records": 0,
+      "input_records": 654,
+      "inserted_records": 651,
+      "rejected_records": 3,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 671
+      "valid_records": 651
     },
     {
       "batch_id": "polygon:2026-07-28:HPE:1",
       "error_messages": [],
-      "input_records": 568,
-      "inserted_records": 567,
-      "rejected_records": 1,
+      "input_records": 558,
+      "inserted_records": 555,
+      "rejected_records": 3,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 567
+      "valid_records": 555
     },
     {
       "batch_id": "polygon:2026-07-28:HPQ:1",
       "error_messages": [],
-      "input_records": 423,
-      "inserted_records": 421,
-      "rejected_records": 2,
+      "input_records": 427,
+      "inserted_records": 427,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 421
+      "valid_records": 427
     },
     {
       "batch_id": "polygon:2026-07-28:HRL:1",
@@ -2584,59 +2584,59 @@
     {
       "batch_id": "polygon:2026-07-28:HSY:1",
       "error_messages": [],
-      "input_records": 335,
-      "inserted_records": 335,
+      "input_records": 343,
+      "inserted_records": 343,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 335
+      "valid_records": 343
     },
     {
       "batch_id": "polygon:2026-07-28:HUBB:1",
       "error_messages": [],
-      "input_records": 157,
-      "inserted_records": 157,
+      "input_records": 158,
+      "inserted_records": 158,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 157
+      "valid_records": 158
     },
     {
       "batch_id": "polygon:2026-07-28:HUM:1",
       "error_messages": [],
-      "input_records": 652,
-      "inserted_records": 652,
+      "input_records": 646,
+      "inserted_records": 646,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 652
+      "valid_records": 646
     },
     {
       "batch_id": "polygon:2026-07-28:HWM:1",
       "error_messages": [],
-      "input_records": 389,
-      "inserted_records": 389,
+      "input_records": 383,
+      "inserted_records": 383,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 389
+      "valid_records": 383
     },
     {
       "batch_id": "polygon:2026-07-28:HYG:1",
       "error_messages": [],
       "input_records": 309,
-      "inserted_records": 305,
-      "rejected_records": 4,
+      "inserted_records": 309,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 305
+      "valid_records": 309
     },
     {
       "batch_id": "polygon:2026-07-28:IAU:1",
       "error_messages": [],
-      "input_records": 588,
+      "input_records": 586,
       "inserted_records": 586,
-      "rejected_records": 2,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
       "valid_records": 586
@@ -2645,51 +2645,51 @@
       "batch_id": "polygon:2026-07-28:IBB:1",
       "error_messages": [],
       "input_records": 287,
-      "inserted_records": 287,
-      "rejected_records": 0,
+      "inserted_records": 282,
+      "rejected_records": 5,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 287
+      "valid_records": 282
     },
     {
       "batch_id": "polygon:2026-07-28:IBIT:1",
       "error_messages": [],
       "input_records": 768,
-      "inserted_records": 766,
-      "rejected_records": 2,
+      "inserted_records": 763,
+      "rejected_records": 5,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 766
+      "valid_records": 763
     },
     {
       "batch_id": "polygon:2026-07-28:IBKR:1",
       "error_messages": [],
-      "input_records": 369,
-      "inserted_records": 369,
+      "input_records": 367,
+      "inserted_records": 367,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 369
+      "valid_records": 367
     },
     {
       "batch_id": "polygon:2026-07-28:IBM:1",
       "error_messages": [],
-      "input_records": 803,
-      "inserted_records": 803,
+      "input_records": 823,
+      "inserted_records": 823,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 803
+      "valid_records": 823
     },
     {
       "batch_id": "polygon:2026-07-28:ICE:1",
       "error_messages": [],
-      "input_records": 371,
-      "inserted_records": 370,
-      "rejected_records": 1,
+      "input_records": 368,
+      "inserted_records": 368,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 370
+      "valid_records": 368
     },
     {
       "batch_id": "polygon:2026-07-28:ICLN:1",
@@ -2704,12 +2704,12 @@
     {
       "batch_id": "polygon:2026-07-28:IDXX:1",
       "error_messages": [],
-      "input_records": 188,
-      "inserted_records": 188,
+      "input_records": 185,
+      "inserted_records": 185,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 188
+      "valid_records": 185
     },
     {
       "batch_id": "polygon:2026-07-28:IEF:1",
@@ -2724,12 +2724,12 @@
     {
       "batch_id": "polygon:2026-07-28:IEX:1",
       "error_messages": [],
-      "input_records": 54,
-      "inserted_records": 54,
+      "input_records": 55,
+      "inserted_records": 55,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 54
+      "valid_records": 55
     },
     {
       "batch_id": "polygon:2026-07-28:IFF:1",
@@ -2745,61 +2745,61 @@
       "batch_id": "polygon:2026-07-28:IGV:1",
       "error_messages": [],
       "input_records": 764,
-      "inserted_records": 764,
-      "rejected_records": 0,
+      "inserted_records": 759,
+      "rejected_records": 5,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 764
+      "valid_records": 759
     },
     {
       "batch_id": "polygon:2026-07-28:IHI:1",
       "error_messages": [],
       "input_records": 120,
-      "inserted_records": 114,
-      "rejected_records": 6,
+      "inserted_records": 119,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 114
+      "valid_records": 119
     },
     {
       "batch_id": "polygon:2026-07-28:INCY:1",
       "error_messages": [],
-      "input_records": 123,
-      "inserted_records": 123,
+      "input_records": 115,
+      "inserted_records": 115,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 123
+      "valid_records": 115
     },
     {
       "batch_id": "polygon:2026-07-28:INDA:1",
       "error_messages": [],
-      "input_records": 146,
-      "inserted_records": 144,
+      "input_records": 147,
+      "inserted_records": 145,
       "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 144
+      "valid_records": 145
     },
     {
       "batch_id": "polygon:2026-07-28:INTC:1",
       "error_messages": [],
-      "input_records": 1169,
-      "inserted_records": 1169,
-      "rejected_records": 0,
+      "input_records": 1155,
+      "inserted_records": 1151,
+      "rejected_records": 4,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 1169
+      "valid_records": 1151
     },
     {
       "batch_id": "polygon:2026-07-28:INTU:1",
       "error_messages": [],
-      "input_records": 681,
-      "inserted_records": 680,
-      "rejected_records": 1,
+      "input_records": 672,
+      "inserted_records": 670,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 680
+      "valid_records": 670
     },
     {
       "batch_id": "polygon:2026-07-28:INVH:1",
@@ -2824,52 +2824,52 @@
     {
       "batch_id": "polygon:2026-07-28:IQV:1",
       "error_messages": [],
-      "input_records": 124,
-      "inserted_records": 123,
+      "input_records": 126,
+      "inserted_records": 125,
       "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 123
+      "valid_records": 125
     },
     {
       "batch_id": "polygon:2026-07-28:IR:1",
       "error_messages": [],
-      "input_records": 75,
-      "inserted_records": 74,
-      "rejected_records": 1,
+      "input_records": 77,
+      "inserted_records": 77,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 74
+      "valid_records": 77
     },
     {
       "batch_id": "polygon:2026-07-28:IRM:1",
       "error_messages": [],
-      "input_records": 307,
-      "inserted_records": 307,
+      "input_records": 303,
+      "inserted_records": 303,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 307
+      "valid_records": 303
     },
     {
       "batch_id": "polygon:2026-07-28:ISRG:1",
       "error_messages": [],
-      "input_records": 932,
-      "inserted_records": 932,
-      "rejected_records": 0,
+      "input_records": 914,
+      "inserted_records": 912,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 932
+      "valid_records": 912
     },
     {
       "batch_id": "polygon:2026-07-28:IT:1",
       "error_messages": [],
       "input_records": 118,
-      "inserted_records": 117,
-      "rejected_records": 1,
+      "inserted_records": 118,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 117
+      "valid_records": 118
     },
     {
       "batch_id": "polygon:2026-07-28:ITB:1",
@@ -2895,11 +2895,11 @@
       "batch_id": "polygon:2026-07-28:ITW:1",
       "error_messages": [],
       "input_records": 160,
-      "inserted_records": 159,
-      "rejected_records": 1,
+      "inserted_records": 160,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 159
+      "valid_records": 160
     },
     {
       "batch_id": "polygon:2026-07-28:IVV:1",
@@ -2914,42 +2914,42 @@
     {
       "batch_id": "polygon:2026-07-28:IVZ:1",
       "error_messages": [],
-      "input_records": 113,
-      "inserted_records": 113,
+      "input_records": 117,
+      "inserted_records": 117,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 113
+      "valid_records": 117
     },
     {
       "batch_id": "polygon:2026-07-28:IWD:1",
       "error_messages": [],
       "input_records": 100,
-      "inserted_records": 97,
-      "rejected_records": 3,
+      "inserted_records": 100,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 97
+      "valid_records": 100
     },
     {
       "batch_id": "polygon:2026-07-28:IWF:1",
       "error_messages": [],
       "input_records": 193,
-      "inserted_records": 193,
-      "rejected_records": 0,
+      "inserted_records": 192,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 193
+      "valid_records": 192
     },
     {
       "batch_id": "polygon:2026-07-28:IWM:1",
       "error_messages": [],
-      "input_records": 2253,
-      "inserted_records": 2252,
-      "rejected_records": 1,
+      "input_records": 2254,
+      "inserted_records": 2254,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 2252
+      "valid_records": 2254
     },
     {
       "batch_id": "polygon:2026-07-28:IYR:1",
@@ -2975,101 +2975,101 @@
       "batch_id": "polygon:2026-07-28:JBHT:1",
       "error_messages": [],
       "input_records": 151,
-      "inserted_records": 151,
-      "rejected_records": 0,
+      "inserted_records": 143,
+      "rejected_records": 8,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 151
+      "valid_records": 143
     },
     {
       "batch_id": "polygon:2026-07-28:JBL:1",
       "error_messages": [],
-      "input_records": 471,
-      "inserted_records": 471,
+      "input_records": 478,
+      "inserted_records": 478,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 471
+      "valid_records": 478
     },
     {
       "batch_id": "polygon:2026-07-28:JCI:1",
       "error_messages": [],
-      "input_records": 179,
-      "inserted_records": 179,
+      "input_records": 183,
+      "inserted_records": 183,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 179
+      "valid_records": 183
     },
     {
       "batch_id": "polygon:2026-07-28:JEPI:1",
       "error_messages": [],
       "input_records": 102,
-      "inserted_records": 101,
-      "rejected_records": 1,
+      "inserted_records": 102,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 101
+      "valid_records": 102
     },
     {
       "batch_id": "polygon:2026-07-28:JEPQ:1",
       "error_messages": [],
       "input_records": 143,
-      "inserted_records": 136,
-      "rejected_records": 7,
+      "inserted_records": 143,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 136
+      "valid_records": 143
     },
     {
       "batch_id": "polygon:2026-07-28:JETS:1",
       "error_messages": [],
-      "input_records": 325,
-      "inserted_records": 325,
-      "rejected_records": 0,
+      "input_records": 320,
+      "inserted_records": 317,
+      "rejected_records": 3,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 325
+      "valid_records": 317
     },
     {
       "batch_id": "polygon:2026-07-28:JKHY:1",
       "error_messages": [],
       "input_records": 90,
-      "inserted_records": 88,
-      "rejected_records": 2,
+      "inserted_records": 90,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 88
+      "valid_records": 90
     },
     {
       "batch_id": "polygon:2026-07-28:JNJ:1",
       "error_messages": [],
       "input_records": 510,
-      "inserted_records": 509,
-      "rejected_records": 1,
+      "inserted_records": 510,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 509
+      "valid_records": 510
     },
     {
       "batch_id": "polygon:2026-07-28:JPM:1",
       "error_messages": [],
       "input_records": 810,
-      "inserted_records": 810,
-      "rejected_records": 0,
+      "inserted_records": 808,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 810
+      "valid_records": 808
     },
     {
       "batch_id": "polygon:2026-07-28:KBE:1",
       "error_messages": [],
-      "input_records": 162,
-      "inserted_records": 162,
-      "rejected_records": 0,
+      "input_records": 160,
+      "inserted_records": 158,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 162
+      "valid_records": 158
     },
     {
       "batch_id": "polygon:2026-07-28:KDP:1",
@@ -3105,11 +3105,11 @@
       "batch_id": "polygon:2026-07-28:KHC:1",
       "error_messages": [],
       "input_records": 280,
-      "inserted_records": 280,
-      "rejected_records": 0,
+      "inserted_records": 279,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 280
+      "valid_records": 279
     },
     {
       "batch_id": "polygon:2026-07-28:KIM:1",
@@ -3134,22 +3134,22 @@
     {
       "batch_id": "polygon:2026-07-28:KLAC:1",
       "error_messages": [],
-      "input_records": 815,
-      "inserted_records": 815,
+      "input_records": 810,
+      "inserted_records": 810,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 815
+      "valid_records": 810
     },
     {
       "batch_id": "polygon:2026-07-28:KMB:1",
       "error_messages": [],
-      "input_records": 389,
-      "inserted_records": 389,
+      "input_records": 387,
+      "inserted_records": 387,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 389
+      "valid_records": 387
     },
     {
       "batch_id": "polygon:2026-07-28:KMI:1",
@@ -3165,11 +3165,11 @@
       "batch_id": "polygon:2026-07-28:KO:1",
       "error_messages": [],
       "input_records": 471,
-      "inserted_records": 468,
-      "rejected_records": 3,
+      "inserted_records": 471,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 468
+      "valid_records": 471
     },
     {
       "batch_id": "polygon:2026-07-28:KR:1",
@@ -3194,32 +3194,32 @@
     {
       "batch_id": "polygon:2026-07-28:KVUE:1",
       "error_messages": [],
-      "input_records": 157,
-      "inserted_records": 157,
+      "input_records": 163,
+      "inserted_records": 163,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 157
+      "valid_records": 163
     },
     {
       "batch_id": "polygon:2026-07-28:KWEB:1",
       "error_messages": [],
-      "input_records": 383,
-      "inserted_records": 371,
-      "rejected_records": 12,
+      "input_records": 390,
+      "inserted_records": 385,
+      "rejected_records": 5,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 371
+      "valid_records": 385
     },
     {
       "batch_id": "polygon:2026-07-28:L:1",
       "error_messages": [],
       "input_records": 53,
-      "inserted_records": 52,
-      "rejected_records": 1,
+      "inserted_records": 53,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 52
+      "valid_records": 53
     },
     {
       "batch_id": "polygon:2026-07-28:LDOS:1",
@@ -3245,11 +3245,11 @@
       "batch_id": "polygon:2026-07-28:LH:1",
       "error_messages": [],
       "input_records": 90,
-      "inserted_records": 89,
-      "rejected_records": 1,
+      "inserted_records": 90,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 89
+      "valid_records": 90
     },
     {
       "batch_id": "polygon:2026-07-28:LHX:1",
@@ -3274,42 +3274,42 @@
     {
       "batch_id": "polygon:2026-07-28:LIN:1",
       "error_messages": [],
-      "input_records": 516,
-      "inserted_records": 513,
-      "rejected_records": 3,
+      "input_records": 514,
+      "inserted_records": 514,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 513
+      "valid_records": 514
     },
     {
       "batch_id": "polygon:2026-07-28:LITE:1",
       "error_messages": [],
-      "input_records": 1351,
-      "inserted_records": 1351,
+      "input_records": 1382,
+      "inserted_records": 1382,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 1351
+      "valid_records": 1382
     },
     {
       "batch_id": "polygon:2026-07-28:LLY:1",
       "error_messages": [],
       "input_records": 1694,
-      "inserted_records": 1694,
-      "rejected_records": 0,
+      "inserted_records": 1688,
+      "rejected_records": 6,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 1694
+      "valid_records": 1688
     },
     {
       "batch_id": "polygon:2026-07-28:LMT:1",
       "error_messages": [],
-      "input_records": 1080,
-      "inserted_records": 1079,
+      "input_records": 1089,
+      "inserted_records": 1088,
       "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 1079
+      "valid_records": 1088
     },
     {
       "batch_id": "polygon:2026-07-28:LNT:1",
@@ -3344,32 +3344,32 @@
     {
       "batch_id": "polygon:2026-07-28:LRCX:1",
       "error_messages": [],
-      "input_records": 768,
-      "inserted_records": 768,
+      "input_records": 769,
+      "inserted_records": 769,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 768
+      "valid_records": 769
     },
     {
       "batch_id": "polygon:2026-07-28:LULU:1",
       "error_messages": [],
       "input_records": 543,
-      "inserted_records": 543,
-      "rejected_records": 0,
+      "inserted_records": 540,
+      "rejected_records": 3,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 543
+      "valid_records": 540
     },
     {
       "batch_id": "polygon:2026-07-28:LUV:1",
       "error_messages": [],
-      "input_records": 373,
-      "inserted_records": 373,
-      "rejected_records": 0,
+      "input_records": 367,
+      "inserted_records": 366,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 373
+      "valid_records": 366
     },
     {
       "batch_id": "polygon:2026-07-28:LVS:1",
@@ -3384,12 +3384,12 @@
     {
       "batch_id": "polygon:2026-07-28:LYB:1",
       "error_messages": [],
-      "input_records": 135,
-      "inserted_records": 135,
-      "rejected_records": 0,
+      "input_records": 138,
+      "inserted_records": 136,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 135
+      "valid_records": 136
     },
     {
       "batch_id": "polygon:2026-07-28:LYV:1",
@@ -3405,51 +3405,51 @@
       "batch_id": "polygon:2026-07-28:MA:1",
       "error_messages": [],
       "input_records": 1028,
-      "inserted_records": 1028,
-      "rejected_records": 0,
+      "inserted_records": 1023,
+      "rejected_records": 5,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 1028
+      "valid_records": 1023
     },
     {
       "batch_id": "polygon:2026-07-28:MAA:1",
       "error_messages": [],
       "input_records": 69,
-      "inserted_records": 69,
-      "rejected_records": 0,
+      "inserted_records": 68,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 69
+      "valid_records": 68
     },
     {
       "batch_id": "polygon:2026-07-28:MAR:1",
       "error_messages": [],
-      "input_records": 422,
-      "inserted_records": 416,
-      "rejected_records": 6,
+      "input_records": 412,
+      "inserted_records": 412,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 416
+      "valid_records": 412
     },
     {
       "batch_id": "polygon:2026-07-28:MAS:1",
       "error_messages": [],
       "input_records": 71,
-      "inserted_records": 69,
-      "rejected_records": 2,
+      "inserted_records": 71,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 69
+      "valid_records": 71
     },
     {
       "batch_id": "polygon:2026-07-28:MCD:1",
       "error_messages": [],
-      "input_records": 642,
-      "inserted_records": 642,
+      "input_records": 646,
+      "inserted_records": 646,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 642
+      "valid_records": 646
     },
     {
       "batch_id": "polygon:2026-07-28:MCHP:1",
@@ -3464,12 +3464,12 @@
     {
       "batch_id": "polygon:2026-07-28:MCK:1",
       "error_messages": [],
-      "input_records": 370,
-      "inserted_records": 370,
+      "input_records": 368,
+      "inserted_records": 368,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 370
+      "valid_records": 368
     },
     {
       "batch_id": "polygon:2026-07-28:MCO:1",
@@ -3504,12 +3504,12 @@
     {
       "batch_id": "polygon:2026-07-28:MELI:1",
       "error_messages": [],
-      "input_records": 1709,
-      "inserted_records": 1684,
-      "rejected_records": 25,
+      "input_records": 1713,
+      "inserted_records": 1696,
+      "rejected_records": 17,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 1684
+      "valid_records": 1696
     },
     {
       "batch_id": "polygon:2026-07-28:MET:1",
@@ -3524,12 +3524,12 @@
     {
       "batch_id": "polygon:2026-07-28:META:1",
       "error_messages": [],
-      "input_records": 2159,
-      "inserted_records": 2151,
+      "input_records": 2144,
+      "inserted_records": 2136,
       "rejected_records": 8,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 2151
+      "valid_records": 2136
     },
     {
       "batch_id": "polygon:2026-07-28:MGM:1",
@@ -3555,41 +3555,41 @@
       "batch_id": "polygon:2026-07-28:MLM:1",
       "error_messages": [],
       "input_records": 195,
-      "inserted_records": 194,
-      "rejected_records": 1,
+      "inserted_records": 195,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 194
+      "valid_records": 195
     },
     {
       "batch_id": "polygon:2026-07-28:MMM:1",
       "error_messages": [],
       "input_records": 399,
-      "inserted_records": 390,
-      "rejected_records": 9,
+      "inserted_records": 397,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 390
+      "valid_records": 397
     },
     {
       "batch_id": "polygon:2026-07-28:MNST:1",
       "error_messages": [],
       "input_records": 152,
-      "inserted_records": 147,
-      "rejected_records": 5,
+      "inserted_records": 150,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 147
+      "valid_records": 150
     },
     {
       "batch_id": "polygon:2026-07-28:MO:1",
       "error_messages": [],
-      "input_records": 338,
-      "inserted_records": 338,
+      "input_records": 345,
+      "inserted_records": 345,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 338
+      "valid_records": 345
     },
     {
       "batch_id": "polygon:2026-07-28:MOS:1",
@@ -3605,41 +3605,41 @@
       "batch_id": "polygon:2026-07-28:MPC:1",
       "error_messages": [],
       "input_records": 209,
-      "inserted_records": 204,
-      "rejected_records": 5,
+      "inserted_records": 209,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 204
+      "valid_records": 209
     },
     {
       "batch_id": "polygon:2026-07-28:MPWR:1",
       "error_messages": [],
-      "input_records": 557,
-      "inserted_records": 557,
+      "input_records": 565,
+      "inserted_records": 565,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 557
+      "valid_records": 565
     },
     {
       "batch_id": "polygon:2026-07-28:MRK:1",
       "error_messages": [],
-      "input_records": 514,
-      "inserted_records": 514,
+      "input_records": 512,
+      "inserted_records": 512,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 514
+      "valid_records": 512
     },
     {
       "batch_id": "polygon:2026-07-28:MRNA:1",
       "error_messages": [],
-      "input_records": 526,
-      "inserted_records": 526,
-      "rejected_records": 0,
+      "input_records": 528,
+      "inserted_records": 525,
+      "rejected_records": 3,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 526
+      "valid_records": 525
     },
     {
       "batch_id": "polygon:2026-07-28:MRSH:1",
@@ -3654,22 +3654,22 @@
     {
       "batch_id": "polygon:2026-07-28:MRVL:1",
       "error_messages": [],
-      "input_records": 663,
-      "inserted_records": 663,
+      "input_records": 661,
+      "inserted_records": 661,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 663
+      "valid_records": 661
     },
     {
       "batch_id": "polygon:2026-07-28:MS:1",
       "error_messages": [],
-      "input_records": 518,
-      "inserted_records": 518,
-      "rejected_records": 0,
+      "input_records": 509,
+      "inserted_records": 507,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 518
+      "valid_records": 507
     },
     {
       "batch_id": "polygon:2026-07-28:MSCI:1",
@@ -3684,32 +3684,32 @@
     {
       "batch_id": "polygon:2026-07-28:MSFT:1",
       "error_messages": [],
-      "input_records": 1565,
-      "inserted_records": 1563,
-      "rejected_records": 2,
+      "input_records": 1557,
+      "inserted_records": 1544,
+      "rejected_records": 13,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 1563
+      "valid_records": 1544
     },
     {
       "batch_id": "polygon:2026-07-28:MSI:1",
       "error_messages": [],
-      "input_records": 141,
-      "inserted_records": 141,
+      "input_records": 142,
+      "inserted_records": 142,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 141
+      "valid_records": 142
     },
     {
       "batch_id": "polygon:2026-07-28:MSTR:1",
       "error_messages": [],
-      "input_records": 688,
-      "inserted_records": 688,
-      "rejected_records": 0,
+      "input_records": 690,
+      "inserted_records": 689,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 688
+      "valid_records": 689
     },
     {
       "batch_id": "polygon:2026-07-28:MTB:1",
@@ -3724,62 +3724,62 @@
     {
       "batch_id": "polygon:2026-07-28:MTD:1",
       "error_messages": [],
-      "input_records": 185,
-      "inserted_records": 185,
+      "input_records": 187,
+      "inserted_records": 187,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 185
+      "valid_records": 187
     },
     {
       "batch_id": "polygon:2026-07-28:MTUM:1",
       "error_messages": [],
-      "input_records": 417,
-      "inserted_records": 417,
+      "input_records": 416,
+      "inserted_records": 416,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 417
+      "valid_records": 416
     },
     {
       "batch_id": "polygon:2026-07-28:MU:1",
       "error_messages": [],
-      "input_records": 2772,
-      "inserted_records": 2772,
+      "input_records": 2764,
+      "inserted_records": 2764,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 2772
+      "valid_records": 2764
     },
     {
       "batch_id": "polygon:2026-07-28:NBIS:1",
       "error_messages": [],
-      "input_records": 713,
-      "inserted_records": 713,
+      "input_records": 688,
+      "inserted_records": 688,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 713
+      "valid_records": 688
     },
     {
       "batch_id": "polygon:2026-07-28:NCLH:1",
       "error_messages": [],
-      "input_records": 265,
-      "inserted_records": 262,
+      "input_records": 268,
+      "inserted_records": 265,
       "rejected_records": 3,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 262
+      "valid_records": 265
     },
     {
       "batch_id": "polygon:2026-07-28:NDAQ:1",
       "error_messages": [],
       "input_records": 330,
-      "inserted_records": 327,
-      "rejected_records": 3,
+      "inserted_records": 329,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 327
+      "valid_records": 329
     },
     {
       "batch_id": "polygon:2026-07-28:NDSN:1",
@@ -3795,11 +3795,11 @@
       "batch_id": "polygon:2026-07-28:NDX:1",
       "error_messages": [],
       "input_records": 5000,
-      "inserted_records": 4673,
-      "rejected_records": 207,
+      "inserted_records": 4722,
+      "rejected_records": 158,
       "skipped_records": 120,
       "updated_records": 0,
-      "valid_records": 4673
+      "valid_records": 4722
     },
     {
       "batch_id": "polygon:2026-07-28:NDX:2",
@@ -3815,11 +3815,11 @@
       "batch_id": "polygon:2026-07-28:NEE:1",
       "error_messages": [],
       "input_records": 363,
-      "inserted_records": 361,
-      "rejected_records": 2,
+      "inserted_records": 363,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 361
+      "valid_records": 363
     },
     {
       "batch_id": "polygon:2026-07-28:NEM:1",
@@ -3835,11 +3835,11 @@
       "batch_id": "polygon:2026-07-28:NFLX:1",
       "error_messages": [],
       "input_records": 796,
-      "inserted_records": 784,
-      "rejected_records": 12,
+      "inserted_records": 794,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 784
+      "valid_records": 794
     },
     {
       "batch_id": "polygon:2026-07-28:NI:1",
@@ -3854,12 +3854,12 @@
     {
       "batch_id": "polygon:2026-07-28:NKE:1",
       "error_messages": [],
-      "input_records": 452,
-      "inserted_records": 452,
+      "input_records": 436,
+      "inserted_records": 436,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 452
+      "valid_records": 436
     },
     {
       "batch_id": "polygon:2026-07-28:NOC:1",
@@ -3874,42 +3874,42 @@
     {
       "batch_id": "polygon:2026-07-28:NOW:1",
       "error_messages": [],
-      "input_records": 851,
-      "inserted_records": 851,
-      "rejected_records": 0,
+      "input_records": 852,
+      "inserted_records": 847,
+      "rejected_records": 5,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 851
+      "valid_records": 847
     },
     {
       "batch_id": "polygon:2026-07-28:NRG:1",
       "error_messages": [],
-      "input_records": 401,
-      "inserted_records": 401,
+      "input_records": 392,
+      "inserted_records": 392,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 401
+      "valid_records": 392
     },
     {
       "batch_id": "polygon:2026-07-28:NSC:1",
       "error_messages": [],
       "input_records": 138,
-      "inserted_records": 134,
-      "rejected_records": 4,
+      "inserted_records": 135,
+      "rejected_records": 3,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 134
+      "valid_records": 135
     },
     {
       "batch_id": "polygon:2026-07-28:NTAP:1",
       "error_messages": [],
-      "input_records": 204,
-      "inserted_records": 204,
+      "input_records": 202,
+      "inserted_records": 202,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 204
+      "valid_records": 202
     },
     {
       "batch_id": "polygon:2026-07-28:NTRS:1",
@@ -3925,21 +3925,21 @@
       "batch_id": "polygon:2026-07-28:NUE:1",
       "error_messages": [],
       "input_records": 206,
-      "inserted_records": 204,
-      "rejected_records": 2,
+      "inserted_records": 206,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 204
+      "valid_records": 206
     },
     {
       "batch_id": "polygon:2026-07-28:NVDA:1",
       "error_messages": [],
-      "input_records": 1112,
-      "inserted_records": 1110,
-      "rejected_records": 2,
+      "input_records": 1125,
+      "inserted_records": 1119,
+      "rejected_records": 6,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 1110
+      "valid_records": 1119
     },
     {
       "batch_id": "polygon:2026-07-28:NWS:1",
@@ -3985,71 +3985,71 @@
       "batch_id": "polygon:2026-07-28:ODFL:1",
       "error_messages": [],
       "input_records": 210,
-      "inserted_records": 209,
-      "rejected_records": 1,
+      "inserted_records": 210,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 209
+      "valid_records": 210
     },
     {
       "batch_id": "polygon:2026-07-28:OIH:1",
       "error_messages": [],
-      "input_records": 274,
-      "inserted_records": 274,
+      "input_records": 276,
+      "inserted_records": 276,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 274
+      "valid_records": 276
     },
     {
       "batch_id": "polygon:2026-07-28:OKE:1",
       "error_messages": [],
-      "input_records": 125,
-      "inserted_records": 125,
+      "input_records": 121,
+      "inserted_records": 121,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 125
+      "valid_records": 121
     },
     {
       "batch_id": "polygon:2026-07-28:OMC:1",
       "error_messages": [],
-      "input_records": 158,
-      "inserted_records": 158,
+      "input_records": 161,
+      "inserted_records": 161,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 158
+      "valid_records": 161
     },
     {
       "batch_id": "polygon:2026-07-28:ON:1",
       "error_messages": [],
-      "input_records": 486,
-      "inserted_records": 486,
+      "input_records": 490,
+      "inserted_records": 490,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 486
+      "valid_records": 490
     },
     {
       "batch_id": "polygon:2026-07-28:ORCL:1",
       "error_messages": [],
-      "input_records": 784,
-      "inserted_records": 784,
+      "input_records": 802,
+      "inserted_records": 802,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 784
+      "valid_records": 802
     },
     {
       "batch_id": "polygon:2026-07-28:ORLY:1",
       "error_messages": [],
-      "input_records": 188,
-      "inserted_records": 185,
+      "input_records": 189,
+      "inserted_records": 186,
       "rejected_records": 3,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 185
+      "valid_records": 186
     },
     {
       "batch_id": "polygon:2026-07-28:OTIS:1",
@@ -4064,32 +4064,32 @@
     {
       "batch_id": "polygon:2026-07-28:OXY:1",
       "error_messages": [],
-      "input_records": 431,
-      "inserted_records": 430,
-      "rejected_records": 1,
+      "input_records": 441,
+      "inserted_records": 439,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 430
+      "valid_records": 439
     },
     {
       "batch_id": "polygon:2026-07-28:PANW:1",
       "error_messages": [],
-      "input_records": 949,
-      "inserted_records": 870,
-      "rejected_records": 8,
+      "input_records": 951,
+      "inserted_records": 866,
+      "rejected_records": 14,
       "skipped_records": 71,
       "updated_records": 0,
-      "valid_records": 870
+      "valid_records": 866
     },
     {
       "batch_id": "polygon:2026-07-28:PAYX:1",
       "error_messages": [],
       "input_records": 120,
-      "inserted_records": 120,
-      "rejected_records": 0,
+      "inserted_records": 119,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 120
+      "valid_records": 119
     },
     {
       "batch_id": "polygon:2026-07-28:PCAR:1",
@@ -4105,51 +4105,51 @@
       "batch_id": "polygon:2026-07-28:PCG:1",
       "error_messages": [],
       "input_records": 225,
-      "inserted_records": 223,
-      "rejected_records": 2,
+      "inserted_records": 224,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 223
+      "valid_records": 224
     },
     {
       "batch_id": "polygon:2026-07-28:PDD:1",
       "error_messages": [],
-      "input_records": 405,
-      "inserted_records": 400,
-      "rejected_records": 5,
+      "input_records": 416,
+      "inserted_records": 415,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 400
+      "valid_records": 415
     },
     {
       "batch_id": "polygon:2026-07-28:PEG:1",
       "error_messages": [],
-      "input_records": 125,
-      "inserted_records": 125,
+      "input_records": 127,
+      "inserted_records": 127,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 125
+      "valid_records": 127
     },
     {
       "batch_id": "polygon:2026-07-28:PEP:1",
       "error_messages": [],
-      "input_records": 552,
-      "inserted_records": 552,
-      "rejected_records": 0,
+      "input_records": 546,
+      "inserted_records": 545,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 552
+      "valid_records": 545
     },
     {
       "batch_id": "polygon:2026-07-28:PFE:1",
       "error_messages": [],
       "input_records": 411,
-      "inserted_records": 405,
-      "rejected_records": 6,
+      "inserted_records": 397,
+      "rejected_records": 14,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 405
+      "valid_records": 397
     },
     {
       "batch_id": "polygon:2026-07-28:PFG:1",
@@ -4164,12 +4164,12 @@
     {
       "batch_id": "polygon:2026-07-28:PG:1",
       "error_messages": [],
-      "input_records": 458,
-      "inserted_records": 458,
+      "input_records": 460,
+      "inserted_records": 460,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 458
+      "valid_records": 460
     },
     {
       "batch_id": "polygon:2026-07-28:PGR:1",
@@ -4184,22 +4184,22 @@
     {
       "batch_id": "polygon:2026-07-28:PH:1",
       "error_messages": [],
-      "input_records": 222,
-      "inserted_records": 217,
-      "rejected_records": 5,
+      "input_records": 221,
+      "inserted_records": 221,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 217
+      "valid_records": 221
     },
     {
       "batch_id": "polygon:2026-07-28:PHM:1",
       "error_messages": [],
       "input_records": 332,
-      "inserted_records": 326,
-      "rejected_records": 6,
+      "inserted_records": 332,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 326
+      "valid_records": 332
     },
     {
       "batch_id": "polygon:2026-07-28:PKG:1",
@@ -4225,11 +4225,11 @@
       "batch_id": "polygon:2026-07-28:PLTR:1",
       "error_messages": [],
       "input_records": 806,
-      "inserted_records": 806,
-      "rejected_records": 0,
+      "inserted_records": 798,
+      "rejected_records": 8,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 806
+      "valid_records": 798
     },
     {
       "batch_id": "polygon:2026-07-28:PM:1",
@@ -4254,12 +4254,12 @@
     {
       "batch_id": "polygon:2026-07-28:PNR:1",
       "error_messages": [],
-      "input_records": 117,
-      "inserted_records": 117,
+      "input_records": 121,
+      "inserted_records": 121,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 117
+      "valid_records": 121
     },
     {
       "batch_id": "polygon:2026-07-28:PNW:1",
@@ -4275,21 +4275,21 @@
       "batch_id": "polygon:2026-07-28:PODD:1",
       "error_messages": [],
       "input_records": 111,
-      "inserted_records": 110,
-      "rejected_records": 1,
+      "inserted_records": 111,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 110
+      "valid_records": 111
     },
     {
       "batch_id": "polygon:2026-07-28:PPG:1",
       "error_messages": [],
-      "input_records": 250,
-      "inserted_records": 250,
+      "input_records": 247,
+      "inserted_records": 247,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 250
+      "valid_records": 247
     },
     {
       "batch_id": "polygon:2026-07-28:PPL:1",
@@ -4334,22 +4334,22 @@
     {
       "batch_id": "polygon:2026-07-28:PSX:1",
       "error_messages": [],
-      "input_records": 403,
-      "inserted_records": 403,
+      "input_records": 411,
+      "inserted_records": 411,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 403
+      "valid_records": 411
     },
     {
       "batch_id": "polygon:2026-07-28:PTC:1",
       "error_messages": [],
-      "input_records": 139,
-      "inserted_records": 139,
+      "input_records": 134,
+      "inserted_records": 134,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 139
+      "valid_records": 134
     },
     {
       "batch_id": "polygon:2026-07-28:PWR:1",
@@ -4364,52 +4364,52 @@
     {
       "batch_id": "polygon:2026-07-28:PYPL:1",
       "error_messages": [],
-      "input_records": 549,
-      "inserted_records": 549,
-      "rejected_records": 0,
+      "input_records": 533,
+      "inserted_records": 525,
+      "rejected_records": 8,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 549
+      "valid_records": 525
     },
     {
       "batch_id": "polygon:2026-07-28:Q:1",
       "error_messages": [],
-      "input_records": 254,
-      "inserted_records": 230,
-      "rejected_records": 1,
+      "input_records": 262,
+      "inserted_records": 239,
+      "rejected_records": 0,
       "skipped_records": 23,
       "updated_records": 0,
-      "valid_records": 230
+      "valid_records": 239
     },
     {
       "batch_id": "polygon:2026-07-28:QCOM:1",
       "error_messages": [],
-      "input_records": 640,
-      "inserted_records": 640,
+      "input_records": 619,
+      "inserted_records": 619,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 640
+      "valid_records": 619
     },
     {
       "batch_id": "polygon:2026-07-28:QQQ:1",
       "error_messages": [],
       "input_records": 5000,
-      "inserted_records": 4986,
-      "rejected_records": 14,
+      "inserted_records": 5000,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 4986
+      "valid_records": 5000
     },
     {
       "batch_id": "polygon:2026-07-28:QQQ:2",
       "error_messages": [],
-      "input_records": 703,
-      "inserted_records": 703,
+      "input_records": 692,
+      "inserted_records": 692,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 703
+      "valid_records": 692
     },
     {
       "batch_id": "polygon:2026-07-28:QQQM:1",
@@ -4434,12 +4434,12 @@
     {
       "batch_id": "polygon:2026-07-28:RCL:1",
       "error_messages": [],
-      "input_records": 551,
-      "inserted_records": 551,
-      "rejected_records": 0,
+      "input_records": 545,
+      "inserted_records": 544,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 551
+      "valid_records": 544
     },
     {
       "batch_id": "polygon:2026-07-28:REG:1",
@@ -4454,12 +4454,12 @@
     {
       "batch_id": "polygon:2026-07-28:REGN:1",
       "error_messages": [],
-      "input_records": 710,
-      "inserted_records": 710,
+      "input_records": 715,
+      "inserted_records": 715,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 710
+      "valid_records": 715
     },
     {
       "batch_id": "polygon:2026-07-28:RF:1",
@@ -4474,32 +4474,32 @@
     {
       "batch_id": "polygon:2026-07-28:RJF:1",
       "error_messages": [],
-      "input_records": 123,
-      "inserted_records": 123,
-      "rejected_records": 0,
+      "input_records": 119,
+      "inserted_records": 118,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 123
+      "valid_records": 118
     },
     {
       "batch_id": "polygon:2026-07-28:RKLB:1",
       "error_messages": [],
-      "input_records": 509,
-      "inserted_records": 509,
-      "rejected_records": 0,
+      "input_records": 517,
+      "inserted_records": 516,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 509
+      "valid_records": 516
     },
     {
       "batch_id": "polygon:2026-07-28:RL:1",
       "error_messages": [],
-      "input_records": 185,
-      "inserted_records": 185,
+      "input_records": 190,
+      "inserted_records": 190,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 185
+      "valid_records": 190
     },
     {
       "batch_id": "polygon:2026-07-28:RMD:1",
@@ -4514,22 +4514,22 @@
     {
       "batch_id": "polygon:2026-07-28:ROK:1",
       "error_messages": [],
-      "input_records": 225,
-      "inserted_records": 225,
+      "input_records": 220,
+      "inserted_records": 220,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 225
+      "valid_records": 220
     },
     {
       "batch_id": "polygon:2026-07-28:ROL:1",
       "error_messages": [],
-      "input_records": 58,
-      "inserted_records": 58,
+      "input_records": 54,
+      "inserted_records": 54,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 58
+      "valid_records": 54
     },
     {
       "batch_id": "polygon:2026-07-28:ROP:1",
@@ -4544,12 +4544,12 @@
     {
       "batch_id": "polygon:2026-07-28:ROST:1",
       "error_messages": [],
-      "input_records": 349,
-      "inserted_records": 337,
-      "rejected_records": 12,
+      "input_records": 341,
+      "inserted_records": 341,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 337
+      "valid_records": 341
     },
     {
       "batch_id": "polygon:2026-07-28:RSG:1",
@@ -4565,31 +4565,31 @@
       "batch_id": "polygon:2026-07-28:RSP:1",
       "error_messages": [],
       "input_records": 351,
-      "inserted_records": 348,
-      "rejected_records": 3,
+      "inserted_records": 347,
+      "rejected_records": 4,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 348
+      "valid_records": 347
     },
     {
       "batch_id": "polygon:2026-07-28:RTX:1",
       "error_messages": [],
       "input_records": 460,
-      "inserted_records": 459,
-      "rejected_records": 1,
+      "inserted_records": 453,
+      "rejected_records": 7,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 459
+      "valid_records": 453
     },
     {
       "batch_id": "polygon:2026-07-28:RUT:1",
       "error_messages": [],
       "input_records": 4304,
-      "inserted_records": 3807,
-      "rejected_records": 104,
+      "inserted_records": 3831,
+      "rejected_records": 80,
       "skipped_records": 393,
       "updated_records": 0,
-      "valid_records": 3807
+      "valid_records": 3831
     },
     {
       "batch_id": "polygon:2026-07-28:RVTY:1",
@@ -4604,62 +4604,62 @@
     {
       "batch_id": "polygon:2026-07-28:SBAC:1",
       "error_messages": [],
-      "input_records": 104,
-      "inserted_records": 104,
+      "input_records": 101,
+      "inserted_records": 101,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 104
+      "valid_records": 101
     },
     {
       "batch_id": "polygon:2026-07-28:SBUX:1",
       "error_messages": [],
-      "input_records": 472,
-      "inserted_records": 472,
+      "input_records": 464,
+      "inserted_records": 464,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 472
+      "valid_records": 464
     },
     {
       "batch_id": "polygon:2026-07-28:SCHB:1",
       "error_messages": [],
       "input_records": 55,
-      "inserted_records": 55,
-      "rejected_records": 0,
+      "inserted_records": 53,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 55
+      "valid_records": 53
     },
     {
       "batch_id": "polygon:2026-07-28:SCHD:1",
       "error_messages": [],
       "input_records": 264,
-      "inserted_records": 263,
-      "rejected_records": 1,
+      "inserted_records": 264,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 263
+      "valid_records": 264
     },
     {
       "batch_id": "polygon:2026-07-28:SCHW:1",
       "error_messages": [],
-      "input_records": 519,
-      "inserted_records": 508,
+      "input_records": 515,
+      "inserted_records": 504,
       "rejected_records": 11,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 508
+      "valid_records": 504
     },
     {
       "batch_id": "polygon:2026-07-28:SHOP:1",
       "error_messages": [],
       "input_records": 689,
-      "inserted_records": 689,
-      "rejected_records": 0,
+      "inserted_records": 685,
+      "rejected_records": 4,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 689
+      "valid_records": 685
     },
     {
       "batch_id": "polygon:2026-07-28:SHW:1",
@@ -4705,71 +4705,71 @@
       "batch_id": "polygon:2026-07-28:SLB:1",
       "error_messages": [],
       "input_records": 415,
-      "inserted_records": 415,
-      "rejected_records": 0,
+      "inserted_records": 414,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 415
+      "valid_records": 414
     },
     {
       "batch_id": "polygon:2026-07-28:SLV:1",
       "error_messages": [],
-      "input_records": 1749,
-      "inserted_records": 1734,
-      "rejected_records": 15,
+      "input_records": 1762,
+      "inserted_records": 1761,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 1734
+      "valid_records": 1761
     },
     {
       "batch_id": "polygon:2026-07-28:SMCI:1",
       "error_messages": [],
-      "input_records": 538,
-      "inserted_records": 538,
-      "rejected_records": 0,
+      "input_records": 543,
+      "inserted_records": 541,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 538
+      "valid_records": 541
     },
     {
       "batch_id": "polygon:2026-07-28:SMH:1",
       "error_messages": [],
-      "input_records": 2327,
-      "inserted_records": 2327,
+      "input_records": 2342,
+      "inserted_records": 2342,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 2327
+      "valid_records": 2342
     },
     {
       "batch_id": "polygon:2026-07-28:SNA:1",
       "error_messages": [],
-      "input_records": 100,
-      "inserted_records": 98,
-      "rejected_records": 2,
+      "input_records": 97,
+      "inserted_records": 97,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 98
+      "valid_records": 97
     },
     {
       "batch_id": "polygon:2026-07-28:SNDK:1",
       "error_messages": [],
-      "input_records": 2173,
-      "inserted_records": 2173,
+      "input_records": 2077,
+      "inserted_records": 2077,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 2173
+      "valid_records": 2077
     },
     {
       "batch_id": "polygon:2026-07-28:SNPS:1",
       "error_messages": [],
-      "input_records": 710,
-      "inserted_records": 710,
+      "input_records": 692,
+      "inserted_records": 692,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 710
+      "valid_records": 692
     },
     {
       "batch_id": "polygon:2026-07-28:SO:1",
@@ -4785,21 +4785,21 @@
       "batch_id": "polygon:2026-07-28:SOLV:1",
       "error_messages": [],
       "input_records": 69,
-      "inserted_records": 66,
-      "rejected_records": 3,
+      "inserted_records": 67,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 66
+      "valid_records": 67
     },
     {
       "batch_id": "polygon:2026-07-28:SOXX:1",
       "error_messages": [],
-      "input_records": 1568,
-      "inserted_records": 1568,
+      "input_records": 1586,
+      "inserted_records": 1586,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 1568
+      "valid_records": 1586
     },
     {
       "batch_id": "polygon:2026-07-28:SPG:1",
@@ -4825,61 +4825,61 @@
       "batch_id": "polygon:2026-07-28:SPX:1",
       "error_messages": [],
       "input_records": 5000,
-      "inserted_records": 4780,
-      "rejected_records": 220,
+      "inserted_records": 4824,
+      "rejected_records": 176,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 4780
+      "valid_records": 4824
     },
     {
       "batch_id": "polygon:2026-07-28:SPX:2",
       "error_messages": [],
       "input_records": 5000,
-      "inserted_records": 4035,
-      "rejected_records": 155,
+      "inserted_records": 4033,
+      "rejected_records": 157,
       "skipped_records": 810,
       "updated_records": 0,
-      "valid_records": 4035
+      "valid_records": 4033
     },
     {
       "batch_id": "polygon:2026-07-28:SPX:3",
       "error_messages": [],
       "input_records": 5000,
-      "inserted_records": 4116,
-      "rejected_records": 131,
+      "inserted_records": 4115,
+      "rejected_records": 132,
       "skipped_records": 753,
       "updated_records": 0,
-      "valid_records": 4116
+      "valid_records": 4115
     },
     {
       "batch_id": "polygon:2026-07-28:SPX:4",
       "error_messages": [],
       "input_records": 1201,
-      "inserted_records": 1168,
-      "rejected_records": 33,
+      "inserted_records": 1175,
+      "rejected_records": 26,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 1168
+      "valid_records": 1175
     },
     {
       "batch_id": "polygon:2026-07-28:SPXU:1",
       "error_messages": [],
-      "input_records": 293,
-      "inserted_records": 279,
+      "input_records": 291,
+      "inserted_records": 277,
       "rejected_records": 0,
       "skipped_records": 14,
       "updated_records": 0,
-      "valid_records": 279
+      "valid_records": 277
     },
     {
       "batch_id": "polygon:2026-07-28:SPY:1",
       "error_messages": [],
       "input_records": 5000,
-      "inserted_records": 4997,
-      "rejected_records": 3,
+      "inserted_records": 5000,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 4997
+      "valid_records": 5000
     },
     {
       "batch_id": "polygon:2026-07-28:SPY:2",
@@ -4895,21 +4895,21 @@
       "batch_id": "polygon:2026-07-28:SQQQ:1",
       "error_messages": [],
       "input_records": 640,
-      "inserted_records": 628,
+      "inserted_records": 629,
       "rejected_records": 0,
-      "skipped_records": 12,
+      "skipped_records": 11,
       "updated_records": 0,
-      "valid_records": 628
+      "valid_records": 629
     },
     {
       "batch_id": "polygon:2026-07-28:SRE:1",
       "error_messages": [],
-      "input_records": 91,
-      "inserted_records": 91,
+      "input_records": 94,
+      "inserted_records": 94,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 91
+      "valid_records": 94
     },
     {
       "batch_id": "polygon:2026-07-28:STE:1",
@@ -4924,12 +4924,12 @@
     {
       "batch_id": "polygon:2026-07-28:STLD:1",
       "error_messages": [],
-      "input_records": 218,
-      "inserted_records": 217,
-      "rejected_records": 1,
+      "input_records": 215,
+      "inserted_records": 213,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 217
+      "valid_records": 213
     },
     {
       "batch_id": "polygon:2026-07-28:STT:1",
@@ -4944,22 +4944,22 @@
     {
       "batch_id": "polygon:2026-07-28:STX:1",
       "error_messages": [],
-      "input_records": 1614,
-      "inserted_records": 1614,
+      "input_records": 1683,
+      "inserted_records": 1683,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 1614
+      "valid_records": 1683
     },
     {
       "batch_id": "polygon:2026-07-28:STZ:1",
       "error_messages": [],
-      "input_records": 418,
-      "inserted_records": 418,
+      "input_records": 427,
+      "inserted_records": 427,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 418
+      "valid_records": 427
     },
     {
       "batch_id": "polygon:2026-07-28:SW:1",
@@ -4984,52 +4984,52 @@
     {
       "batch_id": "polygon:2026-07-28:SWKS:1",
       "error_messages": [],
-      "input_records": 190,
-      "inserted_records": 190,
+      "input_records": 199,
+      "inserted_records": 199,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 190
+      "valid_records": 199
     },
     {
       "batch_id": "polygon:2026-07-28:SYF:1",
       "error_messages": [],
       "input_records": 137,
-      "inserted_records": 136,
-      "rejected_records": 1,
+      "inserted_records": 137,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 136
+      "valid_records": 137
     },
     {
       "batch_id": "polygon:2026-07-28:SYK:1",
       "error_messages": [],
       "input_records": 174,
-      "inserted_records": 172,
-      "rejected_records": 2,
+      "inserted_records": 174,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 172
+      "valid_records": 174
     },
     {
       "batch_id": "polygon:2026-07-28:SYY:1",
       "error_messages": [],
-      "input_records": 160,
-      "inserted_records": 159,
-      "rejected_records": 1,
+      "input_records": 158,
+      "inserted_records": 158,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 159
+      "valid_records": 158
     },
     {
       "batch_id": "polygon:2026-07-28:T:1",
       "error_messages": [],
-      "input_records": 407,
-      "inserted_records": 407,
-      "rejected_records": 0,
+      "input_records": 415,
+      "inserted_records": 414,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 407
+      "valid_records": 414
     },
     {
       "batch_id": "polygon:2026-07-28:TAN:1",
@@ -5054,12 +5054,12 @@
     {
       "batch_id": "polygon:2026-07-28:TDG:1",
       "error_messages": [],
-      "input_records": 288,
-      "inserted_records": 288,
+      "input_records": 285,
+      "inserted_records": 285,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 288
+      "valid_records": 285
     },
     {
       "batch_id": "polygon:2026-07-28:TDY:1",
@@ -5075,31 +5075,31 @@
       "batch_id": "polygon:2026-07-28:TECH:1",
       "error_messages": [],
       "input_records": 58,
-      "inserted_records": 43,
-      "rejected_records": 15,
+      "inserted_records": 53,
+      "rejected_records": 5,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 43
+      "valid_records": 53
     },
     {
       "batch_id": "polygon:2026-07-28:TEL:1",
       "error_messages": [],
-      "input_records": 210,
-      "inserted_records": 210,
+      "input_records": 211,
+      "inserted_records": 211,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 210
+      "valid_records": 211
     },
     {
       "batch_id": "polygon:2026-07-28:TER:1",
       "error_messages": [],
-      "input_records": 701,
-      "inserted_records": 701,
+      "input_records": 696,
+      "inserted_records": 696,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 701
+      "valid_records": 696
     },
     {
       "batch_id": "polygon:2026-07-28:TFC:1",
@@ -5135,21 +5135,21 @@
       "batch_id": "polygon:2026-07-28:TJX:1",
       "error_messages": [],
       "input_records": 309,
-      "inserted_records": 304,
-      "rejected_records": 5,
+      "inserted_records": 302,
+      "rejected_records": 7,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 304
+      "valid_records": 302
     },
     {
       "batch_id": "polygon:2026-07-28:TKO:1",
       "error_messages": [],
-      "input_records": 110,
-      "inserted_records": 110,
+      "input_records": 112,
+      "inserted_records": 112,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 110
+      "valid_records": 112
     },
     {
       "batch_id": "polygon:2026-07-28:TLT:1",
@@ -5164,22 +5164,22 @@
     {
       "batch_id": "polygon:2026-07-28:TMO:1",
       "error_messages": [],
-      "input_records": 496,
-      "inserted_records": 484,
-      "rejected_records": 12,
+      "input_records": 503,
+      "inserted_records": 501,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 484
+      "valid_records": 501
     },
     {
       "batch_id": "polygon:2026-07-28:TMUS:1",
       "error_messages": [],
-      "input_records": 447,
-      "inserted_records": 447,
+      "input_records": 455,
+      "inserted_records": 455,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 447
+      "valid_records": 455
     },
     {
       "batch_id": "polygon:2026-07-28:TPL:1",
@@ -5194,12 +5194,12 @@
     {
       "batch_id": "polygon:2026-07-28:TPR:1",
       "error_messages": [],
-      "input_records": 378,
-      "inserted_records": 378,
-      "rejected_records": 0,
+      "input_records": 370,
+      "inserted_records": 366,
+      "rejected_records": 4,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 378
+      "valid_records": 366
     },
     {
       "batch_id": "polygon:2026-07-28:TQQQ:1",
@@ -5215,11 +5215,11 @@
       "batch_id": "polygon:2026-07-28:TRGP:1",
       "error_messages": [],
       "input_records": 173,
-      "inserted_records": 172,
-      "rejected_records": 1,
+      "inserted_records": 173,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 172
+      "valid_records": 173
     },
     {
       "batch_id": "polygon:2026-07-28:TRI:1",
@@ -5235,51 +5235,51 @@
       "batch_id": "polygon:2026-07-28:TRMB:1",
       "error_messages": [],
       "input_records": 67,
-      "inserted_records": 65,
-      "rejected_records": 2,
+      "inserted_records": 66,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 65
+      "valid_records": 66
     },
     {
       "batch_id": "polygon:2026-07-28:TROW:1",
       "error_messages": [],
-      "input_records": 134,
-      "inserted_records": 134,
+      "input_records": 136,
+      "inserted_records": 136,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 134
+      "valid_records": 136
     },
     {
       "batch_id": "polygon:2026-07-28:TRV:1",
       "error_messages": [],
       "input_records": 143,
-      "inserted_records": 138,
-      "rejected_records": 5,
+      "inserted_records": 143,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 138
+      "valid_records": 143
     },
     {
       "batch_id": "polygon:2026-07-28:TSCO:1",
       "error_messages": [],
-      "input_records": 306,
-      "inserted_records": 306,
+      "input_records": 295,
+      "inserted_records": 295,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 306
+      "valid_records": 295
     },
     {
       "batch_id": "polygon:2026-07-28:TSLA:1",
       "error_messages": [],
-      "input_records": 1586,
-      "inserted_records": 1583,
-      "rejected_records": 3,
+      "input_records": 1590,
+      "inserted_records": 1590,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 1583
+      "valid_records": 1590
     },
     {
       "batch_id": "polygon:2026-07-28:TSN:1",
@@ -5294,22 +5294,22 @@
     {
       "batch_id": "polygon:2026-07-28:TT:1",
       "error_messages": [],
-      "input_records": 280,
-      "inserted_records": 276,
-      "rejected_records": 4,
+      "input_records": 278,
+      "inserted_records": 278,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 276
+      "valid_records": 278
     },
     {
       "batch_id": "polygon:2026-07-28:TTD:1",
       "error_messages": [],
-      "input_records": 320,
-      "inserted_records": 320,
-      "rejected_records": 0,
+      "input_records": 330,
+      "inserted_records": 329,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 320
+      "valid_records": 329
     },
     {
       "batch_id": "polygon:2026-07-28:TTWO:1",
@@ -5324,12 +5324,12 @@
     {
       "batch_id": "polygon:2026-07-28:TXN:1",
       "error_messages": [],
-      "input_records": 807,
-      "inserted_records": 806,
-      "rejected_records": 1,
+      "input_records": 820,
+      "inserted_records": 818,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 806
+      "valid_records": 818
     },
     {
       "batch_id": "polygon:2026-07-28:TXT:1",
@@ -5354,52 +5354,52 @@
     {
       "batch_id": "polygon:2026-07-28:UAL:1",
       "error_messages": [],
-      "input_records": 669,
-      "inserted_records": 662,
-      "rejected_records": 7,
+      "input_records": 673,
+      "inserted_records": 673,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 662
+      "valid_records": 673
     },
     {
       "batch_id": "polygon:2026-07-28:UBER:1",
       "error_messages": [],
-      "input_records": 540,
-      "inserted_records": 540,
-      "rejected_records": 0,
+      "input_records": 547,
+      "inserted_records": 539,
+      "rejected_records": 8,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 540
+      "valid_records": 539
     },
     {
       "batch_id": "polygon:2026-07-28:UDR:1",
       "error_messages": [],
-      "input_records": 40,
-      "inserted_records": 40,
-      "rejected_records": 0,
+      "input_records": 39,
+      "inserted_records": 38,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 40
+      "valid_records": 38
     },
     {
       "batch_id": "polygon:2026-07-28:UHS:1",
       "error_messages": [],
-      "input_records": 129,
-      "inserted_records": 129,
+      "input_records": 131,
+      "inserted_records": 131,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 129
+      "valid_records": 131
     },
     {
       "batch_id": "polygon:2026-07-28:ULTA:1",
       "error_messages": [],
-      "input_records": 797,
-      "inserted_records": 787,
-      "rejected_records": 10,
+      "input_records": 803,
+      "inserted_records": 800,
+      "rejected_records": 3,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 787
+      "valid_records": 800
     },
     {
       "batch_id": "polygon:2026-07-28:UNG:1",
@@ -5424,42 +5424,42 @@
     {
       "batch_id": "polygon:2026-07-28:UNP:1",
       "error_messages": [],
-      "input_records": 536,
-      "inserted_records": 536,
-      "rejected_records": 0,
-      "skipped_records": 0,
-      "updated_records": 0,
-      "valid_records": 536
-    },
-    {
-      "batch_id": "polygon:2026-07-28:UPRO:1",
-      "error_messages": [],
-      "input_records": 682,
-      "inserted_records": 682,
-      "rejected_records": 0,
-      "skipped_records": 0,
-      "updated_records": 0,
-      "valid_records": 682
-    },
-    {
-      "batch_id": "polygon:2026-07-28:UPS:1",
-      "error_messages": [],
-      "input_records": 542,
+      "input_records": 540,
       "inserted_records": 540,
-      "rejected_records": 2,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
       "valid_records": 540
     },
     {
-      "batch_id": "polygon:2026-07-28:URI:1",
+      "batch_id": "polygon:2026-07-28:UPRO:1",
       "error_messages": [],
-      "input_records": 697,
-      "inserted_records": 693,
-      "rejected_records": 4,
+      "input_records": 680,
+      "inserted_records": 680,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 693
+      "valid_records": 680
+    },
+    {
+      "batch_id": "polygon:2026-07-28:UPS:1",
+      "error_messages": [],
+      "input_records": 542,
+      "inserted_records": 542,
+      "rejected_records": 0,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 542
+    },
+    {
+      "batch_id": "polygon:2026-07-28:URI:1",
+      "error_messages": [],
+      "input_records": 707,
+      "inserted_records": 705,
+      "rejected_records": 2,
+      "skipped_records": 0,
+      "updated_records": 0,
+      "valid_records": 705
     },
     {
       "batch_id": "polygon:2026-07-28:USB:1",
@@ -5475,41 +5475,41 @@
       "batch_id": "polygon:2026-07-28:USMV:1",
       "error_messages": [],
       "input_records": 68,
-      "inserted_records": 67,
-      "rejected_records": 1,
+      "inserted_records": 66,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 67
+      "valid_records": 66
     },
     {
       "batch_id": "polygon:2026-07-28:USO:1",
       "error_messages": [],
-      "input_records": 1678,
-      "inserted_records": 1637,
-      "rejected_records": 41,
+      "input_records": 1660,
+      "inserted_records": 1625,
+      "rejected_records": 35,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 1637
+      "valid_records": 1625
     },
     {
       "batch_id": "polygon:2026-07-28:UVXY:1",
       "error_messages": [],
-      "input_records": 477,
-      "inserted_records": 423,
-      "rejected_records": 3,
-      "skipped_records": 51,
+      "input_records": 472,
+      "inserted_records": 417,
+      "rejected_records": 2,
+      "skipped_records": 53,
       "updated_records": 0,
-      "valid_records": 423
+      "valid_records": 417
     },
     {
       "batch_id": "polygon:2026-07-28:V:1",
       "error_messages": [],
-      "input_records": 849,
-      "inserted_records": 825,
-      "rejected_records": 24,
+      "input_records": 839,
+      "inserted_records": 818,
+      "rejected_records": 21,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 825
+      "valid_records": 818
     },
     {
       "batch_id": "polygon:2026-07-28:VEA:1",
@@ -5524,42 +5524,42 @@
     {
       "batch_id": "polygon:2026-07-28:VEEV:1",
       "error_messages": [],
-      "input_records": 184,
-      "inserted_records": 179,
-      "rejected_records": 5,
+      "input_records": 180,
+      "inserted_records": 180,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 179
+      "valid_records": 180
     },
     {
       "batch_id": "polygon:2026-07-28:VICI:1",
       "error_messages": [],
       "input_records": 63,
-      "inserted_records": 57,
-      "rejected_records": 0,
+      "inserted_records": 55,
+      "rejected_records": 2,
       "skipped_records": 6,
       "updated_records": 0,
-      "valid_records": 57
+      "valid_records": 55
     },
     {
       "batch_id": "polygon:2026-07-28:VIG:1",
       "error_messages": [],
-      "input_records": 126,
-      "inserted_records": 121,
-      "rejected_records": 5,
+      "input_records": 125,
+      "inserted_records": 125,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 121
+      "valid_records": 125
     },
     {
       "batch_id": "polygon:2026-07-28:VIXY:1",
       "error_messages": [],
-      "input_records": 132,
-      "inserted_records": 119,
+      "input_records": 125,
+      "inserted_records": 112,
       "rejected_records": 2,
       "skipped_records": 11,
       "updated_records": 0,
-      "valid_records": 119
+      "valid_records": 112
     },
     {
       "batch_id": "polygon:2026-07-28:VLO:1",
@@ -5575,31 +5575,31 @@
       "batch_id": "polygon:2026-07-28:VLTO:1",
       "error_messages": [],
       "input_records": 53,
-      "inserted_records": 53,
-      "rejected_records": 0,
+      "inserted_records": 52,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 53
+      "valid_records": 52
     },
     {
       "batch_id": "polygon:2026-07-28:VLUE:1",
       "error_messages": [],
       "input_records": 65,
-      "inserted_records": 65,
-      "rejected_records": 0,
+      "inserted_records": 64,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 65
+      "valid_records": 64
     },
     {
       "batch_id": "polygon:2026-07-28:VMC:1",
       "error_messages": [],
       "input_records": 96,
-      "inserted_records": 95,
-      "rejected_records": 1,
+      "inserted_records": 94,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 95
+      "valid_records": 94
     },
     {
       "batch_id": "polygon:2026-07-28:VNQ:1",
@@ -5645,11 +5645,11 @@
       "batch_id": "polygon:2026-07-28:VRT:1",
       "error_messages": [],
       "input_records": 759,
-      "inserted_records": 759,
-      "rejected_records": 0,
+      "inserted_records": 757,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 759
+      "valid_records": 757
     },
     {
       "batch_id": "polygon:2026-07-28:VRTX:1",
@@ -5675,88 +5675,88 @@
       "batch_id": "polygon:2026-07-28:VTI:1",
       "error_messages": [],
       "input_records": 282,
-      "inserted_records": 282,
-      "rejected_records": 0,
+      "inserted_records": 280,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 282
+      "valid_records": 280
     },
     {
       "batch_id": "polygon:2026-07-28:VTR:1",
       "error_messages": [],
-      "input_records": 109,
-      "inserted_records": 109,
+      "input_records": 114,
+      "inserted_records": 114,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 109
+      "valid_records": 114
     },
     {
       "batch_id": "polygon:2026-07-28:VTRS:1",
       "error_messages": [],
-      "input_records": 82,
-      "inserted_records": 82,
+      "input_records": 83,
+      "inserted_records": 83,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 82
+      "valid_records": 83
     },
     {
       "batch_id": "polygon:2026-07-28:VTV:1",
       "error_messages": [],
       "input_records": 113,
-      "inserted_records": 106,
-      "rejected_records": 7,
+      "inserted_records": 113,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 106
+      "valid_records": 113
     },
     {
       "batch_id": "polygon:2026-07-28:VUG:1",
       "error_messages": [],
-      "input_records": 238,
-      "inserted_records": 238,
-      "rejected_records": 0,
+      "input_records": 235,
+      "inserted_records": 234,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 238
+      "valid_records": 234
     },
     {
       "batch_id": "polygon:2026-07-28:VWO:1",
       "error_messages": [],
       "input_records": 145,
-      "inserted_records": 145,
-      "rejected_records": 0,
+      "inserted_records": 144,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 145
+      "valid_records": 144
     },
     {
       "batch_id": "polygon:2026-07-28:VYM:1",
       "error_messages": [],
       "input_records": 188,
-      "inserted_records": 184,
-      "rejected_records": 4,
+      "inserted_records": 188,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 184
+      "valid_records": 188
     },
     {
       "batch_id": "polygon:2026-07-28:VZ:1",
       "error_messages": [],
       "input_records": 440,
-      "inserted_records": 439,
-      "rejected_records": 1,
+      "inserted_records": 435,
+      "rejected_records": 5,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 439
+      "valid_records": 435
     },
     {
       "batch_id": "polygon:2026-07-28:WAB:1",
       "error_messages": [],
-      "input_records": 116,
+      "input_records": 113,
       "inserted_records": 113,
-      "rejected_records": 3,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
       "valid_records": 113
@@ -5775,31 +5775,31 @@
       "batch_id": "polygon:2026-07-28:WBD:1",
       "error_messages": [],
       "input_records": 301,
-      "inserted_records": 301,
-      "rejected_records": 0,
+      "inserted_records": 293,
+      "rejected_records": 8,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 301
+      "valid_records": 293
     },
     {
       "batch_id": "polygon:2026-07-28:WDAY:1",
       "error_messages": [],
-      "input_records": 526,
-      "inserted_records": 526,
-      "rejected_records": 0,
+      "input_records": 523,
+      "inserted_records": 516,
+      "rejected_records": 7,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 526
+      "valid_records": 516
     },
     {
       "batch_id": "polygon:2026-07-28:WDC:1",
       "error_messages": [],
-      "input_records": 1118,
-      "inserted_records": 1117,
-      "rejected_records": 1,
+      "input_records": 1198,
+      "inserted_records": 1198,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 1117
+      "valid_records": 1198
     },
     {
       "batch_id": "polygon:2026-07-28:WEC:1",
@@ -5814,32 +5814,32 @@
     {
       "batch_id": "polygon:2026-07-28:WELL:1",
       "error_messages": [],
-      "input_records": 133,
-      "inserted_records": 133,
+      "input_records": 137,
+      "inserted_records": 137,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 133
+      "valid_records": 137
     },
     {
       "batch_id": "polygon:2026-07-28:WFC:1",
       "error_messages": [],
       "input_records": 473,
-      "inserted_records": 471,
-      "rejected_records": 2,
+      "inserted_records": 470,
+      "rejected_records": 3,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 471
+      "valid_records": 470
     },
     {
       "batch_id": "polygon:2026-07-28:WM:1",
       "error_messages": [],
-      "input_records": 183,
-      "inserted_records": 178,
-      "rejected_records": 5,
+      "input_records": 189,
+      "inserted_records": 189,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 178
+      "valid_records": 189
     },
     {
       "batch_id": "polygon:2026-07-28:WMB:1",
@@ -5854,22 +5854,22 @@
     {
       "batch_id": "polygon:2026-07-28:WMT:1",
       "error_messages": [],
-      "input_records": 592,
-      "inserted_records": 582,
-      "rejected_records": 10,
+      "input_records": 585,
+      "inserted_records": 580,
+      "rejected_records": 5,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 582
+      "valid_records": 580
     },
     {
       "batch_id": "polygon:2026-07-28:WRB:1",
       "error_messages": [],
       "input_records": 71,
-      "inserted_records": 70,
-      "rejected_records": 1,
+      "inserted_records": 71,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 70
+      "valid_records": 71
     },
     {
       "batch_id": "polygon:2026-07-28:WSM:1",
@@ -5884,22 +5884,22 @@
     {
       "batch_id": "polygon:2026-07-28:WST:1",
       "error_messages": [],
-      "input_records": 143,
-      "inserted_records": 142,
-      "rejected_records": 1,
+      "input_records": 145,
+      "inserted_records": 145,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 142
+      "valid_records": 145
     },
     {
       "batch_id": "polygon:2026-07-28:WTW:1",
       "error_messages": [],
-      "input_records": 75,
-      "inserted_records": 75,
+      "input_records": 76,
+      "inserted_records": 76,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 75
+      "valid_records": 76
     },
     {
       "batch_id": "polygon:2026-07-28:WY:1",
@@ -5915,21 +5915,21 @@
       "batch_id": "polygon:2026-07-28:WYNN:1",
       "error_messages": [],
       "input_records": 433,
-      "inserted_records": 433,
-      "rejected_records": 0,
+      "inserted_records": 432,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 433
+      "valid_records": 432
     },
     {
       "batch_id": "polygon:2026-07-28:XBI:1",
       "error_messages": [],
-      "input_records": 926,
-      "inserted_records": 918,
-      "rejected_records": 8,
+      "input_records": 933,
+      "inserted_records": 906,
+      "rejected_records": 27,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 918
+      "valid_records": 906
     },
     {
       "batch_id": "polygon:2026-07-28:XEL:1",
@@ -5945,51 +5945,51 @@
       "batch_id": "polygon:2026-07-28:XHB:1",
       "error_messages": [],
       "input_records": 457,
-      "inserted_records": 456,
-      "rejected_records": 1,
+      "inserted_records": 453,
+      "rejected_records": 4,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 456
+      "valid_records": 453
     },
     {
       "batch_id": "polygon:2026-07-28:XLB:1",
       "error_messages": [],
       "input_records": 373,
-      "inserted_records": 373,
-      "rejected_records": 0,
+      "inserted_records": 371,
+      "rejected_records": 2,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 373
+      "valid_records": 371
     },
     {
       "batch_id": "polygon:2026-07-28:XLC:1",
       "error_messages": [],
       "input_records": 374,
-      "inserted_records": 372,
-      "rejected_records": 2,
+      "inserted_records": 369,
+      "rejected_records": 5,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 372
+      "valid_records": 369
     },
     {
       "batch_id": "polygon:2026-07-28:XLE:1",
       "error_messages": [],
-      "input_records": 837,
-      "inserted_records": 837,
+      "input_records": 853,
+      "inserted_records": 853,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 837
+      "valid_records": 853
     },
     {
       "batch_id": "polygon:2026-07-28:XLF:1",
       "error_messages": [],
       "input_records": 795,
-      "inserted_records": 795,
-      "rejected_records": 0,
+      "inserted_records": 787,
+      "rejected_records": 8,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 795
+      "valid_records": 787
     },
     {
       "batch_id": "polygon:2026-07-28:XLI:1",
@@ -6004,12 +6004,12 @@
     {
       "batch_id": "polygon:2026-07-28:XLK:1",
       "error_messages": [],
-      "input_records": 982,
-      "inserted_records": 982,
-      "rejected_records": 0,
+      "input_records": 976,
+      "inserted_records": 975,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 982
+      "valid_records": 975
     },
     {
       "batch_id": "polygon:2026-07-28:XLP:1",
@@ -6034,92 +6034,92 @@
     {
       "batch_id": "polygon:2026-07-28:XLU:1",
       "error_messages": [],
-      "input_records": 394,
-      "inserted_records": 394,
+      "input_records": 399,
+      "inserted_records": 399,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 394
+      "valid_records": 399
     },
     {
       "batch_id": "polygon:2026-07-28:XLV:1",
       "error_messages": [],
       "input_records": 610,
-      "inserted_records": 610,
-      "rejected_records": 0,
+      "inserted_records": 609,
+      "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 610
+      "valid_records": 609
     },
     {
       "batch_id": "polygon:2026-07-28:XLY:1",
       "error_messages": [],
       "input_records": 568,
-      "inserted_records": 568,
-      "rejected_records": 0,
+      "inserted_records": 560,
+      "rejected_records": 8,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 568
+      "valid_records": 560
     },
     {
       "batch_id": "polygon:2026-07-28:XOM:1",
       "error_messages": [],
       "input_records": 650,
-      "inserted_records": 643,
-      "rejected_records": 7,
+      "inserted_records": 650,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 643
+      "valid_records": 650
     },
     {
       "batch_id": "polygon:2026-07-28:XOP:1",
       "error_messages": [],
-      "input_records": 751,
-      "inserted_records": 750,
-      "rejected_records": 1,
+      "input_records": 746,
+      "inserted_records": 746,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 750
+      "valid_records": 746
     },
     {
       "batch_id": "polygon:2026-07-28:XPH:1",
       "error_messages": [],
       "input_records": 34,
-      "inserted_records": 34,
-      "rejected_records": 0,
+      "inserted_records": 31,
+      "rejected_records": 3,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 34
+      "valid_records": 31
     },
     {
       "batch_id": "polygon:2026-07-28:XRT:1",
       "error_messages": [],
       "input_records": 342,
-      "inserted_records": 331,
-      "rejected_records": 11,
+      "inserted_records": 330,
+      "rejected_records": 12,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 331
+      "valid_records": 330
     },
     {
       "batch_id": "polygon:2026-07-28:XYL:1",
       "error_messages": [],
-      "input_records": 131,
-      "inserted_records": 130,
-      "rejected_records": 1,
+      "input_records": 133,
+      "inserted_records": 133,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 130
+      "valid_records": 133
     },
     {
       "batch_id": "polygon:2026-07-28:XYZ:1",
       "error_messages": [],
-      "input_records": 464,
-      "inserted_records": 463,
+      "input_records": 473,
+      "inserted_records": 472,
       "rejected_records": 1,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 463
+      "valid_records": 472
     },
     {
       "batch_id": "polygon:2026-07-28:YUM:1",
@@ -6134,50 +6134,50 @@
     {
       "batch_id": "polygon:2026-07-28:ZBH:1",
       "error_messages": [],
-      "input_records": 89,
-      "inserted_records": 88,
-      "rejected_records": 1,
+      "input_records": 86,
+      "inserted_records": 86,
+      "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 88
+      "valid_records": 86
     },
     {
       "batch_id": "polygon:2026-07-28:ZBRA:1",
       "error_messages": [],
-      "input_records": 130,
-      "inserted_records": 129,
-      "rejected_records": 1,
+      "input_records": 123,
+      "inserted_records": 118,
+      "rejected_records": 5,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 129
+      "valid_records": 118
     },
     {
       "batch_id": "polygon:2026-07-28:ZTS:1",
       "error_messages": [],
-      "input_records": 126,
-      "inserted_records": 126,
+      "input_records": 118,
+      "inserted_records": 118,
       "rejected_records": 0,
       "skipped_records": 0,
       "updated_records": 0,
-      "valid_records": 126
+      "valid_records": 118
     }
   ],
-  "completed_at": "2026-07-28T13:57:45.062074+00:00",
+  "completed_at": "2026-07-28T20:01:53.669458+00:00",
   "failed_batches": 0,
-  "input_records": 273792,
-  "inserted_records": 268810,
+  "input_records": 273891,
+  "inserted_records": 269045,
   "metadata": {
     "batch_size": 5000,
     "end_date": null,
-    "manifest_cycle_id": "options-20260728T134658785923Z",
+    "manifest_cycle_id": "options-20260728T195058289403Z",
     "resume": true,
     "start_date": null
   },
-  "rejected_records": 1714,
+  "rejected_records": 1567,
   "resumed_batches": 0,
-  "skipped_records": 3268,
+  "skipped_records": 3279,
   "source_name": "polygon_option_chain_snapshot",
-  "started_at": "2026-07-28T13:46:58.787981+00:00",
+  "started_at": "2026-07-28T19:50:58.293582+00:00",
   "updated_records": 0,
-  "valid_records": 268810
+  "valid_records": 269045
 }

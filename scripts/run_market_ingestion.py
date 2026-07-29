@@ -4,6 +4,8 @@ import argparse
 import csv
 import json
 import os
+import subprocess
+import sys
 from contextlib import contextmanager
 from collections import Counter
 from datetime import date, datetime, timezone
@@ -212,6 +214,21 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--dealer-sign-convention", choices=["street_proxy", "customer_long_proxy", "unsigned_market_exposure"], default="street_proxy")
     parser.add_argument("--dealer-positioning-write-reports", action="store_true")
     parser.add_argument("--dealer-positioning-fail-fast", action="store_true")
+    parser.add_argument(
+        "--skip-trend-intelligence",
+        action="store_true",
+        help="Skip Milestone 52 trend state, transition, forecast, institutional and platform-context stages.",
+    )
+    parser.add_argument(
+        "--force-trend-refresh",
+        action="store_true",
+        help="Force execution of all Milestone 52 trend stages even when only reused market data is requested.",
+    )
+    parser.add_argument(
+        "--trend-platform-report",
+        default="reports/trend_intelligence/platform_integration_latest.json",
+        help="Unified Trend Intelligence platform-context report path.",
+    )
     parser.add_argument("--skip-market-overview", action="store_true")
     parser.add_argument(
         "--skip-market-intelligence",
@@ -315,7 +332,7 @@ def _apply_mode_preset(args: argparse.Namespace) -> argparse.Namespace:
 
 def _write_lifecycle_report(args: argparse.Namespace, *, started_at: datetime, completed_at: datetime,
                             failed: int, post_ingestion_failed: bool, underlying_refreshed: bool,
-                            options_refreshed: bool, dealer_refreshed: bool, publication) -> None:
+                            options_refreshed: bool, dealer_refreshed: bool, trend_refreshed: bool, publication) -> None:
     path = Path(args.lifecycle_report)
     path.parent.mkdir(parents=True, exist_ok=True)
     payload = {
@@ -329,6 +346,7 @@ def _write_lifecycle_report(args: argparse.Namespace, *, started_at: datetime, c
             "underlying": {"requested": args.data_scope in {"underlying", "all"}, "refreshed": underlying_refreshed},
             "options": {"requested": args.data_scope in {"options", "all"}, "mode": "REUSED" if args.reuse_options_snapshot else ("FORCE_REBUILD" if args.force_options_refresh else "FRESH"), "refreshed": options_refreshed},
             "dealer_positioning": {"skipped": args.skip_dealer_positioning, "refreshed": dealer_refreshed},
+            "trend_intelligence": {"skipped": args.skip_trend_intelligence, "refreshed": trend_refreshed},
             "market_overview": {"skipped": args.skip_market_overview},
             "market_intelligence": {"skipped": args.skip_market_intelligence},
             "publication": {
@@ -440,6 +458,7 @@ def _resolve_force_controls(args: argparse.Namespace) -> argparse.Namespace:
         args.force_options_refresh = True
         args.force_dealer_refresh = True
         args.force_market_overview_refresh = True
+        args.force_trend_refresh = True
     return args
 
 
@@ -622,6 +641,58 @@ def _run_dealer_positioning(args: argparse.Namespace, symbols: tuple[str, ...], 
     return failed, positioning_profile.refreshed_symbols > 0
 
 
+
+def _run_command_stage(name: str, command: list[str]) -> None:
+    print(f"Trend Intelligence stage: {name}")
+    completed = subprocess.run(command, check=False)
+    if completed.returncode != 0:
+        raise RuntimeError(f"{name} failed with exit code {completed.returncode}")
+
+
+def _run_trend_intelligence_pipeline(args: argparse.Namespace, symbols: tuple[str, ...]) -> bool:
+    """Compute and persist all Milestone 52 analytics from database-backed OHLCV.
+
+    Standalone scripts remain diagnostic entry points; this orchestrator is the normal
+    operational path and deliberately performs no provider requests itself.
+    """
+    if args.skip_trend_intelligence:
+        print("Trend Intelligence refresh: skipped")
+        return False
+
+    symbol_args: list[str] = []
+    if args.symbols or args.symbols_file:
+        symbol_args.extend(["--symbols", ",".join(symbols)])
+
+    effective_end = args.end or date.today().isoformat()
+    dated_args: list[str] = [*symbol_args]
+    if args.start:
+        dated_args.extend(["--start", args.start])
+    dated_args.extend(["--end", effective_end])
+
+    # Each standalone phase has its own CLI contract. Phases 1 and 2 do not
+    # accept date arguments; Phases 3 and 4 do. Keep orchestration explicit so
+    # future parser changes are caught by the contract regression test.
+    stages = (
+        ("trend state", "scripts/run_trend_intelligence.py", symbol_args),
+        ("trend transitions", "scripts/run_trend_transition_intelligence.py", symbol_args),
+        ("trend forecasts", "scripts/run_trend_forecasting.py", dated_args),
+        ("institutional participation", "scripts/run_institutional_trend_intelligence.py", dated_args),
+    )
+    for name, script, stage_args in stages:
+        _run_command_stage(name, [sys.executable, script, *stage_args])
+
+    integration_command = [
+        sys.executable,
+        "scripts/run_trend_platform_integration.py",
+        "--symbols",
+        ",".join(symbols),
+        "--output",
+        args.trend_platform_report,
+    ]
+    _run_command_stage("platform context", integration_command)
+    print("Trend Intelligence refresh: READY")
+    return True
+
 def _run_market_overview(args: argparse.Namespace, *, upstream_refreshed: bool) -> bool:
     """Build Market Overview only when source lineage changed, unless explicitly forced."""
     from trading_ai.database import SessionLocal
@@ -723,6 +794,7 @@ def main(argv=None) -> int:
     underlying_refreshed = False
     options_refreshed = False
     dealer_refreshed = False
+    trend_refreshed = False
     if args.data_scope in {"underlying", "all"}:
         failed += _run_underlying_ingestion(args, instruments)
         underlying_refreshed = True
@@ -838,7 +910,13 @@ def main(argv=None) -> int:
         failed += dealer_failed
 
     post_ingestion_failed = False
-    if not args.skip_market_overview:
+    try:
+        trend_refreshed = _run_trend_intelligence_pipeline(args, symbols)
+    except Exception as exc:
+        post_ingestion_failed = True
+        print(f"Trend Intelligence refresh failed: {type(exc).__name__}: {exc}")
+
+    if not post_ingestion_failed and not args.skip_market_overview:
         try:
             _run_market_overview(
                 args,
@@ -886,6 +964,7 @@ def main(argv=None) -> int:
         underlying_refreshed=underlying_refreshed,
         options_refreshed=options_refreshed,
         dealer_refreshed=dealer_refreshed,
+        trend_refreshed=trend_refreshed,
         publication=publication,
     )
     if post_ingestion_failed:

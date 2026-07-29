@@ -1,0 +1,687 @@
+{
+  "status": "READY",
+  "snapshot_timestamp": "2026-07-28T22:26:37.377242+00:00",
+  "requested_symbol_count": 7,
+  "symbol_count": 7,
+  "forecast_count": 21,
+  "skipped_count": 0,
+  "error_count": 0,
+  "start_date": "2025-01-01",
+  "end_date": "2026-07-28",
+  "results": [
+    {
+      "symbol": "AAPL",
+      "as_of_date": "2026-07-24",
+      "snapshot_timestamp": "2026-07-28T22:26:37.352685+00:00",
+      "horizon_days": 5,
+      "continuation_probability": 61.3213,
+      "reversal_probability": 38.6787,
+      "bullish_probability": 61.3213,
+      "bearish_probability": 38.6787,
+      "expected_return_pct": 0.966969,
+      "expected_volatility_pct": 4.578676,
+      "confidence_score": 52.252,
+      "confidence_grade": "C",
+      "persistence_days_estimate": 6,
+      "forecast_direction": "BULLISH",
+      "regime_transition_probabilities": {
+        "CONTINUATION": 61.3213,
+        "REVERSAL": 38.6787
+      },
+      "signal_adjustment": {
+        "CALL": 0.0,
+        "PUT": -0.0
+      },
+      "status": "READY",
+      "calculation_version": "trend_forecast.v1",
+      "warnings": [],
+      "metadata": {
+        "ema20": 317.7374003949985,
+        "ema50": 305.22627219212075,
+        "signal_to_noise": 0.2111897147699942
+      }
+    },
+    {
+      "symbol": "AAPL",
+      "as_of_date": "2026-07-24",
+      "snapshot_timestamp": "2026-07-28T22:26:37.352995+00:00",
+      "horizon_days": 10,
+      "continuation_probability": 72.4553,
+      "reversal_probability": 27.5447,
+      "bullish_probability": 72.4553,
+      "bearish_probability": 27.5447,
+      "expected_return_pct": 1.933938,
+      "expected_volatility_pct": 6.475225,
+      "confidence_score": 67.7759,
+      "confidence_grade": "B",
+      "persistence_days_estimate": 14,
+      "forecast_direction": "BULLISH",
+      "regime_transition_probabilities": {
+        "CONTINUATION": 72.4553,
+        "REVERSAL": 27.5447
+      },
+      "signal_adjustment": {
+        "CALL": 1.3473,
+        "PUT": -1.3473
+      },
+      "status": "READY",
+      "calculation_version": "trend_forecast.v1",
+      "warnings": [],
+      "metadata": {
+        "ema20": 317.7374003949985,
+        "ema50": 305.22627219212075,
+        "signal_to_noise": 0.2986673588614313
+      }
+    },
+    {
+      "symbol": "AAPL",
+      "as_of_date": "2026-07-24",
+      "snapshot_timestamp": "2026-07-28T22:26:37.353270+00:00",
+      "horizon_days": 20,
+      "continuation_probability": 82.0177,
+      "reversal_probability": 17.9823,
+      "bullish_probability": 82.0177,
+      "bearish_probability": 17.9823,
+      "expected_return_pct": 7.827405,
+      "expected_volatility_pct": 7.8136,
+      "confidence_score": 88.6442,
+      "confidence_grade": "A",
+      "persistence_days_estimate": 33,
+      "forecast_direction": "BULLISH",
+      "regime_transition_probabilities": {
+        "CONTINUATION": 82.0177,
+        "REVERSAL": 17.9823
+      },
+      "signal_adjustment": {
+        "CALL": 1.5,
+        "PUT": -1.5
+      },
+      "status": "READY",
+      "calculation_version": "trend_forecast.v1",
+      "warnings": [],
+      "metadata": {
+        "ema20": 317.7374003949985,
+        "ema50": 305.22627219212075,
+        "signal_to_noise": 1.00176683355531
+      }
+    },
+    {
+      "symbol": "MSFT",
+      "as_of_date": "2026-07-24",
+      "snapshot_timestamp": "2026-07-28T22:26:37.358460+00:00",
+      "horizon_days": 5,
+      "continuation_probability": 60.5886,
+      "reversal_probability": 39.4114,
+      "bullish_probability": 39.4114,
+      "bearish_probability": 60.5886,
+      "expected_return_pct": -0.833795,
+      "expected_volatility_pct": 5.315795,
+      "confidence_score": 50.6474,
+      "confidence_grade": "C",
+      "persistence_days_estimate": 6,
+      "forecast_direction": "BEARISH",
+      "regime_transition_probabilities": {
+        "CONTINUATION": 60.5886,
+        "REVERSAL": 39.4114
+      },
+      "signal_adjustment": {
+        "CALL": -0.0,
+        "PUT": 0.0
+      },
+      "status": "READY",
+      "calculation_version": "trend_forecast.v1",
+      "warnings": [],
+      "metadata": {
+        "ema20": 389.3246835355629,
+        "ema50": 394.77874398361735,
+        "signal_to_noise": 0.15685227652332226
+      }
+    },
+    {
+      "symbol": "MSFT",
+      "as_of_date": "2026-07-24",
+      "snapshot_timestamp": "2026-07-28T22:26:37.358760+00:00",
+      "horizon_days": 10,
+      "continuation_probability": 57.3757,
+      "reversal_probability": 42.6243,
+      "bullish_probability": 42.6243,
+      "bearish_probability": 57.3757,
+      "expected_return_pct": -1.667589,
+      "expected_volatility_pct": 7.517669,
+      "confidence_score": 47.2503,
+      "confidence_grade": "D",
+      "persistence_days_estimate": 11,
+      "forecast_direction": "NEUTRAL",
+      "regime_transition_probabilities": {
+        "CONTINUATION": 57.3757,
+        "REVERSAL": 42.6243
+      },
+      "signal_adjustment": {
+        "CALL": 0.0,
+        "PUT": -0.0
+      },
+      "status": "READY",
+      "calculation_version": "trend_forecast.v1",
+      "warnings": [],
+      "metadata": {
+        "ema20": 389.3246835355629,
+        "ema50": 394.77874398361735,
+        "signal_to_noise": 0.22182261674837736
+      }
+    },
+    {
+      "symbol": "MSFT",
+      "as_of_date": "2026-07-24",
+      "snapshot_timestamp": "2026-07-28T22:26:37.359053+00:00",
+      "horizon_days": 20,
+      "continuation_probability": 41.3048,
+      "reversal_probability": 58.6952,
+      "bullish_probability": 58.6952,
+      "bearish_probability": 41.3048,
+      "expected_return_pct": 1.976192,
+      "expected_volatility_pct": 9.400178,
+      "confidence_score": 48.8265,
+      "confidence_grade": "D",
+      "persistence_days_estimate": 17,
+      "forecast_direction": "BULLISH",
+      "regime_transition_probabilities": {
+        "CONTINUATION": 41.3048,
+        "REVERSAL": 58.6952
+      },
+      "signal_adjustment": {
+        "CALL": 0.0,
+        "PUT": -0.0
+      },
+      "status": "READY",
+      "calculation_version": "trend_forecast.v1",
+      "warnings": [],
+      "metadata": {
+        "ema20": 389.3246835355629,
+        "ema50": 394.77874398361735,
+        "signal_to_noise": 0.21022923190923232
+      }
+    },
+    {
+      "symbol": "NVDA",
+      "as_of_date": "2026-07-24",
+      "snapshot_timestamp": "2026-07-28T22:26:37.362391+00:00",
+      "horizon_days": 5,
+      "continuation_probability": 55.3908,
+      "reversal_probability": 44.6092,
+      "bullish_probability": 55.3908,
+      "bearish_probability": 44.6092,
+      "expected_return_pct": -0.176935,
+      "expected_volatility_pct": 5.768886,
+      "confidence_score": 42.3761,
+      "confidence_grade": "D",
+      "persistence_days_estimate": 6,
+      "forecast_direction": "NEUTRAL",
+      "regime_transition_probabilities": {
+        "CONTINUATION": 55.3908,
+        "REVERSAL": 44.6092
+      },
+      "signal_adjustment": {
+        "CALL": 0.0,
+        "PUT": -0.0
+      },
+      "status": "READY",
+      "calculation_version": "trend_forecast.v1",
+      "warnings": [],
+      "metadata": {
+        "ema20": 205.8699080616909,
+        "ema50": 205.10532701032247,
+        "signal_to_noise": 0.030670565466723868
+      }
+    },
+    {
+      "symbol": "NVDA",
+      "as_of_date": "2026-07-24",
+      "snapshot_timestamp": "2026-07-28T22:26:37.362670+00:00",
+      "horizon_days": 10,
+      "continuation_probability": 48.5834,
+      "reversal_probability": 51.4166,
+      "bullish_probability": 48.5834,
+      "bearish_probability": 51.4166,
+      "expected_return_pct": -0.35387,
+      "expected_volatility_pct": 8.158437,
+      "confidence_score": 37.3621,
+      "confidence_grade": "D",
+      "persistence_days_estimate": 10,
+      "forecast_direction": "NEUTRAL",
+      "regime_transition_probabilities": {
+        "CONTINUATION": 48.5834,
+        "REVERSAL": 51.4166
+      },
+      "signal_adjustment": {
+        "CALL": 0.0,
+        "PUT": -0.0
+      },
+      "status": "READY",
+      "calculation_version": "trend_forecast.v1",
+      "warnings": [],
+      "metadata": {
+        "ema20": 205.8699080616909,
+        "ema50": 205.10532701032247,
+        "signal_to_noise": 0.04337472964869279
+      }
+    },
+    {
+      "symbol": "NVDA",
+      "as_of_date": "2026-07-24",
+      "snapshot_timestamp": "2026-07-28T22:26:37.362934+00:00",
+      "horizon_days": 20,
+      "continuation_probability": 67.2043,
+      "reversal_probability": 32.7957,
+      "bullish_probability": 67.2043,
+      "bearish_probability": 32.7957,
+      "expected_return_pct": 6.243386,
+      "expected_volatility_pct": 11.076024,
+      "confidence_score": 64.1298,
+      "confidence_grade": "C",
+      "persistence_days_estimate": 27,
+      "forecast_direction": "BULLISH",
+      "regime_transition_probabilities": {
+        "CONTINUATION": 67.2043,
+        "REVERSAL": 32.7957
+      },
+      "signal_adjustment": {
+        "CALL": 1.0323,
+        "PUT": -1.0323
+      },
+      "status": "READY",
+      "calculation_version": "trend_forecast.v1",
+      "warnings": [],
+      "metadata": {
+        "ema20": 205.8699080616909,
+        "ema50": 205.10532701032247,
+        "signal_to_noise": 0.5636847751581543
+      }
+    },
+    {
+      "symbol": "AMZN",
+      "as_of_date": "2026-07-24",
+      "snapshot_timestamp": "2026-07-28T22:26:37.365186+00:00",
+      "horizon_days": 5,
+      "continuation_probability": 68.825,
+      "reversal_probability": 31.175,
+      "bullish_probability": 31.175,
+      "bearish_probability": 68.825,
+      "expected_return_pct": -1.867145,
+      "expected_volatility_pct": 4.555054,
+      "confidence_score": 64.3914,
+      "confidence_grade": "C",
+      "persistence_days_estimate": 7,
+      "forecast_direction": "BEARISH",
+      "regime_transition_probabilities": {
+        "CONTINUATION": 68.825,
+        "REVERSAL": 31.175
+      },
+      "signal_adjustment": {
+        "CALL": -1.1295,
+        "PUT": 1.1295
+      },
+      "status": "READY",
+      "calculation_version": "trend_forecast.v1",
+      "warnings": [],
+      "metadata": {
+        "ema20": 243.73848630960754,
+        "ema50": 245.30482620396003,
+        "signal_to_noise": 0.4099062268350911
+      }
+    },
+    {
+      "symbol": "AMZN",
+      "as_of_date": "2026-07-24",
+      "snapshot_timestamp": "2026-07-28T22:26:37.365439+00:00",
+      "horizon_days": 10,
+      "continuation_probability": 69.25,
+      "reversal_probability": 30.75,
+      "bullish_probability": 30.75,
+      "bearish_probability": 69.25,
+      "expected_return_pct": -3.73429,
+      "expected_volatility_pct": 6.441819,
+      "confidence_score": 66.9813,
+      "confidence_grade": "B",
+      "persistence_days_estimate": 14,
+      "forecast_direction": "BEARISH",
+      "regime_transition_probabilities": {
+        "CONTINUATION": 69.25,
+        "REVERSAL": 30.75
+      },
+      "signal_adjustment": {
+        "CALL": -1.155,
+        "PUT": 1.155
+      },
+      "status": "READY",
+      "calculation_version": "trend_forecast.v1",
+      "warnings": [],
+      "metadata": {
+        "ema20": 243.73848630960754,
+        "ema50": 245.30482620396003,
+        "signal_to_noise": 0.5796949452913681
+      }
+    },
+    {
+      "symbol": "AMZN",
+      "as_of_date": "2026-07-24",
+      "snapshot_timestamp": "2026-07-28T22:26:37.365690+00:00",
+      "horizon_days": 20,
+      "continuation_probability": 54.5893,
+      "reversal_probability": 45.4107,
+      "bullish_probability": 45.4107,
+      "bearish_probability": 54.5893,
+      "expected_return_pct": 3.98517,
+      "expected_volatility_pct": 8.699077,
+      "confidence_score": 46.4635,
+      "confidence_grade": "D",
+      "persistence_days_estimate": 22,
+      "forecast_direction": "NEUTRAL",
+      "regime_transition_probabilities": {
+        "CONTINUATION": 54.5893,
+        "REVERSAL": 45.4107
+      },
+      "signal_adjustment": {
+        "CALL": 0.0,
+        "PUT": -0.0
+      },
+      "status": "READY",
+      "calculation_version": "trend_forecast.v1",
+      "warnings": [],
+      "metadata": {
+        "ema20": 243.73848630960754,
+        "ema50": 245.30482620396003,
+        "signal_to_noise": 0.458114103445401
+      }
+    },
+    {
+      "symbol": "META",
+      "as_of_date": "2026-07-24",
+      "snapshot_timestamp": "2026-07-28T22:26:37.368574+00:00",
+      "horizon_days": 5,
+      "continuation_probability": 32.7149,
+      "reversal_probability": 67.2851,
+      "bullish_probability": 32.7149,
+      "bearish_probability": 67.2851,
+      "expected_return_pct": -0.575516,
+      "expected_volatility_pct": 6.934585,
+      "confidence_score": 58.4665,
+      "confidence_grade": "C",
+      "persistence_days_estimate": 3,
+      "forecast_direction": "BEARISH",
+      "regime_transition_probabilities": {
+        "CONTINUATION": 32.7149,
+        "REVERSAL": 67.2851
+      },
+      "signal_adjustment": {
+        "CALL": -1.0371,
+        "PUT": 1.0371
+      },
+      "status": "READY",
+      "calculation_version": "trend_forecast.v1",
+      "warnings": [],
+      "metadata": {
+        "ema20": 622.2695888564613,
+        "ema50": 614.5878348482009,
+        "signal_to_noise": 0.0829920595340712
+      }
+    },
+    {
+      "symbol": "META",
+      "as_of_date": "2026-07-24",
+      "snapshot_timestamp": "2026-07-28T22:26:37.368822+00:00",
+      "horizon_days": 10,
+      "continuation_probability": 29.1737,
+      "reversal_probability": 70.8263,
+      "bullish_probability": 29.1737,
+      "bearish_probability": 70.8263,
+      "expected_return_pct": -1.151031,
+      "expected_volatility_pct": 9.806985,
+      "confidence_score": 63.4826,
+      "confidence_grade": "C",
+      "persistence_days_estimate": 6,
+      "forecast_direction": "BEARISH",
+      "regime_transition_probabilities": {
+        "CONTINUATION": 29.1737,
+        "REVERSAL": 70.8263
+      },
+      "signal_adjustment": {
+        "CALL": -1.2496,
+        "PUT": 1.2496
+      },
+      "status": "READY",
+      "calculation_version": "trend_forecast.v1",
+      "warnings": [],
+      "metadata": {
+        "ema20": 622.2695888564613,
+        "ema50": 614.5878348482009,
+        "signal_to_noise": 0.1173684961623588
+      }
+    },
+    {
+      "symbol": "META",
+      "as_of_date": "2026-07-24",
+      "snapshot_timestamp": "2026-07-28T22:26:37.369071+00:00",
+      "horizon_days": 20,
+      "continuation_probability": 65.3939,
+      "reversal_probability": 34.6061,
+      "bullish_probability": 65.3939,
+      "bearish_probability": 34.6061,
+      "expected_return_pct": 3.385219,
+      "expected_volatility_pct": 12.532687,
+      "confidence_score": 58.2534,
+      "confidence_grade": "C",
+      "persistence_days_estimate": 26,
+      "forecast_direction": "BULLISH",
+      "regime_transition_probabilities": {
+        "CONTINUATION": 65.3939,
+        "REVERSAL": 34.6061
+      },
+      "signal_adjustment": {
+        "CALL": 0.9236,
+        "PUT": -0.9236
+      },
+      "status": "READY",
+      "calculation_version": "trend_forecast.v1",
+      "warnings": [],
+      "metadata": {
+        "ema20": 622.2695888564613,
+        "ema50": 614.5878348482009,
+        "signal_to_noise": 0.2701111706616387
+      }
+    },
+    {
+      "symbol": "SPY",
+      "as_of_date": "2026-07-24",
+      "snapshot_timestamp": "2026-07-28T22:26:37.372719+00:00",
+      "horizon_days": 5,
+      "continuation_probability": 51.7338,
+      "reversal_probability": 48.2662,
+      "bullish_probability": 51.7338,
+      "bearish_probability": 48.2662,
+      "expected_return_pct": -0.173672,
+      "expected_volatility_pct": 1.989127,
+      "confidence_score": 38.3016,
+      "confidence_grade": "D",
+      "persistence_days_estimate": 5,
+      "forecast_direction": "NEUTRAL",
+      "regime_transition_probabilities": {
+        "CONTINUATION": 51.7338,
+        "REVERSAL": 48.2662
+      },
+      "signal_adjustment": {
+        "CALL": 0.0,
+        "PUT": -0.0
+      },
+      "status": "READY",
+      "calculation_version": "trend_forecast.v1",
+      "warnings": [],
+      "metadata": {
+        "ema20": 745.1542746091828,
+        "ema50": 738.9112019821434,
+        "signal_to_noise": 0.08731065494637781
+      }
+    },
+    {
+      "symbol": "SPY",
+      "as_of_date": "2026-07-24",
+      "snapshot_timestamp": "2026-07-28T22:26:37.372965+00:00",
+      "horizon_days": 10,
+      "continuation_probability": 49.3931,
+      "reversal_probability": 50.6069,
+      "bullish_probability": 49.3931,
+      "bearish_probability": 50.6069,
+      "expected_return_pct": -0.347344,
+      "expected_volatility_pct": 2.813051,
+      "confidence_score": 37.2707,
+      "confidence_grade": "D",
+      "persistence_days_estimate": 10,
+      "forecast_direction": "NEUTRAL",
+      "regime_transition_probabilities": {
+        "CONTINUATION": 49.3931,
+        "REVERSAL": 50.6069
+      },
+      "signal_adjustment": {
+        "CALL": 0.0,
+        "PUT": -0.0
+      },
+      "status": "READY",
+      "calculation_version": "trend_forecast.v1",
+      "warnings": [],
+      "metadata": {
+        "ema20": 745.1542746091828,
+        "ema50": 738.9112019821434,
+        "signal_to_noise": 0.12347591236484505
+      }
+    },
+    {
+      "symbol": "SPY",
+      "as_of_date": "2026-07-24",
+      "snapshot_timestamp": "2026-07-28T22:26:37.373214+00:00",
+      "horizon_days": 20,
+      "continuation_probability": 63.2308,
+      "reversal_probability": 36.7692,
+      "bullish_probability": 63.2308,
+      "bearish_probability": 36.7692,
+      "expected_return_pct": 3.988731,
+      "expected_volatility_pct": 3.899789,
+      "confidence_score": 64.4738,
+      "confidence_grade": "C",
+      "persistence_days_estimate": 25,
+      "forecast_direction": "BULLISH",
+      "regime_transition_probabilities": {
+        "CONTINUATION": 63.2308,
+        "REVERSAL": 36.7692
+      },
+      "signal_adjustment": {
+        "CALL": 0.7939,
+        "PUT": -0.7939
+      },
+      "status": "READY",
+      "calculation_version": "trend_forecast.v1",
+      "warnings": [],
+      "metadata": {
+        "ema20": 745.1542746091828,
+        "ema50": 738.9112019821434,
+        "signal_to_noise": 1.0228067479768181
+      }
+    },
+    {
+      "symbol": "QQQ",
+      "as_of_date": "2026-07-24",
+      "snapshot_timestamp": "2026-07-28T22:26:37.374911+00:00",
+      "horizon_days": 5,
+      "continuation_probability": 51.2837,
+      "reversal_probability": 48.7163,
+      "bullish_probability": 51.2837,
+      "bearish_probability": 48.7163,
+      "expected_return_pct": -0.724576,
+      "expected_volatility_pct": 3.859989,
+      "confidence_score": 38.9214,
+      "confidence_grade": "D",
+      "persistence_days_estimate": 5,
+      "forecast_direction": "NEUTRAL",
+      "regime_transition_probabilities": {
+        "CONTINUATION": 51.2837,
+        "REVERSAL": 48.7163
+      },
+      "signal_adjustment": {
+        "CALL": 0.0,
+        "PUT": -0.0
+      },
+      "status": "READY",
+      "calculation_version": "trend_forecast.v1",
+      "warnings": [],
+      "metadata": {
+        "ema20": 708.1541908837138,
+        "ema50": 704.6225215593239,
+        "signal_to_noise": 0.1877145178451928
+      }
+    },
+    {
+      "symbol": "QQQ",
+      "as_of_date": "2026-07-24",
+      "snapshot_timestamp": "2026-07-28T22:26:37.375158+00:00",
+      "horizon_days": 10,
+      "continuation_probability": 44.8568,
+      "reversal_probability": 55.1432,
+      "bullish_probability": 44.8568,
+      "bearish_probability": 55.1432,
+      "expected_return_pct": -1.449152,
+      "expected_volatility_pct": 5.458848,
+      "confidence_score": 44.8718,
+      "confidence_grade": "D",
+      "persistence_days_estimate": 9,
+      "forecast_direction": "NEUTRAL",
+      "regime_transition_probabilities": {
+        "CONTINUATION": 44.8568,
+        "REVERSAL": 55.1432
+      },
+      "signal_adjustment": {
+        "CALL": 0.0,
+        "PUT": -0.0
+      },
+      "status": "READY",
+      "calculation_version": "trend_forecast.v1",
+      "warnings": [],
+      "metadata": {
+        "ema20": 708.1541908837138,
+        "ema50": 704.6225215593239,
+        "signal_to_noise": 0.26546841699099805
+      }
+    },
+    {
+      "symbol": "QQQ",
+      "as_of_date": "2026-07-24",
+      "snapshot_timestamp": "2026-07-28T22:26:37.375401+00:00",
+      "horizon_days": 20,
+      "continuation_probability": 52.2756,
+      "reversal_probability": 47.7244,
+      "bullish_probability": 52.2756,
+      "bearish_probability": 47.7244,
+      "expected_return_pct": 5.315699,
+      "expected_volatility_pct": 6.679621,
+      "confidence_score": 47.508,
+      "confidence_grade": "D",
+      "persistence_days_estimate": 21,
+      "forecast_direction": "NEUTRAL",
+      "regime_transition_probabilities": {
+        "CONTINUATION": 52.2756,
+        "REVERSAL": 47.7244
+      },
+      "signal_adjustment": {
+        "CALL": 0.0,
+        "PUT": -0.0
+      },
+      "status": "READY",
+      "calculation_version": "trend_forecast.v1",
+      "warnings": [],
+      "metadata": {
+        "ema20": 708.1541908837138,
+        "ema50": 704.6225215593239,
+        "signal_to_noise": 0.7958085338866271
+      }
+    }
+  ],
+  "skipped": [],
+  "errors": []
+}
