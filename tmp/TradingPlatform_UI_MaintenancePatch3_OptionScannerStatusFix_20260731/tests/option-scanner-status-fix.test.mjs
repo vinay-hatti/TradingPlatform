@@ -1,0 +1,14 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+const root=process.env.TARGET_ROOT||process.cwd();
+const pages=fs.readFileSync(path.join(root,'src/pages.tsx'),'utf8');
+const css=fs.readFileSync(path.join(root,'src/styles.css'),'utf8');
+test('status resolver uses latest successful DAILY_SCAN',()=>assert.match(pages,/latestSuccessfulScan=runs\.find\(\(r:any\)=>r\.kind==='DAILY_SCAN'&&r\.status==='SUCCEEDED'\)/));
+test('status resolver consumes result metadata',()=>assert.match(pages,/persistedSnapshotStatus\(latestSuccessfulScan,results\)/));
+test('misleading missing snapshot message is removed',()=>assert.doesNotMatch(pages,/No published snapshot found/));
+test('standalone published snapshot row is removed',()=>assert.doesNotMatch(pages,/className=\{`snapshot-status/));
+test('compact status is merged into Scanner workspace',()=>assert.match(pages,/scanner-workspace-status/));
+test('read-only persisted-data policy remains visible',()=>assert.match(pages,/No provider calls or ingestion/));
+test('route-local compact status styles exist',()=>assert.match(css,/\.option-scanner-workspace \.scanner-workspace-status/));

@@ -1,0 +1,47 @@
+{
+  "artifacts": [
+    {
+      "name": "recommendations.csv",
+      "path": "reports/daily/2026-07-31/recommendations.csv",
+      "sha256": "8462cf1cbf015465b3641ffd922fa1092fda539cce12254a3252ac9fbd74c7ee"
+    },
+    {
+      "name": "recommendations.json",
+      "path": "reports/daily/2026-07-31/recommendations.json",
+      "sha256": "af2bebba483ea8e022f6345ad02b7a9821b66767cd0f97dc0f78218ef622d46e"
+    },
+    {
+      "name": "report.html",
+      "path": "reports/daily/2026-07-31/report.html",
+      "sha256": "4ad247a17ef196447659830b776ace6eae7719bf022d20c64fa2b9160dad0773"
+    }
+  ],
+  "generated_at": "2026-07-31T05:22:30.828140+00:00",
+  "metadata": {
+    "candidate_count": 17
+  },
+  "report_type": "daily_recommendations",
+  "report_version": "m47.phase6.v1",
+  "reporting_context": {
+    "decision_context_ready": true,
+    "decision_engine_version": null,
+    "decision_run_id": null,
+    "generated_at": "2026-07-31T05:22:30.827917+00:00",
+    "ingestion_run_id": "market-ingestion-20260730T212838440218Z",
+    "market_as_of_date": "2026-07-30",
+    "market_intelligence_snapshot_timestamp": "2026-07-30T21:28:34.902203+00:00",
+    "market_state_hash": "63136149beb865184755ad7b427c05a4364de1b53f34bd8a9ff1463bec8b1685",
+    "option_snapshot_completeness_pct": 99.510603588907,
+    "option_snapshot_id": "options-20260730T211509901149Z",
+    "option_snapshot_timestamp": "2026-07-30T21:26:36.327156+00:00",
+    "policy_version": null,
+    "publication_name": "current_market_state",
+    "publication_status": "DEGRADED",
+    "published_at": "2026-07-30T21:28:39.832225+00:00",
+    "published_state_degraded": true,
+    "report_version": "m47.phase6.v1",
+    "scanner_ready": true,
+    "scanner_run_id": "scanner-20260731T052203423853Z-e0bc85942e",
+    "scanner_version": "m47.phase6.v1"
+  }
+}

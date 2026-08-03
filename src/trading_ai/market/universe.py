@@ -14,6 +14,8 @@ from datetime import date
 from pathlib import Path
 from typing import Iterable
 
+from .trend_universe import DEFINITIONS as TREND_DEFINITIONS, NoTrendUniverseSymbolsError, TrendUniverseResolver, is_trend_universe
+
 REPOSITORY_ROOT = Path(__file__).resolve().parents[3]
 CANONICAL_UNIVERSE_CSV = REPOSITORY_ROOT / "data" / "universe" / "us_listed_equities_etfs.csv"
 LIQUIDITY_METRICS_CSV = REPOSITORY_ROOT / "data" / "market" / "liquidity_metrics.csv"
@@ -173,7 +175,36 @@ def build_universe_registry() -> dict[str, UniverseDefinition]:
 
 
 def list_universes() -> tuple[dict[str, object], ...]:
-    return tuple(definition.metadata() for definition in build_universe_registry().values())
+    registry = build_universe_registry()
+    values = [definition.metadata() for definition in registry.values()]
+    canonical_symbols = registry["liquid-us-700"].symbols
+    resolver = TrendUniverseResolver()
+    for definition in TREND_DEFINITIONS:
+        try:
+            resolution = resolver.resolve(definition.universe_id, canonical_symbols)
+            symbol_count = len(resolution.symbols)
+            as_of_date = resolution.snapshot_timestamp.date().isoformat() if resolution.snapshot_timestamp else None
+            status = resolution.status
+            message = resolution.message
+        except Exception as exc:
+            symbol_count = 0
+            as_of_date = None
+            status = "MISSING_TREND_DATA"
+            message = str(exc)
+        values.append({
+            "id": definition.universe_id,
+            "label": definition.label,
+            "description": definition.description,
+            "symbol_count": symbol_count,
+            "source": "PostgreSQL: stock_trend_snapshot (latest row per symbol)",
+            "as_of_date": as_of_date,
+            "maximum_symbols": None,
+            "active": True,
+            "resolution_status": status,
+            "message": message,
+            "dynamic": True,
+        })
+    return tuple(values)
 
 
 def get_universe(name: str = "liquid-us-700") -> tuple[str, ...]:
@@ -188,6 +219,11 @@ def get_universe(name: str = "liquid-us-700") -> tuple[str, ...]:
     }
     normalized = aliases.get(normalized, normalized)
     registry = build_universe_registry()
+    if is_trend_universe(normalized):
+        resolution = TrendUniverseResolver().resolve(normalized, registry["liquid-us-700"].symbols)
+        if not resolution.symbols:
+            raise NoTrendUniverseSymbolsError(resolution)
+        return resolution.symbols
     if normalized not in registry:
         raise ValueError(
             f"Unsupported universe '{name}'. Supported: {', '.join(registry)}"

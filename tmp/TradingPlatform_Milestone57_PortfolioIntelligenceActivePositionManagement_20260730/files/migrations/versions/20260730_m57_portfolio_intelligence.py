@@ -1,0 +1,17 @@
+"""Milestone 57 portfolio intelligence
+Revision ID: 20260730_m57
+Revises: 20260730_m56_trade_builder
+"""
+from alembic import op
+import sqlalchemy as sa
+revision='20260730_m57';down_revision='20260730_m56_trade_builder';branch_labels=None;depends_on=None
+def upgrade():
+ op.create_table('managed_positions',sa.Column('position_id',sa.String(128),primary_key=True),sa.Column('portfolio_id',sa.String(128),nullable=False),sa.Column('trade_plan_id',sa.String(128),nullable=False),sa.Column('opportunity_id',sa.String(128),nullable=False),sa.Column('intelligence_id',sa.String(128)),sa.Column('execution_id',sa.String(128)),sa.Column('symbol',sa.String(32),nullable=False),sa.Column('strategy',sa.String(64),nullable=False),sa.Column('direction',sa.String(16),nullable=False),sa.Column('state',sa.String(32),nullable=False),sa.Column('version',sa.Integer,nullable=False),sa.Column('opened_at',sa.String(64),nullable=False),sa.Column('closed_at',sa.String(64)),sa.Column('entry_value',sa.Float,nullable=False),sa.Column('realized_pnl',sa.Float,nullable=False),sa.Column('mark_json',sa.JSON,nullable=False),sa.Column('health_json',sa.JSON,nullable=False),sa.Column('decision_json',sa.JSON,nullable=False),sa.Column('metadata_json',sa.JSON,nullable=False),sa.Column('created_by',sa.String(128),nullable=False),sa.Column('created_at',sa.String(64),nullable=False),sa.Column('updated_at',sa.String(64),nullable=False),sa.UniqueConstraint('portfolio_id','trade_plan_id',name='uq_m57_position_trade_plan'))
+ for table in ('managed_positions',):
+  for col in ('portfolio_id','trade_plan_id','opportunity_id','symbol','strategy','state'):op.create_index(f'ix_{table}_{col}',table,[col])
+ op.create_table('managed_position_health_snapshots',sa.Column('health_snapshot_id',sa.String(128),primary_key=True),sa.Column('position_id',sa.String(128),nullable=False),sa.Column('position_version',sa.Integer,nullable=False),sa.Column('snapshot_timestamp',sa.String(64),nullable=False),sa.Column('health_score',sa.Float,nullable=False),sa.Column('direction',sa.String(32),nullable=False),sa.Column('confidence',sa.Float,nullable=False),sa.Column('payload_json',sa.JSON,nullable=False))
+ op.create_table('portfolio_intelligence_snapshots',sa.Column('snapshot_id',sa.String(128),primary_key=True),sa.Column('portfolio_id',sa.String(128),nullable=False),sa.Column('snapshot_timestamp',sa.String(64),nullable=False),sa.Column('payload_json',sa.JSON,nullable=False),sa.Column('generated_by',sa.String(128),nullable=False))
+ op.create_table('managed_position_events',sa.Column('event_id',sa.String(128),primary_key=True),sa.Column('position_id',sa.String(128),nullable=False),sa.Column('position_version',sa.Integer,nullable=False),sa.Column('event_type',sa.String(64),nullable=False),sa.Column('actor',sa.String(128),nullable=False),sa.Column('reason',sa.Text,nullable=False),sa.Column('event_timestamp',sa.String(64),nullable=False),sa.Column('payload_json',sa.JSON,nullable=False))
+ op.create_table('position_attribution_reports',sa.Column('attribution_id',sa.String(128),primary_key=True),sa.Column('position_id',sa.String(128),nullable=False),sa.Column('generated_at',sa.String(64),nullable=False),sa.Column('payload_json',sa.JSON,nullable=False),sa.Column('generated_by',sa.String(128),nullable=False))
+def downgrade():
+ for t in ('position_attribution_reports','managed_position_events','portfolio_intelligence_snapshots','managed_position_health_snapshots','managed_positions'):op.drop_table(t)

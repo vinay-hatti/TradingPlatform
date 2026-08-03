@@ -3,20 +3,20 @@
     {
       "name": "live_trade_candidates.csv",
       "path": "reports/daily/2026-07-29/live_trade_candidates.csv",
-      "sha256": "72d2e12f87a90e76cc44e84e8e5e9a20fdf61e67dce035ce8baa98a303b1cd7b"
+      "sha256": "59c7a1495b0ca685eaae4af1f229cd9a97edac102f80fcbeeb038f1dd0441a1b"
     },
     {
       "name": "live_trade_candidates.json",
       "path": "reports/daily/2026-07-29/live_trade_candidates.json",
-      "sha256": "ba89d47b84d9f32f32cf020a62ae6e6acf3f32e9991728e90557c9fc1c0c2809"
+      "sha256": "a28343922a4df0ac87c970e05edd7f306b95043a6a448732d02aa58a1ed6a003"
     },
     {
       "name": "live_trade_candidates.html",
       "path": "reports/daily/2026-07-29/live_trade_candidates.html",
-      "sha256": "e9de75b1f77049c20e488179a0aa007f0c892bbc89a602b99a78c77c2e941f05"
+      "sha256": "f44d97dbc7e1bb082c46af7db2d1aaa99ba2ca043a485c16415320d8f96e53c0"
     }
   ],
-  "generated_at": "2026-07-29T22:31:31.125364+00:00",
+  "generated_at": "2026-07-30T00:13:10.070418+00:00",
   "metadata": {
     "trade_count": 9
   },
@@ -26,7 +26,7 @@
     "decision_context_ready": true,
     "decision_engine_version": null,
     "decision_run_id": null,
-    "generated_at": "2026-07-29T22:31:31.125208+00:00",
+    "generated_at": "2026-07-30T00:13:10.070280+00:00",
     "ingestion_run_id": "market-ingestion-20260729T201840990043Z",
     "market_as_of_date": "2026-07-29",
     "market_intelligence_snapshot_timestamp": "2026-07-29T20:18:37.537197+00:00",
@@ -41,7 +41,7 @@
     "published_state_degraded": true,
     "report_version": "m47.phase6.v1",
     "scanner_ready": true,
-    "scanner_run_id": "scanner-20260729T223126865551Z-1c465c7eec",
+    "scanner_run_id": "scanner-20260730T001305916688Z-26a343ae91",
     "scanner_version": "m47.phase6.v1"
   }
 }

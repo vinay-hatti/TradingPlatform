@@ -1,76 +1,103 @@
-import { useEffect, useState, type ChangeEvent, type ComponentType } from 'react';
-import { KeyRound, Menu, RefreshCw } from 'lucide-react';
+import { useCallback, useEffect, useState, type ComponentType } from 'react';
 import type { WorkspaceKey } from './types';
-import { CommandCenter, DailyScannerPage, Execution, Exits, MarketOverviewPage, nav, Overview, Portfolio, Positions, Risk } from './pages';
+import { AdvancedTradeBuilderPage } from './AdvancedTradeBuilderPage';
+import { InstitutionalIntelligencePage } from './InstitutionalIntelligencePage';
+import { PortfolioIntelligencePage } from './PortfolioIntelligencePage';
+import { PerformanceLearningPage } from './PerformanceLearningPage';
+import { CommandCenter, DailyScannerPage, Execution, Exits, MarketOverviewPage, OptionScannerPage, OpportunityWorkspacePage, Overview, Positions, Risk } from './pages';
+import { GlobalIntelligenceHeader, WorkspaceCanvas, WorkspaceSidebar, WorkspaceStatusBar } from './WorkspaceChrome';
+import { CommandPalette, loadWorkspaceList, loadWorkspacePreferences, persistWorkspaceList, PreferencesPanel, useWorkspaceShortcuts, type WorkspacePreference } from './WorkspaceProductivity';
 import './styles.css';
+import { InstitutionalIntelligenceRefinedPage } from './InstitutionalIntelligenceRefinedPage';
+import './institutional-intelligence-refined.css';
 
+import { WorkstationRouteBoundary } from './WorkstationRouteBoundary';
+import './workstation-shell-recovery.css';
+import { PortfolioIntelligenceRefinedPage } from './PortfolioIntelligenceRefinedPage';
+import { MarketOverviewRefinedPage } from './MarketOverviewRefinedPage';
+import { PerformanceLearningRefinedPage } from './PerformanceLearningRefinedPage';
 const pages: Record<WorkspaceKey, ComponentType> = {
-  overview: Overview,
-  market: MarketOverviewPage,
-  scanner: DailyScannerPage,
-  portfolio: Portfolio,
-  risk: Risk,
-  execution: Execution,
-  positions: Positions,
-  exits: Exits,
-  command: CommandCenter,
+  overview: Overview, market: MarketOverviewPage, scanner: DailyScannerPage,
+  'option-scanner': OptionScannerPage, opportunities: OpportunityWorkspacePage,
+  intelligence: InstitutionalIntelligenceRefinedPage, 'trade-builder': AdvancedTradeBuilderPage,
+  portfolio: PortfolioIntelligenceRefinedPage, 'performance-learning': PerformanceLearningRefinedPage,
+  risk: Risk, execution: Execution, positions: Positions, exits: Exits, command: CommandCenter,
 };
 
 function route(): WorkspaceKey {
-  const value = location.hash.replace('#/', '') as WorkspaceKey;
+  const value=location.hash.replace('#/','') as WorkspaceKey;
   return value in pages ? value : 'overview';
 }
 
-export default function App() {
-  const [active, setActive] = useState<WorkspaceKey>(route());
-  const [open, setOpen] = useState(false);
-  const [apiKey, setApiKey] = useState(sessionStorage.getItem('trading-ai-api-key') ?? '');
+export default function App(){
+  const [active,setActive]=useState<WorkspaceKey>(route());
+  const [open,setOpen]=useState(false);
+  const [collapsed,setCollapsed]=useState(localStorage.getItem('workstation-nav-collapsed')==='true');
+  const [refreshToken,setRefreshToken]=useState(0);
+  const [paletteOpen,setPaletteOpen]=useState(false);
+  const [preferencesOpen,setPreferencesOpen]=useState(false);
+  const [preferences,setPreferences]=useState<WorkspacePreference>(loadWorkspacePreferences);
+  const [favorites,setFavorites]=useState<WorkspaceKey[]>(()=>loadWorkspaceList('workstation-favorites'));
+  const [recent,setRecent]=useState<WorkspaceKey[]>(()=>loadWorkspaceList('workstation-recent'));
 
-  useEffect(() => {
-    const handleHashChange = () => setActive(route());
-    addEventListener('hashchange', handleHashChange);
-    return () => removeEventListener('hashchange', handleHashChange);
-  }, []);
+  useEffect(()=>{
+    const handler=()=>setActive(route());
+    addEventListener('hashchange',handler);
+    return()=>removeEventListener('hashchange',handler);
+  },[]);
 
-  const Page = pages[active];
-  const saveApiKey = () => {
-    if (apiKey) sessionStorage.setItem('trading-ai-api-key', apiKey);
-    else sessionStorage.removeItem('trading-ai-api-key');
-    location.reload();
-  };
+  useEffect(()=>{
+    setRecent(previous=>{
+      const next=[active,...previous.filter(item=>item!==active)].slice(0,6);
+      persistWorkspaceList('workstation-recent',next);
+      return next;
+    });
+  },[active]);
 
-  const handleApiKeyChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setApiKey(event.target.value);
-  };
+  useEffect(()=>{
+    localStorage.setItem('workstation-preferences',JSON.stringify(preferences));
+  },[preferences]);
 
-  return (
-    <div className="shell">
-      <aside className={open ? 'open' : ''}>
-        <div className="brand">
-          <div className="brandmark">TA</div>
-          <div><b>Trading AI</b><span>Institutional Workstation</span></div>
-        </div>
-        <nav>
-          {nav.map(([id, label, Icon]) => (
-            <a key={id} href={`#/${id}`} className={active === id ? 'active' : ''} onClick={() => setOpen(false)}>
-              <Icon size={18} />{label}
-            </a>
-          ))}
-        </nav>
-        <div className="api-key">
-          <label><KeyRound size={15} />API key</label>
-          <input type="password" value={apiKey} onChange={handleApiKeyChange} placeholder="Session only" />
-          <button onClick={saveApiKey}>Apply</button>
-        </div>
-      </aside>
-      <main>
-        <header className="topbar">
-          <button className="menu" onClick={() => setOpen(!open)}><Menu /></button>
-          <div><h1>Trading Operations Workstation</h1></div>
-          <button className="refresh" onClick={() => location.reload()}><RefreshCw size={16} />Refresh</button>
-        </header>
-        <div className="content"><Page /></div>
-      </main>
-    </div>
-  );
+  const Page=pages[active];
+  const navigate=useCallback((workspace:WorkspaceKey)=>{
+    location.hash=`#/${workspace}`;
+    setOpen(false);
+  },[]);
+  const toggleCollapsed=useCallback(()=>setCollapsed(value=>{
+    localStorage.setItem('workstation-nav-collapsed',String(!value));
+    return !value;
+  }),[]);
+  const refresh=useCallback(()=>setRefreshToken(value=>value+1),[]);
+  const toggleFavorite=useCallback((workspace:WorkspaceKey)=>setFavorites(previous=>{
+    const next=previous.includes(workspace)?previous.filter(item=>item!==workspace):[workspace,...previous].slice(0,6);
+    persistWorkspaceList('workstation-favorites',next);
+    return next;
+  }),[]);
+  const openPreferences=useCallback(()=>{setPaletteOpen(false);setPreferencesOpen(true)},[]);
+
+  useWorkspaceShortcuts({
+    openPalette: useCallback(()=>setPaletteOpen(true),[]),
+    openPreferences,
+    refresh,
+    toggleNavigation: toggleCollapsed,
+  });
+
+  const shellClasses=[
+    'shell workstation-shell',
+    collapsed?'navigation-collapsed':'',
+    preferences.compactDensity?'compact-density':'',
+    preferences.reducedMotion?'reduced-motion':'',
+    preferences.showStatusBar?'':'statusbar-hidden',
+  ].filter(Boolean).join(' ');
+
+  return <div className={shellClasses}>
+    <WorkspaceSidebar active={active} open={open} collapsed={collapsed} onNavigate={()=>setOpen(false)} onToggleCollapsed={toggleCollapsed} favorites={favorites} onToggleFavorite={toggleFavorite}/>
+    <main>
+      <GlobalIntelligenceHeader active={active} onMenu={()=>setOpen(!open)} onRefresh={refresh} refreshing={false} onOpenPalette={()=>setPaletteOpen(true)} onOpenPreferences={openPreferences} favorite={favorites.includes(active)} onToggleFavorite={()=>toggleFavorite(active)}/>
+      <WorkspaceCanvas><div className="content" key={`${active}-${refreshToken}`}><WorkstationRouteBoundary routeKey={active}><Page/></WorkstationRouteBoundary></div></WorkspaceCanvas>
+      {preferences.showStatusBar&&<WorkspaceStatusBar active={active}/>} 
+    </main>
+    <CommandPalette open={paletteOpen} onClose={()=>setPaletteOpen(false)} onNavigate={navigate} onRefresh={refresh} onToggleNavigation={toggleCollapsed} onOpenPreferences={openPreferences} recent={recent} favorites={favorites}/>
+    <PreferencesPanel open={preferencesOpen} value={preferences} onChange={setPreferences} onClose={()=>setPreferencesOpen(false)}/>
+  </div>;
 }

@@ -1,0 +1,13 @@
+"""Milestone 56 advanced trade builder
+Revision ID: 20260730_m56_trade_builder
+Revises: m55_iif_20260730
+"""
+from alembic import op
+import sqlalchemy as sa
+revision='20260730_m56_trade_builder';down_revision='m55_iif_20260730';branch_labels=None;depends_on=None
+def upgrade():
+ op.create_table('advanced_trade_plans',sa.Column('trade_plan_id',sa.String(128),primary_key=True),sa.Column('opportunity_id',sa.String(128),nullable=False),sa.Column('opportunity_version',sa.Integer(),nullable=False),sa.Column('intelligence_id',sa.String(128)),sa.Column('account_id',sa.String(128),nullable=False),sa.Column('symbol',sa.String(32),nullable=False),sa.Column('direction',sa.String(16),nullable=False),sa.Column('strategy',sa.String(64),nullable=False),sa.Column('state',sa.String(32),nullable=False),sa.Column('version',sa.Integer(),nullable=False),sa.Column('capital',sa.Float(),nullable=False),sa.Column('risk_budget_pct',sa.Float(),nullable=False),sa.Column('risk_budget_amount',sa.Float(),nullable=False),sa.Column('estimated_debit',sa.Float(),nullable=False),sa.Column('estimated_credit',sa.Float(),nullable=False),sa.Column('max_loss',sa.Float(),nullable=False),sa.Column('max_profit',sa.Float()),sa.Column('reward_risk_ratio',sa.Float()),sa.Column('net_greeks_json',sa.JSON(),nullable=False),sa.Column('validation_json',sa.JSON(),nullable=False),sa.Column('legs_json',sa.JSON(),nullable=False),sa.Column('execution_intent_json',sa.JSON(),nullable=False),sa.Column('notes',sa.Text(),nullable=False),sa.Column('created_by',sa.String(128),nullable=False),sa.Column('created_at',sa.String(64),nullable=False),sa.Column('updated_at',sa.String(64),nullable=False),sa.UniqueConstraint('opportunity_id','opportunity_version','account_id','strategy',name='uq_m56_trade_plan_source'))
+ op.create_index('ix_m56_trade_plan_opportunity','advanced_trade_plans',['opportunity_id']);op.create_index('ix_m56_trade_plan_state','advanced_trade_plans',['state'])
+ op.create_table('advanced_trade_plan_audit',sa.Column('audit_id',sa.String(128),primary_key=True),sa.Column('trade_plan_id',sa.String(128),nullable=False),sa.Column('trade_plan_version',sa.Integer(),nullable=False),sa.Column('event_type',sa.String(64),nullable=False),sa.Column('actor',sa.String(128),nullable=False),sa.Column('reason',sa.Text(),nullable=False),sa.Column('event_timestamp',sa.String(64),nullable=False),sa.Column('payload_json',sa.JSON(),nullable=False))
+ op.create_index('ix_m56_trade_audit_plan','advanced_trade_plan_audit',['trade_plan_id'])
+def downgrade():op.drop_table('advanced_trade_plan_audit');op.drop_table('advanced_trade_plans')

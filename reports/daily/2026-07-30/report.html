@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trading AI Daily Recommendation Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background: #f7f7f7;
+            color: #222;
+        }
+        h1, h2 {
+            color: #111;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+            overflow-x: auto;
+        }
+        .metric {
+            display: inline-block;
+            margin-right: 30px;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        .metric strong {
+            display: block;
+            font-size: 13px;
+            color: #666;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            white-space: nowrap;
+        }
+        th, td {
+            border-bottom: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            font-size: 14px;
+        }
+        th {
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Trading AI Daily Recommendation Report</h1>
+
+<div class="card">
+    <h2>Summary</h2>
+    <div class="metric"><strong>Date</strong>2026-07-30</div>
+    <div class="metric"><strong>Symbols Scanned</strong>8</div>
+    <div class="metric"><strong>Candidates</strong>1</div>
+    <div class="metric"><strong>Live Profile</strong>aggressive</div>
+    <div class="metric"><strong>Min Score</strong>64.0</div>
+    <div class="metric"><strong>Pricing DTE</strong>30</div>
+    <div class="metric"><strong>Open Positions</strong>0</div>
+</div>
+
+<div class="card">
+    <h2>Published Market State</h2>
+    <div class="metric"><strong>Publication</strong>current_market_state</div>
+<div class="metric"><strong>Status</strong>DEGRADED</div>
+<div class="metric"><strong>Published</strong>2026-07-30T21:28:39.832225+00:00</div>
+<div class="metric"><strong>Market Date</strong>2026-07-30</div>
+<div class="metric"><strong>Ingestion Run</strong>market-ingestion-20260730T212838440218Z</div>
+<div class="metric"><strong>Scanner Run</strong>scanner-20260731T042155912725Z-771219db9e</div>
+<div class="metric"><strong>Decision Run</strong>—</div>
+<div class="metric"><strong>Scanner Ready</strong>TRUE</div>
+<div class="metric"><strong>Decision Ready</strong>TRUE</div>
+<div class="metric"><strong>Option Snapshot</strong>options-20260730T211509901149Z</div>
+<div class="metric"><strong>Option Snapshot Time</strong>2026-07-30T21:26:36.327156+00:00</div>
+<div class="metric"><strong>Market Intelligence</strong>2026-07-30T21:28:34.902203+00:00</div>
+<div class="metric"><strong>Option Coverage %</strong>99.510603588907</div>
+<div class="metric"><strong>Market State Hash</strong>63136149beb865184755ad7b427c05a4364de1b53f34bd8a9ff1463bec8b1685</div>
+</div>
+    <div class="metric"><strong>Ingestion Run</strong>market-ingestion-20260730T212838440218Z</div>
+    <div class="metric"><strong>Market As-Of</strong>2026-07-30</div>
+    <div class="metric"><strong>Market Intelligence</strong>2026-07-30T21:28:34.902203+00:00</div>
+    <div class="metric"><strong>Option Snapshot</strong>options-20260730T211509901149Z</div>
+    <div class="metric"><strong>Option Coverage</strong>99.510603588907</div>
+</div>
+
+<div class="card">
+    <h2>Portfolio Exposure</h2>
+    <p>No recommendations.</p>
+</div>
+
+<div class="card">
+    <h2>AI Ranked Recommendations</h2>
+    <table><thead><tr><th>Symbol</th><th>Sector</th><th>Signal</th><th>Final AI Score</th><th>Raw AI Score</th><th>Base AI Score</th><th>Dealer Adj.</th><th>Trend Base</th><th>Transition Adj.</th><th>Trend Total</th><th>Transition</th><th>Breakout</th><th>Reversal Risk</th><th>Exhaustion Risk</th><th>Score Capped</th><th>Technical</th><th>Greeks</th><th>Regime</th><th>Volatility</th><th>Risk</th><th>Reason</th><th>Portfolio Notes</th><th>Underlying</th><th>Option Price</th><th>Delta</th><th>Theta</th><th>Vega</th></tr></thead><tbody><tr><td>DIA</td><td>Dow Jones Industrial Average</td><td>CALL</td><td>84.19</td><td></td><td>74.12</td><td>+5.81</td><td>+4.36</td><td>-0.17</td><td>+4.26</td><td>CONTINUATION</td><td>IN_CHANNEL</td><td>14.13</td><td>0.00</td><td></td><td>70.00</td><td>44.48</td><td>100.00</td><td>100.00</td><td>100.00</td><td>Technical=70.0 | Greeks=44.5 | Regime=100.0 | Volatility=100.0 | Risk=100.0 | Signal aligned with market regime. | Target-delta strike=525.00; spot=521.51; target |delta|=0.45; resolved delta=0.4535; Greek source=PERSISTED; moneyness=1.63%. | expiration_mode=swing; selected_dte=21. | Dealer positioning NEUTRAL (NEGATIVE_GAMMA), adjustment=+5.81, confidence=99.50. | Trend STRONG_BULLISH/BULLISH/PULLBACK; signal alignment=85.2, base adjustment=+4.36, total trend adjustment=+4.26, RS=B. | Transition CONTINUATION/IN_CHANNEL; confirmation=45.8, reversal risk=14.1, exhaustion risk=0.0, adjustment=-0.17. | Forecast NEUTRAL; confidence=41.1, requested horizon=10D, resolved horizon=10D, resolution=EXACT, adjustment=+0.00. | Institutional MIXED; participation=43.1, conviction=54.6, adjustment=+0.07.</td><td></td><td>$521.51</td><td>$5.95</td><td>0.4535</td><td>-0.1720</td><td>0.5121</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>All Recommendation Details</h2>
+    <table><thead><tr><th>Symbol</th><th>Sector</th><th>Signal</th><th>Strategy</th><th>Final AI Score</th><th>Raw AI Score</th><th>Base AI Score</th><th>Dealer Adj.</th><th>Trend Base</th><th>Transition Adj.</th><th>Trend Total</th><th>Transition</th><th>Breakout</th><th>Reversal Risk</th><th>Exhaustion Risk</th><th>Score Capped</th><th>Portfolio Adjusted</th><th>Legacy Score</th><th>Penalty</th><th>Signal Score</th><th>Regime</th><th>Underlying</th><th>Strike</th><th>Expiration</th><th>DTE</th><th>Expiry Source</th><th>Option Price</th><th>Delta</th><th>Gamma</th><th>Theta</th><th>Vega</th><th>Rho</th><th>Vol</th><th>DTE</th></tr></thead><tbody><tr><td>DIA</td><td>Dow Jones Industrial Average</td><td>CALL</td><td>LONG_CALL</td><td>84.19</td><td></td><td>74.12</td><td>+5.81</td><td>+4.36</td><td>-0.17</td><td>+4.26</td><td>CONTINUATION</td><td>IN_CHANNEL</td><td>14.13</td><td>0.00</td><td></td><td>61.78</td><td>61.78</td><td>0.00</td><td>70.00</td><td>BULL_TREND</td><td>$521.51</td><td>$525.00</td><td>2026-08-21</td><td>21</td><td>LIVE_LISTED_CONTRACT</td><td>$5.95</td><td>0.4535</td><td>0.02281</td><td>-0.1720</td><td>0.5121</td><td>0.0000</td><td>13.63%</td><td>21</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Top Calls</h2>
+    <table><thead><tr><th>Symbol</th><th>AI Score</th><th>Technical</th><th>Greeks</th><th>Regime</th><th>Risk</th><th>Underlying</th><th>Option Price</th><th>Delta</th><th>Theta</th><th>Vega</th></tr></thead><tbody><tr><td>DIA</td><td>84.19</td><td>70.00</td><td>44.48</td><td>100.00</td><td>100.00</td><td>$521.51</td><td>$5.95</td><td>0.4535</td><td>-0.1720</td><td>0.5121</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Top Puts</h2>
+    <p>No recommendations.</p>
+</div>
+
+<div class="card">
+    <h2>Governance Summary</h2>
+    <div class="metric"><strong>Report Version</strong>m47.phase6.v1</div>
+<div class="metric"><strong>Scanner Version</strong>m47.phase6.v1</div>
+<div class="metric"><strong>Decision Version</strong>—</div>
+<div class="metric"><strong>Policy Version</strong>—</div>
+<div class="metric"><strong>Degraded State</strong>TRUE</div>
+<div class="metric"><strong>Generated At</strong>2026-07-31T04:21:56.348039+00:00</div>
+</div>
+
+</body>
+</html>

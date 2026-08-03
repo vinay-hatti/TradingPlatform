@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+set -euo pipefail
+TARGET="${1:-$(pwd)}"; MARKER="$TARGET/.ui_m4_last_backup"; [[ -f "$MARKER" ]]||{ echo 'No UI M4 backup marker.' >&2; exit 1; }; BACKUP="$(cat "$MARKER")"; cp "$BACKUP/ui/workstation/src/pages.tsx" "$TARGET/ui/workstation/src/pages.tsx"; for f in OpportunityWorkspaceM4.tsx opportunity-workspace-m4.css; do if [[ -f "$BACKUP/ui/workstation/src/$f" ]];then cp "$BACKUP/ui/workstation/src/$f" "$TARGET/ui/workstation/src/$f";else rm -f "$TARGET/ui/workstation/src/$f";fi;done; rm -f "$TARGET/ui/workstation/tests/opportunity-workspace-refinement.test.mjs"; echo "UI Milestone 4 rolled back from $BACKUP"

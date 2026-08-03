@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass, asdict, field
 from datetime import date, datetime, timezone
 from typing import Any, Iterable
 
@@ -20,6 +20,9 @@ class TrendPlatformPolicy:
     scanner_adjustment_cap: float = 2.0
     decision_adjustment_cap: float = 2.0
     portfolio_risk_cap: float = 1.0
+    transition_minimum_history_rows: int = 65
+    forecast_minimum_history_rows: int = 126
+    institutional_minimum_history_rows: int = 126
 
 
 @dataclass(frozen=True)
@@ -36,10 +39,15 @@ class TrendPlatformContext:
     decision_adjustment: float
     portfolio_risk_adjustment: float
     warnings: tuple[str, ...]
+    expected_warnings: tuple[str, ...] = field(default_factory=tuple)
+    degrading_warnings: tuple[str, ...] = field(default_factory=tuple)
+    history_rows: int = 0
 
     def to_dict(self) -> dict[str, Any]:
         value = asdict(self)
         value["warnings"] = list(self.warnings)
+        value["expected_warnings"] = list(self.expected_warnings)
+        value["degrading_warnings"] = list(self.degrading_warnings)
         return value
 
 
@@ -157,6 +165,32 @@ class TrendPlatformIntegrationService:
             output[str(row["symbol"]).upper()] = payload
         return output
 
+    def _history_row_counts(self, session, symbols: list[str]) -> dict[str, int]:
+        if not symbols:
+            return {}
+        rows = session.execute(
+            text(
+                """
+                SELECT symbol, COUNT(*) AS history_rows
+                FROM price_history
+                WHERE symbol = ANY(:symbols)
+                  AND close IS NOT NULL
+                GROUP BY symbol
+                """
+            ),
+            {"symbols": symbols},
+        ).mappings().all()
+        return {str(row["symbol"]).upper(): int(row["history_rows"] or 0) for row in rows}
+
+    def _expected_missing_warning(self, warning: str, history_rows: int) -> bool:
+        thresholds = {
+            "MISSING_TRANSITION_TREND_CONTEXT": self.policy.transition_minimum_history_rows,
+            "MISSING_FORECAST_TREND_CONTEXT": self.policy.forecast_minimum_history_rows,
+            "MISSING_INSTITUTIONAL_TREND_CONTEXT": self.policy.institutional_minimum_history_rows,
+        }
+        required = thresholds.get(warning)
+        return required is not None and history_rows < required
+
     def _build_context(
         self,
         symbol: str,
@@ -167,6 +201,7 @@ class TrendPlatformIntegrationService:
         institutional: dict[str, Any],
         reference_date: date,
         reference_timestamp: datetime,
+        history_rows: int,
     ) -> TrendPlatformContext:
         warnings: list[str] = []
         payloads = {"base": base, "transition": transition, "forecast": forecast, "institutional": institutional}
@@ -180,6 +215,12 @@ class TrendPlatformIntegrationService:
                 reference_timestamp=reference_timestamp,
             ):
                 warnings.append(f"STALE_{name.upper()}_TREND_CONTEXT")
+
+        expected_warnings = [
+            warning for warning in warnings
+            if self._expected_missing_warning(warning, history_rows)
+        ]
+        degrading_warnings = [warning for warning in warnings if warning not in expected_warnings]
 
         base_adj = float(base.get("trend_score_adjustment", base.get("score_adjustment", 0.0)) or 0.0)
         transition_adj = float(transition.get("transition_score_adjustment", 0.0) or 0.0)
@@ -201,7 +242,7 @@ class TrendPlatformIntegrationService:
         dated = [payload for payload in payloads.values() if payload.get("as_of_date")]
         as_of_date = min((str(payload["as_of_date"])[:10] for payload in dated), default=None)
         timestamps = [str(payload.get("snapshot_timestamp")) for payload in payloads.values() if payload.get("snapshot_timestamp")]
-        status = "READY" if not warnings else "DEGRADED"
+        status = "READY" if not degrading_warnings else "DEGRADED"
         return TrendPlatformContext(
             symbol=symbol,
             status=status,
@@ -215,6 +256,9 @@ class TrendPlatformIntegrationService:
             decision_adjustment=decision_adjustment,
             portfolio_risk_adjustment=portfolio_risk_adjustment,
             warnings=tuple(warnings),
+            expected_warnings=tuple(expected_warnings),
+            degrading_warnings=tuple(degrading_warnings),
+            history_rows=history_rows,
         )
 
     def contexts(
@@ -235,6 +279,7 @@ class TrendPlatformIntegrationService:
                 horizon_days=self.policy.forecast_horizon_days,
             )
             institutional = self._latest_payloads(session, "stock_institutional_trend_snapshot", targets)
+            history_rows = self._history_row_counts(session, targets)
         return [
             self._build_context(
                 symbol,
@@ -244,6 +289,7 @@ class TrendPlatformIntegrationService:
                 institutional=institutional.get(symbol, {}),
                 reference_date=effective_date,
                 reference_timestamp=reference_timestamp,
+                history_rows=history_rows.get(symbol, 0),
             )
             for symbol in targets
         ]
@@ -270,11 +316,35 @@ class TrendPlatformIntegrationService:
         for context in resolved:
             state = str(context.transition.get("transition_state", "UNAVAILABLE"))
             transition_distribution[state] = transition_distribution.get(state, 0) + 1
+        expected_skips = []
+        for context in resolved:
+            for warning in context.expected_warnings:
+                component = warning.removeprefix("MISSING_").removesuffix("_TREND_CONTEXT").lower()
+                required_rows = {
+                    "transition": self.policy.transition_minimum_history_rows,
+                    "forecast": self.policy.forecast_minimum_history_rows,
+                    "institutional": self.policy.institutional_minimum_history_rows,
+                }[component]
+                expected_skips.append({
+                    "symbol": context.symbol,
+                    "component": component,
+                    "warning": warning,
+                    "reason": f"INSUFFICIENT_{component.upper()}_HISTORY",
+                    "available_rows": context.history_rows,
+                    "required_rows": required_rows,
+                })
+        degrading_warnings = sorted({
+            warning for context in resolved for warning in context.degrading_warnings
+        })
         return {
             "status": "READY" if len(ready) == len(resolved) else "DEGRADED",
             "snapshot_timestamp": datetime.now(timezone.utc).isoformat(),
             "symbol_count": len(resolved),
             "ready_symbol_count": len(ready),
+            "degraded_symbol_count": len(resolved) - len(ready),
+            "expected_skip_count": len(expected_skips),
+            "expected_skips": expected_skips,
+            "degrading_warnings": degrading_warnings,
             "bullish_trend_breadth_pct": round(100.0 * bullish / len(resolved), 2) if resolved else 0.0,
             "bearish_trend_breadth_pct": round(100.0 * bearish / len(resolved), 2) if resolved else 0.0,
             "neutral_trend_breadth_pct": round(100.0 * neutral / len(resolved), 2) if resolved else 0.0,

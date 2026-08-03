@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+const root=path.resolve(path.dirname(new URL(import.meta.url).pathname),'..','src');
+const css=fs.readFileSync(path.join(root,'workstation-shell-recovery.css'),'utf8');
+const boundary=fs.readFileSync(path.join(root,'WorkstationRouteBoundary.tsx'),'utf8');
+assert.match(css,/grid-template-columns:\s*var\(--ui-sidebar-width/);
+assert.match(css,/\.workstation-shell > main/);
+assert.match(css,/\.workspace-canvas > \.content/);
+assert.match(css,/transform:\s*translateX\(-105%\)/);
+assert.match(boundary,/componentDidCatch/);
+assert.match(boundary,/WORKSPACE RECOVERY/);
+console.log('Workstation shell recovery assertions passed.');

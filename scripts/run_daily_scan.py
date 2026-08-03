@@ -14,6 +14,7 @@ from trading_ai.daily.published_context import ScannerPublishedStateContext
 from trading_ai.database import SessionLocal
 from trading_ai.published_state import PublishedMarketStateResolver, PublishedStatePolicy
 from trading_ai.market.universe import get_universe
+from trading_ai.market.trend_universe import NoTrendUniverseSymbolsError
 from trading_ai.portfolio.awareness import PortfolioAwareness
 from trading_ai.lineage import LineagePersistenceService, ScannerRunLineage, new_run_id
 
@@ -474,4 +475,8 @@ def main(argv: list[str] | None = None) -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    try:
+        raise SystemExit(main())
+    except NoTrendUniverseSymbolsError as exc:
+        print(str(exc), file=__import__("sys").stderr)
+        raise SystemExit(2)
