@@ -3,22 +3,22 @@
     {
       "name": "live_trade_candidates.csv",
       "path": "reports/daily/2026-08-03/live_trade_candidates.csv",
-      "sha256": "da41ad0e8a22769faea780e929eacc10b240a73523ecfacaf38210e73be70bcc"
+      "sha256": "7a55f25e3d1e73246b75c6ce9d5f831a9f190cbdccd2c0ef089f9f8c4dbf788c"
     },
     {
       "name": "live_trade_candidates.json",
       "path": "reports/daily/2026-08-03/live_trade_candidates.json",
-      "sha256": "acb8e3f4753dc1c80dcfe574a5c0d75ae4a814118f884cca722c7cd7ad156af9"
+      "sha256": "51e2ec11c7a6116c5806270b1ae52f4c18e96cf65ad1dd7587b741f3155417bc"
     },
     {
       "name": "live_trade_candidates.html",
       "path": "reports/daily/2026-08-03/live_trade_candidates.html",
-      "sha256": "8d48a55c04438533d08d8b8c568477b6964f2735d8489db0061e28d4f977eb34"
+      "sha256": "e236e7f23ee58648a2bd02f0524c44adfea5669da0688b5642d6b1fc2b89ac70"
     }
   ],
-  "generated_at": "2026-08-03T14:21:53.831299+00:00",
+  "generated_at": "2026-08-03T21:35:40.339708+00:00",
   "metadata": {
-    "trade_count": 1
+    "trade_count": 10
   },
   "report_type": "live_trade_candidates",
   "report_version": "m47.phase6.v1",
@@ -26,22 +26,22 @@
     "decision_context_ready": true,
     "decision_engine_version": null,
     "decision_run_id": null,
-    "generated_at": "2026-08-03T14:21:53.831177+00:00",
-    "ingestion_run_id": "market-ingestion-20260803T140610674041Z",
+    "generated_at": "2026-08-03T21:35:40.339573+00:00",
+    "ingestion_run_id": "market-ingestion-20260803T205721928231Z",
     "market_as_of_date": "2026-08-03",
-    "market_intelligence_snapshot_timestamp": "2026-08-03T14:06:05.905312+00:00",
-    "market_state_hash": "290511cf0578bc12cba6391cf26d394787a225bb4f13d2ea711014df09be4aa7",
+    "market_intelligence_snapshot_timestamp": "2026-08-03T20:57:16.954427+00:00",
+    "market_state_hash": "3d66748a1a406569fc62072e6cedd1821c02e0e6a1fa008f95bbfe03e49b02e0",
     "option_snapshot_completeness_pct": 99.510603588907,
-    "option_snapshot_id": "options-20260803T135145073011Z",
-    "option_snapshot_timestamp": "2026-08-03T14:04:14.103662+00:00",
+    "option_snapshot_id": "options-20260803T204425074022Z",
+    "option_snapshot_timestamp": "2026-08-03T20:55:15.001080+00:00",
     "policy_version": null,
     "publication_name": "current_market_state",
     "publication_status": "DEGRADED",
-    "published_at": "2026-08-03T14:06:11.967934+00:00",
+    "published_at": "2026-08-03T20:57:23.570329+00:00",
     "published_state_degraded": true,
     "report_version": "m47.phase6.v1",
     "scanner_ready": true,
-    "scanner_run_id": "scanner-20260803T142153596871Z-18c58eba1c",
+    "scanner_run_id": "scanner-20260803T213535213481Z-15055c90d1",
     "scanner_version": "m47.phase6.v1"
   }
 }

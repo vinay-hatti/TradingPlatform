@@ -63,3 +63,29 @@ Completed July 30, 2026.
 - Status: COMPLETE
 - Refined performance attribution, strategy and directional analytics, probability calibration, decision quality, governed recommendations, and learning-policy governance.
 - Learning remains human-approved, versioned, evidence-backed, bounded, and non-autonomous.
+
+## Milestone 59 — Institutional Execution Workspace (OMS)
+
+**Status:** COMPLETE — 2026-08-03
+
+Delivered a governed paper-execution layer between Trade Builder and Portfolio Intelligence:
+
+- Canonical execution-intent domain and immutable audit trail.
+- PAPER_READY → VALIDATED → APPROVED → SUBMITTED/ACKNOWLEDGED/PARTIALLY_FILLED/FILLED lifecycle.
+- Explicit operator confirmation for IBKR paper submission; live trading remains disabled.
+- Existing IBKR account binding, routing activation, canonical orders, broker orders, synchronization, cancellation, and fill import are reused.
+- Filled intents create idempotent managed positions in Portfolio Intelligence.
+- Dedicated `#/execution-workspace` OMS queue with validation, risk, order legs, broker status, lifecycle actions, and timeline.
+- Trade Builder now creates/opens execution intents after PAPER_READY.
+- Multi-leg intents are retained and reviewable; direct broker submission is blocked until atomic IBKR combo-contract support is enabled.
+
+## Milestone 60 — Native IBKR Atomic Combo Execution
+
+**Status:** COMPLETE — 2026-08-03
+
+- Added IBKR `BAG` combo-contract construction for governed multi-leg option intents.
+- Resolves each option leg to an IBKR contract ID immediately before submission.
+- Submits one atomic paper limit order using governed leg ratios and BUY/SELL actions.
+- Preserves exact confirmation, paper-only routing, idempotency, cancellation, synchronization, and managed-position handoff.
+- Single-leg option submission remains backward compatible.
+- No database migration required.

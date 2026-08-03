@@ -167,11 +167,8 @@ export const nav = [
   ['intelligence', 'Intelligence', BrainCircuit],
   ['trade-builder', 'Trade builder', Waypoints],
   ['portfolio', 'Portfolio', BriefcaseBusiness],
+  ['execution-workspace', 'Execution workspace', Waypoints],
   ['performance-learning', 'Performance learning', Activity],
-  ['risk', 'Risk', ShieldCheck],
-  ['execution', 'Execution', Waypoints],
-  ['positions', 'Positions', ScanLine],
-  ['exits', 'Exits', LogOut],
   ['command', 'Command center', RadioTower],
 ] as const;
 

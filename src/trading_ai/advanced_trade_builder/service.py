@@ -47,7 +47,7 @@ class AdvancedTradeBuilderService:
   if m.version!=expected_version:raise RuntimeError(f'Trade plan version conflict: expected {expected_version}, actual {m.version}')
   allowed={'DRAFT':['VALIDATED','CANCELLED'],'VALIDATED':['APPROVED','CANCELLED'],'APPROVED':['PAPER_READY','CANCELLED'],'PAPER_READY':['CANCELLED'],'CANCELLED':[]}
   if target not in allowed[m.state]:raise ValueError(f'Invalid transition {m.state} -> {target}')
-  if target in ('APPROVED','PAPER_READY') and not m.validation_json.get('valid'):raise ValueError('Invalid trade plan cannot be approved')
+  if target in ('VALIDATED','APPROVED','PAPER_READY') and not m.validation_json.get('valid'):raise ValueError('Invalid trade plan cannot advance')
   m.version+=1;m.state=target;m.updated_at=now()
   if target=='PAPER_READY':m.execution_intent_json={'environment':'PAPER','account_id':m.account_id,'symbol':m.symbol,'strategy':m.strategy,'legs':m.legs_json,'max_loss':m.max_loss,'live_trading_enabled':False,'submission_status':'READY_FOR_EXISTING_ROUTER'}
   self._audit(m,'TRADE_PLAN_TRANSITIONED',actor,reason,{'state':target,'execution_intent':m.execution_intent_json});self.session.commit();return self._dto(m)

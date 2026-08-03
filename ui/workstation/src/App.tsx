@@ -4,7 +4,8 @@ import { AdvancedTradeBuilderPage } from './AdvancedTradeBuilderPage';
 import { InstitutionalIntelligencePage } from './InstitutionalIntelligencePage';
 import { PortfolioIntelligencePage } from './PortfolioIntelligencePage';
 import { PerformanceLearningPage } from './PerformanceLearningPage';
-import { CommandCenter, DailyScannerPage, Execution, Exits, MarketOverviewPage, OptionScannerPage, OpportunityWorkspacePage, Overview, Positions, Risk } from './pages';
+import { ExecutionWorkspacePage } from './ExecutionWorkspacePage';
+import { CommandCenter, DailyScannerPage, MarketOverviewPage, OptionScannerPage, OpportunityWorkspacePage, Overview } from './pages';
 import { GlobalIntelligenceHeader, WorkspaceCanvas, WorkspaceSidebar, WorkspaceStatusBar } from './WorkspaceChrome';
 import { CommandPalette, loadWorkspaceList, loadWorkspacePreferences, persistWorkspaceList, PreferencesPanel, useWorkspaceShortcuts, type WorkspacePreference } from './WorkspaceProductivity';
 import './styles.css';
@@ -21,11 +22,19 @@ const pages: Record<WorkspaceKey, ComponentType> = {
   'option-scanner': OptionScannerPage, opportunities: OpportunityWorkspacePage,
   intelligence: InstitutionalIntelligenceRefinedPage, 'trade-builder': AdvancedTradeBuilderPage,
   portfolio: PortfolioIntelligenceRefinedPage, 'performance-learning': PerformanceLearningRefinedPage,
-  risk: Risk, execution: Execution, positions: Positions, exits: Exits, command: CommandCenter,
+  'execution-workspace': ExecutionWorkspacePage, execution: ExecutionWorkspacePage, risk: PortfolioIntelligenceRefinedPage, positions: PortfolioIntelligenceRefinedPage, exits: PortfolioIntelligenceRefinedPage, command: CommandCenter,
 };
 
 function route(): WorkspaceKey {
   const value=location.hash.replace('#/','') as WorkspaceKey;
+  if (value === 'execution') {
+    if (location.hash !== '#/execution-workspace') history.replaceState(null, '', '#/execution-workspace');
+    return 'execution-workspace';
+  }
+  if (value === 'risk' || value === 'positions' || value === 'exits') {
+    if (location.hash !== '#/portfolio') history.replaceState(null, '', '#/portfolio');
+    return 'portfolio';
+  }
   return value in pages ? value : 'overview';
 }
 

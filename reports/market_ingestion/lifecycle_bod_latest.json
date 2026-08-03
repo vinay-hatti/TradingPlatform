@@ -1,7 +1,7 @@
 {
-  "completed_at": "2026-08-03T14:06:11.973506+00:00",
+  "completed_at": "2026-08-03T19:29:02.280182+00:00",
   "data_scope": "all",
-  "duration_seconds": 929.844,
+  "duration_seconds": 837.928,
   "failed_ingestion_units": 0,
   "mode": "daily",
   "stages": {
@@ -27,14 +27,14 @@
     },
     "trend_intelligence": {
       "metrics": {
-        "duration_seconds": 6.534,
+        "duration_seconds": 6.524,
         "execution_mode": "in-process",
         "loaded_price_symbol_count": 613,
         "requested_symbol_count": 613,
-        "snapshot_timestamp": "2026-08-03T14:06:05.249847+00:00",
+        "snapshot_timestamp": "2026-08-03T19:28:53.947427+00:00",
         "stages": [
           {
-            "duration_seconds": 1.032,
+            "duration_seconds": 1.113,
             "error_count": 0,
             "name": "trend state",
             "report_path": "reports/trend_intelligence/latest.json",
@@ -44,7 +44,7 @@
             "symbol_count": 613
           },
           {
-            "duration_seconds": 0.889,
+            "duration_seconds": 0.782,
             "error_count": 0,
             "name": "trend transitions",
             "report_path": "reports/trend_intelligence/transitions_latest.json",
@@ -54,7 +54,7 @@
             "symbol_count": 611
           },
           {
-            "duration_seconds": 1.532,
+            "duration_seconds": 1.442,
             "error_count": 0,
             "name": "trend forecasts",
             "report_path": "reports/trend_intelligence/forecasts_latest.json",
@@ -64,7 +64,7 @@
             "symbol_count": 611
           },
           {
-            "duration_seconds": 1.42,
+            "duration_seconds": 1.56,
             "error_count": 0,
             "name": "institutional participation",
             "report_path": "reports/trend_intelligence/institutional_latest.json",
@@ -74,7 +74,7 @@
             "symbol_count": 611
           },
           {
-            "duration_seconds": 0.47,
+            "duration_seconds": 0.327,
             "error_count": 0,
             "name": "platform context",
             "report_path": "reports/trend_intelligence/platform_integration_bod_latest.json",
@@ -94,6 +94,6 @@
       "requested": true
     }
   },
-  "started_at": "2026-08-03T13:50:42.129193+00:00",
+  "started_at": "2026-08-03T19:15:04.351810+00:00",
   "status": "READY"
 }

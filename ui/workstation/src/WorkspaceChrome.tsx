@@ -9,12 +9,13 @@ export type NavigationGroup = { label: string; items: WorkspaceKey[] };
 export const navigationGroups: NavigationGroup[] = [
   { label: 'Market intelligence', items: ['overview', 'market'] },
   { label: 'Scanning', items: ['scanner', 'option-scanner'] },
-  { label: 'Opportunities', items: ['opportunities', 'intelligence', 'trade-builder'] },
-  { label: 'Portfolio', items: ['portfolio', 'performance-learning', 'risk', 'positions', 'exits'] },
-  { label: 'Operations', items: ['execution', 'command'] },
+  { label: 'Opportunities', items: ['opportunities', 'intelligence'] },
+  { label: 'Execution', items: ['trade-builder', 'execution-workspace'] },
+  { label: 'Portfolio', items: ['portfolio', 'performance-learning'] },
+  { label: 'Operations', items: ['command'] },
 ];
 
-const NAV_LOOKUP = new Map(nav.map(([id, label, Icon]) => [id, { label, Icon }]));
+const NAV_LOOKUP = new Map<WorkspaceKey, { label: string; Icon: any }>(nav.map(([id, label, Icon]) => [id as WorkspaceKey, { label, Icon }]));
 
 function normalizeStatus(value: unknown, fallback = 'Unknown') {
   const text = String(value ?? '').trim();
