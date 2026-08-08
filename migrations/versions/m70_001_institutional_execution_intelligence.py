@@ -1,0 +1,16 @@
+"""M70 institutional execution intelligence.
+Revision ID: m70_001
+Revises: m69_005
+"""
+from alembic import op
+import sqlalchemy as sa
+from sqlalchemy.dialects import postgresql
+revision='m70_001';down_revision='m69_005';branch_labels=None;depends_on=None
+def upgrade():
+ op.create_table('execution_intelligence_snapshots',
+  sa.Column('execution_snapshot_id',sa.String(128),primary_key=True),sa.Column('execution_intent_id',sa.String(128),nullable=False),sa.Column('execution_intent_version',sa.Integer(),nullable=False),sa.Column('trade_plan_id',sa.String(128),nullable=False),sa.Column('symbol',sa.String(32),nullable=False),sa.Column('strategy',sa.String(64),nullable=False),sa.Column('decision',sa.String(32),nullable=False),sa.Column('execution_confidence',sa.Float(),nullable=False),sa.Column('approved_reference_price',sa.Float(),nullable=False),sa.Column('fresh_executable_price',sa.Float(),nullable=False),sa.Column('governed_limit_price',sa.Float(),nullable=False),sa.Column('adverse_price_drift_pct',sa.Float(),nullable=False),sa.Column('quote_age_seconds',sa.Float(),nullable=False),sa.Column('fresh_max_loss',sa.Float(),nullable=False),sa.Column('risk_budget_amount',sa.Float(),nullable=False),sa.Column('validation_json',postgresql.JSONB(astext_type=sa.Text()),nullable=False),sa.Column('quotes_json',postgresql.JSONB(astext_type=sa.Text()),nullable=False),sa.Column('envelope_json',postgresql.JSONB(astext_type=sa.Text()),nullable=False),sa.Column('policy_json',postgresql.JSONB(astext_type=sa.Text()),nullable=False),sa.Column('evidence_json',postgresql.JSONB(astext_type=sa.Text()),nullable=False),sa.Column('created_at',sa.String(64),nullable=False))
+ op.create_index('ix_m70_exec_intent_created','execution_intelligence_snapshots',['execution_intent_id','created_at']);op.create_index('ix_m70_exec_decision','execution_intelligence_snapshots',['decision']);op.create_index('ix_m70_exec_symbol','execution_intelligence_snapshots',['symbol'])
+ op.create_table('execution_intelligence_events',sa.Column('event_id',sa.String(128),primary_key=True),sa.Column('execution_snapshot_id',sa.String(128),nullable=False),sa.Column('execution_intent_id',sa.String(128),nullable=False),sa.Column('event_type',sa.String(64),nullable=False),sa.Column('actor',sa.String(128),nullable=False),sa.Column('reason',sa.Text(),nullable=False),sa.Column('payload_json',postgresql.JSONB(astext_type=sa.Text()),nullable=False),sa.Column('created_at',sa.String(64),nullable=False))
+ op.create_index('ix_m70_event_intent_created','execution_intelligence_events',['execution_intent_id','created_at']);op.create_index('ix_m70_event_type','execution_intelligence_events',['event_type'])
+def downgrade():
+ op.drop_index('ix_m70_event_type',table_name='execution_intelligence_events');op.drop_index('ix_m70_event_intent_created',table_name='execution_intelligence_events');op.drop_table('execution_intelligence_events');op.drop_index('ix_m70_exec_symbol',table_name='execution_intelligence_snapshots');op.drop_index('ix_m70_exec_decision',table_name='execution_intelligence_snapshots');op.drop_index('ix_m70_exec_intent_created',table_name='execution_intelligence_snapshots');op.drop_table('execution_intelligence_snapshots')

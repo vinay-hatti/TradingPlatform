@@ -2,7 +2,7 @@ from __future__ import annotations
 try:
     from sqlalchemy import DateTime, Float, Integer, JSON, String, Text, UniqueConstraint
     from sqlalchemy.orm import Mapped, mapped_column
-    from trading_ai.database.models import Base
+    from trading_ai.database.base import Base
 except Exception:  # metadata remains optional for file-only workflows
     Base = object
 

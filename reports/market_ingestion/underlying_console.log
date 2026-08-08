@@ -1,0 +1,32 @@
+Split ingestion domain=underlying; domain_lock=reports/market_ingestion/underlying_ingestion.lock; shared_finalize_lock=reports/market_ingestion/shared_market_finalization.lock
+Ingestion mode: daily; data_scope=underlying
+Market ingestion universe: 613 canonical instruments
+Asset classes: EQUITY=517, ETF=93, INDEX=3
+[INDEX] SPX: price=I:SPX, options_snapshot=I:SPX, options_reference=SPX
+[INDEX] NDX: price=I:NDX, options_snapshot=I:NDX, options_reference=NDX
+[INDEX] RUT: price=I:RUT, options_snapshot=I:RUT, options_reference=RUT
+OHLCV concurrency: workers=4, request_interval=15.00s
+Polygon equity/ETF transport: thread_local_clients=true, connect_timeout=5.0s, read_timeout=30.0s, sdk_retries=0, pools_per_worker=1, network_backoff=5.0s, rate_limit_floor=15.0s, global_429_circuit_breaker=true
+Polygon grouped daily mode: requests=3 instead of 610 ticker requests; incremental_sessions=3; stale_repairs=0; cache_write=false
+[BULK OK] 2026-07-31: 610 canonical bars; 610 persisted (0 inserted, 610 updated); request=1/3; attempts=1
+[BULK OK] 2026-08-03: 610 canonical bars; 610 persisted (0 inserted, 610 updated); request=2/3; attempts=1
+[BULK OK] 2026-08-04: 0 canonical bars; 0 persisted (0 inserted, 0 updated); request=3/3; attempts=1
+[OK] SPX: 500 downloaded; 500 persisted (0 inserted, 500 updated); provider=PolygonIndexHistoricalProvider; attempts=1
+[OK] NDX: 502 downloaded; 502 persisted (0 inserted, 502 updated); provider=PolygonIndexHistoricalProvider; attempts=1
+[OK] RUT: 476 downloaded; 476 persisted (0 inserted, 476 updated); provider=PolygonIndexHistoricalProvider; attempts=1
+Trend Intelligence refresh: skipped
+Market intelligence refresh: skipped
+Published market state: skipped
+Stock Intelligence publication: skipped
+Ingestion lifecycle report: reports/market_ingestion/underlying_lifecycle_latest.json
+Trend Intelligence stage: trend state; status=READY; duration=1.029s; symbols=613; skipped=0; errors=0
+Trend Intelligence stage: trend transitions; status=READY; duration=0.798s; symbols=611; skipped=2; errors=0
+Trend Intelligence stage: trend forecasts; status=READY; duration=1.443s; symbols=611; skipped=2; errors=0
+Trend Intelligence stage: institutional participation; status=READY; duration=1.419s; symbols=611; skipped=2; errors=0
+Trend Intelligence stage: platform context; status=READY; duration=0.397s; symbols=613; skipped=0; errors=0
+Trend Intelligence refresh: READY
+Market overview refresh: bias=MODERATELY_BULLISH, health=66.6, breadth=HEALTHY_BROAD, regime=UPTREND
+Market intelligence refresh: correlation=LOW_CORRELATION, sentiment=BULLISH, risk=NORMAL
+Published market state: status=DEGRADED, scanner_ready=true, decision_context_ready=true, publication=current_market_state, run_id=market-ingestion-20260804T074615754153Z
+Stock Intelligence publication: status=READY, publication=current_stock_intelligence, run_id=stock-scan-2e7edf36dc7644be8ffdb8a21f633e79, symbols=613/613, candidates=613, timeframes=1d,1w,1mo
+Shared market finalization: status=READY, scope=underlying, report=reports/market_ingestion/underlying_finalization_latest.json

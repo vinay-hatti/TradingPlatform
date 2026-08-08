@@ -3,12 +3,12 @@ from .policy import MarketDataPopulationPolicy
 from .provider import BulkHistoricalDataProvider
 from .repository import PriceHistoryBulkRepository
 from .service import BulkMarketDataPopulationService
-from .yfinance_provider import YFinanceBulkHistoricalProvider
+from .polygon_provider import PolygonBulkHistoricalProvider
 
 __all__ = [
     "BulkHistoricalDataProvider", "BulkMarketDataPopulationService", "MarketDataCoverage",
     "MarketDataPopulationPolicy", "MarketDataPopulationResult", "PriceBar",
-    "PriceHistoryBulkRepository", "SymbolPopulationResult", "YFinanceBulkHistoricalProvider",
+    "PriceHistoryBulkRepository", "SymbolPopulationResult", "PolygonBulkHistoricalProvider",
     "ResourceSnapshot", "snapshot_resources", "collect_resources",
 ]
 

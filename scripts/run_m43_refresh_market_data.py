@@ -11,7 +11,7 @@ from trading_ai.market.universe import get_universe
 from trading_ai.scanner.market_data_population import (
     BulkMarketDataPopulationService,
     MarketDataPopulationPolicy,
-    YFinanceBulkHistoricalProvider,
+    PolygonBulkHistoricalProvider,
 )
 from trading_ai.scanner.market_data_population.repository import PriceHistoryBulkRepository
 from trading_ai.daily_scan_workstation.refresh_governance import evaluate_refresh_governance
@@ -178,8 +178,7 @@ def main() -> int:
                         max_retries=args.max_retries,
                         retry_backoff_seconds=args.retry_backoff_seconds,
                     )
-                    provider = YFinanceBulkHistoricalProvider(
-                        cache_dir="data/cache/yfinance",
+                    provider = PolygonBulkHistoricalProvider(
                         max_retries=args.max_retries,
                         initial_backoff_seconds=args.retry_backoff_seconds,
                         max_backoff_seconds=args.maximum_retry_backoff_seconds,

@@ -10,7 +10,7 @@ from trading_ai.options.providers.polygon import PolygonOptionsProvider
 class OptionChain:
     """Polygon-only option-chain facade.
 
-    Yahoo options access is intentionally prohibited by provider governance.
+    Non-Polygon options access is prohibited by provider governance.
     """
 
     def __init__(self, provider: Any | None = None) -> None:

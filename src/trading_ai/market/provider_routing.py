@@ -23,13 +23,12 @@ class ProviderRoute:
 class ProviderRoutingPolicy:
     """Authoritative market-data source governance.
 
-    Yahoo is restricted to underlying OHLCV. Polygon is the sole source for
-    option contracts, quotes, Greeks, volume, open interest and IV data.
+    Polygon is the sole source for underlying OHLCV and option market data.
     """
 
     _ROUTES = {
         DataCapability.UNDERLYING_OHLCV: ProviderRoute(
-            DataCapability.UNDERLYING_OHLCV, "yahoo", None
+            DataCapability.UNDERLYING_OHLCV, "polygon", None
         ),
         DataCapability.OPTION_CHAIN: ProviderRoute(
             DataCapability.OPTION_CHAIN, "polygon", None

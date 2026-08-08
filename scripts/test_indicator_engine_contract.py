@@ -71,7 +71,7 @@ def main() -> None:
     assert result["vwap"].notna().all()
     assert result["ema_200"].iloc[-1] > 0
 
-    # Simulate yfinance's common single-symbol MultiIndex output.
+    # Simulate a provider's common single-symbol MultiIndex output.
     multi = frame.drop(columns=["Date"]).copy()
     multi.columns = pd.MultiIndex.from_tuples(
         [(column, "AAPL") for column in multi.columns]

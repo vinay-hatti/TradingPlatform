@@ -3,6 +3,7 @@ from trading_ai.database.base import Base
 
 
 class PriceHistory(Base):
+    __table_args__ = {"extend_existing": True}
     __tablename__ = "price_history"
     symbol = Column(String(16), primary_key=True)
     date = Column(Date, primary_key=True)
@@ -46,3 +47,31 @@ from trading_ai.opportunity_domain.models import (  # noqa: E402,F401
     OpportunityAuditEventModel,
     OpportunityModel,
 )
+
+
+# Import Milestone 61 stock intelligence models for Alembic metadata.
+from trading_ai.stock_intelligence.models import *  # noqa: E402,F401,F403
+
+# Import Milestone 62 Institutional Options domain models for Alembic metadata.
+from trading_ai.institutional_options.models import *  # noqa: E402,F401,F403
+
+# Import Milestone 63 broker portfolio synchronization models.
+from trading_ai.broker_portfolio_sync.models import *  # noqa: E402,F401,F403
+
+# Import Milestone 64 portfolio risk and allocation models.
+from trading_ai.portfolio_risk_allocation.models import *  # noqa: E402,F401,F403
+
+# Import Milestone 65 performance command center and learning models.
+from trading_ai.performance_learning.models import *  # noqa: E402,F401,F403
+
+# Import Milestone 66 production operations models.
+from trading_ai.production_operations.models import *  # noqa: E402,F401,F403
+
+# Import Milestone 67 live trading governance models.
+from trading_ai.live_trading_governance.models import *  # noqa: E402,F401,F403
+
+# Import Milestone 68 institutional inflection intelligence models.
+from trading_ai.inflection_intelligence.models import *  # noqa: E402,F401,F403
+
+# Import Milestone 69 option valuation and mispricing models.
+from trading_ai.option_valuation_intelligence.models import *  # noqa: E402,F401,F403

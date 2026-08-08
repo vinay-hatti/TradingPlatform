@@ -21,6 +21,10 @@ from trading_ai.trend_intelligence.repository import TrendIntelligenceRepository
 from trading_ai.trend_intelligence.transition_repository import TrendTransitionRepository
 from trading_ai.trend_intelligence.forecast_repository import TrendForecastRepository
 from trading_ai.trend_intelligence.institutional_repository import InstitutionalTrendRepository
+from trading_ai.stock_intelligence.option_integration import (
+    UnderlyingOptionIntegrationPolicy,
+    UnderlyingOptionIntegrationService,
+)
 
 
 class DailyScanner:
@@ -84,6 +88,9 @@ class DailyScanner:
         maximum_institutional_snapshot_age_days=3,
         institutional_intelligence_weight=1.0,
         maximum_institutional_score_adjustment=2.0,
+        enable_stock_intelligence_integration=False,
+        stock_intelligence_provider=None,
+        stock_intelligence_policy=None,
     ):
         self.market_service = market_service
         self.feature_pipeline = feature_pipeline
@@ -194,6 +201,15 @@ class DailyScanner:
         self.maximum_institutional_snapshot_age_days = int(maximum_institutional_snapshot_age_days)
         self.institutional_intelligence_weight = max(0.0, float(institutional_intelligence_weight))
         self.maximum_institutional_score_adjustment = max(0.0, float(maximum_institutional_score_adjustment))
+        self.enable_stock_intelligence_integration = bool(enable_stock_intelligence_integration)
+        self.stock_intelligence_provider = stock_intelligence_provider
+        if stock_intelligence_policy is None:
+            stock_intelligence_policy = UnderlyingOptionIntegrationPolicy(
+                enabled=self.enable_stock_intelligence_integration
+            )
+        self.stock_intelligence_integration = UnderlyingOptionIntegrationService(
+            stock_intelligence_policy
+        )
 
     def _latest_feature_row(self, symbol):
         df = self.market_service.get_price_history(
@@ -812,7 +828,7 @@ class DailyScanner:
         elif self.enable_institutional_trend_intelligence:
             ranking_reason += f" | Institutional trend intelligence {institutional_context['institutional_context_status']}; neutral adjustment."
 
-        return DailyCandidate(
+        candidate = DailyCandidate(
             symbol=symbol,
             signal=signal,
             strategy=(
@@ -894,6 +910,68 @@ class DailyScanner:
             **institutional_context,
             **(self.published_state_context.candidate_fields() if self.published_state_context else {}),
         )
+        return self._apply_stock_intelligence(candidate)
+
+    def _apply_stock_intelligence(self, candidate: DailyCandidate) -> DailyCandidate:
+        if not self.enable_stock_intelligence_integration:
+            return candidate
+
+        payload = None
+        if self.stock_intelligence_provider is not None:
+            try:
+                payload = self.stock_intelligence_provider.get(candidate.symbol)
+            except Exception as exc:
+                candidate.stock_intelligence_status = "ERROR"
+                candidate.stock_intelligence_allowed = False
+                candidate.stock_intelligence_rejection_reasons = [
+                    f"STOCK_INTELLIGENCE_PROVIDER_ERROR: {type(exc).__name__}: {exc}"
+                ]
+                return candidate
+
+        raw_probability = float(candidate.directional_alignment_probability or 0.0) / 100.0
+        if raw_probability <= 0:
+            raw_probability = max(0.01, min(0.99, 0.50 + (candidate.ai_score - 50.0) / 500.0))
+
+        profile = self.stock_intelligence_integration.evaluate(
+            symbol=candidate.symbol,
+            signal=candidate.signal,
+            raw_probability=raw_probability,
+            option_volatility=candidate.volatility,
+            option_liquidity_score=candidate.liquidity_score,
+            option_contract_identity=candidate.contract_ticker,
+            stock_payload=payload,
+        )
+        candidate.stock_intelligence_status = "AVAILABLE" if profile.available else "UNAVAILABLE"
+        candidate.stock_intelligence_allowed = profile.allowed
+        candidate.raw_option_probability = profile.raw_probability
+        candidate.underlying_probability_adjustment = profile.probability_adjustment
+        candidate.underlying_adjusted_probability = profile.adjusted_probability
+        candidate.underlying_score = profile.underlying_score
+        candidate.underlying_confidence = profile.underlying_confidence
+        candidate.underlying_management_quality = profile.management_quality
+        candidate.underlying_structural_reward_risk = profile.structural_reward_risk
+        candidate.underlying_edge_score = profile.edge_score
+        candidate.recommended_option_strategy = profile.recommended_strategy
+        candidate.underlying_entry_zone_low = profile.recommended_entry_low
+        candidate.underlying_entry_zone_high = profile.recommended_entry_high
+        candidate.underlying_stop = profile.underlying_stop
+        candidate.underlying_targets = list(profile.underlying_targets)
+        candidate.underlying_trailing_method = profile.trailing_method
+        candidate.underlying_primary_category = profile.primary_category
+        candidate.underlying_primary_timeframe = profile.primary_timeframe
+        candidate.stock_intelligence_state_hash = profile.state_hash
+        candidate.stock_intelligence_warnings = list(profile.warnings)
+        candidate.stock_intelligence_rejection_reasons = list(profile.rejection_reasons)
+        candidate.stock_intelligence_evidence = list(profile.evidence)
+        candidate.ranking_reason += (
+            f" | Stock Intelligence score={profile.underlying_score:.1f}, "
+            f"adjusted POP={profile.adjusted_probability:.1%}, "
+            f"edge={profile.edge_score:.1f}, strategy={profile.recommended_strategy}, "
+            f"allowed={profile.allowed}."
+        )
+        if profile.available:
+            candidate.ai_score = max(0.0, min(100.0, (candidate.ai_score * 0.75) + (profile.edge_score * 0.25)))
+        return candidate
 
     @staticmethod
     def _scan_failure_category(exc: Exception) -> str:
@@ -916,6 +994,17 @@ class DailyScanner:
             try:
                 candidate = self.scan_symbol(symbol)
                 if candidate is not None:
+                    if (
+                        self.enable_stock_intelligence_integration
+                        and not candidate.stock_intelligence_allowed
+                    ):
+                        category = "STOCK_INTELLIGENCE_REJECTED"
+                        bucket = failures.setdefault(category, {"symbols": [], "example": ""})
+                        bucket["symbols"].append(symbol)
+                        if not bucket["example"]:
+                            reasons = ", ".join(candidate.stock_intelligence_rejection_reasons)
+                            bucket["example"] = reasons or "Stock Intelligence eligibility rejected"
+                        continue
                     candidates.append(candidate)
             except Exception as exc:
                 category = self._scan_failure_category(exc)

@@ -129,7 +129,7 @@ def _read_registry(path: Path) -> list[CanonicalInstrument]:
                 canonical_symbol=symbol,
                 name=(row.get("name") or row.get("security") or symbol).strip(),
                 asset_class=asset_class,
-                provider=(row.get("provider") or ("POLYGON" if is_index else "YAHOO")).strip(),
+                provider=(row.get("provider") or "POLYGON").strip(),
                 price_ticker=(row.get("price_ticker") or provider_symbol).strip(),
                 options_snapshot_ticker=(row.get("options_snapshot_ticker") or provider_symbol).strip(),
                 options_reference_ticker=(row.get("options_reference_ticker") or symbol).strip(),

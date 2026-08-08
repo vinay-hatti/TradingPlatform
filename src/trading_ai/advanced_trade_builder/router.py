@@ -20,6 +20,28 @@ def build(payload:dict,request:Request,actor:str=Depends(require_mutation_access
   with SessionLocal() as s:return env(request,AdvancedTradeBuilderService(s).build(r).to_dict())
  except KeyError as e:raise HTTPException(404,str(e))
  except (ValueError,RuntimeError) as e:raise HTTPException(409,str(e))
+@router.post('/plans/{plan_id}/revalidate',response_model=ApiEnvelope)
+def revalidate(plan_id:str,request:Request,actor:str=Depends(require_mutation_access)):
+ try:
+  from trading_ai.institutional_options.handoff import HandoffPolicy,InstitutionalOptionsHandoffService
+  from trading_ai.institutional_options.models import InstitutionalOptionHandoffModel
+  from trading_ai.institutional_options.trade_builder_config import load_trade_builder_risk_config
+  with SessionLocal() as s:
+   m=TradePlanRepository(s).get(plan_id)
+   if not m:raise KeyError('Trade plan not found')
+   if m.state!='DRAFT':raise ValueError('Only DRAFT trade plans can be revalidated')
+   cfg=load_trade_builder_risk_config();policy=HandoffPolicy()
+   if cfg.capital<policy.minimum_capital:raise ValueError('Configured Trade Builder capital is below the governed minimum')
+   if not 0<cfg.risk_budget_pct<=policy.maximum_risk_budget_pct:raise ValueError('Configured Trade Builder risk budget percentage is outside governed limits')
+   handoff=s.query(InstitutionalOptionHandoffModel).filter_by(trade_plan_id=plan_id).order_by(InstitutionalOptionHandoffModel.created_at.desc()).first()
+   if handoff:
+    InstitutionalOptionsHandoffService(s).revalidate_trade_plan(plan_id,actor=actor)
+    refreshed=TradePlanRepository(s).get(plan_id)
+    return env(request,dto(refreshed),revalidation='M62_CURRENT_RECOMMENDATION')
+   result=AdvancedTradeBuilderService(s).revalidate(plan_id,actor,cfg.capital,cfg.risk_budget_pct)
+   return env(request,result.to_dict(),revalidation='PERSISTED_LEGS')
+ except KeyError as e:raise HTTPException(404,str(e))
+ except (ValueError,RuntimeError) as e:raise HTTPException(409,str(e))
 @router.post('/plans/{plan_id}/transitions',response_model=ApiEnvelope)
 def transition(plan_id:str,payload:dict,request:Request,actor:str=Depends(require_mutation_access)):
  try:

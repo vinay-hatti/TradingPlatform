@@ -1,0 +1,13 @@
+ui/workstation/src/StockIntelligenceScannerPage.tsx:5:const timeframeOrder = ['5m', '15m', '30m', '1h', '1d', '1w', '1mo'];
+ui/workstation/src/StockIntelligenceScannerPage.tsx:117:        {timeframeEntries.map(([timeframe, value]: any) => <div className="candidate-timeframe-row" key={timeframe}><b>{timeframe === '1mo' ? '1 month' : timeframe}</b><StatusPill value={value.direction}/><span>{display(value.structure)}</span><strong>{fmt(value.confidence, 0)}%</strong></div>)}
+ui/workstation/src/StockIntelligenceScannerPage.tsx:131:      <div><div className="candidate-section-heading"><div><h4>Primary institutional structure</h4><p>Nearest actionable support and resistance.</p></div></div><div className="candidate-primary-zones">{primarySupport ? <StructureZoneCard zone={primarySupport} index={0}/> : <p className="candidate-empty">Primary support not published.</p>}{primaryResistance ? <StructureZoneCard zone={primaryResistance} index={1}/> : <p className="candidate-empty">Primary resistance not published.</p>}</div></div>
+ui/workstation/src/StockIntelligenceScannerPage.tsx:133:        <div className="candidate-risk-panel"><h4>Risk factors</h4>{risks.length ? <ul>{Array.from(new Set(risks)).map((item, index) => <li key={index}>⚠ {item}</li>)}</ul> : <p>No explicit warnings were published.</p>}</div>
+src/trading_ai/stock_intelligence/breakout.py:6:        if len(r)<25:return BreakoutProfile(evidence={'warning':'insufficient history'})
+src/trading_ai/stock_intelligence/structure_zones.py:10:    "1mo": 70, "1w": 60, "1d": 50, "4h": 40, "2h": 35,
+src/trading_ai/stock_intelligence/structure_zones.py:301:                elif "1mo" in zone.contributing_timeframes or zone.primary_timeframe == "1mo":
+src/trading_ai/stock_intelligence/participation.py:6:        if len(r)<20:return ParticipationProfile(evidence={'warning':'insufficient history'})
+src/trading_ai/stock_intelligence/multi_timeframe.py:21:        if len(rows)<20: raise ValueError(f'insufficient history for {timeframe}')
+src/trading_ai/stock_intelligence/levels.py:7:    "1mo": 70, "1w": 60, "1d": 50, "4h": 40, "2h": 35,
+src/trading_ai/stock_intelligence/publication_service.py:129:                "1mo": self._aggregate(rows, "month"),
+src/trading_ai/stock_intelligence/publication_service.py:161:                "timeframes": ["1d", "1w", "1mo"],
+src/trading_ai/ui_backup_simple/control_center.py:328:        ["1mo", "3mo", "6mo", "1y", "2y", "5y"],

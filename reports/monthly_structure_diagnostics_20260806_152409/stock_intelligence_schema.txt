@@ -1,0 +1,205 @@
+                   table_name                   |              column_name               |        data_type         
+------------------------------------------------+----------------------------------------+--------------------------
+ broker_portfolio_publications                  | publication_id                         | character varying
+ broker_portfolio_publications                  | publication_name                       | character varying
+ broker_portfolio_publications                  | portfolio_id                           | character varying
+ broker_portfolio_publications                  | broker_account_id                      | character varying
+ broker_portfolio_publications                  | account_snapshot_id                    | character varying
+ broker_portfolio_publications                  | reconciliation_run_id                  | character varying
+ broker_portfolio_publications                  | status                                 | character varying
+ broker_portfolio_publications                  | position_count                         | integer
+ broker_portfolio_publications                  | matched_count                          | integer
+ broker_portfolio_publications                  | broker_discovered_count                | integer
+ broker_portfolio_publications                  | drift_count                            | integer
+ broker_portfolio_publications                  | published_at                           | character varying
+ broker_portfolio_publications                  | payload_json                           | jsonb
+ institutional_inflection_publications          | publication_id                         | character varying
+ institutional_inflection_publications          | publication_name                       | character varying
+ institutional_inflection_publications          | source_run_id                          | character varying
+ institutional_inflection_publications          | status                                 | character varying
+ institutional_inflection_publications          | symbol_count                           | integer
+ institutional_inflection_publications          | high_conviction_count                  | integer
+ institutional_inflection_publications          | published_at                           | character varying
+ institutional_inflection_publications          | payload_json                           | json
+ institutional_market_structure_snapshot_legacy | symbol                                 | character varying
+ institutional_market_structure_snapshot_legacy | as_of_date                             | date
+ institutional_market_structure_snapshot_legacy | option_snapshot_date                   | date
+ institutional_market_structure_snapshot_legacy | spot                                   | double precision
+ institutional_market_structure_snapshot_legacy | net_gamma_exposure                     | double precision
+ institutional_market_structure_snapshot_legacy | net_delta_exposure                     | double precision
+ institutional_market_structure_snapshot_legacy | net_vanna_exposure                     | double precision
+ institutional_market_structure_snapshot_legacy | net_charm_exposure                     | double precision
+ institutional_market_structure_snapshot_legacy | gamma_regime                           | character varying
+ institutional_market_structure_snapshot_legacy | gamma_flip                             | double precision
+ institutional_market_structure_snapshot_legacy | call_wall                              | double precision
+ institutional_market_structure_snapshot_legacy | put_wall                               | double precision
+ institutional_market_structure_snapshot_legacy | institutional_positioning_score        | double precision
+ institutional_market_structure_snapshot_legacy | bull_probability                       | double precision
+ institutional_market_structure_snapshot_legacy | bear_probability                       | double precision
+ institutional_market_structure_snapshot_legacy | range_probability                      | double precision
+ institutional_market_structure_snapshot_legacy | breakout_probability                   | double precision
+ institutional_market_structure_snapshot_legacy | confidence                             | character varying
+ institutional_market_structure_snapshot_legacy | payload_json                           | text
+ institutional_option_valuation_publications    | publication_id                         | character varying
+ institutional_option_valuation_publications    | publication_name                       | character varying
+ institutional_option_valuation_publications    | status                                 | character varying
+ institutional_option_valuation_publications    | contract_count                         | integer
+ institutional_option_valuation_publications    | underpriced_count                      | integer
+ institutional_option_valuation_publications    | overpriced_count                       | integer
+ institutional_option_valuation_publications    | published_at                           | character varying
+ institutional_option_valuation_publications    | payload_json                           | json
+ market_ingestion_publication                   | publication_name                       | character varying
+ market_ingestion_publication                   | run_id                                 | character varying
+ market_ingestion_publication                   | published_at                           | timestamp with time zone
+ market_ingestion_publication                   | as_of_date                             | date
+ market_ingestion_publication                   | market_intelligence_timestamp          | timestamp with time zone
+ market_ingestion_publication                   | option_snapshot_timestamp              | timestamp with time zone
+ market_ingestion_publication                   | option_snapshot_id                     | character varying
+ market_ingestion_publication                   | readiness_status                       | character varying
+ market_ingestion_publication                   | scanner_ready                          | boolean
+ market_ingestion_publication                   | decision_context_ready                 | boolean
+ market_ingestion_publication                   | details_json                           | text
+ market_ingestion_publication                   | created_at                             | timestamp with time zone
+ market_ingestion_publication                   | updated_at                             | timestamp with time zone
+ microstructure_liquidity_snapshot              | snapshot_timestamp                     | timestamp with time zone
+ microstructure_liquidity_snapshot              | symbol                                 | character varying
+ microstructure_liquidity_snapshot              | as_of_date                             | date
+ microstructure_liquidity_snapshot              | executable_quote_pct                   | double precision
+ microstructure_liquidity_snapshot              | median_relative_spread_pct             | double precision
+ microstructure_liquidity_snapshot              | average_trade_size                     | double precision
+ microstructure_liquidity_snapshot              | liquidity_score                        | double precision
+ microstructure_liquidity_snapshot              | liquidity_regime                       | character varying
+ microstructure_liquidity_snapshot              | depth_available                        | boolean
+ microstructure_liquidity_snapshot              | confidence                             | double precision
+ microstructure_liquidity_snapshot              | provenance                             | character varying
+ microstructure_liquidity_snapshot              | payload_json                           | text
+ performance_learning_publications              | publication_id                         | character varying
+ performance_learning_publications              | publication_name                       | character varying
+ performance_learning_publications              | portfolio_id                           | character varying
+ performance_learning_publications              | report_id                              | character varying
+ performance_learning_publications              | status                                 | character varying
+ performance_learning_publications              | sample_size                            | integer
+ performance_learning_publications              | published_at                           | character varying
+ performance_learning_publications              | payload_json                           | json
+ portfolio_allocation_publications              | publication_id                         | character varying
+ portfolio_allocation_publications              | publication_name                       | character varying
+ portfolio_allocation_publications              | portfolio_id                           | character varying
+ portfolio_allocation_publications              | risk_snapshot_id                       | character varying
+ portfolio_allocation_publications              | optimization_snapshot_id               | character varying
+ portfolio_allocation_publications              | published_at                           | character varying
+ portfolio_allocation_publications              | status                                 | character varying
+ portfolio_allocation_publications              | payload_json                           | json
+ production_ops_publication_freshness           | freshness_id                           | character varying
+ production_ops_publication_freshness           | publication_name                       | character varying
+ production_ops_publication_freshness           | source_id                              | character varying
+ production_ops_publication_freshness           | status                                 | character varying
+ production_ops_publication_freshness           | published_at                           | character varying
+ production_ops_publication_freshness           | age_seconds                            | double precision
+ production_ops_publication_freshness           | maximum_age_seconds                    | integer
+ production_ops_publication_freshness           | reason                                 | text
+ production_ops_publication_freshness           | lineage_json                           | json
+ production_ops_publication_freshness           | evaluated_at                           | character varying
+ production_ops_readiness_publications          | publication_id                         | character varying
+ production_ops_readiness_publications          | publication_name                       | character varying
+ production_ops_readiness_publications          | status                                 | character varying
+ production_ops_readiness_publications          | scanner_ready                          | boolean
+ production_ops_readiness_publications          | decision_ready                         | boolean
+ production_ops_readiness_publications          | execution_ready                        | boolean
+ production_ops_readiness_publications          | management_ready                       | boolean
+ production_ops_readiness_publications          | portfolio_ready                        | boolean
+ production_ops_readiness_publications          | learning_ready                         | boolean
+ production_ops_readiness_publications          | platform_ready                         | boolean
+ production_ops_readiness_publications          | published_at                           | character varying
+ production_ops_readiness_publications          | payload_json                           | json
+ scanner_candidate_lineage                      | candidate_id                           | character varying
+ scanner_candidate_lineage                      | scanner_run_id                         | character varying
+ scanner_candidate_lineage                      | rank                                   | integer
+ scanner_candidate_lineage                      | symbol                                 | character varying
+ scanner_candidate_lineage                      | signal                                 | character varying
+ scanner_candidate_lineage                      | strategy                               | character varying
+ scanner_candidate_lineage                      | score                                  | double precision
+ scanner_candidate_lineage                      | accepted                               | boolean
+ scanner_candidate_lineage                      | publication_name                       | character varying
+ scanner_candidate_lineage                      | ingestion_run_id                       | character varying
+ scanner_candidate_lineage                      | market_intelligence_snapshot_timestamp | timestamp with time zone
+ scanner_candidate_lineage                      | option_snapshot_id                     | character varying
+ scanner_candidate_lineage                      | market_state_hash                      | character varying
+ scanner_candidate_lineage                      | scanner_version                        | character varying
+ scanner_candidate_lineage                      | payload_json                           | text
+ scanner_lineage_run                            | scanner_run_id                         | character varying
+ scanner_lineage_run                            | publication_name                       | character varying
+ scanner_lineage_run                            | ingestion_run_id                       | character varying
+ scanner_lineage_run                            | publication_status                     | character varying
+ scanner_lineage_run                            | published_at                           | timestamp with time zone
+ scanner_lineage_run                            | market_as_of_date                      | date
+ scanner_lineage_run                            | market_intelligence_snapshot_timestamp | timestamp with time zone
+ scanner_lineage_run                            | option_snapshot_timestamp              | timestamp with time zone
+ scanner_lineage_run                            | option_snapshot_id                     | character varying
+ scanner_lineage_run                            | option_snapshot_completeness_pct       | double precision
+ scanner_lineage_run                            | published_state_degraded               | boolean
+ scanner_lineage_run                            | scanner_version                        | character varying
+ scanner_lineage_run                            | market_state_hash                      | character varying
+ scanner_lineage_run                            | started_at                             | timestamp with time zone
+ scanner_lineage_run                            | completed_at                           | timestamp with time zone
+ scanner_lineage_run                            | status                                 | character varying
+ scanner_lineage_run                            | candidate_count                        | integer
+ scanner_lineage_run                            | metadata_json                          | text
+ stock_institutional_structure_zones            | id                                     | character varying
+ stock_institutional_structure_zones            | symbol                                 | character varying
+ stock_institutional_structure_zones            | scanner_run_id                         | character varying
+ stock_institutional_structure_zones            | candidate_id                           | character varying
+ stock_institutional_structure_zones            | snapshot_timestamp                     | character varying
+ stock_institutional_structure_zones            | zone_type                              | character varying
+ stock_institutional_structure_zones            | lower_bound                            | double precision
+ stock_institutional_structure_zones            | upper_bound                            | double precision
+ stock_institutional_structure_zones            | representative_price                   | double precision
+ stock_institutional_structure_zones            | strength                               | double precision
+ stock_institutional_structure_zones            | confluence_score                       | double precision
+ stock_institutional_structure_zones            | primary_timeframe                      | character varying
+ stock_institutional_structure_zones            | contributing_timeframes                | jsonb
+ stock_institutional_structure_zones            | components                             | jsonb
+ stock_institutional_structure_zones            | payload_json                           | jsonb
+ stock_position_intelligence_snapshots          | id                                     | character varying
+ stock_position_intelligence_snapshots          | symbol                                 | character varying
+ stock_position_intelligence_snapshots          | scanner_run_id                         | character varying
+ stock_position_intelligence_snapshots          | candidate_id                           | character varying
+ stock_position_intelligence_snapshots          | snapshot_timestamp                     | character varying
+ stock_position_intelligence_snapshots          | payload_json                           | json
+ stock_position_intelligence_snapshots          | action                                 | character varying
+ stock_position_intelligence_snapshots          | thesis_integrity                       | double precision
+ stock_position_intelligence_snapshots          | management_quality                     | double precision
+ stock_scanner_candidates                       | id                                     | character varying
+ stock_scanner_candidates                       | symbol                                 | character varying
+ stock_scanner_candidates                       | scanner_run_id                         | character varying
+ stock_scanner_candidates                       | candidate_id                           | character varying
+ stock_scanner_candidates                       | snapshot_timestamp                     | character varying
+ stock_scanner_candidates                       | payload_json                           | json
+ stock_scanner_candidates                       | category                               | character varying
+ stock_scanner_candidates                       | score                                  | double precision
+ stock_scanner_publications                     | id                                     | character varying
+ stock_scanner_publications                     | symbol                                 | character varying
+ stock_scanner_publications                     | scanner_run_id                         | character varying
+ stock_scanner_publications                     | candidate_id                           | character varying
+ stock_scanner_publications                     | snapshot_timestamp                     | character varying
+ stock_scanner_publications                     | payload_json                           | json
+ stock_scanner_publications                     | publication_name                       | character varying
+ stock_scanner_publications                     | status                                 | character varying
+ stock_scanner_runs                             | id                                     | character varying
+ stock_scanner_runs                             | symbol                                 | character varying
+ stock_scanner_runs                             | scanner_run_id                         | character varying
+ stock_scanner_runs                             | candidate_id                           | character varying
+ stock_scanner_runs                             | snapshot_timestamp                     | character varying
+ stock_scanner_runs                             | payload_json                           | json
+ stock_scanner_runs                             | status                                 | character varying
+ stock_scanner_runs                             | provider                               | character varying
+ stock_scanner_timeframe_states                 | id                                     | character varying
+ stock_scanner_timeframe_states                 | symbol                                 | character varying
+ stock_scanner_timeframe_states                 | scanner_run_id                         | character varying
+ stock_scanner_timeframe_states                 | candidate_id                           | character varying
+ stock_scanner_timeframe_states                 | snapshot_timestamp                     | character varying
+ stock_scanner_timeframe_states                 | payload_json                           | json
+ stock_scanner_timeframe_states                 | timeframe                              | character varying
+ stock_scanner_timeframe_states                 | direction                              | character varying
+ stock_scanner_timeframe_states                 | structure                              | character varying
+(201 rows)
+

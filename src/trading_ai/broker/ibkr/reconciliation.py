@@ -40,7 +40,7 @@ class IbkrPaperReconciliationService:
             )
             if binding is None:
                 raise LookupError(f"No IBKR binding registered for {portfolio_id}")
-            if binding.status not in {"VERIFIED_PAPER", "VERIFIED_READ_ONLY"}:
+            if binding.status not in {"VERIFIED_PAPER", "VERIFIED_READ_ONLY", "VERIFIED_PAPER_TRADING"}:
                 raise RuntimeError("IBKR binding must be verified before reconciliation")
 
             latest_snapshot = session.scalar(

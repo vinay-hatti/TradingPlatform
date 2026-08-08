@@ -31,6 +31,11 @@ def sync(id:str,request:Request,actor:str=Depends(require_mutation_access)):
  try:
   with SessionLocal() as s:return env(request,ExecutionWorkspaceService(s).synchronize(id,actor))
  except Exception as e:raise fail(e)
+@router.post('/intents/{id}/reprice',response_model=ApiEnvelope)
+def reprice(id:str,payload:dict,request:Request,actor:str=Depends(require_mutation_access)):
+ try:
+  with SessionLocal() as s:return env(request,ExecutionWorkspaceService(s).reprice_working(id,int(payload['expected_version']),actor,payload['reason'],payload['confirmation']))
+ except Exception as e:raise fail(e)
 @router.post('/intents/{id}/cancel',response_model=ApiEnvelope)
 def cancel(id:str,payload:dict,request:Request,actor:str=Depends(require_mutation_access)):
  try:

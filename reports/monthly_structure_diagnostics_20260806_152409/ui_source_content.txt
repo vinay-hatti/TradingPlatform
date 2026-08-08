@@ -1,0 +1,1645 @@
+
+====================================================================================================
+FILE: ui/workstation/src/StockIntelligenceScannerPage.tsx
+====================================================================================================
+import { Fragment, useEffect, useMemo, useState } from 'react';
+import { stockIntelligenceApi } from './api';
+import type { StockIntelligenceCandidate } from './types';
+
+const timeframeOrder = ['5m', '15m', '30m', '1h', '1d', '1w', '1mo'];
+const fmt = (value: number | null | undefined, digits = 2) => value == null ? '—' : Number(value).toFixed(digits);
+const display = (value: string | null | undefined) => {
+  const text = String(value || '').trim().toUpperCase();
+  return !text || text === 'UNKNOWN' || text === 'UNAVAILABLE' ? 'Not published' : text.replaceAll('_', ' ');
+};
+const unique = (values: (string | null | undefined)[]) => Array.from(new Set(values.map(value => String(value || '').trim()).filter(Boolean))).sort();
+const directionTone = (value: string | null | undefined) => {
+  const text = String(value || '').toUpperCase();
+  if (text.includes('BULL') || text.includes('UP') || text.includes('ACCUM')) return 'positive';
+  if (text.includes('BEAR') || text.includes('DOWN') || text.includes('DISTRIB')) return 'negative';
+  return 'neutral';
+};
+const conviction = (record: StockIntelligenceCandidate) => {
+  const blended = record.score * 0.55 + record.confidence * 0.3 + record.management_quality * 0.15;
+  if (blended >= 90) return 'Exceptional conviction';
+  if (blended >= 80) return 'High conviction';
+  if (blended >= 70) return 'Strong candidate';
+  if (blended >= 60) return 'Moderate candidate';
+  return 'Watch only';
+};
+const suggestedExpression = (record: StockIntelligenceCandidate) => {
+  const bearish = String(record.direction || '').toUpperCase().includes('BEAR');
+  const trending = ['TRENDING', 'EARLY_TREND', 'MATURE_TREND', 'EXPANSION'].includes(String(record.structure || '').toUpperCase());
+  if (bearish) return trending ? 'Put or bear put spread' : 'Defined-risk bearish structure';
+  return trending ? 'Call or bull call spread' : 'Defined-risk bullish structure';
+};
+const zoneSectionTitle = (value: string) => ({
+  PRIMARY_STRUCTURE: 'Primary structure',
+  SECONDARY_STRUCTURE: 'Secondary structure',
+  MAJOR_STRUCTURE: 'Major structural levels',
+  DEALER_STRUCTURE: 'Dealer structure',
+  HISTORICAL_STRUCTURE: 'Historical structure',
+} as Record<string, string>)[value] || display(value);
+const componentLabel = (value: string) => ({
+  PRICE_LEVEL: 'Price structure', DEMAND_ZONE: 'Demand zone', SUPPLY_ZONE: 'Supply zone',
+  PUT_WALL: 'Primary put wall', CALL_WALL: 'Primary call wall', GAMMA_FLIP: 'Gamma flip',
+} as Record<string, string>)[value] || display(value);
+type HeaderFilters = Record<string, string>;
+
+function MetricCard({ label, value, helper, tone = 'neutral' }: { label: string; value: string; helper?: string; tone?: string }) {
+  return <div className={`candidate-metric-card ${tone}`}><span>{label}</span><b>{value}</b>{helper && <small>{helper}</small>}</div>;
+}
+
+function StatusPill({ value }: { value: string | null | undefined }) {
+  return <span className={`candidate-status-pill ${directionTone(value)}`}>{display(value)}</span>;
+}
+
+function StructureZoneCard({ zone, index }: { zone: any; index: number }) {
+  return <div className={`structure-zone-card ${String(zone.zone_type || '').toLowerCase()}`} key={`${zone.zone_type}-${zone.representative_price}-${index}`}>
+    <div className="structure-zone-heading"><span>{display(zone.zone_type)} · {zone.primary_timeframe || 'Dealer'}</span><em>{display(zone.status)}</em></div>
+    <b>{fmt(zone.lower_bound)}–{fmt(zone.upper_bound)}</b>
+    <div className="structure-zone-metrics">
+      <small>Strength <strong>{fmt(zone.strength, 0)}</strong></small><small>Confluence <strong>{fmt(zone.confluence_score, 0)}</strong></small>
+      <small>Hold <strong>{fmt((zone.holding_probability || 0) * 100, 0)}%</strong></small><small>Break <strong>{fmt((zone.break_probability || 0) * 100, 0)}%</strong></small>
+      <small>Distance <strong>{zone.distance_pct == null ? '—' : `${zone.distance_pct > 0 ? '+' : ''}${fmt(zone.distance_pct, 2)}%`}</strong></small><small>Relevance <strong>{fmt(zone.relevance_score, 0)}</strong></small>
+    </div>
+    <small>Timeframes: {(zone.contributing_timeframes || []).join(', ') || 'Dealer-derived'}</small>
+    <div className="structure-zone-components">{(zone.components || []).map((item: string) => <span key={item}>✓ {componentLabel(item)}</span>)}</div>
+    {zone.dealer_context && Object.keys(zone.dealer_context).length > 0 && <div className="dealer-zone-context"><small>Dealer positioning: {display(zone.dealer_context.positioning)}</small><small>Gamma regime: {display(zone.dealer_context.gamma_regime)}</small><small>Dealer confidence: {fmt(zone.dealer_context.confidence_score, 0)}</small></div>}
+  </div>;
+}
+
+function CandidateWorkspace({ record, detail }: { record: StockIntelligenceCandidate; detail: any }) {
+  const timeframeEntries = Object.entries(record.timeframes || {}).sort(([left], [right]) => {
+    const leftIndex = timeframeOrder.indexOf(left); const rightIndex = timeframeOrder.indexOf(right);
+    return (leftIndex < 0 ? 99 : leftIndex) - (rightIndex < 0 ? 99 : rightIndex);
+  });
+  const entryWidth = record.entry_zone_low != null && record.entry_zone_high != null ? record.entry_zone_high - record.entry_zone_low : null;
+  const entryMid = record.entry_zone_low != null && record.entry_zone_high != null ? (record.entry_zone_low + record.entry_zone_high) / 2 : null;
+  const entryWidthPct = entryWidth != null && entryMid ? entryWidth / entryMid * 100 : null;
+  const zones = detail.structure_zones || [];
+  const primarySupport = zones.find((zone: any) => zone.hierarchy === 'PRIMARY_STRUCTURE' && String(zone.zone_type).toUpperCase() === 'SUPPORT');
+  const primaryResistance = zones.find((zone: any) => zone.hierarchy === 'PRIMARY_STRUCTURE' && String(zone.zone_type).toUpperCase() === 'RESISTANCE');
+  const positives = [
+    record.alignment_score >= 70 ? `Multi-timeframe alignment ${fmt(record.alignment_score, 0)}` : null,
+    record.management_quality >= 70 ? `Management quality ${fmt(record.management_quality, 0)}` : null,
+    record.relative_strength_grade && !['UNKNOWN', 'UNAVAILABLE'].includes(record.relative_strength_grade) ? `Relative strength ${display(record.relative_strength_grade)}` : null,
+    record.participation_state && !['UNKNOWN', 'UNAVAILABLE', 'NEUTRAL'].includes(record.participation_state) ? display(record.participation_state) : null,
+    record.breakout_state && !['UNKNOWN', 'UNAVAILABLE', 'NONE'].includes(record.breakout_state) ? display(record.breakout_state) : null,
+    record.market_regime && !['UNKNOWN', 'UNAVAILABLE'].includes(record.market_regime) ? `Market regime ${display(record.market_regime)}` : null,
+  ].filter(Boolean) as string[];
+  const risks = [...record.warnings];
+  if (record.confidence < 65) risks.push('Confidence is below the preferred institutional threshold');
+  if (record.structural_reward_risk < 1.5) risks.push('Structural reward/risk is below 1.5');
+  if (record.freshness < 70) risks.push('The published setup may be aging');
+  if (primaryResistance?.distance_pct != null && primaryResistance.distance_pct > 0 && primaryResistance.distance_pct < 2) risks.push('Primary resistance is less than 2% overhead');
+
+  return <div className="candidate-workspace">
+    <section className="candidate-summary-band">
+      <div className="candidate-summary-title"><div><span className="candidate-symbol">{record.symbol}</span><StatusPill value={record.primary_category}/></div><h3>{conviction(record)}</h3><p>{display(record.direction)} · {display(record.structure)} · {record.primary_timeframe || 'Primary timeframe not published'}</p></div>
+      <div className="candidate-summary-metrics">
+        <MetricCard label="Overall score" value={fmt(record.score, 1)} tone="accent"/>
+        <MetricCard label="Confidence" value={fmt(record.confidence, 1)} />
+        <MetricCard label="Management quality" value={fmt(record.management_quality, 1)} />
+        <MetricCard label="Suggested expression" value={suggestedExpression(record)} helper="Heuristic guidance" />
+      </div>
+    </section>
+
+    <section className="candidate-section"><div className="candidate-section-heading"><div><h4>Market alignment</h4><p>External context supporting or challenging the setup.</p></div></div>
+      <div className="candidate-context-grid">
+        <MetricCard label="Market regime" value={display(record.market_regime)} tone={directionTone(record.market_regime)} />
+        <MetricCard label="Relative strength" value={display(record.relative_strength_grade)} tone={directionTone(record.relative_strength_grade)} />
+        <MetricCard label="Dealer positioning" value={display(record.dealer_positioning)} tone={directionTone(record.dealer_positioning)} />
+        <MetricCard label="Gamma regime" value={display(record.gamma_regime)} tone={directionTone(record.gamma_regime)} />
+        <MetricCard label="Participation" value={display(record.participation_state)} tone={directionTone(record.participation_state)} />
+        <MetricCard label="Freshness" value={fmt(record.freshness, 1)} />
+      </div>
+    </section>
+
+    <section className="candidate-section"><div className="candidate-section-heading"><div><h4>Multi-timeframe alignment</h4><p>Trend, market structure, and confidence across published horizons.</p></div><MetricCard label="Alignment score" value={fmt(record.alignment_score, 1)} /></div>
+      <div className="candidate-timeframe-table"><div className="candidate-timeframe-header"><span>Timeframe</span><span>Trend</span><span>Structure</span><span>Confidence</span></div>
+        {timeframeEntries.map(([timeframe, value]: any) => <div className="candidate-timeframe-row" key={timeframe}><b>{timeframe === '1mo' ? '1 month' : timeframe}</b><StatusPill value={value.direction}/><span>{display(value.structure)}</span><strong>{fmt(value.confidence, 0)}%</strong></div>)}
+      </div>
+    </section>
+
+    <section className="candidate-section"><div className="candidate-section-heading"><div><h4>Dynamic trade plan</h4><p>Underlying-based execution and management levels.</p></div><MetricCard label="Structural R/R" value={fmt(record.structural_reward_risk, 2)} /></div>
+      <div className="candidate-plan-flow">
+        <div className="candidate-plan-step entry"><span>Entry zone</span><b>{fmt(record.entry_zone_low)}–{fmt(record.entry_zone_high)}</b><small>Width {fmt(entryWidth)} ({fmt(entryWidthPct, 2)}%)</small></div><i>→</i>
+        <div className="candidate-plan-step stop"><span>Structural stop</span><b>{fmt(record.recommended_stop)}</b><small>Thesis invalidation</small></div><i>→</i>
+        {(record.targets || []).filter(value => value != null).map((target, index) => <Fragment key={`${target}-${index}`}><div className="candidate-plan-step target"><span>Target {index + 1}</span><b>{fmt(target)}</b><small>Structural objective</small></div>{index < record.targets.filter(value => value != null).length - 1 && <i>→</i>}</Fragment>)}
+      </div>
+      {detail.trade_plan?.entry?.rationale?.length > 0 && <div className="candidate-rationale"><b>Entry rationale</b><ul>{detail.trade_plan.entry.rationale.map((item: string, index: number) => <li key={index}>{item}</li>)}</ul></div>}
+    </section>
+
+    <section className="candidate-section candidate-two-column">
+      <div><div className="candidate-section-heading"><div><h4>Primary institutional structure</h4><p>Nearest actionable support and resistance.</p></div></div><div className="candidate-primary-zones">{primarySupport ? <StructureZoneCard zone={primarySupport} index={0}/> : <p className="candidate-empty">Primary support not published.</p>}{primaryResistance ? <StructureZoneCard zone={primaryResistance} index={1}/> : <p className="candidate-empty">Primary resistance not published.</p>}</div></div>
+      <div><div className="candidate-section-heading"><div><h4>Why this candidate?</h4><p>Explainable evidence behind the ranking.</p></div></div><ul className="candidate-evidence-list">{positives.length ? positives.map((item, index) => <li key={index}>✓ {item}</li>) : <li>No positive evidence was published.</li>}</ul>
+        <div className="candidate-risk-panel"><h4>Risk factors</h4>{risks.length ? <ul>{Array.from(new Set(risks)).map((item, index) => <li key={index}>⚠ {item}</li>)}</ul> : <p>No explicit warnings were published.</p>}</div>
+      </div>
+    </section>
+
+    <details className="candidate-disclosure" open><summary>Institutional structure hierarchy</summary><div className="candidate-disclosure-body"><p className="structure-zone-helper">Primary and secondary structures are actionable. Monthly and dealer structures provide broader context; historical zones remain collapsed.</p>{['PRIMARY_STRUCTURE', 'SECONDARY_STRUCTURE', 'MAJOR_STRUCTURE', 'DEALER_STRUCTURE'].map(group => { const groupZones = zones.filter((zone: any) => zone.hierarchy === group); return groupZones.length ? <section className="structure-zone-section" key={group}><h5>{zoneSectionTitle(group)}</h5><div className="stock-level-grid">{groupZones.map((zone: any, index: number) => <StructureZoneCard key={`${group}-${index}`} zone={zone} index={index}/>)}</div></section> : null; })}{zones.some((zone: any) => zone.hierarchy === 'HISTORICAL_STRUCTURE') && <details className="historical-structure-zones"><summary>Historical structure ({zones.filter((zone: any) => zone.hierarchy === 'HISTORICAL_STRUCTURE').length})</summary><div className="stock-level-grid">{zones.filter((zone: any) => zone.hierarchy === 'HISTORICAL_STRUCTURE').map((zone: any, index: number) => <StructureZoneCard key={`historical-${index}`} zone={zone} index={index}/>)}</div></details>}</div></details>
+
+    <details className="candidate-disclosure"><summary>Advanced intelligence and raw publication data</summary><div className="candidate-disclosure-body"><div className="candidate-context-grid"><MetricCard label="Candidate ID" value={record.candidate_id}/><MetricCard label="State hash" value={record.state_hash}/><MetricCard label="Published snapshot" value={record.snapshot_timestamp ? new Date(record.snapshot_timestamp).toLocaleString() : 'Not published'}/><MetricCard label="Breakout state" value={display(record.breakout_state)}/></div></div></details>
+  </div>;
+}
+
+export function StockIntelligenceScannerPage() {
+  const [records, setRecords] = useState<StockIntelligenceCandidate[]>([]); const [busy, setBusy] = useState(false); const [error, setError] = useState(''); const [publication, setPublication] = useState<any>(null);
+  const [search, setSearch] = useState(''); const [minScore, setMinScore] = useState(0); const [minConfidence, setMinConfidence] = useState(0); const [filters, setFilters] = useState<HeaderFilters>({});
+  const [expandedId, setExpandedId] = useState<string | null>(null); const [details, setDetails] = useState<Record<string, any>>({});
+  const load = async () => { setBusy(true); setError(''); try { const response = await stockIntelligenceApi.candidates({ min_score: 0, min_confidence: 0, limit: 5000 }); setRecords(response.data); setPublication(response.metadata?.publication || null); } catch (caught: any) { setError(caught.message); } finally { setBusy(false); } };
+  useEffect(() => { load(); }, []);
+  const options = useMemo(() => ({ symbol: unique(records.map(record => record.symbol)), category: unique(records.map(record => record.primary_category)), direction: unique(records.map(record => record.direction)), structure: unique(records.map(record => record.structure)), participation: unique(records.map(record => record.participation_state)), breakout: unique(records.map(record => record.breakout_state)) }), [records]);
+  const visible = useMemo(() => records.filter(record => {
+    if (search && !record.symbol.toUpperCase().includes(search.trim().toUpperCase())) return false;
+    if (record.score < minScore || record.confidence < minConfidence) return false;
+    const pairs: Record<string, string> = { symbol: record.symbol, category: record.primary_category, direction: record.direction, structure: record.structure, participation: record.participation_state, breakout: record.breakout_state };
+    if (Object.entries(filters).some(([key, value]) => value && pairs[key] !== value)) return false;
+    if (filters.score && record.score < Number(filters.score)) return false; if (filters.confidence && record.confidence < Number(filters.confidence)) return false; if (filters.alignment && record.alignment_score < Number(filters.alignment)) return false; if (filters.rr && record.structural_reward_risk < Number(filters.rr)) return false;
+    return true;
+  }), [records, search, minScore, minConfidence, filters]);
+  const setFilter = (key: string, value: string) => setFilters(current => ({ ...current, [key]: value }));
+  const toggle = async (record: StockIntelligenceCandidate) => { const next = expandedId === record.candidate_id ? null : record.candidate_id; setExpandedId(next); if (next && !details[next]) { try { const response = await stockIntelligenceApi.candidate(next); setDetails(current => ({ ...current, [next]: response.data })); } catch (caught: any) { setError(caught.message); } } };
+  const headerSelect = (key: string, values: string[], label = 'All') => <select aria-label={`${key} filter`} value={filters[key] || ''} onChange={event => setFilter(key, event.target.value)} onClick={event => event.stopPropagation()}><option value="">{label}</option>{values.map(value => <option key={value} value={value}>{display(value)}</option>)}</select>;
+
+  return <section className="stock-intelligence-page"><div className="page-title"><div><h2>Stock Intelligence Scanner</h2><p>Published equities, ETFs, and indexes with explainable multi-timeframe intelligence and underlying-driven trade management.</p></div><button className="primary" onClick={load} disabled={busy}>{busy ? 'Loading…' : 'Refresh publication'}</button></div>
+    {error && <div className="handoff-message">{error}</div>}
+    <article className="panel stock-publication-info"><h3>Publication details</h3><div className="stock-publication-grid"><div><span>Name</span><b>{publication?.publication_name || 'current_stock_intelligence'}</b></div><div><span>Status</span><b>{display(publication?.status)}</b></div><div><span>Published snapshot</span><b>{publication?.snapshot_timestamp ? new Date(publication.snapshot_timestamp).toLocaleString() : 'Not published'}</b></div><div><span>Scanner run</span><b>{publication?.scanner_run_id || 'Not published'}</b></div><div><span>Published rows</span><b>{records.length}</b></div></div><p><code>run_market_ingestion.py</code> and the split ingestion finalizers publish persisted intelligence into <code>current_stock_intelligence</code>. This page reloads that publication; it does not recompute market data.</p></article>
+    <article className="panel"><div className="scanner-form stock-intelligence-controls"><label>Search<input value={search} onChange={event => setSearch(event.target.value)} placeholder="Symbol"/></label><label>Min score<input type="number" value={minScore} onChange={event => setMinScore(Number(event.target.value))}/></label><label>Min confidence<input type="number" value={minConfidence} onChange={event => setMinConfidence(Number(event.target.value))}/></label><button onClick={() => { setSearch(''); setMinScore(0); setMinConfidence(0); setFilters({}); }}>Clear all filters</button></div></article>
+    <article className="panel stock-intelligence-table"><h3>Published candidates <small>{visible.length} of {records.length}</small></h3><div className="table-wrap"><table><thead><tr><th>Rank</th><th>Symbol</th><th>Category</th><th>Score</th><th>Confidence</th><th>Direction</th><th>Structure</th><th>Alignment</th><th>Participation</th><th>Breakout</th><th>Entry</th><th>Stop</th><th>Targets</th><th>R/R</th></tr><tr className="stock-filter-row"><th></th><th>{headerSelect('symbol', options.symbol)}</th><th>{headerSelect('category', options.category)}</th><th>{headerSelect('score', ['90', '80', '70', '60'], 'Any')}</th><th>{headerSelect('confidence', ['90', '80', '70', '60'], 'Any')}</th><th>{headerSelect('direction', options.direction)}</th><th>{headerSelect('structure', options.structure)}</th><th>{headerSelect('alignment', ['90', '80', '70', '60'], 'Any')}</th><th>{headerSelect('participation', options.participation)}</th><th>{headerSelect('breakout', options.breakout)}</th><th></th><th></th><th></th><th>{headerSelect('rr', ['3', '2', '1.5', '1'], 'Any')}</th></tr></thead><tbody>{visible.map(record => { const expanded = expandedId === record.candidate_id; return <Fragment key={record.candidate_id}><tr className={expanded ? 'selected-row' : ''} onClick={() => toggle(record)}><td>{record.rank ?? '—'}</td><td><b>{record.symbol}</b></td><td>{display(record.primary_category)}</td><td>{fmt(record.score, 1)}</td><td>{fmt(record.confidence, 1)}</td><td>{display(record.direction)}</td><td>{display(record.structure)}</td><td>{fmt(record.alignment_score, 1)}</td><td>{display(record.participation_state)}</td><td>{display(record.breakout_state)}</td><td>{fmt(record.entry_zone_low)}–{fmt(record.entry_zone_high)}</td><td>{fmt(record.recommended_stop)}</td><td>{record.targets.filter(value => value != null).map(value => fmt(value)).join(' / ') || '—'}</td><td>{fmt(record.structural_reward_risk, 2)}</td></tr>{expanded && <tr className="stock-expanded-row"><td colSpan={14}><CandidateWorkspace record={record} detail={details[record.candidate_id] || {}}/></td></tr>}</Fragment>; })}</tbody></table></div></article>
+  </section>;
+}
+
+
+====================================================================================================
+FILE: src/trading_ai/stock_intelligence/breakout.py
+====================================================================================================
+from .profile import *
+from .multi_timeframe import _rows,_atr
+class BreakoutIntelligenceEngine:
+    def analyze(self,data,supports=None,resistances=None):
+        r=_rows(data)
+        if len(r)<25:return BreakoutProfile(evidence={'warning':'insufficient history'})
+        close=float(r[-1]['close']);prev=float(r[-2]['close']);atr=max(_atr(r),1e-9);vol=float(r[-1].get('volume',0));avg=sum(float(x.get('volume',0)) for x in r[-21:-1])/20;rv=vol/avg if avg else 0
+        res=max([x.price for x in (resistances or []) if x.price<=close*1.05] or [max(float(x['high']) for x in r[-21:-1])]); sup=min([x.price for x in (supports or []) if x.price>=close*.95] or [min(float(x['low']) for x in r[-21:-1])])
+        up=(close-res)/atr; dn=(sup-close)/atr; state=BreakoutState.NONE.value; conf=0
+        if close>res+atr*.1:state=BreakoutState.BREAKOUT_CONFIRMED.value;conf=min(100,55+up*20+(rv-1)*20)
+        elif close<sup-atr*.1:state=BreakoutState.BREAKDOWN_CONFIRMED.value;conf=min(100,55+dn*20+(rv-1)*20)
+        elif abs(close-res)<=atr*.25:state=BreakoutState.BREAKOUT_SETUP.value;conf=55
+        elif abs(close-sup)<=atr*.25:state=BreakoutState.BREAKDOWN_SETUP.value;conf=55
+        if prev>res and close<res-atr*.1:state=BreakoutState.FAILED_BREAKOUT.value;conf=75
+        if prev<sup and close>sup+atr*.1:state=BreakoutState.FAILED_BREAKDOWN.value;conf=75
+        follow=max(0,min(95,conf*.65+min(25,rv*10))); fail=max(5,min(95,100-follow+(20 if rv<.8 else 0)))
+        return BreakoutProfile(state,round(conf,2),round(follow,2),round(fail,2),round(max(0,75-abs(close-(res if 'BREAKOUT' in state else sup))/atr*35),2),{'resistance':res,'support':sup,'relative_volume':rv,'atr':atr})
+
+
+====================================================================================================
+FILE: src/trading_ai/stock_intelligence/structure_zones.py
+====================================================================================================
+from __future__ import annotations
+
+from dataclasses import asdict, replace
+from math import log1p
+from typing import Iterable
+
+from .profile import InstitutionalStructureZone, PriceLevel, PriceZone, StockIntelligenceProfile
+
+_TIMEFRAME_PRIORITY = {
+    "1mo": 70, "1w": 60, "1d": 50, "4h": 40, "2h": 35,
+    "1h": 30, "30m": 20, "15m": 15, "5m": 10, "1m": 5,
+}
+_DEALER_COMPONENTS = {"PUT_WALL", "CALL_WALL", "GAMMA_FLIP"}
+
+
+def _unique(values: Iterable[str]) -> list[str]:
+    cleaned = {str(value).strip() for value in values if str(value).strip()}
+    return sorted(cleaned, key=lambda value: (-_TIMEFRAME_PRIORITY.get(value, 0), value))
+
+
+def _clamp(value: float, minimum: float = 0.0, maximum: float = 100.0) -> float:
+    return max(minimum, min(maximum, value))
+
+
+class InstitutionalStructureZoneEngine:
+    """Build prioritized institutional structure zones from all structural evidence.
+
+    Raw support/resistance and supply/demand objects remain available for auditability.
+    This engine clusters them with dealer walls and gamma flip, then adds an actionable
+    hierarchy, price-relative state, distance, and relevance so every downstream
+    consumer uses one authoritative structure model.
+    """
+
+    def build(self, profile: StockIntelligenceProfile) -> list[InstitutionalStructureZone]:
+        close = self._close(profile)
+        atr = self._atr(profile)
+        primitives: list[dict] = []
+
+        for level in profile.support_levels:
+            primitives.append(self._from_level(level, "SUPPORT", atr))
+        for level in profile.resistance_levels:
+            primitives.append(self._from_level(level, "RESISTANCE", atr))
+        for zone in profile.demand_zones:
+            primitives.append(self._from_price_zone(zone, "SUPPORT"))
+        for zone in profile.supply_zones:
+            primitives.append(self._from_price_zone(zone, "RESISTANCE"))
+
+        context_evidence = dict(getattr(profile.context, "evidence", {}) or {})
+        dealer_levels = dict(context_evidence.get("dealer_levels") or {})
+        dealer_context = {
+            "positioning": str(getattr(profile.context, "dealer_positioning", "UNKNOWN") or "UNKNOWN"),
+            "gamma_regime": str(getattr(profile.context, "gamma_regime", "UNKNOWN") or "UNKNOWN"),
+            "confidence_score": float(dealer_levels.get("confidence_score") or 50.0),
+        }
+        put_wall = dealer_levels.get("primary_put_wall")
+        call_wall = dealer_levels.get("primary_call_wall")
+        gamma_flip = dealer_levels.get("gamma_flip")
+        dealer_confidence = dealer_context["confidence_score"]
+
+        if self._positive(put_wall):
+            primitives.append(self._dealer_primitive("SUPPORT", float(put_wall), "PUT_WALL", atr, dealer_confidence, dealer_context))
+        if self._positive(call_wall):
+            primitives.append(self._dealer_primitive("RESISTANCE", float(call_wall), "CALL_WALL", atr, dealer_confidence, dealer_context))
+        if self._positive(gamma_flip):
+            side = "SUPPORT" if float(gamma_flip) <= close else "RESISTANCE"
+            primitives.append(self._dealer_primitive(side, float(gamma_flip), "GAMMA_FLIP", atr, dealer_confidence * 0.85, dealer_context))
+
+        zones: list[InstitutionalStructureZone] = []
+        for side in ("SUPPORT", "RESISTANCE"):
+            items = sorted((item for item in primitives if item["zone_type"] == side), key=lambda item: item["center"])
+            clusters: list[list[dict]] = []
+            for item in items:
+                match = next((cluster for cluster in clusters if self._overlaps_cluster(item, cluster, close, atr)), None)
+                if match is None:
+                    clusters.append([item])
+                else:
+                    match.append(item)
+            built = [self._build_cluster(side, cluster, close, atr) for cluster in clusters]
+            built.sort(key=lambda zone: (abs(zone.representative_price - close), -zone.relevance_score, -zone.strength))
+            zones.extend(built[:5])
+
+        zones = self._apply_hierarchy(zones, close)
+        zones.sort(key=lambda zone: (
+            self._hierarchy_rank(zone.hierarchy),
+            0 if zone.zone_type == "SUPPORT" else 1,
+            abs(zone.distance_pct),
+            -zone.relevance_score,
+        ))
+        return zones
+
+    @staticmethod
+    def _close(profile: StockIntelligenceProfile) -> float:
+        state = profile.timeframe_states.get(profile.primary_timeframe)
+        if state is None and profile.timeframe_states:
+            state = next(iter(profile.timeframe_states.values()))
+        return float(getattr(state, "close", 0.0) or 0.0)
+
+    @staticmethod
+    def _atr(profile: StockIntelligenceProfile) -> float:
+        state = profile.timeframe_states.get(profile.primary_timeframe)
+        if state is None and profile.timeframe_states:
+            state = next(iter(profile.timeframe_states.values()))
+        atr = float(getattr(state, "atr", 0.0) or 0.0)
+        close = float(getattr(state, "close", 0.0) or 0.0)
+        return max(atr, close * 0.005, 0.01)
+
+    @staticmethod
+    def _positive(value) -> bool:
+        try:
+            return float(value) > 0
+        except (TypeError, ValueError):
+            return False
+
+    @staticmethod
+    def _from_level(level: PriceLevel, side: str, atr: float) -> dict:
+        half_width = max(atr * 0.10, level.price * 0.0006)
+        return {
+            "zone_type": side,
+            "lower": max(0.01, level.price - half_width),
+            "upper": level.price + half_width,
+            "center": level.price,
+            "strength": float(level.strength),
+            "confluence": float(level.confluence_score),
+            "touch_count": int(level.touch_count),
+            "holding_probability": float(level.holding_probability),
+            "break_probability": float(level.break_probability),
+            "timeframes": list(level.contributing_timeframes or [level.timeframe]),
+            "component": "PRICE_LEVEL",
+            "freshness": "STRUCTURAL",
+            "payload": asdict(level),
+            "dealer_context": {},
+        }
+
+    @staticmethod
+    def _from_price_zone(zone: PriceZone, side: str) -> dict:
+        center = (float(zone.lower_bound) + float(zone.upper_bound)) / 2.0
+        freshness_bonus = {"FRESH": 12, "TESTED": 5, "STRUCTURAL": 2, "STALE": -12}.get(str(zone.freshness).upper(), 0)
+        return {
+            "zone_type": side,
+            "lower": float(zone.lower_bound),
+            "upper": float(zone.upper_bound),
+            "center": center,
+            "strength": _clamp(float(zone.strength) + freshness_bonus),
+            "confluence": float(zone.strength),
+            "touch_count": int(zone.test_count),
+            "holding_probability": _clamp(45 + float(zone.strength) * 0.45, 5, 95) / 100.0,
+            "break_probability": _clamp(55 - float(zone.strength) * 0.45, 5, 95) / 100.0,
+            "timeframes": list(zone.contributing_timeframes or [zone.timeframe]),
+            "component": "DEMAND_ZONE" if side == "SUPPORT" else "SUPPLY_ZONE",
+            "freshness": str(zone.freshness),
+            "payload": asdict(zone),
+            "dealer_context": {},
+        }
+
+    @staticmethod
+    def _dealer_primitive(side: str, price: float, component: str, atr: float, confidence: float, context: dict) -> dict:
+        half_width = max(atr * 0.12, price * 0.0008)
+        strength = _clamp(45 + confidence * 0.45)
+        dealer_context = {
+            **context,
+            "wall_type": component,
+            "wall_price": price,
+            "confidence_score": round(confidence, 2),
+        }
+        return {
+            "zone_type": side,
+            "lower": max(0.01, price - half_width),
+            "upper": price + half_width,
+            "center": price,
+            "strength": strength,
+            "confluence": 35.0,
+            "touch_count": 0,
+            "holding_probability": _clamp(45 + confidence * 0.35, 5, 95) / 100.0,
+            "break_probability": _clamp(55 - confidence * 0.35, 5, 95) / 100.0,
+            "timeframes": ["dealer"],
+            "component": component,
+            "freshness": "CURRENT",
+            "payload": {"price": price, "confidence": confidence},
+            "dealer_context": dealer_context,
+        }
+
+    @staticmethod
+    def _overlaps_cluster(item: dict, cluster: list[dict], close: float, atr: float) -> bool:
+        lower = min(value["lower"] for value in cluster)
+        upper = max(value["upper"] for value in cluster)
+        tolerance = max(atr * 0.45, close * 0.004)
+        return item["lower"] <= upper + tolerance and item["upper"] >= lower - tolerance
+
+    @staticmethod
+    def _build_cluster(side: str, cluster: list[dict], close: float, atr: float) -> InstitutionalStructureZone:
+        weights = [max(1.0, item["strength"]) for item in cluster]
+        total_weight = sum(weights)
+        representative = sum(item["center"] * weight for item, weight in zip(cluster, weights)) / total_weight
+        original_lower = min(item["lower"] for item in cluster)
+        original_upper = max(item["upper"] for item in cluster)
+        lower, upper = original_lower, original_upper
+        max_width = max(atr * 0.80, close * 0.008)
+        if upper - lower > max_width:
+            lower = representative - max_width / 2.0
+            upper = representative + max_width / 2.0
+
+        components = sorted({item["component"] for item in cluster})
+        timeframes = _unique(tf for item in cluster for tf in item["timeframes"] if tf != "dealer")
+        primary = timeframes[0] if timeframes else "dealer"
+        touch_count = sum(item["touch_count"] for item in cluster)
+        freshness_values = {str(item["freshness"]).upper() for item in cluster}
+        freshness = "FRESH" if {"FRESH", "CURRENT"} & freshness_values else "TESTED" if "TESTED" in freshness_values else "STRUCTURAL"
+
+        avg_strength = sum(item["strength"] for item in cluster) / len(cluster)
+        freshness_score = {"FRESH": 10.0, "TESTED": 3.0, "STRUCTURAL": 0.0}.get(freshness, -8.0)
+        strength = _clamp(avg_strength * 0.72 + min(16.0, log1p(touch_count) * 4.0) + freshness_score + min(10.0, (len(cluster) - 1) * 2.5))
+
+        component_diversity = len(components)
+        timeframe_diversity = len(timeframes)
+        dealer_bonus = 10.0 if _DEALER_COMPONENTS.intersection(components) else 0.0
+        confluence = _clamp(18.0 + component_diversity * 14.0 + timeframe_diversity * 11.0 + dealer_bonus + min(12.0, len(cluster) * 2.0))
+
+        source_holding = sum(item["holding_probability"] for item in cluster) / len(cluster) * 100.0
+        holding = _clamp(source_holding * 0.55 + strength * 0.25 + confluence * 0.20, 5, 95)
+        distance_pct = InstitutionalStructureZoneEngine._distance_pct(side, lower, upper, close)
+        distance_score = _clamp(100.0 - abs(distance_pct) * 9.0)
+        relevance = _clamp(strength * 0.30 + confluence * 0.30 + holding * 0.20 + distance_score * 0.20)
+        status = InstitutionalStructureZoneEngine._status(side, lower, upper, close)
+        dealer_context = next((dict(item["dealer_context"]) for item in cluster if item.get("dealer_context")), {})
+
+        evidence = {
+            "component_count": len(cluster),
+            "components": components,
+            "raw_lower_bound": original_lower,
+            "raw_upper_bound": original_upper,
+            "distance_from_close_pct": distance_pct,
+            "members": [item["payload"] for item in cluster],
+            "strength_definition": "reaction quality, touches, recency, and source strength",
+            "confluence_definition": "independent component, timeframe, and dealer-source diversity",
+        }
+        return InstitutionalStructureZone(
+            zone_type=side,
+            lower_bound=round(max(0.01, lower), 4),
+            upper_bound=round(upper, 4),
+            representative_price=round(representative, 4),
+            strength=round(strength, 2),
+            confluence_score=round(confluence, 2),
+            holding_probability=round(holding / 100.0, 4),
+            break_probability=round(1.0 - holding / 100.0, 4),
+            primary_timeframe=primary,
+            contributing_timeframes=timeframes,
+            components=components,
+            touch_count=touch_count,
+            freshness=freshness,
+            status=status,
+            distance_pct=round(distance_pct, 4),
+            relevance_score=round(relevance, 2),
+            dealer_context=dealer_context,
+            evidence=evidence,
+        )
+
+    @staticmethod
+    def _distance_pct(side: str, lower: float, upper: float, close: float) -> float:
+        if not close or lower <= close <= upper:
+            return 0.0
+        boundary = upper if side == "SUPPORT" else lower
+        return (boundary - close) / close * 100.0
+
+    @staticmethod
+    def _status(side: str, lower: float, upper: float, close: float) -> str:
+        if lower <= close <= upper:
+            return "ACTIVE"
+        if side == "SUPPORT":
+            return "BELOW_PRICE" if close > upper else "BROKEN"
+        return "OVERHEAD" if close < lower else "BROKEN"
+
+    @staticmethod
+    def _hierarchy_rank(value: str) -> int:
+        return {
+            "PRIMARY_STRUCTURE": 0,
+            "SECONDARY_STRUCTURE": 1,
+            "MAJOR_STRUCTURE": 2,
+            "DEALER_STRUCTURE": 3,
+            "HISTORICAL_STRUCTURE": 4,
+        }.get(value, 9)
+
+    @staticmethod
+    def _apply_hierarchy(zones: list[InstitutionalStructureZone], close: float) -> list[InstitutionalStructureZone]:
+        result: list[InstitutionalStructureZone] = []
+        for side in ("SUPPORT", "RESISTANCE"):
+            side_zones = [zone for zone in zones if zone.zone_type == side]
+            dealer = [zone for zone in side_zones if _DEALER_COMPONENTS.intersection(zone.components)]
+            nondealer = [zone for zone in side_zones if zone not in dealer]
+            actionable = sorted(
+                (zone for zone in nondealer if zone.status in {"ACTIVE", "BELOW_PRICE", "OVERHEAD"}),
+                key=lambda zone: (abs(zone.distance_pct), -zone.relevance_score),
+            )
+            primary = actionable[0] if actionable else None
+            secondary = actionable[1] if len(actionable) > 1 else None
+            for zone in side_zones:
+                hierarchy = "HISTORICAL_STRUCTURE"
+                if zone is primary:
+                    hierarchy = "PRIMARY_STRUCTURE"
+                elif zone is secondary:
+                    hierarchy = "SECONDARY_STRUCTURE"
+                elif "1mo" in zone.contributing_timeframes or zone.primary_timeframe == "1mo":
+                    hierarchy = "MAJOR_STRUCTURE"
+                elif zone in dealer:
+                    hierarchy = "DEALER_STRUCTURE"
+                result.append(replace(zone, hierarchy=hierarchy))
+        return result
+
+
+====================================================================================================
+FILE: src/trading_ai/stock_intelligence/participation.py
+====================================================================================================
+from .profile import *
+from .multi_timeframe import _rows
+class ParticipationEngine:
+    def analyze(self,data):
+        r=_rows(data)
+        if len(r)<20:return ParticipationProfile(evidence={'warning':'insufficient history'})
+        obv=0.; adl=0.; up=down=0.; vols=[]; mfs=[]
+        closes=[]
+        for i,x in enumerate(r):
+            c=float(x['close']);v=float(x.get('volume',0));h=float(x['high']);l=float(x['low']);closes.append(c);vols.append(v)
+            if i: obv += v if c>closes[-2] else -v if c<closes[-2] else 0; up += v if c>closes[-2] else 0; down += v if c<closes[-2] else 0
+            mf=((2*c-h-l)/(h-l) if h!=l else 0)*v; adl+=mf;mfs.append(mf)
+        avg=sum(vols[-20:])/20; rv=vols[-1]/avg if avg else 0; cmf=sum(mfs[-20:])/max(1e-9,sum(vols[-20:])); price_ret=closes[-1]/closes[-20]-1
+        obv_norm=obv/max(1,sum(vols)); score=max(0,min(100,50+obv_norm*80+cmf*80+price_ret*100+(rv-1)*12));
+        if rv>2 and price_ret<-.08:state=ParticipationState.CAPITULATION.value
+        elif rv>1.8 and price_ret>.06 and down>up:state=ParticipationState.SHORT_COVERING.value
+        elif score>=68:state=ParticipationState.ACCUMULATION.value
+        elif score<=32:state=ParticipationState.DISTRIBUTION.value
+        elif score>=58:state=ParticipationState.RE_ACCUMULATION.value
+        elif score<=42:state=ParticipationState.RE_DISTRIBUTION.value
+        else:state=ParticipationState.NEUTRAL.value
+        deterioration=max(0,min(100,50-score if score<50 else max(0,(1-rv)*30)))
+        return ParticipationProfile(state,round(score,2),round(min(100,abs(score-50)*2),2),round(deterioration,2),{'obv_normalized':obv_norm,'adl':adl,'cmf':cmf,'relative_volume':rv,'up_down_volume_ratio':up/max(1,down),'price_return_20':price_ret})
+
+
+====================================================================================================
+FILE: src/trading_ai/stock_intelligence/multi_timeframe.py
+====================================================================================================
+from __future__ import annotations
+from math import sqrt
+from .profile import *
+
+def _rows(data):
+    if hasattr(data,'to_dict'): return data.to_dict('records')
+    return list(data or [])
+def _ema(vals,n):
+    if not vals:return 0.
+    a=2/(n+1); x=float(vals[0])
+    for v in vals[1:]:x=a*float(v)+(1-a)*x
+    return x
+def _atr(rows,n=14):
+    tr=[]
+    for i,r in enumerate(rows):
+        pc=float(rows[i-1]['close']) if i else float(r['close']); tr.append(max(float(r['high'])-float(r['low']),abs(float(r['high'])-pc),abs(float(r['low'])-pc)))
+    return sum(tr[-n:])/max(1,len(tr[-n:]))
+class TimeframeStateEngine:
+    def analyze(self,timeframe,data):
+        rows=_rows(data)
+        if len(rows)<20: raise ValueError(f'insufficient history for {timeframe}')
+        c=[float(r['close']) for r in rows]; close=c[-1]; e8=_ema(c[-40:],8); e21=_ema(c[-60:],21); e50=_ema(c[-100:],50)
+        ret=(close/c[-11]-1)*100 if len(c)>10 else 0; slope=(e8/e21-1)*100 if e21 else 0
+        changes=[abs(c[i]-c[i-1]) for i in range(1,len(c))]; er=abs(c[-1]-c[max(0,len(c)-20)])/max(1e-9,sum(changes[-19:]))
+        score=max(-100,min(100,slope*18+ret*3+(25 if e8>e21>e50 else -25 if e8<e21<e50 else 0)))
+        if score>=55:d=Direction.STRONG_BULLISH.value
+        elif score>=20:d=Direction.BULLISH.value
+        elif score>=5:d=Direction.WEAK_BULLISH.value
+        elif score<=-55:d=Direction.STRONG_BEARISH.value
+        elif score<=-20:d=Direction.BEARISH.value
+        elif score<=-5:d=Direction.WEAK_BEARISH.value
+        else:d=Direction.NEUTRAL.value
+        atr=_atr(rows); ranges=[float(r['high'])-float(r['low']) for r in rows]
+        recent=sum(ranges[-10:])/10; prior=sum(ranges[-30:-10])/20 if len(ranges)>=30 else recent
+        if recent<prior*.7:s=Structure.COMPRESSION.value
+        elif recent>prior*1.35:s=Structure.EXPANSION.value
+        elif abs(score)<12:s=Structure.SIDEWAYS.value
+        elif er>.55:s=Structure.EARLY_TREND.value
+        elif er>.3:s=Structure.TRENDING.value
+        else:s=Structure.MATURE_TREND.value
+        rets=[c[i]/c[i-1]-1 for i in range(1,len(c)) if c[i-1]]; rv=(sum(x*x for x in rets[-20:])/max(1,len(rets[-20:])))**.5*sqrt(252)*100
+        return TimeframeState(timeframe,d,s,round(abs(score),2),round(max(0,min(100,50+ret*5)),2),round(min(100,55+len(rows)/4),2),close,round(atr,4),round(rv,2),round(er,4),{'ema8':e8,'ema21':e21,'ema50':e50,'return10_pct':ret})
+class MultiTimeframeTrendStructureService:
+    weights={'5m':.05,'15m':.1,'30m':.1,'1h':.2,'1d':.35,'1w':.2}
+    signed={'STRONG_BULLISH':1,'BULLISH':.7,'WEAK_BULLISH':.3,'NEUTRAL':0,'WEAK_BEARISH':-.3,'BEARISH':-.7,'STRONG_BEARISH':-1}
+    def __init__(self,engine=None):self.engine=engine or TimeframeStateEngine()
+    def analyze(self,data_by_timeframe):
+        states={}; warnings=[]
+        for tf,data in data_by_timeframe.items():
+            try:states[tf]=self.engine.analyze(tf,data)
+            except ValueError as e:warnings.append(str(e))
+        if not states: raise ValueError('no usable timeframe history')
+        total=sum(self.weights.get(k,.1) for k in states); signed=sum(self.weights.get(k,.1)*self.signed[v.direction] for k,v in states.items())/total
+        direction=Direction.STRONG_BULLISH.value if signed>.72 else Direction.BULLISH.value if signed>.25 else Direction.STRONG_BEARISH.value if signed<-.72 else Direction.BEARISH.value if signed<-.25 else Direction.NEUTRAL.value
+        primary='1d' if '1d' in states else max(states,key=lambda k:self.weights.get(k,0))
+        return {'states':states,'direction':direction,'structure':states[primary].structure,'alignment_score':round(abs(signed)*100,2),'confidence':round(sum(x.confidence for x in states.values())/len(states),2),'primary_timeframe':primary,'warnings':warnings,'hash':stable_hash({k:v.__dict__ for k,v in states.items()})}
+
+
+====================================================================================================
+FILE: src/trading_ai/stock_intelligence/levels.py
+====================================================================================================
+from __future__ import annotations
+
+from .profile import *
+from .multi_timeframe import _rows, _atr
+
+_TIMEFRAME_PRIORITY = {
+    "1mo": 70, "1w": 60, "1d": 50, "4h": 40, "2h": 35,
+    "1h": 30, "30m": 20, "15m": 15, "5m": 10, "1m": 5,
+}
+
+def _unique_timeframes(values):
+    unique = {str(value).strip() for value in values if str(value).strip()}
+    return sorted(unique, key=lambda value: (-_TIMEFRAME_PRIORITY.get(value, 0), value))
+
+def _primary_timeframe(values, fallback="1d"):
+    ordered = _unique_timeframes(values)
+    return ordered[0] if ordered else fallback
+
+def _level_timeframes(level):
+    values = list(getattr(level, "contributing_timeframes", []) or [])
+    values.extend(str(getattr(level, "timeframe", "")).split(","))
+    return _unique_timeframes(values)
+
+class SupportResistanceEngine:
+    def analyze(self, timeframe, data):
+        rows = _rows(data); n = len(rows)
+        if n < 20: return [], []
+        atr = max(_atr(rows), 1e-9); candidates = []
+        for i in range(2, n - 2):
+            h = float(rows[i]["high"]); l = float(rows[i]["low"])
+            if h >= max(float(x["high"]) for x in rows[i-2:i+3]): candidates.append(("RESISTANCE", h, i))
+            if l <= min(float(x["low"]) for x in rows[i-2:i+3]): candidates.append(("SUPPORT", l, i))
+        for w in (20, 50, 100):
+            if n >= w:
+                candidates += [("RESISTANCE", max(float(x["high"]) for x in rows[-w:]), n-1), ("SUPPORT", min(float(x["low"]) for x in rows[-w:]), n-1)]
+        out = []
+        for typ, price, idx in candidates:
+            found = next((x for x in out if x.level_type == typ and abs(x.price-price) <= atr*.35), None)
+            if found:
+                found.price = (found.price*found.touch_count + price)/(found.touch_count+1)
+                found.touch_count += 1; found.strength = min(100, found.strength+8); found.confluence_score = min(100, found.confluence_score+10)
+            else:
+                age = n-1-idx; strength = max(25, 80-age*.8)
+                out.append(PriceLevel(typ, round(price,4), timeframe, round(strength,2), round(strength*.75,2), 1, min(.9,.45+strength/220), max(.1,.55-strength/220), {"age_bars":age}, [timeframe]))
+        out.sort(key=lambda x:(-x.strength,x.price))
+        return [x for x in out if x.level_type=="SUPPORT"][:12], [x for x in out if x.level_type=="RESISTANCE"][:12]
+
+class SupplyDemandEngine:
+    def analyze(self, timeframe, data, supports=None, resistances=None):
+        rows = _rows(data); zones = []
+        if len(rows) < 12: return zones
+        atr = max(_atr(rows), 1e-9)
+        for i in range(3, len(rows)-3):
+            base = rows[i-2:i+1]; width = max(float(x["high"]) for x in base)-min(float(x["low"]) for x in base)
+            move = float(rows[i+3]["close"])-float(rows[i]["close"])
+            if width <= atr*1.2 and abs(move) >= atr*1.3:
+                typ = "DEMAND" if move > 0 else "SUPPLY"; lo = min(float(x["low"]) for x in base); hi = max(float(x["high"]) for x in base)
+                tests = sum(1 for x in rows[i+4:] if float(x["low"]) <= hi and float(x["high"]) >= lo)
+                zones.append(PriceZone(typ, round(lo,4), round(hi,4), timeframe, round(min(100,55+abs(move)/atr*12),2), "FRESH" if tests==0 else "TESTED" if tests<3 else "STALE", tests, {"displacement_atr":abs(move)/atr}, [timeframe]))
+        if not zones:
+            for x in (supports or [])[:3]: zones.append(PriceZone("DEMAND",x.price-atr*.2,x.price+atr*.2,timeframe,x.strength*.8,"STRUCTURAL",x.touch_count,{},[timeframe]))
+            for x in (resistances or [])[:3]: zones.append(PriceZone("SUPPLY",x.price-atr*.2,x.price+atr*.2,timeframe,x.strength*.8,"STRUCTURAL",x.touch_count,{},[timeframe]))
+        return sorted(zones,key=lambda z:-z.strength)[:12]
+
+class LevelIntelligenceService:
+    def __init__(self): self.sr=SupportResistanceEngine(); self.sd=SupplyDemandEngine()
+    def analyze(self, data_by_timeframe):
+        sup=[]; res=[]; dem=[]; supply=[]
+        for tf,data in data_by_timeframe.items():
+            s,r=self.sr.analyze(tf,data); z=self.sd.analyze(tf,data,s,r); sup+=s; res+=r; dem += [x for x in z if x.zone_type=="DEMAND"]; supply += [x for x in z if x.zone_type=="SUPPLY"]
+        def merge(levels):
+            levels=sorted(levels,key=lambda x:x.price); out=[]
+            for x in levels:
+                x.contributing_timeframes = _level_timeframes(x)
+                x.timeframe = _primary_timeframe(x.contributing_timeframes, x.timeframe)
+                y=next((z for z in out if abs(z.price-x.price)/max(1,x.price)<.003),None)
+                if y:
+                    y.strength=min(100,(y.strength+x.strength)/2+10); y.confluence_score=min(100,y.confluence_score+x.confluence_score/2); y.touch_count+=x.touch_count
+                    y.contributing_timeframes = _unique_timeframes(_level_timeframes(y)+_level_timeframes(x))
+                    y.timeframe = _primary_timeframe(y.contributing_timeframes, y.timeframe)
+                else: out.append(x)
+            return sorted(out,key=lambda x:-x.strength)
+        return {"support_levels":merge(sup),"resistance_levels":merge(res),"demand_zones":sorted(dem,key=lambda x:-x.strength),"supply_zones":sorted(supply,key=lambda x:-x.strength)}
+
+
+====================================================================================================
+FILE: src/trading_ai/stock_intelligence/publication_service.py
+====================================================================================================
+from __future__ import annotations
+
+from collections import defaultdict
+from dataclasses import dataclass
+from datetime import date, datetime, timezone
+from typing import Iterable
+
+from sqlalchemy import select, text
+
+from trading_ai.market.models import PriceHistory
+
+from .context_loader import PersistedStockContextLoader
+from .orchestration import StockScannerOrchestrator
+
+
+@dataclass(frozen=True)
+class StockPublicationRequest:
+    symbols: tuple[str, ...]
+    publication_name: str = "current_stock_intelligence"
+    minimum_score: float = 0.0
+    top: int | None = None
+    lookback_days: int = 750
+    snapshot_timestamp: str | None = None
+    ingestion_run_id: str | None = None
+    market_publication_name: str = "current_market_state"
+
+
+class StockIntelligencePublicationService:
+    """Publish governed Stock Intelligence from persisted Polygon-backed state.
+
+    The service is shared by the standalone scanner command and the authoritative
+    market-ingestion workflow. It never downloads data itself.
+    """
+
+    def __init__(self, session):
+        self.session = session
+
+    @staticmethod
+    def normalize_symbols(values: Iterable[str]) -> tuple[str, ...]:
+        result: list[str] = []
+        seen: set[str] = set()
+        for value in values:
+            symbol = str(value or "").strip().upper()
+            if not symbol or symbol in seen:
+                continue
+            seen.add(symbol)
+            result.append(symbol)
+        if not result:
+            raise ValueError("At least one symbol is required for Stock Intelligence publication")
+        return tuple(result)
+
+    @staticmethod
+    def _row(record: PriceHistory) -> dict:
+        return {
+            "date": record.date.isoformat(),
+            "open": float(record.open or 0),
+            "high": float(record.high or 0),
+            "low": float(record.low or 0),
+            "close": float(record.close or 0),
+            "volume": float(record.volume or 0),
+        }
+
+    @staticmethod
+    def _aggregate(rows: list[dict], period: str) -> list[dict]:
+        buckets: dict[tuple[int, int], list[dict]] = defaultdict(list)
+        for item in rows:
+            dt = date.fromisoformat(str(item["date"])[:10])
+            if period == "week":
+                iso = dt.isocalendar()
+                key = (iso.year, iso.week)
+            elif period == "month":
+                key = (dt.year, dt.month)
+            else:
+                raise ValueError(f"Unsupported aggregation period: {period}")
+            buckets[key].append(item)
+        values: list[dict] = []
+        for key in sorted(buckets):
+            group = sorted(buckets[key], key=lambda value: value["date"])
+            values.append(
+                {
+                    "date": group[-1]["date"],
+                    "open": group[0]["open"],
+                    "high": max(value["high"] for value in group),
+                    "low": min(value["low"] for value in group),
+                    "close": group[-1]["close"],
+                    "volume": sum(value["volume"] for value in group),
+                }
+            )
+        return values
+
+    def _market_lineage(self, publication_name: str) -> dict:
+        row = self.session.execute(
+            text(
+                """
+                SELECT publication_name, run_id, published_at, as_of_date,
+                       market_intelligence_timestamp, option_snapshot_timestamp,
+                       option_snapshot_id, readiness_status, scanner_ready
+                  FROM market_ingestion_publication
+                 WHERE publication_name = :name
+                 LIMIT 1
+                """
+            ),
+            {"name": publication_name},
+        ).mappings().one_or_none()
+        return dict(row) if row else {}
+
+    def publish(self, request: StockPublicationRequest) -> dict:
+        symbols = self.normalize_symbols(request.symbols)
+        snapshot = request.snapshot_timestamp or datetime.now(timezone.utc).isoformat()
+        data_by_symbol: dict[str, dict[str, list[dict]]] = {}
+        external_context_by_symbol: dict[str, dict] = {}
+        context_loader = PersistedStockContextLoader(self.session)
+
+        for symbol in symbols:
+            records = list(
+                self.session.scalars(
+                    select(PriceHistory)
+                    .where(PriceHistory.symbol == symbol)
+                    .order_by(PriceHistory.date.desc())
+                    .limit(max(100, int(request.lookback_days)))
+                )
+            )
+            rows = [self._row(record) for record in reversed(records)]
+            if not rows:
+                continue
+            data_by_symbol[symbol] = {
+                "1d": rows,
+                "1w": self._aggregate(rows, "week"),
+                "1mo": self._aggregate(rows, "month"),
+            }
+            external_context_by_symbol[symbol] = context_loader.for_symbol(symbol)
+
+        if not data_by_symbol:
+            raise RuntimeError("No persisted Polygon price_history rows were available for requested symbols")
+
+        lineage = self._market_lineage(request.market_publication_name)
+        result = StockScannerOrchestrator(self.session).run(
+            data_by_symbol,
+            external_context_by_symbol=external_context_by_symbol,
+            publication_name=request.publication_name,
+            minimum_score=request.minimum_score,
+            top=request.top,
+            snapshot_timestamp=snapshot,
+            lineage={
+                "ingestion_run_id": request.ingestion_run_id,
+                "market_publication_name": request.market_publication_name,
+                "market_publication_run_id": lineage.get("run_id"),
+                "market_publication_status": lineage.get("readiness_status"),
+                "market_as_of_date": str(lineage.get("as_of_date") or "") or None,
+                "market_snapshot_timestamp": str(lineage.get("market_intelligence_timestamp") or "") or None,
+                "option_snapshot_id": lineage.get("option_snapshot_id"),
+                "option_snapshot_timestamp": str(lineage.get("option_snapshot_timestamp") or "") or None,
+                "publisher": "run_market_ingestion.py" if request.ingestion_run_id else "run_m61_stock_intelligence_scanner.py",
+            },
+        )
+        result.update(
+            {
+                "symbols_requested": len(symbols),
+                "symbols_analyzed": len(data_by_symbol),
+                "symbols_missing_price_history": len(symbols) - len(data_by_symbol),
+                "timeframes": ["1d", "1w", "1mo"],
+                "source": "POLYGON_PERSISTED",
+                "market_publication_name": request.market_publication_name,
+                "ingestion_run_id": request.ingestion_run_id,
+            }
+        )
+        return result
+
+
+====================================================================================================
+FILE: src/trading_ai/ui_backup_simple/control_center.py
+====================================================================================================
+from __future__ import annotations
+
+from datetime import date, datetime, timedelta
+import json
+import os
+from pathlib import Path
+import socket
+import sys
+from typing import Callable
+
+import pandas as pd
+import streamlit as st
+import streamlit.components.v1 as components
+
+from trading_ai.ui.command_runner import CommandResult, CommandRunner
+from trading_ai.ui.report_browser import discover_reports, read_text_file
+
+
+def repository_root() -> Path:
+    return Path(__file__).resolve().parents[3]
+
+
+REPO_ROOT = repository_root()
+RUNNER = CommandRunner(
+    REPO_ROOT,
+    python_executable=sys.executable,
+)
+
+
+def initialize_state() -> None:
+    st.session_state.setdefault("last_result", None)
+    st.session_state.setdefault("last_output", "")
+    st.session_state.setdefault("confirmation", {})
+
+
+def shell_safe_symbols(value: str) -> str:
+    symbols = []
+    for raw in value.split(","):
+        symbol = raw.strip().upper()
+        if not symbol:
+            continue
+        normalized = symbol.replace("_", ".")
+        allowed = all(
+            character.isalnum() or character in {".", "-"}
+            for character in normalized
+        )
+        if not allowed:
+            raise ValueError(
+                f"Unsupported symbol characters in '{symbol}'"
+            )
+        symbols.append(normalized)
+
+    if not symbols:
+        raise ValueError("At least one symbol is required")
+    return ",".join(dict.fromkeys(symbols))
+
+
+def render_result(result: CommandResult | None) -> None:
+    if result is None:
+        return
+
+    if result.succeeded:
+        st.success(
+            f"{result.name} completed in "
+            f"{result.duration_seconds:.1f}s."
+        )
+    else:
+        st.error(
+            f"{result.name} failed with exit code "
+            f"{result.return_code}."
+        )
+
+    st.code(
+        RUNNER.display_command(result.command),
+        language="bash",
+    )
+    st.text_area(
+        "Command output",
+        result.output,
+        height=420,
+        key=f"result-{result.started_at}",
+    )
+
+
+def run_with_streaming(
+    name: str,
+    command: list[str],
+    *,
+    timeout_seconds: float | None = None,
+) -> None:
+    st.session_state["last_output"] = ""
+    output = st.empty()
+    status = st.status(
+        f"Running {name}…",
+        expanded=True,
+    )
+
+    def update(text: str) -> None:
+        st.session_state["last_output"] = text
+        output.code(text[-30_000:], language="text")
+
+    result = RUNNER.run(
+        name,
+        command,
+        output_callback=update,
+        timeout_seconds=timeout_seconds,
+        environment=os.environ.copy(),
+    )
+    st.session_state["last_result"] = result
+
+    if result.succeeded:
+        status.update(
+            label=f"{name} completed",
+            state="complete",
+            expanded=False,
+        )
+    else:
+        status.update(
+            label=f"{name} failed",
+            state="error",
+            expanded=True,
+        )
+
+    render_result(result)
+
+
+def date_value(value: date) -> str:
+    return value.isoformat()
+
+
+def render_overview() -> None:
+    st.subheader("Local runtime overview")
+
+    columns = st.columns(4)
+    columns[0].metric(
+        "Python",
+        f"{sys.version_info.major}.{sys.version_info.minor}",
+    )
+    columns[1].metric(
+        "Repository",
+        REPO_ROOT.name,
+    )
+    columns[2].metric(
+        "Reports",
+        len(discover_reports(REPO_ROOT)),
+    )
+    columns[3].metric(
+        "PostgreSQL",
+        "Reachable" if port_open("localhost", 5432) else "Unavailable",
+    )
+
+    st.code(str(REPO_ROOT), language="text")
+
+    checks = {
+        ".env": (REPO_ROOT / ".env").exists(),
+        "pyproject.toml": (REPO_ROOT / "pyproject.toml").exists(),
+        "Alembic": (REPO_ROOT / "alembic.ini").exists(),
+        "Trading package": (REPO_ROOT / "src/trading_ai").exists(),
+        "Market cache": (REPO_ROOT / ".cache/market").exists(),
+    }
+    st.dataframe(
+        pd.DataFrame(
+            [
+                {
+                    "Check": name,
+                    "Status": "Ready" if ready else "Missing",
+                }
+                for name, ready in checks.items()
+            ]
+        ),
+        use_container_width=True,
+        hide_index=True,
+    )
+
+    st.markdown("#### Common actions")
+    left, middle, right = st.columns(3)
+
+    if left.button(
+        "Run local doctor",
+        use_container_width=True,
+    ):
+        run_with_streaming(
+            "Local doctor",
+            RUNNER.module_command("local-doctor"),
+            timeout_seconds=120,
+        )
+
+    if middle.button(
+        "Apply migrations",
+        use_container_width=True,
+    ):
+        run_with_streaming(
+            "Alembic upgrade",
+            [
+                sys.executable,
+                "-m",
+                "alembic",
+                "upgrade",
+                "head",
+            ],
+            timeout_seconds=300,
+        )
+
+    if right.button(
+        "Show CLI help",
+        use_container_width=True,
+    ):
+        run_with_streaming(
+            "CLI help",
+            RUNNER.module_command("--help"),
+            timeout_seconds=60,
+        )
+
+
+def port_open(host: str, port: int) -> bool:
+    try:
+        with socket.create_connection(
+            (host, port),
+            timeout=0.5,
+        ):
+            return True
+    except OSError:
+        return False
+
+
+def render_ingestion() -> None:
+    st.subheader("Market-data ingestion")
+    st.caption(
+        "Downloads historical daily data through the existing "
+        "`ingest-market` command."
+    )
+
+    symbols = st.text_input(
+        "Symbols",
+        value="AAPL,MSFT,NVDA",
+        key="ingestion-symbols",
+    )
+    lookback = st.number_input(
+        "Lookback days",
+        min_value=30,
+        max_value=3650,
+        value=365,
+        step=30,
+    )
+
+    first, second, third = st.columns(3)
+    workers = first.number_input(
+        "Workers",
+        min_value=1,
+        max_value=10,
+        value=1,
+    )
+    interval = second.number_input(
+        "Request interval (seconds)",
+        min_value=0.0,
+        max_value=120.0,
+        value=20.0,
+        step=5.0,
+    )
+    retries = third.number_input(
+        "Maximum retries",
+        min_value=0,
+        max_value=20,
+        value=8,
+    )
+
+    first, second = st.columns(2)
+    continue_on_error = first.checkbox(
+        "Continue when a symbol fails",
+        value=True,
+    )
+    force_refresh = second.checkbox(
+        "Force refresh cached data",
+        value=False,
+    )
+
+    if st.button(
+        "Start ingestion",
+        type="primary",
+        use_container_width=True,
+    ):
+        try:
+            normalized = shell_safe_symbols(symbols)
+        except ValueError as exc:
+            st.error(str(exc))
+            return
+
+        command = RUNNER.module_command(
+            "ingest-market",
+            "--symbols",
+            normalized,
+            "--lookback-days",
+            str(int(lookback)),
+            "--max-workers",
+            str(int(workers)),
+            "--request-interval",
+            str(float(interval)),
+            "--max-retries",
+            str(int(retries)),
+            "--initial-backoff",
+            "60",
+            "--max-backoff",
+            "600",
+        )
+        if continue_on_error:
+            command.append("--continue-on-error")
+        if force_refresh:
+            command.append("--force-refresh")
+
+        run_with_streaming(
+            "Market ingestion",
+            command,
+            timeout_seconds=14_400,
+        )
+
+
+def render_features() -> None:
+    st.subheader("Feature generation")
+
+    first, second, third = st.columns(3)
+    symbol = first.text_input(
+        "Symbol",
+        value="AAPL",
+        key="feature-symbol",
+    )
+    period = second.selectbox(
+        "Period",
+        ["1mo", "3mo", "6mo", "1y", "2y", "5y"],
+        index=2,
+    )
+    interval = third.selectbox(
+        "Interval",
+        ["1d", "1h", "30m", "15m"],
+        index=0,
+    )
+
+    save_output = st.checkbox(
+        "Write CSV output",
+        value=True,
+    )
+
+    if st.button(
+        "Build features",
+        type="primary",
+        use_container_width=True,
+    ):
+        normalized = shell_safe_symbols(symbol)
+        if "," in normalized:
+            st.error("Feature generation accepts one symbol.")
+            return
+
+        command = RUNNER.module_command(
+            "build-features",
+            "--symbol",
+            normalized,
+            "--period",
+            period,
+            "--interval",
+            interval,
+        )
+        if save_output:
+            command.extend(
+                [
+                    "--output",
+                    (
+                        "reports/features/"
+                        f"{normalized}_{period}_{interval}.csv"
+                    ),
+                ]
+            )
+
+        run_with_streaming(
+            "Feature generation",
+            command,
+            timeout_seconds=900,
+        )
+
+
+def render_scanner() -> None:
+    st.subheader("Trade scanner")
+
+    universe_mode = st.radio(
+        "Universe",
+        ["Custom symbols", "S&P 500 top 100"],
+        horizontal=True,
+    )
+
+    symbols = st.text_area(
+        "Custom symbols",
+        value=(
+            "AMZN,GOOGL,META,AVGO,TSLA,LLY,JPM,"
+            "BRK.B,SPY,QQQ,IWM,GLD"
+        ),
+        disabled=universe_mode != "Custom symbols",
+    )
+
+    today = date.today()
+    first, second = st.columns(2)
+    start = first.date_input(
+        "History start",
+        value=today - timedelta(days=365),
+    )
+    end = second.date_input(
+        "History end",
+        value=today,
+    )
+
+    first, second, third = st.columns(3)
+    minimum_score = first.slider(
+        "Minimum score",
+        min_value=0.0,
+        max_value=100.0,
+        value=60.0,
+        step=1.0,
+    )
+    top = second.number_input(
+        "Maximum candidates",
+        min_value=1,
+        max_value=100,
+        value=25,
+    )
+    pricing_dte = third.number_input(
+        "Pricing DTE",
+        min_value=1,
+        max_value=365,
+        value=30,
+    )
+
+    allow_network = st.checkbox(
+        "Allow Polygon fallback during scan",
+        value=False,
+        help=(
+            "Keep this disabled when using cache-only scans to avoid "
+            "provider rate limits."
+        ),
+    )
+
+    if st.button(
+        "Run trade scan",
+        type="primary",
+        use_container_width=True,
+    ):
+        command = RUNNER.module_command(
+            "generate-signals",
+            "--start",
+            date_value(start),
+            "--end",
+            date_value(end),
+            "--min-score",
+            str(float(minimum_score)),
+            "--top",
+            str(int(top)),
+            "--pricing-dte",
+            str(int(pricing_dte)),
+        )
+
+        if universe_mode == "Custom symbols":
+            try:
+                normalized = shell_safe_symbols(symbols)
+            except ValueError as exc:
+                st.error(str(exc))
+                return
+            command.extend(["--symbols", normalized])
+        else:
+            command.extend(
+                ["--universe", "sp500-top100"]
+            )
+
+        if allow_network:
+            command.append("--allow-network")
+
+        run_with_streaming(
+            "Trade scan",
+            command,
+            timeout_seconds=7_200,
+        )
+
+
+def render_paper_trading() -> None:
+    st.subheader("Paper trading")
+
+    st.warning(
+        "These controls change the local paper-trading state. "
+        "They do not submit live broker orders."
+    )
+
+    first, second, third = st.columns(3)
+
+    if first.button(
+        "Paper status",
+        use_container_width=True,
+    ):
+        run_with_streaming(
+            "Paper status",
+            RUNNER.module_command("paper", "status"),
+            timeout_seconds=120,
+        )
+
+    if second.button(
+        "Mark positions",
+        use_container_width=True,
+    ):
+        run_with_streaming(
+            "Mark paper positions",
+            RUNNER.module_command("paper", "mark"),
+            timeout_seconds=1_800,
+        )
+
+    if third.button(
+        "Create paper trades",
+        type="primary",
+        use_container_width=True,
+    ):
+        run_with_streaming(
+            "Create paper trades",
+            RUNNER.module_command("paper", "run"),
+            timeout_seconds=1_800,
+        )
+
+    st.divider()
+    confirm = st.checkbox(
+        "I understand reset deletes local paper state",
+        value=False,
+    )
+    if st.button(
+        "Reset paper state",
+        disabled=not confirm,
+        use_container_width=True,
+    ):
+        run_with_streaming(
+            "Reset paper state",
+            RUNNER.module_command("paper", "reset"),
+            timeout_seconds=120,
+        )
+
+
+def render_tests() -> None:
+    st.subheader("Validation and tests")
+
+    choices = {
+        "Local runtime CLI": "scripts/test_local_runtime_cli.py",
+        "Market ingestion contract": "scripts/test_market_ingestion_contract.py",
+        "Indicator engine contract": "scripts/test_indicator_engine_contract.py",
+        "Black-Scholes compatibility": "scripts/test_black_scholes_pricing_compatibility.py",
+        "S&P 500 top-100 universe": "scripts/test_sp500_top100_universe.py",
+        "Cache range validation": "scripts/test_market_cache_range_validation.py",
+        "Target-delta strike selection": "scripts/test_target_delta_strike_selection.py",
+        "Final project closure": "scripts/test_final_project_closure.py",
+    }
+
+    selected = st.multiselect(
+        "Tests",
+        list(choices),
+        default=[
+            name
+            for name, script in choices.items()
+            if (REPO_ROOT / script).exists()
+        ][:4],
+    )
+
+    missing = [
+        name
+        for name in selected
+        if not (REPO_ROOT / choices[name]).exists()
+    ]
+    if missing:
+        st.info(
+            "Unavailable in the current checkout: "
+            + ", ".join(missing)
+        )
+
+    if st.button(
+        "Run selected tests",
+        type="primary",
+        use_container_width=True,
+    ):
+        existing = [
+            (name, choices[name])
+            for name in selected
+            if (REPO_ROOT / choices[name]).exists()
+        ]
+
+        if not existing:
+            st.error("No available tests were selected.")
+            return
+
+        combined = []
+        final_code = 0
+
+        for name, script in existing:
+            result = RUNNER.run(
+                name,
+                RUNNER.script_command(script),
+                timeout_seconds=3_600,
+            )
+            combined.append(
+                f"\n===== {name} =====\n{result.output}"
+            )
+            final_code = max(final_code, result.return_code)
+
+        synthetic = CommandResult(
+            name="Selected regression tests",
+            command=["multiple test scripts"],
+            started_at=datetime.now().isoformat(),
+            finished_at=datetime.now().isoformat(),
+            duration_seconds=0.0,
+            return_code=final_code,
+            output="".join(combined),
+        )
+        render_result(synthetic)
+
+
+def render_reports() -> None:
+    st.subheader("Generated reports")
+
+    reports = discover_reports(REPO_ROOT)
+    if not reports:
+        st.info("No supported files were found under reports/.")
+        return
+
+    frame = pd.DataFrame(
+        [
+            {
+                "Report": item.relative_path,
+                "Type": item.suffix,
+                "Size KB": round(item.size_bytes / 1024, 1),
+                "Modified": datetime.fromtimestamp(
+                    item.modified_timestamp
+                ),
+            }
+            for item in reports
+        ]
+    )
+    st.dataframe(
+        frame,
+        use_container_width=True,
+        hide_index=True,
+    )
+
+    selected_name = st.selectbox(
+        "Preview report",
+        [item.relative_path for item in reports],
+    )
+    selected = next(
+        item
+        for item in reports
+        if item.relative_path == selected_name
+    )
+
+    data = selected.path.read_bytes()
+    st.download_button(
+        "Download selected report",
+        data=data,
+        file_name=selected.path.name,
+        mime="application/octet-stream",
+        use_container_width=True,
+    )
+
+    if selected.suffix == ".html":
+        components.html(
+            read_text_file(selected.path),
+            height=720,
+            scrolling=True,
+        )
+    elif selected.suffix == ".csv":
+        try:
+            st.dataframe(
+                pd.read_csv(selected.path),
+                use_container_width=True,
+            )
+        except Exception:
+            st.code(
+                read_text_file(selected.path),
+                language="text",
+            )
+    elif selected.suffix == ".json":
+        try:
+            st.json(
+                json.loads(read_text_file(selected.path))
+            )
+        except json.JSONDecodeError:
+            st.code(
+                read_text_file(selected.path),
+                language="json",
+            )
+    else:
+        st.code(
+            read_text_file(selected.path),
+            language="text",
+        )
+
+
+def render_history() -> None:
+    st.subheader("UI command history")
+    history = RUNNER.read_history(limit=100)
+
+    if not history:
+        st.info("No UI commands have been run yet.")
+        return
+
+    frame = pd.DataFrame(
+        [
+            {
+                "Started": record.get("started_at"),
+                "Action": record.get("name"),
+                "Succeeded": record.get("succeeded"),
+                "Exit": record.get("return_code"),
+                "Duration": record.get("duration_seconds"),
+                "Command": RUNNER.display_command(
+                    record.get("command", [])
+                ),
+            }
+            for record in history
+        ]
+    )
+    st.dataframe(
+        frame,
+        use_container_width=True,
+        hide_index=True,
+    )
+
+    selected = st.selectbox(
+        "Command output",
+        range(len(history)),
+        format_func=lambda index: (
+            f"{history[index].get('started_at')} — "
+            f"{history[index].get('name')}"
+        ),
+    )
+    st.code(
+        history[selected].get("output", ""),
+        language="text",
+    )
+
+
+def main() -> None:
+    st.set_page_config(
+        page_title="Trading AI Control Center",
+        page_icon="📈",
+        layout="wide",
+        initial_sidebar_state="expanded",
+    )
+    initialize_state()
+
+    st.title("Trading AI Control Center")
+    st.caption(
+        "Local command, scanning, paper-trading, testing, "
+        "and report interface."
+    )
+
+    with st.sidebar:
+        st.header("Navigation")
+        page = st.radio(
+            "Page",
+            [
+                "Overview",
+                "Market ingestion",
+                "Feature generation",
+                "Trade scanner",
+                "Paper trading",
+                "Tests",
+                "Reports",
+                "Command history",
+            ],
+            label_visibility="collapsed",
+        )
+        st.divider()
+        st.caption(f"Repository: {REPO_ROOT}")
+        st.caption(f"Python: {sys.executable}")
+
+    pages: dict[str, Callable[[], None]] = {
+        "Overview": render_overview,
+        "Market ingestion": render_ingestion,
+        "Feature generation": render_features,
+        "Trade scanner": render_scanner,
+        "Paper trading": render_paper_trading,
+        "Tests": render_tests,
+        "Reports": render_reports,
+        "Command history": render_history,
+    }
+    pages[page]()
+
+
+if __name__ == "__main__":
+    main()
+

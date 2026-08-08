@@ -15,7 +15,6 @@ Requires-Dist: pydantic-settings
 Requires-Dist: loguru
 Requires-Dist: requests
 Requires-Dist: httpx
-Requires-Dist: yfinance
 Requires-Dist: polygon-api-client>=1.16.3
 Requires-Dist: plotly
 Requires-Dist: streamlit

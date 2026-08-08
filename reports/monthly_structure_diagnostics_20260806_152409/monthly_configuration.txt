@@ -1,0 +1,113 @@
+src/trading_ai/ui/static/strategy_studio.js:12:      <label>Parameters JSON<textarea id="ssParams" rows="10">[{"name":"rsi_period","value":14,"value_type":"int","minimum":2,"maximum":100,"description":"RSI lookback"},{"name":"min_confidence","value":0.65,"value_type":"float","minimum":0,"maximum":1,"description":"Minimum score"}]</textarea></label>
+src/trading_ai/trend_intelligence/transition_policy.py:4:    channel_lookback: int = 63
+src/trading_ai/trend_intelligence/transition_policy.py:8:    volatility_lookback: int = 126
+src/trading_ai/trend_intelligence/policy.py:11:    slope_lookback_short: int = 5
+src/trading_ai/trend_intelligence/policy.py:12:    slope_lookback_intermediate: int = 20
+src/trading_ai/trend_intelligence/policy.py:13:    slope_lookback_long: int = 60
+src/trading_ai/trend_intelligence/policy.py:15:    relative_strength_lookback: int = 63
+src/trading_ai/trend_intelligence/platform_integration.py:192:        return required is not None and history_rows < required
+src/trading_ai/trend_intelligence/engine.py:18:def _slope_pct(series: pd.Series, lookback: int) -> float:
+src/trading_ai/trend_intelligence/engine.py:19:    x = series.dropna().tail(max(lookback, 3))
+src/trading_ai/trend_intelligence/engine.py:25:def _persistence(close: pd.Series, direction: int, lookback: int) -> float:
+src/trading_ai/trend_intelligence/engine.py:26:    returns = close.pct_change().dropna().tail(lookback)
+src/trading_ai/trend_intelligence/engine.py:59:def _return(series: pd.Series, lookback: int) -> float:
+src/trading_ai/trend_intelligence/engine.py:60:    x = series.dropna().tail(lookback + 1)
+src/trading_ai/trend_intelligence/engine.py:87:        short = _horizon("SHORT_TERM", close, p.short_fast, p.short_slow, p.slope_lookback_short)
+src/trading_ai/trend_intelligence/engine.py:88:        intermediate = _horizon("INTERMEDIATE_TERM", close, p.intermediate_fast, p.intermediate_slow, p.slope_lookback_intermediate)
+src/trading_ai/trend_intelligence/engine.py:89:        long = _horizon("LONG_TERM", close, p.long_fast, min(p.long_slow, max(40, len(close)//2)), p.slope_lookback_long)
+src/trading_ai/trend_intelligence/engine.py:111:        stock_ret = _return(close, min(p.relative_strength_lookback, len(close)-1))
+src/trading_ai/trend_intelligence/engine.py:112:        bench_ret = _return(pd.to_numeric(benchmark["close"], errors="coerce").dropna(), p.relative_strength_lookback) if benchmark is not None and not benchmark.empty else 0.0
+src/trading_ai/trend_intelligence/engine.py:113:        sector_ret = _return(pd.to_numeric(sector_prices["close"], errors="coerce").dropna(), p.relative_strength_lookback) if sector_prices is not None and not sector_prices.empty else 0.0
+src/trading_ai/trend_intelligence/contracts.py:17:    lookback_days: int
+src/trading_ai/trend_intelligence/transition_engine.py:21:        window=prior.tail(p.channel_lookback)
+src/trading_ai/trend_intelligence/transition_engine.py:34:        valid=rolling_vol.dropna().tail(p.volatility_lookback)
+src/trading_ai/stock_intelligence/structure_zones.py:10:    "1mo": 70, "1w": 60, "1d": 50, "4h": 40, "2h": 35,
+src/trading_ai/stock_intelligence/structure_zones.py:301:                elif "1mo" in zone.contributing_timeframes or zone.primary_timeframe == "1mo":
+src/trading_ai/stock_intelligence/levels.py:7:    "1mo": 70, "1w": 60, "1d": 50, "4h": 40, "2h": 35,
+src/trading_ai/stock_intelligence/publication_service.py:22:    lookback_days: int = 750
+src/trading_ai/stock_intelligence/publication_service.py:120:                    .limit(max(100, int(request.lookback_days)))
+src/trading_ai/stock_intelligence/publication_service.py:129:                "1mo": self._aggregate(rows, "month"),
+src/trading_ai/stock_intelligence/publication_service.py:161:                "timeframes": ["1d", "1w", "1mo"],
+src/trading_ai/market_intelligence/service.py:50:                s.execute(text('''INSERT INTO correlation_snapshot(snapshot_timestamp,universe_name,as_of_date,lookback_days,average_pairwise_correlation,median_pairwise_correlation,dispersion,correlation_regime,sample_size,confidence,provenance,payload_json) VALUES(:ts,:u,:d,:l,:a,:m,:x,:r,:n,:c,'COMPUTED',:p) ON CONFLICT(snapshot_timestamp,universe_name) DO UPDATE SET payload_json=EXCLUDED.payload_json'''),{'ts':ts,'u':snap.universe_name,'d':d,'l':c['lookback_days'],'a':c['average_pairwise_correlation'],'m':c['median_pairwise_correlation'],'x':c['cross_sectional_dispersion_annualized_pct'],'r':c['regime'],'n':c['symbol_count'],'c':c['confidence'],'p':strict_json_dumps(c)})
+src/trading_ai/market_intelligence/service.py:51:                for x in c.get('pairs',[]):s.execute(text('''INSERT INTO correlation_pair_snapshot(snapshot_timestamp,symbol_a,symbol_b,as_of_date,lookback_days,correlation,confidence,provenance) VALUES(:ts,:a,:b,:d,:l,:v,:c,'COMPUTED') ON CONFLICT DO NOTHING'''),{'ts':ts,'a':x['symbol_a'],'b':x['symbol_b'],'d':d,'l':c['lookback_days'],'v':x['correlation'],'c':c['confidence']})
+src/trading_ai/market_intelligence/database_models.py:17:    __tablename__='correlation_snapshot'; snapshot_timestamp:Mapped[datetime]=mapped_column(DateTime(timezone=True),primary_key=True); universe_name:Mapped[str]=mapped_column(String(64),primary_key=True); as_of_date:Mapped[date]=mapped_column(Date,nullable=False,index=True); lookback_days:Mapped[int]=mapped_column(Integer,nullable=False); average_pairwise_correlation:Mapped[float]=mapped_column(Float,nullable=False); median_pairwise_correlation:Mapped[float]=mapped_column(Float,nullable=False); dispersion:Mapped[float]=mapped_column(Float,nullable=False); correlation_regime:Mapped[str]=mapped_column(String(32),nullable=False); sample_size:Mapped[int]=mapped_column(Integer,nullable=False); confidence:Mapped[float]=mapped_column(Float,nullable=False); provenance:Mapped[str]=mapped_column(String(32),nullable=False); payload_json:Mapped[str]=mapped_column(Text,nullable=False)
+src/trading_ai/market_intelligence/database_models.py:19:    __tablename__='correlation_pair_snapshot'; snapshot_timestamp:Mapped[datetime]=mapped_column(DateTime(timezone=True),primary_key=True); symbol_a:Mapped[str]=mapped_column(String(16),primary_key=True); symbol_b:Mapped[str]=mapped_column(String(16),primary_key=True); as_of_date:Mapped[date]=mapped_column(Date,nullable=False,index=True); lookback_days:Mapped[int]=mapped_column(Integer,nullable=False); correlation:Mapped[float]=mapped_column(Float,nullable=False); confidence:Mapped[float]=mapped_column(Float,nullable=False); provenance:Mapped[str]=mapped_column(String(32),nullable=False)
+src/trading_ai/market_intelligence/engine.py:17:def returns_matrix(price_rows:list[dict[str,Any]],lookback:int=60)->pd.DataFrame:
+src/trading_ai/market_intelligence/engine.py:20:    px=df.pivot_table(index='date',columns='symbol',values='close',aggfunc='last').sort_index().tail(lookback+1)
+src/trading_ai/market_intelligence/engine.py:38:    return {'status':'READY','lookback_days':int(ret.shape[0]),'symbol_count':int(ret.shape[1]),'average_pairwise_correlation':round(avg,4),'median_pairwise_correlation':round(med,4),'cross_sectional_dispersion_annualized_pct':round(disp,2),'regime':regime,'confidence':round(confidence,2),'pairs':pairs,'sector_correlations':sector_rows,'provenance':'COMPUTED','source_tables':['price_history']}
+src/trading_ai/market_intelligence/contracts.py:9:    provenance:str="COMPUTED"; source_tables:list[str]=field(default_factory=list); lookback:int|None=None
+src/trading_ai/daily_scan_workstation/service.py:60:            "--minimum-bars", str(payload.minimum_bars),
+src/trading_ai/daily_scan_workstation/models.py:35:    minimum_bars: int = Field(default=20, ge=1, le=1000)
+src/trading_ai/daily_scan_workstation/models.py.pre_database_only_scan:35:    minimum_bars: int = Field(default=20, ge=1, le=1000)
+src/trading_ai/daily_scan_workstation/service.py.pre_database_only_scan:60:            "--minimum-bars", str(payload.minimum_bars),
+src/trading_ai/backtest/report.py:1134:            return "<p class='section-note'>No non-zero monthly returns.</p>"
+src/trading_ai/backtest/report.py:1543:    def monthly_rows(self, trades):
+src/trading_ai/backtest/report.py:2481:        monthly = self.monthly_rows(trades)
+src/trading_ai/backtest/report.py:2655:<div class="card"><h2>Monthly Return Chart</h2>{self.bar_chart(monthly, 'month', 'return', 'Monthly Return Bars')}</div>
+src/trading_ai/backtest/report.py:2668:<div class="card"><h2>Monthly Return Heatmap</h2>{self.table(monthly, [("Month", "month"), ("Return", "return_fmt"), ("Net PnL", "net_pnl")])}</div>
+src/trading_ai/option_valuation_intelligence/events/outcomes.py:54:    forecast_snapshot_lookback_days: int = 14
+src/trading_ai/market/service.py:253:        lookback_days: int = 730,
+src/trading_ai/market/service.py:256:        if lookback_days <= 0:
+src/trading_ai/market/service.py:257:            raise ValueError("lookback_days must be positive")
+src/trading_ai/market/service.py:259:        start_date = end_date - timedelta(days=lookback_days) if start is None else date.fromisoformat(self._normalize_date(start))
+src/trading_ai/market/downloader.py:183:    def _download_one(self, symbol: str, *, start, end, lookback_days: int, force_refresh: bool) -> MarketDownloadResult:
+src/trading_ai/market/downloader.py:187:                lambda: self.service.save_history(symbol, start=start, end=end, lookback_days=lookback_days, force_refresh=force_refresh),
+src/trading_ai/market/downloader.py:199:    def _run_per_symbol(self, selected, *, start, end, lookback_days, force_refresh):
+src/trading_ai/market/downloader.py:202:            futures = {executor.submit(self._download_one, symbol, start=start, end=end, lookback_days=lookback_days, force_refresh=force_refresh): symbol for symbol in selected}
+src/trading_ai/market/downloader.py:211:    def _run_grouped(self, selected, *, start, end, lookback_days, force_refresh, repair_stale: bool):
+src/trading_ai/market/downloader.py:213:        start_date = end_date - timedelta(days=lookback_days) if start is None else date.fromisoformat(str(start)[:10])
+src/trading_ai/market/downloader.py:252:            repairs = self._run_per_symbol(stale, start=start, end=end, lookback_days=lookback_days, force_refresh=True)
+src/trading_ai/market/downloader.py:283:        lookback_days: int = 730,
+src/trading_ai/market/downloader.py:293:            results = self._run_grouped(selected, start=start, end=end, lookback_days=lookback_days, force_refresh=force_refresh, repair_stale=self.fetch_mode == "auto")
+src/trading_ai/market/downloader.py:295:            results = self._run_per_symbol(selected, start=start, end=end, lookback_days=lookback_days, force_refresh=force_refresh)
+src/trading_ai/market/index_ingestion/service.py:67:        lookback_days: int,
+src/trading_ai/market/index_ingestion/service.py:70:        start_date, end_date = self._resolve_range(start, end, lookback_days)
+src/trading_ai/market/index_ingestion/service.py:218:        lookback_days: int,
+src/trading_ai/market/index_ingestion/service.py:223:            start_date = end_date - timedelta(days=max(1, int(lookback_days)))
+src/trading_ai/strategy_engine/market_regime_forecast_engine.py:45:        history = history[-self.policy.recent_transition_lookback :]
+src/trading_ai/strategy_engine/expected_move_engine.py:288:        monthly_move = daily_move * math.sqrt(21.0)
+src/trading_ai/strategy_engine/expected_move_engine.py:349:            monthly_move=round(monthly_move, 4),
+src/trading_ai/strategy_engine/expected_move_profile.py:33:    monthly_move: float
+src/trading_ai/strategy_engine/market_regime_engine.py:333:        lookback = list(history[-min(30, len(history)) :])
+src/trading_ai/strategy_engine/market_regime_engine.py:334:        dominant = Counter(lookback).most_common(1)[0][1]
+src/trading_ai/strategy_engine/market_regime_engine.py:336:            1 for left, right in zip(lookback, lookback[1:]) if left != right
+src/trading_ai/strategy_engine/market_regime_engine.py:338:        dominance = dominant / len(lookback)
+src/trading_ai/strategy_engine/market_regime_engine.py:339:        transition_penalty = transitions / max(len(lookback) - 1, 1)
+src/trading_ai/strategy_engine/market_regime_forecast_policy.py:12:    recent_transition_lookback: int = 120
+src/trading_ai/strategy_engine/market_regime_forecast_policy.py:25:            "recent_transition_lookback",
+src/trading_ai/ui_backup_simple/control_center.py:238:    lookback = st.number_input(
+src/trading_ai/ui_backup_simple/control_center.py:292:            "--lookback-days",
+src/trading_ai/ui_backup_simple/control_center.py:293:            str(int(lookback)),
+src/trading_ai/ui_backup_simple/control_center.py:328:        ["1mo", "3mo", "6mo", "1y", "2y", "5y"],
+src/trading_ai/scanner/market_data_population/service.py:83:        start_date = start or (end_date - timedelta(days=self.policy.lookback_days))
+src/trading_ai/scanner/market_data_population/service.py:90:            if count >= self.policy.minimum_bars and latest is not None and latest >= stale_cutoff
+src/trading_ai/scanner/market_data_population/service.py:210:            if count < self.policy.minimum_bars:
+src/trading_ai/scanner/market_data_population/policy.py:8:    lookback_days: int = 90
+src/trading_ai/scanner/market_data_population/policy.py:9:    minimum_bars: int = 20
+src/trading_ai/scanner/market_data_population/policy.py:21:        if self.lookback_days < 1:
+src/trading_ai/scanner/market_data_population/policy.py:22:            raise ValueError("lookback_days must be positive")
+src/trading_ai/scanner/market_data_population/policy.py:23:        if self.minimum_bars < 1:
+src/trading_ai/scanner/market_data_population/policy.py:24:            raise ValueError("minimum_bars must be positive")
+src/trading_ai/scanner/market_data_quality/completeness.py:22:    lookback_trading_days: int = 252
+src/trading_ai/scanner/market_data_quality/completeness.py:32:        if self.lookback_trading_days < 1:
+src/trading_ai/scanner/market_data_quality/completeness.py:33:            raise ValueError("lookback_trading_days must be positive")
+src/trading_ai/scanner/market_data_quality/completeness.py:145:            as_of_date, self.policy.lookback_trading_days
+src/trading_ai/scanner/market_data_quality/completeness.py:204:                "lookback_trading_days": self.policy.lookback_trading_days,
+src/trading_ai/scanner/market_data_quality/completeness.py:389:            as_of_date, self.engine.policy.lookback_trading_days
+src/trading_ai/scanner/market_data_quality/repository.py:89:            raise ValueError(f"price-history table is missing required columns: {names}")
+src/trading_ai/scanner/market_data_quality/quality.py:16:    lookback_rows:int=252
+src/trading_ai/scanner/market_data_quality/quality.py:26:        if self.lookback_rows < 2: raise ValueError("lookback_rows must be at least 2")
+src/trading_ai/scanner/market_data_quality/quality.py:92:        return SymbolQualityProfile(symbol.strip().upper(),len(ordered),ip,io,nv,zv,nf,er,round(maxret,8),round(score,6),status,tuple(warnings),tuple(rejections),{"lookback_rows":self.policy.lookback_rows})
+src/trading_ai/scanner/market_data_quality/quality.py:116:    def fetch_bars(self,symbols,as_of_date,lookback_rows):
+src/trading_ai/scanner/market_data_quality/quality.py:123:        ) ranked WHERE rn<=:lookback_rows ORDER BY symbol,date""").bindparams(bindparam("symbols",expanding=True))
+src/trading_ai/scanner/market_data_quality/quality.py:124:        params={"symbols":normalized,"as_of_date":as_of_date,"lookback_rows":lookback_rows}
+src/trading_ai/scanner/market_data_quality/quality.py:141:        bars=self.repository.fetch_bars(normalized,as_of_date,self.engine.policy.lookback_rows)
+src/trading_ai/scanner/universe_management/liquidity_metrics_builder.py:19:    lookback_trading_days: int = 20
+src/trading_ai/scanner/universe_management/liquidity_metrics_builder.py:20:    calendar_lookback_days: int = 45
+src/trading_ai/scanner/universe_management/liquidity_metrics_builder.py:211:        cutoff = effective_date - timedelta(days=self.policy.calendar_lookback_days)
+src/trading_ai/scanner/universe_management/liquidity_metrics_builder.py:221:            observations = prices.get(symbol, [])[: self.policy.lookback_trading_days]
+src/trading_ai/scanner/universe_management/liquidity_metrics_builder.py:294:            "missing_option_count": missing_option, "lookback_trading_days": self.policy.lookback_trading_days,
+src/trading_ai/scanner/correlation_dispersion/history_builder.py:51:    lookback_rows: int,
+src/trading_ai/scanner/correlation_dispersion/history_builder.py:82:        symbol_closes = closes.get(symbol, [])[-(lookback_rows + 1):]
+src/trading_ai/risk/reporting_analytics.py:96:    def monthly_heatmap(self, trades, initial_capital=100000):
+src/trading_ai/certification/service.py:191:                "Latest replay is READY with zero mismatches." if replay_clean else ("No replay history exists; optional under current policy." if not replay_exists and not replay_required else "Latest replay is missing, failed, or contains mismatches."),

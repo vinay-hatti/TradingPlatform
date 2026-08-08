@@ -1,0 +1,34 @@
+Milestone 62 Dynamic Position Management
+bash INSTALL_M62_PHASE10_LAUNCH_AGENT.sh /Users/vinay.hatti/TradingPlatform 60
+
+
+Milestone 63 Broker Portfolio Synchronization
+bash INSTALL_M63_LAUNCH_AGENT.sh /Users/vinay.hatti/TradingPlatform 60
+
+
+Milestone 64 Cumulative Portfolio Risk & Capital Allocation
+bash INSTALL_M64_LAUNCH_AGENT.sh /Users/vinay.hatti/TradingPlatform 300
+
+
+Milestone 65 Performance Command Center & Outcome Learning
+bash INSTALL_M65_LAUNCH_AGENT.sh /Users/vinay.hatti/TradingPlatform 3600
+
+
+Milestone 66 Production Operations & Reliability
+uv run python scripts/run_m66_production_operations.py --daemon --interval-seconds 300
+
+
+Milestone 69_6 Schedule Market event data ingestion and underlying/options data ingestion
+cd /Users/vinay.hatti/TradingPlatform ; chmod +x INSTALL_M69_6_LAUNCH_AGENT_M71_FUTURES_0755_V4.sh ; ./INSTALL_M69_6_LAUNCH_AGENT_M71_FUTURES_0755_V4.sh /Users/vinay.hatti/TradingPlatform
+
+Schedule for above Milestone 69_6
+07:55  ES/NQ/RTY futures pre-open refresh
+08:10  Event and macro intelligence
+08:30  Full morning underlying + options ingestion
+09:30  Options-only refresh
+10:30  Options-only refresh
+11:30  Options-only refresh
+12:30  Options-only refresh
+13:30  Options-only refresh
+14:30  Options-only refresh
+15:20  Full forced end-of-day underlying + options ingestion

@@ -89,3 +89,21 @@ Delivered a governed paper-execution layer between Trade Builder and Portfolio I
 - Preserves exact confirmation, paper-only routing, idempotency, cancellation, synchronization, and managed-position handoff.
 - Single-leg option submission remains backward compatible.
 - No database migration required.
+
+---
+
+# Milestone 70 — Institutional Execution Intelligence
+
+**Status: COMPLETE (2026-08-07)**
+
+Completed scope includes direct Polygon exact-contract preflight, timestamp/freshness governance, multi-sample quote stability, execution confidence, midpoint-vs-crossing-cost separation, governed intelligent limit pricing, fresh risk/envelope revalidation, IBKR paper routing, working-order assessment and confirmation-gated in-place repricing, broker lifecycle/fill telemetry, execution-quality metrics, learning hooks, and the Execution Intelligence Operations page. Live trading remains disabled and paper-only governance remains binding.
+
+Database head: `m70_003`.
+
+Next strategic focus: Portfolio Risk & Capital Allocation / portfolio-aware best-next-trade optimization, followed by Performance Command Center & Outcome Learning and continued production/live-governance hardening.
+
+## Milestone 71 — OPEX Intelligence & Probabilistic Path Forecasting
+
+Status: IMPLEMENTED — pending user-environment migration and operational acceptance.
+
+Scope: SPX/NDX/RUT multi-OPEX probabilistic settlement ranges, price magnets, support/resistance and dealer-level migration, gamma-flip/call-wall/put-wall forecasts, daily charm/vanna flow, dealer hedging pressure, scenario probabilities, confidence decomposition, continuously refreshed forecast history, Cross-OPEX Transition Map, OPEX Analytics UI, and historical calibration/outcome realization. Refresh is integrated with both split ingestion finalizers.

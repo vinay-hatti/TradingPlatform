@@ -14,7 +14,11 @@ def capture(position_id:str,request:Request,actor:str=Depends(require_mutation_a
  except Exception as e:raise fail(e)
 @router.post('/portfolios/{portfolio_id}/reports',response_model=ApiEnvelope)
 def generate(portfolio_id:str,request:Request,actor:str=Depends(require_mutation_access)):
- with SessionLocal() as s:return env(request,PerformanceLearningService(s).generate_report(portfolio_id,actor))
+ from .outcome_engine import Milestone65LearningService
+ with SessionLocal() as s:
+  result=Milestone65LearningService(s).build_command_center(portfolio_id,actor)
+  report=PerformanceLearningRepository(s).latest_report(portfolio_id)
+  return env(request,report.payload_json if report else result)
 @router.get('/portfolios/{portfolio_id}/report',response_model=ApiEnvelope)
 def latest(portfolio_id:str,request:Request,_:str=Depends(require_access)):
  with SessionLocal() as s:
@@ -37,3 +41,23 @@ def transition(policy_id:str,payload:dict,request:Request,actor:str=Depends(requ
  try:
   with SessionLocal() as s:return env(request,PerformanceLearningService(s).transition_policy(policy_id,payload['target_state'],actor,payload['reason']))
  except Exception as e:raise fail(e)
+
+@router.post('/portfolios/{portfolio_id}/command-center/build',response_model=ApiEnvelope)
+def build_command_center(portfolio_id:str,request:Request,actor:str=Depends(require_mutation_access)):
+ from .outcome_engine import Milestone65LearningService
+ with SessionLocal() as s:return env(request,Milestone65LearningService(s).build_command_center(portfolio_id,actor))
+
+@router.get('/portfolios/{portfolio_id}/publication',response_model=ApiEnvelope)
+def current_learning_publication(portfolio_id:str,request:Request,_:str=Depends(require_access)):
+ from .outcome_engine import Milestone65LearningService
+ with SessionLocal() as s:return env(request,Milestone65LearningService(s).current_publication(portfolio_id))
+
+@router.post('/portfolios/{portfolio_id}/outcomes/reconstruct',response_model=ApiEnvelope)
+def reconstruct_outcomes(portfolio_id:str,request:Request,actor:str=Depends(require_mutation_access)):
+ from .outcome_engine import Milestone65LearningService
+ with SessionLocal() as s:return env(request,Milestone65LearningService(s).reconstruct_outcomes(portfolio_id))
+
+@router.post('/portfolios/{portfolio_id}/counterfactuals/evaluate',response_model=ApiEnvelope)
+def evaluate_counterfactuals(portfolio_id:str,request:Request,actor:str=Depends(require_mutation_access)):
+ from .outcome_engine import Milestone65LearningService
+ with SessionLocal() as s:return env(request,Milestone65LearningService(s).evaluate_counterfactuals(portfolio_id))

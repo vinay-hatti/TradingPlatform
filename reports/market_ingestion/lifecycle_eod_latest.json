@@ -1,7 +1,7 @@
 {
-  "completed_at": "2026-08-03T20:57:23.574417+00:00",
+  "completed_at": "2026-08-04T07:24:21.649544+00:00",
   "data_scope": "all",
-  "duration_seconds": 840.579,
+  "duration_seconds": 842.065,
   "failed_ingestion_units": 0,
   "mode": "daily",
   "stages": {
@@ -25,16 +25,32 @@
       "scanner_ready": true,
       "skipped": false
     },
+    "stock_intelligence": {
+      "candidates_published": 613,
+      "publication_id": "stock-publication-5c5c7b881dc542b4b1ed9192c72e3d4f",
+      "publication_name": "current_stock_intelligence",
+      "required": false,
+      "scanner_run_id": "stock-scan-6e4168f18d7b469c897a8e6800e3591b",
+      "skipped": false,
+      "status": "READY",
+      "symbols_analyzed": 613,
+      "symbols_requested": 613,
+      "timeframes": [
+        "1d",
+        "1w",
+        "1mo"
+      ]
+    },
     "trend_intelligence": {
       "metrics": {
-        "duration_seconds": 6.568,
+        "duration_seconds": 6.629,
         "execution_mode": "in-process",
         "loaded_price_symbol_count": 613,
         "requested_symbol_count": 613,
-        "snapshot_timestamp": "2026-08-03T20:57:16.261273+00:00",
+        "snapshot_timestamp": "2026-08-04T07:23:59.193477+00:00",
         "stages": [
           {
-            "duration_seconds": 1.024,
+            "duration_seconds": 1.066,
             "error_count": 0,
             "name": "trend state",
             "report_path": "reports/trend_intelligence/latest.json",
@@ -44,7 +60,7 @@
             "symbol_count": 613
           },
           {
-            "duration_seconds": 0.808,
+            "duration_seconds": 0.829,
             "error_count": 0,
             "name": "trend transitions",
             "report_path": "reports/trend_intelligence/transitions_latest.json",
@@ -54,7 +70,7 @@
             "symbol_count": 611
           },
           {
-            "duration_seconds": 1.581,
+            "duration_seconds": 1.537,
             "error_count": 0,
             "name": "trend forecasts",
             "report_path": "reports/trend_intelligence/forecasts_latest.json",
@@ -64,7 +80,7 @@
             "symbol_count": 611
           },
           {
-            "duration_seconds": 1.526,
+            "duration_seconds": 1.453,
             "error_count": 0,
             "name": "institutional participation",
             "report_path": "reports/trend_intelligence/institutional_latest.json",
@@ -74,7 +90,7 @@
             "symbol_count": 611
           },
           {
-            "duration_seconds": 0.464,
+            "duration_seconds": 0.514,
             "error_count": 0,
             "name": "platform context",
             "report_path": "reports/trend_intelligence/platform_integration_eod_latest.json",
@@ -94,6 +110,6 @@
       "requested": true
     }
   },
-  "started_at": "2026-08-03T20:43:22.995137+00:00",
+  "started_at": "2026-08-04T07:10:19.584876+00:00",
   "status": "READY"
 }

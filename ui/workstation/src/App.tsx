@@ -1,16 +1,24 @@
 import { useCallback, useEffect, useState, type ComponentType } from 'react';
 import type { WorkspaceKey } from './types';
 import { AdvancedTradeBuilderPage } from './AdvancedTradeBuilderPage';
+import { StockIntelligenceScannerPage } from './StockIntelligenceScannerPage';
+import { InstitutionalOptionsPage } from './InstitutionalOptionsPage';
 import { InstitutionalIntelligencePage } from './InstitutionalIntelligencePage';
+import { InflectionAnalyticsPage } from './InflectionAnalyticsPage';
+import { OptionsMispricingAnalyticsPage } from './OptionsMispricingAnalyticsPage';
+import { OpexIntelligencePage } from './OpexIntelligencePage';
 import { PortfolioIntelligencePage } from './PortfolioIntelligencePage';
 import { PerformanceLearningPage } from './PerformanceLearningPage';
 import { ExecutionWorkspacePage } from './ExecutionWorkspacePage';
-import { CommandCenter, DailyScannerPage, MarketOverviewPage, OptionScannerPage, OpportunityWorkspacePage, Overview } from './pages';
+import { ExecutionIntelligencePage } from './ExecutionIntelligencePage';
+import { CommandCenter, DailyScannerPage, MarketOverviewPage, OptionScannerPage, OpportunityWorkspacePage } from './pages';
 import { GlobalIntelligenceHeader, WorkspaceCanvas, WorkspaceSidebar, WorkspaceStatusBar } from './WorkspaceChrome';
 import { CommandPalette, loadWorkspaceList, loadWorkspacePreferences, persistWorkspaceList, PreferencesPanel, useWorkspaceShortcuts, type WorkspacePreference } from './WorkspaceProductivity';
 import './styles.css';
 import { InstitutionalIntelligenceRefinedPage } from './InstitutionalIntelligenceRefinedPage';
 import './institutional-intelligence-refined.css';
+import './analytics-dashboard.css';
+import './opex-intelligence.css';
 
 import { WorkstationRouteBoundary } from './WorkstationRouteBoundary';
 import './workstation-shell-recovery.css';
@@ -18,24 +26,28 @@ import { PortfolioIntelligenceRefinedPage } from './PortfolioIntelligenceRefined
 import { MarketOverviewRefinedPage } from './MarketOverviewRefinedPage';
 import { PerformanceLearningRefinedPage } from './PerformanceLearningRefinedPage';
 const pages: Record<WorkspaceKey, ComponentType> = {
-  overview: Overview, market: MarketOverviewPage, scanner: DailyScannerPage,
-  'option-scanner': OptionScannerPage, opportunities: OpportunityWorkspacePage,
+  market: MarketOverviewPage, 'analytics-inflection': InflectionAnalyticsPage, 'analytics-options-mispricing': OptionsMispricingAnalyticsPage, 'analytics-opex': OpexIntelligencePage, scanner: DailyScannerPage, 'stock-intelligence': StockIntelligenceScannerPage,
+  'option-scanner': OptionScannerPage, 'institutional-options': InstitutionalOptionsPage, opportunities: OpportunityWorkspacePage,
   intelligence: InstitutionalIntelligenceRefinedPage, 'trade-builder': AdvancedTradeBuilderPage,
   portfolio: PortfolioIntelligenceRefinedPage, 'performance-learning': PerformanceLearningRefinedPage,
-  'execution-workspace': ExecutionWorkspacePage, execution: ExecutionWorkspacePage, risk: PortfolioIntelligenceRefinedPage, positions: PortfolioIntelligenceRefinedPage, exits: PortfolioIntelligenceRefinedPage, command: CommandCenter,
+  'execution-workspace': ExecutionWorkspacePage, 'execution-intelligence': ExecutionIntelligencePage, execution: ExecutionWorkspacePage, risk: PortfolioIntelligenceRefinedPage, positions: PortfolioIntelligenceRefinedPage, exits: PortfolioIntelligenceRefinedPage, command: CommandCenter,
 };
 
 function route(): WorkspaceKey {
-  const value=location.hash.replace('#/','') as WorkspaceKey;
-  if (value === 'execution') {
+  const raw=location.hash.replace('#/','');
+  if (raw === 'overview') {
+    if (location.hash !== '#/market') history.replaceState(null, '', '#/market');
+    return 'market';
+  }
+  if (raw === 'execution') {
     if (location.hash !== '#/execution-workspace') history.replaceState(null, '', '#/execution-workspace');
     return 'execution-workspace';
   }
-  if (value === 'risk' || value === 'positions' || value === 'exits') {
+  if (raw === 'risk' || raw === 'positions' || raw === 'exits') {
     if (location.hash !== '#/portfolio') history.replaceState(null, '', '#/portfolio');
     return 'portfolio';
   }
-  return value in pages ? value : 'overview';
+  return raw in pages ? raw as WorkspaceKey : 'market';
 }
 
 export default function App(){

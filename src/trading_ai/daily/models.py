@@ -163,3 +163,25 @@ class DailyCandidate:
     candidate_id: str = ""
     market_state_hash: str = ""
     scanner_version: str = "m47.phase5.v1"
+    stock_intelligence_status: str = "DISABLED"
+    stock_intelligence_allowed: bool = True
+    raw_option_probability: float = 0.0
+    underlying_probability_adjustment: float = 0.0
+    underlying_adjusted_probability: float = 0.0
+    underlying_score: float = 0.0
+    underlying_confidence: float = 0.0
+    underlying_management_quality: float = 0.0
+    underlying_structural_reward_risk: float = 0.0
+    underlying_edge_score: float = 0.0
+    recommended_option_strategy: str = ""
+    underlying_entry_zone_low: float | None = None
+    underlying_entry_zone_high: float | None = None
+    underlying_stop: float | None = None
+    underlying_targets: list[float] = field(default_factory=list)
+    underlying_trailing_method: str = ""
+    underlying_primary_category: str = ""
+    underlying_primary_timeframe: str = ""
+    stock_intelligence_state_hash: str = ""
+    stock_intelligence_warnings: list[str] = field(default_factory=list)
+    stock_intelligence_rejection_reasons: list[str] = field(default_factory=list)
+    stock_intelligence_evidence: list[str] = field(default_factory=list)

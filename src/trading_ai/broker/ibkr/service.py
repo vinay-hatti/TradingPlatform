@@ -90,10 +90,14 @@ class IbkrPaperAccountService:
             binding = session.scalar(select(BrokerAccountBindingModel).where(BrokerAccountBindingModel.portfolio_id == portfolio_id))
             if binding is None:
                 raise LookupError(f"No IBKR paper binding registered for {portfolio_id}")
+            # Account/position synchronization is always a read-only broker session.
+            # The persisted binding may remain paper-order-capable (read_only=False)
+            # for the separate order-routing transport; never pass that capability
+            # into the connectivity-verification transport.
             config = IbkrPaperConnectionConfig(
                 host=binding.host, port=binding.port, client_id=binding.client_id,
                 environment=binding.broker_environment, expected_account_id=binding.broker_account_id,
-                read_only=binding.read_only,
+                read_only=True,
             )
             status = self.transport.connect(config)
             if not status.connected:
@@ -128,7 +132,9 @@ class IbkrPaperAccountService:
                     multiplier=item.multiplier, captured_at=item.captured_at,
                     raw_json=item.raw,
                 ))
-            binding.status = "VERIFIED_READ_ONLY"
+            # Preserve active paper-order routing while refreshing read-side account state.
+            sync_status = "VERIFIED_PAPER_TRADING" if (binding.status == "VERIFIED_PAPER_TRADING" and not binding.read_only) else "VERIFIED_READ_ONLY"
+            binding.status = sync_status
             binding.updated_at = _now()
             account = session.get(PortfolioAccountModel, portfolio_id)
             if account is not None:
@@ -148,7 +154,7 @@ class IbkrPaperAccountService:
                 }
             session.commit()
             return {
-                "status": "VERIFIED_READ_ONLY",
+                "status": sync_status,
                 "portfolio_id": portfolio_id,
                 "broker_account_id_masked": self.mask_account(binding.broker_account_id),
                 "account_summary": asdict(summary),

@@ -10,7 +10,7 @@ from trading_ai.scanner.universe_management import (
     LiquidityGovernancePolicy,
     NasdaqSymbolDirectoryProvider,
 )
-from trading_ai.scanner.market_data_population import MarketDataPopulationPolicy, YFinanceBulkHistoricalProvider
+from trading_ai.scanner.market_data_population import MarketDataPopulationPolicy, PolygonBulkHistoricalProvider
 from trading_ai.scanner.universe_management.liquidity_metrics_builder import LiquidityMetricsBuildPolicy
 from trading_ai.scanner.universe_pipeline import UniversePipelinePolicy, UniversePipelineService
 
@@ -110,7 +110,7 @@ def main() -> None:
             report_only=args.report_only, skip_universe_refresh=(args.skip_universe_refresh or not args.rebuild_universe),
             skip_liquidity_metrics=args.skip_liquidity_metrics, liquidity_policy=liquidity_policy, metrics_policy=metrics_policy,
             populate_market_data=args.populate_market_data,
-            market_data_provider=YFinanceBulkHistoricalProvider() if args.populate_market_data else None,
+            market_data_provider=PolygonBulkHistoricalProvider(request_pause_seconds=args.market_data_request_pause_seconds) if args.populate_market_data else None,
             market_data_policy=market_data_policy,
             market_data_resume=args.resume,
             market_data_force_refresh=args.market_data_force_refresh,

@@ -4,12 +4,12 @@ import argparse
 from pathlib import Path
 
 from trading_ai.indicators.engine import IndicatorEngine
-from trading_ai.market.yahoo import YahooProvider
+from trading_ai.market.polygon import PolygonProvider
 
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="Download Yahoo market data and compute technical indicators."
+        description="Download Polygon market data and compute technical indicators."
     )
     parser.add_argument("--symbol", default="AAPL")
     parser.add_argument("--period", default="6mo")
@@ -30,7 +30,7 @@ def build_parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
 
-    provider = YahooProvider()
+    provider = PolygonProvider()
     frame = provider.history(
         args.symbol.upper(),
         period=args.period,
@@ -38,7 +38,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     if frame.empty:
         raise RuntimeError(
-            f"No Yahoo market data returned for {args.symbol.upper()}"
+            f"No Polygon market data returned for {args.symbol.upper()}"
         )
 
     result = IndicatorEngine().run(frame)

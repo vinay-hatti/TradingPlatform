@@ -25,13 +25,24 @@ from trading_ai.advanced_trade_builder.router import router as advanced_trade_bu
 from trading_ai.portfolio_intelligence.router import router as portfolio_intelligence_router
 from trading_ai.performance_learning.router import router as performance_learning_router
 from trading_ai.execution_workspace.router import router as execution_workspace_router
+from trading_ai.stock_intelligence.router import router as stock_intelligence_router
+from trading_ai.institutional_options.router import router as institutional_options_router
+from trading_ai.dynamic_position_management.router import router as dynamic_position_management_router
+from trading_ai.broker_portfolio_sync.router import router as broker_portfolio_router
+from trading_ai.portfolio_risk_allocation.router import router as portfolio_risk_allocation_router
+from trading_ai.production_operations.router import router as production_operations_router
+from trading_ai.live_trading_governance.router import router as live_trading_governance_router
+from trading_ai.analytics_dashboard.router import router as analytics_dashboard_router
+from trading_ai.execution_intelligence.router import router as execution_intelligence_router
+from trading_ai.opex_intelligence.router import router as opex_intelligence_router
+from trading_ai.futures_intelligence.router import router as futures_intelligence_router
 
 
 def create_production_app(settings: ProductionApiSettings | None = None) -> FastAPI:
     resolved = settings or ProductionApiSettings.from_env()
     app = FastAPI(
         title="Trading AI Production API",
-        version="59.0.0",
+        version="67.0.0",
         description="Governed production API for portfolio, risk, execution, and position management.",
     )
     app.state.m40_settings = resolved
@@ -78,6 +89,17 @@ def create_production_app(settings: ProductionApiSettings | None = None) -> Fast
     app.include_router(portfolio_intelligence_router)
     app.include_router(performance_learning_router)
     app.include_router(execution_workspace_router)
+    app.include_router(stock_intelligence_router)
+    app.include_router(institutional_options_router)
+    app.include_router(dynamic_position_management_router)
+    app.include_router(broker_portfolio_router)
+    app.include_router(portfolio_risk_allocation_router)
+    app.include_router(production_operations_router)
+    app.include_router(live_trading_governance_router)
+    app.include_router(analytics_dashboard_router)
+    app.include_router(execution_intelligence_router)
+    app.include_router(opex_intelligence_router)
+    app.include_router(futures_intelligence_router)
 
     @app.on_event("startup")
     async def start_m42(): await app.state.m42_service.start()

@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useState } from 'react';
-import { executionWorkspaceApi, opportunityApi, tradeBuilderApi } from './api';
+import { Fragment, useEffect, useMemo, useState } from 'react';
+import { executionWorkspaceApi, institutionalOptionsApi, opportunityApi, tradeBuilderApi } from './api';
 import type { OpportunityRecord, TradePlan } from './types';
 
 const n = (v: any, d = 0) => (Number.isFinite(Number(v)) ? Number(v) : d);
@@ -89,11 +89,64 @@ function extractContractLegs(opportunity: any): any[] {
   ];
 }
 
+function managementSummary(plan: TradePlan): any {
+  return plan.execution_intent?.dynamic_management || {};
+}
+function portfolioDecision(plan: TradePlan): any {
+  return (plan.execution_intent as any)?.portfolio_decision || (plan.execution_intent as any)?.decision_snapshot?.portfolio_decision || {};
+}
+
+type ValidationReviewRow = { check: string; actual: string; allowed: string };
+
+function validationReviewRows(plan: TradePlan): ValidationReviewRow[] {
+  const failed = Object.entries(plan.validation || {}).filter(([key, value]) => key !== 'valid' && value === false);
+  const legs = Array.isArray(plan.legs) ? plan.legs : [];
+  const expiries = new Set(legs.map((x:any)=>String(x?.expiry||'')).filter(Boolean));
+  const identified = legs.filter((x:any)=>String(x?.option_symbol||'').trim()).length;
+  return failed.map(([check]) => {
+    switch (check) {
+      case 'risk_within_budget':
+        return {check, actual: `Max loss $${Number(plan.max_loss||0).toFixed(2)}`, allowed: `≤ $${Number(plan.risk_budget_amount||0).toFixed(2)} (${Number(plan.risk_budget_pct||0).toFixed(2)}% of $${Number(plan.capital||0).toFixed(2)})`};
+      case 'option_contract_identity_present':
+      case 'm62_exact_polygon_contracts':
+        return {check, actual: `${identified} of ${legs.length} legs have exact option identity`, allowed: 'Every option leg must have an exact option_symbol'};
+      case 'has_legs':
+        return {check, actual: `${legs.length} legs`, allowed: 'At least 1 leg'};
+      case 'max_four_legs':
+        return {check, actual: `${legs.length} legs`, allowed: 'Maximum 4 legs'};
+      case 'positive_quantities': {
+        const quantities = legs.map((x:any)=>Number(x?.quantity||0));
+        return {check, actual: quantities.length ? quantities.join(', ') : 'No quantities', allowed: 'Every quantity must be > 0'};
+      }
+      case 'single_expiry':
+        return {check, actual: expiries.size ? Array.from(expiries).join(', ') : 'No expiry', allowed: 'Exactly 1 unique expiry'};
+      case 'defined_risk':
+        return {check, actual: `Max loss ${Number.isFinite(Number(plan.max_loss)) ? `$${Number(plan.max_loss).toFixed(2)}` : 'not finite'}`, allowed: 'Defined finite maximum loss required'};
+      case 'm62_selected_strategy':
+        return {check, actual: 'Selected strategy lineage missing', allowed: 'Selected Institutional Options strategy required'};
+      case 'm62_thesis_lineage':
+        return {check, actual: 'Underlying thesis lineage missing', allowed: 'Stock Intelligence thesis/run lineage required'};
+      case 'm62_dynamic_management':
+        return {check, actual: 'Dynamic management evidence missing', allowed: 'Underlying stop and targets required'};
+      case 'm62_override_governance':
+        return {check, actual: 'Override governance failed', allowed: 'All overrides must satisfy handoff policy'};
+      default:
+        return {check, actual: 'Failed', allowed: 'Validation check must pass'};
+    }
+  });
+}
+
+function validationLabel(value: string): string {
+  return value.replaceAll('_',' ').replace(/\b\w/g,(c)=>c.toUpperCase());
+}
+
 export function AdvancedTradeBuilderPage() {
   const [opps, setOpps] = useState<OpportunityRecord[]>([]);
   const [oppId, setOppId] = useState('');
   const [plans, setPlans] = useState<TradePlan[]>([]);
   const [message, setMessage] = useState('');
+  const [reviewPlanId, setReviewPlanId] = useState('');
+  const [revalidatingPlanId, setRevalidatingPlanId] = useState('');
   const [account, setAccount] = useState('PAPER-PRIMARY');
   const [capital, setCapital] = useState(100000);
   const [risk, setRisk] = useState(1);
@@ -115,14 +168,19 @@ export function AdvancedTradeBuilderPage() {
   const singleLeg = isSingleLegStrategy(strategy);
 
   const load = async () => {
-    const o = await opportunityApi.list();
+    const [o, p, config] = await Promise.all([
+      opportunityApi.list(),
+      tradeBuilderApi.list(),
+      institutionalOptionsApi.tradeBuilderConfig(),
+    ]);
     const eligible = o.data.filter((x) =>
       ['UNDER_REVIEW', 'APPROVED', 'TRADE_BUILT'].includes(x.workflow_state),
     );
     setOpps(eligible);
     if (!oppId && eligible[0]) setOppId(eligible[0].opportunity_id);
-    const p = await tradeBuilderApi.list();
     setPlans(p.data);
+    setCapital(n((config.data as any)?.capital, 100000));
+    setRisk(n((config.data as any)?.risk_budget_pct, 1));
   };
 
   useEffect(() => {
@@ -277,6 +335,27 @@ export function AdvancedTradeBuilderPage() {
     }
   };
 
+  const revalidatePlan = async (plan: TradePlan) => {
+    setRevalidatingPlanId(plan.trade_plan_id);
+    setMessage('');
+    try {
+      const response = await tradeBuilderApi.revalidate(plan.trade_plan_id);
+      const refreshed = response.data;
+      await load();
+      if (refreshed.state === 'VALIDATED') {
+        setReviewPlanId('');
+        setMessage(`${refreshed.symbol} revalidation passed. Trade plan advanced to VALIDATED; approval remains a separate governed action.`);
+      } else {
+        setReviewPlanId(refreshed.trade_plan_id);
+        setMessage(`${refreshed.symbol} revalidation completed. Trade plan remains DRAFT; review the refreshed failed checks below.`);
+      }
+    } catch (e:any) {
+      setMessage(e.message);
+    } finally {
+      setRevalidatingPlanId('');
+    }
+  };
+
   const netDebit = singleLeg ? longPrice * 100 : Math.max(0, (longPrice - shortPrice) * 100);
 
   return (
@@ -378,28 +457,61 @@ export function AdvancedTradeBuilderPage() {
           </p>
         </article>
       </div>
+      {plans.some(p=>Object.keys(managementSummary(p)).length>0)&&<article className="panel"><h3>Institutional management handoff</h3><p>Plans created from Institutional Options carry their dynamic stop, targets, trailing, theta, volatility, and assignment rules into the Execution Workspace. They are activated after a confirmed fill.</p><div className="grid metrics">{(()=>{const p=plans.find(x=>x.trade_plan_id===sessionStorage.getItem('m62_trade_plan_id'))||plans.find(x=>Object.keys(managementSummary(x)).length>0);const m=p?managementSummary(p):{};return <><div><span>Structural stop</span><b>{m.underlying_stop==null?'—':`$${Number(m.underlying_stop).toFixed(2)}`}</b></div><div><span>Targets</span><b>{(m.underlying_targets||[]).map((x:number)=>`$${Number(x).toFixed(2)}`).join(' · ')||'—'}</b></div><div><span>Trailing policy</span><b>{String(m.trailing_policy||'—').replaceAll('_',' ')}</b></div><div><span>Activation</span><b>After confirmed fill</b></div></>})()}</div></article>}
       <article className="panel">
         <h3>Trade plans</h3>
         <div className="table-wrap">
           <table>
             <thead>
-              <tr><th>Symbol</th><th>Strategy</th><th>State</th><th>Max loss</th><th>R/R</th><th>Version</th><th>Actions</th></tr>
+              <tr><th>Symbol</th><th>Strategy</th><th>State</th><th>Max loss</th><th>Portfolio decision</th><th>Dynamic management</th><th>Version</th><th>Actions</th></tr>
             </thead>
             <tbody>
               {plans.map((p) => (
-                <tr key={p.trade_plan_id}>
-                  <td>{p.symbol}</td><td>{p.strategy}</td><td>{p.state}</td>
-                  <td>${p.max_loss.toFixed(2)}</td><td>{p.reward_risk_ratio ?? '—'}</td><td>{p.version}</td>
-                  <td>
-                    {p.state === 'VALIDATED' && <button onClick={() => move(p, 'APPROVED')}>Approve</button>}
-                    {p.state === 'APPROVED' && <button onClick={() => move(p, 'PAPER_READY')}>Prepare paper intent</button>}
-                    {p.state === 'PAPER_READY' && (
-                      <button onClick={() => executionWorkspaceApi.create(p.trade_plan_id, p.account_id).then(() => { location.hash = '#/execution-workspace'; }).catch((e: any) => setMessage(e.message))}>
-                        Open execution workspace
-                      </button>
-                    )}
-                  </td>
-                </tr>
+                <Fragment key={p.trade_plan_id}>
+                  <tr>
+                    <td>{p.symbol}</td><td>{p.strategy}</td><td>{p.state}</td>
+                    <td>${p.max_loss.toFixed(2)}</td><td>{(()=>{const d=portfolioDecision(p);return Object.keys(d).length?<span title={(d.explainability?.positive_reasons||[]).join(' · ')}>Fit {Number(d.scores?.portfolio_fit_score||0).toFixed(0)} · Qty {d.capital_allocation?.recommended_quantity??'—'} · {String(d.decision||'REVIEW').replaceAll('_',' ')}</span>:<span className="warning-text">Not assessed</span>})()}</td><td>{(()=>{const m=managementSummary(p);return Object.keys(m).length?<span title={`Stop ${m.underlying_stop ?? '—'} · Targets ${(m.underlying_targets||[]).join(', ')}`}>Attached · {m.trailing_policy?.replaceAll('_',' ')||'governed exits'}</span>:<span className="warning-text">Not attached</span>})()}</td><td>{p.version}</td>
+                    <td className="trade-plan-actions">
+                      {p.state === 'DRAFT' && <button onClick={() => setReviewPlanId(reviewPlanId===p.trade_plan_id?'':p.trade_plan_id)} title="Review failed validation checks and governed limits">{reviewPlanId===p.trade_plan_id?'Hide validation':'Review validation'}</button>}
+                      {p.state === 'VALIDATED' && <button onClick={() => move(p, 'APPROVED')}>Approve</button>}
+                      {p.state === 'APPROVED' && <button onClick={() => move(p, 'PAPER_READY')}>Prepare paper intent</button>}
+                      {p.state === 'PAPER_READY' && (
+                        <button onClick={() => executionWorkspaceApi.create(p.trade_plan_id, p.account_id).then(() => { location.hash = '#/execution-workspace'; }).catch((e: any) => setMessage(e.message))}>
+                          Open execution workspace
+                        </button>
+                      )}
+                      {p.state === 'CANCELLED' && <span>Cancelled</span>}
+                      {!['DRAFT','VALIDATED','APPROVED','PAPER_READY','CANCELLED'].includes(p.state) && <span>No governed action for {p.state}</span>}
+                    </td>
+                  </tr>
+                  {reviewPlanId === p.trade_plan_id && p.state === 'DRAFT' && (
+                    <tr className="trade-validation-review-row">
+                      <td colSpan={8}>
+                        <div className="trade-validation-review">
+                          <div className="trade-validation-review-title">
+                            <div><h4>Validation review · {p.symbol} · {p.strategy}</h4><p>{p.trade_plan_id}</p></div>
+                            <div className="trade-validation-review-actions">
+                              <button onClick={()=>revalidatePlan(p)} disabled={revalidatingPlanId===p.trade_plan_id}>{revalidatingPlanId===p.trade_plan_id?'Revalidating…':'Revalidate'}</button>
+                              <button onClick={()=>setReviewPlanId('')} disabled={revalidatingPlanId===p.trade_plan_id}>Close</button>
+                            </div>
+                          </div>
+                          <div className="grid metrics">
+                            <div><span>Capital</span><b>${Number(p.capital||0).toFixed(2)}</b></div>
+                            <div><span>Risk budget</span><b>{Number(p.risk_budget_pct||0).toFixed(2)}%</b></div>
+                            <div><span>Maximum allowed</span><b>${Number(p.risk_budget_amount||0).toFixed(2)}</b></div>
+                            <div><span>Trade max loss</span><b>${Number(p.max_loss||0).toFixed(2)}</b></div>
+                          </div>
+                          {validationReviewRows(p).length ? (
+                            <div className="table-wrap"><table><thead><tr><th>Failed validation</th><th>Actual</th><th>Allowed / required</th></tr></thead><tbody>
+                              {validationReviewRows(p).map((row)=><tr key={row.check}><td><b>{validationLabel(row.check)}</b></td><td>{row.actual}</td><td>{row.allowed}</td></tr>)}
+                            </tbody></table></div>
+                          ) : <p>No individual failed checks are persisted for this DRAFT plan. The aggregate validation state is {String(p.validation?.valid)}.</p>}
+                          <p className="warning-text">Revalidate reloads current governed Trade Builder risk settings and reruns validation. M62 plans also refresh the current selected recommendation, exact contracts, economics, lineage, and management evidence. A clean pass may advance DRAFT → VALIDATED only; approval remains a separate governed action.</p>
+                        </div>
+                      </td>
+                    </tr>
+                  )}
+                </Fragment>
               ))}
             </tbody>
           </table>

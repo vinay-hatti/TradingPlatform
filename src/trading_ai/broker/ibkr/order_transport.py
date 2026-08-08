@@ -147,6 +147,26 @@ class IbapiPaperOrderTransport:
         LOGGER.info("IBKR placeOrder returned atomic combo order_id=%s; awaiting asynchronous acknowledgement", oid)
         return oid
 
+    def modify_order(self, broker_order_id: int, request: IbkrPaperOrderRequest) -> int:
+        """Modify an existing IBKR paper option order in place using the same order id."""
+        request.validate(); app=self._require(); oid=int(broker_order_id)
+        Contract,Order=self._types(); c=Contract(); c.conId=request.contract_id; c.symbol=request.symbol; c.localSymbol=request.local_symbol; c.secType=request.security_type; c.currency=request.currency; c.exchange=request.exchange; c.primaryExchange=request.primary_exchange; c.lastTradeDateOrContractMonth=request.expiry; c.strike=request.strike or 0; c.right=request.right; c.multiplier=request.multiplier
+        o=_normalize_order_compatibility(Order()); o.account=request.broker_account_id; o.action=request.side.upper(); o.totalQuantity=Decimal(str(request.quantity)); o.orderType=request.order_type.upper(); o.tif=request.time_in_force.upper(); o.outsideRth=request.outside_regular_hours; o.transmit=request.transmit; o.orderRef=request.aggregate_id
+        if request.limit_price is not None:o.lmtPrice=float(request.limit_price)
+        if request.stop_price is not None:o.auxPrice=float(request.stop_price)
+        app.begin_order_ack(oid);app.placeOrder(oid,c,o);return oid
+
+    def modify_combo_order(self, broker_order_id: int, request: IbkrPaperComboOrderRequest) -> int:
+        """Modify an existing IBKR paper BAG order in place using the same order id."""
+        request.validate(); app=self._require(); oid=int(broker_order_id)
+        from ibapi.contract import ComboLeg, Contract
+        from ibapi.order import Order
+        contract=Contract();contract.symbol=request.symbol;contract.secType='BAG';contract.currency=request.currency;contract.exchange=request.exchange;contract.comboLegs=[]
+        for item in request.combo_legs:
+            leg=ComboLeg();leg.conId=int(item.contract_id);leg.ratio=int(item.ratio);leg.action=item.action.upper();leg.exchange=item.exchange;contract.comboLegs.append(leg)
+        order=_normalize_order_compatibility(Order());order.account=request.broker_account_id;order.action=request.side;order.totalQuantity=Decimal(str(request.quantity));order.orderType=request.order_type.upper();order.tif=request.time_in_force.upper();order.outsideRth=request.outside_regular_hours;order.transmit=request.transmit;order.orderRef=request.aggregate_id;order.lmtPrice=float(request.limit_price)
+        app.begin_order_ack(oid);app.placeOrder(oid,contract,order);return oid
+
     def wait_for_order_acknowledgement(self, broker_order_id: int, timeout_seconds: float | None = None) -> dict:
         app = self._require()
         timeout = float(timeout_seconds if timeout_seconds is not None else self._config.timeout_seconds)

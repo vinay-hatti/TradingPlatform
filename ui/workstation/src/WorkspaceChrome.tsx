@@ -7,12 +7,14 @@ import { nav } from './pages';
 export type NavigationGroup = { label: string; items: WorkspaceKey[] };
 
 export const navigationGroups: NavigationGroup[] = [
-  { label: 'Market intelligence', items: ['overview', 'market'] },
-  { label: 'Scanning', items: ['scanner', 'option-scanner'] },
+  { label: 'Market intelligence', items: ['market'] },
+  { label: 'Analytics', items: ['analytics-inflection', 'analytics-options-mispricing', 'analytics-opex'] },
+  { label: 'Scanning - Underlying first', items: ['stock-intelligence', 'institutional-options'] },
+  { label: 'Scanning - Options first', items: ['scanner', 'option-scanner'] },
   { label: 'Opportunities', items: ['opportunities', 'intelligence'] },
   { label: 'Execution', items: ['trade-builder', 'execution-workspace'] },
   { label: 'Portfolio', items: ['portfolio', 'performance-learning'] },
-  { label: 'Operations', items: ['command'] },
+  { label: 'Operations', items: ['execution-intelligence', 'command'] },
 ];
 
 const NAV_LOOKUP = new Map<WorkspaceKey, { label: string; Icon: any }>(nav.map(([id, label, Icon]) => [id as WorkspaceKey, { label, Icon }]));

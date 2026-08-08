@@ -1,9 +1,9 @@
 {
   "final": {
     "hard_limit": 9223372036854775807,
-    "open_file_descriptors": 23,
+    "open_file_descriptors": 9,
     "soft_limit": 256,
-    "utilization_pct": 8.984375
+    "utilization_pct": 3.515625
   },
   "samples": [
     {
@@ -14,45 +14,9 @@
     },
     {
       "hard_limit": 9223372036854775807,
-      "open_file_descriptors": 23,
+      "open_file_descriptors": 9,
       "soft_limit": 256,
-      "utilization_pct": 8.984375
-    },
-    {
-      "hard_limit": 9223372036854775807,
-      "open_file_descriptors": 23,
-      "soft_limit": 256,
-      "utilization_pct": 8.984375
-    },
-    {
-      "hard_limit": 9223372036854775807,
-      "open_file_descriptors": 23,
-      "soft_limit": 256,
-      "utilization_pct": 8.984375
-    },
-    {
-      "hard_limit": 9223372036854775807,
-      "open_file_descriptors": 23,
-      "soft_limit": 256,
-      "utilization_pct": 8.984375
-    },
-    {
-      "hard_limit": 9223372036854775807,
-      "open_file_descriptors": 23,
-      "soft_limit": 256,
-      "utilization_pct": 8.984375
-    },
-    {
-      "hard_limit": 9223372036854775807,
-      "open_file_descriptors": 23,
-      "soft_limit": 256,
-      "utilization_pct": 8.984375
-    },
-    {
-      "hard_limit": 9223372036854775807,
-      "open_file_descriptors": 23,
-      "soft_limit": 256,
-      "utilization_pct": 8.984375
+      "utilization_pct": 3.515625
     }
   ],
   "schema_version": "m35.phase1.step4c1.resources.v1"

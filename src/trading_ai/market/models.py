@@ -4,6 +4,7 @@ from trading_ai.database.base import Base
 
 
 class PriceHistory(Base):
+    __table_args__ = {"extend_existing": True}
     __tablename__ = "price_history"
 
     symbol = Column(String(16), primary_key=True)

@@ -79,6 +79,7 @@ class TradePlan:
     created_at: str
     updated_at: str
     notes: str = ''
+    execution_intent: dict[str, Any] = field(default_factory=dict)
 
     _TRANSITIONS = {
         TradePlanState.DRAFT: (TradePlanState.VALIDATED, TradePlanState.CANCELLED),

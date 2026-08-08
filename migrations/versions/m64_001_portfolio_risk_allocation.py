@@ -1,0 +1,13 @@
+"""Milestone 64 portfolio risk and capital allocation
+Revision ID: m64_001
+Revises: m63_001
+"""
+from alembic import op
+import sqlalchemy as sa
+revision='m64_001';down_revision='m63_001';branch_labels=None;depends_on=None
+def upgrade():
+ op.create_table('portfolio_risk_allocation_snapshots',sa.Column('snapshot_id',sa.String(128),primary_key=True),sa.Column('portfolio_id',sa.String(64),nullable=False),sa.Column('snapshot_timestamp',sa.String(64),nullable=False),sa.Column('broker_publication_id',sa.String(128)),sa.Column('status',sa.String(32),nullable=False),sa.Column('health_score',sa.Float(),nullable=False),sa.Column('net_liquidation',sa.Float(),nullable=False),sa.Column('buying_power',sa.Float(),nullable=False),sa.Column('capital_committed',sa.Float(),nullable=False),sa.Column('open_risk',sa.Float(),nullable=False),sa.Column('var_95',sa.Float(),nullable=False),sa.Column('expected_shortfall_95',sa.Float(),nullable=False),sa.Column('portfolio_heat_pct',sa.Float(),nullable=False),sa.Column('concentration_score',sa.Float(),nullable=False),sa.Column('diversification_score',sa.Float(),nullable=False),sa.Column('payload_json',sa.JSON(),nullable=False));op.create_index('ix_m64_risk_portfolio','portfolio_risk_allocation_snapshots',['portfolio_id','snapshot_timestamp'])
+ op.create_table('portfolio_fit_assessments',sa.Column('assessment_id',sa.String(128),primary_key=True),sa.Column('portfolio_id',sa.String(64),nullable=False),sa.Column('candidate_id',sa.String(160),nullable=False),sa.Column('risk_snapshot_id',sa.String(128),nullable=False),sa.Column('symbol',sa.String(32),nullable=False),sa.Column('portfolio_fit_score',sa.Float(),nullable=False),sa.Column('recommended_quantity',sa.Integer(),nullable=False),sa.Column('recommended_capital',sa.Float(),nullable=False),sa.Column('decision',sa.String(32),nullable=False),sa.Column('assessed_at',sa.String(64),nullable=False),sa.Column('payload_json',sa.JSON(),nullable=False),sa.UniqueConstraint('portfolio_id','candidate_id','risk_snapshot_id',name='uq_m64_fit_candidate_snapshot'))
+ op.create_table('portfolio_stress_allocation_snapshots',sa.Column('stress_snapshot_id',sa.String(128),primary_key=True),sa.Column('portfolio_id',sa.String(64),nullable=False),sa.Column('risk_snapshot_id',sa.String(128),nullable=False),sa.Column('generated_at',sa.String(64),nullable=False),sa.Column('worst_scenario',sa.String(64),nullable=False),sa.Column('worst_loss',sa.Float(),nullable=False),sa.Column('payload_json',sa.JSON(),nullable=False))
+def downgrade():
+ op.drop_table('portfolio_stress_allocation_snapshots');op.drop_table('portfolio_fit_assessments');op.drop_index('ix_m64_risk_portfolio',table_name='portfolio_risk_allocation_snapshots');op.drop_table('portfolio_risk_allocation_snapshots')

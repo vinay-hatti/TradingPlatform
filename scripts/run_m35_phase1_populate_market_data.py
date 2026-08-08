@@ -7,7 +7,7 @@ from trading_ai.database.session import create_session
 from trading_ai.scanner.market_data_population import (
     BulkMarketDataPopulationService,
     MarketDataPopulationPolicy,
-    YFinanceBulkHistoricalProvider,
+    PolygonBulkHistoricalProvider,
 )
 
 
@@ -29,9 +29,6 @@ def main() -> None:
     parser.add_argument("--start")
     parser.add_argument("--end")
     parser.add_argument("--limit", type=int, help="Populate only the first N symbols for smoke testing.")
-    parser.add_argument("--provider-chunk-size", type=int, default=10, help="Maximum tickers per bounded yfinance call.")
-    parser.add_argument("--provider-timeout-seconds", type=float, default=30.0)
-    parser.add_argument("--yfinance-cache-dir", default="data/cache/yfinance")
     parser.add_argument("--minimum-fd-headroom", type=int, default=64)
     args = parser.parse_args()
     policy = MarketDataPopulationPolicy(
@@ -45,10 +42,10 @@ def main() -> None:
     )
     session = create_session()
     try:
-        provider = YFinanceBulkHistoricalProvider(
-            cache_dir=args.yfinance_cache_dir,
-            provider_chunk_size=args.provider_chunk_size,
-            timeout_seconds=args.provider_timeout_seconds,
+        provider = PolygonBulkHistoricalProvider(
+            max_retries=args.max_retries,
+            initial_backoff_seconds=args.retry_backoff_seconds,
+            request_pause_seconds=args.request_pause_seconds,
         )
         result = BulkMarketDataPopulationService(provider, policy).run(
             session=session, universe_csv=args.universe_csv, report_dir=args.report_dir,
@@ -62,7 +59,7 @@ def main() -> None:
     print("=========================================================")
     print("Bulk Market Data Population")
     print("=========================================================")
-    print(f"Provider                         YFINANCE")
+    print(f"Provider                         POLYGON")
     print(f"Requested Symbols                {result.requested_symbols:>10}")
     print(f"Attempted Symbols                {result.attempted_symbols:>10}")
     print(f"Succeeded Symbols                {result.succeeded_symbols:>10}")

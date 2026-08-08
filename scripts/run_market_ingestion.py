@@ -250,8 +250,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--options-minimum-open-interest", type=int, default=1)
     parser.add_argument("--options-minimum-volume", type=int, default=0)
     parser.add_argument("--options-maximum-strike-distance-pct", type=float, default=.40)
-    parser.add_argument("--polygon-requests-per-second", type=float, default=4.0)
-    parser.add_argument("--options-batch-size", type=int, default=5000)
+    parser.add_argument("--polygon-requests-per-second", type=float, default=8.0)
+    parser.add_argument("--options-batch-size", type=int, default=10000)
     parser.add_argument("--options-manifest", default="reports/market_ingestion/options_manifest.json")
     parser.add_argument("--options-report", default="reports/market_ingestion/options_latest.json")
     parser.add_argument("--lifecycle-report", default="reports/market_ingestion/lifecycle_latest.json")
@@ -305,6 +305,29 @@ def build_parser() -> argparse.ArgumentParser:
         default=None,
         help="Optional publication run id. A UTC ingestion id is generated when omitted.",
     )
+    parser.add_argument(
+        "--skip-stock-intelligence",
+        action="store_true",
+        help="Skip the Milestone 61 Stock Intelligence publication stage.",
+    )
+    parser.add_argument(
+        "--require-stock-intelligence",
+        action="store_true",
+        help="Fail the full ingestion run when Stock Intelligence cannot publish READY/DEGRADED output.",
+    )
+    parser.add_argument(
+        "--stock-intelligence-publication-name",
+        default="current_stock_intelligence",
+        help="Named Stock Intelligence publication consumed by the Stock Scanner and Option Scanner.",
+    )
+    parser.add_argument(
+        "--stock-intelligence-symbols",
+        default=None,
+        help="Optional comma-separated Stock Intelligence universe override. Defaults to all ingested equities, ETFs, and indexes.",
+    )
+    parser.add_argument("--stock-intelligence-minimum-score", type=float, default=0.0)
+    parser.add_argument("--stock-intelligence-top", type=int, default=0, help="Maximum published candidates; 0 publishes every successfully analyzed symbol.")
+    parser.add_argument("--stock-intelligence-lookback-days", type=int, default=750)
     return parser
 
 
@@ -428,7 +451,8 @@ def _apply_mode_preset(args: argparse.Namespace) -> argparse.Namespace:
 
 def _write_lifecycle_report(args: argparse.Namespace, *, started_at: datetime, completed_at: datetime,
                             failed: int, post_ingestion_failed: bool, underlying_refreshed: bool,
-                            options_refreshed: bool, dealer_refreshed: bool, trend_refreshed: bool, publication) -> None:
+                            options_refreshed: bool, dealer_refreshed: bool, trend_refreshed: bool,
+                            publication, stock_publication: dict | None = None) -> None:
     path = Path(args.lifecycle_report)
     path.parent.mkdir(parents=True, exist_ok=True)
     payload = {
@@ -437,7 +461,13 @@ def _write_lifecycle_report(args: argparse.Namespace, *, started_at: datetime, c
         "started_at": started_at.isoformat(),
         "completed_at": completed_at.isoformat(),
         "duration_seconds": round((completed_at - started_at).total_seconds(), 3),
-        "status": "FAILED" if post_ingestion_failed else ("DEGRADED" if failed else "READY"),
+        "status": (
+            "FAILED"
+            if post_ingestion_failed
+            else "DEGRADED"
+            if failed or (stock_publication is not None and stock_publication.get("status") == "FAILED")
+            else "READY"
+        ),
         "stages": {
             "underlying": {"requested": args.data_scope in {"underlying", "all"}, "refreshed": underlying_refreshed},
             "options": {"requested": args.data_scope in {"options", "all"}, "mode": "REUSED" if args.reuse_options_snapshot else ("FORCE_REBUILD" if args.force_options_refresh else "FRESH"), "refreshed": options_refreshed},
@@ -453,6 +483,18 @@ def _write_lifecycle_report(args: argparse.Namespace, *, started_at: datetime, c
                 "skipped": args.skip_publication,
                 "scanner_ready": None if publication is None else bool(publication.scanner_ready),
                 "decision_context_ready": None if publication is None else bool(publication.decision_context_ready),
+            },
+            "stock_intelligence": {
+                "skipped": args.skip_stock_intelligence,
+                "required": args.require_stock_intelligence,
+                "publication_name": args.stock_intelligence_publication_name,
+                "status": None if stock_publication is None else stock_publication.get("status"),
+                "scanner_run_id": None if stock_publication is None else stock_publication.get("run_id"),
+                "publication_id": None if stock_publication is None else stock_publication.get("publication_id"),
+                "symbols_requested": None if stock_publication is None else stock_publication.get("symbols_requested"),
+                "symbols_analyzed": None if stock_publication is None else stock_publication.get("symbols_analyzed"),
+                "candidates_published": None if stock_publication is None else stock_publication.get("candidate_count"),
+                "timeframes": None if stock_publication is None else stock_publication.get("timeframes"),
             },
         },
         "failed_ingestion_units": failed,
@@ -876,6 +918,7 @@ def _publish_scanner_state(args: argparse.Namespace):
     run_id = args.publication_run_id or (
         "market-ingestion-" + datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
     )
+    args._resolved_publication_run_id = run_id
     with SessionLocal() as session:
         result = ScannerReadinessService(session).publish(
             run_id=run_id,
@@ -886,6 +929,47 @@ def _publish_scanner_state(args: argparse.Namespace):
         f"status={result.status}, scanner_ready={str(result.scanner_ready).lower()}, "
         f"decision_context_ready={str(result.decision_context_ready).lower()}, "
         f"publication={args.publication_name}, run_id={run_id}"
+    )
+    return result
+
+
+def _publish_stock_intelligence(args: argparse.Namespace, symbols: tuple[str, ...]) -> dict | None:
+    """Publish Stock Intelligence from persisted Polygon data after market publication."""
+    if args.skip_stock_intelligence:
+        print("Stock Intelligence publication: skipped")
+        return None
+    if args.skip_publication:
+        print("Stock Intelligence publication: skipped because governed market publication was skipped")
+        return None
+
+    from trading_ai.database import SessionLocal
+    from trading_ai.stock_intelligence.publication_service import (
+        StockIntelligencePublicationService,
+        StockPublicationRequest,
+    )
+
+    selected = symbols
+    if args.stock_intelligence_symbols:
+        selected = _normalize_symbols(args.stock_intelligence_symbols.split(","))
+    if not selected:
+        print("Stock Intelligence publication: skipped because no symbols were selected")
+        return None
+    request = StockPublicationRequest(
+        symbols=selected,
+        publication_name=args.stock_intelligence_publication_name,
+        minimum_score=args.stock_intelligence_minimum_score,
+        top=None if args.stock_intelligence_top <= 0 else args.stock_intelligence_top,
+        lookback_days=args.stock_intelligence_lookback_days,
+        ingestion_run_id=getattr(args, "_resolved_publication_run_id", args.publication_run_id),
+        market_publication_name=args.publication_name,
+    )
+    with SessionLocal() as session:
+        result = StockIntelligencePublicationService(session).publish(request)
+    print(
+        "Stock Intelligence publication: "
+        f"status={result['status']}, publication={result['publication_name']}, "
+        f"run_id={result['run_id']}, symbols={result['symbols_analyzed']}/{result['symbols_requested']}, "
+        f"candidates={result['candidate_count']}, timeframes={','.join(result['timeframes'])}"
     )
     return result
 
@@ -902,6 +986,10 @@ def main(argv=None) -> int:
     registry = build_registry(args.universe_file, args.index_universe_file)
     instruments = resolve_instruments(registry, args.symbols, args.symbols_file, args.asset_classes)
     symbols = tuple(instrument.canonical_symbol for instrument in instruments)
+    stock_symbols = tuple(
+        instrument.canonical_symbol for instrument in instruments
+        if instrument.asset_class in {"EQUITY", "ETF"}
+    )
     counts = Counter(instrument.asset_class for instrument in instruments)
 
     print(f"Market ingestion universe: {len(symbols)} canonical instruments")
@@ -1087,6 +1175,29 @@ def main(argv=None) -> int:
             + (f": {', '.join(failed_checks)}" if failed_checks else "")
         )
 
+    stock_publication = None
+    if not post_ingestion_failed:
+        try:
+            stock_publication = _publish_stock_intelligence(args, symbols)
+            if (
+                args.require_stock_intelligence
+                and not args.skip_stock_intelligence
+                and (stock_publication is None or stock_publication.get("status") not in {"READY", "DEGRADED"})
+            ):
+                post_ingestion_failed = True
+                print("Stock Intelligence is required but no usable publication was produced")
+        except Exception as exc:
+            stock_publication = {
+                "status": "FAILED",
+                "publication_name": args.stock_intelligence_publication_name,
+                "error": f"{type(exc).__name__}: {exc}",
+            }
+            print(f"Stock Intelligence publication failed: {type(exc).__name__}: {exc}")
+            if args.require_stock_intelligence:
+                post_ingestion_failed = True
+            else:
+                print("Market ingestion remains usable; the previous valid Stock Intelligence publication is preserved")
+
     # --continue-on-error permits symbol/batch-level provider failures, but it must never
     # mask a failed derived-state refresh or an unusable scanner publication.
     lifecycle_completed_at = datetime.now(timezone.utc)
@@ -1101,6 +1212,7 @@ def main(argv=None) -> int:
         dealer_refreshed=dealer_refreshed,
         trend_refreshed=trend_refreshed,
         publication=publication,
+        stock_publication=stock_publication,
     )
     if post_ingestion_failed:
         return 1

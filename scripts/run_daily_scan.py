@@ -17,6 +17,7 @@ from trading_ai.market.universe import get_universe
 from trading_ai.market.trend_universe import NoTrendUniverseSymbolsError
 from trading_ai.portfolio.awareness import PortfolioAwareness
 from trading_ai.lineage import LineagePersistenceService, ScannerRunLineage, new_run_id
+from trading_ai.stock_intelligence.option_integration import StockIntelligenceOptionProvider
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
@@ -100,6 +101,10 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--trend-transition-max-age-days", type=int, default=3)
     parser.add_argument("--trend-transition-weight", type=float, default=1.0)
     parser.add_argument("--trend-transition-max-adjustment", type=float, default=2.0)
+    stock_group = parser.add_mutually_exclusive_group()
+    stock_group.add_argument("--enable-stock-intelligence", dest="enable_stock_intelligence", action="store_true", default=False, help="Enable Milestone 61 persisted Stock Intelligence eligibility, probability, and dynamic-management integration.")
+    stock_group.add_argument("--disable-stock-intelligence", dest="enable_stock_intelligence", action="store_false")
+    parser.add_argument("--stock-intelligence-publication", default="current_stock_intelligence")
     parser.add_argument("--published-state-maximum-age-hours", type=float, default=36.0)
     parser.add_argument("--published-state-warning-age-hours", type=float, default=24.0)
     parser.add_argument("--require-ready-published-state", action="store_true")
@@ -263,6 +268,16 @@ def main(argv: list[str] | None = None) -> int:
         positions_file=args.positions_file,
     )
 
+    stock_intelligence_session = SessionLocal() if args.enable_stock_intelligence else None
+    stock_intelligence_provider = (
+        StockIntelligenceOptionProvider(
+            stock_intelligence_session,
+            publication_name=args.stock_intelligence_publication,
+        )
+        if stock_intelligence_session is not None
+        else None
+    )
+
     scanner = DailyScanner(
         market_service=datasource,
         feature_pipeline=container.pipeline,
@@ -298,6 +313,8 @@ def main(argv: list[str] | None = None) -> int:
         maximum_transition_snapshot_age_days=args.trend_transition_max_age_days,
         transition_intelligence_weight=args.trend_transition_weight,
         maximum_transition_score_adjustment=args.trend_transition_max_adjustment,
+        enable_stock_intelligence_integration=args.enable_stock_intelligence,
+        stock_intelligence_provider=stock_intelligence_provider,
     )
 
     print()
@@ -309,6 +326,7 @@ def main(argv: list[str] | None = None) -> int:
     print(f"History Effective: {args.start} -> {effective_end}")
     print(f"Minimum Score   : {args.min_score}")
     print(f"Option Data     : {args.option_data_mode}")
+    print(f"Stock Intel     : {'ENABLED' if args.enable_stock_intelligence else 'DISABLED'}")
     print(f"Expiry Mode     : {args.expiration_mode}")
     print(f"DTE Range       : {args.minimum_dte} -> {args.maximum_dte}")
     print(f"Expiry Limit    : {args.maximum_trades_per_expiration or 'disabled'} trades per expiration")
@@ -326,7 +344,11 @@ def main(argv: list[str] | None = None) -> int:
         print("Published State : BYPASSED (override)")
     print("-------------------------------------------")
 
-    candidates = scanner.scan(symbols)
+    try:
+        candidates = scanner.scan(symbols)
+    finally:
+        if stock_intelligence_session is not None:
+            stock_intelligence_session.close()
 
     recommender = LiveTradeRecommender(
         capital=args.capital,

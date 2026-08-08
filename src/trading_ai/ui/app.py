@@ -32,6 +32,7 @@ from trading_ai.ui.api.local_admin_session import router as local_admin_session_
 from trading_ai.ui.api.institutional_market_structure import router as institutional_market_structure_router
 from trading_ai.ui.api.production_platform import router as production_platform_router
 from trading_ai.ui.observability.middleware import ObservabilityMiddleware
+from trading_ai.stock_intelligence.router import router as stock_intelligence_router
 
 
 def create_app() -> FastAPI:
@@ -47,6 +48,7 @@ def create_app() -> FastAPI:
 
     for router in (
         health_router,
+        stock_intelligence_router,
         dashboard_router,
         opportunities_router,
         symbols_router,

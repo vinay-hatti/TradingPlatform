@@ -1,11 +1,11 @@
-import yfinance as yf
+from trading_ai.market.polygon import PolygonProvider
 import pandas as pd
 
 from trading_ai.feature_store.pipeline import FeaturePipeline
 from trading_ai.indicators.feature_engine import FeatureEngine
 from trading_ai.options.scoring import OptionsScoringEngine
 
-df = yf.download("AAPL", period="6mo", interval="1d")
+df = PolygonProvider().history("AAPL", period="6mo", interval="1d")
 
 # -----------------------------
 # FIX: flatten multi-index cols

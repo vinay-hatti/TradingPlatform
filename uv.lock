@@ -2002,7 +2002,6 @@ dependencies = [
     { name = "ta" },
     { name = "uvicorn" },
     { name = "xgboost" },
-    { name = "yfinance" },
 ]
 
 [package.optional-dependencies]
@@ -2051,7 +2050,6 @@ requires-dist = [
     { name = "ta" },
     { name = "uvicorn", specifier = ">=0.49.0" },
     { name = "xgboost" },
-    { name = "yfinance" },
 ]
 provides-extras = ["dev"]
 
@@ -2232,24 +2230,3 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/07/6b/087fd5d28fdbb90d385c50ee9308a820241b82feebdf42e72e19a48e4b32/xgboost-3.3.0-py3-none-win_amd64.whl", hash = "sha256:b06057f6a018fc04e6b3e0c15568ca636b8151a5b5f333478e500fcaf4fc7594", size = 69522696, upload-time = "2026-06-17T21:20:53.707Z" },
 ]
 
-[[package]]
-name = "yfinance"
-version = "1.5.1"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "beautifulsoup4" },
-    { name = "curl-cffi" },
-    { name = "multitasking" },
-    { name = "numpy" },
-    { name = "pandas" },
-    { name = "peewee" },
-    { name = "platformdirs" },
-    { name = "protobuf" },
-    { name = "pytz" },
-    { name = "requests" },
-    { name = "websockets" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/75/f1/095457c99cd5fb44802e0dafbb17051e0bfdbf264bd4531556e662f57fbf/yfinance-1.5.1.tar.gz", hash = "sha256:89c48a1d45fb870f8e3066c22643c6911118ede9cead747b48925ce8e01a6940", size = 167897, upload-time = "2026-06-28T18:13:59.593Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/2b/53/ba0f45c93c45cafe010c9fe2f509c70d1ad0f96ae7b6ca93369db0c17942/yfinance-1.5.1-py2.py3-none-any.whl", hash = "sha256:a5c9cfc1b9c990f217b643e4fb92444e023cc02b2bacdea9c1fb472509fdfe22", size = 144223, upload-time = "2026-06-28T18:13:58.349Z" },
-]

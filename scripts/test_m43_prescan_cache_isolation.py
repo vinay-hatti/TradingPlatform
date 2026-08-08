@@ -48,7 +48,7 @@ def command_script(command: list[str]) -> str:
 
 def main_test() -> None:
     # refresh_missing + auto-refresh intentionally runs:
-    #   1. governed Yahoo OHLCV refresh
+    #   1. governed Polygon OHLCV refresh
     #   2. persisted Polygon options ingestion
     #   3. cache/database-only daily scan
     auto_commands = run_case(True)

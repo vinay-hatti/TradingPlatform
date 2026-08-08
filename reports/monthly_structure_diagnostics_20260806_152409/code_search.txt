@@ -1,0 +1,26 @@
+src/trading_ai/stock_intelligence/breakout.py:6:        if len(r)<25:return BreakoutProfile(evidence={'warning':'insufficient history'})
+src/trading_ai/stock_intelligence/structure_zones.py:10:    "1mo": 70, "1w": 60, "1d": 50, "4h": 40, "2h": 35,
+src/trading_ai/stock_intelligence/structure_zones.py:301:                elif "1mo" in zone.contributing_timeframes or zone.primary_timeframe == "1mo":
+src/trading_ai/stock_intelligence/participation.py:6:        if len(r)<20:return ParticipationProfile(evidence={'warning':'insufficient history'})
+src/trading_ai/stock_intelligence/multi_timeframe.py:21:        if len(rows)<20: raise ValueError(f'insufficient history for {timeframe}')
+src/trading_ai/stock_intelligence/levels.py:7:    "1mo": 70, "1w": 60, "1d": 50, "4h": 40, "2h": 35,
+src/trading_ai/stock_intelligence/publication_service.py:129:                "1mo": self._aggregate(rows, "month"),
+src/trading_ai/stock_intelligence/publication_service.py:161:                "timeframes": ["1d", "1w", "1mo"],
+src/trading_ai/research_workstation/analyst_performance/analyst_performance_engine.py:341:        governance_status = "READY" if cases else "INSUFFICIENT_HISTORY"
+src/trading_ai/research_workstation/institutional_learning/institutional_learning_engine.py:57:        status="READY" if len(cases)>=self.policy.minimum_cases else "INSUFFICIENT_HISTORY"
+src/trading_ai/research_workstation/pattern_discovery/pattern_discovery_engine.py:36:        return SimilarityReportProfile(report_id,generated_at or datetime.now(timezone.utc),len(cases),len(matches),tuple(matches),"READY" if len(cases)>=2 else "INSUFFICIENT_HISTORY",tuple(warnings),{"milestone":34,"phase":5,"step":2})
+src/trading_ai/research_workstation/pattern_discovery/pattern_discovery_engine.py:65:        return PatternDiscoveryProfile(report_id,generated_at or datetime.now(timezone.utc),len(clusters),tuple(clusters),strongest,tuple(warnings),"READY" if len(cases)>=self.policy.minimum_cluster_size else "INSUFFICIENT_HISTORY",{"milestone":34,"phase":5,"step":2})
+src/trading_ai/polygon_intelligence/engines.py:16:            return {'value':None,'status':'INSUFFICIENT_HISTORY','observation_count':len(xs),'confidence':clamp(len(xs)/minimum_observations*60)}
+src/trading_ai/polygon_intelligence/engines.py:24:            return {'value':None,'status':'INSUFFICIENT_HISTORY','observation_count':len(xs),'confidence':clamp(len(xs)/minimum_observations*60)}
+src/trading_ai/ui_backup_simple/control_center.py:328:        ["1mo", "3mo", "6mo", "1y", "2y", "5y"],
+src/trading_ai/scanner/market_data_quality/policy.py:45:                f"INSUFFICIENT_HISTORY:{trading_day_count}<{self.minimum_history_days}",
+scripts/test_m34_phase5_step3_governance.py:6:    assert r.governance_status=="INSUFFICIENT_HISTORY"; assert r.warnings; assert r.summary.total_cases==0
+scripts/test_m34_phase5_step4_governance.py:12:    assert empty_report.governance_status == "INSUFFICIENT_HISTORY"
+scripts/run_m61_stock_intelligence_scanner.py:43:    print("timeframes: 1d, 1w, 1mo (derived from persisted daily OHLCV)")
+scripts/test_m46_polygon_closure.py:8:    assert HistoricalVolatilityEngine.iv_rank(.2,[.2]*5)['status']=='INSUFFICIENT_HISTORY'
+scripts/test_m34_phase5_step2_governance.py:6:    assert sim.governance_status=="INSUFFICIENT_HISTORY" and pat.governance_status=="INSUFFICIENT_HISTORY"
+ui/workstation/src/StockIntelligenceScannerPage.tsx:5:const timeframeOrder = ['5m', '15m', '30m', '1h', '1d', '1w', '1mo'];
+ui/workstation/src/StockIntelligenceScannerPage.tsx:117:        {timeframeEntries.map(([timeframe, value]: any) => <div className="candidate-timeframe-row" key={timeframe}><b>{timeframe === '1mo' ? '1 month' : timeframe}</b><StatusPill value={value.direction}/><span>{display(value.structure)}</span><strong>{fmt(value.confidence, 0)}%</strong></div>)}
+tests/milestone61/test_m61_stock_scanner_all_symbols_ui_entry.py:51:        {"1d": _rows(), "1w": _rows(step=0.25), "1mo": _rows(step=0.15)},
+tests/milestone61/test_m61_structured_level_timeframes.py:28:    result=LevelIntelligenceService().analyze({"1d":_bars(),"1w":_bars(step=0.8),"1mo":_bars(step=2.0)})
+tests/milestone61/test_m61_institutional_structure_zones.py:26:    return StockIntelligenceService().analyze('XYZ',{'1d':bars(),'1w':bars(step=.8),'1mo':bars(step=2.5)},'t',context())

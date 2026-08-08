@@ -17,8 +17,8 @@ def main() -> None:
     assert ".run-history-scroll{height:255px" in styles
     assert ".compact-card" in styles
     assert "compact?:boolean" in components
-    assert 'default=4,help="Concurrent Yahoo OHLCV workers' in ingestion
-    assert 'default=1.0,help="Global minimum seconds between Yahoo requests' in ingestion
+    assert 'default=4,help="Concurrent Polygon OHLCV workers' in ingestion
+    assert 'default=1.0,help="Global minimum seconds between Polygon requests' in ingestion
     print("Milestone 43 scanner UI polish and ingestion performance assertions passed.")
 
 

@@ -6,7 +6,7 @@ import sys
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Governed Yahoo OHLCV and Polygon options ingestion workflow.")
+    parser = argparse.ArgumentParser(description="Governed Polygon OHLCV and options ingestion workflow.")
     parser.add_argument("--data-scope", choices=["underlying", "options", "all"], default="all")
     parser.add_argument("--refresh-mode", choices=["cache_only", "refresh_missing", "force_full"], default="refresh_missing")
     parser.add_argument("--universe", default="liquid-us-700")
@@ -56,7 +56,7 @@ def main() -> int:
         ]
         if args.symbols:
             command += ["--symbols", args.symbols]
-        print("========== Yahoo Underlying OHLCV Ingestion ==========")
+        print("========== Polygon Underlying OHLCV Ingestion ==========")
         result = subprocess.run(command, check=False)
         if result.returncode != 0:
             return result.returncode

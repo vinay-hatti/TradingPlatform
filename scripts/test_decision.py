@@ -1,10 +1,10 @@
-import yfinance as yf
+from trading_ai.market.polygon import PolygonProvider
 
 from trading_ai.decision.engine import DecisionEngine
 from trading_ai.feature_store.pipeline import FeaturePipeline
 
 
-df = yf.download("AAPL", period="6mo", auto_adjust=True)
+df = PolygonProvider().history("AAPL", period="6mo", interval="1d")
 
 # Normalize columns if MultiIndex is returned
 if hasattr(df.columns, "nlevels") and df.columns.nlevels > 1:

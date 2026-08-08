@@ -41,6 +41,20 @@ class AdvancedTradeBuilderService:
   state=TradePlanState.VALIDATED if checks['valid'] else TradePlanState.DRAFT
   m=TradePlanModel(trade_plan_id=f'TP-{uuid4().hex.upper()}',opportunity_id=opp.opportunity_id,opportunity_version=opp.version,intelligence_id=latest.intelligence_id if latest else None,account_id=r.account_id,symbol=opp.symbol,direction=opp.direction,strategy=r.strategy,state=state.value,version=1,capital=r.capital,risk_budget_pct=r.risk_budget_pct,risk_budget_amount=budget,estimated_debit=debit,estimated_credit=credit,max_loss=max_loss,max_profit=max_profit,reward_risk_ratio=rr,net_greeks_json=greeks,validation_json=checks,legs_json=[{'side':l.side.value,'quantity':l.quantity,'option_right':l.option_right.value,'strike':l.strike,'expiry':l.expiry,'limit_price':l.limit_price,'delta':l.delta,'gamma':l.gamma,'theta':l.theta,'vega':l.vega,'option_symbol':l.option_symbol} for l in r.legs],execution_intent_json={},notes=r.notes,created_by=r.actor,created_at=ts,updated_at=ts)
   self.repo.add(m);self._audit(m,'TRADE_PLAN_CREATED',r.actor,'Built from canonical opportunity and intelligence',{'validation':checks});self.session.commit();return self._dto(m)
+ def revalidate(self,id,actor,capital,risk_pct):
+  m=self.repo.get(id)
+  if not m:raise KeyError('Trade plan not found')
+  if m.state!=TradePlanState.DRAFT.value:raise ValueError('Only DRAFT trade plans can be revalidated')
+  legs=tuple(TradeLeg(**{**x,'side':__import__('trading_ai.advanced_trade_builder.contracts',fromlist=['LegSide']).LegSide(x['side']),'option_right':__import__('trading_ai.advanced_trade_builder.contracts',fromlist=['OptionRight']).OptionRight(x['option_right'])}) for x in m.legs_json)
+  debit,credit,max_loss,max_profit,rr,budget,greeks,checks=self.economics(legs,float(capital),float(risk_pct))
+  old=dict(m.validation_json or {})
+  if 'positive_strikes' in old:checks['positive_strikes']=all(float(x.strike)>0 for x in legs)
+  if 'positive_limit_prices' in old:checks['positive_limit_prices']=all(float(x.limit_price)>0 for x in legs)
+  if 'option_contract_identity_present' in old:checks['option_contract_identity_present']=all(bool(str(x.option_symbol or '').strip()) for x in legs)
+  checks['valid']=all(bool(v) for k,v in checks.items() if k!='valid')
+  previous={'state':m.state,'capital':m.capital,'risk_budget_pct':m.risk_budget_pct,'risk_budget_amount':m.risk_budget_amount,'max_loss':m.max_loss,'validation':old}
+  m.version+=1;m.capital=float(capital);m.risk_budget_pct=float(risk_pct);m.risk_budget_amount=budget;m.estimated_debit=debit;m.estimated_credit=credit;m.max_loss=max_loss;m.max_profit=max_profit;m.reward_risk_ratio=rr;m.net_greeks_json=greeks;m.validation_json=checks;m.state=TradePlanState.VALIDATED.value if checks['valid'] else TradePlanState.DRAFT.value;m.updated_at=now()
+  self._audit(m,'TRADE_PLAN_REVALIDATED',actor,'Governed DRAFT revalidation using current Trade Builder risk configuration',{'previous':previous,'current':{'state':m.state,'capital':m.capital,'risk_budget_pct':m.risk_budget_pct,'risk_budget_amount':m.risk_budget_amount,'max_loss':m.max_loss,'validation':checks}});self.session.commit();return self._dto(m)
  def transition(self,id,expected_version,target,actor,reason):
   m=self.repo.get(id)
   if not m:raise KeyError('Trade plan not found')
@@ -49,10 +63,10 @@ class AdvancedTradeBuilderService:
   if target not in allowed[m.state]:raise ValueError(f'Invalid transition {m.state} -> {target}')
   if target in ('VALIDATED','APPROVED','PAPER_READY') and not m.validation_json.get('valid'):raise ValueError('Invalid trade plan cannot advance')
   m.version+=1;m.state=target;m.updated_at=now()
-  if target=='PAPER_READY':m.execution_intent_json={'environment':'PAPER','account_id':m.account_id,'symbol':m.symbol,'strategy':m.strategy,'legs':m.legs_json,'max_loss':m.max_loss,'live_trading_enabled':False,'submission_status':'READY_FOR_EXISTING_ROUTER'}
+  if target=='PAPER_READY':m.execution_intent_json={**dict(m.execution_intent_json or {}),'environment':'PAPER','account_id':m.account_id,'symbol':m.symbol,'strategy':m.strategy,'legs':m.legs_json,'max_loss':m.max_loss,'live_trading_enabled':False,'submission_status':'READY_FOR_EXISTING_ROUTER'}
   self._audit(m,'TRADE_PLAN_TRANSITIONED',actor,reason,{'state':target,'execution_intent':m.execution_intent_json});self.session.commit();return self._dto(m)
  def _audit(self,m,event,actor,reason,payload):self.repo.add(TradePlanAuditModel(audit_id=f'TPA-{uuid4().hex.upper()}',trade_plan_id=m.trade_plan_id,trade_plan_version=m.version,event_type=event,actor=actor,reason=reason,event_timestamp=now(),payload_json=payload))
  @staticmethod
  def _dto(m):
   legs=tuple(TradeLeg(**{**x,'side':__import__('trading_ai.advanced_trade_builder.contracts',fromlist=['LegSide']).LegSide(x['side']),'option_right':__import__('trading_ai.advanced_trade_builder.contracts',fromlist=['OptionRight']).OptionRight(x['option_right'])}) for x in m.legs_json)
-  return TradePlan(m.trade_plan_id,m.opportunity_id,m.opportunity_version,m.intelligence_id,m.account_id,m.symbol,m.direction,m.strategy,TradePlanState(m.state),m.version,m.capital,m.risk_budget_pct,m.risk_budget_amount,m.estimated_debit,m.estimated_credit,m.max_loss,m.max_profit,m.reward_risk_ratio,dict(m.net_greeks_json),dict(m.validation_json),legs,m.created_by,m.created_at,m.updated_at,m.notes)
+  return TradePlan(m.trade_plan_id,m.opportunity_id,m.opportunity_version,m.intelligence_id,m.account_id,m.symbol,m.direction,m.strategy,TradePlanState(m.state),m.version,m.capital,m.risk_budget_pct,m.risk_budget_amount,m.estimated_debit,m.estimated_credit,m.max_loss,m.max_profit,m.reward_risk_ratio,dict(m.net_greeks_json),dict(m.validation_json),legs,m.created_by,m.created_at,m.updated_at,m.notes,dict(m.execution_intent_json or {}))

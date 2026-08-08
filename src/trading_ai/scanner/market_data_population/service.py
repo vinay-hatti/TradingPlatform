@@ -107,7 +107,7 @@ class BulkMarketDataPopulationService:
         rows_upserted = 0
         resource_samples: list[dict] = [snapshot_resources().to_dict()]
 
-        # Reject clearly unsupported exchange instruments before invoking yfinance.
+        # Reject clearly unsupported exchange instruments before invoking the provider.
         fetchable: list[str] = []
         for symbol in pending:
             category = self._preflight_failure_category(symbol)
