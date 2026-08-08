@@ -107,3 +107,19 @@ Next strategic focus: Portfolio Risk & Capital Allocation / portfolio-aware best
 Status: IMPLEMENTED — pending user-environment migration and operational acceptance.
 
 Scope: SPX/NDX/RUT multi-OPEX probabilistic settlement ranges, price magnets, support/resistance and dealer-level migration, gamma-flip/call-wall/put-wall forecasts, daily charm/vanna flow, dealer hedging pressure, scenario probabilities, confidence decomposition, continuously refreshed forecast history, Cross-OPEX Transition Map, OPEX Analytics UI, and historical calibration/outcome realization. Refresh is integrated with both split ingestion finalizers.
+
+## Milestone 72 — Performance Calibration & Execution Learning
+
+**Status:** IMPLEMENTED — pending user-environment migration and operational acceptance.
+
+Delivered on the Aug 8, 2026 baseline:
+- Unified immutable prediction registry spanning Institutional Options trade decisions and OPEX forecasts.
+- Idempotent realized-outcome linkage for trade wins/losses and OPEX 50/68/90 coverage, actionable-range, and magnet-zone outcomes.
+- Segmented probability calibration by source, model version, symbol, strategy, and market regime using Brier score, log loss, ECE, and reliability buckets.
+- OPEX calibration target-error tracking for nominal 50/68/90 coverage plus actionable/magnet hit rates.
+- Execution-quality analytics using M70 telemetry: realized slippage, fill rate, decision-to-submit latency, time-to-first-fill, commissions, quality score, execution edge drag, and expected-edge preservation.
+- Performance Analytics `Outcome learning` UI integrating prediction registry, OPEX calibration, execution quality, and segmented calibration.
+- Shared ingestion finalization automatically advances the evidence-only learning cycle after futures/OPEX refresh.
+- Learning governance remains human-approved; autonomous model/weight activation is explicitly disabled.
+
+Database head after install: `m72_001`.

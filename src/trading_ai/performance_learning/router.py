@@ -61,3 +61,13 @@ def reconstruct_outcomes(portfolio_id:str,request:Request,actor:str=Depends(requ
 def evaluate_counterfactuals(portfolio_id:str,request:Request,actor:str=Depends(require_mutation_access)):
  from .outcome_engine import Milestone65LearningService
  with SessionLocal() as s:return env(request,Milestone65LearningService(s).evaluate_counterfactuals(portfolio_id))
+
+@router.post('/portfolios/{portfolio_id}/learning-cycle',response_model=ApiEnvelope)
+def run_learning_cycle(portfolio_id:str,request:Request,actor:str=Depends(require_mutation_access)):
+ from .continuous_learning import ContinuousLearningService
+ with SessionLocal() as s:return env(request,ContinuousLearningService(s).run_cycle(portfolio_id))
+
+@router.get('/portfolios/{portfolio_id}/learning-dashboard',response_model=ApiEnvelope)
+def learning_dashboard(portfolio_id:str,request:Request,_:str=Depends(require_access)):
+ from .continuous_learning import ContinuousLearningService
+ with SessionLocal() as s:return env(request,ContinuousLearningService(s).dashboard(portfolio_id))

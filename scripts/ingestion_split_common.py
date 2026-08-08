@@ -134,6 +134,27 @@ def refresh_futures_intelligence(*, required: bool = False) -> dict[str, object]
         return {"status":"FAILED","error":f"{type(exc).__name__}: {exc}"}
 
 
+def refresh_continuous_learning(*, required: bool = False) -> dict[str, object]:
+    from trading_ai.database.session import SessionLocal
+    from trading_ai.performance_learning.continuous_learning import ContinuousLearningService
+    try:
+        with SessionLocal() as session:
+            result = ContinuousLearningService(session).run_cycle("PAPER-PRIMARY")
+        print(
+            "Continuous Learning: "
+            f"status={result.get('status')}, predictions={result.get('captured', {}).get('created', 0)}, "
+            f"outcomes={result.get('realized', {}).get('created', 0)}, "
+            f"calibration_samples={result.get('calibration', {}).get('sample_size', 0)}, "
+            f"execution_samples={result.get('execution_quality', {}).get('sample_size', 0)}"
+        )
+        return result
+    except Exception as exc:
+        print(f"Continuous Learning failed: {type(exc).__name__}: {exc}")
+        if required:
+            raise
+        return {"status":"FAILED","error":f"{type(exc).__name__}: {exc}"}
+
+
 def refresh_opex_intelligence(*, required: bool = False) -> dict[str, object]:
     from trading_ai.database.session import SessionLocal
     from trading_ai.opex_intelligence.service import OpexIntelligenceService
@@ -343,6 +364,7 @@ def finalize_shared_state(
             # M71.2: refresh futures confirmation first, then update the OPEX posterior.
             futures_intelligence = refresh_futures_intelligence(required=False)
             opex_intelligence = refresh_opex_intelligence(required=False)
+            continuous_learning = refresh_continuous_learning(required=False)
 
             report.update(
                 {
@@ -359,6 +381,7 @@ def finalize_shared_state(
                     "option_valuation_intelligence": option_valuation_intelligence,
                     "futures_intelligence": futures_intelligence,
                     "opex_intelligence": opex_intelligence,
+                    "continuous_learning": continuous_learning,
                 }
             )
     except Exception as exc:

@@ -1,0 +1,20 @@
+"""M72 governed performance learning, OPEX calibration and execution quality completion.
+Revision ID: m72_001
+Revises: m71_002
+"""
+from alembic import op
+import sqlalchemy as sa
+revision='m72_001';down_revision='m71_002';branch_labels=None;depends_on=None
+
+def upgrade():
+ op.create_table('performance_prediction_registry',sa.Column('prediction_id',sa.String(160),primary_key=True),sa.Column('source_type',sa.String(48),nullable=False),sa.Column('source_id',sa.String(160),nullable=False,unique=True),sa.Column('portfolio_id',sa.String(128)),sa.Column('symbol',sa.String(32),nullable=False),sa.Column('strategy',sa.String(64)),sa.Column('target_type',sa.String(64),nullable=False),sa.Column('predicted_probability',sa.Float()),sa.Column('confidence',sa.Float()),sa.Column('model_version',sa.String(96),nullable=False),sa.Column('generated_at',sa.String(64),nullable=False),sa.Column('horizon_end',sa.String(64)),sa.Column('features_json',sa.JSON(),nullable=False),sa.Column('prediction_json',sa.JSON(),nullable=False),sa.Column('lineage_json',sa.JSON(),nullable=False))
+ for n,c in [('ix_m72_pred_source_type','source_type'),('ix_m72_pred_source_id','source_id'),('ix_m72_pred_portfolio','portfolio_id'),('ix_m72_pred_symbol','symbol'),('ix_m72_pred_strategy','strategy'),('ix_m72_pred_target','target_type'),('ix_m72_pred_version','model_version'),('ix_m72_pred_generated','generated_at'),('ix_m72_pred_horizon','horizon_end')]:op.create_index(n,'performance_prediction_registry',[c])
+ op.create_table('performance_prediction_outcomes',sa.Column('outcome_id',sa.String(160),primary_key=True),sa.Column('prediction_id',sa.String(160),nullable=False),sa.Column('outcome_type',sa.String(64),nullable=False),sa.Column('binary_outcome',sa.Integer()),sa.Column('realized_value',sa.Float()),sa.Column('error_value',sa.Float()),sa.Column('realized_at',sa.String(64),nullable=False),sa.Column('outcome_json',sa.JSON(),nullable=False),sa.UniqueConstraint('prediction_id','outcome_type',name='uq_m72_prediction_outcome_type'))
+ for n,c in [('ix_m72_out_prediction','prediction_id'),('ix_m72_out_type','outcome_type'),('ix_m72_out_realized','realized_at')]:op.create_index(n,'performance_prediction_outcomes',[c])
+ op.create_table('performance_calibration_runs',sa.Column('calibration_run_id',sa.String(160),primary_key=True),sa.Column('scope',sa.String(64),nullable=False),sa.Column('scope_value',sa.String(128),nullable=False),sa.Column('target_type',sa.String(64),nullable=False),sa.Column('sample_size',sa.Integer(),nullable=False),sa.Column('brier_score',sa.Float()),sa.Column('log_loss',sa.Float()),sa.Column('expected_calibration_error',sa.Float()),sa.Column('calibration_slope',sa.Float()),sa.Column('calibration_intercept',sa.Float()),sa.Column('generated_at',sa.String(64),nullable=False),sa.Column('metrics_json',sa.JSON(),nullable=False))
+ for n,c in [('ix_m72_cal_scope','scope'),('ix_m72_cal_scope_value','scope_value'),('ix_m72_cal_target','target_type'),('ix_m72_cal_generated','generated_at')]:op.create_index(n,'performance_calibration_runs',[c])
+ op.create_table('performance_execution_quality_snapshots',sa.Column('execution_quality_snapshot_id',sa.String(160),primary_key=True),sa.Column('portfolio_id',sa.String(128),nullable=False),sa.Column('generated_at',sa.String(64),nullable=False),sa.Column('sample_size',sa.Integer(),nullable=False),sa.Column('average_quality_score',sa.Float(),nullable=False),sa.Column('average_slippage_pct',sa.Float(),nullable=False),sa.Column('edge_preservation_pct',sa.Float(),nullable=False),sa.Column('fill_rate_pct',sa.Float(),nullable=False),sa.Column('metrics_json',sa.JSON(),nullable=False))
+ op.create_index('ix_m72_execq_portfolio','performance_execution_quality_snapshots',['portfolio_id']);op.create_index('ix_m72_execq_generated','performance_execution_quality_snapshots',['generated_at'])
+
+def downgrade():
+ op.drop_table('performance_execution_quality_snapshots');op.drop_table('performance_calibration_runs');op.drop_table('performance_prediction_outcomes');op.drop_table('performance_prediction_registry')

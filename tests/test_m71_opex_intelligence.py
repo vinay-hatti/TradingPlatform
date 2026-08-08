@@ -17,7 +17,8 @@ def test_forecast_has_ranges_scenarios_flows_and_migrations():
     f=svc._forecast(snap,prev,ep,None,strikes,{'score':62.,'direction':'BULLISH','rv20':16.},[],datetime.now(timezone.utc))
     assert f['ranges']['90']['low'] < f['ranges']['68']['low'] < f['ranges']['50']['low'] < f['ranges']['50']['high'] < f['ranges']['68']['high'] < f['ranges']['90']['high']
     assert len(f['scenarios'])==4 and round(sum(x['probability'] for x in f['scenarios']),1)==100.0
-    assert len(f['daily_flows'])==15
+    assert len(f['daily_flows'])==11
+    assert all(datetime.fromisoformat(x['date']).weekday() < 5 for x in f['daily_flows'])
     assert f['migration']['gamma_flip']['forecast'] is not None
     assert f['magnet']['candidates']
     assert 'modeled range' in f['summary']

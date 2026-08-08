@@ -23,6 +23,15 @@ def _metric(rows,key):
  vals=[float(r.get(key,0) or 0) for r in rows]
  return round(mean(vals),6) if vals else 0.0
 
+def _select_lifecycle_outcome(rows, current_version):
+ # Deterministically reuse a single lifecycle record for a managed position.
+ # Exact current version wins; otherwise reuse the newest existing record.
+ rows=list(rows or [])
+ if not rows:return None
+ for row in rows:
+  if int(getattr(row,'position_version',-1))==int(current_version):return row
+ return max(rows,key=lambda x:int(getattr(x,'position_version',-1)))
+
 class Milestone65LearningService:
  def __init__(self,session:Session):self.s=session
  def reconstruct_outcomes(self,portfolio_id='PAPER-PRIMARY'):
@@ -31,7 +40,14 @@ class Milestone65LearningService:
   for p in positions:
    decision=self.s.scalar(select(InstitutionalDecisionSnapshotModel).where(InstitutionalDecisionSnapshotModel.opportunity_id==p.opportunity_id))
    pd=self.s.scalar(select(PortfolioDecisionIntelligenceModel).where(PortfolioDecisionIntelligenceModel.opportunity_id==p.opportunity_id).order_by(PortfolioDecisionIntelligenceModel.created_at.desc()).limit(1))
-   existing=self.s.scalar(select(TradeOutcomeModel).where(TradeOutcomeModel.position_id==p.position_id,TradeOutcomeModel.position_version==p.version))
+   # One lifecycle record per managed position. Position.version is an operational
+   # concurrency/version counter and can change thousands of times while the trade
+   # remains OPEN; it must never create a new learning outcome. Prefer an exact
+   # current-version row if one already exists, otherwise reuse the newest lifecycle
+   # row for the position and advance it in place. Duplicate historical rows are
+   # deliberately not deleted here; the governed M72.2.1 repair utility handles them.
+   existing_rows=list(self.s.scalars(select(TradeOutcomeModel).where(TradeOutcomeModel.position_id==p.position_id).order_by(TradeOutcomeModel.position_version.desc())))
+   existing=_select_lifecycle_outcome(existing_rows,p.version)
    mark=p.mark_json or {};meta=p.metadata_json or {};health=p.health_json or {};dp=(decision.payload_json if decision else {}) or {}
    entry=max(float(p.entry_value or 0),1e-9);realized=float(p.realized_pnl or 0);unrealized=float(mark.get('unrealized_pnl',0) or 0);pnl=realized+(0 if p.state=='CLOSED' else unrealized)
    ret=float(meta.get('realized_return_pct',mark.get('unrealized_return_pct',pnl/entry*100)))
@@ -101,8 +117,10 @@ class Milestone65LearningService:
   self.reconstruct_outcomes(portfolio_id);self.evaluate_counterfactuals(portfolio_id)
   rows=self._rows(portfolio_id,closed_only=False);closed=[r for r in rows if r['outcome'] in ('WIN','LOSS','FLAT')]
   base=PerformanceLearningService.build_report(closed,portfolio_id,_id('M65-REPORT')).to_dict();cal=self.calibration_metrics(closed);attr=self._attribution(closed);execution=self._execution(portfolio_id);management=self._management(closed);portfolio=self._portfolio_learning(closed)
+  from .continuous_learning import ContinuousLearningService
+  continuous=ContinuousLearningService(self.s).run_cycle(portfolio_id)
   returns=[r['realized_return_pct'] for r in closed];avg=mean(returns) if returns else 0;sd=pstdev(returns) if len(returns)>1 else 0;down=pstdev([min(0,r) for r in returns]) if len(returns)>1 else 0
-  command={'policy_version':POLICY_VERSION,'sample_governance':{'minimum_for_recommendation':10,'minimum_for_activation':30,'automatic_activation':False},'overall':base['overall'],'attribution':attr,'calibration_metrics':cal,'execution_quality':execution,'management_effectiveness':management,'portfolio_allocation_learning':portfolio,'risk_adjusted':{'sharpe_proxy':round(avg/sd*sqrt(252),4) if sd else 0.0,'sortino_proxy':round(avg/down*sqrt(252),4) if down else 0.0},'model_drift':{'status':'INSUFFICIENT_SAMPLE' if len(closed)<30 else 'STABLE','sample_size':len(closed)},'recommendations':base['recommendations']}
+  command={'policy_version':POLICY_VERSION,'sample_governance':{'minimum_for_recommendation':10,'minimum_for_activation':30,'automatic_activation':False},'overall':base['overall'],'attribution':attr,'calibration_metrics':cal,'execution_quality':execution,'management_effectiveness':management,'portfolio_allocation_learning':portfolio,'risk_adjusted':{'sharpe_proxy':round(avg/sd*sqrt(252),4) if sd else 0.0,'sortino_proxy':round(avg/down*sqrt(252),4) if down else 0.0},'model_drift':{'status':'INSUFFICIENT_SAMPLE' if len(closed)<30 else 'STABLE','sample_size':len(closed)},'continuous_learning':continuous,'recommendations':base['recommendations']}
   report=PerformanceLearningReportModel(report_id=base['report_id'],portfolio_id=portfolio_id,window_start=None,window_end=None,generated_at=now(),analytics_version=POLICY_VERSION,payload_json={**base,'command_center':command},generated_by=actor);self.s.add(report)
   self.s.add(PerformanceAttributionSnapshotModel(attribution_snapshot_id=_id('M65-ATTR'),portfolio_id=portfolio_id,generated_at=now(),sample_size=len(closed),payload_json=attr))
   self.s.add(ProbabilityCalibrationSnapshotModel(calibration_snapshot_id=_id('M65-CAL'),portfolio_id=portfolio_id,scope='GLOBAL',scope_value='ALL',sample_size=cal['sample_size'],brier_score=cal['brier_score'],log_loss=cal['log_loss'],expected_calibration_error=cal['expected_calibration_error'],generated_at=now(),payload_json=cal))

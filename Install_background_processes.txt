@@ -32,3 +32,9 @@ Schedule for above Milestone 69_6
 13:30  Options-only refresh
 14:30  Options-only refresh
 15:20  Full forced end-of-day underlying + options ingestion
+
+
+
+Run the below to collect learning evidence every evening:
+export lc_ext=`date +%F` ; cd /Users/vinay.hatti/TradingPlatform ; uv run python scripts/run_m72_learning_cycle.py > reports/learning_evidence/lc_${lc_ext}.txt
+

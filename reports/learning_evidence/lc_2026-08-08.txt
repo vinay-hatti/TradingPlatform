@@ -1,0 +1,76 @@
+{
+  "version": "M72.2.1-EVIDENCE-INTEGRITY-HARDENING-1.0",
+  "status": "READY",
+  "trade_evidence": {
+    "reconstruction": {
+      "requested": 14,
+      "created": 0,
+      "refreshed": 14
+    },
+    "trade_outcomes": 14,
+    "observations_created": 0,
+    "observations_existing": 0,
+    "pending_open_outcomes": 14
+  },
+  "opex_realization": {
+    "status": "READY",
+    "created": 0
+  },
+  "execution_evidence": {
+    "execution_intents": 20,
+    "broker_orders": 19,
+    "matched_orders": 15,
+    "not_routed_intents": 5,
+    "routed_without_persisted_order": 0,
+    "missing_orders": 0,
+    "terminal_orders": 2,
+    "filled_orders": 0,
+    "telemetry_created": 0,
+    "learning_samples_created": 0,
+    "broker_executions": 0,
+    "errors": 0,
+    "mode": "PERSISTED_EVIDENCE_ONLY"
+  },
+  "captured": {
+    "created": 0,
+    "existing": 3733,
+    "version": "M72.2.1-EVIDENCE-INTEGRITY-HARDENING-1.0"
+  },
+  "realized": {
+    "created": 0,
+    "existing": 0,
+    "pending": 3733
+  },
+  "calibration": {
+    "sample_size": 0,
+    "groups": 0
+  },
+  "execution_quality": {
+    "sample_size": 2,
+    "filled": 0,
+    "fill_rate_pct": 0.0,
+    "average_quality_score": 0.0,
+    "average_realized_slippage_pct": 0.0,
+    "average_time_to_first_fill_seconds": 0.0,
+    "median_time_to_first_fill_seconds": 0.0,
+    "average_decision_to_submit_seconds": 0.0,
+    "commission_total": 0.0,
+    "edge_preservation_pct": 0.0,
+    "average_execution_edge_drag_dollars": 0.0,
+    "by_strategy": {}
+  },
+  "opex_calibration": {
+    "sample_size": 0,
+    "coverage50": null,
+    "coverage68": null,
+    "coverage90": null,
+    "actionable_range_hit_rate": null,
+    "magnet_zone_hit_rate": null,
+    "average_magnet_distance_pct": null,
+    "status": "INSUFFICIENT_SAMPLE"
+  },
+  "governance": {
+    "automatic_activation": false,
+    "broker_sync_mode": "EXPLICIT_ONLY"
+  }
+}
