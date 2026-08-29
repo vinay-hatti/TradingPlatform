@@ -1,0 +1,22 @@
+{
+  "milestone": "M77.19.8.7.10.6",
+  "validation_window": [
+    "2018-01-01",
+    "2022-12-31"
+  ],
+  "target_horizons": [
+    5,
+    10,
+    20
+  ],
+  "target_ids": [
+    "T_ABS_RET",
+    "T_REL_SPY_RET",
+    "T_DIRECTION"
+  ],
+  "preprocessor_fit_partition": "DEVELOPMENT_ONLY",
+  "validation_refit_authorized": false,
+  "model_retuning_authorized": false,
+  "final_holdout_open_authorized": false,
+  "production_authority_effect": false
+}

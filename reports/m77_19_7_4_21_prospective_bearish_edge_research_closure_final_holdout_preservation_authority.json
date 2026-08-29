@@ -1,0 +1,85 @@
+{
+  "architecture_contract": {
+    "descriptive_bearish_state_may_remain_useful": true,
+    "failed_prospective_certification_does_not_invalidate_state_detection": true,
+    "stage_1": "DESCRIPTIVE_STATE",
+    "stage_2": "PROSPECTIVE_EDGE",
+    "stage_3": "ECONOMIC_OPPORTUNITY",
+    "stage_4": "STRATEGY_SELECTION"
+  },
+  "closure_state": {
+    "automatic_bearish_inversion_authorized": false,
+    "certified_prospective_bearish_champion_exists": false,
+    "further_filter_rescue_search_authorized": false,
+    "original_candidate_family_retired": true,
+    "prospective_bearish_edge_research_branch": "CLOSED_NO_CERTIFIED_CHAMPION",
+    "regime_conditioned_candidate_family_retired": true
+  },
+  "final_holdout_preservation": {
+    "opened_by_this_milestone": false,
+    "read_by_this_milestone": false,
+    "remains_pristine_for_materially_different_future_architecture": true,
+    "reuse_to_rescue_closed_candidate_family_authorized": false,
+    "scored_by_this_milestone": false,
+    "start": "2023-01-01"
+  },
+  "instability_authority_sha256": "f59488c3136d56158894689141309948f1c5fa99e35d00479239e983df1e8f0e",
+  "next_step": "RETURN_TO_M77_PROGRAM_GOVERNANCE_AND_SELECT_MATERIALLY_DIFFERENT_PROSPECTIVE_EDGE_ARCHITECTURE_BEFORE_ANY_NEW_MODEL_RESEARCH",
+  "production_governance": {
+    "decision_intelligence_change_authorized": false,
+    "execution_change_authorized": false,
+    "institutional_options_change_authorized": false,
+    "management_change_authorized": false,
+    "portfolio_change_authorized": false,
+    "production_authority_effect": false,
+    "production_model_change_authorized": false,
+    "scoring_change_authorized": false,
+    "stock_intelligence_change_authorized": false,
+    "threshold_change_authorized": false,
+    "weight_change_authorized": false
+  },
+  "recommended_future_direction": {
+    "continue_current_bearish_filter_search": false,
+    "next_architecture_should_be_materially_different": true,
+    "preserve_final_holdout_for_that_architecture": true
+  },
+  "research_closures": [
+    {
+      "basis": "H1/H3 Development rejection and H2/H4 Validation rejection",
+      "production_effect": false,
+      "research_branch": "ORIGINAL_PROSPECTIVE_BEARISH_CANDIDATES",
+      "status": "RETIRED_VALIDATION_FAILURE"
+    },
+    {
+      "basis": "Authorized Validation failed 5/10/20",
+      "production_effect": false,
+      "research_branch": "REGIME_CONDITIONED_H4_GE10_RC1",
+      "status": "RETIRED_VALIDATION_FAILURE"
+    },
+    {
+      "basis": "Authorized Validation failed 5/10/20; N below 300",
+      "production_effect": false,
+      "research_branch": "REGIME_CONDITIONED_H4_5_10_RC2",
+      "status": "RETIRED_VALIDATION_FAILURE"
+    }
+  ],
+  "research_governance": {
+    "automatic_bearish_signal_inversion": false,
+    "calibrator_fitting": false,
+    "classifier_training": false,
+    "new_candidate_scored": false,
+    "parameter_fitting": false,
+    "regime_search_or_optimization": false,
+    "threshold_search_or_optimization": false
+  },
+  "semantic_authority": {
+    "bearish_state_is_certified_standalone_future_downside_probability": false,
+    "economic_opportunity_must_be_separate_from_prospective_edge": true,
+    "prospective_edge_must_be_separate_from_descriptive_state": true,
+    "stock_intelligence_bearish_state_role": "DESCRIPTIVE_STATE_EVIDENCE",
+    "strategy_selection_must_be_downstream_of_certified_edge": true
+  },
+  "status": "READY",
+  "validation_authority_sha256": "8d56017a4006e494b4901ca830d7996a04c1ce73c0ba59ddf31e5a64bafa35dc",
+  "version": "M77.19.7.4.21-PROSPECTIVE-BEARISH-EDGE-RESEARCH-CLOSURE-FINAL-HOLDOUT-PRESERVATION-AUTHORITY-1.0"
+}

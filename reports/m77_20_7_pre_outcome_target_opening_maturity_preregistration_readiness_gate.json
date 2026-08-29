@@ -1,0 +1,83 @@
+{
+  "cumulative_paired_observation_rows": 504,
+  "feature_selection_search_authorized": false,
+  "first_accumulated_effective_session": "2026-08-25",
+  "horizons": [
+    {
+      "first_matured_observation_session": null,
+      "horizon": 5,
+      "last_matured_observation_session": null,
+      "matured_capture_session_count": 0,
+      "minimum_required_rows": 10000,
+      "not_yet_matured_capture_session_count": 1,
+      "potentially_matured_paired_rows": 0,
+      "pre_outcome_opening_row_floor_met": false,
+      "unresolvable_capture_session_count": 0
+    },
+    {
+      "first_matured_observation_session": null,
+      "horizon": 10,
+      "last_matured_observation_session": null,
+      "matured_capture_session_count": 0,
+      "minimum_required_rows": 10000,
+      "not_yet_matured_capture_session_count": 1,
+      "potentially_matured_paired_rows": 0,
+      "pre_outcome_opening_row_floor_met": false,
+      "unresolvable_capture_session_count": 0
+    },
+    {
+      "first_matured_observation_session": null,
+      "horizon": 20,
+      "last_matured_observation_session": null,
+      "matured_capture_session_count": 0,
+      "minimum_required_rows": 10000,
+      "not_yet_matured_capture_session_count": 1,
+      "potentially_matured_paired_rows": 0,
+      "pre_outcome_opening_row_floor_met": false,
+      "unresolvable_capture_session_count": 0
+    }
+  ],
+  "hyperparameter_search_authorized": false,
+  "latest_accumulated_effective_session": "2026-08-25",
+  "latest_market_session_seen": "2026-08-25",
+  "market_session_calendar_source": "POSTGRESQL_PRICE_HISTORY_DATE_ONLY",
+  "market_session_symbol": "SPY",
+  "next_step": "CONTINUE_DAILY_M77_20_6_CAPTURE_AND_RERUN_M77_20_7_READINESS_GATE",
+  "outcomes_read": false,
+  "post_target_binary_eligibility_rule": {
+    "ZERO_rows_excluded_from_binary_scoring": true,
+    "minimum_actual_binary_UP_DOWN_rows_per_horizon": 10000,
+    "missing_or_unmatured_targets_excluded": true,
+    "scoring_remains_blocked_if_any_horizon_below_floor": true
+  },
+  "pre_outcome_target_opening_ready": false,
+  "pre_outcome_target_opening_rule": {
+    "all_horizons_required": true,
+    "horizon_sessions": [
+      5,
+      10,
+      20
+    ],
+    "minimum_potentially_matured_paired_rows_per_horizon": 10000,
+    "rule_frozen_before_any_target_opening": true
+  },
+  "price_values_read": false,
+  "production_authority_effect": false,
+  "prospective_outcomes_opened": false,
+  "prospective_scoring_authorized": false,
+  "prospective_scoring_performed": false,
+  "retuning_authorized": false,
+  "returns_read": false,
+  "statistical_effective_session_count": 1,
+  "status": "READY_ACCUMULATING_PRE_OUTCOME",
+  "target_labels_read": false,
+  "target_materialization_authorized": false,
+  "threshold_search_authorized": false,
+  "upstream_sha256": {
+    "accumulation_manifest": "a3168853261dfd91f8493574e503f6a906a6aedda9a6ffe6a3249590d492f3eb",
+    "m77_20_0": "f0f5434e2da3180ce1badef0a8f54956cb78a88c744b43dcf831c238664120a9",
+    "m77_20_2": "f51f52e20ccf0cd3385667fb910dad80479c424eac23ddb8add66099d3600788",
+    "m77_20_6": "e37d8e51a8a73bfa342dfb3207a8745a19d77ff9dda2ae6958abc2d33ff5a636"
+  },
+  "version": "M77.20.7-PRE-OUTCOME-TARGET-OPENING-MATURITY-PREREGISTRATION-READINESS-GATE-1.0"
+}

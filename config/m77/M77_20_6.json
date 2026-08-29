@@ -1,0 +1,13 @@
+{
+  "milestone": "M77.20.6",
+  "execution_order": [
+    "M77.20.3",
+    "M77.20.4",
+    "M77.20.5"
+  ],
+  "effective_session_deduplication": true,
+  "pre_outcome_accumulation_only": true,
+  "target_materialization_authorized": false,
+  "prospective_scoring_authorized": false,
+  "production_authority_effect": false
+}

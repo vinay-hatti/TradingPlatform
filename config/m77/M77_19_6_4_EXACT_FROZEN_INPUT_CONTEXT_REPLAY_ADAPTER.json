@@ -1,0 +1,13 @@
+{
+  "version": "M77.19.6.4-EXACT-FROZEN-INPUT-CONTEXT-REPLAY-ADAPTER-1.0",
+  "milestone": "M77.19.6.4",
+  "title": "Exact Frozen Input & Context Replay Adapter",
+  "research_only": true,
+  "database_mode": "READ_ONLY",
+  "filesystem_research_artifacts_only": true,
+  "production_authority_effect": false,
+  "full_23_year_reconstruction_authorized": false,
+  "controlled_exact_input_parity_certified": false,
+  "sample_per_cadence": 48,
+  "purpose": "Materialize exact frozen production input/context bundles for the controlled overlap-period parity replay."
+}

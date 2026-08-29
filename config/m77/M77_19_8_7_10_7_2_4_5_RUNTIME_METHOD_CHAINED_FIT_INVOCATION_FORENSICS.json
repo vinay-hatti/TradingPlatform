@@ -1,0 +1,12 @@
+{
+  "milestone": "M77.19.8.7.10.7.2.4.5",
+  "expected_runtime_behavior": [
+    "fit",
+    "predict_proba"
+  ],
+  "validation_scoring_execution_authorized": false,
+  "formula_reimplementation_authorized": false,
+  "semantic_equivalent_rewrite_authorized": false,
+  "final_holdout_opened": false,
+  "production_authority_effect": false
+}

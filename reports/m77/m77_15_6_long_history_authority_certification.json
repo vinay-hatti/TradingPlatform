@@ -1,0 +1,31 @@
+{
+  "version": "M77.15.6-LONG-HISTORY-AUTHORITY-CERTIFICATION-1.0",
+  "status": "READY",
+  "gates": {
+    "SPX": {
+      "present": true,
+      "starts_by_2000_01_10": false,
+      "row_count_ge_min": false,
+      "duplicate_dates_zero": true,
+      "ohlc_violations_zero": true
+    },
+    "NDX": {
+      "present": true,
+      "starts_by_2000_01_10": false,
+      "row_count_ge_min": false,
+      "duplicate_dates_zero": true,
+      "ohlc_violations_zero": true
+    },
+    "RUT": {
+      "present": true,
+      "starts_by_2000_01_10": false,
+      "row_count_ge_min": false,
+      "duplicate_dates_zero": true,
+      "ohlc_violations_zero": true
+    }
+  },
+  "certified_for_m77_15_7_replication": false,
+  "production_authority_effect": false,
+  "database_writes": false,
+  "next_step": "REVIEW_DATA_COVERAGE_OR_SOURCE_GAPS"
+}

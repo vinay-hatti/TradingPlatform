@@ -1,0 +1,14 @@
+{
+  "version": "M77.19.6.5.2.4-MONTHLY-FEATURE-CONFIDENCE-COMPONENT-FORENSICS-1.0",
+  "milestone": "M77.19.6.5.2.4",
+  "title": "Monthly Feature & Confidence Component Forensics",
+  "research_only": true,
+  "forensic_probe_only": true,
+  "database_mode": "READ_ONLY_SPY_SESSION_CALENDAR_ONLY",
+  "prior_report_sha256": "3f43cc0ae88dad4f322240e419a1f3c090e178a6d835256bdee3b9437246a58b",
+  "numeric_tolerance": 1e-09,
+  "parity_thresholds_relaxed": false,
+  "controlled_exact_input_parity_certified": false,
+  "full_23_year_reconstruction_authorized": false,
+  "production_authority_effect": false
+}

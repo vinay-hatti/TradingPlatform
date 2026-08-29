@@ -1,0 +1,6 @@
+id,intent,source_authority,categories,future_data_allowed,thresholds_fitted_here
+MARKET_DRIFT,"Separate persistent upward, neutral, and downward market drift environments.",frozen point-in-time market/index history only,UP_DRIFT|NEUTRAL_DRIFT|DOWN_DRIFT,False,False
+VOLATILITY,"Separate low, normal, and elevated realized-volatility environments.",point-in-time native/frozen volatility evidence only,LOW_VOL|NORMAL_VOL|HIGH_VOL,False,False
+TREND_REGIME,Separate broad market trend regimes without using candidate outcomes.,point-in-time market/trend intelligence or frozen index history,UPTREND|SIDEWAYS|DOWNTREND,False,False
+BREADTH_REGIME,Separate broad participation from narrow/weak participation.,point-in-time breadth evidence only when historically available,BROAD|MIXED|WEAK,False,False
+BEAR_MARKET_CONTEXT,Identify major market drawdown context separately from ordinary bearish signals.,point-in-time index drawdown state only,NORMAL|CORRECTION|BEAR_MARKET,False,False

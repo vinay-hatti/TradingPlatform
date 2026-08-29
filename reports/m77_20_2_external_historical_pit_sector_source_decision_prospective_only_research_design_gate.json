@@ -1,0 +1,119 @@
+{
+  "decision": {
+    "decision_basis": "NO_REPO_CERTIFIED_HISTORICAL_PIT_SOURCE_AND_OUTCOMES_STILL_CLOSED",
+    "decision_made_before_prospective_outcomes_opened": true,
+    "historical_backfill_route": "CLOSED",
+    "historical_external_source_certification_attempted_by_this_step": false,
+    "historical_external_source_selected": false,
+    "prospective_only_route_selected": true
+  },
+  "evaluation_contract": {
+    "advancement_rule": {
+      "all_horizons_delta_floor": -0.002,
+      "mean_balanced_accuracy_delta_min": 0.003,
+      "minimum_matured_binary_rows_per_horizon": 10000,
+      "paired_date_cluster_bootstrap_lower_95ci_above_zero_horizons_min": 2,
+      "pass_only_authorizes_next_shadow_certification_stage": true,
+      "positive_delta_horizons_min": 2,
+      "production_promotion_authorized_if_passed": false
+    },
+    "analysis_model": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+    "baseline_feature_contract": "FROZEN_M77_19_BASELINE",
+    "comparison_feature_contract": "FROZEN_M77_19_BASELINE_PLUS_PROSPECTIVE_F071",
+    "decision_threshold": 0.5,
+    "family_selection_authorized": false,
+    "feature_selection_search_authorized": false,
+    "frozen_configs": {
+      "10": {
+        "C": 1.0
+      },
+      "20": {
+        "C": 0.1
+      },
+      "5": {
+        "C": 10.0
+      }
+    },
+    "horizons": [
+      5,
+      10,
+      20
+    ],
+    "hyperparameter_search_authorized": false,
+    "minimum_matured_binary_rows_per_horizon": 10000,
+    "outcomes_opening_prerequisites": [
+      "PROSPECTIVE_MEMBERSHIP_SNAPSHOT_CAPTURE_CERTIFIED",
+      "PROSPECTIVE_BENCHMARK_SNAPSHOT_CAPTURE_CERTIFIED",
+      "PROSPECTIVE_F071_FEATURE_SNAPSHOT_IMMUTABLE",
+      "MINIMUM_MATURED_SAMPLE_RULE_MET"
+    ],
+    "primary_metric": "BALANCED_ACCURACY_DELTA_F071_MINUS_BASELINE",
+    "production_promotion_authorized_if_passed": false,
+    "research_mode": "PROSPECTIVE_SHADOW_INCREMENTAL_VALUE_ONLY",
+    "retuning_authorized": false,
+    "same_observation_population_required": true,
+    "threshold_search_authorized": false
+  },
+  "execution_state": {
+    "cycle2_feature_accepted": false,
+    "historical_F071_branch_closed": true,
+    "production_authority_effect": false,
+    "prospective_F071_materialized": false,
+    "prospective_benchmark_snapshot_capture_certified": false,
+    "prospective_benchmark_snapshot_capture_started": false,
+    "prospective_membership_snapshot_capture_certified": false,
+    "prospective_membership_snapshot_capture_started": false,
+    "prospective_only_design_certified": true,
+    "prospective_outcomes_opened": false,
+    "prospective_scoring_performed": false
+  },
+  "next_step": "BUILD_M77_20_3_PROSPECTIVE_SECTOR_MEMBERSHIP_AND_BENCHMARK_SNAPSHOT_CAPTURE_AUTHORITY",
+  "prospective_F071_contract": {
+    "benchmark_fallback_to_SPY_authorized": false,
+    "consumed_final_holdout_materialization_authorized": false,
+    "cross_sector_imputation_authorized": false,
+    "current_sector_backfill_authorized": false,
+    "feature_id": "F071",
+    "formula_change_authorized": false,
+    "historical_development_materialization_authorized": false,
+    "historical_validation_materialization_authorized": false,
+    "materialization_scope": "PROSPECTIVE_ONLY",
+    "prospective_feature_materialization_authorized_after_snapshot_capture_certification": true,
+    "rs_sector_13w_formula": "symbol trailing 65 available sessions return minus captured sector benchmark trailing 65 available sessions return",
+    "rs_sector_26w_formula": "symbol trailing 130 available sessions return minus captured sector benchmark trailing 130 available sessions return",
+    "same_as_of_or_prior_snapshot_only": true
+  },
+  "prospective_capture_contract": {
+    "benchmark_pre_inception_substitution_authorized": false,
+    "benchmark_snapshot_required_fields": [
+      "sector",
+      "benchmark_symbol",
+      "snapshot_date",
+      "source_identity",
+      "source_record_identity_or_snapshot_hash"
+    ],
+    "capture_cadence": "DAILY_SNAPSHOT_ON_EACH_MARKET_SESSION_OR_GOVERNED_DAILY_INGESTION_RUN",
+    "capture_start": "2026-08-24",
+    "future_outcome_access_for_snapshot_capture": false,
+    "historical_rewrite_authorized": false,
+    "membership_snapshot_required_fields": [
+      "symbol",
+      "sector",
+      "snapshot_date",
+      "source_identity",
+      "source_record_identity_or_snapshot_hash"
+    ],
+    "prospective_outcomes_opened": false,
+    "retroactive_benchmark_substitution_authorized": false,
+    "retroactive_sector_reclassification_authorized": false,
+    "snapshot_immutability_required": true,
+    "unknown_benchmark_policy": "EXPLICIT_MISSING_F071",
+    "unknown_membership_policy": "EXPLICIT_MISSING_F071"
+  },
+  "status": "READY",
+  "upstream_sha256": {
+    "m77_20_0": "f0f5434e2da3180ce1badef0a8f54956cb78a88c744b43dcf831c238664120a9",
+    "m77_20_1": "df00d67774563aab7959a049a228bac0f964ba28ea3b016aa2976d9203703688"
+  },
+  "version": "M77.20.2-EXTERNAL-HISTORICAL-PIT-SECTOR-SOURCE-DECISION-PROSPECTIVE-ONLY-RESEARCH-DESIGN-GATE-1.0"
+}

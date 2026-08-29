@@ -1,0 +1,50 @@
+{
+  "final_holdout_window": {
+    "end": "2026-08-21",
+    "start": "2023-01-01"
+  },
+  "governance": {
+    "consumed_validation_read": false,
+    "final_holdout_feature_selection": false,
+    "final_holdout_model_retuning": false,
+    "final_holdout_threshold_search": false,
+    "production_authority_effect": false,
+    "secondary_configuration_can_rescue_primary_failure": false
+  },
+  "model": {
+    "family": "HistGradientBoostingClassifier",
+    "feature_selection": "DEVELOPMENT_ONLY_TOP80_BY_NONMISSING_COUNT_THEN_VARIANCE",
+    "imputer": "DEVELOPMENT_ONLY_MEDIAN",
+    "l2_regularization": 1.0,
+    "learning_rate": 0.05,
+    "max_iter": 150,
+    "max_leaf_nodes": 15,
+    "min_samples_leaf": 100,
+    "random_seed": 77212,
+    "training_partition": "DEVELOPMENT_ONLY_THROUGH_2017_12_31"
+  },
+  "preregistration_sha256": "6231916aa4f7eba1eb3e038a56bb32ee67aeb84539923dd933bc51e200ac0568",
+  "primary_acceptance_gates": {
+    "minimum_candidate_rows": 1000,
+    "minimum_loss_10_rate_reduction": 0.0,
+    "minimum_mean_return_improvement": -0.001,
+    "minimum_positive_risk_improvement_year_fraction": 0.75,
+    "minimum_severe_loss_capture_lift_vs_random": 2.0,
+    "minimum_veto_rows": 50,
+    "minimum_veto_symbols": 30,
+    "minimum_vetoed_loss_10_rate_edge": 0.0,
+    "minimum_win_rate_improvement": -0.0025
+  },
+  "primary_horizon_sessions": 20,
+  "primary_population": "pop_certified_trade_builder_ready",
+  "primary_veto": "BOTTOM_1_PERCENT_CONTEMPORANEOUS_CROSS_SECTION_PROBABILITY_UP",
+  "protocol_kind": "ONE_TIME_FINAL_HOLDOUT_DOWNSIDE_RISK_VETO_CERTIFICATION",
+  "tail_fraction": 0.01,
+  "upstream_evidence_sha256": {
+    "candidate_long_bearish_veto_evidence.csv": "8aa15d076800c4f6b7f13454df157b97adb25f1ed9df6d2b7080d30eb6d55e9e",
+    "candidate_long_veto_readiness.csv": "95f6c75996a99b550c080c5c3b06227348bbf6409c1b405c21c2cf42ac055c6e",
+    "point_in_time_long_candidate_veto_summary.json": "0e3c71988e1bcef51dd3b0f5c11c1afedcf5b78dd432575ea5989261af498759",
+    "run_manifest.json": "8a91dd106229f56bce4d6f3364a4584081c0e990a7664a6a3edf36ca792f1167"
+  },
+  "version": "M77.22.4-PREREGISTERED-FINAL-HOLDOUT-DOWNSIDE-RISK-VETO-1.0"
+}

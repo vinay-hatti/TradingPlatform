@@ -1,0 +1,123 @@
+{
+  "completed_units": [
+    [
+      "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      5
+    ],
+    [
+      "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      10
+    ],
+    [
+      "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      20
+    ],
+    [
+      "MF2_MONOTONIC_GAM_DIRECTION",
+      5
+    ],
+    [
+      "MF2_MONOTONIC_GAM_DIRECTION",
+      10
+    ],
+    [
+      "MF2_MONOTONIC_GAM_DIRECTION",
+      20
+    ]
+  ],
+  "evidence": [
+    {
+      "C": 10.0,
+      "balanced_accuracy": 0.5113192264802511,
+      "brier_score": 0.24878748653983745,
+      "development_fit_row_count": 301524,
+      "elapsed_seconds": 66.56832025002223,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "horizon": 5,
+      "log_loss": 0.69072902460298,
+      "roc_auc": 0.5187679179523692,
+      "status": "EVALUATED",
+      "validation_score_row_count": 140184
+    },
+    {
+      "balanced_accuracy": 0.5070611869641755,
+      "brier_score": 0.24883037632402816,
+      "development_fit_row_count": 301524,
+      "elapsed_seconds": 1788.768361833063,
+      "family": "MF2_MONOTONIC_GAM_DIRECTION",
+      "horizon": 5,
+      "l2_penalty": 0.1,
+      "log_loss": 0.6908067915282691,
+      "prediction_chunk_size": 20000,
+      "prediction_execution_mode": "CHUNKED_EXACT_CERTIFIED_PREDICT_PROBA",
+      "roc_auc": 0.5114634745563129,
+      "spline_knots": 4,
+      "status": "EVALUATED",
+      "validation_score_row_count": 140184
+    },
+    {
+      "C": 1.0,
+      "balanced_accuracy": 0.5079039039587212,
+      "brier_score": 0.24807867237230533,
+      "development_fit_row_count": 301326,
+      "elapsed_seconds": 60.19210004096385,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "horizon": 10,
+      "log_loss": 0.6893480302446391,
+      "roc_auc": 0.517177494742923,
+      "status": "EVALUATED",
+      "validation_score_row_count": 139650
+    },
+    {
+      "balanced_accuracy": 0.5066945651247977,
+      "brier_score": 0.24731081762899781,
+      "development_fit_row_count": 301326,
+      "elapsed_seconds": 1326.8804437079234,
+      "family": "MF2_MONOTONIC_GAM_DIRECTION",
+      "horizon": 10,
+      "l2_penalty": 0.1,
+      "log_loss": 0.6877570842512712,
+      "prediction_chunk_size": 20000,
+      "prediction_execution_mode": "CHUNKED_EXACT_CERTIFIED_PREDICT_PROBA",
+      "roc_auc": 0.52193100796718,
+      "spline_knots": 4,
+      "status": "EVALUATED",
+      "validation_score_row_count": 139650
+    },
+    {
+      "C": 0.1,
+      "balanced_accuracy": 0.5060420559758336,
+      "brier_score": 0.24843666370168055,
+      "development_fit_row_count": 300505,
+      "elapsed_seconds": 55.58740141708404,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "horizon": 20,
+      "log_loss": 0.6901844061661407,
+      "roc_auc": 0.5120099738283121,
+      "status": "EVALUATED",
+      "validation_score_row_count": 138605
+    },
+    {
+      "balanced_accuracy": 0.4978521883700043,
+      "brier_score": 0.24840612283318725,
+      "development_fit_row_count": 300505,
+      "elapsed_seconds": 1296.3620534170186,
+      "family": "MF2_MONOTONIC_GAM_DIRECTION",
+      "horizon": 20,
+      "l2_penalty": 0.1,
+      "log_loss": 0.6900072851256417,
+      "prediction_chunk_size": 20000,
+      "prediction_execution_mode": "CHUNKED_EXACT_CERTIFIED_PREDICT_PROBA",
+      "roc_auc": 0.5007940460805825,
+      "spline_knots": 4,
+      "status": "EVALUATED",
+      "validation_score_row_count": 138605
+    }
+  ],
+  "final_holdout_opened": false,
+  "production_authority_effect": false,
+  "status": "COMPLETE",
+  "validation_model_retuning_performed": false,
+  "validation_scoring_performed": true,
+  "version": "M77.19.8.7.10.7.3.6-MEMORY-BOUND-ISOLATED-FROZEN-VALIDATION-SCORING-1.0"
+}

@@ -34,7 +34,7 @@ def current_decision_intelligence(opportunity_id:str,request:Request,portfolio_i
  return env(request,data)
 
 from .optimizer import PortfolioOptimizationService
-from .orchestration import Milestone64ContinuousPortfolioIntelligenceService
+from .orchestration import M64CycleBusyError, M64HistoryCleanupIncompleteError, Milestone64ContinuousPortfolioIntelligenceService
 
 @router.post('/optimizer/build',response_model=ApiEnvelope)
 def build_optimizer(request:Request,payload:dict|None=None,actor:str=Depends(require_mutation_access)):
@@ -66,4 +66,10 @@ def optimizer_publication(request:Request,portfolio_id:str=Query('PAPER-PRIMARY'
 @router.post('/continuous-intelligence/run',response_model=ApiEnvelope)
 def run_continuous_intelligence(request:Request,payload:dict|None=None,actor:str=Depends(require_mutation_access)):
  data=payload or {}
- return env(request,Milestone64ContinuousPortfolioIntelligenceService(SessionLocal).run(data.get('portfolio_id','PAPER-PRIMARY'),actor))
+ try:
+  return env(request,Milestone64ContinuousPortfolioIntelligenceService(SessionLocal).run(
+   data.get('portfolio_id','PAPER-PRIMARY'),actor,
+   lock_timeout_seconds=float(data.get('lock_timeout_seconds',0.0) or 0.0),
+  ))
+ except (M64CycleBusyError, M64HistoryCleanupIncompleteError) as exc:
+  return env(request,{'version':'M64.2.4.3-API-DEFERRED-1.0',**exc.as_dict()})

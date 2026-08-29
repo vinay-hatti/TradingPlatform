@@ -1,0 +1,7 @@
+family,horizon,balanced_accuracy,above_chance_0_500,meets_development_mean_reference_0_505,meets_development_single_fold_floor_reference_0_495,reference_only_not_holdout_gate
+MF1_REGULARIZED_LOGISTIC_DIRECTION,5,0.5113192264802511,True,True,True,True
+MF1_REGULARIZED_LOGISTIC_DIRECTION,10,0.5079039039587212,True,True,True,True
+MF1_REGULARIZED_LOGISTIC_DIRECTION,20,0.5060420559758336,True,True,True,True
+MF2_MONOTONIC_GAM_DIRECTION,5,0.5070611869641755,True,True,True,True
+MF2_MONOTONIC_GAM_DIRECTION,10,0.5066945651247977,True,True,True,True
+MF2_MONOTONIC_GAM_DIRECTION,20,0.4978521883700043,False,False,True,True

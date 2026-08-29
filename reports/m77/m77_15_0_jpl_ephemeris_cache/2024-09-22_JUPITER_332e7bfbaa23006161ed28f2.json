@@ -1,0 +1,20 @@
+{
+  "provider": "NASA_JPL_HORIZONS",
+  "api_version_observed": "1.2",
+  "api_version_documented": "1.3",
+  "api_version_compatibility": "SUPPORTED_OBSERVED_VERSION",
+  "body": "JUPITER",
+  "horizons_id": "599",
+  "date": "2024-09-22",
+  "time_utc": "12:00:00",
+  "center": "EARTH_GEOCENTER_500@399",
+  "reference_plane": "ECLIPTIC",
+  "reference_system": "ICRF",
+  "vector_correction": "NONE_GEOMETRIC",
+  "x_au": 0.788817060618455,
+  "y_au": 4.728339323923855,
+  "z_au": -0.0597083331451244,
+  "tropical_ecliptic_longitude_deg": 80.5287116327305,
+  "source_url_sha256": "d2e7002434eccc22a720591e3ebdf9e5c9dd1ddfeb9a70305f0d83a04bc61eb2",
+  "cache_mode": "MATERIALIZED"
+}

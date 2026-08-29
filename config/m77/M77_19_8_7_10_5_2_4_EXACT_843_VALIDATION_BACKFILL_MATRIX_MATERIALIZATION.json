@@ -1,0 +1,19 @@
+{
+  "milestone": "M77.19.8.7.10.5.2.4",
+  "validation_expected_symbols": 570,
+  "validation_expected_rows": 141567,
+  "required_full_coverage_features": [
+    "F020",
+    "F021",
+    "F030",
+    "F031",
+    "F070",
+    "F080",
+    "F081"
+  ],
+  "feature_formula_reimplementation": false,
+  "validation_targets_opened": false,
+  "validation_outcomes_opened": false,
+  "final_holdout_opened": false,
+  "production_authority_effect": false
+}

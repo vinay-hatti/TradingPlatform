@@ -1,0 +1,84 @@
+#!/bin/bash
+set -uo pipefail
+
+PROJECT_DIR="/Users/vinay.hatti/TradingPlatform"
+UV_BIN="/opt/homebrew/bin/uv"
+LOG_DIR="${PROJECT_DIR}/logs/m77_forward_shadow"
+LOG_FILE="${LOG_DIR}/combined_forward_shadow.log"
+M69_LOCK="${PROJECT_DIR}/reports/m69_event_intelligence/m69_6_market_pipeline.lock"
+M77_LOCK="${PROJECT_DIR}/reports/m77/m77_forward_shadow_orchestrator.lock"
+WAIT_SECONDS="${M77_FORWARD_SHADOW_WAIT_SECONDS:-7200}"
+POLL_SECONDS="${M77_FORWARD_SHADOW_POLL_SECONDS:-60}"
+
+mkdir -p "${LOG_DIR}" "${PROJECT_DIR}/reports/m77"
+cd "${PROJECT_DIR}"
+
+log() {
+  echo "[$(date)] $*" | tee -a "${LOG_FILE}"
+}
+
+cleanup() {
+  rm -rf "${M77_LOCK}" 2>/dev/null || true
+}
+trap cleanup EXIT INT TERM
+
+# Single research orchestrator instance. Stale locks are recovered.
+if ! mkdir "${M77_LOCK}" 2>/dev/null; then
+  pid=""
+  [[ -f "${M77_LOCK}/owner" ]] && pid="$(awk -F= '$1=="pid"{print $2}' "${M77_LOCK}/owner" 2>/dev/null || true)"
+  if [[ -n "${pid}" ]] && kill -0 "${pid}" 2>/dev/null; then
+    log "SKIPPED_DUPLICATE_ORCHESTRATOR active_pid=${pid}"
+    exit 0
+  fi
+  rm -rf "${M77_LOCK}"
+  mkdir "${M77_LOCK}"
+fi
+{
+  echo "pid=$$"
+  echo "started_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+} > "${M77_LOCK}/owner"
+
+# M77 research must never race the production M69 market pipeline.
+waited=0
+while [[ -d "${M69_LOCK}" ]]; do
+  owner_pid=""
+  [[ -f "${M69_LOCK}/owner" ]] && owner_pid="$(awk -F= '$1=="pid"{print $2}' "${M69_LOCK}/owner" 2>/dev/null || true)"
+  if [[ -n "${owner_pid}" ]] && kill -0 "${owner_pid}" 2>/dev/null; then
+    if (( waited >= WAIT_SECONDS )); then
+      log "DEFERRED_PRODUCTION_PIPELINE_STILL_ACTIVE active_pid=${owner_pid} waited_seconds=${waited}"
+      exit 0
+    fi
+    log "WAITING_FOR_PRODUCTION_PIPELINE active_pid=${owner_pid} waited_seconds=${waited}"
+    sleep "${POLL_SECONDS}"
+    waited=$((waited + POLL_SECONDS))
+    continue
+  fi
+  log "RECOVERING_STALE_M69_LOCK"
+  rm -rf "${M69_LOCK}" 2>/dev/null || true
+done
+
+log "START combined M77 forward-shadow orchestration"
+
+m77_6_rc=0
+if [[ -x "${PROJECT_DIR}/scripts/m77_6_shadow/run_daily_shadow_collector.sh" ]]; then
+  log "RUN M77.6 existing live-forward shadow collector"
+  /bin/bash "${PROJECT_DIR}/scripts/m77_6_shadow/run_daily_shadow_collector.sh" \
+    >> "${LOG_FILE}" 2>&1 || m77_6_rc=$?
+else
+  m77_6_rc=127
+  log "ERROR M77.6 collector missing"
+fi
+
+m77_13_rc=0
+log "RUN M77.13 certified-baseline forward shadow"
+"${UV_BIN}" run python scripts/run_m77_13_forward_shadow.py cycle \
+  --confirm RUN_M77_13_FORWARD_SHADOW_CYCLE \
+  >> "${LOG_FILE}" 2>&1 || m77_13_rc=$?
+
+# Research failures are explicit but never mutate or block production ingestion.
+if (( m77_6_rc != 0 || m77_13_rc != 0 )); then
+  log "RESEARCH_DEGRADED m77_6_rc=${m77_6_rc} m77_13_rc=${m77_13_rc} production_effect=NONE"
+  exit 1
+fi
+
+log "END combined M77 forward-shadow orchestration status=READY production_effect=NONE"

@@ -7,6 +7,7 @@ from trading_ai.production_api.models import ApiEnvelope
 from trading_ai.production_api.security import require_access
 
 from .publication import StockScannerPublicationService
+from .cyclical_seasonality_presentation import CyclicalSeasonalityPresentationService
 
 router = APIRouter(prefix="/api/v1/stock-intelligence", tags=["stock-intelligence"])
 
@@ -61,4 +62,5 @@ def get_candidate(candidate_id: str, request: Request, _: str = Depends(require_
         value = StockScannerPublicationService(session).candidate(candidate_id)
         if value is None:
             raise HTTPException(404, "Stock Intelligence candidate not found")
+        value["cyclical_seasonality"] = CyclicalSeasonalityPresentationService().build(symbol=str(value.get("symbol") or ""), direction=str(value.get("direction") or "NEUTRAL"), as_of=value.get("snapshot_timestamp") or value.get("as_of") or value.get("date"))
         return envelope(request, value)

@@ -1,6 +1,0 @@
-
-# Import Milestone 54 canonical Opportunity models for Alembic metadata.
-from trading_ai.opportunity_domain.models import (  # noqa: E402,F401
-    OpportunityAuditEventModel,
-    OpportunityModel,
-)

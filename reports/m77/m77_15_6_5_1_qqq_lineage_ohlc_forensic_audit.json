@@ -1,0 +1,178 @@
+{
+  "version": "M77.15.6.5.1-QQQ-LINEAGE-OHLC-FORENSIC-AUDIT-1.0",
+  "status": "READY",
+  "qqq_lineage_path": "/Users/vinay.hatti/TradingPlatform/research_data/m77_15_6_4/polygon_coverage_lineage/normalized/QQQ_LINEAGE_daily.csv",
+  "lineage_row_count": 5774,
+  "violation_count": 1,
+  "violations": [
+    {
+      "row_index": 221,
+      "date": "2004-07-28",
+      "source_ticker": "QQQ",
+      "reason": "NONPOSITIVE_OHLC",
+      "row": {
+        "symbol": "QQQ_LINEAGE",
+        "polygon_ticker": "QQQ",
+        "date": "2004-07-28",
+        "open": "34.41",
+        "high": "34.626",
+        "low": "0",
+        "close": "34.38",
+        "volume": "155074200.0",
+        "vwap": "34.0006",
+        "transactions": "161328",
+        "source_timestamp_ms": "1090987200000"
+      },
+      "neighbors": [
+        {
+          "symbol": "QQQ_LINEAGE",
+          "polygon_ticker": "QQQ",
+          "date": "2004-07-23",
+          "open": "34.63",
+          "high": "34.66",
+          "low": "34.03",
+          "close": "34.21",
+          "volume": "107147200.0",
+          "vwap": "34.372",
+          "transactions": "143853",
+          "source_timestamp_ms": "1090555200000",
+          "is_violation_row": false
+        },
+        {
+          "symbol": "QQQ_LINEAGE",
+          "polygon_ticker": "QQQ",
+          "date": "2004-07-26",
+          "open": "34.24",
+          "high": "34.41",
+          "low": "33.7",
+          "close": "34.06",
+          "volume": "113063600.0",
+          "vwap": "34.0145",
+          "transactions": "170432",
+          "source_timestamp_ms": "1090814400000",
+          "is_violation_row": false
+        },
+        {
+          "symbol": "QQQ_LINEAGE",
+          "polygon_ticker": "QQQ",
+          "date": "2004-07-27",
+          "open": "34.19",
+          "high": "34.71",
+          "low": "34.04",
+          "close": "34.53",
+          "volume": "103537600.0",
+          "vwap": "34.3762",
+          "transactions": "154825",
+          "source_timestamp_ms": "1090900800000",
+          "is_violation_row": false
+        },
+        {
+          "symbol": "QQQ_LINEAGE",
+          "polygon_ticker": "QQQ",
+          "date": "2004-07-28",
+          "open": "34.41",
+          "high": "34.626",
+          "low": "0",
+          "close": "34.38",
+          "volume": "155074200.0",
+          "vwap": "34.0006",
+          "transactions": "161328",
+          "source_timestamp_ms": "1090987200000",
+          "is_violation_row": true
+        },
+        {
+          "symbol": "QQQ_LINEAGE",
+          "polygon_ticker": "QQQ",
+          "date": "2004-07-29",
+          "open": "34.71",
+          "high": "34.92",
+          "low": "34.5",
+          "close": "34.78",
+          "volume": "99090800.0",
+          "vwap": "34.7087",
+          "transactions": "129733",
+          "source_timestamp_ms": "1091073600000",
+          "is_violation_row": false
+        },
+        {
+          "symbol": "QQQ_LINEAGE",
+          "polygon_ticker": "QQQ",
+          "date": "2004-07-30",
+          "open": "34.76",
+          "high": "35.1",
+          "low": "34.65",
+          "close": "34.89",
+          "volume": "83043100.0",
+          "vwap": "34.8778",
+          "transactions": "115129",
+          "source_timestamp_ms": "1091160000000",
+          "is_violation_row": false
+        },
+        {
+          "symbol": "QQQ_LINEAGE",
+          "polygon_ticker": "QQQ",
+          "date": "2004-08-02",
+          "open": "34.61",
+          "high": "35.02",
+          "low": "34.46",
+          "close": "34.96",
+          "volume": "81371100.0",
+          "vwap": "34.7233",
+          "transactions": "120981",
+          "source_timestamp_ms": "1091419200000",
+          "is_violation_row": false
+        }
+      ]
+    }
+  ],
+  "source_series_evidence": {
+    "QQQ": {
+      "row_count": 4186,
+      "matching_violation_dates": {
+        "2004-07-28": {
+          "symbol": "QQQ",
+          "polygon_ticker": "QQQ",
+          "date": "2004-07-28",
+          "open": "34.41",
+          "high": "34.626",
+          "low": "0",
+          "close": "34.38",
+          "volume": "155074200.0",
+          "vwap": "34.0006",
+          "transactions": "161328",
+          "source_timestamp_ms": "1090987200000"
+        }
+      },
+      "raw_pages": [
+        {
+          "page": 1,
+          "raw_path": "/Users/vinay.hatti/TradingPlatform/research_data/m77_15_6_4/polygon_coverage_lineage/raw/QQQ/QQQ_page_001.json",
+          "raw_sha256": "e6c792c0c32a81ec314a535fa01c111a07c8ad3e240f0f5687d4d06a84501253",
+          "results_count": 4186
+        }
+      ]
+    },
+    "QQQQ": {
+      "row_count": 1588,
+      "matching_violation_dates": {},
+      "raw_pages": [
+        {
+          "page": 1,
+          "raw_path": "/Users/vinay.hatti/TradingPlatform/research_data/m77_15_6_4/polygon_coverage_lineage/raw/QQQQ/QQQQ_page_001.json",
+          "raw_sha256": "cd196f5e4d8200526ac4585a6ca9e60aaf25784cee3f533e21537b8034332788",
+          "results_count": 1588
+        }
+      ]
+    }
+  },
+  "governance": {
+    "diagnostic_only": true,
+    "automatic_repair": false,
+    "source_value_mutation": false,
+    "lineage_mutation": false,
+    "database_writes": false,
+    "production_price_history_writes": false,
+    "production_authority_effect": false
+  },
+  "next_step": "CLASSIFY_SINGLE_QQQ_LINEAGE_OHLC_ANOMALY_AS_SOURCE_DATA_OR_STITCH_DEFECT_BEFORE_ANY_REPAIR"
+}

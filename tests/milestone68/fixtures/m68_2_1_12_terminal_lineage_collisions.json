@@ -1,0 +1,3068 @@
+{
+  "collision_count": 68,
+  "rows": [
+    {
+      "candidate": {
+        "id": "stock-candidate-2be345ea636848f383411aeec9cd0ced",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "HPE"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-432a86e86b314935b0698bf76b17964b",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-2be345ea636848f383411aeec9cd0ced",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "HPE"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-a6fd80c97c8f4977ba1d49079af9ecf9",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-e2b2d90e52194845a139c1d951baedb5",
+        "stock_scanner_run_id": "stock-scan-53eb87934e3a4b1ca05202ba2a8f358b",
+        "symbol": "HPE"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-5c3725b7a2794666b0b8413af83204a0",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "EXPE"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-a296bffa058b46468aa84692a73b1a32",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-5c3725b7a2794666b0b8413af83204a0",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "EXPE"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-11646410f56f481fa7bf9a65888a870b",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-f1d26bdb793c4050b2ccec879c081057",
+        "stock_scanner_run_id": "stock-scan-859ae85ce4654bd1a5522394c0b0aa03",
+        "symbol": "EXPE"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-ac27f901273c4f52ab7cc48cf17918a4",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "SPCX"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-2c209e0349d04f3ba34338139ab8ccd9",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-ac27f901273c4f52ab7cc48cf17918a4",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "SPCX"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-352d0c88c54147b28c522649337efe41",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "VALIDATED",
+        "stock_candidate_id": "stock-candidate-83957df82a58462a89813e2e61237de0",
+        "stock_scanner_run_id": "stock-scan-311c4892054544d99c283d9993a523b1",
+        "symbol": "SPCX"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-078a00c4649e44fb8f2f1b104312d111",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "XPH"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-7f20519cbf604ca1800c78c23d4a2677",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-078a00c4649e44fb8f2f1b104312d111",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "XPH"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-c7c221a5168640688bf1e81b4a7d1138",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "CONTRACTS_OPTIMIZED",
+        "stock_candidate_id": "stock-candidate-e4196bb4af6048949e74e25faac8dccf",
+        "stock_scanner_run_id": "stock-scan-5a521acdc66747d986ba0f60377eb5e3",
+        "symbol": "XPH"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-cb1d3c70a38448ec84505e67af835e4c",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "ACCUMULATION"
+          }
+        },
+        "symbol": "EA"
+      },
+      "exact_current_lineage_owner": {
+        "category": "ACCUMULATION",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-d995d1a6388443ae8f7899db228eb794",
+        "payload_json": {
+          "category": "ACCUMULATION",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-cb1d3c70a38448ec84505e67af835e4c",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "EA"
+      },
+      "older_logical_owner": {
+        "category": "ACCUMULATION",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-9e0339e23112478697267866364c3cf0",
+        "payload_json": {
+          "category": "ACCUMULATION",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "VALIDATED",
+        "stock_candidate_id": "stock-candidate-40ed16236f5341249a9e98936d7e6796",
+        "stock_scanner_run_id": "stock-scan-9ff81a446a32471da5086233106ed899",
+        "symbol": "EA"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-b4fac932d3ca415b9ce55a71a1304e1b",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "SYF"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-974a617a22c14acab67a646b6de7cdb1",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-b4fac932d3ca415b9ce55a71a1304e1b",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "SYF"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-125dd07a94e44370bde3c789f5d4c420",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-19b325a3c5214f808d41a385756b4c24",
+        "stock_scanner_run_id": "stock-scan-8fcae9b773c644bf97f50ba0159cd466",
+        "symbol": "SYF"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-5183e9a17c61463bbf7ba57998d22be7",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "GM"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-f20cc780fb04442c9d05ffd2d784abc8",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-5183e9a17c61463bbf7ba57998d22be7",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "GM"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-bf92ee4449ed4832b74fdbd8db0c30b2",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-bae5dc60b6db463e8b6f66143744ef48",
+        "stock_scanner_run_id": "stock-scan-05abe47ff6dd4d4fb2f0e63614972701",
+        "symbol": "GM"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-0be3d6c8d465438b83e0e4c09f98d792",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "WAB"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-ca357a2c3c5f4bc0991778587982690b",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-0be3d6c8d465438b83e0e4c09f98d792",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "WAB"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-0270d43c9f144ad8a3e40acd3a420f5f",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "CONTRACTS_OPTIMIZED",
+        "stock_candidate_id": "stock-candidate-d8e60e8a2e9444068ab6e2fad98f792e",
+        "stock_scanner_run_id": "stock-scan-5a521acdc66747d986ba0f60377eb5e3",
+        "symbol": "WAB"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-9115034ef6804585af937de9d4b0ea54",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "DAL"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-93c0bd4b20564b0bb9b63781da2a72fe",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-9115034ef6804585af937de9d4b0ea54",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "DAL"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-edc687c44a1d4a45b4456a67839000aa",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-d3a14bbda107489e91064a75a3b8a519",
+        "stock_scanner_run_id": "stock-scan-5927c3a6654a4e1aaec5c90c157667bb",
+        "symbol": "DAL"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-7a22fa0ec110465d80f70f8067252e2f",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "BNY"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-03c09e0f0c4943d482c38b51c7d9775d",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-7a22fa0ec110465d80f70f8067252e2f",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "BNY"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-a082d27fef174548ba972582a0945523",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-ff53ca8c61b8482caeff66c190e46303",
+        "stock_scanner_run_id": "stock-scan-8d3ebecf5eb845a3a1136426c50d6ab0",
+        "symbol": "BNY"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-32d27c76a8e84b5d8748e4107b290a77",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "ACCUMULATION"
+          }
+        },
+        "symbol": "NEM"
+      },
+      "exact_current_lineage_owner": {
+        "category": "ACCUMULATION",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-883cb2cbf26d456fbcba12920db0867a",
+        "payload_json": {
+          "category": "ACCUMULATION",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-32d27c76a8e84b5d8748e4107b290a77",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "NEM"
+      },
+      "older_logical_owner": {
+        "category": "ACCUMULATION",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-e6c702dd85484367bc43fe2c6c2df740",
+        "payload_json": {
+          "category": "ACCUMULATION",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-fc75b578f1fd4bcd946b266431199e90",
+        "stock_scanner_run_id": "stock-scan-05abe47ff6dd4d4fb2f0e63614972701",
+        "symbol": "NEM"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-9db041b3229a47fbbe7586184a291972",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "FFIV"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-180fed887ed441708be0f12416fee7fd",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-9db041b3229a47fbbe7586184a291972",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "FFIV"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-67c555fe8d8a4dedb71e7e019cabba57",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-8188488c94a0472d92d9d382f2d56c89",
+        "stock_scanner_run_id": "stock-scan-e986281a98cc4f28b799b205a10e0426",
+        "symbol": "FFIV"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-2aed3f21d5cd46f79b9f2da4fa9af37c",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "WTW"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-15d04759462a40758a97fd5241746e17",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-2aed3f21d5cd46f79b9f2da4fa9af37c",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "WTW"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-b699668e56de4791bc2d1da2d868f0ce",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "CONTRACTS_OPTIMIZED",
+        "stock_candidate_id": "stock-candidate-48c6eb8cffe745a3b896939987bdb2d9",
+        "stock_scanner_run_id": "stock-scan-5a521acdc66747d986ba0f60377eb5e3",
+        "symbol": "WTW"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-471251d3dde04d1194a540dc48161ed9",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "KBE"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-396864fed4cb4bf3a2271105fec773b1",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-471251d3dde04d1194a540dc48161ed9",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "KBE"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-4e90ba667399401597790c26f55498cd",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "CONTRACTS_OPTIMIZED",
+        "stock_candidate_id": "stock-candidate-8974e41f501d4e58ad72609c0f2ad1a1",
+        "stock_scanner_run_id": "stock-scan-c6c928791d174e85bb36adcecc6affd2",
+        "symbol": "KBE"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-e6bb01983efb4e46910664efb08798f7",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "APO"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-65e8c7765dd74fecb709fede3128217e",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-e6bb01983efb4e46910664efb08798f7",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "APO"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-b6af7097916b4234beea04a3cdb91fd8",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-5b9b3fc4982d42dc84175e62d3e5aa79",
+        "stock_scanner_run_id": "stock-scan-3dc5651dcf164e0c9d82e93f8ea9b88a",
+        "symbol": "APO"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-2e8616a004064f04a6de2285cb75e693",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "AMGN"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-b6c17114930348db87d4d866c9ae5b23",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-2e8616a004064f04a6de2285cb75e693",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "AMGN"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-abefb33d194e4511a429780c287b9a4e",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-08bd4358ad1d4863a201d2c33eebc7e7",
+        "stock_scanner_run_id": "stock-scan-5927c3a6654a4e1aaec5c90c157667bb",
+        "symbol": "AMGN"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-ea9650dce11a4bc1aa1c86ada08f70cc",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "CPAY"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-37f693a4d183406daa6e1f9a8568b9be",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-ea9650dce11a4bc1aa1c86ada08f70cc",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "CPAY"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-fdf0e6ba629647b680180a75a46a2e48",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "CONTRACTS_OPTIMIZED",
+        "stock_candidate_id": "stock-candidate-ce7f8877615b4462b7734798ace655c8",
+        "stock_scanner_run_id": "stock-scan-5a521acdc66747d986ba0f60377eb5e3",
+        "symbol": "CPAY"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-38423f749b634331829dc949a33617a8",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "COF"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-427d2b6bf0bc42e0b25b58d17ca46f54",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-38423f749b634331829dc949a33617a8",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "COF"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-c767eb9addde41f181a5df16562ec6f0",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-c2f38aaf3de44bd7bc0804a764a1f421",
+        "stock_scanner_run_id": "stock-scan-5927c3a6654a4e1aaec5c90c157667bb",
+        "symbol": "COF"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-14a4b62e01434a3483d246fa3b3f2275",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "WAT"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-38a65ce757ad4aae808ee2aeda82fd86",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-14a4b62e01434a3483d246fa3b3f2275",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "WAT"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-6396aaed7e96410991b85f2bd9a165a2",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "CONTRACTS_OPTIMIZED",
+        "stock_candidate_id": "stock-candidate-a0829bec59ce49798713a054da671b46",
+        "stock_scanner_run_id": "stock-scan-5a521acdc66747d986ba0f60377eb5e3",
+        "symbol": "WAT"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-4e5d6a37443e45c5a5dedc9b03908c60",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "REGN"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-a8d08ada60f24094be77c451841be3ea",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-4e5d6a37443e45c5a5dedc9b03908c60",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "REGN"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-ac0ee713dd9f4188a0df8b4381b8b22d",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-2313fbe369254a31a54a690d402f497c",
+        "stock_scanner_run_id": "stock-scan-859ae85ce4654bd1a5522394c0b0aa03",
+        "symbol": "REGN"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-de883b34bc90477789380965e389cae4",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "RTX"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-d70d982be9c9478d9cef4a0dd4f543b6",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-de883b34bc90477789380965e389cae4",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "RTX"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-470df2f048eb4447b2f9ae0b73ef00c5",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-a0251841446a4b28a24349c96d1802a6",
+        "stock_scanner_run_id": "stock-scan-5927c3a6654a4e1aaec5c90c157667bb",
+        "symbol": "RTX"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-d469afd40d99415e89880325b39ec4e9",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "MTD"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-96b19752f66b4adb8e2c0a03a0ede5c6",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-d469afd40d99415e89880325b39ec4e9",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "MTD"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-e05762a36db84a0ebacc0990687ab42c",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "CONTRACTS_OPTIMIZED",
+        "stock_candidate_id": "stock-candidate-a7fe130f6f3e4a2eb07f6a09e5941075",
+        "stock_scanner_run_id": "stock-scan-5a521acdc66747d986ba0f60377eb5e3",
+        "symbol": "MTD"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-51fe4fd51ecb4771b5bb77a5c0b6afa1",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "VLO"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-6374b00f353d4975979f6aafc148d0d4",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-51fe4fd51ecb4771b5bb77a5c0b6afa1",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "VLO"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-d127b86efe9148d692e53d0c51fe9fc0",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-236a3dbe1937425191f6cad5ac6b18c4",
+        "stock_scanner_run_id": "stock-scan-e986281a98cc4f28b799b205a10e0426",
+        "symbol": "VLO"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-2008b1397abb42cd8077dfa3ffae6bec",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "JBL"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-88d15b3e132d4e37af789481bf0716b6",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-2008b1397abb42cd8077dfa3ffae6bec",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "JBL"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-0564780ffd4241b6ba861eeab3d0774a",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-365fd87c6aaf442ca680deefe04cec2c",
+        "stock_scanner_run_id": "stock-scan-8fcae9b773c644bf97f50ba0159cd466",
+        "symbol": "JBL"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-4bbb50f5e8e440b9877f3aa0e8f93e8c",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "CIBR"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-b1e1f59329944300a71228a66cad84bd",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-4bbb50f5e8e440b9877f3aa0e8f93e8c",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "CIBR"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-59c5f82a17ac46ee96eb79dac442d899",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-db4b7d54be294d0baef6a7832e904136",
+        "stock_scanner_run_id": "stock-scan-a32943f48b7d4d659f063d5411d604d7",
+        "symbol": "CIBR"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-a4a6435d7a144321a0198c900e3a47ba",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "NDSN"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-3e4d7507e9d1449185209333b7746432",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-a4a6435d7a144321a0198c900e3a47ba",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "NDSN"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-06263e621b6743b8ba85be6cafe28ca4",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "CONTRACTS_OPTIMIZED",
+        "stock_candidate_id": "stock-candidate-ea42be01b8ff4935b80684013f85046e",
+        "stock_scanner_run_id": "stock-scan-5a521acdc66747d986ba0f60377eb5e3",
+        "symbol": "NDSN"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-b5c907a5b7fe4915a786cf755ef066cb",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "URI"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-009e8bbed0264adf821c28f5b6930285",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-b5c907a5b7fe4915a786cf755ef066cb",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "URI"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-d0cdf2381c364390890746482836fcec",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-a74f723ea4fb40a99f3a07fb39da5a69",
+        "stock_scanner_run_id": "stock-scan-e986281a98cc4f28b799b205a10e0426",
+        "symbol": "URI"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-ecf5dcc8475b4282bce4e44e78967256",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "ETN"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-be6d7c28dd2545d49b618bc3aacd6fff",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-ecf5dcc8475b4282bce4e44e78967256",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "ETN"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-08b7bbf6221643ec9a3dee723d4615da",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-75a912a1398448f18a87935af7cc9662",
+        "stock_scanner_run_id": "stock-scan-ef67ce8546e2441196832999ec48b313",
+        "symbol": "ETN"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-ff077d057b374bf4969a412d580a027f",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "TDY"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-d84dd1f651b340ddbf2597f8f73f9225",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-ff077d057b374bf4969a412d580a027f",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "TDY"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-a24cab3b750441e087850c3a007c8848",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "CONTRACTS_OPTIMIZED",
+        "stock_candidate_id": "stock-candidate-02040a9c38754b49b137733b5c5f0d36",
+        "stock_scanner_run_id": "stock-scan-5a521acdc66747d986ba0f60377eb5e3",
+        "symbol": "TDY"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-625c5eac8dc84bdabedd284e632f5d1b",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "HAS"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-aa57a45cb73546ec99934b191f246d94",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-625c5eac8dc84bdabedd284e632f5d1b",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "HAS"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-9ff0fa9b8b8e40d29c702af7d0bd61ae",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-69ca7c87ed1346b9a4380a035fff1ec2",
+        "stock_scanner_run_id": "stock-scan-ef67ce8546e2441196832999ec48b313",
+        "symbol": "HAS"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-0c9f8f9448fb41d6a68ca4dab9b0091b",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "TMO"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-e757ed1f0d044b6f828c752ab8645234",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-0c9f8f9448fb41d6a68ca4dab9b0091b",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "TMO"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-87d0e13877084bf7a84e5736c54cb1c9",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-cf68913faf054f0391f5deb943ba88eb",
+        "stock_scanner_run_id": "stock-scan-05abe47ff6dd4d4fb2f0e63614972701",
+        "symbol": "TMO"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-4faaf6c34c6d4fafafe183854788b718",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "USMV"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-e57c36cf60a245f2ae3db6207b9b20b2",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-4faaf6c34c6d4fafafe183854788b718",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "USMV"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-66f55761626a4db389f3ce42d9933c36",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "CONTRACTS_OPTIMIZED",
+        "stock_candidate_id": "stock-candidate-22479187dc9e461eba513d3dd697a17d",
+        "stock_scanner_run_id": "stock-scan-5a521acdc66747d986ba0f60377eb5e3",
+        "symbol": "USMV"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-fba772b198cc4ecea53d915d84cd6f49",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "HPQ"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-b94bd7ae66464a8db15d84ad24f43163",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-fba772b198cc4ecea53d915d84cd6f49",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "HPQ"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-bf8001122f70476092016ed8fae06c71",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-bbe35c801ba346e1a0449d53e0c7cf17",
+        "stock_scanner_run_id": "stock-scan-05abe47ff6dd4d4fb2f0e63614972701",
+        "symbol": "HPQ"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-f3042fe7e4ee4aa889f15253c3a658de",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "OKE"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-a04969a4a1624830ab8122a0aaacb89c",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-f3042fe7e4ee4aa889f15253c3a658de",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "OKE"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-c55e61628e4b4c7e9cc5025a1b74f5e0",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-a6e6b2f1de954f85a1be037aaa4afe14",
+        "stock_scanner_run_id": "stock-scan-a32943f48b7d4d659f063d5411d604d7",
+        "symbol": "OKE"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-92a06a7857584611954b763e77f6142e",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "XLK"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-7b92928cbfe14af493eb4d0055b2c07c",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-92a06a7857584611954b763e77f6142e",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "XLK"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-7324f251196647a89bb2987618fb85cd",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-c5c60054b77a4ef98a4fbf6258c43224",
+        "stock_scanner_run_id": "stock-scan-05abe47ff6dd4d4fb2f0e63614972701",
+        "symbol": "XLK"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-035a8d348e0841328fb0cc8e87b20f29",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "QUAL"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-76891d4a88c14489b5392e933f1bdfae",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-035a8d348e0841328fb0cc8e87b20f29",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "QUAL"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-54198e97d88244b382eedc6ac53c8d14",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "CONTRACTS_OPTIMIZED",
+        "stock_candidate_id": "stock-candidate-08d02001179a46d09650a930602deb59",
+        "stock_scanner_run_id": "stock-scan-5a521acdc66747d986ba0f60377eb5e3",
+        "symbol": "QUAL"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-4f2dee5e23b24eb59f9444d35f71bd15",
+        "payload_json": {
+          "direction": "BEARISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BEARISH"
+          }
+        },
+        "symbol": "ALNY"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BEARISH",
+        "direction": "BEARISH",
+        "opportunity_id": "m62-opp-7afbfa023b184abb9a09b0a0cf6efff8",
+        "payload_json": {
+          "category": "BEARISH",
+          "direction": "BEARISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-4f2dee5e23b24eb59f9444d35f71bd15",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "ALNY"
+      },
+      "older_logical_owner": {
+        "category": "BEARISH",
+        "direction": "BEARISH",
+        "opportunity_id": "m62-opp-fe3fab3560f04b5089702b9812a80e57",
+        "payload_json": {
+          "category": "BEARISH",
+          "direction": "BEARISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "CONTRACTS_OPTIMIZED",
+        "stock_candidate_id": "stock-candidate-4184311a34084f539cd9c80c406ba947",
+        "stock_scanner_run_id": "stock-scan-d1cf59d4a1fe41ba8bdf19849907aa85",
+        "symbol": "ALNY"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-cead5dd9dc02490da0efe257daafd6ed",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "VYM"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-9fd620f3ab7141ed877ac4856617bb56",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-cead5dd9dc02490da0efe257daafd6ed",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "VYM"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-10eff3e90870466a98f0509e700c0056",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-473895d960fd40139be1a9db75ac9ab3",
+        "stock_scanner_run_id": "stock-scan-5a521acdc66747d986ba0f60377eb5e3",
+        "symbol": "VYM"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-a2c7cff000f443878e06154f28ccec49",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "MS"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-cb441481097346f7b2de63b436e80c97",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-a2c7cff000f443878e06154f28ccec49",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "MS"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-62ff83286b3546d88a824c144405f243",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-e52b14986b47425ab0c0e2db1ac62d3c",
+        "stock_scanner_run_id": "stock-scan-8fcae9b773c644bf97f50ba0159cd466",
+        "symbol": "MS"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-b6cdf59af40e4f75821e8c0a9fe06099",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "DLTR"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-5fcfe457f1d648719b4ac3893024727e",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-b6cdf59af40e4f75821e8c0a9fe06099",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "DLTR"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-6fcbd02f931348ddab9edbab5a7e05a6",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-f2b0d40e53224350bd8120be689c92cf",
+        "stock_scanner_run_id": "stock-scan-8d3ebecf5eb845a3a1136426c50d6ab0",
+        "symbol": "DLTR"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-3db7746d9b704ecd941c5c8a0ba3a82d",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "IWD"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-4b0fee27ae4a4f25a5879e6276dbe1a3",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-3db7746d9b704ecd941c5c8a0ba3a82d",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "IWD"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-12a09b47a90e4015a49eec37ee67037b",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-ed17718f05bc4e30864a9a4fae5b35f1",
+        "stock_scanner_run_id": "stock-scan-5927c3a6654a4e1aaec5c90c157667bb",
+        "symbol": "IWD"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-d32cb99a5aae4552aa8bf718be4f9295",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "PFG"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-2d618643fb9d4657b0f5a4d444f00b54",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-d32cb99a5aae4552aa8bf718be4f9295",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "PFG"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-5a234c82388f4e32be0e21b88b337cbd",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "CONTRACTS_OPTIMIZED",
+        "stock_candidate_id": "stock-candidate-b40f7a4b3e7d4694b3144ce3721f5aec",
+        "stock_scanner_run_id": "stock-scan-5a521acdc66747d986ba0f60377eb5e3",
+        "symbol": "PFG"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-994b688cdfb843738848c213fbdc0680",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "HWM"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-da7d72321d5549caa40019994809a297",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-994b688cdfb843738848c213fbdc0680",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "HWM"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-0bd2fcd73d2b43f2bfdbd19c1c71a3e1",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-4f4dbfa242dd45cdbf0b806fa9353984",
+        "stock_scanner_run_id": "stock-scan-05abe47ff6dd4d4fb2f0e63614972701",
+        "symbol": "HWM"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-e148b005dfa9471bad75ead14b7a8c3e",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "ARM"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-a22958d4757446c9815a10dab5fa2974",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-e148b005dfa9471bad75ead14b7a8c3e",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "ARM"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-5d9da62d7f27489f9142ca37678c32ac",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-7a4d9d97cc8448ca9a5f7174922b3544",
+        "stock_scanner_run_id": "stock-scan-a32943f48b7d4d659f063d5411d604d7",
+        "symbol": "ARM"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-1f30cbc9fecd4677958fc7d7fb6c6353",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "IAU"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-1b57d5b45f4b40b581471183f9da98ee",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-1f30cbc9fecd4677958fc7d7fb6c6353",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "IAU"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-3e75eaa41bf848359e98420df8609413",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-f7c5640409ad44c4bbbaf38a8899b021",
+        "stock_scanner_run_id": "stock-scan-3dc5651dcf164e0c9d82e93f8ea9b88a",
+        "symbol": "IAU"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-1719060064da40fbae33d56ae03f9f0f",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "IVV"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-d15dbc7fc8a145d9b049cf9da9dbe1ea",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-1719060064da40fbae33d56ae03f9f0f",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "IVV"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-1c3e6971dedb4ad0a2f358aa6480e61f",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "CONTRACTS_OPTIMIZED",
+        "stock_candidate_id": "stock-candidate-529e7d7d3f3d463b975e3dd38c00cbfc",
+        "stock_scanner_run_id": "stock-scan-c3902d75690440cdb6b5fdf17761dc72",
+        "symbol": "IVV"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-7e5f5b3638164b1da6e67b6cbae8c930",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "ITOT"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-fdc9b62f69d94b42915d961ac03ae215",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-7e5f5b3638164b1da6e67b6cbae8c930",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "ITOT"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-6b3345c428aa4f10b096a6754f9024d4",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "CONTRACTS_OPTIMIZED",
+        "stock_candidate_id": "stock-candidate-5a9b60d9f5fd418d91d70e44ce975a63",
+        "stock_scanner_run_id": "stock-scan-5a521acdc66747d986ba0f60377eb5e3",
+        "symbol": "ITOT"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-383219012f9445cbac12bc6d7a03a81f",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "BBY"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-3dbf7766ffbf4af88933bd6d20250ede",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-383219012f9445cbac12bc6d7a03a81f",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "BBY"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-20426ebc9ceb484c9a73c4d8756cf2fe",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-5a800bf587ae42f2aa631cc93c071b3c",
+        "stock_scanner_run_id": "stock-scan-e986281a98cc4f28b799b205a10e0426",
+        "symbol": "BBY"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-07021194aae9438cbc8b7617bacdc1e5",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "IWF"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-68c02b7bbabf49c292e29194e55e6666",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-07021194aae9438cbc8b7617bacdc1e5",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "IWF"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-0075904ab6c7413488bddc962884f1f1",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "CONTRACTS_OPTIMIZED",
+        "stock_candidate_id": "stock-candidate-31eed54113a046998ae065eb7e5f8f9a",
+        "stock_scanner_run_id": "stock-scan-5a521acdc66747d986ba0f60377eb5e3",
+        "symbol": "IWF"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-d7c357da3b0344e182d6c96f220b7558",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "ACCUMULATION"
+          }
+        },
+        "symbol": "BDX"
+      },
+      "exact_current_lineage_owner": {
+        "category": "ACCUMULATION",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-a3170d0eab1545618100cc00f9c32867",
+        "payload_json": {
+          "category": "ACCUMULATION",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-d7c357da3b0344e182d6c96f220b7558",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "BDX"
+      },
+      "older_logical_owner": {
+        "category": "ACCUMULATION",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-7ea24c93fa5a41a9b0e17f00442f44ee",
+        "payload_json": {
+          "category": "ACCUMULATION",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-8782be3a9b7f469393b401af739fe972",
+        "stock_scanner_run_id": "stock-scan-8d3ebecf5eb845a3a1136426c50d6ab0",
+        "symbol": "BDX"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-38fb2fb6e901463ea9021225504062aa",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "BRK.B"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-66283fbb6b664de4a662bc4bdf0f9859",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-38fb2fb6e901463ea9021225504062aa",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "BRK.B"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-a3228eab184a4175b6c7f66cd14d521e",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-f5373398abca4fb99e45f23a13338e5b",
+        "stock_scanner_run_id": "stock-scan-53eb87934e3a4b1ca05202ba2a8f358b",
+        "symbol": "BRK.B"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-e6d451c0fb044829ba6860409f6e41bd",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "GL"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-b0eb807583854e6685529feef8bb2b19",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-e6d451c0fb044829ba6860409f6e41bd",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "GL"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-dc1ff2644f2b4196badc6f47d7599b92",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "CONTRACTS_OPTIMIZED",
+        "stock_candidate_id": "stock-candidate-8b5aa1c31b6f429db79140500906f43e",
+        "stock_scanner_run_id": "stock-scan-5a521acdc66747d986ba0f60377eb5e3",
+        "symbol": "GL"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-01503273f34c4c05903bc65ff00746a7",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "TECH"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-f147f3f451b643cf927fa19da6c42881",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-01503273f34c4c05903bc65ff00746a7",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "TECH"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-5c7e99f5d5e34c27b1d8033372835ed6",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "CONTRACTS_OPTIMIZED",
+        "stock_candidate_id": "stock-candidate-e8554a681d3e477682f079b236031b46",
+        "stock_scanner_run_id": "stock-scan-5a521acdc66747d986ba0f60377eb5e3",
+        "symbol": "TECH"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-006dd01053844ac6b56bf5d8d658f037",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "J"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-02397b94080b44b09f126c0b16c9a174",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-006dd01053844ac6b56bf5d8d658f037",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "J"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-0b3c6bc1829546ee8aefaf2fde848ee0",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "CONTRACTS_OPTIMIZED",
+        "stock_candidate_id": "stock-candidate-0d04f96d816c4570af2f9fd8a3d36a7e",
+        "stock_scanner_run_id": "stock-scan-5a521acdc66747d986ba0f60377eb5e3",
+        "symbol": "J"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-48950081a07e484497f363f0b761af90",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "RCL"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-81b961b1bb714f2d9d9fb6ad65762adc",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-48950081a07e484497f363f0b761af90",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "RCL"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-4ee37234c0814b27ad7bbbe1e5a47db7",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-d3381cfa41c4437fbb59cc1d1a72dd79",
+        "stock_scanner_run_id": "stock-scan-5927c3a6654a4e1aaec5c90c157667bb",
+        "symbol": "RCL"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-e05a4ea55f3c465b932d6948e3eee7b2",
+        "payload_json": {
+          "direction": "BEARISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BEARISH"
+          }
+        },
+        "symbol": "APP"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BEARISH",
+        "direction": "BEARISH",
+        "opportunity_id": "m62-opp-1d7b4898f61749458f7f10eadd2d910c",
+        "payload_json": {
+          "category": "BEARISH",
+          "direction": "BEARISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-e05a4ea55f3c465b932d6948e3eee7b2",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "APP"
+      },
+      "older_logical_owner": {
+        "category": "BEARISH",
+        "direction": "BEARISH",
+        "opportunity_id": "m62-opp-0c0656c0bf634e9391685cc2349684e0",
+        "payload_json": {
+          "category": "BEARISH",
+          "direction": "BEARISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "CONTRACTS_OPTIMIZED",
+        "stock_candidate_id": "stock-candidate-58216f04c4264a51a0ec3e1a9e79c7d6",
+        "stock_scanner_run_id": "stock-scan-5a521acdc66747d986ba0f60377eb5e3",
+        "symbol": "APP"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-332307049e234490a54aad41f188fd32",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "FDS"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-e643565afe5d48d491cb8a51e6e18492",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-332307049e234490a54aad41f188fd32",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "FDS"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-80730830ac7246c28fd2f5aa52fe028e",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "CONTRACTS_OPTIMIZED",
+        "stock_candidate_id": "stock-candidate-97892d1df3fc4e02a5779f01fbaa1d8e",
+        "stock_scanner_run_id": "stock-scan-c6c928791d174e85bb36adcecc6affd2",
+        "symbol": "FDS"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-f0659c38d27b46de9319b487ddb4b1d8",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "TTWO"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-99f9d563992a48169f3e0c494dec61cd",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-f0659c38d27b46de9319b487ddb4b1d8",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "TTWO"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-9c0b9f3db7234580b3c12cabcd950fc5",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-ccc69b04347c41c48ffc5d7517a5509f",
+        "stock_scanner_run_id": "stock-scan-5927c3a6654a4e1aaec5c90c157667bb",
+        "symbol": "TTWO"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-d8e23c4f4cd44a5789f04168907e2ede",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "EME"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-20c4582d1eb6432c9082a39c2bafc21b",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-d8e23c4f4cd44a5789f04168907e2ede",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "EME"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-363ebee45b11408e85424f765db03223",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "CONTRACTS_OPTIMIZED",
+        "stock_candidate_id": "stock-candidate-62049590933a466daf4fa6fc5a073228",
+        "stock_scanner_run_id": "stock-scan-5a521acdc66747d986ba0f60377eb5e3",
+        "symbol": "EME"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-f5cd6d92f0dd4933bb48855820e063ee",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "ROP"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-9827ef05c791410ba4f8fdbba2893487",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-f5cd6d92f0dd4933bb48855820e063ee",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "ROP"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-a13dd59b6de54c108c907e5a3fadcf88",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "CONTRACTS_OPTIMIZED",
+        "stock_candidate_id": "stock-candidate-d90ac5469fd8418f87f874a399ab734d",
+        "stock_scanner_run_id": "stock-scan-c3902d75690440cdb6b5fdf17761dc72",
+        "symbol": "ROP"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-f73e10517e8041189999e9915c02fe02",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "EXR"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-47107a96efb84f83a1fd3cb318096969",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-f73e10517e8041189999e9915c02fe02",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "EXR"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-92c9df138ab740578f1e80ff84eb5539",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "CONTRACTS_OPTIMIZED",
+        "stock_candidate_id": "stock-candidate-d25677fd1ca74ab5bc9f1f24f815c34e",
+        "stock_scanner_run_id": "stock-scan-5a521acdc66747d986ba0f60377eb5e3",
+        "symbol": "EXR"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-0edee064881c4a068ad72ed1e7d193f7",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "DE"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-d33999bdb1814565b4641d4494c69a54",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-0edee064881c4a068ad72ed1e7d193f7",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "DE"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-656d08b275224731850e2976cb74f32f",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-508a1f840b554e3490fae40c6564872f",
+        "stock_scanner_run_id": "stock-scan-4dc80d9223644cd69e8ff4bb354c4e29",
+        "symbol": "DE"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-db02911f912540cbaa2c136210a1efd7",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BREAKOUT"
+          }
+        },
+        "symbol": "ALAB"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BREAKOUT",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-92332e8c0b904a489de83be90f9bc859",
+        "payload_json": {
+          "category": "BREAKOUT",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-db02911f912540cbaa2c136210a1efd7",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "ALAB"
+      },
+      "older_logical_owner": {
+        "category": "BREAKOUT",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-5843fccedb1245fd92c9d41b1451ff41",
+        "payload_json": {
+          "category": "BREAKOUT",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-ed8826cea6e94e3f8e02709baeebce2e",
+        "stock_scanner_run_id": "stock-scan-cd128ad336064498956b35bacddac49d",
+        "symbol": "ALAB"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-2110c8ebc1554e0790eb5ae206df4ea0",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "Q"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-fb18ad4218504f0484b6130b621817d2",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-2110c8ebc1554e0790eb5ae206df4ea0",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "Q"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-bbdf18377f62444baa822d83bd089b87",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-d9e5a22037db495a9b7ce7edc5899a49",
+        "stock_scanner_run_id": "stock-scan-f9a7a42e3ad44b69b10a7d1eda98e758",
+        "symbol": "Q"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-4cbc763696c54cd9896a2a4c63545a3e",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "TEL"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-9c6ccad6367f4edebb9f1ada406e83cf",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-4cbc763696c54cd9896a2a4c63545a3e",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "TEL"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-e533b4c4321d4e8abb3aacef8b179850",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "READY_FOR_EXECUTION",
+        "stock_candidate_id": "stock-candidate-c745ee9ab5b146afb129ec6cdc20b72d",
+        "stock_scanner_run_id": "stock-scan-a32943f48b7d4d659f063d5411d604d7",
+        "symbol": "TEL"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-7925aebf7bae4fafb84abbba38cec740",
+        "payload_json": {
+          "direction": "BEARISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BEARISH"
+          }
+        },
+        "symbol": "HONA"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BEARISH",
+        "direction": "BEARISH",
+        "opportunity_id": "m62-opp-6b0fb317f04847c58ad93af9044bbd16",
+        "payload_json": {
+          "category": "BEARISH",
+          "direction": "BEARISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-7925aebf7bae4fafb84abbba38cec740",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "HONA"
+      },
+      "older_logical_owner": {
+        "category": "BEARISH",
+        "direction": "BEARISH",
+        "opportunity_id": "m62-opp-598c37a803804bb382f7492cd99a36de",
+        "payload_json": {
+          "category": "BEARISH",
+          "direction": "BEARISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "VALIDATED",
+        "stock_candidate_id": "stock-candidate-40e07af0500b4a4ea9eee37cf09a0b52",
+        "stock_scanner_run_id": "stock-scan-2036116ca65b417396d262eef59907d8",
+        "symbol": "HONA"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-0649489daac94ab5b8767bead71c3e82",
+        "payload_json": {
+          "direction": "BULLISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BULLISH"
+          }
+        },
+        "symbol": "CB"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-a5233a4f656d402484a1de3e022924a7",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-0649489daac94ab5b8767bead71c3e82",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "CB"
+      },
+      "older_logical_owner": {
+        "category": "BULLISH",
+        "direction": "BULLISH",
+        "opportunity_id": "m62-opp-4fd9d7da7533432cb1c425b4c329f74c",
+        "payload_json": {
+          "category": "BULLISH",
+          "direction": "BULLISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "CONTRACTS_OPTIMIZED",
+        "stock_candidate_id": "stock-candidate-ccda2e6c508348fc8d6a37effd7eefc0",
+        "stock_scanner_run_id": "stock-scan-5a521acdc66747d986ba0f60377eb5e3",
+        "symbol": "CB"
+      }
+    },
+    {
+      "candidate": {
+        "id": "stock-candidate-b0bd5cbff0e74054a54ed848b420e0d1",
+        "payload_json": {
+          "direction": "BEARISH",
+          "primary_timeframe": "1d",
+          "scores": {
+            "primary_category": "BEARISH"
+          }
+        },
+        "symbol": "ECHO"
+      },
+      "exact_current_lineage_owner": {
+        "category": "BEARISH",
+        "direction": "BEARISH",
+        "opportunity_id": "m62-opp-50e0c187041e452188a359be84bd5523",
+        "payload_json": {
+          "category": "BEARISH",
+          "direction": "BEARISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "REJECTED",
+        "stock_candidate_id": "stock-candidate-b0bd5cbff0e74054a54ed848b420e0d1",
+        "stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+        "symbol": "ECHO"
+      },
+      "older_logical_owner": {
+        "category": "BEARISH",
+        "direction": "BEARISH",
+        "opportunity_id": "m62-opp-af97d8713b0249e4bf62855e63426805",
+        "payload_json": {
+          "category": "BEARISH",
+          "direction": "BEARISH",
+          "metadata": {
+            "primary_timeframe": "1d"
+          }
+        },
+        "state": "VALIDATED",
+        "stock_candidate_id": "stock-candidate-e6f650c0643a4bd5a942cf3c9535fbba",
+        "stock_scanner_run_id": "stock-scan-2036116ca65b417396d262eef59907d8",
+        "symbol": "ECHO"
+      }
+    }
+  ],
+  "source_diagnostic_version": "M68.2.1.11-LINEAGE-COLLISION-DIAGNOSTIC-1.0",
+  "target_stock_scanner_run_id": "stock-scan-86e61f0e1d084d60802538c8783ee701",
+  "version": "M68.2.1.12-TERMINAL-LINEAGE-COLLISION-FIXTURE-1.0"
+}

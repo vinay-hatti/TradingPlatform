@@ -1,0 +1,30 @@
+{
+  "milestone": "M77.19.6.5.2.21",
+  "name": "Native Cluster Event Activation Density Forensics",
+  "authority_report_5220_sha256": "1919911096baf7b9c6d352a3af15195af65272897220b3c739a7ed0e4ee6e6c0",
+  "authority_runner_5220_sha256": "1716c3f52f4f0d1c13890adecdceb5a93cd687430c3dd61d76dafc715c65f07c",
+  "monthly_bundle_count_required": 48,
+  "metrics": [
+    "raw candidate count",
+    "native merge event count",
+    "SPLIT_WIDE activation count",
+    "PRESERVE_SEED activation count",
+    "activations per 1000 raw candidates",
+    "activations per 1000 native merges",
+    "timeframe distribution",
+    "side distribution",
+    "candidate source distribution",
+    "symbol concentration",
+    "causal event observable-state projection"
+  ],
+  "native_internal_atr_merge_multiplier": 0.35,
+  "native_level_merge_threshold": 0.003,
+  "parity_tolerance": 1e-09,
+  "new_trigger_semantic_introduced": false,
+  "new_threshold_introduced": false,
+  "threshold_search_or_optimization": false,
+  "database_mode": "READ_ONLY_SPY_SESSION_CALENDAR_ONLY",
+  "candidate_semantic_promoted": false,
+  "full_23_year_reconstruction_authorized": false,
+  "production_authority_effect": false
+}

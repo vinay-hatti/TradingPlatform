@@ -116,7 +116,17 @@ class ProductionOperationsService:
    elif sid=='option_valuation_intelligence': status,meta=self._age_status(self._latest('institutional_option_valuation_publications','published_at','publication_name','current_option_valuation_intelligence'),'published_at',SERVICE_FRESHNESS[sid])
    elif sid=='institutional_options': status='READY' if self._latest('institutional_option_decision_snapshots','created_at') else 'DEGRADED';meta['reason']='Decision snapshots available' if status=='READY' else 'No Institutional Options decision snapshot found'
    elif sid=='broker_sync': status,meta=self._age_status(self._latest('broker_portfolio_publications','published_at','publication_name','current_broker_portfolio'),'published_at',SERVICE_FRESHNESS[sid])
-   elif sid=='dynamic_management': status='READY' if self._table('managed_positions') else 'FAILED'
+   elif sid=='dynamic_management':
+    if not self._table('managed_positions'):status='FAILED';meta['reason']='managed_positions table is missing'
+    elif self._table('m73_position_managers'):
+     try:
+      total=self.s.execute(text("SELECT COUNT(*) FROM managed_positions WHERE state IN ('OPEN','PARTIAL','HEDGED','ROLLED')")).scalar() or 0
+      managers=self.s.execute(text("SELECT COUNT(*) FROM m73_position_managers WHERE state='ACTIVE'")).scalar() or 0
+      unprotected=self.s.execute(text("SELECT COUNT(*) FROM m73_position_managers WHERE state='ACTIVE' AND protection_state='UNPROTECTED'")).scalar() or 0
+      status='READY' if unprotected==0 and managers>=total else 'FAILED'
+      meta.update(reason=f'M73 managers={managers}/{total}; unprotected={unprotected}',m73_managers=managers,active_positions=total,unprotected=unprotected)
+     except Exception as e:status='DEGRADED';meta['error']=f'{type(e).__name__}: {e}'
+    else:status='DEGRADED';meta['reason']='M73 schema not installed; legacy M62 management only'
    elif sid=='portfolio_intelligence': status,meta=self._age_status(self._latest('portfolio_allocation_publications','published_at','publication_name','current_portfolio_allocation'),'published_at',SERVICE_FRESHNESS[sid])
    elif sid=='performance_learning':
     status,meta=self._age_status(self._latest('performance_learning_publications','published_at','publication_name','current_performance_learning'),'published_at',SERVICE_FRESHNESS[sid]);status='DEGRADED' if status=='STALE' and meta.get('last_success_at') is None else status
@@ -202,7 +212,13 @@ class ProductionOperationsService:
   try:locks=[self.lock_dto(x) for x in self.s.scalars(select(OpsLockModel)).all()]
   except Exception as e:self.s.rollback();errors['locks']=f'{type(e).__name__}: {e}'
   services=ready.get('services') or []
-  return json_safe({'readiness':ready,'alerts':alerts,'workflow_runs':runs,'locks':locks,'dependency_graph':self.dependency_graph(services),'component_errors':errors,'generated_at':iso()})
+  m73=None
+  if self._table('m73_position_managers'):
+   try:
+    from trading_ai.autonomous_position_management import AutonomousPositionManagementService
+    m73=AutonomousPositionManagementService(self.s).dashboard()
+   except Exception as e:self.s.rollback();errors['m73_management']=f'{type(e).__name__}: {e}'
+  return json_safe({'readiness':ready,'alerts':alerts,'workflow_runs':runs,'locks':locks,'autonomous_management':m73,'dependency_graph':self.dependency_graph(services),'component_errors':errors,'generated_at':iso()})
  def workflow_plan(self):
   return [
    ('preflight',None),('underlying_ingestion','scripts/ingest_underlying_data.py'),('options_ingestion','scripts/ingest_options_data.py'),('broker_sync','scripts/run_m63_broker_portfolio_sync.py'),('dynamic_management','scripts/run_m62_dynamic_position_management.py'),('portfolio_intelligence','scripts/run_m64_portfolio_intelligence.py'),('performance_learning','scripts/run_m65_performance_learning.py'),('readiness',None)]

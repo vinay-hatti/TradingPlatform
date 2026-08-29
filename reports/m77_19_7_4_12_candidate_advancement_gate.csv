@@ -1,0 +1,8 @@
+candidate,decision,validation_horizons,reason
+H1_FRESH_DOWNSIDE_TRANSITION,REJECT_DEVELOPMENT,,Development accuracy and median remain weak across all horizons.
+H2_BREAKDOWN_INITIATION,ADVANCE_VALIDATION_5_10_ONLY,"5,10",Development h5/h10 both >50% accuracy and positive median; h20 does not qualify.
+H3_CONTINUATION_WITHOUT_EXHAUSTION,REJECT_DEVELOPMENT,,Development remains weak across all horizons.
+H4_ROOM_PCT_GE_10PCT,ADVANCE_VALIDATION_5_10_20,"5,10,20",Pre-frozen >=10% room bin is interpretable and shows strongest Development percent-room evidence.
+H4_ROOM_PCT_5_10PCT,ADVANCE_VALIDATION_DIAGNOSTIC,"5,10,20",Pre-frozen 5-10% room bin is interpretable and materially improves Development evidence; diagnostic companion to >=10%.
+H4_ROOM_ATR_GE_3ATR,DO_NOT_ADVANCE_INSUFFICIENT_SAMPLE,,Development signal appears positive but count is below fixed 500-observation interpretation floor.
+H4_ROOM_ATR_OTHER,REJECT_NONMONOTONIC_DEVELOPMENT,,Eligible ATR bins are non-monotonic and do not establish robust Development edge.

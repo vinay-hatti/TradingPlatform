@@ -1,0 +1,18 @@
+{
+  "version": "INTRADAY-EXCLUSION-PROGRESSION-CERTIFICATION-1.1.1",
+  "generated_at": "2026-08-28T21:02:52.006383+00:00",
+  "mode": "EOD_RESEARCH_AUTHORITY_CHECK",
+  "market_date": "2026-08-28",
+  "market_session": true,
+  "calendar": "SELF_CONTAINED_NYSE_FULL_DAY_CALENDAR",
+  "timezone": "America/New_York",
+  "certification_eligible": true,
+  "source_shadow_version": "INTRADAY-ACTIVE-UNIVERSE-SHADOW-1.3.1",
+  "source_shadow_mode": "SHADOW_EOD_FULL_UNIVERSE_AUTHORITY",
+  "eod_authority_ready": true,
+  "research_authority_eligible": true,
+  "reported_option_symbol_coverage": 614,
+  "canonical_symbols": 611,
+  "gate": "PASS",
+  "production_effect": false
+}

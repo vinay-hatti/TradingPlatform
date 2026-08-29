@@ -1,0 +1,3977 @@
+{
+  "baseline_summary": {
+    "category_mismatches": [],
+    "comparison_count": 0,
+    "direction_match_pct": 0.0,
+    "max_confidence_abs_error": null,
+    "max_score_abs_error": null,
+    "mean_score_signed_error": null,
+    "median_score_signed_error": null,
+    "primary_category_match_pct": 0.0,
+    "score_signed_error_distribution_2dp": {},
+    "unique_confidence_signed_errors": []
+  },
+  "controlled_exact_input_parity_certified": false,
+  "forensic_conclusion": "MONTHLY_PARITY_NOT_EXPLAINED_BY_SIMPLE_SESSION_CUTOFF_CONTEXT",
+  "full_23_year_reconstruction_authorized": false,
+  "governance": {
+    "controlled_exact_input_parity_certified": false,
+    "database_mode": "READ_ONLY_SPY_SESSION_CALENDAR_ONLY",
+    "forensic_probe_only": true,
+    "full_23_year_reconstruction_authorized": false,
+    "numeric_tolerance": 1e-09,
+    "parity_thresholds_relaxed": false,
+    "production_authority_effect": false,
+    "production_database_writes": false,
+    "research_only": true
+  },
+  "monthly_bundle_count": 48,
+  "next_step": "BUILD_M77_19_6_5_2_4_MONTHLY_FEATURE_CONFIDENCE_COMPONENT_FORENSICS",
+  "production_authority_effect": false,
+  "records": [
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/001_A_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "STRONG_BULLISH",
+        "overall_score": 78.19,
+        "primary_category": "BREAKDOWN"
+      },
+      "symbol": "A"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/002_AAPL_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "NEUTRAL",
+        "overall_score": 39.21,
+        "primary_category": "ACCUMULATION"
+      },
+      "symbol": "AAPL"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/003_ABBV_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "STRONG_BULLISH",
+        "overall_score": 69.82,
+        "primary_category": "BULLISH"
+      },
+      "symbol": "ABBV"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/004_ABNB_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "STRONG_BEARISH",
+        "overall_score": 55.34,
+        "primary_category": "BEARISH"
+      },
+      "symbol": "ABNB"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/005_ABT_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "STRONG_BEARISH",
+        "overall_score": 42.26,
+        "primary_category": "BEARISH"
+      },
+      "symbol": "ABT"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/006_ACGL_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "STRONG_BULLISH",
+        "overall_score": 74.97,
+        "primary_category": "ACCUMULATION"
+      },
+      "symbol": "ACGL"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/007_ACN_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "BULLISH",
+        "overall_score": 48.38,
+        "primary_category": "BULLISH"
+      },
+      "symbol": "ACN"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/008_ADBE_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "BULLISH",
+        "overall_score": 61.1,
+        "primary_category": "BREAKDOWN"
+      },
+      "symbol": "ADBE"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/009_ADI_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "STRONG_BEARISH",
+        "overall_score": 37.58,
+        "primary_category": "BEARISH"
+      },
+      "symbol": "ADI"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/010_ADM_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "STRONG_BULLISH",
+        "overall_score": 71.53,
+        "primary_category": "BULLISH"
+      },
+      "symbol": "ADM"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/011_ADP_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "STRONG_BULLISH",
+        "overall_score": 61.78,
+        "primary_category": "BULLISH"
+      },
+      "symbol": "ADP"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/012_ADSK_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "STRONG_BULLISH",
+        "overall_score": 60.62,
+        "primary_category": "BULLISH"
+      },
+      "symbol": "ADSK"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/013_AEE_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "STRONG_BEARISH",
+        "overall_score": 51.7,
+        "primary_category": "BEARISH"
+      },
+      "symbol": "AEE"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/014_AEP_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "STRONG_BEARISH",
+        "overall_score": 39.38,
+        "primary_category": "BEARISH"
+      },
+      "symbol": "AEP"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/015_AES_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "STRONG_BULLISH",
+        "overall_score": 76.91,
+        "primary_category": "BULLISH"
+      },
+      "symbol": "AES"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/016_AFL_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "STRONG_BULLISH",
+        "overall_score": 71.49,
+        "primary_category": "BULLISH"
+      },
+      "symbol": "AFL"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/017_AGG_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "STRONG_BEARISH",
+        "overall_score": 39.54,
+        "primary_category": "BEARISH"
+      },
+      "symbol": "AGG"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/018_AIG_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "BULLISH",
+        "overall_score": 54.53,
+        "primary_category": "BULLISH"
+      },
+      "symbol": "AIG"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/019_AIZ_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "STRONG_BEARISH",
+        "overall_score": 44.12,
+        "primary_category": "BEARISH"
+      },
+      "symbol": "AIZ"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/020_AJG_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "STRONG_BULLISH",
+        "overall_score": 66.23,
+        "primary_category": "BULLISH"
+      },
+      "symbol": "AJG"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/021_AKAM_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "BULLISH",
+        "overall_score": 47.66,
+        "primary_category": "BULLISH"
+      },
+      "symbol": "AKAM"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/022_ALB_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "STRONG_BULLISH",
+        "overall_score": 77.29,
+        "primary_category": "BULLISH"
+      },
+      "symbol": "ALB"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/023_ALGN_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "STRONG_BEARISH",
+        "overall_score": 56.46,
+        "primary_category": "BEARISH"
+      },
+      "symbol": "ALGN"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/024_ALL_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "BEARISH",
+        "overall_score": 39.62,
+        "primary_category": "BEARISH"
+      },
+      "symbol": "ALL"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/025_ALLE_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "BULLISH",
+        "overall_score": 60.62,
+        "primary_category": "BULLISH"
+      },
+      "symbol": "ALLE"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/026_ALNY_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "STRONG_BULLISH",
+        "overall_score": 66.08,
+        "primary_category": "BULLISH"
+      },
+      "symbol": "ALNY"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/027_AMAT_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "BULLISH",
+        "overall_score": 45.75,
+        "primary_category": "BULLISH"
+      },
+      "symbol": "AMAT"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/028_AMCR_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "NEUTRAL",
+        "overall_score": 41.15,
+        "primary_category": "ACCUMULATION"
+      },
+      "symbol": "AMCR"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/029_AMD_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "STRONG_BEARISH",
+        "overall_score": 40.38,
+        "primary_category": "BEARISH"
+      },
+      "symbol": "AMD"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/030_AME_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "STRONG_BULLISH",
+        "overall_score": 68.24,
+        "primary_category": "BULLISH"
+      },
+      "symbol": "AME"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/031_AMGN_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "STRONG_BULLISH",
+        "overall_score": 70.68,
+        "primary_category": "BULLISH"
+      },
+      "symbol": "AMGN"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/032_AMP_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "STRONG_BULLISH",
+        "overall_score": 67.23,
+        "primary_category": "BULLISH"
+      },
+      "symbol": "AMP"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/033_AMT_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "STRONG_BEARISH",
+        "overall_score": 50.75,
+        "primary_category": "BEARISH"
+      },
+      "symbol": "AMT"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/034_AMZN_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "STRONG_BEARISH",
+        "overall_score": 44.72,
+        "primary_category": "BEARISH"
+      },
+      "symbol": "AMZN"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/035_ANET_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "STRONG_BULLISH",
+        "overall_score": 63.2,
+        "primary_category": "BULLISH"
+      },
+      "symbol": "ANET"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/036_AON_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "NEUTRAL",
+        "overall_score": 41.2,
+        "primary_category": "ACCUMULATION"
+      },
+      "symbol": "AON"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/037_AOS_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "NEUTRAL",
+        "overall_score": 50.81,
+        "primary_category": "ACCUMULATION"
+      },
+      "symbol": "AOS"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/038_APA_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "STRONG_BULLISH",
+        "overall_score": 68.07,
+        "primary_category": "BULLISH"
+      },
+      "symbol": "APA"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/039_APD_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "NEUTRAL",
+        "overall_score": 38.78,
+        "primary_category": "DISTRIBUTION"
+      },
+      "symbol": "APD"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/040_APH_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "STRONG_BULLISH",
+        "overall_score": 63.39,
+        "primary_category": "BULLISH"
+      },
+      "symbol": "APH"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/041_APO_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "BULLISH",
+        "overall_score": 49.31,
+        "primary_category": "BULLISH"
+      },
+      "symbol": "APO"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/042_APP_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "STRONG_BEARISH",
+        "overall_score": 41.19,
+        "primary_category": "BEARISH"
+      },
+      "symbol": "APP"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/043_APTV_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "NEUTRAL",
+        "overall_score": 39.4,
+        "primary_category": "ACCUMULATION"
+      },
+      "symbol": "APTV"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/044_ARE_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "NEUTRAL",
+        "overall_score": 37.07,
+        "primary_category": "BULLISH"
+      },
+      "symbol": "ARE"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/045_ARES_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "STRONG_BULLISH",
+        "overall_score": 64.28,
+        "primary_category": "BULLISH"
+      },
+      "symbol": "ARES"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/046_ARKK_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "BEARISH",
+        "overall_score": 36.83,
+        "primary_category": "BEARISH"
+      },
+      "symbol": "ARKK"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/047_ASML_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "BULLISH",
+        "overall_score": 58.65,
+        "primary_category": "BULLISH"
+      },
+      "symbol": "ASML"
+    },
+    {
+      "baseline": null,
+      "best_candidate": null,
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/048_ATO_2022-10-31.json",
+      "candidates": [
+        {
+          "candidate_as_of": "2022-10-31",
+          "error": "AttributeError",
+          "exact_semantic_match": false,
+          "message": "'OpportunityScores' object has no attribute 'overall_score'",
+          "session_backtrack": 0
+        },
+        {
+          "candidate_as_of": "2022-10-28",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 1
+        },
+        {
+          "candidate_as_of": "2022-10-27",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 2
+        },
+        {
+          "candidate_as_of": "2022-10-26",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 3
+        },
+        {
+          "candidate_as_of": "2022-10-25",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 4
+        },
+        {
+          "candidate_as_of": "2022-10-24",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 5
+        },
+        {
+          "candidate_as_of": "2022-10-21",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 6
+        },
+        {
+          "candidate_as_of": "2022-10-20",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 7
+        },
+        {
+          "candidate_as_of": "2022-10-19",
+          "error": "RuntimeError",
+          "exact_semantic_match": false,
+          "message": "native profile not eligible",
+          "session_backtrack": 8
+        }
+      ],
+      "exact_candidate_found": false,
+      "nominal_as_of": "2022-10-31",
+      "price_history_first_date": "2021-08-24",
+      "price_history_last_date": "2022-10-31",
+      "price_history_row_count": 300,
+      "stored_semantic": {
+        "confidence": 85.62,
+        "direction": "NEUTRAL",
+        "overall_score": 50.1,
+        "primary_category": "BULLISH"
+      },
+      "symbol": "ATO"
+    }
+  ],
+  "session_cutoff_forensics": {
+    "all_monthly_exact_match_recovered_by_session_cutoff": false,
+    "best_candidate_backtrack_distribution": {},
+    "exact_candidate_count": 0,
+    "exact_candidate_symbols": []
+  },
+  "source_certification_report": "/Users/vinay.hatti/TradingPlatform/reports/m77_19_6_5_2_2_native_compare_profile_parity_certification.json",
+  "version": "M77.19.6.5.2.3-MONTHLY-CONTEXT-PARITY-DIFFERENCE-FORENSICS-1.0"
+}

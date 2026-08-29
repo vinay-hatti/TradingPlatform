@@ -1,0 +1,62 @@
+{
+  "challenger_version": "M77.4-GOVERNED-CHALLENGER-WALK-FORWARD-1.0",
+  "governance": {
+    "mode": "READ_ONLY_EXPANDING_WINDOW_PURGED_WALK_FORWARD",
+    "read_only": true,
+    "production_authority_effect": false,
+    "production_model_mutation": false,
+    "production_threshold_change": false,
+    "production_weight_change": false,
+    "automatic_bearish_inversion": false,
+    "automatic_champion_promotion": false,
+    "database_writes": false,
+    "survivorship_bias_free_claim": false,
+    "pit_sector_membership_claim": false,
+    "research_only": true
+  },
+  "lineage": {
+    "m77_2_manifest": "reports/m77/certified/m77_2_multiyear_frozen_champion_manifest.json",
+    "m77_2_manifest_sha256": "70401b986d81d4a46c6dd5a360e5f5f81a536abd418443f855c3a068dbfbe6c9",
+    "m77_3_attribution": "reports/m77/m77_3_conditional_edge_attribution.json",
+    "m77_3_attribution_sha256": "e7e50c00320ca193ae21fb56e6bde235ed71a19080608cff6b448e72ddb4195b",
+    "m77_3_grades_used_for_holdout_selection": false,
+    "replay_run_ids": [
+      "m77-1-replay-35c1d85202b34923ac7935e5c7b654a3",
+      "m77-1-replay-096da9ba629c463ba6cce0b35d24e655",
+      "m77-1-replay-1272eade7ab3476880753116601d92c1",
+      "m77-1-replay-35d08b48d8974ad1a12aacc0a01f3aae",
+      "m77-1-replay-6f64bf3942cb45caad441c80dd86f096"
+    ]
+  },
+  "summary": {
+    "folds": 4,
+    "candidate_horizon_histories": 91,
+    "research_challenger_eligible": 12,
+    "eligible_20d": 4,
+    "eligible_60d": 8,
+    "production_champion_change": false
+  },
+  "challenger_policy": {
+    "version": "M77.4-GOVERNED-CHALLENGER-WALK-FORWARD-1.0",
+    "mode": "RESEARCH_SHADOW_ONLY",
+    "bearish_policy": "ABSTAIN_FROM_BEARISH_CHALLENGER_SUPPORT_DO_NOT_INVERT",
+    "bullish_policy": "A bullish baseline prediction may receive RESEARCH_WALK_FORWARD_SUPPORTED only when it matches at least one research_challenger_eligible cohort.",
+    "score_mutation": "NONE",
+    "threshold_mutation": "NONE",
+    "decision_mutation": "NONE",
+    "eligible_candidate_horizon_ids": [
+      "direction_regime::direction=BULLISH|historical_regime=RANGE_NORMAL@@20d",
+      "direction::direction=BULLISH@@60d",
+      "direction_category::direction=STRONG_BULLISH|primary_category=ACCUMULATION@@60d",
+      "direction_category_score::direction=STRONG_BULLISH|primary_category=ACCUMULATION|score_band=[70,80)@@60d",
+      "direction_category_score::direction=STRONG_BULLISH|primary_category=BREAKOUT|score_band=[80,90)@@60d",
+      "direction_category_structure::direction=STRONG_BULLISH|primary_category=ACCUMULATION|structure=EXPANSION@@60d",
+      "direction_structure::direction=STRONG_BULLISH|structure=EXPANSION@@20d",
+      "direction_structure::direction=STRONG_BULLISH|structure=EXPANSION@@60d",
+      "direction_category::direction=BULLISH|primary_category=BULLISH@@60d",
+      "direction_category_structure::direction=STRONG_BULLISH|primary_category=BULLISH|structure=EXPANSION@@60d",
+      "direction_regime::direction=BULLISH|historical_regime=BULL_HEALTHY@@20d",
+      "direction_score_regime::direction=BULLISH|historical_regime=BULL_HEALTHY|score_band=[40,50)@@20d"
+    ]
+  }
+}

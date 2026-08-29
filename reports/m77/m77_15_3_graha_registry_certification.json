@@ -1,0 +1,198 @@
+{
+  "version": "M77.15.3.1-APPARENT-ECLIPTIC-PARITY-CORRECTION-1.0",
+  "status": "READY",
+  "mode": "GRAHA_REGISTRY_JPL_APPARENT_ECLIPTIC_CERTIFICATION",
+  "comparison_contract": "SWISS_APPARENT_GEOCENTRIC_VS_JPL_OBSERVER_QUANTITY_31_APPARENT_ECLIPTIC_OF_DATE",
+  "comparisons": 20,
+  "max_angular_error_deg": 8.295000000657637e-05,
+  "max_geometric_diagnostic_error_deg": 0.3769884088430473,
+  "threshold_deg": 0.1,
+  "rows": [
+    {
+      "date": "2023-03-20",
+      "body": "MERCURY",
+      "registry_apparent_tropical_deg": 2.62509199,
+      "jpl_apparent_ecliptic_of_date_deg": 2.6250673,
+      "apparent_angular_error_deg": 2.4690000000049395e-05,
+      "jpl_geometric_vector_longitude_deg": 2.3187683144640463,
+      "geometric_vs_registry_diagnostic_error_deg": 0.30632367553595374
+    },
+    {
+      "date": "2023-03-20",
+      "body": "VENUS",
+      "registry_apparent_tropical_deg": 34.28442405,
+      "jpl_apparent_ecliptic_of_date_deg": 34.2844071,
+      "apparent_angular_error_deg": 1.694999999557467e-05,
+      "jpl_geometric_vector_longitude_deg": 33.97155427435482,
+      "geometric_vs_registry_diagnostic_error_deg": 0.3128697756451757
+    },
+    {
+      "date": "2023-03-20",
+      "body": "MARS",
+      "registry_apparent_tropical_deg": 87.62118052,
+      "jpl_apparent_ecliptic_of_date_deg": 87.6211613,
+      "apparent_angular_error_deg": 1.9219999998654202e-05,
+      "jpl_geometric_vector_longitude_deg": 87.30316080501322,
+      "geometric_vs_registry_diagnostic_error_deg": 0.31801971498677517
+    },
+    {
+      "date": "2023-03-20",
+      "body": "JUPITER",
+      "registry_apparent_tropical_deg": 16.37368726,
+      "jpl_apparent_ecliptic_of_date_deg": 16.3736736,
+      "apparent_angular_error_deg": 1.3660000000470518e-05,
+      "jpl_geometric_vector_longitude_deg": 16.06005178405089,
+      "geometric_vs_registry_diagnostic_error_deg": 0.3136354759491091
+    },
+    {
+      "date": "2023-03-20",
+      "body": "SATURN",
+      "registry_apparent_tropical_deg": 331.48594905,
+      "jpl_apparent_ecliptic_of_date_deg": 331.4859503,
+      "apparent_angular_error_deg": 1.2500000252657628e-06,
+      "jpl_geometric_vector_longitude_deg": 331.17114436630976,
+      "geometric_vs_registry_diagnostic_error_deg": 0.31480468369022674
+    },
+    {
+      "date": "2024-09-22",
+      "body": "MERCURY",
+      "registry_apparent_tropical_deg": 172.91181961,
+      "jpl_apparent_ecliptic_of_date_deg": 172.9118018,
+      "apparent_angular_error_deg": 1.7810000002782544e-05,
+      "jpl_geometric_vector_longitude_deg": 172.58114109319496,
+      "geometric_vs_registry_diagnostic_error_deg": 0.330678516805051
+    },
+    {
+      "date": "2024-09-22",
+      "body": "VENUS",
+      "registry_apparent_tropical_deg": 209.25856941,
+      "jpl_apparent_ecliptic_of_date_deg": 209.258538,
+      "apparent_angular_error_deg": 3.141000001960492e-05,
+      "jpl_geometric_vector_longitude_deg": 208.92369753298414,
+      "geometric_vs_registry_diagnostic_error_deg": 0.3348718770158712
+    },
+    {
+      "date": "2024-09-22",
+      "body": "MARS",
+      "registry_apparent_tropical_deg": 100.2606843,
+      "jpl_apparent_ecliptic_of_date_deg": 100.2606616,
+      "apparent_angular_error_deg": 2.2699999988162745e-05,
+      "jpl_geometric_vector_longitude_deg": 99.92005767296511,
+      "geometric_vs_registry_diagnostic_error_deg": 0.34062662703487945
+    },
+    {
+      "date": "2024-09-22",
+      "body": "JUPITER",
+      "registry_apparent_tropical_deg": 80.87203755,
+      "jpl_apparent_ecliptic_of_date_deg": 80.8719546,
+      "apparent_angular_error_deg": 8.295000000657637e-05,
+      "jpl_geometric_vector_longitude_deg": 80.5287116327305,
+      "geometric_vs_registry_diagnostic_error_deg": 0.343325917269496
+    },
+    {
+      "date": "2024-09-22",
+      "body": "SATURN",
+      "registry_apparent_tropical_deg": 344.95075867,
+      "jpl_apparent_ecliptic_of_date_deg": 344.9506992,
+      "apparent_angular_error_deg": 5.947000005335212e-05,
+      "jpl_geometric_vector_longitude_deg": 344.6021844641969,
+      "geometric_vs_registry_diagnostic_error_deg": 0.3485742058031178
+    },
+    {
+      "date": "2025-12-01",
+      "body": "MERCURY",
+      "registry_apparent_tropical_deg": 230.97398089,
+      "jpl_apparent_ecliptic_of_date_deg": 230.9739814,
+      "apparent_angular_error_deg": 5.100000066704524e-07,
+      "jpl_geometric_vector_longitude_deg": 230.61235740481524,
+      "geometric_vs_registry_diagnostic_error_deg": 0.36162348518476506
+    },
+    {
+      "date": "2025-12-01",
+      "body": "VENUS",
+      "registry_apparent_tropical_deg": 240.82628023,
+      "jpl_apparent_ecliptic_of_date_deg": 240.8262693,
+      "apparent_angular_error_deg": 1.093000000196298e-05,
+      "jpl_geometric_vector_longitude_deg": 240.4754770989386,
+      "geometric_vs_registry_diagnostic_error_deg": 0.3508031310614115
+    },
+    {
+      "date": "2025-12-01",
+      "body": "MARS",
+      "registry_apparent_tropical_deg": 259.66553381,
+      "jpl_apparent_ecliptic_of_date_deg": 259.6655188,
+      "apparent_angular_error_deg": 1.501000002690489e-05,
+      "jpl_geometric_vector_longitude_deg": 259.3129011599152,
+      "geometric_vs_registry_diagnostic_error_deg": 0.35263265008478584
+    },
+    {
+      "date": "2025-12-01",
+      "body": "JUPITER",
+      "registry_apparent_tropical_deg": 114.50257193,
+      "jpl_apparent_ecliptic_of_date_deg": 114.5024905,
+      "apparent_angular_error_deg": 8.14300000087087e-05,
+      "jpl_geometric_vector_longitude_deg": 114.13781858096391,
+      "geometric_vs_registry_diagnostic_error_deg": 0.3647533490360928
+    },
+    {
+      "date": "2025-12-01",
+      "body": "SATURN",
+      "registry_apparent_tropical_deg": 355.16758874,
+      "jpl_apparent_ecliptic_of_date_deg": 355.1675491,
+      "apparent_angular_error_deg": 3.964000001133172e-05,
+      "jpl_geometric_vector_longitude_deg": 354.804730634114,
+      "geometric_vs_registry_diagnostic_error_deg": 0.362858105886005
+    },
+    {
+      "date": "2026-08-21",
+      "body": "MERCURY",
+      "registry_apparent_tropical_deg": 142.0477006,
+      "jpl_apparent_ecliptic_of_date_deg": 142.0476879,
+      "apparent_angular_error_deg": 1.2700000013410317e-05,
+      "jpl_geometric_vector_longitude_deg": 141.688084559179,
+      "geometric_vs_registry_diagnostic_error_deg": 0.3596160408210096
+    },
+    {
+      "date": "2026-08-21",
+      "body": "VENUS",
+      "registry_apparent_tropical_deg": 194.17000853,
+      "jpl_apparent_ecliptic_of_date_deg": 194.1699846,
+      "apparent_angular_error_deg": 2.3929999997562845e-05,
+      "jpl_geometric_vector_longitude_deg": 193.79874077923017,
+      "geometric_vs_registry_diagnostic_error_deg": 0.37126775076981744
+    },
+    {
+      "date": "2026-08-21",
+      "body": "MARS",
+      "registry_apparent_tropical_deg": 96.65572115,
+      "jpl_apparent_ecliptic_of_date_deg": 96.6557082,
+      "apparent_angular_error_deg": 1.2949999998568273e-05,
+      "jpl_geometric_vector_longitude_deg": 96.28813587510034,
+      "geometric_vs_registry_diagnostic_error_deg": 0.3675852748996675
+    },
+    {
+      "date": "2026-08-21",
+      "body": "JUPITER",
+      "registry_apparent_tropical_deg": 131.46078583,
+      "jpl_apparent_ecliptic_of_date_deg": 131.4607519,
+      "apparent_angular_error_deg": 3.393000000073698e-05,
+      "jpl_geometric_vector_longitude_deg": 131.09382782069858,
+      "geometric_vs_registry_diagnostic_error_deg": 0.3669580093014133
+    },
+    {
+      "date": "2026-08-21",
+      "body": "SATURN",
+      "registry_apparent_tropical_deg": 14.19850378,
+      "jpl_apparent_ecliptic_of_date_deg": 14.198491,
+      "apparent_angular_error_deg": 1.2779999998713265e-05,
+      "jpl_geometric_vector_longitude_deg": 13.821515371156952,
+      "geometric_vs_registry_diagnostic_error_deg": 0.3769884088430473
+    }
+  ],
+  "acceptance": {
+    "jpl_registry_parity": true,
+    "financial_study_authorized": true,
+    "production_authority_effect": false
+  },
+  "production_authority_effect": false
+}

@@ -1,0 +1,24 @@
+{
+  "milestone": "M77.19.6.5.2.17",
+  "name": "Minimal Cluster Ancestry Causal Replay",
+  "authority_report_5216_sha256": "14d27a0b77de03c306baa76f4b1178201f97305612f32f84e9c97ce2b8c41752",
+  "authority_runner_5216_sha256": "870593692bdb5532bac463606c0715726a2667431d6fd699adf7bd8c9b21d762",
+  "expected_mechanism_map": {
+    "AES": "PREEXISTING_CLUSTER_ABSORPTION",
+    "ANET": "POST_SEED_CENTROID_DRIFT",
+    "ATO": "POST_SEED_CENTROID_DRIFT"
+  },
+  "arms": [
+    "NATIVE_TRACE_CONTROL",
+    "ABSORPTION_ONLY_FORCE_TARGET_NEW_CLUSTER",
+    "CENTROID_DRIFT_ONLY_PIN_TARGET_CLUSTER",
+    "COMBINED_MINIMAL_TARGET_LOCAL"
+  ],
+  "database_mode": "NONE_REPORT_ONLY",
+  "native_internal_atr_merge_multiplier": 0.35,
+  "reachability_threshold": 0.003,
+  "parity_tolerance": 1e-09,
+  "candidate_semantic_promoted": false,
+  "full_23_year_reconstruction_authorized": false,
+  "production_authority_effect": false
+}

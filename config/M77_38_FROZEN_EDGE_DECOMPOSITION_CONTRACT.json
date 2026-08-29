@@ -1,0 +1,25 @@
+{
+  "authority": "M77.26.1 executable management geometry panel",
+  "capital_priority_top_k": 3,
+  "certified_geometry": {
+    "horizon": 60,
+    "stop_atr": 3.0,
+    "target_atr": 5.0
+  },
+  "development_end": "2017-12-31",
+  "drve_identifiability_reason": "M77.26.1 executable cohort is post-DRVE; no pre-DRVE executable counterfactual in this authority.",
+  "drve_necessity_identifiable": false,
+  "forbidden_outcome_window": "2018-01-01 THROUGH 2026-12-31",
+  "management_retuning": false,
+  "neutral_management_counterfactual": {
+    "horizon": 60,
+    "stop_atr": 3.0,
+    "target_atr": 3.0
+  },
+  "new_probability_up_thresholds": 0,
+  "new_top_k_values": 0,
+  "probability_top_fraction": 0.2,
+  "production_authority_effect": false,
+  "prospective_protocols_modified": false,
+  "version": "M77.38-FROZEN-EDGE-DECOMPOSITION-CONTRACT-1.0"
+}

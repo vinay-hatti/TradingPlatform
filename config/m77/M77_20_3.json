@@ -1,0 +1,8 @@
+{
+  "milestone": "M77.20.3",
+  "snapshot_mode": "APPEND_ONLY_IMMUTABLE_DAILY",
+  "unmapped_sector_policy": "EXPLICIT_MISSING_F071_NO_INFERENCE",
+  "prospective_F071_materialized": false,
+  "prospective_outcomes_opened": false,
+  "production_authority_effect": false
+}

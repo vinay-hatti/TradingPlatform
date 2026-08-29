@@ -1,0 +1,22 @@
+{
+  "provider": "NASA_JPL_HORIZONS",
+  "api_version_observed": "1.2",
+  "api_version_documented": "1.3",
+  "api_version_compatibility": "SUPPORTED_OBSERVED_VERSION",
+  "body": "MOON",
+  "horizons_id": "301",
+  "date": "2025-12-01",
+  "time_utc": "12:00:00",
+  "center": "EARTH_GEOCENTER_500@399",
+  "reference_plane": "ECLIPTIC",
+  "reference_system": "ICRF",
+  "vector_correction": "NONE_GEOMETRIC",
+  "x_au": 0.002284102425884384,
+  "y_au": 0.0008458396004672192,
+  "z_au": 0.0001269412312570251,
+  "vx_au_per_day": -0.0002474094075820271,
+  "vy_au_per_day": 0.0005685362768090509,
+  "vz_au_per_day": 4.190487598357022e-05,
+  "source_url_sha256": "3acf5b1b2a318dd0e8bdd034d3b3880714ec57d8639c45d46807b1a568a58222",
+  "cache_mode": "MATERIALIZED"
+}

@@ -4,10 +4,13 @@ from trading_ai.database.base import Base
 
 class ExecutionIntentModel(Base):
     __tablename__='execution_intents'
-    __table_args__=(UniqueConstraint('trade_plan_id','trade_plan_version',name='uq_m59_execution_intent_trade_plan_version'),)
+    __table_args__=(UniqueConstraint('trade_plan_id','trade_plan_version','execution_attempt',name='uq_m73_execution_intent_trade_plan_attempt'),)
     execution_intent_id:Mapped[str]=mapped_column(String(128),primary_key=True)
     trade_plan_id:Mapped[str]=mapped_column(String(128),nullable=False,index=True)
     trade_plan_version:Mapped[int]=mapped_column(Integer,nullable=False)
+    execution_attempt:Mapped[int]=mapped_column(Integer,nullable=False,default=1,index=True)
+    parent_execution_intent_id:Mapped[str|None]=mapped_column(String(128),nullable=True,index=True)
+    retry_reason:Mapped[str|None]=mapped_column(Text,nullable=True)
     opportunity_id:Mapped[str]=mapped_column(String(128),nullable=False,index=True)
     portfolio_id:Mapped[str]=mapped_column(String(64),nullable=False,index=True)
     account_id:Mapped[str]=mapped_column(String(128),nullable=False,index=True)

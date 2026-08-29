@@ -1,0 +1,88 @@
+{
+  "MF1_candidate_count": 2,
+  "MF1_frozen_config_parity": {
+    "10": true,
+    "20": true,
+    "5": true
+  },
+  "MF1_primary_callable": {
+    "args": [
+      "train_rows",
+      "test_rows",
+      "feature_cols",
+      "target_key",
+      "grid",
+      "ml",
+      "progress_prefix"
+    ],
+    "defaults_count": 1,
+    "end_lineno": 153,
+    "kwonlyargs": [],
+    "lineno": 134,
+    "name": "evaluate_mf1",
+    "reasons": [
+      "LOGISTIC",
+      "PREDICT_PROBA",
+      "BALANCED_ACCURACY",
+      "PREPROCESS"
+    ],
+    "score": 21,
+    "source_sha256": "c8391b00951357592fbb8b948c377953f56b200d4a73e0332d6dbc5fb1c4a5c2",
+    "tags": [
+      "BALANCED_ACCURACY",
+      "FIT",
+      "LOGISTIC",
+      "PREDICT_PROBA",
+      "PREPROCESS"
+    ]
+  },
+  "MF1_script_sha256": "a5a7e2bf44f11e6919634c0571015006af32e6b7cb4aabf1ff11eeab0a390bbb",
+  "MF2_all_horizons_explicit_config_parity": true,
+  "MF2_candidate_count": 1,
+  "MF2_frozen_config_parity": {
+    "10": true,
+    "20": true,
+    "5": true
+  },
+  "MF2_primary_callable": {
+    "args": [
+      "y",
+      "p"
+    ],
+    "defaults_count": 0,
+    "end_lineno": 123,
+    "kwonlyargs": [],
+    "lineno": 117,
+    "name": "balanced_accuracy",
+    "reasons": [
+      "BALANCED_ACCURACY"
+    ],
+    "score": 3,
+    "source_sha256": "8e2539d224bf28bc9260c48322d7e5877c2c81c3dac212f962b6644cdde3274d",
+    "tags": [
+      "BALANCED_ACCURACY"
+    ]
+  },
+  "MF2_script_sha256": "f4d00ed8c9afe5621bb49eb271e83e0d477201bc5a6edd21de0cd39b93da287c",
+  "development_invocation_parity_certified": true,
+  "development_model_refit_performed": false,
+  "development_retuning_performed": false,
+  "exact_callable_invocation_contract_certified": true,
+  "final_holdout_opened": false,
+  "model_family_champion_selected": false,
+  "next_step": "BUILD_M77_19_8_7_10_7_3_FROZEN_MF1_MF2_VALIDATION_SCORING_EXECUTION_WITH_DEVELOPMENT_ONLY_FIT",
+  "orchestration_callables_excluded": [
+    "main",
+    "require_ml"
+  ],
+  "preregistration_sha256": "b017500c472f0523d224a3fdaf55d8954ec097faea82c5e757f1c0ed52bd98f7",
+  "production_authority_effect": false,
+  "reuse_binding_sha256": "6e900ba88b0f1bfd549a348dc202fa617b718b6757a2fda1c629b05e7b4eaea1",
+  "status": "READY",
+  "validation_model_refit_performed": false,
+  "validation_model_retuning_performed": false,
+  "validation_preprocessor_refit_performed": false,
+  "validation_scoring_execution_authorized": true,
+  "validation_scoring_performed": false,
+  "version": "M77.19.8.7.10.7.2-EXACT-MF1-MF2-CALLABLE-INVOCATION-CONTRACT-DEVELOPMENT-PARITY-HARNESS-1.0"
+}

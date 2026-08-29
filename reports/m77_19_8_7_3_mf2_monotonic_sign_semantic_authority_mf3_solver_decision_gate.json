@@ -1,0 +1,53 @@
+{
+  "MF1_retuning_authorized": false,
+  "MF2": {
+    "MF1_coefficients_used_to_choose_signs": false,
+    "constrained_column_count": 6,
+    "development_scoring_authorized": false,
+    "field_level_monotonic_sign_map_materialized": true,
+    "next_requirement": "CERTIFY_MONOTONIC_GAM_RUNTIME_IMPLEMENTATION",
+    "outcomes_used_to_choose_signs": false,
+    "pygam_runtime_available": false,
+    "registered_column_count": 97,
+    "runtime_certified": false,
+    "semantic_authority_certified": true,
+    "unconstrained_column_count": 91,
+    "validation_used_to_choose_signs": false
+  },
+  "MF3": {
+    "custom_or_cvxpy_solver_implementation_authorized": true,
+    "decision": "IMPLEMENT_CERTIFIED_SOLVER_IF_RUNTIME_FEASIBLE_ELSE_FORMAL_RETIREMENT_GATE",
+    "development_scoring_authorized": false,
+    "family_retirement_authorized_at_this_gate": false,
+    "preregistration_rewrite_authorized": false,
+    "required_alpha_grid": [
+      0.0001,
+      0.001,
+      0.01
+    ],
+    "required_l1_ratio_grid": [
+      0.0,
+      0.5,
+      1.0
+    ],
+    "required_objective": "PINBALL_PLUS_ELASTIC_NET",
+    "runtime_census": {
+      "cvxpy": false,
+      "scipy": true,
+      "sklearn": true
+    },
+    "sklearn_quantile_regressor_certified": false
+  },
+  "final_holdout_open_authorized": false,
+  "implementation_authority_sha256": "311f1b37a608f3400e3ad886527ec1b9103e110a904c4f694b5e2d7c47ee1e7d",
+  "model_family_comparison_complete": false,
+  "next_step": "BUILD_M77_19_8_7_4_MF2_RUNTIME_AND_MF3_ELASTIC_NET_QUANTILE_SOLVER_CERTIFICATION",
+  "outcome_driven_sign_revision_authorized": false,
+  "preregistration_change_authorized": false,
+  "production_authority_effect": false,
+  "production_model_change_authorized": false,
+  "status": "READY",
+  "training_gate_sha256": "0440ac1ec4f2da34606ba6ba6500b4191086730eff282eaaccf4b6bfd8de0a9c",
+  "validation_open_authorized": false,
+  "version": "M77.19.8.7.3-MF2-MONOTONIC-SIGN-SEMANTIC-AUTHORITY-MF3-SOLVER-DECISION-GATE-1.0"
+}

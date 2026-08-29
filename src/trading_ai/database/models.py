@@ -75,3 +75,6 @@ from trading_ai.inflection_intelligence.models import *  # noqa: E402,F401,F403
 
 # Import Milestone 69 option valuation and mispricing models.
 from trading_ai.option_valuation_intelligence.models import *  # noqa: E402,F401,F403
+
+# Import Milestone 77 governed outcome-probability and meta-labeling models.
+from trading_ai.outcome_probability.models import *  # noqa: E402,F401,F403

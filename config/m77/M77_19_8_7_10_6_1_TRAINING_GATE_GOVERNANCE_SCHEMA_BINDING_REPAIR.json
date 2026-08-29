@@ -1,0 +1,15 @@
+{
+  "milestone": "M77.19.8.7.10.6.1",
+  "required_training_gate_governance": {
+    "selection_and_metrics.validation_used_for_selection": false,
+    "selection_and_metrics.final_holdout_used_for_selection": false,
+    "walk_forward_preregistration.validation_period_used": false,
+    "walk_forward_preregistration.final_holdout_used": false,
+    "walk_forward_preregistration.selection_scope": "DEVELOPMENT_ONLY",
+    "execution_state.validation_opened": false,
+    "execution_state.final_holdout_opened": false
+  },
+  "missing_values_fail_closed": true,
+  "target_logic_change": false,
+  "production_authority_effect": false
+}

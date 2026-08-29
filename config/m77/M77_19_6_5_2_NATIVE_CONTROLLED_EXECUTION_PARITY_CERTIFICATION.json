@@ -1,0 +1,20 @@
+{
+  "version": "M77.19.6.5.2-NATIVE-CONTROLLED-EXECUTION-PARITY-CERTIFICATION-1.0",
+  "milestone": "M77.19.6.5.2",
+  "title": "Native Controlled Execution & Strict Parity Certification",
+  "research_only": true,
+  "database_mode": "READ_ONLY_SPY_SESSION_CALENDAR_ONLY",
+  "production_database_writes": false,
+  "native_runner_sha256": "bcc5b49b87ddceba6ac417000d5af3d4a57efd14145595f4d712eb36ae81204b",
+  "certified_dm_adapter_sha256": "ba9d0f03f22252f719afd34d4257e951e2f327d732c082bc57ffcebd359751ea",
+  "strict_thresholds": {
+    "comparisons_per_cadence": 48,
+    "direction_match_pct": 100.0,
+    "overall_score_max_abs_error": 1e-09,
+    "confidence_max_abs_error": 1e-09,
+    "semantic_hash_match_pct": 100.0,
+    "deterministic_repeat_pct": 100.0
+  },
+  "full_23_year_reconstruction_authorized": false,
+  "production_authority_effect": false
+}

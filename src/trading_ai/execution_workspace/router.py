@@ -41,6 +41,21 @@ def cancel(id:str,payload:dict,request:Request,actor:str=Depends(require_mutatio
  try:
   with SessionLocal() as s:return env(request,ExecutionWorkspaceService(s).cancel(id,int(payload['expected_version']),actor,payload['reason']))
  except Exception as e:raise fail(e)
+
+@router.post('/intents/{id}/retry',response_model=ApiEnvelope)
+def retry(id:str,payload:dict,request:Request,actor:str=Depends(require_mutation_access)):
+ try:
+  with SessionLocal() as s:return env(request,ExecutionWorkspaceService(s).retry_terminal(id,int(payload['expected_version']),actor,payload['reason']))
+ except Exception as e:raise fail(e)
+@router.get('/trade-plans/{trade_plan_id}/attempts',response_model=ApiEnvelope)
+def attempts(trade_plan_id:str,request:Request,trade_plan_version:int|None=Query(None),_:str=Depends(require_access)):
+ with SessionLocal() as s:
+  if trade_plan_version is None:
+   from trading_ai.advanced_trade_builder.models import TradePlanModel
+   tp=s.get(TradePlanModel,trade_plan_id)
+   if not tp:raise fail(KeyError('Trade plan not found'))
+   trade_plan_version=int(tp.version)
+  rows=ExecutionIntentRepository(s).attempts(trade_plan_id,int(trade_plan_version));return env(request,[ExecutionWorkspaceService.dto(x) for x in rows],count=len(rows))
 @router.get('/intents/{id}/audit',response_model=ApiEnvelope)
 def audit(id:str,request:Request,_:str=Depends(require_access)):
  with SessionLocal() as s:

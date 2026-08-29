@@ -1,0 +1,183 @@
+{
+  "architecture": {
+    "calibration_required_before_any_production_use": true,
+    "descriptive_state_input_only_not_prediction_target": true,
+    "distributional_not_state_label_reinterpretation": true,
+    "materially_different_from_closed_bearish_filter_branch": true,
+    "multi_horizon": [
+      5,
+      10,
+      20
+    ],
+    "name": "PROSPECTIVE_EDGE_INTELLIGENCE",
+    "separate_absolute_return_distribution": true,
+    "separate_market_relative_edge": true,
+    "symmetric_bullish_and_bearish_prediction": true
+  },
+  "closure_authority_sha256": "1d4f0cbdb797ab99990735b75ec779ddd416c26d5a898cffc68d91f6b2697e15",
+  "evaluation_protocol": {
+    "baseline_comparisons": [
+      "UNCONDITIONAL_DIRECTION_RATE",
+      "PREVIOUS_PERIOD_DIRECTION",
+      "MARKET_DRIFT_BASELINE"
+    ],
+    "calibration_metrics": [
+      "ReliabilityCurve",
+      "CalibrationSlope",
+      "CalibrationIntercept",
+      "ECE"
+    ],
+    "direction_metrics": [
+      "BrierScore",
+      "LogLoss",
+      "ROC_AUC_DIAGNOSTIC",
+      "DirectionalAccuracy"
+    ],
+    "economic_metrics": [
+      "ExpectedDirectionalReturn",
+      "PayoffRatio",
+      "TailLoss",
+      "MarketRelativeReturn"
+    ],
+    "minimum_validation_requirements_predeclare_before_training": true,
+    "return_metrics": [
+      "MAE_Q50",
+      "PinballLoss_Q10_Q50_Q90",
+      "MedianRealizedReturnByPredictedEdgeBin"
+    ]
+  },
+  "execution_state": {
+    "features_materialized": false,
+    "final_holdout_opened": false,
+    "models_scored": false,
+    "models_trained": false,
+    "production_authority_effect": false,
+    "production_model_change_authorized": false,
+    "validation_opened_for_new_architecture": false
+  },
+  "explainability_contract": {
+    "black_box_model_family_authorized": false,
+    "feature_effect_direction_conflicts_flagged": true,
+    "global_feature_effects_required": true,
+    "per_prediction_feature_contributions_required": true,
+    "sign_stability_across_walk_forward_folds_required": true
+  },
+  "feature_domains": [
+    "PRICE_TREND_AND_MOMENTUM",
+    "MULTITIMEFRAME_ALIGNMENT",
+    "VOLATILITY_AND_RANGE",
+    "SUPPORT_RESISTANCE_AND_STRUCTURE",
+    "BREAKOUT_BREAKDOWN_STATE",
+    "PARTICIPATION_AND_VOLUME",
+    "MARKET_REGIME_AND_BREADTH",
+    "RELATIVE_STRENGTH_VS_MARKET_AND_SECTOR",
+    "DRAW_DOWN_AND_DISTANCE_FROM_EXTREMES",
+    "STATE_TRANSITION_AND_PERSISTENCE"
+  ],
+  "feature_governance": {
+    "closed_hypothesis_identity_as_feature_prohibited": true,
+    "corporate_action_adjustment_provenance_required": true,
+    "feature_standardization_fit_on_development_only": true,
+    "future_information_for_features_prohibited": true,
+    "missingness_must_be_explicit": true,
+    "point_in_time_only": true,
+    "raw_ticker_one_hot_prohibited": true,
+    "symbol_identity_as_predictive_feature_prohibited": true
+  },
+  "model_families": [
+    {
+      "black_box": false,
+      "explainability": "SIGNED_STANDARDIZED_COEFFICIENTS_AND_FEATURE_CONTRIBUTIONS",
+      "fit_separately_by_horizon": true,
+      "id": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "regularization": "L2_OR_ELASTIC_NET_PREDECLARED_GRID_ONLY_IN_DEVELOPMENT",
+      "targets": [
+        "P_UP",
+        "P_DOWN"
+      ],
+      "type": "INTERPRETABLE_LINEAR_PROBABILITY"
+    },
+    {
+      "black_box": false,
+      "explainability": "PER_FEATURE_SHAPE_FUNCTIONS_AND_ADDITIVE_CONTRIBUTIONS",
+      "fit_separately_by_horizon": true,
+      "id": "MF2_MONOTONIC_GAM_DIRECTION",
+      "shape_constraints": "ONLY_WHERE_ECONOMIC_DIRECTION_IS_PREDECLARED",
+      "targets": [
+        "P_UP",
+        "P_DOWN"
+      ],
+      "type": "INTERPRETABLE_NONLINEAR_ADDITIVE_PROBABILITY"
+    },
+    {
+      "black_box": false,
+      "explainability": "SIGNED_COEFFICIENTS_BY_QUANTILE",
+      "fit_separately_by_horizon": true,
+      "id": "MF3_QUANTILE_LINEAR_RETURN_DISTRIBUTION",
+      "regularization": "FIXED_ROBUST_LINEAR_QUANTILE_SPECIFICATION",
+      "targets": [
+        "Q10_RETURN",
+        "Q50_RETURN",
+        "Q90_RETURN"
+      ],
+      "type": "INTERPRETABLE_DISTRIBUTIONAL_RETURN"
+    }
+  ],
+  "next_step": "BUILD_M77_19_8_1_POINT_IN_TIME_PROSPECTIVE_EDGE_FEATURE_AUTHORITY",
+  "research_prohibitions": {
+    "automatic_bearish_signal_inversion": false,
+    "final_holdout_peeking": false,
+    "production_auto_promotion": false,
+    "reuse_closed_filter_hypotheses_as_candidate_model": false,
+    "validation_driven_feature_creation": false,
+    "validation_driven_threshold_search": false
+  },
+  "status": "READY",
+  "targets": [
+    {
+      "definition": "close[t+h]/close[t]-1",
+      "horizons": [
+        5,
+        10,
+        20
+      ],
+      "id": "ABSOLUTE_FORWARD_RETURN",
+      "use": "distributional return target"
+    },
+    {
+      "definition": "symbol_forward_return - SPY_forward_return over same sessions",
+      "horizons": [
+        5,
+        10,
+        20
+      ],
+      "id": "MARKET_RELATIVE_FORWARD_RETURN",
+      "use": "market-neutral predictive edge target"
+    },
+    {
+      "definition": "UP if forward_return>0, DOWN if forward_return<0; exact zero handled explicitly",
+      "horizons": [
+        5,
+        10,
+        20
+      ],
+      "id": "DIRECTION_LABEL",
+      "use": "probabilistic directional target"
+    }
+  ],
+  "training_protocol": {
+    "development_partition_end": "2017-12-31",
+    "final_holdout_start": "2023-01-01",
+    "final_holdout_used_once_only_after_validation_certification": true,
+    "hyperparameter_selection_development_only": true,
+    "model_family_selection_development_only": true,
+    "purge_forward_horizon_overlap_required": true,
+    "symbol_cluster_robust_uncertainty_required": true,
+    "validation_partition_end": "2022-12-31",
+    "validation_partition_start": "2018-01-01",
+    "validation_used_once_for_family_certification": true,
+    "walk_forward_training_required": true,
+    "year_block_robust_uncertainty_required": true
+  },
+  "version": "M77.19.8-PROSPECTIVE-EDGE-INTELLIGENCE-ARCHITECTURE-MODEL-FAMILY-PREREGISTRATION-AUTHORITY-1.0"
+}

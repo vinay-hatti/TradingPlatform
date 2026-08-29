@@ -1,0 +1,19 @@
+{
+  "milestone": "M77.19.8.7.10.7.1.1",
+  "mf2_semantic_authority_path": "MF2.semantic_authority_certified",
+  "required_semantic_authority": {
+    "MF2.semantic_authority_certified": true,
+    "MF2.outcomes_used_to_choose_signs": false,
+    "MF2.validation_used_to_choose_signs": false,
+    "MF2.field_level_monotonic_sign_map_materialized": true,
+    "MF2.registered_column_count": 97,
+    "MF2.constrained_column_count": 6,
+    "MF2.unconstrained_column_count": 91,
+    "MF2.runtime_certified": false
+  },
+  "runtime_authority_separate": true,
+  "missing_values_fail_closed": true,
+  "validation_scoring_performed": false,
+  "final_holdout_opened": false,
+  "production_authority_effect": false
+}

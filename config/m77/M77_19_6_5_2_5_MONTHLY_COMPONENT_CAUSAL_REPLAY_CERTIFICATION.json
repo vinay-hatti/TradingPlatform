@@ -1,0 +1,14 @@
+{
+  "version": "M77.19.6.5.2.5-MONTHLY-COMPONENT-CAUSAL-REPLAY-CERTIFICATION-1.0",
+  "milestone": "M77.19.6.5.2.5",
+  "title": "Monthly Component Causal Replay Certification",
+  "research_only": true,
+  "controlled_intervention_only": true,
+  "database_mode": "READ_ONLY_SPY_SESSION_CALENDAR_ONLY",
+  "prior_report_sha256": "9147873baa5baa3e19e528d6b47d125450316e3a32dfc595ec6064eb2093eb96",
+  "parity_tolerance": 1e-09,
+  "parity_thresholds_relaxed": false,
+  "synthetic_interventions_may_not_be_used_as_production_authority": true,
+  "full_23_year_reconstruction_authorized": false,
+  "production_authority_effect": false
+}

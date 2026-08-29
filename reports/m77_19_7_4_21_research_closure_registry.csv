@@ -1,0 +1,6 @@
+record_type,research_branch,status,basis,production_effect
+RESEARCH_BRANCH,ORIGINAL_PROSPECTIVE_BEARISH_CANDIDATES,RETIRED_VALIDATION_FAILURE,H1/H3 Development rejection and H2/H4 Validation rejection,False
+RESEARCH_BRANCH,REGIME_CONDITIONED_H4_GE10_RC1,RETIRED_VALIDATION_FAILURE,Authorized Validation failed 5/10/20,False
+RESEARCH_BRANCH,REGIME_CONDITIONED_H4_5_10_RC2,RETIRED_VALIDATION_FAILURE,Authorized Validation failed 5/10/20; N below 300,False
+AUTHORITY,FINAL_HOLDOUT,SEALED,Preserve >=2023 for materially different future architecture,False
+AUTHORITY,BEARISH_STATE_SEMANTICS,DESCRIPTIVE_ONLY_NOT_CERTIFIED_PROSPECTIVE_EDGE,Prospective edge failed independent historical certification,False

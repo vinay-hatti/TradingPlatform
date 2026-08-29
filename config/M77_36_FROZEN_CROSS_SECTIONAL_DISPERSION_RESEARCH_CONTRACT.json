@@ -1,0 +1,26 @@
+{
+  "automatic_retraining": false,
+  "bottom_quantile": 0.2,
+  "date_level_point_in_time_only": true,
+  "development_end": "2017-12-31",
+  "feature_authority": "M77.21 frozen PIT panel",
+  "forbidden_outcome_window": "2018-01-01 THROUGH 2026-12-31",
+  "management_retuning": false,
+  "new_probability_up_thresholds": 0,
+  "new_top_k_values": 0,
+  "production_authority_effect": false,
+  "read_or_modify_prospective_protocols": false,
+  "source_population": "M77.26.1 executable NEXT_OPEN / 5ATR / 3ATR / 60-session cohort",
+  "states": [
+    "HIGH_PROBABILITY_DISPERSION",
+    "LOW_PROBABILITY_DISPERSION",
+    "HIGH_SCORE_DISPERSION",
+    "LOW_SCORE_DISPERSION",
+    "TOP_CANDIDATE_MARGIN_LARGE",
+    "TOP_CANDIDATE_MARGIN_SMALL",
+    "CROSS_SECTION_CONCENTRATED",
+    "CROSS_SECTION_DIFFUSE"
+  ],
+  "top_quantile": 0.8,
+  "version": "M77.36-FROZEN-CROSS-SECTIONAL-DISPERSION-RESEARCH-CONTRACT-1.0"
+}

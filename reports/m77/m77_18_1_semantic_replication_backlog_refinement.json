@@ -1,0 +1,779 @@
+{
+  "version": "M77.18.1-SEMANTIC-REPLICATION-BACKLOG-REFINEMENT-1.0",
+  "status": "READY",
+  "mode": "READ_ONLY_SEMANTIC_REFINEMENT",
+  "source_audit_summary": {
+    "files_examined": 249,
+    "milestones_found": 45,
+    "heuristic_backlog_count": 9
+  },
+  "long_history_authority": {
+    "common_start": "2003-09-10",
+    "common_end": "2026-08-21",
+    "common_sessions": 5773,
+    "targets": {
+      "SPX": "SPY",
+      "NDX": "QQQ_LINEAGE",
+      "RUT": "IWM"
+    }
+  },
+  "false_positive_exclusions": [
+    {
+      "milestone": "M77.0.3",
+      "reason": "STRUCTURAL_OR_RECOVERY_TOOLING_NOT_STANDALONE_EMPIRICAL_HYPOTHESIS"
+    },
+    {
+      "milestone": "M77.17",
+      "reason": "CLOSED_RESEARCH_ALREADY_LONG_HISTORY_RESOLVED"
+    }
+  ],
+  "families": [
+    {
+      "family_id": "M77.3",
+      "name": "Conditional Edge Attribution / Cyclical-Seasonality Fold-Native Certification",
+      "priority": "P0",
+      "condition": null,
+      "files_found": 4,
+      "files_missing": [],
+      "empirical_file_count": 0,
+      "runtime_or_structural_file_count": 4,
+      "frozen_hypothesis_recoverable": false,
+      "recommended_action": "BLOCK_MISSING_EMPIRICAL_DEFINITION",
+      "files": [
+        {
+          "path": "scripts/run_m77_3_conditional_edge_attribution.py",
+          "kind": ".py",
+          "semantic_type": "RUNTIME_OR_STRUCTURAL",
+          "marker_counts": {
+            "hypothesis": {},
+            "horizon": {},
+            "sample": {
+              "n": 125
+            },
+            "statistics": {},
+            "disposition": {
+              "certified": 4,
+              "promotion": 1
+            }
+          },
+          "python_constants": {},
+          "json_semantics": {}
+        },
+        {
+          "path": "scripts/run_cyclical_seasonality_fold_native_shadow_certification.py",
+          "kind": ".py",
+          "semantic_type": "RUNTIME_OR_STRUCTURAL",
+          "marker_counts": {
+            "hypothesis": {
+              "prediction": 1,
+              "outcome": 3
+            },
+            "horizon": {
+              "horizon": 26
+            },
+            "sample": {
+              "n": 876
+            },
+            "statistics": {
+              "bh_q": 2
+            },
+            "disposition": {
+              "supported": 7,
+              "certified": 30,
+              "shadow": 43,
+              "promotion": 1
+            }
+          },
+          "python_constants": {
+            "MIN_MATCHED_EXCESS_BY_HORIZON": {
+              "20": 0.25,
+              "60": 0.5
+            }
+          },
+          "json_semantics": {}
+        },
+        {
+          "path": "scripts/report_m77_3_conditional_edges.py",
+          "kind": ".py",
+          "semantic_type": "RUNTIME_OR_STRUCTURAL",
+          "marker_counts": {
+            "hypothesis": {},
+            "horizon": {
+              "horizon": 2
+            },
+            "sample": {
+              "n": 95
+            },
+            "statistics": {},
+            "disposition": {
+              "supported": 1
+            }
+          },
+          "python_constants": {},
+          "json_semantics": {}
+        },
+        {
+          "path": "reports/m77/m77_3_conditional_edge_attribution.json",
+          "kind": ".json",
+          "semantic_type": "RUNTIME_OR_STRUCTURAL",
+          "marker_counts": {
+            "hypothesis": {},
+            "horizon": {
+              "horizon": 432
+            },
+            "sample": {
+              "n": 30453
+            },
+            "statistics": {},
+            "disposition": {
+              "supported": 207,
+              "promotion": 1
+            }
+          },
+          "python_constants": {},
+          "json_semantics": {
+            "governance.production_authority_effect": false
+          }
+        }
+      ]
+    },
+    {
+      "family_id": "M77.11",
+      "name": "Multi-Cadence Confluence / Conflict Study",
+      "priority": "P0",
+      "condition": null,
+      "files_found": 3,
+      "files_missing": [],
+      "empirical_file_count": 3,
+      "runtime_or_structural_file_count": 0,
+      "frozen_hypothesis_recoverable": true,
+      "recommended_action": "BUILD_23_YEAR_FROZEN_REPLICATION",
+      "files": [
+        {
+          "path": "scripts/run_m77_11_multi_cadence_confluence.py",
+          "kind": ".py",
+          "semantic_type": "EMPIRICAL",
+          "marker_counts": {
+            "hypothesis": {
+              "prediction": 3,
+              "outcome": 2
+            },
+            "horizon": {
+              "horizon": 17,
+              "sessions": 6
+            },
+            "sample": {
+              "n": 686
+            },
+            "statistics": {
+              "incremental": 7
+            },
+            "disposition": {
+              "supported": 11,
+              "certified": 14,
+              "shadow": 1,
+              "promotion": 1
+            }
+          },
+          "python_constants": {
+            "CONFIRM": "RUN_M77_11_MULTI_CADENCE_CONFLUENCE",
+            "HORIZONS": [
+              5,
+              10,
+              20,
+              60,
+              120
+            ]
+          },
+          "json_semantics": {}
+        },
+        {
+          "path": "scripts/report_m77_11_multi_cadence_confluence.py",
+          "kind": ".py",
+          "semantic_type": "EMPIRICAL",
+          "marker_counts": {
+            "hypothesis": {},
+            "horizon": {
+              "horizon": 2,
+              "sessions": 2
+            },
+            "sample": {
+              "n": 86
+            },
+            "statistics": {
+              "incremental": 2
+            },
+            "disposition": {
+              "supported": 5
+            }
+          },
+          "python_constants": {},
+          "json_semantics": {}
+        },
+        {
+          "path": "reports/m77/m77_11_multi_cadence_confluence_conflict_study.json",
+          "kind": ".json",
+          "semantic_type": "EMPIRICAL",
+          "marker_counts": {
+            "hypothesis": {
+              "outcome": 2
+            },
+            "horizon": {
+              "horizon": 291,
+              "sessions": 288
+            },
+            "sample": {
+              "n": 7102
+            },
+            "statistics": {
+              "incremental": 235
+            },
+            "disposition": {
+              "supported": 58,
+              "certified": 2,
+              "shadow": 1,
+              "promotion": 1
+            }
+          },
+          "python_constants": {},
+          "json_semantics": {
+            "version": "M77.11-MULTI-CADENCE-CONFLUENCE-CONFLICT-1.0",
+            "status": "READY",
+            "governance.production_authority_effect": false,
+            "next_step": "REVIEW_INCREMENTAL_EDGE_BEFORE_ANY_SHADOW_POLICY",
+            "production_authority_effect": false
+          }
+        }
+      ]
+    },
+    {
+      "family_id": "M77.12",
+      "name": "Cadence Role Incremental Utility",
+      "priority": "P0",
+      "condition": null,
+      "files_found": 3,
+      "files_missing": [],
+      "empirical_file_count": 3,
+      "runtime_or_structural_file_count": 0,
+      "frozen_hypothesis_recoverable": true,
+      "recommended_action": "BUILD_23_YEAR_FROZEN_REPLICATION",
+      "files": [
+        {
+          "path": "scripts/run_m77_12_cadence_role_incremental_utility.py",
+          "kind": ".py",
+          "semantic_type": "EMPIRICAL",
+          "marker_counts": {
+            "hypothesis": {
+              "prediction": 3,
+              "outcome": 1
+            },
+            "horizon": {
+              "horizon": 8,
+              "sessions": 5
+            },
+            "sample": {
+              "n": 752
+            },
+            "statistics": {
+              "incremental": 7
+            },
+            "disposition": {
+              "supported": 14,
+              "certified": 8,
+              "shadow": 3,
+              "promotion": 2
+            }
+          },
+          "python_constants": {
+            "CONFIRM": "RUN_M77_12_CADENCE_ROLE_UTILITY"
+          },
+          "json_semantics": {}
+        },
+        {
+          "path": "scripts/report_m77_12_cadence_role_incremental_utility.py",
+          "kind": ".py",
+          "semantic_type": "EMPIRICAL",
+          "marker_counts": {
+            "hypothesis": {},
+            "horizon": {},
+            "sample": {
+              "n": 105
+            },
+            "statistics": {
+              "incremental": 3
+            },
+            "disposition": {
+              "supported": 5
+            }
+          },
+          "python_constants": {},
+          "json_semantics": {}
+        },
+        {
+          "path": "reports/m77/m77_12_cadence_role_incremental_utility_certification.json",
+          "kind": ".json",
+          "semantic_type": "EMPIRICAL",
+          "marker_counts": {
+            "hypothesis": {
+              "outcome": 1
+            },
+            "horizon": {
+              "horizon": 231,
+              "sessions": 229
+            },
+            "sample": {
+              "n": 5226
+            },
+            "statistics": {
+              "incremental": 218
+            },
+            "disposition": {
+              "supported": 57,
+              "certified": 2,
+              "shadow": 2,
+              "promotion": 1
+            }
+          },
+          "python_constants": {},
+          "json_semantics": {
+            "version": "M77.12-CADENCE-ROLE-INCREMENTAL-UTILITY-1.0",
+            "status": "READY",
+            "governance.production_authority_effect": false,
+            "next_step": "REVIEW_CADENCE_ROLE_UTILITY_BEFORE_ANY_SHADOW_POLICY",
+            "production_authority_effect": false
+          }
+        }
+      ]
+    },
+    {
+      "family_id": "M77.0_OUTCOME_PROBABILITY",
+      "name": "Outcome Probability Calibration / Labels / Feature Utility",
+      "priority": "P1_CONDITIONAL",
+      "condition": "Replicate only empirical calibration/feature claims; do not treat runtime engine code as a historical hypothesis.",
+      "files_found": 8,
+      "files_missing": [],
+      "empirical_file_count": 1,
+      "runtime_or_structural_file_count": 4,
+      "frozen_hypothesis_recoverable": true,
+      "recommended_action": "REPLICATE_ONLY_EMPIRICAL_CALIBRATION_COMPONENTS",
+      "files": [
+        {
+          "path": "scripts/run_m77_outcome_probability.py",
+          "kind": ".py",
+          "semantic_type": "RUNTIME_OR_STRUCTURAL",
+          "marker_counts": {
+            "hypothesis": {
+              "outcome": 7,
+              "label": 1
+            },
+            "horizon": {},
+            "sample": {
+              "n": 92
+            },
+            "statistics": {},
+            "disposition": {
+              "shadow": 10
+            }
+          },
+          "python_constants": {},
+          "json_semantics": {}
+        },
+        {
+          "path": "src/trading_ai/outcome_probability/service.py",
+          "kind": ".py",
+          "semantic_type": "RUNTIME_OR_STRUCTURAL",
+          "marker_counts": {
+            "hypothesis": {
+              "prediction": 2,
+              "outcome": 33,
+              "label": 20,
+              "feature": 13
+            },
+            "horizon": {
+              "horizon": 2,
+              "sessions": 4
+            },
+            "sample": {
+              "sample_size": 3,
+              "n": 524
+            },
+            "statistics": {},
+            "disposition": {
+              "shadow": 19,
+              "promotion": 2
+            }
+          },
+          "python_constants": {},
+          "json_semantics": {}
+        },
+        {
+          "path": "src/trading_ai/outcome_probability/labels.py",
+          "kind": ".py",
+          "semantic_type": "AMBIGUOUS",
+          "marker_counts": {
+            "hypothesis": {
+              "outcome": 9,
+              "label": 20
+            },
+            "horizon": {
+              "horizon": 20,
+              "sessions": 17
+            },
+            "sample": {
+              "n": 547
+            },
+            "statistics": {},
+            "disposition": {}
+          },
+          "python_constants": {},
+          "json_semantics": {}
+        },
+        {
+          "path": "src/trading_ai/outcome_probability/policy.py",
+          "kind": ".py",
+          "semantic_type": "AMBIGUOUS",
+          "marker_counts": {
+            "hypothesis": {
+              "outcome": 1
+            },
+            "horizon": {
+              "horizon": 5,
+              "sessions": 7
+            },
+            "sample": {
+              "n": 66
+            },
+            "statistics": {},
+            "disposition": {
+              "shadow": 3
+            }
+          },
+          "python_constants": {},
+          "json_semantics": {}
+        },
+        {
+          "path": "src/trading_ai/outcome_probability/features.py",
+          "kind": ".py",
+          "semantic_type": "RUNTIME_OR_STRUCTURAL",
+          "marker_counts": {
+            "hypothesis": {
+              "outcome": 1,
+              "feature": 15
+            },
+            "horizon": {},
+            "sample": {
+              "n": 249
+            },
+            "statistics": {},
+            "disposition": {}
+          },
+          "python_constants": {
+            "NUMERIC_FEATURES": [
+              "directional_quality",
+              "trend_quality",
+              "structure_quality",
+              "breakout_quality",
+              "institutional_volume_quality",
+              "participation_quality",
+              "relative_strength_quality",
+              "market_alignment",
+              "dealer_quality",
+              "liquidity_quality",
+              "risk_quality",
+              "management_quality",
+              "certification_quality",
+              "overall_trade_quality",
+              "decision_readiness",
+              "opportunity_freshness",
+              "alignment_score",
+              "scanner_score",
+              "scanner_confidence",
+              "relative_volume_1d",
+              "volume_persistence",
+              "breakout_confirmation",
+              "breakout_follow_through",
+              "breakout_failure",
+              "structural_reward_risk",
+              "entry_extension_atr",
+              "bullish_direction",
+              "bearish_direction",
+              "accumulation_setup",
+              "distribution_setup",
+              "breakout_setup",
+              "mean_reversion_setup",
+              "uptrend_regime",
+              "downtrend_regime",
+              "negative_gamma_regime"
+            ],
+            "FORBIDDEN_FEATURE_TOKENS": [
+              "outcome",
+              "realized",
+              "future",
+              "target_hit",
+              "stop_hit",
+              "maximum_favorable",
+              "maximum_adverse",
+              "closed_at"
+            ]
+          },
+          "json_semantics": {}
+        },
+        {
+          "path": "src/trading_ai/outcome_probability/engine.py",
+          "kind": ".py",
+          "semantic_type": "EMPIRICAL",
+          "marker_counts": {
+            "hypothesis": {
+              "prediction": 2,
+              "outcome": 10,
+              "label": 9,
+              "feature": 27
+            },
+            "horizon": {
+              "horizon": 16
+            },
+            "sample": {
+              "sample_size": 3,
+              "n": 846
+            },
+            "statistics": {},
+            "disposition": {
+              "shadow": 4,
+              "promotion": 3
+            }
+          },
+          "python_constants": {
+            "TARGET_COLUMNS": [
+              "target_1_before_stop",
+              "target_2_before_stop",
+              "target_3_before_stop",
+              "profitable_at_horizon",
+              "thesis_invalidation"
+            ]
+          },
+          "json_semantics": {}
+        },
+        {
+          "path": "src/trading_ai/outcome_probability/models.py",
+          "kind": ".py",
+          "semantic_type": "AMBIGUOUS",
+          "marker_counts": {
+            "hypothesis": {
+              "prediction": 4,
+              "outcome": 8,
+              "label": 5,
+              "feature": 3
+            },
+            "horizon": {
+              "horizon": 2
+            },
+            "sample": {
+              "sample_size": 1,
+              "n": 312
+            },
+            "statistics": {},
+            "disposition": {}
+          },
+          "python_constants": {},
+          "json_semantics": {}
+        },
+        {
+          "path": "src/trading_ai/outcome_probability/repository.py",
+          "kind": ".py",
+          "semantic_type": "RUNTIME_OR_STRUCTURAL",
+          "marker_counts": {
+            "hypothesis": {
+              "prediction": 8,
+              "outcome": 39,
+              "label": 31,
+              "feature": 9
+            },
+            "horizon": {
+              "horizon": 5
+            },
+            "sample": {
+              "sample_size": 3,
+              "n": 217
+            },
+            "statistics": {},
+            "disposition": {
+              "shadow": 4
+            }
+          },
+          "python_constants": {},
+          "json_semantics": {}
+        }
+      ]
+    },
+    {
+      "family_id": "M77.6",
+      "name": "Live Forward Shadow",
+      "priority": "P1_REVIEW",
+      "condition": "Prospective collection itself is not backtestable; extract only frozen hypotheses that generated the shadow.",
+      "files_found": 2,
+      "files_missing": [],
+      "empirical_file_count": 0,
+      "runtime_or_structural_file_count": 2,
+      "frozen_hypothesis_recoverable": false,
+      "recommended_action": "TRACE_TO_UPSTREAM_FROZEN_HYPOTHESIS",
+      "files": [
+        {
+          "path": "scripts/run_m77_6_live_forward_shadow.py",
+          "kind": ".py",
+          "semantic_type": "RUNTIME_OR_STRUCTURAL",
+          "marker_counts": {
+            "hypothesis": {
+              "outcome": 4
+            },
+            "horizon": {
+              "horizon": 12,
+              "sessions": 6
+            },
+            "sample": {
+              "n": 404
+            },
+            "statistics": {},
+            "disposition": {
+              "supported": 1,
+              "certified": 9,
+              "shadow": 26,
+              "promotion": 1
+            }
+          },
+          "python_constants": {},
+          "json_semantics": {}
+        },
+        {
+          "path": "scripts/report_m77_6_live_forward_shadow.py",
+          "kind": ".py",
+          "semantic_type": "RUNTIME_OR_STRUCTURAL",
+          "marker_counts": {
+            "hypothesis": {
+              "outcome": 1
+            },
+            "horizon": {
+              "horizon": 3,
+              "sessions": 2
+            },
+            "sample": {
+              "n": 51
+            },
+            "statistics": {},
+            "disposition": {
+              "shadow": 6
+            }
+          },
+          "python_constants": {},
+          "json_semantics": {}
+        }
+      ]
+    },
+    {
+      "family_id": "M77.13",
+      "name": "Forward Shadow / Completed-Period Calendar",
+      "priority": "P1_REVIEW",
+      "condition": "Prospective collector is not a standalone 23-year hypothesis; recover its frozen upstream empirical premise first.",
+      "files_found": 3,
+      "files_missing": [],
+      "empirical_file_count": 0,
+      "runtime_or_structural_file_count": 2,
+      "frozen_hypothesis_recoverable": false,
+      "recommended_action": "TRACE_TO_UPSTREAM_FROZEN_HYPOTHESIS",
+      "files": [
+        {
+          "path": "scripts/run_m77_13_forward_shadow.py",
+          "kind": ".py",
+          "semantic_type": "RUNTIME_OR_STRUCTURAL",
+          "marker_counts": {
+            "hypothesis": {
+              "prediction": 1,
+              "outcome": 5
+            },
+            "horizon": {
+              "horizon": 8,
+              "sessions": 13
+            },
+            "sample": {
+              "n": 667
+            },
+            "statistics": {},
+            "disposition": {
+              "certified": 5,
+              "shadow": 4,
+              "promotion": 1
+            }
+          },
+          "python_constants": {
+            "CONFIRM": "RUN_M77_13_FORWARD_SHADOW_CYCLE"
+          },
+          "json_semantics": {}
+        },
+        {
+          "path": "scripts/report_m77_13_forward_shadow.py",
+          "kind": ".py",
+          "semantic_type": "RUNTIME_OR_STRUCTURAL",
+          "marker_counts": {
+            "hypothesis": {
+              "outcome": 1
+            },
+            "horizon": {
+              "horizon": 7,
+              "sessions": 7
+            },
+            "sample": {
+              "n": 75
+            },
+            "statistics": {},
+            "disposition": {
+              "certified": 1,
+              "shadow": 1
+            }
+          },
+          "python_constants": {},
+          "json_semantics": {}
+        },
+        {
+          "path": "scripts/m77_13_completed_period_calendar.py",
+          "kind": ".py",
+          "semantic_type": "AMBIGUOUS",
+          "marker_counts": {
+            "hypothesis": {},
+            "horizon": {},
+            "sample": {
+              "n": 105
+            },
+            "statistics": {},
+            "disposition": {}
+          },
+          "python_constants": {},
+          "json_semantics": {}
+        }
+      ]
+    }
+  ],
+  "p0_frozen_replication_families": [
+    "M77.11",
+    "M77.12"
+  ],
+  "p1_review_families": [
+    "M77.0_OUTCOME_PROBABILITY",
+    "M77.6",
+    "M77.13"
+  ],
+  "recommended_execution_order": [
+    "M77.3",
+    "M77.11",
+    "M77.12",
+    "M77.0_OUTCOME_PROBABILITY",
+    "M77.6",
+    "M77.13"
+  ],
+  "next_step": "BUILD_CUMULATIVE_M77_19_LONG_HISTORY_REPLICATION_FOR_P0_FAMILIES_THEN_CONDITIONAL_P1",
+  "governance": {
+    "read_only": true,
+    "database_writes": false,
+    "source_mutation": false,
+    "production_authority_effect": false
+  },
+  "production_authority_effect": false
+}

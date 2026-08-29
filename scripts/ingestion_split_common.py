@@ -64,11 +64,11 @@ def refresh_inflection_intelligence(*, build_mode: str, required: bool = False) 
     try:
         result = InstitutionalInflectionService(SessionLocal).build(build_mode=build_mode)
         diagnostics = result.get("diagnostics") or {}
-        classes = diagnostics.get("classifications") or {}
+        classes = diagnostics.get("disposition_counts") or {}
         print(
             "Institutional Inflection Intelligence: "
             f"status={result.get('status')}, mode={build_mode}, built={result.get('built', 0)}, "
-            f"average={result.get('average_score', 0)}, high_conviction={result.get('high_conviction', 0)}, "
+            f"average={result.get('average_signal_strength', 0)}, high_conviction={result.get('high_conviction', 0)}, "
             f"actionable={classes.get('ACTIONABLE', 0)}, watch={classes.get('WATCH', 0)}"
         )
         return result
@@ -101,6 +101,17 @@ def refresh_option_valuation_intelligence(
             f"scope={result.get('scope')}, duration={result.get('duration_seconds', 0)}s, "
             f"rate={result.get('valuations_per_second', 0)}/s"
         )
+        profile = result.get("parallel_profile") or {}
+        if profile:
+            print(
+                "Option Valuation parallel profile: "
+                f"mode={profile.get('execution_mode')}, "
+                f"workers={profile.get('workers')}, "
+                f"preload={profile.get('preload_seconds', 0)}s, "
+                f"coherent_market={profile.get('coherent_market_preload_seconds', 0)}s, "
+                f"compute={profile.get('compute_seconds', 0)}s, "
+                f"persist={profile.get('persist_seconds', 0)}s"
+            )
         return result
     except Exception as exc:
         print(f"Option Valuation Intelligence failed: {type(exc).__name__}: {exc}")
@@ -120,7 +131,8 @@ def refresh_futures_intelligence(*, required: bool = False) -> dict[str, object]
         svc = FuturesIntelligenceService(SessionLocal)
         if enabled:
             lookback = max(1, int(os.getenv("TRADING_AI_FUTURES_LOOKBACK_DAYS", "3")))
-            end = date.today(); start = end - timedelta(days=lookback)
+            end = date.today()
+            start = end - timedelta(days=lookback)
             result = svc.ingest(("ES","NQ","RTY"), start.isoformat(), end.isoformat(), ("1min","1session"), int(os.getenv("TRADING_AI_FUTURES_MIN_DTM", "5")))
             print("Futures Intelligence: status=READY, provider=POLYGON_FUTURES, products=ES,NQ,RTY")
             return result
@@ -163,6 +175,8 @@ def refresh_opex_intelligence(*, required: bool = False) -> dict[str, object]:
         print(
             "OPEX Intelligence: "
             f"status={result.get('status')}, built={result.get('built', 0)}, "
+            f"reused={result.get('reused', 0)}, "
+            f"cycle_outcome={result.get('cycle_outcome')}, "
             f"symbols={','.join(result.get('symbols', []))}, cycles={result.get('cycles', 0)}"
         )
         return result
@@ -210,9 +224,99 @@ def materialize_institutional_options_opportunities(
         f"rejected={payload.get('rejected', 0)}, "
         f"existing={payload.get('existing', 0)}, "
         f"refreshed={payload.get('refreshed', 0)}, "
-        f"existing_rejected={payload.get('existing_rejected', 0)}"
+        f"existing_rejected={payload.get('existing_rejected', 0)}, "
+        f"exact_current_lineage_rows="
+        f"{payload.get('exact_current_lineage_rows', 0)}, "
+        f"terminal_exact_preserved="
+        f"{payload.get('terminal_exact_preserved', 0)}, "
+        f"lineage_collisions_prevented="
+        f"{payload.get('lineage_collisions_prevented', 0)}, "
+        f"unsafe_logical_contentions="
+        f"{payload.get('unsafe_logical_contentions', 0)}"
     )
     return payload
+
+
+def latest_materialized_stock_publication() -> dict[str, object] | None:
+    """Resolve the underlying-owned Stock Intelligence authority.
+
+    Options finalization enriches the latest materialized authority; it must
+    never manufacture a second Stock Intelligence run that has no matching
+    Institutional Options opportunity domain.
+    """
+    from trading_ai.database.session import SessionLocal
+    from trading_ai.institutional_options.publication_scope import (
+        latest_stock_intelligence_publication,
+    )
+
+    with SessionLocal() as session:
+        row = latest_stock_intelligence_publication(
+            session,
+            "current_stock_intelligence",
+            require_materialized=True,
+        )
+        if row is None:
+            return None
+        return {
+            "publication_name": row.publication_name,
+            "scanner_run_id": row.scanner_run_id,
+            "status": row.status,
+            "snapshot_timestamp": row.snapshot_timestamp,
+            "payload": dict(row.payload_json or {}),
+            "authority_owner": "UNDERLYING_INGESTION",
+            "reuse_mode": "OPTIONS_ENRICHMENT",
+        }
+
+
+def fail_unmaterialized_stock_publication(
+    *,
+    stock_scanner_run_id: str | None,
+    error: str,
+) -> bool:
+    """Retire a Stock publication when its owned finalization never materialized.
+
+    A READY Stock row must not survive an Inflection/materialization failure and
+    outrank the last coherent authority.  Rows that already own opportunities
+    are left untouched because their recovery semantics are different.
+    """
+
+    if not stock_scanner_run_id:
+        return False
+    from trading_ai.database.session import SessionLocal
+    from trading_ai.institutional_options.models import InstitutionalOpportunityModel
+    from trading_ai.stock_intelligence.models import StockScannerPublicationModel
+
+    with SessionLocal() as session:
+        opportunity_count = (
+            session.query(InstitutionalOpportunityModel)
+            .filter_by(stock_scanner_run_id=stock_scanner_run_id)
+            .count()
+        )
+        publication = (
+            session.query(StockScannerPublicationModel)
+            .filter_by(
+                publication_name="current_stock_intelligence",
+                scanner_run_id=stock_scanner_run_id,
+            )
+            .one_or_none()
+        )
+        if publication is None or opportunity_count:
+            return False
+        payload = dict(publication.payload_json or {})
+        payload["underlying_finalization"] = {
+            "version": "M68.2.1.8-UNDERLYING-FINALIZATION-1.0",
+            "status": "FAILED_UNMATERIALIZED",
+            "failed_at": datetime.now(timezone.utc).isoformat(),
+            "error": error,
+        }
+        publication.payload_json = payload
+        publication.status = "FAILED"
+        session.commit()
+        print(
+            "Stock Intelligence publication retired after failed finalization: "
+            f"run_id={stock_scanner_run_id}, status=FAILED"
+        )
+        return True
 
 
 
@@ -248,6 +352,7 @@ def finalize_shared_state(
         "trend_requested": run_trend,
         "lock_file": lock_file,
     }
+    stock_publication = None
     try:
         with core._exclusive_file_lock(lock_file):
             print("\nSHARED INTELLIGENCE FINALIZATION")
@@ -284,8 +389,18 @@ def finalize_shared_state(
             else:
                 print("Market-state publication: skipped by request")
 
-            stock_publication = None
-            if not args.skip_stock_intelligence:
+            if not args.skip_stock_intelligence and scope == "options":
+                stock_publication = latest_materialized_stock_publication()
+                print(
+                    "Stock Intelligence publication: reused underlying-owned "
+                    f"materialized authority run={None if stock_publication is None else stock_publication.get('scanner_run_id')}"
+                )
+                usable = stock_publication and stock_publication.get("status") in {"READY", "DEGRADED"}
+                if args.require_stock_intelligence and not usable:
+                    raise RuntimeError(
+                        "Options enrichment requires a materialized underlying-owned Stock Intelligence publication"
+                    )
+            elif not args.skip_stock_intelligence:
                 stock_publication = core._publish_stock_intelligence(args, symbols)
                 usable = stock_publication and stock_publication.get("status") in {"READY", "DEGRADED"}
                 if args.require_stock_intelligence and not usable:
@@ -386,6 +501,15 @@ def finalize_shared_state(
             )
     except Exception as exc:
         report.update({"status": "FAILED", "error": f"{type(exc).__name__}: {exc}"})
+        if scope == "underlying" and isinstance(stock_publication, dict):
+            report["stock_publication_retired"] = (
+                fail_unmaterialized_stock_publication(
+                    stock_scanner_run_id=str(
+                        stock_publication.get("run_id") or ""
+                    ),
+                    error=f"{type(exc).__name__}: {exc}",
+                )
+            )
         print(f"Shared intelligence finalization failed: {type(exc).__name__}: {exc}")
         if require_success:
             report["completed_at"] = datetime.now(timezone.utc).isoformat()
@@ -395,6 +519,49 @@ def finalize_shared_state(
     write_report(report_file, report)
     print(f"Shared intelligence finalization: status={report['status']}; report={report_file}")
     return 0
+
+
+_CLASSIFIED_ADVANCEMENT_COUNTERS = (
+    "governed_no_strategy",
+    "governed_no_contract",
+    "missing_option_data",
+    "unexpected_failures",
+)
+_RESULT_ADVANCEMENT_COUNTERS = (
+    "governed_not_ready",
+    "reconciled_ready",
+)
+
+
+def _nonnegative_stage_counter(payload: dict[str, object], key: str) -> int:
+    """Read a stage counter without allowing malformed values into authority."""
+
+    value = int(payload.get(key) or 0)
+    if value < 0:
+        raise ValueError(f"Stage counter {key} cannot be negative: {value}")
+    return value
+
+
+def merge_advancement_stage_counters(
+    *,
+    summary: dict[str, int],
+    payload: dict[str, object],
+    classified_counts: dict[str, int],
+) -> None:
+    """Merge classified and result-native counters exactly once.
+
+    M68.2.1.10 added result-native counters for conditional-entry governance
+    and READY-chain reconciliation, but accidentally read those counters from
+    the classified-error mapping.  That mapping deliberately contains only
+    error classifications, so the first healthy stage raised ``KeyError``
+    after its database commit.  Keeping the two counter namespaces explicit
+    prevents both missing-key failures and double counting.
+    """
+
+    for key in _CLASSIFIED_ADVANCEMENT_COUNTERS:
+        summary[key] += int(classified_counts.get(key) or 0)
+    for key in _RESULT_ADVANCEMENT_COUNTERS:
+        summary[key] += _nonnegative_stage_counter(payload, key)
 
 
 def advance_institutional_options_workflow(
@@ -425,6 +592,10 @@ def advance_institutional_options_workflow(
         InstitutionalStrategyGenerationService,
     )
     from trading_ai.institutional_options.publication_scope import latest_opportunity_ids
+    from trading_ai.institutional_options.advancement_authority import (
+        invalidate_advancement_authority,
+        persist_advancement_authority,
+    )
 
     stages: dict[str, object] = {}
     unexpected_failures: list[str] = []
@@ -443,6 +614,18 @@ def advance_institutional_options_workflow(
         f"publication=current_stock_intelligence, run_id={stock_scanner_run_id}, "
         f"opportunities={len(scoped_opportunity_ids)}"
     )
+    full_authority_cycle = bool(
+        run_strategies
+        and run_contracts
+        and run_decisions
+        and run_option_valuation
+    )
+    if stock_scanner_run_id is not None and full_authority_cycle:
+        invalidate_advancement_authority(
+            SessionLocal,
+            stock_scanner_run_id=stock_scanner_run_id,
+            reason="FULL_OPTIONS_ADVANCEMENT_STARTED",
+        )
 
     summary = {
         "strategies_generated": 0,
@@ -450,6 +633,8 @@ def advance_institutional_options_workflow(
         "contracts_optimized": 0,
         "governed_no_contract": 0,
         "missing_option_data": 0,
+        "governed_not_ready": 0,
+        "reconciled_ready": 0,
         "unexpected_failures": 0,
         "decisions_created": 0,
         "decisions_refreshed": 0,
@@ -482,7 +667,7 @@ def advance_institutional_options_workflow(
                     {"classification": classify_error(name, error), "detail": error}
                     for error in raw_errors
                 ]
-                counts = {
+                classified_counts = {
                     "governed_no_strategy": sum(
                         item["classification"] == "GOVERNED_NO_STRATEGY" for item in classified
                     ),
@@ -496,11 +681,15 @@ def advance_institutional_options_workflow(
                         item["classification"] == "UNEXPECTED_FAILURE" for item in classified
                     ),
                 }
-                payload.update(counts)
+                payload.update(classified_counts)
                 payload["classified_outcomes"] = classified
+                governed_not_ready = _nonnegative_stage_counter(
+                    payload, "governed_not_ready"
+                )
                 payload["status"] = (
-                    "FAILED" if counts["unexpected_failures"]
-                    else "DEGRADED" if raw_errors
+                    "FAILED" if classified_counts["unexpected_failures"]
+                    else "DEGRADED"
+                    if raw_errors or governed_not_ready
                     else "READY"
                 )
                 stages[name] = payload
@@ -512,18 +701,23 @@ def advance_institutional_options_workflow(
                 elif name == "decisions":
                     summary["decisions_created"] = int(payload.get("created") or 0)
                     summary["decisions_refreshed"] = int(payload.get("refreshed") or 0)
-                for key in (
-                    "governed_no_strategy", "governed_no_contract",
-                    "missing_option_data", "unexpected_failures",
-                ):
-                    summary[key] += counts[key]
+                merge_advancement_stage_counters(
+                    summary=summary,
+                    payload=payload,
+                    classified_counts=classified_counts,
+                )
 
                 display_keys = (
                     "requested", "generated", "optimized", "created", "refreshed",
-                    "failed", "eligible_candidates", "rejected_candidates",
+                    "failed", "certified", "rejected", "prerequisite_requested",
+                    "valuation_failed", "management_failed",
+                    "remaining_contracts_optimized",
+                    "eligible_candidates", "rejected_candidates",
                     "executable_recommendations", "non_executable_recommendations",
                     "governed_no_strategy", "governed_no_contract",
-                    "missing_option_data", "unexpected_failures",
+                    "missing_option_data", "governed_not_ready",
+                    "reconciled_ready", "unexpected_failures",
+                    "parallel_workers", "execution_mode",
                 )
                 display = ", ".join(
                     f"{key}={payload[key]}" for key in display_keys if key in payload
@@ -538,7 +732,7 @@ def advance_institutional_options_workflow(
                         f"[{item['classification']}]: {item['detail']}"
                     )
 
-                if counts["unexpected_failures"]:
+                if classified_counts["unexpected_failures"]:
                     unexpected_failures.extend(
                         f"{name}: {item['detail']}" for item in classified
                         if item["classification"] == "UNEXPECTED_FAILURE"
@@ -554,7 +748,11 @@ def advance_institutional_options_workflow(
                     payload.get("generated") or payload.get("optimized")
                     or payload.get("created") or payload.get("refreshed") or 0
                 )
-                governed = sum(counts.values()) - counts["unexpected_failures"]
+                governed = (
+                    sum(classified_counts.values())
+                    - classified_counts["unexpected_failures"]
+                    + governed_not_ready
+                )
                 if requested > 0 and useful == 0 and governed == 0 and not raw_errors:
                     detail = f"{name}: stage produced no usable output"
                     unexpected_failures.append(detail)
@@ -636,6 +834,7 @@ def advance_institutional_options_workflow(
         summary["governed_no_strategy"]
         + summary["governed_no_contract"]
         + summary["missing_option_data"]
+        + summary["governed_not_ready"]
     )
     status = (
         "FAILED" if unexpected_failures
@@ -649,6 +848,17 @@ def advance_institutional_options_workflow(
         "unexpected_failures": unexpected_failures,
         "completeness_failures": completeness_failures,
     }
+    if full_authority_cycle and not unexpected_failures:
+        payload["authority"] = persist_advancement_authority(
+            SessionLocal,
+            stock_scanner_run_id=stock_scanner_run_id,
+            advancement=payload,
+        )
+    elif full_authority_cycle:
+        payload["authority"] = {
+            "status": "NOT_PUBLISHED",
+            "reason": "UNEXPECTED_ADVANCEMENT_FAILURES",
+        }
     print(
         "Institutional Options advancement summary: "
         + ", ".join(f"{key}={value}" for key, value in summary.items())

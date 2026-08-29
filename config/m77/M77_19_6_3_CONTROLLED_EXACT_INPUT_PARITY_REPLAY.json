@@ -1,0 +1,18 @@
+{
+  "version": "M77.19.6.3-CONTROLLED-EXACT-INPUT-PARITY-REPLAY-1.0",
+  "milestone": "M77.19.6.3",
+  "title": "Controlled Exact-Input Parity Replay",
+  "research_only": true,
+  "database_mode": "READ_ONLY",
+  "parity_thresholds_relaxed": false,
+  "production_authority_effect": false,
+  "full_23_year_reconstruction_authorized": false,
+  "precondition": "M77.19.6.2 controlled_exact_parity_replay_authorized=true",
+  "strict_thresholds": {
+    "overall_score_max_abs_error": 1e-09,
+    "confidence_max_abs_error": 1e-09,
+    "direction_match_pct": 100.0,
+    "semantic_hash_match_pct": 100.0,
+    "deterministic_repeat_pct": 100.0
+  }
+}

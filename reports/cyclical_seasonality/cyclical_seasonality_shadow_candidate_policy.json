@@ -1,0 +1,1326 @@
+{
+  "version": "CYCLICAL-SEASONALITY-WALK-FORWARD-CERTIFICATION-1.0",
+  "status": "RESEARCH_POLICY_ONLY",
+  "eligible_for_next_research_gate": [
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "regime_age_bucket",
+      "state": "AGE_4_6",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_POSITION",
+      "factor": "week_of_month",
+      "state": "W1",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "OPEX_PROXY",
+      "factor": "opex_phase_proxy",
+      "state": "PRE_OPEX_6_10",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "category_age_bucket",
+      "state": "AGE_1",
+      "direction": "STRONG_BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "breadth_age_bucket",
+      "state": "AGE_4_6",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "category_age_bucket",
+      "state": "AGE_2_3",
+      "direction": "STRONG_BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month_half",
+      "state": "H1",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "trend_age_bucket",
+      "state": "AGE_1",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "regime_age_bucket",
+      "state": "AGE_4_6",
+      "direction": "STRONG_BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "breadth_age_bucket",
+      "state": "AGE_1",
+      "direction": "BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "breadth_age_bucket",
+      "state": "AGE_1",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "category_age_bucket",
+      "state": "AGE_1",
+      "direction": "BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "category_age_bucket",
+      "state": "AGE_4_6",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "category_age_bucket",
+      "state": "AGE_1",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "structure_age_bucket",
+      "state": "AGE_1",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "regime_age_bucket",
+      "state": "AGE_2_3",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "trend_age_bucket",
+      "state": "AGE_2_3",
+      "direction": "STRONG_BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month_half",
+      "state": "H2",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "trend_age_bucket",
+      "state": "AGE_2_3",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "structure_age_bucket",
+      "state": "AGE_2_3",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "category_age_bucket",
+      "state": "AGE_4_6",
+      "direction": "STRONG_BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "category_age_bucket",
+      "state": "AGE_4_6",
+      "direction": "STRONG_BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "breadth_age_bucket",
+      "state": "AGE_2_3",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "regime_age_bucket",
+      "state": "AGE_2_3",
+      "direction": "STRONG_BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month_half",
+      "state": "H1",
+      "direction": "STRONG_BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "regime_age_bucket",
+      "state": "AGE_1",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "structure_age_bucket",
+      "state": "AGE_1",
+      "direction": "STRONG_BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month_half",
+      "state": "H1",
+      "direction": "STRONG_BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_POSITION",
+      "factor": "week_of_month",
+      "state": "W1",
+      "direction": "STRONG_BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "OPEX_PROXY",
+      "factor": "opex_phase_proxy",
+      "state": "PRE_OPEX_6_10",
+      "direction": "STRONG_BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "OPEX_PROXY",
+      "factor": "opex_phase_proxy",
+      "state": "POST_OPEX_1_5",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "breadth_age_bucket",
+      "state": "AGE_1",
+      "direction": "STRONG_BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month_half",
+      "state": "H1",
+      "direction": "BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "category_age_bucket",
+      "state": "AGE_2_3",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "trend_age_bucket",
+      "state": "AGE_2_3",
+      "direction": "BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_POSITION",
+      "factor": "week_of_month",
+      "state": "W4",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "structure_age_bucket",
+      "state": "AGE_2_3",
+      "direction": "STRONG_BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "structure_age_bucket",
+      "state": "AGE_4_6",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "breadth_age_bucket",
+      "state": "AGE_2_3",
+      "direction": "STRONG_BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "structure_age_bucket",
+      "state": "AGE_4_6",
+      "direction": "STRONG_BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "category_age_bucket",
+      "state": "AGE_2_3",
+      "direction": "STRONG_BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "structure_age_bucket",
+      "state": "AGE_2_3",
+      "direction": "STRONG_BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "OPEX_PROXY",
+      "factor": "opex_phase_proxy",
+      "state": "POST_OPEX_1_5",
+      "direction": "BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "breadth_age_bucket",
+      "state": "AGE_4_6",
+      "direction": "STRONG_BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month_half",
+      "state": "H2",
+      "direction": "BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "VOLATILITY_CONTEXT",
+      "factor": "volatility_state",
+      "state": "NORMAL",
+      "direction": "STRONG_BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_POSITION",
+      "factor": "week_of_month",
+      "state": "W4",
+      "direction": "STRONG_BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "OPEX_PROXY",
+      "factor": "opex_phase_proxy",
+      "state": "POST_OPEX_1_5",
+      "direction": "STRONG_BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "trend_age_bucket",
+      "state": "AGE_4_6",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "structure_age_bucket",
+      "state": "AGE_1",
+      "direction": "STRONG_BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "VOLATILITY_CONTEXT",
+      "factor": "volatility_percentile_band",
+      "state": "P60_80",
+      "direction": "STRONG_BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_POSITION",
+      "factor": "week_of_month",
+      "state": "W2",
+      "direction": "STRONG_BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "OPEX_PROXY",
+      "factor": "opex_phase_proxy",
+      "state": "PRE_OPEX_1_5",
+      "direction": "STRONG_BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_POSITION",
+      "factor": "week_of_month",
+      "state": "W2",
+      "direction": "STRONG_BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "OPEX_PROXY",
+      "factor": "opex_phase_proxy",
+      "state": "PRE_OPEX_1_5",
+      "direction": "STRONG_BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_POSITION",
+      "factor": "week_of_month",
+      "state": "W1",
+      "direction": "STRONG_BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "OPEX_PROXY",
+      "factor": "opex_phase_proxy",
+      "state": "PRE_OPEX_6_10",
+      "direction": "STRONG_BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_POSITION",
+      "factor": "week_of_month",
+      "state": "W4",
+      "direction": "BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month_half",
+      "state": "H2",
+      "direction": "STRONG_BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "VOLATILITY_CONTEXT",
+      "factor": "volatility_percentile_band",
+      "state": "P20_40",
+      "direction": "STRONG_BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "VOLATILITY_CONTEXT",
+      "factor": "volatility_percentile_band",
+      "state": "P60_80",
+      "direction": "STRONG_BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "regime_age_bucket",
+      "state": "AGE_2_3",
+      "direction": "BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "structure_age_bucket",
+      "state": "AGE_2_3",
+      "direction": "BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "structure_age_bucket",
+      "state": "AGE_1",
+      "direction": "BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "VOLATILITY_CONTEXT",
+      "factor": "volatility_percentile_band",
+      "state": "P60_80",
+      "direction": "STRONG_BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "regime_age_bucket",
+      "state": "AGE_1",
+      "direction": "STRONG_BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_POSITION",
+      "factor": "week_of_month",
+      "state": "W2",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "OPEX_PROXY",
+      "factor": "opex_phase_proxy",
+      "state": "PRE_OPEX_1_5",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "trend_age_bucket",
+      "state": "AGE_2_3",
+      "direction": "STRONG_BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "category_age_bucket",
+      "state": "AGE_4_6",
+      "direction": "BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "VOLATILITY_CONTEXT",
+      "factor": "volatility_state",
+      "state": "NORMAL",
+      "direction": "BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "category_age_bucket",
+      "state": "AGE_1",
+      "direction": "STRONG_BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "trend_age_bucket",
+      "state": "AGE_1",
+      "direction": "STRONG_BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "VOLATILITY_CONTEXT",
+      "factor": "volatility_state",
+      "state": "NORMAL",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "regime_age_bucket",
+      "state": "AGE_2_3",
+      "direction": "STRONG_BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_POSITION",
+      "factor": "week_of_month",
+      "state": "W2",
+      "direction": "STRONG_BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "OPEX_PROXY",
+      "factor": "opex_phase_proxy",
+      "state": "PRE_OPEX_1_5",
+      "direction": "STRONG_BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "VOLATILITY_CONTEXT",
+      "factor": "volatility_percentile_band",
+      "state": "P60_80",
+      "direction": "BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "trend_age_bucket",
+      "state": "AGE_4_6",
+      "direction": "BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "VOLATILITY_CONTEXT",
+      "factor": "volatility_percentile_band",
+      "state": "P60_80",
+      "direction": "BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "VOLATILITY_CONTEXT",
+      "factor": "volatility_percentile_band",
+      "state": "P60_80",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "regime_age_bucket",
+      "state": "AGE_4_6",
+      "direction": "BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "regime_age_bucket",
+      "state": "AGE_1",
+      "direction": "STRONG_BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "trend_age_bucket",
+      "state": "AGE_4_6",
+      "direction": "STRONG_BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "category_age_bucket",
+      "state": "AGE_2_3",
+      "direction": "STRONG_BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "breadth_age_bucket",
+      "state": "AGE_4_6",
+      "direction": "BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month_half",
+      "state": "H1",
+      "direction": "BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "VOLATILITY_CONTEXT",
+      "factor": "volatility_state",
+      "state": "NORMAL",
+      "direction": "STRONG_BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "category_age_bucket",
+      "state": "AGE_1",
+      "direction": "STRONG_BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "CALENDAR_POSITION",
+      "factor": "week_of_month",
+      "state": "W1",
+      "direction": "STRONG_BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "OPEX_PROXY",
+      "factor": "opex_phase_proxy",
+      "state": "PRE_OPEX_6_10",
+      "direction": "STRONG_BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "breadth_age_bucket",
+      "state": "AGE_2_3",
+      "direction": "BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_POSITION",
+      "factor": "week_of_month",
+      "state": "W2",
+      "direction": "BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "OPEX_PROXY",
+      "factor": "opex_phase_proxy",
+      "state": "PRE_OPEX_1_5",
+      "direction": "BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "structure_age_bucket",
+      "state": "AGE_2_3",
+      "direction": "STRONG_BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "category_age_bucket",
+      "state": "AGE_2_3",
+      "direction": "STRONG_BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month_half",
+      "state": "H2",
+      "direction": "STRONG_BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "category_age_bucket",
+      "state": "AGE_4_6",
+      "direction": "BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month_half",
+      "state": "H1",
+      "direction": "STRONG_BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "structure_age_bucket",
+      "state": "AGE_1",
+      "direction": "STRONG_BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "breadth_age_bucket",
+      "state": "AGE_2_3",
+      "direction": "BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "VOLATILITY_CONTEXT",
+      "factor": "volatility_percentile_band",
+      "state": "P20_40",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_POSITION",
+      "factor": "week_of_month",
+      "state": "W2",
+      "direction": "BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "OPEX_PROXY",
+      "factor": "opex_phase_proxy",
+      "state": "PRE_OPEX_1_5",
+      "direction": "BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "structure_age_bucket",
+      "state": "AGE_2_3",
+      "direction": "BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month_half",
+      "state": "H1",
+      "direction": "BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "category_age_bucket",
+      "state": "AGE_2_3",
+      "direction": "BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "structure_age_bucket",
+      "state": "AGE_1",
+      "direction": "BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "category_age_bucket",
+      "state": "AGE_4_6",
+      "direction": "STRONG_BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "CALENDAR_POSITION",
+      "factor": "week_of_month",
+      "state": "W1",
+      "direction": "BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "OPEX_PROXY",
+      "factor": "opex_phase_proxy",
+      "state": "PRE_OPEX_6_10",
+      "direction": "BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "structure_age_bucket",
+      "state": "AGE_2_3",
+      "direction": "BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "structure_age_bucket",
+      "state": "AGE_1",
+      "direction": "BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "VOLATILITY_CONTEXT",
+      "factor": "volatility_state",
+      "state": "NORMAL",
+      "direction": "BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month_half",
+      "state": "H2",
+      "direction": "STRONG_BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "CALENDAR_POSITION",
+      "factor": "week_of_month",
+      "state": "W2",
+      "direction": "BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "OPEX_PROXY",
+      "factor": "opex_phase_proxy",
+      "state": "PRE_OPEX_1_5",
+      "direction": "BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "category_age_bucket",
+      "state": "AGE_1",
+      "direction": "BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "trend_age_bucket",
+      "state": "AGE_1",
+      "direction": "BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "category_age_bucket",
+      "state": "AGE_7_12",
+      "direction": "STRONG_BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "regime_age_bucket",
+      "state": "AGE_1",
+      "direction": "BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "category_age_bucket",
+      "state": "AGE_2_3",
+      "direction": "BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "VOLATILITY_CONTEXT",
+      "factor": "volatility_percentile_band",
+      "state": "P20_40",
+      "direction": "STRONG_BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "structure_age_bucket",
+      "state": "AGE_4_6",
+      "direction": "BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "VOLATILITY_CONTEXT",
+      "factor": "volatility_state",
+      "state": "NORMAL",
+      "direction": "STRONG_BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month_half",
+      "state": "H2",
+      "direction": "STRONG_BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "VOLATILITY_CONTEXT",
+      "factor": "volatility_percentile_band",
+      "state": "P20_40",
+      "direction": "BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "structure_age_bucket",
+      "state": "AGE_4_6",
+      "direction": "STRONG_BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month_half",
+      "state": "H2",
+      "direction": "BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "regime_age_bucket",
+      "state": "AGE_1",
+      "direction": "BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "trend_age_bucket",
+      "state": "AGE_1",
+      "direction": "BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "category_age_bucket",
+      "state": "AGE_7_12",
+      "direction": "BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "quarter",
+      "state": "Q2",
+      "direction": "STRONG_BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month",
+      "state": "M04",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "quarter",
+      "state": "Q2",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "VOLATILITY_CONTEXT",
+      "factor": "volatility_percentile_band",
+      "state": "P80_100",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "quarter",
+      "state": "Q2",
+      "direction": "STRONG_BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month",
+      "state": "M05",
+      "direction": "STRONG_BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month",
+      "state": "M04",
+      "direction": "BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month",
+      "state": "M04",
+      "direction": "STRONG_BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "VOLATILITY_CONTEXT",
+      "factor": "volatility_percentile_band",
+      "state": "P80_100",
+      "direction": "STRONG_BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "quarter",
+      "state": "Q2",
+      "direction": "BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month",
+      "state": "M03",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month",
+      "state": "M05",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "VOLATILITY_CONTEXT",
+      "factor": "volatility_percentile_band",
+      "state": "P80_100",
+      "direction": "BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "VOLATILITY_CONTEXT",
+      "factor": "volatility_state",
+      "state": "HIGH",
+      "direction": "BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "category_age_bucket",
+      "state": "AGE_7_12",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month",
+      "state": "M11",
+      "direction": "STRONG_BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month",
+      "state": "M05",
+      "direction": "BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "VOLATILITY_CONTEXT",
+      "factor": "volatility_state",
+      "state": "HIGH",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "quarter",
+      "state": "Q2",
+      "direction": "STRONG_BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "quarter",
+      "state": "Q2",
+      "direction": "STRONG_BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "VOLATILITY_CONTEXT",
+      "factor": "volatility_percentile_band",
+      "state": "P80_100",
+      "direction": "STRONG_BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month",
+      "state": "M06",
+      "direction": "STRONG_BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "trend_age_bucket",
+      "state": "AGE_7_12",
+      "direction": "BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month",
+      "state": "M05",
+      "direction": "STRONG_BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month",
+      "state": "M06",
+      "direction": "BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month",
+      "state": "M05",
+      "direction": "STRONG_BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "VOLATILITY_CONTEXT",
+      "factor": "volatility_percentile_band",
+      "state": "P40_60",
+      "direction": "BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "quarter",
+      "state": "Q2",
+      "direction": "BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month",
+      "state": "M11",
+      "direction": "STRONG_BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "trend_age_bucket",
+      "state": "AGE_7_12",
+      "direction": "STRONG_BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "category_age_bucket",
+      "state": "AGE_13_PLUS",
+      "direction": "BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month",
+      "state": "M05",
+      "direction": "BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "quarter",
+      "state": "Q2",
+      "direction": "BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "VOLATILITY_CONTEXT",
+      "factor": "volatility_state",
+      "state": "HIGH",
+      "direction": "STRONG_BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "VOLATILITY_CONTEXT",
+      "factor": "volatility_percentile_band",
+      "state": "P80_100",
+      "direction": "STRONG_BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month",
+      "state": "M01",
+      "direction": "BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month",
+      "state": "M11",
+      "direction": "BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month",
+      "state": "M06",
+      "direction": "BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "VOLATILITY_CONTEXT",
+      "factor": "volatility_percentile_band",
+      "state": "P40_60",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "VOLATILITY_CONTEXT",
+      "factor": "volatility_percentile_band",
+      "state": "P80_100",
+      "direction": "BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "VOLATILITY_CONTEXT",
+      "factor": "volatility_percentile_band",
+      "state": "P80_100",
+      "direction": "BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "VOLATILITY_CONTEXT",
+      "factor": "volatility_state",
+      "state": "HIGH",
+      "direction": "BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "breadth_age_bucket",
+      "state": "AGE_7_12",
+      "direction": "BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month",
+      "state": "M06",
+      "direction": "STRONG_BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "VOLATILITY_CONTEXT",
+      "factor": "volatility_percentile_band",
+      "state": "P40_60",
+      "direction": "STRONG_BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month",
+      "state": "M11",
+      "direction": "BULLISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "trend_age_bucket",
+      "state": "AGE_7_12",
+      "direction": "BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "breadth_age_bucket",
+      "state": "AGE_7_12",
+      "direction": "BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month",
+      "state": "M03",
+      "direction": "STRONG_BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "category_age_bucket",
+      "state": "AGE_13_PLUS",
+      "direction": "BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "breadth_age_bucket",
+      "state": "AGE_7_12",
+      "direction": "STRONG_BULLISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "quarter",
+      "state": "Q1",
+      "direction": "BEARISH",
+      "horizon": 60
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "trend_age_bucket",
+      "state": "AGE_7_12",
+      "direction": "STRONG_BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "month",
+      "state": "M07",
+      "direction": "BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "CALENDAR_SEASONALITY",
+      "factor": "quarter",
+      "state": "Q4",
+      "direction": "STRONG_BEARISH",
+      "horizon": 20
+    },
+    {
+      "factor_family": "STATE_PERSISTENCE",
+      "factor": "category_age_bucket",
+      "state": "AGE_13_PLUS",
+      "direction": "STRONG_BULLISH",
+      "horizon": 60
+    }
+  ],
+  "authority_effect": false,
+  "shadow_activation": false,
+  "production_activation": false,
+  "next_required_gate": "FOLD_NATIVE_MATCHED_CONTROL_HARDENING_AND_SHADOW_CERTIFICATION"
+}

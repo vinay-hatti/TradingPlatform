@@ -1,0 +1,20 @@
+{
+  "milestone": "M77.19.6.5.2.18",
+  "name": "Minimal Generalizable Consolidation Semantic Forensics",
+  "authority_report_5217_sha256": "6b607a5807c380e7dfb0ab12116e3648e4918c12ab17a26648aa45e639e9d5d4",
+  "authority_runner_5217_sha256": "118e8e00ed5c16acfcbfbc8c15f348414b5613002f8cfed2e7eb282100072dde",
+  "required_native_causal_records": 3,
+  "predicates": {
+    "PREEXISTING_CLUSTER_ABSORPTION": "target_seeded_new_cluster == false AND nearest_relative_distance >= 0.003",
+    "POST_SEED_CENTROID_DRIFT": "target_seeded_new_cluster == true AND target_cluster_touch_count > 1 AND nearest_relative_distance >= 0.003"
+  },
+  "symbol_identity_free_required": true,
+  "frozen_target_ancestry_dependency_must_be_disclosed": true,
+  "native_observable_production_generalization_certified": false,
+  "candidate_semantic_promoted": false,
+  "database_mode": "NONE_REPORT_ONLY",
+  "reachability_threshold": 0.003,
+  "parity_tolerance": 1e-09,
+  "full_23_year_reconstruction_authorized": false,
+  "production_authority_effect": false
+}

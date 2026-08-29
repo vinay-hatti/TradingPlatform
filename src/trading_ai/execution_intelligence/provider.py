@@ -56,6 +56,20 @@ class PolygonDirectExecutionQuoteProvider:
         bid=_num(q.get('bid'));ask=_num(q.get('ask'));mid=(bid+ask)/2 if bid>0 and ask>=bid else 0.0;last=_num(trade.get('price') or day.get('close') or r.get('fmv'))
         if mid<=0 and last<=0:raise ExecutionQuoteError(f'Polygon returned no executable price for {option_symbol}')
         return DirectQuote(str(option_symbol).upper(),'OPTION',bid,ask,mid,_num(q.get('bid_size')),_num(q.get('ask_size')),last,_ts(q.get('last_updated') or q.get('sip_timestamp') or q.get('participant_timestamp') or r.get('updated')),datetime.now(timezone.utc).isoformat(),_num(r.get('implied_volatility'),None),_num(g.get('delta'),None),_num(g.get('gamma'),None),_num(g.get('theta'),None),_num(g.get('vega'),None),int(_num(r.get('open_interest'),0)),int(_num(day.get('volume'),0)),_num(ua.get('price'),None),r)
+
+    def index_quote(self,symbol):
+        ticker=str(symbol).upper()
+        if not ticker.startswith('I:'):
+            ticker=f'I:{ticker}'
+        payload=self._get('/v3/snapshot/indices',{'ticker':ticker,'limit':10})
+        rows=payload.get('results') or []
+        if isinstance(rows,dict):rows=[rows]
+        r=next((x for x in rows if str(x.get('ticker','')).upper()==ticker),rows[0] if rows else {})
+        value=_num(r.get('value') or (r.get('session') or {}).get('close'))
+        if value<=0:raise ExecutionQuoteError(f'Polygon returned no index price for {ticker}')
+        ts=_ts(r.get('last_updated'))
+        return DirectQuote(ticker,'INDEX',0.0,0.0,value,0.0,0.0,value,ts,datetime.now(timezone.utc).isoformat(),raw=r)
+
     def underlying_quote(self,symbol):
         payload=self._get(f'/v2/snapshot/locale/us/markets/stocks/tickers/{quote(str(symbol).upper())}')
         r=(payload.get('ticker') or payload.get('results') or {});q=r.get('lastQuote') or r.get('last_quote') or {};trade=r.get('lastTrade') or r.get('last_trade') or {};day=r.get('day') or {}

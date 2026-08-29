@@ -1,0 +1,212 @@
+{
+  "version": "M77.19-MULTI-CADENCE-LONG-HISTORY-REPLICATION-AUTHORITY-AUDIT-1.0",
+  "status": "READY",
+  "cadence_state_coverage": {
+    "daily": {
+      "rows": 528829,
+      "first_as_of": "2022-10-14",
+      "last_as_of": "2026-05-26",
+      "symbols": 601
+    },
+    "weekly": {
+      "rows": 119821,
+      "first_as_of": "2022-10-14",
+      "last_as_of": "2026-08-17",
+      "symbols": 607
+    },
+    "monthly": {
+      "rows": 25798,
+      "first_as_of": "2022-10-31",
+      "last_as_of": "2026-05-29",
+      "symbols": 606
+    }
+  },
+  "pit_regime_coverage": {
+    "rows": 1013,
+    "first_as_of": "2022-08-09",
+    "last_as_of": "2026-08-21"
+  },
+  "gates": {
+    "daily_replay_states_cover_long_history": false,
+    "weekly_replay_states_cover_long_history": false,
+    "monthly_replay_states_cover_long_history": false,
+    "pit_regime_states_cover_long_history": false,
+    "m77_11_frozen_report_present": true,
+    "m77_12_frozen_report_present": true
+  },
+  "authority_gaps": [
+    {
+      "authority": "DAILY_REPLAY_STATES",
+      "available": {
+        "rows": 528829,
+        "first_as_of": "2022-10-14",
+        "last_as_of": "2026-05-26",
+        "symbols": 601
+      },
+      "required": [
+        "2003-09-10",
+        "2026-08-21"
+      ]
+    },
+    {
+      "authority": "WEEKLY_REPLAY_STATES",
+      "available": {
+        "rows": 119821,
+        "first_as_of": "2022-10-14",
+        "last_as_of": "2026-08-17",
+        "symbols": 607
+      },
+      "required": [
+        "2003-09-10",
+        "2026-08-21"
+      ]
+    },
+    {
+      "authority": "MONTHLY_REPLAY_STATES",
+      "available": {
+        "rows": 25798,
+        "first_as_of": "2022-10-31",
+        "last_as_of": "2026-05-29",
+        "symbols": 606
+      },
+      "required": [
+        "2003-09-10",
+        "2026-08-21"
+      ]
+    },
+    {
+      "authority": "PIT_REGIME_STATES",
+      "available": {
+        "rows": 1013,
+        "first_as_of": "2022-08-09",
+        "last_as_of": "2026-08-21"
+      },
+      "required": [
+        "2003-09-10",
+        "2026-08-21"
+      ]
+    }
+  ],
+  "exact_5773_session_replication_authorized": false,
+  "original_M77_11": {
+    "coverage": {
+      "aligned_horizon_observations": 2575250,
+      "symbols": 600,
+      "first_as_of": "2022-10-31",
+      "last_as_of": "2026-05-26",
+      "missing_bindings": {
+        "weekly": 69,
+        "monthly": 6504,
+        "pit": 0,
+        "price": 0
+      }
+    },
+    "summary": {
+      "predefined_classes": 11,
+      "research_supported_class_horizons": 0,
+      "supported_by_horizon": {
+        "5": 0,
+        "10": 0,
+        "20": 0,
+        "60": 0,
+        "120": 0
+      }
+    },
+    "methodology": {
+      "entry_clock": "DAILY replay observation date",
+      "weekly_binding": "latest weekly replay state with as_of <= daily date",
+      "monthly_binding": "latest monthly replay state with as_of <= daily date",
+      "future_leakage_prohibited": true,
+      "outcomes_sessions": [
+        5,
+        10,
+        20,
+        60,
+        120
+      ],
+      "non_overlap": "deterministic per-symbol spacing >= outcome horizon on SPY trading-session index",
+      "incremental_edge": "confluence thesis-aligned mean minus strongest same-year component direction-family baseline",
+      "full_year_support": "at least 2 full years and every evaluated full year passes; partial year supporting only",
+      "minimum_n": {
+        "5": 100,
+        "10": 100,
+        "20": 100,
+        "60": 75,
+        "120": 50
+      },
+      "minimum_hit_rate_pct": 52.0,
+      "minimum_incremental_edge_pct": {
+        "5": 0.1,
+        "10": 0.1,
+        "20": 0.15,
+        "60": 0.25,
+        "120": 0.35
+      }
+    }
+  },
+  "original_M77_12": {
+    "coverage": {
+      "raw_role_observations": 329059,
+      "symbols": 603,
+      "first_as_of": "2023-02-02",
+      "last_as_of": "2026-05-26",
+      "missing_secondary_bindings": {
+        "DAILY_BASELINE_MONTHLY": 77,
+        "DAILY_BASELINE_WEEKLY": 15,
+        "MONTHLY_BASELINE_DAILY": 11
+      }
+    },
+    "summary": {
+      "frozen_daily_baselines": 4,
+      "frozen_monthly_baselines": 7,
+      "directional_monthly_baselines": 5,
+      "tested_baseline_overlay_role_combinations": 54,
+      "research_supported_role_utilities": 0,
+      "supported_by_baseline_source": {
+        "DAILY": 0,
+        "MONTHLY": 0
+      }
+    },
+    "methodology": {
+      "question": "Does a secondary cadence role improve an already-certified frozen baseline?",
+      "roles": [
+        "CONFIRMING",
+        "NEUTRAL",
+        "CONFLICTING"
+      ],
+      "daily_baseline_overlays": [
+        "WEEKLY",
+        "MONTHLY"
+      ],
+      "monthly_baseline_overlays": [
+        "DAILY",
+        "WEEKLY"
+      ],
+      "binding": "latest secondary cadence as_of <= frozen baseline observation date",
+      "future_leakage_prohibited": true,
+      "non_overlap": "deterministic per-symbol spacing >= baseline outcome horizon on SPY session index",
+      "comparison": "role subset versus same frozen certified baseline, same year/horizon",
+      "full_year_support": "at least 2 full years and every evaluated full year must pass; partial year supporting only",
+      "minimum_n": {
+        "5": 100,
+        "10": 100,
+        "20": 100,
+        "60": 50,
+        "120": 30
+      },
+      "minimum_hit_rate_pct": 52.0,
+      "minimum_incremental_pct": {
+        "5": 0.1,
+        "10": 0.1,
+        "20": 0.15,
+        "60": 0.25,
+        "120": 0.35
+      },
+      "neutral_monthly_baselines": "excluded from directional CONFIRMING/CONFLICTING role certification"
+    }
+  },
+  "disposition": "NOT_AUTHORIZED_MISSING_HISTORICAL_CADENCE_OR_PIT_AUTHORITIES",
+  "next_step": "AUDIT_RECONSTRUCTIBILITY_OF_MISSING_CADENCE_AND_PIT_AUTHORITIES_WITHOUT_FABRICATION",
+  "database_writes": false,
+  "production_authority_effect": false
+}

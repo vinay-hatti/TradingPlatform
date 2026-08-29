@@ -1,0 +1,14 @@
+{
+  "version": "M77.19.6.5.2.9.1-NATIVE-TYPED-COMPONENT-REHYDRATION-REPAIR-1.0",
+  "milestone": "M77.19.6.5.2.9.1",
+  "title": "Native Typed Component Rehydration Repair",
+  "supersedes_runner_logic": "M77.19.6.5.2.9 plain-dict synthetic component injection",
+  "root_cause": "Frozen JSON support/resistance and structure-zone objects were injected as dicts while native downstream services require typed component objects.",
+  "database_mode": "READ_ONLY_SPY_SESSION_CALENDAR_ONLY",
+  "parity_tolerance": 1e-09,
+  "parity_thresholds_relaxed": false,
+  "research_only": true,
+  "controlled_exact_input_parity_certified": false,
+  "full_23_year_reconstruction_authorized": false,
+  "production_authority_effect": false
+}

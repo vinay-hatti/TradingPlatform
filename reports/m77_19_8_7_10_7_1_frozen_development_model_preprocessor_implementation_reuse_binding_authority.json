@@ -1,0 +1,925 @@
+{
+  "MF1_model_candidates": [
+    {
+      "arg_names": [],
+      "end_lineno": 94,
+      "lineno": 83,
+      "name": "require_ml",
+      "tags": [
+        "ENCODER",
+        "IMPUTER",
+        "METRIC_BAL_ACC",
+        "MF1_LOGISTIC",
+        "PREPROCESS",
+        "SCALER"
+      ]
+    },
+    {
+      "arg_names": [
+        "train_rows",
+        "test_rows",
+        "feature_cols",
+        "target_key",
+        "grid",
+        "ml",
+        "progress_prefix"
+      ],
+      "end_lineno": 153,
+      "lineno": 134,
+      "name": "evaluate_mf1",
+      "tags": [
+        "FIT_CALL",
+        "METRIC_BAL_ACC",
+        "MF1_LOGISTIC",
+        "PREDICT",
+        "PREDICT_PROBA",
+        "PREPROCESS"
+      ]
+    }
+  ],
+  "MF1_preprocessor_candidates": [
+    {
+      "arg_names": [],
+      "end_lineno": 94,
+      "lineno": 83,
+      "name": "require_ml",
+      "tags": [
+        "ENCODER",
+        "IMPUTER",
+        "METRIC_BAL_ACC",
+        "MF1_LOGISTIC",
+        "PREPROCESS",
+        "SCALER"
+      ]
+    },
+    {
+      "arg_names": [
+        "rows",
+        "feature_cols",
+        "ml"
+      ],
+      "end_lineno": 116,
+      "lineno": 96,
+      "name": "build_preprocessor",
+      "tags": [
+        "ENCODER",
+        "IMPUTER",
+        "PREPROCESS",
+        "SCALER"
+      ]
+    },
+    {
+      "arg_names": [
+        "train_rows",
+        "test_rows",
+        "feature_cols",
+        "target_key",
+        "grid",
+        "ml",
+        "progress_prefix"
+      ],
+      "end_lineno": 153,
+      "lineno": 134,
+      "name": "evaluate_mf1",
+      "tags": [
+        "FIT_CALL",
+        "METRIC_BAL_ACC",
+        "MF1_LOGISTIC",
+        "PREDICT",
+        "PREDICT_PROBA",
+        "PREPROCESS"
+      ]
+    }
+  ],
+  "MF2_model_candidates": [
+    {
+      "arg_names": [],
+      "end_lineno": 316,
+      "lineno": 156,
+      "name": "main",
+      "tags": [
+        "MF2_MONOTONIC"
+      ]
+    },
+    {
+      "arg_names": [],
+      "end_lineno": 215,
+      "lineno": 206,
+      "name": "save_checkpoint",
+      "tags": [
+        "MF2_MONOTONIC"
+      ]
+    }
+  ],
+  "MF2_preprocessor_candidates": [
+    {
+      "arg_names": [
+        "self",
+        "rows"
+      ],
+      "end_lineno": 115,
+      "lineno": 97,
+      "name": "transform",
+      "tags": [
+        "TRANSFORM_CALL"
+      ]
+    }
+  ],
+  "MF2_runtime_candidates": [
+    {
+      "arg_names": [],
+      "end_lineno": 105,
+      "lineno": 28,
+      "name": "main",
+      "tags": [
+        "MF2_MONOTONIC"
+      ]
+    }
+  ],
+  "MF2_semantic_authority_resolution": {
+    "constrained_column_count": 6,
+    "field_level_monotonic_sign_map_materialized": true,
+    "outcomes_used_to_choose_signs": false,
+    "registered_column_count": 97,
+    "runtime_certified_at_7_3": false,
+    "semantic_authority_certified": true,
+    "unconstrained_column_count": 91,
+    "validation_used_to_choose_signs": false
+  },
+  "MF2_semantic_authority_schema_binding_certified": true,
+  "MF2_semantic_authority_sha256": "f5b5f4baae150e0d91d4824270c1839c708859461aa2cc7fb47d0dc92329004f",
+  "candidate_summary": {
+    "MF1_model_candidate_count": 2,
+    "MF1_preprocessor_candidate_count": 3,
+    "MF2_model_candidate_count": 2,
+    "MF2_preprocessor_candidate_count": 1,
+    "MF2_runtime_candidate_count": 1
+  },
+  "development_invocation_parity_certified": false,
+  "exact_callable_invocation_contract_certified": false,
+  "final_holdout_opened": false,
+  "model_family_champion_selected": false,
+  "next_step": "BUILD_M77_19_8_7_10_7_2_EXACT_MF1_MF2_CALLABLE_INVOCATION_CONTRACT_AND_DEVELOPMENT_PARITY_HARNESS",
+  "preregistration_sha256": "b017500c472f0523d224a3fdaf55d8954ec097faea82c5e757f1c0ed52bd98f7",
+  "production_authority_effect": false,
+  "reusable_implementation_candidates_sufficient": true,
+  "source_scans": {
+    "mf1_development": {
+      "candidate_assignments": [
+        {
+          "lineno": 135,
+          "source": "LogisticRegression=ml[\"LogisticRegression\"]"
+        },
+        {
+          "lineno": 237,
+          "source": "mf2_is_available=mf2_available()"
+        },
+        {
+          "lineno": 292,
+          "source": "mf1_configs=defaultdict(list)"
+        },
+        {
+          "lineno": 311,
+          "source": "report={\n        \"version\":VERSION,\"status\":\"READY\",\n        \"training_gate_sha256\":sha256_file(gp),\"target_authority_sha256\":sha256_file(tp),\n        \"development_only\":True,\n        \"structured_training_matrix_materialized\":True,\n        \"training_observation_count\":len(rows),\n        \"training_feature_column_count\":len(feature_cols),\n        \"training_feature_columns\":feature_cols,\n        \"F071_in_training_features\":False,\n        \"walk_forward_fold_count\":len(folds),\n        \"evidence\":evidence,\n        \"development_selected_configs\":selections,\n        \"MF2_status\":\"BLOCKED_PENDING_CERTIFIED_MONOTONIC_SIGN_MAP_AND_RUNTIME\",\n        \"MF3_status\":\"BLOCKED_PENDING_CERTIFIED_ELASTIC_NET_QUANTILE_LINEAR_SOLVER\",\n        \"governance\":{\n            \"preprocessing_fit_within_train_fold_only\":True,\n            \"target_session_purge_enforced\":True,\n            \"development_walk_forward_scored\":True,\n            \"models_trained_within_development_folds\":True,\n            \"full_development_final_model_fit\":False,\n            \"validation_feature_matrix_opened\":False,\n            \"validation_outcomes_opened\":False,\n            \"final_holdout_feature_matrix_opened\":False,\n            \"final"
+        },
+        {
+          "lineno": 143,
+          "source": "prep,nums,cats=build_preprocessor(train_rows,feature_cols,ml)"
+        },
+        {
+          "lineno": 145,
+          "source": "model=Pipeline([(\"prep\",prep),(\"model\",LogisticRegression(C=C,l1_ratio=0,solver=\"liblinear\",max_iter=2000,random_state=77))])"
+        },
+        {
+          "lineno": 302,
+          "source": "cand=[(sum(v)/len(v),C,len(v)) for (hh,C),v in mf1_configs.items() if hh==h]"
+        },
+        {
+          "lineno": 275,
+          "source": "mf1=model_families[\"MF1_REGULARIZED_LOGISTIC_DIRECTION\"]"
+        }
+      ],
+      "candidate_calls": [
+        {
+          "lineno": 352,
+          "source": "print(\"MF1_evidence_row_count:\",sum(e.get(\"family\")==\"MF1_REGULARIZED_LOGISTIC_DIRECTION\" and e.get(\"status\")==\"EVALUATED\" for e in evidence))"
+        },
+        {
+          "lineno": 145,
+          "source": "Pipeline([(\"prep\",prep),(\"model\",LogisticRegression(C=C,l1_ratio=0,solver=\"liblinear\",max_iter=2000,random_state=77))])"
+        },
+        {
+          "lineno": 146,
+          "source": "model.fit(Xtr,ytr)"
+        },
+        {
+          "lineno": 152,
+          "source": "print(f\"{progress_prefix} MF1 C={C} DONE balanced_accuracy={rec['balanced_accuracy']:.6f}\",flush=True)"
+        },
+        {
+          "lineno": 352,
+          "source": "sum(e.get(\"family\")==\"MF1_REGULARIZED_LOGISTIC_DIRECTION\" and e.get(\"status\")==\"EVALUATED\" for e in evidence)"
+        },
+        {
+          "lineno": 147,
+          "source": "model.predict_proba(Xte)"
+        },
+        {
+          "lineno": 148,
+          "source": "float(balanced_accuracy_score(yte,pred))"
+        },
+        {
+          "lineno": 296,
+          "source": "mf1_configs[(e[\"horizon\"],e[\"C\"])].append(e[\"balanced_accuracy\"])"
+        },
+        {
+          "lineno": 305,
+          "source": "selections.append({\"family\":\"MF1_REGULARIZED_LOGISTIC_DIRECTION\",\"horizon\":h,\"selected_config\":{\"C\":C},\"mean_walk_forward_balanced_accuracy\":score,\"fold_count\":n})"
+        },
+        {
+          "lineno": 148,
+          "source": "balanced_accuracy_score(yte,pred)"
+        },
+        {
+          "lineno": 277,
+          "source": "evidence.append({\"fold_id\":fold[\"fold_id\"],\"horizon\":h,\"family\":\"MF1_REGULARIZED_LOGISTIC_DIRECTION\",\"status\":\"EVALUATED\",\"train_count\":len(direction_train),\"test_count\":len(direction_test),**rec})"
+        },
+        {
+          "lineno": 145,
+          "source": "LogisticRegression(C=C,l1_ratio=0,solver=\"liblinear\",max_iter=2000,random_state=77)"
+        }
+      ],
+      "classes": [
+        {
+          "lineno": 17,
+          "name": "EvalError"
+        }
+      ],
+      "function_count": 17,
+      "functions": [
+        {
+          "arg_names": [
+            "path"
+          ],
+          "end_lineno": 23,
+          "lineno": 19,
+          "name": "sha256_file",
+          "tags": []
+        },
+        {
+          "arg_names": [
+            "path"
+          ],
+          "end_lineno": 26,
+          "lineno": 25,
+          "name": "load_json",
+          "tags": []
+        },
+        {
+          "arg_names": [
+            "root",
+            "raw"
+          ],
+          "end_lineno": 30,
+          "lineno": 28,
+          "name": "resolve",
+          "tags": []
+        },
+        {
+          "arg_names": [
+            "path"
+          ],
+          "end_lineno": 37,
+          "lineno": 32,
+          "name": "iter_jsonl_gz",
+          "tags": []
+        },
+        {
+          "arg_names": [
+            "path",
+            "payload"
+          ],
+          "end_lineno": 47,
+          "lineno": 39,
+          "name": "atomic_json",
+          "tags": []
+        },
+        {
+          "arg_names": [
+            "obj",
+            "path"
+          ],
+          "end_lineno": 54,
+          "lineno": 49,
+          "name": "get_path",
+          "tags": []
+        },
+        {
+          "arg_names": [
+            "v"
+          ],
+          "end_lineno": 59,
+          "lineno": 56,
+          "name": "scalar",
+          "tags": []
+        },
+        {
+          "arg_names": [
+            "values"
+          ],
+          "end_lineno": 73,
+          "lineno": 61,
+          "name": "flatten_base_features",
+          "tags": []
+        },
+        {
+          "arg_names": [
+            "replay_profile",
+            "gate"
+          ],
+          "end_lineno": 81,
+          "lineno": 75,
+          "name": "build_structured",
+          "tags": []
+        },
+        {
+          "arg_names": [],
+          "end_lineno": 94,
+          "lineno": 83,
+          "name": "require_ml",
+          "tags": [
+            "ENCODER",
+            "IMPUTER",
+            "METRIC_BAL_ACC",
+            "MF1_LOGISTIC",
+            "PREPROCESS",
+            "SCALER"
+          ]
+        },
+        {
+          "arg_names": [
+            "rows",
+            "feature_cols",
+            "ml"
+          ],
+          "end_lineno": 116,
+          "lineno": 96,
+          "name": "build_preprocessor",
+          "tags": [
+            "ENCODER",
+            "IMPUTER",
+            "PREPROCESS",
+            "SCALER"
+          ]
+        },
+        {
+          "arg_names": [
+            "rows",
+            "cols",
+            "ml"
+          ],
+          "end_lineno": 125,
+          "lineno": 118,
+          "name": "dict_matrix",
+          "tags": []
+        },
+        {
+          "arg_names": [],
+          "end_lineno": 132,
+          "lineno": 127,
+          "name": "mf2_available",
+          "tags": []
+        },
+        {
+          "arg_names": [
+            "train_rows",
+            "test_rows",
+            "feature_cols",
+            "target_key",
+            "grid",
+            "ml",
+            "progress_prefix"
+          ],
+          "end_lineno": 153,
+          "lineno": 134,
+          "name": "evaluate_mf1",
+          "tags": [
+            "FIT_CALL",
+            "METRIC_BAL_ACC",
+            "MF1_LOGISTIC",
+            "PREDICT",
+            "PREDICT_PROBA",
+            "PREPROCESS"
+          ]
+        },
+        {
+          "arg_names": [
+            "train_rows",
+            "test_rows",
+            "feature_cols",
+            "target_key",
+            "grid",
+            "quantiles",
+            "ml",
+            "progress_prefix"
+          ],
+          "end_lineno": 171,
+          "lineno": 155,
+          "name": "evaluate_mf3",
+          "tags": []
+        },
+        {
+          "arg_names": [],
+          "end_lineno": 366,
+          "lineno": 173,
+          "name": "main",
+          "tags": []
+        },
+        {
+          "arg_names": [],
+          "end_lineno": 257,
+          "lineno": 248,
+          "name": "save_checkpoint",
+          "tags": []
+        }
+      ],
+      "imports": [
+        {
+          "lineno": 2,
+          "source": "from __future__ import annotations"
+        },
+        {
+          "lineno": 4,
+          "source": "import argparse, csv, gzip, hashlib, json, math, os, tempfile"
+        },
+        {
+          "lineno": 5,
+          "source": "from collections import Counter, defaultdict"
+        },
+        {
+          "lineno": 6,
+          "source": "from pathlib import Path"
+        },
+        {
+          "lineno": 7,
+          "source": "from typing import Any, Iterable"
+        },
+        {
+          "lineno": 140,
+          "source": "from sklearn.pipeline import Pipeline"
+        },
+        {
+          "lineno": 85,
+          "source": "import numpy as np"
+        },
+        {
+          "lineno": 86,
+          "source": "from sklearn.compose import ColumnTransformer"
+        },
+        {
+          "lineno": 87,
+          "source": "from sklearn.impute import SimpleImputer"
+        },
+        {
+          "lineno": 88,
+          "source": "from sklearn.pipeline import Pipeline"
+        },
+        {
+          "lineno": 89,
+          "source": "from sklearn.preprocessing import OneHotEncoder, StandardScaler"
+        },
+        {
+          "lineno": 90,
+          "source": "from sklearn.linear_model import LogisticRegression"
+        },
+        {
+          "lineno": 91,
+          "source": "from sklearn.metrics import balanced_accuracy_score, log_loss, brier_score_loss, roc_auc_score, mean_pinball_loss, median_absolute_error"
+        },
+        {
+          "lineno": 122,
+          "source": "import pandas as pd"
+        },
+        {
+          "lineno": 129,
+          "source": "from pygam import LogisticGAM, s"
+        }
+      ],
+      "path": "/Users/vinay.hatti/TradingPlatform/scripts/run_m77_19_8_7_development_only_structured_training_matrix_walk_forward_model_family_evaluation.py",
+      "sha256": "a5a7e2bf44f11e6919634c0571015006af32e6b7cb4aabf1ff11eeab0a390bbb"
+    },
+    "mf2_development": {
+      "candidate_assignments": [
+        {
+          "lineno": 8,
+          "source": "VERSION=\"M77.19.8.7.8-MF2-ONLY-DEVELOPMENT-WALK-FORWARD-COMPLETION-CHECKPOINT-REUSE-1.0\""
+        },
+        {
+          "lineno": 9,
+          "source": "EXPECTED_877_VERSION=\"M77.19.8.7.7-MF3-CANARY-CLOSURE-MF2-DEVELOPMENT-ONLY-CONTINUATION-AUTHORITY-1.0\""
+        },
+        {
+          "lineno": 193,
+          "source": "mf2_grid=fam[\"MF2_MONOTONIC_GAM_DIRECTION\"][\"fixed_grid\"]"
+        },
+        {
+          "lineno": 203,
+          "source": "expected_total=len(folds)*len(HORIZONS)*len(mf2_grid[\"spline_knots\"])*len(mf2_grid[\"l2_penalty\"])"
+        },
+        {
+          "lineno": 278,
+          "source": "report={\n        \"version\":VERSION,\"status\":\"READY\",\n        \"continuation_authority_sha256\":sha256_file(apath),\"training_gate_sha256\":sha256_file(gpath),\"target_authority_sha256\":sha256_file(tpath),\n        \"development_only\":True,\"training_observation_count\":len(rows),\"raw_feature_column_count\":len(feature_cols),\n        \"MF2_expected_config_evaluation_count\":expected_total,\n        \"MF2_completed_config_evaluation_count\":len(config_done),\n        \"MF2_existing_checkpoint_reuse_count\":auth.get(\"MF2_existing_completed_config_checkpoint_count\",0),\n        \"MF2_walk_forward_evidence\":evidence,\n        \"MF2_config_stability\":stability,\n        \"MF2_development_selected_configs\":selected,\n        \"MF1_retuning_performed\":False,\n        \"MF3_execution_performed\":False,\n        \"MF3_rescue_search_performed\":False,\n        \"model_family_champion_selected\":False,\n        \"validation_opened\":False,\"final_holdout_opened\":False,\n        \"production_model_change_authorized\":False,\"production_authority_effect\":False,\n        \"next_step\":\"BUILD_M77_19_8_7_9_MF1_VS_MF2_DEVELOPMENT_EVIDENCE_STABILITY_AND_VALIDATION_ADVANCEMENT_GATE\",\n    }"
+        },
+        {
+          "lineno": 202,
+          "source": "config_done={tuple(x) for x in (ck.get(\"completed_configs\") or []) if x and x[0]==\"MF2\"}"
+        },
+        {
+          "lineno": 210,
+          "source": "other_e=[e for e in base.get(\"evidence\") or [] if e.get(\"family\")!=\"MF2_MONOTONIC_GAM_DIRECTION\"]"
+        },
+        {
+          "lineno": 211,
+          "source": "other_cfg=[x for x in base.get(\"completed_configs\") or [] if not x or x[0]!=\"MF2\"]"
+        },
+        {
+          "lineno": 232,
+          "source": "prep=FoldPreprocessor().fit(dtr,feature_cols,sign_map)"
+        },
+        {
+          "lineno": 240,
+          "source": "m=CertifiedMonotonicGAM(knot_count=int(knots),l2_penalty=float(l2),max_iter=300).fit(Xtr,ytr,prep.output_signs)"
+        },
+        {
+          "lineno": 223,
+          "source": "cfg=(\"MF2\",fold[\"fold_id\"],h,str(knots),str(l2))"
+        }
+      ],
+      "candidate_calls": [
+        {
+          "lineno": 269,
+          "source": "selected.append({\n            \"family\":\"MF2_MONOTONIC_GAM_DIRECTION\",\"horizon\":h,\n            \"selected_config\":{\"spline_knots\":best[4],\"l2_penalty\":best[5]},\n            \"mean_walk_forward_balanced_accuracy\":best[0],\n            \"std_walk_forward_balanced_accuracy\":-best[1],\n            \"fold_balanced_accuracies\":best[6],\n            \"fold_count\":len(best[6]),\n        })"
+        },
+        {
+          "lineno": 203,
+          "source": "len(mf2_grid[\"spline_knots\"])"
+        },
+        {
+          "lineno": 232,
+          "source": "FoldPreprocessor().fit(dtr,feature_cols,sign_map)"
+        },
+        {
+          "lineno": 233,
+          "source": "prep.transform(dtr)"
+        },
+        {
+          "lineno": 233,
+          "source": "prep.transform(dte)"
+        },
+        {
+          "lineno": 258,
+          "source": "by_h[int(e[\"horizon\"])][(int(e[\"spline_knots\"]),float(e[\"l2_penalty\"]))].append(float(e[\"balanced_accuracy\"]))"
+        },
+        {
+          "lineno": 267,
+          "source": "stability.append({\"horizon\":h,\"spline_knots\":k,\"l2_penalty\":l,\"fold_count\":len(scores),\"mean_balanced_accuracy\":mean,\"std_balanced_accuracy\":std,\"min_balanced_accuracy\":mn,\"max_balanced_accuracy\":mx})"
+        },
+        {
+          "lineno": 240,
+          "source": "CertifiedMonotonicGAM(knot_count=int(knots),l2_penalty=float(l2),max_iter=300).fit(Xtr,ytr,prep.output_signs)"
+        },
+        {
+          "lineno": 242,
+          "source": "balanced_accuracy(yte,pred)"
+        },
+        {
+          "lineno": 243,
+          "source": "evidence.append({\n                    \"fold_id\":fold[\"fold_id\"],\"horizon\":h,\"family\":\"MF2_MONOTONIC_GAM_DIRECTION\",\n                    \"status\":\"EVALUATED\",\"spline_knots\":knots,\"l2_penalty\":l2,\n                    \"train_count\":len(dtr),\"test_count\":len(dte),\"balanced_accuracy\":bal,\n                    \"elapsed_seconds\":time.perf_counter()-t\n                })"
+        },
+        {
+          "lineno": 258,
+          "source": "float(e[\"balanced_accuracy\"])"
+        },
+        {
+          "lineno": 241,
+          "source": "m.predict_proba(Xte)"
+        },
+        {
+          "lineno": 258,
+          "source": "int(e[\"spline_knots\"])"
+        }
+      ],
+      "classes": [
+        {
+          "lineno": 16,
+          "name": "EvaluationError"
+        },
+        {
+          "lineno": 71,
+          "name": "FoldPreprocessor"
+        }
+      ],
+      "function_count": 15,
+      "functions": [
+        {
+          "arg_names": [
+            "p"
+          ],
+          "end_lineno": 19,
+          "lineno": 18,
+          "name": "load_json",
+          "tags": []
+        },
+        {
+          "arg_names": [
+            "root",
+            "p"
+          ],
+          "end_lineno": 22,
+          "lineno": 20,
+          "name": "resolve",
+          "tags": []
+        },
+        {
+          "arg_names": [
+            "p"
+          ],
+          "end_lineno": 27,
+          "lineno": 23,
+          "name": "sha256_file",
+          "tags": []
+        },
+        {
+          "arg_names": [
+            "path"
+          ],
+          "end_lineno": 33,
+          "lineno": 28,
+          "name": "iter_jsonl_gz",
+          "tags": []
+        },
+        {
+          "arg_names": [
+            "path",
+            "obj"
+          ],
+          "end_lineno": 41,
+          "lineno": 34,
+          "name": "atomic_json",
+          "tags": []
+        },
+        {
+          "arg_names": [
+            "obj",
+            "path"
+          ],
+          "end_lineno": 47,
+          "lineno": 42,
+          "name": "get_path",
+          "tags": []
+        },
+        {
+          "arg_names": [
+            "v"
+          ],
+          "end_lineno": 51,
+          "lineno": 48,
+          "name": "scalar",
+          "tags": []
+        },
+        {
+          "arg_names": [
+            "values"
+          ],
+          "end_lineno": 62,
+          "lineno": 52,
+          "name": "flatten_base_features",
+          "tags": []
+        },
+        {
+          "arg_names": [
+            "profile",
+            "gate"
+          ],
+          "end_lineno": 69,
+          "lineno": 63,
+          "name": "build_structured",
+          "tags": []
+        },
+        {
+          "arg_names": [
+            "y",
+            "p"
+          ],
+          "end_lineno": 123,
+          "lineno": 117,
+          "name": "balanced_accuracy",
+          "tags": [
+            "METRIC_BAL_ACC"
+          ]
+        },
+        {
+          "arg_names": [
+            "feature_root",
+            "target_root",
+            "replay_root",
+            "gate"
+          ],
+          "end_lineno": 154,
+          "lineno": 125,
+          "name": "load_rows",
+          "tags": []
+        },
+        {
+          "arg_names": [],
+          "end_lineno": 316,
+          "lineno": 156,
+          "name": "main",
+          "tags": [
+            "MF2_MONOTONIC"
+          ]
+        },
+        {
+          "arg_names": [
+            "self",
+            "rows",
+            "feature_cols",
+            "sign_map"
+          ],
+          "end_lineno": 96,
+          "lineno": 72,
+          "name": "fit",
+          "tags": [
+            "FIT_CALL"
+          ]
+        },
+        {
+          "arg_names": [
+            "self",
+            "rows"
+          ],
+          "end_lineno": 115,
+          "lineno": 97,
+          "name": "transform",
+          "tags": [
+            "TRANSFORM_CALL"
+          ]
+        },
+        {
+          "arg_names": [],
+          "end_lineno": 215,
+          "lineno": 206,
+          "name": "save_checkpoint",
+          "tags": [
+            "MF2_MONOTONIC"
+          ]
+        }
+      ],
+      "imports": [
+        {
+          "lineno": 2,
+          "source": "from __future__ import annotations"
+        },
+        {
+          "lineno": 3,
+          "source": "import argparse,csv,gzip,hashlib,json,math,os,tempfile,time"
+        },
+        {
+          "lineno": 4,
+          "source": "from collections import defaultdict"
+        },
+        {
+          "lineno": 5,
+          "source": "from pathlib import Path"
+        },
+        {
+          "lineno": 6,
+          "source": "import numpy as np"
+        },
+        {
+          "lineno": 180,
+          "source": "from trading_ai.research.m77.m77_19_8_7_4_certified_solvers import CertifiedMonotonicGAM"
+        }
+      ],
+      "path": "/Users/vinay.hatti/TradingPlatform/scripts/run_m77_19_8_7_8_mf2_only_development_walk_forward_completion_checkpoint_reuse.py",
+      "sha256": "f4d00ed8c9afe5621bb49eb271e83e0d477201bc5a6edd21de0cd39b93da287c"
+    },
+    "mf2_runtime": {
+      "candidate_assignments": [
+        {
+          "lineno": 6,
+          "source": "VERSION=\"M77.19.8.7.4-MF2-RUNTIME-MF3-ELASTIC-NET-QUANTILE-SOLVER-CERTIFICATION-1.0\""
+        },
+        {
+          "lineno": 7,
+          "source": "EXPECTED_873_VERSION=\"M77.19.8.7.3-MF2-MONOTONIC-SIGN-SEMANTIC-AUTHORITY-MF3-SOLVER-DECISION-GATE-1.0\""
+        },
+        {
+          "lineno": 43,
+          "source": "mf2_checks=synthetic_mf2_certification()"
+        },
+        {
+          "lineno": 45,
+          "source": "mf2_cert=all(mf2_checks.values())"
+        },
+        {
+          "lineno": 51,
+          "source": "rows=[\n      {\"family\":\"MF2_MONOTONIC_GAM_DIRECTION\",\"runtime\":\"SCIPY_LBFGSB_LINEAR_SPLINE_GAM\",\"certified\":True,\"development_scoring_authorized\":True},\n      {\"family\":\"MF3_QUANTILE_LINEAR_RETURN_DISTRIBUTION\",\"runtime\":\"SCIPY_POWELL_EXACT_PINBALL_ELASTIC_NET_REFERENCE_SOLVER\",\"certified\":True,\"development_scoring_authorized\":False},\n    ]"
+        },
+        {
+          "lineno": 55,
+          "source": "report={\n      \"version\":VERSION,\"status\":\"READY\",\"semantic_gate_sha256\":sha256_file(sp),\"solver_module_sha256\":sha256_file(solver_path),\n      \"MF2\":{\n        \"runtime\":\"SCIPY_LBFGSB_LINEAR_SPLINE_GAM\",\n        \"objective\":\"LOGISTIC_NLL_PLUS_L2\",\n        \"monotonic_enforcement\":\"COEFFICIENT_BOUNDS_ON_LINEAR_HINGE_SPLINE_BASIS\",\n        \"semantic_sign_authority_required\":True,\n        \"synthetic_certification\":mf2_checks,\n        \"runtime_certified\":True,\n        \"development_scoring_authorized\":True,\n      },\n      \"MF3\":{\n        \"runtime\":\"SCIPY_POWELL_EXACT_PINBALL_ELASTIC_NET_REFERENCE_SOLVER\",\n        \"objective\":\"MEAN_PINBALL_PLUS_ALPHA_TIMES_ELASTIC_NET\",\n        \"alpha_supported\":True,\"l1_ratio_supported\":True,\"quantile_supported\":True,\n        \"synthetic_certification\":mf3_checks,\n        \"objective_contract_certified\":True,\n        \"reference_runtime_certified\":True,\n        \"development_scoring_authorized\":False,\n        \"development_scoring_block_reason\":\"REFERENCE_SOLVER_EXACT_BUT_NOT_CERTIFIED_SCALABLE_FOR_300K_ROW_WALK_FORWARD\",\n        \"next_requirement\":\"CERTIFY_SCALABLE_SOLVER_WITH_NUMERICAL_PARITY_TO_REFERENCE\",\n      },\n      \"model_family_comparison_complete\":"
+        }
+      ],
+      "candidate_calls": [
+        {
+          "lineno": 91,
+          "source": "print(\"MF2_runtime: SCIPY_LBFGSB_LINEAR_SPLINE_GAM\")"
+        }
+      ],
+      "classes": [
+        {
+          "lineno": 9,
+          "name": "CertError"
+        }
+      ],
+      "function_count": 5,
+      "functions": [
+        {
+          "arg_names": [
+            "p"
+          ],
+          "end_lineno": 14,
+          "lineno": 10,
+          "name": "sha256_file",
+          "tags": []
+        },
+        {
+          "arg_names": [
+            "p"
+          ],
+          "end_lineno": 16,
+          "lineno": 15,
+          "name": "load_json",
+          "tags": []
+        },
+        {
+          "arg_names": [
+            "root",
+            "p"
+          ],
+          "end_lineno": 18,
+          "lineno": 17,
+          "name": "resolve",
+          "tags": []
+        },
+        {
+          "arg_names": [
+            "path",
+            "obj"
+          ],
+          "end_lineno": 26,
+          "lineno": 19,
+          "name": "atomic_json",
+          "tags": []
+        },
+        {
+          "arg_names": [],
+          "end_lineno": 105,
+          "lineno": 28,
+          "name": "main",
+          "tags": [
+            "MF2_MONOTONIC"
+          ]
+        }
+      ],
+      "imports": [
+        {
+          "lineno": 2,
+          "source": "from __future__ import annotations"
+        },
+        {
+          "lineno": 3,
+          "source": "import argparse,csv,hashlib,importlib.util,json,os,sys,tempfile"
+        },
+        {
+          "lineno": 4,
+          "source": "from pathlib import Path"
+        },
+        {
+          "lineno": 42,
+          "source": "from trading_ai.research.m77.m77_19_8_7_4_certified_solvers import synthetic_mf2_certification,synthetic_mf3_certification"
+        }
+      ],
+      "path": "/Users/vinay.hatti/TradingPlatform/scripts/run_m77_19_8_7_4_mf2_runtime_mf3_elastic_net_quantile_solver_certification.py",
+      "sha256": "3d858b6efe7765c1a11cc52d27a0fe9cace8d2da1081d0dc339a54477926ed29"
+    }
+  },
+  "status": "READY",
+  "validation_model_refit_performed": false,
+  "validation_model_retuning_performed": false,
+  "validation_preprocessor_refit_performed": false,
+  "validation_scoring_execution_authorized": false,
+  "validation_scoring_performed": false,
+  "version": "M77.19.8.7.10.7.1-FROZEN-DEVELOPMENT-MODEL-PREPROCESSOR-IMPLEMENTATION-REUSE-BINDING-AUTHORITY-1.0"
+}

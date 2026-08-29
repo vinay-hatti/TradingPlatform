@@ -1,0 +1,14 @@
+{
+  "milestone": "M77.19.6.5.2.14",
+  "name": "Residual Candidate Generation Semantics Forensics",
+  "authority_report_5213_sha256": "10bdff010160faa49175c123907c9c8eb365739c547c95c679841355258c847e",
+  "authority_runner_5213_1_sha256": "c3b5b27c4327f73e6767b1381ecca758eb8b1816e4f15bf57dbd9c9bade68892",
+  "native_missing_authority": 67,
+  "no_top12_residual_authority": 54,
+  "restored_by_no_top12_authority": 13,
+  "database_mode": "READ_ONLY_SPY_SESSION_CALENDAR_ONLY",
+  "parity_tolerance": 1e-09,
+  "native_level_merge_threshold": 0.003,
+  "production_authority_effect": false,
+  "full_23_year_reconstruction_authorized": false
+}

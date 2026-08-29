@@ -1,0 +1,1376 @@
+{
+  "completed_units": [
+    [
+      "WF1",
+      5
+    ],
+    [
+      "WF1",
+      10
+    ],
+    [
+      "WF1",
+      20
+    ],
+    [
+      "WF2",
+      5
+    ],
+    [
+      "WF2",
+      10
+    ],
+    [
+      "WF2",
+      20
+    ],
+    [
+      "WF3",
+      5
+    ],
+    [
+      "WF3",
+      10
+    ],
+    [
+      "WF3",
+      20
+    ],
+    [
+      "WF4",
+      5
+    ],
+    [
+      "WF4",
+      10
+    ],
+    [
+      "WF4",
+      20
+    ],
+    [
+      "WF5",
+      5
+    ],
+    [
+      "WF5",
+      10
+    ],
+    [
+      "WF5",
+      20
+    ]
+  ],
+  "evidence": [
+    {
+      "C": 0.01,
+      "balanced_accuracy": 0.5221313934330792,
+      "brier_score": 0.25012057147040695,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF1",
+      "horizon": 5,
+      "log_loss": 0.6999757012231035,
+      "roc_auc": 0.5264716476411583,
+      "status": "EVALUATED",
+      "test_count": 44700,
+      "train_count": 81602
+    },
+    {
+      "C": 0.1,
+      "balanced_accuracy": 0.5188677178121265,
+      "brier_score": 0.25056299857047204,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF1",
+      "horizon": 5,
+      "log_loss": 0.7040466485897294,
+      "roc_auc": 0.5195395136473748,
+      "status": "EVALUATED",
+      "test_count": 44700,
+      "train_count": 81602
+    },
+    {
+      "C": 1.0,
+      "balanced_accuracy": 0.5173652865450739,
+      "brier_score": 0.25067943053041114,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF1",
+      "horizon": 5,
+      "log_loss": 0.7060646621547414,
+      "roc_auc": 0.5178737835987056,
+      "status": "EVALUATED",
+      "test_count": 44700,
+      "train_count": 81602
+    },
+    {
+      "C": 10.0,
+      "balanced_accuracy": 0.5185513851895548,
+      "brier_score": 0.2505377536936342,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF1",
+      "horizon": 5,
+      "log_loss": 0.6999854694936382,
+      "roc_auc": 0.5196398316327634,
+      "status": "EVALUATED",
+      "test_count": 44700,
+      "train_count": 81602
+    },
+    {
+      "family": "MF2_MONOTONIC_GAM_DIRECTION",
+      "fold_id": "WF1",
+      "horizon": 5,
+      "reason": "NO_CERTIFIED_MONOTONIC_GAM_RUNTIME_AND_FIELD_LEVEL_SIGN_MAP",
+      "status": "BLOCKED_DEPENDENCY_OR_SIGN_AUTHORITY",
+      "test_count": 44700,
+      "train_count": 81602
+    },
+    {
+      "family": "MF3_QUANTILE_LINEAR_RETURN_DISTRIBUTION",
+      "fold_id": "WF1",
+      "horizon": 5,
+      "preregistered_alpha": [
+        0.0001,
+        0.001,
+        0.01
+      ],
+      "preregistered_l1_ratio": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "quantiles": [
+        0.1,
+        0.25,
+        0.5,
+        0.75,
+        0.9
+      ],
+      "reason": "SKLEARN_QUANTILE_REGRESSOR_HAS_ALPHA_BUT_NO_L1_RATIO;_PREREGISTERED_MF3_REQUIRES_ALPHA_AND_L1_RATIO",
+      "status": "BLOCKED_SOLVER_CONTRACT_NOT_CERTIFIED",
+      "test_count": 44868,
+      "train_count": 81916
+    },
+    {
+      "C": 0.01,
+      "balanced_accuracy": 0.5096861879424623,
+      "brier_score": 0.250249549210022,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF2",
+      "horizon": 5,
+      "log_loss": 0.7599471257474266,
+      "roc_auc": 0.5067781808199631,
+      "status": "EVALUATED",
+      "test_count": 46767,
+      "train_count": 126286
+    },
+    {
+      "C": 0.1,
+      "balanced_accuracy": 0.5079341554644647,
+      "brier_score": 0.2501941947031071,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF2",
+      "horizon": 5,
+      "log_loss": 0.7614481900737551,
+      "roc_auc": 0.5133907685434344,
+      "status": "EVALUATED",
+      "test_count": 46767,
+      "train_count": 126286
+    },
+    {
+      "C": 1.0,
+      "balanced_accuracy": 0.5086511580911348,
+      "brier_score": 0.25019557880354154,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF2",
+      "horizon": 5,
+      "log_loss": 0.7645193600079897,
+      "roc_auc": 0.5138950937405016,
+      "status": "EVALUATED",
+      "test_count": 46767,
+      "train_count": 126286
+    },
+    {
+      "C": 10.0,
+      "balanced_accuracy": 0.5096585367546761,
+      "brier_score": 0.2502608851182823,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF2",
+      "horizon": 5,
+      "log_loss": 0.7659036457228465,
+      "roc_auc": 0.5120752591984365,
+      "status": "EVALUATED",
+      "test_count": 46767,
+      "train_count": 126286
+    },
+    {
+      "family": "MF2_MONOTONIC_GAM_DIRECTION",
+      "fold_id": "WF2",
+      "horizon": 5,
+      "reason": "NO_CERTIFIED_MONOTONIC_GAM_RUNTIME_AND_FIELD_LEVEL_SIGN_MAP",
+      "status": "BLOCKED_DEPENDENCY_OR_SIGN_AUTHORITY",
+      "test_count": 46767,
+      "train_count": 126286
+    },
+    {
+      "family": "MF3_QUANTILE_LINEAR_RETURN_DISTRIBUTION",
+      "fold_id": "WF2",
+      "horizon": 5,
+      "preregistered_alpha": [
+        0.0001,
+        0.001,
+        0.01
+      ],
+      "preregistered_l1_ratio": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "quantiles": [
+        0.1,
+        0.25,
+        0.5,
+        0.75,
+        0.9
+      ],
+      "reason": "SKLEARN_QUANTILE_REGRESSOR_HAS_ALPHA_BUT_NO_L1_RATIO;_PREREGISTERED_MF3_REQUIRES_ALPHA_AND_L1_RATIO",
+      "status": "BLOCKED_SOLVER_CONTRACT_NOT_CERTIFIED",
+      "test_count": 46936,
+      "train_count": 126769
+    },
+    {
+      "C": 0.01,
+      "balanced_accuracy": 0.5201780637568942,
+      "brier_score": 0.24733335118071995,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF3",
+      "horizon": 5,
+      "log_loss": 0.7238713797793928,
+      "roc_auc": 0.5278784884863715,
+      "status": "EVALUATED",
+      "test_count": 49647,
+      "train_count": 173023
+    },
+    {
+      "C": 0.1,
+      "balanced_accuracy": 0.5220081005783725,
+      "brier_score": 0.24736884711928545,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF3",
+      "horizon": 5,
+      "log_loss": 0.7240150680112407,
+      "roc_auc": 0.5284385381998261,
+      "status": "EVALUATED",
+      "test_count": 49647,
+      "train_count": 173023
+    },
+    {
+      "C": 1.0,
+      "balanced_accuracy": 0.5222887340589506,
+      "brier_score": 0.24737815377932204,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF3",
+      "horizon": 5,
+      "log_loss": 0.7232282992466732,
+      "roc_auc": 0.5284001965511033,
+      "status": "EVALUATED",
+      "test_count": 49647,
+      "train_count": 173023
+    },
+    {
+      "C": 10.0,
+      "balanced_accuracy": 0.5222156222919546,
+      "brier_score": 0.24747381262080448,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF3",
+      "horizon": 5,
+      "log_loss": 0.7270984640586844,
+      "roc_auc": 0.5286287257107483,
+      "status": "EVALUATED",
+      "test_count": 49647,
+      "train_count": 173023
+    },
+    {
+      "family": "MF2_MONOTONIC_GAM_DIRECTION",
+      "fold_id": "WF3",
+      "horizon": 5,
+      "reason": "NO_CERTIFIED_MONOTONIC_GAM_RUNTIME_AND_FIELD_LEVEL_SIGN_MAP",
+      "status": "BLOCKED_DEPENDENCY_OR_SIGN_AUTHORITY",
+      "test_count": 49647,
+      "train_count": 173023
+    },
+    {
+      "family": "MF3_QUANTILE_LINEAR_RETURN_DISTRIBUTION",
+      "fold_id": "WF3",
+      "horizon": 5,
+      "preregistered_alpha": [
+        0.0001,
+        0.001,
+        0.01
+      ],
+      "preregistered_l1_ratio": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "quantiles": [
+        0.1,
+        0.25,
+        0.5,
+        0.75,
+        0.9
+      ],
+      "reason": "SKLEARN_QUANTILE_REGRESSOR_HAS_ALPHA_BUT_NO_L1_RATIO;_PREREGISTERED_MF3_REQUIRES_ALPHA_AND_L1_RATIO",
+      "status": "BLOCKED_SOLVER_CONTRACT_NOT_CERTIFIED",
+      "test_count": 49823,
+      "train_count": 173675
+    },
+    {
+      "C": 0.01,
+      "balanced_accuracy": 0.4962945556217633,
+      "brier_score": 0.25081421838789114,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF4",
+      "horizon": 5,
+      "log_loss": 0.6948161856591216,
+      "roc_auc": 0.49131068986051973,
+      "status": "EVALUATED",
+      "test_count": 52616,
+      "train_count": 222642
+    },
+    {
+      "C": 0.1,
+      "balanced_accuracy": 0.4973655245240596,
+      "brier_score": 0.25103488092895326,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF4",
+      "horizon": 5,
+      "log_loss": 0.6952775052064231,
+      "roc_auc": 0.49070406709407177,
+      "status": "EVALUATED",
+      "test_count": 52616,
+      "train_count": 222642
+    },
+    {
+      "C": 1.0,
+      "balanced_accuracy": 0.49922842403069645,
+      "brier_score": 0.25090108871944244,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF4",
+      "horizon": 5,
+      "log_loss": 0.6950329744916018,
+      "roc_auc": 0.49399647985911144,
+      "status": "EVALUATED",
+      "test_count": 52616,
+      "train_count": 222642
+    },
+    {
+      "C": 10.0,
+      "balanced_accuracy": 0.5004931225038496,
+      "brier_score": 0.25073601247514415,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF4",
+      "horizon": 5,
+      "log_loss": 0.6947553759549108,
+      "roc_auc": 0.497943044083029,
+      "status": "EVALUATED",
+      "test_count": 52616,
+      "train_count": 222642
+    },
+    {
+      "family": "MF2_MONOTONIC_GAM_DIRECTION",
+      "fold_id": "WF4",
+      "horizon": 5,
+      "reason": "NO_CERTIFIED_MONOTONIC_GAM_RUNTIME_AND_FIELD_LEVEL_SIGN_MAP",
+      "status": "BLOCKED_DEPENDENCY_OR_SIGN_AUTHORITY",
+      "test_count": 52616,
+      "train_count": 222642
+    },
+    {
+      "family": "MF3_QUANTILE_LINEAR_RETURN_DISTRIBUTION",
+      "fold_id": "WF4",
+      "horizon": 5,
+      "preregistered_alpha": [
+        0.0001,
+        0.001,
+        0.01
+      ],
+      "preregistered_l1_ratio": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "quantiles": [
+        0.1,
+        0.25,
+        0.5,
+        0.75,
+        0.9
+      ],
+      "reason": "SKLEARN_QUANTILE_REGRESSOR_HAS_ALPHA_BUT_NO_L1_RATIO;_PREREGISTERED_MF3_REQUIRES_ALPHA_AND_L1_RATIO",
+      "status": "BLOCKED_SOLVER_CONTRACT_NOT_CERTIFIED",
+      "test_count": 52784,
+      "train_count": 223470
+    },
+    {
+      "C": 0.01,
+      "balanced_accuracy": 0.5122459425091521,
+      "brier_score": 0.24536084265549885,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF5",
+      "horizon": 5,
+      "log_loss": 0.6838247480430012,
+      "roc_auc": 0.5276604419500662,
+      "status": "EVALUATED",
+      "test_count": 25774,
+      "train_count": 274725
+    },
+    {
+      "C": 0.1,
+      "balanced_accuracy": 0.513909318834593,
+      "brier_score": 0.24532416426871093,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF5",
+      "horizon": 5,
+      "log_loss": 0.6837478542868811,
+      "roc_auc": 0.5291057481871709,
+      "status": "EVALUATED",
+      "test_count": 25774,
+      "train_count": 274725
+    },
+    {
+      "C": 1.0,
+      "balanced_accuracy": 0.5126128181967969,
+      "brier_score": 0.24538889015628385,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF5",
+      "horizon": 5,
+      "log_loss": 0.6838766249299184,
+      "roc_auc": 0.5279444930743511,
+      "status": "EVALUATED",
+      "test_count": 25774,
+      "train_count": 274725
+    },
+    {
+      "C": 10.0,
+      "balanced_accuracy": 0.5106613999461513,
+      "brier_score": 0.24546473140629393,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF5",
+      "horizon": 5,
+      "log_loss": 0.6840280405136834,
+      "roc_auc": 0.5264946091538385,
+      "status": "EVALUATED",
+      "test_count": 25774,
+      "train_count": 274725
+    },
+    {
+      "family": "MF2_MONOTONIC_GAM_DIRECTION",
+      "fold_id": "WF5",
+      "horizon": 5,
+      "reason": "NO_CERTIFIED_MONOTONIC_GAM_RUNTIME_AND_FIELD_LEVEL_SIGN_MAP",
+      "status": "BLOCKED_DEPENDENCY_OR_SIGN_AUTHORITY",
+      "test_count": 25774,
+      "train_count": 274725
+    },
+    {
+      "family": "MF3_QUANTILE_LINEAR_RETURN_DISTRIBUTION",
+      "fold_id": "WF5",
+      "horizon": 5,
+      "preregistered_alpha": [
+        0.0001,
+        0.001,
+        0.01
+      ],
+      "preregistered_l1_ratio": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "quantiles": [
+        0.1,
+        0.25,
+        0.5,
+        0.75,
+        0.9
+      ],
+      "reason": "SKLEARN_QUANTILE_REGRESSOR_HAS_ALPHA_BUT_NO_L1_RATIO;_PREREGISTERED_MF3_REQUIRES_ALPHA_AND_L1_RATIO",
+      "status": "BLOCKED_SOLVER_CONTRACT_NOT_CERTIFIED",
+      "test_count": 25864,
+      "train_count": 275716
+    },
+    {
+      "C": 0.01,
+      "balanced_accuracy": 0.539773237862838,
+      "brier_score": 0.24610379653357858,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF1",
+      "horizon": 10,
+      "log_loss": 0.687249598603559,
+      "roc_auc": 0.537812188399411,
+      "status": "EVALUATED",
+      "test_count": 44758,
+      "train_count": 81262
+    },
+    {
+      "C": 0.1,
+      "balanced_accuracy": 0.5338804127474717,
+      "brier_score": 0.24686323125780962,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF1",
+      "horizon": 10,
+      "log_loss": 0.6891493442990553,
+      "roc_auc": 0.5301526825939739,
+      "status": "EVALUATED",
+      "test_count": 44758,
+      "train_count": 81262
+    },
+    {
+      "C": 1.0,
+      "balanced_accuracy": 0.5336453546460993,
+      "brier_score": 0.24709708775902656,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF1",
+      "horizon": 10,
+      "log_loss": 0.6895186543584421,
+      "roc_auc": 0.5285637193173087,
+      "status": "EVALUATED",
+      "test_count": 44758,
+      "train_count": 81262
+    },
+    {
+      "C": 10.0,
+      "balanced_accuracy": 0.532307487517195,
+      "brier_score": 0.24709662450282485,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF1",
+      "horizon": 10,
+      "log_loss": 0.6888612983338306,
+      "roc_auc": 0.5283887514897867,
+      "status": "EVALUATED",
+      "test_count": 44758,
+      "train_count": 81262
+    },
+    {
+      "family": "MF2_MONOTONIC_GAM_DIRECTION",
+      "fold_id": "WF1",
+      "horizon": 10,
+      "reason": "NO_CERTIFIED_MONOTONIC_GAM_RUNTIME_AND_FIELD_LEVEL_SIGN_MAP",
+      "status": "BLOCKED_DEPENDENCY_OR_SIGN_AUTHORITY",
+      "test_count": 44758,
+      "train_count": 81262
+    },
+    {
+      "family": "MF3_QUANTILE_LINEAR_RETURN_DISTRIBUTION",
+      "fold_id": "WF1",
+      "horizon": 10,
+      "preregistered_alpha": [
+        0.0001,
+        0.001,
+        0.01
+      ],
+      "preregistered_l1_ratio": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "quantiles": [
+        0.1,
+        0.25,
+        0.5,
+        0.75,
+        0.9
+      ],
+      "reason": "SKLEARN_QUANTILE_REGRESSOR_HAS_ALPHA_BUT_NO_L1_RATIO;_PREREGISTERED_MF3_REQUIRES_ALPHA_AND_L1_RATIO",
+      "status": "BLOCKED_SOLVER_CONTRACT_NOT_CERTIFIED",
+      "test_count": 44867,
+      "train_count": 81487
+    },
+    {
+      "C": 0.01,
+      "balanced_accuracy": 0.5142463063205962,
+      "brier_score": 0.2501164180478942,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF2",
+      "horizon": 10,
+      "log_loss": 0.7515443691368137,
+      "roc_auc": 0.49967228846831896,
+      "status": "EVALUATED",
+      "test_count": 46806,
+      "train_count": 125561
+    },
+    {
+      "C": 0.1,
+      "balanced_accuracy": 0.5160757092854871,
+      "brier_score": 0.2498037177294084,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF2",
+      "horizon": 10,
+      "log_loss": 0.7515346939635856,
+      "roc_auc": 0.5048772804468356,
+      "status": "EVALUATED",
+      "test_count": 46806,
+      "train_count": 125561
+    },
+    {
+      "C": 1.0,
+      "balanced_accuracy": 0.5164957712582106,
+      "brier_score": 0.24968733890916542,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF2",
+      "horizon": 10,
+      "log_loss": 0.7518772579658475,
+      "roc_auc": 0.5068684034470663,
+      "status": "EVALUATED",
+      "test_count": 46806,
+      "train_count": 125561
+    },
+    {
+      "C": 10.0,
+      "balanced_accuracy": 0.5169892405109485,
+      "brier_score": 0.24957102252736346,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF2",
+      "horizon": 10,
+      "log_loss": 0.7523226364169625,
+      "roc_auc": 0.5088325576150923,
+      "status": "EVALUATED",
+      "test_count": 46806,
+      "train_count": 125561
+    },
+    {
+      "family": "MF2_MONOTONIC_GAM_DIRECTION",
+      "fold_id": "WF2",
+      "horizon": 10,
+      "reason": "NO_CERTIFIED_MONOTONIC_GAM_RUNTIME_AND_FIELD_LEVEL_SIGN_MAP",
+      "status": "BLOCKED_DEPENDENCY_OR_SIGN_AUTHORITY",
+      "test_count": 46806,
+      "train_count": 125561
+    },
+    {
+      "family": "MF3_QUANTILE_LINEAR_RETURN_DISTRIBUTION",
+      "fold_id": "WF2",
+      "horizon": 10,
+      "preregistered_alpha": [
+        0.0001,
+        0.001,
+        0.01
+      ],
+      "preregistered_l1_ratio": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "quantiles": [
+        0.1,
+        0.25,
+        0.5,
+        0.75,
+        0.9
+      ],
+      "reason": "SKLEARN_QUANTILE_REGRESSOR_HAS_ALPHA_BUT_NO_L1_RATIO;_PREREGISTERED_MF3_REQUIRES_ALPHA_AND_L1_RATIO",
+      "status": "BLOCKED_SOLVER_CONTRACT_NOT_CERTIFIED",
+      "test_count": 46935,
+      "train_count": 125890
+    },
+    {
+      "C": 0.01,
+      "balanced_accuracy": 0.5219362489193006,
+      "brier_score": 0.24560871317793626,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF3",
+      "horizon": 10,
+      "log_loss": 0.7214127911672813,
+      "roc_auc": 0.5281908118503866,
+      "status": "EVALUATED",
+      "test_count": 49696,
+      "train_count": 172735
+    },
+    {
+      "C": 0.1,
+      "balanced_accuracy": 0.5260819143648883,
+      "brier_score": 0.24563246619983467,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF3",
+      "horizon": 10,
+      "log_loss": 0.7213182104354153,
+      "roc_auc": 0.5287792661578625,
+      "status": "EVALUATED",
+      "test_count": 49696,
+      "train_count": 172735
+    },
+    {
+      "C": 1.0,
+      "balanced_accuracy": 0.5273982906380127,
+      "brier_score": 0.24562861221001667,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF3",
+      "horizon": 10,
+      "log_loss": 0.7199790114168574,
+      "roc_auc": 0.5290960435285786,
+      "status": "EVALUATED",
+      "test_count": 49696,
+      "train_count": 172735
+    },
+    {
+      "C": 10.0,
+      "balanced_accuracy": 0.5280827734068783,
+      "brier_score": 0.24570276392302895,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF3",
+      "horizon": 10,
+      "log_loss": 0.7220682506727416,
+      "roc_auc": 0.5293555687309458,
+      "status": "EVALUATED",
+      "test_count": 49696,
+      "train_count": 172735
+    },
+    {
+      "family": "MF2_MONOTONIC_GAM_DIRECTION",
+      "fold_id": "WF3",
+      "horizon": 10,
+      "reason": "NO_CERTIFIED_MONOTONIC_GAM_RUNTIME_AND_FIELD_LEVEL_SIGN_MAP",
+      "status": "BLOCKED_DEPENDENCY_OR_SIGN_AUTHORITY",
+      "test_count": 49696,
+      "train_count": 172735
+    },
+    {
+      "family": "MF3_QUANTILE_LINEAR_RETURN_DISTRIBUTION",
+      "fold_id": "WF3",
+      "horizon": 10,
+      "preregistered_alpha": [
+        0.0001,
+        0.001,
+        0.01
+      ],
+      "preregistered_l1_ratio": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "quantiles": [
+        0.1,
+        0.25,
+        0.5,
+        0.75,
+        0.9
+      ],
+      "reason": "SKLEARN_QUANTILE_REGRESSOR_HAS_ALPHA_BUT_NO_L1_RATIO;_PREREGISTERED_MF3_REQUIRES_ALPHA_AND_L1_RATIO",
+      "status": "BLOCKED_SOLVER_CONTRACT_NOT_CERTIFIED",
+      "test_count": 49822,
+      "train_count": 173199
+    },
+    {
+      "C": 0.01,
+      "balanced_accuracy": 0.4999511745266711,
+      "brier_score": 0.251092350466318,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF4",
+      "horizon": 10,
+      "log_loss": 0.6954584847805604,
+      "roc_auc": 0.4963735644280756,
+      "status": "EVALUATED",
+      "test_count": 52691,
+      "train_count": 222375
+    },
+    {
+      "C": 0.1,
+      "balanced_accuracy": 0.4998344177395478,
+      "brier_score": 0.25149360330905035,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF4",
+      "horizon": 10,
+      "log_loss": 0.6962952891435378,
+      "roc_auc": 0.49374348666505197,
+      "status": "EVALUATED",
+      "test_count": 52691,
+      "train_count": 222375
+    },
+    {
+      "C": 1.0,
+      "balanced_accuracy": 0.4995920470236379,
+      "brier_score": 0.2514035645241908,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF4",
+      "horizon": 10,
+      "log_loss": 0.6961265230080229,
+      "roc_auc": 0.4956075009951263,
+      "status": "EVALUATED",
+      "test_count": 52691,
+      "train_count": 222375
+    },
+    {
+      "C": 10.0,
+      "balanced_accuracy": 0.49953966188774795,
+      "brier_score": 0.251256619361239,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF4",
+      "horizon": 10,
+      "log_loss": 0.6958474210040998,
+      "roc_auc": 0.49942392142267866,
+      "status": "EVALUATED",
+      "test_count": 52691,
+      "train_count": 222375
+    },
+    {
+      "family": "MF2_MONOTONIC_GAM_DIRECTION",
+      "fold_id": "WF4",
+      "horizon": 10,
+      "reason": "NO_CERTIFIED_MONOTONIC_GAM_RUNTIME_AND_FIELD_LEVEL_SIGN_MAP",
+      "status": "BLOCKED_DEPENDENCY_OR_SIGN_AUTHORITY",
+      "test_count": 52691,
+      "train_count": 222375
+    },
+    {
+      "family": "MF3_QUANTILE_LINEAR_RETURN_DISTRIBUTION",
+      "fold_id": "WF4",
+      "horizon": 10,
+      "preregistered_alpha": [
+        0.0001,
+        0.001,
+        0.01
+      ],
+      "preregistered_l1_ratio": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "quantiles": [
+        0.1,
+        0.25,
+        0.5,
+        0.75,
+        0.9
+      ],
+      "reason": "SKLEARN_QUANTILE_REGRESSOR_HAS_ALPHA_BUT_NO_L1_RATIO;_PREREGISTERED_MF3_REQUIRES_ALPHA_AND_L1_RATIO",
+      "status": "BLOCKED_SOLVER_CONTRACT_NOT_CERTIFIED",
+      "test_count": 52786,
+      "train_count": 222964
+    },
+    {
+      "C": 0.01,
+      "balanced_accuracy": 0.520189357468118,
+      "brier_score": 0.2415451294093197,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF5",
+      "horizon": 10,
+      "log_loss": 0.6760875350802089,
+      "roc_auc": 0.5433313447800555,
+      "status": "EVALUATED",
+      "test_count": 25276,
+      "train_count": 274512
+    },
+    {
+      "C": 0.1,
+      "balanced_accuracy": 0.5218955634089999,
+      "brier_score": 0.24192850627927584,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF5",
+      "horizon": 10,
+      "log_loss": 0.676853802644256,
+      "roc_auc": 0.540919298859817,
+      "status": "EVALUATED",
+      "test_count": 25276,
+      "train_count": 274512
+    },
+    {
+      "C": 1.0,
+      "balanced_accuracy": 0.5213189475388472,
+      "brier_score": 0.24201802930732685,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF5",
+      "horizon": 10,
+      "log_loss": 0.6770335914267251,
+      "roc_auc": 0.5405108975267934,
+      "status": "EVALUATED",
+      "test_count": 25276,
+      "train_count": 274512
+    },
+    {
+      "C": 10.0,
+      "balanced_accuracy": 0.5206591014720355,
+      "brier_score": 0.24201058898227507,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF5",
+      "horizon": 10,
+      "log_loss": 0.6770162108644565,
+      "roc_auc": 0.5405540704095522,
+      "status": "EVALUATED",
+      "test_count": 25276,
+      "train_count": 274512
+    },
+    {
+      "family": "MF2_MONOTONIC_GAM_DIRECTION",
+      "fold_id": "WF5",
+      "horizon": 10,
+      "reason": "NO_CERTIFIED_MONOTONIC_GAM_RUNTIME_AND_FIELD_LEVEL_SIGN_MAP",
+      "status": "BLOCKED_DEPENDENCY_OR_SIGN_AUTHORITY",
+      "test_count": 25276,
+      "train_count": 274512
+    },
+    {
+      "family": "MF3_QUANTILE_LINEAR_RETURN_DISTRIBUTION",
+      "fold_id": "WF5",
+      "horizon": 10,
+      "preregistered_alpha": [
+        0.0001,
+        0.001,
+        0.01
+      ],
+      "preregistered_l1_ratio": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "quantiles": [
+        0.1,
+        0.25,
+        0.5,
+        0.75,
+        0.9
+      ],
+      "reason": "SKLEARN_QUANTILE_REGRESSOR_HAS_ALPHA_BUT_NO_L1_RATIO;_PREREGISTERED_MF3_REQUIRES_ALPHA_AND_L1_RATIO",
+      "status": "BLOCKED_SOLVER_CONTRACT_NOT_CERTIFIED",
+      "test_count": 25344,
+      "train_count": 275191
+    },
+    {
+      "C": 0.01,
+      "balanced_accuracy": 0.5353434888431613,
+      "brier_score": 0.24572624296979037,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF1",
+      "horizon": 20,
+      "log_loss": 0.6862053089895066,
+      "roc_auc": 0.5309216505428425,
+      "status": "EVALUATED",
+      "test_count": 44788,
+      "train_count": 80497
+    },
+    {
+      "C": 0.1,
+      "balanced_accuracy": 0.5269715436600679,
+      "brier_score": 0.24551497808284253,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF1",
+      "horizon": 20,
+      "log_loss": 0.6865331359416914,
+      "roc_auc": 0.524638524438466,
+      "status": "EVALUATED",
+      "test_count": 44788,
+      "train_count": 80497
+    },
+    {
+      "C": 1.0,
+      "balanced_accuracy": 0.5253495582090357,
+      "brier_score": 0.24574182229372346,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF1",
+      "horizon": 20,
+      "log_loss": 0.6862150085754477,
+      "roc_auc": 0.5224592547553162,
+      "status": "EVALUATED",
+      "test_count": 44788,
+      "train_count": 80497
+    },
+    {
+      "C": 10.0,
+      "balanced_accuracy": 0.5265606899407216,
+      "brier_score": 0.2456754993177685,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF1",
+      "horizon": 20,
+      "log_loss": 0.6854413347954436,
+      "roc_auc": 0.5230152007120987,
+      "status": "EVALUATED",
+      "test_count": 44788,
+      "train_count": 80497
+    },
+    {
+      "family": "MF2_MONOTONIC_GAM_DIRECTION",
+      "fold_id": "WF1",
+      "horizon": 20,
+      "reason": "NO_CERTIFIED_MONOTONIC_GAM_RUNTIME_AND_FIELD_LEVEL_SIGN_MAP",
+      "status": "BLOCKED_DEPENDENCY_OR_SIGN_AUTHORITY",
+      "test_count": 44788,
+      "train_count": 80497
+    },
+    {
+      "family": "MF3_QUANTILE_LINEAR_RETURN_DISTRIBUTION",
+      "fold_id": "WF1",
+      "horizon": 20,
+      "preregistered_alpha": [
+        0.0001,
+        0.001,
+        0.01
+      ],
+      "preregistered_l1_ratio": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "quantiles": [
+        0.1,
+        0.25,
+        0.5,
+        0.75,
+        0.9
+      ],
+      "reason": "SKLEARN_QUANTILE_REGRESSOR_HAS_ALPHA_BUT_NO_L1_RATIO;_PREREGISTERED_MF3_REQUIRES_ALPHA_AND_L1_RATIO",
+      "status": "BLOCKED_SOLVER_CONTRACT_NOT_CERTIFIED",
+      "test_count": 44865,
+      "train_count": 80633
+    },
+    {
+      "C": 0.01,
+      "balanced_accuracy": 0.5145362644241878,
+      "brier_score": 0.24712775276340274,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF2",
+      "horizon": 20,
+      "log_loss": 0.7396426495996113,
+      "roc_auc": 0.5043232085394442,
+      "status": "EVALUATED",
+      "test_count": 46838,
+      "train_count": 124793
+    },
+    {
+      "C": 0.1,
+      "balanced_accuracy": 0.5171661607304233,
+      "brier_score": 0.24652546042965912,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF2",
+      "horizon": 20,
+      "log_loss": 0.7383942786268702,
+      "roc_auc": 0.5128050147565086,
+      "status": "EVALUATED",
+      "test_count": 46838,
+      "train_count": 124793
+    },
+    {
+      "C": 1.0,
+      "balanced_accuracy": 0.5171367979981852,
+      "brier_score": 0.2463217639632352,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF2",
+      "horizon": 20,
+      "log_loss": 0.7379722966856926,
+      "roc_auc": 0.5153153949930636,
+      "status": "EVALUATED",
+      "test_count": 46838,
+      "train_count": 124793
+    },
+    {
+      "C": 10.0,
+      "balanced_accuracy": 0.5176383678908425,
+      "brier_score": 0.24620873397960466,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF2",
+      "horizon": 20,
+      "log_loss": 0.7377469767258733,
+      "roc_auc": 0.5169673793177345,
+      "status": "EVALUATED",
+      "test_count": 46838,
+      "train_count": 124793
+    },
+    {
+      "family": "MF2_MONOTONIC_GAM_DIRECTION",
+      "fold_id": "WF2",
+      "horizon": 20,
+      "reason": "NO_CERTIFIED_MONOTONIC_GAM_RUNTIME_AND_FIELD_LEVEL_SIGN_MAP",
+      "status": "BLOCKED_DEPENDENCY_OR_SIGN_AUTHORITY",
+      "test_count": 46838,
+      "train_count": 124793
+    },
+    {
+      "family": "MF3_QUANTILE_LINEAR_RETURN_DISTRIBUTION",
+      "fold_id": "WF2",
+      "horizon": 20,
+      "preregistered_alpha": [
+        0.0001,
+        0.001,
+        0.01
+      ],
+      "preregistered_l1_ratio": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "quantiles": [
+        0.1,
+        0.25,
+        0.5,
+        0.75,
+        0.9
+      ],
+      "reason": "SKLEARN_QUANTILE_REGRESSOR_HAS_ALPHA_BUT_NO_L1_RATIO;_PREREGISTERED_MF3_REQUIRES_ALPHA_AND_L1_RATIO",
+      "status": "BLOCKED_SOLVER_CONTRACT_NOT_CERTIFIED",
+      "test_count": 46932,
+      "train_count": 125005
+    },
+    {
+      "C": 0.01,
+      "balanced_accuracy": 0.5214683494752719,
+      "brier_score": 0.23916102022358418,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF3",
+      "horizon": 20,
+      "log_loss": 0.7222287866176874,
+      "roc_auc": 0.5441768573722514,
+      "status": "EVALUATED",
+      "test_count": 49736,
+      "train_count": 171944
+    },
+    {
+      "C": 0.1,
+      "balanced_accuracy": 0.5243617391117303,
+      "brier_score": 0.2391925483643088,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF3",
+      "horizon": 20,
+      "log_loss": 0.7223192949651938,
+      "roc_auc": 0.5430934659784934,
+      "status": "EVALUATED",
+      "test_count": 49736,
+      "train_count": 171944
+    },
+    {
+      "C": 1.0,
+      "balanced_accuracy": 0.523999202564099,
+      "brier_score": 0.2396094500002635,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF3",
+      "horizon": 20,
+      "log_loss": 0.7233727054759274,
+      "roc_auc": 0.5417102914238962,
+      "status": "EVALUATED",
+      "test_count": 49736,
+      "train_count": 171944
+    },
+    {
+      "C": 10.0,
+      "balanced_accuracy": 0.5244644263943872,
+      "brier_score": 0.24000434507036747,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF3",
+      "horizon": 20,
+      "log_loss": 0.7249980867614685,
+      "roc_auc": 0.5414405759770194,
+      "status": "EVALUATED",
+      "test_count": 49736,
+      "train_count": 171944
+    },
+    {
+      "family": "MF2_MONOTONIC_GAM_DIRECTION",
+      "fold_id": "WF3",
+      "horizon": 20,
+      "reason": "NO_CERTIFIED_MONOTONIC_GAM_RUNTIME_AND_FIELD_LEVEL_SIGN_MAP",
+      "status": "BLOCKED_DEPENDENCY_OR_SIGN_AUTHORITY",
+      "test_count": 49736,
+      "train_count": 171944
+    },
+    {
+      "family": "MF3_QUANTILE_LINEAR_RETURN_DISTRIBUTION",
+      "fold_id": "WF3",
+      "horizon": 20,
+      "preregistered_alpha": [
+        0.0001,
+        0.001,
+        0.01
+      ],
+      "preregistered_l1_ratio": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "quantiles": [
+        0.1,
+        0.25,
+        0.5,
+        0.75,
+        0.9
+      ],
+      "reason": "SKLEARN_QUANTILE_REGRESSOR_HAS_ALPHA_BUT_NO_L1_RATIO;_PREREGISTERED_MF3_REQUIRES_ALPHA_AND_L1_RATIO",
+      "status": "BLOCKED_SOLVER_CONTRACT_NOT_CERTIFIED",
+      "test_count": 49817,
+      "train_count": 172250
+    },
+    {
+      "C": 0.01,
+      "balanced_accuracy": 0.5007516341511702,
+      "brier_score": 0.25292826760575376,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF4",
+      "horizon": 20,
+      "log_loss": 0.6994324323843801,
+      "roc_auc": 0.4915552766070202,
+      "status": "EVALUATED",
+      "test_count": 52707,
+      "train_count": 221567
+    },
+    {
+      "C": 0.1,
+      "balanced_accuracy": 0.5013188940807678,
+      "brier_score": 0.253422968299147,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF4",
+      "horizon": 20,
+      "log_loss": 0.7005254135853729,
+      "roc_auc": 0.48817196100078786,
+      "status": "EVALUATED",
+      "test_count": 52707,
+      "train_count": 221567
+    },
+    {
+      "C": 1.0,
+      "balanced_accuracy": 0.5007752267275462,
+      "brier_score": 0.2533095595281499,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF4",
+      "horizon": 20,
+      "log_loss": 0.7003357019467502,
+      "roc_auc": 0.49037286066939667,
+      "status": "EVALUATED",
+      "test_count": 52707,
+      "train_count": 221567
+    },
+    {
+      "C": 10.0,
+      "balanced_accuracy": 0.5002773574965731,
+      "brier_score": 0.2532316546522334,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF4",
+      "horizon": 20,
+      "log_loss": 0.7002911669338525,
+      "roc_auc": 0.4945321676109945,
+      "status": "EVALUATED",
+      "test_count": 52707,
+      "train_count": 221567
+    },
+    {
+      "family": "MF2_MONOTONIC_GAM_DIRECTION",
+      "fold_id": "WF4",
+      "horizon": 20,
+      "reason": "NO_CERTIFIED_MONOTONIC_GAM_RUNTIME_AND_FIELD_LEVEL_SIGN_MAP",
+      "status": "BLOCKED_DEPENDENCY_OR_SIGN_AUTHORITY",
+      "test_count": 52707,
+      "train_count": 221567
+    },
+    {
+      "family": "MF3_QUANTILE_LINEAR_RETURN_DISTRIBUTION",
+      "fold_id": "WF4",
+      "horizon": 20,
+      "preregistered_alpha": [
+        0.0001,
+        0.001,
+        0.01
+      ],
+      "preregistered_l1_ratio": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "quantiles": [
+        0.1,
+        0.25,
+        0.5,
+        0.75,
+        0.9
+      ],
+      "reason": "SKLEARN_QUANTILE_REGRESSOR_HAS_ALPHA_BUT_NO_L1_RATIO;_PREREGISTERED_MF3_REQUIRES_ALPHA_AND_L1_RATIO",
+      "status": "BLOCKED_SOLVER_CONTRACT_NOT_CERTIFIED",
+      "test_count": 52786,
+      "train_count": 221953
+    },
+    {
+      "C": 0.01,
+      "balanced_accuracy": 0.522196988695229,
+      "brier_score": 0.23433362343550912,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF5",
+      "horizon": 20,
+      "log_loss": 0.6614288613172127,
+      "roc_auc": 0.5595408586894002,
+      "status": "EVALUATED",
+      "test_count": 24266,
+      "train_count": 273671
+    },
+    {
+      "C": 0.1,
+      "balanced_accuracy": 0.5266630368847499,
+      "brier_score": 0.23455571573277834,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF5",
+      "horizon": 20,
+      "log_loss": 0.6618629769960181,
+      "roc_auc": 0.5589731061754051,
+      "status": "EVALUATED",
+      "test_count": 24266,
+      "train_count": 273671
+    },
+    {
+      "C": 1.0,
+      "balanced_accuracy": 0.5255849080410147,
+      "brier_score": 0.23469929977828702,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF5",
+      "horizon": 20,
+      "log_loss": 0.6621532720930537,
+      "roc_auc": 0.5580022493764731,
+      "status": "EVALUATED",
+      "test_count": 24266,
+      "train_count": 273671
+    },
+    {
+      "C": 10.0,
+      "balanced_accuracy": 0.5246689315272993,
+      "brier_score": 0.2348169700175342,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_id": "WF5",
+      "horizon": 20,
+      "log_loss": 0.6623871297377534,
+      "roc_auc": 0.5569245223835433,
+      "status": "EVALUATED",
+      "test_count": 24266,
+      "train_count": 273671
+    },
+    {
+      "family": "MF2_MONOTONIC_GAM_DIRECTION",
+      "fold_id": "WF5",
+      "horizon": 20,
+      "reason": "NO_CERTIFIED_MONOTONIC_GAM_RUNTIME_AND_FIELD_LEVEL_SIGN_MAP",
+      "status": "BLOCKED_DEPENDENCY_OR_SIGN_AUTHORITY",
+      "test_count": 24266,
+      "train_count": 273671
+    },
+    {
+      "family": "MF3_QUANTILE_LINEAR_RETURN_DISTRIBUTION",
+      "fold_id": "WF5",
+      "horizon": 20,
+      "preregistered_alpha": [
+        0.0001,
+        0.001,
+        0.01
+      ],
+      "preregistered_l1_ratio": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "quantiles": [
+        0.1,
+        0.25,
+        0.5,
+        0.75,
+        0.9
+      ],
+      "reason": "SKLEARN_QUANTILE_REGRESSOR_HAS_ALPHA_BUT_NO_L1_RATIO;_PREREGISTERED_MF3_REQUIRES_ALPHA_AND_L1_RATIO",
+      "status": "BLOCKED_SOLVER_CONTRACT_NOT_CERTIFIED",
+      "test_count": 24304,
+      "train_count": 274136
+    }
+  ],
+  "final_holdout_opened": false,
+  "production_authority_effect": false,
+  "status": "IN_PROGRESS",
+  "validation_opened": false,
+  "version": "M77.19.8.7-DEVELOPMENT-ONLY-STRUCTURED-TRAINING-MATRIX-WALK-FORWARD-MODEL-FAMILY-EVALUATION-1.0"
+}

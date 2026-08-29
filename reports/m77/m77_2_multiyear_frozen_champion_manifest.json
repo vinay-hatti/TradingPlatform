@@ -1,0 +1,78 @@
+{
+  "version": "M77.2-MULTIYEAR-FROZEN-CHAMPION-1.0",
+  "governance": {
+    "production_authority_effect": false,
+    "production_model_mutation": false,
+    "automatic_champion_promotion": false
+  },
+  "segments": [
+    {
+      "year": 2022,
+      "start": "2022-10-14",
+      "end": "2022-12-31",
+      "cadence": "WEEKLY",
+      "replay_run_id": "m77-1-replay-35c1d85202b34923ac7935e5c7b654a3",
+      "status": "READY",
+      "prediction_count": 6838,
+      "failure_count": 0,
+      "ambiguous_same_bar_count": 297,
+      "production_authority_effect": false
+    },
+    {
+      "year": 2023,
+      "start": "2023-01-01",
+      "end": "2023-12-31",
+      "cadence": "WEEKLY",
+      "replay_run_id": "m77-1-replay-096da9ba629c463ba6cce0b35d24e655",
+      "status": "READY",
+      "prediction_count": 29892,
+      "failure_count": 0,
+      "ambiguous_same_bar_count": 1201,
+      "production_authority_effect": false
+    },
+    {
+      "year": 2024,
+      "start": "2024-01-01",
+      "end": "2024-12-31",
+      "cadence": "WEEKLY",
+      "replay_run_id": "m77-1-replay-1272eade7ab3476880753116601d92c1",
+      "status": "READY",
+      "prediction_count": 30947,
+      "failure_count": 0,
+      "ambiguous_same_bar_count": 1475,
+      "production_authority_effect": false
+    },
+    {
+      "year": 2025,
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "cadence": "WEEKLY",
+      "replay_run_id": "m77-1-replay-35d08b48d8974ad1a12aacc0a01f3aae",
+      "status": "READY",
+      "prediction_count": 31567,
+      "failure_count": 0,
+      "ambiguous_same_bar_count": 1744,
+      "production_authority_effect": false
+    },
+    {
+      "year": 2026,
+      "start": "2026-01-01",
+      "end": "2026-08-17",
+      "cadence": "WEEKLY",
+      "replay_run_id": "m77-1-replay-6f64bf3942cb45caad441c80dd86f096",
+      "status": "READY",
+      "prediction_count": 20577,
+      "failure_count": 0,
+      "ambiguous_same_bar_count": 885,
+      "production_authority_effect": false
+    }
+  ],
+  "status": "READY",
+  "replay_run_ids": [
+    "m77-1-replay-35c1d85202b34923ac7935e5c7b654a3",
+    "m77-1-replay-096da9ba629c463ba6cce0b35d24e655",
+    "m77-1-replay-1272eade7ab3476880753116601d92c1",
+    "m77-1-replay-35d08b48d8974ad1a12aacc0a01f3aae",
+    "m77-1-replay-6f64bf3942cb45caad441c80dd86f096"
+  ]
+}

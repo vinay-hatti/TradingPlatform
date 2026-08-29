@@ -1,0 +1,17 @@
+{
+  "milestone": "M77.19.7.4.19",
+  "preselected_candidates": [
+    "RC_H4_GE10_DOWNTREND_HIGH_VOL",
+    "RC_H4_GE10_DOWNTREND_WEAK_BREADTH",
+    "RC_H4_5_10_BEAR_MARKET_WEAK_BREADTH"
+  ],
+  "horizons": [
+    5,
+    10,
+    20
+  ],
+  "near_duplicate_jaccard": 0.9,
+  "validation_outcomes_used": false,
+  "final_holdout_open": false,
+  "production_authority_effect": false
+}

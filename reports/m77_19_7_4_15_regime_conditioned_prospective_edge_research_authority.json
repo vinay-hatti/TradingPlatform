@@ -1,0 +1,111 @@
+{
+  "final_holdout_policy": {
+    "candidate_scoring_authorized": false,
+    "diagnostic_peeking_authorized": false,
+    "opened": false,
+    "regime_threshold_fitting_authorized": false,
+    "start": "2023-01-01"
+  },
+  "future_research_sequence": [
+    "MATERIALIZE_POINT_IN_TIME_REGIME_CONTEXT_WITHOUT_CANDIDATE_OUTCOMES",
+    "FREEZE_REGIME_THRESHOLDS_AND_COMBINATIONS",
+    "DEVELOPMENT_ONLY_REGIME_CONDITIONED_EVALUATION",
+    "INDEPENDENT_VALIDATION_ONLY_IF_DEVELOPMENT_GATE_PASSES",
+    "FINAL_HOLDOUT_ONLY_IF_VALIDATION_GATE_PASSES"
+  ],
+  "governance": {
+    "automatic_bearish_signal_inversion": false,
+    "classifier_training": false,
+    "new_candidate_scored": false,
+    "new_candidate_selected": false,
+    "parameter_fitting": false,
+    "production_authority_effect": false,
+    "production_model_change_authorized": false,
+    "regime_combinations_searched": false,
+    "regime_thresholds_fitted": false,
+    "threshold_search_or_optimization": false
+  },
+  "instability_authority_sha256": "f59488c3136d56158894689141309948f1c5fa99e35d00479239e983df1e8f0e",
+  "instability_conclusion_frozen": {
+    "all_authorized_candidates_failed_validation": true,
+    "development_validation_instability_present": true,
+    "existing_candidate_family_retired_from_certification": true,
+    "final_holdout_remains_sealed": true
+  },
+  "next_step": "BUILD_M77_19_7_4_16_POINT_IN_TIME_REGIME_CONTEXT_MATERIALIZATION_AUTHORITY",
+  "regime_dimensions": [
+    {
+      "categories": [
+        "UP_DRIFT",
+        "NEUTRAL_DRIFT",
+        "DOWN_DRIFT"
+      ],
+      "future_data_allowed": false,
+      "id": "MARKET_DRIFT",
+      "intent": "Separate persistent upward, neutral, and downward market drift environments.",
+      "source_authority": "frozen point-in-time market/index history only",
+      "thresholds_fitted_here": false
+    },
+    {
+      "categories": [
+        "LOW_VOL",
+        "NORMAL_VOL",
+        "HIGH_VOL"
+      ],
+      "future_data_allowed": false,
+      "id": "VOLATILITY",
+      "intent": "Separate low, normal, and elevated realized-volatility environments.",
+      "source_authority": "point-in-time native/frozen volatility evidence only",
+      "thresholds_fitted_here": false
+    },
+    {
+      "categories": [
+        "UPTREND",
+        "SIDEWAYS",
+        "DOWNTREND"
+      ],
+      "future_data_allowed": false,
+      "id": "TREND_REGIME",
+      "intent": "Separate broad market trend regimes without using candidate outcomes.",
+      "source_authority": "point-in-time market/trend intelligence or frozen index history",
+      "thresholds_fitted_here": false
+    },
+    {
+      "categories": [
+        "BROAD",
+        "MIXED",
+        "WEAK"
+      ],
+      "future_data_allowed": false,
+      "id": "BREADTH_REGIME",
+      "intent": "Separate broad participation from narrow/weak participation.",
+      "source_authority": "point-in-time breadth evidence only when historically available",
+      "thresholds_fitted_here": false
+    },
+    {
+      "categories": [
+        "NORMAL",
+        "CORRECTION",
+        "BEAR_MARKET"
+      ],
+      "future_data_allowed": false,
+      "id": "BEAR_MARKET_CONTEXT",
+      "intent": "Identify major market drawdown context separately from ordinary bearish signals.",
+      "source_authority": "point-in-time index drawdown state only",
+      "thresholds_fitted_here": false
+    }
+  ],
+  "research_contract": {
+    "candidate_outcome_may_not_define_regime": true,
+    "descriptive_state_and_prospective_edge_remain_separate": true,
+    "minimum_cell_count_must_be_predeclared": true,
+    "no_final_holdout_access": true,
+    "no_historical_answer_leakage": true,
+    "no_symbol_specific_rule": true,
+    "regime_combinations_must_be_predeclared_before_candidate_scoring": true,
+    "regime_thresholds_must_be_predeclared_before_candidate_scoring": true,
+    "validation_failure_may_not_be_used_to_relabel_regimes": true
+  },
+  "status": "READY",
+  "version": "M77.19.7.4.15-REGIME-CONDITIONED-PROSPECTIVE-EDGE-RESEARCH-AUTHORITY-1.0"
+}

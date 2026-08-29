@@ -1,0 +1,107 @@
+{
+  "version": "M77.15.6.5.2-SOURCE-ANOMALY-QUARANTINE-RECERTIFICATION-1.0",
+  "status": "READY",
+  "classification": "CONFIRMED_POLYGON_SOURCE_OHLC_ANOMALY_NOT_LINEAGE_STITCH_DEFECT",
+  "source_anomaly": {
+    "date": "2004-07-28",
+    "ticker": "QQQ",
+    "field": "low",
+    "value": 0.0,
+    "evidence": "same invalid low exists in normalized QQQ source row before lineage stitch"
+  },
+  "quarantine_policy": {
+    "source_values_mutated": false,
+    "raw_source_mutated": false,
+    "lineage_mutated": false,
+    "quarantined_session_removed_from_all_common_authority_targets": true,
+    "price_imputation": false,
+    "outcome_dependent_exclusions": false
+  },
+  "quarantined_dates": [
+    "2004-07-28"
+  ],
+  "common_authority": {
+    "first_date": "2003-09-10",
+    "last_date": "2026-08-21",
+    "session_count": 5773,
+    "minimum_sessions": 5700,
+    "sessions_removed_for_source_quality": 1
+  },
+  "targets": {
+    "SPX": {
+      "research_instrument": "SPY",
+      "path": "/Users/vinay.hatti/TradingPlatform/research_data/m77_15_6_5_2/certified_common_proxy_authority/SPX_SPY_COMMON.csv",
+      "sha256": "8fba1b0d49da0696bfb9283ef6ec6528c00b6d61cba2e66ca57e2286ef42b04b",
+      "row_count": 5773,
+      "first_date": "2003-09-10",
+      "last_date": "2026-08-21",
+      "duplicate_date_count": 0,
+      "ohlc_violation_count": 0
+    },
+    "NDX": {
+      "research_instrument": "QQQ_LINEAGE",
+      "path": "/Users/vinay.hatti/TradingPlatform/research_data/m77_15_6_5_2/certified_common_proxy_authority/NDX_QQQ_LINEAGE_COMMON.csv",
+      "sha256": "f3927441549236931d37f811d40673e75e3b5eeb05314abe899d38f46986af8f",
+      "row_count": 5773,
+      "first_date": "2003-09-10",
+      "last_date": "2026-08-21",
+      "duplicate_date_count": 0,
+      "ohlc_violation_count": 0
+    },
+    "RUT": {
+      "research_instrument": "IWM",
+      "path": "/Users/vinay.hatti/TradingPlatform/research_data/m77_15_6_5_2/certified_common_proxy_authority/RUT_IWM_COMMON.csv",
+      "sha256": "1ba5c4e8557f52661f567f7d781426c5cfc6fb21cc77bbfbe5d7547104c5b81b",
+      "row_count": 5773,
+      "first_date": "2003-09-10",
+      "last_date": "2026-08-21",
+      "duplicate_date_count": 0,
+      "ohlc_violation_count": 0
+    }
+  },
+  "gates": {
+    "forensic_source_anomaly_confirmed": true,
+    "quarantine_count_exactly_one": true,
+    "quarantine_date_is_2004_07_28": true,
+    "common_start_preserved": true,
+    "common_sessions_ge_minimum": true,
+    "all_targets_same_session_count": true,
+    "all_targets_zero_duplicates": true,
+    "all_targets_zero_ohlc_violations": true,
+    "source_values_not_mutated": true,
+    "price_imputation_prohibited": true
+  },
+  "certified_for_m77_15_7_long_history_replication": true,
+  "promotion_governance": {
+    "proxy_results_are_not_index_results": true,
+    "proxy_only_survivor_may_not_advance": true,
+    "canonical_recent_index_confirmation_required": true,
+    "same_effect_direction_required_across_authorities": true,
+    "dependence_robust_confirmation_required": true
+  },
+  "replication_era_policy": {
+    "frozen_eras": [
+      [
+        "2003-09-10",
+        "2008-12-31"
+      ],
+      [
+        "2009-01-01",
+        "2014-12-31"
+      ],
+      [
+        "2015-01-01",
+        "2020-12-31"
+      ],
+      [
+        "2021-01-01",
+        "2026-08-21"
+      ]
+    ],
+    "posthoc_era_changes_prohibited": true
+  },
+  "database_writes": false,
+  "production_price_history_writes": false,
+  "production_authority_effect": false,
+  "next_step": "BUILD_M77_15_7_LONG_HISTORY_REPLICATION"
+}

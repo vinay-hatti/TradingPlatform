@@ -1,0 +1,42 @@
+{
+  "version": "M77.17.2-ASTROLOGY-RESEARCH-CLOSURE-SHADOW-RETIREMENT-1.0",
+  "closure": {
+    "M77_14": {
+      "disposition": "CLOSED_UNSUPPORTED_LONG_HISTORY_REPLICATION_FAILURE",
+      "evidence": "reports/m77/m77_17_lunar_survivor_long_history_replication.json"
+    },
+    "M77_15": {
+      "disposition": "CLOSED_UNSUPPORTED"
+    },
+    "M77_16": {
+      "disposition": "CLOSED_UNSUPPORTED"
+    }
+  },
+  "retirement": {
+    "disable_m77_14_lunar_shadow": true,
+    "preserve_historical_artifacts": true,
+    "delete_research_artifacts": false,
+    "delete_logs": false,
+    "delete_data": false,
+    "production_model_change": false,
+    "production_ranking_change": false,
+    "production_decision_change": false
+  },
+  "known_shadow_markers": [
+    "m77_14_3_prospective_lunar_volatility_shadow",
+    "M77.14.3",
+    "prospective_lunar_volatility_shadow"
+  ],
+  "candidate_orchestration_paths": [
+    "scripts/run_m77_combined_forward_shadow.sh",
+    "scripts/run_m77_combined_forward_shadow.py",
+    "scripts/run_combined_m77_forward_shadow.sh",
+    "scripts/run_combined_m77_forward_shadow.py"
+  ],
+  "governance": {
+    "reopen_rule": "NEW_EXTERNALLY_MOTIVATED_PREREGISTERED_HYPOTHESIS_ONLY",
+    "automatic_reopen": false,
+    "database_writes": false,
+    "production_authority_effect": false
+  }
+}

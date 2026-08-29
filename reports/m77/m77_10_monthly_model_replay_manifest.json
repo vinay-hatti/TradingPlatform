@@ -1,0 +1,19 @@
+{
+  "version": "M77.10.2-MONTHLY-MODEL-REPLAY-1.0",
+  "status": "READY",
+  "replay_run_id": "m77-1-replay-58778c52484f4055a0d830325a8cbd2a",
+  "start": "2022-08-31",
+  "end": "2026-05-29",
+  "cadence": "MONTHLY",
+  "authority_table": "historical_underlying_replay_authority",
+  "eligible_symbol_scope": 607,
+  "prediction_count": 25798,
+  "failure_count": 0,
+  "replay_execution_contract": "INSTALLED_M77_1_CLI_RUN_BASELINE",
+  "long_horizon_outcomes_contract": "COMPUTE_FROM_PRICE_HISTORY_DURING_CERTIFICATION",
+  "m77_8_authority": "reports/m77/m77_8_daily_pit_replay_authority.json",
+  "m77_8_sha256": "1b733c12dbba46ff0d33b1747c8161482865ee2d8a2c3d5c4995839816135a00",
+  "production_authority_effect": false,
+  "existing_weekly_m77_mutation": false,
+  "existing_daily_m77_mutation": false
+}

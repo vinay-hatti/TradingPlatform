@@ -1,0 +1,18 @@
+{
+  "provider": "NASA_JPL_HORIZONS",
+  "api_version_observed": "1.2",
+  "api_version_documented": "1.3",
+  "api_version_compatibility": "SUPPORTED_OBSERVED_VERSION",
+  "body": "JUPITER",
+  "horizons_id": "599",
+  "date": "2026-08-21",
+  "time_utc": "12:00:00",
+  "center": "EARTH_GEOCENTER_500@399",
+  "ephemeris_type": "OBSERVER",
+  "quantity": "31_OBSERVER_ECLIPTIC_LONGITUDE_LATITUDE",
+  "apparent": "AIRLESS",
+  "observer_ecliptic_longitude_deg": 131.4607519,
+  "observer_ecliptic_latitude_deg": 0.5095602,
+  "source_url_sha256": "636b35359d76dbc11951ddfd3265728f0349ad01a5b2a1d178019d7ff21fee50",
+  "cache_mode": "MATERIALIZED"
+}

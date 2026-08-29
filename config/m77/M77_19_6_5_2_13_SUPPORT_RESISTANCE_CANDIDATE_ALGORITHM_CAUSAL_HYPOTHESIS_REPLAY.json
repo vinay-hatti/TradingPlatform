@@ -1,0 +1,24 @@
+{
+  "milestone": "M77.19.6.5.2.13",
+  "title": "Support / Resistance Candidate Algorithm Causal Hypothesis Replay",
+  "m77_19_6_5_2_12_report_sha256": "e334a12928eda8da1109e14ce68f92a1ceb92fd8411f04842099bedb63d6d72c",
+  "m77_19_6_5_2_12_3_runner_sha256": "aaa9779e970a14a697d43f297954b7b2cc399b7e926cf805c334d3f4cea979a1",
+  "predeclared_arms": [
+    "NATIVE_CONTROL",
+    "NO_TOP12_RETENTION",
+    "NO_INTERNAL_ATR_CONSOLIDATION",
+    "PIVOT_RADIUS_1",
+    "PIVOT_RADIUS_3",
+    "ADD_ROLLING_WINDOW_10",
+    "ADD_ROLLING_WINDOW_200"
+  ],
+  "governance": {
+    "research_only": true,
+    "database_mode": "READ_ONLY_SPY_SESSION_CALENDAR_ONLY",
+    "threshold_search_or_optimization": false,
+    "native_level_merge_threshold": 0.003,
+    "parity_tolerance": 1e-09,
+    "production_authority_effect": false,
+    "full_23_year_reconstruction_authorized": false
+  }
+}

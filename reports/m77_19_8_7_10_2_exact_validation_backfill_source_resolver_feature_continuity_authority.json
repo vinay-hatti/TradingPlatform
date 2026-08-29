@@ -1,0 +1,217 @@
+{
+  "actual_source_insufficient_symbol_count": 0,
+  "blocked_validation_sha256": "5d92c39d14135ce891d3344b54603b4c451ebbd7226db886989cc4e0256c5232",
+  "daily_close_field": "close",
+  "daily_date_field": "session_date",
+  "development_backfill_authority_sha256": "90bbdb298bfbde0243436fe96caad0c21af4ac77e38b964d11a43140f857ea90",
+  "development_backfill_daily_close_resolution_matches": [
+    [
+      "daily_close_field",
+      "close"
+    ]
+  ],
+  "development_backfill_daily_date_resolution_matches": [
+    [
+      "daily_date_field",
+      "session_date"
+    ]
+  ],
+  "development_backfill_feature_mentions": {
+    "F020": true,
+    "F021": true,
+    "F030": true,
+    "F031": true,
+    "F070": true,
+    "F080": true,
+    "F081": true
+  },
+  "development_backfill_formula_redefinition_authorized": false,
+  "development_backfill_reference_price_resolution_matches": [
+    [
+      "reference_price_source",
+      "profile.timeframe_states.1d.close"
+    ]
+  ],
+  "development_backfill_script_function_names": [
+    "atomic_json",
+    "daily_file_map",
+    "extract_level_price",
+    "get_path",
+    "iter_jsonl_gz",
+    "load_daily_csv",
+    "load_json",
+    "main",
+    "nearest_distance",
+    "prefix_close_on_or_before",
+    "relative_strength",
+    "resolve",
+    "sha256_file",
+    "to_float",
+    "trailing_52w_location",
+    "trailing_return_by_sessions",
+    "unique_native_atr_1d",
+    "walk",
+    "write_jsonl_gz"
+  ],
+  "development_backfill_script_sha256": "b201dfb3f760c3511c8abdd30a2551d0354e70069aafacf902b0be2fefa57658",
+  "development_resolver_authority_sha256": "ca68b7036b4e166638a93d85591ca792ba73f279417b7c40111c825262295840",
+  "exact_development_backfill_implementation_reuse_required": true,
+  "exact_validation_source_continuity_certified": true,
+  "feature_approximation_authorized": false,
+  "final_holdout_opened": false,
+  "global_2018_2022_daily_coverage_required_for_every_symbol": false,
+  "global_window_false_positive_symbol_count": 38,
+  "next_step": "BUILD_M77_19_8_7_10_3_EXACT_IMPLEMENTATION_REUSE_VALIDATION_FEATURE_BACKFILL_MATERIALIZATION",
+  "production_authority_effect": false,
+  "reference_price_source": "profile.timeframe_states.1d.close",
+  "required_feature_ids": [
+    "F020",
+    "F021",
+    "F030",
+    "F031",
+    "F070",
+    "F080",
+    "F081"
+  ],
+  "resolved_development_feature_coverage": {
+    "F020": {
+      "coverage_pct": 1.0,
+      "missing": 0,
+      "present": 303689
+    },
+    "F021": {
+      "coverage_pct": 1.0,
+      "missing": 0,
+      "present": 303689
+    },
+    "F030": {
+      "coverage_pct": 1.0,
+      "missing": 0,
+      "present": 303689
+    },
+    "F031": {
+      "coverage_pct": 1.0,
+      "missing": 0,
+      "present": 303689
+    },
+    "F070": {
+      "coverage_pct": 1.0,
+      "missing": 0,
+      "present": 303689
+    },
+    "F080": {
+      "coverage_pct": 1.0,
+      "missing": 0,
+      "present": 303689
+    },
+    "F081": {
+      "coverage_pct": 1.0,
+      "missing": 0,
+      "present": 303689
+    }
+  },
+  "resolved_development_feature_coverage_matches": {
+    "F020": [
+      [
+        "coverage_summary[0]",
+        {
+          "coverage_pct": 1.0,
+          "missing": 0.0,
+          "present": 303689.0
+        }
+      ]
+    ],
+    "F021": [
+      [
+        "coverage_summary[1]",
+        {
+          "coverage_pct": 1.0,
+          "missing": 0.0,
+          "present": 303689.0
+        }
+      ]
+    ],
+    "F030": [
+      [
+        "coverage_summary[2]",
+        {
+          "coverage_pct": 1.0,
+          "missing": 0.0,
+          "present": 303689.0
+        }
+      ]
+    ],
+    "F031": [
+      [
+        "coverage_summary[3]",
+        {
+          "coverage_pct": 1.0,
+          "missing": 0.0,
+          "present": 303689.0
+        }
+      ]
+    ],
+    "F070": [
+      [
+        "coverage_summary[4]",
+        {
+          "coverage_pct": 1.0,
+          "missing": 0.0,
+          "present": 303689.0
+        }
+      ]
+    ],
+    "F080": [
+      [
+        "coverage_summary[5]",
+        {
+          "coverage_pct": 1.0,
+          "missing": 0.0,
+          "present": 303689.0
+        }
+      ]
+    ],
+    "F081": [
+      [
+        "coverage_summary[6]",
+        {
+          "coverage_pct": 1.0,
+          "missing": 0.0,
+          "present": 303689.0
+        }
+      ]
+    ]
+  },
+  "resolver_daily_close_resolution_matches": [
+    [
+      "frozen_daily_source_resolver.close_field",
+      "close"
+    ]
+  ],
+  "resolver_daily_date_resolution_matches": [
+    [
+      "frozen_daily_source_resolver.date_field",
+      "session_date"
+    ]
+  ],
+  "resolver_reference_price_resolution_matches": [
+    [
+      "reference_price_authority.preferred_path",
+      "profile.timeframe_states.1d.close"
+    ]
+  ],
+  "status": "READY",
+  "symbol_specific_forensics_sha256": "d19a5853653ca5512951f075f64f3732df419263ab788065b7e02d1d2c8f0b39",
+  "symbol_specific_history_windows_preserved": true,
+  "validation_daily_schema_failure_symbol_count": 0,
+  "validation_daily_source_missing_symbol_count": 0,
+  "validation_daily_window_failure_symbol_count": 0,
+  "validation_outcomes_opened": false,
+  "validation_profile_row_count": 141567,
+  "validation_reference_price_missing_count": 0,
+  "validation_reference_price_nonfinite_count": 0,
+  "validation_scoring_performed": false,
+  "validation_symbol_count": 570,
+  "validation_targets_opened": false,
+  "version": "M77.19.8.7.10.2-EXACT-VALIDATION-BACKFILL-SOURCE-RESOLVER-FEATURE-CONTINUITY-AUTHORITY-1.0"
+}

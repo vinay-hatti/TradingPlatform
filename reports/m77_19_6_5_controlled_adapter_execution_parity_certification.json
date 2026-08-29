@@ -1,0 +1,1291 @@
+{
+  "adapter_source_candidates": [
+    {
+      "args": [
+        "service",
+        "rows",
+        "as_of",
+        "session_set",
+        "warmup",
+        "history_rows"
+      ],
+      "function": "isolated_profile",
+      "path": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+      "score": 110
+    },
+    {
+      "args": [
+        "cfg",
+        "source_analysis"
+      ],
+      "function": "build_adapter_contract",
+      "path": "scripts/run_m77_19_3_isolated_daily_monthly_pit_harness.py",
+      "score": 70
+    },
+    {
+      "args": [
+        "session",
+        "profile",
+        "cadence",
+        "limit"
+      ],
+      "function": "fetch_replay_sample",
+      "path": "scripts/run_m77_19_6_4_exact_frozen_input_context_replay_adapter.py",
+      "score": 50
+    },
+    {
+      "args": [
+        "profiles"
+      ],
+      "function": "choose_replay_tables",
+      "path": "scripts/run_m77_19_6_4_exact_frozen_input_context_replay_adapter.py",
+      "score": 50
+    },
+    {
+      "args": [
+        "session",
+        "cadence",
+        "replay_profile",
+        "replay_row",
+        "price_profile"
+      ],
+      "function": "build_bundle_for_observation",
+      "path": "scripts/run_m77_19_6_4_exact_frozen_input_context_replay_adapter.py",
+      "score": 50
+    },
+    {
+      "args": [
+        "session"
+      ],
+      "function": "build_session_calendar",
+      "path": "scripts/run_m77_8_daily_pit_replay_authority.py",
+      "score": 30
+    },
+    {
+      "args": [
+        "root"
+      ],
+      "function": "discover_adapter_sources",
+      "path": "scripts/run_m77_19_6_5_controlled_adapter_execution_parity_certification.py",
+      "score": 30
+    },
+    {
+      "args": [
+        "candidates",
+        "cadence"
+      ],
+      "function": "choose_adapter",
+      "path": "scripts/run_m77_19_6_5_controlled_adapter_execution_parity_certification.py",
+      "score": 30
+    },
+    {
+      "args": [
+        "fn",
+        "bundle",
+        "cadence"
+      ],
+      "function": "build_call_kwargs",
+      "path": "scripts/run_m77_19_6_5_controlled_adapter_execution_parity_certification.py",
+      "score": 30
+    },
+    {
+      "args": [
+        "session",
+        "cadence",
+        "row",
+        "price_profile"
+      ],
+      "function": "build_bundle",
+      "path": "scripts/run_m77_19_6_4_2_joined_frozen_replay_authority_recovery.py",
+      "score": 20
+    },
+    {
+      "args": [
+        "year",
+        "html"
+      ],
+      "function": "_parse_historical_fomc_year",
+      "path": "scripts/backfill_m69_historical_macro_events.py",
+      "score": 20
+    },
+    {
+      "args": [
+        "input_path",
+        "output_path",
+        "policy_path"
+      ],
+      "function": "build",
+      "path": "scripts/run_m77_5_shadow_policy_certification.py",
+      "score": 0
+    },
+    {
+      "args": [
+        "rows"
+      ],
+      "function": "build_index",
+      "path": "scripts/run_m77_12_cadence_role_incremental_utility.py",
+      "score": 0
+    },
+    {
+      "args": [
+        "rows"
+      ],
+      "function": "build_index",
+      "path": "scripts/run_m77_11_multi_cadence_confluence.py",
+      "score": 0
+    }
+  ],
+  "blockers": [
+    "DAILY_STRICT_PARITY_NOT_CERTIFIED",
+    "WEEKLY_STRICT_PARITY_NOT_CERTIFIED",
+    "MONTHLY_STRICT_PARITY_NOT_CERTIFIED"
+  ],
+  "cadences": {
+    "DAILY": {
+      "adapter_selection_ambiguity": [],
+      "bundle_count": 48,
+      "bundle_validation_failures": [],
+      "comparisons": [],
+      "execution_failures": [
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/001_A_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/002_AAPL_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/003_ABBV_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/004_ABNB_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/005_ABT_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/006_ACGL_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/007_ACN_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/008_ADBE_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/009_ADI_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/010_ADM_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/011_ADP_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/012_ADSK_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/013_AEE_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/014_AEP_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/015_AES_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/016_AFL_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/017_AGG_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/018_AIG_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/019_AIZ_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/020_AJG_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/021_AKAM_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/022_ALB_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/023_ALGN_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/024_ALL_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/025_ALLE_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/026_ALNY_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/027_AMAT_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/028_AMCR_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/029_AMD_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/030_AME_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/031_AMGN_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/032_AMP_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/033_AMT_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/034_AMZN_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/035_ANET_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/036_AON_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/037_AOS_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/038_APA_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/039_APD_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/040_APH_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/041_APO_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/042_APP_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/043_APTV_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/044_ARE_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/045_ARES_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/046_ARKK_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/047_ASML_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/048_ATO_2022-10-14.json"
+        }
+      ],
+      "selected_adapter": {
+        "args": [
+          "cfg",
+          "source_analysis"
+        ],
+        "function": "build_adapter_contract",
+        "path": "scripts/run_m77_19_3_isolated_daily_monthly_pit_harness.py",
+        "score": 70
+      },
+      "summary": {
+        "comparison_count": 0,
+        "pass": false,
+        "reason": "NO_SUCCESSFUL_COMPARISONS"
+      }
+    },
+    "MONTHLY": {
+      "adapter_selection_ambiguity": [],
+      "bundle_count": 48,
+      "bundle_validation_failures": [],
+      "comparisons": [],
+      "execution_failures": [
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/001_A_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/002_AAPL_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/003_ABBV_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/004_ABNB_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/005_ABT_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/006_ACGL_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/007_ACN_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/008_ADBE_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/009_ADI_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/010_ADM_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/011_ADP_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/012_ADSK_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/013_AEE_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/014_AEP_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/015_AES_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/016_AFL_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/017_AGG_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/018_AIG_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/019_AIZ_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/020_AJG_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/021_AKAM_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/022_ALB_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/023_ALGN_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/024_ALL_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/025_ALLE_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/026_ALNY_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/027_AMAT_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/028_AMCR_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/029_AMD_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/030_AME_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/031_AMGN_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/032_AMP_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/033_AMT_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/034_AMZN_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/035_ANET_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/036_AON_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/037_AOS_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/038_APA_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/039_APD_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/040_APH_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/041_APO_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/042_APP_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/043_APTV_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/044_ARE_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/045_ARES_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/046_ARKK_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/047_ASML_2022-10-31.json"
+        },
+        {
+          "errors": [
+            "PRICE_HISTORY_ARGUMENT_NOT_FOUND",
+            "AS_OF_ARGUMENT_NOT_FOUND",
+            "UNRESOLVED_REQUIRED_ARGUMENTS:cfg,source_analysis"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/048_ATO_2022-10-31.json"
+        }
+      ],
+      "selected_adapter": {
+        "args": [
+          "cfg",
+          "source_analysis"
+        ],
+        "function": "build_adapter_contract",
+        "path": "scripts/run_m77_19_3_isolated_daily_monthly_pit_harness.py",
+        "score": 70
+      },
+      "summary": {
+        "comparison_count": 0,
+        "pass": false,
+        "reason": "NO_SUCCESSFUL_COMPARISONS"
+      }
+    },
+    "WEEKLY": {
+      "adapter_selection_ambiguity": [],
+      "bundle_count": 48,
+      "bundle_validation_failures": [],
+      "comparisons": [],
+      "execution_failures": [
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/001_A_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/002_AAPL_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/003_ABBV_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/004_ABNB_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/005_ABT_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/006_ACGL_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/007_ACN_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/008_ADBE_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/009_ADI_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/010_ADM_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/011_ADP_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/012_ADSK_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/013_AEE_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/014_AEP_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/015_AES_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/016_AFL_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/017_AGG_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/018_AIG_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/019_AIZ_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/020_AJG_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/021_AKAM_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/022_ALB_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/023_ALGN_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/024_ALL_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/025_ALLE_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/026_ALNY_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/027_AMAT_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/028_AMCR_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/029_AMD_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/030_AME_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/031_AMGN_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/032_AMP_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/033_AMT_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/034_AMZN_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/035_ANET_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/036_AON_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/037_AOS_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/038_APA_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/039_APD_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/040_APH_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/041_APO_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/042_APP_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/043_APTV_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/044_ARE_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/045_ARES_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/046_ARKK_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/047_ASML_2022-10-14.json"
+        },
+        {
+          "errors": [
+            "UNRESOLVED_REQUIRED_ARGUMENTS:rows,service,session_set"
+          ],
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/048_ATO_2022-10-14.json"
+        }
+      ],
+      "selected_adapter": {
+        "args": [
+          "service",
+          "rows",
+          "as_of",
+          "session_set",
+          "warmup",
+          "history_rows"
+        ],
+        "function": "isolated_profile",
+        "path": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+        "score": 110
+      },
+      "summary": {
+        "comparison_count": 0,
+        "pass": false,
+        "reason": "NO_SUCCESSFUL_COMPARISONS"
+      }
+    }
+  },
+  "controlled_exact_input_parity_certified": false,
+  "full_23_year_reconstruction_authorized": false,
+  "generated_at": "2026-08-23T07:46:58.393332+00:00",
+  "governance": {
+    "confidence_epsilon": 1e-09,
+    "deterministic_repeat_required_pct": 100.0,
+    "direction_match_required_pct": 100.0,
+    "full_23_year_reconstruction_authorized": false,
+    "parity_thresholds_relaxed": false,
+    "production_authority_effect": false,
+    "production_database_access_required": false,
+    "production_database_writes": false,
+    "research_only": true,
+    "score_epsilon": 1e-09,
+    "semantic_hash_match_required_pct": 100.0
+  },
+  "next_step": "RESOLVE_M77_19_6_5_CONTROLLED_EXECUTION_BLOCKERS",
+  "prior_report": "/Users/vinay.hatti/TradingPlatform/reports/m77_19_6_4_2_joined_frozen_replay_authority_recovery.json",
+  "production_authority_effect": false,
+  "version": "M77.19.6.5-CONTROLLED-ADAPTER-EXECUTION-PARITY-CERTIFICATION-1.0"
+}

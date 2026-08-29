@@ -1,0 +1,120 @@
+Institutional Options strategies outcome [GOVERNED_NO_STRATEGY]: m62-opp-526380a81414438586eeb66c9d7d8cef: ValueError: No eligible option strategies generated
+Institutional Options strategies outcome [GOVERNED_NO_STRATEGY]: m62-opp-c35e7c33feb6456a859ecdf95e1fddcc: ValueError: No eligible option strategies generated
+Institutional Options strategies outcome [GOVERNED_NO_STRATEGY]: m62-opp-615b1d34cada46038f547041f17bba5f: ValueError: No eligible option strategies generated
+Institutional Options strategies outcome [GOVERNED_NO_STRATEGY]: m62-opp-1a1f30b992674d44970155ca1c9b899d: ValueError: No eligible option strategies generated
+Institutional Options strategies outcome [GOVERNED_NO_STRATEGY]: m62-opp-b7def89ae02c4a19a32a9ca348a6bdb4: ValueError: No eligible option strategies generated
+Institutional Options strategies outcome [GOVERNED_NO_STRATEGY]: m62-opp-c1310ca03dd44467bdb679bebd10458e: ValueError: No eligible option strategies generated
+Institutional Options strategies outcome [GOVERNED_NO_STRATEGY]: m62-opp-621e55a38adc46bab311d5d9c9ff2754: ValueError: No eligible option strategies generated
+Institutional Options contracts: status=DEGRADED; requested=305, optimized=303, failed=2, executable_recommendations=1306, non_executable_recommendations=772, governed_no_strategy=0, governed_no_contract=2, missing_option_data=0, unexpected_failures=0, parallel_workers=4, execution_mode=PARALLEL_OPPORTUNITY_ISOLATED; duration=108.5589s
+Institutional Options contracts outcome [GOVERNED_NO_CONTRACT]: m62-opp-52fabbfc4be14b05b2a716aded4d25f9: ValueError: No executable contract recommendation generated for any eligible strategy after exhaustive package evaluation; evaluated=7
+Institutional Options contracts outcome [GOVERNED_NO_CONTRACT]: m62-opp-a08962189db14176af95be715f100334: ValueError: No executable contract recommendation generated for any eligible strategy after exhaustive package evaluation; evaluated=2
+Option Valuation Intelligence: status=DEGRADED, built=1606, underpriced=152, overpriced=853, average_edge_score=42.4861, scope=CURRENT_RUN, duration=39.3696s, rate=40.7929/s
+Option Valuation parallel profile: mode=PARALLEL_PURE_COMPUTE_SINGLE_WRITER, workers=4, preload=31.133568s, coherent_market=2.929674s, compute=2.650526s, persist=0.305053s
+Institutional Options decisions: status=DEGRADED; requested=354, created=2, refreshed=28, failed=0, prerequisite_requested=354, valuation_failed=0, management_failed=0, remaining_contracts_optimized=191, governed_no_strategy=0, governed_no_contract=0, missing_option_data=0, governed_not_ready=191, reconciled_ready=33, unexpected_failures=0; duration=33.1743s
+Institutional Options advancement summary: strategies_generated=304, governed_no_strategy=12, contracts_optimized=303, governed_no_contract=2, missing_option_data=0, governed_not_ready=191, reconciled_ready=33, unexpected_failures=0, decisions_created=2, decisions_refreshed=28
+Futures Intelligence: status=READY, provider=POLYGON_FUTURES, products=ES,NQ,RTY
+OPEX Intelligence: status=READY, built=9, reused=0, cycle_outcome=AUTHORITY_REBUILT, symbols=SPX,NDX,RUT, cycles=3
+Continuous Learning: status=READY, predictions=11, outcomes=0, calibration_samples=29, execution_samples=52
+Shared intelligence finalization: status=READY; report=reports/market_ingestion/options_finalization_latest.json
+Options end-to-end performance: 1245.39s
+[Tue Aug 18 01:02:32 CDT 2026] RUN: /opt/homebrew/bin/uv run python scripts/verify_intraday_ingestion_lineage.py --expected-stock-run-id stock-scan-661eea95944142409e1a38a0b763c26b
+LINEAGE_OK stock_scanner_run_id=stock-scan-661eea95944142409e1a38a0b763c26b opportunity_count=368
+[Tue Aug 18 01:02:34 CDT 2026] END job=intraday_underlying_options_refresh status=READY stock_scanner_run_id=stock-scan-661eea95944142409e1a38a0b763c26b
+================================================================
+[Tue Aug 18 01:25:18 CDT 2026] START job=intraday_underlying_options_refresh
+[Tue Aug 18 01:25:18 CDT 2026] RUN: /opt/homebrew/bin/uv run python scripts/ingest_underlying_data.py --universe-file data/universe/us_listed_equities_etfs.csv --index-universe-file data/universe/us_market_indices.csv --asset-classes EQUITY,ETF,INDEX --end 2026-08-18 --lookback-days 1460 --underlying-fetch-mode auto --underlying-incremental-sessions 5 --underlying-stale-threshold-days 10 --max-workers 4 --request-interval 15 --require-stock-intelligence --require-institutional-options --require-finalize
+Market ingestion universe: 614 canonical instruments
+Asset classes: EQUITY=518, ETF=93, INDEX=3
+[INDEX] SPX: price=I:SPX, options_snapshot=I:SPX, options_reference=SPX
+[INDEX] NDX: price=I:NDX, options_snapshot=I:NDX, options_reference=NDX
+[INDEX] RUT: price=I:RUT, options_snapshot=I:RUT, options_reference=RUT
+
+UNDERLYING DATA INGESTION
+------------------------------------------------
+Polygon grouped daily mode: requests=5 instead of 611 ticker requests; incremental_sessions=5; stale_repairs=1; cache_write=false
+[BULK OK] 2026-08-12: 610 canonical bars; 610 persisted (0 inserted, 610 updated); request=1/5; attempts=1
+[BULK OK] 2026-08-13: 610 canonical bars; 610 persisted (0 inserted, 610 updated); request=2/5; attempts=1
+[BULK OK] 2026-08-14: 610 canonical bars; 610 persisted (0 inserted, 610 updated); request=3/5; attempts=1
+[BULK OK] 2026-08-17: 609 canonical bars; 609 persisted (0 inserted, 609 updated); request=4/5; attempts=1
+[BULK OK] 2026-08-18: 0 canonical bars; 0 persisted (0 inserted, 0 updated); request=5/5; attempts=1
+Repairing 1 stale/missing symbols with ticker-specific historical requests.
+[OK] EA: 992 downloaded; 992 persisted (0 inserted, 992 updated); provider=PolygonHistoricalProvider; attempts=1
+[OK] SPX: 879 downloaded; 879 persisted (0 inserted, 879 updated); provider=PolygonIndexHistoricalProvider; attempts=1
+[OK] NDX: 882 downloaded; 882 persisted (0 inserted, 882 updated); provider=PolygonIndexHistoricalProvider; attempts=1
+[OK] RUT: 486 downloaded; 486 persisted (0 inserted, 486 updated); provider=PolygonIndexHistoricalProvider; attempts=1
+
+SHARED INTELLIGENCE FINALIZATION
+------------------------------------------------
+Trend Intelligence stage: trend state; status=READY; duration=6.230s; symbols=614; skipped=0; errors=0
+Trend Intelligence stage: trend transitions; status=READY; duration=4.552s; symbols=611; skipped=3; errors=0
+Trend Intelligence stage: trend forecasts; status=READY; duration=6.070s; symbols=611; skipped=3; errors=0
+Trend Intelligence stage: institutional participation; status=READY; duration=7.496s; symbols=611; skipped=3; errors=0
+Trend Intelligence stage: platform context; status=READY; duration=1.310s; symbols=614; skipped=0; errors=0
+Trend Intelligence refresh: READY
+Market overview refresh: bias=MODERATELY_BULLISH, health=64.9, breadth=DIVERGING, regime=UPTREND
+Market intelligence refresh: correlation=LOW_CORRELATION, sentiment=NEUTRAL, risk=NORMAL
+Published market state: status=DEGRADED, scanner_ready=true, decision_context_ready=true, publication=current_market_state, run_id=market-ingestion-20260818T062754922498Z
+Stock Intelligence publication: status=READY, publication=current_stock_intelligence, run_id=stock-scan-c21ef4620a4145deae47dea69cf6d3d5, symbols=614/614, candidates=614, timeframes=1d,1w,1mo
+Institutional Inflection Intelligence: status=READY, mode=UNDERLYING_PRIMARY, built=614, average=43.798, high_conviction=18, actionable=23, watch=44
+Institutional Options materialization: publication=current_stock_intelligence, run_id=stock-scan-c21ef4620a4145deae47dea69cf6d3d5, requested=614, discovered=88, validated=368, rejected=246, existing=324, refreshed=280, existing_rejected=0, exact_current_lineage_rows=0, terminal_exact_preserved=0, lineage_collisions_prevented=0, unsafe_logical_contentions=0
+Institutional Options downstream advancement: skipped by request
+Futures Intelligence: status=READY, provider=POLYGON_FUTURES, products=ES,NQ,RTY
+OPEX Intelligence: status=READY, built=0, reused=9, cycle_outcome=NOOP_UNCHANGED_AUTHORITY, symbols=SPX,NDX,RUT, cycles=3
+Continuous Learning: status=READY, predictions=0, outcomes=0, calibration_samples=29, execution_samples=52
+Shared intelligence finalization: status=READY; report=reports/market_ingestion/underlying_finalization_latest.json
+[Tue Aug 18 01:35:09 CDT 2026] GOVERNED_LINEAGE expected_stock_scanner_run_id=stock-scan-c21ef4620a4145deae47dea69cf6d3d5
+[Tue Aug 18 01:35:09 CDT 2026] RUN: /opt/homebrew/bin/uv run python scripts/ingest_options_data.py --universe-file data/universe/us_listed_equities_etfs.csv --index-universe-file data/universe/us_market_indices.csv --asset-classes EQUITY,ETF,INDEX --end 2026-08-18 --options-minimum-dte 1 --options-maximum-dte 180 --options-minimum-open-interest 1 --options-minimum-volume 0 --options-maximum-strike-distance-pct 0.40 --polygon-requests-per-second 8 --polygon-network-workers 1 --options-batch-size 10000 --require-institutional-options --require-finalize
+Market ingestion universe: 614 canonical instruments
+Asset classes: EQUITY=518, ETF=93, INDEX=3
+[INDEX] SPX: price=I:SPX, options_snapshot=I:SPX, options_reference=SPX
+[INDEX] NDX: price=I:NDX, options_snapshot=I:NDX, options_reference=NDX
+[INDEX] RUT: price=I:RUT, options_snapshot=I:RUT, options_reference=RUT
+
+OPTIONS DATA INGESTION
+------------------------------------------------
+Dealer positioning refresh: 613 refreshed, 1 skipped, 0 failed, 0 reused, mode=PARALLEL_PURE_COMPUTE_SINGLE_BULK_WRITER, workers=4, preload=34.13s, execution=131.43s
+Dealer timing profile: preload=34.13s, compute_wall=52.13s, compute_worker=196.45s, persistence=39.63s (delete=2.82s, prepare=11.65s, insert=24.91s, commit=0.00s), reports=0.00s
+Governed option lineage: snapshot=options-20260818T063510560680Z, timestamp=2026-08-18T06:44:51.025983+00:00, contracts=261932, volatility=613, liquidity=613, completeness=99.8371, stale_daily_rows_pruned=408
+Options snapshot mode: FRESH; cycle=options-20260818T063510560680Z; capture_window=2026-08-18T06:35:11.653273+00:00..2026-08-18T06:44:51.025983+00:00
+Options ingestion: 261932 valid, 261932 persisted/upserted, 0 failed batches, 0 resumed batches
+Options performance: capture=579.37s, snapshot_finalize=5.90s, derived_parallel_wall=132.26s (volatility=6.26s, liquidity=5.98s, dealer=132.25s), options_domain=718.58s
+Polygon capture profile: mode=SEQUENTIAL_SYMBOL_CAPTURE, workers=1, global_rps=8.0, requests=2445, aggregate_http=382.47s, aggregate_throttle_wait=0.05s
+
+SHARED INTELLIGENCE FINALIZATION
+------------------------------------------------
+Trend Intelligence: reused latest persisted publication
+Market overview refresh: bias=MODERATELY_BULLISH, health=64.9, breadth=DIVERGING, regime=UPTREND
+Market intelligence refresh: correlation=LOW_CORRELATION, sentiment=NEUTRAL, risk=NORMAL
+Published market state: status=DEGRADED, scanner_ready=true, decision_context_ready=true, publication=current_market_state, run_id=market-ingestion-20260818T064742897670Z
+Stock Intelligence publication: reused underlying-owned materialized authority run=stock-scan-c21ef4620a4145deae47dea69cf6d3d5
+Institutional Inflection Intelligence: status=DEGRADED, mode=OPTIONS_ENRICHMENT, built=614, average=43.798, high_conviction=18, actionable=23, watch=44
+Institutional Options materialization: not executed (underlying ingestion owns opportunity creation)
+Institutional Options advancement scope: publication=current_stock_intelligence, run_id=stock-scan-c21ef4620a4145deae47dea69cf6d3d5, opportunities=368
+Institutional Options strategies: status=DEGRADED; requested=325, generated=313, failed=12, eligible_candidates=2140, rejected_candidates=1655, governed_no_strategy=12, governed_no_contract=0, missing_option_data=0, unexpected_failures=0; duration=10.2075s
+Institutional Options strategies outcome [GOVERNED_NO_STRATEGY]: m62-opp-ff47e8ec5f3648dc8ab5e05dd0f13fb2: ValueError: No eligible option strategies generated
+Institutional Options strategies outcome [GOVERNED_NO_STRATEGY]: m62-opp-6858731b02e24676adfffe654b67bbe0: ValueError: No eligible option strategies generated
+Institutional Options strategies outcome [GOVERNED_NO_STRATEGY]: m62-opp-80a10514aa81402986cefbe60848a51d: ValueError: No eligible option strategies generated
+Institutional Options strategies outcome [GOVERNED_NO_STRATEGY]: m62-opp-0eb187d3d8e64148a40ef32d00ad2221: ValueError: No eligible option strategies generated
+Institutional Options strategies outcome [GOVERNED_NO_STRATEGY]: m62-opp-69efd314008e426492d1dc93a74028c5: ValueError: No eligible option strategies generated
+Institutional Options strategies outcome [GOVERNED_NO_STRATEGY]: m62-opp-526380a81414438586eeb66c9d7d8cef: ValueError: No eligible option strategies generated
+Institutional Options strategies outcome [GOVERNED_NO_STRATEGY]: m62-opp-c35e7c33feb6456a859ecdf95e1fddcc: ValueError: No eligible option strategies generated
+Institutional Options strategies outcome [GOVERNED_NO_STRATEGY]: m62-opp-615b1d34cada46038f547041f17bba5f: ValueError: No eligible option strategies generated
+Institutional Options strategies outcome [GOVERNED_NO_STRATEGY]: m62-opp-1a1f30b992674d44970155ca1c9b899d: ValueError: No eligible option strategies generated
+Institutional Options strategies outcome [GOVERNED_NO_STRATEGY]: m62-opp-b7def89ae02c4a19a32a9ca348a6bdb4: ValueError: No eligible option strategies generated
+Institutional Options strategies outcome [GOVERNED_NO_STRATEGY]: m62-opp-c1310ca03dd44467bdb679bebd10458e: ValueError: No eligible option strategies generated
+Institutional Options strategies outcome [GOVERNED_NO_STRATEGY]: m62-opp-621e55a38adc46bab311d5d9c9ff2754: ValueError: No eligible option strategies generated
+Institutional Options contracts: status=DEGRADED; requested=314, optimized=312, failed=2, executable_recommendations=1321, non_executable_recommendations=817, governed_no_strategy=0, governed_no_contract=2, missing_option_data=0, unexpected_failures=0, parallel_workers=4, execution_mode=PARALLEL_OPPORTUNITY_ISOLATED; duration=115.7103s
+Institutional Options contracts outcome [GOVERNED_NO_CONTRACT]: m62-opp-52fabbfc4be14b05b2a716aded4d25f9: ValueError: No executable contract recommendation generated for any eligible strategy after exhaustive package evaluation; evaluated=7
+Institutional Options contracts outcome [GOVERNED_NO_CONTRACT]: m62-opp-a08962189db14176af95be715f100334: ValueError: No executable contract recommendation generated for any eligible strategy after exhaustive package evaluation; evaluated=2
+Option Valuation Intelligence: status=DEGRADED, built=1606, underpriced=147, overpriced=841, average_edge_score=42.6903, scope=CURRENT_RUN, duration=41.7243s, rate=38.4908/s
+Option Valuation parallel profile: mode=PARALLEL_PURE_COMPUTE_SINGLE_WRITER, workers=4, preload=30.693882s, coherent_market=3.243575s, compute=2.885819s, persist=1.75269s
+Institutional Options decisions: status=DEGRADED; requested=354, created=2, refreshed=26, failed=0, prerequisite_requested=354, valuation_failed=0, management_failed=0, remaining_contracts_optimized=185, governed_no_strategy=0, governed_no_contract=0, missing_option_data=0, governed_not_ready=185, reconciled_ready=31, unexpected_failures=0; duration=30.9642s
+Institutional Options advancement summary: strategies_generated=313, governed_no_strategy=12, contracts_optimized=312, governed_no_contract=2, missing_option_data=0, governed_not_ready=185, reconciled_ready=31, unexpected_failures=0, decisions_created=2, decisions_refreshed=26
+Futures Intelligence failed: RuntimeError: No active futures contract found for ES on 2026-08-18
+OPEX Intelligence: status=READY, built=9, reused=0, cycle_outcome=AUTHORITY_REBUILT, symbols=SPX,NDX,RUT, cycles=3
+Continuous Learning: status=READY, predictions=11, outcomes=0, calibration_samples=29, execution_samples=52
+Shared intelligence finalization: status=READY; report=reports/market_ingestion/options_finalization_latest.json
+Options end-to-end performance: 1269.54s
+[Tue Aug 18 01:56:20 CDT 2026] RUN: /opt/homebrew/bin/uv run python scripts/verify_intraday_ingestion_lineage.py --expected-stock-run-id stock-scan-c21ef4620a4145deae47dea69cf6d3d5
+LINEAGE_OK stock_scanner_run_id=stock-scan-c21ef4620a4145deae47dea69cf6d3d5 opportunity_count=368
+[Tue Aug 18 01:56:21 CDT 2026] END job=intraday_underlying_options_refresh status=READY stock_scanner_run_id=stock-scan-c21ef4620a4145deae47dea69cf6d3d5

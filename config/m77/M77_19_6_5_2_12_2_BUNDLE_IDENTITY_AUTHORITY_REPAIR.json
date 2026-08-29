@@ -1,0 +1,21 @@
+{
+  "milestone": "M77.19.6.5.2.12.2",
+  "title": "Bundle Identity Authority Repair",
+  "repair_scope": "dependency wiring only",
+  "pre_repair_m77_19_6_5_2_12_1_runner_sha256": "c1d1a747f56f3d53024a6e9ab8655a552cac28063453bebfa2046303199f9f3b",
+  "bundle_identity_authority": {
+    "symbol": "bundle['prediction_identity']['symbol']",
+    "as_of": "bundle['prediction_identity']['as_of']"
+  },
+  "frozen_authority": "bundle['frozen_profile']",
+  "normalization_authority": "pinned helper529.normalize_rows",
+  "causal_design_changed": false,
+  "governance": {
+    "research_only": true,
+    "database_mode": "READ_ONLY_SPY_SESSION_CALENDAR_ONLY",
+    "merge_threshold": 0.003,
+    "parity_tolerance": 1e-09,
+    "production_authority_effect": false,
+    "full_23_year_reconstruction_authorized": false
+  }
+}

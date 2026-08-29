@@ -1,0 +1,983 @@
+==============================================================================================================
+TRADINGPLATFORM — UNDERLYING HISTORICAL REPLAY READINESS AUDIT
+Generated: 2026-08-18T14:01:54.308630+00:00
+==============================================================================================================
+
+
+==============================================================================================================
+1. PRICE HISTORY — HIGH LEVEL COVERAGE
+==============================================================================================================
+{
+  "rows": 750309,
+  "symbols": 616,
+  "first_date": "2021-08-09",
+  "last_date": "2026-08-17",
+  "distinct_sessions": 1265
+}
+
+Per-symbol coverage summary:
+symbols: 616
+min_observations: 44
+median_observations: 1261.0
+max_observations: 1261
+>=5Y        :  575
+>=3Y_<5Y    :   16
+  symbols: BALL,BITO,CEG,EG,ELV,GEHC,GEN,IBIT,JEPQ,KVUE,NDX,RKLB,RVTY,SPX,WBD,WTW
+>=1Y_<3Y    :   21
+  symbols: ALAB,ARM,BF-B,BRK-B,CPAY,CRWV,ETHA,EXE,FBTC,FER,GEV,MRSH,NBIS,PSKY,RUT,SNDK,SOLV,SW,TKO,VLTO,XYZ
+<1Y         :    4
+  symbols: FDXF,HONA,Q,SPCX
+
+
+==============================================================================================================
+2. OHLCV QUALITY — NULLS / INVALID VALUES
+==============================================================================================================
+{
+  "total_rows": 750309,
+  "null_open": 0,
+  "null_high": 0,
+  "null_low": 0,
+  "null_close": 0,
+  "null_volume": 0,
+  "nonpositive_price": 0,
+  "negative_volume": 0,
+  "high_below_low": 0,
+  "open_outside_range": 0,
+  "close_outside_range": 0
+}
+
+
+==============================================================================================================
+3. DUPLICATE SYMBOL / SESSION BARS
+==============================================================================================================
+{
+  "duplicate_keys": 0,
+  "excess_rows": "0"
+}
+
+
+==============================================================================================================
+4. SESSION CONTINUITY / LARGE DATE GAPS
+==============================================================================================================
+gaps_greater_than_7_calendar_days: 6
+{'symbol': 'ECHO', 'previous_date': datetime.date(2021, 11, 22), 'date': datetime.date(2025, 6, 16), 'calendar_gap_days': 1302}
+{'symbol': 'FISV', 'previous_date': datetime.date(2023, 6, 6), 'date': datetime.date(2025, 6, 16), 'calendar_gap_days': 741}
+{'symbol': 'COR', 'previous_date': datetime.date(2021, 12, 27), 'date': datetime.date(2023, 8, 30), 'calendar_gap_days': 611}
+{'symbol': 'IBIT', 'previous_date': datetime.date(2023, 5, 1), 'date': datetime.date(2024, 1, 11), 'calendar_gap_days': 255}
+{'symbol': 'META', 'previous_date': datetime.date(2022, 1, 28), 'date': datetime.date(2022, 6, 9), 'calendar_gap_days': 132}
+{'symbol': 'COHR', 'previous_date': datetime.date(2022, 6, 30), 'date': datetime.date(2022, 9, 8), 'calendar_gap_days': 70}
+
+
+==============================================================================================================
+5. DAILY CROSS-SECTIONAL COVERAGE
+==============================================================================================================
+sessions: 1265
+min_symbols_per_session: 1
+median_symbols_per_session: 593
+max_symbols_per_session: 616
+
+Lowest-coverage sessions:
+{'date': datetime.date(2023, 9, 23), 'symbols': 1}
+{'date': datetime.date(2023, 10, 14), 'symbols': 1}
+{'date': datetime.date(2024, 10, 5), 'symbols': 1}
+{'date': datetime.date(2025, 10, 25), 'symbols': 1}
+{'date': datetime.date(2021, 8, 9), 'symbols': 575}
+{'date': datetime.date(2021, 8, 10), 'symbols': 575}
+{'date': datetime.date(2021, 8, 11), 'symbols': 575}
+{'date': datetime.date(2021, 8, 12), 'symbols': 575}
+{'date': datetime.date(2021, 8, 13), 'symbols': 575}
+{'date': datetime.date(2021, 8, 16), 'symbols': 575}
+{'date': datetime.date(2021, 8, 17), 'symbols': 575}
+{'date': datetime.date(2021, 8, 18), 'symbols': 575}
+{'date': datetime.date(2021, 8, 19), 'symbols': 575}
+{'date': datetime.date(2021, 8, 20), 'symbols': 575}
+{'date': datetime.date(2021, 8, 23), 'symbols': 575}
+{'date': datetime.date(2021, 8, 24), 'symbols': 575}
+{'date': datetime.date(2021, 12, 28), 'symbols': 575}
+{'date': datetime.date(2021, 12, 29), 'symbols': 575}
+{'date': datetime.date(2021, 12, 30), 'symbols': 575}
+{'date': datetime.date(2021, 12, 31), 'symbols': 575}
+{'date': datetime.date(2022, 1, 3), 'symbols': 575}
+{'date': datetime.date(2022, 1, 4), 'symbols': 575}
+{'date': datetime.date(2022, 1, 5), 'symbols': 575}
+{'date': datetime.date(2022, 1, 6), 'symbols': 575}
+{'date': datetime.date(2022, 1, 7), 'symbols': 575}
+{'date': datetime.date(2022, 1, 31), 'symbols': 575}
+{'date': datetime.date(2022, 2, 1), 'symbols': 575}
+{'date': datetime.date(2021, 8, 25), 'symbols': 576}
+{'date': datetime.date(2021, 8, 26), 'symbols': 576}
+{'date': datetime.date(2021, 8, 27), 'symbols': 576}
+{'date': datetime.date(2021, 8, 30), 'symbols': 576}
+{'date': datetime.date(2021, 8, 31), 'symbols': 576}
+{'date': datetime.date(2021, 9, 1), 'symbols': 576}
+{'date': datetime.date(2021, 9, 2), 'symbols': 576}
+{'date': datetime.date(2021, 9, 3), 'symbols': 576}
+{'date': datetime.date(2021, 9, 7), 'symbols': 576}
+{'date': datetime.date(2021, 9, 8), 'symbols': 576}
+{'date': datetime.date(2021, 9, 9), 'symbols': 576}
+{'date': datetime.date(2021, 9, 10), 'symbols': 576}
+{'date': datetime.date(2021, 9, 13), 'symbols': 576}
+{'date': datetime.date(2021, 9, 14), 'symbols': 576}
+{'date': datetime.date(2021, 9, 15), 'symbols': 576}
+{'date': datetime.date(2021, 9, 16), 'symbols': 576}
+{'date': datetime.date(2021, 9, 17), 'symbols': 576}
+{'date': datetime.date(2021, 9, 20), 'symbols': 576}
+{'date': datetime.date(2021, 9, 21), 'symbols': 576}
+{'date': datetime.date(2021, 9, 22), 'symbols': 576}
+{'date': datetime.date(2021, 9, 23), 'symbols': 576}
+{'date': datetime.date(2021, 9, 24), 'symbols': 576}
+{'date': datetime.date(2021, 9, 27), 'symbols': 576}
+
+
+==============================================================================================================
+6. CURRENT CANONICAL UNIVERSE VS PRICE HISTORY
+==============================================================================================================
+canonical_symbols: 614
+price_history_symbols: 616
+
+Canonical symbols missing from price_history: 0
+NONE
+
+Historical symbols not in current canonical files: 2
+BF-B,BRK-B
+
+
+==============================================================================================================
+7. BENCHMARK / INDEX / MARKET-PROXY COVERAGE
+==============================================================================================================
+{'symbol': 'SPX', 'first_date': datetime.date(2023, 2, 14), 'last_date': datetime.date(2026, 8, 17), 'observations': 879}
+{'symbol': 'NDX', 'first_date': datetime.date(2023, 2, 15), 'last_date': datetime.date(2026, 8, 17), 'observations': 882}
+{'symbol': 'RUT', 'first_date': datetime.date(2024, 9, 9), 'last_date': datetime.date(2026, 8, 17), 'observations': 486}
+{'symbol': 'SPY', 'first_date': datetime.date(2021, 8, 9), 'last_date': datetime.date(2026, 8, 17), 'observations': 1261}
+{'symbol': 'QQQ', 'first_date': datetime.date(2021, 8, 9), 'last_date': datetime.date(2026, 8, 17), 'observations': 1261}
+{'symbol': 'IWM', 'first_date': datetime.date(2021, 8, 9), 'last_date': datetime.date(2026, 8, 17), 'observations': 1261}
+{'symbol': 'DIA', 'first_date': datetime.date(2021, 8, 9), 'last_date': datetime.date(2026, 8, 17), 'observations': 1261}
+{'symbol': 'VTI', 'first_date': datetime.date(2021, 8, 9), 'last_date': datetime.date(2026, 8, 17), 'observations': 1261}
+{'symbol': 'XLK', 'first_date': datetime.date(2021, 8, 9), 'last_date': datetime.date(2026, 8, 17), 'observations': 1261}
+{'symbol': 'XLF', 'first_date': datetime.date(2021, 8, 9), 'last_date': datetime.date(2026, 8, 17), 'observations': 1261}
+{'symbol': 'XLE', 'first_date': datetime.date(2021, 8, 9), 'last_date': datetime.date(2026, 8, 17), 'observations': 1261}
+{'symbol': 'XLV', 'first_date': datetime.date(2021, 8, 9), 'last_date': datetime.date(2026, 8, 17), 'observations': 1261}
+{'symbol': 'XLI', 'first_date': datetime.date(2021, 8, 9), 'last_date': datetime.date(2026, 8, 17), 'observations': 1261}
+{'symbol': 'XLP', 'first_date': datetime.date(2021, 8, 9), 'last_date': datetime.date(2026, 8, 17), 'observations': 1261}
+{'symbol': 'XLY', 'first_date': datetime.date(2021, 8, 9), 'last_date': datetime.date(2026, 8, 17), 'observations': 1261}
+{'symbol': 'XLU', 'first_date': datetime.date(2021, 8, 9), 'last_date': datetime.date(2026, 8, 17), 'observations': 1261}
+{'symbol': 'XLB', 'first_date': datetime.date(2021, 8, 9), 'last_date': datetime.date(2026, 8, 17), 'observations': 1261}
+{'symbol': 'XLRE', 'first_date': datetime.date(2021, 8, 9), 'last_date': datetime.date(2026, 8, 17), 'observations': 1261}
+{'symbol': 'XLC', 'first_date': datetime.date(2021, 8, 9), 'last_date': datetime.date(2026, 8, 17), 'observations': 1261}
+
+
+==============================================================================================================
+8. EXTREME PRICE DISCONTINUITIES — SPLIT / ADJUSTMENT SCREEN
+==============================================================================================================
+30pct_or_larger_discontinuities: 84
+{'symbol': 'META', 'date': datetime.date(2022, 6, 9), 'previous_close': 12.31, 'open': 194.28, 'close': 184.0, 'overnight_gap_pct': 1478.2290820471162, 'close_to_close_pct': 1394.7197400487407}
+{'symbol': 'BNY', 'date': datetime.date(2026, 2, 9), 'previous_close': 10.2, 'open': 124.2300033569336, 'close': 127.61000061035156, 'overnight_gap_pct': 1117.9412093817018, 'close_to_close_pct': 1151.078437356388}
+{'symbol': 'COHR', 'date': datetime.date(2022, 9, 8), 'previous_close': 266.22, 'open': 43.1, 'close': 43.26, 'overnight_gap_pct': -83.81038239050409, 'close_to_close_pct': -83.75028172188415}
+{'symbol': 'ECHO', 'date': datetime.date(2025, 8, 26), 'previous_close': 29.8799991607666, 'open': 54.11000061035156, 'close': 50.869998931884766, 'overnight_gap_pct': 81.09103791876852, 'close_to_close_pct': 70.24765850287811}
+{'symbol': 'UVXY', 'date': datetime.date(2024, 8, 5), 'previous_close': 195.1, 'open': 324.95, 'close': 308.85, 'overnight_gap_pct': 66.55561250640699, 'close_to_close_pct': 58.30343413634036}
+{'symbol': 'PDD', 'date': datetime.date(2022, 3, 16), 'previous_close': 27.31, 'open': 37.115, 'close': 42.62, 'overnight_gap_pct': 35.90259978030026, 'close_to_close_pct': 56.060051263273515}
+{'symbol': 'CVNA', 'date': datetime.date(2023, 6, 8), 'previous_close': 3.106, 'open': 3.764, 'close': 4.846, 'overnight_gap_pct': 21.184803605924007, 'close_to_close_pct': 56.02060528010304}
+{'symbol': 'GL', 'date': datetime.date(2024, 4, 11), 'previous_close': 104.93, 'open': 98.48, 'close': 49.17, 'overnight_gap_pct': -6.146955112932428, 'close_to_close_pct': -53.14018869722672}
+{'symbol': 'ECHO', 'date': datetime.date(2021, 9, 10), 'previous_close': 31.32, 'open': 47.9, 'close': 47.7, 'overnight_gap_pct': 52.93742017879948, 'close_to_close_pct': 52.29885057471264}
+{'symbol': 'NBIS', 'date': datetime.date(2025, 9, 9), 'previous_close': 64.06, 'open': 97.2, 'close': 95.72, 'overnight_gap_pct': 51.732750546362794, 'close_to_close_pct': 49.42241648454573}
+{'symbol': 'DOC', 'date': datetime.date(2024, 3, 4), 'previous_close': 11.23, 'open': 16.89, 'close': 16.85, 'overnight_gap_pct': 50.4007123775601, 'close_to_close_pct': 50.04452359750668}
+{'symbol': 'MNST', 'date': datetime.date(2026, 8, 5), 'previous_close': 94.18, 'open': 47.455, 'close': 47.23, 'overnight_gap_pct': -49.61244425568062, 'close_to_close_pct': -49.85134848163093}
+{'symbol': 'ECHO', 'date': datetime.date(2025, 6, 16), 'previous_close': 48.24, 'open': 24.270000457763672, 'close': 25.110000610351562, 'overnight_gap_pct': -49.689053777438495, 'close_to_close_pct': -47.94775992879029}
+{'symbol': 'ALNY', 'date': datetime.date(2022, 8, 3), 'previous_close': 141.97, 'open': 210.0, 'close': 212.01, 'overnight_gap_pct': 47.91857434669296, 'close_to_close_pct': 49.33436641543987}
+{'symbol': 'HONA', 'date': datetime.date(2026, 6, 16), 'previous_close': 200.0, 'open': 297.5, 'close': 269.95001220703125, 'overnight_gap_pct': 48.75000000000001, 'close_to_close_pct': 34.975006103515625}
+{'symbol': 'ARM', 'date': datetime.date(2024, 2, 8), 'previous_close': 77.01, 'open': 94.41, 'close': 113.89, 'overnight_gap_pct': 22.5944682508765, 'close_to_close_pct': 47.88988443059341}
+{'symbol': 'APP', 'date': datetime.date(2024, 11, 7), 'previous_close': 168.55, 'open': 230.0, 'close': 246.53, 'overnight_gap_pct': 36.45802432512606, 'close_to_close_pct': 46.26520320379708}
+{'symbol': 'CVNA', 'date': datetime.date(2023, 1, 12), 'previous_close': 1.1, 'open': 1.126, 'close': 1.606, 'overnight_gap_pct': 2.3636363636363455, 'close_to_close_pct': 46.0}
+{'symbol': 'VIXY', 'date': datetime.date(2024, 8, 5), 'previous_close': 61.88, 'open': 89.4, 'close': 88.52, 'overnight_gap_pct': 44.47317388493859, 'close_to_close_pct': 43.05106658047833}
+{'symbol': 'FISV', 'date': datetime.date(2025, 6, 16), 'previous_close': 114.23, 'open': 163.97000122070312, 'close': 164.88999938964844, 'overnight_gap_pct': 43.54372863582518, 'close_to_close_pct': 44.3491196617775}
+{'symbol': 'FISV', 'date': datetime.date(2025, 10, 29), 'previous_close': 126.16999816894531, 'open': 71.36000061035156, 'close': 70.5999984741211, 'overnight_gap_pct': -43.44138729811311, 'close_to_close_pct': -44.04375089267606}
+{'symbol': 'BIIB', 'date': datetime.date(2022, 9, 28), 'previous_close': 197.79, 'open': 282.96, 'close': 276.61, 'overnight_gap_pct': 43.0608220840285, 'close_to_close_pct': 39.8503463269124}
+{'symbol': 'CVNA', 'date': datetime.date(2022, 12, 7), 'previous_close': 1.342, 'open': 0.888, 'close': 0.766, 'overnight_gap_pct': -33.830104321907605, 'close_to_close_pct': -42.92101341281669}
+{'symbol': 'CRWV', 'date': datetime.date(2025, 4, 1), 'previous_close': 37.08, 'open': 38.5, 'close': 52.57, 'overnight_gap_pct': 3.829557713052867, 'close_to_close_pct': 41.7745415318231}
+{'symbol': 'DXCM', 'date': datetime.date(2024, 7, 26), 'previous_close': 107.85, 'open': 66.0, 'close': 64.0, 'overnight_gap_pct': -38.8038942976356, 'close_to_close_pct': -40.65832174316179}
+{'symbol': 'CNC', 'date': datetime.date(2025, 7, 2), 'previous_close': 56.65, 'open': 37.34, 'close': 33.78, 'overnight_gap_pct': -34.086496028243594, 'close_to_close_pct': -40.37069726390114}
+{'symbol': 'CVNA', 'date': datetime.date(2023, 7, 19), 'previous_close': 7.96, 'open': 10.798, 'close': 11.16, 'overnight_gap_pct': 35.65326633165829, 'close_to_close_pct': 40.201005025125625}
+{'symbol': 'CVNA', 'date': datetime.date(2022, 8, 5), 'previous_close': 6.708, 'open': 6.942, 'close': 9.396, 'overnight_gap_pct': 3.488372093023262, 'close_to_close_pct': 40.07155635062614}
+{'symbol': 'KWEB', 'date': datetime.date(2022, 3, 16), 'previous_close': 22.18, 'open': 27.17, 'close': 30.99, 'overnight_gap_pct': 22.49774571686205, 'close_to_close_pct': 39.72046889089269}
+{'symbol': 'FLEX', 'date': datetime.date(2026, 5, 6), 'previous_close': 96.45, 'open': 119.85, 'close': 134.73, 'overnight_gap_pct': 24.261275272161733, 'close_to_close_pct': 39.68895800933125}
+{'symbol': 'CVNA', 'date': datetime.date(2023, 5, 5), 'previous_close': 1.44, 'open': 2.006, 'close': 1.792, 'overnight_gap_pct': 39.30555555555555, 'close_to_close_pct': 24.444444444444446}
+{'symbol': 'CVNA', 'date': datetime.date(2022, 11, 4), 'previous_close': 2.87, 'open': 2.608, 'close': 1.752, 'overnight_gap_pct': -9.128919860627182, 'close_to_close_pct': -38.954703832752614}
+{'symbol': 'TTD', 'date': datetime.date(2025, 8, 8), 'previous_close': 88.33, 'open': 56.64, 'close': 54.23, 'overnight_gap_pct': -35.87682554058643, 'close_to_close_pct': -38.605230386052305}
+{'symbol': 'WST', 'date': datetime.date(2025, 2, 13), 'previous_close': 322.28, 'open': 243.84, 'close': 199.11, 'overnight_gap_pct': -24.33908402631252, 'close_to_close_pct': -38.21831947374953}
+{'symbol': 'VRT', 'date': datetime.date(2022, 2, 23), 'previous_close': 19.57, 'open': 12.12, 'close': 12.38, 'overnight_gap_pct': -38.06847215125192, 'close_to_close_pct': -36.73990802248339}
+{'symbol': 'CVNA', 'date': datetime.date(2024, 5, 2), 'previous_close': 17.418, 'open': 23.99, 'close': 23.3, 'overnight_gap_pct': 37.73108278792054, 'close_to_close_pct': 33.76966356642554}
+{'symbol': 'ALAB', 'date': datetime.date(2024, 11, 5), 'previous_close': 69.65, 'open': 86.35, 'close': 95.91, 'overnight_gap_pct': 23.977027997128488, 'close_to_close_pct': 37.70279971284995}
+{'symbol': 'AMD', 'date': datetime.date(2025, 10, 6), 'previous_close': 164.67, 'open': 226.445, 'close': 203.71, 'overnight_gap_pct': 37.51442278496386, 'close_to_close_pct': 23.708022104815708}
+{'symbol': 'UVXY', 'date': datetime.date(2021, 11, 26), 'previous_close': 3852.5, 'open': 4550.0, 'close': 5295.0, 'overnight_gap_pct': 18.105126541207017, 'close_to_close_pct': 37.44321868916287}
+{'symbol': 'NBIS', 'date': datetime.date(2025, 1, 27), 'previous_close': 41.69, 'open': 33.5, 'close': 26.08, 'overnight_gap_pct': -19.64499880067162, 'close_to_close_pct': -37.443031902134805}
+{'symbol': 'RKLB', 'date': datetime.date(2021, 9, 9), 'previous_close': 15.09, 'open': 16.27, 'close': 20.72, 'overnight_gap_pct': 7.819748177601049, 'close_to_close_pct': 37.30947647448642}
+{'symbol': 'UVXY', 'date': datetime.date(2025, 4, 3), 'previous_close': 112.75, 'open': 137.95, 'close': 154.4, 'overnight_gap_pct': 22.350332594235024, 'close_to_close_pct': 36.94013303769401}
+{'symbol': 'PSKY', 'date': datetime.date(2025, 8, 13), 'previous_close': 10.97, 'open': 11.2, 'close': 15.0, 'overnight_gap_pct': 2.096627164995435, 'close_to_close_pct': 36.73655423883317}
+{'symbol': 'ALGN', 'date': datetime.date(2025, 7, 31), 'previous_close': 203.57, 'open': 142.5, 'close': 129.01, 'overnight_gap_pct': -29.999508768482585, 'close_to_close_pct': -36.626221938399574}
+{'symbol': 'TTD', 'date': datetime.date(2022, 8, 10), 'previous_close': 54.5, 'open': 68.14, 'close': 74.24, 'overnight_gap_pct': 25.02752293577981, 'close_to_close_pct': 36.220183486238525}
+{'symbol': 'APP', 'date': datetime.date(2023, 2, 9), 'previous_close': 12.68, 'open': 17.27, 'close': 16.11, 'overnight_gap_pct': 36.198738170347, 'close_to_close_pct': 27.050473186119884}
+{'symbol': 'ORCL', 'date': datetime.date(2025, 9, 10), 'previous_close': 241.51, 'open': 319.19, 'close': 328.33, 'overnight_gap_pct': 32.164299614922776, 'close_to_close_pct': 35.948821994948446}
+{'symbol': 'SMCI', 'date': datetime.date(2024, 1, 19), 'previous_close': 31.144, 'open': 34.756, 'close': 42.336, 'overnight_gap_pct': 11.597739532494234, 'close_to_close_pct': 35.93629591574621}
+{'symbol': 'SNPS', 'date': datetime.date(2025, 9, 10), 'previous_close': 604.37, 'open': 427.8, 'close': 387.78, 'overnight_gap_pct': -29.215546767708524, 'close_to_close_pct': -35.83731819911644}
+{'symbol': 'UVXY', 'date': datetime.date(2024, 8, 2), 'previous_close': 143.95, 'open': 160.55, 'close': 195.1, 'overnight_gap_pct': 11.531781868704428, 'close_to_close_pct': 35.53317124001389}
+{'symbol': 'SQQQ', 'date': datetime.date(2025, 4, 9), 'previous_close': 264.85, 'open': 265.8, 'close': 171.4, 'overnight_gap_pct': 0.3586936001510166, 'close_to_close_pct': -35.28412308854069}
+{'symbol': 'TQQQ', 'date': datetime.date(2025, 4, 9), 'previous_close': 19.45, 'open': 19.38, 'close': 26.305, 'overnight_gap_pct': -0.35989717223650075, 'close_to_close_pct': 35.244215938303334}
+{'symbol': 'NFLX', 'date': datetime.date(2022, 4, 20), 'previous_close': 34.861, 'open': 24.52, 'close': 22.619, 'overnight_gap_pct': -29.663520839907054, 'close_to_close_pct': -35.11660594934166}
+{'symbol': 'APP', 'date': datetime.date(2022, 5, 12), 'previous_close': 27.28, 'open': 32.135, 'close': 36.74, 'overnight_gap_pct': 17.796920821114348, 'close_to_close_pct': 34.677419354838705}
+{'symbol': 'ALNY', 'date': datetime.date(2024, 6, 24), 'previous_close': 165.7, 'open': 219.37, 'close': 222.9, 'overnight_gap_pct': 32.38986119493062, 'close_to_close_pct': 34.52021726010863}
+{'symbol': 'RKLB', 'date': datetime.date(2026, 5, 8), 'previous_close': 78.58, 'open': 86.035, 'close': 105.47, 'overnight_gap_pct': 9.48714685670653, 'close_to_close_pct': 34.2199032832782}
+{'symbol': 'HPE', 'date': datetime.date(2026, 6, 2), 'previous_close': 47.0, 'open': 63.06, 'close': 56.15, 'overnight_gap_pct': 34.170212765957444, 'close_to_close_pct': 19.468085106382983}
+{'symbol': 'NBIS', 'date': datetime.date(2026, 8, 12), 'previous_close': 193.23, 'open': 226.0, 'close': 259.2, 'overnight_gap_pct': 16.959064327485397, 'close_to_close_pct': 34.14066138798324}
+{'symbol': 'CVNA', 'date': datetime.date(2023, 2, 1), 'previous_close': 2.034, 'open': 2.02, 'close': 2.712, 'overnight_gap_pct': -0.6882989183874089, 'close_to_close_pct': 33.33333333333335}
+{'symbol': 'SMCI', 'date': datetime.date(2026, 3, 20), 'previous_close': 30.79, 'open': 22.52, 'close': 20.53, 'overnight_gap_pct': -26.859369925300424, 'close_to_close_pct': -33.322507307567385}
+{'symbol': 'TTD', 'date': datetime.date(2025, 2, 13), 'previous_close': 122.23, 'open': 85.095, 'close': 81.92, 'overnight_gap_pct': -30.381248466006717, 'close_to_close_pct': -32.97881043933568}
+{'symbol': 'SMCI', 'date': datetime.date(2024, 2, 22), 'previous_close': 73.417, 'open': 86.499, 'close': 97.552, 'overnight_gap_pct': 17.818761322309527, 'close_to_close_pct': 32.87385755342769}
+{'symbol': 'TTD', 'date': datetime.date(2023, 2, 15), 'previous_close': 49.92, 'open': 58.1, 'close': 66.3, 'overnight_gap_pct': 16.386217948717952, 'close_to_close_pct': 32.8125}
+{'symbol': 'DELL', 'date': datetime.date(2026, 5, 29), 'previous_close': 317.05, 'open': 418.0, 'close': 420.91, 'overnight_gap_pct': 31.84040372181043, 'close_to_close_pct': 32.758240025232624}
+{'symbol': 'SMCI', 'date': datetime.date(2024, 10, 30), 'previous_close': 49.12, 'open': 34.85, 'close': 33.07, 'overnight_gap_pct': -29.05130293159608, 'close_to_close_pct': -32.67508143322475}
+{'symbol': 'MRVL', 'date': datetime.date(2026, 6, 2), 'previous_close': 219.43, 'open': 253.46, 'close': 290.79, 'overnight_gap_pct': 15.50836257576449, 'close_to_close_pct': 32.520621610536395}
+{'symbol': 'MRVL', 'date': datetime.date(2023, 5, 26), 'previous_close': 49.47, 'open': 58.665, 'close': 65.51, 'overnight_gap_pct': 18.587022437841117, 'close_to_close_pct': 32.42369112593493}
+{'symbol': 'DG', 'date': datetime.date(2024, 8, 29), 'previous_close': 123.84, 'open': 92.2, 'close': 84.03, 'overnight_gap_pct': -25.549095607235138, 'close_to_close_pct': -32.14631782945736}
+{'symbol': 'CVNA', 'date': datetime.date(2024, 2, 23), 'previous_close': 10.482, 'open': 13.567, 'close': 13.846, 'overnight_gap_pct': 29.431406220187007, 'close_to_close_pct': 32.09311200152642}
+{'symbol': 'DELL', 'date': datetime.date(2024, 3, 1), 'previous_close': 94.66, 'open': 124.67, 'close': 124.59, 'overnight_gap_pct': 31.702936826537087, 'close_to_close_pct': 31.618423832664288}
+{'symbol': 'UVXY', 'date': datetime.date(2025, 4, 9), 'previous_close': 238.45, 'open': 251.5, 'close': 163.05, 'overnight_gap_pct': 5.4728454602642085, 'close_to_close_pct': -31.62088488152651}
+{'symbol': 'CVNA', 'date': datetime.date(2022, 11, 10), 'previous_close': 1.518, 'open': 1.682, 'close': 1.998, 'overnight_gap_pct': 10.803689064558618, 'close_to_close_pct': 31.62055335968379}
+{'symbol': 'EW', 'date': datetime.date(2024, 7, 25), 'previous_close': 86.95, 'open': 64.01, 'close': 59.7, 'overnight_gap_pct': -26.38297872340425, 'close_to_close_pct': -31.33985048878666}
+{'symbol': 'DDOG', 'date': datetime.date(2026, 5, 7), 'previous_close': 143.71, 'open': 187.99, 'close': 188.73, 'overnight_gap_pct': 30.812052049265894, 'close_to_close_pct': 31.326977941688106}
+{'symbol': 'COIN', 'date': datetime.date(2022, 8, 4), 'previous_close': 80.81, 'open': 106.1, 'close': 88.9, 'overnight_gap_pct': 31.295631728746432, 'close_to_close_pct': 10.011137235490652}
+{'symbol': 'APP', 'date': datetime.date(2025, 2, 13), 'previous_close': 380.32, 'open': 499.34, 'close': 471.67, 'overnight_gap_pct': 31.294699200673115, 'close_to_close_pct': 24.019246949936914}
+{'symbol': 'SMCI', 'date': datetime.date(2024, 11, 19), 'previous_close': 21.54, 'open': 27.11, 'close': 28.27, 'overnight_gap_pct': 25.85886722376973, 'close_to_close_pct': 31.24419684308264}
+{'symbol': 'RKLB', 'date': datetime.date(2024, 11, 13), 'previous_close': 14.66, 'open': 19.24, 'close': 18.83, 'overnight_gap_pct': 31.241473396998632, 'close_to_close_pct': 28.444747612551158}
+{'symbol': 'SMCI', 'date': datetime.date(2022, 5, 4), 'previous_close': 4.323, 'open': 4.832, 'close': 5.672, 'overnight_gap_pct': 11.774230858200308, 'close_to_close_pct': 31.205181586860963}
+{'symbol': 'COIN', 'date': datetime.date(2024, 11, 6), 'previous_close': 193.96, 'open': 221.479, 'close': 254.31, 'overnight_gap_pct': 14.187976902454125, 'close_to_close_pct': 31.11466281707569}
+{'symbol': 'FICO', 'date': datetime.date(2022, 11, 10), 'previous_close': 443.77, 'open': 525.74, 'close': 581.78, 'overnight_gap_pct': 18.471280167654424, 'close_to_close_pct': 31.099443405367655}
+{'symbol': 'PLTR', 'date': datetime.date(2024, 2, 6), 'previous_close': 16.72, 'open': 20.3, 'close': 21.87, 'overnight_gap_pct': 21.411483253588525, 'close_to_close_pct': 30.801435406698573}
+{'symbol': 'APP', 'date': datetime.date(2023, 8, 10), 'previous_close': 29.41, 'open': 38.32, 'close': 37.2, 'overnight_gap_pct': 30.295817749064934, 'close_to_close_pct': 26.487589255355324}
+{'symbol': 'RKLB', 'date': datetime.date(2025, 1, 21), 'previous_close': 24.0, 'open': 26.0, 'close': 31.27, 'overnight_gap_pct': 8.333333333333325, 'close_to_close_pct': 30.29166666666667}
+
+
+==============================================================================================================
+9. RETURN OUTLIER DISTRIBUTION
+==============================================================================================================
+{
+  "abs_ge_10pct": 3423,
+  "abs_ge_20pct": 329,
+  "abs_ge_30pct": 76,
+  "abs_ge_50pct": 10
+}
+
+
+==============================================================================================================
+10. VOLUME QUALITY
+==============================================================================================================
+{
+  "total_rows": 750309,
+  "null_volume": 0,
+  "zero_volume": 2260,
+  "negative_volume": 0
+}
+
+Symbols with zero-volume sessions:
+{'symbol': 'NDX', 'zero_volume_rows': 882, 'total_rows': 882}
+{'symbol': 'SPX', 'zero_volume_rows': 879, 'total_rows': 879}
+{'symbol': 'RUT', 'zero_volume_rows': 486, 'total_rows': 486}
+{'symbol': 'IBIT', 'zero_volume_rows': 13, 'total_rows': 813}
+
+
+==============================================================================================================
+11. SECTOR MEMBERSHIP — POINT-IN-TIME READINESS
+==============================================================================================================
+{
+  "rows": 613,
+  "symbols": 613,
+  "earliest_effective_from": "2026-07-20",
+  "latest_effective_from": "2026-07-20",
+  "closed_intervals": 0,
+  "active_rows": 613
+}
+
+Symbols with historical membership versions: 0
+
+
+==============================================================================================================
+12. SURVIVORSHIP-BIAS SCREEN
+==============================================================================================================
+
+The local historical universe is compared against today's canonical universe.
+
+Interpretation:
+- Historical symbols absent from today's canonical universe are useful evidence
+  that the DB contains at least some delisted/removed historical names.
+- If almost all history consists only of today's canonical symbols, the first
+  replay must be classified CURRENT_UNIVERSE_HISTORICAL_REPLAY until a proper
+  point-in-time universe registry exists.
+
+historical_not_current_count: 2
+current_without_history_count: 0
+
+
+==============================================================================================================
+13. INDICATOR WARM-UP CAPACITY
+==============================================================================================================
+window=20   eligible_symbols=616  coverage=100.00%
+window=50   eligible_symbols=614  coverage=99.68%
+window=100  eligible_symbols=613  coverage=99.51%
+window=200  eligible_symbols=613  coverage=99.51%
+window=252  eligible_symbols=612  coverage=99.35%
+window=300  eligible_symbols=610  coverage=99.03%
+
+
+==============================================================================================================
+14. REPLAY WINDOW AFTER WARM-UP
+==============================================================================================================
+{
+  "first_252_ready_date": "2022-08-08",
+  "first_300_ready_date": "2022-10-14",
+  "latest_date": "2026-08-17"
+}
+
+
+==============================================================================================================
+15. DAILY BAR TARGET / STOP AMBIGUITY — RESOLUTION LIMITATION
+==============================================================================================================
+
+Daily OHLCV cannot determine sequence when BOTH a hypothetical target and stop
+are touched within the same bar.
+
+This section measures the frequency of wide daily bars as a proxy for how often
+order-sensitive labels may require an AMBIGUOUS / ADVERSE_FIRST policy.
+
+{
+  "total_rows": 750309,
+  "range_ge_3pct": 180661,
+  "range_ge_5pct": 47772,
+  "range_ge_8pct": 10575,
+  "range_ge_10pct": 4683
+}
+range_ge_3pct       :    180,661 (24.0782%)
+range_ge_5pct       :     47,772 (6.3670%)
+range_ge_8pct       :     10,575 (1.4094%)
+range_ge_10pct      :      4,683 (0.6241%)
+
+
+==============================================================================================================
+16. SOURCE AUDIT — POLYGON ADJUSTMENT SEMANTICS
+==============================================================================================================
+source_matches: 67
+
+FILE: src/trading_ai/options/chain.py
+   23: 
+   24:     def get_chain(self, symbol: str, expiration: str):
+   25:         grouped = defaultdict(list)
+   26:         for contract in self._contracts(symbol):
+   27:             if str(contract.expiry) != str(expiration):
+
+FILE: src/trading_ai/options/chain.py
+   28:                 continue
+   29:             option_type = str(contract.option_type).upper()
+   30:             grouped["calls" if option_type in {"CALL", "C"} else "puts"].append(contract)
+   31:         return {"calls": grouped["calls"], "puts": grouped["puts"]}
+   32: 
+
+FILE: src/trading_ai/options/chain.py
+   29:             option_type = str(contract.option_type).upper()
+   30:             grouped["calls" if option_type in {"CALL", "C"} else "puts"].append(contract)
+   31:         return {"calls": grouped["calls"], "puts": grouped["puts"]}
+   32: 
+   33:     def expirations(self, symbol: str):
+
+FILE: src/trading_ai/stock_intelligence/option_integration.py
+   43:     raw_probability: float
+   44:     probability_adjustment: float
+   45:     adjusted_probability: float
+   46:     underlying_score: float
+   47:     underlying_confidence: float
+
+FILE: src/trading_ai/stock_intelligence/option_integration.py
+  100:                 raw_probability=raw_probability,
+  101:                 probability_adjustment=0.0,
+  102:                 adjusted_probability=raw_probability,
+  103:                 underlying_score=0.0,
+  104:                 underlying_confidence=0.0,
+
+FILE: src/trading_ai/stock_intelligence/option_integration.py
+  164:         if not direction_aligned:
+  165:             adjustment = min(adjustment, -0.06)
+  166:         adjusted_probability = _clamp(raw_probability + adjustment, 0.01, 0.99)
+  167: 
+  168:         volatility = max(0.0, _number(option_volatility))
+
+FILE: src/trading_ai/stock_intelligence/option_integration.py
+  215:         if structural_rr < self.policy.minimum_structural_reward_risk:
+  216:             rejection_reasons.append("STRUCTURAL_REWARD_RISK_BELOW_MINIMUM")
+  217:         if adjusted_probability < self.policy.minimum_final_probability:
+  218:             rejection_reasons.append("ADJUSTED_PROBABILITY_BELOW_MINIMUM")
+  219:         if recommended_stop is None:
+
+FILE: src/trading_ai/stock_intelligence/option_integration.py
+  216:             rejection_reasons.append("STRUCTURAL_REWARD_RISK_BELOW_MINIMUM")
+  217:         if adjusted_probability < self.policy.minimum_final_probability:
+  218:             rejection_reasons.append("ADJUSTED_PROBABILITY_BELOW_MINIMUM")
+  219:         if recommended_stop is None:
+  220:             rejection_reasons.append("UNDERLYING_STRUCTURAL_STOP_MISSING")
+
+FILE: src/trading_ai/stock_intelligence/option_integration.py
+  230:         rr_multiplier = _clamp(structural_rr / 2.0, 0.4, 1.5)
+  231:         edge_score = _clamp(
+  232:             adjusted_probability * 100.0 * 0.55
+  233:             + underlying_score * 0.20
+  234:             + management_quality * 0.10
+
+FILE: src/trading_ai/stock_intelligence/option_integration.py
+  263:             raw_probability=round(raw_probability, 6),
+  264:             probability_adjustment=round(adjustment, 6),
+  265:             adjusted_probability=round(adjusted_probability, 6),
+  266:             underlying_score=round(underlying_score, 2),
+  267:             underlying_confidence=round(confidence, 2),
+
+FILE: src/trading_ai/execution_intelligence/service.py
+  194:         adverse_price=max(0.0,(governed-approved) if approved>=0 else (abs(approved)-abs(governed)))
+  195:         adverse_dollars=adverse_price*100.0*package_qty
+  196:         adjusted_ev=float(ev)-adverse_dollars if float(ev)>0 else float(ev)
+  197:         adjusted_ror=(adjusted_ev/max(float(max_loss),1e-9)*100.0) if max_loss and adjusted_ev else float(ror)
+  198:         minimum_retained_ev=(float(ev)*policy.minimum_ev_retention_pct/100.0) if float(ev)>0 else None
+
+FILE: src/trading_ai/execution_intelligence/service.py
+  195:         adverse_dollars=adverse_price*100.0*package_qty
+  196:         adjusted_ev=float(ev)-adverse_dollars if float(ev)>0 else float(ev)
+  197:         adjusted_ror=(adjusted_ev/max(float(max_loss),1e-9)*100.0) if max_loss and adjusted_ev else float(ror)
+  198:         minimum_retained_ev=(float(ev)*policy.minimum_ev_retention_pct/100.0) if float(ev)>0 else None
+  199:         ev_retained=(minimum_retained_ev is None or adjusted_ev>=minimum_retained_ev)
+
+FILE: src/trading_ai/execution_intelligence/service.py
+  197:         adjusted_ror=(adjusted_ev/max(float(max_loss),1e-9)*100.0) if max_loss and adjusted_ev else float(ror)
+  198:         minimum_retained_ev=(float(ev)*policy.minimum_ev_retention_pct/100.0) if float(ev)>0 else None
+  199:         ev_retained=(minimum_retained_ev is None or adjusted_ev>=minimum_retained_ev)
+  200:         target_revalidation=_directional_target_revalidation(m,latest.get('underlying_price'))
+  201:         underlying_quote_timestamp=(latest.get('underlying_quote') or {}).get('quote_timestamp')
+
+FILE: src/trading_ai/execution_intelligence/service.py
+  209:             'risk_within_budget':bool(econ_checks.get('risk_within_budget')),'defined_risk':bool(econ_checks.get('defined_risk')),
+  210:             'spread_within_policy':max_spread<=policy.maximum_spread_pct,'execution_confidence':confidence>=policy.minimum_execution_confidence,
+  211:             'edge_threshold':edge>=policy.minimum_edge_score,'expected_value_threshold':adjusted_ev>=policy.minimum_expected_value,'return_on_risk_threshold':adjusted_ror>=policy.minimum_return_on_risk,'expected_value_retention':ev_retained,
+  212:         }
+  213:         valid=all(checks.values())
+
+FILE: src/trading_ai/execution_intelligence/service.py
+  218:         elif not checks['execution_confidence'] or not checks['spread_within_policy']:decision='WAIT'
+  219:         else:decision='EXECUTE'
+  220:         evidence={'purpose':purpose,'target_revalidation':target_revalidation,'fresh_debit':debit,'fresh_credit':credit,'fresh_max_profit':max_profit,'reward_risk_ratio':rr,'fresh_greeks':greeks,'upstream_edge_score':edge,'upstream_expected_value':ev,'upstream_return_on_risk':ror,'adjusted_expected_value_at_limit':adjusted_ev,'adjusted_return_on_risk_at_limit':adjusted_ror,'minimum_retained_expected_value':minimum_retained_ev,'adverse_execution_cost_dollars':adverse_dollars,'effective_aggression_pct':effective_aggression,'stability_max_midpoint_move_pct':max_move,'maximum_spread_pct':max_spread,'underlying_price':latest.get('underlying_price'),'underlying_source':latest.get('underlying_source'),'polygon_underlying_ticker':latest.get('polygon_underlying_ticker'),'underlying_quote':latest.get('underlying_quote'),'underlying_quote_timestamp':underlying_quote_timestamp,'underlying_quote_age_seconds':round(underlying_quote_age_seconds,6) if underlying_quote_age_seconds is not None else None,'option_quote_age_seconds':round(max_age,6) if max_age is not None else None,'quote_timestamp_status':'PRESENT' if timestamps_present else 'MISSING','fresh_midpoint_price':fresh_mid,'fresh_executable_price':fresh_exec,'market_drift_pct':market_drift,'crossing_slippage_pct':crossing_slippage,'limit_aggression_pct':policy.initial_limit_aggression_pct}
+  221:         sid=f'M70-EXEC-{uuid4().hex.upper()}';created=now()
+  222:         snap=ExecutionIntelligenceSnapshotModel(execution_snapshot_id=sid,execution_intent_id=m.execution_intent_id,execution_intent_version=m.version,trade_plan_id=m.trade_plan_id,symbol=m.symbol,strategy=m.strategy,decision=decision,execution_confidence=round(confidence,4),approved_reference_price=approved,fresh_executable_price=fresh_exec,governed_limit_price=governed,adverse_price_drift_pct=round(market_drift,6),quote_age_seconds=round(max_age,6) if max_age is not None else None,fresh_max_loss=float(max_loss),risk_budget_amount=float(budget),validation_json={'valid':valid,'checks':checks},quotes_json={'samples':samples,'live_legs':live_legs},envelope_json=envelope,policy_json=policy.as_dict(),evidence_json=evidence,created_at=created)
+
+FILE: src/trading_ai/market_intelligence/ingestion_orchestrator.py
+  375:             ), {"run_id": run["id"]}
+  376:         ).mappings().all()
+  377:         grouped: dict[str, list[Mapping[str, Any]]] = {}
+  378:         for r in rows: grouped.setdefault(str(r["underlying_symbol"]), []).append(r)
+  379:         # M68.2.1.15.8.2: preload history for the whole symbol population.
+
+FILE: src/trading_ai/market_intelligence/ingestion_orchestrator.py
+  376:         ).mappings().all()
+  377:         grouped: dict[str, list[Mapping[str, Any]]] = {}
+  378:         for r in rows: grouped.setdefault(str(r["underlying_symbol"]), []).append(r)
+  379:         # M68.2.1.15.8.2: preload history for the whole symbol population.
+  380:         # This replaces ~2 SQL round trips per symbol with two bounded bulk reads.
+
+FILE: src/trading_ai/market_intelligence/ingestion_orchestrator.py
+  379:         # M68.2.1.15.8.2: preload history for the whole symbol population.
+  380:         # This replaces ~2 SQL round trips per symbol with two bounded bulk reads.
+  381:         symbols = sorted(grouped)
+  382:         history_stmt = text(
+  383:             """
+
+FILE: src/trading_ai/market_intelligence/ingestion_orchestrator.py
+  424: 
+  425:         written = 0
+  426:         for symbol, contracts in grouped.items():
+  427:             liquid = [r for r in contracts if (r["implied_volatility"] or 0) > 0 and (r["bid"] or 0) > 0 and (r["ask"] or 0) >= (r["bid"] or 0)]
+  428:             near = sorted(liquid, key=lambda r: (abs((r["expiry"] - capture_date).days - 30), abs(abs(float(r["delta"] or 0.5)) - 0.5)))[:12]
+
+FILE: src/trading_ai/market_intelligence/ingestion_orchestrator.py
+  453:             written += 1
+  454:         self.session.commit()
+  455:         return {"status": "READY" if written else "DEGRADED", "rows_written": written, "symbols_evaluated": len(grouped)}
+  456: 
+  457:     def build_liquidity_snapshots(self, *, snapshot_id: str, capture_date: date) -> dict[str, Any]:
+
+FILE: src/trading_ai/market_intelligence/ingestion_orchestrator.py
+  458:         run = self.session.execute(text("SELECT id, snapshot_timestamp FROM option_snapshot_run WHERE snapshot_id=:sid AND provider='POLYGON'"), {"sid": snapshot_id}).mappings().one()
+  459:         rows = self.session.execute(text("SELECT underlying_symbol, bid, ask, volume FROM option_contract_snapshot WHERE snapshot_run_id=:id"), {"id": run["id"]}).mappings().all()
+  460:         grouped: dict[str, list[Mapping[str, Any]]] = {}
+  461:         for r in rows: grouped.setdefault(str(r["underlying_symbol"]), []).append(r)
+  462:         written = 0
+
+FILE: src/trading_ai/market_intelligence/ingestion_orchestrator.py
+  459:         rows = self.session.execute(text("SELECT underlying_symbol, bid, ask, volume FROM option_contract_snapshot WHERE snapshot_run_id=:id"), {"id": run["id"]}).mappings().all()
+  460:         grouped: dict[str, list[Mapping[str, Any]]] = {}
+  461:         for r in rows: grouped.setdefault(str(r["underlying_symbol"]), []).append(r)
+  462:         written = 0
+  463:         for symbol, contracts in grouped.items():
+
+FILE: src/trading_ai/market_intelligence/ingestion_orchestrator.py
+  461:         for r in rows: grouped.setdefault(str(r["underlying_symbol"]), []).append(r)
+  462:         written = 0
+  463:         for symbol, contracts in grouped.items():
+  464:             quotes = [{"bid": r["bid"], "ask": r["ask"]} for r in contracts]
+  465:             metrics = to_native(MicrostructureLiquidityEngine.snapshot_metrics(quotes, ()))
+
+FILE: src/trading_ai/market_intelligence/ingestion_orchestrator.py
+  479:             written += 1
+  480:         self.session.commit()
+  481:         return {"status": "READY" if written else "DEGRADED", "rows_written": written, "symbols_evaluated": len(grouped), "depth_status": "CAPABILITY_UNAVAILABLE", "trade_metrics_status": "NOT_CAPTURED_BY_SNAPSHOT_ENDPOINT"}
+  482: 
+  483: 
+
+FILE: src/trading_ai/daily/scanner.py
+  710:             sector=sector,
+  711:         )
+  712:         adjusted_score = max(
+  713:             0.0,
+  714:             legacy_score
+
+FILE: src/trading_ai/daily/scanner.py
+  882:                 portfolio_result["penalty"]
+  883:             ),
+  884:             adjusted_score=float(adjusted_score),
+  885:             portfolio_notes=portfolio_result["notes"],
+  886:             ai_score=float(final_ai_score),
+
+FILE: src/trading_ai/daily/scanner.py
+  946:         candidate.raw_option_probability = profile.raw_probability
+  947:         candidate.underlying_probability_adjustment = profile.probability_adjustment
+  948:         candidate.underlying_adjusted_probability = profile.adjusted_probability
+  949:         candidate.underlying_score = profile.underlying_score
+  950:         candidate.underlying_confidence = profile.underlying_confidence
+
+FILE: src/trading_ai/daily/scanner.py
+  966:         candidate.ranking_reason += (
+  967:             f" | Stock Intelligence score={profile.underlying_score:.1f}, "
+  968:             f"adjusted POP={profile.adjusted_probability:.1%}, "
+  969:             f"edge={profile.edge_score:.1f}, strategy={profile.recommended_strategy}, "
+  970:             f"allowed={profile.allowed}."
+
+FILE: src/trading_ai/broker_portfolio_sync/service.py
+  516:         # Multiple broker-filled retry attempts for one plan remain genuinely
+  517:         # ambiguous (the FANG case) and must not be auto-owned.
+  518:         grouped_by_plan: dict[str, list[dict]] = {}
+  519:         for rec in effective:
+  520:             grouped_by_plan.setdefault(rec["tp"].trade_plan_id, []).append(rec)
+
+FILE: src/trading_ai/broker_portfolio_sync/service.py
+  518:         grouped_by_plan: dict[str, list[dict]] = {}
+  519:         for rec in effective:
+  520:             grouped_by_plan.setdefault(rec["tp"].trade_plan_id, []).append(rec)
+  521:         by_plan = {}
+  522:         for tp_id, recs in grouped_by_plan.items():
+
+FILE: src/trading_ai/broker_portfolio_sync/service.py
+  520:             grouped_by_plan.setdefault(rec["tp"].trade_plan_id, []).append(rec)
+  521:         by_plan = {}
+  522:         for tp_id, recs in grouped_by_plan.items():
+  523:             broker_filled = [r for r in recs if r["broker_fill_truth"]]
+  524:             if len(broker_filled) > 1:
+
+FILE: src/trading_ai/market/service.py
+  182:             return {"persisted": 0, "inserted": 0, "updated": 0}
+  183:         from trading_ai.market.models import PriceHistory
+  184:         # Deduplicate before hitting PostgreSQL so one grouped payload cannot
+  185:         # produce an ON CONFLICT row-touched-twice error.
+  186:         deduped = list({(r["symbol"], r["date"]): r for r in rows}.values())
+
+FILE: src/trading_ai/market/service.py
+  226:             session.close()
+  227: 
+  228:     def save_grouped_daily(self, symbols: Iterable[str], trading_date: str | date) -> dict[str, Any]:
+  229:         selected = tuple(dict.fromkeys(str(s).strip().upper() for s in symbols if str(s).strip()))
+  230:         bars = self.provider.fetch_grouped_daily(trading_date, symbols=selected)
+
+FILE: src/trading_ai/market/service.py
+  228:     def save_grouped_daily(self, symbols: Iterable[str], trading_date: str | date) -> dict[str, Any]:
+  229:         selected = tuple(dict.fromkeys(str(s).strip().upper() for s in symbols if str(s).strip()))
+  230:         bars = self.provider.fetch_grouped_daily(trading_date, symbols=selected)
+  231:         frame = self._bars_frame(bars)
+  232:         rows = self._persistence_rows(frame)
+
+FILE: src/trading_ai/market/downloader.py
+   89:         if max_workers <= 0 or max_retries < 0:
+   90:             raise ValueError("invalid downloader worker/retry configuration")
+   91:         if fetch_mode not in {"auto", "grouped", "per-symbol"}:
+   92:             raise ValueError("fetch_mode must be auto, grouped, or per-symbol")
+   93:         if incremental_sessions <= 0 or stale_threshold_days <= 0:
+
+FILE: src/trading_ai/market/downloader.py
+   90:             raise ValueError("invalid downloader worker/retry configuration")
+   91:         if fetch_mode not in {"auto", "grouped", "per-symbol"}:
+   92:             raise ValueError("fetch_mode must be auto, grouped, or per-symbol")
+   93:         if incremental_sessions <= 0 or stale_threshold_days <= 0:
+   94:             raise ValueError("incremental session/staleness values must be positive")
+
+FILE: src/trading_ai/market/downloader.py
+  209:         return results
+  210: 
+  211:     def _run_grouped(self, selected, *, start, end, lookback_days, force_refresh, repair_stale: bool):
+  212:         end_date = date.today() if end is None else date.fromisoformat(str(end)[:10])
+  213:         start_date = end_date - timedelta(days=lookback_days) if start is None else date.fromisoformat(str(start)[:10])
+
+FILE: src/trading_ai/market/downloader.py
+  218: 
+  219:         if force_refresh:
+  220:             grouped_dates = all_dates
+  221:         else:
+  222:             grouped_dates = all_dates[-self.incremental_sessions:]
+
+FILE: src/trading_ai/market/downloader.py
+  220:             grouped_dates = all_dates
+  221:         else:
+  222:             grouped_dates = all_dates[-self.incremental_sessions:]
+  223: 
+  224:         counters = {symbol: {"downloaded": 0, "persisted": 0, "inserted": 0, "updated": 0} for symbol in selected}
+
+FILE: src/trading_ai/market/downloader.py
+  225:         failed_dates = []
+  226:         print(
+  227:             f"Polygon grouped daily mode: requests={len(grouped_dates)} instead of {len(selected)} ticker requests; "
+  228:             f"incremental_sessions={self.incremental_sessions}; stale_repairs={len(stale) if repair_stale and not force_refresh else 0}; cache_write=false"
+  229:         )
+
+FILE: src/trading_ai/market/downloader.py
+  228:             f"incremental_sessions={self.incremental_sessions}; stale_repairs={len(stale) if repair_stale and not force_refresh else 0}; cache_write=false"
+  229:         )
+  230:         for position, trading_date in enumerate(grouped_dates, start=1):
+  231:             try:
+  232:                 outcome, attempts = self._call_with_retry(
+
+FILE: src/trading_ai/market/downloader.py
+  231:             try:
+  232:                 outcome, attempts = self._call_with_retry(
+  233:                     f"GROUPED {trading_date.isoformat()}",
+  234:                     lambda d=trading_date: self.service.save_grouped_daily(selected, d),
+  235:                 )
+
+FILE: src/trading_ai/market/downloader.py
+  232:                 outcome, attempts = self._call_with_retry(
+  233:                     f"GROUPED {trading_date.isoformat()}",
+  234:                     lambda d=trading_date: self.service.save_grouped_daily(selected, d),
+  235:                 )
+  236:                 present = outcome.get("symbols_with_bars", {})
+
+FILE: src/trading_ai/market/downloader.py
+  241:                     f"[BULK OK] {trading_date}: {outcome['downloaded_rows']} canonical bars; "
+  242:                     f"{outcome['persisted_rows']} persisted ({outcome['inserted_rows']} inserted, {outcome['updated_rows']} updated); "
+  243:                     f"request={position}/{len(grouped_dates)}; attempts={attempts}"
+  244:                 )
+  245:             except Exception as exc:
+
+FILE: src/trading_ai/market/downloader.py
+  264:                 success=success,
+  265:                 rows=c["persisted"] + (repair.persisted_rows if repair else 0),
+  266:                 message="grouped_daily_persisted" if success else (repair.message if repair and not repair.success else "one_or_more_grouped_dates_failed"),
+  267:                 attempts=1,
+  268:                 downloaded_rows=c["downloaded"] + (repair.downloaded_rows if repair else 0),
+
+FILE: src/trading_ai/market/downloader.py
+  288:         if not selected:
+  289:             raise ValueError("At least one symbol is required")
+  290:         supports_grouped = hasattr(self.service, "save_grouped_daily") and hasattr(self.service.provider, "fetch_grouped_daily")
+  291:         use_grouped = supports_grouped and self.fetch_mode in {"auto", "grouped"}
+  292:         if use_grouped:
+
+FILE: src/trading_ai/market/downloader.py
+  289:             raise ValueError("At least one symbol is required")
+  290:         supports_grouped = hasattr(self.service, "save_grouped_daily") and hasattr(self.service.provider, "fetch_grouped_daily")
+  291:         use_grouped = supports_grouped and self.fetch_mode in {"auto", "grouped"}
+  292:         if use_grouped:
+  293:             results = self._run_grouped(selected, start=start, end=end, lookback_days=lookback_days, force_refresh=force_refresh, repair_stale=self.fetch_mode == "auto")
+
+FILE: src/trading_ai/market/downloader.py
+  290:         supports_grouped = hasattr(self.service, "save_grouped_daily") and hasattr(self.service.provider, "fetch_grouped_daily")
+  291:         use_grouped = supports_grouped and self.fetch_mode in {"auto", "grouped"}
+  292:         if use_grouped:
+  293:             results = self._run_grouped(selected, start=start, end=end, lookback_days=lookback_days, force_refresh=force_refresh, repair_stale=self.fetch_mode == "auto")
+  294:         else:
+
+FILE: src/trading_ai/market/downloader.py
+  291:         use_grouped = supports_grouped and self.fetch_mode in {"auto", "grouped"}
+  292:         if use_grouped:
+  293:             results = self._run_grouped(selected, start=start, end=end, lookback_days=lookback_days, force_refresh=force_refresh, repair_stale=self.fetch_mode == "auto")
+  294:         else:
+  295:             results = self._run_per_symbol(selected, start=start, end=end, lookback_days=lookback_days, force_refresh=force_refresh)
+
+FILE: src/trading_ai/market/providers/polygon.py
+  114:             from_=start,
+  115:             to=end,
+  116:             adjusted=True,
+  117:             sort="asc",
+  118:             limit=50000,
+
+FILE: src/trading_ai/market/providers/polygon.py
+  125:         return bars
+  126: 
+  127:     def fetch_grouped_daily(
+  128:         self,
+  129:         trading_date: str | date,
+
+FILE: src/trading_ai/market/providers/polygon.py
+  136:         client = self._client()
+  137:         try:
+  138:             aggregates = client.get_grouped_daily_aggs(
+  139:                 date=date_text,
+  140:                 adjusted=True,
+
+FILE: src/trading_ai/market/providers/polygon.py
+  138:             aggregates = client.get_grouped_daily_aggs(
+  139:                 date=date_text,
+  140:                 adjusted=True,
+  141:                 include_otc=False,
+  142:             )
+
+FILE: src/trading_ai/market/providers/polygon.py
+  143:         except TypeError:
+  144:             # Compatibility with older polygon client releases.
+  145:             aggregates = client.get_grouped_daily_aggs(date=date_text, adjusted=True)
+  146: 
+  147:         bars: list[MarketBar] = []
+
+FILE: scripts/run_market_ingestion_before_redesign_07292026.py
+  151:     parser.add_argument(
+  152:         "--underlying-fetch-mode",
+  153:         choices=["auto", "grouped", "per-symbol"],
+  154:         default="auto",
+  155:         help=(
+
+FILE: scripts/run_market_ingestion_before_redesign_07292026.py
+  154:         default="auto",
+  155:         help=(
+  156:             "Equity/ETF OHLCV strategy. auto uses Polygon grouped daily market summaries "
+  157:             "for recent sessions and ticker-specific requests only for stale symbols; "
+  158:             "grouped never performs stale repairs; per-symbol preserves legacy behavior."
+
+FILE: scripts/run_market_ingestion_before_redesign_07292026.py
+  156:             "Equity/ETF OHLCV strategy. auto uses Polygon grouped daily market summaries "
+  157:             "for recent sessions and ticker-specific requests only for stale symbols; "
+  158:             "grouped never performs stale repairs; per-symbol preserves legacy behavior."
+  159:         ),
+  160:     )
+
+FILE: scripts/run_market_ingestion_before_redesign_07292026.py
+  163:         type=int,
+  164:         default=3,
+  165:         help="Recent grouped market sessions refreshed during a normal non-force run. Default: 3.",
+  166:     )
+  167:     parser.add_argument(
+
+FILE: scripts/run_market_ingestion.py
+  153:     parser.add_argument(
+  154:         "--underlying-fetch-mode",
+  155:         choices=["auto", "grouped", "per-symbol"],
+  156:         default="auto",
+  157:         help=(
+
+FILE: scripts/run_market_ingestion.py
+  156:         default="auto",
+  157:         help=(
+  158:             "Equity/ETF OHLCV strategy. auto uses Polygon grouped daily market summaries "
+  159:             "for recent sessions and ticker-specific requests only for stale symbols; "
+  160:             "grouped never performs stale repairs; per-symbol preserves legacy behavior."
+
+FILE: scripts/run_market_ingestion.py
+  158:             "Equity/ETF OHLCV strategy. auto uses Polygon grouped daily market summaries "
+  159:             "for recent sessions and ticker-specific requests only for stale symbols; "
+  160:             "grouped never performs stale repairs; per-symbol preserves legacy behavior."
+  161:         ),
+  162:     )
+
+FILE: scripts/run_market_ingestion.py
+  165:         type=int,
+  166:         default=3,
+  167:         help="Recent grouped market sessions refreshed during a normal non-force run. Default: 3.",
+  168:     )
+  169:     parser.add_argument(
+
+FILE: scripts/test_m47_phase6_reporting_integration.py
+   19:         volatility=0.25, dte=27, final_score=70.0, ai_score=70.0,
+   20:         technical_score=72.0, greeks_score=68.0, regime_score=75.0,
+   21:         volatility_score=65.0, risk_score=70.0, adjusted_score=70.0,
+   22:         ranking_reason="phase6 test", publication_name="current_market_state",
+   23:         ingestion_run_id="readiness-test", publication_status="DEGRADED",
+
+FILE: scripts/run_market_ingestion.py_working_copy.py
+  152:     parser.add_argument(
+  153:         "--underlying-fetch-mode",
+  154:         choices=["auto", "grouped", "per-symbol"],
+  155:         default="auto",
+  156:         help=(
+
+FILE: scripts/run_market_ingestion.py_working_copy.py
+  155:         default="auto",
+  156:         help=(
+  157:             "Equity/ETF OHLCV strategy. auto uses Polygon grouped daily market summaries "
+  158:             "for recent sessions and ticker-specific requests only for stale symbols; "
+  159:             "grouped never performs stale repairs; per-symbol preserves legacy behavior."
+
+FILE: scripts/run_market_ingestion.py_working_copy.py
+  157:             "Equity/ETF OHLCV strategy. auto uses Polygon grouped daily market summaries "
+  158:             "for recent sessions and ticker-specific requests only for stale symbols; "
+  159:             "grouped never performs stale repairs; per-symbol preserves legacy behavior."
+  160:         ),
+  161:     )
+
+FILE: scripts/run_market_ingestion.py_working_copy.py
+  164:         type=int,
+  165:         default=3,
+  166:         help="Recent grouped market sessions refreshed during a normal non-force run. Default: 3.",
+  167:     )
+  168:     parser.add_argument(
+
+
+==============================================================================================================
+17. EXISTING HISTORICAL REPLAY INFRASTRUCTURE
+==============================================================================================================
+
+--- historical_replay_run ---
+replay_run_id                            VARCHAR(96)                    nullable=False
+replay_mode                              VARCHAR(24)                    nullable=False
+source_scanner_run_id                    VARCHAR(96)                    nullable=True
+source_decision_run_id                   VARCHAR(96)                    nullable=True
+publication_name                         VARCHAR(128)                   nullable=True
+ingestion_run_id                         VARCHAR(128)                   nullable=True
+option_snapshot_id                       VARCHAR(160)                   nullable=True
+market_state_hash                        VARCHAR(64)                    nullable=True
+scanner_version                          VARCHAR(64)                    nullable=True
+decision_engine_version                  VARCHAR(64)                    nullable=True
+policy_version                           VARCHAR(64)                    nullable=True
+started_at                               TIMESTAMP                      nullable=False
+completed_at                             TIMESTAMP                      nullable=False
+status                                   VARCHAR(24)                    nullable=False
+candidate_count                          INTEGER                        nullable=False
+decision_count                           INTEGER                        nullable=False
+mismatch_count                           INTEGER                        nullable=False
+warnings_json                            TEXT                           nullable=False
+metadata_json                            TEXT                           nullable=False
+rows: 4
+
+--- historical_replay_comparison ---
+id                                       BIGINT                         nullable=False
+replay_run_id                            VARCHAR(96)                    nullable=False
+category                                 VARCHAR(32)                    nullable=False
+comparison_key                           VARCHAR(512)                   nullable=False
+comparison_status                        VARCHAR(24)                    nullable=False
+baseline_hash                            VARCHAR(64)                    nullable=True
+replay_hash                              VARCHAR(64)                    nullable=True
+details_json                             TEXT                           nullable=False
+rows: 8
+
+--- outcome_probability_observations ---
+observation_id                           VARCHAR(160)                   nullable=False
+candidate_id                             VARCHAR(128)                   nullable=False
+scanner_run_id                           VARCHAR(128)                   nullable=False
+symbol                                   VARCHAR(32)                    nullable=False
+as_of                                    VARCHAR(64)                    nullable=False
+horizon_end                              VARCHAR(64)                    nullable=True
+status                                   VARCHAR(48)                    nullable=False
+label_version                            VARCHAR(96)                    nullable=False
+feature_version                          VARCHAR(96)                    nullable=False
+entry_triggered                          INTEGER                        nullable=True
+target_1_before_stop                     INTEGER                        nullable=True
+target_2_before_stop                     INTEGER                        nullable=True
+target_3_before_stop                     INTEGER                        nullable=True
+profitable_at_horizon                    INTEGER                        nullable=True
+thesis_invalidation                      INTEGER                        nullable=True
+maximum_favorable_excursion_pct          DOUBLE PRECISION               nullable=True
+maximum_adverse_excursion_pct            DOUBLE PRECISION               nullable=True
+realized_return_pct                      DOUBLE PRECISION               nullable=True
+days_to_target_1                         INTEGER                        nullable=True
+days_to_stop                             INTEGER                        nullable=True
+features_json                            JSON                           nullable=False
+label_json                               JSON                           nullable=False
+lineage_json                             JSON                           nullable=False
+materialized_at                          VARCHAR(64)                    nullable=False
+rows: 5000
+
+--- outcome_probability_predictions ---
+prediction_id                            VARCHAR(160)                   nullable=False
+candidate_id                             VARCHAR(128)                   nullable=False
+scanner_run_id                           VARCHAR(128)                   nullable=False
+symbol                                   VARCHAR(32)                    nullable=False
+model_id                                 VARCHAR(160)                   nullable=False
+predicted_at                             VARCHAR(64)                    nullable=False
+mode                                     VARCHAR(24)                    nullable=False
+recommended_disposition                  VARCHAR(24)                    nullable=False
+target_1_probability                     DOUBLE PRECISION               nullable=True
+profitable_probability                   DOUBLE PRECISION               nullable=True
+uncertainty                              DOUBLE PRECISION               nullable=False
+assessment_json                          JSON                           nullable=False
+state_hash                               VARCHAR(64)                    nullable=False
+rows: 0
+
+--- outcome_probability_model_artifacts ---
+model_id                                 VARCHAR(160)                   nullable=False
+model_version                            VARCHAR(96)                    nullable=False
+lifecycle_state                          VARCHAR(32)                    nullable=False
+feature_version                          VARCHAR(96)                    nullable=False
+label_version                            VARCHAR(96)                    nullable=False
+training_started_at                      VARCHAR(64)                    nullable=False
+training_completed_at                    VARCHAR(64)                    nullable=False
+training_cutoff                          VARCHAR(64)                    nullable=False
+sample_size                              INTEGER                        nullable=False
+artifact_json                            JSON                           nullable=False
+evaluation_json                          JSON                           nullable=False
+governance_json                          JSON                           nullable=False
+state_hash                               VARCHAR(64)                    nullable=False
+approved_by                              VARCHAR(128)                   nullable=True
+approved_at                              VARCHAR(64)                    nullable=True
+activated_by                             VARCHAR(128)                   nullable=True
+activated_at                             VARCHAR(64)                    nullable=True
+rows: 0
+
+--- performance_counterfactual_outcomes ---
+counterfactual_id                        VARCHAR(128)                   nullable=False
+portfolio_id                             VARCHAR(128)                   nullable=False
+opportunity_id                           VARCHAR(128)                   nullable=False
+decision_state_hash                      VARCHAR(128)                   nullable=False
+decision                                 VARCHAR(32)                    nullable=False
+selected                                 INTEGER                        nullable=False
+predicted_probability                    DOUBLE PRECISION               nullable=False
+observed_return_pct                      DOUBLE PRECISION               nullable=True
+evaluation_status                        VARCHAR(32)                    nullable=False
+evaluated_at                             VARCHAR(64)                    nullable=False
+payload_json                             JSON                           nullable=False
+rows: 8666
+
+--- stock_probability_calibration_snapshots ---
+id                                       VARCHAR(128)                   nullable=False
+symbol                                   VARCHAR(32)                    nullable=False
+scanner_run_id                           VARCHAR(128)                   nullable=False
+candidate_id                             VARCHAR(128)                   nullable=True
+snapshot_timestamp                       VARCHAR(64)                    nullable=False
+payload_json                             JSON                           nullable=False
+model_family                             VARCHAR(128)                   nullable=False
+model_version                            VARCHAR(128)                   nullable=False
+observation_count                        INTEGER                        nullable=False
+brier_score                              DOUBLE PRECISION               nullable=True
+expected_calibration_error               DOUBLE PRECISION               nullable=True
+rows: 0
+
+
+==============================================================================================================
+18. MACHINE-GENERATED PRELIMINARY READINESS SIGNALS
+==============================================================================================================
+{
+  "price_rows": 750309,
+  "five_year_symbols": 575,
+  "null_price_rows": 0,
+  "nonpositive_price_rows": 0,
+  "invalid_ohlc_geometry_rows": 0,
+  "duplicate_symbol_date_keys": 0,
+  "canonical_missing_history": 0,
+  "historical_not_current": 2,
+  "sector_membership_table_present": true,
+  "source_adjustment_matches": 67
+}
+
+=== AUDIT COMPLETE ===

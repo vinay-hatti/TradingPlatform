@@ -1,0 +1,54 @@
+{
+  "version": "M77.5-WALK-FORWARD-STABILITY-INCREMENTAL-EDGE-SHADOW-POLICY-1.0",
+  "mode": "RESEARCH_SHADOW_ONLY",
+  "governance": {
+    "mode": "READ_ONLY_POST_WALK_FORWARD_STABILITY_CERTIFICATION",
+    "read_only": true,
+    "research_only": true,
+    "database_writes": false,
+    "production_authority_effect": false,
+    "production_model_mutation": false,
+    "production_threshold_change": false,
+    "production_weight_change": false,
+    "production_decision_mutation": false,
+    "automatic_bearish_inversion": false,
+    "automatic_champion_promotion": false,
+    "survivorship_bias_free_claim": false,
+    "pit_sector_membership_claim": false,
+    "partial_year_treated_as_full_year": false
+  },
+  "production_champion_change": false,
+  "score_mutation": "NONE",
+  "threshold_mutation": "NONE",
+  "weight_mutation": "NONE",
+  "decision_mutation": "NONE",
+  "bearish_policy": "ABSTAIN_FROM_BEARISH_CHALLENGER_SUPPORT_DO_NOT_INVERT",
+  "partial_year_policy": "2026 may contribute supporting evidence but never satisfies the full-year holdout requirement.",
+  "shadow_policy_certified_candidate_horizon_ids": [
+    "direction_regime::direction=BULLISH|historical_regime=RANGE_NORMAL@@20d",
+    "direction::direction=BULLISH@@60d",
+    "direction_category_score::direction=STRONG_BULLISH|primary_category=ACCUMULATION|score_band=[70,80)@@60d",
+    "direction_category::direction=STRONG_BULLISH|primary_category=ACCUMULATION@@60d",
+    "direction_structure::direction=STRONG_BULLISH|structure=EXPANSION@@60d",
+    "direction_structure::direction=STRONG_BULLISH|structure=EXPANSION@@20d"
+  ],
+  "full_year_depth_preferred_candidate_horizon_ids": [
+    "direction_regime::direction=BULLISH|historical_regime=RANGE_NORMAL@@20d",
+    "direction::direction=BULLISH@@60d"
+  ],
+  "non_certified_m77_4_supported_candidate_horizon_ids": [
+    "direction_category_score::direction=STRONG_BULLISH|primary_category=BREAKOUT|score_band=[80,90)@@60d",
+    "direction_category_structure::direction=STRONG_BULLISH|primary_category=ACCUMULATION|structure=EXPANSION@@60d",
+    "direction_category_structure::direction=STRONG_BULLISH|primary_category=BULLISH|structure=EXPANSION@@60d",
+    "direction_score_regime::direction=BULLISH|historical_regime=BULL_HEALTHY|score_band=[40,50)@@20d",
+    "direction_category::direction=BULLISH|primary_category=BULLISH@@60d",
+    "direction_regime::direction=BULLISH|historical_regime=BULL_HEALTHY@@20d"
+  ],
+  "application_contract": "Research-only annotation. A current bullish baseline observation may be tagged RESEARCH_SHADOW_POLICY_CERTIFIED only when it matches a listed certified cohort. This tag must not change production score, direction, strategy, thresholds, weights, capital allocation, execution, or portfolio-management authority.",
+  "lineage": {
+    "m77_4_input": "reports/m77/m77_4_walk_forward_challenger_certification.json",
+    "m77_4_sha256": "0b0219d57f94ac25b72ebdb74e07cbaefb94f6f9e67e27d39f8f0a117fc4d548",
+    "m77_4_version": "M77.4-GOVERNED-CHALLENGER-WALK-FORWARD-1.0",
+    "m77_4_regime_authority_version": "M77.3-HISTORICAL-REGIME-AUTHORITY-1.0"
+  }
+}

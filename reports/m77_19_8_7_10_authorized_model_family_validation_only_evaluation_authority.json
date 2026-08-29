@@ -1,0 +1,65 @@
+{
+  "MF3_reopened": false,
+  "advancement_gate_sha256": "5488e2e16e408e8a48a4e3ae87ccbd6322915b2ed15df8ad119623c707b34d4f",
+  "authorized_validation_scope": {
+    "MF1_REGULARIZED_LOGISTIC_DIRECTION": [
+      5,
+      10,
+      20
+    ],
+    "MF2_MONOTONIC_GAM_DIRECTION": [
+      5,
+      10,
+      20
+    ]
+  },
+  "development_matrix_authority_sha256": "90bbdb298bfbde0243436fe96caad0c21af4ac77e38b964d11a43140f857ea90",
+  "feature_authority_sha256": "57acdcdd1784c5c067a4754a36f427bb529cb2ed17c691d1622809500c89ce6e",
+  "final_holdout_context_open_authorized": false,
+  "final_holdout_outcomes_open_authorized": false,
+  "frozen_MF1_selected_configs": {
+    "10": {
+      "C": 1.0
+    },
+    "20": {
+      "C": 0.1
+    },
+    "5": {
+      "C": 10.0
+    }
+  },
+  "frozen_MF2_selected_configs": {
+    "10": {
+      "l2_penalty": 0.1,
+      "spline_knots": 4
+    },
+    "20": {
+      "l2_penalty": 0.1,
+      "spline_knots": 4
+    },
+    "5": {
+      "l2_penalty": 0.1,
+      "spline_knots": 4
+    }
+  },
+  "model_family_champion_selected": false,
+  "next_step": "BUILD_M77_19_8_7_10_1_EXACT_PIT_VALIDATION_FEATURE_MATRIX_MATERIALIZATION_AND_FROZEN_PREPROCESSOR_AUTHORITY",
+  "production_authority_effect": false,
+  "production_model_change_authorized": false,
+  "status": "READY",
+  "training_gate_sha256": "0440ac1ec4f2da34606ba6ba6500b4191086730eff282eaaccf4b6bfd8de0a9c",
+  "validation_feature_approximation_authorized": false,
+  "validation_feature_materialization_authorized": true,
+  "validation_feature_materialization_must_reuse_exact_frozen_PIT_extractors": true,
+  "validation_feature_matrix_authority_exists": false,
+  "validation_feature_refitting_authorized": false,
+  "validation_model_retuning_authorized": false,
+  "validation_outcomes_open_authorized_after_exact_feature_materialization": true,
+  "validation_preprocessor_fit_on_validation_authorized": false,
+  "validation_scoring_performed_by_this_step": false,
+  "validation_window": {
+    "end": "2022-12-31",
+    "start": "2018-01-01"
+  },
+  "version": "M77.19.8.7.10-AUTHORIZED-MODEL-FAMILY-VALIDATION-ONLY-EVALUATION-AUTHORITY-1.0"
+}

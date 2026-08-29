@@ -1,0 +1,294 @@
+{
+  "all_required_features_directly_callable": true,
+  "continuity_authority_sha256": "c7c80f5a89bd8c710c99ab171ce95ed8a803d40c5dbed6d28ff6239efe65b4a3",
+  "development_backfill_script_sha256": "b201dfb3f760c3511c8abdd30a2551d0354e70069aafacf902b0be2fefa57658",
+  "feature_bindings": [
+    {
+      "binding_status": "DIRECT_CALLABLE_BINDING_FOUND",
+      "feature_id": "F020",
+      "match_count": 7,
+      "matches": [
+        {
+          "end_lineno": 458,
+          "kind": "FUNCTION",
+          "lineno": 215,
+          "name": "main",
+          "segment_sha256": "3a9a0989fa6570087d9082fcd45281db2eaef6aacf23e13314f541deb792fa7f"
+        },
+        {
+          "end_lineno": 48,
+          "kind": "ASSIGNMENT",
+          "lineno": 48,
+          "name": "<assignment>",
+          "segment_sha256": "2dd028202522f11096f8521c78c3f51f610ddf5e740096133bbf75003aedce3d"
+        },
+        {
+          "end_lineno": 301,
+          "kind": "ASSIGNMENT",
+          "lineno": 301,
+          "name": "<assignment>",
+          "segment_sha256": "82333a577cdefd5ba3a1893677546c53f8420a706b778a5b4b5d2aab1d9d5ec4"
+        },
+        {
+          "end_lineno": 301,
+          "kind": "ASSIGNMENT",
+          "lineno": 301,
+          "name": "<assignment>",
+          "segment_sha256": "82333a577cdefd5ba3a1893677546c53f8420a706b778a5b4b5d2aab1d9d5ec4"
+        },
+        {
+          "end_lineno": 303,
+          "kind": "ASSIGNMENT",
+          "lineno": 303,
+          "name": "<assignment>",
+          "segment_sha256": "614adb2caf8514615c37b16b30467ddd123a2d14762da6f7823e0b6a08466c23"
+        },
+        {
+          "end_lineno": 303,
+          "kind": "ASSIGNMENT",
+          "lineno": 303,
+          "name": "<assignment>",
+          "segment_sha256": "614adb2caf8514615c37b16b30467ddd123a2d14762da6f7823e0b6a08466c23"
+        },
+        {
+          "end_lineno": 303,
+          "kind": "ASSIGNMENT",
+          "lineno": 303,
+          "name": "<assignment>",
+          "segment_sha256": "614adb2caf8514615c37b16b30467ddd123a2d14762da6f7823e0b6a08466c23"
+        }
+      ]
+    },
+    {
+      "binding_status": "DIRECT_CALLABLE_BINDING_FOUND",
+      "feature_id": "F021",
+      "match_count": 7,
+      "matches": [
+        {
+          "end_lineno": 458,
+          "kind": "FUNCTION",
+          "lineno": 215,
+          "name": "main",
+          "segment_sha256": "3a9a0989fa6570087d9082fcd45281db2eaef6aacf23e13314f541deb792fa7f"
+        },
+        {
+          "end_lineno": 48,
+          "kind": "ASSIGNMENT",
+          "lineno": 48,
+          "name": "<assignment>",
+          "segment_sha256": "2dd028202522f11096f8521c78c3f51f610ddf5e740096133bbf75003aedce3d"
+        },
+        {
+          "end_lineno": 316,
+          "kind": "ASSIGNMENT",
+          "lineno": 316,
+          "name": "<assignment>",
+          "segment_sha256": "946d194a051ec14827216b940edaa4f8ef3eac801cc0e4f2e519353a9f2275e1"
+        },
+        {
+          "end_lineno": 316,
+          "kind": "ASSIGNMENT",
+          "lineno": 316,
+          "name": "<assignment>",
+          "segment_sha256": "946d194a051ec14827216b940edaa4f8ef3eac801cc0e4f2e519353a9f2275e1"
+        },
+        {
+          "end_lineno": 318,
+          "kind": "ASSIGNMENT",
+          "lineno": 318,
+          "name": "<assignment>",
+          "segment_sha256": "5f6dfd130ec6ad56d7da34d12f9920240c9152258d388fb5f70b52ef726ff6ce"
+        },
+        {
+          "end_lineno": 318,
+          "kind": "ASSIGNMENT",
+          "lineno": 318,
+          "name": "<assignment>",
+          "segment_sha256": "5f6dfd130ec6ad56d7da34d12f9920240c9152258d388fb5f70b52ef726ff6ce"
+        },
+        {
+          "end_lineno": 318,
+          "kind": "ASSIGNMENT",
+          "lineno": 318,
+          "name": "<assignment>",
+          "segment_sha256": "5f6dfd130ec6ad56d7da34d12f9920240c9152258d388fb5f70b52ef726ff6ce"
+        }
+      ]
+    },
+    {
+      "binding_status": "DIRECT_CALLABLE_BINDING_FOUND",
+      "feature_id": "F030",
+      "match_count": 2,
+      "matches": [
+        {
+          "end_lineno": 458,
+          "kind": "FUNCTION",
+          "lineno": 215,
+          "name": "main",
+          "segment_sha256": "3a9a0989fa6570087d9082fcd45281db2eaef6aacf23e13314f541deb792fa7f"
+        },
+        {
+          "end_lineno": 48,
+          "kind": "ASSIGNMENT",
+          "lineno": 48,
+          "name": "<assignment>",
+          "segment_sha256": "2dd028202522f11096f8521c78c3f51f610ddf5e740096133bbf75003aedce3d"
+        }
+      ]
+    },
+    {
+      "binding_status": "DIRECT_CALLABLE_BINDING_FOUND",
+      "feature_id": "F031",
+      "match_count": 2,
+      "matches": [
+        {
+          "end_lineno": 458,
+          "kind": "FUNCTION",
+          "lineno": 215,
+          "name": "main",
+          "segment_sha256": "3a9a0989fa6570087d9082fcd45281db2eaef6aacf23e13314f541deb792fa7f"
+        },
+        {
+          "end_lineno": 48,
+          "kind": "ASSIGNMENT",
+          "lineno": 48,
+          "name": "<assignment>",
+          "segment_sha256": "2dd028202522f11096f8521c78c3f51f610ddf5e740096133bbf75003aedce3d"
+        }
+      ]
+    },
+    {
+      "binding_status": "DIRECT_CALLABLE_BINDING_FOUND",
+      "feature_id": "F070",
+      "match_count": 7,
+      "matches": [
+        {
+          "end_lineno": 458,
+          "kind": "FUNCTION",
+          "lineno": 215,
+          "name": "main",
+          "segment_sha256": "3a9a0989fa6570087d9082fcd45281db2eaef6aacf23e13314f541deb792fa7f"
+        },
+        {
+          "end_lineno": 48,
+          "kind": "ASSIGNMENT",
+          "lineno": 48,
+          "name": "<assignment>",
+          "segment_sha256": "2dd028202522f11096f8521c78c3f51f610ddf5e740096133bbf75003aedce3d"
+        },
+        {
+          "end_lineno": 329,
+          "kind": "ASSIGNMENT",
+          "lineno": 329,
+          "name": "<assignment>",
+          "segment_sha256": "ee5dd877a7ed7adcc9510c2bd31c1a208029b7a849d292305744fd75ba6d3453"
+        },
+        {
+          "end_lineno": 329,
+          "kind": "ASSIGNMENT",
+          "lineno": 329,
+          "name": "<assignment>",
+          "segment_sha256": "ee5dd877a7ed7adcc9510c2bd31c1a208029b7a849d292305744fd75ba6d3453"
+        },
+        {
+          "end_lineno": 331,
+          "kind": "ASSIGNMENT",
+          "lineno": 331,
+          "name": "<assignment>",
+          "segment_sha256": "70f721bdb153743d693f09a0b45ff200dd7e7a65b49bb254a6ff5927984f384c"
+        },
+        {
+          "end_lineno": 331,
+          "kind": "ASSIGNMENT",
+          "lineno": 331,
+          "name": "<assignment>",
+          "segment_sha256": "70f721bdb153743d693f09a0b45ff200dd7e7a65b49bb254a6ff5927984f384c"
+        },
+        {
+          "end_lineno": 331,
+          "kind": "ASSIGNMENT",
+          "lineno": 331,
+          "name": "<assignment>",
+          "segment_sha256": "70f721bdb153743d693f09a0b45ff200dd7e7a65b49bb254a6ff5927984f384c"
+        }
+      ]
+    },
+    {
+      "binding_status": "DIRECT_CALLABLE_BINDING_FOUND",
+      "feature_id": "F080",
+      "match_count": 3,
+      "matches": [
+        {
+          "end_lineno": 202,
+          "kind": "FUNCTION",
+          "lineno": 192,
+          "name": "trailing_52w_location",
+          "segment_sha256": "6dda86f9c737c33bc313f8d85794a55217eafae54f8e7a87c8880387a554e671"
+        },
+        {
+          "end_lineno": 458,
+          "kind": "FUNCTION",
+          "lineno": 215,
+          "name": "main",
+          "segment_sha256": "3a9a0989fa6570087d9082fcd45281db2eaef6aacf23e13314f541deb792fa7f"
+        },
+        {
+          "end_lineno": 48,
+          "kind": "ASSIGNMENT",
+          "lineno": 48,
+          "name": "<assignment>",
+          "segment_sha256": "2dd028202522f11096f8521c78c3f51f610ddf5e740096133bbf75003aedce3d"
+        }
+      ]
+    },
+    {
+      "binding_status": "DIRECT_CALLABLE_BINDING_FOUND",
+      "feature_id": "F081",
+      "match_count": 3,
+      "matches": [
+        {
+          "end_lineno": 202,
+          "kind": "FUNCTION",
+          "lineno": 192,
+          "name": "trailing_52w_location",
+          "segment_sha256": "6dda86f9c737c33bc313f8d85794a55217eafae54f8e7a87c8880387a554e671"
+        },
+        {
+          "end_lineno": 458,
+          "kind": "FUNCTION",
+          "lineno": 215,
+          "name": "main",
+          "segment_sha256": "3a9a0989fa6570087d9082fcd45281db2eaef6aacf23e13314f541deb792fa7f"
+        },
+        {
+          "end_lineno": 48,
+          "kind": "ASSIGNMENT",
+          "lineno": 48,
+          "name": "<assignment>",
+          "segment_sha256": "2dd028202522f11096f8521c78c3f51f610ddf5e740096133bbf75003aedce3d"
+        }
+      ]
+    }
+  ],
+  "final_holdout_opened": false,
+  "formula_reimplementation_authorized": false,
+  "inline_code_extraction_authorized_by_this_step": false,
+  "next_step": "BUILD_M77_19_8_7_10_4_EXACT_CALLABLE_REUSE_VALIDATION_FEATURE_MATERIALIZATION",
+  "production_authority_effect": false,
+  "required_feature_ids": [
+    "F020",
+    "F021",
+    "F030",
+    "F031",
+    "F070",
+    "F080",
+    "F081"
+  ],
+  "semantic_equivalent_rewrite_authorized": false,
+  "status": "READY",
+  "validation_feature_matrix_materialized": false,
+  "validation_outcomes_opened": false,
+  "validation_scoring_performed": false,
+  "validation_targets_opened": false,
+  "version": "M77.19.8.7.10.3-EXACT-IMPLEMENTATION-REUSE-BINDING-AUTHORITY-1.0"
+}

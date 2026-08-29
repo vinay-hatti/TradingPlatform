@@ -1,0 +1,64 @@
+{
+  "base_matrix_partition_identifier_count": 3,
+  "base_matrix_partition_identifiers": [
+    "VALIDATION_START",
+    "validation_context_rows_seen_and_skipped",
+    "validation_replay_rows_seen_and_skipped"
+  ],
+  "base_matrix_partition_literals": [
+    {
+      "lineno": 2,
+      "value": "\nM77.19.8.2 \u2014 Development-Only Feature Matrix Materialization & Schema Validation\n\nMaterializes the first Prospective Edge Intelligence feature matrix using ONLY\npoint-in-time replay rows whose as_of <= 2017-12-31.\n\nImportant:\n- no Validation rows are materialized;\n- no Final Holdout rows are materialized;\n- no outcome/target data is read;\n- no model is trained or scored;\n- all 27 frozen feature IDs are represented;\n- features that require an unbuilt extractor/authority remain NULL with explicit\n  missingness rather than being approximated;\n- structured payloads are not flattened opportunistically.\n"
+    },
+    {
+      "lineno": 25,
+      "value": "M77.19.8.2-DEVELOPMENT-ONLY-FEATURE-MATRIX-MATERIALIZATION-SCHEMA-VALIDATION-1.0"
+    },
+    {
+      "lineno": 28,
+      "value": "2017-12-31"
+    },
+    {
+      "lineno": 319,
+      "value": "BUILD_M77_19_8_3_BLOCKED_FEATURE_EXTRACTOR_AUTHORITY_AND_DEVELOPMENT_TARGET_MATRIX_PREREGISTRATION"
+    },
+    {
+      "lineno": 331,
+      "value": "=== M77.19.8.2 DEVELOPMENT-ONLY FEATURE MATRIX MATERIALIZATION & SCHEMA VALIDATION ==="
+    },
+    {
+      "lineno": 349,
+      "value": "next_step: BUILD_M77_19_8_3_BLOCKED_FEATURE_EXTRACTOR_AUTHORITY_AND_DEVELOPMENT_TARGET_MATRIX_PREREGISTRATION"
+    },
+    {
+      "lineno": 163,
+      "value": "DEVELOPMENT"
+    }
+  ],
+  "certified_adapter_accepts_matrix_root": true,
+  "development_base_matrix_cardinality": {
+    "rows": 303689,
+    "symbols": 524
+  },
+  "development_base_matrix_script": "scripts/run_m77_19_8_2_development_only_feature_matrix_materialization_schema_validation.py",
+  "development_base_matrix_script_sha256": "674fbd58b33476627b432cf1515aa45c00db7008ff1df80bf9c9109d2a70fec3",
+  "failed_validation_cardinality": {
+    "rows": 303689,
+    "symbols": 524
+  },
+  "feature_formula_change_authorized": false,
+  "final_holdout_opened": false,
+  "next_step": "BUILD_M77_19_8_7_10_5_2_2_EXACT_8_2_BASE_MATRIX_PARTITION_PARAMETERIZATION_AND_DEVELOPMENT_PARITY_GATE",
+  "production_authority_effect": false,
+  "root_cause": "CERTIFIED_8_4_3_ADAPTER_RECEIVED_DEVELOPMENT_ONLY_8_2_BASE_MATRIX",
+  "root_cause_certified": true,
+  "status": "READY",
+  "validation_outcomes_opened": false,
+  "validation_replay_cardinality": {
+    "rows": 141567,
+    "symbols": 570
+  },
+  "validation_scoring_performed": false,
+  "validation_targets_opened": false,
+  "version": "M77.19.8.7.10.5.2.1-VALIDATION-BASE-MATRIX-PARTITION-COUPLING-FORENSICS-1.0"
+}

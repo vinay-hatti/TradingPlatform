@@ -1,0 +1,83 @@
+{
+  "actual_row_count": 303689,
+  "actual_symbol_file_count": 524,
+  "call_graph_authority_sha256": "289e4a67bcea1027d3701362c908a0292c8e6ff7df9215840072d485c17da348",
+  "development_backfill_script_sha256": "b201dfb3f760c3511c8abdd30a2551d0354e70069aafacf902b0be2fefa57658",
+  "development_parity_certified": true,
+  "development_parity_execution_performed": true,
+  "exact_main_cli_invocation_contract_certified": true,
+  "expected_row_count": 303689,
+  "expected_symbol_file_count": 524,
+  "extra_symbol_files": [],
+  "feature_formula_reimplementation_performed": false,
+  "final_holdout_opened": false,
+  "mismatch_symbol_count": 0,
+  "mismatch_symbols": [],
+  "missing_symbol_files": [],
+  "next_step": "BUILD_M77_19_8_7_10_5_EXACT_MAIN_REUSE_VALIDATION_FEATURE_MATRIX_MATERIALIZATION",
+  "parity_output_retained": false,
+  "parity_output_root": null,
+  "production_authority_effect": false,
+  "required_feature_coverage_source": "REGENERATED_MATRIX_DIRECT_SCAN",
+  "required_feature_coverage_summary": [
+    {
+      "coverage_pct": 1.0,
+      "feature_id": "F020",
+      "missing": 0,
+      "present": 303689
+    },
+    {
+      "coverage_pct": 1.0,
+      "feature_id": "F021",
+      "missing": 0,
+      "present": 303689
+    },
+    {
+      "coverage_pct": 1.0,
+      "feature_id": "F030",
+      "missing": 0,
+      "present": 303689
+    },
+    {
+      "coverage_pct": 1.0,
+      "feature_id": "F031",
+      "missing": 0,
+      "present": 303689
+    },
+    {
+      "coverage_pct": 1.0,
+      "feature_id": "F070",
+      "missing": 0,
+      "present": 303689
+    },
+    {
+      "coverage_pct": 1.0,
+      "feature_id": "F080",
+      "missing": 0,
+      "present": 303689
+    },
+    {
+      "coverage_pct": 1.0,
+      "feature_id": "F081",
+      "missing": 0,
+      "present": 303689
+    }
+  ],
+  "required_feature_coverage_zero_missing": true,
+  "required_feature_ids": [
+    "F020",
+    "F021",
+    "F030",
+    "F031",
+    "F070",
+    "F080",
+    "F081"
+  ],
+  "semantic_equivalent_rewrite_performed": false,
+  "status": "READY",
+  "validation_feature_matrix_materialized": false,
+  "validation_outcomes_opened": false,
+  "validation_scoring_performed": false,
+  "validation_targets_opened": false,
+  "version": "M77.19.8.7.10.4.2-EXACT-MAIN-DEVELOPMENT-REPLAY-PARITY-HARNESS-1.0"
+}

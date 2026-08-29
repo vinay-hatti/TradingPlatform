@@ -1,0 +1,11 @@
+{
+  "milestone": "M77.19.7.3.1.1",
+  "repair": "NATIVE_PROFILE_SCHEMA_AUTHORITY",
+  "score_authority": "profile.scores.overall",
+  "confidence_authority": "profile.confidence",
+  "direction_authority": "profile.direction",
+  "production_authority_effect": false,
+  "version": "M77.19.7.3.1.1-FULL-PROFILE-RESUME-INTEGRITY-REPAIR-1.0",
+  "full_profile_resume_integrity_required": true,
+  "metadata_only_resume_allowed_for_full_profile_run": false
+}

@@ -4,12 +4,12 @@ import json
 import math
 import uuid
 from dataclasses import asdict, dataclass, field
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from statistics import mean
 from typing import Any, Callable, Iterable, Mapping, Sequence
 
-from sqlalchemy import text
+from sqlalchemy import bindparam, text
 from sqlalchemy.orm import Session
 
 from trading_ai.polygon_intelligence import HistoricalVolatilityEngine, MicrostructureLiquidityEngine
@@ -87,6 +87,192 @@ class PolygonDerivedSnapshotPublisher:
 
     def __init__(self, session: Session) -> None:
         self.session = session
+
+    def begin_option_snapshot(
+        self,
+        *,
+        symbols: Sequence[str],
+        capture_date: date,
+        snapshot_timestamp: datetime | None = None,
+        snapshot_id: str | None = None,
+    ) -> dict[str, Any]:
+        """Create or resume the exact current-cycle governed option snapshot run.
+
+        Contract rows are written directly into ``option_contract_snapshot`` while
+        Polygon batches are validated.  This prevents earlier same-day compatibility
+        rows from leaking into a later immutable snapshot and also makes interrupted
+        cycles resumable without reconstructing membership from quote timestamps.
+        """
+        ts = snapshot_timestamp or datetime.now(timezone.utc)
+        sid = snapshot_id or f"polygon-{ts.strftime('%Y%m%dT%H%M%S%fZ')}-{uuid.uuid4().hex[:8]}"
+        symbol_list = sorted({s.strip().upper() for s in symbols if s and s.strip()})
+        existing = self.session.execute(
+            text(
+                """
+                SELECT id, snapshot_id, snapshot_timestamp, capture_status
+                  FROM option_snapshot_run
+                 WHERE provider='POLYGON' AND snapshot_id=:sid
+                """
+            ),
+            {"sid": sid},
+        ).mappings().one_or_none()
+        if existing is not None:
+            status = str(existing.get("capture_status") or "").upper()
+            if status in {"READY", "PARTIAL"}:
+                raise ValueError(
+                    f"Option snapshot cycle {sid} is already finalized with status {status}; "
+                    "use a new cycle id or --reuse-options-snapshot."
+                )
+            return {
+                "run_id": int(existing["id"]),
+                "snapshot_id": str(existing["snapshot_id"]),
+                "snapshot_timestamp": existing["snapshot_timestamp"],
+                "resumed": True,
+            }
+        run_id = self.session.execute(
+            text(
+                """
+                INSERT INTO option_snapshot_run
+                    (snapshot_id, snapshot_timestamp, as_of_date, provider, capture_status,
+                     is_partial, completeness_score, symbols_requested, symbols_succeeded,
+                     symbols_failed, contracts_received, contracts_persisted, warnings_json)
+                VALUES
+                    (:sid, :ts, :as_of, 'POLYGON', 'BUILDING', true, 0, :requested,
+                     0, :requested, 0, 0, :warnings)
+                RETURNING id
+                """
+            ),
+            {
+                "sid": sid,
+                "ts": ts,
+                "as_of": capture_date,
+                "requested": len(symbol_list),
+                "warnings": strict_json_dumps(["CAPTURE_IN_PROGRESS"]),
+            },
+        ).scalar_one()
+        self.session.commit()
+        return {
+            "run_id": int(run_id),
+            "snapshot_id": sid,
+            "snapshot_timestamp": ts,
+            "resumed": False,
+        }
+
+    def finalize_option_snapshot(
+        self,
+        *,
+        symbols: Sequence[str],
+        capture_date: date,
+        snapshot_timestamp: datetime,
+        snapshot_id: str,
+    ) -> dict[str, Any]:
+        """Finalize exact current-cycle membership and current-day compatibility state."""
+        symbol_list = sorted({s.strip().upper() for s in symbols if s and s.strip()})
+        run = self.session.execute(
+            text(
+                """
+                SELECT id
+                  FROM option_snapshot_run
+                 WHERE provider='POLYGON' AND snapshot_id=:sid
+                """
+            ),
+            {"sid": snapshot_id},
+        ).mappings().one()
+        run_id = int(run["id"])
+        counts = self.session.execute(
+            text(
+                """
+                SELECT COUNT(*) AS contracts,
+                       COUNT(DISTINCT underlying_symbol) AS symbols
+                  FROM option_contract_snapshot
+                 WHERE snapshot_run_id=:run_id
+                """
+            ),
+            {"run_id": run_id},
+        ).mappings().one()
+        contracts = int(counts["contracts"] or 0)
+        succeeded = int(counts["symbols"] or 0)
+        completeness = (succeeded / len(symbol_list) * 100.0) if symbol_list else 0.0
+        partial = succeeded < len(symbol_list)
+        status = "PARTIAL" if partial else "READY"
+        warnings = [] if not partial else ["SOME_SYMBOLS_HAVE_NO_OPTION_ROWS"]
+
+        # The daily compatibility table must represent the same current cycle.
+        # Remove same-date rows that survived from an earlier intraday capture but
+        # are absent from this exact governed snapshot.
+        prune_result = self.session.execute(
+            text(
+                """
+                DELETE FROM option_contract_history history
+                 WHERE history.quote_date=:capture_date
+                   AND history.underlying_symbol = ANY(:symbols)
+                   AND NOT EXISTS (
+                        SELECT 1
+                          FROM option_contract_snapshot snapshot
+                         WHERE snapshot.snapshot_run_id=:run_id
+                           AND snapshot.option_symbol=history.option_symbol
+                   )
+                """
+            ),
+            {
+                "capture_date": capture_date,
+                "symbols": symbol_list,
+                "run_id": run_id,
+            },
+        )
+        pruned = int(prune_result.rowcount or 0)
+        self.session.execute(
+            text(
+                """
+                UPDATE option_contract_snapshot
+                   SET snapshot_timestamp=:ts
+                 WHERE snapshot_run_id=:run_id
+                """
+            ),
+            {"ts": snapshot_timestamp, "run_id": run_id},
+        )
+        self.session.execute(
+            text(
+                """
+                UPDATE option_snapshot_run
+                   SET snapshot_timestamp=:ts,
+                       as_of_date=:as_of,
+                       capture_status=:status,
+                       is_partial=:partial,
+                       completeness_score=:score,
+                       symbols_requested=:requested,
+                       symbols_succeeded=:succeeded,
+                       symbols_failed=:failed,
+                       contracts_received=:contracts,
+                       contracts_persisted=:contracts,
+                       warnings_json=:warnings
+                 WHERE id=:run_id
+                """
+            ),
+            {
+                "ts": snapshot_timestamp,
+                "as_of": capture_date,
+                "status": status,
+                "partial": partial,
+                "score": completeness,
+                "requested": len(symbol_list),
+                "succeeded": succeeded,
+                "failed": max(0, len(symbol_list) - succeeded),
+                "contracts": contracts,
+                "warnings": strict_json_dumps(warnings),
+                "run_id": run_id,
+            },
+        )
+        self.session.commit()
+        return {
+            "status": "DEGRADED" if partial else "READY",
+            "rows_written": contracts,
+            "snapshot_id": snapshot_id,
+            "snapshot_timestamp": snapshot_timestamp.isoformat(),
+            "completeness_score": round(completeness, 4),
+            "stale_daily_rows_pruned": pruned,
+            "run_id": run_id,
+        }
 
     def publish_option_snapshot(
         self,
@@ -190,15 +376,61 @@ class PolygonDerivedSnapshotPublisher:
         ).mappings().all()
         grouped: dict[str, list[Mapping[str, Any]]] = {}
         for r in rows: grouped.setdefault(str(r["underlying_symbol"]), []).append(r)
+        # M68.2.1.15.8.2: preload history for the whole symbol population.
+        # This replaces ~2 SQL round trips per symbol with two bounded bulk reads.
+        symbols = sorted(grouped)
+        history_stmt = text(
+            """
+            SELECT underlying_symbol, atm_iv_30d, snapshot_timestamp
+              FROM underlying_volatility_snapshot
+             WHERE underlying_symbol IN :symbols
+               AND atm_iv_30d IS NOT NULL
+               AND snapshot_timestamp < :ts
+               AND snapshot_timestamp >= :history_floor
+             ORDER BY underlying_symbol, snapshot_timestamp DESC
+            """
+        ).bindparams(bindparam("symbols", expanding=True))
+        history_rows = self.session.execute(history_stmt, {
+            "symbols": symbols,
+            "ts": run["snapshot_timestamp"],
+            "history_floor": run["snapshot_timestamp"] - timedelta(days=90),
+        }).mappings().all() if symbols else []
+        history_by_symbol: dict[str, list[float]] = {}
+        for item in history_rows:
+            bucket = history_by_symbol.setdefault(str(item["underlying_symbol"]), [])
+            if len(bucket) < 252:
+                bucket.append(float(item["atm_iv_30d"]))
+
+        price_stmt = text(
+            """
+            SELECT symbol, date, close
+              FROM price_history
+             WHERE symbol IN :symbols
+               AND date <= :d
+               AND date >= :floor
+             ORDER BY symbol, date DESC
+            """
+        ).bindparams(bindparam("symbols", expanding=True))
+        price_rows = self.session.execute(price_stmt, {
+            "symbols": symbols,
+            "d": capture_date,
+            "floor": capture_date - timedelta(days=45),
+        }).mappings().all() if symbols else []
+        closes_by_symbol: dict[str, list[float]] = {}
+        for item in price_rows:
+            bucket = closes_by_symbol.setdefault(str(item["symbol"]), [])
+            if len(bucket) < 21 and item["close"] is not None:
+                bucket.append(float(item["close"]))
+
         written = 0
         for symbol, contracts in grouped.items():
             liquid = [r for r in contracts if (r["implied_volatility"] or 0) > 0 and (r["bid"] or 0) > 0 and (r["ask"] or 0) >= (r["bid"] or 0)]
             near = sorted(liquid, key=lambda r: (abs((r["expiry"] - capture_date).days - 30), abs(abs(float(r["delta"] or 0.5)) - 0.5)))[:12]
             atm_iv = mean(float(r["implied_volatility"]) for r in near) if near else None
-            history = [float(x) for x in self.session.execute(text("SELECT atm_iv_30d FROM underlying_volatility_snapshot WHERE underlying_symbol=:s AND atm_iv_30d IS NOT NULL AND snapshot_timestamp < :ts ORDER BY snapshot_timestamp DESC LIMIT 252"), {"s": symbol, "ts": run["snapshot_timestamp"]}).scalars().all()]
+            history = history_by_symbol.get(symbol, [])
             rank = HistoricalVolatilityEngine.iv_rank(atm_iv, history) if atm_iv is not None else {"value": None, "observation_count": len(history), "confidence": 0, "status": "NO_CURRENT_IV"}
             pct = HistoricalVolatilityEngine.iv_percentile(atm_iv, history) if atm_iv is not None else {"value": None, "observation_count": len(history), "confidence": 0, "status": "NO_CURRENT_IV"}
-            closes = self.session.execute(text("SELECT close FROM price_history WHERE symbol=:s AND date <= :d ORDER BY date DESC LIMIT 21"), {"s": symbol, "d": capture_date}).scalars().all()
+            closes = closes_by_symbol.get(symbol, [])
             returns = [math.log(float(closes[i-1]) / float(closes[i])) for i in range(1, len(closes)) if closes[i] and closes[i-1] and float(closes[i]) > 0 and float(closes[i-1]) > 0]
             rv = HistoricalVolatilityEngine.realized_volatility(returns)
             vrp = (atm_iv - rv) if atm_iv is not None and rv is not None else None

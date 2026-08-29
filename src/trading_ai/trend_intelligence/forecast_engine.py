@@ -45,8 +45,22 @@ class TrendForecastEngine:
         persistence = int(round(self._clip(horizon_days * (continuation / 50.0), 1, 60)))
         expected_return = drift * 100.0
         expected_volatility = vol * 100.0
+
+        # M68.2.1.15.5: the probability model describes continuation/reversal
+        # relative to the EMA-defined prevailing trend, while expected_return is
+        # an independent realized-drift estimate.  Do not advertise a directional
+        # forecast downstream when those authorities materially disagree.
+        prevailing_trend_direction = "BULLISH" if trend_sign > 0 else "BEARISH"
+        conflict_codes: list[str] = []
+        material_return_threshold = max(0.75, expected_volatility * 0.15)
+        if direction == "BULLISH" and expected_return < -material_return_threshold:
+            conflict_codes.append("EXPECTED_RETURN_DIRECTION_CONFLICT")
+        elif direction == "BEARISH" and expected_return > material_return_threshold:
+            conflict_codes.append("EXPECTED_RETURN_DIRECTION_CONFLICT")
+        if conflict_codes:
+            direction = "NEUTRAL"
         base_adjustment = 0.0
-        if confidence >= self.policy.minimum_confidence_for_adjustment:
+        if confidence >= self.policy.minimum_confidence_for_adjustment and not conflict_codes:
             directional_probability = bullish if direction == "BULLISH" else bearish if direction == "BEARISH" else 50.0
             base_adjustment = self._clip((directional_probability - 50.0) / 25.0, 0.0, 1.0) * self.policy.maximum_signal_adjustment
         call_adjustment = base_adjustment if direction == "BULLISH" else -base_adjustment if direction == "BEARISH" else 0.0
@@ -62,5 +76,14 @@ class TrendForecastEngine:
             confidence_grade=grade, persistence_days_estimate=persistence, forecast_direction=direction,
             regime_transition_probabilities={"CONTINUATION": round(continuation,4), "REVERSAL": round(reversal,4)},
             signal_adjustment={"CALL": round(call_adjustment,4), "PUT": round(put_adjustment,4)},
-            metadata={"ema20": float(ema20), "ema50": float(ema50), "signal_to_noise": signal_to_noise},
+            metadata={
+                "ema20": float(ema20),
+                "ema50": float(ema50),
+                "signal_to_noise": signal_to_noise,
+                "prevailing_trend_direction": prevailing_trend_direction,
+                "directional_consistency": not conflict_codes,
+                "conflict_codes": conflict_codes,
+                "direction_semantics": "DIRECTIONAL_PROBABILITY_RECONCILED_WITH_EXPECTED_RETURN",
+                "continuation_reversal_semantics": "RELATIVE_TO_PREVAILING_EMA_TREND",
+            },
         )

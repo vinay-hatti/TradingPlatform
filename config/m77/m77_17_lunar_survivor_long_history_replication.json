@@ -1,0 +1,112 @@
+{
+  "version": "M77.17-VEDIC-CLOSURE-LUNAR-SURVIVOR-LONG-HISTORY-REPLICATION-1.0",
+  "closure": {
+    "M77_15": {
+      "disposition": "CLOSED_UNSUPPORTED",
+      "production_authority_effect": false,
+      "reopen_rule": "NEW_EXTERNALLY_MOTIVATED_PREREGISTERED_HYPOTHESIS_ONLY"
+    },
+    "M77_16": {
+      "disposition": "CLOSED_UNSUPPORTED",
+      "hypotheses": {
+        "H1_JUPITER_RAHU_EXPANSION": "UNSUPPORTED",
+        "H2_SOLAR_INGRESS_SANKRANTI": "UNSUPPORTED",
+        "H3_RAHU_KETU_FINANCIAL_HOUSE_AXIS": "UNSUPPORTED",
+        "H4_JUPITER_ATICHARI_VELOCITY": "UNSUPPORTED"
+      },
+      "production_authority_effect": false,
+      "reopen_rule": "NEW_EXTERNALLY_MOTIVATED_PREREGISTERED_HYPOTHESIS_ONLY"
+    }
+  },
+  "lunar_survivor": {
+    "source_hypothesis": {
+      "target": "NDX",
+      "hypothesis": "FIRST_QUARTER_WINDOW",
+      "horizon_sessions": 10,
+      "outcome": "ABSOLUTE_RETURN",
+      "prediction": "SUPPRESSED_10D_ABSOLUTE_MOVE",
+      "historical_incremental_reference": -0.007495998887858346
+    },
+    "primary_replication": {
+      "target": "NDX",
+      "instrument": "QQQ_LINEAGE",
+      "authority_type": "MATERIAL_LONG_HISTORY_TRADABLE_PROXY",
+      "required_same_direction": "NEGATIVE"
+    },
+    "secondary_generalization": [
+      {
+        "target": "SPX",
+        "instrument": "SPY"
+      },
+      {
+        "target": "RUT",
+        "instrument": "IWM"
+      }
+    ],
+    "long_history_authority": {
+      "certification": "reports/m77/m77_15_6_5_2_material_long_history_proxy_authority_certification.json",
+      "common_start": "2003-09-10",
+      "common_end": "2026-08-21",
+      "expected_sessions": 5773,
+      "files": {
+        "SPX": "research_data/m77_15_6_5_2/certified_common_proxy_authority/SPX_SPY_COMMON.csv",
+        "NDX": "research_data/m77_15_6_5_2/certified_common_proxy_authority/NDX_QQQ_LINEAGE_COMMON.csv",
+        "RUT": "research_data/m77_15_6_5_2/certified_common_proxy_authority/RUT_IWM_COMMON.csv"
+      }
+    },
+    "lunar_feature_source": "data/m77/m77_17_1_lunar_phase_daily_2000_2040.csv",
+    "fallback_lunar_registry_candidates": [
+      "data/m77/m77_15_2_panchanga_daily_2000_2040.csv"
+    ],
+    "event_definition": {
+      "phase_window_name": "FIRST_QUARTER_WINDOW",
+      "phase_angle_center_deg": 90.0,
+      "half_width_deg": 22.5,
+      "posthoc_window_change": false
+    },
+    "controls": [
+      "UNCONDITIONAL_COMPLEMENT",
+      "WEEKDAY_CALENDAR_MONTH_MATCHED",
+      "YEAR_STRATIFIED_CIRCULAR_EVENT_CALENDAR_SHIFT",
+      "CONSECUTIVE_EVENT_CLUSTER_BOOTSTRAP",
+      "NONOVERLAP_EVENT_SENSITIVITY"
+    ],
+    "frozen_eras": [
+      [
+        "2003-09-10",
+        "2008-12-31"
+      ],
+      [
+        "2009-01-01",
+        "2014-12-31"
+      ],
+      [
+        "2015-01-01",
+        "2020-12-31"
+      ],
+      [
+        "2021-01-01",
+        "2026-08-21"
+      ]
+    ],
+    "acceptance": {
+      "primary_qqq_negative_incremental": true,
+      "dependence_robust_empirical_p_le": 0.05,
+      "bootstrap_ci_must_exclude_zero": true,
+      "minimum_same_direction_eras": 3,
+      "minimum_eligible_eras": 3,
+      "nonoverlap_same_direction": true,
+      "weekday_month_control_same_direction": true,
+      "economic_effect_abs_min": 0.0025
+    },
+    "decision_policy": {
+      "if_primary_qqq_fails": "TERMINATE_M77_14_PROSPECTIVE_SHADOW_AND_CLOSE_LUNAR_RESEARCH",
+      "if_primary_qqq_passes_secondary_fail": "CONTINUE_NDX_SPECIFIC_PROSPECTIVE_SHADOW",
+      "if_all_three_pass_same_direction": "CONTINUE_PROSPECTIVE_SHADOW_WITH_STRONGER_CREDIBILITY",
+      "automatic_production_promotion": false
+    },
+    "feature_authority_note": "M77.17.1 deterministically reconstructs lunar phase from the certified M77.15.2 daily Sun/Moon sidereal longitudes; no financial outcomes are used."
+  },
+  "database_writes": false,
+  "production_authority_effect": false
+}

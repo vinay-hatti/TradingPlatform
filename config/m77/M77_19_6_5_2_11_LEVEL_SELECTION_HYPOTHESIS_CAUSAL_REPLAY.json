@@ -1,0 +1,21 @@
+{
+  "version": "M77.19.6.5.2.11.1-HELPER529-BUNDLE-NORMALIZATION-REPAIR-1.0",
+  "milestone": "M77.19.6.5.2.11.1",
+  "title": "Helper529 Bundle Normalization Repair",
+  "source_5210_report_sha256": "dfc11d3e4f7c5c45cd47b68f6cccb9133da2f8afa0f253dfbb234ab0f27f0d51",
+  "source_5210_runner_sha256": "9e903c9ce752282e169a33c6beafc469af7650dd7647ba4c0788a953b764dc4c",
+  "native_runner_sha256": "bcc5b49b87ddceba6ac417000d5af3d4a57efd14145595f4d712eb36ae81204b",
+  "level_service_source_sha256": "8581c423956fd9d997af8098fb1065aab78b24646c72b9fb5ba1e8e446402490",
+  "merge_threshold": 0.003,
+  "parity_tolerance": 1e-09,
+  "research_only": true,
+  "database_mode": "READ_ONLY_SPY_SESSION_CALENDAR_ONLY",
+  "production_authority_effect": false,
+  "full_23_year_reconstruction_authorized": false,
+  "source_529_runner_sha256": "5a3af6f274325813cbf3397baf25ce5a23ef63d95204642fe34534df83ba9feb",
+  "repair": {
+    "removed_invalid_dependency": "helper5210.normalize_rows",
+    "restored_proven_dependency": "helper529.normalize_rows",
+    "causal_design_changed": false
+  }
+}

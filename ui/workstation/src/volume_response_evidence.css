@@ -1,0 +1,56 @@
+/* Institutional volume response evidence — compact variable-width chips */
+
+.volume-response-evidence-grid {
+  display: flex !important;
+  flex-flow: row wrap;
+  align-items: center;
+  align-content: flex-start;
+  gap: 8px 10px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.volume-response-evidence-chip {
+  display: inline-flex;
+  flex: 0 0 auto;
+  width: auto;
+  max-width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 32px;
+  padding: 6px 11px;
+  border: 1px solid rgba(148, 163, 184, .34);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .025);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: .01em;
+  white-space: nowrap;
+}
+
+.volume-response-evidence-chip.positive {
+  border-color: rgba(52, 211, 153, .48);
+  background: rgba(52, 211, 153, .065);
+}
+
+.volume-response-evidence-chip.negative {
+  border-color: rgba(248, 113, 113, .52);
+  background: rgba(248, 113, 113, .07);
+}
+
+.volume-response-evidence-chip.neutral {
+  border-color: rgba(148, 163, 184, .36);
+}
+
+.interpretation-boundary-panel {
+  opacity: .82;
+}
+
+/* On narrow viewports, long labels may wrap internally rather than overflow. */
+@media (max-width: 760px) {
+  .volume-response-evidence-chip {
+    white-space: normal;
+    flex: 0 1 auto;
+  }
+}

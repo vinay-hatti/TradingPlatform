@@ -1,0 +1,19 @@
+{
+  "milestone": "M77.19.6.5.2.12.3",
+  "title": "Captured Native Timeframe Input Authority Repair",
+  "repair_scope": "dependency wiring / provenance only",
+  "pre_repair_m77_19_6_5_2_12_2_runner_sha256": "bff9ebc99e06a23f8c4ef8d38b053c413515c46cbf4f9d15082b976add7b2bce",
+  "timeframe_input_authority": "captured SupportResistanceEngine.analyze(timeframe, data) inputs",
+  "normalization_authority": "pinned helper529.normalize_rows",
+  "bundle_identity_authority": "bundle['prediction_identity']",
+  "frozen_authority": "bundle['frozen_profile']",
+  "causal_design_changed": false,
+  "governance": {
+    "research_only": true,
+    "database_mode": "READ_ONLY_SPY_SESSION_CALENDAR_ONLY",
+    "merge_threshold": 0.003,
+    "parity_tolerance": 1e-09,
+    "production_authority_effect": false,
+    "full_23_year_reconstruction_authorized": false
+  }
+}

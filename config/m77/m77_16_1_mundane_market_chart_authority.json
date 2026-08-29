@@ -1,0 +1,104 @@
+{
+  "version": "M77.16.1-MUNDANE-MARKET-CHART-AUTHORITY-RAHU-KETU-HOUSE-PREREGISTRATION-1.0",
+  "research_mode": "RESEARCH_ONLY",
+  "purpose": "Freeze one reproducible mundane market-chart methodology before any H3 financial outcome test.",
+  "market_chart_authority": {
+    "reference_event": {
+      "name": "NYSE_MODERN_REFERENCE_CHART",
+      "date": "1792-05-17",
+      "time_local": "12:00:00",
+      "time_authority": "FIXED_RESEARCH_CONVENTION_NOT_HISTORICALLY_CLAIMED_EXACT",
+      "location": {
+        "name": "New York City",
+        "latitude_deg": 40.7128,
+        "longitude_deg": -74.006,
+        "timezone": "America/New_York"
+      },
+      "rationale": "Buttonwood Agreement date used as a reproducible U.S. equity-market reference event; noon is an explicit research convention because exact historical signing time is not asserted."
+    },
+    "zodiac": "SIDEREAL",
+    "ayanamsha": "LAHIRI",
+    "house_system": "WHOLE_SIGN",
+    "node_type": "TRUE_NODE",
+    "ascendant_required": true,
+    "lordship_scheme": {
+      "ARIES": "MARS",
+      "TAURUS": "VENUS",
+      "GEMINI": "MERCURY",
+      "CANCER": "MOON",
+      "LEO": "SUN",
+      "VIRGO": "MERCURY",
+      "LIBRA": "VENUS",
+      "SCORPIO": "MARS",
+      "SAGITTARIUS": "JUPITER",
+      "CAPRICORN": "SATURN",
+      "AQUARIUS": "SATURN",
+      "PISCES": "JUPITER"
+    },
+    "alternatives_search_prohibited": true,
+    "posthoc_chart_changes_prohibited": true
+  },
+  "h3_preregistration": {
+    "hypothesis": "H3_RAHU_KETU_FINANCIAL_HOUSE_AXIS",
+    "states": [
+      "RAHU_IN_5TH_HOUSE",
+      "KETU_IN_5TH_HOUSE",
+      "RAHU_IN_11TH_HOUSE",
+      "KETU_IN_11TH_HOUSE",
+      "RAHU_CONJUNCT_5TH_LORD",
+      "KETU_CONJUNCT_5TH_LORD",
+      "RAHU_CONJUNCT_11TH_LORD",
+      "KETU_CONJUNCT_11TH_LORD"
+    ],
+    "conjunction_orb_deg": 3.0,
+    "horizons": [
+      5,
+      10,
+      20,
+      60
+    ],
+    "predictions": {
+      "ABSOLUTE_RETURN": "POSITIVE",
+      "REALIZED_VOLATILITY": "POSITIVE",
+      "MAX_ADVERSE_EXCURSION": "MORE_NEGATIVE"
+    },
+    "factor_combinations": false,
+    "neighboring_orb_search": false,
+    "posthoc_threshold_changes": false
+  },
+  "authority": {
+    "required_long_history_certification": "reports/m77/m77_15_6_5_2_material_long_history_proxy_authority_certification.json",
+    "long_history_common_start": "2003-09-10",
+    "long_history_common_end": "2026-08-21",
+    "long_history_common_sessions": 5773,
+    "long_history_instruments": {
+      "SPX": {
+        "instrument": "SPY",
+        "file": "research_data/m77_15_6_5_2/certified_common_proxy_authority/SPX_SPY_COMMON.csv"
+      },
+      "NDX": {
+        "instrument": "QQQ_LINEAGE",
+        "file": "research_data/m77_15_6_5_2/certified_common_proxy_authority/NDX_QQQ_LINEAGE_COMMON.csv"
+      },
+      "RUT": {
+        "instrument": "IWM",
+        "file": "research_data/m77_15_6_5_2/certified_common_proxy_authority/RUT_IWM_COMMON.csv"
+      }
+    },
+    "canonical_recent_confirmation": {
+      "SPX": "SPX",
+      "NDX": "NDX",
+      "RUT": "RUT"
+    }
+  },
+  "governance": {
+    "chart_definition_frozen_before_outcomes": true,
+    "automatic_chart_selection": false,
+    "multiple_chart_search": false,
+    "multiple_location_search": false,
+    "multiple_house_system_search": false,
+    "multiple_ayanamsha_search": false,
+    "database_writes": false,
+    "production_authority_effect": false
+  }
+}

@@ -1,0 +1,28 @@
+milestone,title,classification,mechanism,evidence,next_permitted_action,production_authority_effect
+M77.23,Certified Downside-Risk Veto Production Integration,PRODUCTION_CERTIFIED,DRVE downside-risk veto,Final-holdout PASS; production enforcement activated.,Monitor only; no automatic retraining.,True
+M77.24,Positive Selection Edge Discovery,DEVELOPMENT_SURVIVOR,PROBABILITY_UP positive selection,Development survivor.,Prospective certification only.,False
+M77.24.1,Frozen Prospective Positive Selection Shadow,PROSPECTIVE_CERTIFICATION_PENDING,PSVE,Frozen prospective shadow.,Accumulate/evaluate frozen gates.,False
+M77.25,Entry Timing Path-Dependent Edge Discovery,REJECTED_DEVELOPMENT_HYPOTHESIS,Entry timing/path,0 development-ready timing configurations.,Closed; no post-hoc retuning.,False
+M77.26.1,Executable Management Geometry Recalibration,DEVELOPMENT_SURVIVOR,NEXT_OPEN / 5ATR / 3ATR / 60d,Development-ready executable geometry.,Prospective certification only.,False
+M77.26.2,Prospective Executable Management Geometry Shadow,PROSPECTIVE_CERTIFICATION_PENDING,MGE,Frozen prospective shadow.,Accumulate/evaluate frozen gates.,False
+M77.27,Candidate Quality × Management Interaction,DEVELOPMENT_SURVIVOR,Candidate-quality × management,Development survivor.,Prospective certification only.,False
+M77.27.1,Prospective Candidate Quality × Management Shadow,PROSPECTIVE_CERTIFICATION_PENDING,CQMI,Frozen prospective shadow.,Accumulate/evaluate frozen gates.,False
+M77.28,Regime-Conditioned Edge Stability,FORENSIC_ONLY,Regime stability,Development-only stability forensics.,Reference only.,False
+M77.29,Cross-Sectional Ranking & Opportunity Cost,DEVELOPMENT_SURVIVOR,PROBABILITY_UP ranking,Development-ready ranking evidence.,Prospective allocation testing only.,False
+M77.29.1,Ranking Identity / Independence / Capacity Forensics,FORENSIC_ONLY,Ranking identity/capacity,Forensic decomposition.,Reference only.,False
+M77.29.2,Ensemble Attribution / Capacity / Regime Neutralization,FORENSIC_ONLY,Ensemble/capacity neutralization,Forensic-only.,Reference only.,False
+M77.29.3,Ensemble Payoff Distribution / Component Causality,FORENSIC_ONLY,Component causality,Forensic-only.,Reference only.,False
+M77.30,Frozen Prospective Cross-Sectional Capital Priority Shadow,PROSPECTIVE_CERTIFICATION_PENDING,CPRE Top-3,Frozen prospective shadow.,Accumulate/evaluate frozen gates.,False
+M77.31,Relative Strength / Persistence / Leadership,REJECTED_DEVELOPMENT_HYPOTHESIS,Leadership states,0 survivors.,Closed.,False
+M77.32,Volatility Compression / Expansion Transition,REJECTED_DEVELOPMENT_HYPOTHESIS,Volatility transitions,0 survivors.,Closed.,False
+M77.33,Participation / Accumulation Confirmation,REJECTED_DEVELOPMENT_HYPOTHESIS,Participation states,0 survivors.,Closed.,False
+M77.34,Mean-Reversion / Extension State,REJECTED_DEVELOPMENT_HYPOTHESIS,Extension states,0 survivors.,Closed.,False
+M77.35,Serial Dependence / Path Smoothness,REJECTED_DEVELOPMENT_HYPOTHESIS,Path states,0 survivors.,Closed.,False
+M77.36,Cross-Sectional Dispersion / Relative Opportunity,REJECTED_DEVELOPMENT_HYPOTHESIS,Dispersion states,0 survivors.,Closed.,False
+M77.37,Outcome Asymmetry / Conditional Tail Structure,REJECTED_DEVELOPMENT_HYPOTHESIS,Tail/asymmetry states,0 survivors.,Closed.,False
+M77.38,Edge Interaction Necessity / Redundancy,NOT_IDENTIFIABLE,DRVE necessity in post-DRVE cohort,DRVE ablation not identifiable from conditioned panel.,Do not infer without pre-DRVE counterfactual.,False
+M77.38.1,Capital-Priority Dependency / Incremental Value,FORENSIC_ONLY,CPRE semantic dependency,CPRE is definitionally PROBABILITY_UP-derived.,Architecture reference only.,False
+M77.39,Capacity-Constrained Portfolio Utility,DEVELOPMENT_SURVIVOR,Capacity-aware ranked allocation,Primary Development certification PASS.,Prospective challenger only.,False
+M77.40,Frozen Prospective Capacity-Aware Allocation Shadow,PROSPECTIVE_CERTIFICATION_PENDING,CACA,Frozen prospective challenger.,Accumulate/evaluate frozen gates.,False
+M77.40.1,Governed Capacity Authority / CPRE Live Binding,FORENSIC_ONLY,Live authority binding,Read-only adapter; protocol unchanged.,Operational use only.,False
+M77.40.2,Prospective Shadow Launchd Hardening,FORENSIC_ONLY,Operational automation,Daily record/update orchestration enabled.,Operational monitoring only.,False

@@ -1,0 +1,18 @@
+{
+  "automatic_retraining": false,
+  "capacity_budget_retuning": false,
+  "capacity_source": "LIVE_GOVERNED_AVAILABLE_CAPACITY_AT_SNAPSHOT_TIME",
+  "challenger_fixed_capacity_slots": null,
+  "challenger_policy": "PROBABILITY_UP-ranked fill to actual governed available capacity",
+  "control_policy": "CPRE Top-3 constrained by actual available capacity",
+  "management_retuning": false,
+  "new_probability_up_thresholds": 0,
+  "new_top_k_values": 0,
+  "population": "Trade-Builder-ready LONG + DRVE PASS",
+  "production_capital_allocation_effect": false,
+  "prospective_not_before": "2026-08-28",
+  "protocol_id": "CACA-CANDIDATE-001",
+  "rank_source": "PROBABILITY_UP",
+  "snapshot_policy": "FIRST_IMMUTABLE_SNAPSHOT_PER_MARKET_DATE",
+  "version": "M77.40-FROZEN-PROSPECTIVE-CAPACITY-AWARE-CAPITAL-ALLOCATION-SHADOW-CONTRACT-1.0"
+}

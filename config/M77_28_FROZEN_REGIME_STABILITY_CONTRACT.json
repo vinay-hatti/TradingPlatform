@@ -1,0 +1,33 @@
+{
+  "version": "M77.28-FROZEN-REGIME-STABILITY-CONTRACT-1.0",
+  "development_boundary": "2017-12-31",
+  "consumed_2018_2026_outcomes_forbidden": true,
+  "selector": "PROBABILITY_UP_TOP20",
+  "population": "PIT_TRADE_BUILDER_READY_LONG_AND_DRVE_PASS",
+  "management": {
+    "entry": "NEXT_OPEN",
+    "target_atr": 5.0,
+    "stop_atr": 3.0,
+    "horizon_sessions": 60
+  },
+  "dynamic_regime_thresholds": {
+    "method": "PRIOR_DATE_ROLLING_TERCILES",
+    "minimum_prior_dates": 126,
+    "lookback_dates": 504,
+    "current_date_excluded": true,
+    "future_dates_excluded": true
+  },
+  "regime_families": [
+    "VOLATILITY",
+    "TREND_BREADTH",
+    "MOMENTUM_BREADTH",
+    "PROBABILITY_LEVEL",
+    "PROBABILITY_DISPERSION",
+    "COMPOSITE",
+    "CALENDAR"
+  ],
+  "purpose": "STABILITY_AND_CONCENTRATION_DIAGNOSTIC_NOT_BEST_REGIME_SELECTION",
+  "production_authority_effect": false,
+  "automatic_retraining": false,
+  "prospective_protocol_effect": false
+}

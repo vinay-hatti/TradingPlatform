@@ -1,0 +1,64 @@
+{
+  "version": "M77.19.4.1-ISOLATED-ADAPTER-PIT-LEAKAGE-CERTIFICATION-1.0",
+  "status": "READY",
+  "source_parity": {
+    "scripts/run_m77_8_daily_pit_replay_authority.py": {
+      "expected": "015af1c623d69a5e6c2b3e8e2392d8975afc2faed8f76f6078d453fbf4dbb392",
+      "actual": "015af1c623d69a5e6c2b3e8e2392d8975afc2faed8f76f6078d453fbf4dbb392",
+      "pass": true
+    },
+    "scripts/run_m77_9_daily_model_replay.py": {
+      "expected": "1073dc83ad0a778994d799fcc51b336ddccb6658cc0cc82dbb734d6f2246d534",
+      "actual": "1073dc83ad0a778994d799fcc51b336ddccb6658cc0cc82dbb734d6f2246d534",
+      "pass": true
+    },
+    "scripts/run_m77_10_monthly_model_replay.py": {
+      "expected": "152f9cd4f0f149a5ce7ac28f13a7f09c592e66f254f936896e7eaaf59df965d7",
+      "actual": "152f9cd4f0f149a5ce7ac28f13a7f09c592e66f254f936896e7eaaf59df965d7",
+      "pass": true
+    },
+    "src/trading_ai/historical_underlying_replay/service.py": {
+      "expected": "a3b914ce03f209c13929f0cd8061e825673813e749868859583f379588f155d9",
+      "actual": "a3b914ce03f209c13929f0cd8061e825673813e749868859583f379588f155d9",
+      "pass": true
+    },
+    "src/trading_ai/historical_underlying_replay/regime.py": {
+      "expected": "130bf26e635af255b73fa31faaced5783bd64117ebf2855516bc11e17818f2c8",
+      "actual": "130bf26e635af255b73fa31faaced5783bd64117ebf2855516bc11e17818f2c8",
+      "pass": true
+    }
+  },
+  "gates": {
+    "source_sha256_parity": true,
+    "synthetic_deterministic_repeat": true,
+    "synthetic_future_mutation_invariant": true,
+    "source_regime_sql_bounded_date_le_end": true,
+    "source_regime_uses_max_replay_date": true,
+    "source_service_history_ends_at_as_of": true,
+    "source_service_future_begins_after_as_of": true,
+    "adapter_has_no_db_imports": true,
+    "daily_adapter_range_bounded": true,
+    "monthly_adapter_range_bounded": true
+  },
+  "synthetic_baseline": {
+    "as_of": "2021-02-24",
+    "regime": "BULL_HEALTHY",
+    "trend_state": "BULL_TREND",
+    "volatility_state": "LOW",
+    "breadth_state": "BROAD_STRONG",
+    "spy_close": 129.94,
+    "spy_sma50": 127.547,
+    "spy_sma200": 120.04925,
+    "spy_return20_pct": 1.5156249999999982,
+    "spy_realized_vol20_pct": 1.249076214136275,
+    "vol20_percentile_252": 18.650793650793652,
+    "breadth_above_50d_pct": 66.66666666666666,
+    "breadth_eligible_symbols": 3
+  },
+  "adapter_certified_for_isolated_historical_replay": true,
+  "production_historical_replay_authorized": false,
+  "remaining_blocker": "ORIGINAL_601_SYMBOL_LONG_HISTORY_SOURCE_DATA_MISSING",
+  "next_step": "BUILD_M77_19_5_ORIGINAL_601_SYMBOL_LONG_HISTORY_SOURCE_AUTHORITY",
+  "database_writes": false,
+  "production_authority_effect": false
+}

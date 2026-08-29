@@ -6,6 +6,7 @@ from sqlalchemy import desc
 from trading_ai.database.session import SessionLocal
 from trading_ai.production_api.models import ApiEnvelope
 from trading_ai.production_api.security import require_access, require_mutation_access
+from trading_ai.downside_risk_veto import DownsideRiskVetoService
 
 from .models import (InstitutionalOpportunityModel, OpportunityThesisModel, StrategyCandidateModel, StrategyComparisonModel)
 from .opportunity_ingestion import InstitutionalOpportunityIngestionService
@@ -16,6 +17,9 @@ from .valuation import InstitutionalStrategyValuationService
 from .management import InstitutionalDynamicManagementService
 from .decision import InstitutionalDecisionService
 from .publication_scope import latest_stock_scanner_run_id
+from .trade_builder_authority import classify_trade_builder_authority
+from .lifecycle_authority import derive_lifecycle_authority
+from trading_ai.portfolio_risk_allocation.models import PortfolioIntelligencePublicationModel
 
 router = APIRouter(prefix="/api/v1/institutional-options", tags=["institutional-options"])
 
@@ -40,6 +44,31 @@ def get_trade_builder_config(request: Request, _: str = Depends(require_access))
 
 def envelope(request: Request, data, **metadata):
     return ApiEnvelope(request_id=request.state.request_id, data=data, metadata=metadata)
+
+
+def _authoritative_portfolio_decision(session, decision, stock_scanner_run_id: str) -> dict:
+    """Return only the decision governed by the atomically published M64 cycle."""
+    if decision is None:
+        return {}
+    publication = session.query(PortfolioIntelligencePublicationModel).filter_by(
+        portfolio_id="PAPER-PRIMARY",
+        publication_name="current_portfolio_allocation",
+    ).first()
+    if publication is None:
+        return {}
+    publication_payload = dict(publication.payload_json or {})
+    decision_payload = dict(decision.payload_json or {})
+    portfolio_decision = dict(decision_payload.get("portfolio_decision") or {})
+    lifecycle = dict(portfolio_decision.get("lifecycle") or {})
+    identity = dict(portfolio_decision.get("decision_identity") or {})
+    if (
+        lifecycle.get("status") != "CURRENT"
+        or lifecycle.get("source_stock_scanner_run_id") != stock_scanner_run_id
+        or identity.get("risk_snapshot_id") != publication.risk_snapshot_id
+        or publication_payload.get("stock_scanner_run_id") != stock_scanner_run_id
+    ):
+        return {}
+    return portfolio_decision
 
 
 
@@ -89,13 +118,67 @@ def list_workspace_opportunities(
             if execution is not None:
                 execution_payload = dict(execution.payload_json or {})
                 payload["ready_for_trade_builder"] = execution.ready_for_trade_builder
+                payload["downside_risk_veto"] = DownsideRiskVetoService().evaluate(
+                    symbol=str(row.symbol),
+                    direction=str(row.direction),
+                    stock_scanner_run_id=str(row.stock_scanner_run_id),
+                    trade_builder_ready=bool(execution.ready_for_trade_builder),
+                ).as_dict()
                 payload["underlying_stop"] = execution.underlying_stop
                 payload["underlying_targets"] = execution_payload.get("underlying_targets", [])
+                payload["institutional_plan_certification"] = execution_payload.get("trade_plan_certification") or {}
+                payload["institutional_plan_certification_status"] = (execution_payload.get("trade_plan_certification") or {}).get("status")
+                payload["institutional_plan_fingerprint"] = (execution_payload.get("trade_plan_certification") or {}).get("plan_fingerprint")
             decision = session.query(InstitutionalDecisionSnapshotModel).filter_by(opportunity_id=row.opportunity_id).first()
-            if decision is not None:
-                decision_payload = dict(decision.payload_json or {})
-                if decision_payload.get("portfolio_decision"):
-                    payload["portfolio_decision"] = decision_payload["portfolio_decision"]
+            portfolio_decision = _authoritative_portfolio_decision(
+                session, decision, str(row.stock_scanner_run_id)
+            )
+            if portfolio_decision:
+                payload["portfolio_decision"] = portfolio_decision
+                optimizer_selection = dict(portfolio_decision.get("optimizer_selection") or {})
+                ranking = dict(portfolio_decision.get("ranking") or {})
+                scores = dict(portfolio_decision.get("scores") or {})
+                lifecycle = dict(portfolio_decision.get("lifecycle") or {})
+                payload["portfolio_authority"] = {
+                    "status": "CURRENT" if lifecycle.get("status") == "CURRENT" else "STALE",
+                    "decision": portfolio_decision.get("decision"),
+                    "rank": ranking.get("rank"),
+                    "candidate_count": ranking.get("candidate_count"),
+                    "final_portfolio_score": scores.get("final_portfolio_score"),
+                    "optimizer_status": optimizer_selection.get("status"),
+                    "selected_in_global_optimum": optimizer_selection.get("selected") if optimizer_selection.get("optimality_proven") is True else None,
+                    "optimality_proven": optimizer_selection.get("optimality_proven") is True,
+                }
+            else:
+                payload["portfolio_authority"] = {
+                    "status": "AWAITING_CURRENT_AUTHORITY",
+                    "decision": None,
+                    "rank": None,
+                    "candidate_count": None,
+                    "final_portfolio_score": None,
+                    "optimizer_status": None,
+                    "selected_in_global_optimum": None,
+                    "optimality_proven": False,
+                }
+            management_present = session.query(PositionManagementSnapshotModel.management_snapshot_id).filter_by(
+                opportunity_id=row.opportunity_id
+            ).first() is not None
+            executable_contract = session.query(ContractRecommendationModel.contract_recommendation_id).filter_by(
+                opportunity_id=row.opportunity_id, executable=True
+            ).first() is not None
+            lifecycle_authority = derive_lifecycle_authority(
+                recorded_state=row.state,
+                selected_valuation=selected is not None,
+                executable_contract=executable_contract,
+                execution_payload=None if execution is None else dict(execution.payload_json or {}),
+                execution_ready=None if execution is None else execution.ready_for_trade_builder,
+                management_present=management_present,
+                decision_present=decision is not None,
+                portfolio_decision=portfolio_decision,
+            )
+            payload["lifecycle_authority"] = lifecycle_authority
+            payload["display_state"] = lifecycle_authority["display_state"]
+            payload["next_governed_action"] = lifecycle_authority["next_governed_action"]
             result.append(payload)
         return envelope(request, result, count=len(result), view=view, stock_scanner_run_id=latest_run_id)
 
@@ -116,16 +199,58 @@ def get_workspace_opportunity(opportunity_id: str, request: Request, _: str = De
         management = session.query(PositionManagementSnapshotModel).filter_by(opportunity_id=opportunity_id).order_by(desc(PositionManagementSnapshotModel.created_at)).all()
         decision = session.query(InstitutionalDecisionSnapshotModel).filter_by(opportunity_id=opportunity_id).first()
         audit = session.query(InstitutionalOpportunityAuditModel).filter_by(opportunity_id=opportunity_id).order_by(InstitutionalOpportunityAuditModel.event_timestamp.asc()).all()
+        decision_payload = None if decision is None else dict(decision.payload_json or {})
+        if decision_payload is not None:
+            portfolio_decision = _authoritative_portfolio_decision(
+                session, decision, str(row.stock_scanner_run_id)
+            )
+            if portfolio_decision:
+                decision_payload["portfolio_decision"] = portfolio_decision
+            else:
+                decision_payload.pop("portfolio_decision", None)
+        execution_payload = (
+            None if execution is None else dict(execution.payload_json or {})
+        )
+        if execution_payload is not None:
+            execution_payload["trade_builder_authority"] = (
+                classify_trade_builder_authority(
+                    execution_payload,
+                    execution.ready_for_trade_builder,
+                )
+            )
+            execution_payload["ready_for_trade_builder"] = bool(
+                execution.ready_for_trade_builder
+            )
+        portfolio_decision = {} if decision_payload is None else dict(decision_payload.get("portfolio_decision") or {})
+        selected_valuation = next((item for item in valuations if item.selected), None)
+        executable_contract = any(bool(item.executable) for item in contracts)
+        lifecycle_authority = derive_lifecycle_authority(
+            recorded_state=row.state,
+            selected_valuation=selected_valuation is not None,
+            executable_contract=executable_contract,
+            execution_payload=execution_payload,
+            execution_ready=None if execution is None else execution.ready_for_trade_builder,
+            management_present=bool(management),
+            decision_present=decision is not None,
+            portfolio_decision=portfolio_decision,
+        )
+        opportunity_payload = dict(row.payload_json or {}) | {
+            "state": row.state,
+            "version": row.version,
+            "display_state": lifecycle_authority["display_state"],
+            "next_governed_action": lifecycle_authority["next_governed_action"],
+            "lifecycle_authority": lifecycle_authority,
+        }
         return envelope(request, {
-            "opportunity": dict(row.payload_json or {}) | {"state": row.state, "version": row.version},
+            "opportunity": opportunity_payload,
             "thesis": None if thesis is None else dict(thesis.payload_json or {}),
             "strategies": [dict(item.payload_json or {}) for item in strategies],
             "comparison": None if comparison is None else dict(comparison.payload_json or {}),
             "contracts": [dict(item.payload_json or {}) for item in contracts],
             "valuations": [dict(item.payload_json or {}) for item in valuations],
-            "execution_recommendation": None if execution is None else dict(execution.payload_json or {}),
+            "execution_recommendation": execution_payload,
             "management_snapshots": [dict(item.payload_json or {}) for item in management],
-            "decision_snapshot": None if decision is None else dict(decision.payload_json or {}),
+            "decision_snapshot": decision_payload,
             "audit": [dict(item.payload_json or {}) | {"previous_state": item.previous_state, "new_state": item.new_state, "actor": item.actor, "reason": item.reason, "event_timestamp": item.event_timestamp} for item in audit],
         })
 
@@ -274,8 +399,21 @@ def get_management(opportunity_id: str, request: Request, _: str = Depends(requi
         execution = session.query(ExecutionRecommendationModel).filter_by(opportunity_id=opportunity_id).first()
         snapshots = session.query(PositionManagementSnapshotModel).filter_by(opportunity_id=opportunity_id).order_by(PositionManagementSnapshotModel.created_at.desc()).all()
         valuations = session.query(StrategyValuationModel).filter_by(opportunity_id=opportunity_id).order_by(StrategyValuationModel.strategy_score.desc()).all()
+        execution_payload = (
+            None if execution is None else dict(execution.payload_json or {})
+        )
+        if execution_payload is not None:
+            execution_payload["trade_builder_authority"] = (
+                classify_trade_builder_authority(
+                    execution_payload,
+                    execution.ready_for_trade_builder,
+                )
+            )
+            execution_payload["ready_for_trade_builder"] = bool(
+                execution.ready_for_trade_builder
+            )
         return envelope(request, {
-            "execution_recommendation": None if execution is None else dict(execution.payload_json or {}),
+            "execution_recommendation": execution_payload,
             "management_snapshots": [dict(row.payload_json or {}) for row in snapshots],
             "strategy_valuations": [dict(row.payload_json or {}) for row in valuations],
         })

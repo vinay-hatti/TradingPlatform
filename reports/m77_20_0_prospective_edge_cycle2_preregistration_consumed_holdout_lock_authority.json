@@ -1,0 +1,151 @@
+{
+  "F071_formula_preregistration": {
+    "benchmark_fallback_to_SPY_authorized": false,
+    "benchmark_fallback_to_current_sector_authorized": false,
+    "candidate_semantics_to_freeze_before_any_outcome_evaluation": {
+      "rs_sector_13w": "symbol trailing 65 available sessions return minus point-in-time sector benchmark trailing 65 available sessions return",
+      "rs_sector_26w": "symbol trailing 130 available sessions return minus point-in-time sector benchmark trailing 130 available sessions return"
+    },
+    "cross_sector_imputation_authorized": false,
+    "formula_may_not_be_materialized_until_pit_sector_authority_ready": true,
+    "future_bar_access_for_feature_construction": false,
+    "missingness_explicit": true,
+    "same_as_of_or_prior_only": true
+  },
+  "consumed_holdout_lock": {
+    "period": "2023-01-01..2026-08-21",
+    "permanently_consumed": true,
+    "reuse_for_cycle2_feature_search_authorized": false,
+    "reuse_for_cycle2_incremental_value_claim_authorized": false,
+    "reuse_for_cycle2_retuning_authorized": false,
+    "reuse_for_cycle2_selection_authorized": false,
+    "reuse_for_cycle2_threshold_search_authorized": false
+  },
+  "cycle": "M77.20_PROSPECTIVE_EDGE_CYCLE2",
+  "execution_state": {
+    "F071_materialized": false,
+    "consumed_final_holdout_opened_for_cycle2": false,
+    "cycle2_development_incremental_diagnostics_performed": false,
+    "cycle2_feature_accepted": false,
+    "cycle2_previous_validation_opened_for_selection": false,
+    "pit_sector_authority_certified": false,
+    "production_authority_effect": false,
+    "production_model_change_authorized": false,
+    "prospective_outcomes_opened": false,
+    "prospective_scoring_performed": false,
+    "prospective_shadow_capture_started": false
+  },
+  "incremental_value_test_preregistration": {
+    "analysis_model": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+    "analysis_model_role": "FIXED_MEASUREMENT_INSTRUMENT_NOT_MODEL_FAMILY_SELECTION",
+    "comparison": "FROZEN_BASELINE_VS_FROZEN_BASELINE_PLUS_F071",
+    "direction_label_policy": "DROP_ZERO_THEN_BINARY_UP_VS_DOWN",
+    "frozen_prior_configs": {
+      "10": {
+        "C": 1.0
+      },
+      "20": {
+        "C": 0.1
+      },
+      "5": {
+        "C": 10.0
+      }
+    },
+    "global_feature_selection_search_authorized": false,
+    "horizons": [
+      5,
+      10,
+      20
+    ],
+    "interaction_search_authorized": false,
+    "new_hyperparameter_search_authorized": false,
+    "new_threshold_search_authorized": false,
+    "paired_same_observation_population_required": true,
+    "primary_metric": "BALANCED_ACCURACY_DELTA_F071_MINUS_BASELINE",
+    "prospective_advancement_rule": {
+      "all_horizons_delta_floor": -0.002,
+      "mean_balanced_accuracy_delta_min": 0.003,
+      "minimum_matured_binary_rows_per_horizon": 10000,
+      "paired_date_cluster_bootstrap_lower_95ci_above_zero_horizons_min": 2,
+      "pass_only_authorizes_next_shadow_certification_stage": true,
+      "positive_delta_horizons_min": 2,
+      "production_promotion_authorized_if_passed": false
+    },
+    "regime_conditioning_role": "DESCRIPTIVE_SECONDARY_ANALYSIS_ONLY_NOT_SELECTION",
+    "retuning_authorized": false,
+    "secondary_metrics": [
+      "ROC_AUC_DELTA",
+      "LOG_LOSS_DELTA",
+      "BRIER_SCORE_DELTA"
+    ],
+    "threshold": 0.5
+  },
+  "next_step": "BUILD_M77_20_1_PIT_SECTOR_MEMBERSHIP_AND_BENCHMARK_SOURCE_AUTHORITY_CENSUS",
+  "partition_governance": {
+    "consumed_final_holdout": {
+      "cycle2_use": "PROHIBITED_FOR_FEATURE_SELECTION_MODEL_SELECTION_RETUNING_THRESHOLD_SEARCH_OR_INCREMENTAL_VALUE_CLAIMS",
+      "period": "2023-01-01..2026-08-21"
+    },
+    "development": {
+      "cycle2_use": "FEATURE_AUTHORITY_CONSTRUCTION_AND_DEVELOPMENT_ONLY_INCREMENTAL_DIAGNOSTICS",
+      "period": "2004-11-19..2017-12-29"
+    },
+    "new_untouched_prospective_evaluation": {
+      "capture_mode": "PROSPECTIVE_SHADOW_FEATURES_FIRST_TARGETS_MATURE_LATER",
+      "end": "OPEN_ENDED_UNTIL_SEPARATELY_FROZEN_BEFORE_OUTCOME_ANALYSIS",
+      "outcomes_may_not_be_opened_until_feature_snapshot_is_immutable": true,
+      "start": "2026-08-24"
+    },
+    "previous_validation": {
+      "cycle2_use": "NO_MODEL_OR_FEATURE_SELECTION; DESCRIPTIVE_SANITY_CHECK_ONLY_IF_LATER_EXPLICITLY_AUTHORIZED",
+      "period": "2018-01-01..2022-12-30"
+    }
+  },
+  "pit_sector_contract": {
+    "benchmark_must_exist_as_of_observation": true,
+    "benchmark_pre_inception_substitution_authorized": false,
+    "current_canonical_csv_may_not_be_treated_as_historical_membership": true,
+    "historical_current_mapping_backfill_prohibited": true,
+    "membership_must_be_known_as_of_observation": true,
+    "production_trend_sector_mapping_may_not_be_treated_as_historical_membership": true,
+    "required_benchmark_semantics": [
+      "sector",
+      "benchmark_symbol",
+      "effective_from",
+      "effective_to_or_open_ended",
+      "benchmark_source_identity"
+    ],
+    "required_membership_semantics": [
+      "symbol",
+      "sector",
+      "effective_from_or_snapshot_date",
+      "effective_to_or_successor_boundary",
+      "source_identity",
+      "source_snapshot_or_record_identity"
+    ],
+    "status": "PREREGISTERED_NOT_YET_CERTIFIED",
+    "survivorship_free_claim_requires_independent_certification": true,
+    "unknown_or_unavailable_membership_policy": "EXPLICIT_MISSING_F071_NO_INFERENCE"
+  },
+  "prior_cycle_state": "CLOSED_EVIDENCE_PUBLISHED_NO_PRODUCTION_PROMOTION",
+  "research_question": {
+    "F012_status": "ALREADY_WHITELISTED_AND_MATERIALIZED_IN_PRIOR_99_COLUMN_MODEL_CONTRACT_NOT_A_NEW_CYCLE2_FEATURE",
+    "F051_status": "ALREADY_WHITELISTED_AND_MATERIALIZED_IN_PRIOR_99_COLUMN_MODEL_CONTRACT_NOT_A_NEW_CYCLE2_FEATURE",
+    "feature_domain_under_test": "RELATIVE_STRENGTH_VS_MARKET_AND_SECTOR",
+    "new_feature_ids": [
+      "F071"
+    ],
+    "primary": "Does independently-certified point-in-time sector-relative strength (F071) add durable incremental directional information beyond the frozen M77.19 baseline feature set?"
+  },
+  "status": "READY",
+  "upstream_sha256": {
+    "closure": "bac1233654a695f299b9fd850b2a2f0bfcabc58ab1d9f469dd55e48890017b83",
+    "extractor_authority": "6fd66e278d42fd7b908d7e1049d52b464c080f9254a91a4b9fef112359c50b9d",
+    "feature_authority": "57acdcdd1784c5c067a4754a36f427bb529cb2ed17c691d1622809500c89ce6e",
+    "historical_analytics_source": "f354fe12e37062f5af9076a35a349ca3e8429d1b97e14c59d3ef1042bd95dac1",
+    "structured_target_authority": "ef5e7dabc5291e89863afd55a45008bc155b5a253d53383becea5d24da34832c",
+    "training_gate": "0440ac1ec4f2da34606ba6ba6500b4191086730eff282eaaccf4b6bfd8de0a9c",
+    "trend_service_source": "d6e98beb3946c1337fadf748f5051133b61f05f00903b43881b3f9605c250bc2"
+  },
+  "version": "M77.20.0-PROSPECTIVE-EDGE-CYCLE2-PREREGISTRATION-CONSUMED-HOLDOUT-LOCK-AUTHORITY-1.0"
+}

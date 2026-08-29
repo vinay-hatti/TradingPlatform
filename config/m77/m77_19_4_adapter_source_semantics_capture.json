@@ -1,0 +1,36 @@
+{
+  "version": "M77.19.4-ADAPTER-SOURCE-SEMANTICS-CAPTURE-1.0",
+  "purpose": "Capture the exact installed source bodies and dependency surfaces required to implement the isolated DAILY/MONTHLY/PIT adapters and future-leakage certification without guessing.",
+  "required_primary_sources": [
+    "scripts/run_m77_8_daily_pit_replay_authority.py",
+    "scripts/run_m77_9_daily_model_replay.py",
+    "scripts/run_m77_10_monthly_model_replay.py",
+    "scripts/run_m77_2_multiyear_frozen_champion.py"
+  ],
+  "required_dependency_candidates": [
+    "src/trading_ai/historical_underlying_replay/__init__.py",
+    "src/trading_ai/historical_underlying_replay/service.py",
+    "src/trading_ai/historical_underlying_replay/regime.py",
+    "src/trading_ai/historical_underlying_replay/models.py",
+    "src/trading_ai/historical_underlying_replay/repository.py",
+    "src/trading_ai/historical_underlying_replay/attribution.py",
+    "src/trading_ai/database/session.py",
+    "scripts/run_m77_1*.py",
+    "scripts/run_m77_7*.py"
+  ],
+  "capture_root": "research_data/m77_19_4/source_semantics_capture",
+  "capture_policy": {
+    "copy_source_files_read_only": true,
+    "include_sha256": true,
+    "include_ast_call_inventory": true,
+    "include_import_inventory": true,
+    "include_argparse_inventory": true,
+    "include_sql_and_asof_markers": true,
+    "include_source_text_in_bundle": true,
+    "production_source_mutation": false,
+    "database_writes": false,
+    "automatic_replay_execution": false,
+    "production_authority_effect": false
+  },
+  "next_step": "IMPLEMENT_M77_19_4_1_ISOLATED_ADAPTERS_FROM_CAPTURED_EXACT_SOURCE"
+}

@@ -42,6 +42,20 @@ def _deep(payload: Any, *keys: str, default: Any = None) -> Any:
     return default
 
 
+def current_valuation_snapshot_query(*, valuation_run_id: str | None, limit: int):
+    """Select only the current M69 run before ranking or limiting rows."""
+    query = select(OptionValuationSnapshotModel)
+    if valuation_run_id:
+        query = query.where(
+            OptionValuationSnapshotModel.payload_json["valuation_run_id"].as_string()
+            == valuation_run_id
+        )
+    return query.order_by(
+        desc(OptionValuationSnapshotModel.edge_score),
+        desc(OptionValuationSnapshotModel.snapshot_timestamp),
+    ).limit(limit)
+
+
 def _percentile(values: list[float], p: float) -> float:
     if not values:
         return 0.0
@@ -93,25 +107,23 @@ class AnalyticsDashboardService:
                     InflectionSnapshotModel.publication_name == publication.publication_name,
                     InflectionSnapshotModel.source_run_id == publication.source_run_id,
                 )
-                .order_by(desc(InflectionSnapshotModel.inflection_score))
+                .order_by(desc(InflectionSnapshotModel.signal_strength))
                 .limit(limit)
             ).scalars().all()
 
             symbols = [row.symbol for row in rows]
             opportunities = session.execute(
                 select(InstitutionalOpportunityModel)
-                .where(InstitutionalOpportunityModel.symbol.in_(symbols))
+                .where(
+                    InstitutionalOpportunityModel.symbol.in_(symbols),
+                    InstitutionalOpportunityModel.stock_scanner_run_id
+                    == publication.source_run_id,
+                )
                 .order_by(desc(InstitutionalOpportunityModel.updated_at))
             ).scalars().all() if symbols else []
             opportunity_by_symbol = {}
             for opportunity in opportunities:
-                current = opportunity_by_symbol.get(opportunity.symbol)
-                if current is None:
-                    opportunity_by_symbol[opportunity.symbol] = opportunity
-                    continue
-                current_exact = current.stock_scanner_run_id == publication.source_run_id
-                candidate_exact = opportunity.stock_scanner_run_id == publication.source_run_id
-                if candidate_exact and not current_exact:
+                if opportunity.symbol not in opportunity_by_symbol:
                     opportunity_by_symbol[opportunity.symbol] = opportunity
             opportunity_ids = [row.opportunity_id for row in opportunity_by_symbol.values()]
             theses = session.execute(
@@ -174,7 +186,7 @@ class AnalyticsDashboardService:
                         op_payload, 'market_regime', 'source_payload.market_regime',
                         'source_payload.context.market_regime', default='NOT_AVAILABLE'
                     )
-                score = float(row.inflection_score)
+                score = float(row.signal_strength)
                 candidates.append({
                     'snapshot_id': row.snapshot_id,
                     'symbol': row.symbol,
@@ -182,7 +194,12 @@ class AnalyticsDashboardService:
                     'direction': row.direction,
                     'transition_state': row.transition_state,
                     'score': score,
+                    'signal_strength': score,
+                    'directional_score': float(row.directional_score),
                     'confidence': float(row.confidence),
+                    'input_quality': float(row.input_quality),
+                    'disposition': row.disposition,
+                    'coverage_status': row.coverage_status,
                     'sector': str(sector or 'NOT_CLASSIFIED'),
                     'industry': str(membership.industry or '') if membership else '',
                     'company_name': str(membership.company_name or '') if membership else '',
@@ -199,6 +216,9 @@ class AnalyticsDashboardService:
                     'entry_zone_low': float(thesis.entry_zone_low) if thesis else None,
                     'entry_zone_high': float(thesis.entry_zone_high) if thesis else None,
                     'option_snapshot_id': opportunity.option_snapshot_id if opportunity else None,
+                    'inflection_option_snapshot_id': row.option_snapshot_id,
+                    'source_as_of_date': row.source_as_of_date,
+                    'dealer_as_of_date': row.dealer_as_of_date,
                     'threshold_gap': round(max(0.0, self.HIGH_CONVICTION_THRESHOLD - score), 4),
                     'near_high_conviction': self.HIGH_CONVICTION_THRESHOLD - 10 <= score < self.HIGH_CONVICTION_THRESHOLD,
                     'components': components,
@@ -209,6 +229,7 @@ class AnalyticsDashboardService:
                 })
 
             scores = [row['score'] for row in candidates]
+            directional_scores = [row['directional_score'] for row in candidates]
             threshold_bands = [
                 {'name': 'Within 2 points', 'minimum': 78, 'maximum': 80, 'count': sum(78 <= score < 80 for score in scores)},
                 {'name': 'Within 5 points', 'minimum': 75, 'maximum': 80, 'count': sum(75 <= score < 80 for score in scores)},
@@ -217,6 +238,11 @@ class AnalyticsDashboardService:
             summary = {
                 'symbols_analyzed': len(candidates),
                 'average_score': round(mean(scores), 4) if scores else 0.0,
+                'average_signal_strength': round(mean(scores), 4) if scores else 0.0,
+                'average_directional_score': (
+                    round(mean(directional_scores), 4)
+                    if directional_scores else 0.0
+                ),
                 'median_score': _percentile(scores, 50),
                 'high_conviction': sum(score >= 80 for score in scores),
                 'actionable': sum(70 <= score < 80 for score in scores),
@@ -226,15 +252,30 @@ class AnalyticsDashboardService:
                 'publication_id': publication.publication_id,
                 'source_run_id': publication.source_run_id,
                 'status': publication.status,
+                'coverage_status': publication.coverage_status,
+                'source_as_of_date': publication.source_as_of_date,
+                'option_snapshot_id': publication.option_snapshot_id,
+                'authority_input_fingerprint': (
+                    publication.authority_input_fingerprint
+                ),
+                'exact_opportunity_attachments': len(opportunity_by_symbol),
+                'unmaterialized_symbols': (
+                    len(candidates) - len(opportunity_by_symbol)
+                ),
             }
             return {
-                'status': 'READY',
+                'status': publication.status,
                 'summary': summary,
                 'histogram': _histogram(scores),
                 'percentiles': {f'p{p}': _percentile(scores, p) for p in (10, 25, 50, 75, 90, 95, 99)},
                 'thresholds': {'high_conviction': 80, 'actionable': 70, 'watch': 60},
                 'near_threshold': threshold_bands,
                 'by_transition_state': _distribution(row['transition_state'] for row in candidates),
+                'by_direction': _distribution(row['direction'] for row in candidates),
+                'by_disposition': _distribution(row['disposition'] for row in candidates),
+                'by_coverage_status': _distribution(
+                    row['coverage_status'] for row in candidates
+                ),
                 'by_sector': _distribution(row['sector'] for row in candidates),
                 'by_strategy': _distribution(row['strategy'] for row in candidates),
                 'by_market_regime': _distribution(row['market_regime'] for row in candidates),
@@ -242,6 +283,20 @@ class AnalyticsDashboardService:
                     {'name': name, 'average': round(mean(values), 4), 'coverage': len(values)}
                     for name, values in sorted(component_values.items())
                 ],
+                'governance': {
+                    'policy_version': (
+                        (publication.payload_json or {}).get('policy_version')
+                    ),
+                    'authority_owner': 'UNDERLYING_STOCK_INTELLIGENCE',
+                    'coverage_status': publication.coverage_status,
+                    'source_run_id': publication.source_run_id,
+                    'source_as_of_date': publication.source_as_of_date,
+                    'option_snapshot_id': publication.option_snapshot_id,
+                    'authority_input_fingerprint': (
+                        publication.authority_input_fingerprint
+                    ),
+                    'opportunity_attachment_policy': 'EXACT_SOURCE_RUN_ONLY',
+                },
                 'candidates': candidates,
             }
 
@@ -256,14 +311,12 @@ class AnalyticsDashboardService:
                 return {'status': 'NOT_AVAILABLE', 'summary': {}, 'candidates': []}
 
             valuation_run_id = (publication.payload_json or {}).get('valuation_run_id')
-            query = select(OptionValuationSnapshotModel).order_by(
-                desc(OptionValuationSnapshotModel.edge_score),
-                desc(OptionValuationSnapshotModel.snapshot_timestamp),
-            )
-            rows = session.execute(query.limit(max(limit * 4, limit))).scalars().all()
-            if valuation_run_id:
-                rows = [row for row in rows if (row.payload_json or {}).get('valuation_run_id') == valuation_run_id]
-            rows = rows[:limit]
+            rows = session.execute(
+                current_valuation_snapshot_query(
+                    valuation_run_id=valuation_run_id,
+                    limit=limit,
+                )
+            ).scalars().all()
             opportunity_ids = {row.opportunity_id for row in rows}
             recommendation_ids = {row.contract_recommendation_id for row in rows}
             opportunities = session.execute(select(InstitutionalOpportunityModel).where(InstitutionalOpportunityModel.opportunity_id.in_(opportunity_ids))).scalars().all() if opportunity_ids else []
@@ -272,8 +325,11 @@ class AnalyticsDashboardService:
             valuations = session.execute(select(StrategyValuationModel).where(StrategyValuationModel.opportunity_id.in_(opportunity_ids))).scalars().all() if opportunity_ids else []
             opportunity_map = {row.opportunity_id: row for row in opportunities}
             recommendation_map = {row.contract_recommendation_id: row for row in recommendations}
-            selected_strategy = {row.opportunity_id: row for row in strategies if row.selected}
-            selected_valuation = {row.opportunity_id: row for row in valuations if row.selected}
+            strategy_by_id = {row.strategy_candidate_id: row for row in strategies}
+            valuation_by_lineage = {
+                (row.opportunity_id, row.strategy_candidate_id): row
+                for row in valuations
+            }
             theses = session.execute(select(OpportunityThesisModel).where(OpportunityThesisModel.opportunity_id.in_(opportunity_ids))).scalars().all() if opportunity_ids else []
             thesis_map = {row.opportunity_id: row for row in theses}
             symbols = sorted({row.symbol for row in rows})
@@ -297,8 +353,11 @@ class AnalyticsDashboardService:
                 op_payload = dict(opportunity.payload_json or {}) if opportunity else {}
                 recommendation = recommendation_map.get(row.contract_recommendation_id)
                 rec_payload = dict(recommendation.payload_json or {}) if recommendation else {}
-                strategy_row = selected_strategy.get(row.opportunity_id)
-                valuation_row = selected_valuation.get(row.opportunity_id)
+                strategy_id = payload.get('strategy_candidate_id') or (
+                    recommendation.strategy_candidate_id if recommendation else None
+                )
+                strategy_row = strategy_by_id.get(strategy_id)
+                valuation_row = valuation_by_lineage.get((row.opportunity_id, strategy_id))
                 thesis = thesis_map.get(row.opportunity_id)
                 thesis_payload = dict(thesis.payload_json or {}) if thesis else {}
                 membership = membership_by_symbol.get(row.symbol)
@@ -315,7 +374,7 @@ class AnalyticsDashboardService:
                 regime = _deep(
                     thesis_payload, 'market_regime', 'context.market_regime', default=None
                 ) or _deep(op_payload, 'market_regime', 'source_payload.market_regime', 'source_payload.context.market_regime', default='NOT_AVAILABLE')
-                dte = _num(_deep(payload, 'dte', 'inputs.dte', default=_deep(rec_payload, 'dte', default=0)))
+                dte = _num(_deep(payload, 'dte', 'dte_min', 'inputs.dte', default=_deep(rec_payload, 'dte', default=0)))
                 moneyness = _deep(payload, 'moneyness_bucket', 'segmentation.moneyness_bucket', 'segmentation.moneyness', default='NOT_AVAILABLE')
                 candidates.append({
                     'snapshot_id': row.snapshot_id,
@@ -344,11 +403,16 @@ class AnalyticsDashboardService:
                     'entry_zone_low': float(thesis.entry_zone_low) if thesis else None,
                     'entry_zone_high': float(thesis.entry_zone_high) if thesis else None,
                     'option_snapshot_id': recommendation.option_snapshot_id if recommendation else None,
+                    'quote_input_snapshot_id': payload.get('quote_input_snapshot_id'),
+                    'market_input_as_of': payload.get('market_input_as_of'),
+                    'market_input_status': payload.get('market_input_status'),
                     'dte': dte,
                     'dte_bucket': '0-7' if dte <= 7 else '8-30' if dte <= 30 else '31-60' if dte <= 60 else '61-120' if dte <= 120 else '121+',
                     'moneyness_bucket': str(moneyness or 'UNKNOWN'),
                     'liquidity_score': float(recommendation.liquidity_score or 0.0) if recommendation else 0.0,
-                    'executable': bool(recommendation.executable) if recommendation else False,
+                    'executable': bool(payload.get('valuation_actionable', False)),
+                    'trade_execution_authority': bool(payload.get('trade_execution_authority', False)),
+                    'strategy_selected': bool(strategy_row.selected) if strategy_row else False,
                     'strategy_score': float(valuation_row.strategy_score) if valuation_row else None,
                     'calibrated_probability': float(valuation_row.calibrated_probability or 0.0) if valuation_row else None,
                     'expected_value': float(valuation_row.expected_value or 0.0) if valuation_row else None,
@@ -360,7 +424,7 @@ class AnalyticsDashboardService:
                     'coverage': _deep(payload, 'coverage', default={}),
                     'evidence': _deep(payload, 'evidence', default=[]),
                     'conflicting_evidence': _deep(payload, 'conflicting_evidence', default=[]),
-                    'legs': _deep(rec_payload, 'legs', 'contracts', default=[]),
+                    'legs': _deep(payload, 'legs', default=_deep(rec_payload, 'legs', 'contracts', default=[])),
                     'snapshot_timestamp': row.snapshot_timestamp,
                 })
 
@@ -380,7 +444,7 @@ class AnalyticsDashboardService:
                 'status': publication.status,
             }
             return {
-                'status': 'READY',
+                'status': publication.status,
                 'summary': summary,
                 'edge_histogram': _histogram(edge_scores),
                 'classification_distribution': _distribution(classifications),

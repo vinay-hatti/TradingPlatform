@@ -1,0 +1,65 @@
+{
+  "milestone": "M77.19.7.4.1.2",
+  "version": "M77.19.7.4.1.2-REPAIRED-FULL-PROFILE-AUTHORITY-REPIN-1.0",
+  "authority_sha256": "0d2e684363e51ddf4de4df81d0978e03c5c5c0a6d5604f77b438494dd36c87b3",
+  "cadence": "WEEKLY",
+  "forward_horizons_sessions": [
+    5,
+    10,
+    20
+  ],
+  "confidence_bins": [
+    [
+      0,
+      20
+    ],
+    [
+      20,
+      40
+    ],
+    [
+      40,
+      60
+    ],
+    [
+      60,
+      80
+    ],
+    [
+      80,
+      100
+    ]
+  ],
+  "score_bins": [
+    [
+      0,
+      20
+    ],
+    [
+      20,
+      40
+    ],
+    [
+      40,
+      60
+    ],
+    [
+      60,
+      80
+    ],
+    [
+      80,
+      100
+    ]
+  ],
+  "future_bars_authorized_for_realized_outcome_labeling_only": true,
+  "future_bars_used_for_profile_construction": false,
+  "threshold_search_or_optimization": false,
+  "parameter_fitting": false,
+  "production_authority_effect": false,
+  "confidence_domain": [
+    0,
+    100
+  ],
+  "native_strong_direction_labels_preserved": true
+}

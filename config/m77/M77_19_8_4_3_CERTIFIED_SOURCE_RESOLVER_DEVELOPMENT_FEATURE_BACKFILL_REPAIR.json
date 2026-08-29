@@ -1,0 +1,11 @@
+{
+  "milestone": "M77.19.8.4.3",
+  "reference_price_source": "profile.timeframe_states.1d.close",
+  "daily_date_field": "session_date",
+  "daily_close_field": "close",
+  "development_only": true,
+  "target_matrix_materialized": false,
+  "validation_open": false,
+  "final_holdout_open": false,
+  "production_authority_effect": false
+}

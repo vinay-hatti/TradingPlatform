@@ -1,0 +1,1365 @@
+{
+  "F020_native_atr_proves_replay_payload_extractability": true,
+  "automatic_backfill_semantic_change_authorized": false,
+  "backfill_authority_sha256": "f9105e7eab724359ca46bef14285d68ef0a44d2f5fdf54ed530f8c848596d7f0",
+  "daily_materialization_forensics": {
+    "exact_symbol_basename_match_count": 602,
+    "extension_distribution": {
+      ".B.daily.csv.gz": 2,
+      ".B.json": 2,
+      ".daily.csv.gz": 600,
+      ".json": 600
+    },
+    "files_with_close_key_candidates": 0,
+    "files_with_date_key_candidates": 0,
+    "inspected_file_count": 200,
+    "name_samples": [
+      "daily_bars/A.daily.csv.gz",
+      "daily_bars/AAPL.daily.csv.gz",
+      "daily_bars/ABBV.daily.csv.gz",
+      "daily_bars/ABNB.daily.csv.gz",
+      "daily_bars/ABT.daily.csv.gz",
+      "daily_bars/ACGL.daily.csv.gz",
+      "daily_bars/ACN.daily.csv.gz",
+      "daily_bars/ADBE.daily.csv.gz",
+      "daily_bars/ADI.daily.csv.gz",
+      "daily_bars/ADM.daily.csv.gz",
+      "daily_bars/ADP.daily.csv.gz",
+      "daily_bars/ADSK.daily.csv.gz",
+      "daily_bars/AEE.daily.csv.gz",
+      "daily_bars/AEP.daily.csv.gz",
+      "daily_bars/AES.daily.csv.gz",
+      "daily_bars/AFL.daily.csv.gz",
+      "daily_bars/AGG.daily.csv.gz",
+      "daily_bars/AIG.daily.csv.gz",
+      "daily_bars/AIZ.daily.csv.gz",
+      "daily_bars/AJG.daily.csv.gz",
+      "daily_bars/AKAM.daily.csv.gz",
+      "daily_bars/ALAB.daily.csv.gz",
+      "daily_bars/ALB.daily.csv.gz",
+      "daily_bars/ALGN.daily.csv.gz",
+      "daily_bars/ALL.daily.csv.gz",
+      "daily_bars/ALLE.daily.csv.gz",
+      "daily_bars/ALNY.daily.csv.gz",
+      "daily_bars/AMAT.daily.csv.gz",
+      "daily_bars/AMCR.daily.csv.gz",
+      "daily_bars/AMD.daily.csv.gz",
+      "daily_bars/AME.daily.csv.gz",
+      "daily_bars/AMGN.daily.csv.gz",
+      "daily_bars/AMP.daily.csv.gz",
+      "daily_bars/AMT.daily.csv.gz",
+      "daily_bars/AMZN.daily.csv.gz",
+      "daily_bars/ANET.daily.csv.gz",
+      "daily_bars/AON.daily.csv.gz",
+      "daily_bars/AOS.daily.csv.gz",
+      "daily_bars/APA.daily.csv.gz",
+      "daily_bars/APD.daily.csv.gz",
+      "daily_bars/APH.daily.csv.gz",
+      "daily_bars/APO.daily.csv.gz",
+      "daily_bars/APP.daily.csv.gz",
+      "daily_bars/APTV.daily.csv.gz",
+      "daily_bars/ARE.daily.csv.gz",
+      "daily_bars/ARES.daily.csv.gz",
+      "daily_bars/ARKK.daily.csv.gz",
+      "daily_bars/ARM.daily.csv.gz",
+      "daily_bars/ASML.daily.csv.gz",
+      "daily_bars/ATO.daily.csv.gz",
+      "daily_bars/AVB.daily.csv.gz",
+      "daily_bars/AVGO.daily.csv.gz",
+      "daily_bars/AVY.daily.csv.gz",
+      "daily_bars/AWK.daily.csv.gz",
+      "daily_bars/AXON.daily.csv.gz",
+      "daily_bars/AXP.daily.csv.gz",
+      "daily_bars/AZO.daily.csv.gz",
+      "daily_bars/BA.daily.csv.gz",
+      "daily_bars/BAC.daily.csv.gz",
+      "daily_bars/BALL.daily.csv.gz",
+      "daily_bars/BAX.daily.csv.gz",
+      "daily_bars/BBY.daily.csv.gz",
+      "daily_bars/BDX.daily.csv.gz",
+      "daily_bars/BEN.daily.csv.gz",
+      "daily_bars/BF.B.daily.csv.gz",
+      "daily_bars/BG.daily.csv.gz",
+      "daily_bars/BIIB.daily.csv.gz",
+      "daily_bars/BITO.daily.csv.gz",
+      "daily_bars/BKNG.daily.csv.gz",
+      "daily_bars/BKR.daily.csv.gz",
+      "daily_bars/BLDR.daily.csv.gz",
+      "daily_bars/BLK.daily.csv.gz",
+      "daily_bars/BMY.daily.csv.gz",
+      "daily_bars/BND.daily.csv.gz",
+      "daily_bars/BR.daily.csv.gz",
+      "daily_bars/BRK.B.daily.csv.gz",
+      "daily_bars/BRO.daily.csv.gz",
+      "daily_bars/BSX.daily.csv.gz",
+      "daily_bars/BX.daily.csv.gz",
+      "daily_bars/BXP.daily.csv.gz",
+      "daily_bars/C.daily.csv.gz",
+      "daily_bars/CAH.daily.csv.gz",
+      "daily_bars/CARR.daily.csv.gz",
+      "daily_bars/CASY.daily.csv.gz",
+      "daily_bars/CAT.daily.csv.gz",
+      "daily_bars/CB.daily.csv.gz",
+      "daily_bars/CBOE.daily.csv.gz",
+      "daily_bars/CBRE.daily.csv.gz",
+      "daily_bars/CCEP.daily.csv.gz",
+      "daily_bars/CCI.daily.csv.gz",
+      "daily_bars/CCL.daily.csv.gz",
+      "daily_bars/CDNS.daily.csv.gz",
+      "daily_bars/CDW.daily.csv.gz",
+      "daily_bars/CEG.daily.csv.gz",
+      "daily_bars/CF.daily.csv.gz",
+      "daily_bars/CFG.daily.csv.gz",
+      "daily_bars/CHD.daily.csv.gz",
+      "daily_bars/CHRW.daily.csv.gz",
+      "daily_bars/CHTR.daily.csv.gz",
+      "daily_bars/CI.daily.csv.gz"
+    ],
+    "parse_error_count": 0,
+    "parse_mode_distribution": {
+      "UNKNOWN_TEXT": 200
+    },
+    "path_depth_distribution": {
+      "2": 1204
+    },
+    "root": "/Users/vinay.hatti/TradingPlatform/research_data/m77_19_7_2/symbol_specific_polygon_replay_materialization",
+    "status": "DAILY_ARTIFACT_SCHEMA_NOT_YET_DISCOVERABLE",
+    "symbol_basename_contains_match_count": 602,
+    "symbol_path_examples": {
+      "A": [
+        "daily_bars/A.daily.csv.gz",
+        "daily_bars/AAPL.daily.csv.gz",
+        "daily_bars/ABBV.daily.csv.gz",
+        "daily_bars/ABNB.daily.csv.gz",
+        "daily_bars/ABT.daily.csv.gz",
+        "daily_bars/ACGL.daily.csv.gz",
+        "daily_bars/ACN.daily.csv.gz",
+        "daily_bars/ADBE.daily.csv.gz",
+        "daily_bars/ADI.daily.csv.gz",
+        "daily_bars/ADM.daily.csv.gz"
+      ],
+      "AAPL": [
+        "daily_bars/AAPL.daily.csv.gz",
+        "symbol_metadata/AAPL.json"
+      ],
+      "ABBV": [
+        "daily_bars/ABBV.daily.csv.gz",
+        "symbol_metadata/ABBV.json"
+      ],
+      "ABNB": [
+        "daily_bars/ABNB.daily.csv.gz",
+        "symbol_metadata/ABNB.json"
+      ],
+      "ABT": [
+        "daily_bars/ABT.daily.csv.gz",
+        "symbol_metadata/ABT.json"
+      ],
+      "ACGL": [
+        "daily_bars/ACGL.daily.csv.gz",
+        "symbol_metadata/ACGL.json"
+      ],
+      "ACN": [
+        "daily_bars/ACN.daily.csv.gz",
+        "symbol_metadata/ACN.json"
+      ],
+      "ADBE": [
+        "daily_bars/ADBE.daily.csv.gz",
+        "symbol_metadata/ADBE.json"
+      ],
+      "ADI": [
+        "daily_bars/ADI.daily.csv.gz",
+        "symbol_metadata/ADI.json"
+      ],
+      "ADM": [
+        "daily_bars/ADM.daily.csv.gz",
+        "symbol_metadata/ADM.json"
+      ],
+      "ADP": [
+        "daily_bars/ADP.daily.csv.gz",
+        "symbol_metadata/ADP.json"
+      ],
+      "ADSK": [
+        "daily_bars/ADSK.daily.csv.gz",
+        "symbol_metadata/ADSK.json"
+      ],
+      "AEE": [
+        "daily_bars/AEE.daily.csv.gz",
+        "symbol_metadata/AEE.json"
+      ],
+      "AEP": [
+        "daily_bars/AEP.daily.csv.gz",
+        "symbol_metadata/AEP.json"
+      ],
+      "AES": [
+        "daily_bars/AES.daily.csv.gz",
+        "symbol_metadata/AES.json"
+      ],
+      "AFL": [
+        "daily_bars/AFL.daily.csv.gz",
+        "symbol_metadata/AFL.json"
+      ],
+      "AGG": [
+        "daily_bars/AGG.daily.csv.gz",
+        "symbol_metadata/AGG.json"
+      ],
+      "AIG": [
+        "daily_bars/AIG.daily.csv.gz",
+        "symbol_metadata/AIG.json"
+      ],
+      "AIZ": [
+        "daily_bars/AIZ.daily.csv.gz",
+        "symbol_metadata/AIZ.json"
+      ],
+      "AJG": [
+        "daily_bars/AJG.daily.csv.gz",
+        "symbol_metadata/AJG.json"
+      ],
+      "AKAM": [
+        "daily_bars/AKAM.daily.csv.gz",
+        "symbol_metadata/AKAM.json"
+      ],
+      "ALAB": [
+        "daily_bars/ALAB.daily.csv.gz",
+        "symbol_metadata/ALAB.json"
+      ],
+      "ALB": [
+        "daily_bars/ALB.daily.csv.gz",
+        "symbol_metadata/ALB.json"
+      ],
+      "ALGN": [
+        "daily_bars/ALGN.daily.csv.gz",
+        "symbol_metadata/ALGN.json"
+      ],
+      "ALL": [
+        "daily_bars/ALL.daily.csv.gz",
+        "daily_bars/ALLE.daily.csv.gz",
+        "daily_bars/BALL.daily.csv.gz",
+        "symbol_metadata/ALL.json",
+        "symbol_metadata/ALLE.json",
+        "symbol_metadata/BALL.json"
+      ]
+    },
+    "total_file_count": 1204
+  },
+  "forensic_conclusion": "ZERO_COVERAGE_IS_SOURCE_RESOLUTION_NOT_FEATURE_EVIDENCE",
+  "next_step": "BUILD_M77_19_8_4_2_REFERENCE_PRICE_AND_FROZEN_DAILY_SOURCE_RESOLVER_AUTHORITY",
+  "reference_price_forensics": {
+    "broad_candidate_paths": [
+      {
+        "examples": [
+          {
+            "as_of": "2004-11-19",
+            "symbol": "A",
+            "value": 16.5451
+          },
+          {
+            "as_of": "2004-11-26",
+            "symbol": "A",
+            "value": 16.5665
+          },
+          {
+            "as_of": "2004-12-03",
+            "symbol": "A",
+            "value": 17.3176
+          },
+          {
+            "as_of": "2004-12-10",
+            "symbol": "A",
+            "value": 16.9456
+          },
+          {
+            "as_of": "2004-12-17",
+            "symbol": "A",
+            "value": 17.0386
+          }
+        ],
+        "observation_count": 13056,
+        "path": "profile.decision_intelligence.explainability.opportunity_freshness.reference_price",
+        "symbol_count": 524
+      },
+      {
+        "examples": [
+          {
+            "as_of": "2004-11-19",
+            "symbol": "A",
+            "value": 16.5451
+          },
+          {
+            "as_of": "2004-11-26",
+            "symbol": "A",
+            "value": 16.5665
+          },
+          {
+            "as_of": "2004-12-03",
+            "symbol": "A",
+            "value": 17.3176
+          },
+          {
+            "as_of": "2004-12-10",
+            "symbol": "A",
+            "value": 16.9456
+          },
+          {
+            "as_of": "2004-12-17",
+            "symbol": "A",
+            "value": 17.0386
+          }
+        ],
+        "observation_count": 13056,
+        "path": "profile.timeframe_states.1d.close",
+        "symbol_count": 524
+      },
+      {
+        "examples": [
+          {
+            "as_of": "2004-11-19",
+            "symbol": "A",
+            "value": 16.5451
+          },
+          {
+            "as_of": "2004-11-26",
+            "symbol": "A",
+            "value": 16.5665
+          },
+          {
+            "as_of": "2004-12-03",
+            "symbol": "A",
+            "value": 17.3176
+          },
+          {
+            "as_of": "2004-12-10",
+            "symbol": "A",
+            "value": 16.9456
+          },
+          {
+            "as_of": "2004-12-17",
+            "symbol": "A",
+            "value": 17.0386
+          }
+        ],
+        "observation_count": 13056,
+        "path": "profile.timeframe_states.1w.close",
+        "symbol_count": 524
+      },
+      {
+        "examples": [
+          {
+            "as_of": "2004-11-19",
+            "symbol": "A",
+            "value": 16.5451
+          },
+          {
+            "as_of": "2004-11-26",
+            "symbol": "A",
+            "value": 16.5665
+          },
+          {
+            "as_of": "2004-12-03",
+            "symbol": "A",
+            "value": 17.3176
+          },
+          {
+            "as_of": "2004-12-10",
+            "symbol": "A",
+            "value": 16.9456
+          },
+          {
+            "as_of": "2004-12-17",
+            "symbol": "A",
+            "value": 17.0386
+          }
+        ],
+        "observation_count": 13056,
+        "path": "profile.trade_plan.certification.entry_execution.reference_price",
+        "symbol_count": 524
+      },
+      {
+        "examples": [
+          {
+            "as_of": "2004-11-19",
+            "symbol": "A",
+            "value": 11443622.62
+          },
+          {
+            "as_of": "2004-11-26",
+            "symbol": "A",
+            "value": 11433542.62
+          },
+          {
+            "as_of": "2004-12-03",
+            "symbol": "A",
+            "value": 11423462.62
+          },
+          {
+            "as_of": "2004-12-10",
+            "symbol": "A",
+            "value": 11413382.62
+          },
+          {
+            "as_of": "2004-12-17",
+            "symbol": "A",
+            "value": 11403302.62
+          }
+        ],
+        "observation_count": 13056,
+        "path": "profile.trade_plan.certification.reference_market.freshness_minutes_at_certification",
+        "symbol_count": 524
+      },
+      {
+        "examples": [
+          {
+            "as_of": "2004-11-19",
+            "symbol": "A",
+            "value": 16.5451
+          },
+          {
+            "as_of": "2004-11-26",
+            "symbol": "A",
+            "value": 16.5665
+          },
+          {
+            "as_of": "2004-12-03",
+            "symbol": "A",
+            "value": 17.3176
+          },
+          {
+            "as_of": "2004-12-10",
+            "symbol": "A",
+            "value": 16.9456
+          },
+          {
+            "as_of": "2004-12-17",
+            "symbol": "A",
+            "value": 17.0386
+          }
+        ],
+        "observation_count": 13056,
+        "path": "profile.trade_plan.certification.reference_market.price",
+        "symbol_count": 524
+      },
+      {
+        "examples": [
+          {
+            "as_of": "2004-11-19",
+            "symbol": "A",
+            "value": 16.5451
+          },
+          {
+            "as_of": "2004-11-26",
+            "symbol": "A",
+            "value": 16.5665
+          },
+          {
+            "as_of": "2004-12-03",
+            "symbol": "A",
+            "value": 17.3176
+          },
+          {
+            "as_of": "2004-12-10",
+            "symbol": "A",
+            "value": 16.9456
+          },
+          {
+            "as_of": "2004-12-17",
+            "symbol": "A",
+            "value": 17.0386
+          }
+        ],
+        "observation_count": 13056,
+        "path": "profile.trade_plan.geometry_context.reference_price",
+        "symbol_count": 524
+      },
+      {
+        "examples": [
+          {
+            "as_of": "2004-11-19",
+            "symbol": "A",
+            "value": 11443622.62
+          },
+          {
+            "as_of": "2004-11-26",
+            "symbol": "A",
+            "value": 11433542.62
+          },
+          {
+            "as_of": "2004-12-03",
+            "symbol": "A",
+            "value": 11423462.62
+          },
+          {
+            "as_of": "2004-12-10",
+            "symbol": "A",
+            "value": 11413382.62
+          },
+          {
+            "as_of": "2004-12-17",
+            "symbol": "A",
+            "value": 11403302.62
+          }
+        ],
+        "observation_count": 13056,
+        "path": "profile.trade_plan.reference_market.freshness_minutes_at_certification",
+        "symbol_count": 524
+      },
+      {
+        "examples": [
+          {
+            "as_of": "2004-11-19",
+            "symbol": "A",
+            "value": 16.5451
+          },
+          {
+            "as_of": "2004-11-26",
+            "symbol": "A",
+            "value": 16.5665
+          },
+          {
+            "as_of": "2004-12-03",
+            "symbol": "A",
+            "value": 17.3176
+          },
+          {
+            "as_of": "2004-12-10",
+            "symbol": "A",
+            "value": 16.9456
+          },
+          {
+            "as_of": "2004-12-17",
+            "symbol": "A",
+            "value": 17.0386
+          }
+        ],
+        "observation_count": 13056,
+        "path": "profile.trade_plan.reference_market.price",
+        "symbol_count": 524
+      },
+      {
+        "examples": [
+          {
+            "as_of": "2004-11-19",
+            "symbol": "A",
+            "value": 14.9928
+          },
+          {
+            "as_of": "2004-11-26",
+            "symbol": "A",
+            "value": 15.0506
+          },
+          {
+            "as_of": "2004-12-03",
+            "symbol": "A",
+            "value": 17.0243
+          },
+          {
+            "as_of": "2004-12-10",
+            "symbol": "A",
+            "value": 16.5605
+          },
+          {
+            "as_of": "2004-12-17",
+            "symbol": "A",
+            "value": 16.9408
+          }
+        ],
+        "observation_count": 13056,
+        "path": "profile.trade_plan.trailing.activation_price",
+        "symbol_count": 524
+      },
+      {
+        "examples": [
+          {
+            "as_of": "2004-11-19",
+            "symbol": "A",
+            "value": 16.5392
+          },
+          {
+            "as_of": "2004-11-26",
+            "symbol": "A",
+            "value": 16.5293
+          },
+          {
+            "as_of": "2005-01-07",
+            "symbol": "A",
+            "value": 15.6438
+          },
+          {
+            "as_of": "2005-01-14",
+            "symbol": "A",
+            "value": 15.5736
+          },
+          {
+            "as_of": "2005-01-21",
+            "symbol": "A",
+            "value": 15.1082
+          }
+        ],
+        "observation_count": 10078,
+        "path": "profile.trade_plan.geometry_context.next_objective_zone.representative_price",
+        "symbol_count": 524
+      },
+      {
+        "examples": [
+          {
+            "as_of": "2004-12-10",
+            "symbol": "A",
+            "value": 0.0492
+          },
+          {
+            "as_of": "2004-12-17",
+            "symbol": "A",
+            "value": 0.0298
+          },
+          {
+            "as_of": "2004-12-23",
+            "symbol": "A",
+            "value": 0.035
+          },
+          {
+            "as_of": "2005-02-11",
+            "symbol": "A",
+            "value": 0.0757
+          },
+          {
+            "as_of": "2005-02-18",
+            "symbol": "A",
+            "value": 0.0993
+          }
+        ],
+        "observation_count": 6965,
+        "path": "profile.institutional_volume.evidence.price_return_20d",
+        "symbol_count": 523
+      },
+      {
+        "examples": [
+          {
+            "as_of": "2004-12-10",
+            "symbol": "A",
+            "value": 0.04915921642437904
+          },
+          {
+            "as_of": "2004-12-17",
+            "symbol": "A",
+            "value": 0.029827562238970984
+          },
+          {
+            "as_of": "2004-12-23",
+            "symbol": "A",
+            "value": 0.03497419491141751
+          },
+          {
+            "as_of": "2005-02-11",
+            "symbol": "A",
+            "value": 0.07573941987636701
+          },
+          {
+            "as_of": "2005-02-18",
+            "symbol": "A",
+            "value": 0.0993466438883166
+          }
+        ],
+        "observation_count": 6965,
+        "path": "profile.participation.evidence.price_return_20",
+        "symbol_count": 523
+      },
+      {
+        "examples": [
+          {
+            "as_of": "2004-12-03",
+            "symbol": "A",
+            "value": 0.0071
+          },
+          {
+            "as_of": "2004-12-17",
+            "symbol": "A",
+            "value": 0.0059
+          },
+          {
+            "as_of": "2004-12-31",
+            "symbol": "A",
+            "value": 0.0004
+          },
+          {
+            "as_of": "2005-01-14",
+            "symbol": "A",
+            "value": 0.0157
+          },
+          {
+            "as_of": "2005-02-04",
+            "symbol": "A",
+            "value": 0.0158
+          }
+        ],
+        "observation_count": 6409,
+        "path": "profile.institutional_volume.evidence.price_change_1d",
+        "symbol_count": 524
+      },
+      {
+        "examples": [
+          {
+            "as_of": "2004-12-17",
+            "symbol": "A",
+            "value": 0.308
+          },
+          {
+            "as_of": "2004-12-23",
+            "symbol": "A",
+            "value": 0.133
+          },
+          {
+            "as_of": "2005-01-14",
+            "symbol": "A",
+            "value": 0.55
+          },
+          {
+            "as_of": "2005-02-04",
+            "symbol": "A",
+            "value": 0.87
+          },
+          {
+            "as_of": "2005-02-11",
+            "symbol": "A",
+            "value": 0.802
+          }
+        ],
+        "observation_count": 6134,
+        "path": "profile.institutional_volume.close_location_value",
+        "symbol_count": 524
+      },
+      {
+        "examples": [
+          {
+            "as_of": "2005-04-01",
+            "symbol": "A",
+            "value": 15.7868
+          },
+          {
+            "as_of": "2005-04-08",
+            "symbol": "A",
+            "value": 15.2861
+          },
+          {
+            "as_of": "2005-04-15",
+            "symbol": "A",
+            "value": 14.5923
+          },
+          {
+            "as_of": "2005-04-22",
+            "symbol": "A",
+            "value": 15.093
+          },
+          {
+            "as_of": "2005-04-29",
+            "symbol": "A",
+            "value": 14.8426
+          }
+        ],
+        "observation_count": 3199,
+        "path": "profile.timeframe_states.1mo.close",
+        "symbol_count": 521
+      },
+      {
+        "examples": [
+          {
+            "as_of": "2004-12-03",
+            "symbol": "A",
+            "value": 35.0
+          },
+          {
+            "as_of": "2004-12-10",
+            "symbol": "A",
+            "value": 35.0
+          },
+          {
+            "as_of": "2004-12-17",
+            "symbol": "A",
+            "value": 35.0
+          },
+          {
+            "as_of": "2004-12-23",
+            "symbol": "A",
+            "value": 35.0
+          },
+          {
+            "as_of": "2004-12-31",
+            "symbol": "A",
+            "value": 35.0
+          }
+        ],
+        "observation_count": 2698,
+        "path": "profile.decision_intelligence.explainability.decision_readiness.fail_closed_cap",
+        "symbol_count": 508
+      }
+    ],
+    "distinct_price_like_path_count": 17,
+    "path_registry": [
+      {
+        "examples": [
+          {
+            "as_of": "2004-11-19",
+            "symbol": "A",
+            "value": 16.5451
+          },
+          {
+            "as_of": "2004-11-26",
+            "symbol": "A",
+            "value": 16.5665
+          },
+          {
+            "as_of": "2004-12-03",
+            "symbol": "A",
+            "value": 17.3176
+          },
+          {
+            "as_of": "2004-12-10",
+            "symbol": "A",
+            "value": 16.9456
+          },
+          {
+            "as_of": "2004-12-17",
+            "symbol": "A",
+            "value": 17.0386
+          }
+        ],
+        "observation_count": 13056,
+        "path": "profile.decision_intelligence.explainability.opportunity_freshness.reference_price",
+        "symbol_count": 524
+      },
+      {
+        "examples": [
+          {
+            "as_of": "2004-11-19",
+            "symbol": "A",
+            "value": 16.5451
+          },
+          {
+            "as_of": "2004-11-26",
+            "symbol": "A",
+            "value": 16.5665
+          },
+          {
+            "as_of": "2004-12-03",
+            "symbol": "A",
+            "value": 17.3176
+          },
+          {
+            "as_of": "2004-12-10",
+            "symbol": "A",
+            "value": 16.9456
+          },
+          {
+            "as_of": "2004-12-17",
+            "symbol": "A",
+            "value": 17.0386
+          }
+        ],
+        "observation_count": 13056,
+        "path": "profile.timeframe_states.1d.close",
+        "symbol_count": 524
+      },
+      {
+        "examples": [
+          {
+            "as_of": "2004-11-19",
+            "symbol": "A",
+            "value": 16.5451
+          },
+          {
+            "as_of": "2004-11-26",
+            "symbol": "A",
+            "value": 16.5665
+          },
+          {
+            "as_of": "2004-12-03",
+            "symbol": "A",
+            "value": 17.3176
+          },
+          {
+            "as_of": "2004-12-10",
+            "symbol": "A",
+            "value": 16.9456
+          },
+          {
+            "as_of": "2004-12-17",
+            "symbol": "A",
+            "value": 17.0386
+          }
+        ],
+        "observation_count": 13056,
+        "path": "profile.timeframe_states.1w.close",
+        "symbol_count": 524
+      },
+      {
+        "examples": [
+          {
+            "as_of": "2004-11-19",
+            "symbol": "A",
+            "value": 16.5451
+          },
+          {
+            "as_of": "2004-11-26",
+            "symbol": "A",
+            "value": 16.5665
+          },
+          {
+            "as_of": "2004-12-03",
+            "symbol": "A",
+            "value": 17.3176
+          },
+          {
+            "as_of": "2004-12-10",
+            "symbol": "A",
+            "value": 16.9456
+          },
+          {
+            "as_of": "2004-12-17",
+            "symbol": "A",
+            "value": 17.0386
+          }
+        ],
+        "observation_count": 13056,
+        "path": "profile.trade_plan.certification.entry_execution.reference_price",
+        "symbol_count": 524
+      },
+      {
+        "examples": [
+          {
+            "as_of": "2004-11-19",
+            "symbol": "A",
+            "value": 11443622.62
+          },
+          {
+            "as_of": "2004-11-26",
+            "symbol": "A",
+            "value": 11433542.62
+          },
+          {
+            "as_of": "2004-12-03",
+            "symbol": "A",
+            "value": 11423462.62
+          },
+          {
+            "as_of": "2004-12-10",
+            "symbol": "A",
+            "value": 11413382.62
+          },
+          {
+            "as_of": "2004-12-17",
+            "symbol": "A",
+            "value": 11403302.62
+          }
+        ],
+        "observation_count": 13056,
+        "path": "profile.trade_plan.certification.reference_market.freshness_minutes_at_certification",
+        "symbol_count": 524
+      },
+      {
+        "examples": [
+          {
+            "as_of": "2004-11-19",
+            "symbol": "A",
+            "value": 16.5451
+          },
+          {
+            "as_of": "2004-11-26",
+            "symbol": "A",
+            "value": 16.5665
+          },
+          {
+            "as_of": "2004-12-03",
+            "symbol": "A",
+            "value": 17.3176
+          },
+          {
+            "as_of": "2004-12-10",
+            "symbol": "A",
+            "value": 16.9456
+          },
+          {
+            "as_of": "2004-12-17",
+            "symbol": "A",
+            "value": 17.0386
+          }
+        ],
+        "observation_count": 13056,
+        "path": "profile.trade_plan.certification.reference_market.price",
+        "symbol_count": 524
+      },
+      {
+        "examples": [
+          {
+            "as_of": "2004-11-19",
+            "symbol": "A",
+            "value": 16.5451
+          },
+          {
+            "as_of": "2004-11-26",
+            "symbol": "A",
+            "value": 16.5665
+          },
+          {
+            "as_of": "2004-12-03",
+            "symbol": "A",
+            "value": 17.3176
+          },
+          {
+            "as_of": "2004-12-10",
+            "symbol": "A",
+            "value": 16.9456
+          },
+          {
+            "as_of": "2004-12-17",
+            "symbol": "A",
+            "value": 17.0386
+          }
+        ],
+        "observation_count": 13056,
+        "path": "profile.trade_plan.geometry_context.reference_price",
+        "symbol_count": 524
+      },
+      {
+        "examples": [
+          {
+            "as_of": "2004-11-19",
+            "symbol": "A",
+            "value": 11443622.62
+          },
+          {
+            "as_of": "2004-11-26",
+            "symbol": "A",
+            "value": 11433542.62
+          },
+          {
+            "as_of": "2004-12-03",
+            "symbol": "A",
+            "value": 11423462.62
+          },
+          {
+            "as_of": "2004-12-10",
+            "symbol": "A",
+            "value": 11413382.62
+          },
+          {
+            "as_of": "2004-12-17",
+            "symbol": "A",
+            "value": 11403302.62
+          }
+        ],
+        "observation_count": 13056,
+        "path": "profile.trade_plan.reference_market.freshness_minutes_at_certification",
+        "symbol_count": 524
+      },
+      {
+        "examples": [
+          {
+            "as_of": "2004-11-19",
+            "symbol": "A",
+            "value": 16.5451
+          },
+          {
+            "as_of": "2004-11-26",
+            "symbol": "A",
+            "value": 16.5665
+          },
+          {
+            "as_of": "2004-12-03",
+            "symbol": "A",
+            "value": 17.3176
+          },
+          {
+            "as_of": "2004-12-10",
+            "symbol": "A",
+            "value": 16.9456
+          },
+          {
+            "as_of": "2004-12-17",
+            "symbol": "A",
+            "value": 17.0386
+          }
+        ],
+        "observation_count": 13056,
+        "path": "profile.trade_plan.reference_market.price",
+        "symbol_count": 524
+      },
+      {
+        "examples": [
+          {
+            "as_of": "2004-11-19",
+            "symbol": "A",
+            "value": 14.9928
+          },
+          {
+            "as_of": "2004-11-26",
+            "symbol": "A",
+            "value": 15.0506
+          },
+          {
+            "as_of": "2004-12-03",
+            "symbol": "A",
+            "value": 17.0243
+          },
+          {
+            "as_of": "2004-12-10",
+            "symbol": "A",
+            "value": 16.5605
+          },
+          {
+            "as_of": "2004-12-17",
+            "symbol": "A",
+            "value": 16.9408
+          }
+        ],
+        "observation_count": 13056,
+        "path": "profile.trade_plan.trailing.activation_price",
+        "symbol_count": 524
+      },
+      {
+        "examples": [
+          {
+            "as_of": "2004-11-19",
+            "symbol": "A",
+            "value": 16.5392
+          },
+          {
+            "as_of": "2004-11-26",
+            "symbol": "A",
+            "value": 16.5293
+          },
+          {
+            "as_of": "2005-01-07",
+            "symbol": "A",
+            "value": 15.6438
+          },
+          {
+            "as_of": "2005-01-14",
+            "symbol": "A",
+            "value": 15.5736
+          },
+          {
+            "as_of": "2005-01-21",
+            "symbol": "A",
+            "value": 15.1082
+          }
+        ],
+        "observation_count": 10078,
+        "path": "profile.trade_plan.geometry_context.next_objective_zone.representative_price",
+        "symbol_count": 524
+      },
+      {
+        "examples": [
+          {
+            "as_of": "2004-12-10",
+            "symbol": "A",
+            "value": 0.0492
+          },
+          {
+            "as_of": "2004-12-17",
+            "symbol": "A",
+            "value": 0.0298
+          },
+          {
+            "as_of": "2004-12-23",
+            "symbol": "A",
+            "value": 0.035
+          },
+          {
+            "as_of": "2005-02-11",
+            "symbol": "A",
+            "value": 0.0757
+          },
+          {
+            "as_of": "2005-02-18",
+            "symbol": "A",
+            "value": 0.0993
+          }
+        ],
+        "observation_count": 6965,
+        "path": "profile.institutional_volume.evidence.price_return_20d",
+        "symbol_count": 523
+      },
+      {
+        "examples": [
+          {
+            "as_of": "2004-12-10",
+            "symbol": "A",
+            "value": 0.04915921642437904
+          },
+          {
+            "as_of": "2004-12-17",
+            "symbol": "A",
+            "value": 0.029827562238970984
+          },
+          {
+            "as_of": "2004-12-23",
+            "symbol": "A",
+            "value": 0.03497419491141751
+          },
+          {
+            "as_of": "2005-02-11",
+            "symbol": "A",
+            "value": 0.07573941987636701
+          },
+          {
+            "as_of": "2005-02-18",
+            "symbol": "A",
+            "value": 0.0993466438883166
+          }
+        ],
+        "observation_count": 6965,
+        "path": "profile.participation.evidence.price_return_20",
+        "symbol_count": 523
+      },
+      {
+        "examples": [
+          {
+            "as_of": "2004-12-03",
+            "symbol": "A",
+            "value": 0.0071
+          },
+          {
+            "as_of": "2004-12-17",
+            "symbol": "A",
+            "value": 0.0059
+          },
+          {
+            "as_of": "2004-12-31",
+            "symbol": "A",
+            "value": 0.0004
+          },
+          {
+            "as_of": "2005-01-14",
+            "symbol": "A",
+            "value": 0.0157
+          },
+          {
+            "as_of": "2005-02-04",
+            "symbol": "A",
+            "value": 0.0158
+          }
+        ],
+        "observation_count": 6409,
+        "path": "profile.institutional_volume.evidence.price_change_1d",
+        "symbol_count": 524
+      },
+      {
+        "examples": [
+          {
+            "as_of": "2004-12-17",
+            "symbol": "A",
+            "value": 0.308
+          },
+          {
+            "as_of": "2004-12-23",
+            "symbol": "A",
+            "value": 0.133
+          },
+          {
+            "as_of": "2005-01-14",
+            "symbol": "A",
+            "value": 0.55
+          },
+          {
+            "as_of": "2005-02-04",
+            "symbol": "A",
+            "value": 0.87
+          },
+          {
+            "as_of": "2005-02-11",
+            "symbol": "A",
+            "value": 0.802
+          }
+        ],
+        "observation_count": 6134,
+        "path": "profile.institutional_volume.close_location_value",
+        "symbol_count": 524
+      },
+      {
+        "examples": [
+          {
+            "as_of": "2005-04-01",
+            "symbol": "A",
+            "value": 15.7868
+          },
+          {
+            "as_of": "2005-04-08",
+            "symbol": "A",
+            "value": 15.2861
+          },
+          {
+            "as_of": "2005-04-15",
+            "symbol": "A",
+            "value": 14.5923
+          },
+          {
+            "as_of": "2005-04-22",
+            "symbol": "A",
+            "value": 15.093
+          },
+          {
+            "as_of": "2005-04-29",
+            "symbol": "A",
+            "value": 14.8426
+          }
+        ],
+        "observation_count": 3199,
+        "path": "profile.timeframe_states.1mo.close",
+        "symbol_count": 521
+      },
+      {
+        "examples": [
+          {
+            "as_of": "2004-12-03",
+            "symbol": "A",
+            "value": 35.0
+          },
+          {
+            "as_of": "2004-12-10",
+            "symbol": "A",
+            "value": 35.0
+          },
+          {
+            "as_of": "2004-12-17",
+            "symbol": "A",
+            "value": 35.0
+          },
+          {
+            "as_of": "2004-12-23",
+            "symbol": "A",
+            "value": 35.0
+          },
+          {
+            "as_of": "2004-12-31",
+            "symbol": "A",
+            "value": 35.0
+          }
+        ],
+        "observation_count": 2698,
+        "path": "profile.decision_intelligence.explainability.decision_readiness.fail_closed_cap",
+        "symbol_count": 508
+      }
+    ],
+    "rows_examined": 13056,
+    "rows_with_any_price_like_candidate": 13056,
+    "status": "BROAD_CANDIDATE_PATHS_FOUND_REQUIRES_EXACT_VALUE_CONSISTENCY_REPLAY",
+    "symbols_examined": 524
+  },
+  "scope": {
+    "development_only": true,
+    "feature_matrix_mutated": false,
+    "feature_semantics_changed": false,
+    "final_holdout_data_opened": false,
+    "model_training_performed": false,
+    "outcome_or_target_file_opened": false,
+    "production_authority_effect": false,
+    "validation_data_opened": false
+  },
+  "status": "READY",
+  "upstream_zero_coverage_features": [
+    "F021",
+    "F030",
+    "F031",
+    "F070",
+    "F080",
+    "F081"
+  ],
+  "version": "M77.19.8.4.1-BACKFILL-SOURCE-RESOLUTION-REFERENCE-PRICE-FORENSICS-1.0"
+}

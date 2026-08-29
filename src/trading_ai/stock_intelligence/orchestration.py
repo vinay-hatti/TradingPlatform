@@ -7,6 +7,7 @@ from uuid import uuid4
 from .models import StockScannerPublicationModel, StockScannerRunModel
 from .repository import StockIntelligenceRepository
 from .service import StockIntelligenceService
+from trading_ai.outcome_probability.service import OutcomeProbabilityService
 
 
 class StockScannerOrchestrator:
@@ -44,6 +45,9 @@ class StockScannerOrchestrator:
         self.session.add(run)
         profiles = []
         failures = []
+        outcome_service = OutcomeProbabilityService(self.session)
+        outcome_runtime = outcome_service.build_runtime()
+        outcome_assessments = {}
         contexts = external_context_by_symbol or {}
         for symbol in sorted(data_by_symbol):
             try:
@@ -57,13 +61,25 @@ class StockScannerOrchestrator:
                     profiles.append(profile)
             except Exception as exc:  # scanner continues across isolated symbol failures
                 failures.append({"symbol": symbol, "error": str(exc), "type": type(exc).__name__})
-        profiles.sort(key=lambda item: (-float(item.scores.overall), item.symbol))
+        for profile in profiles:
+            outcome_assessments[profile.symbol] = outcome_service.attach_shadow_assessment(
+                profile,
+                outcome_runtime,
+            )
+        profiles = self.intelligence.decision.rank_population(profiles)
+        profiles.sort(key=lambda item: (-float(item.decision_intelligence.capital_priority if item.decision_intelligence else item.scores.overall), item.symbol))
         if top is not None and int(top) > 0:
             profiles = profiles[: int(top)]
         for rank, profile in enumerate(profiles, start=1):
             candidate_id = f"stock-candidate-{uuid4().hex}"
             profile.metadata.update({"rank": rank, "publication_name": publication_name, "scanner_run_id": run_id})
             self.repository.save_profile(run_id, candidate_id, profile)
+            outcome_service.record_prediction(
+                candidate_id=candidate_id,
+                scanner_run_id=run_id,
+                symbol=profile.symbol,
+                assessment=outcome_assessments[profile.symbol],
+            )
         status = "READY" if profiles and not failures else ("DEGRADED" if profiles else "FAILED")
         run.status = status
         run.payload_json = {

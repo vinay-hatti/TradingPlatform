@@ -1,0 +1,3100 @@
+{
+  "version": "M77.19.6-ISOLATED-REPLAY-ENGINE-PARITY-CERTIFICATION-1.0",
+  "status": "READY",
+  "source_authority_certified": true,
+  "cadence_results": {
+    "DAILY": {
+      "sample_requested": 48,
+      "comparisons": 48,
+      "errors": [],
+      "direction_match_pct": 100.0,
+      "state_hash_match_pct": 0.0,
+      "deterministic_repeat_pct": 0.0,
+      "max_score_abs_error": 12.700000000000003,
+      "max_confidence_abs_error": 3.1700000000000017,
+      "gates": {
+        "minimum_comparisons": true,
+        "direction_exact": true,
+        "score_exact": false,
+        "confidence_exact": false,
+        "state_hash_exact": false,
+        "deterministic_repeat": false
+      },
+      "evidence": [
+        {
+          "direction_match": true,
+          "score_abs_error": 1.4500000000000028,
+          "confidence_abs_error": 0.8299999999999983,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 40.11,
+            "confidence": 86.08,
+            "state_hash": "be0de2dee72facec407ca4937e109eb617b62ece840b6902eb9db7d194365d34"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 38.66,
+            "confidence": 85.25,
+            "state_hash": "87403f3bda21224f30dffdf9a6e1a7b9f5a26d9de36f17555f54908c9d25e098"
+          },
+          "symbol": "A",
+          "as_of": "2022-10-14",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.29000000000000625,
+          "confidence_abs_error": 3.1700000000000017,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BULLISH",
+            "overall_score": 69.28,
+            "confidence": 86.0,
+            "state_hash": "080c647c23e16237e81da890477d29ef3c1b7a11e1d82be0d6fcd2322b47a1ba"
+          },
+          "stored": {
+            "direction": "BULLISH",
+            "overall_score": 68.99,
+            "confidence": 82.83,
+            "state_hash": "70dd464327855a5764b7371a946748a3060d95e45b9442f0efcc512abf860046"
+          },
+          "symbol": "A",
+          "as_of": "2023-12-27",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 39.12,
+            "confidence": 86.17,
+            "state_hash": "8a85cab40887aa81d9872eeb5743724bc8ad3017cb9e79a2ac9fb33cdade4f23"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 39.12,
+            "confidence": 86.17,
+            "state_hash": "82d1f28a6cf58cc6b483bca90abbe163808253602cde16b07a015b0a9d1da3fb"
+          },
+          "symbol": "A",
+          "as_of": "2025-03-13",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 39.9,
+            "confidence": 86.17,
+            "state_hash": "cdf4635b5ebd0fad97a14d07b7391839ce7a8f12b7084a6ceefc01f92ca5b3e9"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 39.9,
+            "confidence": 86.17,
+            "state_hash": "c337656d53bef303280b867a8340736ae891c02d1a889f1c26327463776dfd02"
+          },
+          "symbol": "A",
+          "as_of": "2026-05-26",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 11.579999999999998,
+          "confidence_abs_error": 0.8299999999999983,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 53.82,
+            "confidence": 86.08,
+            "state_hash": "118b363ad2bc7d95071567b69e5b5d7d0fed72a8872cc601fcbb59ca6ae00ba0"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 42.24,
+            "confidence": 85.25,
+            "state_hash": "26db5711fafe9441657579f7336f43051c8b8faca652838ebc963839c2a65b8c"
+          },
+          "symbol": "AXP",
+          "as_of": "2022-10-14",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 1.0900000000000034,
+          "confidence_abs_error": 3.1700000000000017,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 69.2,
+            "confidence": 86.0,
+            "state_hash": "ae590db3b8fe65b19a609982f2fc769bb2bb219a64647d16e78aad1177aa8434"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 68.11,
+            "confidence": 82.83,
+            "state_hash": "394cde93b9ef38d998d5bc10f6722b08eba4ad15e2da72d96fd8131db6680f76"
+          },
+          "symbol": "AXP",
+          "as_of": "2023-12-27",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BEARISH",
+            "overall_score": 52.59,
+            "confidence": 86.17,
+            "state_hash": "fd4f7cdbb0fa0b5252b9e04341a86ea954f8c6f18ea8cc40975d306006485f88"
+          },
+          "stored": {
+            "direction": "BEARISH",
+            "overall_score": 52.59,
+            "confidence": 86.17,
+            "state_hash": "a170468807c9643fa0bbb37278b84810492f3fbf588d8c5bccc57fbfae708938"
+          },
+          "symbol": "AXP",
+          "as_of": "2025-03-13",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BEARISH",
+            "overall_score": 49.13,
+            "confidence": 86.17,
+            "state_hash": "646e898c3cf83c7d17af2fa2cfdaa96d43acc15fde1bc6f04bc6360e5b4378d3"
+          },
+          "stored": {
+            "direction": "BEARISH",
+            "overall_score": 49.13,
+            "confidence": 86.17,
+            "state_hash": "5049ab736f223a2407987dd3509f5e6416087f867ee932f8137c8e96f34f94cd"
+          },
+          "symbol": "AXP",
+          "as_of": "2026-05-26",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.3299999999999983,
+          "confidence_abs_error": 0.8299999999999983,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 40.18,
+            "confidence": 86.08,
+            "state_hash": "63fe374306d90f726b67ea2c64f3a88156d2ae12a1a8b8fed6acc4d3615ae073"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 39.85,
+            "confidence": 85.25,
+            "state_hash": "1434495222c4f6b35bb984805f01dc9aa36646ebba1fc8e0fe51cde53c6b5b41"
+          },
+          "symbol": "CMS",
+          "as_of": "2022-10-14",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.1700000000000017,
+          "confidence_abs_error": 3.1700000000000017,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BULLISH",
+            "overall_score": 50.82,
+            "confidence": 86.0,
+            "state_hash": "12c32a9415c8758ee049454b1020637a48ab332fe57f4187a51268f8efb7a743"
+          },
+          "stored": {
+            "direction": "BULLISH",
+            "overall_score": 50.65,
+            "confidence": 82.83,
+            "state_hash": "f96d30c3673ac3fa4b92f41c3c462a7c3a56a62a9126c130954b9f205da9bdf7"
+          },
+          "symbol": "CMS",
+          "as_of": "2023-12-27",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.010000000000005116,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 62.62,
+            "confidence": 86.17,
+            "state_hash": "b1401e7bfcc374369f720d3d2d0a6993030ba585c143549aeda6dd2a292efd23"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 62.63,
+            "confidence": 86.17,
+            "state_hash": "63b4295eb03b72826c289680ad3740dff0fcc23043aee7c31f42a4ac8371b24c"
+          },
+          "symbol": "CMS",
+          "as_of": "2025-03-13",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "NEUTRAL",
+            "overall_score": 38.49,
+            "confidence": 86.17,
+            "state_hash": "b299f18705fb23a518c7164707f3956ff429bf0ae0d5b09b49e2a94a2dd5d852"
+          },
+          "stored": {
+            "direction": "NEUTRAL",
+            "overall_score": 38.49,
+            "confidence": 86.17,
+            "state_hash": "5d57f5936ba36a0481cb721f5e368517bc977e2f42f9bb6ec256067c8575ae6b"
+          },
+          "symbol": "CMS",
+          "as_of": "2026-05-26",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 1.5500000000000043,
+          "confidence_abs_error": 0.8299999999999983,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 42.46,
+            "confidence": 86.08,
+            "state_hash": "fe97720b3c7a1c0ce47fb751deb5d2240c6a516846d93c01311ed94916288959"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 40.91,
+            "confidence": 85.25,
+            "state_hash": "51be1dd3567885c32c55c626d8bfc227695dda33ea960d901e2be5093bad6d6b"
+          },
+          "symbol": "ECL",
+          "as_of": "2022-10-14",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.1799999999999926,
+          "confidence_abs_error": 3.1700000000000017,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 65.88,
+            "confidence": 86.0,
+            "state_hash": "952eb7ea29714fa950e89c15a5fe81a23f45578e20b4a01c496c9ece6b618d53"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 65.7,
+            "confidence": 82.83,
+            "state_hash": "6636915686dd85c431ba506cd3e8437c439bea0286430c32952d35fdb305e05d"
+          },
+          "symbol": "ECL",
+          "as_of": "2023-12-27",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.00999999999999801,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "NEUTRAL",
+            "overall_score": 37.24,
+            "confidence": 86.17,
+            "state_hash": "1d195d4fa292a31b1275433c84da0e72f6b4f9e523f90cd5c157c78c49f6e3d3"
+          },
+          "stored": {
+            "direction": "NEUTRAL",
+            "overall_score": 37.25,
+            "confidence": 86.17,
+            "state_hash": "24038b511a28e536b39fb3936a9a852685fe1418cb2817536c4c6aa5f5b71d52"
+          },
+          "symbol": "ECL",
+          "as_of": "2025-03-13",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BEARISH",
+            "overall_score": 37.04,
+            "confidence": 86.17,
+            "state_hash": "5d3af7048c775ce3fc7552d2c48684622a5a3c3f5cbed97bd6ec5472253e3b76"
+          },
+          "stored": {
+            "direction": "BEARISH",
+            "overall_score": 37.04,
+            "confidence": 86.17,
+            "state_hash": "d421eeafb967144dee2e5afcc40b4d2e49cb108d784d367f77b8ead5169ddeb0"
+          },
+          "symbol": "ECL",
+          "as_of": "2026-05-26",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.21000000000000085,
+          "confidence_abs_error": 0.8299999999999983,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 51.19,
+            "confidence": 86.08,
+            "state_hash": "cd4ce8cba4c034b803be445908e9e8f2593d8a96a62bbdcc14e15fa2cc3137df"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 50.98,
+            "confidence": 85.25,
+            "state_hash": "2a4f61b5dd8bc6092a115b5dae492bd39fd56fa189c997b3b6e29a81c1639c3f"
+          },
+          "symbol": "GDX",
+          "as_of": "2022-10-14",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 1.3200000000000003,
+          "confidence_abs_error": 3.1700000000000017,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 61.76,
+            "confidence": 86.0,
+            "state_hash": "70817dd33bf5a73abc74d019b811b3890a5829afc22d8abb0b13c0bfc77efe9d"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 63.08,
+            "confidence": 82.83,
+            "state_hash": "d37bf44b382aae31f60e425914b31e8275929b043ce6055a4bde19878a1a8017"
+          },
+          "symbol": "GDX",
+          "as_of": "2023-12-27",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.010000000000005116,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 66.75,
+            "confidence": 86.17,
+            "state_hash": "feacc4bf557104caa514e3e3fd7be337d8492be47ec1b82c21db4441bb2b699b"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 66.76,
+            "confidence": 86.17,
+            "state_hash": "c8fea385dcd6f9544cfbc2b7a0317d6ca845758d84df7e120417e38bd3acad0e"
+          },
+          "symbol": "GDX",
+          "as_of": "2025-03-13",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "NEUTRAL",
+            "overall_score": 49.16,
+            "confidence": 86.17,
+            "state_hash": "6f6ad6d6dcc1c55edff8514eba88c499fa312fa65ce2ffde1bf2b70e16cbe27e"
+          },
+          "stored": {
+            "direction": "NEUTRAL",
+            "overall_score": 49.16,
+            "confidence": 86.17,
+            "state_hash": "97905a03605876bab8a1a88d9e69220e0c5e63f52bdb40d4f8b2d8a77352aa8a"
+          },
+          "symbol": "GDX",
+          "as_of": "2026-05-26",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 1.1799999999999997,
+          "confidence_abs_error": 0.8299999999999983,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 39.53,
+            "confidence": 86.08,
+            "state_hash": "4a8048abe7ab172f8fefdbcd472a37121890c9ba3ff8b788b1445a12c1a2f1ae"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 40.71,
+            "confidence": 85.25,
+            "state_hash": "2c9269019449b6a8474a520f5d9cc70dc95650d8415d5c450c9976db81e471c0"
+          },
+          "symbol": "INDA",
+          "as_of": "2022-10-14",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.1799999999999926,
+          "confidence_abs_error": 3.1700000000000017,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 70.13,
+            "confidence": 86.0,
+            "state_hash": "7e01892041c7d0aaf6fc555ba1f6f45d5569ccba402d61d5843da2d5e90344ef"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 69.95,
+            "confidence": 82.83,
+            "state_hash": "6f79c054cf4138a712e85ad32862b4889752f834e019683b67e8eb3f508a0b00"
+          },
+          "symbol": "INDA",
+          "as_of": "2023-12-27",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BEARISH",
+            "overall_score": 38.91,
+            "confidence": 86.17,
+            "state_hash": "eb4e53d4d98ea09b736281b58316e9be90d944badfd88b2b4f4e2d65c79ef371"
+          },
+          "stored": {
+            "direction": "BEARISH",
+            "overall_score": 38.91,
+            "confidence": 86.17,
+            "state_hash": "1fbd319bc24d5ddf1d854f8a790f600733683bd95f5bb93df7742d98c4b4c726"
+          },
+          "symbol": "INDA",
+          "as_of": "2025-03-13",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BEARISH",
+            "overall_score": 43.19,
+            "confidence": 86.17,
+            "state_hash": "85b32c99c0fa876048f96b14c8732b72149586accf3a981afb81e7b02240a94f"
+          },
+          "stored": {
+            "direction": "BEARISH",
+            "overall_score": 43.19,
+            "confidence": 86.17,
+            "state_hash": "76698d8cdd7c2b1b515d756b0f4b4ea27785446411f46016c0162dea206fbf5d"
+          },
+          "symbol": "INDA",
+          "as_of": "2026-05-26",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.19999999999999574,
+          "confidence_abs_error": 0.8299999999999983,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 41.3,
+            "confidence": 86.08,
+            "state_hash": "2e15a7245dc9e3160bccc438bbe98cfa2a1cf309081895745c521d113ab757d6"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 41.1,
+            "confidence": 85.25,
+            "state_hash": "ce11ea22d6a29af188ce3391b41a426674529d4da713499a784965171ff4b1e6"
+          },
+          "symbol": "LNT",
+          "as_of": "2022-10-14",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.10999999999999943,
+          "confidence_abs_error": 3.1700000000000017,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "NEUTRAL",
+            "overall_score": 37.92,
+            "confidence": 86.0,
+            "state_hash": "fc33155026dca69e962cdeb39e9fe709e72f77af4b704895d572905a896c94a1"
+          },
+          "stored": {
+            "direction": "NEUTRAL",
+            "overall_score": 37.81,
+            "confidence": 82.83,
+            "state_hash": "60db5f6a78139fe640e8467acd463e3a65263bbd60efcad098c56159d2a62ee4"
+          },
+          "symbol": "LNT",
+          "as_of": "2023-12-27",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 61.59,
+            "confidence": 86.17,
+            "state_hash": "63376e41d39eae491a1b9a3443e48638b433bffeab9cbff9a146d6afffc701c6"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 61.59,
+            "confidence": 86.17,
+            "state_hash": "30d351a10b7abd4b55930127b2c89bbad640f67d5524c6412415dd44c6f91c8a"
+          },
+          "symbol": "LNT",
+          "as_of": "2025-03-13",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.02999999999999403,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 60.91,
+            "confidence": 86.17,
+            "state_hash": "9904c314c5dc8906d4b36d3a03597fd66f17617d74c29a4a8a506f9686ccb19a"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 60.88,
+            "confidence": 86.17,
+            "state_hash": "d2ddb82deabf1170f2b020646d7fd9f32c0926268bc404b29bdd992deca7cb39"
+          },
+          "symbol": "LNT",
+          "as_of": "2026-05-26",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.13000000000000256,
+          "confidence_abs_error": 0.8299999999999983,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 40.59,
+            "confidence": 86.08,
+            "state_hash": "9ef537c3f37a3f41fc0f5614ceb951b365b811ff2735b1033f6d449d7b2e5d4a"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 40.46,
+            "confidence": 85.25,
+            "state_hash": "7a17c837134b60101b1cecfa73935f8c018e37294786d680fe3bb14c9d5df318"
+          },
+          "symbol": "NSC",
+          "as_of": "2022-10-14",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 7.659999999999997,
+          "confidence_abs_error": 3.1700000000000017,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BULLISH",
+            "overall_score": 58.64,
+            "confidence": 86.0,
+            "state_hash": "afb2838e5fb259ea39092b150d9505ffe04d20f453263810197222575cce9dff"
+          },
+          "stored": {
+            "direction": "BULLISH",
+            "overall_score": 66.3,
+            "confidence": 82.83,
+            "state_hash": "5d1779fa08936715ef13bbf76f6a5a43d5aa664b7247dc020354d348ad39551a"
+          },
+          "symbol": "NSC",
+          "as_of": "2023-12-27",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BEARISH",
+            "overall_score": 39.37,
+            "confidence": 86.17,
+            "state_hash": "01426a1643d838a8390b6b380268cc41116e468ac2213cf9e291cb45f898c798"
+          },
+          "stored": {
+            "direction": "BEARISH",
+            "overall_score": 39.37,
+            "confidence": 86.17,
+            "state_hash": "720eadd6901995cef341c4f1cfe1e032b707e95f4b1ecb8195e9204e86f75532"
+          },
+          "symbol": "NSC",
+          "as_of": "2025-03-13",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 61.16,
+            "confidence": 86.17,
+            "state_hash": "b664452a777db837f1663a24ccd2603c8856d0ba024b94da299438686eee5031"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 61.16,
+            "confidence": 86.17,
+            "state_hash": "9ee80dfb60f64e3c359b6e86bc1e2aafc7be5ecda12d55b6e9d48a16b6700454"
+          },
+          "symbol": "NSC",
+          "as_of": "2026-05-26",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.4000000000000057,
+          "confidence_abs_error": 0.8299999999999983,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 66.2,
+            "confidence": 86.08,
+            "state_hash": "fe8df8c1916877f3589421428a7732d436cb9987f6fd8777238829324feaac56"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 65.8,
+            "confidence": 85.25,
+            "state_hash": "1796569ec172cb8337a9c1daf7eeec6bf575fcec482ade19c33bee23b4a6eea6"
+          },
+          "symbol": "REGN",
+          "as_of": "2022-10-14",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.12999999999999545,
+          "confidence_abs_error": 3.1700000000000017,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 66.66,
+            "confidence": 86.0,
+            "state_hash": "4702f4e1d378bb1db4703a22165e2a4b7f6fef8ef2f774ade82d8814fe1ff2c1"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 66.53,
+            "confidence": 82.83,
+            "state_hash": "e1c2e5e9a9ccbe8b5e60e56fe74fd4dd40f851516b35fb78b6572c70188a983e"
+          },
+          "symbol": "REGN",
+          "as_of": "2023-12-27",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BEARISH",
+            "overall_score": 51.39,
+            "confidence": 86.17,
+            "state_hash": "c601d4bcfdaeeb2a9a51b401a70e1886ea984d5c1a9328bb064fbc79d02fd14f"
+          },
+          "stored": {
+            "direction": "BEARISH",
+            "overall_score": 51.39,
+            "confidence": 86.17,
+            "state_hash": "6abb1a99259056dc366e9cbc6d79a801bfda14059e7780570b5b8248dee5a25f"
+          },
+          "symbol": "REGN",
+          "as_of": "2025-03-13",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 41.14,
+            "confidence": 86.17,
+            "state_hash": "2940248e11cc1725f6a19e1afaeb3d00d185c1fb27d46fa91396281986adb5b7"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 41.14,
+            "confidence": 86.17,
+            "state_hash": "e11b7882a42a2311abc7b5d3f0c4092464a210447134b8c12f24c21df3b9c184"
+          },
+          "symbol": "REGN",
+          "as_of": "2026-05-26",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.3999999999999986,
+          "confidence_abs_error": 0.8299999999999983,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 42.28,
+            "confidence": 86.08,
+            "state_hash": "ca25dd4a25329d885c4f6010958ed672bad5cd363f94f22e46dc7921f4354452"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 41.88,
+            "confidence": 85.25,
+            "state_hash": "02df30e0bf5db33280bd1576f3b2f907411fc10f54034ffadd19ad3c5727a099"
+          },
+          "symbol": "TDY",
+          "as_of": "2022-10-14",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 3.839999999999989,
+          "confidence_abs_error": 3.1700000000000017,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 70.38,
+            "confidence": 86.0,
+            "state_hash": "f697ea9f4e8a3b42ab0c108475b0b3a6c67713daac35ec3724b8fac5accbfb3a"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 66.54,
+            "confidence": 82.83,
+            "state_hash": "7584fc7e1ed57e03a0f42635b92c496c289ecefa4002cb21a119efb8cbb96120"
+          },
+          "symbol": "TDY",
+          "as_of": "2023-12-27",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "NEUTRAL",
+            "overall_score": 46.73,
+            "confidence": 86.17,
+            "state_hash": "bb9faa152533ca431a87a382a3b912997bb89895e6d6395c19dc7ce9f9ca6d37"
+          },
+          "stored": {
+            "direction": "NEUTRAL",
+            "overall_score": 46.73,
+            "confidence": 86.17,
+            "state_hash": "0275c57852d75a325e2f02bdb376ae53dafd76d572973bb8c2b44310b0f0d6e9"
+          },
+          "symbol": "TDY",
+          "as_of": "2025-03-13",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "NEUTRAL",
+            "overall_score": 39.07,
+            "confidence": 86.17,
+            "state_hash": "af9e83d9d80cc720e0bb5f0292f3675f6a4ad0fa0a2aadf032da250ae307f062"
+          },
+          "stored": {
+            "direction": "NEUTRAL",
+            "overall_score": 39.07,
+            "confidence": 86.17,
+            "state_hash": "2055792bd659ca83fcd8d9d0677de54470d51eecfc3de273f53c190310a2d78a"
+          },
+          "symbol": "TDY",
+          "as_of": "2026-05-26",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.8399999999999963,
+          "confidence_abs_error": 0.8299999999999983,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 41.29,
+            "confidence": 86.08,
+            "state_hash": "33a2fba91fd668afb3dabb0cc22a10a3ef8a14273324e95f4bf47163d51701c2"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 40.45,
+            "confidence": 85.25,
+            "state_hash": "b5653b830b5f15b95dcdce5847a5bbb4b2de29cd00cdd9905fe1117310c9d3b3"
+          },
+          "symbol": "VNQ",
+          "as_of": "2022-10-14",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.37000000000000455,
+          "confidence_abs_error": 3.1700000000000017,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BULLISH",
+            "overall_score": 58.88,
+            "confidence": 86.0,
+            "state_hash": "a36ab7f9097f25b1c0daf8586d6d495bfd650eacbba3e6604883584cfbcb4141"
+          },
+          "stored": {
+            "direction": "BULLISH",
+            "overall_score": 58.51,
+            "confidence": 82.83,
+            "state_hash": "f68ec7eac25f7c0b001d27e8bec3d63039284482c33af1d05dba4effbaf0ea17"
+          },
+          "symbol": "VNQ",
+          "as_of": "2023-12-27",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BEARISH",
+            "overall_score": 34.62,
+            "confidence": 86.17,
+            "state_hash": "43ed4e104b21d5d5d1de4812b6e1f88ffcf7c0840f7612f047333fe6d5ab7aaf"
+          },
+          "stored": {
+            "direction": "BEARISH",
+            "overall_score": 34.62,
+            "confidence": 86.17,
+            "state_hash": "e6065da348c0aacb232c0e4641b851d8be3e5bdc21e19c5157b1adb304beb954"
+          },
+          "symbol": "VNQ",
+          "as_of": "2025-03-13",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 62.89,
+            "confidence": 86.17,
+            "state_hash": "8faa2f3f243f007447486f2b9b678b15ce9c7f22997b78f6714702a64df6d486"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 62.89,
+            "confidence": 86.17,
+            "state_hash": "065a2372f1bdf0a304f2815751c8f17a13fdc1df3eb7830b84f75ff9c28b6f2b"
+          },
+          "symbol": "VNQ",
+          "as_of": "2026-05-26",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 12.700000000000003,
+          "confidence_abs_error": 0.8299999999999983,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 53.96,
+            "confidence": 86.08,
+            "state_hash": "f523a50853f4c7dfebfa22f35982446ee4ff7b1e2f55d10c4f3e754cdc4f17bc"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 41.26,
+            "confidence": 85.25,
+            "state_hash": "c1148c1366e629975cae29f2bcd5324d72b840b21505b7af53e32c6356a452fa"
+          },
+          "symbol": "ZTS",
+          "as_of": "2022-10-14",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.3199999999999932,
+          "confidence_abs_error": 3.1700000000000017,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 67.66,
+            "confidence": 86.0,
+            "state_hash": "57f55a66135654dd86a32325d69e5610318f4a9f75eb22704a3e7efed0a1d4cb"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 67.34,
+            "confidence": 82.83,
+            "state_hash": "96a816eaa38f265f9edff42fe75f3182191dc4bdba31a4ca5da6fd1521495b11"
+          },
+          "symbol": "ZTS",
+          "as_of": "2023-12-27",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 40.34,
+            "confidence": 86.17,
+            "state_hash": "7855e663d38f3f450a630d552e15eb353f6d89df8e595afa18165da78b769085"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 40.34,
+            "confidence": 86.17,
+            "state_hash": "f02f6dce207bb581419b9e6dae1928acfd308e3eabd94562c16c5ece80c02232"
+          },
+          "symbol": "ZTS",
+          "as_of": "2025-03-13",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 54.01,
+            "confidence": 86.17,
+            "state_hash": "90eab6a0f6184334191f7a732955a3be4a47d06676580c2f02355f3c0d20a7d6"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 54.01,
+            "confidence": 86.17,
+            "state_hash": "58e8d4f37cdf1c25ccb333b54694cfef30f0549bbac559bb0d27527dc75c1cb8"
+          },
+          "symbol": "ZTS",
+          "as_of": "2026-05-26",
+          "deterministic_repeat": false
+        }
+      ],
+      "pass": false
+    },
+    "MONTHLY": {
+      "sample_requested": 48,
+      "comparisons": 48,
+      "errors": [],
+      "direction_match_pct": 97.91666666666667,
+      "state_hash_match_pct": 0.0,
+      "deterministic_repeat_pct": 0.0,
+      "max_score_abs_error": 16.230000000000004,
+      "max_confidence_abs_error": 3.1700000000000017,
+      "gates": {
+        "minimum_comparisons": true,
+        "direction_exact": false,
+        "score_exact": false,
+        "confidence_exact": false,
+        "state_hash_exact": false,
+        "deterministic_repeat": false
+      },
+      "evidence": [
+        {
+          "direction_match": true,
+          "score_abs_error": 16.04,
+          "confidence_abs_error": 0.45999999999999375,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 62.15,
+            "confidence": 86.08,
+            "state_hash": "8f5672532536aa51623977d5ea18536be342a0d9777a095394ece03501f45a2a"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 78.19,
+            "confidence": 85.62,
+            "state_hash": "7023098eabaf2584f0aa171cf30584680ab30147068dd9cf245c69dcb89e3046"
+          },
+          "symbol": "A",
+          "as_of": "2022-10-31",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.2600000000000051,
+          "confidence_abs_error": 3.1700000000000017,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BULLISH",
+            "overall_score": 68.43,
+            "confidence": 86.0,
+            "state_hash": "1a77d734e1fa3d52891dbcb30492aa11358eb07daa87a0b0004e1554354da7cf"
+          },
+          "stored": {
+            "direction": "BULLISH",
+            "overall_score": 68.17,
+            "confidence": 82.83,
+            "state_hash": "2da56b8d1fcf0688dd53f0e6fcbd69b43397d36ada3fd9833654e1d54fa23a79"
+          },
+          "symbol": "A",
+          "as_of": "2023-12-29",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 52.23,
+            "confidence": 86.08,
+            "state_hash": "585ea6f76d9ee51753009f0e222ccfe68b2bff0056c4e305528ef0343a4e8dc7"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 52.23,
+            "confidence": 86.08,
+            "state_hash": "e3f9881c97ad584317134ea554123da435e8ad0ad031825c50c93e2877c0a127"
+          },
+          "symbol": "A",
+          "as_of": "2025-03-31",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 64.97,
+            "confidence": 86.08,
+            "state_hash": "a871ddf03822645f1ebbedf13077bf81e98c7fa34e17413d15f6b6e8b0bdcc98"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 64.97,
+            "confidence": 86.08,
+            "state_hash": "196b74997f1667ab13554755da43bcd95117b05c524517dd045e9031cd3dbb16"
+          },
+          "symbol": "A",
+          "as_of": "2026-05-29",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 9.780000000000001,
+          "confidence_abs_error": 0.45999999999999375,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "NEUTRAL",
+            "overall_score": 46.78,
+            "confidence": 86.08,
+            "state_hash": "1771b1de268d49699a915f6fb13024161c359eaeddd4fe150c0e08996e0da1e0"
+          },
+          "stored": {
+            "direction": "NEUTRAL",
+            "overall_score": 37.0,
+            "confidence": 85.62,
+            "state_hash": "e0e5fe5da3f838bfa4f1e2e449d0d7bccda38f2ffbc12ab198d6e3e764730035"
+          },
+          "symbol": "AXP",
+          "as_of": "2022-10-31",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 1.0999999999999943,
+          "confidence_abs_error": 3.1700000000000017,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 68.0,
+            "confidence": 86.0,
+            "state_hash": "f00e3dab12280185db86c74fc675ad20ec71c47a9a05c339446a4e83e350cc42"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 66.9,
+            "confidence": 82.83,
+            "state_hash": "12cc4d5b53551e87ba26c6c8b8f5bb446df31e0e4432a682bd27fa52cf178250"
+          },
+          "symbol": "AXP",
+          "as_of": "2023-12-29",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BEARISH",
+            "overall_score": 50.76,
+            "confidence": 86.08,
+            "state_hash": "49d81be850be616d4e3cd134f0edc62b28ffbc19b2cc3b73e1e6500ee8fa1066"
+          },
+          "stored": {
+            "direction": "BEARISH",
+            "overall_score": 50.76,
+            "confidence": 86.08,
+            "state_hash": "7500c4a06a0164e06028790a8f3877c38b9c023377e714efb6e40a3117ed901e"
+          },
+          "symbol": "AXP",
+          "as_of": "2025-03-31",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.010000000000005116,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BEARISH",
+            "overall_score": 37.08,
+            "confidence": 86.08,
+            "state_hash": "24dca16bfbb58dc00411b83dff52b4c1e37b290aaa7e8d4880ef25aee8d88100"
+          },
+          "stored": {
+            "direction": "BEARISH",
+            "overall_score": 37.09,
+            "confidence": 86.08,
+            "state_hash": "d767b1095a474b08a9bb2ba5abf63acf18746d9f292e9a3e60d691ee89fae818"
+          },
+          "symbol": "AXP",
+          "as_of": "2026-05-29",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.009999999999990905,
+          "confidence_abs_error": 0.45999999999999375,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 67.12,
+            "confidence": 86.08,
+            "state_hash": "da04d5427cc1bfa930468b0209aebc536885275ace09fab53b7305f992bce81c"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 67.13,
+            "confidence": 85.62,
+            "state_hash": "6fa8d3d7f85d7973e9125b8db74ab008f363d1bce5e4093ccf6dd6cfa80a7001"
+          },
+          "symbol": "CMI",
+          "as_of": "2022-10-31",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 1.990000000000002,
+          "confidence_abs_error": 3.1700000000000017,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BULLISH",
+            "overall_score": 55.14,
+            "confidence": 86.0,
+            "state_hash": "5ecf9662aa07ee9b02906f1d51bc5fc3ee8b3573d633a9a84cfc1f4f148847c8"
+          },
+          "stored": {
+            "direction": "BULLISH",
+            "overall_score": 57.13,
+            "confidence": 82.83,
+            "state_hash": "c0fa43313c554c1d4665c36a0377987c9ea5f90015f99d856d1194b6b1d94470"
+          },
+          "symbol": "CMI",
+          "as_of": "2023-12-29",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.00999999999999801,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BEARISH",
+            "overall_score": 42.62,
+            "confidence": 86.08,
+            "state_hash": "d1c1cce3a43a8bacf80d468aa19054753a20756b9d3ff5a2aa1b5563f60aeab2"
+          },
+          "stored": {
+            "direction": "BEARISH",
+            "overall_score": 42.61,
+            "confidence": 86.08,
+            "state_hash": "e00a5920dc992941c5f9c3b8b0dc439063430b848f4ea9ca79bdc0f17cde84e5"
+          },
+          "symbol": "CMI",
+          "as_of": "2025-03-31",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.00999999999999801,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "NEUTRAL",
+            "overall_score": 39.22,
+            "confidence": 86.08,
+            "state_hash": "127c5a7c3a88f89abdd7e29e278ea698f0a9c6f360c0f89830f8e4576462f37b"
+          },
+          "stored": {
+            "direction": "NEUTRAL",
+            "overall_score": 39.21,
+            "confidence": 86.08,
+            "state_hash": "3e788566ae4362d23b51fc841a95864c42a1e3b28126c291931e622aceaa663b"
+          },
+          "symbol": "CMI",
+          "as_of": "2026-05-29",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 1.0200000000000031,
+          "confidence_abs_error": 0.45999999999999375,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "NEUTRAL",
+            "overall_score": 47.68,
+            "confidence": 86.08,
+            "state_hash": "7ff24c00deea2a88e9d1d08671dc1fa57d38af4d2634a84341a5269a9e49a454"
+          },
+          "stored": {
+            "direction": "NEUTRAL",
+            "overall_score": 46.66,
+            "confidence": 85.62,
+            "state_hash": "a04f31d004b8e6619765aec63bf9642e44dd5a08b22aaa99ef8e0eecf33da19e"
+          },
+          "symbol": "EBAY",
+          "as_of": "2022-10-31",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.3500000000000014,
+          "confidence_abs_error": 3.1700000000000017,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BULLISH",
+            "overall_score": 45.99,
+            "confidence": 86.0,
+            "state_hash": "dacaa4bffb491a213729f479fe076e1e8f519ce4675ace7345aba1fa8280943f"
+          },
+          "stored": {
+            "direction": "BULLISH",
+            "overall_score": 45.64,
+            "confidence": 82.83,
+            "state_hash": "9cd25c3e05034c91500f65e960fc75c62813aba0093a9593f8bf7bd1aaeb999e"
+          },
+          "symbol": "EBAY",
+          "as_of": "2023-12-29",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 61.92,
+            "confidence": 86.08,
+            "state_hash": "83e60b847918582146bd3d8fac635c58bf0e9e5596761b9f65ccd803c4e9a64f"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 61.92,
+            "confidence": 86.08,
+            "state_hash": "25926ad933855658813f2304b94e490acf367e2a9fac8cac65c5c60cac709311"
+          },
+          "symbol": "EBAY",
+          "as_of": "2025-03-31",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 76.03,
+            "confidence": 86.08,
+            "state_hash": "58a1075e91508b1f0d2db6c2b0dd0497fa98e89935d07bc339d9ef5519d8f382"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 76.03,
+            "confidence": 86.08,
+            "state_hash": "f6883f684ee67794472a84ca9a4e1234b6aa7455b94420641e960fe9c3d5e4fe"
+          },
+          "symbol": "EBAY",
+          "as_of": "2026-05-29",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.259999999999998,
+          "confidence_abs_error": 0.45999999999999375,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "NEUTRAL",
+            "overall_score": 46.94,
+            "confidence": 86.08,
+            "state_hash": "b89c3ea8380f2aa269ffb3201d561f059c1824fb7bcabc69d031f6c8ae5fe2b9"
+          },
+          "stored": {
+            "direction": "NEUTRAL",
+            "overall_score": 46.68,
+            "confidence": 85.62,
+            "state_hash": "cffcb73d077552e3ef86997aee7244a0ab1b4394dc3f72563e17b8d8c9aed145"
+          },
+          "symbol": "GDX",
+          "as_of": "2022-10-31",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 1.0200000000000031,
+          "confidence_abs_error": 3.1700000000000017,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BULLISH",
+            "overall_score": 51.48,
+            "confidence": 86.0,
+            "state_hash": "00bfbf098f1d860d7f7d7c27d023f44d91473b5f6f86df2f99e1433a1e037592"
+          },
+          "stored": {
+            "direction": "BULLISH",
+            "overall_score": 52.5,
+            "confidence": 82.83,
+            "state_hash": "e2c53bbf6d12848715b6cae6a1856c0aa200f63b3e38e22c138f6855f7d21bf8"
+          },
+          "symbol": "GDX",
+          "as_of": "2023-12-29",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.009999999999990905,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 69.27,
+            "confidence": 86.08,
+            "state_hash": "5732425b66976c84ad54b238982e0fc223d85412cbb2788973d7410a0979b56c"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 69.26,
+            "confidence": 86.08,
+            "state_hash": "1004a2a61aad7b2897ba5e16ed52f43b77a461932fdb476b6162ae8c85c0a34b"
+          },
+          "symbol": "GDX",
+          "as_of": "2025-03-31",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.010000000000005116,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "NEUTRAL",
+            "overall_score": 50.98,
+            "confidence": 86.08,
+            "state_hash": "338a0b5208dbf5087a67ae03713ede57edca8c78f0182b85e7eedb255332f898"
+          },
+          "stored": {
+            "direction": "NEUTRAL",
+            "overall_score": 50.99,
+            "confidence": 86.08,
+            "state_hash": "fbd232726c8422bdc189d2700c6af0578ac876e1143cec465c06bf749cfbc43e"
+          },
+          "symbol": "GDX",
+          "as_of": "2026-05-29",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.3299999999999983,
+          "confidence_abs_error": 0.45999999999999375,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "NEUTRAL",
+            "overall_score": 35.4,
+            "confidence": 86.08,
+            "state_hash": "502467d9151869c41795ff2d25d770c16843baeb338fac0dbc66de3287ed4a80"
+          },
+          "stored": {
+            "direction": "NEUTRAL",
+            "overall_score": 35.73,
+            "confidence": 85.62,
+            "state_hash": "734c0b26e54f0b3d54e5c728854dde5f0b83ca77c985651337c27bb8bcc9714f"
+          },
+          "symbol": "INDA",
+          "as_of": "2022-10-31",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.20000000000000284,
+          "confidence_abs_error": 3.1700000000000017,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 70.39,
+            "confidence": 86.0,
+            "state_hash": "c05acd0bc650e41557857be00d3d601480d909f1aa496f0cf2f5679b828d1e01"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 70.19,
+            "confidence": 82.83,
+            "state_hash": "40116e604ee5793c857b4fae5179f681c7a4c560ed0917c6758522a57ad7afbe"
+          },
+          "symbol": "INDA",
+          "as_of": "2023-12-29",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "NEUTRAL",
+            "overall_score": 44.51,
+            "confidence": 86.08,
+            "state_hash": "a4a9a6f77abb709ab711be9466783fd8bdac3800ee94a02303e5b7cc074f7e5e"
+          },
+          "stored": {
+            "direction": "NEUTRAL",
+            "overall_score": 44.51,
+            "confidence": 86.08,
+            "state_hash": "40f5c421a761a95ff882fb1e336829e028e51076ec4163943b8ec15e104f6403"
+          },
+          "symbol": "INDA",
+          "as_of": "2025-03-31",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BEARISH",
+            "overall_score": 44.46,
+            "confidence": 86.08,
+            "state_hash": "2f57891f3e2b6f608b8f9768391ef1f5a3b2899d69287eca16a9f155376a7dc7"
+          },
+          "stored": {
+            "direction": "BEARISH",
+            "overall_score": 44.46,
+            "confidence": 86.08,
+            "state_hash": "a4cbf3ab4cf978ff1cba10b019f2378c2c7149b2f812bf0802d5c7269744d9f8"
+          },
+          "symbol": "INDA",
+          "as_of": "2026-05-29",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 1.2100000000000009,
+          "confidence_abs_error": 0.45999999999999375,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "NEUTRAL",
+            "overall_score": 51.12,
+            "confidence": 86.08,
+            "state_hash": "34a4845b4fc1d6729837e07fe10a269a71f0fe1863f07a93422cdee03f11ada6"
+          },
+          "stored": {
+            "direction": "NEUTRAL",
+            "overall_score": 49.91,
+            "confidence": 85.62,
+            "state_hash": "cc31fefa3708142b6846ac8c002a50273cf1b91b82232c831d37328b8ea913d0"
+          },
+          "symbol": "LOW",
+          "as_of": "2022-10-31",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.1599999999999966,
+          "confidence_abs_error": 3.1700000000000017,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 69.78,
+            "confidence": 86.0,
+            "state_hash": "0d10602839c60c3ed9ae061540dbf4ba61a540a73439df31f9d80794cefa8fb8"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 69.62,
+            "confidence": 82.83,
+            "state_hash": "bf02a157fdfda343520dd73725a32236d0687226b7871acd88aef7114fff0efa"
+          },
+          "symbol": "LOW",
+          "as_of": "2023-12-29",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BEARISH",
+            "overall_score": 41.26,
+            "confidence": 86.08,
+            "state_hash": "a89396f705bcd7e0a201679ece192d3ff994080a9ff7d85cf3ef28e4bc135983"
+          },
+          "stored": {
+            "direction": "BEARISH",
+            "overall_score": 41.26,
+            "confidence": 86.08,
+            "state_hash": "e6ad277e6ec6233210ecb1b8378411b84b00e843305aa9579873c8d00d30b2fc"
+          },
+          "symbol": "LOW",
+          "as_of": "2025-03-31",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 41.33,
+            "confidence": 86.08,
+            "state_hash": "240f0f6334f29ed0c1b342a264ec8b0e057a8ab7ee9cd436f41adf5e3243eaa2"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 41.33,
+            "confidence": 86.08,
+            "state_hash": "e93b061dcc2e52b62b8228ad354fe1346bf13d695c6ea5cc9ca49233f190fa33"
+          },
+          "symbol": "LOW",
+          "as_of": "2026-05-29",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.01999999999999602,
+          "confidence_abs_error": 0.45999999999999375,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "NEUTRAL",
+            "overall_score": 37.38,
+            "confidence": 86.08,
+            "state_hash": "6270489a06361b4aeecff35a45a057a1efd29e66e164400595c7f0b0ad1fcfb6"
+          },
+          "stored": {
+            "direction": "NEUTRAL",
+            "overall_score": 37.4,
+            "confidence": 85.62,
+            "state_hash": "336c7be9efabd957b3f14748c779b1017ee4d0bb3970274403132f8118840d8e"
+          },
+          "symbol": "NSC",
+          "as_of": "2022-10-31",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 8.420000000000009,
+          "confidence_abs_error": 3.1700000000000017,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BULLISH",
+            "overall_score": 56.48,
+            "confidence": 86.0,
+            "state_hash": "88c0179a89b21ff9b5153adb166f87932cd156c5263020bb19683b2d06f5fbe2"
+          },
+          "stored": {
+            "direction": "BULLISH",
+            "overall_score": 64.9,
+            "confidence": 82.83,
+            "state_hash": "e799f2f78d5b1b3fb0077c4a805811a157d549cda20a8a8099305ce30202e428"
+          },
+          "symbol": "NSC",
+          "as_of": "2023-12-29",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BEARISH",
+            "overall_score": 39.85,
+            "confidence": 86.08,
+            "state_hash": "4c499e3140e7001693ee76b7ed3ad7264857d35cfd5bcf3cf4f60977bc347e27"
+          },
+          "stored": {
+            "direction": "BEARISH",
+            "overall_score": 39.85,
+            "confidence": 86.08,
+            "state_hash": "0aa1f728c9b0d8e47cf895bd02b089fecadcb4be0f6c6f93b3c076e2566e8df4"
+          },
+          "symbol": "NSC",
+          "as_of": "2025-03-31",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BULLISH",
+            "overall_score": 65.62,
+            "confidence": 86.08,
+            "state_hash": "6a6d8bd3a03a3cd68d7c589dda511c923cb24011401c45c4fea9f927a9b0b139"
+          },
+          "stored": {
+            "direction": "BULLISH",
+            "overall_score": 65.62,
+            "confidence": 86.08,
+            "state_hash": "d34096147c17669001c48890ada68abb3d46006432bf084aa7512368747f893e"
+          },
+          "symbol": "NSC",
+          "as_of": "2026-05-29",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 1.3599999999999994,
+          "confidence_abs_error": 0.45999999999999375,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BULLISH",
+            "overall_score": 50.73,
+            "confidence": 86.08,
+            "state_hash": "7d79eabc3635eb48777fe9f682ea6f3f10cd9bf6c72d7bb33419c2587a6b9932"
+          },
+          "stored": {
+            "direction": "BULLISH",
+            "overall_score": 49.37,
+            "confidence": 85.62,
+            "state_hash": "bb8b906b9e6530b122f730570ba98e9a8dd2c34c9ae3078be2437ecf17760b3c"
+          },
+          "symbol": "RF",
+          "as_of": "2022-10-31",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.030000000000001137,
+          "confidence_abs_error": 3.1700000000000017,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BULLISH",
+            "overall_score": 56.14,
+            "confidence": 86.0,
+            "state_hash": "2a78f8598a3950915fcd8ab78f854720572b13eb1ffd42f915b86f9643942670"
+          },
+          "stored": {
+            "direction": "BULLISH",
+            "overall_score": 56.11,
+            "confidence": 82.83,
+            "state_hash": "ac8e734aaaa36805f6adb4816d1fe319e6c642f0e5a191500b7f411deaf4fb98"
+          },
+          "symbol": "RF",
+          "as_of": "2023-12-29",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BEARISH",
+            "overall_score": 39.61,
+            "confidence": 86.08,
+            "state_hash": "07f2ef9c4b0dc9d10969150d9a8b1fe2480175151dc710ee1a568719f7ff9130"
+          },
+          "stored": {
+            "direction": "BEARISH",
+            "overall_score": 39.61,
+            "confidence": 86.08,
+            "state_hash": "e52e387eaed4ff5b5a47cd89d9944979b58f93933b13bd937808a2f5f8183ba2"
+          },
+          "symbol": "RF",
+          "as_of": "2025-03-31",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 61.9,
+            "confidence": 86.08,
+            "state_hash": "314df530984e2540edaecc097bca6ca96523bd385b90afe060fd912069e30b5e"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 61.9,
+            "confidence": 86.08,
+            "state_hash": "1c0b6ad731df73ee5a71eba49de5efafc45677d11e9606658089ad6559e7711d"
+          },
+          "symbol": "RF",
+          "as_of": "2026-05-29",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 1.3200000000000003,
+          "confidence_abs_error": 0.45999999999999375,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "NEUTRAL",
+            "overall_score": 34.89,
+            "confidence": 86.08,
+            "state_hash": "38c51d563badde201165dcda6603fcd572a1a6cbd6c3499445d0c01ba82d0588"
+          },
+          "stored": {
+            "direction": "NEUTRAL",
+            "overall_score": 36.21,
+            "confidence": 85.62,
+            "state_hash": "78573bd56114adef3fbca2356cf5c89b2d2e626f00768c239284fe7b22079e4b"
+          },
+          "symbol": "TDG",
+          "as_of": "2022-10-31",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.30000000000001137,
+          "confidence_abs_error": 3.1700000000000017,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 66.46,
+            "confidence": 86.0,
+            "state_hash": "2478bd22cfbe2a83b2a24accbafccffd8a928b0990f30fae842a427fccbc5a2b"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 66.76,
+            "confidence": 82.83,
+            "state_hash": "ced2b7ef6c010cb10dfd23e1f455a23962542731d1c81112976b1024c8f1d991"
+          },
+          "symbol": "TDG",
+          "as_of": "2023-12-29",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 66.97,
+            "confidence": 86.08,
+            "state_hash": "4cba9c9f7eb1dd5257db20c53097f3664cf41bb115929229b6ae48132f411361"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 66.97,
+            "confidence": 86.08,
+            "state_hash": "c556ff2db86978acb6830c42f7612641a06b9686aa341a4d9a256e746ba4dc3d"
+          },
+          "symbol": "TDG",
+          "as_of": "2025-03-31",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "NEUTRAL",
+            "overall_score": 35.88,
+            "confidence": 86.08,
+            "state_hash": "7b0ccc6f0cb1f1feea9497974a53f86ae171e44240a3c51c8852b9aec023d0f8"
+          },
+          "stored": {
+            "direction": "NEUTRAL",
+            "overall_score": 35.88,
+            "confidence": 86.08,
+            "state_hash": "cc245b21c31808583cbddaf02a20e7b7a71dc3ca36ac88744790e9b267c6c07a"
+          },
+          "symbol": "TDG",
+          "as_of": "2026-05-29",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": false,
+          "score_abs_error": 16.230000000000004,
+          "confidence_abs_error": 0.45999999999999375,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BEARISH",
+            "overall_score": 33.11,
+            "confidence": 86.08,
+            "state_hash": "c20e243d7557f2cdda99097d35fd0b1640e05c44740e2fe78739cae2ac2fa2d2"
+          },
+          "stored": {
+            "direction": "NEUTRAL",
+            "overall_score": 49.34,
+            "confidence": 85.62,
+            "state_hash": "5eb4e489223595ee9336fd496e2a72613c3820b3eb4f9167253c584ffe289766"
+          },
+          "symbol": "VNQ",
+          "as_of": "2022-10-31",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.37000000000000455,
+          "confidence_abs_error": 3.1700000000000017,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BULLISH",
+            "overall_score": 57.67,
+            "confidence": 86.0,
+            "state_hash": "adbd4ce192190c97717cfee4ff70c9230a03117b0a59d36591a169e6f3109df7"
+          },
+          "stored": {
+            "direction": "BULLISH",
+            "overall_score": 57.3,
+            "confidence": 82.83,
+            "state_hash": "5f6f9f353d4e694f3575113e20fa24f3f7b403526831c1114946ef641676fd18"
+          },
+          "symbol": "VNQ",
+          "as_of": "2023-12-29",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BEARISH",
+            "overall_score": 32.09,
+            "confidence": 86.08,
+            "state_hash": "c9b100f4fc535882222beeab09018ea14aaa73737b962b2e12801b38228fd9c6"
+          },
+          "stored": {
+            "direction": "BEARISH",
+            "overall_score": 32.09,
+            "confidence": 86.08,
+            "state_hash": "a53094990b5ffcdaa30be9eaf91a82911d3dcc1ff3ddce7dce87f96eab5d1f43"
+          },
+          "symbol": "VNQ",
+          "as_of": "2025-03-31",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 60.55,
+            "confidence": 86.08,
+            "state_hash": "636a330dc6ba290dce893d3eacfd79564c139db0f9da9c855c17e3a239492046"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 60.55,
+            "confidence": 86.08,
+            "state_hash": "3871f0dae10f9688afb80495906e2b35e85ed60e6ba40c555d5b4086c7fec3a4"
+          },
+          "symbol": "VNQ",
+          "as_of": "2026-05-29",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 2.469999999999999,
+          "confidence_abs_error": 0.45999999999999375,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BEARISH",
+            "overall_score": 49.81,
+            "confidence": 86.08,
+            "state_hash": "7e7a718784997d152cc2c8b5e7c8b7ab53daa8e67ce91b15354443ebb82b8c5c"
+          },
+          "stored": {
+            "direction": "BEARISH",
+            "overall_score": 47.34,
+            "confidence": 85.62,
+            "state_hash": "4ddddd22d77e260bab3cd9547001b614771f7a5b8d50ff65dce415b4cbaeb728"
+          },
+          "symbol": "ZTS",
+          "as_of": "2022-10-31",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.3200000000000074,
+          "confidence_abs_error": 3.1700000000000017,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 67.23,
+            "confidence": 86.0,
+            "state_hash": "37a1fce5758561aea858b865e4a06e045572a99dadd858be5480662e0ea422a4"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 66.91,
+            "confidence": 82.83,
+            "state_hash": "33c6bede6907f5b181d87ff308237ffe2b16c4ddad915538bb1de2137ef26571"
+          },
+          "symbol": "ZTS",
+          "as_of": "2023-12-29",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 54.13,
+            "confidence": 86.08,
+            "state_hash": "b6d550d32e21264f7bffdd80fdae29c22677166eb9afa2d7c9a619a1ef94937a"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 54.13,
+            "confidence": 86.08,
+            "state_hash": "1a602c145a9a50f26ed7f4151eabfd1fa977f5aa829de7a321c1caba34eaaf1a"
+          },
+          "symbol": "ZTS",
+          "as_of": "2025-03-31",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 39.01,
+            "confidence": 86.08,
+            "state_hash": "7515e11ca88563fd7b90613a4f391e602bd6c2b15c1bdbde28a77b1d86f3c30a"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 39.01,
+            "confidence": 86.08,
+            "state_hash": "f85d8350eeb935817ef06a9a5cddc6876c9f4721c84a14085b42766f6d000127"
+          },
+          "symbol": "ZTS",
+          "as_of": "2026-05-29",
+          "deterministic_repeat": false
+        }
+      ],
+      "pass": false
+    },
+    "WEEKLY": {
+      "sample_requested": 48,
+      "comparisons": 48,
+      "errors": [],
+      "direction_match_pct": 97.91666666666667,
+      "state_hash_match_pct": 0.0,
+      "deterministic_repeat_pct": 0.0,
+      "max_score_abs_error": 12.700000000000003,
+      "max_confidence_abs_error": 2.75,
+      "gates": {
+        "minimum_comparisons": true,
+        "direction_exact": false,
+        "score_exact": false,
+        "confidence_exact": false,
+        "state_hash_exact": false,
+        "deterministic_repeat": false
+      },
+      "evidence": [
+        {
+          "direction_match": true,
+          "score_abs_error": 1.4500000000000028,
+          "confidence_abs_error": 0.8299999999999983,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 40.11,
+            "confidence": 86.08,
+            "state_hash": "13d2b0188381173f6267997cc121b40087aeb123481eef770fe65bd395788a39"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 38.66,
+            "confidence": 85.25,
+            "state_hash": "1f0382c2d6d44f34d971693951025db1432f84e90a4094eb70ea69c695309318"
+          },
+          "symbol": "A",
+          "as_of": "2022-10-14",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 1.0799999999999983,
+          "confidence_abs_error": 2.6599999999999966,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BULLISH",
+            "overall_score": 54.86,
+            "confidence": 86.08,
+            "state_hash": "309e3a882db07c0b57be0256cef7e8815546a29ba88a583853ed4157a235e9ab"
+          },
+          "stored": {
+            "direction": "BULLISH",
+            "overall_score": 53.78,
+            "confidence": 83.42,
+            "state_hash": "8ad81138062efec3f58f6b7d74dda395fcaf6fb7f53a96ce8314ef069e385a58"
+          },
+          "symbol": "A",
+          "as_of": "2024-02-02",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 62.15,
+            "confidence": 86.17,
+            "state_hash": "b21668b58c6a3bbc90b72acd703fa56517a8aab0555682ebd25b6bc431fb0481"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 62.15,
+            "confidence": 86.17,
+            "state_hash": "2d334915ec8e355fae28e68818af2cf5cd8ac79356b059ba384c5464cafaaafd"
+          },
+          "symbol": "A",
+          "as_of": "2025-05-09",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 67.91,
+            "confidence": 86.17,
+            "state_hash": "b1919c55a829dcc505018419c2268e54813b2f2d4c16bfa2bc126e1a11a2fae2"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 67.91,
+            "confidence": 86.17,
+            "state_hash": "9bf26ba7d8dfddafb123437c21358c29cddd0977d222db7eae59151128ef4ead"
+          },
+          "symbol": "A",
+          "as_of": "2026-08-17",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 11.579999999999998,
+          "confidence_abs_error": 0.8299999999999983,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 53.82,
+            "confidence": 86.08,
+            "state_hash": "d29ce9daf6d18f4db916256c2019c8ce3df00798582e6a7f27010a2236542637"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 42.24,
+            "confidence": 85.25,
+            "state_hash": "c328efa761637bbf77dcabb83f9512abc2ad7f39782908339010cbda60a1eeea"
+          },
+          "symbol": "AXP",
+          "as_of": "2022-10-14",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.21999999999999886,
+          "confidence_abs_error": 2.6599999999999966,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 78.55,
+            "confidence": 86.08,
+            "state_hash": "8957e5fdeb43e3a773da3930200c9803a4357896caa46b852b480ee501c5f6c3"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 78.33,
+            "confidence": 83.42,
+            "state_hash": "0112b96946391b0d8c42ab032a3046224def38fcbc8496dfdd1f3dce43ca0563"
+          },
+          "symbol": "AXP",
+          "as_of": "2024-02-02",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BULLISH",
+            "overall_score": 67.63,
+            "confidence": 86.17,
+            "state_hash": "30895f925797b91b173287725a025209923910997392122852e209894b9675d2"
+          },
+          "stored": {
+            "direction": "BULLISH",
+            "overall_score": 67.63,
+            "confidence": 86.17,
+            "state_hash": "e960faa706ec1467407c85010baa01fb91f449d3a0f97dbeb895bfff03c1d7ce"
+          },
+          "symbol": "AXP",
+          "as_of": "2025-05-09",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BULLISH",
+            "overall_score": 55.67,
+            "confidence": 86.17,
+            "state_hash": "5ce12d18b5430d6807969439c350384ae63194f5940702950b5251268d99a184"
+          },
+          "stored": {
+            "direction": "BULLISH",
+            "overall_score": 55.67,
+            "confidence": 86.17,
+            "state_hash": "1705f3394d50e20aa1b5202600ed9853e4ee02fa7352f27e89373d2ade278f6b"
+          },
+          "symbol": "AXP",
+          "as_of": "2026-08-17",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": false,
+          "score_abs_error": 6.159999999999997,
+          "confidence_abs_error": 0.8299999999999983,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BULLISH",
+            "overall_score": 53.07,
+            "confidence": 86.08,
+            "state_hash": "4a3a3e51515e12301effa1bc28abc9ccaf2b89fbb684a92fcadd14809bcda458"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 59.23,
+            "confidence": 85.25,
+            "state_hash": "2a0ad5a13575120548cc6bbeeb692d5c379ad889acf60569bd4e7aeb277da9ad"
+          },
+          "symbol": "CMI",
+          "as_of": "2022-10-14",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.8800000000000097,
+          "confidence_abs_error": 2.6599999999999966,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 65.49,
+            "confidence": 86.08,
+            "state_hash": "a8d02222915bf1b3be178ed275acf04cfce7722f9b3ec68f2c1cc589d7cd8cc1"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 66.37,
+            "confidence": 83.42,
+            "state_hash": "c2aba97f03949e7674061b71baab841fb2de7f80d87eef0f61533a8d58716327"
+          },
+          "symbol": "CMI",
+          "as_of": "2024-02-02",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.020000000000003126,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "NEUTRAL",
+            "overall_score": 63.25,
+            "confidence": 86.17,
+            "state_hash": "b765c7cd688523844a47b63aa5fb0e3265f636e499b156a8d6e9656803eb02c2"
+          },
+          "stored": {
+            "direction": "NEUTRAL",
+            "overall_score": 63.23,
+            "confidence": 86.17,
+            "state_hash": "1af8ec8bd45360f5d0cf1e333b622c87ba45e361263ac2dbbd268bc9f259456b"
+          },
+          "symbol": "CMI",
+          "as_of": "2025-05-09",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.01999999999999602,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "NEUTRAL",
+            "overall_score": 46.54,
+            "confidence": 86.17,
+            "state_hash": "f3d553ab9f03168a1c11b0bdd1c8e0737a8c561bc84a36d48f2e9611824076a6"
+          },
+          "stored": {
+            "direction": "NEUTRAL",
+            "overall_score": 46.52,
+            "confidence": 86.17,
+            "state_hash": "429c81acd5fbeab4a739a7fde1b37088867f9816847a7a7dd489894d26ffc1a0"
+          },
+          "symbol": "CMI",
+          "as_of": "2026-08-17",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.5799999999999983,
+          "confidence_abs_error": 0.8299999999999983,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 40.6,
+            "confidence": 86.08,
+            "state_hash": "d617ff45987ceb8cd8055839a380f60b6689de5f5db2c916aa3f915af10b48f6"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 40.02,
+            "confidence": 85.25,
+            "state_hash": "76c04091832edeeb872e668b7d82ad2f4c4103668ab8d8c56b996d453c4ec570"
+          },
+          "symbol": "EA",
+          "as_of": "2022-10-14",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.10999999999999943,
+          "confidence_abs_error": 2.75,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 61.78,
+            "confidence": 86.0,
+            "state_hash": "61637cf52ed2fbb5c4fc119e4a6ed0b2fa92052fe29fb7950a711cf908e42930"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 61.89,
+            "confidence": 83.25,
+            "state_hash": "062140e4e87aa7c4939829753b22d7a9ea3fee9a068992834c75b9b933e4820c"
+          },
+          "symbol": "EA",
+          "as_of": "2024-01-26",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 67.83,
+            "confidence": 86.17,
+            "state_hash": "e788e7bf88566bbbc036f93136a8d20f6c0ceeabedcb28bc8c9344c03202c47d"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 67.83,
+            "confidence": 86.17,
+            "state_hash": "c2cc675077588e3a1bb0ac12c83a4f0edfc849524219f305ad165d0bfcd265ab"
+          },
+          "symbol": "EA",
+          "as_of": "2025-05-02",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 78.01,
+            "confidence": 86.17,
+            "state_hash": "379356134980e9c5255b12f0ddbb0266eeedd6110aa91fa563e027b02ad47132"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 78.01,
+            "confidence": 86.17,
+            "state_hash": "e16c3eca24921a9c2dab4974bf2c9d3fadee04810e348bb0adc94fd0f44420ed"
+          },
+          "symbol": "EA",
+          "as_of": "2026-08-04",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.8400000000000034,
+          "confidence_abs_error": 0.8299999999999983,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 39.46,
+            "confidence": 86.08,
+            "state_hash": "67a880268a21be74b3cee708c469cfd36df6c6a7afcd25c4a5d041dc2ae8a41c"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 38.62,
+            "confidence": 85.25,
+            "state_hash": "d8b1589c5b58f23d2412ce4eb40cf98f1ebcf8a4a8f4c737a7c9bcc5dd561aee"
+          },
+          "symbol": "GDDY",
+          "as_of": "2022-10-14",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.29999999999999716,
+          "confidence_abs_error": 2.6599999999999966,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 63.39,
+            "confidence": 86.08,
+            "state_hash": "f67200b2483b7f7463f96b83e506b002d0ae9cf67a124b6f3a38e8373896ef39"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 63.69,
+            "confidence": 83.42,
+            "state_hash": "07ecc6090b814fa2bf9004a33a3563fdc221d7bf06335286b160e6b584d9cb38"
+          },
+          "symbol": "GDDY",
+          "as_of": "2024-02-02",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BULLISH",
+            "overall_score": 55.02,
+            "confidence": 86.17,
+            "state_hash": "e231dc4a97d8b344a969f97844bb48debcb641e40c83a0a6e6c30bd261a0aa79"
+          },
+          "stored": {
+            "direction": "BULLISH",
+            "overall_score": 55.02,
+            "confidence": 86.17,
+            "state_hash": "778f19e335158a1229af4071af06ff02f75fe3b04110708dc300ddce2a7e1f1e"
+          },
+          "symbol": "GDDY",
+          "as_of": "2025-05-09",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BULLISH",
+            "overall_score": 67.63,
+            "confidence": 86.17,
+            "state_hash": "c46ea7d68748c89e86f4d8496589d6bb430c0474137c5f945ab4928beabe63b2"
+          },
+          "stored": {
+            "direction": "BULLISH",
+            "overall_score": 67.63,
+            "confidence": 86.17,
+            "state_hash": "ed33f4723742fc1735ae3bc5cff4d945fde5d95994555e316f118ad99273476d"
+          },
+          "symbol": "GDDY",
+          "as_of": "2026-08-17",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 11.029999999999994,
+          "confidence_abs_error": 0.8299999999999983,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 51.12,
+            "confidence": 86.08,
+            "state_hash": "e57e08ae9bda90da9c6505a36ed5247585e37a4f3db1f3a26ef4ab2e032e47a3"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 40.09,
+            "confidence": 85.25,
+            "state_hash": "850c087b4b43ede7cafe16d1eb269aa6ca4afa2d3465ac0d8ad5037099887e05"
+          },
+          "symbol": "INCY",
+          "as_of": "2022-10-14",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.1600000000000037,
+          "confidence_abs_error": 2.6599999999999966,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BEARISH",
+            "overall_score": 45.11,
+            "confidence": 86.08,
+            "state_hash": "8cfdf48647c78be4a81c3dd03e97aed9ff41ff14f94faba701b5b3f9c08883d5"
+          },
+          "stored": {
+            "direction": "BEARISH",
+            "overall_score": 45.27,
+            "confidence": 83.42,
+            "state_hash": "6aa9f37d5223589d6e32b017e81e942e89060c5e1087e3eefe6311cde3a04dbc"
+          },
+          "symbol": "INCY",
+          "as_of": "2024-02-02",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 44.09,
+            "confidence": 86.17,
+            "state_hash": "464823abd9f5389d9369666fb72667a874545c5ec546d0cd315d55b10185bcb2"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 44.09,
+            "confidence": 86.17,
+            "state_hash": "61cdb97c908d09fc47a0c16d16cc455ccfe1006cb46b98fe364978be51a04473"
+          },
+          "symbol": "INCY",
+          "as_of": "2025-05-09",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 66.41,
+            "confidence": 86.17,
+            "state_hash": "45fd84337ba45de7053848ba570a7478a8475aaef3bbf60b6f5dbddf8c19010e"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 66.41,
+            "confidence": 86.17,
+            "state_hash": "e5a9faaea94407452fa8789c2ed121148e48c4cf54bf86040f35e597695ea8d7"
+          },
+          "symbol": "INCY",
+          "as_of": "2026-08-17",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.18000000000000682,
+          "confidence_abs_error": 0.8299999999999983,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 39.41,
+            "confidence": 86.08,
+            "state_hash": "55146e6e937780988468dc80680dd74a7b12f05e07b36dc14e1a4f767cbadad3"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 39.59,
+            "confidence": 85.25,
+            "state_hash": "efa6c1d154d9e9f95c2ffa0d6b2a79344bb058f2d59107e7eeb672c18209dcef"
+          },
+          "symbol": "LOW",
+          "as_of": "2022-10-14",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0799999999999983,
+          "confidence_abs_error": 2.6599999999999966,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 65.56,
+            "confidence": 86.08,
+            "state_hash": "2646110fe21e296462df5c0c1ed45c82cde90b93da6373622b313ea4e9a70068"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 65.48,
+            "confidence": 83.42,
+            "state_hash": "2e64f99f96c29f5d6104994abb3a06cfdb3f7ae8fd0dbeec0e589cb42d7a66fe"
+          },
+          "symbol": "LOW",
+          "as_of": "2024-02-02",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BEARISH",
+            "overall_score": 49.91,
+            "confidence": 86.17,
+            "state_hash": "673338fc3717e4577db09202c191c68616a5b85bcc86e652b75afebbc10da0df"
+          },
+          "stored": {
+            "direction": "BEARISH",
+            "overall_score": 49.91,
+            "confidence": 86.17,
+            "state_hash": "90205e35a316174e35c19c3130d42a2cba915ca27151f1a7f9126915380c1eea"
+          },
+          "symbol": "LOW",
+          "as_of": "2025-05-09",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BEARISH",
+            "overall_score": 38.19,
+            "confidence": 86.17,
+            "state_hash": "042880eb5251ed946e5b55ebc5c465c0ecd1e82f56a120cfc081cfafdbc4fc3d"
+          },
+          "stored": {
+            "direction": "BEARISH",
+            "overall_score": 38.19,
+            "confidence": 86.17,
+            "state_hash": "6f26853a8c68ed24ee184d1141191ee89b7266545daccd59c28f65b017594aac"
+          },
+          "symbol": "LOW",
+          "as_of": "2026-08-17",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.13000000000000256,
+          "confidence_abs_error": 0.8299999999999983,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 40.59,
+            "confidence": 86.08,
+            "state_hash": "c2d799256c46aed9a4b5e3f94fb1e2475a1db11ae94820f0d2641079af8f4b17"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 40.46,
+            "confidence": 85.25,
+            "state_hash": "31379885339545b0082207c0d3ade889afae410c32a74843d1ec4c4011a17cc1"
+          },
+          "symbol": "NSC",
+          "as_of": "2022-10-14",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0799999999999983,
+          "confidence_abs_error": 2.6599999999999966,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 70.69,
+            "confidence": 86.08,
+            "state_hash": "39507ef11bdf7be16b9ea02fbe490923dd8050bebf4a039b37e3254df99249fd"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 70.77,
+            "confidence": 83.42,
+            "state_hash": "712a5b5a8771dfb2db2f4be60e2553f0c73edf2c40665d310412f1d51d66561d"
+          },
+          "symbol": "NSC",
+          "as_of": "2024-02-02",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 52.64,
+            "confidence": 86.17,
+            "state_hash": "6704a1bbf8fdc2ea774ef3dc363d1d65146fe0f35e6629adce5c9ec925c37912"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 52.64,
+            "confidence": 86.17,
+            "state_hash": "edae7728b93d0812291ff0ac8f8e35b79ab02388dd48b4064c8219a71e35ffeb"
+          },
+          "symbol": "NSC",
+          "as_of": "2025-05-09",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 60.28,
+            "confidence": 86.17,
+            "state_hash": "b6434e59d1fd07b6032f62c9929f574c17f5d1cfa8117d71b756be541cfe4cbe"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 60.28,
+            "confidence": 86.17,
+            "state_hash": "f5bd1a1dd677d06313df81703809f8046dde50be33b051f378a496015af1ddcb"
+          },
+          "symbol": "NSC",
+          "as_of": "2026-08-17",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 4.809999999999995,
+          "confidence_abs_error": 0.8299999999999983,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BEARISH",
+            "overall_score": 33.85,
+            "confidence": 86.08,
+            "state_hash": "02fa7985d0d197162b907119145247cc5430a6de3ed6e052756cfcd10910e8e0"
+          },
+          "stored": {
+            "direction": "BEARISH",
+            "overall_score": 38.66,
+            "confidence": 85.25,
+            "state_hash": "391da52798e17a37d50df9d6e5f254e3b2515588cacf759bbd9c9995f2bca51f"
+          },
+          "symbol": "RF",
+          "as_of": "2022-10-14",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.020000000000003126,
+          "confidence_abs_error": 2.6599999999999966,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "NEUTRAL",
+            "overall_score": 49.59,
+            "confidence": 86.08,
+            "state_hash": "5f0e5dcc7516767bb83ab8c483a087a38e3c6d620a843d85d80ccca0bb7c7edb"
+          },
+          "stored": {
+            "direction": "NEUTRAL",
+            "overall_score": 49.57,
+            "confidence": 83.42,
+            "state_hash": "7e31a1f488156cb419a323e0e62a6d1d37c8b6a835edee3981c1ac0f546d6f51"
+          },
+          "symbol": "RF",
+          "as_of": "2024-02-02",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "NEUTRAL",
+            "overall_score": 54.17,
+            "confidence": 86.17,
+            "state_hash": "aaa4d3687cadb2d5046576f8ad7870ed2a43529c316b87f0c8be16251fd2f6c3"
+          },
+          "stored": {
+            "direction": "NEUTRAL",
+            "overall_score": 54.17,
+            "confidence": 86.17,
+            "state_hash": "562c49a870b97d346976881e7e39c0467c8845d9d4eb959b82a0d3258dfd14cf"
+          },
+          "symbol": "RF",
+          "as_of": "2025-05-09",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 62.75,
+            "confidence": 86.17,
+            "state_hash": "e90a169477737fcfaca14f4429f89114dfb6b8950406d27dfa931f3b8c77d1f1"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 62.75,
+            "confidence": 86.17,
+            "state_hash": "d2c1a2ee2a4abdb689e66d3546812586e6f38c6fb71ebc5780cffbc26cf0f8bb"
+          },
+          "symbol": "RF",
+          "as_of": "2026-08-17",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.4199999999999946,
+          "confidence_abs_error": 0.8299999999999983,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 40.56,
+            "confidence": 86.08,
+            "state_hash": "d43bbfcc4a53226329be9ec091c16b8918b79c7ae7a78b2dbbf94450183f3f69"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 40.98,
+            "confidence": 85.25,
+            "state_hash": "b18d128d8a9b0157222b4a57e81496cc3fe702bbc41da4349248034b1ef242da"
+          },
+          "symbol": "TDG",
+          "as_of": "2022-10-14",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 2.6599999999999966,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 71.55,
+            "confidence": 86.08,
+            "state_hash": "d015a0046e64e07425311d9f53b071d080dcf7437ebe4fb94d473e23f8c7e61d"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 71.55,
+            "confidence": 83.42,
+            "state_hash": "e4871821652a7a6888f4b442f68f10e9cf8864eb95f5f7e1b95f441579957fc6"
+          },
+          "symbol": "TDG",
+          "as_of": "2024-02-02",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 65.97,
+            "confidence": 86.17,
+            "state_hash": "a73e22155ab30f4e2363db7ae3d4b92a8cd7a9a366ae16f198cea0537549187e"
+          },
+          "stored": {
+            "direction": "STRONG_BULLISH",
+            "overall_score": 65.97,
+            "confidence": 86.17,
+            "state_hash": "9eec652514a97f8e9323502e2fbe2ae17359178e51979c15ddd7dd29c9528b77"
+          },
+          "symbol": "TDG",
+          "as_of": "2025-05-09",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BEARISH",
+            "overall_score": 40.86,
+            "confidence": 86.17,
+            "state_hash": "ee394207fbbb31e20f709ca104025056ef99253b8daa83c74bde622b7e1ddb78"
+          },
+          "stored": {
+            "direction": "BEARISH",
+            "overall_score": 40.86,
+            "confidence": 86.17,
+            "state_hash": "3420431dfb59febbdd11f07f326ca64d13ef7b8e306def682dbdd60998ffb669"
+          },
+          "symbol": "TDG",
+          "as_of": "2026-08-17",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.8399999999999963,
+          "confidence_abs_error": 0.8299999999999983,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 41.29,
+            "confidence": 86.08,
+            "state_hash": "5eafae08608c66f07cd78995e7c5a155014285f87f6e56c1c679a8bfac1b8776"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 40.45,
+            "confidence": 85.25,
+            "state_hash": "288b8ecedc398b3af74ab9b59926628affeb46a1404583549b897d866f9b54ba"
+          },
+          "symbol": "VNQ",
+          "as_of": "2022-10-14",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.21999999999999886,
+          "confidence_abs_error": 2.6599999999999966,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "NEUTRAL",
+            "overall_score": 37.18,
+            "confidence": 86.08,
+            "state_hash": "e1dded03a36429c467df3e589f2da5e43fd04293206fb970b5a69829b7e01396"
+          },
+          "stored": {
+            "direction": "NEUTRAL",
+            "overall_score": 36.96,
+            "confidence": 83.42,
+            "state_hash": "cf1df883ed7920886a1a0d00409529d845de0f823c80347f0966076830323727"
+          },
+          "symbol": "VNQ",
+          "as_of": "2024-02-02",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "NEUTRAL",
+            "overall_score": 54.37,
+            "confidence": 86.17,
+            "state_hash": "7d12dcca9c93d84604e677e9a828b5f61e1786fca2b7a092d963901c965312c0"
+          },
+          "stored": {
+            "direction": "NEUTRAL",
+            "overall_score": 54.37,
+            "confidence": 86.17,
+            "state_hash": "f03e7c3fff16bd78c83fcf3a7f2cb70ad9ad0ab26ee1df06cf9226e8f5463116"
+          },
+          "symbol": "VNQ",
+          "as_of": "2025-05-09",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "NEUTRAL",
+            "overall_score": 50.48,
+            "confidence": 86.17,
+            "state_hash": "e09cdd76b0fa874dc74547a4f8a81b721afddb9c8cfe693f22bc052a957f85ec"
+          },
+          "stored": {
+            "direction": "NEUTRAL",
+            "overall_score": 50.48,
+            "confidence": 86.17,
+            "state_hash": "c64a07e7d694fb0170a8d3a6dcce433f37d390641bf0cde5d6d13804d3f9a3c6"
+          },
+          "symbol": "VNQ",
+          "as_of": "2026-08-17",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 12.700000000000003,
+          "confidence_abs_error": 0.8299999999999983,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 53.96,
+            "confidence": 86.08,
+            "state_hash": "37541f774c6cc80b4dfd7198ebfd8b98bbd4fceb1b21f78b660924ae4ce7e0ef"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 41.26,
+            "confidence": 85.25,
+            "state_hash": "52a4b117c2bfa667c301edc27ec83f66a80f96e7f3f755414b8af6136ee17c12"
+          },
+          "symbol": "ZTS",
+          "as_of": "2022-10-14",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.8500000000000014,
+          "confidence_abs_error": 2.6599999999999966,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "BULLISH",
+            "overall_score": 53.32,
+            "confidence": 86.08,
+            "state_hash": "cb0dc6f54b9505fc645c91156497ee8b54d7be9e1a3679a82f8a3db82af3d9b0"
+          },
+          "stored": {
+            "direction": "BULLISH",
+            "overall_score": 52.47,
+            "confidence": 83.42,
+            "state_hash": "959483f2c65f8bbb1feb25992a48e255f291bea86aba08e69bd5eef0a37f7609"
+          },
+          "symbol": "ZTS",
+          "as_of": "2024-02-02",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "NEUTRAL",
+            "overall_score": 42.82,
+            "confidence": 86.17,
+            "state_hash": "a1e3d86c4c922ff780a0f03e228e35f68995f4f486c3b55b87092068dfc07af6"
+          },
+          "stored": {
+            "direction": "NEUTRAL",
+            "overall_score": 42.82,
+            "confidence": 86.17,
+            "state_hash": "3ecf9f5ef6d0f284a6d08254c333ca7120ad41e9b57bfcc8a0e20c0af4fcc37f"
+          },
+          "symbol": "ZTS",
+          "as_of": "2025-05-09",
+          "deterministic_repeat": false
+        },
+        {
+          "direction_match": true,
+          "score_abs_error": 0.0,
+          "confidence_abs_error": 0.0,
+          "state_hash_match": false,
+          "isolated": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 43.46,
+            "confidence": 86.17,
+            "state_hash": "100c73cc81e734d67fd330153fce95814e2f19e61a7393bb2d6a28473837c52d"
+          },
+          "stored": {
+            "direction": "STRONG_BEARISH",
+            "overall_score": 43.46,
+            "confidence": 86.17,
+            "state_hash": "e9e24c6c7f34f154dbd21c8ee399b26c29190c7b3f85f09e8853374787595d66"
+          },
+          "symbol": "ZTS",
+          "as_of": "2026-08-17",
+          "deterministic_repeat": false
+        }
+      ],
+      "pass": false
+    }
+  },
+  "isolated_replay_engine_parity_certified": false,
+  "full_23_year_reconstruction_authorized": false,
+  "interpretation": "Exact parity not demonstrated. Do not run the 23-year reconstruction until differences are resolved.",
+  "next_step": "FORENSIC_REVIEW_M77_19_6_PARITY_DIFFERENCES",
+  "database_writes": false,
+  "production_authority_effect": false
+}

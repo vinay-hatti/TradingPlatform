@@ -1,0 +1,18 @@
+{
+  "milestone": "M77.19.8.7.10.7.2.1",
+  "excluded_orchestration_callables": [
+    "main",
+    "require_ml"
+  ],
+  "mf2_explicit_config_parity_required_for_horizons": [
+    5,
+    10,
+    20
+  ],
+  "missing_or_none_parity_passes": false,
+  "validation_scoring_performed": false,
+  "validation_refit_authorized": false,
+  "validation_retuning_authorized": false,
+  "final_holdout_open_authorized": false,
+  "production_authority_effect": false
+}

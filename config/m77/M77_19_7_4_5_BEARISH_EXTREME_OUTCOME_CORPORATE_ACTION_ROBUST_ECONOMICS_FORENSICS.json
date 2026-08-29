@@ -1,0 +1,30 @@
+{
+  "milestone": "M77.19.7.4.5",
+  "version": "M77.19.7.4.5-BEARISH-EXTREME-OUTCOME-CORPORATE-ACTION-ROBUST-ECONOMICS-FORENSICS-1.0",
+  "replay_authority_sha256": "0d2e684363e51ddf4de4df81d0978e03c5c5c0a6d5604f77b438494dd36c87b3",
+  "outcome_authority_sha256": "d8c8ea6fd2a6412d3b2898f87fa1e3f19ba6968b112eb100998c81ac2bb07775",
+  "fixed_horizons": [
+    5,
+    10,
+    20
+  ],
+  "trim_levels": [
+    0.01,
+    0.025,
+    0.05
+  ],
+  "winsor_levels": [
+    0.01,
+    0.025,
+    0.05
+  ],
+  "adverse_thresholds": [
+    0.1,
+    0.2,
+    0.5,
+    1.0
+  ],
+  "corporate_action_auto_classification": false,
+  "observations_removed_from_authority": false,
+  "production_authority_effect": false
+}

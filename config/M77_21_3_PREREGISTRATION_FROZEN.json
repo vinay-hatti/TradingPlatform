@@ -1,0 +1,69 @@
+{
+  "final_holdout_start": "2023-01-01",
+  "governance": {
+    "final_holdout_open_authorized": false,
+    "production_authority_effect": false,
+    "secondary_evidence_can_override_primary_failure": false,
+    "validation_feature_selection": false,
+    "validation_hyperparameter_tuning": false,
+    "validation_model_refit": false,
+    "validation_outcome_dependent_protocol_change": false,
+    "validation_threshold_search": false
+  },
+  "model": {
+    "family": "HistGradientBoostingClassifier",
+    "feature_selection": "DEVELOPMENT_ONLY_TOP80_BY_NONMISSING_COUNT_THEN_VARIANCE",
+    "imputer": "DEVELOPMENT_ONLY_MEDIAN",
+    "l2_regularization": 1.0,
+    "learning_rate": 0.05,
+    "max_iter": 150,
+    "max_leaf_nodes": 15,
+    "min_samples_leaf": 100,
+    "random_seed": 77212
+  },
+  "preregistration_sha256": "eabf969e9e14623b3aa4535817f5e2f66f3985ca011481bc229d315125a3fd28",
+  "primary_acceptance_gates": {
+    "maximum_largest_symbol_abs_contribution_fraction": 0.1,
+    "maximum_top10_symbol_abs_contribution_fraction": 0.35,
+    "maximum_top1_vs_top5_win_rate_inversion": 0.015,
+    "minimum_barrier_expectancy_r": 0.1,
+    "minimum_mean_return": 0.0,
+    "minimum_median_return": 0.005,
+    "minimum_observations": 800,
+    "minimum_positive_years": 4,
+    "minimum_unique_symbols": 150,
+    "minimum_win_rate": 0.58,
+    "minimum_win_rate_edge_vs_validation_baseline": 0.02
+  },
+  "primary_hypothesis": {
+    "barrier_stop_atr": 1.5,
+    "barrier_target_atr": 2.0,
+    "direction": "LONG",
+    "horizon_sessions": 20,
+    "selection": "CONTEMPORANEOUS_WEEKLY_CROSS_SECTION_TOP_1_PERCENT_PROBABILITY_UP",
+    "tail_fraction": 0.01
+  },
+  "registered_before_validation_open": true,
+  "secondary_horizons": [
+    15,
+    20,
+    30,
+    45,
+    60
+  ],
+  "secondary_tail_fractions": [
+    0.01,
+    0.025,
+    0.05
+  ],
+  "upstream_evidence_sha256": {
+    "historical_price_integrity_summary.json": "30280e4de6946efd9f770a5c65de22e692ddc4e485a589969b21611fc301c7b6",
+    "multivariate_tail_summary.json": "2a88dac1563542c6a6cd2c36f206b6f086cf5d9e89225d4f3c8f35754fef770d",
+    "walk_forward_fold_metrics.csv": "0464d35f58829dd3f94426840337ddaae84b9d57fcb6ace5d2d3341ae0c0502f"
+  },
+  "validation_window": {
+    "end": "2022-12-31",
+    "start": "2018-01-01"
+  },
+  "version": "M77.21.3-PREREGISTERED-EXTERNAL-VALIDATION-1.0"
+}

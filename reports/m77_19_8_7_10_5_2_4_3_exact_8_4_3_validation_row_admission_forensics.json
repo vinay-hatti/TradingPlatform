@@ -1,0 +1,478 @@
+{
+  "adapter_authority_sha256": "202f96418fd120fa3d79dc99716e73dd4a60a7e6e11ed7e3761e030148590e95",
+  "certified_adapter_script_sha256": "7e03f85218470646d78390be295490514732c4cf11bd050282a62396c657262c",
+  "failed_validation_sha256": "d1fe787802f69285d063e8e0debd131de07d750d559fcddbf462e6dd803962e3",
+  "failing_row_count_guard_lines": [
+    376
+  ],
+  "failure_signature": "DEVELOPMENT_ROW_COUNT_CHANGED_ZERO",
+  "feature_formula_change_authorized": false,
+  "feature_matrix_mutated": false,
+  "final_holdout_opened": false,
+  "focused_source_window": [
+    {
+      "lineno": 296,
+      "source": "            if rrw is None:raise RepairError(f\"{symbol} {d}: replay provenance missing\")"
+    },
+    {
+      "lineno": 297,
+      "source": "            p=rrw.get(\"profile\") or {}"
+    },
+    {
+      "lineno": 298,
+      "source": "            if not isinstance(p,dict):raise RepairError(f\"{symbol} {d}: full profile missing\")"
+    },
+    {
+      "lineno": 299,
+      "source": ""
+    },
+    {
+      "lineno": 300,
+      "source": "            vals=dict(row.get(\"feature_values\") or {})"
+    },
+    {
+      "lineno": 301,
+      "source": "            miss=dict(row.get(\"feature_missing\") or {})"
+    },
+    {
+      "lineno": 302,
+      "source": "            reasons=dict(row.get(\"feature_missing_reason\") or {})"
+    },
+    {
+      "lineno": 303,
+      "source": ""
+    },
+    {
+      "lineno": 304,
+      "source": "            # F020: preserve/recompute under same preregistered semantics."
+    },
+    {
+      "lineno": 305,
+      "source": "            atr=unique_native_atr_1d(p)"
+    },
+    {
+      "lineno": 306,
+      "source": "            if atr is not None:"
+    },
+    {
+      "lineno": 307,
+      "source": "                vals[\"F020\"]=atr;miss[\"F020\"]=False;reasons.pop(\"F020\",None);coverage_present[\"F020\"]+=1"
+    },
+    {
+      "lineno": 308,
+      "source": "            else:"
+    },
+    {
+      "lineno": 309,
+      "source": "                vals[\"F020\"]=None;miss[\"F020\"]=True;reasons[\"F020\"]=\"UNIQUE_NATIVE_1D_ATR_NOT_AVAILABLE\";coverage_missing[\"F020\"]+=1"
+    },
+    {
+      "lineno": 310,
+      "source": ""
+    },
+    {
+      "lineno": 311,
+      "source": "            # Certified reference price."
+    },
+    {
+      "lineno": 312,
+      "source": "            ref=to_float(get_path(rrw,REFERENCE_PRICE_PATH))"
+    },
+    {
+      "lineno": 313,
+      "source": "            if ref is None or ref<=0:"
+    },
+    {
+      "lineno": 314,
+      "source": "                raise RepairError(f\"{symbol} {d}: certified reference price unavailable\")"
+    },
+    {
+      "lineno": 315,
+      "source": "            # Daily close should match as-of native 1d close if daily bar exists on/before as_of."
+    },
+    {
+      "lineno": 316,
+      "source": "            _,daily_close=prefix_close_on_or_before(hist,d)"
+    },
+    {
+      "lineno": 317,
+      "source": "            if daily_close is not None:"
+    },
+    {
+      "lineno": 318,
+      "source": "                if abs(daily_close-ref) > 1e-9*max(1.0,abs(ref),abs(daily_close)):"
+    },
+    {
+      "lineno": 319,
+      "source": "                    reference_mismatch_count+=1"
+    },
+    {
+      "lineno": 320,
+      "source": ""
+    },
+    {
+      "lineno": 321,
+      "source": "            if atr is not None:"
+    },
+    {
+      "lineno": 322,
+      "source": "                vals[\"F021\"]=atr/ref;miss[\"F021\"]=False;reasons.pop(\"F021\",None);coverage_present[\"F021\"]+=1"
+    },
+    {
+      "lineno": 323,
+      "source": "            else:"
+    },
+    {
+      "lineno": 324,
+      "source": "                vals[\"F021\"]=None;miss[\"F021\"]=True;reasons[\"F021\"]=\"ATR_UNAVAILABLE\";coverage_missing[\"F021\"]+=1"
+    },
+    {
+      "lineno": 325,
+      "source": ""
+    },
+    {
+      "lineno": 326,
+      "source": "            for fid,key in ((\"F030\",\"support_levels\"),(\"F031\",\"resistance_levels\")):"
+    },
+    {
+      "lineno": 327,
+      "source": "                v=nearest_distance(p.get(key),ref)"
+    },
+    {
+      "lineno": 328,
+      "source": "                if v is not None:"
+    },
+    {
+      "lineno": 329,
+      "source": "                    vals[fid]=v;miss[fid]=False;reasons.pop(fid,None);coverage_present[fid]+=1"
+    },
+    {
+      "lineno": 330,
+      "source": "                else:"
+    },
+    {
+      "lineno": 331,
+      "source": "                    vals[fid]=None;miss[fid]=True;reasons[fid]=\"NO_STRUCTURAL_LEVEL_AVAILABLE\";coverage_missing[fid]+=1"
+    },
+    {
+      "lineno": 332,
+      "source": ""
+    },
+    {
+      "lineno": 333,
+      "source": "            rs=relative_strength(hist,spy_hist,d)"
+    },
+    {
+      "lineno": 334,
+      "source": "            if rs is not None and (rs.get(\"rs_13w\") is not None or rs.get(\"rs_26w\") is not None):"
+    },
+    {
+      "lineno": 335,
+      "source": "                vals[\"F070\"]=rs;miss[\"F070\"]=False;reasons.pop(\"F070\",None);coverage_present[\"F070\"]+=1"
+    },
+    {
+      "lineno": 336,
+      "source": "            else:"
+    },
+    {
+      "lineno": 337,
+      "source": "                vals[\"F070\"]=None;miss[\"F070\"]=True;reasons[\"F070\"]=\"INSUFFICIENT_SYMBOL_OR_SPY_TRAILING_SESSIONS\";coverage_missing[\"F070\"]+=1"
+    },
+    {
+      "lineno": 338,
+      "source": ""
+    },
+    {
+      "lineno": 339,
+      "source": "            loc=trailing_52w_location(hist,d)"
+    },
+    {
+      "lineno": 340,
+      "source": "            for fid in (\"F080\",\"F081\"):"
+    },
+    {
+      "lineno": 341,
+      "source": "                v=loc.get(fid)"
+    },
+    {
+      "lineno": 342,
+      "source": "                if v is not None:"
+    },
+    {
+      "lineno": 343,
+      "source": "                    vals[fid]=v;miss[fid]=False;reasons.pop(fid,None);coverage_present[fid]+=1"
+    },
+    {
+      "lineno": 344,
+      "source": "                else:"
+    },
+    {
+      "lineno": 345,
+      "source": "                    vals[fid]=None;miss[fid]=True;reasons[fid]=\"INSUFFICIENT_FROZEN_DAILY_PREFIX\";coverage_missing[fid]+=1"
+    },
+    {
+      "lineno": 346,
+      "source": ""
+    },
+    {
+      "lineno": 347,
+      "source": "            # Preserve governed non-materialization."
+    },
+    {
+      "lineno": 348,
+      "source": "            for fid,reason in ("
+    },
+    {
+      "lineno": 349,
+      "source": "                (\"F012\",\"SCHEMA_CENSUS_ONLY_FIELD_WHITELIST_NOT_YET_FROZEN\"),"
+    },
+    {
+      "lineno": 350,
+      "source": "                (\"F051\",\"SCHEMA_CENSUS_ONLY_FIELD_WHITELIST_NOT_YET_FROZEN\"),"
+    },
+    {
+      "lineno": 351,
+      "source": "                (\"F071\",\"PIT_SECTOR_AUTHORITY_NOT_AVAILABLE\"),"
+    },
+    {
+      "lineno": 352,
+      "source": "            ):"
+    },
+    {
+      "lineno": 353,
+      "source": "                vals[fid]=None;miss[fid]=True;reasons[fid]=reason"
+    },
+    {
+      "lineno": 354,
+      "source": ""
+    },
+    {
+      "lineno": 355,
+      "source": "            row[\"feature_values\"]=vals"
+    },
+    {
+      "lineno": 356,
+      "source": "            row[\"feature_missing\"]=miss"
+    },
+    {
+      "lineno": 357,
+      "source": "            row[\"feature_missing_reason\"]=reasons"
+    },
+    {
+      "lineno": 358,
+      "source": "            row[\"m77_19_8_4_3_certified_backfill\"]=True"
+    },
+    {
+      "lineno": 359,
+      "source": "            row[\"reference_price_source\"]=REFERENCE_PRICE_PATH"
+    },
+    {
+      "lineno": 360,
+      "source": "            row[\"daily_source_sha256\"]=sha256_file(df)"
+    },
+    {
+      "lineno": 361,
+      "source": "            out_rows.append(row)"
+    },
+    {
+      "lineno": 362,
+      "source": ""
+    },
+    {
+      "lineno": 363,
+      "source": "        out=outroot/f\"{symbol}.jsonl.gz\""
+    },
+    {
+      "lineno": 364,
+      "source": "        write_jsonl_gz(out,out_rows)"
+    },
+    {
+      "lineno": 365,
+      "source": "        symbols.append({"
+    },
+    {
+      "lineno": 366,
+      "source": "            \"symbol\":symbol,"
+    },
+    {
+      "lineno": 367,
+      "source": "            \"row_count\":len(out_rows),"
+    },
+    {
+      "lineno": 368,
+      "source": "            \"output_file\":str(out.relative_to(root)),"
+    },
+    {
+      "lineno": 369,
+      "source": "            \"output_sha256\":sha256_file(out),"
+    },
+    {
+      "lineno": 370,
+      "source": "            \"daily_source_file\":str(df.relative_to(root)),"
+    },
+    {
+      "lineno": 371,
+      "source": "            \"daily_source_sha256\":sha256_file(df),"
+    },
+    {
+      "lineno": 372,
+      "source": "        })"
+    },
+    {
+      "lineno": 373,
+      "source": "        total_rows+=len(out_rows)"
+    },
+    {
+      "lineno": 374,
+      "source": ""
+    },
+    {
+      "lineno": 375,
+      "source": "    if total_rows!=args.expected_matrix_row_count:"
+    },
+    {
+      "lineno": 376,
+      "source": "        raise RepairError(f\"Development row count changed: {total_rows}\")"
+    },
+    {
+      "lineno": 377,
+      "source": "    if len(symbols)!=524:"
+    },
+    {
+      "lineno": 378,
+      "source": "        raise RepairError(f\"Development symbol count changed: {len(symbols)}\")"
+    },
+    {
+      "lineno": 379,
+      "source": "    if validation_rows_materialized or final_holdout_rows_materialized:"
+    },
+    {
+      "lineno": 380,
+      "source": "        raise RepairError(\"non-Development rows materialized\")"
+    },
+    {
+      "lineno": 381,
+      "source": ""
+    },
+    {
+      "lineno": 382,
+      "source": "    summary=[]"
+    },
+    {
+      "lineno": 383,
+      "source": "    for fid in BACKFILL_FEATURES:"
+    },
+    {
+      "lineno": 384,
+      "source": "        total=coverage_present[fid]+coverage_missing[fid]"
+    },
+    {
+      "lineno": 385,
+      "source": "        summary.append({"
+    },
+    {
+      "lineno": 386,
+      "source": "            \"feature_id\":fid,"
+    },
+    {
+      "lineno": 387,
+      "source": "            \"present_count\":coverage_present[fid],"
+    },
+    {
+      "lineno": 388,
+      "source": "            \"missing_count\":coverage_missing[fid],"
+    },
+    {
+      "lineno": 389,
+      "source": "            \"coverage_pct\":None if total==0 else coverage_present[fid]/total,"
+    },
+    {
+      "lineno": 390,
+      "source": "        })"
+    },
+    {
+      "lineno": 391,
+      "source": ""
+    },
+    {
+      "lineno": 392,
+      "source": "    report={"
+    },
+    {
+      "lineno": 393,
+      "source": "        \"version\":VERSION,"
+    },
+    {
+      "lineno": 394,
+      "source": "        \"status\":\"READY\","
+    },
+    {
+      "lineno": 395,
+      "source": "        \"resolver_authority_sha256\":sha256_file(rp),"
+    },
+    {
+      "lineno": 396,
+      "source": "        \"upstream_84_authority_sha256\":sha256_file(bp),"
+    }
+  ],
+  "next_step": "REVIEW_M77_19_8_7_10_5_2_4_3_ROW_ADMISSION_EVIDENCE_BEFORE_PARAMETERIZATION",
+  "production_authority_effect": false,
+  "ranked_row_admission_gate_candidates": [
+    {
+      "end_lineno": 294,
+      "lineno": 292,
+      "reasons": [
+        "REFERENCES_VALIDATION",
+        "CAN_SKIP_ROW"
+      ],
+      "score": 7,
+      "source": "if d>=VALIDATION_START:\n                validation_rows_materialized+=1\n                continue",
+      "test": "d>=VALIDATION_START"
+    },
+    {
+      "end_lineno": 284,
+      "lineno": 283,
+      "reasons": [
+        "REFERENCES_DEV_END"
+      ],
+      "score": 5,
+      "source": "if d<=DEV_END and r.get(\"status\")==\"REPLAYED\":\n                replay_by_date[d]=r",
+      "test": "d<=DEV_END and r.get(\"status\")==\"REPLAYED\""
+    }
+  ],
+  "relevant_assignment_count": 19,
+  "relevant_call_count": 25,
+  "relevant_if_count": 5,
+  "status": "READY",
+  "total_rows_reference_count": 6,
+  "total_rows_references": [
+    {
+      "ctx": "Store",
+      "lineno": 267
+    },
+    {
+      "ctx": "Store",
+      "lineno": 373
+    },
+    {
+      "ctx": "Load",
+      "lineno": 375
+    },
+    {
+      "ctx": "Load",
+      "lineno": 399
+    },
+    {
+      "ctx": "Load",
+      "lineno": 444
+    },
+    {
+      "ctx": "Load",
+      "lineno": 376
+    }
+  ],
+  "validation_outcomes_opened": false,
+  "validation_scoring_performed": false,
+  "validation_targets_opened": false,
+  "version": "M77.19.8.7.10.5.2.4.3-EXACT-8.4.3-VALIDATION-ROW-ADMISSION-FORENSICS-1.0"
+}

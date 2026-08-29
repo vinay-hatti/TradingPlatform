@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass, field, is_dataclass
+from dataclasses import asdict, dataclass, field, fields, is_dataclass
 from datetime import datetime, timezone
 from enum import Enum
 from hashlib import sha256
@@ -30,6 +30,7 @@ class ThesisDirection(str, Enum):
 
 class StrategyDisposition(str, Enum):
     ELIGIBLE = "ELIGIBLE"
+    CONDITIONAL = "CONDITIONAL"
     REJECTED = "REJECTED"
     SELECTED = "SELECTED"
 
@@ -48,8 +49,32 @@ class OpportunityLineage:
     market_publication_name: str | None = None
     market_run_id: str | None = None
     option_snapshot_id: str | None = None
+    source_option_snapshot_id: str | None = None
+    contract_option_snapshot_id: str | None = None
     option_snapshot_timestamp: str | None = None
     source_provider: str = "POLYGON_PERSISTED"
+
+    @classmethod
+    def from_payload(cls, payload: dict[str, Any] | None) -> "OpportunityLineage":
+        """Deserialize persisted lineage without breaking on versioned extensions.
+
+        M68.2.1.3 split the raw source option snapshot from the exact contract
+        snapshot.  Older opportunity rows contain only ``option_snapshot_id``;
+        newer rows contain both explicit fields.  This boundary accepts both
+        contracts, ignores unrelated future keys, and keeps the legacy alias
+        pinned to the exact contract snapshot when one exists.
+        """
+
+        raw = dict(payload or {})
+        allowed = {item.name for item in fields(cls)}
+        values = {key: value for key, value in raw.items() if key in allowed}
+        legacy = values.get("option_snapshot_id")
+        source = values.get("source_option_snapshot_id") or legacy
+        contract = values.get("contract_option_snapshot_id") or legacy
+        values["source_option_snapshot_id"] = source
+        values["contract_option_snapshot_id"] = contract
+        values["option_snapshot_id"] = contract or legacy or source
+        return cls(**values)
 
 
 @dataclass(frozen=True)
@@ -94,6 +119,48 @@ class InstitutionalOpportunity:
     created_at: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
     updated_at: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
     metadata: dict[str, Any] = field(default_factory=dict)
+    inflection_intelligence: dict[str, Any] = field(default_factory=dict)
+    intelligence_extensions: dict[str, Any] = field(default_factory=dict)
+
+    @classmethod
+    def from_payload(
+        cls,
+        payload: dict[str, Any] | None,
+    ) -> "InstitutionalOpportunity":
+        """Deserialize a versioned opportunity payload without losing evidence.
+
+        Inflection and later intelligence milestones enrich persisted opportunity
+        payloads additively.  Rehydrating those rows with ``cls(**payload)`` makes
+        an additive evidence field a runtime-breaking schema change.  This
+        boundary converts the governed enum/lineage fields, accepts the current
+        Inflection contract explicitly, and retains unknown future fields under
+        ``intelligence_extensions`` instead of discarding them.
+        """
+
+        raw = dict(payload or {})
+        allowed = {item.name for item in fields(cls)}
+        extensions = dict(raw.get("intelligence_extensions") or {})
+        extensions.update({
+            key: value
+            for key, value in raw.items()
+            if key not in allowed
+        })
+        values = {
+            key: value
+            for key, value in raw.items()
+            if key in allowed
+        }
+        values["state"] = OpportunityState(values["state"])
+        values["direction"] = ThesisDirection(values["direction"])
+        values["lineage"] = OpportunityLineage.from_payload(
+            values.get("lineage")
+        )
+        values["metadata"] = dict(values.get("metadata") or {})
+        values["inflection_intelligence"] = dict(
+            values.get("inflection_intelligence") or {}
+        )
+        values["intelligence_extensions"] = extensions
+        return cls(**values)
 
 
 @dataclass(frozen=True)
@@ -147,11 +214,18 @@ class ContractLegRecommendation:
     volume: float | None = None
     open_interest: float | None = None
     implied_volatility: float | None = None
+    implied_volatility_raw: float | None = None
+    implied_volatility_status: str | None = None
+    implied_volatility_source: str | None = None
     delta: float | None = None
     gamma: float | None = None
     theta: float | None = None
     vega: float | None = None
     multiplier: str = "100"
+    dte: int | None = None
+    quote_date: str | None = None
+    quote_timestamp: str | None = None
+    source_underlying_price: float | None = None
 
 
 @dataclass(frozen=True)
@@ -171,6 +245,8 @@ class ContractRecommendation:
     optimization_scores: dict[str, float] = field(default_factory=dict)
     option_valuation_intelligence: dict[str, Any] = field(default_factory=dict)
     intelligence_extensions: dict[str, Any] = field(default_factory=dict)
+    market_data_as_of: str | None = None
+    underlying_price: float | None = None
     created_at: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
 
 
@@ -201,6 +277,7 @@ class ExecutionRecommendation:
     volatility_exit_rule: str | None = None
     invalidation_reasons: tuple[str, ...] = ()
     ready_for_trade_builder: bool = False
+    trade_plan_certification: dict[str, Any] | None = None
     created_at: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
 
 

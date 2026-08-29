@@ -1,0 +1,643 @@
+{
+  "version": "M77.5-WALK-FORWARD-STABILITY-INCREMENTAL-EDGE-SHADOW-POLICY-1.0",
+  "governance": {
+    "mode": "READ_ONLY_POST_WALK_FORWARD_STABILITY_CERTIFICATION",
+    "read_only": true,
+    "research_only": true,
+    "database_writes": false,
+    "production_authority_effect": false,
+    "production_model_mutation": false,
+    "production_threshold_change": false,
+    "production_weight_change": false,
+    "production_decision_mutation": false,
+    "automatic_bearish_inversion": false,
+    "automatic_champion_promotion": false,
+    "survivorship_bias_free_claim": false,
+    "pit_sector_membership_claim": false,
+    "partial_year_treated_as_full_year": false
+  },
+  "methodology": {
+    "input_candidate_scope": "ONLY_M77_4_RESEARCH_CHALLENGER_ELIGIBLE",
+    "candidate_search_reopened": false,
+    "m77_4_holdout_results_reused_without_relabeling": true,
+    "stability_contract": {
+      "min_selected_holdouts": 2,
+      "min_full_year_holdouts": 1,
+      "all_selected_holdouts_must_pass": true,
+      "min_non_overlapping_observations_each_holdout": 100,
+      "min_thesis_return_each_holdout_pct_exclusive": 0.0,
+      "min_directional_hit_rate_each_holdout_pct": 50.0,
+      "min_matched_excess_each_holdout_pct_exclusive": 0.0
+    },
+    "partial_year_policy": "2026 may contribute supporting evidence but never satisfies the full-year holdout requirement.",
+    "promotion_policy": "SHADOW_ONLY_NO_PRODUCTION_PROMOTION"
+  },
+  "lineage": {
+    "m77_4_input": "reports/m77/m77_4_walk_forward_challenger_certification.json",
+    "m77_4_sha256": "0b0219d57f94ac25b72ebdb74e07cbaefb94f6f9e67e27d39f8f0a117fc4d548",
+    "m77_4_version": "M77.4-GOVERNED-CHALLENGER-WALK-FORWARD-1.0",
+    "m77_4_regime_authority_version": "M77.3-HISTORICAL-REGIME-AUTHORITY-1.0"
+  },
+  "coverage": {
+    "observations": 119821,
+    "directional_observations": 95548,
+    "symbols": 607,
+    "years": [
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "first_as_of": "2022-10-14",
+    "last_as_of": "2026-08-17",
+    "regime_dates": 207
+  },
+  "summary": {
+    "m77_4_research_challenger_eligible": 12,
+    "shadow_policy_certified": 6,
+    "walk_forward_supported_not_shadow_certified": 2,
+    "observational_walk_forward_support": 4,
+    "certified_with_two_or_more_full_year_holdouts": 2,
+    "production_champion_change": false
+  },
+  "certification": [
+    {
+      "candidate_horizon_id": "direction_regime::direction=BULLISH|historical_regime=RANGE_NORMAL@@20d",
+      "candidate_id": "direction_regime::direction=BULLISH|historical_regime=RANGE_NORMAL",
+      "dimensions": {
+        "direction": "BULLISH",
+        "historical_regime": "RANGE_NORMAL"
+      },
+      "horizon": 20,
+      "selected_holdout_folds": 3,
+      "full_year_holdout_folds": 2,
+      "partial_year_holdout_folds": 1,
+      "passed_holdout_folds": 3,
+      "all_selected_holdouts_passed": true,
+      "min_non_overlapping_observations": 100,
+      "median_non_overlapping_observations": 218,
+      "min_thesis_return_pct": 0.7631975983606558,
+      "median_thesis_return_pct": 3.28535904,
+      "min_directional_hit_rate_pct": 59.01639344262295,
+      "median_directional_hit_rate_pct": 69.0,
+      "min_matched_excess_pct": 0.14368454117275117,
+      "median_matched_excess_pct": 0.1763178639644108,
+      "multi_holdout_stable": true,
+      "full_year_supported": true,
+      "incremental_edge_confirmed": true,
+      "directional_stability_confirmed": true,
+      "sample_floor_confirmed": true,
+      "status": "SHADOW_POLICY_CERTIFIED",
+      "failure_reasons": [],
+      "holdouts": [
+        {
+          "validation_year": 2024,
+          "period_status": "FULL_YEAR",
+          "non_overlapping_observations": 218,
+          "thesis_return_avg_pct": 4.348994087155964,
+          "directional_hit_rate_pct": 79.35779816513761,
+          "matched_excess_thesis_return_avg_pct": 0.14368454117275117,
+          "passed": true
+        },
+        {
+          "validation_year": 2025,
+          "period_status": "FULL_YEAR",
+          "non_overlapping_observations": 244,
+          "thesis_return_avg_pct": 0.7631975983606558,
+          "directional_hit_rate_pct": 59.01639344262295,
+          "matched_excess_thesis_return_avg_pct": 0.1763178639644108,
+          "passed": true
+        },
+        {
+          "validation_year": 2026,
+          "period_status": "PARTIAL_YEAR",
+          "non_overlapping_observations": 100,
+          "thesis_return_avg_pct": 3.28535904,
+          "directional_hit_rate_pct": 69.0,
+          "matched_excess_thesis_return_avg_pct": 1.2324153535296891,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "candidate_horizon_id": "direction::direction=BULLISH@@60d",
+      "candidate_id": "direction::direction=BULLISH",
+      "dimensions": {
+        "direction": "BULLISH"
+      },
+      "horizon": 60,
+      "selected_holdout_folds": 2,
+      "full_year_holdout_folds": 2,
+      "partial_year_holdout_folds": 0,
+      "passed_holdout_folds": 2,
+      "all_selected_holdouts_passed": true,
+      "min_non_overlapping_observations": 1498,
+      "median_non_overlapping_observations": 1517.0,
+      "min_thesis_return_pct": 3.2065801361815756,
+      "median_thesis_return_pct": 3.4382039704345377,
+      "min_directional_hit_rate_pct": 55.473965287049396,
+      "median_directional_hit_rate_pct": 57.847659726858026,
+      "min_matched_excess_pct": 0.06873733878721881,
+      "median_matched_excess_pct": 0.23068997200182037,
+      "multi_holdout_stable": true,
+      "full_year_supported": true,
+      "incremental_edge_confirmed": true,
+      "directional_stability_confirmed": true,
+      "sample_floor_confirmed": true,
+      "status": "SHADOW_POLICY_CERTIFIED",
+      "failure_reasons": [],
+      "holdouts": [
+        {
+          "validation_year": 2024,
+          "period_status": "FULL_YEAR",
+          "non_overlapping_observations": 1536,
+          "thesis_return_avg_pct": 3.6698278046875,
+          "directional_hit_rate_pct": 60.221354166666664,
+          "matched_excess_thesis_return_avg_pct": 0.06873733878721881,
+          "passed": true
+        },
+        {
+          "validation_year": 2025,
+          "period_status": "FULL_YEAR",
+          "non_overlapping_observations": 1498,
+          "thesis_return_avg_pct": 3.2065801361815756,
+          "directional_hit_rate_pct": 55.473965287049396,
+          "matched_excess_thesis_return_avg_pct": 0.3926426052164219,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "candidate_horizon_id": "direction_category_score::direction=STRONG_BULLISH|primary_category=ACCUMULATION|score_band=[70,80)@@60d",
+      "candidate_id": "direction_category_score::direction=STRONG_BULLISH|primary_category=ACCUMULATION|score_band=[70,80)",
+      "dimensions": {
+        "direction": "STRONG_BULLISH",
+        "primary_category": "ACCUMULATION",
+        "score_band": "[70,80)"
+      },
+      "horizon": 60,
+      "selected_holdout_folds": 2,
+      "full_year_holdout_folds": 1,
+      "partial_year_holdout_folds": 1,
+      "passed_holdout_folds": 2,
+      "all_selected_holdouts_passed": true,
+      "min_non_overlapping_observations": 169,
+      "median_non_overlapping_observations": 215.0,
+      "min_thesis_return_pct": 6.855400865900383,
+      "median_thesis_return_pct": 9.386575753845714,
+      "min_directional_hit_rate_pct": 58.23754789272031,
+      "median_directional_hit_rate_pct": 60.0889232000915,
+      "min_matched_excess_pct": 3.186518642075609,
+      "median_matched_excess_pct": 3.3492726927615926,
+      "multi_holdout_stable": true,
+      "full_year_supported": true,
+      "incremental_edge_confirmed": true,
+      "directional_stability_confirmed": true,
+      "sample_floor_confirmed": true,
+      "status": "SHADOW_POLICY_CERTIFIED",
+      "failure_reasons": [],
+      "holdouts": [
+        {
+          "validation_year": 2025,
+          "period_status": "FULL_YEAR",
+          "non_overlapping_observations": 261,
+          "thesis_return_avg_pct": 6.855400865900383,
+          "directional_hit_rate_pct": 58.23754789272031,
+          "matched_excess_thesis_return_avg_pct": 3.186518642075609,
+          "passed": true
+        },
+        {
+          "validation_year": 2026,
+          "period_status": "PARTIAL_YEAR",
+          "non_overlapping_observations": 169,
+          "thesis_return_avg_pct": 11.917750641791045,
+          "directional_hit_rate_pct": 61.940298507462686,
+          "matched_excess_thesis_return_avg_pct": 3.512026743447576,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "candidate_horizon_id": "direction_category::direction=STRONG_BULLISH|primary_category=ACCUMULATION@@60d",
+      "candidate_id": "direction_category::direction=STRONG_BULLISH|primary_category=ACCUMULATION",
+      "dimensions": {
+        "direction": "STRONG_BULLISH",
+        "primary_category": "ACCUMULATION"
+      },
+      "horizon": 60,
+      "selected_holdout_folds": 2,
+      "full_year_holdout_folds": 1,
+      "partial_year_holdout_folds": 1,
+      "passed_holdout_folds": 2,
+      "all_selected_holdouts_passed": true,
+      "min_non_overlapping_observations": 213,
+      "median_non_overlapping_observations": 277.0,
+      "min_thesis_return_pct": 6.470120070381232,
+      "median_thesis_return_pct": 8.906180250759478,
+      "min_directional_hit_rate_pct": 58.35777126099707,
+      "median_directional_hit_rate_pct": 59.71780778618716,
+      "min_matched_excess_pct": 2.003284178147705,
+      "median_matched_excess_pct": 2.2344454919468446,
+      "multi_holdout_stable": true,
+      "full_year_supported": true,
+      "incremental_edge_confirmed": true,
+      "directional_stability_confirmed": true,
+      "sample_floor_confirmed": true,
+      "status": "SHADOW_POLICY_CERTIFIED",
+      "failure_reasons": [],
+      "holdouts": [
+        {
+          "validation_year": 2025,
+          "period_status": "FULL_YEAR",
+          "non_overlapping_observations": 341,
+          "thesis_return_avg_pct": 6.470120070381232,
+          "directional_hit_rate_pct": 58.35777126099707,
+          "matched_excess_thesis_return_avg_pct": 2.4656068057459843,
+          "passed": true
+        },
+        {
+          "validation_year": 2026,
+          "period_status": "PARTIAL_YEAR",
+          "non_overlapping_observations": 213,
+          "thesis_return_avg_pct": 11.342240431137725,
+          "directional_hit_rate_pct": 61.07784431137725,
+          "matched_excess_thesis_return_avg_pct": 2.003284178147705,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "candidate_horizon_id": "direction_structure::direction=STRONG_BULLISH|structure=EXPANSION@@60d",
+      "candidate_id": "direction_structure::direction=STRONG_BULLISH|structure=EXPANSION",
+      "dimensions": {
+        "direction": "STRONG_BULLISH",
+        "structure": "EXPANSION"
+      },
+      "horizon": 60,
+      "selected_holdout_folds": 2,
+      "full_year_holdout_folds": 1,
+      "partial_year_holdout_folds": 1,
+      "passed_holdout_folds": 2,
+      "all_selected_holdouts_passed": true,
+      "min_non_overlapping_observations": 518,
+      "median_non_overlapping_observations": 532.5,
+      "min_thesis_return_pct": 3.8969408775137113,
+      "median_thesis_return_pct": 4.849379677707132,
+      "min_directional_hit_rate_pct": 55.575868372943326,
+      "median_directional_hit_rate_pct": 55.68848667265951,
+      "min_matched_excess_pct": 1.2573829169253412,
+      "median_matched_excess_pct": 2.1265477060215647,
+      "multi_holdout_stable": true,
+      "full_year_supported": true,
+      "incremental_edge_confirmed": true,
+      "directional_stability_confirmed": true,
+      "sample_floor_confirmed": true,
+      "status": "SHADOW_POLICY_CERTIFIED",
+      "failure_reasons": [],
+      "holdouts": [
+        {
+          "validation_year": 2025,
+          "period_status": "FULL_YEAR",
+          "non_overlapping_observations": 547,
+          "thesis_return_avg_pct": 3.8969408775137113,
+          "directional_hit_rate_pct": 55.575868372943326,
+          "matched_excess_thesis_return_avg_pct": 1.2573829169253412,
+          "passed": true
+        },
+        {
+          "validation_year": 2026,
+          "period_status": "PARTIAL_YEAR",
+          "non_overlapping_observations": 518,
+          "thesis_return_avg_pct": 5.801818477900553,
+          "directional_hit_rate_pct": 55.80110497237569,
+          "matched_excess_thesis_return_avg_pct": 2.9957124951177883,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "candidate_horizon_id": "direction_structure::direction=STRONG_BULLISH|structure=EXPANSION@@20d",
+      "candidate_id": "direction_structure::direction=STRONG_BULLISH|structure=EXPANSION",
+      "dimensions": {
+        "direction": "STRONG_BULLISH",
+        "structure": "EXPANSION"
+      },
+      "horizon": 20,
+      "selected_holdout_folds": 2,
+      "full_year_holdout_folds": 1,
+      "partial_year_holdout_folds": 1,
+      "passed_holdout_folds": 2,
+      "all_selected_holdouts_passed": true,
+      "min_non_overlapping_observations": 585,
+      "median_non_overlapping_observations": 642.0,
+      "min_thesis_return_pct": 0.6119020743919886,
+      "median_thesis_return_pct": 1.3604983526835661,
+      "min_directional_hit_rate_pct": 54.875717017208416,
+      "median_directional_hit_rate_pct": 54.90566966740249,
+      "min_matched_excess_pct": 0.4097606616082828,
+      "median_matched_excess_pct": 0.4563743026932756,
+      "multi_holdout_stable": true,
+      "full_year_supported": true,
+      "incremental_edge_confirmed": true,
+      "directional_stability_confirmed": true,
+      "sample_floor_confirmed": true,
+      "status": "SHADOW_POLICY_CERTIFIED",
+      "failure_reasons": [],
+      "holdouts": [
+        {
+          "validation_year": 2025,
+          "period_status": "FULL_YEAR",
+          "non_overlapping_observations": 699,
+          "thesis_return_avg_pct": 0.6119020743919886,
+          "directional_hit_rate_pct": 54.93562231759657,
+          "matched_excess_thesis_return_avg_pct": 0.4097606616082828,
+          "passed": true
+        },
+        {
+          "validation_year": 2026,
+          "period_status": "PARTIAL_YEAR",
+          "non_overlapping_observations": 585,
+          "thesis_return_avg_pct": 2.1090946309751435,
+          "directional_hit_rate_pct": 54.875717017208416,
+          "matched_excess_thesis_return_avg_pct": 0.5029879437782684,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "candidate_horizon_id": "direction_category_score::direction=STRONG_BULLISH|primary_category=BREAKOUT|score_band=[80,90)@@60d",
+      "candidate_id": "direction_category_score::direction=STRONG_BULLISH|primary_category=BREAKOUT|score_band=[80,90)",
+      "dimensions": {
+        "direction": "STRONG_BULLISH",
+        "primary_category": "BREAKOUT",
+        "score_band": "[80,90)"
+      },
+      "horizon": 60,
+      "selected_holdout_folds": 2,
+      "full_year_holdout_folds": 1,
+      "partial_year_holdout_folds": 1,
+      "passed_holdout_folds": 2,
+      "all_selected_holdouts_passed": true,
+      "min_non_overlapping_observations": 44,
+      "median_non_overlapping_observations": 48.5,
+      "min_thesis_return_pct": 9.910256590909091,
+      "median_thesis_return_pct": 19.43367722138047,
+      "min_directional_hit_rate_pct": 56.81818181818182,
+      "median_directional_hit_rate_pct": 58.03872053872054,
+      "min_matched_excess_pct": 0.5158608371508585,
+      "median_matched_excess_pct": 6.647763335821891,
+      "multi_holdout_stable": true,
+      "full_year_supported": true,
+      "incremental_edge_confirmed": true,
+      "directional_stability_confirmed": true,
+      "sample_floor_confirmed": false,
+      "status": "WALK_FORWARD_SUPPORTED_NOT_SHADOW_CERTIFIED",
+      "failure_reasons": [
+        "HOLDOUT_SAMPLE_BELOW_100_NON_OVERLAPPING"
+      ],
+      "holdouts": [
+        {
+          "validation_year": 2025,
+          "period_status": "FULL_YEAR",
+          "non_overlapping_observations": 44,
+          "thesis_return_avg_pct": 9.910256590909091,
+          "directional_hit_rate_pct": 56.81818181818182,
+          "matched_excess_thesis_return_avg_pct": 0.5158608371508585,
+          "passed": true
+        },
+        {
+          "validation_year": 2026,
+          "period_status": "PARTIAL_YEAR",
+          "non_overlapping_observations": 53,
+          "thesis_return_avg_pct": 28.957097851851852,
+          "directional_hit_rate_pct": 59.25925925925925,
+          "matched_excess_thesis_return_avg_pct": 12.779665834492922,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "candidate_horizon_id": "direction_category_structure::direction=STRONG_BULLISH|primary_category=ACCUMULATION|structure=EXPANSION@@60d",
+      "candidate_id": "direction_category_structure::direction=STRONG_BULLISH|primary_category=ACCUMULATION|structure=EXPANSION",
+      "dimensions": {
+        "direction": "STRONG_BULLISH",
+        "primary_category": "ACCUMULATION",
+        "structure": "EXPANSION"
+      },
+      "horizon": 60,
+      "selected_holdout_folds": 2,
+      "full_year_holdout_folds": 1,
+      "partial_year_holdout_folds": 1,
+      "passed_holdout_folds": 2,
+      "all_selected_holdouts_passed": true,
+      "min_non_overlapping_observations": 87,
+      "median_non_overlapping_observations": 96.5,
+      "min_thesis_return_pct": 8.475632206896552,
+      "median_thesis_return_pct": 8.995084103448276,
+      "min_directional_hit_rate_pct": 57.47126436781609,
+      "median_directional_hit_rate_pct": 58.735632183908045,
+      "min_matched_excess_pct": 0.8190242336417476,
+      "median_matched_excess_pct": 2.008429256451504,
+      "multi_holdout_stable": true,
+      "full_year_supported": true,
+      "incremental_edge_confirmed": true,
+      "directional_stability_confirmed": true,
+      "sample_floor_confirmed": false,
+      "status": "WALK_FORWARD_SUPPORTED_NOT_SHADOW_CERTIFIED",
+      "failure_reasons": [
+        "HOLDOUT_SAMPLE_BELOW_100_NON_OVERLAPPING"
+      ],
+      "holdouts": [
+        {
+          "validation_year": 2025,
+          "period_status": "FULL_YEAR",
+          "non_overlapping_observations": 87,
+          "thesis_return_avg_pct": 8.475632206896552,
+          "directional_hit_rate_pct": 57.47126436781609,
+          "matched_excess_thesis_return_avg_pct": 3.19783427926126,
+          "passed": true
+        },
+        {
+          "validation_year": 2026,
+          "period_status": "PARTIAL_YEAR",
+          "non_overlapping_observations": 106,
+          "thesis_return_avg_pct": 9.514536,
+          "directional_hit_rate_pct": 60.0,
+          "matched_excess_thesis_return_avg_pct": 0.8190242336417476,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "candidate_horizon_id": "direction_category_structure::direction=STRONG_BULLISH|primary_category=BULLISH|structure=EXPANSION@@60d",
+      "candidate_id": "direction_category_structure::direction=STRONG_BULLISH|primary_category=BULLISH|structure=EXPANSION",
+      "dimensions": {
+        "direction": "STRONG_BULLISH",
+        "primary_category": "BULLISH",
+        "structure": "EXPANSION"
+      },
+      "horizon": 60,
+      "selected_holdout_folds": 1,
+      "full_year_holdout_folds": 1,
+      "partial_year_holdout_folds": 0,
+      "passed_holdout_folds": 1,
+      "all_selected_holdouts_passed": true,
+      "min_non_overlapping_observations": 516,
+      "median_non_overlapping_observations": 516,
+      "min_thesis_return_pct": 3.8623494554263567,
+      "median_thesis_return_pct": 3.8623494554263567,
+      "min_directional_hit_rate_pct": 55.62015503875969,
+      "median_directional_hit_rate_pct": 55.62015503875969,
+      "min_matched_excess_pct": 0.8104836538587751,
+      "median_matched_excess_pct": 0.8104836538587751,
+      "multi_holdout_stable": false,
+      "full_year_supported": true,
+      "incremental_edge_confirmed": true,
+      "directional_stability_confirmed": true,
+      "sample_floor_confirmed": true,
+      "status": "OBSERVATIONAL_WALK_FORWARD_SUPPORT",
+      "failure_reasons": [
+        "INSUFFICIENT_SELECTED_HOLDOUTS"
+      ],
+      "holdouts": [
+        {
+          "validation_year": 2025,
+          "period_status": "FULL_YEAR",
+          "non_overlapping_observations": 516,
+          "thesis_return_avg_pct": 3.8623494554263567,
+          "directional_hit_rate_pct": 55.62015503875969,
+          "matched_excess_thesis_return_avg_pct": 0.8104836538587751,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "candidate_horizon_id": "direction_score_regime::direction=BULLISH|historical_regime=BULL_HEALTHY|score_band=[40,50)@@20d",
+      "candidate_id": "direction_score_regime::direction=BULLISH|historical_regime=BULL_HEALTHY|score_band=[40,50)",
+      "dimensions": {
+        "direction": "BULLISH",
+        "historical_regime": "BULL_HEALTHY",
+        "score_band": "[40,50)"
+      },
+      "horizon": 20,
+      "selected_holdout_folds": 1,
+      "full_year_holdout_folds": 1,
+      "partial_year_holdout_folds": 0,
+      "passed_holdout_folds": 1,
+      "all_selected_holdouts_passed": true,
+      "min_non_overlapping_observations": 299,
+      "median_non_overlapping_observations": 299,
+      "min_thesis_return_pct": 0.012468795986622098,
+      "median_thesis_return_pct": 0.012468795986622098,
+      "min_directional_hit_rate_pct": 50.16722408026756,
+      "median_directional_hit_rate_pct": 50.16722408026756,
+      "min_matched_excess_pct": 0.28018423972529966,
+      "median_matched_excess_pct": 0.28018423972529966,
+      "multi_holdout_stable": false,
+      "full_year_supported": true,
+      "incremental_edge_confirmed": true,
+      "directional_stability_confirmed": true,
+      "sample_floor_confirmed": true,
+      "status": "OBSERVATIONAL_WALK_FORWARD_SUPPORT",
+      "failure_reasons": [
+        "INSUFFICIENT_SELECTED_HOLDOUTS"
+      ],
+      "holdouts": [
+        {
+          "validation_year": 2025,
+          "period_status": "FULL_YEAR",
+          "non_overlapping_observations": 299,
+          "thesis_return_avg_pct": 0.012468795986622098,
+          "directional_hit_rate_pct": 50.16722408026756,
+          "matched_excess_thesis_return_avg_pct": 0.28018423972529966,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "candidate_horizon_id": "direction_category::direction=BULLISH|primary_category=BULLISH@@60d",
+      "candidate_id": "direction_category::direction=BULLISH|primary_category=BULLISH",
+      "dimensions": {
+        "direction": "BULLISH",
+        "primary_category": "BULLISH"
+      },
+      "horizon": 60,
+      "selected_holdout_folds": 1,
+      "full_year_holdout_folds": 1,
+      "partial_year_holdout_folds": 0,
+      "passed_holdout_folds": 1,
+      "all_selected_holdouts_passed": true,
+      "min_non_overlapping_observations": 1429,
+      "median_non_overlapping_observations": 1429,
+      "min_thesis_return_pct": 2.2525798481455563,
+      "median_thesis_return_pct": 2.2525798481455563,
+      "min_directional_hit_rate_pct": 55.14345696291113,
+      "median_directional_hit_rate_pct": 55.14345696291113,
+      "min_matched_excess_pct": 0.08097431780804197,
+      "median_matched_excess_pct": 0.08097431780804197,
+      "multi_holdout_stable": false,
+      "full_year_supported": true,
+      "incremental_edge_confirmed": true,
+      "directional_stability_confirmed": true,
+      "sample_floor_confirmed": true,
+      "status": "OBSERVATIONAL_WALK_FORWARD_SUPPORT",
+      "failure_reasons": [
+        "INSUFFICIENT_SELECTED_HOLDOUTS"
+      ],
+      "holdouts": [
+        {
+          "validation_year": 2025,
+          "period_status": "FULL_YEAR",
+          "non_overlapping_observations": 1429,
+          "thesis_return_avg_pct": 2.2525798481455563,
+          "directional_hit_rate_pct": 55.14345696291113,
+          "matched_excess_thesis_return_avg_pct": 0.08097431780804197,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "candidate_horizon_id": "direction_regime::direction=BULLISH|historical_regime=BULL_HEALTHY@@20d",
+      "candidate_id": "direction_regime::direction=BULLISH|historical_regime=BULL_HEALTHY",
+      "dimensions": {
+        "direction": "BULLISH",
+        "historical_regime": "BULL_HEALTHY"
+      },
+      "horizon": 20,
+      "selected_holdout_folds": 1,
+      "full_year_holdout_folds": 1,
+      "partial_year_holdout_folds": 0,
+      "passed_holdout_folds": 1,
+      "all_selected_holdouts_passed": true,
+      "min_non_overlapping_observations": 1317,
+      "median_non_overlapping_observations": 1317,
+      "min_thesis_return_pct": 0.22998184586180712,
+      "median_thesis_return_pct": 0.22998184586180712,
+      "min_directional_hit_rate_pct": 51.784358390280936,
+      "median_directional_hit_rate_pct": 51.784358390280936,
+      "min_matched_excess_pct": 0.051368227386682105,
+      "median_matched_excess_pct": 0.051368227386682105,
+      "multi_holdout_stable": false,
+      "full_year_supported": true,
+      "incremental_edge_confirmed": true,
+      "directional_stability_confirmed": true,
+      "sample_floor_confirmed": true,
+      "status": "OBSERVATIONAL_WALK_FORWARD_SUPPORT",
+      "failure_reasons": [
+        "INSUFFICIENT_SELECTED_HOLDOUTS"
+      ],
+      "holdouts": [
+        {
+          "validation_year": 2025,
+          "period_status": "FULL_YEAR",
+          "non_overlapping_observations": 1317,
+          "thesis_return_avg_pct": 0.22998184586180712,
+          "directional_hit_rate_pct": 51.784358390280936,
+          "matched_excess_thesis_return_avg_pct": 0.051368227386682105,
+          "passed": true
+        }
+      ]
+    }
+  ]
+}

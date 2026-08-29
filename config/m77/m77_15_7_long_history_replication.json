@@ -1,0 +1,63 @@
+{
+  "version": "M77.15.7-LONG-HISTORY-FROZEN-HYPOTHESIS-REPLICATION-1.0",
+  "required_authority_certification": "reports/m77/m77_15_6_5_2_material_long_history_proxy_authority_certification.json",
+  "authority_type": "MATERIAL_LONG_HISTORY_TRADABLE_PROXY",
+  "proxy_files": {
+    "SPX": "research_data/m77_15_6_5_2/certified_common_proxy_authority/SPX_SPY_COMMON.csv",
+    "NDX": "research_data/m77_15_6_5_2/certified_common_proxy_authority/NDX_QQQ_LINEAGE_COMMON.csv",
+    "RUT": "research_data/m77_15_6_5_2/certified_common_proxy_authority/RUT_IWM_COMMON.csv"
+  },
+  "frozen_hypothesis_sources": {
+    "panchanga_registry": "data/m77/m77_15_2_panchanga_daily_2000_2040.csv",
+    "graha_registry": "data/m77/m77_15_3_graha_state_daily_2000_2040.csv",
+    "event_registry": "data/m77/m77_15_4_astronomical_event_registry_2000_2040.csv"
+  },
+  "recent_canonical_artifacts": {
+    "M77_15_2": "reports/m77/m77_15_2_single_factor_panchanga_study.json",
+    "M77_15_3": "reports/m77/m77_15_3_graha_state_major_transit_study.json",
+    "M77_15_4": "reports/m77/m77_15_4_rahu_ketu_eclipse_planetary_geometry_event_study.json"
+  },
+  "horizons": [
+    1,
+    5,
+    10,
+    20,
+    60
+  ],
+  "outcomes": [
+    "FORWARD_RETURN",
+    "ABSOLUTE_RETURN",
+    "REALIZED_VOLATILITY",
+    "MAX_ADVERSE_EXCURSION",
+    "MAX_FAVORABLE_EXCURSION",
+    "TURNING_POINT_3_SESSION"
+  ],
+  "long_history_controls": "COMPLEMENT_PLUS_WEEKDAY_MONTH_MATCHED_PLUS_CIRCULAR_SHIFT",
+  "pit_regime_control_in_long_history": false,
+  "frozen_eras": [
+    [
+      "2003-09-10",
+      "2008-12-31"
+    ],
+    [
+      "2009-01-01",
+      "2014-12-31"
+    ],
+    [
+      "2015-01-01",
+      "2020-12-31"
+    ],
+    [
+      "2021-01-01",
+      "2026-08-21"
+    ]
+  ],
+  "promotion_governance": {
+    "proxy_only_survivor_may_advance": false,
+    "recent_canonical_supported_counterpart_required": true,
+    "same_effect_direction_required": true,
+    "dependence_robust_confirmation_required": true
+  },
+  "database_writes": false,
+  "production_authority_effect": false
+}

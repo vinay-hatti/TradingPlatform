@@ -1,0 +1,358 @@
+{
+  "version": "M77.19.3-ISOLATED-DAILY-MONTHLY-PIT-HARNESS-FOUNDATION-1.0",
+  "status": "READY",
+  "mode": "ISOLATED_HARNESS_FOUNDATION_CERTIFICATION",
+  "source_analysis": {
+    "pit": {
+      "path": "scripts/run_m77_8_daily_pit_replay_authority.py",
+      "present": true,
+      "sha256": "015af1c623d69a5e6c2b3e8e2392d8975afc2faed8f76f6078d453fbf4dbb392",
+      "top_level_functions": [
+        {
+          "name": "normalize_date",
+          "args": [
+            "v"
+          ],
+          "kwonlyargs": [],
+          "defaults": 0
+        },
+        {
+          "name": "sha256_file",
+          "args": [
+            "path"
+          ],
+          "kwonlyargs": [],
+          "defaults": 0
+        },
+        {
+          "name": "read_json",
+          "args": [
+            "path"
+          ],
+          "kwonlyargs": [],
+          "defaults": 0
+        },
+        {
+          "name": "read_canonical_symbols",
+          "args": [
+            "path"
+          ],
+          "kwonlyargs": [],
+          "defaults": 0
+        },
+        {
+          "name": "validate_m77_7",
+          "args": [
+            "d"
+          ],
+          "kwonlyargs": [],
+          "defaults": 0
+        },
+        {
+          "name": "verify_polygon_adjustment_semantics",
+          "args": [],
+          "kwonlyargs": [],
+          "defaults": 0
+        },
+        {
+          "name": "discover_price_history",
+          "args": [
+            "session"
+          ],
+          "kwonlyargs": [],
+          "defaults": 0
+        },
+        {
+          "name": "build_session_calendar",
+          "args": [
+            "session"
+          ],
+          "kwonlyargs": [],
+          "defaults": 0
+        },
+        {
+          "name": "compare_snapshot",
+          "args": [
+            "current",
+            "frozen",
+            "tolerance"
+          ],
+          "kwonlyargs": [],
+          "defaults": 1
+        },
+        {
+          "name": "main",
+          "args": [],
+          "kwonlyargs": [],
+          "defaults": 0
+        }
+      ],
+      "top_level_classes": [],
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "csv",
+        "datetime",
+        "hashlib",
+        "inspect",
+        "json",
+        "pathlib",
+        "sqlalchemy",
+        "trading_ai.database.session",
+        "trading_ai.historical_underlying_replay.regime",
+        "typing"
+      ],
+      "contains_sessionlocal": true,
+      "contains_production_db_import": true,
+      "contains_main_guard": true
+    },
+    "daily": {
+      "path": "scripts/run_m77_9_daily_model_replay.py",
+      "present": true,
+      "sha256": "1073dc83ad0a778994d799fcc51b336ddccb6658cc0cc82dbb734d6f2246d534",
+      "top_level_functions": [
+        {
+          "name": "load_json",
+          "args": [
+            "p"
+          ],
+          "kwonlyargs": [],
+          "defaults": 0
+        },
+        {
+          "name": "symbols",
+          "args": [
+            "path"
+          ],
+          "kwonlyargs": [],
+          "defaults": 0
+        },
+        {
+          "name": "preflight",
+          "args": [
+            "session"
+          ],
+          "kwonlyargs": [],
+          "defaults": 0
+        },
+        {
+          "name": "main",
+          "args": [],
+          "kwonlyargs": [],
+          "defaults": 0
+        }
+      ],
+      "top_level_classes": [],
+      "imports": [
+        "__future__",
+        "argparse",
+        "csv",
+        "datetime",
+        "json",
+        "pathlib",
+        "sqlalchemy",
+        "trading_ai.database.session",
+        "trading_ai.historical_underlying_replay"
+      ],
+      "contains_sessionlocal": true,
+      "contains_production_db_import": true,
+      "contains_main_guard": true
+    },
+    "monthly": {
+      "path": "scripts/run_m77_10_monthly_model_replay.py",
+      "present": true,
+      "sha256": "152f9cd4f0f149a5ce7ac28f13a7f09c592e66f254f936896e7eaaf59df965d7",
+      "top_level_functions": [
+        {
+          "name": "sha",
+          "args": [
+            "p"
+          ],
+          "kwonlyargs": [],
+          "defaults": 0
+        },
+        {
+          "name": "discover_authority_table",
+          "args": [
+            "session"
+          ],
+          "kwonlyargs": [],
+          "defaults": 0
+        },
+        {
+          "name": "eligible_authority_symbols",
+          "args": [
+            "session"
+          ],
+          "kwonlyargs": [],
+          "defaults": 0
+        },
+        {
+          "name": "run_m77_1_cli",
+          "args": [
+            "symbols"
+          ],
+          "kwonlyargs": [],
+          "defaults": 0
+        },
+        {
+          "name": "main",
+          "args": [],
+          "kwonlyargs": [],
+          "defaults": 0
+        }
+      ],
+      "top_level_classes": [],
+      "imports": [
+        "__future__",
+        "argparse",
+        "hashlib",
+        "json",
+        "pathlib",
+        "sqlalchemy",
+        "subprocess",
+        "sys",
+        "trading_ai.database.session",
+        "trading_ai.historical_underlying_replay.service"
+      ],
+      "contains_sessionlocal": true,
+      "contains_production_db_import": true,
+      "contains_main_guard": false
+    },
+    "weekly": {
+      "path": "scripts/run_m77_2_multiyear_frozen_champion.py",
+      "present": true,
+      "sha256": "9fbc50d88be6642213831a83d6902305d7718200a6182d7afef7ccfc913744f7",
+      "top_level_functions": [
+        {
+          "name": "_segments",
+          "args": [
+            "start",
+            "end"
+          ],
+          "kwonlyargs": [],
+          "defaults": 0
+        },
+        {
+          "name": "_load_manifest",
+          "args": [
+            "path"
+          ],
+          "kwonlyargs": [],
+          "defaults": 0
+        },
+        {
+          "name": "_save_manifest",
+          "args": [
+            "path",
+            "manifest"
+          ],
+          "kwonlyargs": [],
+          "defaults": 0
+        },
+        {
+          "name": "main",
+          "args": [],
+          "kwonlyargs": [],
+          "defaults": 0
+        }
+      ],
+      "top_level_classes": [],
+      "imports": [
+        "__future__",
+        "argparse",
+        "datetime",
+        "json",
+        "pathlib",
+        "trading_ai.database",
+        "trading_ai.historical_underlying_replay.service"
+      ],
+      "contains_sessionlocal": true,
+      "contains_production_db_import": true,
+      "contains_main_guard": true
+    }
+  },
+  "adapter_contract": {
+    "version": "M77.19.3-ISOLATED-DAILY-MONTHLY-PIT-HARNESS-FOUNDATION-1.0",
+    "status": "FOUNDATION_ONLY",
+    "research_storage_root": "research_data/m77_19_3",
+    "date_parameters": {
+      "start": "2003-09-10",
+      "end": "2026-08-21",
+      "as_of_rule": "EVERY FEATURE/STATE READ MUST BE <= OBSERVATION AS_OF"
+    },
+    "cadence_adapters": {
+      "DAILY": {
+        "source_runner": "scripts/run_m77_9_daily_model_replay.py",
+        "required_new_parameters": [
+          "start",
+          "end",
+          "research_output_root"
+        ],
+        "execution_authorized": false
+      },
+      "MONTHLY": {
+        "source_runner": "scripts/run_m77_10_monthly_model_replay.py",
+        "required_new_parameters": [
+          "start",
+          "end",
+          "research_output_root"
+        ],
+        "execution_authorized": false
+      },
+      "PIT": {
+        "source_runner": "scripts/run_m77_8_daily_pit_replay_authority.py",
+        "required_new_parameters": [
+          "start",
+          "end",
+          "research_output_root"
+        ],
+        "execution_authorized": false
+      },
+      "WEEKLY": {
+        "source_runner": "scripts/run_m77_2_multiyear_frozen_champion.py",
+        "required_new_parameters": [],
+        "existing_range_capability_reused": true,
+        "execution_authorized": false
+      }
+    },
+    "source_sha256": {
+      "pit": "015af1c623d69a5e6c2b3e8e2392d8975afc2faed8f76f6078d453fbf4dbb392",
+      "daily": "1073dc83ad0a778994d799fcc51b336ddccb6658cc0cc82dbb734d6f2246d534",
+      "monthly": "152f9cd4f0f149a5ce7ac28f13a7f09c592e66f254f936896e7eaaf59df965d7",
+      "weekly": "9fbc50d88be6642213831a83d6902305d7718200a6182d7afef7ccfc913744f7"
+    },
+    "production_db_write_allowed": false,
+    "original_runner_source_mutation_allowed": false,
+    "automatic_replay_execution": false,
+    "point_in_time_certification_required_before_execution": true
+  },
+  "harness_db_semantic_audit": {
+    "database_imports": [],
+    "sessionlocal_name_refs": 0,
+    "sql_write_literals": [],
+    "has_production_db_semantics": false
+  },
+  "gates": {
+    "source_runners_present": true,
+    "source_runners_compile": true,
+    "source_sha256_frozen": true,
+    "top_level_callables_discovered": true,
+    "date_parameterization_adapter_contract_present": true,
+    "research_output_namespace_isolated": true,
+    "no_production_db_write_code_in_harness": true,
+    "no_automatic_replay_execution": true,
+    "point_in_time_execution_not_yet_authorized": true
+  },
+  "harness_foundation_certified": true,
+  "historical_replay_execution_authorized": false,
+  "remaining_blockers": [
+    "ORIGINAL_601_SYMBOL_LONG_HISTORY_SOURCE_DATA_MISSING",
+    "ADAPTER_IMPLEMENTATION_NOT_YET_BUILT",
+    "POINT_IN_TIME_BEHAVIOR_NOT_YET_EXECUTION_CERTIFIED"
+  ],
+  "next_step": "BUILD_M77_19_4_ISOLATED_ADAPTER_IMPLEMENTATION_AND_PIT_LEAKAGE_TESTS",
+  "database_writes": false,
+  "production_authority_effect": false
+}

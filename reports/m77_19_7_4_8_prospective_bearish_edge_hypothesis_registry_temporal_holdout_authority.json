@@ -1,0 +1,160 @@
+{
+  "candidate_evaluation_contract": {
+    "development_may_be_used_for_candidate_definition_refinement": true,
+    "exact_numeric_acceptance_thresholds_fitted_here": false,
+    "final_holdout_may_not_be_used_for_candidate_revision": true,
+    "final_holdout_single_pass_intent": true,
+    "minimum_acceptance_dimensions": [
+      "positive_median_bearish_directional_return",
+      "accuracy_above_predeclared_baseline",
+      "adequate_sample_size",
+      "cross_symbol_consistency",
+      "cross_era_consistency",
+      "validation_confirmation",
+      "final_holdout_confirmation"
+    ],
+    "validation_may_be_used_for_candidate_accept_reject": true
+  },
+  "global_replay_window": {
+    "first_replayed_as_of": "2004-11-19",
+    "last_replayed_as_of": "2026-08-21"
+  },
+  "governance": {
+    "automatic_bearish_signal_inversion": false,
+    "calibrator_fitting": false,
+    "classifier_training": false,
+    "database_access": "NONE",
+    "future_feature_leakage": false,
+    "parameter_fitting": false,
+    "polygon_api_queried": false,
+    "price_history_table_used": false,
+    "production_authority_effect": false,
+    "production_model_change_authorized": false,
+    "threshold_search_or_optimization": false
+  },
+  "hypothesis_registry": [
+    {
+      "id": "H1_FRESH_DOWNSIDE_TRANSITION",
+      "intent": "Test whether newly bearish transitions retain more prospective downside edge than mature bearish states.",
+      "name": "Fresh downside transition",
+      "predeclared_semantics": [
+        "current native direction is BEARISH or STRONG_BEARISH",
+        "transitioned_into_bearish is TRUE",
+        "exclude already-deep extension overlays in later evaluation"
+      ],
+      "required_observables": [
+        "native_direction",
+        "previous_direction",
+        "bearish_streak_observations",
+        "prior_10_session_return",
+        "prior_20_session_return",
+        "drawdown_from_prior_63_session_high"
+      ]
+    },
+    {
+      "id": "H2_BREAKDOWN_INITIATION",
+      "intent": "Test whether initiation/setup has more prospective edge than mature confirmed breakdown.",
+      "name": "Breakdown initiation",
+      "predeclared_semantics": [
+        "prefer BREAKDOWN_SETUP / newly lost structure evidence",
+        "compare separately against BREAKDOWN_CONFIRMED",
+        "do not invert BREAKDOWN_CONFIRMED"
+      ],
+      "required_observables": [
+        "breakout.state",
+        "native_direction",
+        "bearish_streak_observations"
+      ]
+    },
+    {
+      "id": "H3_CONTINUATION_WITHOUT_EXHAUSTION",
+      "intent": "Test bearish continuation only when exhaustion-like state is absent.",
+      "name": "Continuation without exhaustion",
+      "predeclared_semantics": [
+        "exclude CAPITULATION",
+        "exclude mature BREAKDOWN_CONFIRMED in late lifecycle",
+        "exclude large prior-decline/deep-drawdown exhaustion overlays"
+      ],
+      "required_observables": [
+        "participation.state",
+        "breakout.state",
+        "prior_10_session_return",
+        "prior_20_session_return",
+        "drawdown_from_prior_63_session_high",
+        "bearish_streak_observations"
+      ]
+    },
+    {
+      "id": "H4_REMAINING_STRUCTURAL_DOWNSIDE_ROOM",
+      "intent": "Test whether remaining distance to defensible support/demand destinations is prospective evidence.",
+      "name": "Remaining structural downside room",
+      "predeclared_semantics": [
+        "measure remaining downside room rather than bearish severity alone",
+        "use native point-in-time structural levels only",
+        "no future structure or realized target information"
+      ],
+      "required_observables": [
+        "current_reference_price",
+        "support_levels",
+        "demand_zones",
+        "ATR_or_native_volatility_context",
+        "native_direction",
+        "bearish_streak_observations"
+      ]
+    }
+  ],
+  "next_step": "BUILD_M77_19_7_4_9_DEVELOPMENT_ONLY_PROSPECTIVE_BEARISH_EDGE_CANDIDATE_EVALUATION",
+  "outcome_authority_sha256": "d8c8ea6fd2a6412d3b2898f87fa1e3f19ba6968b112eb100998c81ac2bb07775",
+  "partition_authority": {
+    "DEVELOPMENT": {
+      "eligible_symbol_count": 524,
+      "replayed_observation_count": 303689
+    },
+    "FINAL_HOLDOUT": {
+      "eligible_symbol_count": 602,
+      "replayed_observation_count": 111027
+    },
+    "VALIDATION": {
+      "eligible_symbol_count": 570,
+      "replayed_observation_count": 141567
+    }
+  },
+  "performance_computation": {
+    "candidate_accuracy_computed": false,
+    "candidate_champion_selected": false,
+    "candidate_forward_returns_computed": false,
+    "candidate_ranking_computed": false
+  },
+  "replay_authority_sha256": "0d2e684363e51ddf4de4df81d0978e03c5c5c0a6d5604f77b438494dd36c87b3",
+  "semantic_decomposition_authority_sha256": "cc731e405a78efe861572258c6fe3baa2946c8366a92c0f2b3b9dfcd50546cd3",
+  "status": "READY",
+  "successful_symbol_count": 602,
+  "symbol_specific_window_policy": {
+    "force_common_23_year_start": false,
+    "partition_membership_requires_actual_replayed_observation": true,
+    "predecessor_successor_auto_concatenation": false,
+    "synthetic_backfill": false,
+    "use_each_symbol_certified_history_only": true
+  },
+  "temporal_partitions": [
+    {
+      "end": "2017-12-31",
+      "name": "DEVELOPMENT",
+      "performance_use": "candidate-development-only",
+      "start": null
+    },
+    {
+      "end": "2022-12-31",
+      "name": "VALIDATION",
+      "performance_use": "independent-validation",
+      "start": "2018-01-01"
+    },
+    {
+      "end": null,
+      "name": "FINAL_HOLDOUT",
+      "performance_use": "untouched-final-certification",
+      "start": "2023-01-01"
+    }
+  ],
+  "version": "M77.19.7.4.8-PROSPECTIVE-BEARISH-EDGE-HYPOTHESIS-REGISTRY-TEMPORAL-HOLDOUT-AUTHORITY-1.0"
+}

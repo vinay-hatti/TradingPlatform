@@ -1,0 +1,7 @@
+family,horizon,selected_config_json,validation_authorized,retuning_authorized
+MF1_REGULARIZED_LOGISTIC_DIRECTION,5,"{""C"": 10.0}",True,False
+MF1_REGULARIZED_LOGISTIC_DIRECTION,10,"{""C"": 1.0}",True,False
+MF1_REGULARIZED_LOGISTIC_DIRECTION,20,"{""C"": 0.1}",True,False
+MF2_MONOTONIC_GAM_DIRECTION,5,"{""l2_penalty"": 0.1, ""spline_knots"": 4}",True,False
+MF2_MONOTONIC_GAM_DIRECTION,10,"{""l2_penalty"": 0.1, ""spline_knots"": 4}",True,False
+MF2_MONOTONIC_GAM_DIRECTION,20,"{""l2_penalty"": 0.1, ""spline_knots"": 4}",True,False

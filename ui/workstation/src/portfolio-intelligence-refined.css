@@ -2,3 +2,71 @@
 @media(max-width:1280px){.pi-kpis{grid-template-columns:repeat(3,1fr)}.pi-layout{grid-template-columns:240px minmax(0,1fr)}.pi-right{position:static;grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:900px){.pi-workspace{padding:12px}.pi-command-header{flex-direction:column}.pi-header-actions{justify-content:flex-start}.pi-kpis{grid-template-columns:repeat(2,1fr)}.pi-layout{display:flex;flex-direction:column}.pi-left,.pi-right{position:static;width:100%;max-height:none}.pi-position-list{max-height:340px}.pi-position-metrics,.pi-greeks.position{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.pi-kpis{grid-template-columns:1fr}.pi-position-hero{align-items:flex-start;flex-direction:column}.pi-decision-grid,.pi-driver-grid,.pi-right{grid-template-columns:1fr}.pi-action-bar{position:static}.pi-header-actions button{flex:1}}
+
+/* M74.9 autonomous-management visibility */
+.pi-kpis article.pi-kpi-auto{border-color:rgba(16,185,129,.55);background:rgba(16,185,129,.08)}
+.pi-kpis article.pi-kpi-auto svg{color:#34d399}
+.pi-kpis article.pi-kpi-manual{border-color:rgba(244,63,94,.6);background:rgba(244,63,94,.09)}
+.pi-kpis article.pi-kpi-manual svg{color:#fb7185}
+.pi-kpis article.pi-kpi-degraded{border-color:rgba(245,158,11,.55);background:rgba(245,158,11,.08)}
+.pi-kpis article.pi-kpi-degraded svg{color:#fbbf24}
+.pi-position-list>button.pi-management-row{border-left-width:4px}
+.pi-position-list>button.pi-management-row.auto{border-left-color:#10b981;background:rgba(16,185,129,.045)}
+.pi-position-list>button.pi-management-row.manual{border-left-color:#f43f5e;background:rgba(244,63,94,.065)}
+.pi-position-list>button.pi-management-row.degraded{border-left-color:#f59e0b;background:rgba(245,158,11,.06)}
+.pi-position-list>button.pi-management-row.closed{border-left-color:#64748b;opacity:.75}
+.pi-position-list>button.pi-management-row.auto:hover,.pi-position-list>button.pi-management-row.auto.selected{background:rgba(16,185,129,.13);border-color:rgba(16,185,129,.5)}
+.pi-position-list>button.pi-management-row.manual:hover,.pi-position-list>button.pi-management-row.manual.selected{background:rgba(244,63,94,.14);border-color:rgba(244,63,94,.55)}
+.pi-position-list>button.pi-management-row.degraded:hover,.pi-position-list>button.pi-management-row.degraded.selected{background:rgba(245,158,11,.13);border-color:rgba(245,158,11,.5)}
+.pi-management-badge{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.055em;padding:4px 7px;border-radius:999px;white-space:nowrap;border:1px solid transparent}
+.pi-management-badge.auto{color:#6ee7b7;background:rgba(16,185,129,.18);border-color:rgba(16,185,129,.35)}
+.pi-management-badge.manual{color:#fecdd3;background:rgba(244,63,94,.2);border-color:rgba(244,63,94,.42)}
+.pi-management-badge.degraded{color:#fde68a;background:rgba(245,158,11,.18);border-color:rgba(245,158,11,.4)}
+.pi-management-badge.closed{color:#cbd5e1;background:rgba(100,116,139,.18);border-color:rgba(100,116,139,.35)}
+.pi-management-banner{display:flex;gap:12px;align-items:flex-start;border:1px solid;border-radius:10px;padding:14px 16px}
+.pi-management-banner-icon{flex:none;margin-top:1px}
+.pi-management-banner strong{font-size:14px;letter-spacing:.035em}
+.pi-management-banner p{margin:5px 0 4px;line-height:1.45;font-weight:600}
+.pi-management-banner small{font-size:10px;opacity:.85}
+.pi-management-banner.auto{color:#a7f3d0;border-color:rgba(16,185,129,.6);background:rgba(16,185,129,.10)}
+.pi-management-banner.manual{color:#fecdd3;border-color:rgba(244,63,94,.7);background:rgba(244,63,94,.12)}
+.pi-management-banner.degraded{color:#fde68a;border-color:rgba(245,158,11,.65);background:rgba(245,158,11,.11)}
+.pi-management-banner.closed{color:#cbd5e1;border-color:rgba(100,116,139,.45);background:rgba(100,116,139,.08)}
+
+/* M74.10 strategy-level autonomous management visibility */
+.pi-strategy-lifecycle { border-color: color-mix(in srgb, #38bdf8 38%, var(--border, #24344d)); }
+.pi-strategy-lifecycle header b { color: #7dd3fc; font-size: 11px; letter-spacing: .06em; }
+.pi-strategy-leg-list { display: flex; flex-wrap: wrap; gap: 7px; align-items: center; margin-top: 12px; }
+.pi-strategy-leg-list > span { width: 100%; color: #94a3b8; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; }
+.pi-strategy-leg-list i { font-style: normal; border: 1px solid rgba(56,189,248,.28); background: rgba(14,165,233,.08); color: #bae6fd; border-radius: 5px; padding: 5px 7px; font-size: 11px; }
+.pi-management-explanation { margin-top: 12px; display: flex; justify-content: space-between; gap: 12px; padding: 10px 12px; border: 1px solid rgba(56,189,248,.22); background: rgba(14,165,233,.06); border-radius: 7px; }
+.pi-management-explanation strong { color: #cbd5e1; }
+.pi-management-explanation span { color: #7dd3fc; font-weight: 700; text-align: right; }
+.pi-strategy-note { margin: 10px 0 0; color: #94a3b8; line-height: 1.45; }
+
+/* M74.14 unified exit materialization + autonomous health */
+.pi-autonomous-health{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:10px 0}
+.pi-autonomous-health>div{display:flex;flex-direction:column;gap:3px;padding:10px 12px;border:1px solid var(--border,#334155);border-radius:8px;background:var(--surface-2,#172033)}
+.pi-autonomous-health strong{font-size:10px;letter-spacing:.045em}
+.pi-autonomous-health span{font-size:10px;color:var(--text-muted,#94a3b8);line-height:1.35}
+.pi-autonomous-health .healthy{border-color:rgba(16,185,129,.34);background:rgba(16,185,129,.06)}
+.pi-autonomous-health .healthy strong{color:#6ee7b7}
+.pi-autonomous-health .warning{border-color:rgba(245,158,11,.42);background:rgba(245,158,11,.07)}
+.pi-autonomous-health .warning strong{color:#fde68a}
+.pi-autonomous-health .critical{border-color:rgba(244,63,94,.5);background:rgba(244,63,94,.08)}
+.pi-autonomous-health .critical strong{color:#fecdd3}
+.pi-exit-rule{border:1px solid transparent}
+.pi-exit-rule.protection.armed,.pi-exit-rule.protection.submitted,.pi-exit-rule.protection.acknowledged{border-color:rgba(16,185,129,.24)}
+.pi-exit-rule.target.submission_failed{border-color:rgba(245,158,11,.45);background:rgba(245,158,11,.06)}
+.pi-exit-rule.protection.submission_failed{border-color:rgba(244,63,94,.55);background:rgba(244,63,94,.08)}
+.pi-exit-rule small{display:block;margin-top:6px;font-size:9px;color:#7dd3fc}
+.pi-exit-history{margin-top:12px;border-top:1px solid var(--border,#334155);padding-top:10px}
+.pi-exit-history summary{cursor:pointer;font-size:10px;color:var(--text-muted,#94a3b8)}
+.pi-exit-history>div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin-top:8px}
+.pi-exit-history article{display:flex;justify-content:space-between;gap:8px;padding:7px 9px;border-radius:6px;background:rgba(100,116,139,.08);font-size:9px;color:var(--text-muted,#94a3b8)}
+.pi-exit-history article strong{color:#cbd5e1}
+@media(max-width:700px){.pi-autonomous-health,.pi-exit-history>div{grid-template-columns:1fr}}
+
+/* M75 terminal lifecycle governance */
+.pi-management-banner.closed strong { letter-spacing: .02em; }
+.pi-management-banner.closed small { opacity: .86; }

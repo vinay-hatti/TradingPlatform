@@ -1,0 +1,12 @@
+{
+  "version": "M77.19.6.5.2.1-NATIVE-OUTPUT-SCHEMA-COMPARE-CONTRACT-FORENSICS-1.0",
+  "milestone": "M77.19.6.5.2.1",
+  "title": "Native Output Schema & Compare-Contract Forensics",
+  "research_only": true,
+  "forensic_probe_only": true,
+  "database_mode": "READ_ONLY_SPY_SESSION_CALENDAR_ONLY",
+  "parity_thresholds_relaxed": false,
+  "controlled_exact_input_parity_certified": false,
+  "full_23_year_reconstruction_authorized": false,
+  "production_authority_effect": false
+}

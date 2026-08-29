@@ -1,0 +1,33 @@
+{
+  "milestone": "M77.19.6.5.2.20",
+  "name": "Native Observable Trigger Collateral Impact Forensics",
+  "authority_report_5219_sha256": "9e024506d6c519b73ac9c32d8e11b350a35329627e58e5243fed03e1911a52c7",
+  "authority_runner_5219_sha256": "1a47684e03de666163366baaa9c852bf0e9c24325c4109bb45ad3ef93dbea1f0",
+  "native_authority": {
+    "exact": 1338,
+    "missing": 67
+  },
+  "split_wide_authority": {
+    "exact": 549,
+    "missing": 560,
+    "targets_recovered": 3
+  },
+  "preserve_seed_authority": {
+    "exact": 1222,
+    "missing": 150,
+    "targets_recovered": 1
+  },
+  "analysis_scope": [
+    "per-symbol exact delta",
+    "per-symbol missing reduction",
+    "target vs non-target collateral",
+    "non-degrading/unchanged/degrading classification",
+    "worst-damage concentration"
+  ],
+  "database_mode": "NONE_REPORT_ONLY",
+  "new_trigger_semantic_introduced": false,
+  "new_threshold_introduced": false,
+  "candidate_semantic_promoted": false,
+  "full_23_year_reconstruction_authorized": false,
+  "production_authority_effect": false
+}

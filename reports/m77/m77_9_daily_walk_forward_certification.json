@@ -1,0 +1,4653 @@
+{
+  "version": "M77.9-DAILY-WALK-FORWARD-CERTIFICATION-1.0",
+  "status": "DEGRADED",
+  "governance": {
+    "research_only": true,
+    "database_read_only": true,
+    "database_writes": false,
+    "automatic_champion_promotion": false,
+    "production_authority_effect": false,
+    "existing_weekly_m77_mutation": false
+  },
+  "lineage": {
+    "daily_replay_run_id": "m77-1-replay-de7709ab17db4d7d98b828d075f4ddad",
+    "m77_8_snapshots": "reports/m77/m77_8_daily_pit_regime_snapshots.json"
+  },
+  "coverage": {
+    "observations": 426209,
+    "symbols": 601,
+    "first_as_of": "2022-10-14",
+    "last_as_of": "2026-05-26",
+    "years": [
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "methodology": {
+    "horizons_sessions": [
+      5,
+      10,
+      20,
+      40,
+      60
+    ],
+    "expanding_year_holdout": true,
+    "selection_uses_only_pre_holdout_data": true,
+    "non_overlapping_observation_sampling": true,
+    "minimum_training_n": 250,
+    "minimum_holdout_n": 75,
+    "minimum_holdout_hit_rate_pct": 52.0,
+    "minimum_holdout_mean_pct": {
+      "5": 0.05,
+      "10": 0.1,
+      "20": 0.15,
+      "40": 0.25,
+      "60": 0.35
+    },
+    "certification_contract": "at least 2 selected FULL_YEAR holdouts; every selected full and partial holdout must pass"
+  },
+  "folds": [
+    {
+      "holdout_year": 2023,
+      "holdout_credit": "FULL_YEAR",
+      "training_first": "2022-10-14",
+      "training_last": "2022-12-30",
+      "holdout_first": "2023-01-03",
+      "holdout_last": "2023-12-29",
+      "horizons": [
+        {
+          "horizon_sessions": 5,
+          "training_observations": 5621,
+          "holdout_observations": 25107,
+          "training_selected_cohorts": 2,
+          "passed_cohorts": 0,
+          "cohorts": [
+            {
+              "cohort": {
+                "regime": "TRANSITION_UP",
+                "direction": "STRONG_BEARISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 413,
+                "mean_pct": 1.2092693050847458,
+                "hit_rate_pct": 61.50121065375303,
+                "stdev_pct": 6.220397635010674,
+                "t_approx": 3.9507532637623672
+              },
+              "holdout": {
+                "n": 199,
+                "mean_pct": -1.7709234773869347,
+                "hit_rate_pct": 33.165829145728644,
+                "stdev_pct": 5.852022267305858,
+                "t_approx": -4.268943075500366
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_UP",
+                "direction": "BEARISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 268,
+                "mean_pct": 0.47469663805970147,
+                "hit_rate_pct": 54.1044776119403,
+                "stdev_pct": 5.0544944256449105,
+                "t_approx": 1.5374670995486344
+              },
+              "holdout": {
+                "n": 205,
+                "mean_pct": -0.8012159951219512,
+                "hit_rate_pct": 38.048780487804876,
+                "stdev_pct": 3.1417798426077606,
+                "t_approx": -3.651327535945106
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            }
+          ]
+        },
+        {
+          "horizon_sessions": 10,
+          "training_observations": 3091,
+          "holdout_observations": 13327,
+          "training_selected_cohorts": 1,
+          "passed_cohorts": 1,
+          "cohorts": [
+            {
+              "cohort": {
+                "regime": "TRANSITION_UP",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 477,
+                "mean_pct": 1.1475573815513627,
+                "hit_rate_pct": 54.507337526205454,
+                "stdev_pct": 6.080127542490171,
+                "t_approx": 4.122122661193717
+              },
+              "holdout": {
+                "n": 222,
+                "mean_pct": 3.4457387972972975,
+                "hit_rate_pct": 68.46846846846847,
+                "stdev_pct": 5.811428908635308,
+                "t_approx": 8.834376637083901
+              },
+              "passed": true,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "horizon_sessions": 20,
+          "training_observations": 1699,
+          "holdout_observations": 7095,
+          "training_selected_cohorts": 2,
+          "passed_cohorts": 0,
+          "cohorts": [
+            {
+              "cohort": {
+                "regime": "TRANSITION_UP",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 305,
+                "mean_pct": 0.3776773475409836,
+                "hit_rate_pct": 55.73770491803279,
+                "stdev_pct": 5.6961273221296675,
+                "t_approx": 1.1579536306590807
+              },
+              "holdout": {
+                "n": 132,
+                "mean_pct": -3.8700642424242426,
+                "hit_rate_pct": 20.454545454545453,
+                "stdev_pct": 5.239515056237057,
+                "t_approx": -8.486215326461672
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_UP",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 252,
+                "mean_pct": 0.36161268253968254,
+                "hit_rate_pct": 55.95238095238095,
+                "stdev_pct": 4.997594840241245,
+                "t_approx": 1.1486372059093508
+              },
+              "holdout": {
+                "n": 88,
+                "mean_pct": -2.885287625,
+                "hit_rate_pct": 22.727272727272727,
+                "stdev_pct": 5.849556820965318,
+                "t_approx": -4.627085080845564
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            }
+          ]
+        },
+        {
+          "horizon_sessions": 40,
+          "training_observations": 1138,
+          "holdout_observations": 3880,
+          "training_selected_cohorts": 0,
+          "passed_cohorts": 0,
+          "cohorts": []
+        },
+        {
+          "horizon_sessions": 60,
+          "training_observations": 571,
+          "holdout_observations": 2747,
+          "training_selected_cohorts": 0,
+          "passed_cohorts": 0,
+          "cohorts": []
+        }
+      ]
+    },
+    {
+      "holdout_year": 2024,
+      "holdout_credit": "FULL_YEAR",
+      "training_first": "2022-10-14",
+      "training_last": "2023-12-29",
+      "holdout_first": "2024-01-02",
+      "holdout_last": "2024-12-31",
+      "horizons": [
+        {
+          "horizon_sessions": 5,
+          "training_observations": 30546,
+          "holdout_observations": 25863,
+          "training_selected_cohorts": 12,
+          "passed_cohorts": 2,
+          "cohorts": [
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 3078,
+                "mean_pct": 0.191302510071475,
+                "hit_rate_pct": 52.85899935022742,
+                "stdev_pct": 3.403504665716323,
+                "t_approx": 3.1183770523069527
+              },
+              "holdout": {
+                "n": 6130,
+                "mean_pct": 0.15111901517128876,
+                "hit_rate_pct": 51.141924959216965,
+                "stdev_pct": 3.5746608084127662,
+                "t_approx": 3.3098972576108374
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_HIT_RATE_BELOW_52"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "RANGE_NORMAL",
+                "direction": "BEARISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 276,
+                "mean_pct": 0.11785378623188404,
+                "hit_rate_pct": 58.333333333333336,
+                "stdev_pct": 4.732768680055573,
+                "t_approx": 0.4136974102176143
+              },
+              "holdout": {
+                "n": 94,
+                "mean_pct": 0.6212971063829787,
+                "hit_rate_pct": 67.02127659574468,
+                "stdev_pct": 3.6273285702699103,
+                "t_approx": 1.6606433135224383
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "RANGE_NORMAL",
+                "direction": "BEARISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C70_79"
+              },
+              "training": {
+                "n": 278,
+                "mean_pct": 1.767287334532374,
+                "hit_rate_pct": 65.10791366906474,
+                "stdev_pct": 5.679611000135397,
+                "t_approx": 5.188131452716209
+              },
+              "holdout": {
+                "n": 1,
+                "mean_pct": 1.111626,
+                "hit_rate_pct": 100.0,
+                "stdev_pct": 0.0,
+                "t_approx": null
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_DOWN",
+                "direction": "STRONG_BEARISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 2101,
+                "mean_pct": 0.03834887101380295,
+                "hit_rate_pct": 51.11851499286054,
+                "stdev_pct": 4.234365773522438,
+                "t_approx": 0.4151234227439981
+              },
+              "holdout": {
+                "n": 549,
+                "mean_pct": -1.825036034608379,
+                "hit_rate_pct": 31.147540983606557,
+                "stdev_pct": 4.945157171160117,
+                "t_approx": -8.647240080222234
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 2054,
+                "mean_pct": 0.4699600301850049,
+                "hit_rate_pct": 55.793573515092504,
+                "stdev_pct": 3.4889514344470602,
+                "t_approx": 6.104726594549416
+              },
+              "holdout": {
+                "n": 3160,
+                "mean_pct": -0.07724858575949367,
+                "hit_rate_pct": 47.34177215189873,
+                "stdev_pct": 3.603516590727723,
+                "t_approx": -1.2050568968936888
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 507,
+                "mean_pct": 0.44209186390532546,
+                "hit_rate_pct": 55.226824457593686,
+                "stdev_pct": 4.660453292473813,
+                "t_approx": 2.1359365246154267
+              },
+              "holdout": {
+                "n": 509,
+                "mean_pct": -0.20366987622789784,
+                "hit_rate_pct": 45.18664047151277,
+                "stdev_pct": 5.365266081595009,
+                "t_approx": -0.8564350361738116
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_UP",
+                "direction": "STRONG_BEARISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 533,
+                "mean_pct": 0.9120536341463414,
+                "hit_rate_pct": 57.97373358348968,
+                "stdev_pct": 5.818663852535467,
+                "t_approx": 3.618767774235379
+              },
+              "holdout": {
+                "n": 0,
+                "mean_pct": null,
+                "hit_rate_pct": null,
+                "stdev_pct": null,
+                "t_approx": null
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_UP",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 1099,
+                "mean_pct": 0.18069671974522294,
+                "hit_rate_pct": 54.140127388535035,
+                "stdev_pct": 4.072952601046624,
+                "t_approx": 1.4707530541717397
+              },
+              "holdout": {
+                "n": 0,
+                "mean_pct": null,
+                "hit_rate_pct": null,
+                "stdev_pct": null,
+                "t_approx": null
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C70_79"
+              },
+              "training": {
+                "n": 691,
+                "mean_pct": 0.48450899276410997,
+                "hit_rate_pct": 56.72937771345875,
+                "stdev_pct": 3.5207776421039205,
+                "t_approx": 3.617447760749211
+              },
+              "holdout": {
+                "n": 42,
+                "mean_pct": 2.005943785714286,
+                "hit_rate_pct": 69.04761904761905,
+                "stdev_pct": 4.64410446997635,
+                "t_approx": 2.799248297457682
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S70_79",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 904,
+                "mean_pct": 0.1822776471238938,
+                "hit_rate_pct": 52.876106194690266,
+                "stdev_pct": 4.298211832783602,
+                "t_approx": 1.2750576281352521
+              },
+              "holdout": {
+                "n": 1782,
+                "mean_pct": 0.46649779854096524,
+                "hit_rate_pct": 52.02020202020202,
+                "stdev_pct": 5.000316977852008,
+                "t_approx": 3.9382738580414336
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "BEAR_ORDERLY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 301,
+                "mean_pct": 0.9165187607973422,
+                "hit_rate_pct": 65.11627906976744,
+                "stdev_pct": 3.230819841361418,
+                "t_approx": 4.921662916843103
+              },
+              "holdout": {
+                "n": 0,
+                "mean_pct": null,
+                "hit_rate_pct": null,
+                "stdev_pct": null,
+                "t_approx": null
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C70_79"
+              },
+              "training": {
+                "n": 949,
+                "mean_pct": 0.14282780927291885,
+                "hit_rate_pct": 52.16016859852476,
+                "stdev_pct": 3.1537560698343676,
+                "t_approx": 1.395139971823283
+              },
+              "holdout": {
+                "n": 12,
+                "mean_pct": -0.31578975000000004,
+                "hit_rate_pct": 50.0,
+                "stdev_pct": 2.8638160499828467,
+                "t_approx": -0.3819825589096409
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            }
+          ]
+        },
+        {
+          "horizon_sessions": 10,
+          "training_observations": 16154,
+          "holdout_observations": 13637,
+          "training_selected_cohorts": 8,
+          "passed_cohorts": 2,
+          "cohorts": [
+            {
+              "cohort": {
+                "regime": "TRANSITION_DOWN",
+                "direction": "STRONG_BEARISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 1044,
+                "mean_pct": 0.12576966091954023,
+                "hit_rate_pct": 53.065134099616856,
+                "stdev_pct": 6.318184008303368,
+                "t_approx": 0.6431819816254655
+              },
+              "holdout": {
+                "n": 269,
+                "mean_pct": -3.367875223048327,
+                "hit_rate_pct": 21.933085501858734,
+                "stdev_pct": 6.177242162222276,
+                "t_approx": -8.9420584816984
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 1134,
+                "mean_pct": 0.6313474153439154,
+                "hit_rate_pct": 55.29100529100529,
+                "stdev_pct": 4.894070975132114,
+                "t_approx": 4.344148581050328
+              },
+              "holdout": {
+                "n": 1740,
+                "mean_pct": -0.13913015862068967,
+                "hit_rate_pct": 48.44827586206897,
+                "stdev_pct": 4.996802310628114,
+                "t_approx": -1.1614586070479507
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 293,
+                "mean_pct": 1.0304878839590443,
+                "hit_rate_pct": 53.58361774744027,
+                "stdev_pct": 6.792776280049004,
+                "t_approx": 2.5967455062019247
+              },
+              "holdout": {
+                "n": 306,
+                "mean_pct": 0.08902315686274512,
+                "hit_rate_pct": 50.65359477124183,
+                "stdev_pct": 7.676819926108225,
+                "t_approx": 0.20285342766549197
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_UP",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 699,
+                "mean_pct": 1.5406012231759656,
+                "hit_rate_pct": 57.081545064377686,
+                "stdev_pct": 6.044529325131967,
+                "t_approx": 6.738548171007424
+              },
+              "holdout": {
+                "n": 0,
+                "mean_pct": null,
+                "hit_rate_pct": null,
+                "stdev_pct": null,
+                "t_approx": null
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C70_79"
+              },
+              "training": {
+                "n": 349,
+                "mean_pct": 0.7831593151862464,
+                "hit_rate_pct": 57.306590257879655,
+                "stdev_pct": 4.571585657863241,
+                "t_approx": 3.2003388962374535
+              },
+              "holdout": {
+                "n": 23,
+                "mean_pct": 3.5111569130434783,
+                "hit_rate_pct": 69.56521739130434,
+                "stdev_pct": 7.253325586163985,
+                "t_approx": 2.3215443463605454
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 1510,
+                "mean_pct": 0.3047835649006623,
+                "hit_rate_pct": 53.11258278145695,
+                "stdev_pct": 4.669124004856826,
+                "t_approx": 2.536556905750172
+              },
+              "holdout": {
+                "n": 3168,
+                "mean_pct": 0.5134179081439394,
+                "hit_rate_pct": 55.744949494949495,
+                "stdev_pct": 5.2475783170836365,
+                "t_approx": 5.506868049730597
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S70_79",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 448,
+                "mean_pct": 0.39931134375,
+                "hit_rate_pct": 53.794642857142854,
+                "stdev_pct": 5.778957613035477,
+                "t_approx": 1.4625177507672995
+              },
+              "holdout": {
+                "n": 894,
+                "mean_pct": 1.1153533154362416,
+                "hit_rate_pct": 57.94183445190156,
+                "stdev_pct": 7.9391268543824305,
+                "t_approx": 4.200572459511841
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C70_79"
+              },
+              "training": {
+                "n": 514,
+                "mean_pct": 0.7307285797665369,
+                "hit_rate_pct": 57.39299610894942,
+                "stdev_pct": 4.5513372334624895,
+                "t_approx": 3.639976979769942
+              },
+              "holdout": {
+                "n": 7,
+                "mean_pct": -2.5748022857142856,
+                "hit_rate_pct": 28.571428571428573,
+                "stdev_pct": 5.219549866972567,
+                "t_approx": -1.3051482784495216
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            }
+          ]
+        },
+        {
+          "horizon_sessions": 20,
+          "training_observations": 8548,
+          "holdout_observations": 7243,
+          "training_selected_cohorts": 4,
+          "passed_cohorts": 1,
+          "cohorts": [
+            {
+              "cohort": {
+                "regime": "TRANSITION_UP",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 470,
+                "mean_pct": 0.2987252425531915,
+                "hit_rate_pct": 51.702127659574465,
+                "stdev_pct": 5.814513490551736,
+                "t_approx": 1.1138006549016428
+              },
+              "holdout": {
+                "n": 0,
+                "mean_pct": null,
+                "hit_rate_pct": null,
+                "stdev_pct": null,
+                "t_approx": null
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 649,
+                "mean_pct": 0.6482340385208012,
+                "hit_rate_pct": 54.08320493066256,
+                "stdev_pct": 7.5667488349125325,
+                "t_approx": 2.1824528090572386
+              },
+              "holdout": {
+                "n": 923,
+                "mean_pct": 0.6671496923076923,
+                "hit_rate_pct": 52.54604550379198,
+                "stdev_pct": 7.300660818658571,
+                "t_approx": 2.77627171553967
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C70_79"
+              },
+              "training": {
+                "n": 274,
+                "mean_pct": 1.2120637554744524,
+                "hit_rate_pct": 56.934306569343065,
+                "stdev_pct": 6.943500445444547,
+                "t_approx": 2.8894972026726067
+              },
+              "holdout": {
+                "n": 3,
+                "mean_pct": -4.566382,
+                "hit_rate_pct": 33.333333333333336,
+                "stdev_pct": 7.11321641886908,
+                "t_approx": -1.1119028530873039
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_UP",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 409,
+                "mean_pct": 1.2574858679706602,
+                "hit_rate_pct": 55.99022004889976,
+                "stdev_pct": 6.83773096153818,
+                "t_approx": 3.7192276171378076
+              },
+              "holdout": {
+                "n": 0,
+                "mean_pct": null,
+                "hit_rate_pct": null,
+                "stdev_pct": null,
+                "t_approx": null
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52"
+              ]
+            }
+          ]
+        },
+        {
+          "horizon_sessions": 40,
+          "training_observations": 4562,
+          "holdout_observations": 3896,
+          "training_selected_cohorts": 0,
+          "passed_cohorts": 0,
+          "cohorts": []
+        },
+        {
+          "horizon_sessions": 60,
+          "training_observations": 3156,
+          "holdout_observations": 2803,
+          "training_selected_cohorts": 1,
+          "passed_cohorts": 1,
+          "cohorts": [
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 318,
+                "mean_pct": 2.7240633993710692,
+                "hit_rate_pct": 51.886792452830186,
+                "stdev_pct": 18.400650299162578,
+                "t_approx": 2.6399615362124784
+              },
+              "holdout": {
+                "n": 790,
+                "mean_pct": 3.4225342443037974,
+                "hit_rate_pct": 62.0253164556962,
+                "stdev_pct": 13.90426025319723,
+                "t_approx": 6.9185241259646295
+              },
+              "passed": true,
+              "reasons": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "holdout_year": 2025,
+      "holdout_credit": "FULL_YEAR",
+      "training_first": "2022-10-14",
+      "training_last": "2024-12-31",
+      "holdout_first": "2025-01-02",
+      "holdout_last": "2025-12-31",
+      "horizons": [
+        {
+          "horizon_sessions": 5,
+          "training_observations": 56228,
+          "holdout_observations": 25939,
+          "training_selected_cohorts": 18,
+          "passed_cohorts": 6,
+          "cohorts": [
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 9209,
+                "mean_pct": 0.16295709132370506,
+                "hit_rate_pct": 52.350961016397,
+                "stdev_pct": 3.476201703062679,
+                "t_approx": 4.498570517576107
+              },
+              "holdout": {
+                "n": 4206,
+                "mean_pct": 0.18810011531145981,
+                "hit_rate_pct": 52.448882548739896,
+                "stdev_pct": 3.808012231633436,
+                "t_approx": 3.203504668717727
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "RANGE_NORMAL",
+                "direction": "BEARISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 369,
+                "mean_pct": 0.30567194308943085,
+                "hit_rate_pct": 60.97560975609756,
+                "stdev_pct": 4.385412121113308,
+                "t_approx": 1.3389314664927645
+              },
+              "holdout": {
+                "n": 195,
+                "mean_pct": -1.5298421948717948,
+                "hit_rate_pct": 37.43589743589744,
+                "stdev_pct": 4.632367608524529,
+                "t_approx": -4.6116986913913145
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "RANGE_NORMAL",
+                "direction": "BEARISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C70_79"
+              },
+              "training": {
+                "n": 279,
+                "mean_pct": 1.76493729390681,
+                "hit_rate_pct": 65.23297491039426,
+                "stdev_pct": 5.669558749757522,
+                "t_approx": 5.199745906891397
+              },
+              "holdout": {
+                "n": 3,
+                "mean_pct": -3.70214,
+                "hit_rate_pct": 66.66666666666667,
+                "stdev_pct": 9.323979460086807,
+                "t_approx": -0.6877207960594696
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 5191,
+                "mean_pct": 0.1908656792525525,
+                "hit_rate_pct": 51.53149682142169,
+                "stdev_pct": 3.575540989402516,
+                "t_approx": 3.8460205070198534
+              },
+              "holdout": {
+                "n": 2329,
+                "mean_pct": -0.025078993988836406,
+                "hit_rate_pct": 49.03392013739803,
+                "stdev_pct": 3.9251958288780266,
+                "t_approx": -0.308342597739914
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 1005,
+                "mean_pct": 0.17110443084577115,
+                "hit_rate_pct": 50.9452736318408,
+                "stdev_pct": 5.030836005790294,
+                "t_approx": 1.078211913950362
+              },
+              "holdout": {
+                "n": 460,
+                "mean_pct": -0.38877830434782606,
+                "hit_rate_pct": 46.52173913043478,
+                "stdev_pct": 5.464478013101189,
+                "t_approx": -1.5259217179239224
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_DOWN",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 1332,
+                "mean_pct": 0.7180857342342343,
+                "hit_rate_pct": 59.68468468468468,
+                "stdev_pct": 3.837012685629367,
+                "t_approx": 6.8302276102981905
+              },
+              "holdout": {
+                "n": 710,
+                "mean_pct": -0.05885783380281692,
+                "hit_rate_pct": 51.690140845070424,
+                "stdev_pct": 4.757407582114194,
+                "t_approx": -0.3296575967983557
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S70_79",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 2693,
+                "mean_pct": 0.3748995146676569,
+                "hit_rate_pct": 52.952098031934646,
+                "stdev_pct": 4.710074818745298,
+                "t_approx": 4.130524942485272
+              },
+              "holdout": {
+                "n": 1334,
+                "mean_pct": 0.19460165742128935,
+                "hit_rate_pct": 52.39880059970015,
+                "stdev_pct": 5.176682483229924,
+                "t_approx": 1.373007538351123
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "BULL_STRESSED",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S70_79",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 647,
+                "mean_pct": 0.3954730432766615,
+                "hit_rate_pct": 53.32302936630603,
+                "stdev_pct": 4.403298787646145,
+                "t_approx": 2.284498464937972
+              },
+              "holdout": {
+                "n": 65,
+                "mean_pct": 0.24569575384615386,
+                "hit_rate_pct": 55.38461538461539,
+                "stdev_pct": 5.971251383148432,
+                "t_approx": 0.33173322777206
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_STRESSED",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 2026,
+                "mean_pct": 0.39051078381046395,
+                "hit_rate_pct": 59.6248766041461,
+                "stdev_pct": 3.255797833181098,
+                "t_approx": 5.398776166472838
+              },
+              "holdout": {
+                "n": 204,
+                "mean_pct": 0.5744708627450981,
+                "hit_rate_pct": 61.27450980392157,
+                "stdev_pct": 4.782260710401171,
+                "t_approx": 1.7157335406890564
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_DOWN",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 1420,
+                "mean_pct": 0.22612123591549296,
+                "hit_rate_pct": 54.15492957746479,
+                "stdev_pct": 3.558990792212291,
+                "t_approx": 2.3941902524708665
+              },
+              "holdout": {
+                "n": 794,
+                "mean_pct": -0.6552421007556675,
+                "hit_rate_pct": 48.48866498740554,
+                "stdev_pct": 4.721595719678387,
+                "t_approx": -3.9104185714636714
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_UP",
+                "direction": "STRONG_BEARISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 533,
+                "mean_pct": 0.9120536341463414,
+                "hit_rate_pct": 57.97373358348968,
+                "stdev_pct": 5.818663852535467,
+                "t_approx": 3.618767774235379
+              },
+              "holdout": {
+                "n": 466,
+                "mean_pct": -1.507921371244635,
+                "hit_rate_pct": 34.54935622317596,
+                "stdev_pct": 5.273538004199284,
+                "t_approx": -6.172620467525776
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_UP",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 1099,
+                "mean_pct": 0.18069671974522294,
+                "hit_rate_pct": 54.140127388535035,
+                "stdev_pct": 4.072952601046624,
+                "t_approx": 1.4707530541717397
+              },
+              "holdout": {
+                "n": 660,
+                "mean_pct": 0.9083406287878788,
+                "hit_rate_pct": 61.06060606060606,
+                "stdev_pct": 3.4092949822880696,
+                "t_approx": 6.84472695853418
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C70_79"
+              },
+              "training": {
+                "n": 728,
+                "mean_pct": 0.5658743887362637,
+                "hit_rate_pct": 57.55494505494506,
+                "stdev_pct": 3.601979721325703,
+                "t_approx": 4.238815019972171
+              },
+              "holdout": {
+                "n": 20,
+                "mean_pct": -1.2448824,
+                "hit_rate_pct": 25.0,
+                "stdev_pct": 5.242413792938329,
+                "t_approx": -1.0619694592375457
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_STRESSED",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 818,
+                "mean_pct": 0.3398175305623472,
+                "hit_rate_pct": 55.99022004889976,
+                "stdev_pct": 3.78546257475851,
+                "t_approx": 2.567458748798953
+              },
+              "holdout": {
+                "n": 103,
+                "mean_pct": 0.5190605145631068,
+                "hit_rate_pct": 56.310679611650485,
+                "stdev_pct": 3.298895853711836,
+                "t_approx": 1.5968642575044143
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_DOWN",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S70_79",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 327,
+                "mean_pct": 0.2076669510703364,
+                "hit_rate_pct": 53.51681957186544,
+                "stdev_pct": 4.88206645429807,
+                "t_approx": 0.7691969904255549
+              },
+              "holdout": {
+                "n": 218,
+                "mean_pct": 0.0222163211009174,
+                "hit_rate_pct": 44.95412844036697,
+                "stdev_pct": 5.968772023846121,
+                "t_approx": 0.05495603598091648
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BEAR_ORDERLY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 301,
+                "mean_pct": 0.9165187607973422,
+                "hit_rate_pct": 65.11627906976744,
+                "stdev_pct": 3.230819841361418,
+                "t_approx": 4.921662916843103
+              },
+              "holdout": {
+                "n": 0,
+                "mean_pct": null,
+                "hit_rate_pct": null,
+                "stdev_pct": null,
+                "t_approx": null
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S80_89",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 577,
+                "mean_pct": 0.46326066724436743,
+                "hit_rate_pct": 53.20623916811092,
+                "stdev_pct": 7.2007817484095735,
+                "t_approx": 1.545374305357775
+              },
+              "holdout": {
+                "n": 277,
+                "mean_pct": 0.9545104657039711,
+                "hit_rate_pct": 56.67870036101083,
+                "stdev_pct": 7.12804307599353,
+                "t_approx": 2.2286930745644806
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C70_79"
+              },
+              "training": {
+                "n": 961,
+                "mean_pct": 0.1413239292403746,
+                "hit_rate_pct": 52.13319458896982,
+                "stdev_pct": 3.150331160041144,
+                "t_approx": 1.390660722282414
+              },
+              "holdout": {
+                "n": 12,
+                "mean_pct": 2.5438231666666664,
+                "hit_rate_pct": 83.33333333333333,
+                "stdev_pct": 4.426807449936219,
+                "t_approx": 1.9906133347638146
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM"
+              ]
+            }
+          ]
+        },
+        {
+          "horizon_sessions": 10,
+          "training_observations": 29557,
+          "holdout_observations": 13712,
+          "training_selected_cohorts": 12,
+          "passed_cohorts": 6,
+          "cohorts": [
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 2854,
+                "mean_pct": 0.23874358759635597,
+                "hit_rate_pct": 51.89208128941836,
+                "stdev_pct": 5.0047687835048125,
+                "t_approx": 2.548441577339705
+              },
+              "holdout": {
+                "n": 1303,
+                "mean_pct": 0.08352208518802763,
+                "hit_rate_pct": 52.033768227168075,
+                "stdev_pct": 5.5381938137363695,
+                "t_approx": 0.5443840420950817
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_MEAN_BELOW_FLOOR"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 586,
+                "mean_pct": 0.5289153651877133,
+                "hit_rate_pct": 51.36518771331058,
+                "stdev_pct": 7.276006170865021,
+                "t_approx": 1.7597133666054945
+              },
+              "holdout": {
+                "n": 266,
+                "mean_pct": -0.8364829887218045,
+                "hit_rate_pct": 45.86466165413534,
+                "stdev_pct": 7.860055542497605,
+                "t_approx": -1.7356906207128198
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 4535,
+                "mean_pct": 0.45748802910694597,
+                "hit_rate_pct": 54.35501653803749,
+                "stdev_pct": 5.055199033356428,
+                "t_approx": 6.094388291313736
+              },
+              "holdout": {
+                "n": 2102,
+                "mean_pct": 0.3469555670789724,
+                "hit_rate_pct": 53.663177925784964,
+                "stdev_pct": 5.517456078742056,
+                "t_approx": 2.883044405178591
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_DOWN",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 778,
+                "mean_pct": 1.1673225745501286,
+                "hit_rate_pct": 63.624678663239074,
+                "stdev_pct": 5.025486250461586,
+                "t_approx": 6.478919646011345
+              },
+              "holdout": {
+                "n": 389,
+                "mean_pct": -0.3527824498714653,
+                "hit_rate_pct": 53.2133676092545,
+                "stdev_pct": 6.157080935845253,
+                "t_approx": -1.1300740700349894
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_STRESSED",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S70_79",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 317,
+                "mean_pct": 0.8965941041009463,
+                "hit_rate_pct": 56.15141955835962,
+                "stdev_pct": 6.0473466793939386,
+                "t_approx": 2.6397369006831575
+              },
+              "holdout": {
+                "n": 50,
+                "mean_pct": -0.17723590000000006,
+                "hit_rate_pct": 52.0,
+                "stdev_pct": 6.734429718127632,
+                "t_approx": -0.1860955002950789
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_STRESSED",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 1034,
+                "mean_pct": 0.6043695328820116,
+                "hit_rate_pct": 58.22050290135397,
+                "stdev_pct": 4.031879807471009,
+                "t_approx": 4.82009119566201
+              },
+              "holdout": {
+                "n": 136,
+                "mean_pct": 1.697315882352941,
+                "hit_rate_pct": 66.17647058823529,
+                "stdev_pct": 6.390592785403197,
+                "t_approx": 3.0973550006073443
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_UP",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 699,
+                "mean_pct": 1.5406012231759656,
+                "hit_rate_pct": 57.081545064377686,
+                "stdev_pct": 6.044529325131967,
+                "t_approx": 6.738548171007424
+              },
+              "holdout": {
+                "n": 392,
+                "mean_pct": 1.5658377168367348,
+                "hit_rate_pct": 59.94897959183673,
+                "stdev_pct": 4.76301172283036,
+                "t_approx": 6.508907998307236
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C70_79"
+              },
+              "training": {
+                "n": 365,
+                "mean_pct": 0.8552138219178083,
+                "hit_rate_pct": 57.534246575342465,
+                "stdev_pct": 4.728500642239641,
+                "t_approx": 3.4553949258848156
+              },
+              "holdout": {
+                "n": 9,
+                "mean_pct": -3.609313222222222,
+                "hit_rate_pct": 33.333333333333336,
+                "stdev_pct": 4.393648700724712,
+                "t_approx": -2.4644527599306354
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S70_79",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 1314,
+                "mean_pct": 0.865402799847793,
+                "hit_rate_pct": 56.240487062404874,
+                "stdev_pct": 7.108571554467905,
+                "t_approx": 4.412997070979497
+              },
+              "holdout": {
+                "n": 675,
+                "mean_pct": 0.5209859125925926,
+                "hit_rate_pct": 53.77777777777778,
+                "stdev_pct": 7.391600684228217,
+                "t_approx": 1.8312151369934875
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "BULL_STRESSED",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 492,
+                "mean_pct": 0.48608839024390244,
+                "hit_rate_pct": 51.21951219512195,
+                "stdev_pct": 4.827067708663392,
+                "t_approx": 2.233646330531602
+              },
+              "holdout": {
+                "n": 79,
+                "mean_pct": 0.8621032658227847,
+                "hit_rate_pct": 59.49367088607595,
+                "stdev_pct": 7.985203894995389,
+                "t_approx": 0.9595924581510059
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C70_79"
+              },
+              "training": {
+                "n": 520,
+                "mean_pct": 0.6955675538461539,
+                "hit_rate_pct": 57.11538461538461,
+                "stdev_pct": 4.576343562712031,
+                "t_approx": 3.4659505805185558
+              },
+              "holdout": {
+                "n": 10,
+                "mean_pct": 2.6028206,
+                "hit_rate_pct": 80.0,
+                "stdev_pct": 10.767834990793146,
+                "t_approx": 0.764391490382579
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S80_89",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 278,
+                "mean_pct": 1.88914990647482,
+                "hit_rate_pct": 51.43884892086331,
+                "stdev_pct": 11.594625595954994,
+                "t_approx": 2.716639992275342
+              },
+              "holdout": {
+                "n": 139,
+                "mean_pct": 1.2908123165467627,
+                "hit_rate_pct": 53.9568345323741,
+                "stdev_pct": 10.721499802120084,
+                "t_approx": 1.4194331996280076
+              },
+              "passed": true,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "horizon_sessions": 20,
+          "training_observations": 15502,
+          "holdout_observations": 7285,
+          "training_selected_cohorts": 11,
+          "passed_cohorts": 7,
+          "cohorts": [
+            {
+              "cohort": {
+                "regime": "TRANSITION_UP",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 470,
+                "mean_pct": 0.2987252425531915,
+                "hit_rate_pct": 51.702127659574465,
+                "stdev_pct": 5.814513490551736,
+                "t_approx": 1.1138006549016428
+              },
+              "holdout": {
+                "n": 295,
+                "mean_pct": 2.974238786440678,
+                "hit_rate_pct": 66.44067796610169,
+                "stdev_pct": 6.850277206392948,
+                "t_approx": 7.457249860065814
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 1596,
+                "mean_pct": 0.7815152863408521,
+                "hit_rate_pct": 53.88471177944862,
+                "stdev_pct": 7.571039106257049,
+                "t_approx": 4.123807947390702
+              },
+              "holdout": {
+                "n": 721,
+                "mean_pct": 0.5748940249653259,
+                "hit_rate_pct": 53.536754507628295,
+                "stdev_pct": 8.653808716629868,
+                "t_approx": 1.7838081175895784
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "BULL_STRESSED",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 266,
+                "mean_pct": 1.0542987368421053,
+                "hit_rate_pct": 57.5187969924812,
+                "stdev_pct": 7.1861804874439255,
+                "t_approx": 2.3927999106100595
+              },
+              "holdout": {
+                "n": 48,
+                "mean_pct": -2.262216875,
+                "hit_rate_pct": 50.0,
+                "stdev_pct": 8.259868717813344,
+                "t_approx": -1.8974996814607905
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 2337,
+                "mean_pct": 0.5235621570389388,
+                "hit_rate_pct": 53.35900727428327,
+                "stdev_pct": 7.086304815619745,
+                "t_approx": 3.571723037919065
+              },
+              "holdout": {
+                "n": 1030,
+                "mean_pct": 0.7265217262135922,
+                "hit_rate_pct": 54.75728155339806,
+                "stdev_pct": 7.612446255811831,
+                "t_approx": 3.0629716632188337
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_DOWN",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 427,
+                "mean_pct": 1.356381868852459,
+                "hit_rate_pct": 61.35831381733021,
+                "stdev_pct": 7.007318724224061,
+                "t_approx": 3.9998531013590286
+              },
+              "holdout": {
+                "n": 278,
+                "mean_pct": 1.2312615,
+                "hit_rate_pct": 57.9136690647482,
+                "stdev_pct": 7.331508381465709,
+                "t_approx": 2.8001375297984934
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "BULL_STRESSED",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 485,
+                "mean_pct": 2.039110150515464,
+                "hit_rate_pct": 64.5360824742268,
+                "stdev_pct": 6.063416594592629,
+                "t_approx": 7.406178036799246
+              },
+              "holdout": {
+                "n": 87,
+                "mean_pct": -2.070182114942529,
+                "hit_rate_pct": 43.67816091954023,
+                "stdev_pct": 7.713802784155773,
+                "t_approx": -2.503223615549997
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S70_79",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 692,
+                "mean_pct": 1.9225588497109827,
+                "hit_rate_pct": 53.90173410404624,
+                "stdev_pct": 14.261552608024664,
+                "t_approx": 3.5462216869511503
+              },
+              "holdout": {
+                "n": 304,
+                "mean_pct": 1.2970865361842105,
+                "hit_rate_pct": 52.63157894736842,
+                "stdev_pct": 10.325368991125673,
+                "t_approx": 2.1902826473759953
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_DOWN",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 328,
+                "mean_pct": 1.919966243902439,
+                "hit_rate_pct": 61.28048780487805,
+                "stdev_pct": 7.431616152961384,
+                "t_approx": 4.678937510471823
+              },
+              "holdout": {
+                "n": 247,
+                "mean_pct": 0.5018077813765183,
+                "hit_rate_pct": 53.036437246963565,
+                "stdev_pct": 7.757091947367261,
+                "t_approx": 1.0166862002868062
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C70_79"
+              },
+              "training": {
+                "n": 276,
+                "mean_pct": 1.2468709782608696,
+                "hit_rate_pct": 57.2463768115942,
+                "stdev_pct": 6.934874861980936,
+                "t_approx": 2.9870151742127327
+              },
+              "holdout": {
+                "n": 3,
+                "mean_pct": -2.894323,
+                "hit_rate_pct": 66.66666666666667,
+                "stdev_pct": 16.19838670832691,
+                "t_approx": -0.3094823317767901
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 321,
+                "mean_pct": 0.43360253894080997,
+                "hit_rate_pct": 53.271028037383175,
+                "stdev_pct": 10.58559673102657,
+                "t_approx": 0.7338866500835602
+              },
+              "holdout": {
+                "n": 140,
+                "mean_pct": 0.07984195714285715,
+                "hit_rate_pct": 47.142857142857146,
+                "stdev_pct": 10.715690373850887,
+                "t_approx": 0.08816070118050914
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_UP",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 409,
+                "mean_pct": 1.2574858679706602,
+                "hit_rate_pct": 55.99022004889976,
+                "stdev_pct": 6.83773096153818,
+                "t_approx": 3.7192276171378076
+              },
+              "holdout": {
+                "n": 209,
+                "mean_pct": 2.081678976076555,
+                "hit_rate_pct": 62.67942583732057,
+                "stdev_pct": 6.9198818831462265,
+                "t_approx": 4.3489880834597185
+              },
+              "passed": true,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "horizon_sessions": 40,
+          "training_observations": 8053,
+          "holdout_observations": 3899,
+          "training_selected_cohorts": 4,
+          "passed_cohorts": 3,
+          "cohorts": [
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 873,
+                "mean_pct": 0.8403985830469645,
+                "hit_rate_pct": 50.85910652920962,
+                "stdev_pct": 9.827908804554555,
+                "t_approx": 2.5265698855766816
+              },
+              "holdout": {
+                "n": 330,
+                "mean_pct": 2.761853896969697,
+                "hit_rate_pct": 56.666666666666664,
+                "stdev_pct": 12.18275593018462,
+                "t_approx": 4.118244497572786
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "BULL_STRESSED",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 266,
+                "mean_pct": 3.031388319548872,
+                "hit_rate_pct": 64.66165413533835,
+                "stdev_pct": 9.061846728880925,
+                "t_approx": 5.455890920428806
+              },
+              "holdout": {
+                "n": 2,
+                "mean_pct": -5.6769365,
+                "hit_rate_pct": 0.0,
+                "stdev_pct": 1.5855715000000004,
+                "t_approx": -5.063411262772349
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 1242,
+                "mean_pct": 1.435569273752013,
+                "hit_rate_pct": 54.830917874396135,
+                "stdev_pct": 10.305935617788315,
+                "t_approx": 4.9090508100680585
+              },
+              "holdout": {
+                "n": 521,
+                "mean_pct": 2.84280286756238,
+                "hit_rate_pct": 59.50095969289827,
+                "stdev_pct": 12.338355865157075,
+                "t_approx": 5.259062285653801
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S70_79",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 390,
+                "mean_pct": 5.417624343589743,
+                "hit_rate_pct": 64.1025641025641,
+                "stdev_pct": 19.627119837267674,
+                "t_approx": 5.451105874888516
+              },
+              "holdout": {
+                "n": 165,
+                "mean_pct": 4.387445987878788,
+                "hit_rate_pct": 61.21212121212121,
+                "stdev_pct": 16.290583659660303,
+                "t_approx": 3.459530076886724
+              },
+              "passed": true,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "horizon_sessions": 60,
+          "training_observations": 5632,
+          "holdout_observations": 2802,
+          "training_selected_cohorts": 2,
+          "passed_cohorts": 1,
+          "cohorts": [
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 935,
+                "mean_pct": 2.1603903486631015,
+                "hit_rate_pct": 54.973262032085564,
+                "stdev_pct": 15.359914660203248,
+                "t_approx": 4.300799842385794
+              },
+              "holdout": {
+                "n": 317,
+                "mean_pct": 0.21329482334384856,
+                "hit_rate_pct": 53.31230283911672,
+                "stdev_pct": 12.56160517668698,
+                "t_approx": 0.3023185579813377
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 640,
+                "mean_pct": 1.4588835734375,
+                "hit_rate_pct": 52.96875,
+                "stdev_pct": 12.662003522096041,
+                "t_approx": 2.914796177408948
+              },
+              "holdout": {
+                "n": 245,
+                "mean_pct": 2.5486621632653064,
+                "hit_rate_pct": 54.285714285714285,
+                "stdev_pct": 14.434751420521948,
+                "t_approx": 2.7636688557368836
+              },
+              "passed": true,
+              "reasons": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "holdout_year": 2026,
+      "holdout_credit": "PARTIAL_YEAR",
+      "training_first": "2022-10-14",
+      "training_last": "2025-12-31",
+      "holdout_first": "2026-01-02",
+      "holdout_last": "2026-05-26",
+      "horizons": [
+        {
+          "horizon_sessions": 5,
+          "training_observations": 82015,
+          "holdout_observations": 10598,
+          "training_selected_cohorts": 20,
+          "passed_cohorts": 6,
+          "cohorts": [
+            {
+              "cohort": {
+                "regime": "TRANSITION_UP",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S70_79",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 933,
+                "mean_pct": 0.2934142465166131,
+                "hit_rate_pct": 51.98285101822079,
+                "stdev_pct": 4.23111421992799,
+                "t_approx": 2.1182014908749602
+              },
+              "holdout": {
+                "n": 0,
+                "mean_pct": null,
+                "hit_rate_pct": null,
+                "stdev_pct": null,
+                "t_approx": null
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_UP",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 2687,
+                "mean_pct": 0.15830605098623,
+                "hit_rate_pct": 53.740230740602904,
+                "stdev_pct": 3.3144210127676508,
+                "t_approx": 2.475846269587446
+              },
+              "holdout": {
+                "n": 0,
+                "mean_pct": null,
+                "hit_rate_pct": null,
+                "stdev_pct": null,
+                "t_approx": null
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 13445,
+                "mean_pct": 0.17326889550018595,
+                "hit_rate_pct": 52.473038304202305,
+                "stdev_pct": 3.5725693738968163,
+                "t_approx": 5.623676620418304
+              },
+              "holdout": {
+                "n": 1161,
+                "mean_pct": 0.3642377622739018,
+                "hit_rate_pct": 55.21102497846684,
+                "stdev_pct": 4.371928336673161,
+                "t_approx": 2.838755865253122
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "RANGE_NORMAL",
+                "direction": "BEARISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C70_79"
+              },
+              "training": {
+                "n": 282,
+                "mean_pct": 1.7067768971631205,
+                "hit_rate_pct": 65.2482269503546,
+                "stdev_pct": 5.748163375968656,
+                "t_approx": 4.986228842386835
+              },
+              "holdout": {
+                "n": 0,
+                "mean_pct": null,
+                "hit_rate_pct": null,
+                "stdev_pct": null,
+                "t_approx": null
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 7531,
+                "mean_pct": 0.1218920877705484,
+                "hit_rate_pct": 50.736953923781705,
+                "stdev_pct": 3.6830742265997762,
+                "t_approx": 2.872045845007015
+              },
+              "holdout": {
+                "n": 625,
+                "mean_pct": 0.53978624,
+                "hit_rate_pct": 54.08,
+                "stdev_pct": 5.132612241416149,
+                "t_approx": 2.629198420856484
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_DOWN",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 2030,
+                "mean_pct": 0.49016600492610835,
+                "hit_rate_pct": 57.53694581280788,
+                "stdev_pct": 4.251873805274958,
+                "t_approx": 5.194106384385412
+              },
+              "holdout": {
+                "n": 421,
+                "mean_pct": -0.10947129691211403,
+                "hit_rate_pct": 49.1686460807601,
+                "stdev_pct": 4.551350235692848,
+                "t_approx": -0.4935157923360258
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S70_79",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 4036,
+                "mean_pct": 0.32249398761149656,
+                "hit_rate_pct": 52.92368681863231,
+                "stdev_pct": 4.874559163894348,
+                "t_approx": 4.203023857500701
+              },
+              "holdout": {
+                "n": 533,
+                "mean_pct": 1.990930234521576,
+                "hit_rate_pct": 63.22701688555347,
+                "stdev_pct": 7.541352320301986,
+                "t_approx": 6.094953766147191
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "BULL_STRESSED",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S70_79",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 722,
+                "mean_pct": 0.20204456371191135,
+                "hit_rate_pct": 52.35457063711911,
+                "stdev_pct": 4.673141928868567,
+                "t_approx": 1.1617342602757377
+              },
+              "holdout": {
+                "n": 150,
+                "mean_pct": 2.2792088533333335,
+                "hit_rate_pct": 66.66666666666667,
+                "stdev_pct": 6.017516743273526,
+                "t_approx": 4.638872599848817
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "BULL_STRESSED",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 2234,
+                "mean_pct": 0.3933356812891674,
+                "hit_rate_pct": 59.80304386750224,
+                "stdev_pct": 3.4712053786403314,
+                "t_approx": 5.355803310677124
+              },
+              "holdout": {
+                "n": 364,
+                "mean_pct": 0.5477232335164836,
+                "hit_rate_pct": 51.37362637362637,
+                "stdev_pct": 4.2586665984102625,
+                "t_approx": 2.4537946416057363
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_HIT_RATE_BELOW_52"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_DOWN",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S70_79",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 538,
+                "mean_pct": 0.09807383271375462,
+                "hit_rate_pct": 50.185873605947954,
+                "stdev_pct": 5.284748288883965,
+                "t_approx": 0.43044729088378986
+              },
+              "holdout": {
+                "n": 302,
+                "mean_pct": 0.03266081125827815,
+                "hit_rate_pct": 47.019867549668874,
+                "stdev_pct": 5.938291617568834,
+                "t_approx": 0.0955804164180811
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_UP",
+                "direction": "BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 668,
+                "mean_pct": 0.9064661047904191,
+                "hit_rate_pct": 52.395209580838326,
+                "stdev_pct": 6.62488901802495,
+                "t_approx": 3.5363984641454906
+              },
+              "holdout": {
+                "n": 0,
+                "mean_pct": null,
+                "hit_rate_pct": null,
+                "stdev_pct": null,
+                "t_approx": null
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_UP",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 1758,
+                "mean_pct": 0.4515588486916951,
+                "hit_rate_pct": 56.8259385665529,
+                "stdev_pct": 3.8503539071286146,
+                "t_approx": 4.917259666113332
+              },
+              "holdout": {
+                "n": 0,
+                "mean_pct": null,
+                "hit_rate_pct": null,
+                "stdev_pct": null,
+                "t_approx": null
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C70_79"
+              },
+              "training": {
+                "n": 748,
+                "mean_pct": 0.5174584318181819,
+                "hit_rate_pct": 56.68449197860963,
+                "stdev_pct": 3.6670853549894677,
+                "t_approx": 3.8592707532260397
+              },
+              "holdout": {
+                "n": 5,
+                "mean_pct": 1.222789,
+                "hit_rate_pct": 60.0,
+                "stdev_pct": 8.363506054532417,
+                "t_approx": 0.32692501306401633
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_DOWN",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 272,
+                "mean_pct": 0.12663065441176471,
+                "hit_rate_pct": 55.51470588235294,
+                "stdev_pct": 3.4757157644819276,
+                "t_approx": 0.6008679638493007
+              },
+              "holdout": {
+                "n": 32,
+                "mean_pct": 0.9458356250000001,
+                "hit_rate_pct": 68.75,
+                "stdev_pct": 3.367102248912694,
+                "t_approx": 1.589038252797432
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_DOWN",
+                "direction": "BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 353,
+                "mean_pct": 0.15526173087818698,
+                "hit_rate_pct": 54.95750708215297,
+                "stdev_pct": 6.348233104147096,
+                "t_approx": 0.45951417256416827
+              },
+              "holdout": {
+                "n": 137,
+                "mean_pct": -0.2209593795620438,
+                "hit_rate_pct": 43.065693430656935,
+                "stdev_pct": 6.455827318846296,
+                "t_approx": -0.4006091090265875
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_STRESSED",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 938,
+                "mean_pct": 0.3448308752665245,
+                "hit_rate_pct": 55.863539445628994,
+                "stdev_pct": 3.7399104864737516,
+                "t_approx": 2.8238807705966575
+              },
+              "holdout": {
+                "n": 239,
+                "mean_pct": 0.8523114351464435,
+                "hit_rate_pct": 56.06694560669456,
+                "stdev_pct": 4.618900741507196,
+                "t_approx": 2.85271664542659
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "BEAR_ORDERLY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 301,
+                "mean_pct": 0.9165187607973422,
+                "hit_rate_pct": 65.11627906976744,
+                "stdev_pct": 3.230819841361418,
+                "t_approx": 4.921662916843103
+              },
+              "holdout": {
+                "n": 0,
+                "mean_pct": null,
+                "hit_rate_pct": null,
+                "stdev_pct": null,
+                "t_approx": null
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "BULLISH",
+                "score_band": "S70_79",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 306,
+                "mean_pct": 0.5638948496732026,
+                "hit_rate_pct": 50.65359477124183,
+                "stdev_pct": 7.388573448110552,
+                "t_approx": 1.3350521986228492
+              },
+              "holdout": {
+                "n": 27,
+                "mean_pct": -0.9094289999999998,
+                "hit_rate_pct": 51.851851851851855,
+                "stdev_pct": 7.325688153934507,
+                "t_approx": -0.6450631807322651
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S80_89",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 847,
+                "mean_pct": 0.6610166871310508,
+                "hit_rate_pct": 54.19126328217237,
+                "stdev_pct": 7.139063364501655,
+                "t_approx": 2.694715321956096
+              },
+              "holdout": {
+                "n": 151,
+                "mean_pct": 4.901778437086093,
+                "hit_rate_pct": 70.86092715231788,
+                "stdev_pct": 9.477799876859718,
+                "t_approx": 6.355278930538327
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C70_79"
+              },
+              "training": {
+                "n": 973,
+                "mean_pct": 0.1709539301130524,
+                "hit_rate_pct": 52.51798561151079,
+                "stdev_pct": 3.1802798128409706,
+                "t_approx": 1.676757188901885
+              },
+              "holdout": {
+                "n": 4,
+                "mean_pct": 6.99661475,
+                "hit_rate_pct": 75.0,
+                "stdev_pct": 4.692669099553759,
+                "t_approx": 2.9819339917512315
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM"
+              ]
+            }
+          ]
+        },
+        {
+          "horizon_sessions": 10,
+          "training_observations": 43075,
+          "holdout_observations": 5640,
+          "training_selected_cohorts": 14,
+          "passed_cohorts": 5,
+          "cohorts": [
+            {
+              "cohort": {
+                "regime": "TRANSITION_UP",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S70_79",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 528,
+                "mean_pct": 0.8785162954545455,
+                "hit_rate_pct": 53.97727272727273,
+                "stdev_pct": 6.16154244218173,
+                "t_approx": 3.276252297277805
+              },
+              "holdout": {
+                "n": 0,
+                "mean_pct": null,
+                "hit_rate_pct": null,
+                "stdev_pct": null,
+                "t_approx": null
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_UP",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 1400,
+                "mean_pct": 0.48008952214285716,
+                "hit_rate_pct": 53.357142857142854,
+                "stdev_pct": 4.6008605030114875,
+                "t_approx": 3.904335951204796
+              },
+              "holdout": {
+                "n": 0,
+                "mean_pct": null,
+                "hit_rate_pct": null,
+                "stdev_pct": null,
+                "t_approx": null
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 4160,
+                "mean_pct": 0.17420069110576922,
+                "hit_rate_pct": 51.97115384615385,
+                "stdev_pct": 5.223938847973903,
+                "t_approx": 2.1507922087122657
+              },
+              "holdout": {
+                "n": 361,
+                "mean_pct": 0.48918948199445983,
+                "hit_rate_pct": 53.73961218836565,
+                "stdev_pct": 8.094430111735981,
+                "t_approx": 1.1482710987174563
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 6646,
+                "mean_pct": 0.457308467950647,
+                "hit_rate_pct": 54.318386999699065,
+                "stdev_pct": 5.154734800722406,
+                "t_approx": 7.232410782523304
+              },
+              "holdout": {
+                "n": 536,
+                "mean_pct": 1.3594470559701493,
+                "hit_rate_pct": 61.19402985074627,
+                "stdev_pct": 6.896850510118444,
+                "t_approx": 4.563456138363807
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_DOWN",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 1156,
+                "mean_pct": 0.6521554169550173,
+                "hit_rate_pct": 59.94809688581315,
+                "stdev_pct": 5.580063154936045,
+                "t_approx": 3.9736618674031337
+              },
+              "holdout": {
+                "n": 262,
+                "mean_pct": -0.39253664122137405,
+                "hit_rate_pct": 44.274809160305345,
+                "stdev_pct": 6.302587489341138,
+                "t_approx": -1.0081193823647447
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_STRESSED",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S70_79",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 358,
+                "mean_pct": 0.5139048575418994,
+                "hit_rate_pct": 53.63128491620112,
+                "stdev_pct": 6.118370354631785,
+                "t_approx": 1.5892362919910914
+              },
+              "holdout": {
+                "n": 65,
+                "mean_pct": 5.149099507692307,
+                "hit_rate_pct": 66.15384615384616,
+                "stdev_pct": 11.104907857440692,
+                "t_approx": 3.738290126814252
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_STRESSED",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 1134,
+                "mean_pct": 0.6138145432098765,
+                "hit_rate_pct": 58.46560846560847,
+                "stdev_pct": 4.294416887388532,
+                "t_approx": 4.813261967671761
+              },
+              "holdout": {
+                "n": 182,
+                "mean_pct": 1.8150697307692307,
+                "hit_rate_pct": 59.89010989010989,
+                "stdev_pct": 6.368726309659945,
+                "t_approx": 3.8448236281771355
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_UP",
+                "direction": "BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 395,
+                "mean_pct": 2.1132670101265822,
+                "hit_rate_pct": 58.9873417721519,
+                "stdev_pct": 7.894113167443461,
+                "t_approx": 5.32046478691859
+              },
+              "holdout": {
+                "n": 0,
+                "mean_pct": null,
+                "hit_rate_pct": null,
+                "stdev_pct": null,
+                "t_approx": null
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_UP",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 1090,
+                "mean_pct": 1.5406757935779816,
+                "hit_rate_pct": 57.79816513761468,
+                "stdev_pct": 5.626079102777584,
+                "t_approx": 9.041045899817387
+              },
+              "holdout": {
+                "n": 0,
+                "mean_pct": null,
+                "hit_rate_pct": null,
+                "stdev_pct": null,
+                "t_approx": null
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C70_79"
+              },
+              "training": {
+                "n": 374,
+                "mean_pct": 0.747778679144385,
+                "hit_rate_pct": 56.95187165775401,
+                "stdev_pct": 4.77004375587608,
+                "t_approx": 3.0317020437577686
+              },
+              "holdout": {
+                "n": 1,
+                "mean_pct": 6.488079,
+                "hit_rate_pct": 100.0,
+                "stdev_pct": 0.0,
+                "t_approx": null
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S70_79",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 1997,
+                "mean_pct": 0.7809317045568352,
+                "hit_rate_pct": 55.38307461191788,
+                "stdev_pct": 7.2380231198769955,
+                "t_approx": 4.821499446740078
+              },
+              "holdout": {
+                "n": 291,
+                "mean_pct": 2.5760279587628867,
+                "hit_rate_pct": 65.63573883161511,
+                "stdev_pct": 9.803626781490085,
+                "t_approx": 4.482396777600404
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "BULL_STRESSED",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 563,
+                "mean_pct": 0.500852298401421,
+                "hit_rate_pct": 51.86500888099467,
+                "stdev_pct": 5.0560273130081965,
+                "t_approx": 2.3504686180407526
+              },
+              "holdout": {
+                "n": 120,
+                "mean_pct": 0.5101742166666666,
+                "hit_rate_pct": 50.0,
+                "stdev_pct": 7.447280109260658,
+                "t_approx": 0.7504321648339415
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_HIT_RATE_BELOW_52"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C70_79"
+              },
+              "training": {
+                "n": 529,
+                "mean_pct": 0.7207349508506616,
+                "hit_rate_pct": 57.46691871455577,
+                "stdev_pct": 4.7732431158749495,
+                "t_approx": 3.4728806949793554
+              },
+              "holdout": {
+                "n": 2,
+                "mean_pct": -2.1611355000000003,
+                "hit_rate_pct": 0.0,
+                "stdev_pct": 1.0723825,
+                "t_approx": -2.8500158611558475
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S80_89",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 412,
+                "mean_pct": 1.808329322815534,
+                "hit_rate_pct": 52.42718446601942,
+                "stdev_pct": 11.24980055074299,
+                "t_approx": 3.2627313041597716
+              },
+              "holdout": {
+                "n": 81,
+                "mean_pct": 5.76825237037037,
+                "hit_rate_pct": 72.8395061728395,
+                "stdev_pct": 9.86683564488562,
+                "t_approx": 5.261491444852697
+              },
+              "passed": true,
+              "reasons": []
+            }
+          ]
+        },
+        {
+          "horizon_sessions": 20,
+          "training_observations": 22559,
+          "holdout_observations": 2976,
+          "training_selected_cohorts": 12,
+          "passed_cohorts": 2,
+          "cohorts": [
+            {
+              "cohort": {
+                "regime": "TRANSITION_UP",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 753,
+                "mean_pct": 1.3767668353253653,
+                "hit_rate_pct": 57.636122177954846,
+                "stdev_pct": 6.276543763770273,
+                "t_approx": 6.019179885550661
+              },
+              "holdout": {
+                "n": 0,
+                "mean_pct": null,
+                "hit_rate_pct": null,
+                "stdev_pct": null,
+                "t_approx": null
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 2324,
+                "mean_pct": 0.7152294956970741,
+                "hit_rate_pct": 53.270223752151466,
+                "stdev_pct": 7.796264821541787,
+                "t_approx": 4.422592197614601
+              },
+              "holdout": {
+                "n": 207,
+                "mean_pct": 1.8452197149758454,
+                "hit_rate_pct": 56.52173913043478,
+                "stdev_pct": 11.578751412624602,
+                "t_approx": 2.2928282751291964
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "BULL_STRESSED",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 302,
+                "mean_pct": 0.8613294900662252,
+                "hit_rate_pct": 56.62251655629139,
+                "stdev_pct": 7.166324581796819,
+                "t_approx": 2.088701187425137
+              },
+              "holdout": {
+                "n": 35,
+                "mean_pct": 2.0114795142857145,
+                "hit_rate_pct": 54.285714285714285,
+                "stdev_pct": 8.859346367209396,
+                "t_approx": 1.3432224901635892
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 3401,
+                "mean_pct": 0.49637431696559836,
+                "hit_rate_pct": 53.30785063216701,
+                "stdev_pct": 7.244155630331517,
+                "t_approx": 3.995994175105341
+              },
+              "holdout": {
+                "n": 256,
+                "mean_pct": 1.57570276171875,
+                "hit_rate_pct": 51.5625,
+                "stdev_pct": 8.75707878142399,
+                "t_approx": 2.8789559642856606
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_HIT_RATE_BELOW_52"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_DOWN",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 635,
+                "mean_pct": 0.9209077023622048,
+                "hit_rate_pct": 57.00787401574803,
+                "stdev_pct": 7.204939312215226,
+                "t_approx": 3.2208658814857127
+              },
+              "holdout": {
+                "n": 139,
+                "mean_pct": -0.07479294964028778,
+                "hit_rate_pct": 46.76258992805755,
+                "stdev_pct": 9.866794069622078,
+                "t_approx": -0.08937004920034028
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_STRESSED",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 521,
+                "mean_pct": 1.8303233627639155,
+                "hit_rate_pct": 63.72360844529751,
+                "stdev_pct": 6.4032463491853004,
+                "t_approx": 6.524488564792233
+              },
+              "holdout": {
+                "n": 21,
+                "mean_pct": -2.471047761904762,
+                "hit_rate_pct": 23.80952380952381,
+                "stdev_pct": 6.865517327597431,
+                "t_approx": -1.6493678297571945
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S70_79",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 1016,
+                "mean_pct": 1.7487055580708661,
+                "hit_rate_pct": 54.92125984251968,
+                "stdev_pct": 13.343394468305931,
+                "t_approx": 4.177314939609532
+              },
+              "holdout": {
+                "n": 162,
+                "mean_pct": 5.1869625493827165,
+                "hit_rate_pct": 62.96296296296296,
+                "stdev_pct": 14.39411171952505,
+                "t_approx": 4.586545967555103
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 480,
+                "mean_pct": 0.4121523458333333,
+                "hit_rate_pct": 51.25,
+                "stdev_pct": 11.195792140705045,
+                "t_approx": 0.8065356487669516
+              },
+              "holdout": {
+                "n": 43,
+                "mean_pct": 1.1894279767441862,
+                "hit_rate_pct": 58.13953488372093,
+                "stdev_pct": 10.730151043438987,
+                "t_approx": 0.726886397498945
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_DOWN",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 513,
+                "mean_pct": 0.9916537875243665,
+                "hit_rate_pct": 54.580896686159846,
+                "stdev_pct": 7.877804460339889,
+                "t_approx": 2.8511072916101954
+              },
+              "holdout": {
+                "n": 192,
+                "mean_pct": -0.44440528125000006,
+                "hit_rate_pct": 32.8125,
+                "stdev_pct": 11.715320079366707,
+                "t_approx": -0.5256245811892805
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C70_79"
+              },
+              "training": {
+                "n": 279,
+                "mean_pct": 1.202342010752688,
+                "hit_rate_pct": 57.34767025089606,
+                "stdev_pct": 7.111902666300592,
+                "t_approx": 2.823867527514021
+              },
+              "holdout": {
+                "n": 1,
+                "mean_pct": -5.30767,
+                "hit_rate_pct": 0.0,
+                "stdev_pct": 0.0,
+                "t_approx": null
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_UP",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 618,
+                "mean_pct": 1.5570408656957928,
+                "hit_rate_pct": 58.25242718446602,
+                "stdev_pct": 7.0948976282624585,
+                "t_approx": 5.4556702784344635
+              },
+              "holdout": {
+                "n": 0,
+                "mean_pct": null,
+                "hit_rate_pct": null,
+                "stdev_pct": null,
+                "t_approx": null
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_UP",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S70_79",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 267,
+                "mean_pct": 1.7568419176029964,
+                "hit_rate_pct": 60.674157303370784,
+                "stdev_pct": 7.722221411184976,
+                "t_approx": 3.7174579623399864
+              },
+              "holdout": {
+                "n": 0,
+                "mean_pct": null,
+                "hit_rate_pct": null,
+                "stdev_pct": null,
+                "t_approx": null
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52"
+              ]
+            }
+          ]
+        },
+        {
+          "horizon_sessions": 40,
+          "training_observations": 11660,
+          "holdout_observations": 1789,
+          "training_selected_cohorts": 8,
+          "passed_cohorts": 3,
+          "cohorts": [
+            {
+              "cohort": {
+                "regime": "TRANSITION_UP",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 362,
+                "mean_pct": 1.9184052320441989,
+                "hit_rate_pct": 54.69613259668508,
+                "stdev_pct": 9.026557118401934,
+                "t_approx": 4.043640157056125
+              },
+              "holdout": {
+                "n": 0,
+                "mean_pct": null,
+                "hit_rate_pct": null,
+                "stdev_pct": null,
+                "t_approx": null
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 1204,
+                "mean_pct": 0.7942278712624584,
+                "hit_rate_pct": 51.91029900332226,
+                "stdev_pct": 10.067710283625079,
+                "t_approx": 2.7373331530880765
+              },
+              "holdout": {
+                "n": 131,
+                "mean_pct": 4.596662946564885,
+                "hit_rate_pct": 61.83206106870229,
+                "stdev_pct": 15.08012743436555,
+                "t_approx": 3.4887776884551935
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_DOWN",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 332,
+                "mean_pct": 2.906603578313253,
+                "hit_rate_pct": 58.13253012048193,
+                "stdev_pct": 11.114504875410576,
+                "t_approx": 4.765019969483406
+              },
+              "holdout": {
+                "n": 69,
+                "mean_pct": 0.5358747101449276,
+                "hit_rate_pct": 46.3768115942029,
+                "stdev_pct": 14.751849969865141,
+                "t_approx": 0.30174585993737946
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_STRESSED",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 301,
+                "mean_pct": 2.225440800664452,
+                "hit_rate_pct": 61.794019933554814,
+                "stdev_pct": 9.853152196641192,
+                "t_approx": 3.9185383606029793
+              },
+              "holdout": {
+                "n": 0,
+                "mean_pct": null,
+                "hit_rate_pct": null,
+                "stdev_pct": null,
+                "t_approx": null
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 1751,
+                "mean_pct": 1.3907326978869217,
+                "hit_rate_pct": 55.45402627070246,
+                "stdev_pct": 10.696958327765001,
+                "t_approx": 5.440344916168542
+              },
+              "holdout": {
+                "n": 118,
+                "mean_pct": 2.210941161016949,
+                "hit_rate_pct": 67.79661016949153,
+                "stdev_pct": 10.68958464814801,
+                "t_approx": 2.2467634900339606
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S70_79",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 567,
+                "mean_pct": 4.7348845731922395,
+                "hit_rate_pct": 62.96296296296296,
+                "stdev_pct": 19.31726856042053,
+                "t_approx": 5.8365365296195595
+              },
+              "holdout": {
+                "n": 79,
+                "mean_pct": 9.66576453164557,
+                "hit_rate_pct": 64.55696202531645,
+                "stdev_pct": 25.675947998760154,
+                "t_approx": 3.3459794494601596
+              },
+              "passed": true,
+              "reasons": []
+            },
+            {
+              "cohort": {
+                "regime": "TRANSITION_DOWN",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 251,
+                "mean_pct": 2.1747065258964144,
+                "hit_rate_pct": 60.95617529880478,
+                "stdev_pct": 10.844088522233719,
+                "t_approx": 3.1771993447179785
+              },
+              "holdout": {
+                "n": 143,
+                "mean_pct": -2.6264436573426573,
+                "hit_rate_pct": 29.37062937062937,
+                "stdev_pct": 7.797489778907955,
+                "t_approx": -4.027924238711479
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 261,
+                "mean_pct": 0.31371226436781613,
+                "hit_rate_pct": 50.191570881226056,
+                "stdev_pct": 14.090699938848239,
+                "t_approx": 0.3596823975327932
+              },
+              "holdout": {
+                "n": 40,
+                "mean_pct": 3.1209632,
+                "hit_rate_pct": 55.0,
+                "stdev_pct": 17.09909143800449,
+                "t_approx": 1.1543715338736615
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM"
+              ]
+            }
+          ]
+        },
+        {
+          "horizon_sessions": 60,
+          "training_observations": 8051,
+          "holdout_observations": 1200,
+          "training_selected_cohorts": 4,
+          "passed_cohorts": 0,
+          "cohorts": [
+            {
+              "cohort": {
+                "regime": "TRANSITION_UP",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 298,
+                "mean_pct": 2.337525654362416,
+                "hit_rate_pct": 55.70469798657718,
+                "stdev_pct": 11.93820426347537,
+                "t_approx": 3.3800685844335865
+              },
+              "holdout": {
+                "n": 0,
+                "mean_pct": null,
+                "hit_rate_pct": null,
+                "stdev_pct": null,
+                "t_approx": null
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S60_69",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 1276,
+                "mean_pct": 2.455734931818182,
+                "hit_rate_pct": 56.03448275862069,
+                "stdev_pct": 15.456127611041172,
+                "t_approx": 5.675526167357978
+              },
+              "holdout": {
+                "n": 1,
+                "mean_pct": 11.250472,
+                "hit_rate_pct": 100.0,
+                "stdev_pct": 0.0,
+                "t_approx": null
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "STRONG_BULLISH",
+                "score_band": "S70_79",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 290,
+                "mean_pct": 2.5989619551724137,
+                "hit_rate_pct": 53.10344827586207,
+                "stdev_pct": 21.120247998293856,
+                "t_approx": 2.095559071491483
+              },
+              "holdout": {
+                "n": 5,
+                "mean_pct": -7.3633556,
+                "hit_rate_pct": 40.0,
+                "stdev_pct": 8.750072211644303,
+                "t_approx": -1.8816946038676947
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            },
+            {
+              "cohort": {
+                "regime": "BULL_HEALTHY",
+                "direction": "BULLISH",
+                "score_band": "S_LT60",
+                "confidence_band": "C80_100"
+              },
+              "training": {
+                "n": 864,
+                "mean_pct": 2.0124208993055555,
+                "hit_rate_pct": 53.93518518518518,
+                "stdev_pct": 13.864436882127034,
+                "t_approx": 4.266516751819383
+              },
+              "holdout": {
+                "n": 49,
+                "mean_pct": -0.43695675510204085,
+                "hit_rate_pct": 38.775510204081634,
+                "stdev_pct": 16.77208906193146,
+                "t_approx": -0.18236829499413884
+              },
+              "passed": false,
+              "reasons": [
+                "HOLDOUT_N_BELOW_MINIMUM",
+                "HOLDOUT_MEAN_BELOW_FLOOR",
+                "HOLDOUT_HIT_RATE_BELOW_52",
+                "HOLDOUT_RELATIVE_DECAY_EXCESSIVE"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "cohort_certification": [
+    {
+      "horizon_sessions": 5,
+      "regime": "BULL_HEALTHY",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S70_79",
+      "confidence_band": "C80_100",
+      "selected_full": 2,
+      "passed_full": 2,
+      "selected_total": 3,
+      "passed_total": 3,
+      "certified": true
+    },
+    {
+      "horizon_sessions": 10,
+      "regime": "BULL_HEALTHY",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S60_69",
+      "confidence_band": "C80_100",
+      "selected_full": 2,
+      "passed_full": 2,
+      "selected_total": 3,
+      "passed_total": 3,
+      "certified": true
+    },
+    {
+      "horizon_sessions": 10,
+      "regime": "BULL_HEALTHY",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S70_79",
+      "confidence_band": "C80_100",
+      "selected_full": 2,
+      "passed_full": 2,
+      "selected_total": 3,
+      "passed_total": 3,
+      "certified": true
+    },
+    {
+      "horizon_sessions": 20,
+      "regime": "BULL_HEALTHY",
+      "direction": "BULLISH",
+      "score_band": "S_LT60",
+      "confidence_band": "C80_100",
+      "selected_full": 2,
+      "passed_full": 2,
+      "selected_total": 3,
+      "passed_total": 3,
+      "certified": true
+    },
+    {
+      "horizon_sessions": 5,
+      "regime": "BEAR_ORDERLY",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S60_69",
+      "confidence_band": "C80_100",
+      "selected_full": 2,
+      "passed_full": 0,
+      "selected_total": 3,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 5,
+      "regime": "BULL_HEALTHY",
+      "direction": "BULLISH",
+      "score_band": "S60_69",
+      "confidence_band": "C80_100",
+      "selected_full": 2,
+      "passed_full": 0,
+      "selected_total": 2,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 5,
+      "regime": "BULL_HEALTHY",
+      "direction": "BULLISH",
+      "score_band": "S70_79",
+      "confidence_band": "C80_100",
+      "selected_full": 0,
+      "passed_full": 0,
+      "selected_total": 1,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 5,
+      "regime": "BULL_HEALTHY",
+      "direction": "BULLISH",
+      "score_band": "S_LT60",
+      "confidence_band": "C70_79",
+      "selected_full": 2,
+      "passed_full": 0,
+      "selected_total": 3,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 5,
+      "regime": "BULL_HEALTHY",
+      "direction": "BULLISH",
+      "score_band": "S_LT60",
+      "confidence_band": "C80_100",
+      "selected_full": 2,
+      "passed_full": 0,
+      "selected_total": 3,
+      "passed_total": 1,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 5,
+      "regime": "BULL_HEALTHY",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S60_69",
+      "confidence_band": "C70_79",
+      "selected_full": 2,
+      "passed_full": 0,
+      "selected_total": 3,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 5,
+      "regime": "BULL_HEALTHY",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S60_69",
+      "confidence_band": "C80_100",
+      "selected_full": 2,
+      "passed_full": 1,
+      "selected_total": 3,
+      "passed_total": 2,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 5,
+      "regime": "BULL_HEALTHY",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S80_89",
+      "confidence_band": "C80_100",
+      "selected_full": 1,
+      "passed_full": 1,
+      "selected_total": 2,
+      "passed_total": 2,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 5,
+      "regime": "BULL_STRESSED",
+      "direction": "BULLISH",
+      "score_band": "S_LT60",
+      "confidence_band": "C80_100",
+      "selected_full": 1,
+      "passed_full": 1,
+      "selected_total": 2,
+      "passed_total": 2,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 5,
+      "regime": "BULL_STRESSED",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S60_69",
+      "confidence_band": "C80_100",
+      "selected_full": 1,
+      "passed_full": 1,
+      "selected_total": 2,
+      "passed_total": 1,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 5,
+      "regime": "BULL_STRESSED",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S70_79",
+      "confidence_band": "C80_100",
+      "selected_full": 1,
+      "passed_full": 0,
+      "selected_total": 2,
+      "passed_total": 1,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 5,
+      "regime": "RANGE_NORMAL",
+      "direction": "BEARISH",
+      "score_band": "S_LT60",
+      "confidence_band": "C70_79",
+      "selected_full": 2,
+      "passed_full": 0,
+      "selected_total": 3,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 5,
+      "regime": "RANGE_NORMAL",
+      "direction": "BEARISH",
+      "score_band": "S_LT60",
+      "confidence_band": "C80_100",
+      "selected_full": 2,
+      "passed_full": 1,
+      "selected_total": 2,
+      "passed_total": 1,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 5,
+      "regime": "TRANSITION_DOWN",
+      "direction": "BULLISH",
+      "score_band": "S60_69",
+      "confidence_band": "C80_100",
+      "selected_full": 0,
+      "passed_full": 0,
+      "selected_total": 1,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 5,
+      "regime": "TRANSITION_DOWN",
+      "direction": "BULLISH",
+      "score_band": "S_LT60",
+      "confidence_band": "C80_100",
+      "selected_full": 1,
+      "passed_full": 0,
+      "selected_total": 2,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 5,
+      "regime": "TRANSITION_DOWN",
+      "direction": "STRONG_BEARISH",
+      "score_band": "S_LT60",
+      "confidence_band": "C80_100",
+      "selected_full": 1,
+      "passed_full": 0,
+      "selected_total": 1,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 5,
+      "regime": "TRANSITION_DOWN",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S60_69",
+      "confidence_band": "C80_100",
+      "selected_full": 1,
+      "passed_full": 0,
+      "selected_total": 1,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 5,
+      "regime": "TRANSITION_DOWN",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S70_79",
+      "confidence_band": "C80_100",
+      "selected_full": 1,
+      "passed_full": 0,
+      "selected_total": 2,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 5,
+      "regime": "TRANSITION_DOWN",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S_LT60",
+      "confidence_band": "C80_100",
+      "selected_full": 0,
+      "passed_full": 0,
+      "selected_total": 1,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 5,
+      "regime": "TRANSITION_UP",
+      "direction": "BEARISH",
+      "score_band": "S_LT60",
+      "confidence_band": "C80_100",
+      "selected_full": 1,
+      "passed_full": 0,
+      "selected_total": 1,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 5,
+      "regime": "TRANSITION_UP",
+      "direction": "BULLISH",
+      "score_band": "S60_69",
+      "confidence_band": "C80_100",
+      "selected_full": 0,
+      "passed_full": 0,
+      "selected_total": 1,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 5,
+      "regime": "TRANSITION_UP",
+      "direction": "BULLISH",
+      "score_band": "S_LT60",
+      "confidence_band": "C80_100",
+      "selected_full": 2,
+      "passed_full": 1,
+      "selected_total": 3,
+      "passed_total": 1,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 5,
+      "regime": "TRANSITION_UP",
+      "direction": "STRONG_BEARISH",
+      "score_band": "S_LT60",
+      "confidence_band": "C80_100",
+      "selected_full": 3,
+      "passed_full": 0,
+      "selected_total": 3,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 5,
+      "regime": "TRANSITION_UP",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S60_69",
+      "confidence_band": "C80_100",
+      "selected_full": 0,
+      "passed_full": 0,
+      "selected_total": 1,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 5,
+      "regime": "TRANSITION_UP",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S70_79",
+      "confidence_band": "C80_100",
+      "selected_full": 0,
+      "passed_full": 0,
+      "selected_total": 1,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 10,
+      "regime": "BULL_HEALTHY",
+      "direction": "BULLISH",
+      "score_band": "S60_69",
+      "confidence_band": "C80_100",
+      "selected_full": 2,
+      "passed_full": 0,
+      "selected_total": 2,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 10,
+      "regime": "BULL_HEALTHY",
+      "direction": "BULLISH",
+      "score_band": "S_LT60",
+      "confidence_band": "C70_79",
+      "selected_full": 2,
+      "passed_full": 0,
+      "selected_total": 3,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 10,
+      "regime": "BULL_HEALTHY",
+      "direction": "BULLISH",
+      "score_band": "S_LT60",
+      "confidence_band": "C80_100",
+      "selected_full": 2,
+      "passed_full": 0,
+      "selected_total": 3,
+      "passed_total": 1,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 10,
+      "regime": "BULL_HEALTHY",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S60_69",
+      "confidence_band": "C70_79",
+      "selected_full": 2,
+      "passed_full": 0,
+      "selected_total": 3,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 10,
+      "regime": "BULL_HEALTHY",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S80_89",
+      "confidence_band": "C80_100",
+      "selected_full": 1,
+      "passed_full": 1,
+      "selected_total": 2,
+      "passed_total": 2,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 10,
+      "regime": "BULL_STRESSED",
+      "direction": "BULLISH",
+      "score_band": "S_LT60",
+      "confidence_band": "C80_100",
+      "selected_full": 1,
+      "passed_full": 1,
+      "selected_total": 2,
+      "passed_total": 1,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 10,
+      "regime": "BULL_STRESSED",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S60_69",
+      "confidence_band": "C80_100",
+      "selected_full": 1,
+      "passed_full": 1,
+      "selected_total": 2,
+      "passed_total": 2,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 10,
+      "regime": "BULL_STRESSED",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S70_79",
+      "confidence_band": "C80_100",
+      "selected_full": 1,
+      "passed_full": 0,
+      "selected_total": 2,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 10,
+      "regime": "TRANSITION_DOWN",
+      "direction": "BULLISH",
+      "score_band": "S_LT60",
+      "confidence_band": "C80_100",
+      "selected_full": 1,
+      "passed_full": 0,
+      "selected_total": 2,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 10,
+      "regime": "TRANSITION_DOWN",
+      "direction": "STRONG_BEARISH",
+      "score_band": "S_LT60",
+      "confidence_band": "C80_100",
+      "selected_full": 1,
+      "passed_full": 0,
+      "selected_total": 1,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 10,
+      "regime": "TRANSITION_UP",
+      "direction": "BULLISH",
+      "score_band": "S60_69",
+      "confidence_band": "C80_100",
+      "selected_full": 0,
+      "passed_full": 0,
+      "selected_total": 1,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 10,
+      "regime": "TRANSITION_UP",
+      "direction": "BULLISH",
+      "score_band": "S_LT60",
+      "confidence_band": "C80_100",
+      "selected_full": 3,
+      "passed_full": 2,
+      "selected_total": 4,
+      "passed_total": 2,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 10,
+      "regime": "TRANSITION_UP",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S60_69",
+      "confidence_band": "C80_100",
+      "selected_full": 0,
+      "passed_full": 0,
+      "selected_total": 1,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 10,
+      "regime": "TRANSITION_UP",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S70_79",
+      "confidence_band": "C80_100",
+      "selected_full": 0,
+      "passed_full": 0,
+      "selected_total": 1,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 20,
+      "regime": "BULL_HEALTHY",
+      "direction": "BULLISH",
+      "score_band": "S60_69",
+      "confidence_band": "C80_100",
+      "selected_full": 1,
+      "passed_full": 0,
+      "selected_total": 2,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 20,
+      "regime": "BULL_HEALTHY",
+      "direction": "BULLISH",
+      "score_band": "S_LT60",
+      "confidence_band": "C70_79",
+      "selected_full": 2,
+      "passed_full": 0,
+      "selected_total": 3,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 20,
+      "regime": "BULL_HEALTHY",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S60_69",
+      "confidence_band": "C80_100",
+      "selected_full": 1,
+      "passed_full": 1,
+      "selected_total": 2,
+      "passed_total": 1,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 20,
+      "regime": "BULL_HEALTHY",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S70_79",
+      "confidence_band": "C80_100",
+      "selected_full": 1,
+      "passed_full": 1,
+      "selected_total": 2,
+      "passed_total": 2,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 20,
+      "regime": "BULL_STRESSED",
+      "direction": "BULLISH",
+      "score_band": "S_LT60",
+      "confidence_band": "C80_100",
+      "selected_full": 1,
+      "passed_full": 0,
+      "selected_total": 2,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 20,
+      "regime": "BULL_STRESSED",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S60_69",
+      "confidence_band": "C80_100",
+      "selected_full": 1,
+      "passed_full": 0,
+      "selected_total": 2,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 20,
+      "regime": "TRANSITION_DOWN",
+      "direction": "BULLISH",
+      "score_band": "S_LT60",
+      "confidence_band": "C80_100",
+      "selected_full": 1,
+      "passed_full": 1,
+      "selected_total": 2,
+      "passed_total": 1,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 20,
+      "regime": "TRANSITION_DOWN",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S60_69",
+      "confidence_band": "C80_100",
+      "selected_full": 1,
+      "passed_full": 1,
+      "selected_total": 2,
+      "passed_total": 1,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 20,
+      "regime": "TRANSITION_UP",
+      "direction": "BULLISH",
+      "score_band": "S_LT60",
+      "confidence_band": "C80_100",
+      "selected_full": 3,
+      "passed_full": 1,
+      "selected_total": 4,
+      "passed_total": 1,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 20,
+      "regime": "TRANSITION_UP",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S60_69",
+      "confidence_band": "C80_100",
+      "selected_full": 3,
+      "passed_full": 1,
+      "selected_total": 4,
+      "passed_total": 1,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 20,
+      "regime": "TRANSITION_UP",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S70_79",
+      "confidence_band": "C80_100",
+      "selected_full": 0,
+      "passed_full": 0,
+      "selected_total": 1,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 40,
+      "regime": "BULL_HEALTHY",
+      "direction": "BULLISH",
+      "score_band": "S60_69",
+      "confidence_band": "C80_100",
+      "selected_full": 0,
+      "passed_full": 0,
+      "selected_total": 1,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 40,
+      "regime": "BULL_HEALTHY",
+      "direction": "BULLISH",
+      "score_band": "S_LT60",
+      "confidence_band": "C80_100",
+      "selected_full": 1,
+      "passed_full": 1,
+      "selected_total": 2,
+      "passed_total": 2,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 40,
+      "regime": "BULL_HEALTHY",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S60_69",
+      "confidence_band": "C80_100",
+      "selected_full": 1,
+      "passed_full": 1,
+      "selected_total": 2,
+      "passed_total": 2,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 40,
+      "regime": "BULL_HEALTHY",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S70_79",
+      "confidence_band": "C80_100",
+      "selected_full": 1,
+      "passed_full": 1,
+      "selected_total": 2,
+      "passed_total": 2,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 40,
+      "regime": "BULL_STRESSED",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S60_69",
+      "confidence_band": "C80_100",
+      "selected_full": 1,
+      "passed_full": 0,
+      "selected_total": 2,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 40,
+      "regime": "TRANSITION_DOWN",
+      "direction": "BULLISH",
+      "score_band": "S_LT60",
+      "confidence_band": "C80_100",
+      "selected_full": 0,
+      "passed_full": 0,
+      "selected_total": 1,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 40,
+      "regime": "TRANSITION_DOWN",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S60_69",
+      "confidence_band": "C80_100",
+      "selected_full": 0,
+      "passed_full": 0,
+      "selected_total": 1,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 40,
+      "regime": "TRANSITION_UP",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S60_69",
+      "confidence_band": "C80_100",
+      "selected_full": 0,
+      "passed_full": 0,
+      "selected_total": 1,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 60,
+      "regime": "BULL_HEALTHY",
+      "direction": "BULLISH",
+      "score_band": "S_LT60",
+      "confidence_band": "C80_100",
+      "selected_full": 1,
+      "passed_full": 1,
+      "selected_total": 2,
+      "passed_total": 1,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 60,
+      "regime": "BULL_HEALTHY",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S60_69",
+      "confidence_band": "C80_100",
+      "selected_full": 2,
+      "passed_full": 1,
+      "selected_total": 3,
+      "passed_total": 1,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 60,
+      "regime": "BULL_HEALTHY",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S70_79",
+      "confidence_band": "C80_100",
+      "selected_full": 0,
+      "passed_full": 0,
+      "selected_total": 1,
+      "passed_total": 0,
+      "certified": false
+    },
+    {
+      "horizon_sessions": 60,
+      "regime": "TRANSITION_UP",
+      "direction": "STRONG_BULLISH",
+      "score_band": "S60_69",
+      "confidence_band": "C80_100",
+      "selected_full": 0,
+      "passed_full": 0,
+      "selected_total": 1,
+      "passed_total": 0,
+      "certified": false
+    }
+  ],
+  "summary": {
+    "folds": 4,
+    "certified_cohorts": 4,
+    "candidate_cohorts": 66,
+    "by_horizon": {
+      "5": 1,
+      "10": 2,
+      "20": 1,
+      "40": 0,
+      "60": 0
+    }
+  },
+  "acceptance": {
+    "daily_replay_run_present": true,
+    "m77_8_exact_daily_pit_binding": true,
+    "walk_forward_training_precedes_holdout": true,
+    "full_year_holdouts_present": true,
+    "certified_cohorts_present": true,
+    "production_authority_effect": false
+  },
+  "next_step": "BUILD_MONTHLY_MODEL_REPLAY_AND_WALK_FORWARD_CERTIFICATION",
+  "production_authority_effect": false
+}

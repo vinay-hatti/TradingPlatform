@@ -34,7 +34,14 @@ Schedule for above Milestone 69_6
 15:20  Full forced end-of-day underlying + options ingestion
 
 
+Milestone 73 Automatic broker-truth-driven bounded entry-fill supervision (Every 5 seconds)
+cd /Users/vinay.hatti/TradingPlatform ; chmod +x INSTALL_M73_ENTRY_FILL_MANAGEMENT_LAUNCH_AGENT.sh ; ./INSTALL_M73_ENTRY_FILL_MANAGEMENT_LAUNCH_AGENT.sh
+
 
 Run the below to collect learning evidence every evening:
 export lc_ext=`date +%F` ; cd /Users/vinay.hatti/TradingPlatform ; uv run python scripts/run_m72_learning_cycle.py > reports/learning_evidence/lc_${lc_ext}.txt
 
+
+
+M77.6.4 source verification PASSED -- independent weekday LaunchAgent at 18:30 local time
+Cd /Users/vinay.hatti/TradingPlatform ; ./APPLY_M77_6_4_INDEPENDENT_DAILY_SHADOW.sh

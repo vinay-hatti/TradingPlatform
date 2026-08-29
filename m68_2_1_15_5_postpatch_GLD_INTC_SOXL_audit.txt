@@ -1,0 +1,5140 @@
+
+=== LATEST LINEAGE ===
+{
+  "stock_scanner_run_id": "stock-scan-a22d925e8e1e493f80d1d89381b16eed",
+  "latest_updated_at": "2026-08-17T17:54:11.594456+00:00"
+}
+
+=== TREND ===
+[
+  {
+    "snapshot_timestamp": "2026-08-17 12:18:56.157686-05:00",
+    "symbol": "GLD",
+    "as_of_date": "2026-08-17",
+    "short_term_state": "STRONG_BULLISH",
+    "intermediate_term_state": "PULLBACK",
+    "long_term_state": "PULLBACK",
+    "alignment_score": 57.56,
+    "trend_quality_score": 66.0,
+    "trend_confidence": 81.57,
+    "trend_stage": "EARLY_TREND",
+    "trend_age_days": 10,
+    "relative_strength_vs_spy": -7.516,
+    "relative_strength_vs_sector": -2.7079,
+    "sector": "Gold",
+    "sector_etf": "",
+    "calculation_version": "trend.v1",
+    "payload_json": {
+      "symbol": "GLD",
+      "as_of_date": "2026-08-17",
+      "snapshot_timestamp": "2026-08-17T17:18:56.157686+00:00",
+      "short_term": {
+        "name": "SHORT_TERM",
+        "direction": "UP",
+        "state": "STRONG_BULLISH",
+        "score": 92.58,
+        "strength": 83.5,
+        "confidence": 87.18,
+        "slope_pct": 1.664,
+        "price_vs_anchor_pct": 4.3163,
+        "persistence_pct": 60.0,
+        "lookback_days": 5,
+        "warnings": []
+      },
+      "intermediate_term": {
+        "name": "INTERMEDIATE_TERM",
+        "direction": "NEUTRAL",
+        "state": "PULLBACK",
+        "score": 50.0,
+        "strength": 55.45,
+        "confidence": 78.31,
+        "slope_pct": -0.9141,
+        "price_vs_anchor_pct": 3.5352,
+        "persistence_pct": 25.0,
+        "lookback_days": 20,
+        "warnings": []
+      },
+      "long_term": {
+        "name": "LONG_TERM",
+        "direction": "NEUTRAL",
+        "state": "PULLBACK",
+        "score": 50.0,
+        "strength": 64.3,
+        "confidence": 80.92,
+        "slope_pct": -1.6983,
+        "price_vs_anchor_pct": 3.1544,
+        "persistence_pct": 43.33,
+        "lookback_days": 60,
+        "warnings": []
+      },
+      "alignment_score": 57.56,
+      "signal_alignment": {
+        "CALL": 61.02,
+        "PUT": 43.52
+      },
+      "trend_quality_score": 66.0,
+      "trend_confidence": 81.57,
+      "trend_stage": "EARLY_TREND",
+      "trend_age_days": 10,
+      "relative_strength_vs_spy": -7.516,
+      "relative_strength_vs_sector": -2.7079,
+      "relative_strength_grade": "F",
+      "sector": "Gold",
+      "sector_etf": "",
+      "market_alignment_score": 64.42,
+      "sector_alignment_score": 50.0,
+      "status": "READY",
+      "calculation_version": "trend.v1",
+      "warnings": [],
+      "metadata": {
+        "weighted_direction": 0.25,
+        "price_rows": 1261,
+        "stock_return_63d_pct": -2.7079,
+        "benchmark_return_63d_pct": 4.8081,
+        "sector_return_63d_pct": 0.0
+      }
+    },
+    "created_at": "2026-08-17 12:18:56.157686-05:00"
+  },
+  {
+    "snapshot_timestamp": "2026-08-17 12:18:56.225031-05:00",
+    "symbol": "INTC",
+    "as_of_date": "2026-08-17",
+    "short_term_state": "STRONG_BULLISH",
+    "intermediate_term_state": "PULLBACK",
+    "long_term_state": "STRONG_BULLISH",
+    "alignment_score": 71.1,
+    "trend_quality_score": 76.71,
+    "trend_confidence": 89.11,
+    "trend_stage": "EARLY_TREND",
+    "trend_age_days": 4,
+    "relative_strength_vs_spy": -8.2236,
+    "relative_strength_vs_sector": -11.8916,
+    "sector": "Information Technology",
+    "sector_etf": "XLK",
+    "calculation_version": "trend.v1",
+    "payload_json": {
+      "symbol": "INTC",
+      "as_of_date": "2026-08-17",
+      "snapshot_timestamp": "2026-08-17T17:18:56.225031+00:00",
+      "short_term": {
+        "name": "SHORT_TERM",
+        "direction": "UP",
+        "state": "STRONG_BULLISH",
+        "score": 93.18,
+        "strength": 84.85,
+        "confidence": 82.64,
+        "slope_pct": 1.2477,
+        "price_vs_anchor_pct": 4.3115,
+        "persistence_pct": 80.0,
+        "lookback_days": 5,
+        "warnings": []
+      },
+      "intermediate_term": {
+        "name": "INTERMEDIATE_TERM",
+        "direction": "NEUTRAL",
+        "state": "PULLBACK",
+        "score": 50.0,
+        "strength": 69.13,
+        "confidence": 81.29,
+        "slope_pct": -2.9156,
+        "price_vs_anchor_pct": 3.776,
+        "persistence_pct": 50.0,
+        "lookback_days": 20,
+        "warnings": []
+      },
+      "long_term": {
+        "name": "LONG_TERM",
+        "direction": "UP",
+        "state": "STRONG_BULLISH",
+        "score": 90.21,
+        "strength": 78.25,
+        "confidence": 100.0,
+        "slope_pct": 46.7764,
+        "price_vs_anchor_pct": 34.8408,
+        "persistence_pct": 45.0,
+        "lookback_days": 60,
+        "warnings": []
+      },
+      "alignment_score": 71.1,
+      "signal_alignment": {
+        "CALL": 79.08,
+        "PUT": 33.58
+      },
+      "trend_quality_score": 76.71,
+      "trend_confidence": 89.11,
+      "trend_stage": "EARLY_TREND",
+      "trend_age_days": 4,
+      "relative_strength_vs_spy": -8.2236,
+      "relative_strength_vs_sector": -11.8916,
+      "relative_strength_grade": "F",
+      "sector": "Information Technology",
+      "sector_etf": "XLK",
+      "market_alignment_score": 64.42,
+      "sector_alignment_score": 75.43,
+      "status": "READY",
+      "calculation_version": "trend.v1",
+      "warnings": [],
+      "metadata": {
+        "weighted_direction": 0.65,
+        "price_rows": 1261,
+        "stock_return_63d_pct": -3.4155,
+        "benchmark_return_63d_pct": 4.8081,
+        "sector_return_63d_pct": 8.4761
+      }
+    },
+    "created_at": "2026-08-17 12:18:56.225031-05:00"
+  }
+]
+
+=== TREND TRANSITION ===
+[
+  {
+    "snapshot_timestamp": "2026-08-17 12:18:57.360011-05:00",
+    "symbol": "GLD",
+    "as_of_date": "2026-08-17",
+    "transition_state": "CONTINUATION",
+    "transition_direction": "NEUTRAL",
+    "breakout_state": "IN_CHANNEL",
+    "confirmation_score": 35.98,
+    "reversal_risk_score": 27.99,
+    "exhaustion_risk_score": 0.0,
+    "volatility_state": "NORMAL",
+    "calculation_version": "trend_transition.v1",
+    "payload_json": {
+      "symbol": "GLD",
+      "as_of_date": "2026-08-17",
+      "snapshot_timestamp": "2026-08-17T17:18:57.360011+00:00",
+      "transition_state": "CONTINUATION",
+      "transition_direction": "NEUTRAL",
+      "breakout_state": "IN_CHANNEL",
+      "channel_position_pct": 76.73,
+      "breakout_distance_pct": 0.0,
+      "momentum_acceleration_score": 44.02,
+      "volatility_state": "NORMAL",
+      "volatility_percentile": 30.16,
+      "compression_score": 69.84,
+      "reversal_risk_score": 27.99,
+      "exhaustion_risk_score": 0.0,
+      "confirmation_score": 35.98,
+      "signal_adjustment": {
+        "CALL": -0.56,
+        "PUT": 0.0
+      },
+      "status": "READY",
+      "calculation_version": "trend_transition.v1",
+      "warnings": [],
+      "metadata": {
+        "fast_momentum_pct": 0.1756,
+        "slow_momentum_pct": 0.5079,
+        "channel_high": 418.43,
+        "channel_low": 364.96,
+        "phase1_alignment": 57.56,
+        "phase1_quality": 66.0
+      }
+    },
+    "created_at": "2026-08-17 12:18:57.360011-05:00"
+  },
+  {
+    "snapshot_timestamp": "2026-08-17 12:18:57.420993-05:00",
+    "symbol": "INTC",
+    "as_of_date": "2026-08-17",
+    "transition_state": "CONTINUATION",
+    "transition_direction": "NEUTRAL",
+    "breakout_state": "IN_CHANNEL",
+    "confirmation_score": 48.59,
+    "reversal_risk_score": 29.92,
+    "exhaustion_risk_score": 0.0,
+    "volatility_state": "NORMAL",
+    "calculation_version": "trend_transition.v1",
+    "payload_json": {
+      "symbol": "INTC",
+      "as_of_date": "2026-08-17",
+      "snapshot_timestamp": "2026-08-17T17:18:57.420993+00:00",
+      "transition_state": "CONTINUATION",
+      "transition_direction": "NEUTRAL",
+      "breakout_state": "IN_CHANNEL",
+      "channel_position_pct": 39.24,
+      "breakout_distance_pct": 0.0,
+      "momentum_acceleration_score": 68.03,
+      "volatility_state": "NORMAL",
+      "volatility_percentile": 46.83,
+      "compression_score": 53.17,
+      "reversal_risk_score": 29.92,
+      "exhaustion_risk_score": 0.0,
+      "confirmation_score": 48.59,
+      "signal_adjustment": {
+        "CALL": -0.06,
+        "PUT": 0.0
+      },
+      "status": "READY",
+      "calculation_version": "trend_transition.v1",
+      "warnings": [],
+      "metadata": {
+        "fast_momentum_pct": 1.5219,
+        "slow_momentum_pct": 0.5203,
+        "channel_high": 140.94,
+        "channel_low": 81.88,
+        "phase1_alignment": 71.1,
+        "phase1_quality": 76.71
+      }
+    },
+    "created_at": "2026-08-17 12:18:57.420993-05:00"
+  }
+]
+
+=== FORECASTS ===
+[
+  {
+    "id": 152983,
+    "symbol": "GLD",
+    "as_of_date": "2026-08-17",
+    "snapshot_timestamp": "2026-08-17 12:18:58.736202-05:00",
+    "horizon_days": 5,
+    "status": "READY",
+    "payload_json": {
+      "status": "READY",
+      "symbol": "GLD",
+      "metadata": {
+        "ema20": 389.5898956664134,
+        "ema50": 389.1507625967507,
+        "conflict_codes": [],
+        "signal_to_noise": 0.19947229534353658,
+        "direction_semantics": "DIRECTIONAL_PROBABILITY_RECONCILED_WITH_EXPECTED_RETURN",
+        "directional_consistency": true,
+        "prevailing_trend_direction": "BULLISH",
+        "continuation_reversal_semantics": "RELATIVE_TO_PREVAILING_EMA_TREND"
+      },
+      "warnings": [],
+      "as_of_date": "2026-08-17",
+      "horizon_days": 5,
+      "confidence_grade": "D",
+      "confidence_score": 40.3988,
+      "signal_adjustment": {
+        "PUT": 0.0,
+        "CALL": 0.0
+      },
+      "forecast_direction": "NEUTRAL",
+      "snapshot_timestamp": "2026-08-17T17:18:58.736202+00:00",
+      "bearish_probability": 47.6884,
+      "bullish_probability": 52.3116,
+      "calculation_version": "trend_forecast.v1",
+      "expected_return_pct": 0.647981,
+      "reversal_probability": 47.6884,
+      "expected_volatility_pct": 3.248474,
+      "continuation_probability": 52.3116,
+      "persistence_days_estimate": 5,
+      "regime_transition_probabilities": {
+        "REVERSAL": 47.6884,
+        "CONTINUATION": 52.3116
+      }
+    }
+  },
+  {
+    "id": 152984,
+    "symbol": "GLD",
+    "as_of_date": "2026-08-17",
+    "snapshot_timestamp": "2026-08-17 12:18:58.736507-05:00",
+    "horizon_days": 10,
+    "status": "READY",
+    "payload_json": {
+      "status": "READY",
+      "symbol": "GLD",
+      "metadata": {
+        "ema20": 389.5898956664134,
+        "ema50": 389.1507625967507,
+        "conflict_codes": [],
+        "signal_to_noise": 0.282096425392521,
+        "direction_semantics": "DIRECTIONAL_PROBABILITY_RECONCILED_WITH_EXPECTED_RETURN",
+        "directional_consistency": true,
+        "prevailing_trend_direction": "BULLISH",
+        "continuation_reversal_semantics": "RELATIVE_TO_PREVAILING_EMA_TREND"
+      },
+      "warnings": [],
+      "as_of_date": "2026-08-17",
+      "horizon_days": 10,
+      "confidence_grade": "C",
+      "confidence_score": 61.604,
+      "signal_adjustment": {
+        "PUT": -1.0716,
+        "CALL": 1.0716
+      },
+      "forecast_direction": "BULLISH",
+      "snapshot_timestamp": "2026-08-17T17:18:58.736507+00:00",
+      "bearish_probability": 32.1394,
+      "bullish_probability": 67.8606,
+      "calculation_version": "trend_forecast.v1",
+      "expected_return_pct": 1.295961,
+      "reversal_probability": 32.1394,
+      "expected_volatility_pct": 4.594036,
+      "continuation_probability": 67.8606,
+      "persistence_days_estimate": 14,
+      "regime_transition_probabilities": {
+        "REVERSAL": 32.1394,
+        "CONTINUATION": 67.8606
+      }
+    }
+  },
+  {
+    "id": 152985,
+    "symbol": "GLD",
+    "as_of_date": "2026-08-17",
+    "snapshot_timestamp": "2026-08-17 12:18:58.736809-05:00",
+    "horizon_days": 20,
+    "status": "READY",
+    "payload_json": {
+      "status": "READY",
+      "symbol": "GLD",
+      "metadata": {
+        "ema20": 389.5898956664134,
+        "ema50": 389.1507625967507,
+        "conflict_codes": [
+          "EXPECTED_RETURN_DIRECTION_CONFLICT"
+        ],
+        "signal_to_noise": 0.22388854657697718,
+        "direction_semantics": "DIRECTIONAL_PROBABILITY_RECONCILED_WITH_EXPECTED_RETURN",
+        "directional_consistency": false,
+        "prevailing_trend_direction": "BULLISH",
+        "continuation_reversal_semantics": "RELATIVE_TO_PREVAILING_EMA_TREND"
+      },
+      "warnings": [],
+      "as_of_date": "2026-08-17",
+      "horizon_days": 20,
+      "confidence_grade": "C",
+      "confidence_score": 62.9428,
+      "signal_adjustment": {
+        "PUT": 0.0,
+        "CALL": 0.0
+      },
+      "forecast_direction": "NEUTRAL",
+      "snapshot_timestamp": "2026-08-17T17:18:58.736809+00:00",
+      "bearish_probability": 30.5722,
+      "bullish_probability": 69.4278,
+      "calculation_version": "trend_forecast.v1",
+      "expected_return_pct": -1.511387,
+      "reversal_probability": 30.5722,
+      "expected_volatility_pct": 6.750623,
+      "continuation_probability": 69.4278,
+      "persistence_days_estimate": 28,
+      "regime_transition_probabilities": {
+        "REVERSAL": 30.5722,
+        "CONTINUATION": 69.4278
+      }
+    }
+  },
+  {
+    "id": 153124,
+    "symbol": "INTC",
+    "as_of_date": "2026-08-17",
+    "snapshot_timestamp": "2026-08-17 12:18:58.887209-05:00",
+    "horizon_days": 5,
+    "status": "READY",
+    "payload_json": {
+      "status": "READY",
+      "symbol": "INTC",
+      "metadata": {
+        "ema20": 100.58504830299641,
+        "ema50": 102.70170051785175,
+        "conflict_codes": [
+          "EXPECTED_RETURN_DIRECTION_CONFLICT"
+        ],
+        "signal_to_noise": 0.2224689847552528,
+        "direction_semantics": "DIRECTIONAL_PROBABILITY_RECONCILED_WITH_EXPECTED_RETURN",
+        "directional_consistency": false,
+        "prevailing_trend_direction": "BEARISH",
+        "continuation_reversal_semantics": "RELATIVE_TO_PREVAILING_EMA_TREND"
+      },
+      "warnings": [],
+      "as_of_date": "2026-08-17",
+      "horizon_days": 5,
+      "confidence_grade": "C",
+      "confidence_score": 50.5024,
+      "signal_adjustment": {
+        "PUT": 0.0,
+        "CALL": 0.0
+      },
+      "forecast_direction": "NEUTRAL",
+      "snapshot_timestamp": "2026-08-17T17:18:58.887209+00:00",
+      "bearish_probability": 40.1286,
+      "bullish_probability": 59.8714,
+      "calculation_version": "trend_forecast.v1",
+      "expected_return_pct": -2.435561,
+      "reversal_probability": 59.8714,
+      "expected_volatility_pct": 10.947867,
+      "continuation_probability": 40.1286,
+      "persistence_days_estimate": 4,
+      "regime_transition_probabilities": {
+        "REVERSAL": 59.8714,
+        "CONTINUATION": 40.1286
+      }
+    }
+  },
+  {
+    "id": 153125,
+    "symbol": "INTC",
+    "as_of_date": "2026-08-17",
+    "snapshot_timestamp": "2026-08-17 12:18:58.887504-05:00",
+    "horizon_days": 10,
+    "status": "READY",
+    "payload_json": {
+      "status": "READY",
+      "symbol": "INTC",
+      "metadata": {
+        "ema20": 100.58504830299641,
+        "ema50": 102.70170051785175,
+        "conflict_codes": [
+          "EXPECTED_RETURN_DIRECTION_CONFLICT"
+        ],
+        "signal_to_noise": 0.31461865544825185,
+        "direction_semantics": "DIRECTIONAL_PROBABILITY_RECONCILED_WITH_EXPECTED_RETURN",
+        "directional_consistency": false,
+        "prevailing_trend_direction": "BEARISH",
+        "continuation_reversal_semantics": "RELATIVE_TO_PREVAILING_EMA_TREND"
+      },
+      "warnings": [],
+      "as_of_date": "2026-08-17",
+      "horizon_days": 10,
+      "confidence_grade": "C",
+      "confidence_score": 63.2854,
+      "signal_adjustment": {
+        "PUT": 0.0,
+        "CALL": 0.0
+      },
+      "forecast_direction": "NEUTRAL",
+      "snapshot_timestamp": "2026-08-17T17:18:58.887504+00:00",
+      "bearish_probability": 31.1462,
+      "bullish_probability": 68.8538,
+      "calculation_version": "trend_forecast.v1",
+      "expected_return_pct": -4.871122,
+      "reversal_probability": 68.8538,
+      "expected_volatility_pct": 15.482621,
+      "continuation_probability": 31.1462,
+      "persistence_days_estimate": 6,
+      "regime_transition_probabilities": {
+        "REVERSAL": 68.8538,
+        "CONTINUATION": 31.1462
+      }
+    }
+  },
+  {
+    "id": 153126,
+    "symbol": "INTC",
+    "as_of_date": "2026-08-17",
+    "snapshot_timestamp": "2026-08-17 12:18:58.887802-05:00",
+    "horizon_days": 20,
+    "status": "READY",
+    "payload_json": {
+      "status": "READY",
+      "symbol": "INTC",
+      "metadata": {
+        "ema20": 100.58504830299641,
+        "ema50": 102.70170051785175,
+        "conflict_codes": [],
+        "signal_to_noise": 0.5721345402891089,
+        "direction_semantics": "DIRECTIONAL_PROBABILITY_RECONCILED_WITH_EXPECTED_RETURN",
+        "directional_consistency": true,
+        "prevailing_trend_direction": "BEARISH",
+        "continuation_reversal_semantics": "RELATIVE_TO_PREVAILING_EMA_TREND"
+      },
+      "warnings": [],
+      "as_of_date": "2026-08-17",
+      "horizon_days": 20,
+      "confidence_grade": "C",
+      "confidence_score": 51.3209,
+      "signal_adjustment": {
+        "PUT": 0.0,
+        "CALL": 0.0
+      },
+      "forecast_direction": "NEUTRAL",
+      "snapshot_timestamp": "2026-08-17T17:18:58.887802+00:00",
+      "bearish_probability": 42.7267,
+      "bullish_probability": 57.2733,
+      "calculation_version": "trend_forecast.v1",
+      "expected_return_pct": 15.454066,
+      "reversal_probability": 57.2733,
+      "expected_volatility_pct": 27.011245,
+      "continuation_probability": 42.7267,
+      "persistence_days_estimate": 17,
+      "regime_transition_probabilities": {
+        "REVERSAL": 57.2733,
+        "CONTINUATION": 42.7267
+      }
+    }
+  }
+]
+
+=== INSTITUTIONAL TREND ===
+[
+  {
+    "id": 49761,
+    "symbol": "GLD",
+    "as_of_date": "2026-08-17",
+    "snapshot_timestamp": "2026-08-17 12:19:00.512314-05:00",
+    "status": "READY",
+    "participation_score": 63.4139,
+    "leadership_score": 59.4461,
+    "trend_quality_score": 59.3857,
+    "deterioration_risk_score": 30.4753,
+    "payload_json": {
+      "status": "READY",
+      "symbol": "GLD",
+      "metadata": {
+        "history_rows": 1002,
+        "analytics_basis": "persisted_ohlcv_proxy",
+        "benchmark_symbol": "SPY",
+        "institutional_identity_claimed": false
+      },
+      "warnings": [],
+      "as_of_date": "2026-08-17",
+      "leadership_grade": "C",
+      "leadership_score": 59.4461,
+      "leadership_state": "NEUTRAL",
+      "snapshot_timestamp": "2026-08-17T17:19:00.512314+00:00",
+      "volume_trend_score": 57.8397,
+      "calculation_version": "institutional_trend.v1",
+      "deterioration_state": "STABLE",
+      "participation_grade": "C",
+      "participation_score": 63.4139,
+      "participation_state": "MIXED",
+      "relative_volume_20d": 0.709845,
+      "trend_quality_score": 59.3857,
+      "volume_thrust_score": 40.7228,
+      "distribution_risk_score": 50.0,
+      "deterioration_risk_score": 30.4753,
+      "participation_confidence": 81.707,
+      "breadth_confirmation_score": 50.0,
+      "leadership_persistence_score": 70.0,
+      "market_relative_strength_20d": 6.047724,
+      "market_relative_strength_60d": -7.247586,
+      "cross_asset_confirmation_score": 50.0,
+      "institutional_conviction_score": 63.3424,
+      "accumulation_distribution_score": 48.3591,
+      "price_volume_confirmation_score": 100.0
+    }
+  },
+  {
+    "id": 49808,
+    "symbol": "INTC",
+    "as_of_date": "2026-08-17",
+    "snapshot_timestamp": "2026-08-17 12:19:00.631000-05:00",
+    "status": "READY",
+    "participation_score": 46.1232,
+    "leadership_score": 42.0811,
+    "trend_quality_score": 41.2087,
+    "deterioration_risk_score": 42.1433,
+    "payload_json": {
+      "status": "READY",
+      "symbol": "INTC",
+      "metadata": {
+        "history_rows": 1002,
+        "analytics_basis": "persisted_ohlcv_proxy",
+        "benchmark_symbol": "SPY",
+        "institutional_identity_claimed": false
+      },
+      "warnings": [],
+      "as_of_date": "2026-08-17",
+      "leadership_grade": "D",
+      "leadership_score": 42.0811,
+      "leadership_state": "NEUTRAL",
+      "snapshot_timestamp": "2026-08-17T17:19:00.631000+00:00",
+      "volume_trend_score": 47.7155,
+      "calculation_version": "institutional_trend.v1",
+      "deterioration_state": "STABLE",
+      "participation_grade": "D",
+      "participation_score": 46.1232,
+      "participation_state": "MIXED",
+      "relative_volume_20d": 0.433802,
+      "trend_quality_score": 41.2087,
+      "volume_thrust_score": 37.7924,
+      "distribution_risk_score": 51.9926,
+      "deterioration_risk_score": 42.1433,
+      "participation_confidence": 76.9384,
+      "breadth_confirmation_score": 50.0,
+      "leadership_persistence_score": 15.0,
+      "market_relative_strength_20d": 3.84148,
+      "market_relative_strength_60d": -16.2028,
+      "cross_asset_confirmation_score": 50.0,
+      "institutional_conviction_score": 37.9857,
+      "accumulation_distribution_score": 49.6733,
+      "price_volume_confirmation_score": 48.0074
+    }
+  }
+]
+
+=== INFLECTION ===
+[
+  {
+    "snapshot_id": "M68-INF-ECDD68EE49DD431D9125B9D586BA0C71",
+    "publication_name": "current_institutional_inflection",
+    "source_run_id": "stock-scan-a22d925e8e1e493f80d1d89381b16eed",
+    "symbol": "GLD",
+    "timeframe": "1d",
+    "direction": "BULLISH",
+    "transition_state": "TREND_EXHAUSTION",
+    "inflection_score": 47.9025,
+    "confidence": 99.97,
+    "horizon_min_sessions": 1,
+    "horizon_max_sessions": 7,
+    "state_hash": "0388beeced2bd3e4037fdad32fb13feae1d7e4dc8cf9cf589de1c88c92761fb3",
+    "snapshot_timestamp": "2026-08-17T17:47:19.348952+00:00",
+    "payload_json": {
+      "policy_version": "M68.2.1-POINT-IN-TIME-BREADTH-INFLECTION-1.0",
+      "symbol": "GLD",
+      "timeframe": "1d",
+      "build_mode": "OPTIONS_ENRICHMENT",
+      "direction": "BULLISH",
+      "directional_score": 38.3117,
+      "signal_strength": 47.9025,
+      "inflection_score": 47.9025,
+      "confidence": 99.97,
+      "input_quality": 99.95,
+      "disposition": "DEVELOPING",
+      "transition_state": "TREND_EXHAUSTION",
+      "velocity": 0.8571,
+      "acceleration": -1.7538,
+      "horizon_min_sessions": 1,
+      "horizon_max_sessions": 7,
+      "components": {
+        "trend": 61.5216,
+        "structure": 67.1687,
+        "dealer": 15.9903,
+        "volatility": 16.8005,
+        "participation": 11.0392,
+        "breadth": 14.5845
+      },
+      "component_decomposition": {
+        "trend": {
+          "raw_score": 61.5216,
+          "configured_weight": 0.25,
+          "available": true,
+          "weighted_contribution": 15.3804
+        },
+        "structure": {
+          "raw_score": 67.1687,
+          "configured_weight": 0.23,
+          "available": true,
+          "weighted_contribution": 15.4488
+        },
+        "dealer": {
+          "raw_score": 15.9903,
+          "configured_weight": 0.18,
+          "available": true,
+          "weighted_contribution": 2.8783
+        },
+        "participation": {
+          "raw_score": 11.0392,
+          "configured_weight": 0.15,
+          "available": true,
+          "weighted_contribution": 1.6559
+        },
+        "breadth": {
+          "raw_score": 14.5845,
+          "configured_weight": 0.11,
+          "available": true,
+          "weighted_contribution": 1.6043
+        },
+        "volatility": {
+          "raw_score": 16.8005,
+          "configured_weight": 0.08,
+          "available": true,
+          "weighted_contribution": 1.344
+        }
+      },
+      "weight_contract": {
+        "policy": "FIXED_NO_RENORMALIZATION",
+        "configured_weight_total": 1.0,
+        "available_weight_total": 1.0
+      },
+      "component_availability": {
+        "trend": true,
+        "structure": true,
+        "dealer": true,
+        "volatility": true,
+        "participation": true,
+        "breadth": true,
+        "implied_volatility": true,
+        "option_liquidity": true
+      },
+      "evidence": [
+        "structure:+67.2 (bullish)",
+        "trend:+61.5 (bullish)",
+        "volatility:+16.8 (bullish)",
+        "dealer:+16.0 (bullish)"
+      ],
+      "conflicting_evidence": [],
+      "missing_inputs": [],
+      "invalidation": {
+        "price_below": 366.526,
+        "price_above": null,
+        "directional_score_inside_deadband": 15.0,
+        "confidence_below": 55.0
+      },
+      "diagnostics": {
+        "momentum_5": 0.85705768,
+        "momentum_20": 10.44341676,
+        "compression_ratio": 0.64359148,
+        "volume_ratio": 0.88122486,
+        "realized_volatility_20d": 0.22540169,
+        "implied_volatility": 0.2304822,
+        "volatility_divergence": -0.50805107,
+        "range_position": 0.93289905,
+        "liquidity_quality": 99.7418,
+        "agreement": 100.0,
+        "material_acceleration": true
+      },
+      "input_fingerprint": "5898b1ed3482850fb602e4b6a32d0e389bf7cb8776d81b48d1cf6ddbff8d5029",
+      "semantic_state_hash": "8de0a8cf3b15d0ffb7cb69ddd7c1cbdcdf9f2a767bae854343ec0b9372b74d38",
+      "thresholds": {
+        "high_conviction": 80.0,
+        "actionable": 70.0,
+        "watch": 60.0
+      },
+      "state_hash": "0388beeced2bd3e4037fdad32fb13feae1d7e4dc8cf9cf589de1c88c92761fb3",
+      "lineage": {
+        "stock_scanner_run_id": "stock-scan-a22d925e8e1e493f80d1d89381b16eed",
+        "stock_publication_name": "current_stock_intelligence",
+        "stock_publication_timestamp": "2026-08-17T17:19:33.217291+00:00",
+        "source_as_of_date": "2026-08-17",
+        "option_snapshot_id": "options-20260817T173006379861Z",
+        "option_snapshot_timestamp": "2026-08-17 12:38:43.688194-05:00",
+        "option_as_of_date": "2026-08-17",
+        "dealer_as_of_date": "2026-08-17",
+        "build_mode": "OPTIONS_ENRICHMENT",
+        "component_freshness": {
+          "underlying": "CURRENT_EXACT",
+          "breadth": "CURRENT_EXACT",
+          "dealer_options": "CURRENT_EXACT"
+        },
+        "breadth": {
+          "score": 57.29223018349103,
+          "available": true,
+          "resolution": "CANONICAL_MARKET_FALLBACK",
+          "source_table": "market_breadth_snapshot",
+          "snapshot_timestamp": "2026-08-17T12:19:02.299429-05:00",
+          "as_of_date": "2026-08-17",
+          "universe_name": "canonical",
+          "evaluated_symbols": 613,
+          "breadth_regime": "DIVERGING"
+        }
+      },
+      "coverage_status": "CURRENT_EXACT"
+    },
+    "directional_score": 38.3117,
+    "signal_strength": 47.9025,
+    "input_quality": 99.95,
+    "disposition": "DEVELOPING",
+    "input_fingerprint": "5898b1ed3482850fb602e4b6a32d0e389bf7cb8776d81b48d1cf6ddbff8d5029",
+    "semantic_state_hash": "8de0a8cf3b15d0ffb7cb69ddd7c1cbdcdf9f2a767bae854343ec0b9372b74d38",
+    "source_as_of_date": "2026-08-17",
+    "option_snapshot_id": "options-20260817T173006379861Z",
+    "dealer_as_of_date": "2026-08-17",
+    "coverage_status": "CURRENT_EXACT"
+  },
+  {
+    "snapshot_id": "M68-INF-2655ABF7890A430D9553017F7BD3B86C",
+    "publication_name": "current_institutional_inflection",
+    "source_run_id": "stock-scan-a22d925e8e1e493f80d1d89381b16eed",
+    "symbol": "INTC",
+    "timeframe": "1d",
+    "direction": "BULLISH",
+    "transition_state": "TREND_CONTINUATION",
+    "inflection_score": 76.4573,
+    "confidence": 99.97,
+    "horizon_min_sessions": 3,
+    "horizon_max_sessions": 10,
+    "state_hash": "95fb3edb5810ba9761dc9680d2f936917e885ff7e35d24c01f739ce9c45b8cac",
+    "snapshot_timestamp": "2026-08-17T17:47:19.348952+00:00",
+    "payload_json": {
+      "policy_version": "M68.2.1-POINT-IN-TIME-BREADTH-INFLECTION-1.0",
+      "symbol": "INTC",
+      "timeframe": "1d",
+      "build_mode": "OPTIONS_ENRICHMENT",
+      "direction": "BULLISH",
+      "directional_score": 62.9051,
+      "signal_strength": 76.4573,
+      "inflection_score": 76.4573,
+      "confidence": 99.97,
+      "input_quality": 99.95,
+      "disposition": "ACTIONABLE",
+      "transition_state": "TREND_CONTINUATION",
+      "velocity": 7.7266,
+      "acceleration": 5.6673,
+      "horizon_min_sessions": 3,
+      "horizon_max_sessions": 10,
+      "components": {
+        "trend": 100.0,
+        "structure": 57.9519,
+        "dealer": 21.1062,
+        "volatility": 50.6967,
+        "participation": 76.6129,
+        "breadth": 47.54
+      },
+      "component_decomposition": {
+        "trend": {
+          "raw_score": 100.0,
+          "configured_weight": 0.25,
+          "available": true,
+          "weighted_contribution": 25.0
+        },
+        "structure": {
+          "raw_score": 57.9519,
+          "configured_weight": 0.23,
+          "available": true,
+          "weighted_contribution": 13.3289
+        },
+        "dealer": {
+          "raw_score": 21.1062,
+          "configured_weight": 0.18,
+          "available": true,
+          "weighted_contribution": 3.7991
+        },
+        "participation": {
+          "raw_score": 76.6129,
+          "configured_weight": 0.15,
+          "available": true,
+          "weighted_contribution": 11.4919
+        },
+        "breadth": {
+          "raw_score": 47.54,
+          "configured_weight": 0.11,
+          "available": true,
+          "weighted_contribution": 5.2294
+        },
+        "volatility": {
+          "raw_score": 50.6967,
+          "configured_weight": 0.08,
+          "available": true,
+          "weighted_contribution": 4.0557
+        }
+      },
+      "weight_contract": {
+        "policy": "FIXED_NO_RENORMALIZATION",
+        "configured_weight_total": 1.0,
+        "available_weight_total": 1.0
+      },
+      "component_availability": {
+        "trend": true,
+        "structure": true,
+        "dealer": true,
+        "volatility": true,
+        "participation": true,
+        "breadth": true,
+        "implied_volatility": true,
+        "option_liquidity": true
+      },
+      "evidence": [
+        "trend:+100.0 (bullish)",
+        "participation:+76.6 (bullish)",
+        "structure:+58.0 (bullish)",
+        "volatility:+50.7 (bullish)"
+      ],
+      "conflicting_evidence": [],
+      "missing_inputs": [],
+      "invalidation": {
+        "price_below": 81.79,
+        "price_above": null,
+        "directional_score_inside_deadband": 15.0,
+        "confidence_below": 55.0
+      },
+      "diagnostics": {
+        "momentum_5": 7.72662018,
+        "momentum_20": 8.23717288,
+        "compression_ratio": 0.37422493,
+        "volume_ratio": 0.74738219,
+        "realized_volatility_20d": 0.79965722,
+        "implied_volatility": 0.64941157,
+        "volatility_divergence": 15.024565,
+        "range_position": 0.80488751,
+        "liquidity_quality": 99.735,
+        "agreement": 100.0,
+        "material_acceleration": true
+      },
+      "input_fingerprint": "fb5e6a97319c5c69608d8384b23ceeecc88a104fca898f6b26f27908720d6211",
+      "semantic_state_hash": "44c11f9a4166a5f9753a351dc5d9dcbbd8e8abba81499342b81ed282d526ebdc",
+      "thresholds": {
+        "high_conviction": 80.0,
+        "actionable": 70.0,
+        "watch": 60.0
+      },
+      "state_hash": "95fb3edb5810ba9761dc9680d2f936917e885ff7e35d24c01f739ce9c45b8cac",
+      "lineage": {
+        "stock_scanner_run_id": "stock-scan-a22d925e8e1e493f80d1d89381b16eed",
+        "stock_publication_name": "current_stock_intelligence",
+        "stock_publication_timestamp": "2026-08-17T17:19:33.217291+00:00",
+        "source_as_of_date": "2026-08-17",
+        "option_snapshot_id": "options-20260817T173006379861Z",
+        "option_snapshot_timestamp": "2026-08-17 12:38:43.688194-05:00",
+        "option_as_of_date": "2026-08-17",
+        "dealer_as_of_date": "2026-08-17",
+        "build_mode": "OPTIONS_ENRICHMENT",
+        "component_freshness": {
+          "underlying": "CURRENT_EXACT",
+          "breadth": "CURRENT_EXACT",
+          "dealer_options": "CURRENT_EXACT"
+        },
+        "breadth": {
+          "score": 73.77,
+          "available": true,
+          "resolution": "EFFECTIVE_SECTOR_MEMBERSHIP",
+          "source_table": "sector_breadth_snapshot",
+          "snapshot_timestamp": "2026-08-17T12:19:03.173614-05:00",
+          "as_of_date": "2026-08-17",
+          "sector": "Information Technology",
+          "sector_etf": "XLK",
+          "constituent_count": 77,
+          "confidence": 100.0,
+          "provenance": "COMPUTED",
+          "membership_effective_from": "2026-07-20"
+        }
+      },
+      "coverage_status": "CURRENT_EXACT"
+    },
+    "directional_score": 62.9051,
+    "signal_strength": 76.4573,
+    "input_quality": 99.95,
+    "disposition": "ACTIONABLE",
+    "input_fingerprint": "fb5e6a97319c5c69608d8384b23ceeecc88a104fca898f6b26f27908720d6211",
+    "semantic_state_hash": "44c11f9a4166a5f9753a351dc5d9dcbbd8e8abba81499342b81ed282d526ebdc",
+    "source_as_of_date": "2026-08-17",
+    "option_snapshot_id": "options-20260817T173006379861Z",
+    "dealer_as_of_date": "2026-08-17",
+    "coverage_status": "CURRENT_EXACT"
+  }
+]
+
+=== INSTITUTIONAL OPTION OPPORTUNITIES ===
+[
+  {
+    "opportunity_id": "m62-opp-8010ba9e2173453d98328d88b3d2a8fd",
+    "symbol": "GLD",
+    "asset_class": "EQUITY",
+    "state": "CONTRACTS_OPTIMIZED",
+    "direction": "BULLISH",
+    "category": "BULLISH",
+    "overall_score": 57.26,
+    "confidence": 86.17,
+    "conviction": "LOW",
+    "thesis_id": "m62-thesis-f4c808cd4eb04abd86d07c16eeb6336f",
+    "stock_publication_name": "current_stock_intelligence",
+    "stock_scanner_run_id": "stock-scan-a22d925e8e1e493f80d1d89381b16eed",
+    "stock_candidate_id": "stock-candidate-c91a5c5f10324f739a7067e442c52afd",
+    "stock_state_hash": "fd1e18571a9cfbfff144897e0d0d2642414059af558caecb3d77ab5d5fbcbec7",
+    "option_snapshot_id": "polygon-options-2026-08-17",
+    "version": 30,
+    "created_at": "2026-08-14T00:31:00.660940+00:00",
+    "updated_at": "2026-08-17T17:49:14.041562+00:00",
+    "payload_json": {
+      "state": "VALIDATED",
+      "symbol": "GLD",
+      "lineage": {
+        "market_run_id": "market-ingestion-20260817T171918068162Z",
+        "source_provider": "POLYGON_PERSISTED",
+        "stock_state_hash": "fd1e18571a9cfbfff144897e0d0d2642414059af558caecb3d77ab5d5fbcbec7",
+        "option_snapshot_id": "polygon-options-2026-08-17",
+        "stock_candidate_id": "stock-candidate-c91a5c5f10324f739a7067e442c52afd",
+        "stock_scanner_run_id": "stock-scan-a22d925e8e1e493f80d1d89381b16eed",
+        "stock_publication_name": "current_stock_intelligence",
+        "market_publication_name": "current_market_state",
+        "option_snapshot_timestamp": "2026-08-17",
+        "source_option_snapshot_id": null,
+        "contract_option_snapshot_id": "polygon-options-2026-08-17"
+      },
+      "version": 27,
+      "category": "BULLISH",
+      "metadata": {
+        "freshness": 100.0,
+        "entry_execution": {
+          "atr": 7.2422,
+          "target_1": 417.7258,
+          "entry_type": "DEMAND_BOUNCE",
+          "chase_limit": 404.714,
+          "disposition": "WAITING_FOR_ENTRY",
+          "reason_codes": [
+            "ABOVE_CHASE_LIMIT_WAIT_FOR_PULLBACK_OR_CONFIRMATION"
+          ],
+          "entry_zone_low": 400.8697,
+          "entry_zone_high": 403.0423,
+          "reference_price": 405.99,
+          "trade_builder_ready": false,
+          "confirmation_trigger": 407.0763,
+          "minimum_target_1_room": 2.02995,
+          "target_1_remaining_room": 11.7358
+        },
+        "reference_market": {
+          "price": 405.99,
+          "source": "LATEST_UNDERLYING_INGESTION",
+          "provider": "POLYGON",
+          "timestamp": "2026-08-17T17:19:33.217291+00:00",
+          "primary_timeframe": "1d",
+          "freshness_minutes_at_certification": 0.15
+        },
+        "forecast_evidence": {
+          "horizon_days": 10,
+          "conflict_codes": [],
+          "forecast_direction": "BULLISH",
+          "bearish_probability": 32.1394,
+          "bullish_probability": 67.8606,
+          "expected_return_pct": 1.295961,
+          "reversal_probability": 32.1394,
+          "directional_consistency": true,
+          "expected_volatility_pct": 4.594036,
+          "continuation_probability": 67.8606,
+          "prevailing_trend_direction": "BULLISH"
+        },
+        "primary_timeframe": "1d",
+        "management_quality": 85.98,
+        "m76_2_trade_quality": 60.6,
+        "opportunity_quality": 68.252,
+        "eligibility_warnings": [],
+        "institutional_volume": {
+          "regime": "QUIET",
+          "signal": "ACCUMULATION_CONFIRMED",
+          "evidence": {
+            "cmf_20d": 0.0374,
+            "version": "M76-INSTITUTIONAL-VOLUME-1.0",
+            "volume_1d": 5669366.34,
+            "absorption_side": "NONE",
+            "price_change_1d": 0.0112,
+            "climactic_volume": false,
+            "price_return_20d": 0.0832,
+            "average_volume_20d": 7899424.11,
+            "average_volume_60d": 7568832.39,
+            "dry_up_ratio_5d_vs_20d": 0.9858,
+            "signed_volume_flow_20d": 0.5292,
+            "range_ratio_vs_20d_median": 1.0279,
+            "elevated_volume_sessions_10d": 5
+          },
+          "dry_up_score": 1.48,
+          "absorption_score": 0.0,
+          "persistence_score": 51.93,
+          "volume_zscore_20d": -0.697,
+          "accumulation_score": 95.2,
+          "distribution_score": 33.48,
+          "relative_volume_1d": 0.718,
+          "relative_volume_5d": 0.986,
+          "relative_volume_20d": 1.055,
+          "close_location_value": 0.881,
+          "volume_percentile_60d": 31.67,
+          "up_down_volume_ratio_20d": 3.248,
+          "breakout_confirmation_score": 0.0,
+          "breakdown_confirmation_score": 0.0,
+          "institutional_participation_score": 50.48
+        },
+        "execution_disposition": "WAITING_FOR_ENTRY",
+        "m76_2_2_continuity_key": "GLD|BULLISH|BULLISH|1d",
+        "m76_2_capital_priority": 67.98,
+        "structural_reward_risk": 3.77,
+        "source_plan_fingerprint": "9bfe4193a24c1373eb32f7c74a5a62caee2a65d9ce1712df6554bba4bd381502",
+        "m76_2_2_continuity_match": "LOGICAL_REFRESH",
+        "m76_2_decision_readiness": 72.81,
+        "trade_plan_certification": {
+          "status": "PASS",
+          "domains": {
+            "risk": {
+              "name": "RISK",
+              "rules": [
+                {
+                  "code": "TPC-RISK-001",
+                  "status": "PASS",
+                  "message": "Structural reward/risk must be positive.",
+                  "evidence": {
+                    "structural_reward_risk": 3.77
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-RISK-002",
+                  "status": "PASS",
+                  "message": "Defined structural stop is required.",
+                  "evidence": {
+                    "stop": 395.438
+                  },
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            },
+            "market": {
+              "name": "MARKET",
+              "rules": [
+                {
+                  "code": "TPC-MKT-001",
+                  "status": "PASS",
+                  "message": "Reference underlying price must be available from the latest ingestion.",
+                  "evidence": {
+                    "reference_price": 405.99
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MKT-002",
+                  "status": "PASS",
+                  "message": "Reference market timestamp must be present.",
+                  "evidence": {
+                    "timestamp": "2026-08-17T17:19:33.217291+00:00"
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MKT-003",
+                  "status": "PASS",
+                  "message": "Reference market lineage must be Polygon.",
+                  "evidence": {
+                    "provider": "POLYGON"
+                  },
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            },
+            "lineage": {
+              "name": "LINEAGE",
+              "rules": [],
+              "score": 100.0,
+              "status": "NOT_APPLICABLE"
+            },
+            "geometry": {
+              "name": "GEOMETRY",
+              "rules": [
+                {
+                  "code": "TPC-GEO-000",
+                  "status": "PASS",
+                  "message": "Trade plan must have a directional bullish or bearish thesis.",
+                  "evidence": {
+                    "direction": "BULLISH"
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-004",
+                  "status": "PASS",
+                  "message": "Entry zone must be positive and ordered.",
+                  "evidence": {
+                    "entry_zone_low": 400.8697,
+                    "entry_zone_high": 403.0423
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-001",
+                  "status": "PASS",
+                  "message": "Every bullish target must be strictly above the reference underlying price.",
+                  "evidence": {
+                    "targets": [
+                      417.7258,
+                      420.0,
+                      426.5181
+                    ],
+                    "invalid_targets": [],
+                    "reference_price": 405.99
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-003",
+                  "status": "PASS",
+                  "message": "Bullish targets must be strictly increasing.",
+                  "evidence": {
+                    "targets": [
+                      417.7258,
+                      420.0,
+                      426.5181
+                    ]
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-005",
+                  "status": "PASS",
+                  "message": "Bullish structural stop must be below the reference price.",
+                  "evidence": {
+                    "stop": 395.438,
+                    "reference_price": 405.99
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-006",
+                  "status": "PASS",
+                  "message": "Bullish structural stop must be below the entry zone.",
+                  "evidence": {
+                    "stop": 395.438,
+                    "entry_zone_low": 400.8697
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-007",
+                  "status": "PASS",
+                  "message": "Bullish Target 1 must be above the entry zone.",
+                  "evidence": {
+                    "target_1": 417.7258,
+                    "entry_zone_high": 403.0423
+                  },
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            },
+            "strategy": {
+              "name": "STRATEGY",
+              "rules": [],
+              "score": 100.0,
+              "status": "NOT_APPLICABLE"
+            },
+            "execution": {
+              "name": "EXECUTION",
+              "rules": [],
+              "score": 100.0,
+              "status": "NOT_APPLICABLE"
+            },
+            "lifecycle": {
+              "name": "LIFECYCLE",
+              "rules": [],
+              "score": 100.0,
+              "status": "NOT_APPLICABLE"
+            },
+            "management": {
+              "name": "AUTONOMOUS_MANAGEMENT",
+              "rules": [
+                {
+                  "code": "TPC-MGMT-001",
+                  "status": "PASS",
+                  "message": "Structural stop must be available for autonomous management.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MGMT-002",
+                  "status": "PASS",
+                  "message": "At least one governed profit target must be available.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MGMT-003",
+                  "status": "PASS",
+                  "message": "Trailing policy must be defined.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MGMT-004",
+                  "status": "PASS",
+                  "message": "Underlying exit intelligence must be available.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            }
+          },
+          "version": "M68.2.1-CONDITIONAL-ENTRY-GOVERNANCE-1.0",
+          "direction": "BULLISH",
+          "publishable": true,
+          "certified_at": "2026-08-17T17:19:42.219884+00:00",
+          "plan_mutated": false,
+          "failure_codes": [],
+          "quality_score": 100.0,
+          "entry_execution": {
+            "atr": 7.2422,
+            "target_1": 417.7258,
+            "entry_type": "DEMAND_BOUNCE",
+            "chase_limit": 404.714,
+            "disposition": "WAITING_FOR_ENTRY",
+            "reason_codes": [
+              "ABOVE_CHASE_LIMIT_WAIT_FOR_PULLBACK_OR_CONFIRMATION"
+            ],
+            "entry_zone_low": 400.8697,
+            "entry_zone_high": 403.0423,
+            "reference_price": 405.99,
+            "trade_builder_ready": false,
+            "confirmation_trigger": 407.0763,
+            "minimum_target_1_room": 2.02995,
+            "target_1_remaining_room": 11.7358
+          },
+          "failure_reasons": [],
+          "certification_id": "TPC-GLD-PENDING",
+          "plan_fingerprint": "9bfe4193a24c1373eb32f7c74a5a62caee2a65d9ce1712df6554bba4bd381502",
+          "reference_market": {
+            "price": 405.99,
+            "source": "LATEST_UNDERLYING_INGESTION",
+            "provider": "POLYGON",
+            "timestamp": "2026-08-17T17:19:33.217291+00:00",
+            "primary_timeframe": "1d",
+            "freshness_minutes_at_certification": 0.15
+          },
+          "certification_scope": "STOCK_TRADE_PLAN",
+          "trade_builder_ready": false,
+          "execution_disposition": "WAITING_FOR_ENTRY",
+          "source_plan_fingerprint": "9bfe4193a24c1373eb32f7c74a5a62caee2a65d9ce1712df6554bba4bd381502"
+        },
+        "m76_2_barrier_probability": {
+          "model": "DETERMINISTIC_GEOMETRY_PRIOR",
+          "evidence": {
+            "atr": 7.2422,
+            "note": "Deterministic prior only; outcome calibration is intentionally not active in M76.2.",
+            "stop": 395.438,
+            "entry": 401.956,
+            "atr_pct": 1.8017,
+            "targets": [
+              417.7258,
+              420.0,
+              426.5181
+            ],
+            "quality_edge": 0.4097,
+            "risk_distance": 6.518
+          },
+          "expected_mae_pct": 5.61,
+          "expected_mfe_pct": 10.93,
+          "calibration_status": "UNCALIBRATED",
+          "target_1_before_stop": 40.35,
+          "target_2_before_stop": 37.08,
+          "target_3_before_stop": 30.05,
+          "expected_holding_days": 30
+        },
+        "source_option_snapshot_id": "options-20260817T163005831833Z",
+        "eligibility_policy_version": "M62-PH2-1.0",
+        "institutional_plan_mutated": false,
+        "contract_option_snapshot_id": "polygon-options-2026-08-17",
+        "m75_2_2_source_plan_changed": true,
+        "m76_2_2_source_candidate_id": "stock-candidate-c91a5c5f10324f739a7067e442c52afd",
+        "m75_2_certification_required": true,
+        "m76_2_2_previous_candidate_id": "stock-candidate-bd8a5e7ff0eb42c2ba10dead7ac7b6e4",
+        "m76_2_2_source_scanner_run_id": "stock-scan-a22d925e8e1e493f80d1d89381b16eed",
+        "institutional_plan_fingerprint": "246bda0e806644a696693c4aeeced84326d4d08909ae2b925f94051029ab12f5",
+        "selected_strategy_candidate_id": "m62-strategy-f69d8384245642658b8c73f658533534",
+        "m68_2_1_3_option_lineage_policy": "SOURCE_AND_CONTRACT_IDENTITIES_SEPARATED",
+        "m76_2_2_previous_scanner_run_id": "stock-scan-758df313015a4abea6ffaad5cc5e2278",
+        "institutional_plan_certification": {
+          "status": "PASS",
+          "domains": {
+            "risk": {
+              "name": "RISK",
+              "rules": [
+                {
+                  "code": "TPC-RISK-001",
+                  "status": "PASS",
+                  "message": "Institutional underlying reward/risk must remain positive after transformation.",
+                  "evidence": {
+                    "structural_reward_risk": 2.4194231359312526
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-RISK-002",
+                  "status": "PASS",
+                  "message": "Institutional underlying plan must retain a defined structural stop.",
+                  "evidence": {
+                    "stop": 395.438
+                  },
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            },
+            "market": {
+              "name": "MARKET",
+              "rules": [
+                {
+                  "code": "TPC-MKT-001",
+                  "status": "PASS",
+                  "message": "Reference underlying price must remain available from the certified Stock Intelligence plan.",
+                  "evidence": {
+                    "reference_price": 405.99
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MKT-002",
+                  "status": "PASS",
+                  "message": "Reference market timestamp must remain bound to the Institutional Options plan.",
+                  "evidence": {
+                    "timestamp": "2026-08-17T17:19:33.217291+00:00"
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MKT-003",
+                  "status": "PASS",
+                  "message": "Reference market lineage must remain Polygon.",
+                  "evidence": {
+                    "provider": "POLYGON"
+                  },
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            },
+            "lineage": {
+              "name": "LINEAGE",
+              "rules": [
+                {
+                  "code": "TPC-LIN-001",
+                  "status": "PASS",
+                  "message": "Source Stock Intelligence trade plan certification must PASS.",
+                  "evidence": {
+                    "source_status": "PASS"
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-LIN-002",
+                  "status": "PASS",
+                  "message": "Source Stock Intelligence plan fingerprint must be present.",
+                  "evidence": {
+                    "source_plan_fingerprint": "9bfe4193a24c1373eb32f7c74a5a62caee2a65d9ce1712df6554bba4bd381502"
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-LIN-003",
+                  "status": "PASS",
+                  "message": "Final Institutional Options plan fingerprint must be materialized.",
+                  "evidence": {
+                    "plan_fingerprint": "246bda0e806644a696693c4aeeced84326d4d08909ae2b925f94051029ab12f5"
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-LIN-004",
+                  "status": "PASS",
+                  "message": "Any downstream plan mutation is explicitly re-certified before readiness.",
+                  "evidence": {
+                    "plan_mutated": false
+                  },
+                  "severity": "INFO"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            },
+            "geometry": {
+              "name": "GEOMETRY",
+              "rules": [
+                {
+                  "code": "TPC-GEO-000",
+                  "status": "PASS",
+                  "message": "Trade plan must have a directional bullish or bearish thesis.",
+                  "evidence": {
+                    "direction": "BULLISH"
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-004",
+                  "status": "PASS",
+                  "message": "Entry zone must be positive and ordered.",
+                  "evidence": {
+                    "entry_zone_low": 400.8697,
+                    "entry_zone_high": 403.0423
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-001",
+                  "status": "PASS",
+                  "message": "Every bullish target must be strictly above the reference underlying price.",
+                  "evidence": {
+                    "targets": [
+                      417.7258,
+                      420.0,
+                      426.5181
+                    ],
+                    "invalid_targets": [],
+                    "reference_price": 405.99
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-003",
+                  "status": "PASS",
+                  "message": "Bullish targets must be strictly increasing.",
+                  "evidence": {
+                    "targets": [
+                      417.7258,
+                      420.0,
+                      426.5181
+                    ]
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-005",
+                  "status": "PASS",
+                  "message": "Bullish structural stop must be below the reference price.",
+                  "evidence": {
+                    "stop": 395.438,
+                    "reference_price": 405.99
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-006",
+                  "status": "PASS",
+                  "message": "Bullish structural stop must be below the entry zone.",
+                  "evidence": {
+                    "stop": 395.438,
+                    "entry_zone_low": 400.8697
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-007",
+                  "status": "PASS",
+                  "message": "Bullish Target 1 must be above the entry zone.",
+                  "evidence": {
+                    "target_1": 417.7258,
+                    "entry_zone_high": 403.0423
+                  },
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            },
+            "strategy": {
+              "name": "STRATEGY",
+              "rules": [
+                {
+                  "code": "TPC-STR-001",
+                  "status": "PASS",
+                  "message": "Strategy must contain at least one option leg.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-STR-002",
+                  "status": "PASS",
+                  "message": "Every option leg must carry exact Polygon contract identity.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-STR-020",
+                  "status": "PASS",
+                  "message": "BULL_CALL_SPREAD must contain one long and one short leg with the same expiry.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-STR-021",
+                  "status": "PASS",
+                  "message": "BULL_CALL_SPREAD strike ordering is invalid.",
+                  "evidence": {
+                    "buy_strike": 404.0,
+                    "sell_strike": 425.0
+                  },
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            },
+            "execution": {
+              "name": "EXECUTION",
+              "rules": [
+                {
+                  "code": "TPC-EXEC-020",
+                  "status": "PASS",
+                  "message": "Selected Institutional Options contract recommendation must be executable.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-EXEC-021",
+                  "status": "PASS",
+                  "message": "Final Institutional Options plan must retain exact contract identity.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            },
+            "lifecycle": {
+              "name": "LIFECYCLE",
+              "rules": [],
+              "score": 100.0,
+              "status": "NOT_APPLICABLE"
+            },
+            "management": {
+              "name": "AUTONOMOUS_MANAGEMENT",
+              "rules": [
+                {
+                  "code": "TPC-MGMT-010",
+                  "status": "PASS",
+                  "message": "Institutional Options management plan must retain the structural stop.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MGMT-011",
+                  "status": "PASS",
+                  "message": "Institutional Options management plan must retain governed underlying targets.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MGMT-012",
+                  "status": "PASS",
+                  "message": "Institutional Options management plan must define trailing policy.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MGMT-013",
+                  "status": "PASS",
+                  "message": "Institutional Options management plan must define volatility exit governance.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            }
+          },
+          "version": "M68.2.1-CONDITIONAL-ENTRY-GOVERNANCE-1.0",
+          "strategy": "BULL_CALL_SPREAD",
+          "direction": "BULLISH",
+          "publishable": true,
+          "certified_at": "2026-08-17T17:54:11.621835+00:00",
+          "plan_mutated": false,
+          "failure_codes": [],
+          "quality_score": 100.0,
+          "lineage_status": "UNCHANGED_RECERTIFIED",
+          "entry_execution": {
+            "atr": 7.2422,
+            "target_1": 417.7258,
+            "entry_type": "DEMAND_BOUNCE",
+            "chase_limit": 404.714,
+            "disposition": "WAITING_FOR_ENTRY",
+            "reason_codes": [
+              "ABOVE_CHASE_LIMIT_WAIT_FOR_PULLBACK_OR_CONFIRMATION"
+            ],
+            "entry_zone_low": 400.8697,
+            "entry_zone_high": 403.0423,
+            "reference_price": 405.99,
+            "trade_builder_ready": false,
+            "confirmation_trigger": 407.0763,
+            "minimum_target_1_room": 2.02995,
+            "target_1_remaining_room": 11.7358
+          },
+          "failure_reasons": [],
+          "certification_id": "TPC-IO-246BDA0E806644A6",
+          "plan_fingerprint": "246bda0e806644a696693c4aeeced84326d4d08909ae2b925f94051029ab12f5",
+          "reference_market": {
+            "price": 405.99,
+            "source": "LATEST_UNDERLYING_INGESTION",
+            "provider": "POLYGON",
+            "timestamp": "2026-08-17T17:19:33.217291+00:00",
+            "primary_timeframe": "1d",
+            "freshness_minutes_at_certification": 0.15
+          },
+          "certification_scope": "INSTITUTIONAL_OPTIONS_FINAL_PLAN",
+          "trade_builder_ready": false,
+          "execution_disposition": "WAITING_FOR_ENTRY",
+          "source_certification_id": "TPC-GLD-PENDING",
+          "source_plan_fingerprint": "9bfe4193a24c1373eb32f7c74a5a62caee2a65d9ce1712df6554bba4bd381502",
+          "underlying_plan_fingerprint": "9bfe4193a24c1373eb32f7c74a5a62caee2a65d9ce1712df6554bba4bd381502"
+        },
+        "previous_source_plan_fingerprint": "231706c455009d013f8ba1182c435a6dd3fdfb71c32076c4226506464d42f293",
+        "source_option_snapshot_timestamp": "2026-08-17 11:38:34.167830-05:00",
+        "m76_2_2_current_decision_snapshot": true,
+        "institutional_decision_intelligence": {
+          "version": "M76.2-IDI-1.0",
+          "decision": "WATCH",
+          "warnings": [
+            "TARGET_1_BARRIER_PRIOR_BELOW_50"
+          ],
+          "state_hash": "15d1381fe29191d4aa411c5958530ae11f645e89f6b214eb6c5de5a98695cb37",
+          "competition": {
+            "status": "READY",
+            "version": "M76.2-IDI-1.0",
+            "rank_label": "Rank #172 / 614",
+            "market_rank": 172,
+            "top_percent": 28.01,
+            "ranking_basis": "CAPITAL_PRIORITY_THEN_TRADE_QUALITY",
+            "population_size": 614,
+            "market_percentile": 72.15
+          },
+          "passport_id": "IDI-15D1381FE29191D4",
+          "explainability": {
+            "version": "M76.2.1-EXPLAINABILITY-1.0",
+            "trade_quality": {
+              "score": 60.6,
+              "components": [
+                {
+                  "key": "directional_quality",
+                  "score": 80.0,
+                  "weight": 0.09,
+                  "contribution": 7.2
+                },
+                {
+                  "key": "trend_quality",
+                  "score": 97.97,
+                  "weight": 0.08,
+                  "contribution": 7.84
+                },
+                {
+                  "key": "structure_quality",
+                  "score": 75.27,
+                  "weight": 0.11,
+                  "contribution": 8.28
+                },
+                {
+                  "key": "breakout_quality",
+                  "score": 3.26,
+                  "weight": 0.08,
+                  "contribution": 0.26
+                },
+                {
+                  "key": "institutional_volume_quality",
+                  "score": 50.48,
+                  "weight": 0.09,
+                  "contribution": 4.54
+                },
+                {
+                  "key": "participation_quality",
+                  "score": 67.28,
+                  "weight": 0.06,
+                  "contribution": 4.04
+                },
+                {
+                  "key": "relative_strength_quality",
+                  "score": 20.0,
+                  "weight": 0.07,
+                  "contribution": 1.4
+                },
+                {
+                  "key": "market_alignment",
+                  "score": 48.7,
+                  "weight": 0.07,
+                  "contribution": 3.41
+                },
+                {
+                  "key": "dealer_quality",
+                  "score": 50.0,
+                  "weight": 0.04,
+                  "contribution": 2.0
+                },
+                {
+                  "key": "liquidity_quality",
+                  "score": 35.12,
+                  "weight": 0.05,
+                  "contribution": 1.76
+                },
+                {
+                  "key": "risk_quality",
+                  "score": 95.32,
+                  "weight": 0.08,
+                  "contribution": 7.63
+                },
+                {
+                  "key": "target_quality",
+                  "score": 38.67,
+                  "weight": 0.08,
+                  "contribution": 3.09
+                },
+                {
+                  "key": "management_quality",
+                  "score": 85.98,
+                  "weight": 0.06,
+                  "contribution": 5.16
+                },
+                {
+                  "key": "certification_quality",
+                  "score": 100.0,
+                  "weight": 0.04,
+                  "contribution": 4.0
+                }
+              ],
+              "ranking_basis": "DETERMINISTIC_WEIGHTED_QUALITY_VECTOR"
+            },
+            "capital_priority": {
+              "score": 67.98,
+              "components": {
+                "risk_quality": {
+                  "score": 95.32,
+                  "weight": 0.1,
+                  "contribution": 9.53
+                },
+                "trade_quality": {
+                  "score": 60.6,
+                  "weight": 0.58,
+                  "contribution": 35.15
+                },
+                "decision_readiness": {
+                  "score": 72.81,
+                  "weight": 0.32,
+                  "contribution": 23.3
+                }
+              },
+              "ranking_basis": "CAPITAL_PRIORITY_THEN_TRADE_QUALITY"
+            },
+            "decision_readiness": {
+              "score": 72.81,
+              "certified": true,
+              "components": {
+                "confidence": {
+                  "score": 86.17,
+                  "weight": 0.13,
+                  "contribution": 11.2
+                },
+                "trade_quality": {
+                  "score": 60.6,
+                  "weight": 0.42,
+                  "contribution": 25.45
+                },
+                "management_quality": {
+                  "score": 85.98,
+                  "weight": 0.15,
+                  "contribution": 12.9
+                },
+                "institutional_volume": {
+                  "score": 50.48,
+                  "weight": 0.1,
+                  "contribution": 5.05
+                },
+                "opportunity_freshness": {
+                  "score": 91.05,
+                  "weight": 0.2,
+                  "contribution": 18.21
+                }
+              },
+              "fail_closed_cap": null
+            },
+            "barrier_probability": {
+              "model": "DETERMINISTIC_GEOMETRY_PRIOR",
+              "expected_mae_pct": 5.61,
+              "expected_mfe_pct": 10.93,
+              "calibration_status": "UNCALIBRATED",
+              "target_1_before_stop": 40.35,
+              "target_2_before_stop": 37.08,
+              "target_3_before_stop": 30.05,
+              "expected_holding_days": 30
+            },
+            "opportunity_freshness": {
+              "score": 91.05,
+              "entry_zone": [
+                400.8697,
+                403.0423
+              ],
+              "aging_penalty": 8.95,
+              "extension_atr": 0.407,
+              "reference_price": 405.99
+            }
+          },
+          "quality_vector": {
+            "risk_quality": 95.32,
+            "trend_quality": 97.97,
+            "dealer_quality": 50.0,
+            "target_quality": 38.67,
+            "breakout_quality": 3.26,
+            "market_alignment": 48.7,
+            "liquidity_quality": 35.12,
+            "structure_quality": 75.27,
+            "management_quality": 85.98,
+            "directional_quality": 80.0,
+            "certification_quality": 100.0,
+            "participation_quality": 67.28,
+            "relative_strength_quality": 20.0,
+            "institutional_volume_quality": 50.48
+          },
+          "capital_priority": 67.98,
+          "evidence_registry": [
+            {
+              "key": "directional_quality",
+              "label": "Directional thesis",
+              "score": 80.0,
+              "status": "STRONG"
+            },
+            {
+              "key": "trend_quality",
+              "label": "Trend",
+              "score": 97.97,
+              "status": "STRONG"
+            },
+            {
+              "key": "structure_quality",
+              "label": "Structure",
+              "score": 75.27,
+              "status": "SUPPORTIVE"
+            },
+            {
+              "key": "breakout_quality",
+              "label": "Breakout / breakdown",
+              "score": 3.26,
+              "status": "WEAK"
+            },
+            {
+              "key": "institutional_volume_quality",
+              "label": "Institutional volume",
+              "score": 50.48,
+              "status": "MIXED"
+            },
+            {
+              "key": "participation_quality",
+              "label": "Participation",
+              "score": 67.28,
+              "status": "SUPPORTIVE"
+            },
+            {
+              "key": "relative_strength_quality",
+              "label": "Relative strength",
+              "score": 20.0,
+              "status": "WEAK"
+            },
+            {
+              "key": "market_alignment",
+              "label": "Market alignment",
+              "score": 48.7,
+              "status": "WEAK"
+            },
+            {
+              "key": "dealer_quality",
+              "label": "Dealer context",
+              "score": 50.0,
+              "status": "MIXED"
+            },
+            {
+              "key": "liquidity_quality",
+              "label": "Underlying liquidity proxy",
+              "score": 35.12,
+              "status": "WEAK"
+            },
+            {
+              "key": "risk_quality",
+              "label": "Risk geometry",
+              "score": 95.32,
+              "status": "STRONG"
+            },
+            {
+              "key": "target_quality",
+              "label": "Barrier / target quality",
+              "score": 38.67,
+              "status": "WEAK"
+            },
+            {
+              "key": "management_quality",
+              "label": "Management",
+              "score": 85.98,
+              "status": "STRONG"
+            },
+            {
+              "key": "certification_quality",
+              "label": "Trade-plan certification",
+              "score": 100.0,
+              "status": "STRONG"
+            },
+            {
+              "key": "barrier_probability",
+              "label": "Target 1 before stop",
+              "score": 40.35,
+              "status": "UNCALIBRATED_PRIOR",
+              "details": {
+                "atr": 7.2422,
+                "note": "Deterministic prior only; outcome calibration is intentionally not active in M76.2.",
+                "stop": 395.438,
+                "entry": 401.956,
+                "atr_pct": 1.8017,
+                "targets": [
+                  417.7258,
+                  420.0,
+                  426.5181
+                ],
+                "quality_edge": 0.4097,
+                "risk_distance": 6.518
+              }
+            },
+            {
+              "key": "opportunity_aging",
+              "label": "Opportunity aging",
+              "score": null,
+              "status": "MEASURED",
+              "details": {
+                "entry_zone": [
+                  400.8697,
+                  403.0423
+                ],
+                "aging_penalty": 8.95,
+                "extension_atr": 0.407,
+                "reference_price": 405.99
+              }
+            }
+          ],
+          "learning_snapshot": {
+            "mode": "SHADOW_CAPTURE",
+            "features": {
+              "barrier_t1": 40.35,
+              "barrier_t2": 37.08,
+              "barrier_t3": 30.05,
+              "risk_quality": 95.32,
+              "trend_quality": 97.97,
+              "dealer_quality": 50.0,
+              "target_quality": 38.67,
+              "alignment_score": 60.0,
+              "breakout_quality": 3.26,
+              "market_alignment": 48.7,
+              "liquidity_quality": 35.12,
+              "structure_quality": 75.27,
+              "management_quality": 85.98,
+              "relative_volume_1d": 0.718,
+              "directional_quality": 80.0,
+              "certification_quality": 100.0,
+              "participation_quality": 67.28,
+              "structural_reward_risk": 3.77,
+              "relative_strength_quality": 20.0,
+              "institutional_volume_quality": 50.48
+            },
+            "feature_version": "M76.2-IDI-1.0",
+            "adaptive_influence": false,
+            "outcome_fields_pending": [
+              "MFE",
+              "MAE",
+              "TARGET_SEQUENCE",
+              "STOP_HIT",
+              "HOLDING_PERIOD",
+              "REALIZED_RETURN"
+            ]
+          },
+          "decision_readiness": 72.81,
+          "barrier_probability": {
+            "model": "DETERMINISTIC_GEOMETRY_PRIOR",
+            "evidence": {
+              "atr": 7.2422,
+              "note": "Deterministic prior only; outcome calibration is intentionally not active in M76.2.",
+              "stop": 395.438,
+              "entry": 401.956,
+              "atr_pct": 1.8017,
+              "targets": [
+                417.7258,
+                420.0,
+                426.5181
+              ],
+              "quality_edge": 0.4097,
+              "risk_distance": 6.518
+            },
+            "expected_mae_pct": 5.61,
+            "expected_mfe_pct": 10.93,
+            "calibration_status": "UNCALIBRATED",
+            "target_1_before_stop": 40.35,
+            "target_2_before_stop": 37.08,
+            "target_3_before_stop": 30.05,
+            "expected_holding_days": 30
+          },
+          "institutional_grade": "C+",
+          "outcome_probability": {
+            "mode": "SHADOW",
+            "status": "SHADOW_NOT_READY",
+            "lineage": {
+              "runtime_mode": "SHADOW",
+              "scanner_run_id": null,
+              "feature_version": "M77.0-POINT-IN-TIME-FEATURES-1.0",
+              "source_provider": "polygon",
+              "authority_effect": false,
+              "feature_allow_list": [
+                "directional_quality",
+                "trend_quality",
+                "structure_quality",
+                "breakout_quality",
+                "institutional_volume_quality",
+                "participation_quality",
+                "relative_strength_quality",
+                "market_alignment",
+                "dealer_quality",
+                "liquidity_quality",
+                "risk_quality",
+                "management_quality",
+                "certification_quality",
+                "overall_trade_quality",
+                "decision_readiness",
+                "opportunity_freshness",
+                "alignment_score",
+                "scanner_score",
+                "scanner_confidence",
+                "relative_volume_1d",
+                "volume_persistence",
+                "breakout_confirmation",
+                "breakout_follow_through",
+                "breakout_failure",
+                "structural_reward_risk",
+                "entry_extension_atr",
+                "bullish_direction",
+                "bearish_direction",
+                "accumulation_setup",
+                "distribution_setup",
+                "breakout_setup",
+                "mean_reversion_setup",
+                "uptrend_regime",
+                "downtrend_regime",
+                "negative_gamma_regime"
+              ],
+              "snapshot_timestamp": "2026-08-17T17:19:33.217291+00:00",
+              "candidate_state_hash": "9ff777f4c3952554c76c6ffa34f4fa4513aa96ec5a67f540e62a990e87c3f4fc",
+              "future_fields_excluded": true
+            },
+            "version": "M77.0-OUTCOME-PROBABILITY-1.0",
+            "model_id": null,
+            "warnings": [
+              "NO_APPROVED_SHADOW_MODEL",
+              "DETERMINISTIC_M76_BARRIER_PRIOR_REMAINS_AUTHORITATIVE_INPUT"
+            ],
+            "state_hash": "5aff1273e541723da7cc7f30c14e4baaf882f5610c7c88426f93f4c1f564055c",
+            "model_version": null,
+            "analog_evidence": {},
+            "authority_effect": false,
+            "expected_mae_pct": null,
+            "expected_mfe_pct": null,
+            "expected_value_r": null,
+            "model_confidence": 0.0,
+            "calibration_status": "NOT_AVAILABLE",
+            "thesis_invalidation": null,
+            "target_1_before_stop": null,
+            "target_2_before_stop": null,
+            "target_3_before_stop": null,
+            "epistemic_uncertainty": 1.0,
+            "expected_days_to_stop": null,
+            "feature_contributions": [],
+            "profitable_at_horizon": null,
+            "recommended_disposition": "ABSTAIN",
+            "expected_days_to_target_1": null,
+            "out_of_distribution_score": 1.0
+          },
+          "opportunity_freshness": 91.05,
+          "opportunity_lifecycle": "ACTIONABLE",
+          "overall_trade_quality": 60.6
+        },
+        "m68_2_1_12_exact_lineage_precedence": true,
+        "m68_2_1_13_executable_package_count": 7,
+        "m68_2_1_3_source_option_snapshot_id": "options-20260817T163005831833Z",
+        "m76_2_2_source_decision_fingerprint": "c961afa8d0de4dc56d0c3d50de546de85c73b5544c7d1599f1972f0de79e8c5d",
+        "m68_2_1_3_contract_option_snapshot_id": "polygon-options-2026-08-17",
+        "m68_2_1_12_logical_collision_prevented": false,
+        "m75_2_2_final_plan_certification_pending": true,
+        "m68_2_1_13_global_feasible_package_proven": true,
+        "m68_2_1_13_selected_strategy_candidate_id": "m62-strategy-e0943f9b8c0d4f4db56e6fd8e9ea1f28",
+        "m68_2_1_3_source_option_snapshot_timestamp": "2026-08-17 11:38:34.167830-05:00",
+        "m76_2_2_previous_source_decision_fingerprint": "20a7d1390f24d1a5e3a89dc03779c8499aa695c4ebddeec3d1f4c1be0a4f0039"
+      },
+      "direction": "BULLISH",
+      "thesis_id": "m62-thesis-f4c808cd4eb04abd86d07c16eeb6336f",
+      "confidence": 86.17,
+      "conviction": "LOW",
+      "created_at": "2026-08-14T00:31:00.660940+00:00",
+      "updated_at": "2026-08-17T17:20:19.374534+00:00",
+      "asset_class": "EQUITY",
+      "overall_score": 57.26,
+      "opportunity_id": "m62-opp-8010ba9e2173453d98328d88b3d2a8fd",
+      "inflection_intelligence": {
+        "symbol": "GLD",
+        "lineage": {
+          "breadth": {
+            "score": 57.29223018349103,
+            "available": true,
+            "as_of_date": "2026-08-17",
+            "resolution": "CANONICAL_MARKET_FALLBACK",
+            "source_table": "market_breadth_snapshot",
+            "universe_name": "canonical",
+            "breadth_regime": "DIVERGING",
+            "evaluated_symbols": 613,
+            "snapshot_timestamp": "2026-08-17T12:19:02.299429-05:00"
+          },
+          "build_mode": "OPTIONS_ENRICHMENT",
+          "dealer_as_of_date": "2026-08-17",
+          "option_as_of_date": "2026-08-17",
+          "source_as_of_date": "2026-08-17",
+          "option_snapshot_id": "options-20260817T173006379861Z",
+          "component_freshness": {
+            "breadth": "CURRENT_EXACT",
+            "underlying": "CURRENT_EXACT",
+            "dealer_options": "CURRENT_EXACT"
+          },
+          "stock_scanner_run_id": "stock-scan-a22d925e8e1e493f80d1d89381b16eed",
+          "stock_publication_name": "current_stock_intelligence",
+          "option_snapshot_timestamp": "2026-08-17 12:38:43.688194-05:00",
+          "stock_publication_timestamp": "2026-08-17T17:19:33.217291+00:00"
+        },
+        "evidence": [
+          "structure:+67.2 (bullish)",
+          "trend:+61.5 (bullish)",
+          "volatility:+16.8 (bullish)",
+          "dealer:+16.0 (bullish)"
+        ],
+        "velocity": 0.8571,
+        "direction": "BULLISH",
+        "timeframe": "1d",
+        "build_mode": "OPTIONS_ENRICHMENT",
+        "components": {
+          "trend": 61.5216,
+          "dealer": 15.9903,
+          "breadth": 14.5845,
+          "structure": 67.1687,
+          "volatility": 16.8005,
+          "participation": 11.0392
+        },
+        "confidence": 99.97,
+        "state_hash": "0388beeced2bd3e4037fdad32fb13feae1d7e4dc8cf9cf589de1c88c92761fb3",
+        "thresholds": {
+          "watch": 60.0,
+          "actionable": 70.0,
+          "high_conviction": 80.0
+        },
+        "diagnostics": {
+          "agreement": 100.0,
+          "momentum_5": 0.85705768,
+          "momentum_20": 10.44341676,
+          "volume_ratio": 0.88122486,
+          "range_position": 0.93289905,
+          "compression_ratio": 0.64359148,
+          "liquidity_quality": 99.7418,
+          "implied_volatility": 0.2304822,
+          "material_acceleration": true,
+          "volatility_divergence": -0.50805107,
+          "realized_volatility_20d": 0.22540169
+        },
+        "disposition": "DEVELOPING",
+        "acceleration": -1.7538,
+        "invalidation": {
+          "price_above": null,
+          "price_below": 366.526,
+          "confidence_below": 55.0,
+          "directional_score_inside_deadband": 15.0
+        },
+        "input_quality": 99.95,
+        "missing_inputs": [],
+        "policy_version": "M68.2.1-POINT-IN-TIME-BREADTH-INFLECTION-1.0",
+        "coverage_status": "CURRENT_EXACT",
+        "signal_strength": 47.9025,
+        "weight_contract": {
+          "policy": "FIXED_NO_RENORMALIZATION",
+          "available_weight_total": 1.0,
+          "configured_weight_total": 1.0
+        },
+        "inflection_score": 47.9025,
+        "transition_state": "TREND_EXHAUSTION",
+        "directional_score": 38.3117,
+        "input_fingerprint": "5898b1ed3482850fb602e4b6a32d0e389bf7cb8776d81b48d1cf6ddbff8d5029",
+        "semantic_state_hash": "8de0a8cf3b15d0ffb7cb69ddd7c1cbdcdf9f2a767bae854343ec0b9372b74d38",
+        "conflicting_evidence": [],
+        "horizon_max_sessions": 7,
+        "horizon_min_sessions": 1,
+        "component_availability": {
+          "trend": true,
+          "dealer": true,
+          "breadth": true,
+          "structure": true,
+          "volatility": true,
+          "participation": true,
+          "option_liquidity": true,
+          "implied_volatility": true
+        },
+        "component_decomposition": {
+          "trend": {
+            "available": true,
+            "raw_score": 61.5216,
+            "configured_weight": 0.25,
+            "weighted_contribution": 15.3804
+          },
+          "dealer": {
+            "available": true,
+            "raw_score": 15.9903,
+            "configured_weight": 0.18,
+            "weighted_contribution": 2.8783
+          },
+          "breadth": {
+            "available": true,
+            "raw_score": 14.5845,
+            "configured_weight": 0.11,
+            "weighted_contribution": 1.6043
+          },
+          "structure": {
+            "available": true,
+            "raw_score": 67.1687,
+            "configured_weight": 0.23,
+            "weighted_contribution": 15.4488
+          },
+          "volatility": {
+            "available": true,
+            "raw_score": 16.8005,
+            "configured_weight": 0.08,
+            "weighted_contribution": 1.344
+          },
+          "participation": {
+            "available": true,
+            "raw_score": 11.0392,
+            "configured_weight": 0.15,
+            "weighted_contribution": 1.6559
+          }
+        }
+      },
+      "intelligence_extensions": {}
+    }
+  },
+  {
+    "opportunity_id": "m62-opp-b7def89ae02c4a19a32a9ca348a6bdb4",
+    "symbol": "INTC",
+    "asset_class": "EQUITY",
+    "state": "VALIDATED",
+    "direction": "BULLISH",
+    "category": "BULLISH",
+    "overall_score": 73.02,
+    "confidence": 86.17,
+    "conviction": "MODERATE",
+    "thesis_id": "m62-thesis-d4d0cea2968242afa00b7003a48bd313",
+    "stock_publication_name": "current_stock_intelligence",
+    "stock_scanner_run_id": "stock-scan-a22d925e8e1e493f80d1d89381b16eed",
+    "stock_candidate_id": "stock-candidate-cb6ff952808a446ba0a170ef83ad4b83",
+    "stock_state_hash": "4e08de6d861017ee2d02fa524be148891b9485304b6ce3a3a484f612608e45dd",
+    "option_snapshot_id": "polygon-options-2026-08-13",
+    "version": 7,
+    "created_at": "2026-08-13T13:33:56.246368+00:00",
+    "updated_at": "2026-08-17T17:20:20.092951+00:00",
+    "payload_json": {
+      "state": "VALIDATED",
+      "symbol": "INTC",
+      "lineage": {
+        "market_run_id": "market-ingestion-20260817T171918068162Z",
+        "source_provider": "POLYGON_PERSISTED",
+        "stock_state_hash": "4e08de6d861017ee2d02fa524be148891b9485304b6ce3a3a484f612608e45dd",
+        "option_snapshot_id": "polygon-options-2026-08-13",
+        "stock_candidate_id": "stock-candidate-cb6ff952808a446ba0a170ef83ad4b83",
+        "stock_scanner_run_id": "stock-scan-a22d925e8e1e493f80d1d89381b16eed",
+        "stock_publication_name": "current_stock_intelligence",
+        "market_publication_name": "current_market_state",
+        "option_snapshot_timestamp": "2026-08-13",
+        "source_option_snapshot_id": null,
+        "contract_option_snapshot_id": null
+      },
+      "version": 6,
+      "category": "BULLISH",
+      "metadata": {
+        "freshness": 100.0,
+        "reference_market": {
+          "price": 105.055,
+          "source": "LATEST_UNDERLYING_INGESTION",
+          "provider": "POLYGON",
+          "timestamp": "2026-08-17T17:19:33.217291+00:00",
+          "primary_timeframe": "1d",
+          "freshness_minutes_at_certification": 0.15
+        },
+        "forecast_evidence": {
+          "horizon_days": 10,
+          "conflict_codes": [
+            "EXPECTED_RETURN_DIRECTION_CONFLICT"
+          ],
+          "forecast_direction": "NEUTRAL",
+          "bearish_probability": 31.1462,
+          "bullish_probability": 68.8538,
+          "expected_return_pct": -4.871122,
+          "reversal_probability": 68.8538,
+          "directional_consistency": false,
+          "expected_volatility_pct": 15.482621,
+          "continuation_probability": 31.1462,
+          "prevailing_trend_direction": "BEARISH"
+        },
+        "primary_timeframe": "1d",
+        "management_quality": 87.37,
+        "m76_2_trade_quality": 59.88,
+        "opportunity_quality": 71.2104,
+        "eligibility_warnings": [],
+        "institutional_volume": {
+          "regime": "QUIET",
+          "signal": "NEUTRAL",
+          "evidence": {
+            "cmf_20d": -0.0783,
+            "version": "M76-INSTITUTIONAL-VOLUME-1.0",
+            "volume_1d": 50910535.29,
+            "absorption_side": "NONE",
+            "price_change_1d": 0.0249,
+            "climactic_volume": false,
+            "price_return_20d": -0.0037,
+            "average_volume_20d": 119300340.11,
+            "average_volume_60d": 121208534.1,
+            "dry_up_ratio_5d_vs_20d": 0.9885,
+            "signed_volume_flow_20d": -0.043,
+            "range_ratio_vs_20d_median": 0.7407,
+            "elevated_volume_sessions_10d": 2
+          },
+          "dry_up_score": 1.84,
+          "absorption_score": 0.0,
+          "persistence_score": 20.0,
+          "volume_zscore_20d": -2.16,
+          "accumulation_score": 47.36,
+          "distribution_score": 60.29,
+          "relative_volume_1d": 0.427,
+          "relative_volume_5d": 0.989,
+          "relative_volume_20d": 0.968,
+          "close_location_value": 0.561,
+          "volume_percentile_60d": 1.67,
+          "up_down_volume_ratio_20d": 0.918,
+          "breakout_confirmation_score": 0.0,
+          "breakdown_confirmation_score": 39.0,
+          "institutional_participation_score": 35.94
+        },
+        "m76_2_2_continuity_key": "INTC|BULLISH|BULLISH|1d",
+        "m76_2_capital_priority": 67.15,
+        "structural_reward_risk": 6.87,
+        "source_plan_fingerprint": "a600a04007deb24814296a736a2278510f1d45751ffbd77fc4a8782b879a51d1",
+        "m76_2_2_continuity_match": "LOGICAL_REFRESH",
+        "m76_2_decision_readiness": 70.39,
+        "trade_plan_certification": {
+          "status": "PASS",
+          "domains": {
+            "risk": {
+              "name": "RISK",
+              "rules": [
+                {
+                  "code": "TPC-RISK-001",
+                  "status": "PASS",
+                  "message": "Structural reward/risk must be positive.",
+                  "evidence": {
+                    "structural_reward_risk": 6.87
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-RISK-002",
+                  "status": "PASS",
+                  "message": "Defined structural stop is required.",
+                  "evidence": {
+                    "stop": 94.8986
+                  },
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            },
+            "market": {
+              "name": "MARKET",
+              "rules": [
+                {
+                  "code": "TPC-MKT-001",
+                  "status": "PASS",
+                  "message": "Reference underlying price must be available from the latest ingestion.",
+                  "evidence": {
+                    "reference_price": 105.055
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MKT-002",
+                  "status": "PASS",
+                  "message": "Reference market timestamp must be present.",
+                  "evidence": {
+                    "timestamp": "2026-08-17T17:19:33.217291+00:00"
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MKT-003",
+                  "status": "PASS",
+                  "message": "Reference market lineage must be Polygon.",
+                  "evidence": {
+                    "provider": "POLYGON"
+                  },
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            },
+            "lineage": {
+              "name": "LINEAGE",
+              "rules": [],
+              "score": 100.0,
+              "status": "NOT_APPLICABLE"
+            },
+            "geometry": {
+              "name": "GEOMETRY",
+              "rules": [
+                {
+                  "code": "TPC-GEO-000",
+                  "status": "PASS",
+                  "message": "Trade plan must have a directional bullish or bearish thesis.",
+                  "evidence": {
+                    "direction": "BULLISH"
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-004",
+                  "status": "PASS",
+                  "message": "Entry zone must be positive and ordered.",
+                  "evidence": {
+                    "entry_zone_low": 100.4653,
+                    "entry_zone_high": 101.0957
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-001",
+                  "status": "PASS",
+                  "message": "Every bullish target must be strictly above the reference underlying price.",
+                  "evidence": {
+                    "targets": [
+                      110.0,
+                      116.8764,
+                      141.1905
+                    ],
+                    "invalid_targets": [],
+                    "reference_price": 105.055
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-003",
+                  "status": "PASS",
+                  "message": "Bullish targets must be strictly increasing.",
+                  "evidence": {
+                    "targets": [
+                      110.0,
+                      116.8764,
+                      141.1905
+                    ]
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-005",
+                  "status": "PASS",
+                  "message": "Bullish structural stop must be below the reference price.",
+                  "evidence": {
+                    "stop": 94.8986,
+                    "reference_price": 105.055
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-006",
+                  "status": "PASS",
+                  "message": "Bullish structural stop must be below the entry zone.",
+                  "evidence": {
+                    "stop": 94.8986,
+                    "entry_zone_low": 100.4653
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-007",
+                  "status": "PASS",
+                  "message": "Bullish Target 1 must be above the entry zone.",
+                  "evidence": {
+                    "target_1": 110.0,
+                    "entry_zone_high": 101.0957
+                  },
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            },
+            "strategy": {
+              "name": "STRATEGY",
+              "rules": [],
+              "score": 100.0,
+              "status": "NOT_APPLICABLE"
+            },
+            "execution": {
+              "name": "EXECUTION",
+              "rules": [],
+              "score": 100.0,
+              "status": "NOT_APPLICABLE"
+            },
+            "lifecycle": {
+              "name": "LIFECYCLE",
+              "rules": [],
+              "score": 100.0,
+              "status": "NOT_APPLICABLE"
+            },
+            "management": {
+              "name": "AUTONOMOUS_MANAGEMENT",
+              "rules": [
+                {
+                  "code": "TPC-MGMT-001",
+                  "status": "PASS",
+                  "message": "Structural stop must be available for autonomous management.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MGMT-002",
+                  "status": "PASS",
+                  "message": "At least one governed profit target must be available.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MGMT-003",
+                  "status": "PASS",
+                  "message": "Trailing policy must be defined.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MGMT-004",
+                  "status": "PASS",
+                  "message": "Underlying exit intelligence must be available.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            }
+          },
+          "version": "M68.2.1-CONDITIONAL-ENTRY-GOVERNANCE-1.0",
+          "direction": "BULLISH",
+          "publishable": true,
+          "certified_at": "2026-08-17T17:19:42.426677+00:00",
+          "plan_mutated": false,
+          "failure_codes": [],
+          "quality_score": 100.0,
+          "entry_execution": {
+            "atr": 6.5354,
+            "target_1": 110.0,
+            "entry_type": "DEMAND_BOUNCE",
+            "chase_limit": 103.3831,
+            "disposition": "WAITING_FOR_ENTRY",
+            "reason_codes": [
+              "ABOVE_CHASE_LIMIT_WAIT_FOR_PULLBACK_OR_CONFIRMATION"
+            ],
+            "entry_zone_low": 100.4653,
+            "entry_zone_high": 101.0957,
+            "reference_price": 105.055,
+            "trade_builder_ready": false,
+            "confirmation_trigger": 106.0353,
+            "minimum_target_1_room": 1.63385,
+            "target_1_remaining_room": 4.945
+          },
+          "failure_reasons": [],
+          "certification_id": "TPC-INTC-PENDING",
+          "plan_fingerprint": "a600a04007deb24814296a736a2278510f1d45751ffbd77fc4a8782b879a51d1",
+          "reference_market": {
+            "price": 105.055,
+            "source": "LATEST_UNDERLYING_INGESTION",
+            "provider": "POLYGON",
+            "timestamp": "2026-08-17T17:19:33.217291+00:00",
+            "primary_timeframe": "1d",
+            "freshness_minutes_at_certification": 0.15
+          },
+          "certification_scope": "STOCK_TRADE_PLAN",
+          "trade_builder_ready": false,
+          "execution_disposition": "WAITING_FOR_ENTRY",
+          "source_plan_fingerprint": "a600a04007deb24814296a736a2278510f1d45751ffbd77fc4a8782b879a51d1"
+        },
+        "m76_2_barrier_probability": {
+          "model": "DETERMINISTIC_GEOMETRY_PRIOR",
+          "evidence": {
+            "atr": 6.5354,
+            "note": "Deterministic prior only; outcome calibration is intentionally not active in M76.2.",
+            "stop": 94.8986,
+            "entry": 100.7805,
+            "atr_pct": 6.4848,
+            "targets": [
+              110.0,
+              116.8764,
+              141.1905
+            ],
+            "quality_edge": 0.3209,
+            "risk_distance": 5.8819
+          },
+          "expected_mae_pct": 20.67,
+          "expected_mfe_pct": 38.48,
+          "calibration_status": "UNCALIBRATED",
+          "target_1_before_stop": 47.65,
+          "target_2_before_stop": 33.5,
+          "target_3_before_stop": 15.1,
+          "expected_holding_days": 30
+        },
+        "source_option_snapshot_id": "options-20260817T163005831833Z",
+        "eligibility_policy_version": "M62-PH2-1.0",
+        "contract_option_snapshot_id": "polygon-options-2026-08-13",
+        "m75_2_2_source_plan_changed": true,
+        "m76_2_2_source_candidate_id": "stock-candidate-cb6ff952808a446ba0a170ef83ad4b83",
+        "m75_2_certification_required": true,
+        "m76_2_2_previous_candidate_id": "stock-candidate-b47e58cb778a4948b2ada36246326664",
+        "m76_2_2_source_scanner_run_id": "stock-scan-a22d925e8e1e493f80d1d89381b16eed",
+        "m68_2_1_3_option_lineage_policy": "SOURCE_AND_CONTRACT_IDENTITIES_SEPARATED",
+        "m76_2_2_previous_scanner_run_id": "stock-scan-758df313015a4abea6ffaad5cc5e2278",
+        "previous_source_plan_fingerprint": "ee888d31c9beafc930141806cd5ab0267ce89300de8f902ac067393197d76fed",
+        "source_option_snapshot_timestamp": "2026-08-17 11:38:34.167830-05:00",
+        "m76_2_2_current_decision_snapshot": true,
+        "institutional_decision_intelligence": {
+          "version": "M76.2-IDI-1.0",
+          "decision": "WATCH",
+          "warnings": [
+            "TARGET_1_BARRIER_PRIOR_BELOW_50"
+          ],
+          "state_hash": "5bce58df2a647f24a92f81da5185a68223c3fb7bc9fd5ff27d9db8ef177c7f7b",
+          "competition": {
+            "status": "READY",
+            "version": "M76.2-IDI-1.0",
+            "rank_label": "Rank #215 / 614",
+            "market_rank": 215,
+            "top_percent": 35.02,
+            "ranking_basis": "CAPITAL_PRIORITY_THEN_TRADE_QUALITY",
+            "population_size": 614,
+            "market_percentile": 65.15
+          },
+          "passport_id": "IDI-5BCE58DF2A647F24",
+          "explainability": {
+            "version": "M76.2.1-EXPLAINABILITY-1.0",
+            "trade_quality": {
+              "score": 59.88,
+              "components": [
+                {
+                  "key": "directional_quality",
+                  "score": 95.0,
+                  "weight": 0.09,
+                  "contribution": 8.55
+                },
+                {
+                  "key": "trend_quality",
+                  "score": 76.48,
+                  "weight": 0.08,
+                  "contribution": 6.12
+                },
+                {
+                  "key": "structure_quality",
+                  "score": 77.97,
+                  "weight": 0.11,
+                  "contribution": 8.58
+                },
+                {
+                  "key": "breakout_quality",
+                  "score": 41.01,
+                  "weight": 0.08,
+                  "contribution": 3.28
+                },
+                {
+                  "key": "institutional_volume_quality",
+                  "score": 35.94,
+                  "weight": 0.09,
+                  "contribution": 3.23
+                },
+                {
+                  "key": "participation_quality",
+                  "score": 41.08,
+                  "weight": 0.06,
+                  "contribution": 2.46
+                },
+                {
+                  "key": "relative_strength_quality",
+                  "score": 20.0,
+                  "weight": 0.07,
+                  "contribution": 1.4
+                },
+                {
+                  "key": "market_alignment",
+                  "score": 44.83,
+                  "weight": 0.07,
+                  "contribution": 3.14
+                },
+                {
+                  "key": "dealer_quality",
+                  "score": 50.0,
+                  "weight": 0.04,
+                  "contribution": 2.0
+                },
+                {
+                  "key": "liquidity_quality",
+                  "score": 12.57,
+                  "weight": 0.05,
+                  "contribution": 0.63
+                },
+                {
+                  "key": "risk_quality",
+                  "score": 99.0,
+                  "weight": 0.08,
+                  "contribution": 7.92
+                },
+                {
+                  "key": "target_quality",
+                  "score": 41.56,
+                  "weight": 0.08,
+                  "contribution": 3.32
+                },
+                {
+                  "key": "management_quality",
+                  "score": 87.37,
+                  "weight": 0.06,
+                  "contribution": 5.24
+                },
+                {
+                  "key": "certification_quality",
+                  "score": 100.0,
+                  "weight": 0.04,
+                  "contribution": 4.0
+                }
+              ],
+              "ranking_basis": "DETERMINISTIC_WEIGHTED_QUALITY_VECTOR"
+            },
+            "capital_priority": {
+              "score": 67.15,
+              "components": {
+                "risk_quality": {
+                  "score": 99.0,
+                  "weight": 0.1,
+                  "contribution": 9.9
+                },
+                "trade_quality": {
+                  "score": 59.88,
+                  "weight": 0.58,
+                  "contribution": 34.73
+                },
+                "decision_readiness": {
+                  "score": 70.39,
+                  "weight": 0.32,
+                  "contribution": 22.52
+                }
+              },
+              "ranking_basis": "CAPITAL_PRIORITY_THEN_TRADE_QUALITY"
+            },
+            "decision_readiness": {
+              "score": 70.39,
+              "certified": true,
+              "components": {
+                "confidence": {
+                  "score": 86.17,
+                  "weight": 0.13,
+                  "contribution": 11.2
+                },
+                "trade_quality": {
+                  "score": 59.88,
+                  "weight": 0.42,
+                  "contribution": 25.15
+                },
+                "management_quality": {
+                  "score": 87.37,
+                  "weight": 0.15,
+                  "contribution": 13.11
+                },
+                "institutional_volume": {
+                  "score": 35.94,
+                  "weight": 0.1,
+                  "contribution": 3.59
+                },
+                "opportunity_freshness": {
+                  "score": 86.67,
+                  "weight": 0.2,
+                  "contribution": 17.33
+                }
+              },
+              "fail_closed_cap": null
+            },
+            "barrier_probability": {
+              "model": "DETERMINISTIC_GEOMETRY_PRIOR",
+              "expected_mae_pct": 20.67,
+              "expected_mfe_pct": 38.48,
+              "calibration_status": "UNCALIBRATED",
+              "target_1_before_stop": 47.65,
+              "target_2_before_stop": 33.5,
+              "target_3_before_stop": 15.1,
+              "expected_holding_days": 30
+            },
+            "opportunity_freshness": {
+              "score": 86.67,
+              "entry_zone": [
+                100.4653,
+                101.0957
+              ],
+              "aging_penalty": 13.33,
+              "extension_atr": 0.606,
+              "reference_price": 105.055
+            }
+          },
+          "quality_vector": {
+            "risk_quality": 99.0,
+            "trend_quality": 76.48,
+            "dealer_quality": 50.0,
+            "target_quality": 41.56,
+            "breakout_quality": 41.01,
+            "market_alignment": 44.83,
+            "liquidity_quality": 12.57,
+            "structure_quality": 77.97,
+            "management_quality": 87.37,
+            "directional_quality": 95.0,
+            "certification_quality": 100.0,
+            "participation_quality": 41.08,
+            "relative_strength_quality": 20.0,
+            "institutional_volume_quality": 35.94
+          },
+          "capital_priority": 67.15,
+          "evidence_registry": [
+            {
+              "key": "directional_quality",
+              "label": "Directional thesis",
+              "score": 95.0,
+              "status": "STRONG"
+            },
+            {
+              "key": "trend_quality",
+              "label": "Trend",
+              "score": 76.48,
+              "status": "SUPPORTIVE"
+            },
+            {
+              "key": "structure_quality",
+              "label": "Structure",
+              "score": 77.97,
+              "status": "SUPPORTIVE"
+            },
+            {
+              "key": "breakout_quality",
+              "label": "Breakout / breakdown",
+              "score": 41.01,
+              "status": "WEAK"
+            },
+            {
+              "key": "institutional_volume_quality",
+              "label": "Institutional volume",
+              "score": 35.94,
+              "status": "WEAK"
+            },
+            {
+              "key": "participation_quality",
+              "label": "Participation",
+              "score": 41.08,
+              "status": "WEAK"
+            },
+            {
+              "key": "relative_strength_quality",
+              "label": "Relative strength",
+              "score": 20.0,
+              "status": "WEAK"
+            },
+            {
+              "key": "market_alignment",
+              "label": "Market alignment",
+              "score": 44.83,
+              "status": "WEAK"
+            },
+            {
+              "key": "dealer_quality",
+              "label": "Dealer context",
+              "score": 50.0,
+              "status": "MIXED"
+            },
+            {
+              "key": "liquidity_quality",
+              "label": "Underlying liquidity proxy",
+              "score": 12.57,
+              "status": "WEAK"
+            },
+            {
+              "key": "risk_quality",
+              "label": "Risk geometry",
+              "score": 99.0,
+              "status": "STRONG"
+            },
+            {
+              "key": "target_quality",
+              "label": "Barrier / target quality",
+              "score": 41.56,
+              "status": "WEAK"
+            },
+            {
+              "key": "management_quality",
+              "label": "Management",
+              "score": 87.37,
+              "status": "STRONG"
+            },
+            {
+              "key": "certification_quality",
+              "label": "Trade-plan certification",
+              "score": 100.0,
+              "status": "STRONG"
+            },
+            {
+              "key": "barrier_probability",
+              "label": "Target 1 before stop",
+              "score": 47.65,
+              "status": "UNCALIBRATED_PRIOR",
+              "details": {
+                "atr": 6.5354,
+                "note": "Deterministic prior only; outcome calibration is intentionally not active in M76.2.",
+                "stop": 94.8986,
+                "entry": 100.7805,
+                "atr_pct": 6.4848,
+                "targets": [
+                  110.0,
+                  116.8764,
+                  141.1905
+                ],
+                "quality_edge": 0.3209,
+                "risk_distance": 5.8819
+              }
+            },
+            {
+              "key": "opportunity_aging",
+              "label": "Opportunity aging",
+              "score": null,
+              "status": "MEASURED",
+              "details": {
+                "entry_zone": [
+                  100.4653,
+                  101.0957
+                ],
+                "aging_penalty": 13.33,
+                "extension_atr": 0.606,
+                "reference_price": 105.055
+              }
+            }
+          ],
+          "learning_snapshot": {
+            "mode": "SHADOW_CAPTURE",
+            "features": {
+              "barrier_t1": 47.65,
+              "barrier_t2": 33.5,
+              "barrier_t3": 15.1,
+              "risk_quality": 99.0,
+              "trend_quality": 76.48,
+              "dealer_quality": 50.0,
+              "target_quality": 41.56,
+              "alignment_score": 100.0,
+              "breakout_quality": 41.01,
+              "market_alignment": 44.83,
+              "liquidity_quality": 12.57,
+              "structure_quality": 77.97,
+              "management_quality": 87.37,
+              "relative_volume_1d": 0.427,
+              "directional_quality": 95.0,
+              "certification_quality": 100.0,
+              "participation_quality": 41.08,
+              "structural_reward_risk": 6.87,
+              "relative_strength_quality": 20.0,
+              "institutional_volume_quality": 35.94
+            },
+            "feature_version": "M76.2-IDI-1.0",
+            "adaptive_influence": false,
+            "outcome_fields_pending": [
+              "MFE",
+              "MAE",
+              "TARGET_SEQUENCE",
+              "STOP_HIT",
+              "HOLDING_PERIOD",
+              "REALIZED_RETURN"
+            ]
+          },
+          "decision_readiness": 70.39,
+          "barrier_probability": {
+            "model": "DETERMINISTIC_GEOMETRY_PRIOR",
+            "evidence": {
+              "atr": 6.5354,
+              "note": "Deterministic prior only; outcome calibration is intentionally not active in M76.2.",
+              "stop": 94.8986,
+              "entry": 100.7805,
+              "atr_pct": 6.4848,
+              "targets": [
+                110.0,
+                116.8764,
+                141.1905
+              ],
+              "quality_edge": 0.3209,
+              "risk_distance": 5.8819
+            },
+            "expected_mae_pct": 20.67,
+            "expected_mfe_pct": 38.48,
+            "calibration_status": "UNCALIBRATED",
+            "target_1_before_stop": 47.65,
+            "target_2_before_stop": 33.5,
+            "target_3_before_stop": 15.1,
+            "expected_holding_days": 30
+          },
+          "institutional_grade": "C",
+          "outcome_probability": {
+            "mode": "SHADOW",
+            "status": "SHADOW_NOT_READY",
+            "lineage": {
+              "runtime_mode": "SHADOW",
+              "scanner_run_id": null,
+              "feature_version": "M77.0-POINT-IN-TIME-FEATURES-1.0",
+              "source_provider": "polygon",
+              "authority_effect": false,
+              "feature_allow_list": [
+                "directional_quality",
+                "trend_quality",
+                "structure_quality",
+                "breakout_quality",
+                "institutional_volume_quality",
+                "participation_quality",
+                "relative_strength_quality",
+                "market_alignment",
+                "dealer_quality",
+                "liquidity_quality",
+                "risk_quality",
+                "management_quality",
+                "certification_quality",
+                "overall_trade_quality",
+                "decision_readiness",
+                "opportunity_freshness",
+                "alignment_score",
+                "scanner_score",
+                "scanner_confidence",
+                "relative_volume_1d",
+                "volume_persistence",
+                "breakout_confirmation",
+                "breakout_follow_through",
+                "breakout_failure",
+                "structural_reward_risk",
+                "entry_extension_atr",
+                "bullish_direction",
+                "bearish_direction",
+                "accumulation_setup",
+                "distribution_setup",
+                "breakout_setup",
+                "mean_reversion_setup",
+                "uptrend_regime",
+                "downtrend_regime",
+                "negative_gamma_regime"
+              ],
+              "snapshot_timestamp": "2026-08-17T17:19:33.217291+00:00",
+              "candidate_state_hash": "5e324a0bff9d7850de8ac3fe940b9e4f8cc422079d209376cc1952a3e7b5d3d6",
+              "future_fields_excluded": true
+            },
+            "version": "M77.0-OUTCOME-PROBABILITY-1.0",
+            "model_id": null,
+            "warnings": [
+              "NO_APPROVED_SHADOW_MODEL",
+              "DETERMINISTIC_M76_BARRIER_PRIOR_REMAINS_AUTHORITATIVE_INPUT"
+            ],
+            "state_hash": "f4e354634ad1ce64b240a97fbbfe1a7f46b1783aeb33e3f6a1120e036cc67daf",
+            "model_version": null,
+            "analog_evidence": {},
+            "authority_effect": false,
+            "expected_mae_pct": null,
+            "expected_mfe_pct": null,
+            "expected_value_r": null,
+            "model_confidence": 0.0,
+            "calibration_status": "NOT_AVAILABLE",
+            "thesis_invalidation": null,
+            "target_1_before_stop": null,
+            "target_2_before_stop": null,
+            "target_3_before_stop": null,
+            "epistemic_uncertainty": 1.0,
+            "expected_days_to_stop": null,
+            "feature_contributions": [],
+            "profitable_at_horizon": null,
+            "recommended_disposition": "ABSTAIN",
+            "expected_days_to_target_1": null,
+            "out_of_distribution_score": 1.0
+          },
+          "opportunity_freshness": 86.67,
+          "opportunity_lifecycle": "INVALIDATION_RISK",
+          "overall_trade_quality": 59.88
+        },
+        "m68_2_1_12_exact_lineage_precedence": true,
+        "m68_2_1_3_source_option_snapshot_id": "options-20260817T163005831833Z",
+        "m76_2_2_source_decision_fingerprint": "aafe78f30cd68470af845bc1a46cda32ee78e0dde1e11f7df4ee12ee24bc4c86",
+        "m68_2_1_3_contract_option_snapshot_id": "polygon-options-2026-08-13",
+        "m68_2_1_12_logical_collision_prevented": false,
+        "m75_2_2_final_plan_certification_pending": true,
+        "m68_2_1_3_source_option_snapshot_timestamp": "2026-08-17 11:38:34.167830-05:00",
+        "m76_2_2_previous_source_decision_fingerprint": "409e810ffd1f8351d07c09b0c5207a6765d259181d79ae9fe1fa60c7309b4a1d"
+      },
+      "direction": "BULLISH",
+      "thesis_id": "m62-thesis-d4d0cea2968242afa00b7003a48bd313",
+      "confidence": 86.17,
+      "conviction": "MODERATE",
+      "created_at": "2026-08-13T13:33:56.246368+00:00",
+      "updated_at": "2026-08-17T17:20:19.374534+00:00",
+      "asset_class": "EQUITY",
+      "overall_score": 73.02,
+      "opportunity_id": "m62-opp-b7def89ae02c4a19a32a9ca348a6bdb4",
+      "inflection_intelligence": {
+        "symbol": "INTC",
+        "lineage": {
+          "breadth": {
+            "score": 73.77,
+            "sector": "Information Technology",
+            "available": true,
+            "as_of_date": "2026-08-17",
+            "confidence": 100.0,
+            "provenance": "COMPUTED",
+            "resolution": "EFFECTIVE_SECTOR_MEMBERSHIP",
+            "sector_etf": "XLK",
+            "source_table": "sector_breadth_snapshot",
+            "constituent_count": 77,
+            "snapshot_timestamp": "2026-08-17T12:19:03.173614-05:00",
+            "membership_effective_from": "2026-07-20"
+          },
+          "build_mode": "OPTIONS_ENRICHMENT",
+          "dealer_as_of_date": "2026-08-17",
+          "option_as_of_date": "2026-08-17",
+          "source_as_of_date": "2026-08-17",
+          "option_snapshot_id": "options-20260817T173006379861Z",
+          "component_freshness": {
+            "breadth": "CURRENT_EXACT",
+            "underlying": "CURRENT_EXACT",
+            "dealer_options": "CURRENT_EXACT"
+          },
+          "stock_scanner_run_id": "stock-scan-a22d925e8e1e493f80d1d89381b16eed",
+          "stock_publication_name": "current_stock_intelligence",
+          "option_snapshot_timestamp": "2026-08-17 12:38:43.688194-05:00",
+          "stock_publication_timestamp": "2026-08-17T17:19:33.217291+00:00"
+        },
+        "evidence": [
+          "trend:+100.0 (bullish)",
+          "participation:+76.6 (bullish)",
+          "structure:+58.0 (bullish)",
+          "volatility:+50.7 (bullish)"
+        ],
+        "velocity": 7.7266,
+        "direction": "BULLISH",
+        "timeframe": "1d",
+        "build_mode": "OPTIONS_ENRICHMENT",
+        "components": {
+          "trend": 100.0,
+          "dealer": 21.1062,
+          "breadth": 47.54,
+          "structure": 57.9519,
+          "volatility": 50.6967,
+          "participation": 76.6129
+        },
+        "confidence": 99.97,
+        "state_hash": "95fb3edb5810ba9761dc9680d2f936917e885ff7e35d24c01f739ce9c45b8cac",
+        "thresholds": {
+          "watch": 60.0,
+          "actionable": 70.0,
+          "high_conviction": 80.0
+        },
+        "diagnostics": {
+          "agreement": 100.0,
+          "momentum_5": 7.72662018,
+          "momentum_20": 8.23717288,
+          "volume_ratio": 0.74738219,
+          "range_position": 0.80488751,
+          "compression_ratio": 0.37422493,
+          "liquidity_quality": 99.735,
+          "implied_volatility": 0.64941157,
+          "material_acceleration": true,
+          "volatility_divergence": 15.024565,
+          "realized_volatility_20d": 0.79965722
+        },
+        "disposition": "ACTIONABLE",
+        "acceleration": 5.6673,
+        "invalidation": {
+          "price_above": null,
+          "price_below": 81.79,
+          "confidence_below": 55.0,
+          "directional_score_inside_deadband": 15.0
+        },
+        "input_quality": 99.95,
+        "missing_inputs": [],
+        "policy_version": "M68.2.1-POINT-IN-TIME-BREADTH-INFLECTION-1.0",
+        "coverage_status": "CURRENT_EXACT",
+        "signal_strength": 76.4573,
+        "weight_contract": {
+          "policy": "FIXED_NO_RENORMALIZATION",
+          "available_weight_total": 1.0,
+          "configured_weight_total": 1.0
+        },
+        "inflection_score": 76.4573,
+        "transition_state": "TREND_CONTINUATION",
+        "directional_score": 62.9051,
+        "input_fingerprint": "fb5e6a97319c5c69608d8384b23ceeecc88a104fca898f6b26f27908720d6211",
+        "semantic_state_hash": "44c11f9a4166a5f9753a351dc5d9dcbbd8e8abba81499342b81ed282d526ebdc",
+        "conflicting_evidence": [],
+        "horizon_max_sessions": 10,
+        "horizon_min_sessions": 3,
+        "component_availability": {
+          "trend": true,
+          "dealer": true,
+          "breadth": true,
+          "structure": true,
+          "volatility": true,
+          "participation": true,
+          "option_liquidity": true,
+          "implied_volatility": true
+        },
+        "component_decomposition": {
+          "trend": {
+            "available": true,
+            "raw_score": 100.0,
+            "configured_weight": 0.25,
+            "weighted_contribution": 25.0
+          },
+          "dealer": {
+            "available": true,
+            "raw_score": 21.1062,
+            "configured_weight": 0.18,
+            "weighted_contribution": 3.7991
+          },
+          "breadth": {
+            "available": true,
+            "raw_score": 47.54,
+            "configured_weight": 0.11,
+            "weighted_contribution": 5.2294
+          },
+          "structure": {
+            "available": true,
+            "raw_score": 57.9519,
+            "configured_weight": 0.23,
+            "weighted_contribution": 13.3289
+          },
+          "volatility": {
+            "available": true,
+            "raw_score": 50.6967,
+            "configured_weight": 0.08,
+            "weighted_contribution": 4.0557
+          },
+          "participation": {
+            "available": true,
+            "raw_score": 76.6129,
+            "configured_weight": 0.15,
+            "weighted_contribution": 11.4919
+          }
+        }
+      },
+      "intelligence_extensions": {}
+    }
+  }
+]
+
+=== STRATEGIES ===
+[
+  {
+    "symbol": "GLD",
+    "strategy_candidate_id": "m62-strategy-f69d8384245642658b8c73f658533534",
+    "opportunity_id": "m62-opp-8010ba9e2173453d98328d88b3d2a8fd",
+    "strategy": "BULL_CALL_SPREAD",
+    "disposition": "SELECTED",
+    "eligibility_score": 100.0,
+    "strategy_score": 74.6724,
+    "complexity": "LOW",
+    "rank": 1,
+    "selected": true,
+    "payload_json": {
+      "rank": 1,
+      "metadata": {
+        "market_regime": "UPTREND",
+        "policy_version": "M62-PH3-1.0",
+        "setup_category": "BULLISH",
+        "liquidity_score": 74.65,
+        "structure_state": "TRENDING",
+        "tail_risk_score": 73.8725,
+        "volatility_bias": "MODERATE_TO_HIGH_IV",
+        "capital_efficiency_score": 100.0,
+        "valuation_policy_version": "M68.2.1.15.5-ABSOLUTE-STRATEGY-FLOOR-1.0",
+        "conditional_opposite_direction": false,
+        "contract_feasibility_authority": {
+          "selected": false,
+          "executable": true,
+          "package_rank": 2,
+          "package_score": 95.254,
+          "contract_score": 86.44,
+          "policy_version": "M68.2.1.13-GLOBAL-FEASIBLE-PACKAGE-1.0",
+          "option_snapshot_id": "polygon-options-2026-08-17"
+        },
+        "contradictory_evidence_authority": {
+          "state": "BULLISH_DETERIORATING",
+          "evidence": [
+            "Inflection transition TREND_EXHAUSTION; score 47.9"
+          ],
+          "reason_codes": [
+            "TREND_EXHAUSTION",
+            "NEGATIVE_INFLECTION_ACCELERATION"
+          ],
+          "policy_version": "M68.2.1.15.5-CONTRADICTORY-EVIDENCE-1.0",
+          "severity_score": 42.0152,
+          "execution_blocked": false,
+          "dominant_direction": "BULLISH",
+          "opposite_direction": "BEARISH",
+          "allow_opposite_conditional": true
+        },
+        "execution_blocked_by_contradiction": false
+      },
+      "selected": true,
+      "strategy": "BULL_CALL_SPREAD",
+      "complexity": "LOW",
+      "disposition": "SELECTED",
+      "probability": {
+        "model_family": "M62_RULE_BASED_CONTRACT_VALUATION",
+        "model_version": "M68.2.1.15.5-ABSOLUTE-STRATEGY-FLOOR-1.0",
+        "dealer_adjustment": 0.0,
+        "regime_adjustment": 0.0,
+        "liquidity_adjustment": 0.02465,
+        "structure_adjustment": 0.035486,
+        "calibrated_probability": 0.68649,
+        "underlying_probability": 0.79468,
+        "option_payoff_probability": 0.558216
+      },
+      "maximum_loss": 802.5,
+      "expected_value": 1081.29,
+      "opportunity_id": "m62-opp-8010ba9e2173453d98328d88b3d2a8fd",
+      "strategy_score": 74.6724,
+      "accepted_reasons": [
+        "Direction compatible: BULLISH",
+        "Market regime compatible: UPTREND",
+        "Structure compatible: TRENDING",
+        "Forecast supports bullish candidate direction",
+        "Institutional accumulation supports bullish thesis",
+        "Defined-risk bullish participation with reduced volatility cost",
+        "Contract liquidity score 74.65",
+        "Structural reward/risk 2.42",
+        "Calibrated probability 68.65%",
+        "Expected return on risk 134.74%"
+      ],
+      "capital_required": 802.5,
+      "eligibility_score": 100.0,
+      "rejection_reasons": [],
+      "strategy_candidate_id": "m62-strategy-f69d8384245642658b8c73f658533534",
+      "structural_reward_risk": 2.419423,
+      "expected_return_on_risk": 1.347399
+    }
+  },
+  {
+    "symbol": "GLD",
+    "strategy_candidate_id": "m62-strategy-e0943f9b8c0d4f4db56e6fd8e9ea1f28",
+    "opportunity_id": "m62-opp-8010ba9e2173453d98328d88b3d2a8fd",
+    "strategy": "CALL_DIAGONAL",
+    "disposition": "ELIGIBLE",
+    "eligibility_score": 96.8775,
+    "strategy_score": 71.4728,
+    "complexity": "HIGH",
+    "rank": 2,
+    "selected": false,
+    "payload_json": {
+      "rank": 2,
+      "metadata": {
+        "market_regime": "UPTREND",
+        "policy_version": "M62-PH3-1.0",
+        "setup_category": "BULLISH",
+        "liquidity_score": 98.86,
+        "structure_state": "TRENDING",
+        "tail_risk_score": 65.399,
+        "volatility_bias": "TERM_STRUCTURE",
+        "capital_efficiency_score": 100.0,
+        "valuation_policy_version": "M68.2.1.15.5-ABSOLUTE-STRATEGY-FLOOR-1.0",
+        "conditional_opposite_direction": false,
+        "contract_feasibility_authority": {
+          "selected": true,
+          "executable": true,
+          "package_rank": 1,
+          "package_score": 96.440875,
+          "contract_score": 95.63,
+          "policy_version": "M68.2.1.13-GLOBAL-FEASIBLE-PACKAGE-1.0",
+          "option_snapshot_id": "polygon-options-2026-08-17"
+        },
+        "contradictory_evidence_authority": {
+          "state": "BULLISH_DETERIORATING",
+          "evidence": [
+            "Inflection transition TREND_EXHAUSTION; score 47.9"
+          ],
+          "reason_codes": [
+            "TREND_EXHAUSTION",
+            "NEGATIVE_INFLECTION_ACCELERATION"
+          ],
+          "policy_version": "M68.2.1.15.5-CONTRADICTORY-EVIDENCE-1.0",
+          "severity_score": 42.0152,
+          "execution_blocked": false,
+          "dominant_direction": "BULLISH",
+          "opposite_direction": "BEARISH",
+          "allow_opposite_conditional": true
+        },
+        "execution_blocked_by_contradiction": false
+      },
+      "selected": false,
+      "strategy": "CALL_DIAGONAL",
+      "complexity": "HIGH",
+      "disposition": "ELIGIBLE",
+      "probability": {
+        "model_family": "M62_RULE_BASED_CONTRACT_VALUATION",
+        "model_version": "M68.2.1.15.5-ABSOLUTE-STRATEGY-FLOOR-1.0",
+        "dealer_adjustment": 0.0,
+        "regime_adjustment": 0.0,
+        "liquidity_adjustment": 0.04886,
+        "structure_adjustment": 0.035486,
+        "calibrated_probability": 0.703052,
+        "underlying_probability": 0.79468,
+        "option_payoff_probability": 0.553052
+      },
+      "maximum_loss": 1190.0,
+      "expected_value": 1670.8,
+      "opportunity_id": "m62-opp-8010ba9e2173453d98328d88b3d2a8fd",
+      "strategy_score": 71.4728,
+      "accepted_reasons": [
+        "Direction compatible: BULLISH",
+        "Market regime compatible: UPTREND",
+        "Structure compatible: TRENDING",
+        "Forecast supports bullish candidate direction",
+        "Institutional accumulation supports bullish thesis",
+        "Bullish time-spread expression with controlled front-leg decay",
+        "Contract liquidity score 98.86",
+        "Structural reward/risk 2.42",
+        "Calibrated probability 70.31%",
+        "Expected return on risk 140.40%"
+      ],
+      "capital_required": 1190.0,
+      "eligibility_score": 96.8775,
+      "rejection_reasons": [],
+      "strategy_candidate_id": "m62-strategy-e0943f9b8c0d4f4db56e6fd8e9ea1f28",
+      "structural_reward_risk": 2.419423,
+      "expected_return_on_risk": 1.404031
+    }
+  },
+  {
+    "symbol": "GLD",
+    "strategy_candidate_id": "m62-strategy-7c78e48a2d794891973d0a47b8957f43",
+    "opportunity_id": "m62-opp-8010ba9e2173453d98328d88b3d2a8fd",
+    "strategy": "LONG_CALL",
+    "disposition": "ELIGIBLE",
+    "eligibility_score": 100.0,
+    "strategy_score": 70.4807,
+    "complexity": "LOW",
+    "rank": 3,
+    "selected": false,
+    "payload_json": {
+      "rank": 3,
+      "metadata": {
+        "market_regime": "UPTREND",
+        "policy_version": "M62-PH3-1.0",
+        "setup_category": "BULLISH",
+        "liquidity_score": 51.21,
+        "structure_state": "TRENDING",
+        "tail_risk_score": 82.0765,
+        "volatility_bias": "LOW_TO_MODERATE_IV",
+        "capital_efficiency_score": 100.0,
+        "valuation_policy_version": "M68.2.1.15.5-ABSOLUTE-STRATEGY-FLOOR-1.0",
+        "conditional_opposite_direction": false,
+        "contract_feasibility_authority": {
+          "selected": false,
+          "executable": true,
+          "package_rank": 4,
+          "package_score": 92.097,
+          "contract_score": 77.42,
+          "policy_version": "M68.2.1.13-GLOBAL-FEASIBLE-PACKAGE-1.0",
+          "option_snapshot_id": "polygon-options-2026-08-17"
+        },
+        "contradictory_evidence_authority": {
+          "state": "BULLISH_DETERIORATING",
+          "evidence": [
+            "Inflection transition TREND_EXHAUSTION; score 47.9"
+          ],
+          "reason_codes": [
+            "TREND_EXHAUSTION",
+            "NEGATIVE_INFLECTION_ACCELERATION"
+          ],
+          "policy_version": "M68.2.1.15.5-CONTRADICTORY-EVIDENCE-1.0",
+          "severity_score": 42.0152,
+          "execution_blocked": false,
+          "dominant_direction": "BULLISH",
+          "opposite_direction": "BEARISH",
+          "allow_opposite_conditional": true
+        },
+        "execution_blocked_by_contradiction": false
+      },
+      "selected": false,
+      "strategy": "LONG_CALL",
+      "complexity": "LOW",
+      "disposition": "ELIGIBLE",
+      "probability": {
+        "model_family": "M62_RULE_BASED_CONTRACT_VALUATION",
+        "model_version": "M68.2.1.15.5-ABSOLUTE-STRATEGY-FLOOR-1.0",
+        "dealer_adjustment": 0.0,
+        "regime_adjustment": 0.0,
+        "liquidity_adjustment": 0.00121,
+        "structure_adjustment": 0.035486,
+        "calibrated_probability": 0.692907,
+        "underlying_probability": 0.79468,
+        "option_payoff_probability": 0.588073
+      },
+      "maximum_loss": 1455.0,
+      "expected_value": 1992.39,
+      "opportunity_id": "m62-opp-8010ba9e2173453d98328d88b3d2a8fd",
+      "strategy_score": 70.4807,
+      "accepted_reasons": [
+        "Direction compatible: BULLISH",
+        "Market regime compatible: UPTREND",
+        "Structure compatible: TRENDING",
+        "Forecast supports bullish candidate direction",
+        "Institutional accumulation supports bullish thesis",
+        "Direct bullish participation with convex upside",
+        "Contract liquidity score 51.21",
+        "Structural reward/risk 2.42",
+        "Calibrated probability 69.29%",
+        "Expected return on risk 136.93%"
+      ],
+      "capital_required": 1455.0,
+      "eligibility_score": 100.0,
+      "rejection_reasons": [],
+      "strategy_candidate_id": "m62-strategy-7c78e48a2d794891973d0a47b8957f43",
+      "structural_reward_risk": 2.419423,
+      "expected_return_on_risk": 1.369342
+    }
+  },
+  {
+    "symbol": "GLD",
+    "strategy_candidate_id": "m62-strategy-9e91f19ec638437396053d59deb0e035",
+    "opportunity_id": "m62-opp-8010ba9e2173453d98328d88b3d2a8fd",
+    "strategy": "BULL_PUT_SPREAD",
+    "disposition": "ELIGIBLE",
+    "eligibility_score": 98.8775,
+    "strategy_score": 61.1782,
+    "complexity": "MEDIUM",
+    "rank": 4,
+    "selected": false,
+    "payload_json": {
+      "rank": 4,
+      "metadata": {
+        "market_regime": "UPTREND",
+        "policy_version": "M62-PH3-1.0",
+        "setup_category": "BULLISH",
+        "liquidity_score": 65.41,
+        "structure_state": "TRENDING",
+        "tail_risk_score": 77.1065,
+        "volatility_bias": "HIGH_IV",
+        "capital_efficiency_score": 100.0,
+        "valuation_policy_version": "M68.2.1.15.5-ABSOLUTE-STRATEGY-FLOOR-1.0",
+        "conditional_opposite_direction": false,
+        "contract_feasibility_authority": {
+          "selected": false,
+          "executable": true,
+          "package_rank": 3,
+          "package_score": 93.061375,
+          "contract_score": 82.26,
+          "policy_version": "M68.2.1.13-GLOBAL-FEASIBLE-PACKAGE-1.0",
+          "option_snapshot_id": "polygon-options-2026-08-17"
+        },
+        "contradictory_evidence_authority": {
+          "state": "BULLISH_DETERIORATING",
+          "evidence": [
+            "Inflection transition TREND_EXHAUSTION; score 47.9"
+          ],
+          "reason_codes": [
+            "TREND_EXHAUSTION",
+            "NEGATIVE_INFLECTION_ACCELERATION"
+          ],
+          "policy_version": "M68.2.1.15.5-CONTRADICTORY-EVIDENCE-1.0",
+          "severity_score": 42.0152,
+          "execution_blocked": false,
+          "dominant_direction": "BULLISH",
+          "opposite_direction": "BEARISH",
+          "allow_opposite_conditional": true
+        },
+        "execution_blocked_by_contradiction": false
+      },
+      "selected": false,
+      "strategy": "BULL_PUT_SPREAD",
+      "complexity": "MEDIUM",
+      "disposition": "ELIGIBLE",
+      "probability": {
+        "model_family": "M62_RULE_BASED_CONTRACT_VALUATION",
+        "model_version": "M68.2.1.15.5-ABSOLUTE-STRATEGY-FLOOR-1.0",
+        "dealer_adjustment": 0.0,
+        "regime_adjustment": 0.0,
+        "liquidity_adjustment": 0.01541,
+        "structure_adjustment": 0.035486,
+        "calibrated_probability": 0.624806,
+        "underlying_probability": 0.79468,
+        "option_payoff_probability": 0.505773
+      },
+      "maximum_loss": 1050.0,
+      "expected_value": 1193.3,
+      "opportunity_id": "m62-opp-8010ba9e2173453d98328d88b3d2a8fd",
+      "strategy_score": 61.1782,
+      "accepted_reasons": [
+        "Direction compatible: BULLISH",
+        "Market regime compatible: UPTREND",
+        "Structure compatible: TRENDING",
+        "Forecast supports bullish candidate direction",
+        "Institutional accumulation supports bullish thesis",
+        "Defined-risk bullish premium sale above structural support",
+        "Contract liquidity score 65.41",
+        "Structural reward/risk 2.42",
+        "Calibrated probability 62.48%",
+        "Expected return on risk 113.65%"
+      ],
+      "capital_required": 1050.0,
+      "eligibility_score": 98.8775,
+      "rejection_reasons": [],
+      "strategy_candidate_id": "m62-strategy-9e91f19ec638437396053d59deb0e035",
+      "structural_reward_risk": 2.419423,
+      "expected_return_on_risk": 1.136478
+    }
+  },
+  {
+    "symbol": "GLD",
+    "strategy_candidate_id": "m62-strategy-3fe76e0faa1646abbd496630e7b52b54",
+    "opportunity_id": "m62-opp-8010ba9e2173453d98328d88b3d2a8fd",
+    "strategy": "LONG_PUT",
+    "disposition": "REJECTED",
+    "eligibility_score": 46.8775,
+    "strategy_score": null,
+    "complexity": "LOW",
+    "rank": null,
+    "selected": false,
+    "payload_json": {
+      "rank": null,
+      "metadata": {
+        "market_regime": "UPTREND",
+        "policy_version": "M62-PH3-1.0",
+        "setup_category": "BULLISH",
+        "structure_state": "TRENDING",
+        "volatility_bias": "LOW_TO_MODERATE_IV",
+        "conditional_opposite_direction": true,
+        "contradictory_evidence_authority": {
+          "state": "BULLISH_DETERIORATING",
+          "evidence": [
+            "Inflection transition TREND_EXHAUSTION; score 47.9"
+          ],
+          "reason_codes": [
+            "TREND_EXHAUSTION",
+            "NEGATIVE_INFLECTION_ACCELERATION"
+          ],
+          "policy_version": "M68.2.1.15.5-CONTRADICTORY-EVIDENCE-1.0",
+          "severity_score": 42.0152,
+          "execution_blocked": false,
+          "dominant_direction": "BULLISH",
+          "opposite_direction": "BEARISH",
+          "allow_opposite_conditional": true
+        },
+        "execution_blocked_by_contradiction": false
+      },
+      "selected": false,
+      "strategy": "LONG_PUT",
+      "complexity": "LOW",
+      "disposition": "REJECTED",
+      "probability": null,
+      "maximum_loss": null,
+      "expected_value": null,
+      "opportunity_id": "m62-opp-8010ba9e2173453d98328d88b3d2a8fd",
+      "strategy_score": null,
+      "accepted_reasons": [
+        "Opposite-direction candidate retained conditionally by BULLISH_DETERIORATING",
+        "Structure compatible: TRENDING",
+        "Institutional accumulation supports bullish thesis",
+        "Direct bearish participation with convex downside"
+      ],
+      "capital_required": null,
+      "eligibility_score": 46.8775,
+      "rejection_reasons": [
+        "CONDITIONAL_REVERSAL_CONFIRMATION_REQUIRED",
+        "MARKET_REGIME_MISMATCH:UPTREND",
+        "FORECAST_DIRECTION_CONFLICT",
+        "CONTRACT_RECOMMENDATION_MISSING"
+      ],
+      "strategy_candidate_id": "m62-strategy-3fe76e0faa1646abbd496630e7b52b54",
+      "structural_reward_risk": null,
+      "expected_return_on_risk": null
+    }
+  },
+  {
+    "symbol": "GLD",
+    "strategy_candidate_id": "m62-strategy-44d382d9a54d44189ad1663e2e4910cd",
+    "opportunity_id": "m62-opp-8010ba9e2173453d98328d88b3d2a8fd",
+    "strategy": "PUT_DIAGONAL",
+    "disposition": "REJECTED",
+    "eligibility_score": 38.8775,
+    "strategy_score": null,
+    "complexity": "HIGH",
+    "rank": null,
+    "selected": false,
+    "payload_json": {
+      "rank": null,
+      "metadata": {
+        "market_regime": "UPTREND",
+        "policy_version": "M62-PH3-1.0",
+        "setup_category": "BULLISH",
+        "structure_state": "TRENDING",
+        "volatility_bias": "TERM_STRUCTURE",
+        "conditional_opposite_direction": true,
+        "contradictory_evidence_authority": {
+          "state": "BULLISH_DETERIORATING",
+          "evidence": [
+            "Inflection transition TREND_EXHAUSTION; score 47.9"
+          ],
+          "reason_codes": [
+            "TREND_EXHAUSTION",
+            "NEGATIVE_INFLECTION_ACCELERATION"
+          ],
+          "policy_version": "M68.2.1.15.5-CONTRADICTORY-EVIDENCE-1.0",
+          "severity_score": 42.0152,
+          "execution_blocked": false,
+          "dominant_direction": "BULLISH",
+          "opposite_direction": "BEARISH",
+          "allow_opposite_conditional": true
+        },
+        "execution_blocked_by_contradiction": false
+      },
+      "selected": false,
+      "strategy": "PUT_DIAGONAL",
+      "complexity": "HIGH",
+      "disposition": "REJECTED",
+      "probability": null,
+      "maximum_loss": null,
+      "expected_value": null,
+      "opportunity_id": "m62-opp-8010ba9e2173453d98328d88b3d2a8fd",
+      "strategy_score": null,
+      "accepted_reasons": [
+        "Opposite-direction candidate retained conditionally by BULLISH_DETERIORATING",
+        "Structure compatible: TRENDING",
+        "Institutional accumulation supports bullish thesis",
+        "Bearish time-spread expression with controlled front-leg decay"
+      ],
+      "capital_required": null,
+      "eligibility_score": 38.8775,
+      "rejection_reasons": [
+        "CONDITIONAL_REVERSAL_CONFIRMATION_REQUIRED",
+        "MARKET_REGIME_MISMATCH:UPTREND",
+        "FORECAST_DIRECTION_CONFLICT",
+        "CONTRACT_RECOMMENDATION_MISSING"
+      ],
+      "strategy_candidate_id": "m62-strategy-44d382d9a54d44189ad1663e2e4910cd",
+      "structural_reward_risk": null,
+      "expected_return_on_risk": null
+    }
+  },
+  {
+    "symbol": "GLD",
+    "strategy_candidate_id": "m62-strategy-60d7c99ad2784bb1931f6f000bf2070b",
+    "opportunity_id": "m62-opp-8010ba9e2173453d98328d88b3d2a8fd",
+    "strategy": "BEAR_CALL_SPREAD",
+    "disposition": "REJECTED",
+    "eligibility_score": 40.8775,
+    "strategy_score": null,
+    "complexity": "MEDIUM",
+    "rank": null,
+    "selected": false,
+    "payload_json": {
+      "rank": null,
+      "metadata": {
+        "market_regime": "UPTREND",
+        "policy_version": "M62-PH3-1.0",
+        "setup_category": "BULLISH",
+        "structure_state": "TRENDING",
+        "volatility_bias": "HIGH_IV",
+        "conditional_opposite_direction": true,
+        "contradictory_evidence_authority": {
+          "state": "BULLISH_DETERIORATING",
+          "evidence": [
+            "Inflection transition TREND_EXHAUSTION; score 47.9"
+          ],
+          "reason_codes": [
+            "TREND_EXHAUSTION",
+            "NEGATIVE_INFLECTION_ACCELERATION"
+          ],
+          "policy_version": "M68.2.1.15.5-CONTRADICTORY-EVIDENCE-1.0",
+          "severity_score": 42.0152,
+          "execution_blocked": false,
+          "dominant_direction": "BULLISH",
+          "opposite_direction": "BEARISH",
+          "allow_opposite_conditional": true
+        },
+        "execution_blocked_by_contradiction": false
+      },
+      "selected": false,
+      "strategy": "BEAR_CALL_SPREAD",
+      "complexity": "MEDIUM",
+      "disposition": "REJECTED",
+      "probability": null,
+      "maximum_loss": null,
+      "expected_value": null,
+      "opportunity_id": "m62-opp-8010ba9e2173453d98328d88b3d2a8fd",
+      "strategy_score": null,
+      "accepted_reasons": [
+        "Opposite-direction candidate retained conditionally by BULLISH_DETERIORATING",
+        "Structure compatible: TRENDING",
+        "Institutional accumulation supports bullish thesis",
+        "Defined-risk bearish premium sale below structural resistance"
+      ],
+      "capital_required": null,
+      "eligibility_score": 40.8775,
+      "rejection_reasons": [
+        "CONDITIONAL_REVERSAL_CONFIRMATION_REQUIRED",
+        "MARKET_REGIME_MISMATCH:UPTREND",
+        "FORECAST_DIRECTION_CONFLICT",
+        "CONTRACT_RECOMMENDATION_MISSING"
+      ],
+      "strategy_candidate_id": "m62-strategy-60d7c99ad2784bb1931f6f000bf2070b",
+      "structural_reward_risk": null,
+      "expected_return_on_risk": null
+    }
+  },
+  {
+    "symbol": "GLD",
+    "strategy_candidate_id": "m62-strategy-9c3ed7559d8e4a2f87770d02632ffa36",
+    "opportunity_id": "m62-opp-8010ba9e2173453d98328d88b3d2a8fd",
+    "strategy": "BEAR_PUT_SPREAD",
+    "disposition": "REJECTED",
+    "eligibility_score": 52.8775,
+    "strategy_score": null,
+    "complexity": "LOW",
+    "rank": null,
+    "selected": false,
+    "payload_json": {
+      "rank": null,
+      "metadata": {
+        "market_regime": "UPTREND",
+        "policy_version": "M62-PH3-1.0",
+        "setup_category": "BULLISH",
+        "structure_state": "TRENDING",
+        "volatility_bias": "MODERATE_TO_HIGH_IV",
+        "conditional_opposite_direction": true,
+        "contradictory_evidence_authority": {
+          "state": "BULLISH_DETERIORATING",
+          "evidence": [
+            "Inflection transition TREND_EXHAUSTION; score 47.9"
+          ],
+          "reason_codes": [
+            "TREND_EXHAUSTION",
+            "NEGATIVE_INFLECTION_ACCELERATION"
+          ],
+          "policy_version": "M68.2.1.15.5-CONTRADICTORY-EVIDENCE-1.0",
+          "severity_score": 42.0152,
+          "execution_blocked": false,
+          "dominant_direction": "BULLISH",
+          "opposite_direction": "BEARISH",
+          "allow_opposite_conditional": true
+        },
+        "execution_blocked_by_contradiction": false
+      },
+      "selected": false,
+      "strategy": "BEAR_PUT_SPREAD",
+      "complexity": "LOW",
+      "disposition": "REJECTED",
+      "probability": null,
+      "maximum_loss": null,
+      "expected_value": null,
+      "opportunity_id": "m62-opp-8010ba9e2173453d98328d88b3d2a8fd",
+      "strategy_score": null,
+      "accepted_reasons": [
+        "Opposite-direction candidate retained conditionally by BULLISH_DETERIORATING",
+        "Structure compatible: TRENDING",
+        "Institutional accumulation supports bullish thesis",
+        "Defined-risk bearish participation with reduced volatility cost"
+      ],
+      "capital_required": null,
+      "eligibility_score": 52.8775,
+      "rejection_reasons": [
+        "CONDITIONAL_REVERSAL_CONFIRMATION_REQUIRED",
+        "MARKET_REGIME_MISMATCH:UPTREND",
+        "FORECAST_DIRECTION_CONFLICT",
+        "CONTRACT_RECOMMENDATION_MISSING"
+      ],
+      "strategy_candidate_id": "m62-strategy-9c3ed7559d8e4a2f87770d02632ffa36",
+      "structural_reward_risk": null,
+      "expected_return_on_risk": null
+    }
+  },
+  {
+    "symbol": "GLD",
+    "strategy_candidate_id": "m62-strategy-a2045e74fff04b0ca7c79f3d8959e210",
+    "opportunity_id": "m62-opp-8010ba9e2173453d98328d88b3d2a8fd",
+    "strategy": "IRON_BUTTERFLY",
+    "disposition": "REJECTED",
+    "eligibility_score": 53.8775,
+    "strategy_score": 60.0166,
+    "complexity": "HIGH",
+    "rank": null,
+    "selected": false,
+    "payload_json": {
+      "rank": null,
+      "metadata": {
+        "market_regime": "UPTREND",
+        "policy_version": "M62-PH3-1.0",
+        "setup_category": "BULLISH",
+        "liquidity_score": 66.97,
+        "structure_state": "TRENDING",
+        "tail_risk_score": 76.5605,
+        "volatility_bias": "HIGH_IV",
+        "capital_efficiency_score": 100.0,
+        "valuation_policy_version": "M68.2.1.15.5-ABSOLUTE-STRATEGY-FLOOR-1.0",
+        "conditional_opposite_direction": false,
+        "contract_feasibility_authority": {
+          "selected": false,
+          "executable": true,
+          "package_rank": 7,
+          "package_score": 63.814875,
+          "contract_score": 82.27,
+          "policy_version": "M68.2.1.13-GLOBAL-FEASIBLE-PACKAGE-1.0",
+          "option_snapshot_id": "polygon-options-2026-08-17"
+        },
+        "contradictory_evidence_authority": {
+          "state": "BULLISH_DETERIORATING",
+          "evidence": [
+            "Inflection transition TREND_EXHAUSTION; score 47.9"
+          ],
+          "reason_codes": [
+            "TREND_EXHAUSTION",
+            "NEGATIVE_INFLECTION_ACCELERATION"
+          ],
+          "policy_version": "M68.2.1.15.5-CONTRADICTORY-EVIDENCE-1.0",
+          "severity_score": 42.0152,
+          "execution_blocked": false,
+          "dominant_direction": "BULLISH",
+          "opposite_direction": "BEARISH",
+          "allow_opposite_conditional": true
+        },
+        "execution_blocked_by_contradiction": false
+      },
+      "selected": false,
+      "strategy": "IRON_BUTTERFLY",
+      "complexity": "HIGH",
+      "disposition": "REJECTED",
+      "probability": {
+        "model_family": "M62_RULE_BASED_CONTRACT_VALUATION",
+        "model_version": "M68.2.1.15.5-ABSOLUTE-STRATEGY-FLOOR-1.0",
+        "dealer_adjustment": 0.0,
+        "regime_adjustment": 0.0,
+        "liquidity_adjustment": 0.01697,
+        "structure_adjustment": 0.035486,
+        "calibrated_probability": 0.657786,
+        "underlying_probability": 0.79468,
+        "option_payoff_probability": 0.537193
+      },
+      "maximum_loss": 5565.0,
+      "expected_value": 6952.08,
+      "opportunity_id": "m62-opp-8010ba9e2173453d98328d88b3d2a8fd",
+      "strategy_score": 60.0166,
+      "accepted_reasons": [
+        "Direction compatible: BULLISH",
+        "Institutional accumulation supports bullish thesis",
+        "Concentrated defined-risk range expression around a strong structural center",
+        "Contract liquidity score 66.97",
+        "Structural reward/risk 2.42",
+        "Calibrated probability 65.78%",
+        "Expected return on risk 124.92%"
+      ],
+      "capital_required": 5565.0,
+      "eligibility_score": 53.8775,
+      "rejection_reasons": [
+        "MARKET_REGIME_MISMATCH:UPTREND",
+        "STRUCTURE_MISMATCH:TRENDING"
+      ],
+      "strategy_candidate_id": "m62-strategy-a2045e74fff04b0ca7c79f3d8959e210",
+      "structural_reward_risk": 2.419423,
+      "expected_return_on_risk": 1.24925
+    }
+  },
+  {
+    "symbol": "GLD",
+    "strategy_candidate_id": "m62-strategy-c9a1601abd1c46d6b5925c8defdb82f4",
+    "opportunity_id": "m62-opp-8010ba9e2173453d98328d88b3d2a8fd",
+    "strategy": "IRON_CONDOR",
+    "disposition": "REJECTED",
+    "eligibility_score": 57.8775,
+    "strategy_score": 61.1813,
+    "complexity": "HIGH",
+    "rank": null,
+    "selected": false,
+    "payload_json": {
+      "rank": null,
+      "metadata": {
+        "market_regime": "UPTREND",
+        "policy_version": "M62-PH3-1.0",
+        "setup_category": "BULLISH",
+        "liquidity_score": 76.8,
+        "structure_state": "TRENDING",
+        "tail_risk_score": 73.12,
+        "volatility_bias": "HIGH_IV",
+        "capital_efficiency_score": 100.0,
+        "valuation_policy_version": "M68.2.1.15.5-ABSOLUTE-STRATEGY-FLOOR-1.0",
+        "conditional_opposite_direction": false,
+        "contract_feasibility_authority": {
+          "selected": false,
+          "executable": true,
+          "package_rank": 6,
+          "package_score": 67.965375,
+          "contract_score": 86.7,
+          "policy_version": "M68.2.1.13-GLOBAL-FEASIBLE-PACKAGE-1.0",
+          "option_snapshot_id": "polygon-options-2026-08-17"
+        },
+        "contradictory_evidence_authority": {
+          "state": "BULLISH_DETERIORATING",
+          "evidence": [
+            "Inflection transition TREND_EXHAUSTION; score 47.9"
+          ],
+          "reason_codes": [
+            "TREND_EXHAUSTION",
+            "NEGATIVE_INFLECTION_ACCELERATION"
+          ],
+          "policy_version": "M68.2.1.15.5-CONTRADICTORY-EVIDENCE-1.0",
+          "severity_score": 42.0152,
+          "execution_blocked": false,
+          "dominant_direction": "BULLISH",
+          "opposite_direction": "BEARISH",
+          "allow_opposite_conditional": true
+        },
+        "execution_blocked_by_contradiction": false
+      },
+      "selected": false,
+      "strategy": "IRON_CONDOR",
+      "complexity": "HIGH",
+      "disposition": "REJECTED",
+      "probability": {
+        "model_family": "M62_RULE_BASED_CONTRACT_VALUATION",
+        "model_version": "M68.2.1.15.5-ABSOLUTE-STRATEGY-FLOOR-1.0",
+        "dealer_adjustment": 0.0,
+        "regime_adjustment": 0.0,
+        "liquidity_adjustment": 0.0268,
+        "structure_adjustment": 0.035486,
+        "calibrated_probability": 0.649528,
+        "underlying_probability": 0.79468,
+        "option_payoff_probability": 0.519104
+      },
+      "maximum_loss": 2580.0,
+      "expected_value": 3150.2,
+      "opportunity_id": "m62-opp-8010ba9e2173453d98328d88b3d2a8fd",
+      "strategy_score": 61.1813,
+      "accepted_reasons": [
+        "Direction compatible: BULLISH",
+        "Institutional accumulation supports bullish thesis",
+        "Defined-risk range expression when structural containment is strong",
+        "Contract liquidity score 76.80",
+        "Structural reward/risk 2.42",
+        "Calibrated probability 64.95%",
+        "Expected return on risk 122.10%"
+      ],
+      "capital_required": 2580.0,
+      "eligibility_score": 57.8775,
+      "rejection_reasons": [
+        "MARKET_REGIME_MISMATCH:UPTREND",
+        "STRUCTURE_MISMATCH:TRENDING"
+      ],
+      "strategy_candidate_id": "m62-strategy-c9a1601abd1c46d6b5925c8defdb82f4",
+      "structural_reward_risk": 2.419423,
+      "expected_return_on_risk": 1.221009
+    }
+  },
+  {
+    "symbol": "GLD",
+    "strategy_candidate_id": "m62-strategy-d8ac57d866c84206ab8e9e900feaa349",
+    "opportunity_id": "m62-opp-8010ba9e2173453d98328d88b3d2a8fd",
+    "strategy": "PUT_CALENDAR",
+    "disposition": "REJECTED",
+    "eligibility_score": 21.8775,
+    "strategy_score": null,
+    "complexity": "HIGH",
+    "rank": null,
+    "selected": false,
+    "payload_json": {
+      "rank": null,
+      "metadata": {
+        "market_regime": "UPTREND",
+        "policy_version": "M62-PH3-1.0",
+        "setup_category": "BULLISH",
+        "structure_state": "TRENDING",
+        "volatility_bias": "LOW_FRONT_IV",
+        "conditional_opposite_direction": true,
+        "contradictory_evidence_authority": {
+          "state": "BULLISH_DETERIORATING",
+          "evidence": [
+            "Inflection transition TREND_EXHAUSTION; score 47.9"
+          ],
+          "reason_codes": [
+            "TREND_EXHAUSTION",
+            "NEGATIVE_INFLECTION_ACCELERATION"
+          ],
+          "policy_version": "M68.2.1.15.5-CONTRADICTORY-EVIDENCE-1.0",
+          "severity_score": 42.0152,
+          "execution_blocked": false,
+          "dominant_direction": "BULLISH",
+          "opposite_direction": "BEARISH",
+          "allow_opposite_conditional": true
+        },
+        "execution_blocked_by_contradiction": false
+      },
+      "selected": false,
+      "strategy": "PUT_CALENDAR",
+      "complexity": "HIGH",
+      "disposition": "REJECTED",
+      "probability": null,
+      "maximum_loss": null,
+      "expected_value": null,
+      "opportunity_id": "m62-opp-8010ba9e2173453d98328d88b3d2a8fd",
+      "strategy_score": null,
+      "accepted_reasons": [
+        "Opposite-direction candidate retained conditionally by BULLISH_DETERIORATING",
+        "Institutional accumulation supports bullish thesis",
+        "Bearish or neutral volatility-term-structure expression"
+      ],
+      "capital_required": null,
+      "eligibility_score": 21.8775,
+      "rejection_reasons": [
+        "CONDITIONAL_REVERSAL_CONFIRMATION_REQUIRED",
+        "MARKET_REGIME_MISMATCH:UPTREND",
+        "STRUCTURE_MISMATCH:TRENDING",
+        "FORECAST_DIRECTION_CONFLICT",
+        "CONTRACT_RECOMMENDATION_MISSING"
+      ],
+      "strategy_candidate_id": "m62-strategy-d8ac57d866c84206ab8e9e900feaa349",
+      "structural_reward_risk": null,
+      "expected_return_on_risk": null
+    }
+  },
+  {
+    "symbol": "GLD",
+    "strategy_candidate_id": "m62-strategy-f1c0b0393c3f447083885573f4168dab",
+    "opportunity_id": "m62-opp-8010ba9e2173453d98328d88b3d2a8fd",
+    "strategy": "CALL_CALENDAR",
+    "disposition": "REJECTED",
+    "eligibility_score": 65.8775,
+    "strategy_score": 74.9445,
+    "complexity": "HIGH",
+    "rank": null,
+    "selected": false,
+    "payload_json": {
+      "rank": null,
+      "metadata": {
+        "market_regime": "UPTREND",
+        "policy_version": "M62-PH3-1.0",
+        "setup_category": "BULLISH",
+        "liquidity_score": 99.11,
+        "structure_state": "TRENDING",
+        "tail_risk_score": 65.3115,
+        "volatility_bias": "LOW_FRONT_IV",
+        "capital_efficiency_score": 100.0,
+        "valuation_policy_version": "M68.2.1.15.5-ABSOLUTE-STRATEGY-FLOOR-1.0",
+        "conditional_opposite_direction": false,
+        "contract_feasibility_authority": {
+          "selected": false,
+          "executable": true,
+          "package_rank": 5,
+          "package_score": 76.339875,
+          "contract_score": 95.77,
+          "policy_version": "M68.2.1.13-GLOBAL-FEASIBLE-PACKAGE-1.0",
+          "option_snapshot_id": "polygon-options-2026-08-17"
+        },
+        "contradictory_evidence_authority": {
+          "state": "BULLISH_DETERIORATING",
+          "evidence": [
+            "Inflection transition TREND_EXHAUSTION; score 47.9"
+          ],
+          "reason_codes": [
+            "TREND_EXHAUSTION",
+            "NEGATIVE_INFLECTION_ACCELERATION"
+          ],
+          "policy_version": "M68.2.1.15.5-CONTRADICTORY-EVIDENCE-1.0",
+          "severity_score": 42.0152,
+          "execution_blocked": false,
+          "dominant_direction": "BULLISH",
+          "opposite_direction": "BEARISH",
+          "allow_opposite_conditional": true
+        },
+        "execution_blocked_by_contradiction": false
+      },
+      "selected": false,
+      "strategy": "CALL_CALENDAR",
+      "complexity": "HIGH",
+      "disposition": "REJECTED",
+      "probability": {
+        "model_family": "M62_RULE_BASED_CONTRACT_VALUATION",
+        "model_version": "M68.2.1.15.5-ABSOLUTE-STRATEGY-FLOOR-1.0",
+        "dealer_adjustment": 0.0,
+        "regime_adjustment": 0.0,
+        "liquidity_adjustment": 0.04911,
+        "structure_adjustment": 0.035486,
+        "calibrated_probability": 0.735147,
+        "underlying_probability": 0.79468,
+        "option_payoff_probability": 0.585147
+      },
+      "maximum_loss": 480.0,
+      "expected_value": 726.61,
+      "opportunity_id": "m62-opp-8010ba9e2173453d98328d88b3d2a8fd",
+      "strategy_score": 74.9445,
+      "accepted_reasons": [
+        "Direction compatible: BULLISH",
+        "Forecast supports bullish candidate direction",
+        "Institutional accumulation supports bullish thesis",
+        "Bullish or neutral volatility-term-structure expression",
+        "Contract liquidity score 99.11",
+        "Structural reward/risk 2.42",
+        "Calibrated probability 73.51%",
+        "Expected return on risk 151.38%"
+      ],
+      "capital_required": 480.0,
+      "eligibility_score": 65.8775,
+      "rejection_reasons": [
+        "MARKET_REGIME_MISMATCH:UPTREND",
+        "STRUCTURE_MISMATCH:TRENDING"
+      ],
+      "strategy_candidate_id": "m62-strategy-f1c0b0393c3f447083885573f4168dab",
+      "structural_reward_risk": 2.419423,
+      "expected_return_on_risk": 1.513778
+    }
+  },
+  {
+    "symbol": "INTC",
+    "strategy_candidate_id": "m62-strategy-067e2560a4064223874c1eaa789f1f57",
+    "opportunity_id": "m62-opp-b7def89ae02c4a19a32a9ca348a6bdb4",
+    "strategy": "LONG_CALL",
+    "disposition": "REJECTED",
+    "eligibility_score": 76.0295,
+    "strategy_score": null,
+    "complexity": "LOW",
+    "rank": null,
+    "selected": false,
+    "payload_json": {
+      "rank": null,
+      "metadata": {
+        "market_regime": "UPTREND",
+        "policy_version": "M62-PH3-1.0",
+        "setup_category": "BULLISH",
+        "structure_state": "MATURE_TREND",
+        "volatility_bias": "LOW_TO_MODERATE_IV",
+        "conditional_opposite_direction": false,
+        "contradictory_evidence_authority": {
+          "state": "BULLISH_DETERIORATING",
+          "evidence": [
+            "Forecast contains unresolved directional/return contradiction",
+            "Distribution 60.3 versus accumulation 47.4"
+          ],
+          "reason_codes": [
+            "FORECAST_SEMANTIC_CONFLICT",
+            "DISTRIBUTION_EXCEEDS_ACCUMULATION"
+          ],
+          "policy_version": "M68.2.1.15.5-CONTRADICTORY-EVIDENCE-1.0",
+          "severity_score": 48.0,
+          "execution_blocked": false,
+          "dominant_direction": "BULLISH",
+          "opposite_direction": "BEARISH",
+          "allow_opposite_conditional": true
+        },
+        "execution_blocked_by_contradiction": false
+      },
+      "selected": false,
+      "strategy": "LONG_CALL",
+      "complexity": "LOW",
+      "disposition": "REJECTED",
+      "probability": null,
+      "maximum_loss": null,
+      "expected_value": null,
+      "opportunity_id": "m62-opp-b7def89ae02c4a19a32a9ca348a6bdb4",
+      "strategy_score": null,
+      "accepted_reasons": [
+        "Direction compatible: BULLISH",
+        "Market regime compatible: UPTREND",
+        "Direct bullish participation with convex upside"
+      ],
+      "capital_required": null,
+      "eligibility_score": 76.0295,
+      "rejection_reasons": [
+        "STRUCTURE_MISMATCH:MATURE_TREND",
+        "FORECAST_SEMANTIC_CONFLICT"
+      ],
+      "strategy_candidate_id": "m62-strategy-067e2560a4064223874c1eaa789f1f57",
+      "structural_reward_risk": null,
+      "expected_return_on_risk": null
+    }
+  },
+  {
+    "symbol": "INTC",
+    "strategy_candidate_id": "m62-strategy-0f21ede7a2bf45e793bf50c8ab9542ed",
+    "opportunity_id": "m62-opp-b7def89ae02c4a19a32a9ca348a6bdb4",
+    "strategy": "BULL_CALL_SPREAD",
+    "disposition": "REJECTED",
+    "eligibility_score": 95.0295,
+    "strategy_score": null,
+    "complexity": "LOW",
+    "rank": null,
+    "selected": false,
+    "payload_json": {
+      "rank": null,
+      "metadata": {
+        "market_regime": "UPTREND",
+        "policy_version": "M62-PH3-1.0",
+        "setup_category": "BULLISH",
+        "structure_state": "MATURE_TREND",
+        "volatility_bias": "MODERATE_TO_HIGH_IV",
+        "conditional_opposite_direction": false,
+        "contradictory_evidence_authority": {
+          "state": "BULLISH_DETERIORATING",
+          "evidence": [
+            "Forecast contains unresolved directional/return contradiction",
+            "Distribution 60.3 versus accumulation 47.4"
+          ],
+          "reason_codes": [
+            "FORECAST_SEMANTIC_CONFLICT",
+            "DISTRIBUTION_EXCEEDS_ACCUMULATION"
+          ],
+          "policy_version": "M68.2.1.15.5-CONTRADICTORY-EVIDENCE-1.0",
+          "severity_score": 48.0,
+          "execution_blocked": false,
+          "dominant_direction": "BULLISH",
+          "opposite_direction": "BEARISH",
+          "allow_opposite_conditional": true
+        },
+        "execution_blocked_by_contradiction": false
+      },
+      "selected": false,
+      "strategy": "BULL_CALL_SPREAD",
+      "complexity": "LOW",
+      "disposition": "REJECTED",
+      "probability": null,
+      "maximum_loss": null,
+      "expected_value": null,
+      "opportunity_id": "m62-opp-b7def89ae02c4a19a32a9ca348a6bdb4",
+      "strategy_score": null,
+      "accepted_reasons": [
+        "Direction compatible: BULLISH",
+        "Market regime compatible: UPTREND",
+        "Structure compatible: MATURE_TREND",
+        "Defined-risk bullish participation with reduced volatility cost"
+      ],
+      "capital_required": null,
+      "eligibility_score": 95.0295,
+      "rejection_reasons": [
+        "FORECAST_SEMANTIC_CONFLICT"
+      ],
+      "strategy_candidate_id": "m62-strategy-0f21ede7a2bf45e793bf50c8ab9542ed",
+      "structural_reward_risk": null,
+      "expected_return_on_risk": null
+    }
+  },
+  {
+    "symbol": "INTC",
+    "strategy_candidate_id": "m62-strategy-13928280463c49daacc755f695158e2d",
+    "opportunity_id": "m62-opp-b7def89ae02c4a19a32a9ca348a6bdb4",
+    "strategy": "CALL_DIAGONAL",
+    "disposition": "REJECTED",
+    "eligibility_score": 81.0295,
+    "strategy_score": null,
+    "complexity": "HIGH",
+    "rank": null,
+    "selected": false,
+    "payload_json": {
+      "rank": null,
+      "metadata": {
+        "market_regime": "UPTREND",
+        "policy_version": "M62-PH3-1.0",
+        "setup_category": "BULLISH",
+        "structure_state": "MATURE_TREND",
+        "volatility_bias": "TERM_STRUCTURE",
+        "conditional_opposite_direction": false,
+        "contradictory_evidence_authority": {
+          "state": "BULLISH_DETERIORATING",
+          "evidence": [
+            "Forecast contains unresolved directional/return contradiction",
+            "Distribution 60.3 versus accumulation 47.4"
+          ],
+          "reason_codes": [
+            "FORECAST_SEMANTIC_CONFLICT",
+            "DISTRIBUTION_EXCEEDS_ACCUMULATION"
+          ],
+          "policy_version": "M68.2.1.15.5-CONTRADICTORY-EVIDENCE-1.0",
+          "severity_score": 48.0,
+          "execution_blocked": false,
+          "dominant_direction": "BULLISH",
+          "opposite_direction": "BEARISH",
+          "allow_opposite_conditional": true
+        },
+        "execution_blocked_by_contradiction": false
+      },
+      "selected": false,
+      "strategy": "CALL_DIAGONAL",
+      "complexity": "HIGH",
+      "disposition": "REJECTED",
+      "probability": null,
+      "maximum_loss": null,
+      "expected_value": null,
+      "opportunity_id": "m62-opp-b7def89ae02c4a19a32a9ca348a6bdb4",
+      "strategy_score": null,
+      "accepted_reasons": [
+        "Direction compatible: BULLISH",
+        "Market regime compatible: UPTREND",
+        "Structure compatible: MATURE_TREND",
+        "Bullish time-spread expression with controlled front-leg decay"
+      ],
+      "capital_required": null,
+      "eligibility_score": 81.0295,
+      "rejection_reasons": [
+        "FORECAST_SEMANTIC_CONFLICT"
+      ],
+      "strategy_candidate_id": "m62-strategy-13928280463c49daacc755f695158e2d",
+      "structural_reward_risk": null,
+      "expected_return_on_risk": null
+    }
+  },
+  {
+    "symbol": "INTC",
+    "strategy_candidate_id": "m62-strategy-1d79f8d9e1f64a88b4feca2712f03ba2",
+    "opportunity_id": "m62-opp-b7def89ae02c4a19a32a9ca348a6bdb4",
+    "strategy": "IRON_CONDOR",
+    "disposition": "REJECTED",
+    "eligibility_score": 48.0295,
+    "strategy_score": null,
+    "complexity": "HIGH",
+    "rank": null,
+    "selected": false,
+    "payload_json": {
+      "rank": null,
+      "metadata": {
+        "market_regime": "UPTREND",
+        "policy_version": "M62-PH3-1.0",
+        "setup_category": "BULLISH",
+        "structure_state": "MATURE_TREND",
+        "volatility_bias": "HIGH_IV",
+        "conditional_opposite_direction": false,
+        "contradictory_evidence_authority": {
+          "state": "BULLISH_DETERIORATING",
+          "evidence": [
+            "Forecast contains unresolved directional/return contradiction",
+            "Distribution 60.3 versus accumulation 47.4"
+          ],
+          "reason_codes": [
+            "FORECAST_SEMANTIC_CONFLICT",
+            "DISTRIBUTION_EXCEEDS_ACCUMULATION"
+          ],
+          "policy_version": "M68.2.1.15.5-CONTRADICTORY-EVIDENCE-1.0",
+          "severity_score": 48.0,
+          "execution_blocked": false,
+          "dominant_direction": "BULLISH",
+          "opposite_direction": "BEARISH",
+          "allow_opposite_conditional": true
+        },
+        "execution_blocked_by_contradiction": false
+      },
+      "selected": false,
+      "strategy": "IRON_CONDOR",
+      "complexity": "HIGH",
+      "disposition": "REJECTED",
+      "probability": null,
+      "maximum_loss": null,
+      "expected_value": null,
+      "opportunity_id": "m62-opp-b7def89ae02c4a19a32a9ca348a6bdb4",
+      "strategy_score": null,
+      "accepted_reasons": [
+        "Direction compatible: BULLISH",
+        "Defined-risk range expression when structural containment is strong"
+      ],
+      "capital_required": null,
+      "eligibility_score": 48.0295,
+      "rejection_reasons": [
+        "MARKET_REGIME_MISMATCH:UPTREND",
+        "STRUCTURE_MISMATCH:MATURE_TREND",
+        "FORECAST_SEMANTIC_CONFLICT"
+      ],
+      "strategy_candidate_id": "m62-strategy-1d79f8d9e1f64a88b4feca2712f03ba2",
+      "structural_reward_risk": null,
+      "expected_return_on_risk": null
+    }
+  },
+  {
+    "symbol": "INTC",
+    "strategy_candidate_id": "m62-strategy-2b1b3a41e9054ba4910fda3423a38469",
+    "opportunity_id": "m62-opp-b7def89ae02c4a19a32a9ca348a6bdb4",
+    "strategy": "LONG_PUT",
+    "disposition": "REJECTED",
+    "eligibility_score": 34.0295,
+    "strategy_score": null,
+    "complexity": "LOW",
+    "rank": null,
+    "selected": false,
+    "payload_json": {
+      "rank": null,
+      "metadata": {
+        "market_regime": "UPTREND",
+        "policy_version": "M62-PH3-1.0",
+        "setup_category": "BULLISH",
+        "structure_state": "MATURE_TREND",
+        "volatility_bias": "LOW_TO_MODERATE_IV",
+        "conditional_opposite_direction": true,
+        "contradictory_evidence_authority": {
+          "state": "BULLISH_DETERIORATING",
+          "evidence": [
+            "Forecast contains unresolved directional/return contradiction",
+            "Distribution 60.3 versus accumulation 47.4"
+          ],
+          "reason_codes": [
+            "FORECAST_SEMANTIC_CONFLICT",
+            "DISTRIBUTION_EXCEEDS_ACCUMULATION"
+          ],
+          "policy_version": "M68.2.1.15.5-CONTRADICTORY-EVIDENCE-1.0",
+          "severity_score": 48.0,
+          "execution_blocked": false,
+          "dominant_direction": "BULLISH",
+          "opposite_direction": "BEARISH",
+          "allow_opposite_conditional": true
+        },
+        "execution_blocked_by_contradiction": false
+      },
+      "selected": false,
+      "strategy": "LONG_PUT",
+      "complexity": "LOW",
+      "disposition": "REJECTED",
+      "probability": null,
+      "maximum_loss": null,
+      "expected_value": null,
+      "opportunity_id": "m62-opp-b7def89ae02c4a19a32a9ca348a6bdb4",
+      "strategy_score": null,
+      "accepted_reasons": [
+        "Opposite-direction candidate retained conditionally by BULLISH_DETERIORATING",
+        "Direct bearish participation with convex downside"
+      ],
+      "capital_required": null,
+      "eligibility_score": 34.0295,
+      "rejection_reasons": [
+        "CONDITIONAL_REVERSAL_CONFIRMATION_REQUIRED",
+        "MARKET_REGIME_MISMATCH:UPTREND",
+        "STRUCTURE_MISMATCH:MATURE_TREND",
+        "FORECAST_SEMANTIC_CONFLICT"
+      ],
+      "strategy_candidate_id": "m62-strategy-2b1b3a41e9054ba4910fda3423a38469",
+      "structural_reward_risk": null,
+      "expected_return_on_risk": null
+    }
+  },
+  {
+    "symbol": "INTC",
+    "strategy_candidate_id": "m62-strategy-49be66fe82b147e59ae5c6f6a3945b47",
+    "opportunity_id": "m62-opp-b7def89ae02c4a19a32a9ca348a6bdb4",
+    "strategy": "BEAR_CALL_SPREAD",
+    "disposition": "REJECTED",
+    "eligibility_score": 28.0295,
+    "strategy_score": null,
+    "complexity": "MEDIUM",
+    "rank": null,
+    "selected": false,
+    "payload_json": {
+      "rank": null,
+      "metadata": {
+        "market_regime": "UPTREND",
+        "policy_version": "M62-PH3-1.0",
+        "setup_category": "BULLISH",
+        "structure_state": "MATURE_TREND",
+        "volatility_bias": "HIGH_IV",
+        "conditional_opposite_direction": true,
+        "contradictory_evidence_authority": {
+          "state": "BULLISH_DETERIORATING",
+          "evidence": [
+            "Forecast contains unresolved directional/return contradiction",
+            "Distribution 60.3 versus accumulation 47.4"
+          ],
+          "reason_codes": [
+            "FORECAST_SEMANTIC_CONFLICT",
+            "DISTRIBUTION_EXCEEDS_ACCUMULATION"
+          ],
+          "policy_version": "M68.2.1.15.5-CONTRADICTORY-EVIDENCE-1.0",
+          "severity_score": 48.0,
+          "execution_blocked": false,
+          "dominant_direction": "BULLISH",
+          "opposite_direction": "BEARISH",
+          "allow_opposite_conditional": true
+        },
+        "execution_blocked_by_contradiction": false
+      },
+      "selected": false,
+      "strategy": "BEAR_CALL_SPREAD",
+      "complexity": "MEDIUM",
+      "disposition": "REJECTED",
+      "probability": null,
+      "maximum_loss": null,
+      "expected_value": null,
+      "opportunity_id": "m62-opp-b7def89ae02c4a19a32a9ca348a6bdb4",
+      "strategy_score": null,
+      "accepted_reasons": [
+        "Opposite-direction candidate retained conditionally by BULLISH_DETERIORATING",
+        "Defined-risk bearish premium sale below structural resistance"
+      ],
+      "capital_required": null,
+      "eligibility_score": 28.0295,
+      "rejection_reasons": [
+        "CONDITIONAL_REVERSAL_CONFIRMATION_REQUIRED",
+        "MARKET_REGIME_MISMATCH:UPTREND",
+        "STRUCTURE_MISMATCH:MATURE_TREND",
+        "FORECAST_SEMANTIC_CONFLICT"
+      ],
+      "strategy_candidate_id": "m62-strategy-49be66fe82b147e59ae5c6f6a3945b47",
+      "structural_reward_risk": null,
+      "expected_return_on_risk": null
+    }
+  },
+  {
+    "symbol": "INTC",
+    "strategy_candidate_id": "m62-strategy-64536d73e4ed4475abfdb2f83e2c9318",
+    "opportunity_id": "m62-opp-b7def89ae02c4a19a32a9ca348a6bdb4",
+    "strategy": "IRON_BUTTERFLY",
+    "disposition": "REJECTED",
+    "eligibility_score": 44.0295,
+    "strategy_score": null,
+    "complexity": "HIGH",
+    "rank": null,
+    "selected": false,
+    "payload_json": {
+      "rank": null,
+      "metadata": {
+        "market_regime": "UPTREND",
+        "policy_version": "M62-PH3-1.0",
+        "setup_category": "BULLISH",
+        "structure_state": "MATURE_TREND",
+        "volatility_bias": "HIGH_IV",
+        "conditional_opposite_direction": false,
+        "contradictory_evidence_authority": {
+          "state": "BULLISH_DETERIORATING",
+          "evidence": [
+            "Forecast contains unresolved directional/return contradiction",
+            "Distribution 60.3 versus accumulation 47.4"
+          ],
+          "reason_codes": [
+            "FORECAST_SEMANTIC_CONFLICT",
+            "DISTRIBUTION_EXCEEDS_ACCUMULATION"
+          ],
+          "policy_version": "M68.2.1.15.5-CONTRADICTORY-EVIDENCE-1.0",
+          "severity_score": 48.0,
+          "execution_blocked": false,
+          "dominant_direction": "BULLISH",
+          "opposite_direction": "BEARISH",
+          "allow_opposite_conditional": true
+        },
+        "execution_blocked_by_contradiction": false
+      },
+      "selected": false,
+      "strategy": "IRON_BUTTERFLY",
+      "complexity": "HIGH",
+      "disposition": "REJECTED",
+      "probability": null,
+      "maximum_loss": null,
+      "expected_value": null,
+      "opportunity_id": "m62-opp-b7def89ae02c4a19a32a9ca348a6bdb4",
+      "strategy_score": null,
+      "accepted_reasons": [
+        "Direction compatible: BULLISH",
+        "Concentrated defined-risk range expression around a strong structural center"
+      ],
+      "capital_required": null,
+      "eligibility_score": 44.0295,
+      "rejection_reasons": [
+        "MARKET_REGIME_MISMATCH:UPTREND",
+        "STRUCTURE_MISMATCH:MATURE_TREND",
+        "FORECAST_SEMANTIC_CONFLICT"
+      ],
+      "strategy_candidate_id": "m62-strategy-64536d73e4ed4475abfdb2f83e2c9318",
+      "structural_reward_risk": null,
+      "expected_return_on_risk": null
+    }
+  },
+  {
+    "symbol": "INTC",
+    "strategy_candidate_id": "m62-strategy-964389aa1a474a1ca223472f7ab7f141",
+    "opportunity_id": "m62-opp-b7def89ae02c4a19a32a9ca348a6bdb4",
+    "strategy": "PUT_DIAGONAL",
+    "disposition": "REJECTED",
+    "eligibility_score": 39.0295,
+    "strategy_score": null,
+    "complexity": "HIGH",
+    "rank": null,
+    "selected": false,
+    "payload_json": {
+      "rank": null,
+      "metadata": {
+        "market_regime": "UPTREND",
+        "policy_version": "M62-PH3-1.0",
+        "setup_category": "BULLISH",
+        "structure_state": "MATURE_TREND",
+        "volatility_bias": "TERM_STRUCTURE",
+        "conditional_opposite_direction": true,
+        "contradictory_evidence_authority": {
+          "state": "BULLISH_DETERIORATING",
+          "evidence": [
+            "Forecast contains unresolved directional/return contradiction",
+            "Distribution 60.3 versus accumulation 47.4"
+          ],
+          "reason_codes": [
+            "FORECAST_SEMANTIC_CONFLICT",
+            "DISTRIBUTION_EXCEEDS_ACCUMULATION"
+          ],
+          "policy_version": "M68.2.1.15.5-CONTRADICTORY-EVIDENCE-1.0",
+          "severity_score": 48.0,
+          "execution_blocked": false,
+          "dominant_direction": "BULLISH",
+          "opposite_direction": "BEARISH",
+          "allow_opposite_conditional": true
+        },
+        "execution_blocked_by_contradiction": false
+      },
+      "selected": false,
+      "strategy": "PUT_DIAGONAL",
+      "complexity": "HIGH",
+      "disposition": "REJECTED",
+      "probability": null,
+      "maximum_loss": null,
+      "expected_value": null,
+      "opportunity_id": "m62-opp-b7def89ae02c4a19a32a9ca348a6bdb4",
+      "strategy_score": null,
+      "accepted_reasons": [
+        "Opposite-direction candidate retained conditionally by BULLISH_DETERIORATING",
+        "Structure compatible: MATURE_TREND",
+        "Bearish time-spread expression with controlled front-leg decay"
+      ],
+      "capital_required": null,
+      "eligibility_score": 39.0295,
+      "rejection_reasons": [
+        "CONDITIONAL_REVERSAL_CONFIRMATION_REQUIRED",
+        "MARKET_REGIME_MISMATCH:UPTREND",
+        "FORECAST_SEMANTIC_CONFLICT"
+      ],
+      "strategy_candidate_id": "m62-strategy-964389aa1a474a1ca223472f7ab7f141",
+      "structural_reward_risk": null,
+      "expected_return_on_risk": null
+    }
+  },
+  {
+    "symbol": "INTC",
+    "strategy_candidate_id": "m62-strategy-aac715788a504782a1201231f599e89a",
+    "opportunity_id": "m62-opp-b7def89ae02c4a19a32a9ca348a6bdb4",
+    "strategy": "PUT_CALENDAR",
+    "disposition": "REJECTED",
+    "eligibility_score": 22.0295,
+    "strategy_score": null,
+    "complexity": "HIGH",
+    "rank": null,
+    "selected": false,
+    "payload_json": {
+      "rank": null,
+      "metadata": {
+        "market_regime": "UPTREND",
+        "policy_version": "M62-PH3-1.0",
+        "setup_category": "BULLISH",
+        "structure_state": "MATURE_TREND",
+        "volatility_bias": "LOW_FRONT_IV",
+        "conditional_opposite_direction": true,
+        "contradictory_evidence_authority": {
+          "state": "BULLISH_DETERIORATING",
+          "evidence": [
+            "Forecast contains unresolved directional/return contradiction",
+            "Distribution 60.3 versus accumulation 47.4"
+          ],
+          "reason_codes": [
+            "FORECAST_SEMANTIC_CONFLICT",
+            "DISTRIBUTION_EXCEEDS_ACCUMULATION"
+          ],
+          "policy_version": "M68.2.1.15.5-CONTRADICTORY-EVIDENCE-1.0",
+          "severity_score": 48.0,
+          "execution_blocked": false,
+          "dominant_direction": "BULLISH",
+          "opposite_direction": "BEARISH",
+          "allow_opposite_conditional": true
+        },
+        "execution_blocked_by_contradiction": false
+      },
+      "selected": false,
+      "strategy": "PUT_CALENDAR",
+      "complexity": "HIGH",
+      "disposition": "REJECTED",
+      "probability": null,
+      "maximum_loss": null,
+      "expected_value": null,
+      "opportunity_id": "m62-opp-b7def89ae02c4a19a32a9ca348a6bdb4",
+      "strategy_score": null,
+      "accepted_reasons": [
+        "Opposite-direction candidate retained conditionally by BULLISH_DETERIORATING",
+        "Bearish or neutral volatility-term-structure expression"
+      ],
+      "capital_required": null,
+      "eligibility_score": 22.0295,
+      "rejection_reasons": [
+        "CONDITIONAL_REVERSAL_CONFIRMATION_REQUIRED",
+        "MARKET_REGIME_MISMATCH:UPTREND",
+        "STRUCTURE_MISMATCH:MATURE_TREND",
+        "FORECAST_SEMANTIC_CONFLICT"
+      ],
+      "strategy_candidate_id": "m62-strategy-aac715788a504782a1201231f599e89a",
+      "structural_reward_risk": null,
+      "expected_return_on_risk": null
+    }
+  },
+  {
+    "symbol": "INTC",
+    "strategy_candidate_id": "m62-strategy-d351f5cffcfd46ac8de2b229fb04fb62",
+    "opportunity_id": "m62-opp-b7def89ae02c4a19a32a9ca348a6bdb4",
+    "strategy": "CALL_CALENDAR",
+    "disposition": "REJECTED",
+    "eligibility_score": 50.0295,
+    "strategy_score": null,
+    "complexity": "HIGH",
+    "rank": null,
+    "selected": false,
+    "payload_json": {
+      "rank": null,
+      "metadata": {
+        "market_regime": "UPTREND",
+        "policy_version": "M62-PH3-1.0",
+        "setup_category": "BULLISH",
+        "structure_state": "MATURE_TREND",
+        "volatility_bias": "LOW_FRONT_IV",
+        "conditional_opposite_direction": false,
+        "contradictory_evidence_authority": {
+          "state": "BULLISH_DETERIORATING",
+          "evidence": [
+            "Forecast contains unresolved directional/return contradiction",
+            "Distribution 60.3 versus accumulation 47.4"
+          ],
+          "reason_codes": [
+            "FORECAST_SEMANTIC_CONFLICT",
+            "DISTRIBUTION_EXCEEDS_ACCUMULATION"
+          ],
+          "policy_version": "M68.2.1.15.5-CONTRADICTORY-EVIDENCE-1.0",
+          "severity_score": 48.0,
+          "execution_blocked": false,
+          "dominant_direction": "BULLISH",
+          "opposite_direction": "BEARISH",
+          "allow_opposite_conditional": true
+        },
+        "execution_blocked_by_contradiction": false
+      },
+      "selected": false,
+      "strategy": "CALL_CALENDAR",
+      "complexity": "HIGH",
+      "disposition": "REJECTED",
+      "probability": null,
+      "maximum_loss": null,
+      "expected_value": null,
+      "opportunity_id": "m62-opp-b7def89ae02c4a19a32a9ca348a6bdb4",
+      "strategy_score": null,
+      "accepted_reasons": [
+        "Direction compatible: BULLISH",
+        "Bullish or neutral volatility-term-structure expression"
+      ],
+      "capital_required": null,
+      "eligibility_score": 50.0295,
+      "rejection_reasons": [
+        "MARKET_REGIME_MISMATCH:UPTREND",
+        "STRUCTURE_MISMATCH:MATURE_TREND",
+        "FORECAST_SEMANTIC_CONFLICT"
+      ],
+      "strategy_candidate_id": "m62-strategy-d351f5cffcfd46ac8de2b229fb04fb62",
+      "structural_reward_risk": null,
+      "expected_return_on_risk": null
+    }
+  },
+  {
+    "symbol": "INTC",
+    "strategy_candidate_id": "m62-strategy-eb079e4469df4069995c8f98381b9ea2",
+    "opportunity_id": "m62-opp-b7def89ae02c4a19a32a9ca348a6bdb4",
+    "strategy": "BULL_PUT_SPREAD",
+    "disposition": "REJECTED",
+    "eligibility_score": 70.0295,
+    "strategy_score": null,
+    "complexity": "MEDIUM",
+    "rank": null,
+    "selected": false,
+    "payload_json": {
+      "rank": null,
+      "metadata": {
+        "market_regime": "UPTREND",
+        "policy_version": "M62-PH3-1.0",
+        "setup_category": "BULLISH",
+        "structure_state": "MATURE_TREND",
+        "volatility_bias": "HIGH_IV",
+        "conditional_opposite_direction": false,
+        "contradictory_evidence_authority": {
+          "state": "BULLISH_DETERIORATING",
+          "evidence": [
+            "Forecast contains unresolved directional/return contradiction",
+            "Distribution 60.3 versus accumulation 47.4"
+          ],
+          "reason_codes": [
+            "FORECAST_SEMANTIC_CONFLICT",
+            "DISTRIBUTION_EXCEEDS_ACCUMULATION"
+          ],
+          "policy_version": "M68.2.1.15.5-CONTRADICTORY-EVIDENCE-1.0",
+          "severity_score": 48.0,
+          "execution_blocked": false,
+          "dominant_direction": "BULLISH",
+          "opposite_direction": "BEARISH",
+          "allow_opposite_conditional": true
+        },
+        "execution_blocked_by_contradiction": false
+      },
+      "selected": false,
+      "strategy": "BULL_PUT_SPREAD",
+      "complexity": "MEDIUM",
+      "disposition": "REJECTED",
+      "probability": null,
+      "maximum_loss": null,
+      "expected_value": null,
+      "opportunity_id": "m62-opp-b7def89ae02c4a19a32a9ca348a6bdb4",
+      "strategy_score": null,
+      "accepted_reasons": [
+        "Direction compatible: BULLISH",
+        "Market regime compatible: UPTREND",
+        "Defined-risk bullish premium sale above structural support"
+      ],
+      "capital_required": null,
+      "eligibility_score": 70.0295,
+      "rejection_reasons": [
+        "STRUCTURE_MISMATCH:MATURE_TREND",
+        "FORECAST_SEMANTIC_CONFLICT"
+      ],
+      "strategy_candidate_id": "m62-strategy-eb079e4469df4069995c8f98381b9ea2",
+      "structural_reward_risk": null,
+      "expected_return_on_risk": null
+    }
+  },
+  {
+    "symbol": "INTC",
+    "strategy_candidate_id": "m62-strategy-fbca835dbb68436cb2fe29ddbc40688c",
+    "opportunity_id": "m62-opp-b7def89ae02c4a19a32a9ca348a6bdb4",
+    "strategy": "BEAR_PUT_SPREAD",
+    "disposition": "CONDITIONAL",
+    "eligibility_score": 53.0295,
+    "strategy_score": null,
+    "complexity": "LOW",
+    "rank": null,
+    "selected": false,
+    "payload_json": {
+      "rank": null,
+      "metadata": {
+        "market_regime": "UPTREND",
+        "policy_version": "M62-PH3-1.0",
+        "setup_category": "BULLISH",
+        "structure_state": "MATURE_TREND",
+        "volatility_bias": "MODERATE_TO_HIGH_IV",
+        "conditional_opposite_direction": true,
+        "contradictory_evidence_authority": {
+          "state": "BULLISH_DETERIORATING",
+          "evidence": [
+            "Forecast contains unresolved directional/return contradiction",
+            "Distribution 60.3 versus accumulation 47.4"
+          ],
+          "reason_codes": [
+            "FORECAST_SEMANTIC_CONFLICT",
+            "DISTRIBUTION_EXCEEDS_ACCUMULATION"
+          ],
+          "policy_version": "M68.2.1.15.5-CONTRADICTORY-EVIDENCE-1.0",
+          "severity_score": 48.0,
+          "execution_blocked": false,
+          "dominant_direction": "BULLISH",
+          "opposite_direction": "BEARISH",
+          "allow_opposite_conditional": true
+        },
+        "execution_blocked_by_contradiction": false
+      },
+      "selected": false,
+      "strategy": "BEAR_PUT_SPREAD",
+      "complexity": "LOW",
+      "disposition": "CONDITIONAL",
+      "probability": null,
+      "maximum_loss": null,
+      "expected_value": null,
+      "opportunity_id": "m62-opp-b7def89ae02c4a19a32a9ca348a6bdb4",
+      "strategy_score": null,
+      "accepted_reasons": [
+        "Opposite-direction candidate retained conditionally by BULLISH_DETERIORATING",
+        "Structure compatible: MATURE_TREND",
+        "Defined-risk bearish participation with reduced volatility cost"
+      ],
+      "capital_required": null,
+      "eligibility_score": 53.0295,
+      "rejection_reasons": [
+        "CONDITIONAL_REVERSAL_CONFIRMATION_REQUIRED",
+        "MARKET_REGIME_MISMATCH:UPTREND",
+        "FORECAST_SEMANTIC_CONFLICT"
+      ],
+      "strategy_candidate_id": "m62-strategy-fbca835dbb68436cb2fe29ddbc40688c",
+      "structural_reward_risk": null,
+      "expected_return_on_risk": null
+    }
+  }
+]
+
+=== POST-PATCH AUDIT COMPLETE ===

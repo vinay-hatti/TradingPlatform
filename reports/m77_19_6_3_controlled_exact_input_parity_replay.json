@@ -1,0 +1,2864 @@
+{
+  "actual_comparison_evidence": {
+    "cadences": {
+      "DAILY": {
+        "evidence_count": 0,
+        "pass": false,
+        "reason": "NO_CONTROLLED_ACTUAL_SCALAR_COMPARISONS"
+      },
+      "MONTHLY": {
+        "evidence_count": 0,
+        "pass": false,
+        "reason": "NO_CONTROLLED_ACTUAL_SCALAR_COMPARISONS"
+      },
+      "WEEKLY": {
+        "evidence_count": 0,
+        "pass": false,
+        "reason": "NO_CONTROLLED_ACTUAL_SCALAR_COMPARISONS"
+      }
+    },
+    "strict_parity_certified": false
+  },
+  "blockers": [
+    "CONTROLLED_EXACT_INPUT_REPLAY_NOT_YET_CERTIFIED"
+  ],
+  "candidate_tables": {
+    "context": [
+      "public.m77_shadow_signals"
+    ],
+    "price_history": [
+      "public.price_history"
+    ],
+    "replay": [
+      "public.historical_replay_comparison",
+      "public.historical_replay_run",
+      "public.historical_underlying_replay_authority",
+      "public.historical_underlying_replay_failure",
+      "public.historical_underlying_replay_outcome",
+      "public.historical_underlying_replay_prediction",
+      "public.historical_underlying_replay_run",
+      "public.m73_replay_events",
+      "public.m77_13_cadence_states",
+      "public.m77_13_forward_outcomes",
+      "public.m77_13_forward_signals",
+      "public.m77_shadow_outcomes",
+      "public.m77_shadow_signals"
+    ]
+  },
+  "controlled_exact_input_parity_certified": false,
+  "database_inventory": {
+    "available": true,
+    "candidate_schemas": [
+      {
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint"
+          },
+          {
+            "name": "replay_run_id",
+            "type": "character varying"
+          },
+          {
+            "name": "category",
+            "type": "character varying"
+          },
+          {
+            "name": "comparison_key",
+            "type": "character varying"
+          },
+          {
+            "name": "comparison_status",
+            "type": "character varying"
+          },
+          {
+            "name": "baseline_hash",
+            "type": "character varying"
+          },
+          {
+            "name": "replay_hash",
+            "type": "character varying"
+          },
+          {
+            "name": "details_json",
+            "type": "text"
+          }
+        ],
+        "table": "public.historical_replay_comparison"
+      },
+      {
+        "columns": [
+          {
+            "name": "replay_run_id",
+            "type": "character varying"
+          },
+          {
+            "name": "replay_mode",
+            "type": "character varying"
+          },
+          {
+            "name": "source_scanner_run_id",
+            "type": "character varying"
+          },
+          {
+            "name": "source_decision_run_id",
+            "type": "character varying"
+          },
+          {
+            "name": "publication_name",
+            "type": "character varying"
+          },
+          {
+            "name": "ingestion_run_id",
+            "type": "character varying"
+          },
+          {
+            "name": "option_snapshot_id",
+            "type": "character varying"
+          },
+          {
+            "name": "market_state_hash",
+            "type": "character varying"
+          },
+          {
+            "name": "scanner_version",
+            "type": "character varying"
+          },
+          {
+            "name": "decision_engine_version",
+            "type": "character varying"
+          },
+          {
+            "name": "policy_version",
+            "type": "character varying"
+          },
+          {
+            "name": "started_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "completed_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "status",
+            "type": "character varying"
+          },
+          {
+            "name": "candidate_count",
+            "type": "integer"
+          },
+          {
+            "name": "decision_count",
+            "type": "integer"
+          },
+          {
+            "name": "mismatch_count",
+            "type": "integer"
+          },
+          {
+            "name": "warnings_json",
+            "type": "text"
+          },
+          {
+            "name": "metadata_json",
+            "type": "text"
+          }
+        ],
+        "table": "public.historical_replay_run"
+      },
+      {
+        "columns": [
+          {
+            "name": "symbol",
+            "type": "character varying"
+          },
+          {
+            "name": "disposition",
+            "type": "character varying"
+          },
+          {
+            "name": "continuity_start",
+            "type": "date"
+          },
+          {
+            "name": "eligible_from",
+            "type": "date"
+          },
+          {
+            "name": "last_date",
+            "type": "date"
+          },
+          {
+            "name": "valid_observation_count",
+            "type": "integer"
+          },
+          {
+            "name": "identity_break_count",
+            "type": "integer"
+          },
+          {
+            "name": "invalid_session_count",
+            "type": "integer"
+          },
+          {
+            "name": "authority_version",
+            "type": "character varying"
+          },
+          {
+            "name": "evidence_json",
+            "type": "jsonb"
+          },
+          {
+            "name": "materialized_at",
+            "type": "timestamp with time zone"
+          }
+        ],
+        "table": "public.historical_underlying_replay_authority"
+      },
+      {
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint"
+          },
+          {
+            "name": "replay_run_id",
+            "type": "character varying"
+          },
+          {
+            "name": "symbol",
+            "type": "character varying"
+          },
+          {
+            "name": "as_of",
+            "type": "date"
+          },
+          {
+            "name": "error_type",
+            "type": "character varying"
+          },
+          {
+            "name": "error_message",
+            "type": "text"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone"
+          }
+        ],
+        "table": "public.historical_underlying_replay_failure"
+      },
+      {
+        "columns": [
+          {
+            "name": "prediction_id",
+            "type": "character varying"
+          },
+          {
+            "name": "replay_run_id",
+            "type": "character varying"
+          },
+          {
+            "name": "symbol",
+            "type": "character varying"
+          },
+          {
+            "name": "as_of",
+            "type": "date"
+          },
+          {
+            "name": "status",
+            "type": "character varying"
+          },
+          {
+            "name": "entry_triggered",
+            "type": "boolean"
+          },
+          {
+            "name": "ambiguous_same_bar",
+            "type": "boolean"
+          },
+          {
+            "name": "mfe_pct",
+            "type": "double precision"
+          },
+          {
+            "name": "mae_pct",
+            "type": "double precision"
+          },
+          {
+            "name": "return_5d_pct",
+            "type": "double precision"
+          },
+          {
+            "name": "return_10d_pct",
+            "type": "double precision"
+          },
+          {
+            "name": "return_20d_pct",
+            "type": "double precision"
+          },
+          {
+            "name": "return_40d_pct",
+            "type": "double precision"
+          },
+          {
+            "name": "return_60d_pct",
+            "type": "double precision"
+          },
+          {
+            "name": "outcome_json",
+            "type": "jsonb"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone"
+          }
+        ],
+        "table": "public.historical_underlying_replay_outcome"
+      },
+      {
+        "columns": [
+          {
+            "name": "prediction_id",
+            "type": "character varying"
+          },
+          {
+            "name": "replay_run_id",
+            "type": "character varying"
+          },
+          {
+            "name": "symbol",
+            "type": "character varying"
+          },
+          {
+            "name": "as_of",
+            "type": "date"
+          },
+          {
+            "name": "direction",
+            "type": "character varying"
+          },
+          {
+            "name": "primary_category",
+            "type": "character varying"
+          },
+          {
+            "name": "overall_score",
+            "type": "double precision"
+          },
+          {
+            "name": "confidence",
+            "type": "double precision"
+          },
+          {
+            "name": "state_hash",
+            "type": "character varying"
+          },
+          {
+            "name": "profile_json",
+            "type": "jsonb"
+          },
+          {
+            "name": "lineage_json",
+            "type": "jsonb"
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp with time zone"
+          }
+        ],
+        "table": "public.historical_underlying_replay_prediction"
+      },
+      {
+        "columns": [
+          {
+            "name": "replay_run_id",
+            "type": "character varying"
+          },
+          {
+            "name": "replay_mode",
+            "type": "character varying"
+          },
+          {
+            "name": "champion_mode",
+            "type": "character varying"
+          },
+          {
+            "name": "start_date",
+            "type": "date"
+          },
+          {
+            "name": "end_date",
+            "type": "date"
+          },
+          {
+            "name": "cadence",
+            "type": "character varying"
+          },
+          {
+            "name": "status",
+            "type": "character varying"
+          },
+          {
+            "name": "authority_version",
+            "type": "character varying"
+          },
+          {
+            "name": "started_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "completed_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "prediction_count",
+            "type": "integer"
+          },
+          {
+            "name": "failure_count",
+            "type": "integer"
+          },
+          {
+            "name": "metadata_json",
+            "type": "jsonb"
+          }
+        ],
+        "table": "public.historical_underlying_replay_run"
+      },
+      {
+        "columns": [
+          {
+            "name": "event_id",
+            "type": "character varying"
+          },
+          {
+            "name": "position_id",
+            "type": "character varying"
+          },
+          {
+            "name": "event_timestamp",
+            "type": "character varying"
+          },
+          {
+            "name": "sequence_no",
+            "type": "integer"
+          },
+          {
+            "name": "event_type",
+            "type": "character varying"
+          },
+          {
+            "name": "payload_json",
+            "type": "json"
+          }
+        ],
+        "table": "public.m73_replay_events"
+      },
+      {
+        "columns": [
+          {
+            "name": "state_id",
+            "type": "character varying"
+          },
+          {
+            "name": "cadence",
+            "type": "character varying"
+          },
+          {
+            "name": "as_of",
+            "type": "date"
+          },
+          {
+            "name": "symbol",
+            "type": "character varying"
+          },
+          {
+            "name": "direction",
+            "type": "character varying"
+          },
+          {
+            "name": "overall_score",
+            "type": "double precision"
+          },
+          {
+            "name": "confidence",
+            "type": "double precision"
+          },
+          {
+            "name": "regime",
+            "type": "character varying"
+          },
+          {
+            "name": "state_hash",
+            "type": "character varying"
+          },
+          {
+            "name": "source_replay_run_id",
+            "type": "character varying"
+          },
+          {
+            "name": "payload_json",
+            "type": "jsonb"
+          }
+        ],
+        "table": "public.m77_13_cadence_states"
+      },
+      {
+        "columns": [
+          {
+            "name": "outcome_id",
+            "type": "character varying"
+          },
+          {
+            "name": "signal_id",
+            "type": "character varying"
+          },
+          {
+            "name": "target_session_date",
+            "type": "date"
+          },
+          {
+            "name": "observed_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "target_close",
+            "type": "double precision"
+          },
+          {
+            "name": "raw_return_pct",
+            "type": "double precision"
+          },
+          {
+            "name": "thesis_return_pct",
+            "type": "double precision"
+          },
+          {
+            "name": "directional_hit",
+            "type": "boolean"
+          },
+          {
+            "name": "payload_json",
+            "type": "jsonb"
+          }
+        ],
+        "table": "public.m77_13_forward_outcomes"
+      },
+      {
+        "columns": [
+          {
+            "name": "signal_id",
+            "type": "character varying"
+          },
+          {
+            "name": "signal_fingerprint",
+            "type": "character varying"
+          },
+          {
+            "name": "captured_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "source_as_of",
+            "type": "date"
+          },
+          {
+            "name": "symbol",
+            "type": "character varying"
+          },
+          {
+            "name": "baseline_source",
+            "type": "character varying"
+          },
+          {
+            "name": "baseline_id",
+            "type": "character varying"
+          },
+          {
+            "name": "horizon_sessions",
+            "type": "integer"
+          },
+          {
+            "name": "direction",
+            "type": "character varying"
+          },
+          {
+            "name": "regime",
+            "type": "character varying"
+          },
+          {
+            "name": "score_band",
+            "type": "character varying"
+          },
+          {
+            "name": "confidence_band",
+            "type": "character varying"
+          },
+          {
+            "name": "reference_price",
+            "type": "double precision"
+          },
+          {
+            "name": "daily_state_as_of",
+            "type": "date"
+          },
+          {
+            "name": "weekly_state_as_of",
+            "type": "date"
+          },
+          {
+            "name": "monthly_state_as_of",
+            "type": "date"
+          },
+          {
+            "name": "policy_sha256",
+            "type": "character varying"
+          },
+          {
+            "name": "status",
+            "type": "character varying"
+          },
+          {
+            "name": "payload_json",
+            "type": "jsonb"
+          }
+        ],
+        "table": "public.m77_13_forward_signals"
+      },
+      {
+        "columns": [
+          {
+            "name": "outcome_id",
+            "type": "character varying"
+          },
+          {
+            "name": "signal_id",
+            "type": "character varying"
+          },
+          {
+            "name": "target_session_date",
+            "type": "date"
+          },
+          {
+            "name": "observed_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "target_close",
+            "type": "double precision"
+          },
+          {
+            "name": "raw_return_pct",
+            "type": "double precision"
+          },
+          {
+            "name": "thesis_return_pct",
+            "type": "double precision"
+          },
+          {
+            "name": "directional_hit",
+            "type": "boolean"
+          },
+          {
+            "name": "payload_json",
+            "type": "jsonb"
+          }
+        ],
+        "table": "public.m77_shadow_outcomes"
+      },
+      {
+        "columns": [
+          {
+            "name": "signal_id",
+            "type": "character varying"
+          },
+          {
+            "name": "signal_fingerprint",
+            "type": "character varying"
+          },
+          {
+            "name": "captured_at",
+            "type": "timestamp with time zone"
+          },
+          {
+            "name": "source_as_of_date",
+            "type": "date"
+          },
+          {
+            "name": "scanner_run_id",
+            "type": "character varying"
+          },
+          {
+            "name": "candidate_id",
+            "type": "character varying"
+          },
+          {
+            "name": "symbol",
+            "type": "character varying"
+          },
+          {
+            "name": "direction",
+            "type": "character varying"
+          },
+          {
+            "name": "primary_category",
+            "type": "character varying"
+          },
+          {
+            "name": "structure",
+            "type": "character varying"
+          },
+          {
+            "name": "overall_score",
+            "type": "double precision"
+          },
+          {
+            "name": "confidence",
+            "type": "double precision"
+          },
+          {
+            "name": "historical_regime",
+            "type": "character varying"
+          },
+          {
+            "name": "shadow_tier",
+            "type": "character varying"
+          },
+          {
+            "name": "candidate_horizon_id",
+            "type": "character varying"
+          },
+          {
+            "name": "horizon_sessions",
+            "type": "integer"
+          },
+          {
+            "name": "reference_price",
+            "type": "double precision"
+          },
+          {
+            "name": "state_hash",
+            "type": "character varying"
+          },
+          {
+            "name": "policy_sha256",
+            "type": "character varying"
+          },
+          {
+            "name": "status",
+            "type": "character varying"
+          },
+          {
+            "name": "payload_json",
+            "type": "jsonb"
+          }
+        ],
+        "table": "public.m77_shadow_signals"
+      },
+      {
+        "columns": [
+          {
+            "name": "symbol",
+            "type": "character varying"
+          },
+          {
+            "name": "date",
+            "type": "date"
+          },
+          {
+            "name": "open",
+            "type": "double precision"
+          },
+          {
+            "name": "high",
+            "type": "double precision"
+          },
+          {
+            "name": "low",
+            "type": "double precision"
+          },
+          {
+            "name": "close",
+            "type": "double precision"
+          },
+          {
+            "name": "volume",
+            "type": "double precision"
+          }
+        ],
+        "table": "public.price_history"
+      }
+    ],
+    "errors": []
+  },
+  "full_23_year_reconstruction_authorized": false,
+  "generated_at": "2026-08-23T07:33:48.787395+00:00",
+  "governance": {
+    "confidence_epsilon": 1e-09,
+    "database_mode": "READ_ONLY",
+    "deterministic_repeat_required_pct": 100.0,
+    "direction_required_pct": 100.0,
+    "full_23_year_reconstruction_authorized": false,
+    "parity_thresholds_relaxed": false,
+    "production_authority_effect": false,
+    "production_writes": false,
+    "research_only": true,
+    "score_epsilon": 1e-09,
+    "semantic_hash_required_pct": 100.0
+  },
+  "m77_19_6_2_authority_report": "/Users/vinay.hatti/TradingPlatform/reports/m77_19_6_2_exact_input_context_hash_parity.json",
+  "next_step": "BUILD_EXACT_FROZEN_INPUT_CONTEXT_REPLAY_ADAPTER",
+  "production_authority_effect": false,
+  "source_semantics": {
+    "compute_calls": [
+      {
+        "call": "HistoricalUnderlyingReplayService",
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_10_monthly_model_replay.py",
+        "line": 68
+      },
+      {
+        "call": "build_index",
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_11_multi_cadence_confluence.py",
+        "line": 196
+      },
+      {
+        "call": "build_index",
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_11_multi_cadence_confluence.py",
+        "line": 196
+      },
+      {
+        "call": "score_band",
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_11_multi_cadence_confluence.py",
+        "line": 220
+      },
+      {
+        "call": "score_band",
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_11_multi_cadence_confluence.py",
+        "line": 222
+      },
+      {
+        "call": "build_index",
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_12_cadence_role_incremental_utility.py",
+        "line": 212
+      },
+      {
+        "call": "build_index",
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_12_cadence_role_incremental_utility.py",
+        "line": 212
+      },
+      {
+        "call": "build_index",
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_12_cadence_role_incremental_utility.py",
+        "line": 212
+      },
+      {
+        "call": "score_band",
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_12_cadence_role_incremental_utility.py",
+        "line": 117
+      },
+      {
+        "call": "score_band",
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_13_forward_shadow.py",
+        "line": 81
+      },
+      {
+        "call": "build_adapter_contract",
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_19_3_isolated_daily_monthly_pit_harness.py",
+        "line": 164
+      },
+      {
+        "call": "HistoricalUnderlyingReplayService",
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_1_historical_underlying_replay.py",
+        "line": 12
+      },
+      {
+        "call": "HistoricalUnderlyingReplayService",
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_2_multiyear_frozen_champion.py",
+        "line": 97
+      },
+      {
+        "call": "build_session_calendar",
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_8_daily_pit_replay_authority.py",
+        "line": 185
+      },
+      {
+        "call": "build_authority",
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_8_daily_pit_replay_authority.py",
+        "line": 190
+      },
+      {
+        "call": "HistoricalUnderlyingReplayService",
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_9_daily_model_replay.py",
+        "line": 54
+      },
+      {
+        "call": "build_authority",
+        "file": "research_data/m77_19_4/source_semantics_capture/source/src/trading_ai/historical_underlying_replay/attribution.py",
+        "line": 286
+      },
+      {
+        "call": "_score_band",
+        "file": "research_data/m77_19_4/source_semantics_capture/source/src/trading_ai/historical_underlying_replay/attribution.py",
+        "line": 82
+      },
+      {
+        "call": "score_band",
+        "file": "scripts/certify_m77_10_monthly_walk_forward.py",
+        "line": 96
+      },
+      {
+        "call": "build_report",
+        "file": "scripts/report_m77_1_1_1_historical_champion_analytics.py",
+        "line": 20
+      },
+      {
+        "call": "build_report",
+        "file": "scripts/report_m77_1_1_historical_champion_analytics.py",
+        "line": 8
+      },
+      {
+        "call": "build_report",
+        "file": "scripts/report_m77_2_multiyear_frozen_champion.py",
+        "line": 41
+      },
+      {
+        "call": "ReplaySelector",
+        "file": "scripts/run_m47_historical_replay.py",
+        "line": 26
+      },
+      {
+        "call": "ReplayPolicy",
+        "file": "scripts/run_m47_historical_replay.py",
+        "line": 32
+      },
+      {
+        "call": "HistoricalReplayService",
+        "file": "scripts/run_m47_historical_replay.py",
+        "line": 36
+      },
+      {
+        "call": "build",
+        "file": "scripts/run_m77_0_3_recover_institutional_options_requalification.py",
+        "line": 178
+      },
+      {
+        "call": "HistoricalUnderlyingReplayService",
+        "file": "scripts/run_m77_10_monthly_model_replay.py",
+        "line": 68
+      },
+      {
+        "call": "build_index",
+        "file": "scripts/run_m77_11_multi_cadence_confluence.py",
+        "line": 196
+      },
+      {
+        "call": "build_index",
+        "file": "scripts/run_m77_11_multi_cadence_confluence.py",
+        "line": 196
+      },
+      {
+        "call": "score_band",
+        "file": "scripts/run_m77_11_multi_cadence_confluence.py",
+        "line": 220
+      },
+      {
+        "call": "score_band",
+        "file": "scripts/run_m77_11_multi_cadence_confluence.py",
+        "line": 222
+      },
+      {
+        "call": "build_index",
+        "file": "scripts/run_m77_12_cadence_role_incremental_utility.py",
+        "line": 212
+      },
+      {
+        "call": "build_index",
+        "file": "scripts/run_m77_12_cadence_role_incremental_utility.py",
+        "line": 212
+      },
+      {
+        "call": "build_index",
+        "file": "scripts/run_m77_12_cadence_role_incremental_utility.py",
+        "line": 212
+      },
+      {
+        "call": "score_band",
+        "file": "scripts/run_m77_12_cadence_role_incremental_utility.py",
+        "line": 117
+      },
+      {
+        "call": "score_band",
+        "file": "scripts/run_m77_13_forward_shadow.py",
+        "line": 81
+      },
+      {
+        "call": "build_adapter_contract",
+        "file": "scripts/run_m77_19_3_isolated_daily_monthly_pit_harness.py",
+        "line": 164
+      },
+      {
+        "call": "evaluate_actual_comparisons",
+        "file": "scripts/run_m77_19_6_3_controlled_exact_input_parity_replay.py",
+        "line": 508
+      },
+      {
+        "call": "HistoricalUnderlyingReplayService",
+        "file": "scripts/run_m77_1_historical_underlying_replay.py",
+        "line": 12
+      },
+      {
+        "call": "HistoricalUnderlyingReplayService",
+        "file": "scripts/run_m77_2_multiyear_frozen_champion.py",
+        "line": 97
+      },
+      {
+        "call": "build_report",
+        "file": "scripts/run_m77_3_conditional_edge_attribution.py",
+        "line": 46
+      },
+      {
+        "call": "build_report",
+        "file": "scripts/run_m77_4_stock_intelligence_challenger.py",
+        "line": 62
+      },
+      {
+        "call": "build",
+        "file": "scripts/run_m77_5_shadow_policy_certification.py",
+        "line": 270
+      },
+      {
+        "call": "build_authority",
+        "file": "scripts/run_m77_6_live_forward_shadow.py",
+        "line": 46
+      },
+      {
+        "call": "build_session_calendar",
+        "file": "scripts/run_m77_8_daily_pit_replay_authority.py",
+        "line": 185
+      },
+      {
+        "call": "build_authority",
+        "file": "scripts/run_m77_8_daily_pit_replay_authority.py",
+        "line": 190
+      },
+      {
+        "call": "HistoricalUnderlyingReplayService",
+        "file": "scripts/run_m77_9_daily_model_replay.py",
+        "line": 54
+      },
+      {
+        "call": "ReplaySource",
+        "file": "scripts/test_m47_phase7_historical_replay.py",
+        "line": 11
+      },
+      {
+        "call": "ReplayPolicy",
+        "file": "scripts/test_m47_phase7_historical_replay.py",
+        "line": 55
+      },
+      {
+        "call": "HistoricalReplayService",
+        "file": "scripts/test_m47_phase7_historical_replay.py",
+        "line": 56
+      },
+      {
+        "call": "ReplaySelector",
+        "file": "scripts/test_m47_phase7_historical_replay.py",
+        "line": 57
+      },
+      {
+        "call": "ReplaySelector",
+        "file": "scripts/test_m47_phase7_historical_replay.py",
+        "line": 72
+      },
+      {
+        "call": "ReplaySelector",
+        "file": "scripts/test_m47_phase7_historical_replay.py",
+        "line": 83
+      },
+      {
+        "call": "HistoricalReplayService",
+        "file": "scripts/test_m47_phase7_historical_replay.py",
+        "line": 66
+      },
+      {
+        "call": "HistoricalReplayService",
+        "file": "scripts/test_m47_phase7_historical_replay.py",
+        "line": 81
+      },
+      {
+        "call": "build_authority",
+        "file": "src/trading_ai/historical_underlying_replay/attribution.py",
+        "line": 286
+      },
+      {
+        "call": "_score_band",
+        "file": "src/trading_ai/historical_underlying_replay/attribution.py",
+        "line": 82
+      },
+      {
+        "call": "build_authority",
+        "file": "src/trading_ai/historical_underlying_replay/challenger.py",
+        "line": 89
+      },
+      {
+        "call": "ReplaySource",
+        "file": "src/trading_ai/replay/repository.py",
+        "line": 95
+      },
+      {
+        "call": "ReplayResult",
+        "file": "src/trading_ai/replay/service.py",
+        "line": 102
+      },
+      {
+        "call": "ReplayPolicy",
+        "file": "src/trading_ai/replay/service.py",
+        "line": 40
+      },
+      {
+        "call": "ReplayComparison",
+        "file": "src/trading_ai/replay/service.py",
+        "line": 62
+      },
+      {
+        "call": "ReplayComparison",
+        "file": "src/trading_ai/replay/service.py",
+        "line": 95
+      },
+      {
+        "call": "build_runtime",
+        "file": "src/trading_ai/stock_intelligence/orchestration.py",
+        "line": 49
+      },
+      {
+        "call": "build",
+        "file": "src/trading_ai/stock_intelligence/position_intelligence.py",
+        "line": 317
+      },
+      {
+        "call": "build",
+        "file": "src/trading_ai/stock_intelligence/position_intelligence.py",
+        "line": 318
+      },
+      {
+        "call": "build",
+        "file": "src/trading_ai/stock_intelligence/position_intelligence.py",
+        "line": 318
+      },
+      {
+        "call": "build",
+        "file": "src/trading_ai/stock_intelligence/position_intelligence.py",
+        "line": 318
+      },
+      {
+        "call": "build",
+        "file": "src/trading_ai/stock_intelligence/position_intelligence.py",
+        "line": 318
+      },
+      {
+        "call": "evaluate",
+        "file": "src/trading_ai/stock_intelligence/position_intelligence.py",
+        "line": 318
+      },
+      {
+        "call": "build",
+        "file": "src/trading_ai/stock_intelligence/position_intelligence.py",
+        "line": 100
+      },
+      {
+        "call": "build",
+        "file": "src/trading_ai/stock_intelligence/position_intelligence.py",
+        "line": 180
+      },
+      {
+        "call": "build",
+        "file": "src/trading_ai/stock_intelligence/position_intelligence.py",
+        "line": 236
+      },
+      {
+        "call": "StockOpportunityScoreSnapshotModel",
+        "file": "src/trading_ai/stock_intelligence/repository.py",
+        "line": 29
+      },
+      {
+        "call": "build",
+        "file": "src/trading_ai/stock_intelligence/router.py",
+        "line": 65
+      },
+      {
+        "call": "OpportunityScores",
+        "file": "src/trading_ai/stock_intelligence/scoring.py",
+        "line": 11
+      },
+      {
+        "call": "build",
+        "file": "src/trading_ai/stock_intelligence/service.py",
+        "line": 19
+      },
+      {
+        "call": "score",
+        "file": "src/trading_ai/stock_intelligence/service.py",
+        "line": 19
+      },
+      {
+        "call": "build",
+        "file": "src/trading_ai/stock_intelligence/service.py",
+        "line": 19
+      },
+      {
+        "call": "_build_cluster",
+        "file": "src/trading_ai/stock_intelligence/structure_zones.py",
+        "line": 78
+      }
+    ],
+    "context_markers": [
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_7_multi_cadence_replay_coverage_feasibility.py",
+        "line": 238,
+        "text": "auth = d.get(\"historical_regime_authority\") or {}"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_8_daily_pit_replay_authority.py",
+        "line": 27,
+        "text": "DEFAULT_M77_3 = Path(\"reports/m77/m77_3_historical_regime_authority.json\")"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/src/trading_ai/historical_underlying_replay/attribution.py",
+        "line": 78,
+        "text": "row[\"historical_regime\"] = snapshot.regime if snapshot else \"UNKNOWN\""
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/src/trading_ai/historical_underlying_replay/attribution.py",
+        "line": 95,
+        "text": "key = (row[\"as_of\"], row[\"historical_regime\"], row[\"score_band\"])"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/src/trading_ai/historical_underlying_replay/attribution.py",
+        "line": 111,
+        "text": "key = (row[\"as_of\"], row[\"historical_regime\"], row[\"score_band\"])"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/src/trading_ai/historical_underlying_replay/attribution.py",
+        "line": 241,
+        "text": "(\"direction_regime\", {\"direction\": row[\"direction\"], \"historical_regime\": row[\"historical_regime\"]}),"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/src/trading_ai/historical_underlying_replay/attribution.py",
+        "line": 242,
+        "text": "(\"direction_score_regime\", {\"direction\": row[\"direction\"], \"score_band\": row[\"score_band\"], \"historical_regime\": row[\"historical_regime\"]}),"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/src/trading_ai/historical_underlying_replay/attribution.py",
+        "line": 336,
+        "text": "\"historical_regime_authority\": {"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/src/trading_ai/historical_underlying_replay/service.py",
+        "line": 89,
+        "text": "self.session.execute(text(\"\"\"INSERT INTO historical_underlying_replay_run(replay_run_id,replay_mode,champion_mode,start_date,end_date,cadence,status,authority_version,started_at,metadata_json) VALUES (:id,:mode,:champion,:start,:end,:cadence,'RUNNING',:version,:started,CAST(:meta AS jsonb))\"\"\"),{'id':run_id,'mode':REPLAY_MODE,'champion':CHAMPION_MODE,'start':start,'end':end,'cadence':cadence,'version':VERSION,'started':started,'meta':_json({'production_authority_effect':False,'external_context':"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/src/trading_ai/historical_underlying_replay/service.py",
+        "line": 104,
+        "text": "profile=self.intelligence.analyze(symbol,self._timeframes(history),snapshot_timestamp=f'{as_of.isoformat()}T20:00:00+00:00',external_context={}); payload=asdict(profile); outcome=self._outcome(profile,future,float(rows[pos]['close'])); ambiguous+=int(outcome['ambiguous_same_bar']); pid=f'm77-1-pred-{uuid4().hex}'"
+      },
+      {
+        "file": "scripts/certify_m77_9_daily_walk_forward.py",
+        "line": 33,
+        "text": "def key(r): return (r['historical_regime'],r['direction'],r['score_band'],r['confidence_band'])"
+      },
+      {
+        "file": "scripts/certify_m77_9_daily_walk_forward.py",
+        "line": 61,
+        "text": "x=dict(r); x['as_of']=ad; x['session_index']=idx[ad]; x['historical_regime']=sp['regime']; x['score_band']=band(x['overall_score']); x['confidence_band']=conf(x['confidence']); data.append(x)"
+      },
+      {
+        "file": "scripts/report_m77_19_6_1_parity_forensic_decomposition.py",
+        "line": 22,
+        "text": "print(\"external_context_semantic_markers:\",len(x[\"external_context_semantic_markers\"]))"
+      },
+      {
+        "file": "scripts/report_m77_3_conditional_edges.py",
+        "line": 24,
+        "text": "\"regime_counts\": data[\"historical_regime_authority\"][\"regime_counts\"],"
+      },
+      {
+        "file": "scripts/run_m77_19_6_1_parity_forensic_decomposition.py",
+        "line": 166,
+        "text": "def inspect_external_context_semantics():"
+      },
+      {
+        "file": "scripts/run_m77_19_6_1_parity_forensic_decomposition.py",
+        "line": 173,
+        "text": "if any(k in low for k in (\"external_context\",\"market_alignment\",\"dealer\",\"liquidity\",\"institutional\",\"context\")):"
+      },
+      {
+        "file": "scripts/run_m77_19_6_1_parity_forensic_decomposition.py",
+        "line": 211,
+        "text": "context_hits=inspect_external_context_semantics()"
+      },
+      {
+        "file": "scripts/run_m77_19_6_1_parity_forensic_decomposition.py",
+        "line": 226,
+        "text": "\"classification\":\"EXTERNAL_CONTEXT_DEPENDENCY_REQUIRES_PARITY_CONTROL\","
+      },
+      {
+        "file": "scripts/run_m77_19_6_1_parity_forensic_decomposition.py",
+        "line": 227,
+        "text": "\"evidence\":\"Stock Intelligence service contains external/context-dependent logic; M77.19.6 used external_context={}. Frozen replay context must be recovered or explicitly demonstrated irrelevant.\""
+      },
+      {
+        "file": "scripts/run_m77_19_6_1_parity_forensic_decomposition.py",
+        "line": 244,
+        "text": "\"external_context_semantic_markers\":context_hits,"
+      },
+      {
+        "file": "scripts/run_m77_19_6_2_exact_input_context_hash_parity.py",
+        "line": 55,
+        "text": "\"historical_regime\", \"regime\", \"score_band\","
+      },
+      {
+        "file": "scripts/run_m77_19_6_2_exact_input_context_hash_parity.py",
+        "line": 59,
+        "text": "\"external_context\", \"market_alignment\", \"market_regime\", \"regime\","
+      },
+      {
+        "file": "scripts/run_m77_19_6_2_exact_input_context_hash_parity.py",
+        "line": 273,
+        "text": "def analyze_external_context(project_root: Path, source_files: Sequence[str], json_docs: Sequence[tuple[str, Any]]) -> dict[str, Any]:"
+      },
+      {
+        "file": "scripts/run_m77_19_6_2_exact_input_context_hash_parity.py",
+        "line": 379,
+        "text": "if \"regime\" in name or any(h in cols for h in (\"market_regime\", \"external_context\", \"historical_regime\")):"
+      },
+      {
+        "file": "scripts/run_m77_19_6_2_exact_input_context_hash_parity.py",
+        "line": 394,
+        "text": "ctx = report[\"external_context\"]"
+      },
+      {
+        "file": "scripts/run_m77_19_6_2_exact_input_context_hash_parity.py",
+        "line": 401,
+        "text": "blockers.append(\"FROZEN_EXTERNAL_CONTEXT_AUTHORITY_NOT_DISCOVERED\")"
+      },
+      {
+        "file": "scripts/run_m77_19_6_2_exact_input_context_hash_parity.py",
+        "line": 405,
+        "text": "blockers.append(\"EXTERNAL_CONTEXT_SOURCE_DEPENDENCY_NOT_LOCATED\")"
+      },
+      {
+        "file": "scripts/run_m77_19_6_2_exact_input_context_hash_parity.py",
+        "line": 448,
+        "text": "report[\"external_context\"] = analyze_external_context(root, discovered[\"source_files\"], docs)"
+      },
+      {
+        "file": "scripts/run_m77_19_6_3_controlled_exact_input_parity_replay.py",
+        "line": 196,
+        "text": "or \"external_context\" in columns"
+      },
+      {
+        "file": "scripts/run_m77_19_6_3_controlled_exact_input_parity_replay.py",
+        "line": 197,
+        "text": "or \"historical_regime\" in columns"
+      },
+      {
+        "file": "scripts/run_m77_19_6_3_controlled_exact_input_parity_replay.py",
+        "line": 288,
+        "text": "\"external_context\","
+      },
+      {
+        "file": "scripts/run_m77_19_6_3_controlled_exact_input_parity_replay.py",
+        "line": 289,
+        "text": "\"market_regime\","
+      },
+      {
+        "file": "scripts/run_m77_19_6_3_controlled_exact_input_parity_replay.py",
+        "line": 290,
+        "text": "\"historical_regime\","
+      },
+      {
+        "file": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+        "line": 110,
+        "text": "external_context={},"
+      },
+      {
+        "file": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+        "line": 139,
+        "text": "external_context={},"
+      },
+      {
+        "file": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+        "line": 145,
+        "text": "external_context={},"
+      },
+      {
+        "file": "scripts/run_m77_3_conditional_edge_attribution.py",
+        "line": 27,
+        "text": "default=\"reports/m77/m77_3_historical_regime_authority.json\","
+      },
+      {
+        "file": "scripts/run_m77_3_conditional_edge_attribution.py",
+        "line": 60,
+        "text": "**report[\"historical_regime_authority\"],"
+      },
+      {
+        "file": "scripts/run_m77_3_conditional_edge_attribution.py",
+        "line": 71,
+        "text": "\"regime_counts\": report[\"historical_regime_authority\"][\"regime_counts\"],"
+      },
+      {
+        "file": "scripts/run_m77_6_live_forward_shadow.py",
+        "line": 24,
+        "text": "return {f'direction::direction={d}',f'direction_regime::direction={d}|historical_regime={r}',f'direction_category::direction={d}|primary_category={c}',f'direction_structure::direction={d}|structure={s}',f'direction_category_score::direction={d}|primary_category={c}|score_band={b}',f'direction_category_structure::direction={d}|primary_category={c}|structure={s}',f'direction_score_regime::direction={d}|historical_regime={r}|score_band={b}'}"
+      },
+      {
+        "file": "scripts/run_m77_6_live_forward_shadow.py",
+        "line": 62,
+        "text": "session.execute(text('INSERT INTO m77_shadow_signals(signal_id,signal_fingerprint,captured_at,source_as_of_date,scanner_run_id,candidate_id,symbol,direction,primary_category,structure,overall_score,confidence,historical_regime,shadow_tier,candidate_horizon_id,horizon_sessions,reference_price,state_hash,policy_sha256,status,payload_json) VALUES(:id,:fp,:now,:d,:run,:cid,:sym,:dir,:cat,:st,:score,:conf,:reg,:tier,:cohort,:h,:px,:state,:sha,\\'OPEN\\',CAST(:payload AS jsonb))'),{'id':'m77-shadow-'+uu"
+      },
+      {
+        "file": "scripts/run_m77_7_multi_cadence_replay_coverage_feasibility.py",
+        "line": 238,
+        "text": "auth = d.get(\"historical_regime_authority\") or {}"
+      },
+      {
+        "file": "scripts/run_m77_8_daily_pit_replay_authority.py",
+        "line": 27,
+        "text": "DEFAULT_M77_3 = Path(\"reports/m77/m77_3_historical_regime_authority.json\")"
+      },
+      {
+        "file": "scripts/verify_m77_19_6_2.py",
+        "line": 35,
+        "text": "\"external_context\","
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/analytics.py",
+        "line": 325,
+        "text": "str((profile.get(\"context\") or {}).get(\"market_regime\") or \"UNKNOWN\")"
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/analytics.py",
+        "line": 402,
+        "text": "\"market_regime_counts\": dict(sorted(regimes.items()))"
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/attribution.py",
+        "line": 78,
+        "text": "row[\"historical_regime\"] = snapshot.regime if snapshot else \"UNKNOWN\""
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/attribution.py",
+        "line": 95,
+        "text": "key = (row[\"as_of\"], row[\"historical_regime\"], row[\"score_band\"])"
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/attribution.py",
+        "line": 111,
+        "text": "key = (row[\"as_of\"], row[\"historical_regime\"], row[\"score_band\"])"
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/attribution.py",
+        "line": 241,
+        "text": "(\"direction_regime\", {\"direction\": row[\"direction\"], \"historical_regime\": row[\"historical_regime\"]}),"
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/attribution.py",
+        "line": 242,
+        "text": "(\"direction_score_regime\", {\"direction\": row[\"direction\"], \"score_band\": row[\"score_band\"], \"historical_regime\": row[\"historical_regime\"]}),"
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/attribution.py",
+        "line": 336,
+        "text": "\"historical_regime_authority\": {"
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/certification.py",
+        "line": 202,
+        "text": "str((profile.get(\"context\") or {}).get(\"market_regime\") or \"UNKNOWN\")"
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/certification.py",
+        "line": 261,
+        "text": "\"market_regime_certification_requires_context\": True,"
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/certification.py",
+        "line": 306,
+        "text": "\"market_regime_counts\": dict(sorted(regime_counts.items()))"
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/service.py",
+        "line": 89,
+        "text": "self.session.execute(text(\"\"\"INSERT INTO historical_underlying_replay_run(replay_run_id,replay_mode,champion_mode,start_date,end_date,cadence,status,authority_version,started_at,metadata_json) VALUES (:id,:mode,:champion,:start,:end,:cadence,'RUNNING',:version,:started,CAST(:meta AS jsonb))\"\"\"),{'id':run_id,'mode':REPLAY_MODE,'champion':CHAMPION_MODE,'start':start,'end':end,'cadence':cadence,'version':VERSION,'started':started,'meta':_json({'production_authority_effect':False,'external_context':"
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/service.py",
+        "line": 104,
+        "text": "profile=self.intelligence.analyze(symbol,self._timeframes(history),snapshot_timestamp=f'{as_of.isoformat()}T20:00:00+00:00',external_context={}); payload=asdict(profile); outcome=self._outcome(profile,future,float(rows[pos]['close'])); ambiguous+=int(outcome['ambiguous_same_bar']); pid=f'm77-1-pred-{uuid4().hex}'"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/context.py",
+        "line": 3,
+        "text": "def integrate(self,direction,trend=None,institutional=None,dealer=None,market_regime=None,forecast=None,breadth=None,sector=None):"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/context.py",
+        "line": 7,
+        "text": "mr=str(getattr(market_regime,'regime',getattr(market_regime,'current_regime','UNKNOWN')) if market_regime else 'UNKNOWN').upper(); add('market_regime',75 if ('BULL' in mr)==bullish and mr!='UNKNOWN' else 25 if mr!='UNKNOWN' else 50,1.2)"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/context_loader.py",
+        "line": 162,
+        "text": "\"market_regime\": market,"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/models.py",
+        "line": 19,
+        "text": "StockOutcomeObservationModel=model('StockOutcomeObservationModel','stock_outcome_observations',{'outcome':Column(String(32),nullable=False,index=True),'setup_category':Column(String(64),nullable=False,index=True),'market_regime':Column(String(64),nullable=False,index=True),'strategy':Column(String(64),nullable=False,index=True),'prediction_probability':Column(Float,nullable=False),'realized_return_pct':Column(Float,nullable=False,default=0),'management_policy':Column(String(64),nullable=False,in"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/orchestration.py",
+        "line": 25,
+        "text": "external_context_by_symbol: dict[str, dict] | None = None,"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/orchestration.py",
+        "line": 51,
+        "text": "contexts = external_context_by_symbol or {}"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/orchestration.py",
+        "line": 58,
+        "text": "external_context=contexts.get(symbol),"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/outcome.py",
+        "line": 22,
+        "text": "market_regime: str"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/outcome.py",
+        "line": 199,
+        "text": "market_regime=str(context.get(\"market_regime\", candidate_payload.get(\"market_regime\", \"UNKNOWN\"))).upper(),"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/profile.py",
+        "line": 46,
+        "text": "score:float=50.; adjustment:float=0.; confidence:float=0.; market_regime:str='UNKNOWN'; forecast_direction:str='UNKNOWN'; relative_strength_grade:str=''; dealer_positioning:str='UNKNOWN'; gamma_regime:str='UNKNOWN'; institutional_state:str='UNKNOWN'; evidence:dict[str,Any]=field(default_factory=dict)"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/publication.py",
+        "line": 139,
+        "text": "\"market_regime\": context.get(\"market_regime\", \"UNAVAILABLE\"),"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/publication_service.py",
+        "line": 111,
+        "text": "external_context_by_symbol: dict[str, dict] = {}"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/publication_service.py",
+        "line": 131,
+        "text": "external_context_by_symbol[symbol] = context_loader.for_symbol(symbol)"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/publication_service.py",
+        "line": 139,
+        "text": "external_context_by_symbol=external_context_by_symbol,"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/repository.py",
+        "line": 50,
+        "text": "market_regime=observation.market_regime,"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/service.py",
+        "line": 15,
+        "text": "def analyze(self,symbol,data_by_timeframe,snapshot_timestamp=None,external_context=None):"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/service.py",
+        "line": 19,
+        "text": "e=external_context or {};p.context=self.ctx.integrate(p.direction,**e);p.structure_zones=self.structure_zones.build(p);p.scores=self.scorer.score(p);p.categories=[p.scores.primary_category];p.trade_plan=self.position.build(p)"
+      }
+    ],
+    "output_markers": [
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_11_multi_cadence_confluence.py",
+        "line": 124,
+        "text": "x.get(\"confidence_band\"),"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_11_multi_cadence_confluence.py",
+        "line": 168,
+        "text": "SELECT as_of,symbol,direction,overall_score,confidence"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_11_multi_cadence_confluence.py",
+        "line": 173,
+        "text": "SELECT as_of,symbol,direction,overall_score,confidence"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_11_multi_cadence_confluence.py",
+        "line": 178,
+        "text": "SELECT as_of,symbol,direction,overall_score,confidence"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_11_multi_cadence_confluence.py",
+        "line": 220,
+        "text": "dkey=(h,reg,d0[\"direction\"],score_band(d0[\"overall_score\"]),conf_band(d0[\"confidence\"]))"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_11_multi_cadence_confluence.py",
+        "line": 222,
+        "text": "mkey=(h,mreg,m[\"direction\"],score_band(m[\"overall_score\"]),conf_band(m[\"confidence\"]))"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_12_cadence_role_incremental_utility.py",
+        "line": 109,
+        "text": "\"confidence_band\":x.get(\"confidence_band\"),"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_12_cadence_role_incremental_utility.py",
+        "line": 117,
+        "text": "and score_band(row[\"overall_score\"])==cert[\"score_band\"]"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_12_cadence_role_incremental_utility.py",
+        "line": 118,
+        "text": "and conf_band(row[\"confidence\"])==cert[\"confidence_band\"]"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_12_cadence_role_incremental_utility.py",
+        "line": 186,
+        "text": "SELECT as_of,symbol,direction,overall_score,confidence"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_12_cadence_role_incremental_utility.py",
+        "line": 191,
+        "text": "SELECT as_of,symbol,direction,overall_score,confidence"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_12_cadence_role_incremental_utility.py",
+        "line": 196,
+        "text": "SELECT as_of,symbol,direction,overall_score,confidence"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_12_cadence_role_incremental_utility.py",
+        "line": 218,
+        "text": "bid=f'DAILY::{h}::{c[\"regime\"]}::{c[\"direction\"]}::{c[\"score_band\"]}::{c[\"confidence_band\"]}'"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_12_cadence_role_incremental_utility.py",
+        "line": 243,
+        "text": "bid=f'MONTHLY::{h}::{c[\"regime\"]}::{c[\"direction\"]}::{c[\"score_band\"]}::{c[\"confidence_band\"]}'"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_13_forward_shadow.py",
+        "line": 70,
+        "text": "\"confidence_band\":x.get(\"confidence_band\"),"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_13_forward_shadow.py",
+        "line": 75,
+        "text": "return f'{source}::{c[\"horizon_sessions\"]}::{c[\"regime\"]}::{c[\"direction\"]}::{c[\"score_band\"]}::{c[\"confidence_band\"]}'"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_13_forward_shadow.py",
+        "line": 81,
+        "text": "and score_band(row[\"overall_score\"])==c[\"score_band\"]"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_13_forward_shadow.py",
+        "line": 82,
+        "text": "and conf_band(row[\"confidence\"])==c[\"confidence_band\"]"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_13_forward_shadow.py",
+        "line": 137,
+        "text": "SELECT as_of,symbol,direction,overall_score,confidence,state_hash"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_13_forward_shadow.py",
+        "line": 149,
+        "text": "state_id,cadence,as_of,symbol,direction,overall_score,confidence,regime,state_hash,source_replay_run_id,payload_json"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_13_forward_shadow.py",
+        "line": 156,
+        "text": "\"dir\":r[\"direction\"],\"score\":r[\"overall_score\"],\"conf\":r[\"confidence\"],"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_13_forward_shadow.py",
+        "line": 157,
+        "text": "\"reg\":reg,\"hash\":r[\"state_hash\"],\"rid\":rid,"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_13_forward_shadow.py",
+        "line": 166,
+        "text": "SELECT symbol,direction,overall_score,confidence,regime,state_hash"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_13_forward_shadow.py",
+        "line": 203,
+        "text": "direction,regime,score_band,confidence_band,reference_price,daily_state_as_of,weekly_state_as_of,monthly_state_as_of,"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/scripts/run_m77_13_forward_shadow.py",
+        "line": 211,
+        "text": "\"sb\":c[\"score_band\"],\"cb\":c[\"confidence_band\"],\"px\":px,"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/src/trading_ai/historical_underlying_replay/attribution.py",
+        "line": 46,
+        "text": "return _bucket(float(row[\"overall_score\"]), SCORE_EDGES)"
+      },
+      {
+        "file": "research_data/m77_19_4/source_semantics_capture/source/src/trading_ai/historical_underlying_replay/service.py",
+        "line": 105,
+        "text": "self.session.execute(text(\"\"\"INSERT INTO historical_underlying_replay_prediction(prediction_id,replay_run_id,symbol,as_of,direction,primary_category,overall_score,confidence,state_hash,profile_json,lineage_json,created_at) VALUES (:pid,:rid,:s,:a,:d,:c,:o,:conf,:h,CAST(:p AS jsonb),CAST(:l AS jsonb),:now)\"\"\"),{'pid':pid,'rid':run_id,'s':symbol,'a':as_of,'d':profile.direction,'c':profile.scores.primary_category if profile.scores else None,'o':float(profile.scores.overall if profile.scores else 0)"
+      },
+      {
+        "file": "scripts/certify_m77_10_monthly_walk_forward.py",
+        "line": 55,
+        "text": "SELECT as_of,symbol,direction,overall_score,confidence"
+      },
+      {
+        "file": "scripts/certify_m77_10_monthly_walk_forward.py",
+        "line": 96,
+        "text": "\"direction\":str(p[\"direction\"]),\"score_band\":score_band(p[\"overall_score\"]),"
+      },
+      {
+        "file": "scripts/certify_m77_10_monthly_walk_forward.py",
+        "line": 97,
+        "text": "\"confidence_band\":conf_band(p[\"confidence\"]),\"h\":h,\"ret\":align(p[\"direction\"],raw)})"
+      },
+      {
+        "file": "scripts/certify_m77_10_monthly_walk_forward.py",
+        "line": 108,
+        "text": "for x in tr: gt[(x[\"regime\"],x[\"direction\"],x[\"score_band\"],x[\"confidence_band\"])].append(x[\"ret\"])"
+      },
+      {
+        "file": "scripts/certify_m77_10_monthly_walk_forward.py",
+        "line": 109,
+        "text": "for x in ho: gh[(x[\"regime\"],x[\"direction\"],x[\"score_band\"],x[\"confidence_band\"])].append(x[\"ret\"])"
+      },
+      {
+        "file": "scripts/certify_m77_10_monthly_walk_forward.py",
+        "line": 121,
+        "text": "cohorts.append({\"cohort\":{\"regime\":k[0],\"direction\":k[1],\"score_band\":k[2],\"confidence_band\":k[3]},"
+      },
+      {
+        "file": "scripts/certify_m77_10_monthly_walk_forward.py",
+        "line": 133,
+        "text": "certs.append({\"horizon_sessions\":h,\"regime\":reg,\"direction\":dr,\"score_band\":sb,\"confidence_band\":cb,**hx,\"certified\":ok})"
+      },
+      {
+        "file": "scripts/certify_m77_9_daily_walk_forward.py",
+        "line": 33,
+        "text": "def key(r): return (r['historical_regime'],r['direction'],r['score_band'],r['confidence_band'])"
+      },
+      {
+        "file": "scripts/certify_m77_9_daily_walk_forward.py",
+        "line": 51,
+        "text": "q=\"\"\"SELECT p.symbol,p.as_of,p.direction,p.overall_score,p.confidence,"
+      },
+      {
+        "file": "scripts/certify_m77_9_daily_walk_forward.py",
+        "line": 61,
+        "text": "x=dict(r); x['as_of']=ad; x['session_index']=idx[ad]; x['historical_regime']=sp['regime']; x['score_band']=band(x['overall_score']); x['confidence_band']=conf(x['confidence']); data.append(x)"
+      },
+      {
+        "file": "scripts/certify_m77_9_daily_walk_forward.py",
+        "line": 83,
+        "text": "recs.append({'cohort':{'regime':k[0],'direction':k[1],'score_band':k[2],'confidence_band':k[3]},'training':ts,'holdout':vs,'passed':not reasons,'reasons':reasons})"
+      },
+      {
+        "file": "scripts/certify_m77_9_daily_walk_forward.py",
+        "line": 91,
+        "text": "c=r['cohort']; k=(h,c['regime'],c['direction'],c['score_band'],c['confidence_band']); z=ledger[k]; z['selected_total']+=1; z['passed_total']+=int(r['passed'])"
+      },
+      {
+        "file": "scripts/certify_m77_9_daily_walk_forward.py",
+        "line": 96,
+        "text": "certified.append({'horizon_sessions':k[0],'regime':k[1],'direction':k[2],'score_band':k[3],'confidence_band':k[4],**z,'certified':ok})"
+      },
+      {
+        "file": "scripts/certify_m77_9_daily_walk_forward.py",
+        "line": 97,
+        "text": "certified.sort(key=lambda x:(not x['certified'],x['horizon_sessions'],x['regime'],x['direction'],x['score_band'],x['confidence_band']))"
+      },
+      {
+        "file": "scripts/report_m77_10_monthly_walk_forward.py",
+        "line": 21,
+        "text": "print(f'{x[\"horizon_sessions\"]}d | {x.get(\"regime\",\"UNKNOWN\")} | {x[\"direction\"]} | {x[\"score_band\"]} | {x[\"confidence_band\"]} | full={x[\"passed_full\"]}/{x[\"selected_full\"]} total={x[\"passed_total\"]}/{x[\"selected_total\"]}')"
+      },
+      {
+        "file": "scripts/report_m77_19_6_1_parity_forensic_decomposition.py",
+        "line": 21,
+        "text": "print(\"\\nstate_hash_semantic_markers:\",len(x[\"state_hash_semantic_markers\"]))"
+      },
+      {
+        "file": "scripts/report_m77_19_6_isolated_replay_engine_parity.py",
+        "line": 18,
+        "text": "print(\"state_hash_match_pct:\",v[\"state_hash_match_pct\"])"
+      },
+      {
+        "file": "scripts/report_m77_19_6_isolated_replay_engine_parity.py",
+        "line": 20,
+        "text": "print(\"max_confidence_abs_error:\",v[\"max_confidence_abs_error\"])"
+      },
+      {
+        "file": "scripts/report_m77_9_daily_walk_forward.py",
+        "line": 14,
+        "text": "for x in xs: print(f\"{x['horizon_sessions']}d | {x['regime']} | {x['direction']} | {x['score_band']} | {x['confidence_band']} | full={x['passed_full']}/{x['selected_full']} total={x['passed_total']}/{x['selected_total']}\")"
+      },
+      {
+        "file": "scripts/run_m77_0_3_recover_institutional_options_requalification.py",
+        "line": 81,
+        "text": "desc(InstitutionalOpportunityModel.overall_score),"
+      },
+      {
+        "file": "scripts/run_m77_11_multi_cadence_confluence.py",
+        "line": 124,
+        "text": "x.get(\"confidence_band\"),"
+      },
+      {
+        "file": "scripts/run_m77_11_multi_cadence_confluence.py",
+        "line": 168,
+        "text": "SELECT as_of,symbol,direction,overall_score,confidence"
+      },
+      {
+        "file": "scripts/run_m77_11_multi_cadence_confluence.py",
+        "line": 173,
+        "text": "SELECT as_of,symbol,direction,overall_score,confidence"
+      },
+      {
+        "file": "scripts/run_m77_11_multi_cadence_confluence.py",
+        "line": 178,
+        "text": "SELECT as_of,symbol,direction,overall_score,confidence"
+      },
+      {
+        "file": "scripts/run_m77_11_multi_cadence_confluence.py",
+        "line": 220,
+        "text": "dkey=(h,reg,d0[\"direction\"],score_band(d0[\"overall_score\"]),conf_band(d0[\"confidence\"]))"
+      },
+      {
+        "file": "scripts/run_m77_11_multi_cadence_confluence.py",
+        "line": 222,
+        "text": "mkey=(h,mreg,m[\"direction\"],score_band(m[\"overall_score\"]),conf_band(m[\"confidence\"]))"
+      },
+      {
+        "file": "scripts/run_m77_12_cadence_role_incremental_utility.py",
+        "line": 109,
+        "text": "\"confidence_band\":x.get(\"confidence_band\"),"
+      },
+      {
+        "file": "scripts/run_m77_12_cadence_role_incremental_utility.py",
+        "line": 117,
+        "text": "and score_band(row[\"overall_score\"])==cert[\"score_band\"]"
+      },
+      {
+        "file": "scripts/run_m77_12_cadence_role_incremental_utility.py",
+        "line": 118,
+        "text": "and conf_band(row[\"confidence\"])==cert[\"confidence_band\"]"
+      },
+      {
+        "file": "scripts/run_m77_12_cadence_role_incremental_utility.py",
+        "line": 186,
+        "text": "SELECT as_of,symbol,direction,overall_score,confidence"
+      },
+      {
+        "file": "scripts/run_m77_12_cadence_role_incremental_utility.py",
+        "line": 191,
+        "text": "SELECT as_of,symbol,direction,overall_score,confidence"
+      },
+      {
+        "file": "scripts/run_m77_12_cadence_role_incremental_utility.py",
+        "line": 196,
+        "text": "SELECT as_of,symbol,direction,overall_score,confidence"
+      },
+      {
+        "file": "scripts/run_m77_12_cadence_role_incremental_utility.py",
+        "line": 218,
+        "text": "bid=f'DAILY::{h}::{c[\"regime\"]}::{c[\"direction\"]}::{c[\"score_band\"]}::{c[\"confidence_band\"]}'"
+      },
+      {
+        "file": "scripts/run_m77_12_cadence_role_incremental_utility.py",
+        "line": 243,
+        "text": "bid=f'MONTHLY::{h}::{c[\"regime\"]}::{c[\"direction\"]}::{c[\"score_band\"]}::{c[\"confidence_band\"]}'"
+      },
+      {
+        "file": "scripts/run_m77_13_forward_shadow.py",
+        "line": 70,
+        "text": "\"confidence_band\":x.get(\"confidence_band\"),"
+      },
+      {
+        "file": "scripts/run_m77_13_forward_shadow.py",
+        "line": 75,
+        "text": "return f'{source}::{c[\"horizon_sessions\"]}::{c[\"regime\"]}::{c[\"direction\"]}::{c[\"score_band\"]}::{c[\"confidence_band\"]}'"
+      },
+      {
+        "file": "scripts/run_m77_13_forward_shadow.py",
+        "line": 81,
+        "text": "and score_band(row[\"overall_score\"])==c[\"score_band\"]"
+      },
+      {
+        "file": "scripts/run_m77_13_forward_shadow.py",
+        "line": 82,
+        "text": "and conf_band(row[\"confidence\"])==c[\"confidence_band\"]"
+      },
+      {
+        "file": "scripts/run_m77_13_forward_shadow.py",
+        "line": 137,
+        "text": "SELECT as_of,symbol,direction,overall_score,confidence,state_hash"
+      },
+      {
+        "file": "scripts/run_m77_13_forward_shadow.py",
+        "line": 149,
+        "text": "state_id,cadence,as_of,symbol,direction,overall_score,confidence,regime,state_hash,source_replay_run_id,payload_json"
+      },
+      {
+        "file": "scripts/run_m77_13_forward_shadow.py",
+        "line": 156,
+        "text": "\"dir\":r[\"direction\"],\"score\":r[\"overall_score\"],\"conf\":r[\"confidence\"],"
+      },
+      {
+        "file": "scripts/run_m77_13_forward_shadow.py",
+        "line": 157,
+        "text": "\"reg\":reg,\"hash\":r[\"state_hash\"],\"rid\":rid,"
+      },
+      {
+        "file": "scripts/run_m77_13_forward_shadow.py",
+        "line": 166,
+        "text": "SELECT symbol,direction,overall_score,confidence,regime,state_hash"
+      },
+      {
+        "file": "scripts/run_m77_13_forward_shadow.py",
+        "line": 203,
+        "text": "direction,regime,score_band,confidence_band,reference_price,daily_state_as_of,weekly_state_as_of,monthly_state_as_of,"
+      },
+      {
+        "file": "scripts/run_m77_13_forward_shadow.py",
+        "line": 211,
+        "text": "\"sb\":c[\"score_band\"],\"cb\":c[\"confidence_band\"],\"px\":px,"
+      },
+      {
+        "file": "scripts/run_m77_19_6_1_parity_forensic_decomposition.py",
+        "line": 108,
+        "text": "# Existing deterministic_repeat compares the whole isolated dict including state_hash."
+      },
+      {
+        "file": "scripts/run_m77_19_6_1_parity_forensic_decomposition.py",
+        "line": 118,
+        "text": "conf_errors.append(float(x[\"confidence_abs_error\"]))"
+      },
+      {
+        "file": "scripts/run_m77_19_6_1_parity_forensic_decomposition.py",
+        "line": 119,
+        "text": "hash_matches.append(bool(x[\"state_hash_match\"]))"
+      },
+      {
+        "file": "scripts/run_m77_19_6_1_parity_forensic_decomposition.py",
+        "line": 127,
+        "text": "and x[\"isolated\"][\"overall_score\"] == x[\"isolated\"][\"overall_score\"]"
+      },
+      {
+        "file": "scripts/run_m77_19_6_1_parity_forensic_decomposition.py",
+        "line": 128,
+        "text": "and x[\"isolated\"][\"confidence\"] == x[\"isolated\"][\"confidence\"]"
+      },
+      {
+        "file": "scripts/run_m77_19_6_1_parity_forensic_decomposition.py",
+        "line": 133,
+        "text": "\"state_hash_match_pct\": 100.0*sum(hash_matches)/len(hash_matches) if hash_matches else None,"
+      },
+      {
+        "file": "scripts/run_m77_19_6_1_parity_forensic_decomposition.py",
+        "line": 137,
+        "text": "\"confidence_error_median\": median(conf_errors) if conf_errors else None,"
+      },
+      {
+        "file": "scripts/run_m77_19_6_1_parity_forensic_decomposition.py",
+        "line": 138,
+        "text": "\"confidence_error_mean\": mean(conf_errors) if conf_errors else None,"
+      },
+      {
+        "file": "scripts/run_m77_19_6_1_parity_forensic_decomposition.py",
+        "line": 139,
+        "text": "\"confidence_error_max\": max(conf_errors) if conf_errors else None,"
+      },
+      {
+        "file": "scripts/run_m77_19_6_1_parity_forensic_decomposition.py",
+        "line": 162,
+        "text": "if any(k in low for k in (\"state_hash\",\"uuid\",\"snapshot_timestamp\",\"generated_at\",\"now(\",\"utcnow\",\"time.time\")):"
+      },
+      {
+        "file": "scripts/run_m77_19_6_1_parity_forensic_decomposition.py",
+        "line": 214,
+        "text": "if all(v[\"state_hash_match_pct\"]==0.0 for v in summary.values()):"
+      },
+      {
+        "file": "scripts/run_m77_19_6_1_parity_forensic_decomposition.py",
+        "line": 216,
+        "text": "\"classification\":\"STATE_HASH_IS_NOT_A_VALID_CROSS_RUN_PARITY_KEY_UNTIL_HASH_INPUTS_ARE_DECOMPOSED\","
+      },
+      {
+        "file": "scripts/run_m77_19_6_1_parity_forensic_decomposition.py",
+        "line": 217,
+        "text": "\"evidence\":\"0% state_hash parity across all cadences despite ~98-100% direction agreement.\""
+      },
+      {
+        "file": "scripts/run_m77_19_6_1_parity_forensic_decomposition.py",
+        "line": 243,
+        "text": "\"state_hash_semantic_markers\":hash_hits,"
+      },
+      {
+        "file": "scripts/run_m77_19_6_2_exact_input_context_hash_parity.py",
+        "line": 13,
+        "text": "4. Decompose state_hash inputs and distinguish semantic fields from"
+      },
+      {
+        "file": "scripts/run_m77_19_6_2_exact_input_context_hash_parity.py",
+        "line": 42,
+        "text": "STRICT_CONFIDENCE_EPSILON = 1e-9"
+      },
+      {
+        "file": "scripts/run_m77_19_6_2_exact_input_context_hash_parity.py",
+        "line": 57,
+        "text": "HASH_FIELD_HINTS = (\"state_hash\", \"hash\", \"sha256\", \"digest\")"
+      },
+      {
+        "file": "scripts/run_m77_19_6_2_exact_input_context_hash_parity.py",
+        "line": 241,
+        "text": "if \"state_hash\" in line or \"sha256\" in line or \"snapshot_timestamp\" in line or \"uuid\" in line.lower():"
+      },
+      {
+        "file": "scripts/run_m77_19_6_2_exact_input_context_hash_parity.py",
+        "line": 246,
+        "text": "recs = recursively_find_records(doc, {\"state_hash\"})"
+      },
+      {
+        "file": "scripts/run_m77_19_6_2_exact_input_context_hash_parity.py",
+        "line": 250,
+        "text": "\"state_hash\": r.get(\"state_hash\"),"
+      },
+      {
+        "file": "scripts/run_m77_19_6_2_exact_input_context_hash_parity.py",
+        "line": 403,
+        "text": "blockers.append(\"STATE_HASH_CONSTRUCTION_SEMANTICS_NOT_LOCATED\")"
+      },
+      {
+        "file": "scripts/run_m77_19_6_2_exact_input_context_hash_parity.py",
+        "line": 437,
+        "text": "\"confidence_epsilon\": STRICT_CONFIDENCE_EPSILON,"
+      },
+      {
+        "file": "scripts/run_m77_19_6_3_controlled_exact_input_parity_replay.py",
+        "line": 17,
+        "text": "CONFIDENCE_EPSILON = 1e-9"
+      },
+      {
+        "file": "scripts/run_m77_19_6_3_controlled_exact_input_parity_replay.py",
+        "line": 299,
+        "text": "for token in (\"state_hash\", \"overall_score\", \"confidence\")"
+      },
+      {
+        "file": "scripts/run_m77_19_6_3_controlled_exact_input_parity_replay.py",
+        "line": 325,
+        "text": "\"stored_confidence\","
+      },
+      {
+        "file": "scripts/run_m77_19_6_3_controlled_exact_input_parity_replay.py",
+        "line": 326,
+        "text": "\"isolated_confidence\","
+      },
+      {
+        "file": "scripts/run_m77_19_6_3_controlled_exact_input_parity_replay.py",
+        "line": 331,
+        "text": "or {\"stored_overall_score\", \"isolated_overall_score\"}.issubset(keys)"
+      },
+      {
+        "file": "scripts/run_m77_19_6_3_controlled_exact_input_parity_replay.py",
+        "line": 400,
+        "text": "confidence_errors = []"
+      },
+      {
+        "file": "scripts/run_m77_19_6_3_controlled_exact_input_parity_replay.py",
+        "line": 408,
+        "text": "row.get(\"stored_overall_score\"),"
+      },
+      {
+        "file": "scripts/run_m77_19_6_3_controlled_exact_input_parity_replay.py",
+        "line": 412,
+        "text": "row.get(\"isolated_overall_score\"),"
+      },
+      {
+        "file": "scripts/run_m77_19_6_3_controlled_exact_input_parity_replay.py",
+        "line": 419,
+        "text": "confidence_errors.append("
+      },
+      {
+        "file": "scripts/run_m77_19_6_3_controlled_exact_input_parity_replay.py",
+        "line": 421,
+        "text": "float(row[\"stored_confidence\"])"
+      },
+      {
+        "file": "scripts/run_m77_19_6_3_controlled_exact_input_parity_replay.py",
+        "line": 422,
+        "text": "- float(row[\"isolated_confidence\"])"
+      },
+      {
+        "file": "scripts/run_m77_19_6_3_controlled_exact_input_parity_replay.py",
+        "line": 458,
+        "text": "and max(confidence_errors) <= CONFIDENCE_EPSILON"
+      },
+      {
+        "file": "scripts/run_m77_19_6_3_controlled_exact_input_parity_replay.py",
+        "line": 467,
+        "text": "\"max_confidence_abs_error\": max(confidence_errors),"
+      },
+      {
+        "file": "scripts/run_m77_19_6_3_controlled_exact_input_parity_replay.py",
+        "line": 545,
+        "text": "\"confidence_epsilon\": CONFIDENCE_EPSILON,"
+      },
+      {
+        "file": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+        "line": 153,
+        "text": "SELECT replay_run_id,as_of,symbol,direction,overall_score,confidence,state_hash"
+      },
+      {
+        "file": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+        "line": 161,
+        "text": "SELECT replay_run_id,as_of,symbol,direction,overall_score,confidence,state_hash"
+      },
+      {
+        "file": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+        "line": 168,
+        "text": "SELECT replay_run_id,as_of,symbol,direction,overall_score,confidence,state_hash"
+      },
+      {
+        "file": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+        "line": 203,
+        "text": "confidence = float(getattr(profile, \"confidence\", 0.0))"
+      },
+      {
+        "file": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+        "line": 205,
+        "text": "state_hash = getattr(profile, \"state_hash\", None)"
+      },
+      {
+        "file": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+        "line": 208,
+        "text": "\"score_abs_error\": abs(score - float(stored[\"overall_score\"] or 0.0)),"
+      },
+      {
+        "file": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+        "line": 209,
+        "text": "\"confidence_abs_error\": abs(confidence - float(stored[\"confidence\"] or 0.0)),"
+      },
+      {
+        "file": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+        "line": 210,
+        "text": "\"state_hash_match\": state_hash == stored[\"state_hash\"],"
+      },
+      {
+        "file": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+        "line": 213,
+        "text": "\"overall_score\": score,"
+      },
+      {
+        "file": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+        "line": 214,
+        "text": "\"confidence\": confidence,"
+      },
+      {
+        "file": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+        "line": 215,
+        "text": "\"state_hash\": state_hash,"
+      },
+      {
+        "file": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+        "line": 219,
+        "text": "\"overall_score\": float(stored[\"overall_score\"] or 0.0),"
+      },
+      {
+        "file": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+        "line": 220,
+        "text": "\"confidence\": float(stored[\"confidence\"] or 0.0),"
+      },
+      {
+        "file": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+        "line": 221,
+        "text": "\"state_hash\": stored[\"state_hash\"],"
+      },
+      {
+        "file": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+        "line": 322,
+        "text": "100.0 * sum(x[\"state_hash_match\"] for x in evidence) / n"
+      },
+      {
+        "file": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+        "line": 330,
+        "text": "max_conf = max((x[\"confidence_abs_error\"] for x in evidence), default=None)"
+      },
+      {
+        "file": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+        "line": 334,
+        "text": "\"score_exact\": max_score is not None and max_score <= policy[\"overall_score_max_abs_error\"],"
+      },
+      {
+        "file": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+        "line": 335,
+        "text": "\"confidence_exact\": max_conf is not None and max_conf <= policy[\"confidence_max_abs_error\"],"
+      },
+      {
+        "file": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+        "line": 336,
+        "text": "\"state_hash_exact\": ("
+      },
+      {
+        "file": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+        "line": 337,
+        "text": "state_pct == 100.0 if policy[\"state_hash_exact_required\"] else True"
+      },
+      {
+        "file": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+        "line": 348,
+        "text": "\"state_hash_match_pct\": state_pct,"
+      },
+      {
+        "file": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+        "line": 351,
+        "text": "\"max_confidence_abs_error\": max_conf,"
+      },
+      {
+        "file": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+        "line": 388,
+        "text": "\"state_hash_match_pct\": v[\"state_hash_match_pct\"],"
+      },
+      {
+        "file": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+        "line": 390,
+        "text": "\"max_confidence_abs_error\": v[\"max_confidence_abs_error\"],"
+      },
+      {
+        "file": "scripts/run_m77_6_live_forward_shadow.py",
+        "line": 41,
+        "text": "return p,str(p.get('direction') or 'UNKNOWN').upper(),str(sc.get('primary_category') or r.get('category') or 'UNKNOWN').upper(),str(p.get('structure') or 'UNKNOWN').upper(),float(sc.get('overall') if sc.get('overall') is not None else r.get('score') or 0),float(p.get('confidence') if p.get('confidence') is not None else sc.get('confidence') or 0),p.get('state_hash')"
+      },
+      {
+        "file": "scripts/run_m77_6_live_forward_shadow.py",
+        "line": 62,
+        "text": "session.execute(text('INSERT INTO m77_shadow_signals(signal_id,signal_fingerprint,captured_at,source_as_of_date,scanner_run_id,candidate_id,symbol,direction,primary_category,structure,overall_score,confidence,historical_regime,shadow_tier,candidate_horizon_id,horizon_sessions,reference_price,state_hash,policy_sha256,status,payload_json) VALUES(:id,:fp,:now,:d,:run,:cid,:sym,:dir,:cat,:st,:score,:conf,:reg,:tier,:cohort,:h,:px,:state,:sha,\\'OPEN\\',CAST(:payload AS jsonb))'),{'id':'m77-shadow-'+uu"
+      },
+      {
+        "file": "scripts/test_m47_phase7_historical_replay.py",
+        "line": 19,
+        "text": "market_state_hash=\"abc123\","
+      },
+      {
+        "file": "scripts/test_m47_phase7_historical_replay.py",
+        "line": 30,
+        "text": "{\"decision_id\": \"d-old\", \"decision_run_id\": \"old\", \"symbol\": \"AAPL\", \"strategy\": \"LONG_CALL\", \"action\": \"ACCEPT\", \"confidence\": 81.85},"
+      },
+      {
+        "file": "scripts/verify_m77_19_6_2.py",
+        "line": 30,
+        "text": "\"STRICT_CONFIDENCE_EPSILON = 1e-9\","
+      },
+      {
+        "file": "scripts/verify_m77_19_6_3.py",
+        "line": 19,
+        "text": "\"CONFIDENCE_EPSILON = 1e-9\","
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/analytics.py",
+        "line": 194,
+        "text": "p.overall_score,"
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/analytics.py",
+        "line": 195,
+        "text": "p.confidence,"
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/analytics.py",
+        "line": 363,
+        "text": "\"confidence\": ("
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/analytics.py",
+        "line": 364,
+        "text": "\"Stock Intelligence confidence is analyzed as a score, NOT \""
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/analytics.py",
+        "line": 383,
+        "text": "\"by_confidence_bucket\": self._group("
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/analytics.py",
+        "line": 384,
+        "text": "rows, lambda row: _bucket(float(row[\"confidence\"]), edges)"
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/analytics.py",
+        "line": 386,
+        "text": "\"by_overall_score_bucket\": self._group("
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/analytics.py",
+        "line": 387,
+        "text": "rows, lambda row: _bucket(float(row[\"overall_score\"]), edges)"
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/attribution.py",
+        "line": 46,
+        "text": "return _bucket(float(row[\"overall_score\"]), SCORE_EDGES)"
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/certification.py",
+        "line": 169,
+        "text": "by_confidence = self._group("
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/certification.py",
+        "line": 172,
+        "text": "float(r[\"confidence\"]), (0, 40, 50, 60, 70, 80, 90, 101)"
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/certification.py",
+        "line": 178,
+        "text": "float(r[\"overall_score\"]), (0, 40, 50, 60, 70, 80, 90, 101)"
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/certification.py",
+        "line": 260,
+        "text": "\"confidence_probability_claim\": False,"
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/certification.py",
+        "line": 291,
+        "text": "\"by_confidence_bucket\": by_confidence,"
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/certification.py",
+        "line": 292,
+        "text": "\"by_overall_score_bucket\": by_score,"
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/certification.py",
+        "line": 340,
+        "text": "\"overall_score_20d\": self._persistence("
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/certification.py",
+        "line": 343,
+        "text": "float(r[\"overall_score\"]),"
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/certification.py",
+        "line": 348,
+        "text": "\"overall_score_60d\": self._persistence("
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/certification.py",
+        "line": 351,
+        "text": "float(r[\"overall_score\"]),"
+      },
+      {
+        "file": "src/trading_ai/historical_underlying_replay/service.py",
+        "line": 105,
+        "text": "self.session.execute(text(\"\"\"INSERT INTO historical_underlying_replay_prediction(prediction_id,replay_run_id,symbol,as_of,direction,primary_category,overall_score,confidence,state_hash,profile_json,lineage_json,created_at) VALUES (:pid,:rid,:s,:a,:d,:c,:o,:conf,:h,CAST(:p AS jsonb),CAST(:l AS jsonb),:now)\"\"\"),{'pid':pid,'rid':run_id,'s':symbol,'a':as_of,'d':profile.direction,'c':profile.scores.primary_category if profile.scores else None,'o':float(profile.scores.overall if profile.scores else 0)"
+      },
+      {
+        "file": "src/trading_ai/replay/profile.py",
+        "line": 23,
+        "text": "require_exact_market_state_hash: bool = True"
+      },
+      {
+        "file": "src/trading_ai/replay/profile.py",
+        "line": 40,
+        "text": "market_state_hash: str | None"
+      },
+      {
+        "file": "src/trading_ai/replay/repository.py",
+        "line": 103,
+        "text": "market_state_hash=base.get(\"market_state_hash\"),"
+      },
+      {
+        "file": "src/trading_ai/replay/service.py",
+        "line": 129,
+        "text": "publication_name, ingestion_run_id, option_snapshot_id, market_state_hash,"
+      },
+      {
+        "file": "src/trading_ai/replay/service.py",
+        "line": 135,
+        "text": ":publication_name, :ingestion_run_id, :option_snapshot_id, :market_state_hash,"
+      },
+      {
+        "file": "src/trading_ai/replay/service.py",
+        "line": 144,
+        "text": "\"option_snapshot_id\": source.option_snapshot_id, \"market_state_hash\": source.market_state_hash,"
+      },
+      {
+        "file": "src/trading_ai/replay/service.py",
+        "line": 186,
+        "text": "market_state_hash=result.source.market_state_hash,"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/context.py",
+        "line": 30,
+        "text": "'confidence_score':float(getattr(dealer,'confidence_score',0) or 0) if dealer else 0.0,"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/context_loader.py",
+        "line": 49,
+        "text": "SELECT trend_regime, market_bias, breadth_regime, confidence_score,"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/context_loader.py",
+        "line": 68,
+        "text": "confidence_score=float(self._market_context.get(\"confidence_score\") or 0.0),"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/context_loader.py",
+        "line": 100,
+        "text": "SELECT positioning_label, gamma_regime, confidence_score, as_of_date,"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/context_loader.py",
+        "line": 114,
+        "text": "confidence_score=float(row[\"confidence_score\"] or 0.0),"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/context_loader.py",
+        "line": 140,
+        "text": "confidence_score=float(payload.get(\"forecast_confidence_score\") or payload.get(\"confidence_score\") or 0.0),"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/decision_intelligence.py",
+        "line": 66,
+        "text": "state_hash: str = \"\""
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/decision_intelligence.py",
+        "line": 86,
+        "text": "self.state_hash = stable_hash(payload)"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/decision_intelligence.py",
+        "line": 87,
+        "text": "self.passport_id = f\"IDI-{self.state_hash[:16].upper()}\""
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/decision_intelligence.py",
+        "line": 116,
+        "text": "trend = _clip((_num(getattr(primary, \"trend_strength\", 50), 50) * 0.55) + (_num(getattr(primary, \"confidence\", 50), 50) * 0.45))"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/decision_intelligence.py",
+        "line": 213,
+        "text": "\"confidence\": {\"score\": round(_num(profile.confidence, 0), 2), \"weight\": 0.13, \"contribution\": round(_num(profile.confidence, 0) * 0.13, 2)},"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/decision_intelligence.py",
+        "line": 440,
+        "text": "confidence = _num(profile.confidence, 0)"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/decision_intelligence.py",
+        "line": 442,
+        "text": "return _clip(quality * 0.42 + opportunity_freshness * 0.20 + management * 0.15 + confidence * 0.13 + volume * 0.10)"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/models.py",
+        "line": 17,
+        "text": "StockOpportunityScoreSnapshotModel=model('StockOpportunityScoreSnapshotModel','stock_opportunity_score_snapshots',{'primary_category':Column(String(64),nullable=False),'overall_score':Column(Float,nullable=False),'confidence':Column(Float,nullable=False)})"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/multi_timeframe.py",
+        "line": 56,
+        "text": "return {'states':states,'direction':direction,'structure':states[primary].structure,'alignment_score':round(abs(signed)*100,2),'confidence':round(sum(x.confidence for x in states.values())/len(states),2),'primary_timeframe':primary,'warnings':warnings,'hash':stable_hash({k:v.__dict__ for k,v in states.items()})}"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/option_integration.py",
+        "line": 27,
+        "text": "minimum_underlying_confidence: float = 45.0"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/option_integration.py",
+        "line": 47,
+        "text": "underlying_confidence: float"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/option_integration.py",
+        "line": 60,
+        "text": "state_hash: str = \"\""
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/option_integration.py",
+        "line": 104,
+        "text": "underlying_confidence=0.0,"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/option_integration.py",
+        "line": 127,
+        "text": "confidence = _number(scores.get(\"confidence\"), _number(payload.get(\"confidence\"), 0.0))"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/option_integration.py",
+        "line": 137,
+        "text": "confidence_component = (confidence - 50.0) / 1000.0"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/option_integration.py",
+        "line": 148,
+        "text": "confidence_component,"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/option_integration.py",
+        "line": 211,
+        "text": "if confidence < self.policy.minimum_underlying_confidence:"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/option_integration.py",
+        "line": 212,
+        "text": "rejection_reasons.append(\"UNDERLYING_CONFIDENCE_BELOW_MINIMUM\")"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/option_integration.py",
+        "line": 252,
+        "text": "f\"Underlying score {underlying_score:.2f}, confidence {confidence:.2f}\","
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/option_integration.py",
+        "line": 267,
+        "text": "underlying_confidence=round(confidence, 2),"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/option_integration.py",
+        "line": 280,
+        "text": "state_hash=str(payload.get(\"state_hash\", \"\")),"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/orchestration.py",
+        "line": 104,
+        "text": "\"state_hashes\": [item.state_hash for item in profiles],"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/outcome.py",
+        "line": 40,
+        "text": "state_hash: str = \"\""
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/outcome.py",
+        "line": 48,
+        "text": "if not self.state_hash:"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/outcome.py",
+        "line": 50,
+        "text": "payload.pop(\"state_hash\", None)"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/outcome.py",
+        "line": 51,
+        "text": "self.state_hash = stable_hash(payload)"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/outcome.py",
+        "line": 83,
+        "text": "confidence_grade: str"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/outcome.py",
+        "line": 177,
+        "text": "raw_probability = scores.get(\"confidence\", 50.0) / 100.0"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/outcome.py",
+        "line": 303,
+        "text": "confidence_grade=grade,"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/position_intelligence.py",
+        "line": 170,
+        "text": "conf=_clamp((profile.confidence+getattr(profile.scores,'confidence',50)+getattr(profile.context,'confidence',50))/3)"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/position_intelligence.py",
+        "line": 208,
+        "text": "selected=max(c,key=lambda x:(x.confidence,-x.distance_pct)) if c else None"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/position_intelligence.py",
+        "line": 212,
+        "text": "return StopProfile(selected.price if selected else None,selected.stop_type if selected else 'STRUCTURAL',selected.confidence if selected else 0.,c,None if emergency is None else round(emergency,4),rationale)"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/position_intelligence.py",
+        "line": 260,
+        "text": "ctx=getattr(profile,'context',None);evidence=getattr(ctx,'evidence',{}) if ctx else {};dealer=(evidence or {}).get('dealer_levels',{}) if isinstance(evidence,dict) else {};dealer_conf=float(dealer.get('confidence_score') or 0) if isinstance(dealer,dict) else 0."
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/position_intelligence.py",
+        "line": 294,
+        "text": "return TrailingProfile(method,activation,trail,0.75 if method=='ATR' else 0.,round(_clamp(profile.confidence*.9+10),2),[f'{method} trail selected from structure {profile.structure}','Activate after first structural objective'])"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/position_intelligence.py",
+        "line": 320,
+        "text": "quality=_clamp(mean([e.confidence,s.confidence,tr.confidence,x.thesis_integrity,getattr(profile.scores,'confidence',50)]))"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/profile.py",
+        "line": 21,
+        "text": "timeframe:str; direction:str; structure:str; trend_strength:float; momentum_score:float; confidence:float; close:float; atr:float=0.; realized_volatility:float=0.; efficiency_ratio:float=0.; evidence:dict[str,Any]=field(default_factory=dict)"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/profile.py",
+        "line": 46,
+        "text": "score:float=50.; adjustment:float=0.; confidence:float=0.; market_regime:str='UNKNOWN'; forecast_direction:str='UNKNOWN'; relative_strength_grade:str=''; dealer_positioning:str='UNKNOWN'; gamma_regime:str='UNKNOWN'; institutional_state:str='UNKNOWN'; evidence:dict[str,Any]=field(default_factory=dict)"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/profile.py",
+        "line": 49,
+        "text": "bullish:float=0.; bearish:float=0.; breakout:float=0.; breakdown:float=0.; accumulation:float=0.; distribution:float=0.; mean_reversion_long:float=0.; mean_reversion_short:float=0.; trend_continuation:float=0.; reversal:float=0.; options_suitability:float=0.; overall:float=0.; confidence:float=0.; freshness:float=100.; primary_category:str='NEUTRAL'; weights:dict[str,float]=field(default_factory=dict); warnings:list[str]=field(default_factory=list)"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/profile.py",
+        "line": 55,
+        "text": "symbol:str; snapshot_timestamp:str; provider:str='polygon'; primary_timeframe:str='1d'; timeframe_states:dict[str,TimeframeState]=field(default_factory=dict); direction:str='NEUTRAL'; structure:str='SIDEWAYS'; alignment_score:float=0.; confidence:float=0.; support_levels:list[PriceLevel]=field(default_factory=list); resistance_levels:list[PriceLevel]=field(default_factory=list); demand_zones:list[PriceZone]=field(default_factory=list); supply_zones:list[PriceZone]=field(default_factory=list); st"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/profile.py",
+        "line": 58,
+        "text": "d=asdict(self); d.pop('state_hash',None)"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/profile.py",
+        "line": 64,
+        "text": "self.state_hash=stable_hash(d); return self"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/profile.py",
+        "line": 74,
+        "text": "entry_type:str='PULLBACK'; preferred_entry:float|None=None; zone_low:float|None=None; zone_high:float|None=None; confirmation_trigger:float|None=None; chase_limit:float|None=None; confidence:float=0.; fill_probability:float=0.; freshness:float=100.; rationale:list[str]=field(default_factory=list)"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/profile.py",
+        "line": 77,
+        "text": "stop_type:str; price:float; confidence:float; reliability:float; distance_pct:float; false_stop_probability:float; rationale:list[str]=field(default_factory=list)"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/profile.py",
+        "line": 80,
+        "text": "recommended_stop:float|None=None; selected_type:str='STRUCTURAL'; confidence:float=0.; candidates:list[StopCandidate]=field(default_factory=list); emergency_stop:float|None=None; rationale:list[str]=field(default_factory=list)"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/profile.py",
+        "line": 89,
+        "text": "method:str='STRUCTURE'; activation_price:float|None=None; current_trail:float|None=None; step_pct:float=0.; confidence:float=0.; rationale:list[str]=field(default_factory=list)"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/profile.py",
+        "line": 95,
+        "text": "entry:EntryProfile=field(default_factory=EntryProfile); stop:StopProfile=field(default_factory=StopProfile); targets:TargetProfile=field(default_factory=TargetProfile); trailing:TrailingProfile=field(default_factory=TrailingProfile); exit:ExitIntelligence=field(default_factory=ExitIntelligence); expected_hold_days:int=0; structural_reward_risk:float=0.; management_quality:float=0.; reference_market:dict[str,Any]=field(default_factory=dict); certification:dict[str,Any]=field(default_factory=dict)"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/profile.py",
+        "line": 97,
+        "text": "d=asdict(self);d.pop('state_hash',None);self.state_hash=stable_hash(d);return self"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/publication.py",
+        "line": 30,
+        "text": "min_confidence: float = 0.0,"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/publication.py",
+        "line": 51,
+        "text": "if float(scores.get(\"confidence\", 0)) < min_confidence:"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/publication.py",
+        "line": 95,
+        "text": "\"confidence\": scores.get(\"confidence\", 0),"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/publication.py",
+        "line": 154,
+        "text": "\"timeframes\": {key: {\"direction\": value.get(\"direction\"), \"structure\": value.get(\"structure\"), \"confidence\": value.get(\"confidence\")} for key, value in states.items()},"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/publication.py",
+        "line": 156,
+        "text": "\"state_hash\": payload.get(\"state_hash\", \"\"),"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/repository.py",
+        "line": 29,
+        "text": "if p.scores:self.session.add(StockOpportunityScoreSnapshotModel(id=str(uuid4()),primary_category=p.scores.primary_category,overall_score=p.scores.overall,confidence=p.scores.confidence,payload_json=asdict(p.scores),**common))"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/router.py",
+        "line": 28,
+        "text": "min_confidence: float = Query(0, ge=0, le=100),"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/router.py",
+        "line": 40,
+        "text": "min_confidence=min_confidence,"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/scoring.py",
+        "line": 11,
+        "text": "scores=OpportunityScores(round(bull,2),round(bear,2),round(br if 'BREAKOUT' in bstate else br*.4,2),round(br if 'BREAKDOWN' in bstate else br*.4,2),round(accumulation,2),round(distribution,2),round((100-bull)*.4+level_score*.6,2),round((100-bear)*.4+level_score*.6,2),round(max(bull,bear)*.6+align*.4,2),round(p.breakout.failure_probability if p.breakout and 'FAILED' in bstate else max(0,50-align/2),2),round(min(100,overall*.65+p.confidence*.35),2),round(overall,2),round(min(p.confidence,freshness"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/scoring.py",
+        "line": 16,
+        "text": "return sorted(profiles,key=lambda p:(key(p),p.scores.confidence if p.scores else 0,p.scores.options_suitability if p.scores else 0,p.symbol),reverse=True)"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/service.py",
+        "line": 16,
+        "text": "mt=self.mt.analyze(data_by_timeframe); p=StockIntelligenceProfile(symbol,snapshot_timestamp or datetime.now(timezone.utc).isoformat(),timeframe_states=mt['states'],direction=mt['direction'],structure=mt['structure'],alignment_score=mt['alignment_score'],confidence=mt['confidence'],primary_timeframe=mt['primary_timeframe'],warnings=mt['warnings'])"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/structure_zones.py",
+        "line": 53,
+        "text": "\"confidence_score\": float(dealer_levels.get(\"confidence_score\") or 50.0),"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/structure_zones.py",
+        "line": 58,
+        "text": "dealer_confidence = dealer_context[\"confidence_score\"]"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/structure_zones.py",
+        "line": 61,
+        "text": "primitives.append(self._dealer_primitive(\"SUPPORT\", float(put_wall), \"PUT_WALL\", atr, dealer_confidence, dealer_context))"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/structure_zones.py",
+        "line": 63,
+        "text": "primitives.append(self._dealer_primitive(\"RESISTANCE\", float(call_wall), \"CALL_WALL\", atr, dealer_confidence, dealer_context))"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/structure_zones.py",
+        "line": 66,
+        "text": "primitives.append(self._dealer_primitive(side, float(gamma_flip), \"GAMMA_FLIP\", atr, dealer_confidence * 0.85, dealer_context))"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/structure_zones.py",
+        "line": 156,
+        "text": "def _dealer_primitive(side: str, price: float, component: str, atr: float, confidence: float, context: dict) -> dict:"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/structure_zones.py",
+        "line": 158,
+        "text": "strength = _clamp(45 + confidence * 0.45)"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/structure_zones.py",
+        "line": 163,
+        "text": "\"confidence_score\": round(confidence, 2),"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/structure_zones.py",
+        "line": 173,
+        "text": "\"holding_probability\": _clamp(45 + confidence * 0.35, 5, 95) / 100.0,"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/structure_zones.py",
+        "line": 174,
+        "text": "\"break_probability\": _clamp(55 - confidence * 0.35, 5, 95) / 100.0,"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/structure_zones.py",
+        "line": 178,
+        "text": "\"payload\": {\"price\": price, \"confidence\": confidence},"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/volume_response_classifier.py",
+        "line": 29,
+        "text": "confidence: float"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/volume_response_classifier.py",
+        "line": 130,
+        "text": "confidence = 45.0"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/volume_response_classifier.py",
+        "line": 165,
+        "text": "confidence = min(95.0, 70.0 + (breakout_confirm - 70.0) * 0.35 + max(0.0, clv) * 10.0)"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/volume_response_classifier.py",
+        "line": 174,
+        "text": "confidence = min(95.0, 68.0 + abs(clv) * 18.0 + min(12.0, max(0.0, rv1 - 2.5) * 3.0))"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/volume_response_classifier.py",
+        "line": 181,
+        "text": "confidence = min(92.0, 65.0 + (distribution - accumulation) * 0.25 + abs(clv) * 12.0)"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/volume_response_classifier.py",
+        "line": 188,
+        "text": "confidence = min(88.0, 60.0 + absorption * 0.18 + max(0.0, persistence - 60.0) * 0.10)"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/volume_response_classifier.py",
+        "line": 195,
+        "text": "confidence = min(86.0, 58.0 + absorption * 0.20 + max(0.0, persistence - 50.0) * 0.08)"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/volume_response_classifier.py",
+        "line": 202,
+        "text": "confidence = min(86.0, 58.0 + absorption * 0.18 + max(0.0, rv1 - 1.5) * 3.0)"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/volume_response_classifier.py",
+        "line": 209,
+        "text": "confidence = min(88.0, 62.0 + max(0.0, rv1 - 2.5) * 3.0 + clv * 10.0)"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/volume_response_classifier.py",
+        "line": 218,
+        "text": "confidence = min(90.0, 60.0 + max(0.0, accumulation - 60.0) * 0.45)"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/volume_response_classifier.py",
+        "line": 227,
+        "text": "confidence = min(90.0, 60.0 + max(0.0, distribution - 60.0) * 0.45)"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/volume_response_classifier.py",
+        "line": 234,
+        "text": "confidence = 60.0"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/volume_response_classifier.py",
+        "line": 241,
+        "text": "confidence = 45.0"
+      },
+      {
+        "file": "src/trading_ai/stock_intelligence/volume_response_classifier.py",
+        "line": 258,
+        "text": "confidence=round(max(0.0, min(100.0, confidence)), 1),"
+      }
+    ]
+  },
+  "version": "M77.19.6.3-CONTROLLED-EXACT-INPUT-PARITY-REPLAY-1.0"
+}

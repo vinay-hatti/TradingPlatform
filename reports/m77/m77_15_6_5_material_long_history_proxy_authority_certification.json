@@ -1,0 +1,97 @@
+{
+  "version": "M77.15.6.5-MATERIAL-LONG-HISTORY-PROXY-AUTHORITY-CERTIFICATION-1.0",
+  "status": "READY",
+  "authority_type": "MATERIAL_LONG_HISTORY_TRADABLE_PROXY",
+  "source_manifest": "/Users/vinay.hatti/TradingPlatform/research_data/m77_15_6_4/polygon_coverage_lineage/manifests/latest.json",
+  "common_authority": {
+    "common_start": "2003-09-10",
+    "common_end": "2026-08-21",
+    "common_session_count": 5774,
+    "minimum_common_sessions": 5700,
+    "frozen_start_gate": "2003-09-10"
+  },
+  "targets": {
+    "SPX": {
+      "research_instrument": "SPY",
+      "row_count": 5774,
+      "first_date": "2003-09-10",
+      "last_date": "2026-08-21",
+      "duplicate_dates_zero": true,
+      "duplicate_date_count": 0,
+      "ohlc_violations_zero": true,
+      "ohlc_violation_count": 0
+    },
+    "NDX": {
+      "research_instrument": "QQQ_LINEAGE",
+      "row_count": 5774,
+      "first_date": "2003-09-10",
+      "last_date": "2026-08-21",
+      "duplicate_dates_zero": true,
+      "duplicate_date_count": 0,
+      "ohlc_violations_zero": false,
+      "ohlc_violation_count": 1
+    },
+    "RUT": {
+      "research_instrument": "IWM",
+      "row_count": 5774,
+      "first_date": "2003-09-10",
+      "last_date": "2026-08-21",
+      "duplicate_dates_zero": true,
+      "duplicate_date_count": 0,
+      "ohlc_violations_zero": true,
+      "ohlc_violation_count": 0
+    }
+  },
+  "qqq_lineage": {
+    "source_ticker_contract_pass": true,
+    "violation_count": 0,
+    "violations_sample": []
+  },
+  "source_provenance": {
+    "checksums_present": true,
+    "missing_sample": []
+  },
+  "gates": {
+    "common_session_intersection_present": true,
+    "common_start_matches_frozen_gate": true,
+    "common_session_count_ge_minimum": true,
+    "all_targets_zero_duplicates": true,
+    "all_targets_zero_ohlc_violations": false,
+    "qqq_lineage_source_ticker_contract": true,
+    "source_provenance_checksums_present": true,
+    "canonical_authority_not_overwritten": true
+  },
+  "certified_for_m77_15_7_long_history_replication": false,
+  "promotion_governance": {
+    "proxy_results_are_not_index_results": true,
+    "proxy_only_survivor_may_not_advance": true,
+    "canonical_recent_index_confirmation_required": true,
+    "same_effect_direction_required_across_authorities": true,
+    "dependence_robust_confirmation_required_after_cross_authority_survival": true
+  },
+  "replication_era_policy": {
+    "frozen_eras": [
+      [
+        "2003-09-10",
+        "2008-12-31"
+      ],
+      [
+        "2009-01-01",
+        "2014-12-31"
+      ],
+      [
+        "2015-01-01",
+        "2020-12-31"
+      ],
+      [
+        "2021-01-01",
+        "2026-08-21"
+      ]
+    ],
+    "posthoc_era_changes_prohibited": true
+  },
+  "database_writes": false,
+  "production_price_history_writes": false,
+  "production_authority_effect": false,
+  "next_step": "REVIEW_M77_15_6_5_CERTIFICATION_FAILURES"
+}

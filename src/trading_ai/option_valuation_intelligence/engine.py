@@ -87,7 +87,7 @@ def weighted_leg_value(legs: list[dict], *keys: str) -> tuple[float | None, int]
 
 
 class InstitutionalOptionValuationEngine:
-    POLICY = 'M69-OPTION-VALUATION-1.2'
+    POLICY = 'M69.7-COHERENT-OPTION-VALUATION-1.0'
     MODERATE_THRESHOLD_PCT = 4.0
     STRONG_THRESHOLD_PCT = 12.0
 
@@ -95,6 +95,9 @@ class InstitutionalOptionValuationEngine:
                  siblings: list[dict] | None = None) -> dict:
         inflection = inflection or {}
         siblings = siblings or []
+        input_validation = contract.get('market_input_validation') if isinstance(contract, dict) else None
+        if isinstance(input_validation, dict) and input_validation.get('status') != 'CURRENT_COHERENT':
+            raise ValueError('option valuation requires CURRENT_COHERENT market inputs')
         legs = extract_legs(contract)
         priced_legs = []
         for leg in legs:
@@ -124,9 +127,10 @@ class InstitutionalOptionValuationEngine:
         reference_value = max(abs(mid), gross_leg_premium * 0.20, 0.25)
         low_net_premium = abs(mid) < max(0.05, gross_leg_premium * 0.05)
 
-        s = num(deep_get(contract, 'underlying_price', 'spot', 'underlying_last'),
+        s = num(contract.get('underlying_price') if isinstance(contract, dict) else None,
                 num(deep_get(opportunity, 'underlying_price', 'spot_price', 'current_price', 'last_price', 'price')))
-        k = num(deep_get(contract, 'strike', 'strike_price'), s)
+        representative_leg = next((leg for leg in legs if leg_side_sign(leg) > 0), legs[0] if legs else {})
+        k = num(representative_leg.get('strike', representative_leg.get('strike_price')), s)
 
         leg_iv, iv_count = weighted_leg_value(legs, 'implied_volatility', 'iv')
         leg_rv, rv_count = weighted_leg_value(legs, 'realized_volatility_20d', 'realized_volatility', 'rv')
@@ -140,8 +144,10 @@ class InstitutionalOptionValuationEngine:
         forecast_available = forecast_raw is not None and num(forecast_raw) > 0
         forecast_input = max(0.01, num(forecast_raw, rv if rv_available else iv))
 
-        dte = max(1, num(deep_get(contract, 'dte', 'days_to_expiration'), 45))
-        right = str(deep_get(contract, 'right', 'option_type', default='C')).upper()[:1]
+        default_dte = max(1, num(contract.get('dte') if isinstance(contract, dict) else None, 45))
+        leg_dtes = [max(1, num(leg.get('dte'), default_dte)) for leg in legs]
+        dte = min(leg_dtes) if leg_dtes else default_dte
+        right = str(representative_leg.get('right') or representative_leg.get('option_type') or 'C').upper()[:1]
         risk_free = num(deep_get(contract, 'risk_free_rate'), 0.04)
         dividend_yield = max(0.0, num(deep_get(contract, 'dividend_yield'), 0.0))
 
@@ -190,14 +196,15 @@ class InstitutionalOptionValuationEngine:
         if s > 0 and priced_legs:
             market_theoretical = 0.0
             model_fair_value = 0.0
-            for item in priced_legs:
+            for leg_index, item in enumerate(priced_legs):
                 leg = item['leg']
                 lk = num(deep_get(leg, 'strike', 'strike_price'), k)
                 lright = str(deep_get(leg, 'right', 'option_type', default=right)).upper()[:1]
                 liv = max(0.01, num(deep_get(leg, 'implied_volatility', 'iv'), iv))
                 leg_forecast_sigma = max(0.05, min(2.50, liv * (forecast_sigma / max(iv, 0.01))))
-                market_theoretical += item['sign'] * item['qty'] * bs_price(s, lk, dte/365.0, risk_free, liv, lright, dividend_yield)
-                model_fair_value += item['sign'] * item['qty'] * bs_price(s, lk, dte/365.0, risk_free, leg_forecast_sigma, lright, dividend_yield)
+                leg_dte = leg_dtes[leg_index] if leg_index < len(leg_dtes) else dte
+                market_theoretical += item['sign'] * item['qty'] * bs_price(s, lk, leg_dte/365.0, risk_free, liv, lright, dividend_yield)
+                model_fair_value += item['sign'] * item['qty'] * bs_price(s, lk, leg_dte/365.0, risk_free, leg_forecast_sigma, lright, dividend_yield)
             valuation_basis = 'INDEPENDENT_MODEL'
         else:
             market_theoretical = mid
@@ -284,6 +291,19 @@ class InstitutionalOptionValuationEngine:
 
         raw = {
             'policy_version': self.POLICY,
+            'status': 'READY',
+            'market_input_status': (input_validation or {}).get('status', 'LEGACY_UNVERIFIED'),
+            'market_input_as_of': contract.get('market_input_as_of'),
+            'underlying_price_as_of': contract.get('underlying_price_as_of'),
+            'quote_input_snapshot_id': contract.get('quote_input_snapshot_id'),
+            'underlying_price': round(s, 6),
+            'dte': int(dte),
+            'dte_min': int(min(leg_dtes)) if leg_dtes else int(dte),
+            'dte_max': int(max(leg_dtes)) if leg_dtes else int(dte),
+            'per_leg_dte': {
+                str(leg.get('option_symbol') or index): int(leg_dtes[index])
+                for index, leg in enumerate(legs)
+            },
             'valuation_basis': valuation_basis,
             'market_mid': round(mid, 6),
             'buy_natural': None if buy_natural is None else round(buy_natural, 6),

@@ -1,0 +1,812 @@
+{
+  "blockers": [
+    "DAILY_STRICT_PARITY_NOT_CERTIFIED",
+    "WEEKLY_STRICT_PARITY_NOT_CERTIFIED",
+    "MONTHLY_STRICT_PARITY_NOT_CERTIFIED"
+  ],
+  "cadences": {
+    "DAILY": {
+      "bundle_count": 48,
+      "comparisons": 0,
+      "error_count": 48,
+      "errors": [
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/001_A_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/002_AAPL_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/003_ABBV_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/004_ABNB_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/005_ABT_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/006_ACGL_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/007_ACN_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/008_ADBE_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/009_ADI_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/010_ADM_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/011_ADP_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/012_ADSK_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/013_AEE_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/014_AEP_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/015_AES_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/016_AFL_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/017_AGG_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/018_AIG_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/019_AIZ_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/020_AJG_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/021_AKAM_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/022_ALB_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/023_ALGN_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/024_ALL_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/025_ALLE_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/026_ALNY_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/027_AMAT_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/028_AMCR_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/029_AMD_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/030_AME_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/031_AMGN_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/032_AMP_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/033_AMT_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/034_AMZN_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/035_ANET_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/036_AON_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/037_AOS_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/038_APA_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/039_APD_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/040_APH_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/041_APO_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/042_APP_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/043_APTV_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/044_ARE_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/045_ARES_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/046_ARKK_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/047_ASML_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/daily/048_ATO_2022-10-14.json",
+          "message": "isolated score missing"
+        }
+      ],
+      "evidence": [],
+      "summary": {
+        "comparisons": 0,
+        "deterministic_repeat_pct": 0.0,
+        "direction_match_pct": 0.0,
+        "max_confidence_abs_error": null,
+        "max_score_abs_error": null,
+        "pass": false,
+        "semantic_hash_match_pct": 0.0
+      }
+    },
+    "MONTHLY": {
+      "bundle_count": 48,
+      "comparisons": 0,
+      "error_count": 48,
+      "errors": [
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/001_A_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/002_AAPL_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/003_ABBV_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/004_ABNB_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/005_ABT_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/006_ACGL_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/007_ACN_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/008_ADBE_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/009_ADI_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/010_ADM_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/011_ADP_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/012_ADSK_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/013_AEE_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/014_AEP_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/015_AES_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/016_AFL_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/017_AGG_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/018_AIG_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/019_AIZ_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/020_AJG_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/021_AKAM_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/022_ALB_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/023_ALGN_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/024_ALL_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/025_ALLE_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/026_ALNY_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/027_AMAT_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/028_AMCR_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/029_AMD_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/030_AME_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/031_AMGN_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/032_AMP_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/033_AMT_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/034_AMZN_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/035_ANET_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/036_AON_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/037_AOS_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/038_APA_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/039_APD_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/040_APH_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/041_APO_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/042_APP_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/043_APTV_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/044_ARE_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/045_ARES_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/046_ARKK_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/047_ASML_2022-10-31.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/048_ATO_2022-10-31.json",
+          "message": "isolated score missing"
+        }
+      ],
+      "evidence": [],
+      "summary": {
+        "comparisons": 0,
+        "deterministic_repeat_pct": 0.0,
+        "direction_match_pct": 0.0,
+        "max_confidence_abs_error": null,
+        "max_score_abs_error": null,
+        "pass": false,
+        "semantic_hash_match_pct": 0.0
+      }
+    },
+    "WEEKLY": {
+      "bundle_count": 48,
+      "comparisons": 0,
+      "error_count": 48,
+      "errors": [
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/001_A_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/002_AAPL_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/003_ABBV_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/004_ABNB_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/005_ABT_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/006_ACGL_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/007_ACN_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/008_ADBE_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/009_ADI_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/010_ADM_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/011_ADP_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/012_ADSK_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/013_AEE_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/014_AEP_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/015_AES_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/016_AFL_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/017_AGG_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/018_AIG_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/019_AIZ_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/020_AJG_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/021_AKAM_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/022_ALB_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/023_ALGN_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/024_ALL_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/025_ALLE_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/026_ALNY_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/027_AMAT_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/028_AMCR_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/029_AMD_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/030_AME_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/031_AMGN_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/032_AMP_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/033_AMT_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/034_AMZN_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/035_ANET_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/036_AON_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/037_AOS_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/038_APA_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/039_APD_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/040_APH_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/041_APO_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/042_APP_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/043_APTV_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/044_ARE_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/045_ARES_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/046_ARKK_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/047_ASML_2022-10-14.json",
+          "message": "isolated score missing"
+        },
+        {
+          "error": "ValueError",
+          "file": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/weekly/048_ATO_2022-10-14.json",
+          "message": "isolated score missing"
+        }
+      ],
+      "evidence": [],
+      "summary": {
+        "comparisons": 0,
+        "deterministic_repeat_pct": 0.0,
+        "direction_match_pct": 0.0,
+        "max_confidence_abs_error": null,
+        "max_score_abs_error": null,
+        "pass": false,
+        "semantic_hash_match_pct": 0.0
+      }
+    }
+  },
+  "controlled_exact_input_parity_certified": false,
+  "full_23_year_reconstruction_authorized": false,
+  "generated_at": "2026-08-23T07:54:48.091091+00:00",
+  "governance": {
+    "certified_dm_adapter_sha256_frozen": "ba9d0f03f22252f719afd34d4257e951e2f327d732c082bc57ffcebd359751ea",
+    "confidence_epsilon": 1e-09,
+    "database_mode": "READ_ONLY_SPY_SESSION_CALENDAR_ONLY",
+    "deterministic_repeat_required_pct": 100.0,
+    "direction_required_pct": 100.0,
+    "full_23_year_reconstruction_authorized": false,
+    "native_runner_sha256_frozen": "bcc5b49b87ddceba6ac417000d5af3d4a57efd14145595f4d712eb36ae81204b",
+    "parity_thresholds_relaxed": false,
+    "production_authority_effect": false,
+    "production_database_writes": false,
+    "research_only": true,
+    "score_epsilon": 1e-09,
+    "semantic_hash_required_pct": 100.0
+  },
+  "native_contract": {
+    "callable": "call_profile",
+    "certified_pit_adapter": "src/trading_ai/historical_underlying_replay/m77_19_4_isolated_adapters.py",
+    "certified_pit_adapter_sha256": "ba9d0f03f22252f719afd34d4257e951e2f327d732c082bc57ffcebd359751ea",
+    "runner": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+    "runner_sha256": "bcc5b49b87ddceba6ac417000d5af3d4a57efd14145595f4d712eb36ae81204b",
+    "service": "StockIntelligenceService()",
+    "session_calendar": "READ_ONLY public.price_history WHERE symbol='SPY'"
+  },
+  "next_step": "FORENSIC_REVIEW_M77_19_6_5_2_NATIVE_PARITY_DIFFERENCES",
+  "prior_report": "/Users/vinay.hatti/TradingPlatform/reports/m77_19_6_5_1_1_imported_native_contract_resolution.json",
+  "production_authority_effect": false,
+  "spy_session_count": 1265,
+  "version": "M77.19.6.5.2-NATIVE-CONTROLLED-EXECUTION-PARITY-CERTIFICATION-1.0"
+}

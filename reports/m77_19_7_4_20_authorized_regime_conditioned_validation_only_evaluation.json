@@ -1,0 +1,213 @@
+{
+  "advancement_gate_sha256": "e846e42d81bd544ac3da2b1669030e4f8a2ef8002d47029906c0bb3cdbb67472",
+  "authorized_scope": {
+    "RC_H4_5_10_BEAR_MARKET_WEAK_BREADTH": {
+      "candidate_id": "H4_ROOM_PCT_5_10PCT",
+      "concept": "BEAR_MARKET_PLUS_BREADTH_STRESS",
+      "horizons": [
+        5,
+        10,
+        20
+      ],
+      "regime_id": "RC2_BEAR_MARKET_WEAK_BREADTH"
+    },
+    "RC_H4_GE10_DOWNTREND_HIGH_VOL": {
+      "candidate_id": "H4_ROOM_PCT_GE_10PCT",
+      "concept": "TREND_PLUS_VOLATILITY_STRESS",
+      "horizons": [
+        5,
+        10,
+        20
+      ],
+      "regime_id": "RC1_DOWNTREND_HIGH_VOL"
+    }
+  },
+  "candidate_summary": {
+    "RC_H4_5_10_BEAR_MARKET_WEAK_BREADTH": {
+      "all_horizons_pass": false,
+      "any_horizon_pass": false,
+      "candidate_id": "H4_ROOM_PCT_5_10PCT",
+      "concept": "BEAR_MARKET_PLUS_BREADTH_STRESS",
+      "failed_horizons": [
+        5,
+        10,
+        20
+      ],
+      "passed_horizons": [],
+      "regime_id": "RC2_BEAR_MARKET_WEAK_BREADTH",
+      "validation_membership_count": 286
+    },
+    "RC_H4_GE10_DOWNTREND_HIGH_VOL": {
+      "all_horizons_pass": false,
+      "any_horizon_pass": false,
+      "candidate_id": "H4_ROOM_PCT_GE_10PCT",
+      "concept": "TREND_PLUS_VOLATILITY_STRESS",
+      "failed_horizons": [
+        5,
+        10,
+        20
+      ],
+      "passed_horizons": [],
+      "regime_id": "RC1_DOWNTREND_HIGH_VOL",
+      "validation_membership_count": 362
+    }
+  },
+  "context_authority_sha256": "f9a749854689235a28550d248c764188a7ade3ac3a4e0cbb9b70274f5a4bbbdd",
+  "context_csv_sha256": "7c9849cf38a3a0bd23d6c0a9dee796391f5d64ad1fcc48a8fe936114a7d9a6d0",
+  "evidence": [
+    {
+      "accuracy": 0.43922651933701656,
+      "accuracy_delta_vs_unconditioned_candidate": -0.038664637125568446,
+      "authorized_name": "RC_H4_GE10_DOWNTREND_HIGH_VOL",
+      "candidate_id": "H4_ROOM_PCT_GE_10PCT",
+      "concept": "TREND_PLUS_VOLATILITY_STRESS",
+      "count": 362,
+      "horizon_sessions": 5,
+      "mean": -0.030878086737641076,
+      "median": -0.034396071361678215,
+      "median_delta_vs_unconditioned_candidate": -0.02776314443889616,
+      "minimum_validation_count": 300,
+      "regime_id": "RC1_DOWNTREND_HIGH_VOL",
+      "unconditioned_candidate_accuracy": 0.477891156462585,
+      "unconditioned_candidate_count": 588,
+      "unconditioned_candidate_median": -0.006632926922782056,
+      "validation_pass": false
+    },
+    {
+      "accuracy": 0.26243093922651933,
+      "accuracy_delta_vs_unconditioned_candidate": -0.07430375465103167,
+      "authorized_name": "RC_H4_GE10_DOWNTREND_HIGH_VOL",
+      "candidate_id": "H4_ROOM_PCT_GE_10PCT",
+      "concept": "TREND_PLUS_VOLATILITY_STRESS",
+      "count": 362,
+      "horizon_sessions": 10,
+      "mean": -0.07728406390423069,
+      "median": -0.07788487184439497,
+      "median_delta_vs_unconditioned_candidate": -0.021263398496541464,
+      "minimum_validation_count": 300,
+      "regime_id": "RC1_DOWNTREND_HIGH_VOL",
+      "unconditioned_candidate_accuracy": 0.336734693877551,
+      "unconditioned_candidate_count": 588,
+      "unconditioned_candidate_median": -0.0566214733478535,
+      "validation_pass": false
+    },
+    {
+      "accuracy": 0.19613259668508287,
+      "accuracy_delta_vs_unconditioned_candidate": -0.07767692712444096,
+      "authorized_name": "RC_H4_GE10_DOWNTREND_HIGH_VOL",
+      "candidate_id": "H4_ROOM_PCT_GE_10PCT",
+      "concept": "TREND_PLUS_VOLATILITY_STRESS",
+      "count": 362,
+      "horizon_sessions": 20,
+      "mean": -0.1621138530960852,
+      "median": -0.14956607055614923,
+      "median_delta_vs_unconditioned_candidate": -0.05522962485753591,
+      "minimum_validation_count": 300,
+      "regime_id": "RC1_DOWNTREND_HIGH_VOL",
+      "unconditioned_candidate_accuracy": 0.27380952380952384,
+      "unconditioned_candidate_count": 588,
+      "unconditioned_candidate_median": -0.09433644569861332,
+      "validation_pass": false
+    },
+    {
+      "accuracy": 0.34965034965034963,
+      "accuracy_delta_vs_unconditioned_candidate": -0.07190968540661796,
+      "authorized_name": "RC_H4_5_10_BEAR_MARKET_WEAK_BREADTH",
+      "candidate_id": "H4_ROOM_PCT_5_10PCT",
+      "concept": "BEAR_MARKET_PLUS_BREADTH_STRESS",
+      "count": 286,
+      "horizon_sessions": 5,
+      "mean": -0.04107506471729538,
+      "median": -0.062116715953768,
+      "median_delta_vs_unconditioned_candidate": -0.04652412848315535,
+      "minimum_validation_count": 300,
+      "regime_id": "RC2_BEAR_MARKET_WEAK_BREADTH",
+      "unconditioned_candidate_accuracy": 0.4215600350569676,
+      "unconditioned_candidate_count": 1141,
+      "unconditioned_candidate_median": -0.015592587470612651,
+      "validation_pass": false
+    },
+    {
+      "accuracy": 0.3006993006993007,
+      "accuracy_delta_vs_unconditioned_candidate": -0.08580376678536189,
+      "authorized_name": "RC_H4_5_10_BEAR_MARKET_WEAK_BREADTH",
+      "candidate_id": "H4_ROOM_PCT_5_10PCT",
+      "concept": "BEAR_MARKET_PLUS_BREADTH_STRESS",
+      "count": 286,
+      "horizon_sessions": 10,
+      "mean": -0.057890463406340666,
+      "median": -0.060821719808931696,
+      "median_delta_vs_unconditioned_candidate": -0.02985131375249661,
+      "minimum_validation_count": 300,
+      "regime_id": "RC2_BEAR_MARKET_WEAK_BREADTH",
+      "unconditioned_candidate_accuracy": 0.38650306748466257,
+      "unconditioned_candidate_count": 1141,
+      "unconditioned_candidate_median": -0.030970406056435085,
+      "validation_pass": false
+    },
+    {
+      "accuracy": 0.15034965034965034,
+      "accuracy_delta_vs_unconditioned_candidate": -0.16954517874763272,
+      "authorized_name": "RC_H4_5_10_BEAR_MARKET_WEAK_BREADTH",
+      "candidate_id": "H4_ROOM_PCT_5_10PCT",
+      "concept": "BEAR_MARKET_PLUS_BREADTH_STRESS",
+      "count": 286,
+      "horizon_sessions": 20,
+      "mean": -0.1350184328430522,
+      "median": -0.13295130320172366,
+      "median_delta_vs_unconditioned_candidate": -0.07022067589545056,
+      "minimum_validation_count": 300,
+      "regime_id": "RC2_BEAR_MARKET_WEAK_BREADTH",
+      "unconditioned_candidate_accuracy": 0.31989482909728306,
+      "unconditioned_candidate_count": 1141,
+      "unconditioned_candidate_median": -0.0627306273062731,
+      "validation_pass": false
+    }
+  ],
+  "governance": {
+    "automatic_bearish_signal_inversion": false,
+    "candidate_definitions_changed": false,
+    "classifier_training": false,
+    "development_scoring_performed": false,
+    "final_holdout_opened": false,
+    "final_holdout_scoring_performed": false,
+    "parameter_fitting": false,
+    "production_authority_effect": false,
+    "production_model_change_authorized": false,
+    "regime_combinations_changed": false,
+    "regime_search_or_optimization": false,
+    "regime_thresholds_changed": false,
+    "threshold_search_or_optimization": false,
+    "validation_scoring_performed": true
+  },
+  "h4_authority_sha256": "a290d8291b92bec11f99a443912d1a94bb377debf71a110fbaa5983b69802a43",
+  "minimum_validation_count": 300,
+  "next_step": "REVIEW_M77_19_7_4_20_VALIDATION_EVIDENCE_BEFORE_ANY_FINAL_HOLDOUT_AUTHORIZATION",
+  "outcome_authority_sha256": "d8c8ea6fd2a6412d3b2898f87fa1e3f19ba6968b112eb100998c81ac2bb07775",
+  "regime_authority_sha256": "ddf6d998848ee2694acbc44b4d50e3c32af530d70fe24af6db8959eef2a41ffa",
+  "scope_protection": {
+    "development_context_rows_skipped": 685,
+    "development_geometry_rows_skipped": 74832,
+    "development_outcome_rows_skipped": 303689,
+    "final_holdout_context_rows_seen": 0,
+    "final_holdout_geometry_rows_seen_and_skipped": 31388,
+    "final_holdout_outcome_rows_seen_and_skipped": 111027,
+    "scope_expansion_performed": false,
+    "unauthorized_candidate_scoring_performed": false,
+    "unauthorized_horizon_scoring_performed": false,
+    "validation_context_rows_used": 261
+  },
+  "status": "READY",
+  "validation_gate_result": {
+    "candidate_family_survives_validation": false,
+    "failed_candidate_count": 2,
+    "final_holdout_open_authorized": false,
+    "fully_surviving_candidate_count": 0,
+    "partially_surviving_candidate_count": 0
+  },
+  "validation_window": {
+    "end": "2022-12-31",
+    "start": "2018-01-01"
+  },
+  "version": "M77.19.7.4.20-AUTHORIZED-REGIME-CONDITIONED-VALIDATION-ONLY-EVALUATION-1.0"
+}

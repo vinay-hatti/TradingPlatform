@@ -1,0 +1,16 @@
+{
+  "milestone": "M77.19.8.7.10.7.6.0",
+  "final_holdout_rows_read_by_this_step": false,
+  "final_holdout_scoring_performed": false,
+  "production_authority_effect": false,
+  "canonical_source_sha256": {
+    "context": "f1aa47fc78d7404f513aa1405e4401ca70ee2e06cb63a298063a3a068e2b891a",
+    "base": "eb223744f3762976d9e67ed82843ed90d10a136810764b20e982a58cb0d0b8cf",
+    "backfill": "21550a07c6d05afaad0de888673963fd1e52cba6333a6b8a40474b2a4f832f65"
+  },
+  "adapter_sha256": {
+    "run_m77_19_7_4_16_final_holdout_partition_parameterized_certified.py": "04a13d955353e42b50df9d0d72017edb8630d2a0f3e9a65c57161e2498c8ee6f",
+    "run_m77_19_8_2_final_holdout_routing_parameterized_certified.py": "12e1e4b46c937dff8cfac127a254ea4d19d4421666a39433b47df1ee3fdc7102",
+    "run_m77_19_8_4_3_final_holdout_row_admission_parameterized_certified.py": "ccdc4a3d26cc1f25f537f6a01f03ff3acb0311f7e7c73134b13331955f95fd4b"
+  }
+}

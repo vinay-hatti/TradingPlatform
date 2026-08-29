@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, replace
-from math import exp, log
 from typing import Iterable
 from uuid import uuid4
 
@@ -19,8 +18,6 @@ from .domain import (
     StrategyComparison,
     StrategyDisposition,
     ThesisDirection,
-    ContractLegRecommendation,
-    ContractSide,
 )
 from .models import (
     ContractRecommendationModel,
@@ -35,10 +32,11 @@ from .repository import InstitutionalOpportunityRepository
 class StrategyValuationPolicy:
     minimum_probability: float = 0.52
     minimum_liquidity_score: float = 45.0
-    minimum_expected_return_on_risk: float = -0.05
+    minimum_expected_return_on_risk: float = 0.0
+    minimum_expected_value: float = 0.0
     maximum_tail_risk: float = 85.0
     probability_adjustment_cap: float = 0.15
-    policy_version: str = "M62-PH5-1.0"
+    policy_version: str = "M68.2.1.15.5-ABSOLUTE-STRATEGY-FLOOR-1.0"
 
 
 @dataclass(frozen=True)
@@ -149,8 +147,13 @@ class ContractStrategyValuationEngine:
             rejections.append("PROBABILITY_BELOW_MINIMUM")
         if liquidity < self.policy.minimum_liquidity_score:
             rejections.append("LIQUIDITY_BELOW_MINIMUM")
-        if expected_return_on_risk < self.policy.minimum_expected_return_on_risk:
-            rejections.append("EXPECTED_RETURN_ON_RISK_BELOW_MINIMUM")
+        if expected_value <= self.policy.minimum_expected_value:
+            rejections.append("EXPECTED_VALUE_NOT_POSITIVE")
+        if expected_return_on_risk <= self.policy.minimum_expected_return_on_risk:
+            rejections.append("EXPECTED_RETURN_ON_RISK_NOT_POSITIVE")
+        contradiction = dict(strategy.metadata.get("contradictory_evidence_authority") or {})
+        if strategy.metadata.get("execution_blocked_by_contradiction") or contradiction.get("execution_blocked"):
+            rejections.append("MATERIAL_CONTRADICTORY_EVIDENCE_UNRESOLVED")
         if tail_risk > self.policy.maximum_tail_risk:
             rejections.append("TAIL_RISK_ABOVE_MAXIMUM")
         eligible = not rejections
@@ -219,20 +222,28 @@ class InstitutionalStrategyValuationService:
             try:
                 with self.session.begin_nested():
                     opportunity_payload = dict(row.payload_json or {})
-                    opportunity = InstitutionalOpportunity(
-                        **(opportunity_payload | {
-                            "state": OpportunityState(opportunity_payload["state"]),
-                            "direction": ThesisDirection(opportunity_payload["direction"]),
-                            "lineage": OpportunityLineage(**opportunity_payload["lineage"]),
-                        })
+                    opportunity = InstitutionalOpportunity.from_payload(
+                        opportunity_payload
                     )
                     thesis_row = self.session.query(OpportunityThesisModel).filter_by(opportunity_id=row.opportunity_id).one()
                     thesis_payload = dict(thesis_row.payload_json or {})
                     thesis = OpportunityThesis(**(thesis_payload | {"direction": ThesisDirection(thesis_payload["direction"]), "targets": tuple(thesis_payload.get("targets") or ()) , "evidence": tuple(thesis_payload.get("evidence") or ()), "risks": tuple(thesis_payload.get("risks") or ())}))
                     strategy_rows = self.session.query(StrategyCandidateModel).filter_by(opportunity_id=row.opportunity_id).all()
+                    current_option_snapshot_id = str(
+                        row.option_snapshot_id
+                        or (opportunity_payload.get("lineage") or {}).get("option_snapshot_id")
+                        or ""
+                    )
+                    if not current_option_snapshot_id:
+                        raise ValueError(
+                            "Current governed option snapshot lineage is missing"
+                        )
                     contract_rows = (
                         self.session.query(ContractRecommendationModel)
-                        .filter_by(opportunity_id=row.opportunity_id)
+                        .filter_by(
+                            opportunity_id=row.opportunity_id,
+                            option_snapshot_id=current_option_snapshot_id,
+                        )
                         .order_by(
                             ContractRecommendationModel.executable.desc(),
                             ContractRecommendationModel.liquidity_score.desc().nullslast(),
@@ -240,11 +251,10 @@ class InstitutionalStrategyValuationService:
                         )
                         .all()
                     )
-                    # One authoritative contract recommendation is consumed per
-                    # strategy candidate. Prefer executable, liquid, and newest
-                    # rows deterministically; retain the first row selected by
-                    # that ordering rather than allowing an arbitrary later row
-                    # to overwrite it.
+                    # Historical option snapshots remain available for audit,
+                    # but valuation consumes only the opportunity's current
+                    # governed snapshot. Within that snapshot one authoritative
+                    # recommendation is selected deterministically per strategy.
                     contracts: dict[str, ContractRecommendation] = {}
                     for contract_row in contract_rows:
                         strategy_candidate_id = str(contract_row.strategy_candidate_id)
@@ -311,12 +321,16 @@ class InstitutionalStrategyValuationService:
                     rejected += len([item for item in valuations if item.disposition == StrategyDisposition.REJECTED])
                     if selected_id:
                         selected += 1
-                        self.repository.transition(
-                            row.opportunity_id,
-                            OpportunityState.READY_FOR_EXECUTION,
-                            "m62-phase5",
-                            "Final valued strategy selected",
-                        )
+                        # M75.2.2: selecting/valuing a strategy is no longer sufficient
+                        # to declare READY_FOR_EXECUTION. The exact transformed
+                        # Institutional Options underlying/management plan is certified
+                        # in Phase 6 before readiness is granted.
+                        opportunity_payload = dict(row.payload_json or {})
+                        metadata = dict(opportunity_payload.get("metadata") or {})
+                        metadata["m75_2_2_final_plan_certification_pending"] = True
+                        metadata["selected_strategy_candidate_id"] = selected_id
+                        opportunity_payload["metadata"] = metadata
+                        row.payload_json = opportunity_payload
                     else:
                         self.repository.transition(
                             row.opportunity_id,

@@ -1,0 +1,25 @@
+{
+  "blocking_reason": "DEVELOPMENT_BACKFILL_FEATURES_REQUIRE_EXACT_2018_2022_SOURCE_RESOLUTION_AND_CANNOT_BE_NULL_FILLED_OR_APPROXIMATED",
+  "development_feature_schema_column_count": 27,
+  "development_preprocessor_refit_performed": false,
+  "exact_scalar_feature_continuity_certified": false,
+  "final_holdout_opened": false,
+  "next_step": "BUILD_M77_19_8_7_10_2_EXACT_VALIDATION_BACKFILL_SOURCE_RESOLVER_AND_FEATURE_CONTINUITY_AUTHORITY",
+  "production_authority_effect": false,
+  "status": "BLOCKED_EXACT_VALIDATION_FEATURE_CONTINUITY_NOT_YET_PROVEN",
+  "training_gate_sha256": "0440ac1ec4f2da34606ba6ba6500b4191086730eff282eaaccf4b6bfd8de0a9c",
+  "validation_authority_sha256": "fe7efc8e222acd3aa306995da314b395ff3cf6ae7ab0acbebc51f1ba4bf143c0",
+  "validation_feature_approximation_performed": false,
+  "validation_feature_matrix_certified": false,
+  "validation_feature_schema_mismatch_count": 0,
+  "validation_outcomes_opened": false,
+  "validation_profile_row_count_seen": 141567,
+  "validation_profile_symbol_count_seen": 570,
+  "validation_scoring_performed": false,
+  "validation_targets_opened": false,
+  "validation_window": {
+    "end": "2022-12-31",
+    "start": "2018-01-01"
+  },
+  "version": "M77.19.8.7.10.1-EXACT-PIT-VALIDATION-FEATURE-MATRIX-FROZEN-PREPROCESSOR-AUTHORITY-1.0"
+}

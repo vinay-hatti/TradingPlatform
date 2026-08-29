@@ -1,0 +1,20 @@
+{
+  "milestone": "M77.19.6.5.2.12",
+  "title": "Raw Support / Resistance Candidate Generation Forensics",
+  "version": "M77.19.6.5.2.12-RAW-SUPPORT-RESISTANCE-CANDIDATE-GENERATION-FORENSICS-1.0",
+  "authority": {
+    "m77_19_6_5_2_11_report_sha256": "88e9e9b4781727b59254c9ae6a583cea27dece55bc034bc0064c686638c101d6",
+    "m77_19_6_5_2_11_1_runner_sha256": "1c93e515a111eb9f28c448775addaace1e727262e9ce0885528dcbb6fb4a76b4",
+    "m77_19_6_5_2_9_repaired_runner_sha256": "5a3af6f274325813cbf3397baf25ce5a23ef63d95204642fe34534df83ba9feb",
+    "native_runner_sha256": "bcc5b49b87ddceba6ac417000d5af3d4a57efd14145595f4d712eb36ae81204b",
+    "level_service_source_sha256": "8581c423956fd9d997af8098fb1065aab78b24646c72b9fb5ba1e8e446402490"
+  },
+  "governance": {
+    "research_only": true,
+    "database_mode": "READ_ONLY_SPY_SESSION_CALENDAR_ONLY",
+    "production_authority_effect": false,
+    "full_23_year_reconstruction_authorized": false,
+    "merge_threshold": 0.003,
+    "parity_tolerance": 1e-09
+  }
+}

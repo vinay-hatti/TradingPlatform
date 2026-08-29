@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+import json
+from pathlib import Path
+p=Path("reports/m77/m77_15_6_5_2_material_long_history_proxy_authority_certification.json")
+if not p.exists(): raise SystemExit("Run M77.15.6.5.2 first")
+x=json.loads(p.read_text())
+print("=== M77.15.6.5.2 SOURCE-ANOMALY QUARANTINE RECERTIFICATION ===")
+print("status:",x["status"])
+print("classification:",x["classification"])
+print("certified_for_m77_15_7_long_history_replication:",x["certified_for_m77_15_7_long_history_replication"])
+print("production_authority_effect:",x["production_authority_effect"])
+print("\n--- SOURCE ANOMALY ---")
+print(x["source_anomaly"])
+print("\n--- QUARANTINE ---")
+print("dates:",x["quarantined_dates"])
+for k,v in x["quarantine_policy"].items(): print(f"{k}: {v}")
+print("\n--- COMMON AUTHORITY ---")
+for k,v in x["common_authority"].items(): print(f"{k}: {v}")
+print("\n--- TARGETS ---")
+for k,v in x["targets"].items(): print(k,v)
+print("\n--- GATES ---")
+for k,v in x["gates"].items(): print(f"{k}: {v}")
+print("next_step:",x["next_step"])

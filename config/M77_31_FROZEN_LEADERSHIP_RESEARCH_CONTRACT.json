@@ -1,0 +1,26 @@
+{
+  "automatic_retraining": false,
+  "bottom_quantile": 0.2,
+  "development_end": "2017-12-31",
+  "forbidden_outcome_window": "2018-01-01 THROUGH 2026-12-31",
+  "leadership_states": [
+    "RS20_TOP20",
+    "RS60_TOP20",
+    "RS126_TOP20",
+    "PERSIST_20_60_TOP20",
+    "PERSIST_20_60_126_TOP20",
+    "STABLE_20_60_126_TOP20",
+    "ACCEL_20_VS_60_TOP20",
+    "DECEL_20_VS_60_BOTTOM20"
+  ],
+  "management_retuning": false,
+  "new_probability_up_thresholds": 0,
+  "new_top_k_values": 0,
+  "production_authority_effect": false,
+  "read_or_modify_prospective_protocols": false,
+  "same_date_point_in_time_cross_sectional_ranking": true,
+  "sector_relative_only_if_point_in_time_sector_field_exists": true,
+  "source_population": "M77.26.1 executable NEXT_OPEN / 5ATR / 3ATR / 60-session cohort",
+  "top_quantile": 0.8,
+  "version": "M77.31-FROZEN-LEADERSHIP-RESEARCH-CONTRACT-1.0"
+}

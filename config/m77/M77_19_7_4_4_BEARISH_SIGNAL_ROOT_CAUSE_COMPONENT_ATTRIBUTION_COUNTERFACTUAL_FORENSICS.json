@@ -1,0 +1,22 @@
+{
+  "milestone": "M77.19.7.4.4.1",
+  "version": "M77.19.7.4.4.1-REPLAY-PROFILE-PAYLOAD-SCHEMA-AUTHORITY-REPAIR-1.0",
+  "bearish_classes": [
+    "BEARISH",
+    "STRONG_BEARISH"
+  ],
+  "fixed_horizons_sessions": [
+    5,
+    10,
+    20
+  ],
+  "component_paths_predeclared": true,
+  "interaction_paths_predeclared": true,
+  "classifier_training": false,
+  "automatic_bearish_signal_inversion": false,
+  "threshold_search_or_optimization": false,
+  "parameter_fitting": false,
+  "production_model_change_authorized": false,
+  "profile_payload_resolution": "TOP_LEVEL_NATIVE_SIGNATURE_EXACTLY_ONE",
+  "recursive_profile_field_guessing": false
+}

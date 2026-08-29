@@ -1,0 +1,1712 @@
+{
+  "blockers": [
+    "DAILY_MONTHLY_EXECUTION_CALL_SITE_NOT_YET_RESOLVED",
+    "WEEKLY_ISOLATED_PROFILE_NATIVE_CALL_SITE_NOT_RESOLVED"
+  ],
+  "controlled_exact_input_parity_certified": false,
+  "full_23_year_reconstruction_authorized": false,
+  "governance": {
+    "build_adapter_contract_is_execution_authority": false,
+    "full_23_year_reconstruction_authorized": false,
+    "heuristic_adapter_execution_allowed": false,
+    "parity_thresholds_relaxed": false,
+    "production_authority_effect": false,
+    "production_database_access_required": false,
+    "production_database_writes": false,
+    "research_only": true
+  },
+  "native_contract_summary": {
+    "DAILY_MONTHLY": {
+      "blockers": [
+        "DAILY_MONTHLY_EXECUTION_CALL_SITE_NOT_YET_RESOLVED"
+      ],
+      "certified_native_contract_resolved": false,
+      "source_files": [
+        {
+          "path": "scripts/run_m77_19_3_isolated_daily_monthly_pit_harness.py",
+          "sha256": "4b738f91def9b97059a893feadfd5fd18c115e093f8f84b2cde7ae1d3f760d9a"
+        },
+        {
+          "path": "scripts/run_m77_19_4_1_isolated_adapter_leakage_certification.py",
+          "sha256": "245ef18c2c2db2e37b5a104de184c4ce1e5d6aef288fe68bb4f0bba2037dc59d"
+        }
+      ],
+      "target_call_sites": [
+        {
+          "args": [
+            "cfg",
+            "analyses"
+          ],
+          "assignments_in_enclosing_function": [
+            {
+              "expression": "argparse.ArgumentParser()",
+              "line": 148,
+              "targets": [
+                "ap"
+              ]
+            },
+            {
+              "expression": "ap.parse_args()",
+              "line": 150,
+              "targets": [
+                "args"
+              ]
+            },
+            {
+              "expression": "json.loads(CFG.read_text())",
+              "line": 152,
+              "targets": [
+                "cfg"
+              ]
+            },
+            {
+              "expression": "{\n        name: inspect_runner(ROOT / rel)\n        for name, rel in cfg[\"source_runners\"].items()\n    }",
+              "line": 153,
+              "targets": [
+                "analyses"
+              ]
+            },
+            {
+              "expression": "all(x.get(\"present\") for x in analyses.values())",
+              "line": 158,
+              "targets": [
+                "all_present"
+              ]
+            },
+            {
+              "expression": "{\n        k: len(v.get(\"top_level_functions\") or [])\n        for k, v in analyses.items()\n    }",
+              "line": 159,
+              "targets": [
+                "callable_counts"
+              ]
+            },
+            {
+              "expression": "build_adapter_contract(cfg, analyses)",
+              "line": 164,
+              "targets": [
+                "contract"
+              ]
+            },
+            {
+              "expression": "harness_has_production_db_semantics()",
+              "line": 184,
+              "targets": [
+                "harness_db_semantics"
+              ]
+            },
+            {
+              "expression": "{\n        \"source_runners_present\": all_present,\n        \"source_runners_compile\": all_present,\n        \"source_sha256_frozen\": all(\n            bool(v.get(\"sha256\")) for v in analyses.values() if v.get(\"present\")\n        ),\n        \"top_level_callables_discovered\": all(\n            callable_counts[k] > 0 for k in (\"pit\", \"daily\", \"monthly\", \"weekly\")\n        ),\n        \"date_parameterization_adapter_contract_present\": ADAPTER.exists(),\n        \"research_output_namespace_isolated\": str(RESEARCH).startswith(str(ROOT / \"research_data\")),\n        \"no_production_db_write_code_in_harness\":\n            not harness_db_semantics[\"has_production_db_semantics\"],\n        \"no_automatic_replay_execution\": True,\n        \"point_in_time_execution_not_yet_authorized\": True\n    }",
+              "line": 185,
+              "targets": [
+                "gates"
+              ]
+            },
+            {
+              "expression": "all(gates.values())",
+              "line": 202,
+              "targets": [
+                "certified"
+              ]
+            },
+            {
+              "expression": "{\n        \"version\": cfg[\"version\"],\n        \"status\": \"READY\",\n        \"mode\": \"ISOLATED_HARNESS_FOUNDATION_CERTIFICATION\",\n        \"source_analysis\": analyses,\n        \"adapter_contract\": contract,\n        \"harness_db_semantic_audit\": harness_db_semantics,\n        \"gates\": gates,\n        \"harness_foundation_certified\": certified,\n        \"historical_replay_execution_authorized\": False,\n        \"remaining_blockers\": [\n            \"ORIGINAL_601_SYMBOL_LONG_HISTORY_SOURCE_DATA_MISSING\",\n            \"ADAPTER_IMPLEMENTATION_NOT_YET_BUILT\",\n            \"POINT_IN_TIME_BEHAVIOR_NOT_YET_EXECUTION_CERTIFIED\"\n        ],\n        \"next_step\": (\n            \"BUILD_M77_19_4_ISOLATED_ADAPTER_IMPLEMENTATION_AND_PIT_LEAKAGE_TESTS\"\n            if certified\n            else \"REVIEW_M77_19_3_FOUNDATION_CERTIFICATION_FAILURES\"\n        ),\n        \"database_writes\": False,\n        \"production_authority_effect\": False\n    }",
+              "line": 203,
+              "targets": [
+                "out"
+              ]
+            }
+          ],
+          "call": "build_adapter_contract",
+          "calls_in_enclosing_function": [
+            {
+              "args": [],
+              "call": "argparse.ArgumentParser",
+              "expression": "argparse.ArgumentParser()",
+              "kwargs": {},
+              "line": 148
+            },
+            {
+              "args": [
+                "\"mode\""
+              ],
+              "call": "ap.add_argument",
+              "expression": "ap.add_argument(\"mode\", choices=(\"preflight\", \"certify\"))",
+              "kwargs": {
+                "choices": "(\"preflight\", \"certify\")"
+              },
+              "line": 149
+            },
+            {
+              "args": [],
+              "call": "ap.parse_args",
+              "expression": "ap.parse_args()",
+              "kwargs": {},
+              "line": 150
+            },
+            {
+              "args": [
+                "CFG.read_text()"
+              ],
+              "call": "json.loads",
+              "expression": "json.loads(CFG.read_text())",
+              "kwargs": {},
+              "line": 152
+            },
+            {
+              "args": [],
+              "call": "CFG.read_text",
+              "expression": "CFG.read_text()",
+              "kwargs": {},
+              "line": 152
+            },
+            {
+              "args": [
+                "ROOT / rel"
+              ],
+              "call": "inspect_runner",
+              "expression": "inspect_runner(ROOT / rel)",
+              "kwargs": {},
+              "line": 154
+            },
+            {
+              "args": [],
+              "call": "items",
+              "expression": "cfg[\"source_runners\"].items()",
+              "kwargs": {},
+              "line": 155
+            },
+            {
+              "args": [
+                "(x.get(\"present\") for x in analyses.values())"
+              ],
+              "call": "all",
+              "expression": "all(x.get(\"present\") for x in analyses.values())",
+              "kwargs": {},
+              "line": 158
+            },
+            {
+              "args": [
+                "\"present\""
+              ],
+              "call": "x.get",
+              "expression": "x.get(\"present\")",
+              "kwargs": {},
+              "line": 158
+            },
+            {
+              "args": [],
+              "call": "analyses.values",
+              "expression": "analyses.values()",
+              "kwargs": {},
+              "line": 158
+            },
+            {
+              "args": [
+                "v.get(\"top_level_functions\") or []"
+              ],
+              "call": "len",
+              "expression": "len(v.get(\"top_level_functions\") or [])",
+              "kwargs": {},
+              "line": 160
+            },
+            {
+              "args": [
+                "\"top_level_functions\""
+              ],
+              "call": "v.get",
+              "expression": "v.get(\"top_level_functions\")",
+              "kwargs": {},
+              "line": 160
+            },
+            {
+              "args": [],
+              "call": "analyses.items",
+              "expression": "analyses.items()",
+              "kwargs": {},
+              "line": 161
+            },
+            {
+              "args": [
+                "cfg",
+                "analyses"
+              ],
+              "call": "build_adapter_contract",
+              "expression": "build_adapter_contract(cfg, analyses)",
+              "kwargs": {},
+              "line": 164
+            },
+            {
+              "args": [
+                "json.dumps({\n            \"version\": cfg[\"version\"],\n            \"status\": \"READY\",\n            \"source_runners_present\": all_present,\n            \"callable_counts\": callable_counts,\n            \"source_analysis\": analyses,\n            \"adapter_contract_preview\": contract,\n            \"automatic_replay_execution\": False,\n            \"database_writes\": False,\n            \"production_authority_effect\": False\n        }, indent=2)"
+              ],
+              "call": "print",
+              "expression": "print(json.dumps({\n            \"version\": cfg[\"version\"],\n            \"status\": \"READY\",\n            \"source_runners_present\": all_present,\n            \"callable_counts\": callable_counts,\n            \"source_analysis\": analyses,\n            \"adapter_contract_preview\": contract,\n            \"automatic_replay_execution\": False,\n            \"database_writes\": False,\n            \"production_authority_effect\": False\n        }, indent=2))",
+              "kwargs": {},
+              "line": 167
+            },
+            {
+              "args": [
+                "{\n            \"version\": cfg[\"version\"],\n            \"status\": \"READY\",\n            \"source_runners_present\": all_present,\n            \"callable_counts\": callable_counts,\n            \"source_analysis\": analyses,\n            \"adapter_contract_preview\": contract,\n            \"automatic_replay_execution\": False,\n            \"database_writes\": False,\n            \"production_authority_effect\": False\n        }"
+              ],
+              "call": "json.dumps",
+              "expression": "json.dumps({\n            \"version\": cfg[\"version\"],\n            \"status\": \"READY\",\n            \"source_runners_present\": all_present,\n            \"callable_counts\": callable_counts,\n            \"source_analysis\": analyses,\n            \"adapter_contract_preview\": contract,\n            \"automatic_replay_execution\": False,\n            \"database_writes\": False,\n            \"production_authority_effect\": False\n        }, indent=2)",
+              "kwargs": {
+                "indent": "2"
+              },
+              "line": 167
+            },
+            {
+              "args": [],
+              "call": "RESEARCH.mkdir",
+              "expression": "RESEARCH.mkdir(parents=True, exist_ok=True)",
+              "kwargs": {
+                "exist_ok": "True",
+                "parents": "True"
+              },
+              "line": 181
+            },
+            {
+              "args": [
+                "ADAPTER",
+                "contract"
+              ],
+              "call": "write_json_atomic",
+              "expression": "write_json_atomic(ADAPTER, contract)",
+              "kwargs": {},
+              "line": 182
+            },
+            {
+              "args": [],
+              "call": "harness_has_production_db_semantics",
+              "expression": "harness_has_production_db_semantics()",
+              "kwargs": {},
+              "line": 184
+            },
+            {
+              "args": [
+                "(\n            bool(v.get(\"sha256\")) for v in analyses.values() if v.get(\"present\")\n        )"
+              ],
+              "call": "all",
+              "expression": "all(\n            bool(v.get(\"sha256\")) for v in analyses.values() if v.get(\"present\")\n        )",
+              "kwargs": {},
+              "line": 188
+            },
+            {
+              "args": [
+                "v.get(\"sha256\")"
+              ],
+              "call": "bool",
+              "expression": "bool(v.get(\"sha256\"))",
+              "kwargs": {},
+              "line": 189
+            },
+            {
+              "args": [
+                "\"sha256\""
+              ],
+              "call": "v.get",
+              "expression": "v.get(\"sha256\")",
+              "kwargs": {},
+              "line": 189
+            },
+            {
+              "args": [],
+              "call": "analyses.values",
+              "expression": "analyses.values()",
+              "kwargs": {},
+              "line": 189
+            },
+            {
+              "args": [
+                "\"present\""
+              ],
+              "call": "v.get",
+              "expression": "v.get(\"present\")",
+              "kwargs": {},
+              "line": 189
+            },
+            {
+              "args": [
+                "(\n            callable_counts[k] > 0 for k in (\"pit\", \"daily\", \"monthly\", \"weekly\")\n        )"
+              ],
+              "call": "all",
+              "expression": "all(\n            callable_counts[k] > 0 for k in (\"pit\", \"daily\", \"monthly\", \"weekly\")\n        )",
+              "kwargs": {},
+              "line": 191
+            },
+            {
+              "args": [],
+              "call": "ADAPTER.exists",
+              "expression": "ADAPTER.exists()",
+              "kwargs": {},
+              "line": 194
+            },
+            {
+              "args": [
+                "str(ROOT / \"research_data\")"
+              ],
+              "call": "startswith",
+              "expression": "str(RESEARCH).startswith(str(ROOT / \"research_data\"))",
+              "kwargs": {},
+              "line": 195
+            },
+            {
+              "args": [
+                "ROOT / \"research_data\""
+              ],
+              "call": "str",
+              "expression": "str(ROOT / \"research_data\")",
+              "kwargs": {},
+              "line": 195
+            },
+            {
+              "args": [
+                "RESEARCH"
+              ],
+              "call": "str",
+              "expression": "str(RESEARCH)",
+              "kwargs": {},
+              "line": 195
+            },
+            {
+              "args": [
+                "gates.values()"
+              ],
+              "call": "all",
+              "expression": "all(gates.values())",
+              "kwargs": {},
+              "line": 202
+            },
+            {
+              "args": [],
+              "call": "gates.values",
+              "expression": "gates.values()",
+              "kwargs": {},
+              "line": 202
+            },
+            {
+              "args": [
+                "OUT",
+                "out"
+              ],
+              "call": "write_json_atomic",
+              "expression": "write_json_atomic(OUT, out)",
+              "kwargs": {},
+              "line": 226
+            },
+            {
+              "args": [
+                "json.dumps(out, indent=2)"
+              ],
+              "call": "print",
+              "expression": "print(json.dumps(out, indent=2))",
+              "kwargs": {},
+              "line": 227
+            },
+            {
+              "args": [
+                "out"
+              ],
+              "call": "json.dumps",
+              "expression": "json.dumps(out, indent=2)",
+              "kwargs": {
+                "indent": "2"
+              },
+              "line": 227
+            }
+          ],
+          "enclosing_function": "main",
+          "enclosing_function_line": 147,
+          "enclosing_function_source": "def main():\n    ap = argparse.ArgumentParser()\n    ap.add_argument(\"mode\", choices=(\"preflight\", \"certify\"))\n    args = ap.parse_args()\n\n    cfg = json.loads(CFG.read_text())\n    analyses = {\n        name: inspect_runner(ROOT / rel)\n        for name, rel in cfg[\"source_runners\"].items()\n    }\n\n    all_present = all(x.get(\"present\") for x in analyses.values())\n    callable_counts = {\n        k: len(v.get(\"top_level_functions\") or [])\n        for k, v in analyses.items()\n    }\n\n    contract = build_adapter_contract(cfg, analyses)\n\n    if args.mode == \"preflight\":\n        print(json.dumps({\n            \"version\": cfg[\"version\"],\n            \"status\": \"READY\",\n            \"source_runners_present\": all_present,\n            \"callable_counts\": callable_counts,\n            \"source_analysis\": analyses,\n            \"adapter_contract_preview\": contract,\n            \"automatic_replay_execution\": False,\n            \"database_writes\": False,\n            \"production_authority_effect\": False\n        }, indent=2))\n        return\n\n    # Certification materializes only filesystem research metadata; it never invokes source runners.\n    RESEARCH.mkdir(parents=True, exist_ok=True)\n    write_json_atomic(ADAPTER, contract)\n\n    harness_db_semantics = harness_has_production_db_semantics()\n    gates = {\n        \"source_runners_present\": all_present,\n        \"source_runners_compile\": all_present,\n        \"source_sha256_frozen\": all(\n            bool(v.get(\"sha256\")) for v in analyses.values() if v.get(\"present\")\n        ),\n        \"top_level_callables_discovered\": all(\n            callable_counts[k] > 0 for k in (\"pit\", \"daily\", \"monthly\", \"weekly\")\n        ),\n        \"date_parameterization_adapter_contract_present\": ADAPTER.exists(),\n        \"research_output_namespace_isolated\": str(RESEARCH).startswith(str(ROOT / \"research_data\")),\n        \"no_production_db_write_code_in_harness\":\n            not harness_db_semantics[\"has_production_db_semantics\"],\n        \"no_automatic_replay_execution\": True,\n        \"point_in_time_execution_not_yet_authorized\": True\n    }\n\n    certified = all(gates.values())\n    out = {\n        \"version\": cfg[\"version\"],\n        \"status\": \"READY\",\n        \"mode\": \"ISOLATED_HARNESS_FOUNDATION_CERTIFICATION\",\n        \"source_analysis\": analyses,\n        \"adapter_contract\": contract,\n        \"harness_db_semantic_audit\": harness_db_semantics,\n        \"gates\": gates,\n        \"harness_foundation_certified\": certified,\n        \"historical_replay_execution_authorized\": False,\n        \"remaining_blockers\": [\n            \"ORIGINAL_601_SYMBOL_LONG_HISTORY_SOURCE_DATA_MISSING\",\n            \"ADAPTER_IMPLEMENTATION_NOT_YET_BUILT\",\n            \"POINT_IN_TIME_BEHAVIOR_NOT_YET_EXECUTION_CERTIFIED\"\n        ],\n        \"next_step\": (\n            \"BUILD_M77_19_4_ISOLATED_ADAPTER_IMPLEMENTATION_AND_PIT_LEAKAGE_TESTS\"\n            if certified\n            else \"REVIEW_M77_19_3_FOUNDATION_CERTIFICATION_FAILURES\"\n        ),\n        \"database_writes\": False,\n        \"production_authority_effect\": False\n    }\n    write_json_atomic(OUT, out)\n    print(json.dumps(out, indent=2))",
+          "expression": "build_adapter_contract(cfg, analyses)",
+          "kwargs": {},
+          "line": 164,
+          "path": "scripts/run_m77_19_3_isolated_daily_monthly_pit_harness.py"
+        }
+      ]
+    },
+    "WEEKLY": {
+      "blockers": [
+        "WEEKLY_ISOLATED_PROFILE_NATIVE_CALL_SITE_NOT_RESOLVED"
+      ],
+      "certified_native_contract_resolved": false,
+      "source_files": [
+        {
+          "path": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+          "sha256": "bcc5b49b87ddceba6ac417000d5af3d4a57efd14145595f4d712eb36ae81204b"
+        },
+        {
+          "path": "scripts/run_m77_2_multiyear_frozen_champion.py",
+          "sha256": "9fbc50d88be6642213831a83d6902305d7718200a6182d7afef7ccfc913744f7"
+        }
+      ],
+      "target_call_sites": []
+    }
+  },
+  "native_invocation_contract_ready": false,
+  "next_step": "RESOLVE_M77_19_6_5_1_NATIVE_CONTRACT_BLOCKERS",
+  "prior_report": "/Users/vinay.hatti/TradingPlatform/reports/m77_19_6_5_controlled_adapter_execution_parity_certification.json",
+  "production_authority_effect": false,
+  "source_analyses": [
+    {
+      "classes": [],
+      "functions": [
+        {
+          "args": [
+            "path"
+          ],
+          "kwarg": null,
+          "line": 17,
+          "name": "sha256",
+          "vararg": null
+        },
+        {
+          "args": [
+            "path",
+            "payload"
+          ],
+          "kwarg": null,
+          "line": 24,
+          "name": "write_json_atomic",
+          "vararg": null
+        },
+        {
+          "args": [
+            "path"
+          ],
+          "kwarg": null,
+          "line": 31,
+          "name": "inspect_runner",
+          "vararg": null
+        },
+        {
+          "args": [],
+          "kwarg": null,
+          "line": 67,
+          "name": "harness_has_production_db_semantics",
+          "vararg": null
+        },
+        {
+          "args": [
+            "cfg",
+            "source_analysis"
+          ],
+          "kwarg": null,
+          "line": 103,
+          "name": "build_adapter_contract",
+          "vararg": null
+        },
+        {
+          "args": [],
+          "kwarg": null,
+          "line": 147,
+          "name": "main",
+          "vararg": null
+        }
+      ],
+      "imports": [
+        {
+          "line": 2,
+          "module": "__future__",
+          "names": [
+            {
+              "asname": null,
+              "name": "annotations"
+            }
+          ],
+          "type": "from"
+        },
+        {
+          "line": 4,
+          "module": null,
+          "names": [
+            {
+              "asname": null,
+              "name": "argparse"
+            }
+          ],
+          "type": "import"
+        },
+        {
+          "line": 5,
+          "module": null,
+          "names": [
+            {
+              "asname": null,
+              "name": "ast"
+            }
+          ],
+          "type": "import"
+        },
+        {
+          "line": 6,
+          "module": null,
+          "names": [
+            {
+              "asname": null,
+              "name": "hashlib"
+            }
+          ],
+          "type": "import"
+        },
+        {
+          "line": 7,
+          "module": null,
+          "names": [
+            {
+              "asname": null,
+              "name": "json"
+            }
+          ],
+          "type": "import"
+        },
+        {
+          "line": 8,
+          "module": null,
+          "names": [
+            {
+              "asname": null,
+              "name": "py_compile"
+            }
+          ],
+          "type": "import"
+        },
+        {
+          "line": 9,
+          "module": "pathlib",
+          "names": [
+            {
+              "asname": null,
+              "name": "Path"
+            }
+          ],
+          "type": "from"
+        }
+      ],
+      "path": "scripts/run_m77_19_3_isolated_daily_monthly_pit_harness.py",
+      "roles": [
+        "DAILY_MONTHLY"
+      ],
+      "semantic_markers": [
+        {
+          "line": 114,
+          "text": "\"DAILY\": {"
+        },
+        {
+          "line": 115,
+          "text": "\"source_runner\": cfg[\"source_runners\"][\"daily\"],"
+        },
+        {
+          "line": 119,
+          "text": "\"MONTHLY\": {"
+        },
+        {
+          "line": 120,
+          "text": "\"source_runner\": cfg[\"source_runners\"][\"monthly\"],"
+        },
+        {
+          "line": 129,
+          "text": "\"WEEKLY\": {"
+        },
+        {
+          "line": 130,
+          "text": "\"source_runner\": cfg[\"source_runners\"][\"weekly\"],"
+        },
+        {
+          "line": 192,
+          "text": "callable_counts[k] > 0 for k in (\"pit\", \"daily\", \"monthly\", \"weekly\")"
+        }
+      ],
+      "sha256": "4b738f91def9b97059a893feadfd5fd18c115e093f8f84b2cde7ae1d3f760d9a",
+      "target_call_sites": [
+        {
+          "args": [
+            "cfg",
+            "analyses"
+          ],
+          "assignments_in_enclosing_function": [
+            {
+              "expression": "argparse.ArgumentParser()",
+              "line": 148,
+              "targets": [
+                "ap"
+              ]
+            },
+            {
+              "expression": "ap.parse_args()",
+              "line": 150,
+              "targets": [
+                "args"
+              ]
+            },
+            {
+              "expression": "json.loads(CFG.read_text())",
+              "line": 152,
+              "targets": [
+                "cfg"
+              ]
+            },
+            {
+              "expression": "{\n        name: inspect_runner(ROOT / rel)\n        for name, rel in cfg[\"source_runners\"].items()\n    }",
+              "line": 153,
+              "targets": [
+                "analyses"
+              ]
+            },
+            {
+              "expression": "all(x.get(\"present\") for x in analyses.values())",
+              "line": 158,
+              "targets": [
+                "all_present"
+              ]
+            },
+            {
+              "expression": "{\n        k: len(v.get(\"top_level_functions\") or [])\n        for k, v in analyses.items()\n    }",
+              "line": 159,
+              "targets": [
+                "callable_counts"
+              ]
+            },
+            {
+              "expression": "build_adapter_contract(cfg, analyses)",
+              "line": 164,
+              "targets": [
+                "contract"
+              ]
+            },
+            {
+              "expression": "harness_has_production_db_semantics()",
+              "line": 184,
+              "targets": [
+                "harness_db_semantics"
+              ]
+            },
+            {
+              "expression": "{\n        \"source_runners_present\": all_present,\n        \"source_runners_compile\": all_present,\n        \"source_sha256_frozen\": all(\n            bool(v.get(\"sha256\")) for v in analyses.values() if v.get(\"present\")\n        ),\n        \"top_level_callables_discovered\": all(\n            callable_counts[k] > 0 for k in (\"pit\", \"daily\", \"monthly\", \"weekly\")\n        ),\n        \"date_parameterization_adapter_contract_present\": ADAPTER.exists(),\n        \"research_output_namespace_isolated\": str(RESEARCH).startswith(str(ROOT / \"research_data\")),\n        \"no_production_db_write_code_in_harness\":\n            not harness_db_semantics[\"has_production_db_semantics\"],\n        \"no_automatic_replay_execution\": True,\n        \"point_in_time_execution_not_yet_authorized\": True\n    }",
+              "line": 185,
+              "targets": [
+                "gates"
+              ]
+            },
+            {
+              "expression": "all(gates.values())",
+              "line": 202,
+              "targets": [
+                "certified"
+              ]
+            },
+            {
+              "expression": "{\n        \"version\": cfg[\"version\"],\n        \"status\": \"READY\",\n        \"mode\": \"ISOLATED_HARNESS_FOUNDATION_CERTIFICATION\",\n        \"source_analysis\": analyses,\n        \"adapter_contract\": contract,\n        \"harness_db_semantic_audit\": harness_db_semantics,\n        \"gates\": gates,\n        \"harness_foundation_certified\": certified,\n        \"historical_replay_execution_authorized\": False,\n        \"remaining_blockers\": [\n            \"ORIGINAL_601_SYMBOL_LONG_HISTORY_SOURCE_DATA_MISSING\",\n            \"ADAPTER_IMPLEMENTATION_NOT_YET_BUILT\",\n            \"POINT_IN_TIME_BEHAVIOR_NOT_YET_EXECUTION_CERTIFIED\"\n        ],\n        \"next_step\": (\n            \"BUILD_M77_19_4_ISOLATED_ADAPTER_IMPLEMENTATION_AND_PIT_LEAKAGE_TESTS\"\n            if certified\n            else \"REVIEW_M77_19_3_FOUNDATION_CERTIFICATION_FAILURES\"\n        ),\n        \"database_writes\": False,\n        \"production_authority_effect\": False\n    }",
+              "line": 203,
+              "targets": [
+                "out"
+              ]
+            }
+          ],
+          "call": "build_adapter_contract",
+          "calls_in_enclosing_function": [
+            {
+              "args": [],
+              "call": "argparse.ArgumentParser",
+              "expression": "argparse.ArgumentParser()",
+              "kwargs": {},
+              "line": 148
+            },
+            {
+              "args": [
+                "\"mode\""
+              ],
+              "call": "ap.add_argument",
+              "expression": "ap.add_argument(\"mode\", choices=(\"preflight\", \"certify\"))",
+              "kwargs": {
+                "choices": "(\"preflight\", \"certify\")"
+              },
+              "line": 149
+            },
+            {
+              "args": [],
+              "call": "ap.parse_args",
+              "expression": "ap.parse_args()",
+              "kwargs": {},
+              "line": 150
+            },
+            {
+              "args": [
+                "CFG.read_text()"
+              ],
+              "call": "json.loads",
+              "expression": "json.loads(CFG.read_text())",
+              "kwargs": {},
+              "line": 152
+            },
+            {
+              "args": [],
+              "call": "CFG.read_text",
+              "expression": "CFG.read_text()",
+              "kwargs": {},
+              "line": 152
+            },
+            {
+              "args": [
+                "ROOT / rel"
+              ],
+              "call": "inspect_runner",
+              "expression": "inspect_runner(ROOT / rel)",
+              "kwargs": {},
+              "line": 154
+            },
+            {
+              "args": [],
+              "call": "items",
+              "expression": "cfg[\"source_runners\"].items()",
+              "kwargs": {},
+              "line": 155
+            },
+            {
+              "args": [
+                "(x.get(\"present\") for x in analyses.values())"
+              ],
+              "call": "all",
+              "expression": "all(x.get(\"present\") for x in analyses.values())",
+              "kwargs": {},
+              "line": 158
+            },
+            {
+              "args": [
+                "\"present\""
+              ],
+              "call": "x.get",
+              "expression": "x.get(\"present\")",
+              "kwargs": {},
+              "line": 158
+            },
+            {
+              "args": [],
+              "call": "analyses.values",
+              "expression": "analyses.values()",
+              "kwargs": {},
+              "line": 158
+            },
+            {
+              "args": [
+                "v.get(\"top_level_functions\") or []"
+              ],
+              "call": "len",
+              "expression": "len(v.get(\"top_level_functions\") or [])",
+              "kwargs": {},
+              "line": 160
+            },
+            {
+              "args": [
+                "\"top_level_functions\""
+              ],
+              "call": "v.get",
+              "expression": "v.get(\"top_level_functions\")",
+              "kwargs": {},
+              "line": 160
+            },
+            {
+              "args": [],
+              "call": "analyses.items",
+              "expression": "analyses.items()",
+              "kwargs": {},
+              "line": 161
+            },
+            {
+              "args": [
+                "cfg",
+                "analyses"
+              ],
+              "call": "build_adapter_contract",
+              "expression": "build_adapter_contract(cfg, analyses)",
+              "kwargs": {},
+              "line": 164
+            },
+            {
+              "args": [
+                "json.dumps({\n            \"version\": cfg[\"version\"],\n            \"status\": \"READY\",\n            \"source_runners_present\": all_present,\n            \"callable_counts\": callable_counts,\n            \"source_analysis\": analyses,\n            \"adapter_contract_preview\": contract,\n            \"automatic_replay_execution\": False,\n            \"database_writes\": False,\n            \"production_authority_effect\": False\n        }, indent=2)"
+              ],
+              "call": "print",
+              "expression": "print(json.dumps({\n            \"version\": cfg[\"version\"],\n            \"status\": \"READY\",\n            \"source_runners_present\": all_present,\n            \"callable_counts\": callable_counts,\n            \"source_analysis\": analyses,\n            \"adapter_contract_preview\": contract,\n            \"automatic_replay_execution\": False,\n            \"database_writes\": False,\n            \"production_authority_effect\": False\n        }, indent=2))",
+              "kwargs": {},
+              "line": 167
+            },
+            {
+              "args": [
+                "{\n            \"version\": cfg[\"version\"],\n            \"status\": \"READY\",\n            \"source_runners_present\": all_present,\n            \"callable_counts\": callable_counts,\n            \"source_analysis\": analyses,\n            \"adapter_contract_preview\": contract,\n            \"automatic_replay_execution\": False,\n            \"database_writes\": False,\n            \"production_authority_effect\": False\n        }"
+              ],
+              "call": "json.dumps",
+              "expression": "json.dumps({\n            \"version\": cfg[\"version\"],\n            \"status\": \"READY\",\n            \"source_runners_present\": all_present,\n            \"callable_counts\": callable_counts,\n            \"source_analysis\": analyses,\n            \"adapter_contract_preview\": contract,\n            \"automatic_replay_execution\": False,\n            \"database_writes\": False,\n            \"production_authority_effect\": False\n        }, indent=2)",
+              "kwargs": {
+                "indent": "2"
+              },
+              "line": 167
+            },
+            {
+              "args": [],
+              "call": "RESEARCH.mkdir",
+              "expression": "RESEARCH.mkdir(parents=True, exist_ok=True)",
+              "kwargs": {
+                "exist_ok": "True",
+                "parents": "True"
+              },
+              "line": 181
+            },
+            {
+              "args": [
+                "ADAPTER",
+                "contract"
+              ],
+              "call": "write_json_atomic",
+              "expression": "write_json_atomic(ADAPTER, contract)",
+              "kwargs": {},
+              "line": 182
+            },
+            {
+              "args": [],
+              "call": "harness_has_production_db_semantics",
+              "expression": "harness_has_production_db_semantics()",
+              "kwargs": {},
+              "line": 184
+            },
+            {
+              "args": [
+                "(\n            bool(v.get(\"sha256\")) for v in analyses.values() if v.get(\"present\")\n        )"
+              ],
+              "call": "all",
+              "expression": "all(\n            bool(v.get(\"sha256\")) for v in analyses.values() if v.get(\"present\")\n        )",
+              "kwargs": {},
+              "line": 188
+            },
+            {
+              "args": [
+                "v.get(\"sha256\")"
+              ],
+              "call": "bool",
+              "expression": "bool(v.get(\"sha256\"))",
+              "kwargs": {},
+              "line": 189
+            },
+            {
+              "args": [
+                "\"sha256\""
+              ],
+              "call": "v.get",
+              "expression": "v.get(\"sha256\")",
+              "kwargs": {},
+              "line": 189
+            },
+            {
+              "args": [],
+              "call": "analyses.values",
+              "expression": "analyses.values()",
+              "kwargs": {},
+              "line": 189
+            },
+            {
+              "args": [
+                "\"present\""
+              ],
+              "call": "v.get",
+              "expression": "v.get(\"present\")",
+              "kwargs": {},
+              "line": 189
+            },
+            {
+              "args": [
+                "(\n            callable_counts[k] > 0 for k in (\"pit\", \"daily\", \"monthly\", \"weekly\")\n        )"
+              ],
+              "call": "all",
+              "expression": "all(\n            callable_counts[k] > 0 for k in (\"pit\", \"daily\", \"monthly\", \"weekly\")\n        )",
+              "kwargs": {},
+              "line": 191
+            },
+            {
+              "args": [],
+              "call": "ADAPTER.exists",
+              "expression": "ADAPTER.exists()",
+              "kwargs": {},
+              "line": 194
+            },
+            {
+              "args": [
+                "str(ROOT / \"research_data\")"
+              ],
+              "call": "startswith",
+              "expression": "str(RESEARCH).startswith(str(ROOT / \"research_data\"))",
+              "kwargs": {},
+              "line": 195
+            },
+            {
+              "args": [
+                "ROOT / \"research_data\""
+              ],
+              "call": "str",
+              "expression": "str(ROOT / \"research_data\")",
+              "kwargs": {},
+              "line": 195
+            },
+            {
+              "args": [
+                "RESEARCH"
+              ],
+              "call": "str",
+              "expression": "str(RESEARCH)",
+              "kwargs": {},
+              "line": 195
+            },
+            {
+              "args": [
+                "gates.values()"
+              ],
+              "call": "all",
+              "expression": "all(gates.values())",
+              "kwargs": {},
+              "line": 202
+            },
+            {
+              "args": [],
+              "call": "gates.values",
+              "expression": "gates.values()",
+              "kwargs": {},
+              "line": 202
+            },
+            {
+              "args": [
+                "OUT",
+                "out"
+              ],
+              "call": "write_json_atomic",
+              "expression": "write_json_atomic(OUT, out)",
+              "kwargs": {},
+              "line": 226
+            },
+            {
+              "args": [
+                "json.dumps(out, indent=2)"
+              ],
+              "call": "print",
+              "expression": "print(json.dumps(out, indent=2))",
+              "kwargs": {},
+              "line": 227
+            },
+            {
+              "args": [
+                "out"
+              ],
+              "call": "json.dumps",
+              "expression": "json.dumps(out, indent=2)",
+              "kwargs": {
+                "indent": "2"
+              },
+              "line": 227
+            }
+          ],
+          "enclosing_function": "main",
+          "enclosing_function_line": 147,
+          "enclosing_function_source": "def main():\n    ap = argparse.ArgumentParser()\n    ap.add_argument(\"mode\", choices=(\"preflight\", \"certify\"))\n    args = ap.parse_args()\n\n    cfg = json.loads(CFG.read_text())\n    analyses = {\n        name: inspect_runner(ROOT / rel)\n        for name, rel in cfg[\"source_runners\"].items()\n    }\n\n    all_present = all(x.get(\"present\") for x in analyses.values())\n    callable_counts = {\n        k: len(v.get(\"top_level_functions\") or [])\n        for k, v in analyses.items()\n    }\n\n    contract = build_adapter_contract(cfg, analyses)\n\n    if args.mode == \"preflight\":\n        print(json.dumps({\n            \"version\": cfg[\"version\"],\n            \"status\": \"READY\",\n            \"source_runners_present\": all_present,\n            \"callable_counts\": callable_counts,\n            \"source_analysis\": analyses,\n            \"adapter_contract_preview\": contract,\n            \"automatic_replay_execution\": False,\n            \"database_writes\": False,\n            \"production_authority_effect\": False\n        }, indent=2))\n        return\n\n    # Certification materializes only filesystem research metadata; it never invokes source runners.\n    RESEARCH.mkdir(parents=True, exist_ok=True)\n    write_json_atomic(ADAPTER, contract)\n\n    harness_db_semantics = harness_has_production_db_semantics()\n    gates = {\n        \"source_runners_present\": all_present,\n        \"source_runners_compile\": all_present,\n        \"source_sha256_frozen\": all(\n            bool(v.get(\"sha256\")) for v in analyses.values() if v.get(\"present\")\n        ),\n        \"top_level_callables_discovered\": all(\n            callable_counts[k] > 0 for k in (\"pit\", \"daily\", \"monthly\", \"weekly\")\n        ),\n        \"date_parameterization_adapter_contract_present\": ADAPTER.exists(),\n        \"research_output_namespace_isolated\": str(RESEARCH).startswith(str(ROOT / \"research_data\")),\n        \"no_production_db_write_code_in_harness\":\n            not harness_db_semantics[\"has_production_db_semantics\"],\n        \"no_automatic_replay_execution\": True,\n        \"point_in_time_execution_not_yet_authorized\": True\n    }\n\n    certified = all(gates.values())\n    out = {\n        \"version\": cfg[\"version\"],\n        \"status\": \"READY\",\n        \"mode\": \"ISOLATED_HARNESS_FOUNDATION_CERTIFICATION\",\n        \"source_analysis\": analyses,\n        \"adapter_contract\": contract,\n        \"harness_db_semantic_audit\": harness_db_semantics,\n        \"gates\": gates,\n        \"harness_foundation_certified\": certified,\n        \"historical_replay_execution_authorized\": False,\n        \"remaining_blockers\": [\n            \"ORIGINAL_601_SYMBOL_LONG_HISTORY_SOURCE_DATA_MISSING\",\n            \"ADAPTER_IMPLEMENTATION_NOT_YET_BUILT\",\n            \"POINT_IN_TIME_BEHAVIOR_NOT_YET_EXECUTION_CERTIFIED\"\n        ],\n        \"next_step\": (\n            \"BUILD_M77_19_4_ISOLATED_ADAPTER_IMPLEMENTATION_AND_PIT_LEAKAGE_TESTS\"\n            if certified\n            else \"REVIEW_M77_19_3_FOUNDATION_CERTIFICATION_FAILURES\"\n        ),\n        \"database_writes\": False,\n        \"production_authority_effect\": False\n    }\n    write_json_atomic(OUT, out)\n    print(json.dumps(out, indent=2))",
+          "expression": "build_adapter_contract(cfg, analyses)",
+          "kwargs": {},
+          "line": 164
+        }
+      ]
+    },
+    {
+      "classes": [],
+      "functions": [
+        {
+          "args": [
+            "p"
+          ],
+          "kwarg": null,
+          "line": 7,
+          "name": "sha",
+          "vararg": null
+        },
+        {
+          "args": [],
+          "kwarg": null,
+          "line": 8,
+          "name": "synth",
+          "vararg": null
+        },
+        {
+          "args": [],
+          "kwarg": null,
+          "line": 16,
+          "name": "main",
+          "vararg": null
+        }
+      ],
+      "imports": [
+        {
+          "line": 2,
+          "module": null,
+          "names": [
+            {
+              "asname": null,
+              "name": "ast"
+            },
+            {
+              "asname": null,
+              "name": "hashlib"
+            },
+            {
+              "asname": null,
+              "name": "json"
+            }
+          ],
+          "type": "import"
+        },
+        {
+          "line": 3,
+          "module": "datetime",
+          "names": [
+            {
+              "asname": null,
+              "name": "date"
+            },
+            {
+              "asname": null,
+              "name": "timedelta"
+            }
+          ],
+          "type": "from"
+        },
+        {
+          "line": 4,
+          "module": "pathlib",
+          "names": [
+            {
+              "asname": null,
+              "name": "Path"
+            }
+          ],
+          "type": "from"
+        },
+        {
+          "line": 5,
+          "module": "trading_ai.historical_underlying_replay.m77_19_4_isolated_adapters",
+          "names": [
+            {
+              "asname": null,
+              "name": "snapshot"
+            },
+            {
+              "asname": null,
+              "name": "daily_dates"
+            },
+            {
+              "asname": null,
+              "name": "monthly_dates"
+            }
+          ],
+          "type": "from"
+        }
+      ],
+      "path": "scripts/run_m77_19_4_1_isolated_adapter_leakage_certification.py",
+      "roles": [
+        "DAILY_MONTHLY"
+      ],
+      "semantic_markers": [
+        {
+          "line": 5,
+          "text": "from trading_ai.historical_underlying_replay.m77_19_4_isolated_adapters import snapshot,daily_dates,monthly_dates"
+        },
+        {
+          "line": 26,
+          "text": "gates={\"source_sha256_parity\":all(x[\"pass\"] for x in parity.values()),\"synthetic_deterministic_repeat\":base==repeat,\"synthetic_future_mutation_invariant\":base==changed,\"source_regime_sql_bounded_date_le_end\":\"WHERE date <= :end\" in reg,\"source_regime_uses_max_replay_date\":\"_load_price_history(max(replay_dates))\" in reg,\"source_service_history_ends_at_as_of\":\"history=rows[max(0,pos-749):pos+1]\" in svc,\"source_service_future_begins_after_as_of\":\"future=rows[pos+1:pos+61]\" in svc,\"adapter_has_no_db_imports\":not bad}"
+        },
+        {
+          "line": 27,
+          "text": "dd=daily_dates(ds,ds[252],ds[300]);md=monthly_dates(ds,ds[252],ds[300]);gates[\"daily_adapter_range_bounded\"]=all(ds[252]<=x<=ds[300] for x in dd);gates[\"monthly_adapter_range_bounded\"]=all(ds[252]<=x<=ds[300] for x in md)"
+        },
+        {
+          "line": 29,
+          "text": "out={\"version\":c[\"version\"],\"status\":\"READY\",\"source_parity\":parity,\"gates\":gates,\"synthetic_baseline\":base,\"adapter_certified_for_isolated_historical_replay\":certified,\"production_historical_replay_authorized\":False,\"remaining_blocker\":\"ORIGINAL_601_SYMBOL_LONG_HISTORY_SOURCE_DATA_MISSING\",\"next_step\":\"BUILD_M77_19_5_ORIGINAL_601_SYMBOL_LONG_HISTORY_SOURCE_AUTHORITY\" if certified else \"REVIEW_M77_19_4_1_CERTIFICATION_FAILURES\",\"database_writes\":False,\"production_authority_effect\":False}"
+        }
+      ],
+      "sha256": "245ef18c2c2db2e37b5a104de184c4ce1e5d6aef288fe68bb4f0bba2037dc59d",
+      "target_call_sites": []
+    },
+    {
+      "classes": [],
+      "functions": [
+        {
+          "args": [
+            "path",
+            "payload"
+          ],
+          "kwarg": null,
+          "line": 23,
+          "name": "write_json_atomic",
+          "vararg": null
+        },
+        {
+          "args": [
+            "rel"
+          ],
+          "kwarg": null,
+          "line": 30,
+          "name": "load_json",
+          "vararg": null
+        },
+        {
+          "args": [
+            "root",
+            "symbol"
+          ],
+          "kwarg": null,
+          "line": 36,
+          "name": "normalized_path",
+          "vararg": null
+        },
+        {
+          "args": [
+            "root",
+            "symbol"
+          ],
+          "kwarg": null,
+          "line": 39,
+          "name": "load_symbol_rows",
+          "vararg": null
+        },
+        {
+          "args": [
+            "rows"
+          ],
+          "kwarg": null,
+          "line": 60,
+          "name": "continuity",
+          "vararg": null
+        },
+        {
+          "args": [
+            "rows"
+          ],
+          "kwarg": null,
+          "line": 71,
+          "name": "engine_rows",
+          "vararg": null
+        },
+        {
+          "args": [
+            "rows"
+          ],
+          "kwarg": null,
+          "line": 74,
+          "name": "timeframes",
+          "vararg": null
+        },
+        {
+          "args": [
+            "dates",
+            "cadence"
+          ],
+          "kwarg": null,
+          "line": 82,
+          "name": "cadence_select",
+          "vararg": null
+        },
+        {
+          "args": [
+            "service",
+            "rows",
+            "as_of",
+            "session_set",
+            "warmup",
+            "history_rows"
+          ],
+          "kwarg": null,
+          "line": 93,
+          "name": "isolated_profile",
+          "vararg": null
+        },
+        {
+          "args": [
+            "service",
+            "symbol",
+            "rows",
+            "as_of",
+            "session_set",
+            "warmup",
+            "history_rows"
+          ],
+          "kwarg": null,
+          "line": 115,
+          "name": "call_profile",
+          "vararg": null
+        },
+        {
+          "args": [
+            "session",
+            "cadence",
+            "manifests"
+          ],
+          "kwarg": null,
+          "line": 149,
+          "name": "stored_rows",
+          "vararg": null
+        },
+        {
+          "args": [
+            "rows",
+            "n_symbols",
+            "n_dates"
+          ],
+          "kwarg": null,
+          "line": 174,
+          "name": "deterministic_sample",
+          "vararg": null
+        },
+        {
+          "args": [
+            "profile",
+            "stored"
+          ],
+          "kwarg": null,
+          "line": 200,
+          "name": "compare_profile",
+          "vararg": null
+        },
+        {
+          "args": [],
+          "kwarg": null,
+          "line": 225,
+          "name": "main",
+          "vararg": null
+        }
+      ],
+      "imports": [
+        {
+          "line": 2,
+          "module": "__future__",
+          "names": [
+            {
+              "asname": null,
+              "name": "annotations"
+            }
+          ],
+          "type": "from"
+        },
+        {
+          "line": 4,
+          "module": null,
+          "names": [
+            {
+              "asname": null,
+              "name": "argparse"
+            }
+          ],
+          "type": "import"
+        },
+        {
+          "line": 5,
+          "module": null,
+          "names": [
+            {
+              "asname": null,
+              "name": "csv"
+            }
+          ],
+          "type": "import"
+        },
+        {
+          "line": 6,
+          "module": null,
+          "names": [
+            {
+              "asname": null,
+              "name": "json"
+            }
+          ],
+          "type": "import"
+        },
+        {
+          "line": 7,
+          "module": "collections",
+          "names": [
+            {
+              "asname": null,
+              "name": "defaultdict"
+            }
+          ],
+          "type": "from"
+        },
+        {
+          "line": 8,
+          "module": "dataclasses",
+          "names": [
+            {
+              "asname": null,
+              "name": "asdict"
+            }
+          ],
+          "type": "from"
+        },
+        {
+          "line": 9,
+          "module": "datetime",
+          "names": [
+            {
+              "asname": null,
+              "name": "date"
+            }
+          ],
+          "type": "from"
+        },
+        {
+          "line": 10,
+          "module": "pathlib",
+          "names": [
+            {
+              "asname": null,
+              "name": "Path"
+            }
+          ],
+          "type": "from"
+        },
+        {
+          "line": 11,
+          "module": "statistics",
+          "names": [
+            {
+              "asname": null,
+              "name": "mean"
+            }
+          ],
+          "type": "from"
+        },
+        {
+          "line": 13,
+          "module": "sqlalchemy",
+          "names": [
+            {
+              "asname": null,
+              "name": "text"
+            }
+          ],
+          "type": "from"
+        },
+        {
+          "line": 15,
+          "module": "trading_ai.database.session",
+          "names": [
+            {
+              "asname": null,
+              "name": "SessionLocal"
+            }
+          ],
+          "type": "from"
+        },
+        {
+          "line": 16,
+          "module": "trading_ai.stock_intelligence.service",
+          "names": [
+            {
+              "asname": null,
+              "name": "StockIntelligenceService"
+            }
+          ],
+          "type": "from"
+        },
+        {
+          "line": 17,
+          "module": "trading_ai.stock_intelligence.publication_service",
+          "names": [
+            {
+              "asname": null,
+              "name": "StockIntelligencePublicationService"
+            }
+          ],
+          "type": "from"
+        }
+      ],
+      "path": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+      "roles": [
+        "WEEKLY"
+      ],
+      "semantic_markers": [
+        {
+          "line": 16,
+          "text": "from trading_ai.stock_intelligence.service import StockIntelligenceService"
+        },
+        {
+          "line": 17,
+          "text": "from trading_ai.stock_intelligence.publication_service import StockIntelligencePublicationService"
+        },
+        {
+          "line": 37,
+          "text": "return root / f\"{symbol.replace('/','_')}_daily.csv\""
+        },
+        {
+          "line": 78,
+          "text": "\"1w\": StockIntelligencePublicationService._aggregate(d, \"week\"),"
+        },
+        {
+          "line": 79,
+          "text": "\"1mo\": StockIntelligencePublicationService._aggregate(d, \"month\"),"
+        },
+        {
+          "line": 83,
+          "text": "if cadence == \"DAILY\":"
+        },
+        {
+          "line": 85,
+          "text": "if cadence == \"WEEKLY\":"
+        },
+        {
+          "line": 88,
+          "text": "if cadence == \"MONTHLY\":"
+        },
+        {
+          "line": 93,
+          "text": "def isolated_profile(service, rows, as_of, session_set, warmup=300, history_rows=750):"
+        },
+        {
+          "line": 95,
+          "text": "valid = [r for r in segment if r[\"date\"] in session_set and r[\"date\"].weekday() < 5]"
+        },
+        {
+          "line": 96,
+          "text": "if len(valid) < warmup:"
+        },
+        {
+          "line": 98,
+          "text": "eligible_from = valid[warmup-1][\"date\"]"
+        },
+        {
+          "line": 105,
+          "text": "history = valid[max(0, pos-(history_rows-1)):pos+1]"
+        },
+        {
+          "line": 110,
+          "text": "external_context={},"
+        },
+        {
+          "line": 115,
+          "text": "def call_profile(service, symbol, rows, as_of, session_set, warmup, history_rows):"
+        },
+        {
+          "line": 117,
+          "text": "Preserve original service call semantics. Some installed StockIntelligenceService"
+        },
+        {
+          "line": 122,
+          "text": "valid = [r for r in segment if r[\"date\"] in session_set and r[\"date\"].weekday() < 5]"
+        },
+        {
+          "line": 123,
+          "text": "if len(valid) < warmup:"
+        },
+        {
+          "line": 125,
+          "text": "eligible_from = valid[warmup-1][\"date\"]"
+        },
+        {
+          "line": 132,
+          "text": "history = valid[max(0, pos-(history_rows-1)):pos+1]"
+        },
+        {
+          "line": 139,
+          "text": "external_context={},"
+        },
+        {
+          "line": 145,
+          "text": "external_context={},"
+        },
+        {
+          "line": 150,
+          "text": "if cadence == \"DAILY\":"
+        },
+        {
+          "line": 151,
+          "text": "rid = manifests[\"daily\"][\"replay_run_id\"]"
+        },
+        {
+          "line": 158,
+          "text": "if cadence == \"MONTHLY\":"
+        },
+        {
+          "line": 159,
+          "text": "rid = manifests[\"monthly\"][\"replay_run_id\"]"
+        },
+        {
+          "line": 166,
+          "text": "ids = list(manifests[\"weekly\"].get(\"replay_run_ids\") or [])"
+        },
+        {
+          "line": 244,
+          "text": "session_set = set(spy_dates)"
+        },
+        {
+          "line": 248,
+          "text": "for cadence in (\"DAILY\", \"MONTHLY\", \"WEEKLY\"):"
+        },
+        {
+          "line": 266,
+          "text": "svc = StockIntelligenceService()"
+        },
+        {
+          "line": 270,
+          "text": "for cadence in (\"DAILY\", \"MONTHLY\", \"WEEKLY\"):"
+        },
+        {
+          "line": 290,
+          "text": "svc, sym, rows, as_of, session_set,"
+        },
+        {
+          "line": 291,
+          "text": "policy[\"authority_warmup_rows\"],"
+        },
+        {
+          "line": 295,
+          "text": "svc, sym, rows, as_of, session_set,"
+        },
+        {
+          "line": 296,
+          "text": "policy[\"authority_warmup_rows\"],"
+        }
+      ],
+      "sha256": "bcc5b49b87ddceba6ac417000d5af3d4a57efd14145595f4d712eb36ae81204b",
+      "target_call_sites": []
+    },
+    {
+      "classes": [],
+      "functions": [
+        {
+          "args": [
+            "start",
+            "end"
+          ],
+          "kwarg": null,
+          "line": 18,
+          "name": "_segments",
+          "vararg": null
+        },
+        {
+          "args": [
+            "path"
+          ],
+          "kwarg": null,
+          "line": 27,
+          "name": "_load_manifest",
+          "vararg": null
+        },
+        {
+          "args": [
+            "path",
+            "manifest"
+          ],
+          "kwarg": null,
+          "line": 41,
+          "name": "_save_manifest",
+          "vararg": null
+        },
+        {
+          "args": [],
+          "kwarg": null,
+          "line": 48,
+          "name": "main",
+          "vararg": null
+        }
+      ],
+      "imports": [
+        {
+          "line": 1,
+          "module": "__future__",
+          "names": [
+            {
+              "asname": null,
+              "name": "annotations"
+            }
+          ],
+          "type": "from"
+        },
+        {
+          "line": 3,
+          "module": null,
+          "names": [
+            {
+              "asname": null,
+              "name": "argparse"
+            }
+          ],
+          "type": "import"
+        },
+        {
+          "line": 4,
+          "module": "datetime",
+          "names": [
+            {
+              "asname": null,
+              "name": "date"
+            }
+          ],
+          "type": "from"
+        },
+        {
+          "line": 5,
+          "module": null,
+          "names": [
+            {
+              "asname": null,
+              "name": "json"
+            }
+          ],
+          "type": "import"
+        },
+        {
+          "line": 6,
+          "module": "pathlib",
+          "names": [
+            {
+              "asname": null,
+              "name": "Path"
+            }
+          ],
+          "type": "from"
+        },
+        {
+          "line": 8,
+          "module": "trading_ai.database",
+          "names": [
+            {
+              "asname": null,
+              "name": "SessionLocal"
+            }
+          ],
+          "type": "from"
+        },
+        {
+          "line": 9,
+          "module": "trading_ai.historical_underlying_replay.service",
+          "names": [
+            {
+              "asname": null,
+              "name": "HistoricalUnderlyingReplayService"
+            }
+          ],
+          "type": "from"
+        }
+      ],
+      "path": "scripts/run_m77_2_multiyear_frozen_champion.py",
+      "roles": [
+        "WEEKLY"
+      ],
+      "semantic_markers": [
+        {
+          "line": 55,
+          "text": "\"--cadence\", choices=[\"WEEKLY\", \"MONTHLY\"], default=\"WEEKLY\""
+        },
+        {
+          "line": 97,
+          "text": "service = HistoricalUnderlyingReplayService(session)"
+        }
+      ],
+      "sha256": "9fbc50d88be6642213831a83d6902305d7718200a6182d7afef7ccfc913744f7",
+      "target_call_sites": []
+    }
+  ],
+  "version": "M77.19.6.5.1-NATIVE-REPLAY-INVOCATION-CONTRACT-RECOVERY-1.0"
+}

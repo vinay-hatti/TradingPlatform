@@ -1,0 +1,33 @@
+{
+  "milestone": "M77.19.7",
+  "name": "Symbol-Specific Polygon Historical Availability & Lifecycle Authority",
+  "history_authority_source": "POLYGON_DIRECT_REST_API",
+  "polygon_base_url_default": "https://api.polygon.io",
+  "provider_history_floor": "2003-09-10",
+  "canonical_universe": "data/universe/us_listed_equities_etfs.csv",
+  "oldest_history_query": {
+    "endpoint": "/v2/aggs/ticker/{ticker}/range/1/day/{from}/{to}",
+    "adjusted": true,
+    "sort": "asc",
+    "limit": 400
+  },
+  "latest_history_query": {
+    "endpoint": "/v2/aggs/ticker/{ticker}/range/1/day/{from}/{to}",
+    "adjusted": true,
+    "sort": "desc",
+    "limit": 1
+  },
+  "metadata_queries": [
+    "/v3/reference/tickers/{ticker}",
+    "/vX/reference/tickers/{ticker}/events",
+    "/stocks/v1/splits"
+  ],
+  "warmup_sessions": 300,
+  "database_access": "NONE",
+  "price_history_table_used": false,
+  "ticker_lineage_join_authorized": false,
+  "predecessor_successor_series_automatically_concatenated": false,
+  "symbol_specific_reconstruction_authorized": false,
+  "full_23_year_reconstruction_authorized": false,
+  "production_authority_effect": false
+}

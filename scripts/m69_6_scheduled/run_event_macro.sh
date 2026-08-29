@@ -8,7 +8,7 @@ export LOG_FILE="/Users/vinay.hatti/TradingPlatform/logs/m69_6_event_macro.log"
 export ENV_FILE_PRIMARY="/Users/vinay.hatti/TradingPlatform/.env"
 export ENV_FILE_FALLBACK="/Users/vinay.hatti/.config/tradingplatform/m69_6.env"
 source "/Users/vinay.hatti/TradingPlatform/scripts/m69_6_scheduled/common.sh"
-run_cmd "${UV_BIN}" run python scripts/sync_m69_event_calendar.py --horizon-months 6
+run_cmd "${UV_BIN}" run python scripts/sync_m69_event_calendar.py --horizon-months 6 --accept-governed-cache
 DRY_RUN_JSON="$("${UV_BIN}" run python scripts/reconcile_m69_macro_event_integrity.py --start-year 2016)"
 printf '%s\n' "${DRY_RUN_JSON}" | tee -a "${LOG_FILE}"
 if DRY_RUN_JSON="${DRY_RUN_JSON}" "${UV_BIN}" run python - <<'PY'
@@ -27,4 +27,4 @@ fi
 run_cmd "${UV_BIN}" run python scripts/realize_m69_event_outcomes.py
 run_cmd "${UV_BIN}" run python scripts/compute_m69_event_expected_moves.py
 run_cmd "${UV_BIN}" run python scripts/verify_m69_event_intelligence_hardening.py
-echo "[$(date)] END job=${JOB_NAME} status=READY" | tee -a "${LOG_FILE}"
+echo "[$(date)] END job=${JOB_NAME} status=COMPLETED verification=PASSED" | tee -a "${LOG_FILE}"

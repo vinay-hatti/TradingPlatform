@@ -1,0 +1,85 @@
+{
+  "MF1_retuning_authorized": false,
+  "MF2_retuning_authorized": false,
+  "final_holdout_feature_materialization_authorized": true,
+  "final_holdout_open_authorized": true,
+  "final_holdout_opened": false,
+  "final_holdout_protocol_preregistered": true,
+  "final_holdout_scoring_authorized_by_this_step": false,
+  "final_holdout_target_materialization_authorized_after_exact_feature_certification": true,
+  "model_family_champion_selected": false,
+  "model_family_champion_selection_authorized": false,
+  "next_step": "BUILD_M77_19_8_7_10_7_6_FINAL_HOLDOUT_FEATURE_TARGET_MATERIALIZATION_AUTHORITY",
+  "non_outcome_dependent_scope_certified": true,
+  "post_validation_numeric_acceptance_threshold_defined": false,
+  "production_authority_effect": false,
+  "protocol": {
+    "automatic_final_holdout_pass_fail_rule_defined": false,
+    "decision_threshold": 0.5,
+    "feature_selection_search_authorized": false,
+    "final_holdout_fit_authorized": false,
+    "final_holdout_role": "PURE_FROZEN_EVIDENCE_ESTIMATION",
+    "final_holdout_scope": {
+      "MF1_REGULARIZED_LOGISTIC_DIRECTION": [
+        5,
+        10,
+        20
+      ],
+      "MF2_MONOTONIC_GAM_DIRECTION": [
+        5,
+        10,
+        20
+      ]
+    },
+    "final_holdout_single_use_evaluation": true,
+    "fit_partition": "DEVELOPMENT_ONLY",
+    "frozen_MF1_selected_configs": {
+      "10": {
+        "C": 1.0
+      },
+      "20": {
+        "C": 0.1
+      },
+      "5": {
+        "C": 10.0
+      }
+    },
+    "frozen_MF2_selected_configs": {
+      "10": {
+        "l2_penalty": 0.1,
+        "spline_knots": 4
+      },
+      "20": {
+        "l2_penalty": 0.1,
+        "spline_knots": 4
+      },
+      "5": {
+        "l2_penalty": 0.1,
+        "spline_knots": 4
+      }
+    },
+    "hyperparameter_search_authorized": false,
+    "multiclass_policy": "DROP_ZERO_LABEL_ROWS_THEN_BINARY_UP_VS_DOWN",
+    "preprocessor_fit_partition": "DEVELOPMENT_ONLY",
+    "primary_metric": "BALANCED_ACCURACY",
+    "scope_derivation": "IDENTICAL_TO_PREVALIDATION_AUTHORIZED_VALIDATION_SCOPE",
+    "secondary_metrics": [
+      "LOG_LOSS",
+      "Brier_SCORE",
+      "ROC_AUC"
+    ],
+    "target": "T_DIRECTION",
+    "threshold_search_authorized": false,
+    "validation_fit_authorized": false,
+    "validation_performance_used_to_choose_holdout_scope": false,
+    "validation_performance_used_to_eliminate_family": false
+  },
+  "status": "READY",
+  "upstream_sha256": {
+    "10": "fe7efc8e222acd3aa306995da314b395ff3cf6ae7ab0acbebc51f1ba4bf143c0",
+    "10_7": "b017500c472f0523d224a3fdaf55d8954ec097faea82c5e757f1c0ed52bd98f7",
+    "10_7_4": "7075bcde51a8a5c9878552c8eb1c2dc88b0afb884d75c87bccd68f9aae5ada76",
+    "8_6": "0440ac1ec4f2da34606ba6ba6500b4191086730eff282eaaccf4b6bfd8de0a9c"
+  },
+  "version": "M77.19.8.7.10.7.5-1.0"
+}

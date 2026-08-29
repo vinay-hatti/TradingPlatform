@@ -1,0 +1,28 @@
+{
+  "version": "M77.19.5-ORIGINAL-601-SYMBOL-LONG-HISTORY-SOURCE-AUTHORITY-1.0",
+  "status": "READY",
+  "summary": {
+    "cohort_count": 601,
+    "successful_symbols": 601,
+    "success_pct": 100.0,
+    "no_data_symbols": 0,
+    "error_symbols": 0,
+    "earliest_start": "2003-09-10",
+    "symbols_starting_by_2004_01_31": 409,
+    "median_rows": 5774,
+    "aggregate_symbol_years": 12155.48
+  },
+  "gates": {
+    "cohort_count": true,
+    "success_pct": true,
+    "early_symbols": true,
+    "aggregate_symbol_years": true,
+    "median_rows": true
+  },
+  "certified_for_m77_19_6_reconstruction": true,
+  "authority_semantics": "FROZEN_COHORT_LONG_HISTORY_NOT_PIT_CONSTITUENT_AUTHORITY",
+  "survivorship_bias_explicit": true,
+  "next_step": "BUILD_M77_19_6_ISOLATED_LONG_HISTORY_RECONSTRUCTION",
+  "database_writes": false,
+  "production_authority_effect": false
+}

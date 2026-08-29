@@ -1,0 +1,32 @@
+record_type,name,lineno,call_name,source_sha256,source
+RUNTIME_METHOD,fit,43,,3f4a6bcf18532e300747e36fb62cde661e3da79876da3667fe29bcc0cc8adbcf,"def fit(self, X, y, monotonic_signs):
+        X=np.asarray(X,dtype=float); y=np.asarray(y,dtype=float)
+        if X.ndim!=2 or y.ndim!=1 or len(X)!=len(y):raise ValueError(""shape mismatch"")
+        if len(monotonic_signs)!=X.shape[1]:raise ValueError(""sign map mismatch"")
+        self.knots_=[]; blocks=[]; bounds=[(None,None)] # intercept
+        for j in range(X.shape[1]):
+            ks=choose_knots(X[:,j],self.knot_count)
+            self.knots_.append(ks)
+            b=spline_basis_1d(X[:,j],ks)
+            blocks.append(b)
+            bounds.extend(monotonic_bounds(int(monotonic_signs[j]),b.shape[1]))
+        B=np.column_stack(blocks) if blocks else np.empty((len(X),0))
+        Z=np.column_stack([np.ones(len(X)),B])
+        lam=float(self.l2_penalty)
+        def fun(beta):
+            eta=Z@beta
+            # stable logistic negative log likelihood
+            loss=np.logaddexp(0.0,eta)-y*eta
+            reg=0.5*lam*np.dot(beta[1:],beta[1:])
+            return float(loss.mean()+reg"
+RUNTIME_METHOD,_design,75,,5c9d83d86b1abdbe5b4508fa76486afac1d493f260fb8be49149db14fa718a60,"def _design(self,X):
+        X=np.asarray(X,dtype=float)
+        blocks=[spline_basis_1d(X[:,j],self.knots_[j]) for j in range(X.shape[1])]
+        B=np.column_stack(blocks) if blocks else np.empty((len(X),0))
+        return np.column_stack([np.ones(len(X)),B])"
+RUNTIME_METHOD,predict_proba,81,,f97b3d18ea37107a56fd7e4d552b8d17d750192584a4fb1eb2a2697e34a2a0e7,"def predict_proba(self,X):
+        p=sigmoid(self._design(X)@self.coef_)
+        return np.column_stack([1-p,p])"
+DEVELOPMENT_CALL,,240,fit,73895af0fac512b858e14d5c0ef12168a710cb958c9068dcb958e2f735f45757,"CertifiedMonotonicGAM(knot_count=int(knots),l2_penalty=float(l2),max_iter=300).fit(Xtr,ytr,prep.output_signs)"
+DEVELOPMENT_CALL,,241,m.predict_proba,a41fa5a1e047158c81d7e37e468207714256c29546bde658b24ef88099bb143b,m.predict_proba(Xte)
+DEVELOPMENT_CALL,,240,CertifiedMonotonicGAM,bec63d2771b5721404a167e8ba8d923f7c06e84fe0330f8883bd032575541fc2,"CertifiedMonotonicGAM(knot_count=int(knots),l2_penalty=float(l2),max_iter=300)"

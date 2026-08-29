@@ -1,0 +1,15 @@
+{
+  "version": "M77.19.7.3-POINT-IN-TIME-SYMBOL-SPECIFIC-STOCK-INTELLIGENCE-REPLAY-1.0",
+  "default_cadences": ["WEEKLY"],
+  "supported_cadences": ["DAILY", "WEEKLY", "MONTHLY"],
+  "warmup_sessions": 300,
+  "history_rows": 750,
+  "source": "M77.19.7.2_POLYGON_DIRECT_MATERIALIZATION",
+  "session_calendar": "M77.19.7.2_FROZEN_POLYGON_SPY_DAILY_BARS",
+  "database_access": "NONE",
+  "price_history_table_used": false,
+  "polygon_api_queried": false,
+  "point_in_time_price_prefix_only": true,
+  "point_in_time_spy_calendar_prefix_only": true,
+  "production_authority_effect": false
+}

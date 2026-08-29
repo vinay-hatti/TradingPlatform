@@ -1,0 +1,67 @@
+{
+  "binding_authority_sha256": "8839994e0b23615ff0269edf0dcab0b81c34a58f2bf4fc69562368026c95fac2",
+  "blocking_reason": "CANDIDATE_MULTI_FEATURE_CALLABLE_EXISTS_BUT_EXACT_DEVELOPMENT_ROW_PARITY_NOT_YET_PROVEN",
+  "callable_signatures": {
+    "main": "() -> 'int'",
+    "trailing_52w_location": "(hist: 'list[tuple[str, float]]', as_of: 'str')"
+  },
+  "candidate_multi_feature_callables": [
+    {
+      "callable_name": "main",
+      "required_feature_ids_mentioned": [
+        "F020",
+        "F021",
+        "F030",
+        "F031",
+        "F070",
+        "F080",
+        "F081"
+      ],
+      "signature": "() -> 'int'",
+      "source_sha256": "d769dc604eb32fd0ae0ed7cf6144bd652883b108c9cfd9f780e4e552ec9dab52"
+    }
+  ],
+  "continuity_authority_sha256": "c7c80f5a89bd8c710c99ab171ce95ed8a803d40c5dbed6d28ff6239efe65b4a3",
+  "development_backfill_script_sha256": "b201dfb3f760c3511c8abdd30a2551d0354e70069aafacf902b0be2fefa57658",
+  "development_feature_schema_column_count": 27,
+  "development_parity_certified": false,
+  "exact_callable_invocation_contract_certified": false,
+  "final_holdout_opened": false,
+  "formula_reimplementation_performed": false,
+  "next_step": "BUILD_M77_19_8_7_10_4_1_EXACT_CALLABLE_INVOCATION_CONTRACT_AND_DEVELOPMENT_PARITY_AUTHORITY",
+  "production_authority_effect": false,
+  "selected_callable_names_by_feature": {
+    "F020": [
+      "main"
+    ],
+    "F021": [
+      "main"
+    ],
+    "F030": [
+      "main"
+    ],
+    "F031": [
+      "main"
+    ],
+    "F070": [
+      "main"
+    ],
+    "F080": [
+      "main",
+      "trailing_52w_location"
+    ],
+    "F081": [
+      "main",
+      "trailing_52w_location"
+    ]
+  },
+  "semantic_equivalent_rewrite_performed": false,
+  "status": "BLOCKED_CANDIDATE_CALLABLE_INVOCATION_PARITY_NOT_YET_CERTIFIED",
+  "validation_feature_matrix_materialized": false,
+  "validation_outcomes_opened": false,
+  "validation_row_count_seen": 141567,
+  "validation_scoring_performed": false,
+  "validation_symbol_count_seen": 570,
+  "validation_targets_opened": false,
+  "version": "M77.19.8.7.10.4-EXACT-CALLABLE-REUSE-VALIDATION-FEATURE-MATERIALIZATION-1.0+M77.19.8.7.10.4.0.1"
+}

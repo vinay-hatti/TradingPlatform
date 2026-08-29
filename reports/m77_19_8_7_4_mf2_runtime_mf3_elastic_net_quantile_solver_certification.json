@@ -1,0 +1,172 @@
+{
+  "MF1_retuning_authorized": false,
+  "MF2": {
+    "development_scoring_authorized": true,
+    "monotonic_enforcement": "COEFFICIENT_BOUNDS_ON_LINEAR_HINGE_SPLINE_BASIS",
+    "objective": "LOGISTIC_NLL_PLUS_L2",
+    "runtime": "SCIPY_LBFGSB_LINEAR_SPLINE_GAM",
+    "runtime_certified": true,
+    "semantic_sign_authority_required": true,
+    "synthetic_certification": {
+      "finite_probabilities": true,
+      "negative_monotonic_non_increasing": true,
+      "positive_monotonic_non_decreasing": true
+    }
+  },
+  "MF3": {
+    "alpha_supported": true,
+    "development_scoring_authorized": false,
+    "development_scoring_block_reason": "REFERENCE_SOLVER_EXACT_BUT_NOT_CERTIFIED_SCALABLE_FOR_300K_ROW_WALK_FORWARD",
+    "l1_ratio_supported": true,
+    "next_requirement": "CERTIFY_SCALABLE_SOLVER_WITH_NUMERICAL_PARITY_TO_REFERENCE",
+    "objective": "MEAN_PINBALL_PLUS_ALPHA_TIMES_ELASTIC_NET",
+    "objective_contract_certified": true,
+    "quantile_supported": true,
+    "reference_runtime_certified": true,
+    "runtime": "SCIPY_POWELL_EXACT_PINBALL_ELASTIC_NET_REFERENCE_SOLVER",
+    "synthetic_certification": {
+      "all_finite": true,
+      "all_objective_matches_contract": true,
+      "case_count": 18,
+      "cases": [
+        {
+          "alpha": 0.001,
+          "finite": true,
+          "l1_ratio": 0.0,
+          "objective_matches_contract": true,
+          "quantile": 0.1
+        },
+        {
+          "alpha": 0.001,
+          "finite": true,
+          "l1_ratio": 0.5,
+          "objective_matches_contract": true,
+          "quantile": 0.1
+        },
+        {
+          "alpha": 0.001,
+          "finite": true,
+          "l1_ratio": 1.0,
+          "objective_matches_contract": true,
+          "quantile": 0.1
+        },
+        {
+          "alpha": 0.01,
+          "finite": true,
+          "l1_ratio": 0.0,
+          "objective_matches_contract": true,
+          "quantile": 0.1
+        },
+        {
+          "alpha": 0.01,
+          "finite": true,
+          "l1_ratio": 0.5,
+          "objective_matches_contract": true,
+          "quantile": 0.1
+        },
+        {
+          "alpha": 0.01,
+          "finite": true,
+          "l1_ratio": 1.0,
+          "objective_matches_contract": true,
+          "quantile": 0.1
+        },
+        {
+          "alpha": 0.001,
+          "finite": true,
+          "l1_ratio": 0.0,
+          "objective_matches_contract": true,
+          "quantile": 0.5
+        },
+        {
+          "alpha": 0.001,
+          "finite": true,
+          "l1_ratio": 0.5,
+          "objective_matches_contract": true,
+          "quantile": 0.5
+        },
+        {
+          "alpha": 0.001,
+          "finite": true,
+          "l1_ratio": 1.0,
+          "objective_matches_contract": true,
+          "quantile": 0.5
+        },
+        {
+          "alpha": 0.01,
+          "finite": true,
+          "l1_ratio": 0.0,
+          "objective_matches_contract": true,
+          "quantile": 0.5
+        },
+        {
+          "alpha": 0.01,
+          "finite": true,
+          "l1_ratio": 0.5,
+          "objective_matches_contract": true,
+          "quantile": 0.5
+        },
+        {
+          "alpha": 0.01,
+          "finite": true,
+          "l1_ratio": 1.0,
+          "objective_matches_contract": true,
+          "quantile": 0.5
+        },
+        {
+          "alpha": 0.001,
+          "finite": true,
+          "l1_ratio": 0.0,
+          "objective_matches_contract": true,
+          "quantile": 0.9
+        },
+        {
+          "alpha": 0.001,
+          "finite": true,
+          "l1_ratio": 0.5,
+          "objective_matches_contract": true,
+          "quantile": 0.9
+        },
+        {
+          "alpha": 0.001,
+          "finite": true,
+          "l1_ratio": 1.0,
+          "objective_matches_contract": true,
+          "quantile": 0.9
+        },
+        {
+          "alpha": 0.01,
+          "finite": true,
+          "l1_ratio": 0.0,
+          "objective_matches_contract": true,
+          "quantile": 0.9
+        },
+        {
+          "alpha": 0.01,
+          "finite": true,
+          "l1_ratio": 0.5,
+          "objective_matches_contract": true,
+          "quantile": 0.9
+        },
+        {
+          "alpha": 0.01,
+          "finite": true,
+          "l1_ratio": 1.0,
+          "objective_matches_contract": true,
+          "quantile": 0.9
+        }
+      ],
+      "median_fit_directionally_sane": true
+    }
+  },
+  "final_holdout_open_authorized": false,
+  "model_family_comparison_complete": false,
+  "next_step": "BUILD_M77_19_8_7_5_MF2_DEVELOPMENT_WALK_FORWARD_AND_MF3_SCALABLE_SOLVER_PARITY_AUTHORITY",
+  "preregistration_change_authorized": false,
+  "production_authority_effect": false,
+  "semantic_gate_sha256": "f5b5f4baae150e0d91d4824270c1839c708859461aa2cc7fb47d0dc92329004f",
+  "solver_module_sha256": "31c082fffedcd413beadca205bf77d425f8d8166ea2a25ca0124947a6c7e1de6",
+  "status": "READY",
+  "validation_open_authorized": false,
+  "version": "M77.19.8.7.4-MF2-RUNTIME-MF3-ELASTIC-NET-QUANTILE-SOLVER-CERTIFICATION-1.0"
+}

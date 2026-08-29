@@ -1,0 +1,11 @@
+{
+  "version": "CYCLICAL-SEASONALITY-FOLD-NATIVE-MATCHED-CONTROL-SHADOW-CERT-1.0",
+  "status": "RESEARCH_SHADOW_POLICY_CERTIFIED",
+  "authority_effect": false,
+  "automatic_shadow_activation": false,
+  "production_activation": false,
+  "application_contract": "Research annotation only. A current observation may be tagged with a listed cyclical/seasonality shadow cohort only after a separate live-forward capture implementation. This policy must not change production score, direction, strategy, thresholds, weights, capital allocation, execution, or portfolio-management authority.",
+  "tier_1": [],
+  "tier_2": [],
+  "next_required_gate": "LIVE_FORWARD_CYCLICAL_SEASONALITY_SHADOW_CAPTURE_WITH_ZERO_PRODUCTION_EFFECT"
+}

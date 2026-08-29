@@ -1,0 +1,22 @@
+{
+  "2018_2026_read": false,
+  "development_end": "2017-12-31",
+  "executable_outcome_authority": "research_data/m77_26_1/executable_management_geometry_recalibration/executable_geometry_observation_panel.csv.gz",
+  "join_keys": [
+    "symbol",
+    "as_of"
+  ],
+  "join_validation": "many_to_one",
+  "joined_features": [
+    "px_ret_20",
+    "px_ret_60",
+    "px_ret_126"
+  ],
+  "leadership_states_unchanged": true,
+  "point_in_time_feature_authority": "research_data/m77_21_0/edge_discovery_lab/checkpoints/panel.pkl.gz",
+  "production_authority_effect": false,
+  "prospective_protocols_modified": false,
+  "require_complete_feature_parity": true,
+  "thresholds_unchanged": true,
+  "version": "M77.31.1-PIT-FEATURE-AUTHORITY-JOIN-REPAIR-CONTRACT-1.0"
+}

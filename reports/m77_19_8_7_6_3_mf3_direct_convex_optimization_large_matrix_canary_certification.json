@@ -1,0 +1,44 @@
+{
+  "all_reference_parity_cases_passed": true,
+  "exact_mf3_objective_preserved": true,
+  "execution_authority_sha256": "c96067c448ca81d46c4ac545fab346568f6f7b2bf46b9c9ff0bbbfb675a5f7f8",
+  "final_holdout_open_authorized": false,
+  "full_development_walk_forward_authorized": false,
+  "max_relative_objective_gap": 2.1618758603142274e-05,
+  "next_step": "RUN_SINGLE_REAL_WF1_H5_Q050_CANARY_BEFORE_FULL_MF3_DEVELOPMENT_REAUTHORIZATION",
+  "parity_tolerance": 0.015,
+  "production_authority_effect": false,
+  "real_development_canary_authorized": true,
+  "real_development_canary_executed": false,
+  "reference_parity_case_count": 36,
+  "solver_architecture": "DIRECT_PROXIMAL_SUBGRADIENT_EXACT_OBJECTIVE",
+  "status": "READY",
+  "synthetic_scaling_benchmarks": [
+    {
+      "alpha": 0.001,
+      "elapsed_seconds": 0.037816166994161904,
+      "iterations": 600,
+      "l1_ratio": 0.5,
+      "n": 5000,
+      "objective": 0.1804201494930633,
+      "p": 24,
+      "pass": true,
+      "quantile": 0.5,
+      "stage": "SYNTHETIC_SCALING"
+    },
+    {
+      "alpha": 0.001,
+      "elapsed_seconds": 0.10090262489393353,
+      "iterations": 600,
+      "l1_ratio": 0.5,
+      "n": 20000,
+      "objective": 0.18035668942779834,
+      "p": 24,
+      "pass": true,
+      "quantile": 0.5,
+      "stage": "SYNTHETIC_SCALING"
+    }
+  ],
+  "validation_open_authorized": false,
+  "version": "M77.19.8.7.6.3-MF3-DIRECT-CONVEX-OPTIMIZATION-LARGE-MATRIX-CANARY-CERTIFICATION-1.0"
+}

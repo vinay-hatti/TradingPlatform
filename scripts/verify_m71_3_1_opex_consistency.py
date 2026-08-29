@@ -1,7 +1,7 @@
 from pathlib import Path
 from trading_ai.opex_intelligence.service import OpexIntelligenceService
 
-assert OpexIntelligenceService.VERSION.startswith('M71.3.1-'), OpexIntelligenceService.VERSION
+assert OpexIntelligenceService.VERSION.startswith(('M71.3.1-','M71.4-')), OpexIntelligenceService.VERSION
 svc=Path('src/trading_ai/opex_intelligence/service.py').read_text()
 ui=Path('ui/workstation/src/OpexIntelligencePage.tsx').read_text()
 for token in ('_coherent_scenarios','_path_ladder','acceptance_probability','attraction_score','terminal_base_zone','current_decision_zone','p25','p75'):

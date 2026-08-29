@@ -1,0 +1,445 @@
+{
+  "development": {
+    "duplicate_horizon_rows": 0,
+    "examples": {
+      "10": {
+        "'MATURED'|'DOWN'": {
+          "as_of": "2004-12-03",
+          "file": "/Users/vinay.hatti/TradingPlatform/research_data/m77_19_8_5/development_target_matrix/A.jsonl.gz",
+          "payload": {
+            "absolute_forward_return": -0.01611077747493883,
+            "direction_label": "DOWN",
+            "horizon_sessions": 10,
+            "market_relative_forward_return": -0.017704068879551005,
+            "status": "MATURED",
+            "target_session": "2004-12-17"
+          },
+          "raw_horizon_key": "10",
+          "symbol": "A"
+        },
+        "'MATURED'|'UP'": {
+          "as_of": "2004-11-19",
+          "file": "/Users/vinay.hatti/TradingPlatform/research_data/m77_19_8_5/development_target_matrix/A.jsonl.gz",
+          "payload": {
+            "absolute_forward_return": 0.05101208212703434,
+            "direction_label": "UP",
+            "horizon_sessions": 10,
+            "market_relative_forward_return": 0.035767660393087874,
+            "status": "MATURED",
+            "target_session": "2004-12-06"
+          },
+          "raw_horizon_key": "10",
+          "symbol": "A"
+        },
+        "'MATURED'|'ZERO'": {
+          "as_of": "2010-01-22",
+          "file": "/Users/vinay.hatti/TradingPlatform/research_data/m77_19_8_5/development_target_matrix/A.jsonl.gz",
+          "payload": {
+            "absolute_forward_return": 0.0,
+            "direction_label": "ZERO",
+            "horizon_sessions": 10,
+            "market_relative_forward_return": 0.02334951011812103,
+            "status": "MATURED",
+            "target_session": "2010-02-05"
+          },
+          "raw_horizon_key": "10",
+          "symbol": "A"
+        },
+        "'PURGED_PARTITION_OVERLAP'|<NULL>": {
+          "as_of": "2017-12-15",
+          "file": "/Users/vinay.hatti/TradingPlatform/research_data/m77_19_8_5/development_target_matrix/A.jsonl.gz",
+          "payload": {
+            "absolute_forward_return": null,
+            "direction_label": null,
+            "horizon_sessions": 10,
+            "market_relative_forward_return": null,
+            "status": "PURGED_PARTITION_OVERLAP",
+            "target_session": "2018-01-02"
+          },
+          "raw_horizon_key": "10",
+          "symbol": "A"
+        },
+        "'SYMBOL_TARGET_SESSION_MISSING'|<NULL>": {
+          "as_of": "2016-03-11",
+          "file": "/Users/vinay.hatti/TradingPlatform/research_data/m77_19_8_5/development_target_matrix/ARKK.jsonl.gz",
+          "payload": {
+            "absolute_forward_return": null,
+            "direction_label": null,
+            "horizon_sessions": 10,
+            "market_relative_forward_return": null,
+            "status": "SYMBOL_TARGET_SESSION_MISSING",
+            "target_session": "2016-03-28"
+          },
+          "raw_horizon_key": "10",
+          "symbol": "ARKK"
+        }
+      },
+      "20": {
+        "'MATURED'|'DOWN'": {
+          "as_of": "2004-12-03",
+          "file": "/Users/vinay.hatti/TradingPlatform/research_data/m77_19_8_5/development_target_matrix/A.jsonl.gz",
+          "payload": {
+            "absolute_forward_return": -0.01363352889545899,
+            "direction_label": "DOWN",
+            "horizon_sessions": 20,
+            "market_relative_forward_return": -0.02243856034199987,
+            "status": "MATURED",
+            "target_session": "2005-01-03"
+          },
+          "raw_horizon_key": "20",
+          "symbol": "A"
+        },
+        "'MATURED'|'UP'": {
+          "as_of": "2004-11-19",
+          "file": "/Users/vinay.hatti/TradingPlatform/research_data/m77_19_8_5/development_target_matrix/A.jsonl.gz",
+          "payload": {
+            "absolute_forward_return": 0.019020737257556597,
+            "direction_label": "UP",
+            "horizon_sessions": 20,
+            "market_relative_forward_return": 0.0015620419756625648,
+            "status": "MATURED",
+            "target_session": "2004-12-20"
+          },
+          "raw_horizon_key": "20",
+          "symbol": "A"
+        },
+        "'MATURED'|'ZERO'": {
+          "as_of": "2009-07-24",
+          "file": "/Users/vinay.hatti/TradingPlatform/research_data/m77_19_8_5/development_target_matrix/ACN.jsonl.gz",
+          "payload": {
+            "absolute_forward_return": 0.0,
+            "direction_label": "ZERO",
+            "horizon_sessions": 20,
+            "market_relative_forward_return": -0.04996431120628131,
+            "status": "MATURED",
+            "target_session": "2009-08-21"
+          },
+          "raw_horizon_key": "20",
+          "symbol": "ACN"
+        },
+        "'PURGED_PARTITION_OVERLAP'|<NULL>": {
+          "as_of": "2017-12-01",
+          "file": "/Users/vinay.hatti/TradingPlatform/research_data/m77_19_8_5/development_target_matrix/A.jsonl.gz",
+          "payload": {
+            "absolute_forward_return": null,
+            "direction_label": null,
+            "horizon_sessions": 20,
+            "market_relative_forward_return": null,
+            "status": "PURGED_PARTITION_OVERLAP",
+            "target_session": "2018-01-02"
+          },
+          "raw_horizon_key": "20",
+          "symbol": "A"
+        },
+        "'SYMBOL_TARGET_SESSION_MISSING'|<NULL>": {
+          "as_of": "2016-02-26",
+          "file": "/Users/vinay.hatti/TradingPlatform/research_data/m77_19_8_5/development_target_matrix/ARKK.jsonl.gz",
+          "payload": {
+            "absolute_forward_return": null,
+            "direction_label": null,
+            "horizon_sessions": 20,
+            "market_relative_forward_return": null,
+            "status": "SYMBOL_TARGET_SESSION_MISSING",
+            "target_session": "2016-03-28"
+          },
+          "raw_horizon_key": "20",
+          "symbol": "ARKK"
+        }
+      },
+      "5": {
+        "'MATURED'|'DOWN'": {
+          "as_of": "2004-11-19",
+          "file": "/Users/vinay.hatti/TradingPlatform/research_data/m77_19_8_5/development_target_matrix/A.jsonl.gz",
+          "payload": {
+            "absolute_forward_return": -0.0034632610259232033,
+            "direction_label": "DOWN",
+            "horizon_sessions": 5,
+            "market_relative_forward_return": -0.00678467134784444,
+            "status": "MATURED",
+            "target_session": "2004-11-29"
+          },
+          "raw_horizon_key": "5",
+          "symbol": "A"
+        },
+        "'MATURED'|'UP'": {
+          "as_of": "2004-11-26",
+          "file": "/Users/vinay.hatti/TradingPlatform/research_data/m77_19_8_5/development_target_matrix/A.jsonl.gz",
+          "payload": {
+            "absolute_forward_return": 0.04533848429058618,
+            "direction_label": "UP",
+            "horizon_sessions": 5,
+            "market_relative_forward_return": 0.03773392155294353,
+            "status": "MATURED",
+            "target_session": "2004-12-03"
+          },
+          "raw_horizon_key": "5",
+          "symbol": "A"
+        },
+        "'MATURED'|'ZERO'": {
+          "as_of": "2010-03-12",
+          "file": "/Users/vinay.hatti/TradingPlatform/research_data/m77_19_8_5/development_target_matrix/A.jsonl.gz",
+          "payload": {
+            "absolute_forward_return": 0.0,
+            "direction_label": "ZERO",
+            "horizon_sessions": 5,
+            "market_relative_forward_return": -0.0044171141520874535,
+            "status": "MATURED",
+            "target_session": "2010-03-19"
+          },
+          "raw_horizon_key": "5",
+          "symbol": "A"
+        },
+        "'PURGED_PARTITION_OVERLAP'|<NULL>": {
+          "as_of": "2017-12-22",
+          "file": "/Users/vinay.hatti/TradingPlatform/research_data/m77_19_8_5/development_target_matrix/A.jsonl.gz",
+          "payload": {
+            "absolute_forward_return": null,
+            "direction_label": null,
+            "horizon_sessions": 5,
+            "market_relative_forward_return": null,
+            "status": "PURGED_PARTITION_OVERLAP",
+            "target_session": "2018-01-02"
+          },
+          "raw_horizon_key": "5",
+          "symbol": "A"
+        },
+        "'SYMBOL_TARGET_SESSION_MISSING'|<NULL>": {
+          "as_of": "2016-03-18",
+          "file": "/Users/vinay.hatti/TradingPlatform/research_data/m77_19_8_5/development_target_matrix/ARKK.jsonl.gz",
+          "payload": {
+            "absolute_forward_return": null,
+            "direction_label": null,
+            "horizon_sessions": 5,
+            "market_relative_forward_return": null,
+            "status": "SYMBOL_TARGET_SESSION_MISSING",
+            "target_session": "2016-03-28"
+          },
+          "raw_horizon_key": "5",
+          "symbol": "ARKK"
+        }
+      }
+    },
+    "file_count": 524,
+    "label_counts": {
+      "10": {
+        "'DOWN'": 134438,
+        "'UP'": 166888,
+        "'ZERO'": 753,
+        "<NULL>": 1610
+      },
+      "20": {
+        "'DOWN'": 128032,
+        "'UP'": 172473,
+        "'ZERO'": 507,
+        "<NULL>": 2677
+      },
+      "5": {
+        "'DOWN'": 139028,
+        "'UP'": 162496,
+        "'ZERO'": 1086,
+        "<NULL>": 1079
+      }
+    },
+    "payload_key_shapes": {
+      "10": [
+        {
+          "count": 303689,
+          "keys": [
+            "absolute_forward_return",
+            "direction_label",
+            "horizon_sessions",
+            "market_relative_forward_return",
+            "status",
+            "target_session"
+          ]
+        }
+      ],
+      "20": [
+        {
+          "count": 303689,
+          "keys": [
+            "absolute_forward_return",
+            "direction_label",
+            "horizon_sessions",
+            "market_relative_forward_return",
+            "status",
+            "target_session"
+          ]
+        }
+      ],
+      "5": [
+        {
+          "count": 303689,
+          "keys": [
+            "absolute_forward_return",
+            "direction_label",
+            "horizon_sessions",
+            "market_relative_forward_return",
+            "status",
+            "target_session"
+          ]
+        }
+      ]
+    },
+    "row_count": 303689,
+    "rows_with_targets": 303689,
+    "status_counts": {
+      "10": {
+        "'MATURED'": 302079,
+        "'PURGED_PARTITION_OVERLAP'": 1557,
+        "'SYMBOL_TARGET_SESSION_MISSING'": 53
+      },
+      "20": {
+        "'MATURED'": 301012,
+        "'PURGED_PARTITION_OVERLAP'": 2595,
+        "'SYMBOL_TARGET_SESSION_MISSING'": 82
+      },
+      "5": {
+        "'MATURED'": 302610,
+        "'PURGED_PARTITION_OVERLAP'": 1038,
+        "'SYMBOL_TARGET_SESSION_MISSING'": 41
+      }
+    },
+    "status_label_pairs": {
+      "10": [
+        {
+          "count": 134438,
+          "direction_label": "'DOWN'",
+          "status": "'MATURED'"
+        },
+        {
+          "count": 166888,
+          "direction_label": "'UP'",
+          "status": "'MATURED'"
+        },
+        {
+          "count": 753,
+          "direction_label": "'ZERO'",
+          "status": "'MATURED'"
+        },
+        {
+          "count": 1557,
+          "direction_label": "<NULL>",
+          "status": "'PURGED_PARTITION_OVERLAP'"
+        },
+        {
+          "count": 53,
+          "direction_label": "<NULL>",
+          "status": "'SYMBOL_TARGET_SESSION_MISSING'"
+        }
+      ],
+      "20": [
+        {
+          "count": 128032,
+          "direction_label": "'DOWN'",
+          "status": "'MATURED'"
+        },
+        {
+          "count": 172473,
+          "direction_label": "'UP'",
+          "status": "'MATURED'"
+        },
+        {
+          "count": 507,
+          "direction_label": "'ZERO'",
+          "status": "'MATURED'"
+        },
+        {
+          "count": 2595,
+          "direction_label": "<NULL>",
+          "status": "'PURGED_PARTITION_OVERLAP'"
+        },
+        {
+          "count": 82,
+          "direction_label": "<NULL>",
+          "status": "'SYMBOL_TARGET_SESSION_MISSING'"
+        }
+      ],
+      "5": [
+        {
+          "count": 139028,
+          "direction_label": "'DOWN'",
+          "status": "'MATURED'"
+        },
+        {
+          "count": 162496,
+          "direction_label": "'UP'",
+          "status": "'MATURED'"
+        },
+        {
+          "count": 1086,
+          "direction_label": "'ZERO'",
+          "status": "'MATURED'"
+        },
+        {
+          "count": 1038,
+          "direction_label": "<NULL>",
+          "status": "'PURGED_PARTITION_OVERLAP'"
+        },
+        {
+          "count": 41,
+          "direction_label": "<NULL>",
+          "status": "'SYMBOL_TARGET_SESSION_MISSING'"
+        }
+      ]
+    },
+    "unrecognized_target_keys": {}
+  },
+  "development_target_root": "/Users/vinay.hatti/TradingPlatform/research_data/m77_19_8_5/development_target_matrix",
+  "final_holdout_opened": false,
+  "model_family_champion_selected": false,
+  "next_step": "BUILD_M77_19_8_7_10_7_3_4_TARGET_STATUS_ELIGIBILITY_AND_DIRECTION_LABEL_BINDING_AUTHORITY",
+  "noncanonical_or_null_direction_label_values": [
+    "<NULL>"
+  ],
+  "observed_direction_label_values": [
+    "'DOWN'",
+    "'UP'",
+    "'ZERO'",
+    "<NULL>"
+  ],
+  "production_authority_effect": false,
+  "root_cause": "NESTED_TARGET_DIRECTION_LABEL_VALUE_DOMAIN_REQUIRES_STATUS_AWARE_ELIGIBILITY_BINDING",
+  "root_cause_certified": true,
+  "status": "READY",
+  "target_label_mapping_change_authorized": false,
+  "target_status_eligibility_binding_authorized": false,
+  "validation": {
+    "duplicate_horizon_rows": 0,
+    "examples": {
+      "10": {},
+      "20": {},
+      "5": {}
+    },
+    "file_count": 1707,
+    "label_counts": {
+      "10": {},
+      "20": {},
+      "5": {}
+    },
+    "payload_key_shapes": {
+      "10": [],
+      "20": [],
+      "5": []
+    },
+    "row_count": 419018,
+    "rows_with_targets": 0,
+    "status_counts": {
+      "10": {},
+      "20": {},
+      "5": {}
+    },
+    "status_label_pairs": {
+      "10": [],
+      "20": [],
+      "5": []
+    },
+    "unrecognized_target_keys": {}
+  },
+  "validation_model_refit_performed": false,
+  "validation_model_retuning_performed": false,
+  "validation_scoring_execution_authorized": false,
+  "validation_scoring_performed": false,
+  "validation_target_root": "/Users/vinay.hatti/TradingPlatform/research_data/m77_19_8_7_10_6/validation_target_matrix",
+  "version": "M77.19.8.7.10.7.3.3-NESTED-TARGET-LABEL-STATUS-CENSUS-FORENSICS-1.0"
+}

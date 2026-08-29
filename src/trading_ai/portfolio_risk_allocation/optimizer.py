@@ -5,17 +5,41 @@ from hashlib import sha256
 import json
 from uuid import uuid4
 
-from sqlalchemy import select
+from sqlalchemy import select, text
 
+from trading_ai.institutional_options.models import (
+    ContractRecommendationModel,
+    ExecutionRecommendationModel,
+    InstitutionalOpportunityModel,
+    StrategyCandidateModel,
+    StrategyComparisonModel,
+)
+from trading_ai.institutional_options.opportunity_ingestion import (
+    StockOpportunityEligibilityService,
+)
+from trading_ai.institutional_options.trade_builder_authority import (
+    certified_ready_opportunity_ids,
+    classify_trade_builder_authority,
+)
+from trading_ai.institutional_options.publication_scope import latest_stock_scanner_run_id
 from trading_ai.portfolio_management.database_models import PortfolioPositionModel
 
-from .decision_intelligence import InstitutionalDecisionIntelligenceService
+from .decision_intelligence import (
+    DecisionGenerationCoverageError,
+    InstitutionalDecisionIntelligenceService,
+)
+from .config import (
+    MAX_NEW_POSITIONS_MAX,
+    MAX_NEW_POSITIONS_MIN,
+    load_portfolio_optimizer_config,
+)
 from .models import (
     PortfolioDecisionIntelligenceModel,
     PortfolioIntelligencePublicationModel,
     PortfolioOptimizationSnapshotModel,
     PortfolioRecommendationModel,
     PortfolioRiskBudgetSnapshotModel,
+    PortfolioRiskSnapshotModel,
 )
 from .service import PortfolioRiskAllocationService, clamp, number
 
@@ -25,20 +49,19 @@ def utc_now() -> str:
 
 
 class PortfolioOptimizationService:
-    """Governed, deterministic portfolio optimizer and recommendation publisher.
+    """Governed exact portfolio optimizer and recommendation publisher.
 
-    The optimizer deliberately uses a transparent constrained-greedy policy rather
-    than an opaque mathematical solver.  Every selected or rejected candidate is
-    accompanied by the binding constraints and portfolio contribution that drove
-    the result.  Future learning modules may replace the objective weights while
-    retaining this contract.
+    Every current Stock Intelligence candidate is classified through the hard
+    gates.  The executable-now set is then solved with deterministic exact
+    branch-and-bound.  Authority is published only with a complete universe
+    ledger and a proof that the selected subset maximizes the governed objective
+    under all capital, heat, concentration, and correlation constraints.
     """
 
-    POLICY_VERSION = "M64-PORTFOLIO-OPTIMIZER-1.0"
+    POLICY_VERSION = "M64.2.4.9-GLOBAL-FEASIBLE-OPTIMIZER-1.0"
     PUBLICATION_NAME = "current_portfolio_allocation"
 
     DEFAULT_POLICY = {
-        "max_new_positions": 5,
         "max_new_capital_pct": 5.0,
         "max_single_candidate_capital_pct": 2.0,
         "max_portfolio_heat_pct": 20.0,
@@ -47,7 +70,8 @@ class PortfolioOptimizationService:
         "max_strategy_pct": 35.0,
         "max_pair_correlation": 0.80,
         "min_final_portfolio_score": 62.0,
-        "max_candidates_considered": 250,
+        "max_candidates_considered": 1000,
+        "exact_solver_node_limit": 2_000_000,
         "delta_hedge_threshold_pct": 15.0,
         "vega_hedge_threshold_pct": 0.75,
     }
@@ -57,6 +81,39 @@ class PortfolioOptimizationService:
         self.risk_service = PortfolioRiskAllocationService(session_factory)
         self.decision_service = InstitutionalDecisionIntelligenceService(session_factory)
 
+    @classmethod
+    def resolved_policy(cls, policy: dict | None = None) -> dict:
+        """Resolve policy with the position cap owned by the project ``.env``.
+
+        An explicit cap is accepted only for deterministic tests or controlled
+        offline simulations.  Normal M64 authority calls provide no override and
+        therefore fail closed unless ``M64_MAX_NEW_POSITIONS`` exists in ``.env``.
+        """
+
+        supplied = dict(policy or {})
+        if "max_new_positions" in supplied:
+            max_new_positions = int(supplied["max_new_positions"])
+            config_source = "EXPLICIT_CONTROLLED_OVERRIDE"
+        else:
+            runtime = load_portfolio_optimizer_config()
+            max_new_positions = runtime.max_new_positions
+            config_source = runtime.source
+        if not (
+            MAX_NEW_POSITIONS_MIN
+            <= max_new_positions
+            <= MAX_NEW_POSITIONS_MAX
+        ):
+            raise ValueError(
+                "max_new_positions must be between "
+                f"{MAX_NEW_POSITIONS_MIN} and {MAX_NEW_POSITIONS_MAX}"
+            )
+        return {
+            **cls.DEFAULT_POLICY,
+            **supplied,
+            "max_new_positions": max_new_positions,
+            "max_new_positions_source": config_source,
+        }
+
     def build(
         self,
         portfolio_id: str = "PAPER-PRIMARY",
@@ -64,49 +121,161 @@ class PortfolioOptimizationService:
         rebuild_decisions: bool = True,
         actor: str = "m64-portfolio-optimizer",
         policy: dict | None = None,
+        risk_snapshot_id: str | None = None,
+        stock_scanner_run_id: str | None = None,
+        authority_input: dict | None = None,
+        progress=None,
     ) -> dict:
-        policy_values = {**self.DEFAULT_POLICY, **(policy or {})}
-        risk = self.risk_service.current(portfolio_id) or self.risk_service.build(portfolio_id, actor)
-        if rebuild_decisions:
-            self.decision_service.build(
-                portfolio_id,
-                limit=int(policy_values["max_candidates_considered"]),
+        policy_values = self.resolved_policy(policy)
+        risk = self.risk_service.snapshot(portfolio_id, risk_snapshot_id)
+        if risk is None and risk_snapshot_id is not None:
+            raise LookupError(
+                f"Pinned portfolio risk snapshot {risk_snapshot_id} was not found "
+                f"for portfolio {portfolio_id}"
             )
+        risk = risk or self.risk_service.build(portfolio_id, actor)
+        if rebuild_decisions:
+            decision_generation = self.decision_service.build(
+                portfolio_id,
+                risk_snapshot_id=risk["snapshot_id"],
+                require_complete=True,
+                progress=progress,
+            )
+            stock_scanner_run_id = decision_generation["stock_scanner_run_id"]
 
         with self.session_factory() as session:
+            if session.bind is not None and session.bind.dialect.name == "postgresql":
+                acquired = bool(session.scalar(text(
+                    "SELECT pg_try_advisory_xact_lock(hashtext(:lock_key))"
+                ), {
+                    "lock_key": f"trading_ai:m64_authoritative_publish:{portfolio_id}"
+                }))
+                if not acquired:
+                    raise DecisionGenerationCoverageError(
+                        f"M64 authoritative publication is already active for {portfolio_id}"
+                    )
+            current_publication = session.scalar(select(PortfolioIntelligencePublicationModel).where(
+                PortfolioIntelligencePublicationModel.portfolio_id == portfolio_id,
+                PortfolioIntelligencePublicationModel.publication_name == self.PUBLICATION_NAME,
+            ))
+            if current_publication and current_publication.risk_snapshot_id != risk["snapshot_id"]:
+                published_risk = session.scalar(select(PortfolioRiskSnapshotModel).where(
+                    PortfolioRiskSnapshotModel.snapshot_id == current_publication.risk_snapshot_id,
+                    PortfolioRiskSnapshotModel.portfolio_id == portfolio_id,
+                ))
+                candidate_risk = session.scalar(select(PortfolioRiskSnapshotModel).where(
+                    PortfolioRiskSnapshotModel.snapshot_id == risk["snapshot_id"],
+                    PortfolioRiskSnapshotModel.portfolio_id == portfolio_id,
+                ))
+                if (
+                    published_risk is not None
+                    and candidate_risk is not None
+                    and str(published_risk.snapshot_timestamp) > str(candidate_risk.snapshot_timestamp)
+                ):
+                    raise DecisionGenerationCoverageError(
+                        "Refused to replace a newer authoritative portfolio publication "
+                        f"({published_risk.snapshot_id}) with older risk snapshot {candidate_risk.snapshot_id}"
+                    )
+            observed_stock_run_id = latest_stock_scanner_run_id(session)
+            governed_stock_run_id = stock_scanner_run_id or observed_stock_run_id
+            if not governed_stock_run_id:
+                raise DecisionGenerationCoverageError(
+                    "No materialized current Stock Intelligence run is available for optimization"
+                )
+            if observed_stock_run_id != governed_stock_run_id:
+                raise DecisionGenerationCoverageError(
+                    "Stock Intelligence advanced before portfolio publication: "
+                    f"expected {governed_stock_run_id}, observed {observed_stock_run_id}"
+                )
+            eligible_ids = certified_ready_opportunity_ids(
+                session,
+                stock_scanner_run_id=governed_stock_run_id,
+            )
             decisions = list(
                 session.scalars(
                     select(PortfolioDecisionIntelligenceModel)
                     .where(
                         PortfolioDecisionIntelligenceModel.portfolio_id == portfolio_id,
                         PortfolioDecisionIntelligenceModel.risk_snapshot_id == risk["snapshot_id"],
+                        PortfolioDecisionIntelligenceModel.opportunity_id.in_(eligible_ids),
                     )
                     .order_by(
                         PortfolioDecisionIntelligenceModel.final_portfolio_score.desc(),
                         PortfolioDecisionIntelligenceModel.rank.asc(),
                     )
                 ).all()
-            )
+            ) if eligible_ids else []
+            decision_ids = {str(row.opportunity_id) for row in decisions}
+            missing_decisions = sorted(eligible_ids - decision_ids)
+            if not eligible_ids or missing_decisions or len(decisions) != len(eligible_ids):
+                raise DecisionGenerationCoverageError(
+                    f"Portfolio optimizer refused incomplete decision authority: "
+                    f"eligible={len(eligible_ids)}, decisions={len(decisions)}, "
+                    f"missing={len(missing_decisions)}"
+                )
             risk_payload = dict(risk.get("payload_json") or {})
             budgets = self._risk_budgets(risk, policy_values)
-            selected, rejected = self._select_candidates(decisions, risk, budgets, policy_values)
+            selected, rejected, optimization_proof = self._select_candidates(
+                decisions, risk, budgets, policy_values
+            )
+            universe_authority = self._global_universe_authority(
+                session,
+                governed_stock_run_id,
+                decisions,
+                selected,
+                optimization_proof,
+            )
+            if not universe_authority["all_source_candidates_classified"]:
+                raise DecisionGenerationCoverageError(
+                    "Global feasible optimizer refused incomplete Stock "
+                    "Intelligence universe classification"
+                )
+            if progress:
+                progress("optimizer_selection_completed", {
+                    "eligible": len(eligible_ids),
+                    "decisions": len(decisions),
+                    "selected": len(selected),
+                    "rejected": len(rejected),
+                    "optimality_proven": optimization_proof[
+                        "optimality_proven"
+                    ],
+                    "source_universe_count": universe_authority[
+                        "source_universe_count"
+                    ],
+                })
             hedge_recommendations = self._hedge_recommendations(risk, policy_values)
             rebalance_recommendations = self._rebalance_recommendations(
                 session, portfolio_id, risk, selected, policy_values
             )
             target = self._target_portfolio(risk, selected)
             objective = self._objective(selected)
-            status = self._status(selected, decisions, budgets)
+            status = self._status(
+                selected, decisions, budgets, optimization_proof
+            )
             payload = {
                 "policy_version": self.POLICY_VERSION,
+                "resolved_optimizer_policy": policy_values,
                 "generated_by": actor,
                 "portfolio_id": portfolio_id,
                 "risk_snapshot_id": risk["snapshot_id"],
+                "stock_scanner_run_id": governed_stock_run_id,
                 "generated_at": utc_now(),
                 "status": status,
+                "authority_input": dict(authority_input or {}),
+                "decision_authority": {
+                    "status": "CURRENT",
+                    "eligible_candidates": len(eligible_ids),
+                    "materialized_decisions": len(decisions),
+                    "missing_decisions": 0,
+                    "risk_snapshot_id": risk["snapshot_id"],
+                    "stock_scanner_run_id": governed_stock_run_id,
+                },
                 "objective": {
-                    "name": "MAXIMIZE_EXPECTED_PORTFOLIO_IMPROVEMENT",
+                    "name": "MAXIMIZE_TOTAL_FINAL_PORTFOLIO_SCORE",
                     "score": objective,
+                    "total_score": optimization_proof[
+                        "objective_total_score"
+                    ],
                     "candidate_count": len(decisions),
                     "selected_count": len(selected),
                     "rejected_count": len(rejected),
@@ -125,7 +294,9 @@ class PortfolioOptimizationService:
                 "target_portfolio": target,
                 "selected_candidates": selected,
                 "rejected_candidates": rejected,
-                "best_next_trades": selected[:5],
+                "best_next_trades": selected,
+                "optimization_proof": optimization_proof,
+                "global_candidate_authority": universe_authority,
                 "hedge_recommendations": hedge_recommendations,
                 "rebalance_recommendations": rebalance_recommendations,
                 "recommended_actions": [*rebalance_recommendations, *hedge_recommendations],
@@ -136,6 +307,30 @@ class PortfolioOptimizationService:
                     "option_valuation_intelligence": None,
                 },
             }
+            if progress:
+                progress("decision_activation_started", {
+                    "eligible": len(eligible_ids),
+                    "risk_snapshot_id": risk["snapshot_id"],
+                    "stock_scanner_run_id": governed_stock_run_id,
+                })
+            activation = self.decision_service.activate_generation(
+                session,
+                portfolio_id=portfolio_id,
+                risk_snapshot_id=risk["snapshot_id"],
+                stock_scanner_run_id=governed_stock_run_id,
+                selected_opportunity_ids={
+                    str(item["opportunity_id"]) for item in selected
+                },
+                optimization_proof=optimization_proof,
+                progress=progress,
+            )
+            if progress:
+                progress("decision_activation_completed", dict(activation))
+            payload["decision_authority"].update({
+                "activated_decisions": activation["activated"],
+                "superseded_decisions": activation["superseded"],
+                "retirement_execution_mode": activation["retirement_execution_mode"],
+            })
             state_hash = sha256(
                 json.dumps(payload, sort_keys=True, default=str).encode()
             ).hexdigest()
@@ -154,13 +349,26 @@ class PortfolioOptimizationService:
             publication = self._upsert_publication(
                 session, portfolio_id, risk["snapshot_id"], snapshot, payload
             )
+            if progress:
+                progress("authoritative_publication_commit_started", {
+                    "publication_id": publication.publication_id,
+                    "risk_snapshot_id": risk["snapshot_id"],
+                    "stock_scanner_run_id": governed_stock_run_id,
+                })
             session.commit()
+            if progress:
+                progress("authoritative_publication_commit_completed", {
+                    "publication_id": publication.publication_id,
+                    "risk_snapshot_id": risk["snapshot_id"],
+                    "stock_scanner_run_id": governed_stock_run_id,
+                })
             return {
                 **payload,
                 "optimization_snapshot_id": snapshot.optimization_snapshot_id,
                 "budget_snapshot_id": budget_row.budget_snapshot_id,
                 "publication_id": publication.publication_id,
                 "persisted_action_count": len(action_rows),
+                "decision_activation": activation,
             }
 
     def current(self, portfolio_id: str = "PAPER-PRIMARY") -> dict | None:
@@ -221,93 +429,665 @@ class PortfolioOptimizationService:
             ]
 
     def _select_candidates(self, decisions, risk, budgets, policy):
+        """Return the exact maximum-score feasible subset and its proof.
+
+        Candidate capital is fixed before solving; it never depends on iteration
+        order.  Branch-and-bound explores both include/exclude branches and uses
+        only an admissible score upper bound, so a completed search is an exact
+        proof rather than a greedy approximation.
+        """
+
+        net = max(number(risk.get("net_liquidation")), 1.0)
+        available_capital = number(
+            budgets["portfolio"]["new_capital_remaining"]
+        )
+        current_heat = number(risk.get("portfolio_heat_pct"))
+        exposures = (risk.get("payload_json") or {}).get("exposures", {})
+        current_symbols = dict(exposures.get("symbol") or {})
+        current_sectors = dict(exposures.get("sector") or {})
+        current_strategies = dict(exposures.get("strategy") or {})
+
+        prepared = [
+            self._candidate_record(row, risk, budgets, policy)
+            for row in decisions
+        ]
+        hard_rejected = [
+            item for item in prepared if item["hard_gate_reasons"]
+        ]
+        feasible = sorted(
+            [item for item in prepared if not item["hard_gate_reasons"]],
+            key=lambda item: (
+                -number(item["final_portfolio_score"]),
+                int(item.get("rank") or 1_000_000),
+                str(item["opportunity_id"]),
+            ),
+        )
+        if len(feasible) > int(policy["max_candidates_considered"]):
+            raise DecisionGenerationCoverageError(
+                "Exact optimizer candidate count exceeds governed limit: "
+                f"feasible={len(feasible)}, "
+                f"limit={int(policy['max_candidates_considered'])}"
+            )
+
+        max_positions = min(
+            int(policy["max_new_positions"]), len(feasible)
+        )
+        max_heat_increment = max(
+            0.0,
+            number(policy["max_portfolio_heat_pct"]) - current_heat,
+        )
+        node_limit = int(policy.get("exact_solver_node_limit", 2_000_000))
+        nodes_evaluated = 0
+        nodes_pruned = 0
+        node_limit_reached = False
+        best_indices: tuple[int, ...] = ()
+        best_score = 0.0
+
+        def can_add(
+            candidate: dict,
+            capital: float,
+            heat: float,
+            symbols: set[str],
+            sectors: dict[str, float],
+            strategies: dict[str, float],
+        ) -> bool:
+            symbol = str(candidate["symbol"])
+            sector = str(candidate["sector"])
+            strategy = str(candidate["strategy"])
+            amount = number(candidate["recommended_capital"])
+            if symbol in symbols:
+                return False
+            if capital + amount > available_capital + 1e-9:
+                return False
+            if heat + number(candidate["marginal_heat_pct"]) > max_heat_increment + 1e-9:
+                return False
+            if (
+                number(current_symbols.get(symbol)) + amount
+            ) / net * 100 > number(policy["max_symbol_pct"]) + 1e-9:
+                return False
+            if (
+                number(current_sectors.get(sector))
+                + number(sectors.get(sector))
+                + amount
+            ) / net * 100 > number(policy["max_sector_pct"]) + 1e-9:
+                return False
+            if (
+                number(current_strategies.get(strategy))
+                + number(strategies.get(strategy))
+                + amount
+            ) / net * 100 > number(policy["max_strategy_pct"]) + 1e-9:
+                return False
+            return True
+
+        def search(
+            index: int,
+            chosen: tuple[int, ...],
+            score: float,
+            capital: float,
+            heat: float,
+            symbols: set[str],
+            sectors: dict[str, float],
+            strategies: dict[str, float],
+        ) -> None:
+            nonlocal nodes_evaluated, nodes_pruned, node_limit_reached
+            nonlocal best_indices, best_score
+            if node_limit_reached:
+                return
+            nodes_evaluated += 1
+            if nodes_evaluated > node_limit:
+                node_limit_reached = True
+                return
+            if score > best_score + 1e-9:
+                best_score = score
+                best_indices = chosen
+            if index >= len(feasible) or len(chosen) >= max_positions:
+                return
+
+            slots = max_positions - len(chosen)
+            optimistic = score + sum(
+                number(item["final_portfolio_score"])
+                for item in feasible[index:index + slots]
+            )
+            if optimistic <= best_score + 1e-9:
+                nodes_pruned += 1
+                return
+
+            candidate = feasible[index]
+            if can_add(
+                candidate, capital, heat, symbols, sectors, strategies
+            ):
+                symbol = str(candidate["symbol"])
+                sector = str(candidate["sector"])
+                strategy = str(candidate["strategy"])
+                amount = number(candidate["recommended_capital"])
+                next_sectors = dict(sectors)
+                next_strategies = dict(strategies)
+                next_sectors[sector] = number(next_sectors.get(sector)) + amount
+                next_strategies[strategy] = (
+                    number(next_strategies.get(strategy)) + amount
+                )
+                search(
+                    index + 1,
+                    (*chosen, index),
+                    score + number(candidate["final_portfolio_score"]),
+                    capital + amount,
+                    heat + number(candidate["marginal_heat_pct"]),
+                    {*symbols, symbol},
+                    next_sectors,
+                    next_strategies,
+                )
+            search(
+                index + 1,
+                chosen,
+                score,
+                capital,
+                heat,
+                symbols,
+                sectors,
+                strategies,
+            )
+
+        search(0, (), 0.0, 0.0, 0.0, set(), {}, {})
+        optimality_proven = not node_limit_reached
+        if not optimality_proven:
+            raise DecisionGenerationCoverageError(
+                "Exact portfolio optimizer reached its governed node limit "
+                f"({node_limit}) before proving global optimality; no new "
+                "portfolio authority was published"
+            )
+
+        selected_ids = {feasible[index]["opportunity_id"] for index in best_indices}
         selected: list[dict] = []
         rejected: list[dict] = []
-        net = max(number(risk.get("net_liquidation")), 1.0)
-        remaining_capital = budgets["portfolio"]["new_capital_remaining"]
-        current_heat = number(risk.get("portfolio_heat_pct"))
-        selected_symbols: set[str] = set()
-        selected_sectors: dict[str, float] = {}
-        selected_strategies: dict[str, float] = {}
+        for feasible_rank, candidate in enumerate(feasible, 1):
+            item = dict(candidate)
+            item.pop("hard_gate_reasons", None)
+            item["global_feasible_rank"] = feasible_rank
+            if item["opportunity_id"] in selected_ids:
+                item["optimizer_decision"] = "SELECT"
+                item["selection_reason"] = self._selection_reason(item)
+                selected.append(item)
+            else:
+                reasons = ["NOT_IN_GLOBAL_OPTIMAL_SUBSET"]
+                if len(selected_ids) >= max_positions:
+                    reasons.append("MAX_NEW_POSITIONS")
+                item["optimizer_decision"] = "SKIP"
+                item["rejection_reasons"] = reasons
+                rejected.append(item)
+        for candidate in hard_rejected:
+            item = dict(candidate)
+            reasons = list(item.pop("hard_gate_reasons"))
+            item["optimizer_decision"] = "SKIP"
+            item["rejection_reasons"] = reasons
+            item["globally_feasible_rank"] = None
+            rejected.append(item)
 
-        for row in decisions:
-            payload = dict(row.payload_json or {})
-            identity = payload.get("decision_identity") or {}
-            symbol = self._symbol(payload)
-            sector = self._sector(payload)
-            strategy = self._strategy(payload)
-            allocation = payload.get("capital_allocation") or {}
-            impact = payload.get("portfolio_impact") or {}
-            scores = payload.get("scores") or {}
-            requested_qty = max(0, int(number(allocation.get("recommended_quantity"))))
-            unit_capital = number(allocation.get("recommended_capital")) / max(requested_qty, 1)
-            max_per_candidate = net * number(policy["max_single_candidate_capital_pct"]) / 100
-            candidate_capital = min(
-                number(allocation.get("recommended_capital")),
-                max_per_candidate,
-                remaining_capital,
+        selected.sort(
+            key=lambda item: (
+                -number(item["final_portfolio_score"]),
+                int(item.get("rank") or 1_000_000),
+                str(item["opportunity_id"]),
             )
-            quantity = min(requested_qty, int(candidate_capital // max(unit_capital, 1.0)))
-            final_score = number(scores.get("final_portfolio_score") or row.final_portfolio_score)
-            reasons: list[str] = []
-            if row.decision == "REJECT":
-                reasons.append("PORTFOLIO_DECISION_REJECTED")
-            if final_score < number(policy["min_final_portfolio_score"]):
-                reasons.append("MINIMUM_PORTFOLIO_SCORE")
-            if quantity <= 0:
-                reasons.append("INSUFFICIENT_RISK_BUDGET")
-            if len(selected) >= int(policy["max_new_positions"]):
-                reasons.append("MAX_NEW_POSITIONS")
-            if symbol in selected_symbols:
-                reasons.append("DUPLICATE_SYMBOL_ALLOCATION")
-            projected_heat = current_heat + sum(number(x["marginal_heat_pct"]) for x in selected) + number(impact.get("marginal_heat_pct"))
-            if projected_heat > number(policy["max_portfolio_heat_pct"]):
-                reasons.append("PORTFOLIO_HEAT_LIMIT")
-            projected_sector = number(selected_sectors.get(sector)) + candidate_capital
-            current_sector = number((risk.get("payload_json") or {}).get("exposures", {}).get("sector", {}).get(sector))
-            if (current_sector + projected_sector) / net * 100 > number(policy["max_sector_pct"]):
-                reasons.append("SECTOR_BUDGET_LIMIT")
-            projected_strategy = number(selected_strategies.get(strategy)) + candidate_capital
-            current_strategy = number((risk.get("payload_json") or {}).get("exposures", {}).get("strategy", {}).get(strategy))
-            if (current_strategy + projected_strategy) / net * 100 > number(policy["max_strategy_pct"]):
-                reasons.append("STRATEGY_BUDGET_LIMIT")
-            pair_corr = number((payload.get("correlation") or {}).get("portfolio_correlation"))
-            if pair_corr > number(policy["max_pair_correlation"]):
-                reasons.append("CORRELATION_LIMIT")
+        )
+        rejected.sort(
+            key=lambda item: (
+                -number(item["final_portfolio_score"]),
+                int(item.get("rank") or 1_000_000),
+                str(item["opportunity_id"]),
+            )
+        )
+        proof = {
+            "version": "M64.2.4.9-EXACT-BRANCH-AND-BOUND-PROOF-1.0",
+            "solver": "DETERMINISTIC_EXACT_BRANCH_AND_BOUND",
+            "optimality_proven": True,
+            "objective": "MAXIMIZE_TOTAL_FINAL_PORTFOLIO_SCORE",
+            "objective_total_score": round(best_score, 6),
+            "candidate_decisions_evaluated": len(prepared),
+            "hard_gate_eligible_candidates": len(feasible),
+            "hard_gate_excluded_candidates": len(hard_rejected),
+            "selected_count": len(selected),
+            "max_new_positions": int(policy["max_new_positions"]),
+            "max_new_positions_source": policy[
+                "max_new_positions_source"
+            ],
+            "nodes_evaluated": nodes_evaluated,
+            "nodes_pruned_by_admissible_bound": nodes_pruned,
+            "node_limit": node_limit,
+            "selected_opportunity_ids": [
+                item["opportunity_id"] for item in selected
+            ],
+            "selected_global_feasible_ranks": [
+                item["global_feasible_rank"] for item in selected
+            ],
+            "all_feasible_subsets_covered_by_search_or_bound": True,
+            "order_independent_candidate_capital": True,
+        }
+        return selected, rejected, proof
 
-            candidate = {
-                "opportunity_id": identity.get("opportunity_id") or row.opportunity_id,
-                "institutional_decision_snapshot_id": identity.get("institutional_decision_snapshot_id"),
+    def _candidate_record(self, row, risk, budgets, policy) -> dict:
+        payload = dict(row.payload_json or {})
+        identity = payload.get("decision_identity") or {}
+        symbol = self._symbol(payload)
+        sector = self._sector(payload)
+        strategy = self._strategy(payload)
+        allocation = payload.get("capital_allocation") or {}
+        impact = payload.get("portfolio_impact") or {}
+        scores = payload.get("scores") or {}
+        requested_qty = max(
+            0, int(number(allocation.get("recommended_quantity")))
+        )
+        requested_capital = max(
+            0.0, number(allocation.get("recommended_capital"))
+        )
+        unit_capital = requested_capital / max(requested_qty, 1)
+        net = max(number(risk.get("net_liquidation")), 1.0)
+        max_per_candidate = (
+            net * number(policy["max_single_candidate_capital_pct"]) / 100
+        )
+        capital_limit = min(
+            requested_capital,
+            max_per_candidate,
+            number(budgets["portfolio"]["new_capital_remaining"]),
+        )
+        quantity = min(
+            requested_qty,
+            int(capital_limit // max(unit_capital, 1.0)),
+        )
+        capital = unit_capital * quantity
+        final_score = number(
+            scores.get("final_portfolio_score")
+            or row.final_portfolio_score
+        )
+        pair_corr = number(
+            (payload.get("correlation") or {}).get(
+                "portfolio_correlation"
+            )
+        )
+        exposures = (risk.get("payload_json") or {}).get("exposures", {})
+        reasons: list[str] = []
+        if row.decision == "REJECT":
+            reasons.append("PORTFOLIO_DECISION_REJECTED")
+        if final_score < number(policy["min_final_portfolio_score"]):
+            reasons.append("MINIMUM_PORTFOLIO_SCORE")
+        if quantity <= 0:
+            reasons.append("INSUFFICIENT_RISK_BUDGET")
+        if (
+            number((exposures.get("symbol") or {}).get(symbol)) + capital
+        ) / net * 100 > number(policy["max_symbol_pct"]):
+            reasons.append("SYMBOL_BUDGET_LIMIT")
+        if (
+            number((exposures.get("sector") or {}).get(sector)) + capital
+        ) / net * 100 > number(policy["max_sector_pct"]):
+            reasons.append("SECTOR_BUDGET_LIMIT")
+        if (
+            number((exposures.get("strategy") or {}).get(strategy)) + capital
+        ) / net * 100 > number(policy["max_strategy_pct"]):
+            reasons.append("STRATEGY_BUDGET_LIMIT")
+        if (
+            number(risk.get("portfolio_heat_pct"))
+            + number(impact.get("marginal_heat_pct"))
+            > number(policy["max_portfolio_heat_pct"])
+        ):
+            reasons.append("PORTFOLIO_HEAT_LIMIT")
+        if pair_corr > number(policy["max_pair_correlation"]):
+            reasons.append("CORRELATION_LIMIT")
+        return {
+            "opportunity_id": (
+                identity.get("opportunity_id") or row.opportunity_id
+            ),
+            "institutional_decision_snapshot_id": identity.get(
+                "institutional_decision_snapshot_id"
+            ),
+            "symbol": symbol,
+            "sector": sector,
+            "strategy": strategy,
+            "final_portfolio_score": final_score,
+            "portfolio_fit_score": number(
+                scores.get("portfolio_fit_score")
+            ),
+            "opportunity_cost_score": number(
+                scores.get("opportunity_cost_score")
+            ),
+            "recommended_quantity": quantity,
+            "recommended_capital": capital,
+            "marginal_heat_pct": number(
+                impact.get("marginal_heat_pct")
+            ),
+            "marginal_var_95": number(impact.get("marginal_var_95")),
+            "marginal_greeks": impact.get("marginal_greeks") or {},
+            "correlation": pair_corr,
+            "decision": row.decision,
+            "rank": row.rank,
+            "explainability": payload.get("explainability") or {},
+            "hard_gate_reasons": reasons,
+        }
+
+    def _global_universe_authority(
+        self,
+        session,
+        stock_scanner_run_id: str,
+        decisions,
+        selected,
+        optimization_proof: dict,
+    ) -> dict:
+        """Classify the full current Stock Intelligence authority.
+
+        The ledger makes the global claim auditable: non-materialized, rejected,
+        waiting, and executable-now candidates remain visible rather than being
+        silently dropped before portfolio ranking.
+        """
+
+        stock_rows = list(session.execute(text("""
+            SELECT id, symbol, snapshot_timestamp, payload_json
+            FROM stock_scanner_candidates
+            WHERE scanner_run_id = :scanner_run_id
+            ORDER BY symbol
+        """), {"scanner_run_id": stock_scanner_run_id}).mappings())
+        opportunity_rows = list(session.scalars(
+            select(InstitutionalOpportunityModel).where(
+                InstitutionalOpportunityModel.stock_scanner_run_id
+                == stock_scanner_run_id
+            )
+        ).all())
+        opportunity_by_candidate = {
+            str(row.stock_candidate_id or ""): row for row in opportunity_rows
+        }
+        opportunity_by_symbol = {
+            str(row.symbol or "").upper(): row for row in opportunity_rows
+        }
+        opportunity_ids = [str(row.opportunity_id) for row in opportunity_rows]
+        strategy_rows = list(session.scalars(
+            select(StrategyCandidateModel).where(
+                StrategyCandidateModel.opportunity_id.in_(opportunity_ids)
+            )
+        ).all()) if opportunity_ids else []
+        strategies_by_opportunity: dict[str, list] = {}
+        for row in strategy_rows:
+            strategies_by_opportunity.setdefault(
+                str(row.opportunity_id), []
+            ).append(row)
+        comparison_by_opportunity = {
+            str(row.opportunity_id): row for row in (
+                session.scalars(select(StrategyComparisonModel).where(
+                    StrategyComparisonModel.opportunity_id.in_(opportunity_ids)
+                )).all() if opportunity_ids else []
+            )
+        }
+        contract_rows = list(session.scalars(
+            select(ContractRecommendationModel).where(
+                ContractRecommendationModel.opportunity_id.in_(opportunity_ids)
+            )
+        ).all()) if opportunity_ids else []
+        contracts_by_opportunity: dict[str, list] = {}
+        for row in contract_rows:
+            contracts_by_opportunity.setdefault(
+                str(row.opportunity_id), []
+            ).append(row)
+        execution_by_opportunity = {
+            str(row.opportunity_id): row for row in (
+                session.scalars(select(ExecutionRecommendationModel).where(
+                    ExecutionRecommendationModel.opportunity_id.in_(opportunity_ids)
+                )).all() if opportunity_ids else []
+            )
+        }
+        decision_by_opportunity = {
+            str(row.opportunity_id): row for row in decisions
+        }
+        selected_ids = {
+            str(item["opportunity_id"]) for item in selected
+        }
+        ranked_sources: list[dict] = []
+        for row in stock_rows:
+            raw_payload = row.get("payload_json")
+            if isinstance(raw_payload, str):
+                try:
+                    source_payload = json.loads(raw_payload)
+                except json.JSONDecodeError:
+                    source_payload = {}
+            else:
+                source_payload = dict(raw_payload or {})
+            ranked_sources.append({
+                "stock_candidate_id": str(row.get("id") or ""),
+                "symbol": str(row.get("symbol") or "").upper(),
+                "payload": source_payload,
+                "snapshot_timestamp": row.get("snapshot_timestamp"),
+                "source_score": self._source_candidate_score(source_payload),
+            })
+        ranked_sources.sort(
+            key=lambda item: (-item["source_score"], item["symbol"])
+        )
+        ledger: list[dict] = []
+        eligibility_service = StockOpportunityEligibilityService()
+        terminal_stage_counts: dict[str, int] = {}
+        hard_gate_reason_counts: dict[str, int] = {}
+        invalid_ready_invariants = 0
+        for source_rank, source in enumerate(ranked_sources, 1):
+            symbol = source["symbol"]
+            opportunity = (
+                opportunity_by_candidate.get(source["stock_candidate_id"])
+                or opportunity_by_symbol.get(symbol)
+            )
+            state = (
+                "NOT_MATERIALIZED"
+                if opportunity is None
+                else str(opportunity.state)
+            )
+            opportunity_id = (
+                None if opportunity is None
+                else str(opportunity.opportunity_id)
+            )
+            decision = decision_by_opportunity.get(str(opportunity_id))
+            snapshot_timestamp = source["snapshot_timestamp"]
+            if hasattr(snapshot_timestamp, "isoformat"):
+                snapshot_timestamp = snapshot_timestamp.isoformat()
+            eligibility = eligibility_service.evaluate(
+                source["payload"],
+                snapshot_timestamp=(
+                    None if snapshot_timestamp is None
+                    else str(snapshot_timestamp)
+                ),
+            )
+            reasons = list(eligibility.reasons)
+            reasons.extend(self._source_governance_reasons(source["payload"]))
+            reasons = list(dict.fromkeys(reasons))
+            oid = str(opportunity_id or "")
+            strategies = strategies_by_opportunity.get(oid, [])
+            eligible_strategies = [
+                item for item in strategies
+                if str(item.disposition) == "ELIGIBLE"
+            ]
+            comparison = comparison_by_opportunity.get(oid)
+            selected_strategy_id = (
+                None if comparison is None
+                else comparison.selected_strategy_candidate_id
+            )
+            contracts = contracts_by_opportunity.get(oid, [])
+            current_contracts = [
+                item for item in contracts
+                if opportunity is not None
+                and str(item.option_snapshot_id or "")
+                == str(opportunity.option_snapshot_id or "")
+                and str(item.strategy_candidate_id or "")
+                == str(selected_strategy_id or "")
+                and bool(item.executable)
+            ]
+            execution = execution_by_opportunity.get(oid)
+            trade_builder = classify_trade_builder_authority(
+                None if execution is None else execution.payload_json,
+                None if execution is None
+                else execution.ready_for_trade_builder,
+            )
+            executable_now = bool(
+                state == "READY_FOR_EXECUTION"
+                and trade_builder["authorized"]
+            )
+            if state == "READY_FOR_EXECUTION" and not executable_now:
+                terminal_stage = "INVALID_READY_INVARIANT"
+                invalid_ready_invariants += 1
+                reasons.extend(trade_builder["reason_codes"])
+            elif not eligibility.eligible:
+                terminal_stage = "SOURCE_INELIGIBLE"
+            elif opportunity is None:
+                terminal_stage = "NOT_MATERIALIZED_BUG"
+                reasons.append(
+                    "SOURCE_DID_NOT_MATERIALIZE_INSTITUTIONAL_OPTION_OPPORTUNITY"
+                )
+            elif not strategies:
+                terminal_stage = "NO_STRATEGY_CANDIDATES"
+                reasons.append("NO_STRATEGY_CANDIDATES_GENERATED")
+            elif not selected_strategy_id:
+                terminal_stage = "NO_SELECTED_STRATEGY"
+                reasons.append("NO_ELIGIBLE_STRATEGY_SELECTED")
+            elif not current_contracts:
+                terminal_stage = "NO_EXECUTABLE_CURRENT_CONTRACT"
+                reasons.append("NO_EXECUTABLE_CURRENT_CONTRACT")
+            elif execution is None:
+                terminal_stage = "FINAL_CERTIFICATION_NOT_BUILT"
+                reasons.append("EXECUTION_RECOMMENDATION_MISSING")
+            elif executable_now:
+                terminal_stage = "EXECUTABLE_NOW"
+            elif trade_builder["execution_disposition"] == "WAITING_FOR_ENTRY":
+                terminal_stage = "WAITING_FOR_ENTRY"
+                reasons.extend(trade_builder["reason_codes"])
+            elif trade_builder["execution_disposition"] == "REGENERATE_REQUIRED":
+                terminal_stage = "REGENERATION_REQUIRED"
+                reasons.extend(trade_builder["reason_codes"])
+            elif not trade_builder["certification_present"]:
+                terminal_stage = "FINAL_CERTIFICATION_MISSING"
+                reasons.extend(trade_builder["reason_codes"])
+            elif trade_builder["certification_status"] != "PASS":
+                terminal_stage = "FINAL_CERTIFICATION_FAILED"
+                reasons.extend(trade_builder["reason_codes"])
+            else:
+                terminal_stage = f"INSTITUTIONAL_OPTIONS_STATE:{state}"
+                reasons.extend(trade_builder["reason_codes"])
+            reasons = list(dict.fromkeys(reasons))
+            terminal_stage_counts[terminal_stage] = (
+                terminal_stage_counts.get(terminal_stage, 0) + 1
+            )
+            for reason in reasons:
+                hard_gate_reason_counts[reason] = (
+                    hard_gate_reason_counts.get(reason, 0) + 1
+                )
+            ledger.append({
+                "source_rank": source_rank,
+                "stock_candidate_id": source["stock_candidate_id"],
                 "symbol": symbol,
-                "sector": sector,
-                "strategy": strategy,
-                "final_portfolio_score": final_score,
-                "portfolio_fit_score": number(scores.get("portfolio_fit_score")),
-                "opportunity_cost_score": number(scores.get("opportunity_cost_score")),
-                "recommended_quantity": quantity,
-                "recommended_capital": unit_capital * quantity,
-                "marginal_heat_pct": number(impact.get("marginal_heat_pct")),
-                "marginal_var_95": number(impact.get("marginal_var_95")),
-                "marginal_greeks": impact.get("marginal_greeks") or {},
-                "correlation": pair_corr,
-                "decision": row.decision,
-                "rank": row.rank,
-                "explainability": payload.get("explainability") or {},
-            }
-            if reasons:
-                candidate["rejection_reasons"] = reasons
-                candidate["optimizer_decision"] = "SKIP"
-                rejected.append(candidate)
-                continue
-            candidate["optimizer_decision"] = "SELECT"
-            candidate["selection_reason"] = self._selection_reason(candidate)
-            selected.append(candidate)
-            selected_symbols.add(symbol)
-            selected_sectors[sector] = number(selected_sectors.get(sector)) + candidate["recommended_capital"]
-            selected_strategies[strategy] = number(selected_strategies.get(strategy)) + candidate["recommended_capital"]
-            remaining_capital -= candidate["recommended_capital"]
+                "source_score": source["source_score"],
+                "source_eligible": eligibility.eligible,
+                "source_eligibility_quality": eligibility.opportunity_quality,
+                "opportunity_id": opportunity_id,
+                "institutional_options_state": state,
+                "terminal_stage": terminal_stage,
+                "strategy_candidate_count": len(strategies),
+                "eligible_strategy_count": len(eligible_strategies),
+                "selected_strategy_candidate_id": selected_strategy_id,
+                "contract_package_count": len(contracts),
+                "executable_current_contract_count": len(current_contracts),
+                "trade_builder_authority": trade_builder,
+                "executable_now": executable_now,
+                "portfolio_decision": (
+                    None if decision is None else str(decision.decision)
+                ),
+                "final_portfolio_score": (
+                    None if decision is None
+                    else number(decision.final_portfolio_score)
+                ),
+                "portfolio_rank": (
+                    None if decision is None else decision.rank
+                ),
+                "selected_in_global_optimum": (
+                    opportunity_id in selected_ids
+                ),
+                "hard_gate_reasons": reasons,
+            })
+        ready_count = sum(
+            item["executable_now"] for item in ledger
+        )
+        unclassified_or_invalid = sum(
+            terminal_stage_counts.get(stage, 0)
+            for stage in ("NOT_MATERIALIZED_BUG", "INVALID_READY_INVARIANT")
+        )
+        complete = bool(
+            ledger
+            and len(ledger) == len(stock_rows)
+            and len({item["symbol"] for item in ledger}) == len(ledger)
+            and ready_count == len(decisions)
+            and all(
+                item["opportunity_id"] in decision_by_opportunity
+                for item in ledger if item["executable_now"]
+            )
+            and unclassified_or_invalid == 0
+        )
+        claim_proven = bool(
+            complete and optimization_proof.get("optimality_proven")
+        )
+        return {
+            "version": "M68.2.1.15-GLOBAL-CERTIFIED-CANDIDATE-AUTHORITY-1.0",
+            "status": "PROVEN" if claim_proven else "INCOMPLETE",
+            "stock_scanner_run_id": stock_scanner_run_id,
+            "source_universe_count": len(ledger),
+            "materialized_opportunity_count": len(opportunity_rows),
+            "executable_now_count": ready_count,
+            "portfolio_decision_count": len(decisions),
+            "selected_count": len(selected),
+            "source_eligible_count": sum(
+                bool(item["source_eligible"]) for item in ledger
+            ),
+            "strategy_package_count": len(strategy_rows),
+            "contract_package_count": len(contract_rows),
+            "invalid_ready_invariant_count": invalid_ready_invariants,
+            "terminal_stage_counts": dict(sorted(terminal_stage_counts.items())),
+            "hard_gate_reason_counts": dict(sorted(hard_gate_reason_counts.items())),
+            "all_source_candidates_classified": complete,
+            "optimality_proven": claim_proven,
+            "claim_scope": (
+                "GLOBAL_BEST_PORTFOLIO_FEASIBLE_SUBSET_OF_CURRENT_"
+                "STOCK_AUTHORITY"
+            ),
+            "claim": (
+                f"All {len(ledger)} current Stock Intelligence candidates were "
+                f"classified through explicit stage outcomes; all {ready_count} "
+                "final-certified executable-now candidates were "
+                "evaluated; the selected subset is the exact maximum-total-"
+                "portfolio-score subset under the published constraints."
+            ) if claim_proven else None,
+            "scope_limitation": (
+                "The global claim is limited to current source candidates that "
+                "survive the published source, strategy, contract, final-"
+                "certification, entry, and portfolio constraints. Every excluded "
+                "candidate remains in the stage ledger with governed reason codes."
+            ),
+            "candidate_ledger": ledger,
+        }
 
-        return selected, rejected
+    @staticmethod
+    def _source_candidate_score(payload: dict) -> float:
+        for key in (
+            "overall_score", "score", "composite_score", "scanner_score"
+        ):
+            if payload.get(key) is not None:
+                return number(payload.get(key))
+        nested = payload.get("scores") or {}
+        for key in ("overall_score", "composite_score", "score"):
+            if nested.get(key) is not None:
+                return number(nested.get(key))
+        return 0.0
+
+    @staticmethod
+    def _source_governance_reasons(payload: dict) -> list[str]:
+        reasons: list[str] = []
+        for container in (payload, payload.get("metadata") or {}):
+            for key in (
+                "rejection_reasons", "validation_reasons",
+                "governance_reasons", "exclusion_reasons",
+            ):
+                value = container.get(key)
+                if isinstance(value, (list, tuple)):
+                    reasons.extend(str(item) for item in value if item)
+                elif value:
+                    reasons.append(str(value))
+        return list(dict.fromkeys(reasons))
 
     def _risk_budgets(self, risk: dict, policy: dict) -> dict:
         payload = dict(risk.get("payload_json") or {})
@@ -497,7 +1277,9 @@ class PortfolioOptimizationService:
             return 0.0
         return clamp(sum(number(item["final_portfolio_score"]) for item in selected) / len(selected))
 
-    def _status(self, selected, decisions, budgets):
+    def _status(self, selected, decisions, budgets, optimization_proof):
+        if not optimization_proof.get("optimality_proven"):
+            return "FAILED"
         if budgets["status"] == "BREACHED":
             return "DEGRADED"
         if decisions and not selected:
@@ -517,7 +1299,8 @@ class PortfolioOptimizationService:
     def _explain(self, selected, rejected, budgets):
         return {
             "summary": (
-                f"Selected {len(selected)} candidate(s) under capital, heat, concentration, "
+                f"Exactly selected {len(selected)} candidate(s) from the full "
+                "executable-now set under capital, heat, symbol, sector, "
                 "strategy, and correlation constraints."
             ),
             "positive_reasons": [item["selection_reason"] for item in selected[:5]],

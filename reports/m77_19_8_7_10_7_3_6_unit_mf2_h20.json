@@ -1,0 +1,16 @@
+{
+  "balanced_accuracy": 0.4978521883700043,
+  "brier_score": 0.24840612283318725,
+  "development_fit_row_count": 300505,
+  "elapsed_seconds": 1296.3620534170186,
+  "family": "MF2_MONOTONIC_GAM_DIRECTION",
+  "horizon": 20,
+  "l2_penalty": 0.1,
+  "log_loss": 0.6900072851256417,
+  "prediction_chunk_size": 20000,
+  "prediction_execution_mode": "CHUNKED_EXACT_CERTIFIED_PREDICT_PROBA",
+  "roc_auc": 0.5007940460805825,
+  "spline_knots": 4,
+  "status": "EVALUATED",
+  "validation_score_row_count": 138605
+}

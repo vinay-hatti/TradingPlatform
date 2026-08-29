@@ -1,0 +1,27 @@
+{
+  "acceptance_gates": {
+    "maximum_loss_10_rate_change": 0.0,
+    "maximum_top10_abs_contribution_fraction": 0.35,
+    "minimum_equal_symbol_mean_return_uplift": 0.0,
+    "minimum_mean_return_uplift": 0.0075,
+    "minimum_nonoverlap_win_rate_uplift": 0.02,
+    "minimum_positive_month_fraction": 0.7,
+    "minimum_selected_observations": 300,
+    "minimum_unique_selected_symbols": 100,
+    "minimum_win_rate_uplift": 0.03
+  },
+  "automatic_retraining": false,
+  "frozen_date": "2026-08-26",
+  "historical_2018_2026_forbidden_for_tuning": true,
+  "horizon_sessions": 60,
+  "one_immutable_snapshot_per_market_date": true,
+  "population": "TRADE_BUILDER_READY_LONG_AND_DRVE_PASS",
+  "production_authority_effect": false,
+  "production_eligibility_effect": false,
+  "production_ranking_effect": false,
+  "prospective_not_before": "2026-08-27",
+  "protocol_id": "PSVE-CANDIDATE-001",
+  "selector": "PROBABILITY_UP",
+  "top_fraction": 0.1,
+  "version": "M77.24.1-FROZEN-PROSPECTIVE-PROTOCOL-1.0"
+}

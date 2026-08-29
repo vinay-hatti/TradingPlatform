@@ -1,0 +1,31 @@
+{
+  "version": "M77.15.6.5.2-SOURCE-ANOMALY-QUARANTINE-RECERTIFICATION-1.0",
+  "source_manifest": "research_data/m77_15_6_4/polygon_coverage_lineage/manifests/latest.json",
+  "forensic_artifact": "reports/m77/m77_15_6_5_1_qqq_lineage_ohlc_forensic_audit.json",
+  "authority_type": "MATERIAL_LONG_HISTORY_TRADABLE_PROXY",
+  "common_start": "2003-09-10",
+  "minimum_common_sessions": 5700,
+  "frozen_quarantine": [
+    {
+      "date": "2004-07-28",
+      "research_target": "NDX",
+      "research_instrument": "QQQ_LINEAGE",
+      "source_ticker": "QQQ",
+      "reason": "SOURCE_OHLC_INVALID_LOW_ZERO",
+      "source_low": 0.0,
+      "evidence_requirement": "FORENSIC_ROW_MATCHES_NORMALIZED_SOURCE_QQQ"
+    }
+  ],
+  "quarantine_policy": {
+    "source_values_mutated": false,
+    "raw_source_mutated": false,
+    "lineage_mutated": false,
+    "quarantined_session_removed_from_all_common_authority_targets": true,
+    "price_imputation": false,
+    "outcome_dependent_exclusions": false
+  },
+  "output_root": "research_data/m77_15_6_5_2/certified_common_proxy_authority",
+  "database_writes": false,
+  "production_price_history_writes": false,
+  "production_authority_effect": false
+}

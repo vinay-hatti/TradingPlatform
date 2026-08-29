@@ -1,0 +1,18 @@
+{
+  "version": "M77.40.1-GOVERNED-PRODUCTION-CAPACITY-AUTHORITY-CPRE-LIVE-INPUT-BINDING-1.0",
+  "protocol_id": "CACA-CANDIDATE-001",
+  "frozen_protocol_modified": false,
+  "candidate_authority": "M77.30 immutable CPRE prospective snapshot",
+  "capacity_authority": "latest READY current_portfolio_allocation for PAPER-PRIMARY on the same market date",
+  "capacity_measure": "M64_EXACT_OPTIMIZER_FEASIBLE_SELECTED_COUNT_SLOT_EQUIVALENT",
+  "capacity_measure_scope": "shadow comparison axis only; not a production max-position or literal free-slot rule",
+  "candidate_capacity_scanner_run_equality_required": false,
+  "market_date_equality_required": true,
+  "production_database_writes": false,
+  "production_capital_allocation_effect": false,
+  "automatic_retraining": false,
+  "new_probability_up_thresholds_tested": 0,
+  "new_top_k_values_tested": 0,
+  "capacity_budgets_retuned": false,
+  "management_geometry_retuned": false
+}

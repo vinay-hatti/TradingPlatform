@@ -1,0 +1,64 @@
+{
+  "continuity_authority_sha256": "c7c80f5a89bd8c710c99ab171ce95ed8a803d40c5dbed6d28ff6239efe65b4a3",
+  "development_feature_schema_column_count": 27,
+  "exact_8_4_3_partition_parameterization_adapter_required": true,
+  "feature_formula_reimplementation_performed": false,
+  "final_holdout_opened": false,
+  "next_step": "BUILD_M77_19_8_7_10_5_1_EXACT_8_4_3_PARTITION_PARAMETERIZATION_ADAPTER_AND_DEVELOPMENT_PARITY_GATE",
+  "parity_authority_sha256": "516cabdaaf34efa6163193d28bee341b3b7bae10d3c2b651752a3392fcd9998a",
+  "production_authority_effect": false,
+  "required_backfill_feature_coverage": [
+    {
+      "coverage_pct": 0.0,
+      "feature_id": "F020",
+      "missing": 141567,
+      "present": 0
+    },
+    {
+      "coverage_pct": 0.0,
+      "feature_id": "F021",
+      "missing": 141567,
+      "present": 0
+    },
+    {
+      "coverage_pct": 0.0,
+      "feature_id": "F030",
+      "missing": 141567,
+      "present": 0
+    },
+    {
+      "coverage_pct": 0.0,
+      "feature_id": "F031",
+      "missing": 141567,
+      "present": 0
+    },
+    {
+      "coverage_pct": 0.0,
+      "feature_id": "F070",
+      "missing": 141567,
+      "present": 0
+    },
+    {
+      "coverage_pct": 0.0,
+      "feature_id": "F080",
+      "missing": 141567,
+      "present": 0
+    },
+    {
+      "coverage_pct": 0.0,
+      "feature_id": "F081",
+      "missing": 141567,
+      "present": 0
+    }
+  ],
+  "semantic_equivalent_rewrite_performed": false,
+  "status": "BLOCKED_EXACT_8_4_3_PARTITION_PARAMETERIZATION_ADAPTER_REQUIRED",
+  "validation_authority_sha256": "fe7efc8e222acd3aa306995da314b395ff3cf6ae7ab0acbebc51f1ba4bf143c0",
+  "validation_feature_matrix_certified": false,
+  "validation_outcomes_opened": false,
+  "validation_row_count": 141567,
+  "validation_scoring_performed": false,
+  "validation_symbol_count": 570,
+  "validation_targets_opened": false,
+  "version": "M77.19.8.7.10.5-EXACT-MAIN-REUSE-VALIDATION-FEATURE-MATRIX-MATERIALIZATION-1.0"
+}

@@ -1,0 +1,54 @@
+{
+  "version": "M77.15.1-LAHIRI-TRUE-NODE-PANCHANGA-FOUNDATION-1.0",
+  "status": "READY",
+  "rows": [
+    {
+      "date": "2023-03-20",
+      "lahiri_interpolated_deg": 24.181366655646464,
+      "lahiri_reference_deg": 24.181385779899358,
+      "lahiri_error_deg": 1.9124252894187066e-05,
+      "jpl_true_node_deg": 34.11854304820403,
+      "swiss_true_node_reference_deg": 34.42015624546653,
+      "true_node_error_deg": 0.3016131972624976
+    },
+    {
+      "date": "2024-09-22",
+      "lahiri_interpolated_deg": 24.20247995892496,
+      "lahiri_reference_deg": 24.202499083313967,
+      "lahiri_error_deg": 1.9124389005753528e-05,
+      "jpl_true_node_deg": 6.307560978035658,
+      "swiss_true_node_reference_deg": 6.640112576048212,
+      "true_node_error_deg": 0.33255159801255374
+    },
+    {
+      "date": "2025-12-01",
+      "lahiri_interpolated_deg": 24.21911825867045,
+      "lahiri_reference_deg": 24.219137383203076,
+      "lahiri_error_deg": 1.9124532627756707e-05,
+      "jpl_true_node_deg": 343.88578835679687,
+      "swiss_true_node_reference_deg": 344.26264082752056,
+      "true_node_error_deg": 0.37685247072369066
+    },
+    {
+      "date": "2026-08-21",
+      "lahiri_interpolated_deg": 24.229177778779796,
+      "lahiri_reference_deg": 24.229196903322304,
+      "lahiri_error_deg": 1.9124542507853448e-05,
+      "jpl_true_node_deg": 329.4393850167818,
+      "swiss_true_node_reference_deg": 329.82546110995463,
+      "true_node_error_deg": 0.3860760931728464
+    }
+  ],
+  "thresholds": {
+    "lahiri_max_error_deg": 0.01,
+    "true_node_max_error_deg": 1.0
+  },
+  "acceptance": {
+    "lahiri_ayanamsha_parity": true,
+    "true_node_authority": true,
+    "sidereal_feature_materialization": true,
+    "production_authority_effect": false
+  },
+  "next_step": "MATERIALIZE_PANCHANGA_FOUNDATION",
+  "production_authority_effect": false
+}\n

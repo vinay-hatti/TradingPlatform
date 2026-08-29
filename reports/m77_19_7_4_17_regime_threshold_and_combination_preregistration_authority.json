@@ -1,0 +1,136 @@
+{
+  "context_authority_sha256": "f9a749854689235a28550d248c764188a7ade3ac3a4e0cbb9b70274f5a4bbbdd",
+  "context_csv_sha256": "7c9849cf38a3a0bd23d6c0a9dee796391f5d64ad1fcc48a8fe936114a7d9a6d0",
+  "development_context_row_count": 685,
+  "governance": {
+    "automatic_bearish_signal_inversion": false,
+    "classifier_training": false,
+    "combination_search_against_outcomes": false,
+    "parameter_fitting_against_candidate_returns": false,
+    "production_authority_effect": false,
+    "production_model_change_authorized": false,
+    "threshold_search_against_outcomes": false
+  },
+  "next_step": "BUILD_M77_19_7_4_18_DEVELOPMENT_ONLY_REGIME_CONDITIONED_EDGE_EVALUATION",
+  "predeclared_regime_combinations": [
+    {
+      "conditions": [
+        "TREND_REGIME=DOWNTREND",
+        "VOLATILITY=HIGH_VOL"
+      ],
+      "id": "RC1_DOWNTREND_HIGH_VOL",
+      "rationale": "Separate stressed persistent downside from ordinary bearish state."
+    },
+    {
+      "conditions": [
+        "BEAR_MARKET_CONTEXT=BEAR_MARKET",
+        "BREADTH_REGIME=WEAK"
+      ],
+      "id": "RC2_BEAR_MARKET_WEAK_BREADTH",
+      "rationale": "Separate broad market stress with weak cross-sectional participation."
+    },
+    {
+      "conditions": [
+        "MARKET_DRIFT=DOWN_DRIFT",
+        "VOLATILITY=HIGH_VOL"
+      ],
+      "id": "RC3_DOWN_DRIFT_HIGH_VOL",
+      "rationale": "Separate negative medium-term drift with elevated volatility."
+    },
+    {
+      "conditions": [
+        "TREND_REGIME=DOWNTREND",
+        "BREADTH_REGIME=WEAK"
+      ],
+      "id": "RC4_DOWNTREND_WEAK_BREADTH",
+      "rationale": "Separate aligned market trend and breadth deterioration."
+    },
+    {
+      "conditions": [
+        "BEAR_MARKET_CONTEXT in {CORRECTION,BEAR_MARKET}",
+        "VOLATILITY=HIGH_VOL"
+      ],
+      "id": "RC5_CORRECTION_OR_BEAR_HIGH_VOL",
+      "rationale": "Separate material drawdown context with elevated realized volatility."
+    }
+  ],
+  "preregistration_contract": {
+    "candidate_outcomes_read": false,
+    "candidate_performance_scored": false,
+    "combinations_frozen_after_this_authority": true,
+    "final_holdout_context_available": false,
+    "minimum_development_cell_count_for_future_scoring": 500,
+    "minimum_validation_cell_count_for_future_scoring": 300,
+    "thresholds_frozen_after_this_authority": true,
+    "validation_context_used_to_choose_combinations": false,
+    "validation_context_used_to_choose_thresholds": false
+  },
+  "status": "READY",
+  "thresholds": {
+    "BEAR_MARKET_CONTEXT": {
+      "categories": [
+        "NORMAL",
+        "CORRECTION",
+        "BEAR_MARKET"
+      ],
+      "correction_to_bear": -0.2,
+      "method": "FIXED_DRAWDOWN_BANDS",
+      "normal_to_correction": -0.1,
+      "source_field": "spy_drawdown_from_52w_peak"
+    },
+    "BREADTH_REGIME": {
+      "bearish_high_threshold": 0.2536082474226804,
+      "bullish_high_threshold": 0.6912928759894459,
+      "categories": [
+        "WEAK",
+        "MIXED",
+        "BROAD"
+      ],
+      "method": "DEVELOPMENT_TERCILES_SIDE_SPECIFIC",
+      "source_fields": [
+        "breadth_bearish_fraction",
+        "breadth_bullish_fraction"
+      ]
+    },
+    "MARKET_DRIFT": {
+      "categories": [
+        "DOWN_DRIFT",
+        "NEUTRAL_DRIFT",
+        "UP_DRIFT"
+      ],
+      "down_to_neutral": -0.1,
+      "method": "FIXED_ZERO_AND_10PCT_BANDS",
+      "neutral_to_up": 0.1,
+      "source_field": "spy_return_26w"
+    },
+    "TREND_REGIME": {
+      "categories": [
+        "UPTREND",
+        "SIDEWAYS",
+        "DOWNTREND"
+      ],
+      "downtrend_rule": "spy_return_13w < 0 AND spy_return_26w < 0 AND spy_direction in {BEARISH,STRONG_BEARISH}",
+      "else_rule": "SIDEWAYS",
+      "method": "FIXED_DIRECTION_CONCORDANCE",
+      "source_fields": [
+        "spy_return_13w",
+        "spy_return_26w",
+        "spy_direction"
+      ],
+      "uptrend_rule": "spy_return_13w > 0 AND spy_return_26w > 0 AND spy_direction in {BULLISH,STRONG_BULLISH}"
+    },
+    "VOLATILITY": {
+      "categories": [
+        "LOW_VOL",
+        "NORMAL_VOL",
+        "HIGH_VOL"
+      ],
+      "low_to_normal": 0.1046075589994507,
+      "method": "DEVELOPMENT_TERCILES",
+      "normal_to_high": 0.1543907529565513,
+      "source_field": "spy_realized_vol_26w_annualized"
+    }
+  },
+  "validation_context_row_count_present_but_unused_for_threshold_selection": 261,
+  "version": "M77.19.7.4.17-REGIME-THRESHOLD-COMBINATION-PREREGISTRATION-AUTHORITY-1.0"
+}

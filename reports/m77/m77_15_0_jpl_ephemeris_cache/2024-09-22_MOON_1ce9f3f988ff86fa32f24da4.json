@@ -1,0 +1,20 @@
+{
+  "provider": "NASA_JPL_HORIZONS",
+  "api_version_observed": "1.2",
+  "api_version_documented": "1.3",
+  "api_version_compatibility": "SUPPORTED_OBSERVED_VERSION",
+  "body": "MOON",
+  "horizons_id": "301",
+  "date": "2024-09-22",
+  "time_utc": "12:00:00",
+  "center": "EARTH_GEOCENTER_500@399",
+  "reference_plane": "ECLIPTIC",
+  "reference_system": "ICRF",
+  "vector_correction": "NONE_GEOMETRIC",
+  "x_au": 0.00121135454168389,
+  "y_au": 0.002149606200518232,
+  "z_au": 0.0001855797495891829,
+  "tropical_ecliptic_longitude_deg": 60.59769987327046,
+  "source_url_sha256": "388a6dd50832accf2907c475fed074cce6dd54fa4332d964d93d3b2aebb12cb1",
+  "cache_mode": "MATERIALIZED"
+}

@@ -1,0 +1,51 @@
+{
+  "version": "M77.19.3-ISOLATED-DAILY-MONTHLY-PIT-HARNESS-FOUNDATION-1.0",
+  "purpose": "Build and certify the isolation/date-parameterization contract required before any historical M77.8/M77.9/M77.10 replay is attempted.",
+  "target_history": {
+    "desired_start": "2003-09-10",
+    "desired_end": "2026-08-21",
+    "desired_sessions": 5773,
+    "note": "This milestone does not claim the original ~601-symbol universe has 23-year source data."
+  },
+  "source_runners": {
+    "pit": "scripts/run_m77_8_daily_pit_replay_authority.py",
+    "daily": "scripts/run_m77_9_daily_model_replay.py",
+    "monthly": "scripts/run_m77_10_monthly_model_replay.py",
+    "weekly": "scripts/run_m77_2_multiyear_frozen_champion.py"
+  },
+  "research_storage_root": "research_data/m77_19_3",
+  "harness_contract": {
+    "source_price_access": "READ_ONLY",
+    "production_database_writes": false,
+    "production_table_mutation": false,
+    "research_output": "FILESYSTEM_ONLY",
+    "date_parameterization_required": [
+      "DAILY",
+      "MONTHLY",
+      "PIT"
+    ],
+    "weekly_existing_range_capability_reused": true,
+    "future_leakage_prohibited": true,
+    "as_of_cutoff_required": true,
+    "deterministic_replay_identity_required": true,
+    "original_runner_source_mutation": false,
+    "automatic_historical_replay": false
+  },
+  "certification_gates": [
+    "SOURCE_RUNNERS_PRESENT",
+    "SOURCE_RUNNERS_COMPILE",
+    "SOURCE_SHA256_FROZEN",
+    "TOP_LEVEL_CALLABLES_DISCOVERED",
+    "DATE_PARAMETERIZATION_ADAPTER_CONTRACT_PRESENT",
+    "RESEARCH_OUTPUT_NAMESPACE_ISOLATED",
+    "NO_PRODUCTION_DB_WRITE_CODE_IN_HARNESS",
+    "NO_AUTOMATIC_REPLAY_EXECUTION",
+    "POINT_IN_TIME_EXECUTION_NOT_YET_AUTHORIZED"
+  ],
+  "governance": {
+    "database_writes": false,
+    "production_authority_effect": false,
+    "automatic_replay_execution": false,
+    "source_mutation": false
+  }
+}

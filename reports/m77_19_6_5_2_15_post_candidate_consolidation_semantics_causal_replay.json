@@ -1,0 +1,3108 @@
+{
+  "arm_summaries": {
+    "NATIVE_CONTROL": {
+      "exact_frozen_match_count": 1338,
+      "exact_gain_vs_no_top12": 9,
+      "exact_ohlc_selection_target_recovered_count": 0,
+      "missing_beyond_0_3pct_count": 67,
+      "missing_reduction_vs_no_top12": -13,
+      "near_ohlc_target_recovered_count": 0,
+      "no_ohlc_target_recovered_count": 0,
+      "preconsolidation_target_recovered_count": 0
+    },
+    "NO_TOP12_BASELINE": {
+      "exact_frozen_match_count": 1329,
+      "exact_gain_vs_no_top12": 0,
+      "exact_ohlc_selection_target_recovered_count": 0,
+      "missing_beyond_0_3pct_count": 54,
+      "missing_reduction_vs_no_top12": 0,
+      "near_ohlc_target_recovered_count": 0,
+      "no_ohlc_target_recovered_count": 0,
+      "preconsolidation_target_recovered_count": 0
+    },
+    "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+      "exact_frozen_match_count": 1099,
+      "exact_gain_vs_no_top12": -230,
+      "exact_ohlc_selection_target_recovered_count": 0,
+      "missing_beyond_0_3pct_count": 170,
+      "missing_reduction_vs_no_top12": -116,
+      "near_ohlc_target_recovered_count": 7,
+      "no_ohlc_target_recovered_count": 0,
+      "preconsolidation_target_recovered_count": 0
+    },
+    "NO_TOP12_KEEP_SEED_PRICE": {
+      "exact_frozen_match_count": 479,
+      "exact_gain_vs_no_top12": -850,
+      "exact_ohlc_selection_target_recovered_count": 2,
+      "missing_beyond_0_3pct_count": 472,
+      "missing_reduction_vs_no_top12": -418,
+      "near_ohlc_target_recovered_count": 18,
+      "no_ohlc_target_recovered_count": 0,
+      "preconsolidation_target_recovered_count": 2
+    },
+    "NO_TOP12_NEAREST_MATCH": {
+      "exact_frozen_match_count": 1144,
+      "exact_gain_vs_no_top12": -185,
+      "exact_ohlc_selection_target_recovered_count": 0,
+      "missing_beyond_0_3pct_count": 138,
+      "missing_reduction_vs_no_top12": -84,
+      "near_ohlc_target_recovered_count": 5,
+      "no_ohlc_target_recovered_count": 0,
+      "preconsolidation_target_recovered_count": 0
+    }
+  },
+  "authority_5214": {
+    "exact_ohlc_selection_targets_8": true,
+    "forensic_conclusion": true,
+    "monthly_bundle_count_48": true,
+    "native_missing_67": true,
+    "near_ohlc_targets_41": true,
+    "next_step": true,
+    "no_ohlc_targets_2": true,
+    "no_top12_residual_54": true,
+    "parity_not_certified": true,
+    "pass": true,
+    "preconsolidation_targets_3": true,
+    "production_authority_unchanged": true,
+    "reconstruction_blocked": true
+  },
+  "controlled_exact_input_parity_certified": false,
+  "forensic_conclusion": "POST_CANDIDATE_CONSOLIDATION_SEMANTICS_CAUSALLY_RESTORE_PRECONSOLIDATION_TARGETS",
+  "full_23_year_reconstruction_authorized": false,
+  "governance": {
+    "candidate_generation_frozen": {
+      "pivot_radius": 2,
+      "rolling_windows": [
+        20,
+        50,
+        100
+      ]
+    },
+    "controlled_exact_input_parity_certified": false,
+    "database_mode": "READ_ONLY_SPY_SESSION_CALENDAR_ONLY",
+    "frozen_profile_scoring_authority_only": true,
+    "full_23_year_reconstruction_authorized": false,
+    "native_control_unmodified": true,
+    "native_internal_atr_merge_multiplier": 0.35,
+    "native_internal_atr_merge_multiplier_relaxed": false,
+    "native_level_merge_threshold": 0.003,
+    "native_level_merge_threshold_relaxed": false,
+    "no_top12_baseline_forensic_only": true,
+    "one_factor_causal_arms_only": true,
+    "parity_thresholds_relaxed": false,
+    "parity_tolerance": 1e-09,
+    "production_authority_effect": false,
+    "production_database_writes": false,
+    "research_only": true,
+    "threshold_search_or_optimization": false
+  },
+  "monthly_bundle_count": 48,
+  "next_step": "BUILD_M77_19_6_5_2_16_WINNING_CONSOLIDATION_SEMANTIC_EXACT_PARITY_REPLAY",
+  "predeclared_arms": [
+    "NATIVE_CONTROL",
+    "NO_TOP12_BASELINE",
+    "NO_TOP12_KEEP_SEED_PRICE",
+    "NO_TOP12_NEAREST_MATCH",
+    "NO_TOP12_FIXED_SEED_MEMBERSHIP"
+  ],
+  "production_authority_effect": false,
+  "ranking": [
+    "NO_TOP12_KEEP_SEED_PRICE",
+    "NO_TOP12_NEAREST_MATCH",
+    "NO_TOP12_FIXED_SEED_MEMBERSHIP"
+  ],
+  "records": [
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 29,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 30,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 25,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 9,
+          "missing_beyond_0_3pct_count": 9,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 24,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/001_A_2022-10-31.json",
+      "symbol": "A"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 23,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 23,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 14,
+          "missing_beyond_0_3pct_count": 4,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 3,
+          "missing_beyond_0_3pct_count": 9,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 19,
+          "missing_beyond_0_3pct_count": 5,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/002_AAPL_2022-10-31.json",
+      "symbol": "AAPL"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 26,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 26,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 20,
+          "missing_beyond_0_3pct_count": 3,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [
+              {
+                "price": 119.62335,
+                "side": "resistance",
+                "symbol": "ABBV",
+                "timeframe": "1d"
+              }
+            ],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 6,
+          "missing_beyond_0_3pct_count": 7,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [
+              {
+                "price": 121.53,
+                "side": "resistance",
+                "symbol": "ABBV",
+                "timeframe": "1w"
+              }
+            ],
+            "NEAR_OHLC": [
+              {
+                "price": 119.62335,
+                "side": "resistance",
+                "symbol": "ABBV",
+                "timeframe": "1d"
+              }
+            ],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 17,
+          "missing_beyond_0_3pct_count": 7,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/003_ABBV_2022-10-31.json",
+      "symbol": "ABBV"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 29,
+          "missing_beyond_0_3pct_count": 3,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 28,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 22,
+          "missing_beyond_0_3pct_count": 5,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 8,
+          "missing_beyond_0_3pct_count": 17,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 28,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/004_ABNB_2022-10-31.json",
+      "symbol": "ABNB"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 27,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 27,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 20,
+          "missing_beyond_0_3pct_count": 4,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 6,
+          "missing_beyond_0_3pct_count": 10,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 25,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/005_ABT_2022-10-31.json",
+      "symbol": "ABT"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 21,
+          "missing_beyond_0_3pct_count": 3,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 21,
+          "missing_beyond_0_3pct_count": 3,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 12,
+          "missing_beyond_0_3pct_count": 8,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [
+              {
+                "price": 41.19464444444444,
+                "side": "support",
+                "symbol": "ACGL",
+                "timeframe": "1d"
+              },
+              {
+                "price": 42.02875,
+                "side": "support",
+                "symbol": "ACGL",
+                "timeframe": "1d"
+              }
+            ],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 5,
+          "missing_beyond_0_3pct_count": 8,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [
+              {
+                "price": 41.19464444444444,
+                "side": "support",
+                "symbol": "ACGL",
+                "timeframe": "1d"
+              },
+              {
+                "price": 42.02875,
+                "side": "support",
+                "symbol": "ACGL",
+                "timeframe": "1d"
+              }
+            ],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 14,
+          "missing_beyond_0_3pct_count": 5,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [
+              {
+                "price": 41.19464444444444,
+                "side": "support",
+                "symbol": "ACGL",
+                "timeframe": "1d"
+              }
+            ],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/006_ACGL_2022-10-31.json",
+      "symbol": "ACGL"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 26,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 25,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 24,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 12,
+          "missing_beyond_0_3pct_count": 4,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 25,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/007_ACN_2022-10-31.json",
+      "symbol": "ACN"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 30,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 30,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 30,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 18,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 30,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/008_ADBE_2022-10-31.json",
+      "symbol": "ADBE"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 22,
+          "missing_beyond_0_3pct_count": 5,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 22,
+          "missing_beyond_0_3pct_count": 5,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 17,
+          "missing_beyond_0_3pct_count": 7,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 8,
+          "missing_beyond_0_3pct_count": 9,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [
+              {
+                "price": 172.036,
+                "side": "resistance",
+                "symbol": "ADI",
+                "timeframe": "1d"
+              },
+              {
+                "price": 171.3166666666667,
+                "side": "resistance",
+                "symbol": "ADI",
+                "timeframe": "1w"
+              }
+            ],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 19,
+          "missing_beyond_0_3pct_count": 6,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [
+              {
+                "price": 168.71714285714285,
+                "side": "resistance",
+                "symbol": "ADI",
+                "timeframe": "1d"
+              }
+            ],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/009_ADI_2022-10-31.json",
+      "symbol": "ADI"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 29,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 29,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 23,
+          "missing_beyond_0_3pct_count": 4,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 7,
+          "missing_beyond_0_3pct_count": 13,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 25,
+          "missing_beyond_0_3pct_count": 3,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/010_ADM_2022-10-31.json",
+      "symbol": "ADM"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 25,
+          "missing_beyond_0_3pct_count": 3,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 25,
+          "missing_beyond_0_3pct_count": 3,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 15,
+          "missing_beyond_0_3pct_count": 8,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 5,
+          "missing_beyond_0_3pct_count": 6,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [
+              {
+                "price": 206.543775,
+                "side": "support",
+                "symbol": "ADP",
+                "timeframe": "1d"
+              },
+              {
+                "price": 203.975,
+                "side": "support",
+                "symbol": "ADP",
+                "timeframe": "1d"
+              }
+            ],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 21,
+          "missing_beyond_0_3pct_count": 5,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [
+              {
+                "price": 211.61000000000004,
+                "side": "resistance",
+                "symbol": "ADP",
+                "timeframe": "1d"
+              }
+            ],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/011_ADP_2022-10-31.json",
+      "symbol": "ADP"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 33,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 33,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 32,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 13,
+          "missing_beyond_0_3pct_count": 11,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 30,
+          "missing_beyond_0_3pct_count": 3,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/012_ADSK_2022-10-31.json",
+      "symbol": "ADSK"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 25,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 25,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 23,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 13,
+          "missing_beyond_0_3pct_count": 6,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 18,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/013_AEE_2022-10-31.json",
+      "symbol": "AEE"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 22,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 22,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 16,
+          "missing_beyond_0_3pct_count": 5,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 6,
+          "missing_beyond_0_3pct_count": 12,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 19,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/014_AEP_2022-10-31.json",
+      "symbol": "AEP"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 23,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 23,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 14,
+          "missing_beyond_0_3pct_count": 8,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 7,
+          "missing_beyond_0_3pct_count": 13,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 22,
+          "missing_beyond_0_3pct_count": 4,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/015_AES_2022-10-31.json",
+      "symbol": "AES"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 28,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 27,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 22,
+          "missing_beyond_0_3pct_count": 4,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 5,
+          "missing_beyond_0_3pct_count": 10,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [
+              {
+                "price": 55.74916666666667,
+                "side": "support",
+                "symbol": "AFL",
+                "timeframe": "1d"
+              },
+              {
+                "price": 56.3,
+                "side": "support",
+                "symbol": "AFL",
+                "timeframe": "1d"
+              }
+            ],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 16,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [
+              {
+                "price": 56.3,
+                "side": "support",
+                "symbol": "AFL",
+                "timeframe": "1d"
+              }
+            ],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/016_AFL_2022-10-31.json",
+      "symbol": "AFL"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 24,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 22,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 19,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 12,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 22,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/017_AGG_2022-10-31.json",
+      "symbol": "AGG"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 26,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 26,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 20,
+          "missing_beyond_0_3pct_count": 3,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 7,
+          "missing_beyond_0_3pct_count": 13,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [
+              {
+                "price": 52.129999999999995,
+                "side": "support",
+                "symbol": "AIG",
+                "timeframe": "1d"
+              }
+            ],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 22,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/018_AIG_2022-10-31.json",
+      "symbol": "AIG"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 28,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 28,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 17,
+          "missing_beyond_0_3pct_count": 6,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 10,
+          "missing_beyond_0_3pct_count": 11,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [
+              {
+                "price": 168.82333333333335,
+                "side": "resistance",
+                "symbol": "AIZ",
+                "timeframe": "1d"
+              }
+            ],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 24,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/019_AIZ_2022-10-31.json",
+      "symbol": "AIZ"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 27,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 27,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 17,
+          "missing_beyond_0_3pct_count": 3,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 4,
+          "missing_beyond_0_3pct_count": 11,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 20,
+          "missing_beyond_0_3pct_count": 4,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/020_AJG_2022-10-31.json",
+      "symbol": "AJG"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 30,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 28,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 27,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 15,
+          "missing_beyond_0_3pct_count": 7,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 27,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/021_AKAM_2022-10-31.json",
+      "symbol": "AKAM"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 29,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 29,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 24,
+          "missing_beyond_0_3pct_count": 3,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 13,
+          "missing_beyond_0_3pct_count": 9,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [
+              {
+                "price": 243.86326666666668,
+                "side": "resistance",
+                "symbol": "ALB",
+                "timeframe": "1d"
+              }
+            ],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 20,
+          "missing_beyond_0_3pct_count": 6,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/022_ALB_2022-10-31.json",
+      "symbol": "ALB"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 34,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 33,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 27,
+          "missing_beyond_0_3pct_count": 5,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 17,
+          "missing_beyond_0_3pct_count": 10,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 32,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/023_ALGN_2022-10-31.json",
+      "symbol": "ALGN"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 22,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 22,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 15,
+          "missing_beyond_0_3pct_count": 6,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 4,
+          "missing_beyond_0_3pct_count": 10,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 16,
+          "missing_beyond_0_3pct_count": 5,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/024_ALL_2022-10-31.json",
+      "symbol": "ALL"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 32,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 32,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 29,
+          "missing_beyond_0_3pct_count": 3,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 8,
+          "missing_beyond_0_3pct_count": 13,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 29,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/025_ALLE_2022-10-31.json",
+      "symbol": "ALLE"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 31,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 31,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 28,
+          "missing_beyond_0_3pct_count": 4,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 9,
+          "missing_beyond_0_3pct_count": 18,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 23,
+          "missing_beyond_0_3pct_count": 8,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/026_ALNY_2022-10-31.json",
+      "symbol": "ALNY"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 31,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 30,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 26,
+          "missing_beyond_0_3pct_count": 4,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 12,
+          "missing_beyond_0_3pct_count": 12,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 28,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/027_AMAT_2022-10-31.json",
+      "symbol": "AMAT"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 23,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 23,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 11,
+          "missing_beyond_0_3pct_count": 3,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 6,
+          "missing_beyond_0_3pct_count": 11,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 17,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/028_AMCR_2022-10-31.json",
+      "symbol": "AMCR"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 31,
+          "missing_beyond_0_3pct_count": 3,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 32,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 31,
+          "missing_beyond_0_3pct_count": 3,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 19,
+          "missing_beyond_0_3pct_count": 6,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [
+              {
+                "price": 114.4899,
+                "side": "resistance",
+                "symbol": "AMD",
+                "timeframe": "1w"
+              }
+            ],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 31,
+          "missing_beyond_0_3pct_count": 3,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/029_AMD_2022-10-31.json",
+      "symbol": "AMD"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 25,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 25,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 23,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 6,
+          "missing_beyond_0_3pct_count": 5,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 19,
+          "missing_beyond_0_3pct_count": 3,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/030_AME_2022-10-31.json",
+      "symbol": "AME"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 27,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 28,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 27,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 6,
+          "missing_beyond_0_3pct_count": 10,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 21,
+          "missing_beyond_0_3pct_count": 4,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/031_AMGN_2022-10-31.json",
+      "symbol": "AMGN"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 25,
+          "missing_beyond_0_3pct_count": 4,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 25,
+          "missing_beyond_0_3pct_count": 4,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 21,
+          "missing_beyond_0_3pct_count": 8,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [
+              {
+                "price": 267.995,
+                "side": "resistance",
+                "symbol": "AMP",
+                "timeframe": "1d"
+              }
+            ],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 8,
+          "missing_beyond_0_3pct_count": 11,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [
+              {
+                "price": 274.3514285714285,
+                "side": "resistance",
+                "symbol": "AMP",
+                "timeframe": "1d"
+              }
+            ],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 17,
+          "missing_beyond_0_3pct_count": 9,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/032_AMP_2022-10-31.json",
+      "symbol": "AMP"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 28,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 28,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 16,
+          "missing_beyond_0_3pct_count": 4,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 8,
+          "missing_beyond_0_3pct_count": 11,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 19,
+          "missing_beyond_0_3pct_count": 4,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/033_AMT_2022-10-31.json",
+      "symbol": "AMT"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 32,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 32,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 27,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 12,
+          "missing_beyond_0_3pct_count": 13,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 29,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/034_AMZN_2022-10-31.json",
+      "symbol": "AMZN"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 27,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 27,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 26,
+          "missing_beyond_0_3pct_count": 3,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 9,
+          "missing_beyond_0_3pct_count": 16,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": [
+              {
+                "price": 22.8919,
+                "side": "support",
+                "symbol": "ANET",
+                "timeframe": "1d"
+              }
+            ]
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 21,
+          "missing_beyond_0_3pct_count": 7,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/035_ANET_2022-10-31.json",
+      "symbol": "ANET"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 25,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 25,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 20,
+          "missing_beyond_0_3pct_count": 4,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 12,
+          "missing_beyond_0_3pct_count": 9,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 21,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/036_AON_2022-10-31.json",
+      "symbol": "AON"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 31,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 31,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 29,
+          "missing_beyond_0_3pct_count": 3,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 12,
+          "missing_beyond_0_3pct_count": 9,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [
+              {
+                "price": 73.08625,
+                "side": "resistance",
+                "symbol": "AOS",
+                "timeframe": "1d"
+              }
+            ],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 28,
+          "missing_beyond_0_3pct_count": 4,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/037_AOS_2022-10-31.json",
+      "symbol": "AOS"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 31,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 31,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 27,
+          "missing_beyond_0_3pct_count": 6,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 10,
+          "missing_beyond_0_3pct_count": 18,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 24,
+          "missing_beyond_0_3pct_count": 8,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/038_APA_2022-10-31.json",
+      "symbol": "APA"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 30,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 29,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 25,
+          "missing_beyond_0_3pct_count": 3,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 9,
+          "missing_beyond_0_3pct_count": 11,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 28,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/039_APD_2022-10-31.json",
+      "symbol": "APD"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 26,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 26,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 21,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 8,
+          "missing_beyond_0_3pct_count": 5,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 24,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/040_APH_2022-10-31.json",
+      "symbol": "APH"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 29,
+          "missing_beyond_0_3pct_count": 3,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 28,
+          "missing_beyond_0_3pct_count": 3,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 25,
+          "missing_beyond_0_3pct_count": 5,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [
+              {
+                "price": 60.278,
+                "side": "resistance",
+                "symbol": "APO",
+                "timeframe": "1d"
+              }
+            ],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 9,
+          "missing_beyond_0_3pct_count": 11,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [
+              {
+                "price": 55.166666666666664,
+                "side": "support",
+                "symbol": "APO",
+                "timeframe": "1d"
+              },
+              {
+                "price": 60.278,
+                "side": "resistance",
+                "symbol": "APO",
+                "timeframe": "1d"
+              }
+            ],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 28,
+          "missing_beyond_0_3pct_count": 3,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/041_APO_2022-10-31.json",
+      "symbol": "APO"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 35,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 35,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 35,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 26,
+          "missing_beyond_0_3pct_count": 5,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 35,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/042_APP_2022-10-31.json",
+      "symbol": "APP"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 35,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 35,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 33,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 18,
+          "missing_beyond_0_3pct_count": 10,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 30,
+          "missing_beyond_0_3pct_count": 4,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/043_APTV_2022-10-31.json",
+      "symbol": "APTV"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 27,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 27,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 24,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [
+              {
+                "price": 207.87666666666667,
+                "side": "resistance",
+                "symbol": "ARE",
+                "timeframe": "1d"
+              },
+              {
+                "price": 210.47125,
+                "side": "resistance",
+                "symbol": "ARE",
+                "timeframe": "1w"
+              }
+            ],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 15,
+          "missing_beyond_0_3pct_count": 6,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [
+              {
+                "price": 207.87666666666667,
+                "side": "resistance",
+                "symbol": "ARE",
+                "timeframe": "1d"
+              }
+            ],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 26,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [
+              {
+                "price": 207.87666666666667,
+                "side": "resistance",
+                "symbol": "ARE",
+                "timeframe": "1d"
+              }
+            ],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/044_ARE_2022-10-31.json",
+      "symbol": "ARE"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 29,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 30,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 23,
+          "missing_beyond_0_3pct_count": 5,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 9,
+          "missing_beyond_0_3pct_count": 11,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [
+              {
+                "price": 70.21000000000001,
+                "side": "support",
+                "symbol": "ARES",
+                "timeframe": "1d"
+              }
+            ],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 24,
+          "missing_beyond_0_3pct_count": 4,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/045_ARES_2022-10-31.json",
+      "symbol": "ARES"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 32,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 31,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 26,
+          "missing_beyond_0_3pct_count": 4,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 12,
+          "missing_beyond_0_3pct_count": 15,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 31,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/046_ARKK_2022-10-31.json",
+      "symbol": "ARKK"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 32,
+          "missing_beyond_0_3pct_count": 1,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 32,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 30,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 13,
+          "missing_beyond_0_3pct_count": 13,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 32,
+          "missing_beyond_0_3pct_count": 0,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/047_ASML_2022-10-31.json",
+      "symbol": "ASML"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 26,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_BASELINE": {
+          "exact_frozen_match_count": 25,
+          "missing_beyond_0_3pct_count": 2,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_FIXED_SEED_MEMBERSHIP": {
+          "exact_frozen_match_count": 21,
+          "missing_beyond_0_3pct_count": 4,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        },
+        "NO_TOP12_KEEP_SEED_PRICE": {
+          "exact_frozen_match_count": 10,
+          "missing_beyond_0_3pct_count": 6,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": [
+              {
+                "price": 103.405,
+                "side": "resistance",
+                "symbol": "ATO",
+                "timeframe": "1d"
+              }
+            ]
+          }
+        },
+        "NO_TOP12_NEAREST_MATCH": {
+          "exact_frozen_match_count": 24,
+          "missing_beyond_0_3pct_count": 3,
+          "recovered_targets": {
+            "EXACT_OHLC_SELECTION": [],
+            "NEAR_OHLC": [],
+            "NO_OHLC": [],
+            "PRECONSOLIDATION": []
+          }
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/048_ATO_2022-10-31.json",
+      "symbol": "ATO"
+    }
+  ],
+  "source_authorities": {
+    "level_service_source_sha256": "8581c423956fd9d997af8098fb1065aab78b24646c72b9fb5ba1e8e446402490",
+    "m77_19_6_5_2_14_report": {
+      "path": "/Users/vinay.hatti/TradingPlatform/reports/m77_19_6_5_2_14_residual_candidate_generation_semantics_forensics.json",
+      "sha256": "3cced0fca689833455e548e9f5f66fe54bcad5bd9b53f470af62f7c4f7ca275b"
+    },
+    "m77_19_6_5_2_14_runner": {
+      "path": "/Users/vinay.hatti/TradingPlatform/scripts/run_m77_19_6_5_2_14_residual_candidate_generation_semantics_forensics.py",
+      "sha256": "2fc32620d3e05927f7a85ada94c4364b47b49df32c63acbe432e8556e40132dd"
+    },
+    "native_runner": {
+      "path": "/Users/vinay.hatti/TradingPlatform/scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+      "sha256": "bcc5b49b87ddceba6ac417000d5af3d4a57efd14145595f4d712eb36ae81204b"
+    },
+    "support_resistance_source_sha256": "e960e1c5dfc3b8572d4bd4a321a2706490a4b52e92979a1c463ff54a58ac4213"
+  },
+  "version": "M77.19.6.5.2.15-POST-CANDIDATE-CONSOLIDATION-SEMANTICS-CAUSAL-REPLAY-1.0",
+  "winner_analysis": {
+    "no_top12_baseline_exact_count": 1329,
+    "no_top12_baseline_missing_count": 54,
+    "winner": "NO_TOP12_KEEP_SEED_PRICE",
+    "winner_exact_gain_vs_no_top12": -850,
+    "winner_missing_reduction_vs_no_top12": -418,
+    "winner_preconsolidation_target_recovered_count": 2
+  }
+}

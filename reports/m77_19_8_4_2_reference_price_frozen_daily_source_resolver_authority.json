@@ -1,0 +1,110 @@
+{
+  "forensics_authority_sha256": "f709dedef1a411ab06cbaa29953661af3e96b1d0403e99fc84b59dc032595008",
+  "frozen_daily_source_resolver": {
+    "certified": true,
+    "close_field": "close",
+    "date_field": "session_date",
+    "expected_symbol_file_count": 602,
+    "extra_daily_symbols": [],
+    "fieldnames": [
+      "session_date",
+      "open",
+      "high",
+      "low",
+      "close",
+      "volume",
+      "vwap",
+      "transactions"
+    ],
+    "file_glob": "**/*.daily.csv.gz",
+    "filename_rule": "<symbol>.daily.csv.gz",
+    "missing_replay_symbols": [],
+    "resolved_symbol_file_count": 602,
+    "uniform_schema": true,
+    "unique_mapping_per_symbol": true
+  },
+  "governance": {
+    "feature_matrix_mutated": false,
+    "feature_semantics_changed": false,
+    "final_holdout_data_opened": false,
+    "model_scoring_performed": false,
+    "model_training_performed": false,
+    "outcome_or_target_file_opened": false,
+    "production_authority_effect": false,
+    "production_model_change_authorized": false,
+    "validation_data_opened": false
+  },
+  "next_step": "BUILD_M77_19_8_4_3_CERTIFIED_SOURCE_RESOLVER_DEVELOPMENT_FEATURE_BACKFILL_REPAIR",
+  "reference_price_authority": {
+    "all_full_coverage_paths_exact_to_preferred": true,
+    "candidate_paths": [
+      "profile.decision_intelligence.explainability.opportunity_freshness.reference_price",
+      "profile.timeframe_states.1d.close",
+      "profile.trade_plan.certification.entry_execution.reference_price",
+      "profile.trade_plan.certification.reference_market.price",
+      "profile.trade_plan.geometry_context.reference_price",
+      "profile.trade_plan.reference_market.price"
+    ],
+    "certified": true,
+    "full_coverage_paths": [
+      "profile.decision_intelligence.explainability.opportunity_freshness.reference_price",
+      "profile.timeframe_states.1d.close",
+      "profile.trade_plan.certification.entry_execution.reference_price",
+      "profile.trade_plan.certification.reference_market.price",
+      "profile.trade_plan.geometry_context.reference_price",
+      "profile.trade_plan.reference_market.price"
+    ],
+    "path_present_counts": {
+      "profile.decision_intelligence.explainability.opportunity_freshness.reference_price": 51569,
+      "profile.timeframe_states.1d.close": 51569,
+      "profile.trade_plan.certification.entry_execution.reference_price": 51569,
+      "profile.trade_plan.certification.reference_market.price": 51569,
+      "profile.trade_plan.geometry_context.reference_price": 51569,
+      "profile.trade_plan.reference_market.price": 51569
+    },
+    "preferred_pair_results": [
+      {
+        "compared": 51569,
+        "exact": 51569,
+        "max_abs_diff": 0.0,
+        "mismatch": 0,
+        "other_path": "profile.decision_intelligence.explainability.opportunity_freshness.reference_price"
+      },
+      {
+        "compared": 51569,
+        "exact": 51569,
+        "max_abs_diff": 0.0,
+        "mismatch": 0,
+        "other_path": "profile.trade_plan.certification.entry_execution.reference_price"
+      },
+      {
+        "compared": 51569,
+        "exact": 51569,
+        "max_abs_diff": 0.0,
+        "mismatch": 0,
+        "other_path": "profile.trade_plan.certification.reference_market.price"
+      },
+      {
+        "compared": 51569,
+        "exact": 51569,
+        "max_abs_diff": 0.0,
+        "mismatch": 0,
+        "other_path": "profile.trade_plan.geometry_context.reference_price"
+      },
+      {
+        "compared": 51569,
+        "exact": 51569,
+        "max_abs_diff": 0.0,
+        "mismatch": 0,
+        "other_path": "profile.trade_plan.reference_market.price"
+      }
+    ],
+    "preferred_path": "profile.timeframe_states.1d.close",
+    "preferred_path_present_count": 51569,
+    "rows_examined": 51569,
+    "semantic": "SAME_AS_OF_NATIVE_1D_CLOSE",
+    "symbols_examined": 524
+  },
+  "status": "READY",
+  "version": "M77.19.8.4.2-REFERENCE-PRICE-FROZEN-DAILY-SOURCE-RESOLVER-AUTHORITY-1.0"
+}

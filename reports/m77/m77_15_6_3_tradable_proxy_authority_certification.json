@@ -1,0 +1,47 @@
+{
+  "version": "M77.15.6.3-TRADABLE-PROXY-AUTHORITY-CERTIFICATION-1.0",
+  "status": "READY",
+  "authority_type": "LONG_HISTORY_TRADABLE_PROXY",
+  "gates": {
+    "SPX": {
+      "research_instrument": "SPY",
+      "authority_type_is_long_history_tradable_proxy": true,
+      "starts_by_target_specific_gate": false,
+      "start_gate": "2000-01-10",
+      "row_count_ge_min": false,
+      "minimum_rows": 6000,
+      "duplicate_dates_zero": true,
+      "ohlc_violations_zero": true
+    },
+    "NDX": {
+      "research_instrument": "QQQ",
+      "authority_type_is_long_history_tradable_proxy": true,
+      "starts_by_target_specific_gate": false,
+      "start_gate": "2000-01-10",
+      "row_count_ge_min": false,
+      "minimum_rows": 6000,
+      "duplicate_dates_zero": true,
+      "ohlc_violations_zero": true
+    },
+    "RUT": {
+      "research_instrument": "IWM",
+      "authority_type_is_long_history_tradable_proxy": true,
+      "starts_by_target_specific_gate": false,
+      "start_gate": "2000-06-01",
+      "row_count_ge_min": false,
+      "minimum_rows": 6000,
+      "duplicate_dates_zero": true,
+      "ohlc_violations_zero": true
+    }
+  },
+  "certified_for_m77_15_7_long_history_replication": false,
+  "promotion_governance": {
+    "proxy_results_are_not_index_results": true,
+    "proxy_only_survivor_may_not_advance": true,
+    "future_cross_authority_same_direction_required": true,
+    "canonical_recent_index_confirmation_required": true
+  },
+  "database_writes": false,
+  "production_authority_effect": false,
+  "next_step": "REVIEW_PROXY_DATA_COVERAGE_OR_SOURCE_GAPS"
+}

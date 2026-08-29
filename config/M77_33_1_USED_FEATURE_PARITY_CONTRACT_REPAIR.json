@@ -1,0 +1,24 @@
+{
+  "2018_2026_read": false,
+  "certification_critical_features": [
+    "volume_ratio_10",
+    "volume_ratio_20",
+    "volume_ratio_60",
+    "clv"
+  ],
+  "development_end": "2017-12-31",
+  "frozen_states_unchanged": true,
+  "imputation_allowed": false,
+  "optional_diagnostic_features": [
+    "volume_z_10",
+    "volume_z_20",
+    "volume_z_60",
+    "body_range"
+  ],
+  "production_authority_effect": false,
+  "prospective_protocols_modified": false,
+  "quantiles_unchanged": true,
+  "required_parity_fraction": 1.0,
+  "row_deletion_allowed": false,
+  "version": "M77.33.1-USED-FEATURE-PARITY-CONTRACT-REPAIR-1.0"
+}

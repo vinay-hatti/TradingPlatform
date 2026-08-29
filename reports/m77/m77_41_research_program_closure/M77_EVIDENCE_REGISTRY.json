@@ -1,0 +1,248 @@
+{
+  "entries": [
+    {
+      "classification": "PRODUCTION_CERTIFIED",
+      "evidence": "Final-holdout PASS; production enforcement activated.",
+      "mechanism": "DRVE downside-risk veto",
+      "milestone": "M77.23",
+      "next_permitted_action": "Monitor only; no automatic retraining.",
+      "production_authority_effect": true,
+      "title": "Certified Downside-Risk Veto Production Integration"
+    },
+    {
+      "classification": "DEVELOPMENT_SURVIVOR",
+      "evidence": "Development survivor.",
+      "mechanism": "PROBABILITY_UP positive selection",
+      "milestone": "M77.24",
+      "next_permitted_action": "Prospective certification only.",
+      "production_authority_effect": false,
+      "title": "Positive Selection Edge Discovery"
+    },
+    {
+      "classification": "PROSPECTIVE_CERTIFICATION_PENDING",
+      "evidence": "Frozen prospective shadow.",
+      "mechanism": "PSVE",
+      "milestone": "M77.24.1",
+      "next_permitted_action": "Accumulate/evaluate frozen gates.",
+      "production_authority_effect": false,
+      "title": "Frozen Prospective Positive Selection Shadow"
+    },
+    {
+      "classification": "REJECTED_DEVELOPMENT_HYPOTHESIS",
+      "evidence": "0 development-ready timing configurations.",
+      "mechanism": "Entry timing/path",
+      "milestone": "M77.25",
+      "next_permitted_action": "Closed; no post-hoc retuning.",
+      "production_authority_effect": false,
+      "title": "Entry Timing Path-Dependent Edge Discovery"
+    },
+    {
+      "classification": "DEVELOPMENT_SURVIVOR",
+      "evidence": "Development-ready executable geometry.",
+      "mechanism": "NEXT_OPEN / 5ATR / 3ATR / 60d",
+      "milestone": "M77.26.1",
+      "next_permitted_action": "Prospective certification only.",
+      "production_authority_effect": false,
+      "title": "Executable Management Geometry Recalibration"
+    },
+    {
+      "classification": "PROSPECTIVE_CERTIFICATION_PENDING",
+      "evidence": "Frozen prospective shadow.",
+      "mechanism": "MGE",
+      "milestone": "M77.26.2",
+      "next_permitted_action": "Accumulate/evaluate frozen gates.",
+      "production_authority_effect": false,
+      "title": "Prospective Executable Management Geometry Shadow"
+    },
+    {
+      "classification": "DEVELOPMENT_SURVIVOR",
+      "evidence": "Development survivor.",
+      "mechanism": "Candidate-quality \u00d7 management",
+      "milestone": "M77.27",
+      "next_permitted_action": "Prospective certification only.",
+      "production_authority_effect": false,
+      "title": "Candidate Quality \u00d7 Management Interaction"
+    },
+    {
+      "classification": "PROSPECTIVE_CERTIFICATION_PENDING",
+      "evidence": "Frozen prospective shadow.",
+      "mechanism": "CQMI",
+      "milestone": "M77.27.1",
+      "next_permitted_action": "Accumulate/evaluate frozen gates.",
+      "production_authority_effect": false,
+      "title": "Prospective Candidate Quality \u00d7 Management Shadow"
+    },
+    {
+      "classification": "FORENSIC_ONLY",
+      "evidence": "Development-only stability forensics.",
+      "mechanism": "Regime stability",
+      "milestone": "M77.28",
+      "next_permitted_action": "Reference only.",
+      "production_authority_effect": false,
+      "title": "Regime-Conditioned Edge Stability"
+    },
+    {
+      "classification": "DEVELOPMENT_SURVIVOR",
+      "evidence": "Development-ready ranking evidence.",
+      "mechanism": "PROBABILITY_UP ranking",
+      "milestone": "M77.29",
+      "next_permitted_action": "Prospective allocation testing only.",
+      "production_authority_effect": false,
+      "title": "Cross-Sectional Ranking & Opportunity Cost"
+    },
+    {
+      "classification": "FORENSIC_ONLY",
+      "evidence": "Forensic decomposition.",
+      "mechanism": "Ranking identity/capacity",
+      "milestone": "M77.29.1",
+      "next_permitted_action": "Reference only.",
+      "production_authority_effect": false,
+      "title": "Ranking Identity / Independence / Capacity Forensics"
+    },
+    {
+      "classification": "FORENSIC_ONLY",
+      "evidence": "Forensic-only.",
+      "mechanism": "Ensemble/capacity neutralization",
+      "milestone": "M77.29.2",
+      "next_permitted_action": "Reference only.",
+      "production_authority_effect": false,
+      "title": "Ensemble Attribution / Capacity / Regime Neutralization"
+    },
+    {
+      "classification": "FORENSIC_ONLY",
+      "evidence": "Forensic-only.",
+      "mechanism": "Component causality",
+      "milestone": "M77.29.3",
+      "next_permitted_action": "Reference only.",
+      "production_authority_effect": false,
+      "title": "Ensemble Payoff Distribution / Component Causality"
+    },
+    {
+      "classification": "PROSPECTIVE_CERTIFICATION_PENDING",
+      "evidence": "Frozen prospective shadow.",
+      "mechanism": "CPRE Top-3",
+      "milestone": "M77.30",
+      "next_permitted_action": "Accumulate/evaluate frozen gates.",
+      "production_authority_effect": false,
+      "title": "Frozen Prospective Cross-Sectional Capital Priority Shadow"
+    },
+    {
+      "classification": "REJECTED_DEVELOPMENT_HYPOTHESIS",
+      "evidence": "0 survivors.",
+      "mechanism": "Leadership states",
+      "milestone": "M77.31",
+      "next_permitted_action": "Closed.",
+      "production_authority_effect": false,
+      "title": "Relative Strength / Persistence / Leadership"
+    },
+    {
+      "classification": "REJECTED_DEVELOPMENT_HYPOTHESIS",
+      "evidence": "0 survivors.",
+      "mechanism": "Volatility transitions",
+      "milestone": "M77.32",
+      "next_permitted_action": "Closed.",
+      "production_authority_effect": false,
+      "title": "Volatility Compression / Expansion Transition"
+    },
+    {
+      "classification": "REJECTED_DEVELOPMENT_HYPOTHESIS",
+      "evidence": "0 survivors.",
+      "mechanism": "Participation states",
+      "milestone": "M77.33",
+      "next_permitted_action": "Closed.",
+      "production_authority_effect": false,
+      "title": "Participation / Accumulation Confirmation"
+    },
+    {
+      "classification": "REJECTED_DEVELOPMENT_HYPOTHESIS",
+      "evidence": "0 survivors.",
+      "mechanism": "Extension states",
+      "milestone": "M77.34",
+      "next_permitted_action": "Closed.",
+      "production_authority_effect": false,
+      "title": "Mean-Reversion / Extension State"
+    },
+    {
+      "classification": "REJECTED_DEVELOPMENT_HYPOTHESIS",
+      "evidence": "0 survivors.",
+      "mechanism": "Path states",
+      "milestone": "M77.35",
+      "next_permitted_action": "Closed.",
+      "production_authority_effect": false,
+      "title": "Serial Dependence / Path Smoothness"
+    },
+    {
+      "classification": "REJECTED_DEVELOPMENT_HYPOTHESIS",
+      "evidence": "0 survivors.",
+      "mechanism": "Dispersion states",
+      "milestone": "M77.36",
+      "next_permitted_action": "Closed.",
+      "production_authority_effect": false,
+      "title": "Cross-Sectional Dispersion / Relative Opportunity"
+    },
+    {
+      "classification": "REJECTED_DEVELOPMENT_HYPOTHESIS",
+      "evidence": "0 survivors.",
+      "mechanism": "Tail/asymmetry states",
+      "milestone": "M77.37",
+      "next_permitted_action": "Closed.",
+      "production_authority_effect": false,
+      "title": "Outcome Asymmetry / Conditional Tail Structure"
+    },
+    {
+      "classification": "NOT_IDENTIFIABLE",
+      "evidence": "DRVE ablation not identifiable from conditioned panel.",
+      "mechanism": "DRVE necessity in post-DRVE cohort",
+      "milestone": "M77.38",
+      "next_permitted_action": "Do not infer without pre-DRVE counterfactual.",
+      "production_authority_effect": false,
+      "title": "Edge Interaction Necessity / Redundancy"
+    },
+    {
+      "classification": "FORENSIC_ONLY",
+      "evidence": "CPRE is definitionally PROBABILITY_UP-derived.",
+      "mechanism": "CPRE semantic dependency",
+      "milestone": "M77.38.1",
+      "next_permitted_action": "Architecture reference only.",
+      "production_authority_effect": false,
+      "title": "Capital-Priority Dependency / Incremental Value"
+    },
+    {
+      "classification": "DEVELOPMENT_SURVIVOR",
+      "evidence": "Primary Development certification PASS.",
+      "mechanism": "Capacity-aware ranked allocation",
+      "milestone": "M77.39",
+      "next_permitted_action": "Prospective challenger only.",
+      "production_authority_effect": false,
+      "title": "Capacity-Constrained Portfolio Utility"
+    },
+    {
+      "classification": "PROSPECTIVE_CERTIFICATION_PENDING",
+      "evidence": "Frozen prospective challenger.",
+      "mechanism": "CACA",
+      "milestone": "M77.40",
+      "next_permitted_action": "Accumulate/evaluate frozen gates.",
+      "production_authority_effect": false,
+      "title": "Frozen Prospective Capacity-Aware Allocation Shadow"
+    },
+    {
+      "classification": "FORENSIC_ONLY",
+      "evidence": "Read-only adapter; protocol unchanged.",
+      "mechanism": "Live authority binding",
+      "milestone": "M77.40.1",
+      "next_permitted_action": "Operational use only.",
+      "production_authority_effect": false,
+      "title": "Governed Capacity Authority / CPRE Live Binding"
+    },
+    {
+      "classification": "FORENSIC_ONLY",
+      "evidence": "Daily record/update orchestration enabled.",
+      "mechanism": "Operational automation",
+      "milestone": "M77.40.2",
+      "next_permitted_action": "Operational monitoring only.",
+      "production_authority_effect": false,
+      "title": "Prospective Shadow Launchd Hardening"
+    }
+  ],
+  "version": "M77.41.0-RESEARCH-PROGRAM-CLOSURE-EVIDENCE-REGISTRY-PROSPECTIVE-GOVERNANCE-DASHBOARD-1.0"
+}

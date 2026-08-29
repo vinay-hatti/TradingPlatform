@@ -1,0 +1,13 @@
+{
+  "version": "M77.19.6.5.2.2-NATIVE-COMPARE-PROFILE-PARITY-CERTIFICATION-1.0",
+  "milestone": "M77.19.6.5.2.2",
+  "title": "Native compare_profile Parity Certification",
+  "research_only": true,
+  "database_mode": "READ_ONLY_SPY_SESSION_CALENDAR_ONLY",
+  "native_compare_profile_authority": true,
+  "numeric_tolerance": 1e-09,
+  "required_match_pct": 100.0,
+  "parity_thresholds_relaxed": false,
+  "full_23_year_reconstruction_authorized": false,
+  "production_authority_effect": false
+}

@@ -1,0 +1,27 @@
+{
+  "provenance": {
+    "source": "Swiss Ephemeris / pyswisseph",
+    "library_version": "2.10.03",
+    "sidereal_mode": "SE_SIDM_LAHIRI",
+    "true_node_object": "SE_TRUE_NODE",
+    "reference_time_utc": "12:00:00"
+  },
+  "dates": {
+    "2023-03-20": {
+      "lahiri_ayanamsha_deg": 24.181385779899358,
+      "swiss_true_node_deg": 34.42015624546653
+    },
+    "2024-09-22": {
+      "lahiri_ayanamsha_deg": 24.202499083313967,
+      "swiss_true_node_deg": 6.640112576048212
+    },
+    "2025-12-01": {
+      "lahiri_ayanamsha_deg": 24.219137383203076,
+      "swiss_true_node_deg": 344.26264082752056
+    },
+    "2026-08-21": {
+      "lahiri_ayanamsha_deg": 24.229196903322304,
+      "swiss_true_node_deg": 329.82546110995463
+    }
+  }
+}

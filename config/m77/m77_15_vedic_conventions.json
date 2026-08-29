@@ -1,0 +1,22 @@
+{
+  "version": "M77.15.0-VEDIC-CONVENTIONS-1.0",
+  "zodiac": "SIDEREAL",
+  "ayanamsha": "LAHIRI_CHITRAPAKSHA",
+  "observer": "GEOCENTRIC",
+  "time_basis": "UTC",
+  "daily_reference_time_utc": "12:00:00",
+  "node_convention": "TRUE_NODE",
+  "phase_0_authoritative_provider": "NASA_JPL_HORIZONS",
+  "phase_0_planetary_scope": [
+    "SUN",
+    "MOON",
+    "MERCURY",
+    "VENUS",
+    "MARS",
+    "JUPITER",
+    "SATURN"
+  ],
+  "node_status": "DEFERRED",
+  "sidereal_feature_materialization": "BLOCKED_PENDING_AYANAMSHA_PARITY",
+  "production_authority_effect": false
+}

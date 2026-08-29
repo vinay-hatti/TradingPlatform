@@ -1,0 +1,21 @@
+{
+  "authority": "M77.26.1 certified 5ATR/3ATR/60d executable panel",
+  "capital_priority_top_k": 3,
+  "cohort_size_strata": [
+    "01_05",
+    "06_10",
+    "11_20",
+    "21_50",
+    "51_PLUS"
+  ],
+  "cpre_rank_source": "PROBABILITY_UP",
+  "development_end": "2017-12-31",
+  "forbidden_outcome_window": "2018-01-01 THROUGH 2026-12-31",
+  "management_retuning": false,
+  "new_probability_up_thresholds": 0,
+  "new_top_k_values": 0,
+  "probability_top_fraction": 0.2,
+  "production_authority_effect": false,
+  "prospective_protocols_modified": false,
+  "version": "M77.38.1-FROZEN-CAPITAL-PRIORITY-SEMANTIC-FORENSICS-CONTRACT-1.0"
+}

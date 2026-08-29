@@ -1,0 +1,286 @@
+{
+  "version": "M77.15.5-HISTORICAL-COVERAGE-LONG-HORIZON-RESEARCH-AUTHORITY-AUDIT-1.0",
+  "status": "READY",
+  "audit": {
+    "event_registry": {
+      "rows": 300,
+      "first_date": "2000-01-21",
+      "last_date": "2040-11-18",
+      "family_counts": {
+        "JUPITER_RAHU_CONJUNCTION": 7,
+        "JUPITER_RAHU_OPPOSITION": 7,
+        "JUPITER_RAHU_SQUARE": 12,
+        "JUPITER_RAHU_TRINE": 14,
+        "JUPITER_SATURN_CONJUNCTION": 3,
+        "JUPITER_SATURN_OPPOSITION": 8,
+        "JUPITER_SATURN_SQUARE": 12,
+        "JUPITER_SATURN_TRINE": 16,
+        "LUNAR_ECLIPSE": 94,
+        "SATURN_RAHU_CONJUNCTION": 4,
+        "SATURN_RAHU_OPPOSITION": 8,
+        "SATURN_RAHU_SQUARE": 9,
+        "SATURN_RAHU_TRINE": 14,
+        "SOLAR_ECLIPSE": 92
+      }
+    },
+    "pit_regime_coverage": {
+      "rows": 1013,
+      "first_date": "2022-08-09",
+      "last_date": "2026-08-21"
+    },
+    "targets": {
+      "SPX": {
+        "price_coverage": {
+          "symbol": "SPX",
+          "row_count": 883,
+          "first_date": "2023-02-14",
+          "last_date": "2026-08-21"
+        },
+        "event_family_coverage": {
+          "JUPITER_RAHU_CONJUNCTION": {
+            "astronomical_event_count": 7,
+            "price_overlap_event_count": 1,
+            "pit_exact_date_overlap_event_count": 1
+          },
+          "JUPITER_RAHU_OPPOSITION": {
+            "astronomical_event_count": 7,
+            "price_overlap_event_count": 0,
+            "pit_exact_date_overlap_event_count": 0
+          },
+          "JUPITER_RAHU_SQUARE": {
+            "astronomical_event_count": 12,
+            "price_overlap_event_count": 1,
+            "pit_exact_date_overlap_event_count": 0
+          },
+          "JUPITER_RAHU_TRINE": {
+            "astronomical_event_count": 14,
+            "price_overlap_event_count": 1,
+            "pit_exact_date_overlap_event_count": 1
+          },
+          "JUPITER_SATURN_CONJUNCTION": {
+            "astronomical_event_count": 3,
+            "price_overlap_event_count": 0,
+            "pit_exact_date_overlap_event_count": 0
+          },
+          "JUPITER_SATURN_OPPOSITION": {
+            "astronomical_event_count": 8,
+            "price_overlap_event_count": 0,
+            "pit_exact_date_overlap_event_count": 0
+          },
+          "JUPITER_SATURN_SQUARE": {
+            "astronomical_event_count": 12,
+            "price_overlap_event_count": 3,
+            "pit_exact_date_overlap_event_count": 2
+          },
+          "JUPITER_SATURN_TRINE": {
+            "astronomical_event_count": 16,
+            "price_overlap_event_count": 1,
+            "pit_exact_date_overlap_event_count": 1
+          },
+          "LUNAR_ECLIPSE": {
+            "astronomical_event_count": 94,
+            "price_overlap_event_count": 7,
+            "pit_exact_date_overlap_event_count": 5
+          },
+          "SATURN_RAHU_CONJUNCTION": {
+            "astronomical_event_count": 4,
+            "price_overlap_event_count": 1,
+            "pit_exact_date_overlap_event_count": 1
+          },
+          "SATURN_RAHU_OPPOSITION": {
+            "astronomical_event_count": 8,
+            "price_overlap_event_count": 0,
+            "pit_exact_date_overlap_event_count": 0
+          },
+          "SATURN_RAHU_SQUARE": {
+            "astronomical_event_count": 9,
+            "price_overlap_event_count": 0,
+            "pit_exact_date_overlap_event_count": 0
+          },
+          "SATURN_RAHU_TRINE": {
+            "astronomical_event_count": 14,
+            "price_overlap_event_count": 0,
+            "pit_exact_date_overlap_event_count": 0
+          },
+          "SOLAR_ECLIPSE": {
+            "astronomical_event_count": 92,
+            "price_overlap_event_count": 8,
+            "pit_exact_date_overlap_event_count": 5
+          }
+        }
+      },
+      "NDX": {
+        "price_coverage": {
+          "symbol": "NDX",
+          "row_count": 886,
+          "first_date": "2023-02-15",
+          "last_date": "2026-08-21"
+        },
+        "event_family_coverage": {
+          "JUPITER_RAHU_CONJUNCTION": {
+            "astronomical_event_count": 7,
+            "price_overlap_event_count": 1,
+            "pit_exact_date_overlap_event_count": 1
+          },
+          "JUPITER_RAHU_OPPOSITION": {
+            "astronomical_event_count": 7,
+            "price_overlap_event_count": 0,
+            "pit_exact_date_overlap_event_count": 0
+          },
+          "JUPITER_RAHU_SQUARE": {
+            "astronomical_event_count": 12,
+            "price_overlap_event_count": 1,
+            "pit_exact_date_overlap_event_count": 0
+          },
+          "JUPITER_RAHU_TRINE": {
+            "astronomical_event_count": 14,
+            "price_overlap_event_count": 1,
+            "pit_exact_date_overlap_event_count": 1
+          },
+          "JUPITER_SATURN_CONJUNCTION": {
+            "astronomical_event_count": 3,
+            "price_overlap_event_count": 0,
+            "pit_exact_date_overlap_event_count": 0
+          },
+          "JUPITER_SATURN_OPPOSITION": {
+            "astronomical_event_count": 8,
+            "price_overlap_event_count": 0,
+            "pit_exact_date_overlap_event_count": 0
+          },
+          "JUPITER_SATURN_SQUARE": {
+            "astronomical_event_count": 12,
+            "price_overlap_event_count": 3,
+            "pit_exact_date_overlap_event_count": 2
+          },
+          "JUPITER_SATURN_TRINE": {
+            "astronomical_event_count": 16,
+            "price_overlap_event_count": 1,
+            "pit_exact_date_overlap_event_count": 1
+          },
+          "LUNAR_ECLIPSE": {
+            "astronomical_event_count": 94,
+            "price_overlap_event_count": 7,
+            "pit_exact_date_overlap_event_count": 5
+          },
+          "SATURN_RAHU_CONJUNCTION": {
+            "astronomical_event_count": 4,
+            "price_overlap_event_count": 1,
+            "pit_exact_date_overlap_event_count": 1
+          },
+          "SATURN_RAHU_OPPOSITION": {
+            "astronomical_event_count": 8,
+            "price_overlap_event_count": 0,
+            "pit_exact_date_overlap_event_count": 0
+          },
+          "SATURN_RAHU_SQUARE": {
+            "astronomical_event_count": 9,
+            "price_overlap_event_count": 0,
+            "pit_exact_date_overlap_event_count": 0
+          },
+          "SATURN_RAHU_TRINE": {
+            "astronomical_event_count": 14,
+            "price_overlap_event_count": 0,
+            "pit_exact_date_overlap_event_count": 0
+          },
+          "SOLAR_ECLIPSE": {
+            "astronomical_event_count": 92,
+            "price_overlap_event_count": 8,
+            "pit_exact_date_overlap_event_count": 5
+          }
+        }
+      },
+      "RUT": {
+        "price_coverage": {
+          "symbol": "RUT",
+          "row_count": 490,
+          "first_date": "2024-09-09",
+          "last_date": "2026-08-21"
+        },
+        "event_family_coverage": {
+          "JUPITER_RAHU_CONJUNCTION": {
+            "astronomical_event_count": 7,
+            "price_overlap_event_count": 0,
+            "pit_exact_date_overlap_event_count": 0
+          },
+          "JUPITER_RAHU_OPPOSITION": {
+            "astronomical_event_count": 7,
+            "price_overlap_event_count": 0,
+            "pit_exact_date_overlap_event_count": 0
+          },
+          "JUPITER_RAHU_SQUARE": {
+            "astronomical_event_count": 12,
+            "price_overlap_event_count": 1,
+            "pit_exact_date_overlap_event_count": 0
+          },
+          "JUPITER_RAHU_TRINE": {
+            "astronomical_event_count": 14,
+            "price_overlap_event_count": 1,
+            "pit_exact_date_overlap_event_count": 1
+          },
+          "JUPITER_SATURN_CONJUNCTION": {
+            "astronomical_event_count": 3,
+            "price_overlap_event_count": 0,
+            "pit_exact_date_overlap_event_count": 0
+          },
+          "JUPITER_SATURN_OPPOSITION": {
+            "astronomical_event_count": 8,
+            "price_overlap_event_count": 0,
+            "pit_exact_date_overlap_event_count": 0
+          },
+          "JUPITER_SATURN_SQUARE": {
+            "astronomical_event_count": 12,
+            "price_overlap_event_count": 2,
+            "pit_exact_date_overlap_event_count": 1
+          },
+          "JUPITER_SATURN_TRINE": {
+            "astronomical_event_count": 16,
+            "price_overlap_event_count": 1,
+            "pit_exact_date_overlap_event_count": 1
+          },
+          "LUNAR_ECLIPSE": {
+            "astronomical_event_count": 94,
+            "price_overlap_event_count": 4,
+            "pit_exact_date_overlap_event_count": 3
+          },
+          "SATURN_RAHU_CONJUNCTION": {
+            "astronomical_event_count": 4,
+            "price_overlap_event_count": 1,
+            "pit_exact_date_overlap_event_count": 1
+          },
+          "SATURN_RAHU_OPPOSITION": {
+            "astronomical_event_count": 8,
+            "price_overlap_event_count": 0,
+            "pit_exact_date_overlap_event_count": 0
+          },
+          "SATURN_RAHU_SQUARE": {
+            "astronomical_event_count": 9,
+            "price_overlap_event_count": 0,
+            "pit_exact_date_overlap_event_count": 0
+          },
+          "SATURN_RAHU_TRINE": {
+            "astronomical_event_count": 14,
+            "price_overlap_event_count": 0,
+            "pit_exact_date_overlap_event_count": 0
+          },
+          "SOLAR_ECLIPSE": {
+            "astronomical_event_count": 92,
+            "price_overlap_event_count": 5,
+            "pit_exact_date_overlap_event_count": 3
+          }
+        }
+      }
+    }
+  },
+  "recommendation": {
+    "price_history_span_years_across_targets": 3.52,
+    "full_pit_control_available_from": "2022-08-09",
+    "full_pit_control_available_through": "2026-08-21",
+    "long_history_mode_definition": "PRICE_PLUS_CALENDAR_CONTROLS_ONLY",
+    "recent_pit_mode_definition": "PRICE_PLUS_CALENDAR_PLUS_PIT_REGIME_CONTROLS",
+    "promotion_rule": "NO_CANDIDATE_MAY_ADVANCE_UNLESS_IT_SURVIVES_LONG_HISTORY_AND_RECENT_PIT_MODES_IN_SAME_DIRECTION",
+    "fabricated_historical_pit_regimes": "PROHIBITED"
+  },
+  "next_step": "BUILD_DUAL_CONTROL_LONG_HISTORY_RESEARCH_HARNESS_IF_PRICE_HISTORY_IS_MATERIALLY_LONGER_THAN_PIT_HISTORY",
+  "production_authority_effect": false,
+  "database_writes": false
+}

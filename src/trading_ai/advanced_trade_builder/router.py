@@ -33,13 +33,18 @@ def revalidate(plan_id:str,request:Request,actor:str=Depends(require_mutation_ac
    cfg=load_trade_builder_risk_config();policy=HandoffPolicy()
    if cfg.capital<policy.minimum_capital:raise ValueError('Configured Trade Builder capital is below the governed minimum')
    if not 0<cfg.risk_budget_pct<=policy.maximum_risk_budget_pct:raise ValueError('Configured Trade Builder risk budget percentage is outside governed limits')
+   previous_state=m.state;previous_version=m.version;previous_validation=dict(m.validation_json or {})
    handoff=s.query(InstitutionalOptionHandoffModel).filter_by(trade_plan_id=plan_id).order_by(InstitutionalOptionHandoffModel.created_at.desc()).first()
    if handoff:
     InstitutionalOptionsHandoffService(s).revalidate_trade_plan(plan_id,actor=actor)
     refreshed=TradePlanRepository(s).get(plan_id)
-    return env(request,dto(refreshed),revalidation='M62_CURRENT_RECOMMENDATION')
+    current_validation=dict(refreshed.validation_json or {})
+    failed=[k for k,v in current_validation.items() if k!='valid' and not bool(v)]
+    return env(request,dto(refreshed),revalidation='M62_CURRENT_RECOMMENDATION',previous_state=previous_state,previous_version=previous_version,current_state=refreshed.state,current_version=refreshed.version,failed_checks=failed,validation_changed=previous_validation!=current_validation)
    result=AdvancedTradeBuilderService(s).revalidate(plan_id,actor,cfg.capital,cfg.risk_budget_pct)
-   return env(request,result.to_dict(),revalidation='PERSISTED_LEGS')
+   current_validation=dict(result.validation or {})
+   failed=[k for k,v in current_validation.items() if k!='valid' and not bool(v)]
+   return env(request,result.to_dict(),revalidation='PERSISTED_LEGS',previous_state=previous_state,previous_version=previous_version,current_state=result.state.value,current_version=result.version,failed_checks=failed,validation_changed=previous_validation!=current_validation)
  except KeyError as e:raise HTTPException(404,str(e))
  except (ValueError,RuntimeError) as e:raise HTTPException(409,str(e))
 @router.post('/plans/{plan_id}/transitions',response_model=ApiEnvelope)

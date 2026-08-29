@@ -10,9 +10,17 @@ from .repository import TradePlanRepository
 
 def now():return datetime.now(timezone.utc).isoformat()
 class AdvancedTradeBuilderService:
+ TIME_SPREAD_STRATEGIES={'CALL_DIAGONAL','PUT_DIAGONAL','CALL_CALENDAR','PUT_CALENDAR','CALENDAR_CALL','CALENDAR_PUT'}
  def __init__(self,session:Session):self.session=session;self.repo=TradePlanRepository(session)
- @staticmethod
- def economics(legs:tuple[TradeLeg,...],capital:float,risk_pct:float):
+ @classmethod
+ def _expiry_checks(cls,strategy:str,legs:tuple[TradeLeg,...]):
+  expiries={str(l.expiry) for l in legs if str(l.expiry or '').strip()}
+  normalized=str(strategy or '').strip().upper()
+  if normalized in cls.TIME_SPREAD_STRATEGIES:
+   return {'two_expiries':len(expiries)==2}
+  return {'single_expiry':len(expiries)==1}
+ @classmethod
+ def economics(cls,legs:tuple[TradeLeg,...],capital:float,risk_pct:float,strategy:str=''):
   debit=sum(l.limit_price*l.quantity*100 for l in legs if l.side.value=='BUY')
   credit=sum(l.limit_price*l.quantity*100 for l in legs if l.side.value=='SELL')
   net=max(0.0,debit-credit); budget=capital*risk_pct/100
@@ -23,11 +31,13 @@ class AdvancedTradeBuilderService:
    max_loss=max(0.0,width+debit-credit)
   net_g={k:round(sum((getattr(l,k) or 0)*l.quantity*(1 if l.side.value=='BUY' else -1) for l in legs),6) for k in ('delta','gamma','theta','vega')}
   max_profit=None
-  if len(legs)==2 and len({l.option_right for l in legs})==1:
+  normalized_strategy=str(strategy or '').strip().upper()
+  if normalized_strategy not in cls.TIME_SPREAD_STRATEGIES and len(legs)==2 and len({l.option_right for l in legs})==1:
    width=abs(legs[0].strike-legs[1].strike)*100*min(l.quantity for l in legs)
    max_profit=max(0.0,width-max_loss) if net>0 else max(0.0,credit-debit)
   rr=round(max_profit/max_loss,4) if max_profit is not None and max_loss>0 else None
-  checks={'has_legs':bool(legs),'max_four_legs':len(legs)<=4,'positive_quantities':all(l.quantity>0 for l in legs),'single_expiry':len({l.expiry for l in legs})==1,'risk_within_budget':max_loss<=budget+1e-9,'defined_risk':len(legs)<=2 or net>0}
+  checks={'has_legs':bool(legs),'max_four_legs':len(legs)<=4,'positive_quantities':all(l.quantity>0 for l in legs),'risk_within_budget':max_loss<=budget+1e-9,'defined_risk':len(legs)<=2 or net>0}
+  checks.update(cls._expiry_checks(strategy,legs))
   checks['valid']=all(checks.values())
   return debit,credit,max_loss,max_profit,rr,budget,net_g,checks
  def build(self,r:BuildTradePlanRequest)->TradePlan:
@@ -36,7 +46,7 @@ class AdvancedTradeBuilderService:
   if opp.version!=r.expected_opportunity_version:raise RuntimeError(f'Opportunity version conflict: expected {r.expected_opportunity_version}, actual {opp.version}')
   existing=self.repo.find_source(r.opportunity_id,opp.version,r.account_id,r.strategy)
   if existing:return self._dto(existing)
-  debit,credit,max_loss,max_profit,rr,budget,greeks,checks=self.economics(r.legs,r.capital,r.risk_budget_pct)
+  debit,credit,max_loss,max_profit,rr,budget,greeks,checks=self.economics(r.legs,r.capital,r.risk_budget_pct,r.strategy)
   latest=IntelligenceRepository(self.session).latest(r.opportunity_id); ts=now()
   state=TradePlanState.VALIDATED if checks['valid'] else TradePlanState.DRAFT
   m=TradePlanModel(trade_plan_id=f'TP-{uuid4().hex.upper()}',opportunity_id=opp.opportunity_id,opportunity_version=opp.version,intelligence_id=latest.intelligence_id if latest else None,account_id=r.account_id,symbol=opp.symbol,direction=opp.direction,strategy=r.strategy,state=state.value,version=1,capital=r.capital,risk_budget_pct=r.risk_budget_pct,risk_budget_amount=budget,estimated_debit=debit,estimated_credit=credit,max_loss=max_loss,max_profit=max_profit,reward_risk_ratio=rr,net_greeks_json=greeks,validation_json=checks,legs_json=[{'side':l.side.value,'quantity':l.quantity,'option_right':l.option_right.value,'strike':l.strike,'expiry':l.expiry,'limit_price':l.limit_price,'delta':l.delta,'gamma':l.gamma,'theta':l.theta,'vega':l.vega,'option_symbol':l.option_symbol} for l in r.legs],execution_intent_json={},notes=r.notes,created_by=r.actor,created_at=ts,updated_at=ts)
@@ -46,7 +56,7 @@ class AdvancedTradeBuilderService:
   if not m:raise KeyError('Trade plan not found')
   if m.state!=TradePlanState.DRAFT.value:raise ValueError('Only DRAFT trade plans can be revalidated')
   legs=tuple(TradeLeg(**{**x,'side':__import__('trading_ai.advanced_trade_builder.contracts',fromlist=['LegSide']).LegSide(x['side']),'option_right':__import__('trading_ai.advanced_trade_builder.contracts',fromlist=['OptionRight']).OptionRight(x['option_right'])}) for x in m.legs_json)
-  debit,credit,max_loss,max_profit,rr,budget,greeks,checks=self.economics(legs,float(capital),float(risk_pct))
+  debit,credit,max_loss,max_profit,rr,budget,greeks,checks=self.economics(legs,float(capital),float(risk_pct),m.strategy)
   old=dict(m.validation_json or {})
   if 'positive_strikes' in old:checks['positive_strikes']=all(float(x.strike)>0 for x in legs)
   if 'positive_limit_prices' in old:checks['positive_limit_prices']=all(float(x.limit_price)>0 for x in legs)

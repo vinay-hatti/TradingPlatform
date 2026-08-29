@@ -1,0 +1,42 @@
+{
+  "version": "M77.16.2-H3-ASTRONOMICAL-HOUSE-LORDSHIP-FEATURE-MATERIALIZATION-PARITY-1.0",
+  "required_market_chart_certification": "reports/m77/m77_16_1_mundane_market_chart_authority.json",
+  "source_graha_registry": "data/m77/m77_15_3_graha_state_daily_2000_2040.csv",
+  "output_registry": "data/m77/m77_16_2_h3_house_features_2000_2040.csv",
+  "output_metadata": "data/m77/m77_16_2_h3_house_features_2000_2040.metadata.json",
+  "reference_chart": {
+    "date": "1792-05-17",
+    "time_local": "12:00:00",
+    "timezone": "America/New_York",
+    "latitude_deg": 40.7128,
+    "longitude_deg": -74.006,
+    "zodiac": "SIDEREAL",
+    "ayanamsha": "LAHIRI",
+    "house_system": "WHOLE_SIGN",
+    "node_type": "TRUE_NODE"
+  },
+  "frozen_external_benchmarks": {
+    "lahiri_ayanamsha_1792_05_17_deg": 20.96,
+    "lahiri_source": "ASTRODIENST_SWISS_EPHEMERIS_SIDEREAL_EPHEMERIS_1792",
+    "lahiri_tolerance_deg": 0.01
+  },
+  "feature_definition": {
+    "house_1": "WHOLE_SIGN_ASCENDANT_SIGN",
+    "house_5": "ASCENDANT_SIGN_PLUS_4",
+    "house_11": "ASCENDANT_SIGN_PLUS_10",
+    "lordship_basis": "FROZEN_TRADITIONAL_SIGN_LORDSHIP_FROM_M77_16_1",
+    "node_house_state": "TRANSITING_TRUE_NODE_SIDEREAL_RASHI_EQUALS_FIXED_HOUSE_SIGN",
+    "node_lord_conjunction_state": "TRANSITING_TRUE_NODE_LONGITUDE_WITHIN_3_DEGREES_OF_TRANSITING_LONGITUDE_OF_FIXED_HOUSE_LORD_PLANET",
+    "conjunction_orb_deg": 3.0,
+    "factor_combinations": false
+  },
+  "parity": {
+    "historical_lahiri_benchmark_required": true,
+    "dual_ascendant_formula_internal_parity_required": true,
+    "whole_sign_house_mapping_invariants_required": true,
+    "node_opposition_invariant_required": true,
+    "feature_registry_no_financial_outcomes": true
+  },
+  "database_writes": false,
+  "production_authority_effect": false
+}

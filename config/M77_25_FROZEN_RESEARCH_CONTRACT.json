@@ -1,0 +1,42 @@
+{
+  "barrier_geometries": [
+    [
+      1.5,
+      1.0
+    ],
+    [
+      2.0,
+      1.0
+    ],
+    [
+      3.0,
+      1.0
+    ]
+  ],
+  "baseline_entry_policy": "NEXT_OPEN",
+  "candidate_population": "PIT_TRADE_BUILDER_READY_LONG_AND_DRVE_PASS",
+  "consumed_2018_2026_forbidden_for_tuning": true,
+  "development_end": "2017-12-31",
+  "drv_reference_horizon_sessions": 20,
+  "m77_24_psve_candidate_001_unchanged": true,
+  "max_wait_sessions": 5,
+  "outcome_horizons": [
+    20,
+    30,
+    45,
+    60
+  ],
+  "policies": [
+    "NEXT_OPEN",
+    "DELAY1_CLOSE",
+    "CONFIRM_CLOSE_ABOVE_ASOF_HIGH",
+    "PULLBACK_0P5_ATR",
+    "PULLBACK_1P0_ATR",
+    "BREAKOUT_0P5_ATR",
+    "BREAKOUT_1P0_ATR",
+    "CLOSE_BREAKOUT_20D"
+  ],
+  "production_authority_effect": false,
+  "same_trigger_day_barrier_evaluation": false,
+  "version": "M77.25-FROZEN-DEVELOPMENT-RESEARCH-CONTRACT-1.0"
+}

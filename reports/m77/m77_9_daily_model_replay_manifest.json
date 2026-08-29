@@ -1,0 +1,14 @@
+{
+  "version": "M77.9-DAILY-MODEL-REPLAY-1.0",
+  "status": "READY",
+  "replay_run_id": "m77-1-replay-de7709ab17db4d7d98b828d075f4ddad",
+  "start": "2022-08-09",
+  "end": "2026-05-26",
+  "cadence": "DAILY",
+  "canonical_symbol_scope": 611,
+  "prediction_count": 528829,
+  "failure_count": 0,
+  "m77_8_authority": "reports/m77/m77_8_daily_pit_replay_authority.json",
+  "production_authority_effect": false,
+  "existing_weekly_m77_mutation": false
+}

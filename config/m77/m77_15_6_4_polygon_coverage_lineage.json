@@ -1,0 +1,58 @@
+{
+  "version": "M77.15.6.4-POLYGON-COVERAGE-SYMBOL-LINEAGE-RESOLUTION-1.0",
+  "provider": "POLYGON",
+  "api_key_env": "POLYGON_API_KEY",
+  "requested_range": [
+    "2000-01-01",
+    "TODAY_UTC"
+  ],
+  "diagnostic_scope": {
+    "SPY": {
+      "research_target": "SPX",
+      "symbols_to_probe": [
+        "SPY"
+      ],
+      "expected_lineage": "UNCHANGED_SYMBOL",
+      "external_reference_note": "SPY itself has no expected symbol change in this study."
+    },
+    "QQQ": {
+      "research_target": "NDX",
+      "symbols_to_probe": [
+        "QQQ",
+        "QQQQ"
+      ],
+      "expected_lineage": "QQQ_TO_QQQQ_2004_12_01_TO_QQQ_2011_03_23",
+      "expected_segments": [
+        {
+          "ticker": "QQQ",
+          "through": "2004-11-30"
+        },
+        {
+          "ticker": "QQQQ",
+          "from": "2004-12-01",
+          "through": "2011-03-22"
+        },
+        {
+          "ticker": "QQQ",
+          "from": "2011-03-23"
+        }
+      ]
+    },
+    "IWM": {
+      "research_target": "RUT",
+      "symbols_to_probe": [
+        "IWM"
+      ],
+      "expected_lineage": "UNCHANGED_SYMBOL",
+      "known_fund_inception_date": "2000-05-22"
+    }
+  },
+  "storage_root": "research_data/m77_15_6_4/polygon_coverage_lineage",
+  "raw_storage": "research_data/m77_15_6_4/polygon_coverage_lineage/raw",
+  "normalized_storage": "research_data/m77_15_6_4/polygon_coverage_lineage/normalized",
+  "manifest_storage": "research_data/m77_15_6_4/polygon_coverage_lineage/manifests",
+  "canonical_authorities_mutated": false,
+  "production_price_history_writes": false,
+  "database_writes": false,
+  "production_authority_effect": false
+}

@@ -1,0 +1,20 @@
+{
+  "consumed_2018_2026_forbidden": true,
+  "development_end": "2017-12-31",
+  "new_rankers_tested": 0,
+  "new_thresholds_tested": 0,
+  "primary_capacity": 10,
+  "primary_questions": [
+    "PROBABILITY_UP_VS_DRVE_IDENTITY",
+    "ENSEMBLE_TOP1_INDEPENDENCE",
+    "TOP3_CAPACITY_ACCEPTED_VS_SKIPPED"
+  ],
+  "production_authority_effect": false,
+  "top_k_for_identity": [
+    1,
+    3,
+    5,
+    10
+  ],
+  "version": "M77.29.1-FROZEN-FORENSIC-CONTRACT-1.0"
+}

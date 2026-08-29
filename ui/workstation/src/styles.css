@@ -302,3 +302,11 @@ body.io-resizing * {
 /* M71.3 OPEX decision intelligence */
 .opex-evidence-net,.opex-evidence-row,.opex-zone-row{display:grid;grid-template-columns:1.4fr .6fr 1fr;gap:10px;align-items:center;padding:7px 0;border-top:1px solid var(--border-subtle,#263244)}
 .opex-evidence-row em,.opex-zone-row em{font-size:11px;opacity:.72;text-align:right}.opex-evidence-row b{font-variant-numeric:tabular-nums}.opex-subtitle{margin-top:12px;padding-top:8px;border-top:1px solid var(--border-subtle,#263244);font-size:11px;text-transform:uppercase;letter-spacing:.06em;opacity:.7}.opex-transition-probs{display:flex;flex-wrap:wrap;gap:8px 14px;grid-column:1/-1;margin-top:6px;font-size:11px}.opex-transition-probs span{white-space:nowrap}.opex-transition-probs b{font-variant-numeric:tabular-nums}
+
+/* M76.2.2 decision-intelligence card presentation */
+.decision-evidence-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:12px}
+.decision-evidence-card{display:grid;gap:9px;align-content:start;min-height:118px;padding:15px 16px;border:1px solid rgba(148,163,184,.22);border-radius:12px;background:rgba(11,25,41,.62)}
+.decision-evidence-card.positive{border-left:3px solid #3fbf8b}.decision-evidence-card.negative{border-left:3px solid #ee6b6e}.decision-evidence-card.accent{border-color:rgba(110,168,254,.58);background:rgba(51,102,170,.15)}
+.decision-evidence-card-head{display:flex;gap:10px;align-items:flex-start;justify-content:space-between}.decision-evidence-card-head>span{color:#8fa3bb;font-size:.7rem;text-transform:uppercase;letter-spacing:.065em;font-weight:700}.decision-evidence-card-head>em{font-style:normal;font-size:.64rem;font-weight:800;padding:3px 7px;border-radius:999px;background:rgba(148,163,184,.13);color:#b7c8da}
+.decision-evidence-card-value{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}.decision-evidence-card-value>b{font-size:1.18rem;color:#e6edf6;overflow-wrap:anywhere}.decision-evidence-card-value>strong{font-size:.76rem;color:#9db0c6;font-weight:650}.decision-evidence-card>small{color:#7f95ae;line-height:1.35}
+@media(max-width:720px){.decision-evidence-grid{grid-template-columns:1fr}}

@@ -1,0 +1,12 @@
+{
+  "milestone": "M77.19.8.7.10.5.2.3.5.1",
+  "output_partition_metadata_required": false,
+  "partition_certification_method": "SHA_PINNED_ROUTING_AUTHORITY_PLUS_EXPLICIT_VALIDATION_ROUTE_AND_DATE_WINDOW",
+  "feature_schema_change": false,
+  "feature_formula_change": false,
+  "routing_change": false,
+  "validation_targets_opened": false,
+  "validation_outcomes_opened": false,
+  "final_holdout_opened": false,
+  "production_authority_effect": false
+}

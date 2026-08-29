@@ -13,7 +13,11 @@ from trading_ai.advanced_trade_builder.models import TradePlanModel
 from trading_ai.execution_workspace.models import ExecutionIntentModel
 from trading_ai.broker.ibkr.database_models import BrokerExecutionModel, BrokerOrderModel
 from trading_ai.institutional_options.models import InstitutionalDecisionSnapshotModel, InstitutionalOpportunityModel
-from trading_ai.opex_intelligence.models import OpexForecastOutcomeModel, OpexForecastSnapshotModel
+from trading_ai.opex_intelligence.models import (
+    OpexForecastOutcomeModel,
+    OpexForecastPublicationModel,
+    OpexForecastSnapshotModel,
+)
 from trading_ai.database.models import PriceHistory
 from .models import (
     CalibrationRunModel,
@@ -135,7 +139,26 @@ class ContinuousLearningService:
             ))
             created += 1
 
-        forecasts = list(self.s.scalars(select(OpexForecastSnapshotModel)))
+        publication = self.s.scalar(
+            select(OpexForecastPublicationModel).where(
+                OpexForecastPublicationModel.publication_name
+                == "current_opex_intelligence"
+            )
+        )
+        published_forecast_ids = list(
+            ((publication.payload_json or {}).get("forecast_ids") or [])
+            if publication
+            else []
+        )
+        forecasts = list(
+            self.s.scalars(
+                select(OpexForecastSnapshotModel).where(
+                    OpexForecastSnapshotModel.forecast_id.in_(
+                        published_forecast_ids
+                    )
+                )
+            )
+        ) if published_forecast_ids else []
         for f in forecasts:
             source_id = f"OPEX:{f.forecast_id}"
             if self.s.scalar(select(PredictionRegistryModel).where(PredictionRegistryModel.source_id == source_id)):
@@ -155,8 +178,11 @@ class ContinuousLearningService:
                 prediction_json={"dominant_scenario": dominant, "ranges": {
                     "50": [f.range50_low, f.range50_high], "68": [f.range68_low, f.range68_high], "90": [f.range90_low, f.range90_high]},
                     "magnet": p.get("magnet"), "actionable_range": p.get("actionable_range"),
-                    "expected_daily_path": p.get("expected_daily_path", []), "levels": p.get("level_probabilities", [])},
-                lineage_json={"forecast_id": f.forecast_id, "expiration": f.expiration, "forecast_timestamp": f.forecast_timestamp},
+                    "expected_daily_path": p.get("expected_daily_path", []), "levels": (p.get("path_distribution") or {}).get("levels", [])},
+                lineage_json={"forecast_id": f.forecast_id, "expiration": f.expiration, "forecast_timestamp": f.forecast_timestamp,
+                              "input_fingerprint": f.input_fingerprint,
+                              "publication_id": publication.publication_id if publication else None,
+                              "governance": {"runtime_mode": "SHADOW", "authority_effect": False}},
             ))
             created += 1
 
@@ -344,10 +370,10 @@ class ContinuousLearningService:
                 prediction_json=pred.prediction_json or {}; features=pred.features_json or {}
                 dominant=((prediction_json.get("dominant_scenario") or {}).get("name") or features.get("dominant_scenario") or "UNKNOWN")
                 settle=float(observed.settlement_price);support=features.get("support");resistance=features.get("resistance")
-                if extra.get("in_actionable_range") or extra.get("in_magnet_zone"): actual_scenario="PIN_RANGE"
+                if not observed.in_90: actual_scenario="VOLATILITY_SHOCK"
+                elif extra.get("in_actionable_range") or extra.get("in_magnet_zone"): actual_scenario="PIN_RANGE"
                 elif resistance is not None and settle>float(resistance): actual_scenario="BULLISH_BREAKOUT"
                 elif support is not None and settle<float(support): actual_scenario="BEARISH_BREAKDOWN"
-                elif not observed.in_90: actual_scenario="VOLATILITY_SHOCK"
                 else: actual_scenario="PIN_RANGE"
                 outcome_type="OPEX_SCENARIO"
                 if not self.s.scalar(select(PredictionOutcomeModel).where(PredictionOutcomeModel.prediction_id==pred.prediction_id,PredictionOutcomeModel.outcome_type==outcome_type)):
@@ -463,24 +489,13 @@ class ContinuousLearningService:
         return summary
 
     def opex_calibration(self) -> dict:
-        rows = list(self.s.scalars(select(OpexForecastOutcomeModel)))
-        if not rows:
-            return {"sample_size":0,"coverage50":None,"coverage68":None,"coverage90":None,"actionable_range_hit_rate":None,"magnet_zone_hit_rate":None,"average_magnet_distance_pct":None,"status":"INSUFFICIENT_SAMPLE"}
-        actionable=[(x.payload_json or {}).get("in_actionable_range") for x in rows if (x.payload_json or {}).get("in_actionable_range") is not None]
-        magnet=[(x.payload_json or {}).get("in_magnet_zone") for x in rows if (x.payload_json or {}).get("in_magnet_zone") is not None]
-        distances=[float(x.magnet_distance_pct) for x in rows if x.magnet_distance_pct is not None]
-        scenario=list(self.s.scalars(select(PredictionOutcomeModel).where(PredictionOutcomeModel.outcome_type=="OPEX_SCENARIO")));path=list(self.s.scalars(select(PredictionOutcomeModel).where(PredictionOutcomeModel.outcome_type=="OPEX_PATH")))
-        path_payload=[x.outcome_json or {} for x in path]
-        return {
-            "sample_size":len(rows),"coverage50":round(mean(x.in_50 for x in rows)*100,2),"coverage68":round(mean(x.in_68 for x in rows)*100,2),"coverage90":round(mean(x.in_90 for x in rows)*100,2),
-            "target_error50":round(mean(x.in_50 for x in rows)*100-50,2),"target_error68":round(mean(x.in_68 for x in rows)*100-68,2),"target_error90":round(mean(x.in_90 for x in rows)*100-90,2),
-            "actionable_range_hit_rate":round(mean(actionable)*100,2) if actionable else None,"magnet_zone_hit_rate":round(mean(magnet)*100,2) if magnet else None,
-            "average_magnet_distance_pct":round(mean(distances),4) if distances else None,
-            "scenario_accuracy_pct":round(mean(x.binary_outcome for x in scenario if x.binary_outcome is not None)*100,2) if scenario else None,
-            "path_mape_pct":round(mean(float(x.get("mape_pct") or 0) for x in path_payload),4) if path_payload else None,
-            "path_band_coverage_pct":round(mean(float(x.get("p25_p75_coverage_pct") or 0) for x in path_payload),2) if path_payload else None,
-            "path_direction_accuracy_pct":round(mean(float(x.get("direction_accuracy_pct") or 0) for x in path_payload),2) if path_payload else None,
-            "status":"CALIBRATING" if len(rows)<30 else "MEASURABLE"}
+        from trading_ai.opex_intelligence.service import OpexIntelligenceService
+
+        summary = OpexIntelligenceService(lambda: self.s)._calibration(self.s)
+        summary["actionable_range_hit_rate"] = summary.get(
+            "actionable_range_coverage"
+        )
+        return summary
 
     def dashboard(self, portfolio_id: str = "PAPER-PRIMARY") -> dict:
         predictions = list(self.s.scalars(select(PredictionRegistryModel).order_by(PredictionRegistryModel.generated_at.desc())))
@@ -675,11 +690,23 @@ class ContinuousLearningService:
         cal = self.build_calibration()
         execq = self.execution_quality(portfolio_id)
         opex = self.opex_calibration()
+        try:
+            from trading_ai.outcome_probability.service import OutcomeProbabilityService
+            outcome_probability = OutcomeProbabilityService(self.s).materialize_outcomes()
+        except Exception as exc:
+            self.s.rollback()
+            outcome_probability = {
+                "status": "DEFERRED_NON_BLOCKING",
+                "error_type": type(exc).__name__,
+                "error": str(exc),
+                "authority_effect": False,
+            }
         return {
             "version": VERSION, "status": "READY",
             "trade_evidence": trade_bridge, "opex_realization": opex_realization, "execution_evidence": execution_bridge,
             "captured": capture, "realized": realize,
             "calibration": {"sample_size": cal["sample_size"], "groups": len(cal["groups"])},
             "execution_quality": execq, "opex_calibration": opex,
+            "outcome_probability": outcome_probability,
             "governance": {"automatic_activation": False, "broker_sync_mode": "EXPLICIT_ONLY"},
         }

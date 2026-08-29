@@ -1,0 +1,26 @@
+{
+  "milestone": "M77.19.7.4.13",
+  "validation_window": [
+    "2018-01-01",
+    "2022-12-31"
+  ],
+  "minimum_validation_count": 300,
+  "authorized_scope": {
+    "H2_BREAKDOWN_INITIATION": [
+      5,
+      10
+    ],
+    "H4_ROOM_PCT_GE_10PCT": [
+      5,
+      10,
+      20
+    ],
+    "H4_ROOM_PCT_5_10PCT": [
+      5,
+      10,
+      20
+    ]
+  },
+  "final_holdout_open": false,
+  "production_authority_effect": false
+}

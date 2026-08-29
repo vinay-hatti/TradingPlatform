@@ -1,0 +1,13 @@
+{
+  "milestone": "M77.20.7",
+  "horizons": [
+    5,
+    10,
+    20
+  ],
+  "minimum_potentially_matured_paired_rows_per_horizon": 10000,
+  "minimum_actual_binary_rows_per_horizon": 10000,
+  "target_opening_gate_defined_pre_outcome": true,
+  "prospective_scoring_authorized": false,
+  "production_authority_effect": false
+}

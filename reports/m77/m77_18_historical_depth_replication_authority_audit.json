@@ -1,0 +1,962 @@
+{
+  "version": "M77.18-HISTORICAL-DEPTH-REPLICATION-AUTHORITY-AUDIT-1.0",
+  "status": "READY",
+  "mode": "READ_ONLY_AUDIT",
+  "long_history_authority": {
+    "certified": true,
+    "common_start": "2003-09-10",
+    "common_end": "2026-08-21",
+    "common_sessions": 5773
+  },
+  "files_examined": 249,
+  "milestones_found": 45,
+  "milestone_summary": {
+    "M77.0": {
+      "classification": "SHORT_HISTORY_EMPIRICAL_REPLICATION_REQUIRED",
+      "file_count": 6,
+      "class_counts": {
+        "SHORT_HISTORY_EMPIRICAL_REPLICATION_REQUIRED": 1,
+        "UNKNOWN_REVIEW_REQUIRED": 1,
+        "PROSPECTIVE_ONLY": 3,
+        "STRUCTURAL_ENGINEERING": 1
+      },
+      "sample_files": [
+        "src/trading_ai/outcome_probability/service.py",
+        "src/trading_ai/outcome_probability/labels.py",
+        "src/trading_ai/outcome_probability/policy.py",
+        "src/trading_ai/outcome_probability/features.py",
+        "src/trading_ai/outcome_probability/engine.py",
+        "src/trading_ai/outcome_probability/contracts.py"
+      ],
+      "date_ranges": []
+    },
+    "M77.0.3": {
+      "classification": "SHORT_HISTORY_EMPIRICAL_REPLICATION_REQUIRED",
+      "file_count": 2,
+      "class_counts": {
+        "SHORT_HISTORY_EMPIRICAL_REPLICATION_REQUIRED": 1,
+        "STRUCTURAL_ENGINEERING": 1
+      },
+      "sample_files": [
+        "scripts/run_m77_0_3_recover_institutional_options_requalification.py",
+        "scripts/verify_m77_0_3_institutional_options_requalification.py"
+      ],
+      "date_ranges": []
+    },
+    "M77.001": {
+      "classification": "PROSPECTIVE_ONLY",
+      "file_count": 1,
+      "class_counts": {
+        "PROSPECTIVE_ONLY": 1
+      },
+      "sample_files": [
+        "scripts/verify_m77_outcome_probability.py"
+      ],
+      "date_ranges": []
+    },
+    "M77.1": {
+      "classification": "STRUCTURAL_ENGINEERING",
+      "file_count": 3,
+      "class_counts": {
+        "STRUCTURAL_ENGINEERING": 2,
+        "UNKNOWN_REVIEW_REQUIRED": 1
+      },
+      "sample_files": [
+        "scripts/run_m77_1_historical_underlying_replay.py",
+        "scripts/report_m77_1_historical_underlying_replay.py",
+        "src/trading_ai/historical_underlying_replay/service.py"
+      ],
+      "date_ranges": []
+    },
+    "M77.1.1": {
+      "classification": "UNKNOWN_REVIEW_REQUIRED",
+      "file_count": 1,
+      "class_counts": {
+        "UNKNOWN_REVIEW_REQUIRED": 1
+      },
+      "sample_files": [
+        "scripts/report_m77_1_1_historical_champion_analytics.py"
+      ],
+      "date_ranges": []
+    },
+    "M77.1.1.1": {
+      "classification": "STRUCTURAL_ENGINEERING",
+      "file_count": 2,
+      "class_counts": {
+        "UNKNOWN_REVIEW_REQUIRED": 1,
+        "STRUCTURAL_ENGINEERING": 1
+      },
+      "sample_files": [
+        "scripts/report_m77_1_1_1_historical_champion_analytics.py",
+        "src/trading_ai/historical_underlying_replay/analytics.py"
+      ],
+      "date_ranges": []
+    },
+    "M77.10": {
+      "classification": "STRUCTURAL_ENGINEERING",
+      "file_count": 6,
+      "class_counts": {
+        "STRUCTURAL_ENGINEERING": 6
+      },
+      "sample_files": [
+        "scripts/verify_m77_10_monthly_model_replay.py",
+        "scripts/run_m77_10_monthly_model_replay.py",
+        "scripts/report_m77_10_monthly_walk_forward.py",
+        "scripts/certify_m77_10_monthly_walk_forward.py",
+        "reports/m77/m77_10_monthly_walk_forward_certification.json",
+        "reports/m77/m77_10_monthly_model_replay_manifest.json"
+      ],
+      "date_ranges": []
+    },
+    "M77.11": {
+      "classification": "SHORT_HISTORY_EMPIRICAL_REPLICATION_REQUIRED",
+      "file_count": 4,
+      "class_counts": {
+        "STRUCTURAL_ENGINEERING": 1,
+        "SHORT_HISTORY_EMPIRICAL_REPLICATION_REQUIRED": 2,
+        "LONG_HISTORY_ALREADY_CERTIFIED": 1
+      },
+      "sample_files": [
+        "scripts/verify_m77_11_multi_cadence_confluence.py",
+        "scripts/run_m77_11_multi_cadence_confluence.py",
+        "scripts/report_m77_11_multi_cadence_confluence.py",
+        "reports/m77/m77_11_multi_cadence_confluence_conflict_study.json"
+      ],
+      "date_ranges": []
+    },
+    "M77.12": {
+      "classification": "SHORT_HISTORY_EMPIRICAL_REPLICATION_REQUIRED",
+      "file_count": 4,
+      "class_counts": {
+        "SHORT_HISTORY_EMPIRICAL_REPLICATION_REQUIRED": 2,
+        "PROSPECTIVE_ONLY": 1,
+        "LONG_HISTORY_ALREADY_CERTIFIED": 1
+      },
+      "sample_files": [
+        "scripts/report_m77_12_cadence_role_incremental_utility.py",
+        "scripts/verify_m77_12_cadence_role_incremental_utility.py",
+        "scripts/run_m77_12_cadence_role_incremental_utility.py",
+        "reports/m77/m77_12_cadence_role_incremental_utility_certification.json"
+      ],
+      "date_ranges": []
+    },
+    "M77.13": {
+      "classification": "SHORT_HISTORY_EMPIRICAL_REPLICATION_REQUIRED",
+      "file_count": 5,
+      "class_counts": {
+        "UNKNOWN_REVIEW_REQUIRED": 2,
+        "PROSPECTIVE_ONLY": 2,
+        "SHORT_HISTORY_EMPIRICAL_REPLICATION_REQUIRED": 1
+      },
+      "sample_files": [
+        "scripts/cleanup_m77_13_invalid_partial_period_capture.py",
+        "scripts/report_m77_13_forward_shadow.py",
+        "scripts/run_m77_13_forward_shadow.py",
+        "scripts/m77_13_completed_period_calendar.py",
+        "scripts/verify_m77_13_forward_shadow.py"
+      ],
+      "date_ranges": []
+    },
+    "M77.13.1": {
+      "classification": "PROSPECTIVE_ONLY",
+      "file_count": 1,
+      "class_counts": {
+        "PROSPECTIVE_ONLY": 1
+      },
+      "sample_files": [
+        "scripts/verify_m77_13_1.py"
+      ],
+      "date_ranges": []
+    },
+    "M77.14": {
+      "classification": "CLOSED_SUPERSEDED",
+      "file_count": 3,
+      "class_counts": {
+        "CLOSED_SUPERSEDED": 3
+      },
+      "sample_files": [
+        "scripts/run_m77_14_astronomical_cycle_feasibility.py",
+        "scripts/report_m77_14_astronomical_cycle_feasibility.py",
+        "reports/m77/m77_14_astronomical_cycle_feasibility.json"
+      ],
+      "date_ranges": []
+    },
+    "M77.14.1": {
+      "classification": "CLOSED_SUPERSEDED",
+      "file_count": 3,
+      "class_counts": {
+        "CLOSED_SUPERSEDED": 3
+      },
+      "sample_files": [
+        "scripts/run_m77_14_1_astronomical_incremental_hardening.py",
+        "scripts/report_m77_14_1_astronomical_incremental_hardening.py",
+        "reports/m77/m77_14_1_astronomical_incremental_certification.json"
+      ],
+      "date_ranges": []
+    },
+    "M77.14.2": {
+      "classification": "CLOSED_SUPERSEDED",
+      "file_count": 3,
+      "class_counts": {
+        "CLOSED_SUPERSEDED": 3
+      },
+      "sample_files": [
+        "scripts/report_m77_14_2_lunar_survivor_certification.py",
+        "scripts/run_m77_14_2_lunar_survivor_certification.py",
+        "reports/m77/m77_14_2_lunar_survivor_certification.json"
+      ],
+      "date_ranges": []
+    },
+    "M77.14.3": {
+      "classification": "CLOSED_SUPERSEDED",
+      "file_count": 4,
+      "class_counts": {
+        "CLOSED_SUPERSEDED": 4
+      },
+      "sample_files": [
+        "scripts/reclassify_m77_14_3_partial_launch_episode.py",
+        "scripts/run_m77_14_3_prospective_lunar_volatility_shadow.py",
+        "scripts/report_m77_14_3_prospective_lunar_volatility_shadow.py",
+        "reports/m77/m77_14_3_lunar_forward_shadow/latest.json"
+      ],
+      "date_ranges": []
+    },
+    "M77.14.3.1": {
+      "classification": "CLOSED_SUPERSEDED",
+      "file_count": 1,
+      "class_counts": {
+        "CLOSED_SUPERSEDED": 1
+      },
+      "sample_files": [
+        "scripts/patch_m77_14_3_1_combined_orchestrator.py"
+      ],
+      "date_ranges": []
+    },
+    "M77.15": {
+      "classification": "CLOSED_SUPERSEDED",
+      "file_count": 3,
+      "class_counts": {
+        "CLOSED_SUPERSEDED": 3
+      },
+      "sample_files": [
+        "scripts/repair_m77_15_jpl_cache_json.py",
+        "src/trading_ai/historical_underlying_replay/jpl_horizons_ephemeris.py",
+        "config/m77/m77_15_vedic_conventions.json"
+      ],
+      "date_ranges": []
+    },
+    "M77.15.0": {
+      "classification": "CLOSED_SUPERSEDED",
+      "file_count": 55,
+      "class_counts": {
+        "CLOSED_SUPERSEDED": 55
+      },
+      "sample_files": [
+        "scripts/run_m77_15_0_vedic_ephemeris_foundation.py",
+        "scripts/report_m77_15_0_vedic_ephemeris_foundation.py",
+        "reports/m77/m77_15_0_ephemeris_foundation_parity.json",
+        "reports/m77/m77_15_0_jpl_ephemeris_cache/2025-12-01_SATURN_APP_ECL31_70e2da3536fce2933ffd8f5c.json",
+        "reports/m77/m77_15_0_jpl_ephemeris_cache/2023-03-20_SATURN_40f1a1bdae24ab81f2504846.json",
+        "reports/m77/m77_15_0_jpl_ephemeris_cache/2025-12-01_VENUS_APP_ECL31_258509d9a1a69845d5479e13.json",
+        "reports/m77/m77_15_0_jpl_ephemeris_cache/2023-03-20_SUN_298d9e4eb120c6cfb3a1b382.json",
+        "reports/m77/m77_15_0_jpl_ephemeris_cache/2024-09-22_MARS_APP_ECL31_fda11eacd1630d29428bc3b2.json",
+        "reports/m77/m77_15_0_jpl_ephemeris_cache/2023-03-20_VENUS_81bc2d973d3eb437f3fda89f.json",
+        "reports/m77/m77_15_0_jpl_ephemeris_cache/2026-08-21_MERCURY_APP_ECL31_82319e90afad5f2675ef25df.json",
+        "reports/m77/m77_15_0_jpl_ephemeris_cache/2026-08-21_MOON_d6976fcd4642367ab558c801.json",
+        "reports/m77/m77_15_0_jpl_ephemeris_cache/2023-03-20_JUPITER_APP_ECL31_de46982ab33d8a8eec19884c.json"
+      ],
+      "date_ranges": []
+    },
+    "M77.15.1": {
+      "classification": "CLOSED_SUPERSEDED",
+      "file_count": 8,
+      "class_counts": {
+        "CLOSED_SUPERSEDED": 8
+      },
+      "sample_files": [
+        "scripts/report_m77_15_1_lahiri_true_node_panchanga.py",
+        "scripts/repair_m77_15_1_json_artifacts.py",
+        "scripts/run_m77_15_1_lahiri_true_node_panchanga.py",
+        "src/trading_ai/historical_underlying_replay/vedic_astronomy_foundation.py",
+        "config/m77/m77_15_1_frozen_parity_reference.json",
+        "config/m77/m77_15_1_lahiri_monthly_benchmarks_2000_2040.json",
+        "reports/m77/m77_15_1_lahiri_true_node_parity.json",
+        "reports/m77/m77_15_1_panchanga_foundation.json"
+      ],
+      "date_ranges": []
+    },
+    "M77.15.2": {
+      "classification": "CLOSED_SUPERSEDED",
+      "file_count": 5,
+      "class_counts": {
+        "CLOSED_SUPERSEDED": 5
+      },
+      "sample_files": [
+        "scripts/report_m77_15_2_single_factor_panchanga_study.py",
+        "scripts/run_m77_15_2_single_factor_panchanga_study.py",
+        "scripts/repair_m77_15_2_study_artifact.py",
+        "reports/m77/m77_15_2_single_factor_panchanga_study.json",
+        "data/m77/m77_15_2_panchanga_daily_2000_2040.metadata.json"
+      ],
+      "date_ranges": []
+    },
+    "M77.15.3": {
+      "classification": "CLOSED_SUPERSEDED",
+      "file_count": 5,
+      "class_counts": {
+        "CLOSED_SUPERSEDED": 5
+      },
+      "sample_files": [
+        "scripts/report_m77_15_3_graha_state_major_transit_study.py",
+        "scripts/run_m77_15_3_graha_state_major_transit_study.py",
+        "reports/m77/m77_15_3_graha_state_major_transit_study.json",
+        "reports/m77/m77_15_3_graha_registry_certification.json",
+        "data/m77/m77_15_3_graha_state_daily_2000_2040.metadata.json"
+      ],
+      "date_ranges": []
+    },
+    "M77.15.4": {
+      "classification": "CLOSED_SUPERSEDED",
+      "file_count": 4,
+      "class_counts": {
+        "CLOSED_SUPERSEDED": 4
+      },
+      "sample_files": [
+        "scripts/report_m77_15_4_rahu_ketu_eclipse_planetary_geometry_event_study.py",
+        "scripts/run_m77_15_4_rahu_ketu_eclipse_planetary_geometry_event_study.py",
+        "reports/m77/m77_15_4_rahu_ketu_eclipse_planetary_geometry_event_study.json",
+        "data/m77/m77_15_4_astronomical_event_registry_2000_2040.metadata.json"
+      ],
+      "date_ranges": []
+    },
+    "M77.15.5": {
+      "classification": "CLOSED_SUPERSEDED",
+      "file_count": 3,
+      "class_counts": {
+        "CLOSED_SUPERSEDED": 3
+      },
+      "sample_files": [
+        "scripts/run_m77_15_5_historical_coverage_authority_audit.py",
+        "scripts/report_m77_15_5_historical_coverage_authority_audit.py",
+        "reports/m77/m77_15_5_historical_coverage_authority_audit.json"
+      ],
+      "date_ranges": [
+        {
+          "first_date": "2000-01-21",
+          "last_date": "2040-11-18"
+        }
+      ]
+    },
+    "M77.15.6": {
+      "classification": "CLOSED_SUPERSEDED",
+      "file_count": 10,
+      "class_counts": {
+        "CLOSED_SUPERSEDED": 10
+      },
+      "sample_files": [
+        "scripts/run_m77_15_6_isolated_long_history_index_authority.py",
+        "scripts/certify_m77_15_6_long_history_index_authority.py",
+        "scripts/report_m77_15_6_isolated_long_history_index_authority.py",
+        "src/trading_ai/historical_underlying_replay/long_history_index_authority.py",
+        "config/m77/m77_15_6_long_history_index_authority.json",
+        "reports/m77/m77_15_6_long_history_authority_certification.json",
+        "research_data/m77_15_6/index_history/manifests/latest.json",
+        "research_data/m77_15_6/index_history/raw/SPX/I_SPX_page_001.json",
+        "research_data/m77_15_6/index_history/raw/NDX/I_NDX_page_001.json",
+        "research_data/m77_15_6/index_history/raw/RUT/I_RUT_page_001.json"
+      ],
+      "date_ranges": [
+        {
+          "first_date": "2000-01-01",
+          "last_date": null
+        },
+        {
+          "first_date": "2023-02-14",
+          "last_date": "2026-08-21"
+        }
+      ]
+    },
+    "M77.15.6.3": {
+      "classification": "CLOSED_SUPERSEDED",
+      "file_count": 9,
+      "class_counts": {
+        "CLOSED_SUPERSEDED": 9
+      },
+      "sample_files": [
+        "scripts/certify_m77_15_6_3_long_history_tradable_proxy_authority.py",
+        "scripts/report_m77_15_6_3_long_history_tradable_proxy_authority.py",
+        "scripts/run_m77_15_6_3_long_history_tradable_proxy_authority.py",
+        "config/m77/m77_15_6_3_tradable_proxy_authority.json",
+        "reports/m77/m77_15_6_3_tradable_proxy_authority_certification.json",
+        "research_data/m77_15_6_3/tradable_proxy_history/manifests/latest.json",
+        "research_data/m77_15_6_3/tradable_proxy_history/raw/SPX/SPY_page_001.json",
+        "research_data/m77_15_6_3/tradable_proxy_history/raw/NDX/QQQ_page_001.json",
+        "research_data/m77_15_6_3/tradable_proxy_history/raw/RUT/IWM_page_001.json"
+      ],
+      "date_ranges": [
+        {
+          "first_date": "2003-09-10",
+          "last_date": "2026-08-21"
+        }
+      ]
+    },
+    "M77.15.6.4": {
+      "classification": "CLOSED_SUPERSEDED",
+      "file_count": 8,
+      "class_counts": {
+        "CLOSED_SUPERSEDED": 8
+      },
+      "sample_files": [
+        "scripts/run_m77_15_6_4_polygon_coverage_symbol_lineage_resolution.py",
+        "scripts/report_m77_15_6_4_polygon_coverage_symbol_lineage_resolution.py",
+        "config/m77/m77_15_6_4_polygon_coverage_lineage.json",
+        "research_data/m77_15_6_4/polygon_coverage_lineage/manifests/latest.json",
+        "research_data/m77_15_6_4/polygon_coverage_lineage/raw/SPY/SPY_page_001.json",
+        "research_data/m77_15_6_4/polygon_coverage_lineage/raw/QQQ/QQQ_page_001.json",
+        "research_data/m77_15_6_4/polygon_coverage_lineage/raw/QQQQ/QQQQ_page_001.json",
+        "research_data/m77_15_6_4/polygon_coverage_lineage/raw/IWM/IWM_page_001.json"
+      ],
+      "date_ranges": [
+        {
+          "first_date": "2004-12-01",
+          "last_date": "2011-03-22"
+        },
+        {
+          "first_date": "2003-09-10",
+          "last_date": "2026-08-21"
+        }
+      ]
+    },
+    "M77.15.6.5": {
+      "classification": "CLOSED_SUPERSEDED",
+      "file_count": 10,
+      "class_counts": {
+        "CLOSED_SUPERSEDED": 10
+      },
+      "sample_files": [
+        "scripts/report_m77_15_6_5_material_long_history_proxy_authority.py",
+        "scripts/run_m77_15_6_5_1_qqq_lineage_ohlc_forensic_audit.py",
+        "scripts/run_m77_15_6_5_2_source_anomaly_quarantine_recertification.py",
+        "scripts/certify_m77_15_6_5_material_long_history_proxy_authority.py",
+        "scripts/report_m77_15_6_5_2_source_anomaly_quarantine_recertification.py",
+        "config/m77/m77_15_6_5_2_source_anomaly_quarantine.json",
+        "config/m77/m77_15_6_5_material_long_history_proxy_certification.json",
+        "reports/m77/m77_15_6_5_2_material_long_history_proxy_authority_certification.json",
+        "reports/m77/m77_15_6_5_1_qqq_lineage_ohlc_forensic_audit.json",
+        "reports/m77/m77_15_6_5_material_long_history_proxy_authority_certification.json"
+      ],
+      "date_ranges": [
+        {
+          "first_date": "2003-09-10",
+          "last_date": null
+        },
+        {
+          "first_date": "2004-12-01",
+          "last_date": "2011-03-22"
+        },
+        {
+          "first_date": "2003-09-10",
+          "last_date": "2026-08-21"
+        },
+        {
+          "first_date": "2003-09-10",
+          "last_date": "2026-08-21"
+        }
+      ]
+    },
+    "M77.15.7": {
+      "classification": "CLOSED_SUPERSEDED",
+      "file_count": 4,
+      "class_counts": {
+        "CLOSED_SUPERSEDED": 4
+      },
+      "sample_files": [
+        "scripts/report_m77_15_7_long_history_frozen_hypothesis_replication.py",
+        "scripts/run_m77_15_7_long_history_frozen_hypothesis_replication.py",
+        "config/m77/m77_15_7_long_history_replication.json",
+        "reports/m77/m77_15_7_long_history_frozen_hypothesis_replication.json"
+      ],
+      "date_ranges": [
+        {
+          "first_date": "2003-09-10",
+          "last_date": "2026-08-21"
+        }
+      ]
+    },
+    "M77.16": {
+      "classification": "CLOSED_SUPERSEDED",
+      "file_count": 4,
+      "class_counts": {
+        "CLOSED_SUPERSEDED": 4
+      },
+      "sample_files": [
+        "scripts/report_m77_16_vedic_predictive_hypotheses_ii.py",
+        "scripts/run_m77_16_vedic_predictive_hypotheses_ii.py",
+        "config/m77/m77_16_vedic_predictive_hypotheses_ii.json",
+        "reports/m77/m77_16_vedic_predictive_hypotheses_ii.json"
+      ],
+      "date_ranges": [
+        {
+          "first_date": "2003-09-10",
+          "last_date": "2026-08-21"
+        }
+      ]
+    },
+    "M77.16.1": {
+      "classification": "CLOSED_SUPERSEDED",
+      "file_count": 4,
+      "class_counts": {
+        "CLOSED_SUPERSEDED": 4
+      },
+      "sample_files": [
+        "scripts/report_m77_16_1_mundane_market_chart_authority.py",
+        "scripts/run_m77_16_1_mundane_market_chart_authority.py",
+        "config/m77/m77_16_1_mundane_market_chart_authority.json",
+        "reports/m77/m77_16_1_mundane_market_chart_authority.json"
+      ],
+      "date_ranges": []
+    },
+    "M77.16.2": {
+      "classification": "CLOSED_SUPERSEDED",
+      "file_count": 4,
+      "class_counts": {
+        "CLOSED_SUPERSEDED": 4
+      },
+      "sample_files": [
+        "scripts/report_m77_16_2_h3_astronomical_feature_materialization.py",
+        "scripts/run_m77_16_2_h3_astronomical_feature_materialization.py",
+        "config/m77/m77_16_2_h3_feature_materialization.json",
+        "data/m77/m77_16_2_h3_house_features_2000_2040.metadata.json"
+      ],
+      "date_ranges": [
+        {
+          "first_date": "2000-01-01",
+          "last_date": "2040-12-31"
+        }
+      ]
+    },
+    "M77.16.3": {
+      "classification": "CLOSED_SUPERSEDED",
+      "file_count": 4,
+      "class_counts": {
+        "CLOSED_SUPERSEDED": 4
+      },
+      "sample_files": [
+        "scripts/report_m77_16_3_h3_long_history_financial_study.py",
+        "scripts/run_m77_16_3_h3_long_history_financial_study.py",
+        "config/m77/m77_16_3_h3_long_history_financial_study.json",
+        "reports/m77/m77_16_3_h3_long_history_financial_study.json"
+      ],
+      "date_ranges": [
+        {
+          "first_date": "2003-09-10",
+          "last_date": "2026-08-21"
+        },
+        {
+          "first_date": "2003-09-10",
+          "last_date": "2026-08-21"
+        }
+      ]
+    },
+    "M77.17": {
+      "classification": "SHORT_HISTORY_EMPIRICAL_REPLICATION_REQUIRED",
+      "file_count": 5,
+      "class_counts": {
+        "LONG_HISTORY_ALREADY_CERTIFIED": 4,
+        "SHORT_HISTORY_EMPIRICAL_REPLICATION_REQUIRED": 1
+      },
+      "sample_files": [
+        "scripts/run_m77_17_lunar_survivor_long_history_replication.py",
+        "scripts/report_m77_17_lunar_survivor_long_history_replication.py",
+        "config/m77/m77_17_lunar_survivor_long_history_replication.json",
+        "reports/m77/m77_17_vedic_research_closure.json",
+        "reports/m77/m77_17_lunar_survivor_long_history_replication.json"
+      ],
+      "date_ranges": [
+        {
+          "first_date": "2003-09-10",
+          "last_date": "2026-08-21"
+        },
+        {
+          "first_date": "2003-09-10",
+          "last_date": "2026-08-21"
+        }
+      ]
+    },
+    "M77.17.1": {
+      "classification": "STRUCTURAL_ENGINEERING",
+      "file_count": 2,
+      "class_counts": {
+        "STRUCTURAL_ENGINEERING": 2
+      },
+      "sample_files": [
+        "scripts/build_m77_17_1_lunar_feature_authority.py",
+        "data/m77/m77_17_1_lunar_phase_daily_2000_2040.metadata.json"
+      ],
+      "date_ranges": [
+        {
+          "first_date": "2000-01-01",
+          "last_date": "2040-12-31"
+        }
+      ]
+    },
+    "M77.17.2": {
+      "classification": "PROSPECTIVE_ONLY",
+      "file_count": 5,
+      "class_counts": {
+        "STRUCTURAL_ENGINEERING": 1,
+        "PROSPECTIVE_ONLY": 2,
+        "LONG_HISTORY_ALREADY_CERTIFIED": 2
+      },
+      "sample_files": [
+        "scripts/report_m77_17_2_astrology_research_closure.py",
+        "scripts/run_m77_17_2_astrology_research_closure.py",
+        "config/m77/M77_ASTROLOGY_RESEARCH_RETIRED.json",
+        "config/m77/m77_17_2_astrology_research_closure.json",
+        "reports/m77/m77_17_2_astrology_research_closure.json"
+      ],
+      "date_ranges": []
+    },
+    "M77.18": {
+      "classification": "LONG_HISTORY_ALREADY_CERTIFIED",
+      "file_count": 3,
+      "class_counts": {
+        "LONG_HISTORY_ALREADY_CERTIFIED": 3
+      },
+      "sample_files": [
+        "scripts/report_m77_18_historical_depth_replication_authority_audit.py",
+        "scripts/run_m77_18_historical_depth_replication_authority_audit.py",
+        "config/m77/m77_18_historical_depth_audit.json"
+      ],
+      "date_ranges": [
+        {
+          "first_date": "2003-09-10",
+          "last_date": "2026-08-21"
+        }
+      ]
+    },
+    "M77.2": {
+      "classification": "STRUCTURAL_ENGINEERING",
+      "file_count": 7,
+      "class_counts": {
+        "STRUCTURAL_ENGINEERING": 6,
+        "UNKNOWN_REVIEW_REQUIRED": 1
+      },
+      "sample_files": [
+        "scripts/run_m77_2_multiyear_frozen_champion.py",
+        "scripts/report_m77_2_multiyear_frozen_champion.py",
+        "src/trading_ai/historical_underlying_replay/certification.py",
+        "reports/m77/m77_2_multiyear_frozen_champion_certification.json",
+        "reports/m77/m77_2_multiyear_frozen_champion_manifest.json",
+        "reports/m77/certified/m77_2_multiyear_frozen_champion_certification.json",
+        "reports/m77/certified/m77_2_multiyear_frozen_champion_manifest.json"
+      ],
+      "date_ranges": [
+        {
+          "first_date": "2022-10-14",
+          "last_date": "2026-08-17"
+        },
+        {
+          "first_date": "2022-10-14",
+          "last_date": "2026-08-17"
+        }
+      ]
+    },
+    "M77.3": {
+      "classification": "SHORT_HISTORY_EMPIRICAL_REPLICATION_REQUIRED",
+      "file_count": 7,
+      "class_counts": {
+        "STRUCTURAL_ENGINEERING": 6,
+        "SHORT_HISTORY_EMPIRICAL_REPLICATION_REQUIRED": 1
+      },
+      "sample_files": [
+        "scripts/run_m77_3_conditional_edge_attribution.py",
+        "scripts/run_cyclical_seasonality_fold_native_shadow_certification.py",
+        "scripts/report_m77_3_conditional_edges.py",
+        "src/trading_ai/historical_underlying_replay/regime.py",
+        "src/trading_ai/historical_underlying_replay/attribution.py",
+        "reports/m77/m77_3_conditional_edge_attribution.json",
+        "reports/m77/m77_3_historical_regime_authority.json"
+      ],
+      "date_ranges": []
+    },
+    "M77.4": {
+      "classification": "PROSPECTIVE_ONLY",
+      "file_count": 5,
+      "class_counts": {
+        "STRUCTURAL_ENGINEERING": 1,
+        "UNKNOWN_REVIEW_REQUIRED": 1,
+        "PROSPECTIVE_ONLY": 3
+      },
+      "sample_files": [
+        "scripts/run_m77_4_stock_intelligence_challenger.py",
+        "scripts/report_m77_4_stock_intelligence_challenger.py",
+        "src/trading_ai/historical_underlying_replay/challenger.py",
+        "reports/m77/m77_4_walk_forward_challenger_certification.json",
+        "reports/m77/m77_4_research_challenger_policy.json"
+      ],
+      "date_ranges": []
+    },
+    "M77.5": {
+      "classification": "PROSPECTIVE_ONLY",
+      "file_count": 4,
+      "class_counts": {
+        "PROSPECTIVE_ONLY": 4
+      },
+      "sample_files": [
+        "scripts/run_m77_5_shadow_policy_certification.py",
+        "scripts/report_m77_5_shadow_policy_certification.py",
+        "reports/m77/m77_5_shadow_policy_certification.json",
+        "reports/m77/m77_5_research_shadow_policy.json"
+      ],
+      "date_ranges": []
+    },
+    "M77.6": {
+      "classification": "SHORT_HISTORY_EMPIRICAL_REPLICATION_REQUIRED",
+      "file_count": 4,
+      "class_counts": {
+        "SHORT_HISTORY_EMPIRICAL_REPLICATION_REQUIRED": 3,
+        "PROSPECTIVE_ONLY": 1
+      },
+      "sample_files": [
+        "scripts/run_m77_6_live_forward_shadow.py",
+        "scripts/report_m77_6_live_forward_shadow.py",
+        "scripts/m77_forward_shadow/run_combined_forward_shadow.sh",
+        "scripts/m77_6_shadow/run_daily_shadow_collector.sh"
+      ],
+      "date_ranges": []
+    },
+    "M77.7": {
+      "classification": "STRUCTURAL_ENGINEERING",
+      "file_count": 3,
+      "class_counts": {
+        "STRUCTURAL_ENGINEERING": 3
+      },
+      "sample_files": [
+        "scripts/report_m77_7_multi_cadence_replay_coverage_feasibility.py",
+        "scripts/run_m77_7_multi_cadence_replay_coverage_feasibility.py",
+        "reports/m77/m77_7_multi_cadence_replay_coverage_feasibility.json"
+      ],
+      "date_ranges": [
+        {
+          "first_date": "2021-08-09",
+          "last_date": "2026-08-20"
+        }
+      ]
+    },
+    "M77.8": {
+      "classification": "STRUCTURAL_ENGINEERING",
+      "file_count": 5,
+      "class_counts": {
+        "STRUCTURAL_ENGINEERING": 5
+      },
+      "sample_files": [
+        "scripts/report_m77_8_daily_pit_replay_authority.py",
+        "scripts/run_m77_8_daily_pit_replay_authority.py",
+        "scripts/verify_m77_8_daily_pit_replay_authority.py",
+        "reports/m77/m77_8_daily_pit_replay_authority.json",
+        "reports/m77/m77_8_daily_pit_regime_snapshots.json"
+      ],
+      "date_ranges": []
+    },
+    "M77.9": {
+      "classification": "STRUCTURAL_ENGINEERING",
+      "file_count": 6,
+      "class_counts": {
+        "STRUCTURAL_ENGINEERING": 6
+      },
+      "sample_files": [
+        "scripts/certify_m77_9_daily_walk_forward.py",
+        "scripts/report_m77_9_daily_walk_forward.py",
+        "scripts/verify_m77_9_daily_model_replay.py",
+        "scripts/run_m77_9_daily_model_replay.py",
+        "reports/m77/m77_9_daily_walk_forward_certification.json",
+        "reports/m77/m77_9_daily_model_replay_manifest.json"
+      ],
+      "date_ranges": []
+    },
+    "M77.UNKNOWN": {
+      "classification": "SHORT_HISTORY_EMPIRICAL_REPLICATION_REQUIRED",
+      "file_count": 4,
+      "class_counts": {
+        "PROSPECTIVE_ONLY": 1,
+        "SHORT_HISTORY_EMPIRICAL_REPLICATION_REQUIRED": 3
+      },
+      "sample_files": [
+        "scripts/run_m77_outcome_probability.py",
+        "src/trading_ai/stock_intelligence/cyclical_seasonality_presentation.py",
+        "src/trading_ai/outcome_probability/models.py",
+        "src/trading_ai/outcome_probability/repository.py"
+      ],
+      "date_ranges": []
+    }
+  },
+  "replication_backlog": [
+    {
+      "milestone": "M77.0",
+      "classification": "SHORT_HISTORY_EMPIRICAL_REPLICATION_REQUIRED",
+      "priority": "HIGH",
+      "recommended_action": "RECOVER_FROZEN_HYPOTHESIS_AND_REPLICATE_ON_5773_SESSION_AUTHORITY",
+      "sample_files": [
+        "src/trading_ai/outcome_probability/service.py",
+        "src/trading_ai/outcome_probability/labels.py",
+        "src/trading_ai/outcome_probability/policy.py",
+        "src/trading_ai/outcome_probability/features.py",
+        "src/trading_ai/outcome_probability/engine.py",
+        "src/trading_ai/outcome_probability/contracts.py"
+      ]
+    },
+    {
+      "milestone": "M77.0.3",
+      "classification": "SHORT_HISTORY_EMPIRICAL_REPLICATION_REQUIRED",
+      "priority": "HIGH",
+      "recommended_action": "RECOVER_FROZEN_HYPOTHESIS_AND_REPLICATE_ON_5773_SESSION_AUTHORITY",
+      "sample_files": [
+        "scripts/run_m77_0_3_recover_institutional_options_requalification.py",
+        "scripts/verify_m77_0_3_institutional_options_requalification.py"
+      ]
+    },
+    {
+      "milestone": "M77.11",
+      "classification": "SHORT_HISTORY_EMPIRICAL_REPLICATION_REQUIRED",
+      "priority": "HIGH",
+      "recommended_action": "RECOVER_FROZEN_HYPOTHESIS_AND_REPLICATE_ON_5773_SESSION_AUTHORITY",
+      "sample_files": [
+        "scripts/verify_m77_11_multi_cadence_confluence.py",
+        "scripts/run_m77_11_multi_cadence_confluence.py",
+        "scripts/report_m77_11_multi_cadence_confluence.py",
+        "reports/m77/m77_11_multi_cadence_confluence_conflict_study.json"
+      ]
+    },
+    {
+      "milestone": "M77.12",
+      "classification": "SHORT_HISTORY_EMPIRICAL_REPLICATION_REQUIRED",
+      "priority": "HIGH",
+      "recommended_action": "RECOVER_FROZEN_HYPOTHESIS_AND_REPLICATE_ON_5773_SESSION_AUTHORITY",
+      "sample_files": [
+        "scripts/report_m77_12_cadence_role_incremental_utility.py",
+        "scripts/verify_m77_12_cadence_role_incremental_utility.py",
+        "scripts/run_m77_12_cadence_role_incremental_utility.py",
+        "reports/m77/m77_12_cadence_role_incremental_utility_certification.json"
+      ]
+    },
+    {
+      "milestone": "M77.13",
+      "classification": "SHORT_HISTORY_EMPIRICAL_REPLICATION_REQUIRED",
+      "priority": "HIGH",
+      "recommended_action": "RECOVER_FROZEN_HYPOTHESIS_AND_REPLICATE_ON_5773_SESSION_AUTHORITY",
+      "sample_files": [
+        "scripts/cleanup_m77_13_invalid_partial_period_capture.py",
+        "scripts/report_m77_13_forward_shadow.py",
+        "scripts/run_m77_13_forward_shadow.py",
+        "scripts/m77_13_completed_period_calendar.py",
+        "scripts/verify_m77_13_forward_shadow.py"
+      ]
+    },
+    {
+      "milestone": "M77.17",
+      "classification": "SHORT_HISTORY_EMPIRICAL_REPLICATION_REQUIRED",
+      "priority": "HIGH",
+      "recommended_action": "RECOVER_FROZEN_HYPOTHESIS_AND_REPLICATE_ON_5773_SESSION_AUTHORITY",
+      "sample_files": [
+        "scripts/run_m77_17_lunar_survivor_long_history_replication.py",
+        "scripts/report_m77_17_lunar_survivor_long_history_replication.py",
+        "config/m77/m77_17_lunar_survivor_long_history_replication.json",
+        "reports/m77/m77_17_vedic_research_closure.json",
+        "reports/m77/m77_17_lunar_survivor_long_history_replication.json"
+      ]
+    },
+    {
+      "milestone": "M77.3",
+      "classification": "SHORT_HISTORY_EMPIRICAL_REPLICATION_REQUIRED",
+      "priority": "HIGH",
+      "recommended_action": "RECOVER_FROZEN_HYPOTHESIS_AND_REPLICATE_ON_5773_SESSION_AUTHORITY",
+      "sample_files": [
+        "scripts/run_m77_3_conditional_edge_attribution.py",
+        "scripts/run_cyclical_seasonality_fold_native_shadow_certification.py",
+        "scripts/report_m77_3_conditional_edges.py",
+        "src/trading_ai/historical_underlying_replay/regime.py",
+        "src/trading_ai/historical_underlying_replay/attribution.py",
+        "reports/m77/m77_3_conditional_edge_attribution.json"
+      ]
+    },
+    {
+      "milestone": "M77.6",
+      "classification": "SHORT_HISTORY_EMPIRICAL_REPLICATION_REQUIRED",
+      "priority": "HIGH",
+      "recommended_action": "RECOVER_FROZEN_HYPOTHESIS_AND_REPLICATE_ON_5773_SESSION_AUTHORITY",
+      "sample_files": [
+        "scripts/run_m77_6_live_forward_shadow.py",
+        "scripts/report_m77_6_live_forward_shadow.py",
+        "scripts/m77_forward_shadow/run_combined_forward_shadow.sh",
+        "scripts/m77_6_shadow/run_daily_shadow_collector.sh"
+      ]
+    },
+    {
+      "milestone": "M77.UNKNOWN",
+      "classification": "SHORT_HISTORY_EMPIRICAL_REPLICATION_REQUIRED",
+      "priority": "HIGH",
+      "recommended_action": "RECOVER_FROZEN_HYPOTHESIS_AND_REPLICATE_ON_5773_SESSION_AUTHORITY",
+      "sample_files": [
+        "scripts/run_m77_outcome_probability.py",
+        "src/trading_ai/stock_intelligence/cyclical_seasonality_presentation.py",
+        "src/trading_ai/outcome_probability/models.py",
+        "src/trading_ai/outcome_probability/repository.py"
+      ]
+    }
+  ],
+  "cycle_seasonality_findings": {
+    "milestones": [
+      "M77.0",
+      "M77.0.3",
+      "M77.13",
+      "M77.14",
+      "M77.14.1",
+      "M77.14.2",
+      "M77.14.3",
+      "M77.14.3.1",
+      "M77.15.0",
+      "M77.18",
+      "M77.3",
+      "M77.6",
+      "M77.UNKNOWN"
+    ],
+    "file_count": 21,
+    "sample_files": [
+      "scripts/report_m77_18_historical_depth_replication_authority_audit.py",
+      "scripts/run_m77_15_0_vedic_ephemeris_foundation.py",
+      "scripts/run_cyclical_seasonality_fold_native_shadow_certification.py",
+      "scripts/run_m77_14_1_astronomical_incremental_hardening.py",
+      "scripts/run_m77_14_astronomical_cycle_feasibility.py",
+      "scripts/patch_m77_14_3_1_combined_orchestrator.py",
+      "scripts/run_m77_0_3_recover_institutional_options_requalification.py",
+      "scripts/run_m77_18_historical_depth_replication_authority_audit.py",
+      "scripts/run_m77_14_2_lunar_survivor_certification.py",
+      "scripts/run_m77_13_forward_shadow.py",
+      "scripts/run_m77_14_3_prospective_lunar_volatility_shadow.py",
+      "scripts/run_m77_6_live_forward_shadow.py",
+      "scripts/report_m77_14_astronomical_cycle_feasibility.py",
+      "scripts/m77_forward_shadow/run_combined_forward_shadow.sh",
+      "scripts/m77_6_shadow/run_daily_shadow_collector.sh",
+      "src/trading_ai/stock_intelligence/cyclical_seasonality_presentation.py",
+      "src/trading_ai/outcome_probability/service.py",
+      "src/trading_ai/outcome_probability/models.py",
+      "src/trading_ai/outcome_probability/repository.py",
+      "config/m77/m77_18_historical_depth_audit.json"
+    ]
+  },
+  "closed_branches": {
+    "M77.14": "CLOSED_UNSUPPORTED_LONG_HISTORY_REPLICATION_FAILURE",
+    "M77.15": "CLOSED_UNSUPPORTED",
+    "M77.16": "CLOSED_UNSUPPORTED"
+  },
+  "governance": {
+    "database_writes": false,
+    "production_authority_effect": false,
+    "source_files_mutated": false,
+    "reports_mutated": false,
+    "historical_artifacts_deleted": false
+  },
+  "next_step": "REVIEW_REPLICATION_BACKLOG_THEN_BUILD_FROZEN_LONG_HISTORY_REPLICATIONS_ONLY",
+  "production_authority_effect": false
+}

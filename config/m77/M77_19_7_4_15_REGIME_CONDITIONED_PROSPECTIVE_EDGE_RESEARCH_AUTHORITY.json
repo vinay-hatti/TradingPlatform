@@ -1,0 +1,14 @@
+{
+  "milestone": "M77.19.7.4.15",
+  "regime_dimensions": [
+    "MARKET_DRIFT",
+    "VOLATILITY",
+    "TREND_REGIME",
+    "BREADTH_REGIME",
+    "BEAR_MARKET_CONTEXT"
+  ],
+  "final_holdout_start": "2023-01-01",
+  "final_holdout_open": false,
+  "new_candidate_scored": false,
+  "production_authority_effect": false
+}

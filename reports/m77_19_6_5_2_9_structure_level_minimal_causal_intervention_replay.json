@@ -1,0 +1,2597 @@
+{
+  "arm_summaries": {
+    "CONTROL_WEEKLY_PARTICIPATION": {
+      "count": 48,
+      "decision_intelligence_exact_count": 14,
+      "direction_match_pct": 100.0,
+      "max_confidence_abs_error": 0.0,
+      "max_score_abs_error": 0.0,
+      "overall_score_exact_count": 48,
+      "profile_confidence_exact_count": 48,
+      "resistance_levels_exact_count": 7,
+      "state_hash_exact_count": 0,
+      "structure_zones_exact_count": 12,
+      "support_levels_exact_count": 8,
+      "trade_plan_exact_count": 0
+    },
+    "LEVELS_AND_STRUCTURE": {
+      "count": 48,
+      "decision_intelligence_exact_count": 48,
+      "direction_match_pct": 100.0,
+      "max_confidence_abs_error": 0.0,
+      "max_score_abs_error": 0.0,
+      "overall_score_exact_count": 48,
+      "profile_confidence_exact_count": 48,
+      "resistance_levels_exact_count": 48,
+      "state_hash_exact_count": 0,
+      "structure_zones_exact_count": 48,
+      "support_levels_exact_count": 48,
+      "trade_plan_exact_count": 0
+    },
+    "LEVELS_ONLY": {
+      "count": 48,
+      "decision_intelligence_exact_count": 35,
+      "direction_match_pct": 100.0,
+      "max_confidence_abs_error": 0.0,
+      "max_score_abs_error": 0.0,
+      "overall_score_exact_count": 48,
+      "profile_confidence_exact_count": 48,
+      "resistance_levels_exact_count": 48,
+      "state_hash_exact_count": 0,
+      "structure_zones_exact_count": 34,
+      "support_levels_exact_count": 48,
+      "trade_plan_exact_count": 0
+    },
+    "STRUCTURE_ONLY": {
+      "count": 48,
+      "decision_intelligence_exact_count": 46,
+      "direction_match_pct": 100.0,
+      "max_confidence_abs_error": 0.0,
+      "max_score_abs_error": 0.0,
+      "overall_score_exact_count": 48,
+      "profile_confidence_exact_count": 48,
+      "resistance_levels_exact_count": 7,
+      "state_hash_exact_count": 0,
+      "structure_zones_exact_count": 48,
+      "support_levels_exact_count": 8,
+      "trade_plan_exact_count": 0
+    }
+  },
+  "authority_validation": {
+    "m77_19_6_5_2_7": {
+      "combined_score_closed": true,
+      "combined_state_open": true,
+      "parity_not_certified": true,
+      "pass": true,
+      "production_authority_unchanged": true,
+      "reconstruction_blocked": true
+    },
+    "m77_19_6_5_2_8": {
+      "confidence_closed_48": true,
+      "monthly_bundle_count_48": true,
+      "parity_not_certified": true,
+      "pass": true,
+      "production_authority_unchanged": true,
+      "reconstruction_blocked": true,
+      "score_closed_48": true,
+      "state_hash_zero_48": true,
+      "structure_level_residual_present": true
+    }
+  },
+  "causal_findings": {
+    "combined_levels_structure_exact_48": true,
+    "combined_restore_decision_gain": 34,
+    "combined_restore_state_hash_gain": 0,
+    "combined_restore_trade_plan_gain": 0,
+    "control_confidence_closed_48": true,
+    "control_score_closed_48": true,
+    "control_state_open_48": true,
+    "full_confidence_parity_after_combined": true,
+    "full_score_parity_after_combined": true,
+    "full_state_parity_after_combined": false,
+    "levels_intervention_exact_48": true,
+    "levels_restore_decision_gain": 21,
+    "levels_restore_state_hash_gain": 0,
+    "levels_restore_structure_gain": 22,
+    "levels_restore_trade_plan_gain": 0,
+    "structure_intervention_exact_48": true,
+    "structure_restore_decision_gain": 32,
+    "structure_restore_state_hash_gain": 0,
+    "structure_restore_trade_plan_gain": 0
+  },
+  "controlled_exact_input_parity_certified": false,
+  "forensic_conclusion": "LEVEL_GENERATION_CAUSALLY_DRIVES_STRUCTURE_DIVERGENCE_BUT_FULL_STATE_PARITY_REMAINS_OPEN",
+  "full_23_year_reconstruction_authorized": false,
+  "governance": {
+    "controlled_exact_input_parity_certified": false,
+    "database_mode": "READ_ONLY_SPY_SESSION_CALENDAR_ONLY",
+    "full_23_year_reconstruction_authorized": false,
+    "native_compare_profile_is_semantic_authority": true,
+    "native_typed_component_rehydration_required": true,
+    "parity_thresholds_relaxed": false,
+    "parity_tolerance": 1e-09,
+    "plain_dict_component_injection_allowed": false,
+    "production_authority_effect": false,
+    "production_database_writes": false,
+    "research_only": true,
+    "synthetic_component_output_interventions_only": true
+  },
+  "intervention_contract": {
+    "control": "weekly confidence + weekly ema50 + participation component outputs",
+    "demand_supply_zones_not_replaced_in_levels_only": true,
+    "frozen_structure_zones_rehydrated_to_native_runtime_type": true,
+    "frozen_support_resistance_rehydrated_to_native_runtime_type": true,
+    "levels_and_structure": "control + both interventions; all scoring/trade-plan/certification/decision stages recompute natively",
+    "levels_only": "control + frozen support_levels/resistance_levels injected at LevelIntelligenceService output; native structure/downstream recompute",
+    "native_structure_builder_executes_before_structure_output_replacement": true,
+    "structure_only": "control + frozen structure_zones injected at InstitutionalStructureZoneEngine output; native levels and downstream recompute"
+  },
+  "monthly_bundle_count": 48,
+  "next_step": "BUILD_M77_19_6_5_2_10_LEVEL_GENERATION_INPUT_AND_SELECTION_SEMANTICS_FORENSICS",
+  "production_authority_effect": false,
+  "records": [
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/001_A_2022-10-31.json",
+      "symbol": "A"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/002_AAPL_2022-10-31.json",
+      "symbol": "AAPL"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/003_ABBV_2022-10-31.json",
+      "symbol": "ABBV"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/004_ABNB_2022-10-31.json",
+      "symbol": "ABNB"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/005_ABT_2022-10-31.json",
+      "symbol": "ABT"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/006_ACGL_2022-10-31.json",
+      "symbol": "ACGL"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/007_ACN_2022-10-31.json",
+      "symbol": "ACN"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/008_ADBE_2022-10-31.json",
+      "symbol": "ADBE"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/009_ADI_2022-10-31.json",
+      "symbol": "ADI"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/010_ADM_2022-10-31.json",
+      "symbol": "ADM"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/011_ADP_2022-10-31.json",
+      "symbol": "ADP"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/012_ADSK_2022-10-31.json",
+      "symbol": "ADSK"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/013_AEE_2022-10-31.json",
+      "symbol": "AEE"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/014_AEP_2022-10-31.json",
+      "symbol": "AEP"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/015_AES_2022-10-31.json",
+      "symbol": "AES"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/016_AFL_2022-10-31.json",
+      "symbol": "AFL"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/017_AGG_2022-10-31.json",
+      "symbol": "AGG"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/018_AIG_2022-10-31.json",
+      "symbol": "AIG"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/019_AIZ_2022-10-31.json",
+      "symbol": "AIZ"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/020_AJG_2022-10-31.json",
+      "symbol": "AJG"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/021_AKAM_2022-10-31.json",
+      "symbol": "AKAM"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/022_ALB_2022-10-31.json",
+      "symbol": "ALB"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/023_ALGN_2022-10-31.json",
+      "symbol": "ALGN"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/024_ALL_2022-10-31.json",
+      "symbol": "ALL"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/025_ALLE_2022-10-31.json",
+      "symbol": "ALLE"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/026_ALNY_2022-10-31.json",
+      "symbol": "ALNY"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/027_AMAT_2022-10-31.json",
+      "symbol": "AMAT"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/028_AMCR_2022-10-31.json",
+      "symbol": "AMCR"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/029_AMD_2022-10-31.json",
+      "symbol": "AMD"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/030_AME_2022-10-31.json",
+      "symbol": "AME"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/031_AMGN_2022-10-31.json",
+      "symbol": "AMGN"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/032_AMP_2022-10-31.json",
+      "symbol": "AMP"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/033_AMT_2022-10-31.json",
+      "symbol": "AMT"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/034_AMZN_2022-10-31.json",
+      "symbol": "AMZN"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/035_ANET_2022-10-31.json",
+      "symbol": "ANET"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/036_AON_2022-10-31.json",
+      "symbol": "AON"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/037_AOS_2022-10-31.json",
+      "symbol": "AOS"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/038_APA_2022-10-31.json",
+      "symbol": "APA"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/039_APD_2022-10-31.json",
+      "symbol": "APD"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/040_APH_2022-10-31.json",
+      "symbol": "APH"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/041_APO_2022-10-31.json",
+      "symbol": "APO"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/042_APP_2022-10-31.json",
+      "symbol": "APP"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/043_APTV_2022-10-31.json",
+      "symbol": "APTV"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/044_ARE_2022-10-31.json",
+      "symbol": "ARE"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/045_ARES_2022-10-31.json",
+      "symbol": "ARES"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/046_ARKK_2022-10-31.json",
+      "symbol": "ARKK"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/047_ASML_2022-10-31.json",
+      "symbol": "ASML"
+    },
+    {
+      "arms": {
+        "CONTROL_WEEKLY_PARTICIPATION": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        },
+        "LEVELS_AND_STRUCTURE": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "LEVELS_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": false,
+          "direction_match": true,
+          "resistance_levels_exact": true,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": false,
+          "support_levels_exact": true,
+          "trade_plan_exact": false
+        },
+        "STRUCTURE_ONLY": {
+          "confidence_abs_error": 0.0,
+          "decision_intelligence_exact": true,
+          "direction_match": true,
+          "resistance_levels_exact": false,
+          "score_abs_error": 0.0,
+          "state_hash_match": false,
+          "structure_zones_exact": true,
+          "support_levels_exact": false,
+          "trade_plan_exact": false
+        }
+      },
+      "as_of": "2022-10-31",
+      "bundle": "research_data/m77_19_6_4_2/exact_frozen_input_context_bundles/monthly/048_ATO_2022-10-31.json",
+      "symbol": "ATO"
+    }
+  ],
+  "source_authorities": {
+    "m77_19_6_5_2_7": {
+      "path": "/Users/vinay.hatti/TradingPlatform/reports/m77_19_6_5_2_7_native_timeframe_state_and_participation_causal_intervention_replay.json",
+      "sha256": "bfba461d7b788112235a0d565bd7e0bc4e1398a6ed188022faf94357ae49835e"
+    },
+    "m77_19_6_5_2_8": {
+      "path": "/Users/vinay.hatti/TradingPlatform/reports/m77_19_6_5_2_8_structure_and_level_generation_upstream_causal_forensics.json",
+      "sha256": "d227650425b2221da14b4e67c3bcdc0f3bc880c24909f97f75233a2e50cf0101"
+    },
+    "native_runner": {
+      "path": "/Users/vinay.hatti/TradingPlatform/scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+      "sha256": "bcc5b49b87ddceba6ac417000d5af3d4a57efd14145595f4d712eb36ae81204b"
+    }
+  },
+  "version": "M77.19.6.5.2.9.1-NATIVE-TYPED-COMPONENT-REHYDRATION-REPAIR-1.0"
+}

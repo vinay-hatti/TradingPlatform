@@ -1,0 +1,962 @@
+{
+  "arm_summaries": {
+    "NATIVE_CONTROL": {
+      "exact_frozen_match_count": 1338,
+      "exact_gain_vs_native": 0,
+      "missing_beyond_0_3pct_count": 67,
+      "missing_reduction_vs_native": 0,
+      "target_recovered_count": 0,
+      "target_recovered_symbols": []
+    },
+    "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+      "exact_frozen_match_count": 1222,
+      "exact_gain_vs_native": -116,
+      "missing_beyond_0_3pct_count": 150,
+      "missing_reduction_vs_native": -83,
+      "target_recovered_count": 1,
+      "target_recovered_symbols": [
+        "ATO"
+      ]
+    },
+    "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+      "exact_frozen_match_count": 549,
+      "exact_gain_vs_native": -789,
+      "missing_beyond_0_3pct_count": 560,
+      "missing_reduction_vs_native": -493,
+      "target_recovered_count": 3,
+      "target_recovered_symbols": [
+        "AES",
+        "ANET",
+        "ATO"
+      ]
+    }
+  },
+  "authority_5218": {
+    "frozen_target_ancestry_still_required_upstream": true,
+    "identity_free_classification_closed_3_of_3": true,
+    "pass": true,
+    "production_generalization_not_certified_upstream": true,
+    "report_sha256": "bc2c4f7411698d7ad25ba7fa85b384d4431d666547a09c4be3126ecfc91cd8aa",
+    "runner_sha256": "979592ee06af3c5668f386f0e89f0d0b47633b0724be7eaeb7820ef703353818"
+  },
+  "candidate_semantic_promoted": false,
+  "controlled_exact_input_parity_certified": false,
+  "forensic_conclusion": "NATIVE_OBSERVABLE_TRIGGER_RECOVERS_ALL_CAUSAL_TARGETS_BUT_GLOBAL_PARITY_TRADEOFF_REMAINS",
+  "full_23_year_reconstruction_authorized": false,
+  "governance": {
+    "candidate_semantic_promoted": false,
+    "controlled_exact_input_parity_certified": false,
+    "database_mode": "READ_ONLY_SPY_SESSION_CALENDAR_ONLY",
+    "frozen_target_identity_prohibited": true,
+    "full_23_year_reconstruction_authorized": false,
+    "historical_answer_leakage_prohibited": true,
+    "native_candidate_generation_unchanged": true,
+    "native_internal_atr_merge_multiplier": 0.35,
+    "native_internal_atr_merge_multiplier_relaxed": false,
+    "native_level_merge_threshold": 0.003,
+    "native_level_merge_threshold_relaxed": false,
+    "native_top12_retention_unchanged": true,
+    "observable_trigger_threshold_source": "EXISTING_NATIVE_LEVEL_MERGE_THRESHOLD",
+    "parity_thresholds_relaxed": false,
+    "parity_tolerance": 1e-09,
+    "production_authority_effect": false,
+    "production_database_writes": false,
+    "research_only": true,
+    "symbol_specific_rules_prohibited": true,
+    "threshold_search_or_optimization": false
+  },
+  "monthly_bundle_count": 48,
+  "native_observable_trigger_uses_frozen_target_identity": false,
+  "native_observable_trigger_uses_historical_answer": false,
+  "native_observable_trigger_uses_symbol_identity": false,
+  "next_step": "BUILD_M77_19_6_5_2_20_NATIVE_OBSERVABLE_TRIGGER_COLLATERAL_IMPACT_FORENSICS",
+  "predeclared_arms": [
+    "NATIVE_CONTROL",
+    "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE",
+    "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT"
+  ],
+  "production_authority_effect": false,
+  "ranking": [
+    "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE",
+    "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT"
+  ],
+  "records": [
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 29,
+          "missing_beyond_0_3pct_count": 1
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 25,
+          "missing_beyond_0_3pct_count": 5
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 7,
+          "missing_beyond_0_3pct_count": 15
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "A"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 23,
+          "missing_beyond_0_3pct_count": 2
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 22,
+          "missing_beyond_0_3pct_count": 3
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 3,
+          "missing_beyond_0_3pct_count": 11
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "AAPL"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 26,
+          "missing_beyond_0_3pct_count": 2
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 21,
+          "missing_beyond_0_3pct_count": 4
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 7,
+          "missing_beyond_0_3pct_count": 14
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "ABBV"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 29,
+          "missing_beyond_0_3pct_count": 3
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 24,
+          "missing_beyond_0_3pct_count": 6
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 8,
+          "missing_beyond_0_3pct_count": 19
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "ABNB"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 27,
+          "missing_beyond_0_3pct_count": 1
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 24,
+          "missing_beyond_0_3pct_count": 3
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 10,
+          "missing_beyond_0_3pct_count": 9
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "ABT"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 21,
+          "missing_beyond_0_3pct_count": 3
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 21,
+          "missing_beyond_0_3pct_count": 1
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 5,
+          "missing_beyond_0_3pct_count": 11
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "ACGL"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 26,
+          "missing_beyond_0_3pct_count": 2
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 26,
+          "missing_beyond_0_3pct_count": 2
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 15,
+          "missing_beyond_0_3pct_count": 8
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "ACN"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 30,
+          "missing_beyond_0_3pct_count": 1
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 28,
+          "missing_beyond_0_3pct_count": 2
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 19,
+          "missing_beyond_0_3pct_count": 7
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "ADBE"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 22,
+          "missing_beyond_0_3pct_count": 5
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 19,
+          "missing_beyond_0_3pct_count": 4
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 9,
+          "missing_beyond_0_3pct_count": 11
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "ADI"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 29,
+          "missing_beyond_0_3pct_count": 1
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 25,
+          "missing_beyond_0_3pct_count": 3
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 10,
+          "missing_beyond_0_3pct_count": 14
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "ADM"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 25,
+          "missing_beyond_0_3pct_count": 3
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 23,
+          "missing_beyond_0_3pct_count": 5
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 8,
+          "missing_beyond_0_3pct_count": 9
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "ADP"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 33,
+          "missing_beyond_0_3pct_count": 1
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 29,
+          "missing_beyond_0_3pct_count": 3
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 15,
+          "missing_beyond_0_3pct_count": 10
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "ADSK"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 25,
+          "missing_beyond_0_3pct_count": 1
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 24,
+          "missing_beyond_0_3pct_count": 2
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 13,
+          "missing_beyond_0_3pct_count": 5
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "AEE"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 22,
+          "missing_beyond_0_3pct_count": 1
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 18,
+          "missing_beyond_0_3pct_count": 4
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 6,
+          "missing_beyond_0_3pct_count": 13
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "AEP"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 23,
+          "missing_beyond_0_3pct_count": 1
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 18,
+          "missing_beyond_0_3pct_count": 4
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 11,
+          "missing_beyond_0_3pct_count": 8
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "AES"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 28,
+          "missing_beyond_0_3pct_count": 2
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 25,
+          "missing_beyond_0_3pct_count": 4
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 5,
+          "missing_beyond_0_3pct_count": 13
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "AFL"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 24,
+          "missing_beyond_0_3pct_count": 0
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 24,
+          "missing_beyond_0_3pct_count": 0
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 23,
+          "missing_beyond_0_3pct_count": 0
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "AGG"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 26,
+          "missing_beyond_0_3pct_count": 1
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 22,
+          "missing_beyond_0_3pct_count": 3
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 6,
+          "missing_beyond_0_3pct_count": 14
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "AIG"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 28,
+          "missing_beyond_0_3pct_count": 1
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 25,
+          "missing_beyond_0_3pct_count": 4
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 12,
+          "missing_beyond_0_3pct_count": 13
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "AIZ"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 27,
+          "missing_beyond_0_3pct_count": 2
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 26,
+          "missing_beyond_0_3pct_count": 2
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 7,
+          "missing_beyond_0_3pct_count": 12
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "AJG"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 30,
+          "missing_beyond_0_3pct_count": 0
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 29,
+          "missing_beyond_0_3pct_count": 1
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 19,
+          "missing_beyond_0_3pct_count": 9
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "AKAM"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 29,
+          "missing_beyond_0_3pct_count": 1
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 26,
+          "missing_beyond_0_3pct_count": 3
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 11,
+          "missing_beyond_0_3pct_count": 14
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "ALB"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 34,
+          "missing_beyond_0_3pct_count": 0
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 32,
+          "missing_beyond_0_3pct_count": 2
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 20,
+          "missing_beyond_0_3pct_count": 9
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "ALGN"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 22,
+          "missing_beyond_0_3pct_count": 1
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 20,
+          "missing_beyond_0_3pct_count": 4
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 1,
+          "missing_beyond_0_3pct_count": 16
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "ALL"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 32,
+          "missing_beyond_0_3pct_count": 1
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 25,
+          "missing_beyond_0_3pct_count": 7
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 10,
+          "missing_beyond_0_3pct_count": 15
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "ALLE"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 31,
+          "missing_beyond_0_3pct_count": 2
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 30,
+          "missing_beyond_0_3pct_count": 2
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 12,
+          "missing_beyond_0_3pct_count": 19
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "ALNY"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 31,
+          "missing_beyond_0_3pct_count": 1
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 26,
+          "missing_beyond_0_3pct_count": 6
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 13,
+          "missing_beyond_0_3pct_count": 12
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "AMAT"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 23,
+          "missing_beyond_0_3pct_count": 0
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 22,
+          "missing_beyond_0_3pct_count": 2
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 5,
+          "missing_beyond_0_3pct_count": 10
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "AMCR"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 31,
+          "missing_beyond_0_3pct_count": 3
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 30,
+          "missing_beyond_0_3pct_count": 4
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 19,
+          "missing_beyond_0_3pct_count": 10
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "AMD"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 25,
+          "missing_beyond_0_3pct_count": 0
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 23,
+          "missing_beyond_0_3pct_count": 0
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 12,
+          "missing_beyond_0_3pct_count": 8
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "AME"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 27,
+          "missing_beyond_0_3pct_count": 1
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 25,
+          "missing_beyond_0_3pct_count": 1
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 10,
+          "missing_beyond_0_3pct_count": 12
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "AMGN"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 25,
+          "missing_beyond_0_3pct_count": 4
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 24,
+          "missing_beyond_0_3pct_count": 4
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 9,
+          "missing_beyond_0_3pct_count": 14
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "AMP"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 28,
+          "missing_beyond_0_3pct_count": 1
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 28,
+          "missing_beyond_0_3pct_count": 0
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 12,
+          "missing_beyond_0_3pct_count": 9
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "AMT"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 32,
+          "missing_beyond_0_3pct_count": 0
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 27,
+          "missing_beyond_0_3pct_count": 4
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 12,
+          "missing_beyond_0_3pct_count": 16
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "AMZN"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 27,
+          "missing_beyond_0_3pct_count": 2
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 24,
+          "missing_beyond_0_3pct_count": 6
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 7,
+          "missing_beyond_0_3pct_count": 19
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "ANET"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 25,
+          "missing_beyond_0_3pct_count": 0
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 22,
+          "missing_beyond_0_3pct_count": 2
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 9,
+          "missing_beyond_0_3pct_count": 11
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "AON"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 31,
+          "missing_beyond_0_3pct_count": 2
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 29,
+          "missing_beyond_0_3pct_count": 4
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 14,
+          "missing_beyond_0_3pct_count": 13
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "AOS"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 31,
+          "missing_beyond_0_3pct_count": 2
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 30,
+          "missing_beyond_0_3pct_count": 3
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 11,
+          "missing_beyond_0_3pct_count": 17
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "APA"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 30,
+          "missing_beyond_0_3pct_count": 1
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 28,
+          "missing_beyond_0_3pct_count": 2
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 11,
+          "missing_beyond_0_3pct_count": 9
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "APD"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 26,
+          "missing_beyond_0_3pct_count": 0
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 25,
+          "missing_beyond_0_3pct_count": 1
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 10,
+          "missing_beyond_0_3pct_count": 7
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "APH"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 29,
+          "missing_beyond_0_3pct_count": 3
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 26,
+          "missing_beyond_0_3pct_count": 5
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 13,
+          "missing_beyond_0_3pct_count": 10
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "APO"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 35,
+          "missing_beyond_0_3pct_count": 0
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 32,
+          "missing_beyond_0_3pct_count": 3
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 25,
+          "missing_beyond_0_3pct_count": 9
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "APP"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 35,
+          "missing_beyond_0_3pct_count": 1
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 31,
+          "missing_beyond_0_3pct_count": 5
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 16,
+          "missing_beyond_0_3pct_count": 15
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "APTV"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 27,
+          "missing_beyond_0_3pct_count": 2
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 26,
+          "missing_beyond_0_3pct_count": 3
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 17,
+          "missing_beyond_0_3pct_count": 8
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "ARE"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 29,
+          "missing_beyond_0_3pct_count": 2
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 27,
+          "missing_beyond_0_3pct_count": 4
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 9,
+          "missing_beyond_0_3pct_count": 14
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "ARES"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 32,
+          "missing_beyond_0_3pct_count": 0
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 29,
+          "missing_beyond_0_3pct_count": 4
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 14,
+          "missing_beyond_0_3pct_count": 17
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "ARKK"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 32,
+          "missing_beyond_0_3pct_count": 1
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 30,
+          "missing_beyond_0_3pct_count": 3
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 14,
+          "missing_beyond_0_3pct_count": 16
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "ASML"
+    },
+    {
+      "arms": {
+        "NATIVE_CONTROL": {
+          "exact_frozen_match_count": 26,
+          "missing_beyond_0_3pct_count": 2
+        },
+        "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT": {
+          "exact_frozen_match_count": 27,
+          "missing_beyond_0_3pct_count": 1
+        },
+        "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE": {
+          "exact_frozen_match_count": 15,
+          "missing_beyond_0_3pct_count": 6
+        }
+      },
+      "as_of": "2022-10-31",
+      "symbol": "ATO"
+    }
+  ],
+  "version": "M77.19.6.5.2.19-NATIVE-OBSERVABLE-CONSOLIDATION-TRIGGER-CAUSAL-REPLAY-1.0",
+  "winner_analysis": {
+    "all_three_targets_recovered": true,
+    "exact_gain_vs_native": -789,
+    "globally_non_degrading": false,
+    "missing_reduction_vs_native": -493,
+    "target_recovered_symbols": [
+      "AES",
+      "ANET",
+      "ATO"
+    ],
+    "winner": "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE"
+  }
+}

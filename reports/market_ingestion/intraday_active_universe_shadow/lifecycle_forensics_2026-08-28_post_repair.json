@@ -1,0 +1,6372 @@
+{
+  "active_count_max": 381,
+  "active_count_min": 261,
+  "active_count_monotonic_non_decreasing": false,
+  "cross_session_carried_without_current_qualification_total": 0,
+  "daily": [
+    {
+      "carried_from_previous_session": null,
+      "carried_without_current_qualification": null,
+      "carried_without_current_qualification_symbols": [],
+      "dropped_since_previous_session_final": null,
+      "final_active": 261,
+      "final_hysteresis_only": 10,
+      "final_independently_qualified": 251,
+      "initial_active": 365,
+      "initial_hysteresis_only": 146,
+      "initial_independently_qualified": 219,
+      "market_date": "2026-08-28",
+      "new_since_previous_session_final": null,
+      "observation_count": 8,
+      "previous_session_final_active": null
+    }
+  ],
+  "end_date": "2026-08-28",
+  "fail_reasons": [
+    "HYSTERESIS_RETENTION_EXCEEDS_TWO_OBSERVATIONS_WITHOUT_INDEPENDENT_REQUALIFICATION"
+  ],
+  "forensic_gate": "FAIL",
+  "interpretation": "PASS means active membership is explainable by current policy/safety/mandatory reasons or bounded hysteresis. FAIL means retention outlives the intended two-observation hysteresis window, crosses sessions without current qualification, or contains unexplained active membership.",
+  "market_session_count": 1,
+  "mode": "READ_ONLY_ACTIVE_UNIVERSE_LIFECYCLE_FORENSICS",
+  "observation_count": 8,
+  "observations": [
+    {
+      "active_total": 365,
+      "carried_from_previous_snapshot": 0,
+      "carried_without_current_qualification": 0,
+      "carried_without_current_qualification_symbols": [],
+      "cross_session_transition": false,
+      "current_policy_qualified": 141,
+      "deactivated": 0,
+      "generated_at": "2026-08-28T14:21:23.277843+00:00",
+      "hysteresis_only": 146,
+      "mandatory_reference": 24,
+      "market_date": "2026-08-28",
+      "newly_active": 365,
+      "safety_included": 54,
+      "unexplained_active": 0
+    },
+    {
+      "active_total": 369,
+      "carried_from_previous_snapshot": 365,
+      "carried_without_current_qualification": 0,
+      "carried_without_current_qualification_symbols": [],
+      "cross_session_transition": false,
+      "current_policy_qualified": 148,
+      "deactivated": 0,
+      "generated_at": "2026-08-28T15:11:49.361967+00:00",
+      "hysteresis_only": 143,
+      "mandatory_reference": 24,
+      "market_date": "2026-08-28",
+      "newly_active": 4,
+      "safety_included": 54,
+      "unexplained_active": 0
+    },
+    {
+      "active_total": 370,
+      "carried_from_previous_snapshot": 369,
+      "carried_without_current_qualification": 0,
+      "carried_without_current_qualification_symbols": [],
+      "cross_session_transition": false,
+      "current_policy_qualified": 148,
+      "deactivated": 0,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "hysteresis_only": 144,
+      "mandatory_reference": 24,
+      "market_date": "2026-08-28",
+      "newly_active": 1,
+      "safety_included": 54,
+      "unexplained_active": 0
+    },
+    {
+      "active_total": 378,
+      "carried_from_previous_snapshot": 370,
+      "carried_without_current_qualification": 0,
+      "carried_without_current_qualification_symbols": [],
+      "cross_session_transition": false,
+      "current_policy_qualified": 158,
+      "deactivated": 0,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "hysteresis_only": 142,
+      "mandatory_reference": 24,
+      "market_date": "2026-08-28",
+      "newly_active": 8,
+      "safety_included": 54,
+      "unexplained_active": 0
+    },
+    {
+      "active_total": 380,
+      "carried_from_previous_snapshot": 378,
+      "carried_without_current_qualification": 0,
+      "carried_without_current_qualification_symbols": [],
+      "cross_session_transition": false,
+      "current_policy_qualified": 163,
+      "deactivated": 0,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "hysteresis_only": 139,
+      "mandatory_reference": 24,
+      "market_date": "2026-08-28",
+      "newly_active": 2,
+      "safety_included": 54,
+      "unexplained_active": 0
+    },
+    {
+      "active_total": 380,
+      "carried_from_previous_snapshot": 380,
+      "carried_without_current_qualification": 0,
+      "carried_without_current_qualification_symbols": [],
+      "cross_session_transition": false,
+      "current_policy_qualified": 160,
+      "deactivated": 0,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "hysteresis_only": 142,
+      "mandatory_reference": 24,
+      "market_date": "2026-08-28",
+      "newly_active": 0,
+      "safety_included": 54,
+      "unexplained_active": 0
+    },
+    {
+      "active_total": 381,
+      "carried_from_previous_snapshot": 380,
+      "carried_without_current_qualification": 0,
+      "carried_without_current_qualification_symbols": [],
+      "cross_session_transition": false,
+      "current_policy_qualified": 165,
+      "deactivated": 0,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "hysteresis_only": 138,
+      "mandatory_reference": 24,
+      "market_date": "2026-08-28",
+      "newly_active": 1,
+      "safety_included": 54,
+      "unexplained_active": 0
+    },
+    {
+      "active_total": 261,
+      "carried_from_previous_snapshot": 257,
+      "carried_without_current_qualification": 0,
+      "carried_without_current_qualification_symbols": [],
+      "cross_session_transition": false,
+      "current_policy_qualified": 173,
+      "deactivated": 124,
+      "generated_at": "2026-08-28T22:21:21.794225+00:00",
+      "hysteresis_only": 10,
+      "mandatory_reference": 24,
+      "market_date": "2026-08-28",
+      "newly_active": 4,
+      "safety_included": 54,
+      "unexplained_active": 0
+    }
+  ],
+  "policy": {
+    "frozen": true,
+    "name": "INTRADAY-ACTIVE-UNIVERSE-SHADOW-1.3.x",
+    "production_effect": false,
+    "threshold_change": false
+  },
+  "start_date": "2026-08-28",
+  "sticky_events": [
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "META"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "STLD"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ADI"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "HONA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MNST"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "JPM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "FANG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "AMP"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "AMD"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "PEG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CSCO"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MKC"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "HRL"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "PNW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MDT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CDNS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "UPRO"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "NBIS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VEA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "SWK"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ICLN"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "QCOM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VIG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VLTO"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "EQT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CBRE"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "V"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "IBM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CRWV"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "STT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "GEHC"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "WST"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "GD"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MGM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "EOG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "GLW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "BLK"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "LHX"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CME"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "QUAL"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "DECK"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ABBV"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "SW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ETN"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "HAL"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "BR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CBOE"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "EW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "XYZ"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VRT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "DAL"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "WTW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "RCL"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ES"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "AKAM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VRSK"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TER"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CAT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ADM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "UNP"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "PH"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ERIE"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TXN"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TAP"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "BEN"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "BDX"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TDY"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "FFIV"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "AFL"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "NXPI"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "LDOS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MTUM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TRV"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "COR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "DVA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CHD"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "KKR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MELI"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "LULU"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "NTAP"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ITOT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MRSH"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "KDP"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "FIS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "IWD"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "JETS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "SQQQ"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TRI"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CF"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "BBY"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "LII"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VIXY"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "NUE"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CMG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "COHR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CIEN"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "KEY"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "HCA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "DG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MDLZ"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ULTA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ESS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "AMCR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CMCSA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ITW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "DHR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CEG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ELV"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "DLTR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CNC"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "LRCX"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "BSX"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "PAYX"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "BG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "HPE"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "HST"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MCK"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "JBHT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ALNY"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T16:12:56.260664+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "LYB"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "META"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "STLD"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VTRS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ADI"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "HONA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TSLA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MNST"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "JPM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "FANG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "AMP"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "AMD"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "PEG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CSCO"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MKC"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "HRL"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "PNW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MDT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CDNS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "UPRO"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "NBIS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "PSKY"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VEA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "SWK"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ICLN"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "QCOM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VIG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VLTO"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "EQT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CBRE"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TRMB"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "V"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "IBM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "STT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "GEHC"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "SLV"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "WST"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "GD"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MGM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "EOG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "GLW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "BLK"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "LHX"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CME"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "QUAL"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "DECK"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ABBV"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "SW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ETN"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "HAL"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "BR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "EW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "XYZ"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VRT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "DAL"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "WTW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "RCL"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ES"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VRSK"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TER"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CAT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CHTR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ADM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "UNP"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "PH"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ERIE"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TXN"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TAP"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "BEN"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TDY"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "FFIV"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "AFL"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "LDOS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MTUM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TRV"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "COR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "DVA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CHD"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "SYF"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "KKR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MELI"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "LULU"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "NTAP"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ITOT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MRSH"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "KDP"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "FIS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "IWD"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "JETS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "SQQQ"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TRI"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CF"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "BBY"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "LII"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VIXY"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "NUE"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "COHR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CDW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CIEN"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "KEY"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "HCA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "DG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MDLZ"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ESS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "AMCR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CMCSA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ITW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "DHR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CEG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ELV"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "DLTR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "PTC"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CNC"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "BSX"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "PAYX"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "BG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "HPE"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "HST"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MCK"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "JBHT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ALNY"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T17:14:04.392309+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "LYB"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "META"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "STLD"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VTRS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ADI"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "HONA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TSLA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MNST"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "JPM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "FANG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "AMP"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "AMD"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "PEG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "APP"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CSCO"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MKC"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "REGN"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "HRL"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "PNW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MDT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CDNS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "UPRO"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "NBIS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "PSKY"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VEA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "SWK"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ICLN"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "QCOM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VIG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VLTO"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "EQT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CBRE"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "V"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "IBM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "STT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "GEHC"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "SLV"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "WST"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "GD"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MGM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "EOG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TQQQ"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ACN"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "GLW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "BLK"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "LHX"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CME"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "QUAL"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "DECK"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ABBV"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "SW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ETN"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "HAL"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "BR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "EW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "XYZ"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VRT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "EBAY"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "DAL"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "WTW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "RCL"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ES"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VRSK"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TER"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CAT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CHTR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ADM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "UNP"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "PH"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TXN"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TAP"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "BEN"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TDY"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "FFIV"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "AFL"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "LDOS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "URI"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MTUM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TRV"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "COR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "DVA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CHD"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "SYF"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "KKR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MELI"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "LULU"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "NTAP"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ITOT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MRSH"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "KDP"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "FIS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "IWD"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "JETS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ARES"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "SQQQ"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TRI"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CF"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "BBY"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "LII"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VIXY"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "NUE"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "COHR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CDW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CIEN"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "KEY"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "HCA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "DG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MDLZ"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ESS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "AMCR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CMCSA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ITW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "DHR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CEG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ELV"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "DLTR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "PTC"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CNC"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "BSX"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "PAYX"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "BG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "HPE"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "HST"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MCK"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "JBHT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ALNY"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "FLEX"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T18:11:17.334193+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "LYB"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ARM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "META"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "STLD"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VTRS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ADI"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "HONA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TSLA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MNST"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "JPM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "FANG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "AMP"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "JEPI"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "AMD"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "PEG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "APP"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CSCO"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MKC"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "REGN"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "HRL"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "PNW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MDT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CDNS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "UPRO"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "NBIS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "PSKY"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VEA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "SWK"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ICLN"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "QCOM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VIG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VLTO"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "EQT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CBRE"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "V"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "IBM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "STT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "GEHC"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "WST"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "GD"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MGM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "EOG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TQQQ"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "PGR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ACN"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "GLW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "BLK"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "LHX"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CME"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "QUAL"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "DECK"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ABBV"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TRGP"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "SW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ETN"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "HAL"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "BR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "EW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "XYZ"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VRT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "EBAY"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "DAL"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "WTW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "RCL"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ES"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VRSK"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TER"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CAT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CHTR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ADM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "UNP"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "PH"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TXN"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CIBR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TAP"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "BEN"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TDY"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "FFIV"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "AFL"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "LDOS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "URI"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MTUM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "COR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "DVA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CHD"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "SYF"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "KKR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MELI"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "LULU"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "NTAP"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ITOT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MRSH"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "KDP"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "FIS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "IWD"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "JETS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "SQQQ"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TRI"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CF"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "BBY"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "LII"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VIXY"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "NUE"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CDW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CIEN"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "KEY"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "HCA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "DG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MDLZ"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ESS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "AMCR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CMCSA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "EEM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ITW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CEG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ELV"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "DLTR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "PTC"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CNC"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "BSX"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "PAYX"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "BG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "HPE"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "HST"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MCK"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "JBHT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ALNY"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "FLEX"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T19:13:28.831199+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "LYB"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ARM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "META"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "STLD"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VTRS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ADI"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "HONA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TSLA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MNST"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "JPM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "FANG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "AMP"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "AMD"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "PEG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "APP"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CSCO"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MKC"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "REGN"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "HRL"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 3,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "EQIX"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "PNW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MDT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CDNS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "UPRO"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VEA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "SWK"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ICLN"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "QCOM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VIG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VLTO"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "EQT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CBRE"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "V"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "IBM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "STT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "GEHC"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "WST"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "GD"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MGM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "EOG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TQQQ"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "PGR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ACN"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "GLW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "BLK"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "LHX"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CME"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "QUAL"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "DECK"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ABBV"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TRGP"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "SW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ETN"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "HAL"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "BR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "EW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "XYZ"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VRT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "EBAY"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "DAL"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "WTW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "RCL"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ES"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VRSK"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TER"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CAT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CHTR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ADM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "UNP"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "PH"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TXN"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 4,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CIBR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TAP"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "BEN"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TDY"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "FFIV"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "AFL"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "LDOS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "URI"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MTUM"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "COR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "DVA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CHD"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "SYF"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "KKR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MELI"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "LULU"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "NTAP"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MRSH"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "KDP"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "FIS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "IWD"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "JETS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "SQQQ"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "TRI"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CF"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "BBY"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "VIXY"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "NUE"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CDW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CIEN"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "KEY"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "HCA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "DG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MDLZ"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ESS"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "AMCR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CMCSA"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ITW"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CEG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ELV"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "DLTR"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 6,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "PTC"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "CNC"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "BSX"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "PAYX"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "BG"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "HPE"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "HST"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "MCK"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "JBHT"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "ALNY"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 5,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "FLEX"
+    },
+    {
+      "consecutive_observations_without_independent_qualification": 7,
+      "generated_at": "2026-08-28T20:13:57.451527+00:00",
+      "market_date": "2026-08-28",
+      "reasons": [
+        "ELIGIBILITY_HYSTERESIS"
+      ],
+      "symbol": "LYB"
+    }
+  ],
+  "sticky_symbol_count": 145,
+  "sticky_symbols": [
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "ABBV"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "ADI"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "ADM"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "AFL"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "ALNY"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "AMCR"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "AMD"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "AMP"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "BBY"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "BEN"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "BG"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "BLK"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "BR"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "BSX"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "CAT"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "CBRE"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "CDNS"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "CEG"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "CF"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "CHD"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "CIEN"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "CMCSA"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "CME"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "CNC"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "COR"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "CSCO"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "DAL"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "DECK"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "DG"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "DLTR"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "DVA"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "ELV"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "EOG"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "EQT"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "ES"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "ESS"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "ETN"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "EW"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "FANG"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "FFIV"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "FIS"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "GD"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "GEHC"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "GLW"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "HAL"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "HCA"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "HONA"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "HPE"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "HRL"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "HST"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "IBM"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "ICLN"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "ITW"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "IWD"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "JBHT"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "JETS"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "JPM"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "KDP"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "KEY"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "KKR"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "LDOS"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "LHX"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "LULU"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "LYB"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "MA"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "MCK"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "MDLZ"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "MDT"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "MELI"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "META"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "MGM"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "MKC"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "MNST"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "MRSH"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "MTUM"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "NTAP"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "NUE"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "PAYX"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "PEG"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "PH"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "PNW"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "QCOM"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "QUAL"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "RCL"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "SQQQ"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "STLD"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "STT"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "SW"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "SWK"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "TAP"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "TDY"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "TER"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "TRI"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "TXN"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "UNP"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "UPRO"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "V"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "VEA"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "VIG"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "VIXY"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "VLTO"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "VRSK"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "VRT"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "WST"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "WTW"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 7,
+      "symbol": "XYZ"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 6,
+      "symbol": "CDW"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 6,
+      "symbol": "CHTR"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 6,
+      "symbol": "ITOT"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 6,
+      "symbol": "LII"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 6,
+      "symbol": "NBIS"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 6,
+      "symbol": "PTC"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 6,
+      "symbol": "SYF"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 6,
+      "symbol": "TSLA"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 6,
+      "symbol": "VTRS"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 5,
+      "symbol": "ACN"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 5,
+      "symbol": "APP"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 5,
+      "symbol": "COHR"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 5,
+      "symbol": "DHR"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 5,
+      "symbol": "EBAY"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 5,
+      "symbol": "FLEX"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 5,
+      "symbol": "PSKY"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 5,
+      "symbol": "REGN"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 5,
+      "symbol": "TQQQ"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 5,
+      "symbol": "TRV"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 5,
+      "symbol": "URI"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 4,
+      "symbol": "ARM"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 4,
+      "symbol": "CIBR"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 4,
+      "symbol": "ERIE"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 4,
+      "symbol": "PGR"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 4,
+      "symbol": "SLV"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 4,
+      "symbol": "TRGP"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 3,
+      "symbol": "AKAM"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 3,
+      "symbol": "ARES"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 3,
+      "symbol": "BDX"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 3,
+      "symbol": "CBOE"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 3,
+      "symbol": "CMG"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 3,
+      "symbol": "CRWV"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 3,
+      "symbol": "EEM"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 3,
+      "symbol": "EQIX"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 3,
+      "symbol": "JEPI"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 3,
+      "symbol": "LRCX"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 3,
+      "symbol": "NXPI"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 3,
+      "symbol": "TRMB"
+    },
+    {
+      "max_consecutive_observations_without_independent_qualification": 3,
+      "symbol": "ULTA"
+    }
+  ],
+  "version": "INTRADAY-ACTIVE-UNIVERSE-LIFECYCLE-FORENSICS-1.0"
+}

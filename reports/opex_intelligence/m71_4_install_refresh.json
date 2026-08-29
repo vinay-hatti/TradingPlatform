@@ -1,0 +1,29 @@
+{
+  "authority_input_fingerprint": "30292b49cf2768b2b9ac4d46b11440233613300660b3aac2e52744b02ccb7393",
+  "built": 9,
+  "completeness": {
+    "actual": 9,
+    "expected": 9,
+    "status": "COMPLETE"
+  },
+  "cycle_outcome": "AUTHORITY_REBUILT",
+  "cycles": 3,
+  "forecast_count": 9,
+  "outcome_refresh": {
+    "created": 0,
+    "deferred": 0,
+    "existing": 0,
+    "ignored_duplicate_refreshes": 0,
+    "settlement_policy": "OFFICIAL_SPECIAL_OPENING_QUOTATION_ONLY",
+    "status": "READY"
+  },
+  "published_at": "2026-08-16T05:44:58.660763+00:00",
+  "reused": 0,
+  "status": "READY",
+  "symbols": [
+    "SPX",
+    "NDX",
+    "RUT"
+  ],
+  "version": "M71.4-GOVERNED-OPEX-AUTHORITY-1.0"
+}

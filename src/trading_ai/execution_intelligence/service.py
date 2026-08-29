@@ -32,6 +32,73 @@ def _age(ts,reference=None):
 def _pct_change(new,old):
     return (float(new)-float(old))/max(abs(float(old)),1e-9)*100.0
 
+def _directional_target_revalidation(m, underlying_price):
+    meta=dict(m.metadata_json or {})
+    thesis=dict(meta.get('underlying_thesis') or {})
+    management=dict(meta.get('dynamic_management') or {})
+    raw_direction=str(thesis.get('direction') or thesis.get('setup_category') or '').upper()
+    strategy=str(getattr(m,'strategy','') or '').upper()
+    if 'BULL' in raw_direction or raw_direction in {'STRONG_BULLISH','WEAK_BULLISH'}:
+        direction='BULLISH'
+    elif 'BEAR' in raw_direction or raw_direction in {'STRONG_BEARISH','WEAK_BEARISH'}:
+        direction='BEARISH'
+    elif strategy in {'LONG_CALL','BULL_CALL_SPREAD','CALL_DIAGONAL'}:
+        direction='BULLISH'
+    elif strategy in {'LONG_PUT','BEAR_PUT_SPREAD','PUT_DIAGONAL'}:
+        direction='BEARISH'
+    else:
+        direction='NEUTRAL'
+    original=[]
+    for item in management.get('underlying_targets') or []:
+        try:
+            value=float(item)
+            if value>0:original.append(value)
+        except Exception:
+            continue
+    original=sorted(set(original),reverse=direction=='BEARISH')
+    underlying=None
+    try:
+        candidate=float(underlying_price) if underlying_price is not None else None
+        if candidate is not None and candidate>0: underlying=candidate
+    except Exception:
+        underlying=None
+    available=underlying is not None
+    if direction=='BULLISH' and available:
+        effective=[x for x in original if x>underlying];skipped=[x for x in original if x<=underlying]
+    elif direction=='BEARISH' and available:
+        effective=[x for x in original if x<underlying];skipped=[x for x in original if x>=underlying]
+    elif direction in {'BULLISH','BEARISH'}:
+        effective=[];skipped=[]
+    else:
+        effective=list(original);skipped=[]
+    if direction in {'BULLISH','BEARISH'} and not available:
+        status='UNDERLYING_UNAVAILABLE'
+    elif skipped and effective:
+        status='FILTERED'
+    elif original and not effective and direction in {'BULLISH','BEARISH'}:
+        status='NO_VALID_TARGETS'
+    else:
+        status='VALID'
+    skipped_details=[]
+    if available and direction in {'BULLISH','BEARISH'}:
+        for value in skipped:
+            original_number=original.index(value)+1
+            distance=(underlying-value) if direction=='BULLISH' else (value-underlying)
+            skipped_details.append({
+                'original_target_number':original_number,
+                'label':f'Target {original_number}',
+                'target_value':value,
+                'current_underlying':underlying,
+                'distance':round(max(0.0,float(distance)),6),
+                'distance_label':'EXCEEDED_BY' if direction=='BULLISH' else 'UNDERCUT_BY',
+            })
+    return {
+        'direction':direction,'underlying_price':underlying,'underlying_price_available':available,
+        'original_targets':original,'skipped_targets':skipped,'skipped_target_details':skipped_details,'effective_targets':effective,
+        'status':status,
+        'valid_target_available':bool(effective) if direction in {'BULLISH','BEARISH'} else True,
+    }
+
 class ExecutionIntelligenceService:
     WORKING_STATES={'SUBMITTED','ACKNOWLEDGED','PARTIALLY_FILLED'}
     def __init__(self,s:Session,provider=None): self.s=s;self.provider=provider
@@ -62,7 +129,7 @@ class ExecutionIntelligenceService:
         ev=float(getattr(decision,'expected_value',0) or dp.get('expected_value') or 0);ror=float(dp.get('expected_return_on_risk') or dp.get('selected_strategy_metrics',{}).get('expected_return_on_risk') or 0)
         return edge,ev,ror
 
-    def _evaluate(self,m,tp,policy,provider,actor,reason,purpose):
+    def _evaluate(self,m,tp,policy,provider,actor,reason,purpose,aggression_pct=None):
         envelope=self._approval_envelope(m,policy);samples=[]
         for sample_index in range(policy.quote_stability_samples):
             quote_map={};underlying=None
@@ -70,10 +137,26 @@ class ExecutionIntelligenceService:
                 sym=str(leg.get('option_symbol') or '').strip()
                 if not sym:raise ValueError('Exact Polygon option_symbol is required for execution-time quoting')
                 q=provider.option_quote(m.symbol,sym);quote_map[sym]=q.to_dict();underlying=underlying or q.underlying_price
+            underlying_tickers=[]
+            for qd in quote_map.values():
+                raw=dict(qd.get('raw') or {});ua=dict(raw.get('underlying_asset') or {})
+                ticker=str(ua.get('ticker') or '').strip().upper()
+                if ticker and ticker not in underlying_tickers: underlying_tickers.append(ticker)
+            polygon_underlying_ticker=next((x for x in underlying_tickers if x.startswith('I:')), underlying_tickers[0] if underlying_tickers else str(m.symbol).upper())
             try:
-                u=provider.underlying_quote(m.symbol);underlying=u.midpoint or u.last or underlying;underlying_quote=u.to_dict()
-            except Exception as e:underlying_quote={'instrument':m.symbol,'error':str(e),'fallback_underlying_price':underlying}
-            samples.append({'sample':sample_index+1,'quotes':quote_map,'underlying_quote':underlying_quote,'underlying_price':underlying,'captured_at':now()})
+                if polygon_underlying_ticker.startswith('I:'):
+                    u=provider.index_quote(polygon_underlying_ticker)
+                    underlying_source='POLYGON_INDEX_SNAPSHOT'
+                else:
+                    u=provider.underlying_quote(m.symbol)
+                    underlying_source='POLYGON_STOCK_SNAPSHOT'
+                resolved=u.midpoint or u.last or None
+                if resolved is not None and float(resolved)>0: underlying=float(resolved)
+                underlying_quote={**u.to_dict(),'source':underlying_source,'requested_symbol':m.symbol,'polygon_underlying_ticker':polygon_underlying_ticker}
+            except Exception as e:
+                underlying_source='POLYGON_INDEX_SNAPSHOT_FAILED' if polygon_underlying_ticker.startswith('I:') else 'POLYGON_STOCK_SNAPSHOT_FAILED'
+                underlying_quote={'instrument':m.symbol,'polygon_underlying_ticker':polygon_underlying_ticker,'source':underlying_source,'error':str(e),'fallback_underlying_price':underlying}
+            samples.append({'sample':sample_index+1,'quotes':quote_map,'underlying_quote':underlying_quote,'underlying_price':underlying,'underlying_source':underlying_source,'polygon_underlying_ticker':polygon_underlying_ticker,'captured_at':now()})
             if sample_index+1<policy.quote_stability_samples and policy.quote_stability_interval_ms:sleep(policy.quote_stability_interval_ms/1000.0)
 
         latest=samples[-1];live_legs=[];ages=[];spreads=[];mid_series={}
@@ -98,7 +181,8 @@ class ExecutionIntelligenceService:
         age_penalty=0 if max_age is None else min(25.0,max_age/max(policy.max_quote_age_seconds,1e-9)*10.0)
         spread_penalty=min(25.0,max_spread/max(policy.maximum_spread_pct,1e-9)*10.0) if policy.maximum_spread_pct>0 else 0
         confidence=max(0.0,min(100.0,stability_score-age_penalty-spread_penalty))
-        aggression=max(0.0,min(1.0,policy.initial_limit_aggression_pct/100.0))
+        effective_aggression=float(policy.initial_limit_aggression_pct if aggression_pct is None else aggression_pct)
+        aggression=max(0.0,min(1.0,effective_aggression/100.0))
         governed=round(fresh_mid+aggression*(fresh_exec-fresh_mid),4)
         if approved>=0 and envelope.get('maximum_debit') is not None: governed=min(governed,float(envelope['maximum_debit']))
         if approved<0 and envelope.get('minimum_credit') is not None: governed=min(governed,-float(envelope['minimum_credit']))
@@ -106,20 +190,34 @@ class ExecutionIntelligenceService:
         trade_legs=tuple(TradeLeg(side=LegSide(str(x['side']).upper()),quantity=int(x['quantity']),option_right=OptionRight(str(x['option_right']).upper()),strike=float(x['strike']),expiry=str(x['expiry']),limit_price=float(x['midpoint_price']),delta=x.get('delta'),gamma=x.get('gamma'),theta=x.get('theta'),vega=x.get('vega'),option_symbol=str(x['option_symbol'])) for x in live_legs)
         debit,credit,max_loss,max_profit,rr,budget,greeks,econ_checks=AdvancedTradeBuilderService.economics(trade_legs,float(tp.capital),float(tp.risk_budget_pct))
         edge,ev,ror=self._upstream_metrics(m)
+        package_qty=max(1.0,float(getattr(tp,'contracts',0) or 0) or 1.0)
+        adverse_price=max(0.0,(governed-approved) if approved>=0 else (abs(approved)-abs(governed)))
+        adverse_dollars=adverse_price*100.0*package_qty
+        adjusted_ev=float(ev)-adverse_dollars if float(ev)>0 else float(ev)
+        adjusted_ror=(adjusted_ev/max(float(max_loss),1e-9)*100.0) if max_loss and adjusted_ev else float(ror)
+        minimum_retained_ev=(float(ev)*policy.minimum_ev_retention_pct/100.0) if float(ev)>0 else None
+        ev_retained=(minimum_retained_ev is None or adjusted_ev>=minimum_retained_ev)
+        target_revalidation=_directional_target_revalidation(m,latest.get('underlying_price'))
+        underlying_quote_timestamp=(latest.get('underlying_quote') or {}).get('quote_timestamp')
+        underlying_quote_age_seconds=_age(underlying_quote_timestamp)
         checks={
             'direct_polygon_quotes':True,'quote_timestamp_present':timestamps_present,
             'quote_fresh':bool(timestamps_present and max_age is not None and max_age<=policy.max_quote_age_seconds),
+            'underlying_price_available':bool(target_revalidation['underlying_price_available']) if target_revalidation['direction'] in {'BULLISH','BEARISH'} else True,
+            'directional_profit_target_available':bool(target_revalidation['valid_target_available']),
             'price_drift_within_envelope':market_drift<=policy.max_price_drift_pct,
             'risk_within_budget':bool(econ_checks.get('risk_within_budget')),'defined_risk':bool(econ_checks.get('defined_risk')),
             'spread_within_policy':max_spread<=policy.maximum_spread_pct,'execution_confidence':confidence>=policy.minimum_execution_confidence,
-            'edge_threshold':edge>=policy.minimum_edge_score,'expected_value_threshold':ev>=policy.minimum_expected_value,'return_on_risk_threshold':ror>=policy.minimum_return_on_risk,
+            'edge_threshold':edge>=policy.minimum_edge_score,'expected_value_threshold':adjusted_ev>=policy.minimum_expected_value,'return_on_risk_threshold':adjusted_ror>=policy.minimum_return_on_risk,'expected_value_retention':ev_retained,
         }
         valid=all(checks.values())
         if not checks['direct_polygon_quotes'] or not checks['quote_timestamp_present'] or not checks['quote_fresh']:decision='BLOCK'
+        elif not checks['underlying_price_available']:decision='BLOCK'
+        elif not checks['directional_profit_target_available']:decision='REVALIDATE'
         elif not checks['risk_within_budget'] or not checks['defined_risk'] or not checks['price_drift_within_envelope']:decision='REVALIDATE'
         elif not checks['execution_confidence'] or not checks['spread_within_policy']:decision='WAIT'
         else:decision='EXECUTE'
-        evidence={'purpose':purpose,'fresh_debit':debit,'fresh_credit':credit,'fresh_max_profit':max_profit,'reward_risk_ratio':rr,'fresh_greeks':greeks,'upstream_edge_score':edge,'upstream_expected_value':ev,'upstream_return_on_risk':ror,'stability_max_midpoint_move_pct':max_move,'maximum_spread_pct':max_spread,'underlying_price':latest.get('underlying_price'),'quote_timestamp_status':'PRESENT' if timestamps_present else 'MISSING','fresh_midpoint_price':fresh_mid,'fresh_executable_price':fresh_exec,'market_drift_pct':market_drift,'crossing_slippage_pct':crossing_slippage,'limit_aggression_pct':policy.initial_limit_aggression_pct}
+        evidence={'purpose':purpose,'target_revalidation':target_revalidation,'fresh_debit':debit,'fresh_credit':credit,'fresh_max_profit':max_profit,'reward_risk_ratio':rr,'fresh_greeks':greeks,'upstream_edge_score':edge,'upstream_expected_value':ev,'upstream_return_on_risk':ror,'adjusted_expected_value_at_limit':adjusted_ev,'adjusted_return_on_risk_at_limit':adjusted_ror,'minimum_retained_expected_value':minimum_retained_ev,'adverse_execution_cost_dollars':adverse_dollars,'effective_aggression_pct':effective_aggression,'stability_max_midpoint_move_pct':max_move,'maximum_spread_pct':max_spread,'underlying_price':latest.get('underlying_price'),'underlying_source':latest.get('underlying_source'),'polygon_underlying_ticker':latest.get('polygon_underlying_ticker'),'underlying_quote':latest.get('underlying_quote'),'underlying_quote_timestamp':underlying_quote_timestamp,'underlying_quote_age_seconds':round(underlying_quote_age_seconds,6) if underlying_quote_age_seconds is not None else None,'option_quote_age_seconds':round(max_age,6) if max_age is not None else None,'quote_timestamp_status':'PRESENT' if timestamps_present else 'MISSING','fresh_midpoint_price':fresh_mid,'fresh_executable_price':fresh_exec,'market_drift_pct':market_drift,'crossing_slippage_pct':crossing_slippage,'limit_aggression_pct':policy.initial_limit_aggression_pct}
         sid=f'M70-EXEC-{uuid4().hex.upper()}';created=now()
         snap=ExecutionIntelligenceSnapshotModel(execution_snapshot_id=sid,execution_intent_id=m.execution_intent_id,execution_intent_version=m.version,trade_plan_id=m.trade_plan_id,symbol=m.symbol,strategy=m.strategy,decision=decision,execution_confidence=round(confidence,4),approved_reference_price=approved,fresh_executable_price=fresh_exec,governed_limit_price=governed,adverse_price_drift_pct=round(market_drift,6),quote_age_seconds=round(max_age,6) if max_age is not None else None,fresh_max_loss=float(max_loss),risk_budget_amount=float(budget),validation_json={'valid':valid,'checks':checks},quotes_json={'samples':samples,'live_legs':live_legs},envelope_json=envelope,policy_json=policy.as_dict(),evidence_json=evidence,created_at=created)
         self.s.add(snap);self.s.add(ExecutionIntelligenceEventModel(event_id=f'M70-EVT-{uuid4().hex.upper()}',execution_snapshot_id=sid,execution_intent_id=m.execution_intent_id,event_type=f'EXECUTION_{decision}',actor=actor,reason=reason,payload_json={'validation':snap.validation_json,'evidence':evidence},created_at=created));self.s.commit()
@@ -137,24 +235,132 @@ class ExecutionIntelligenceService:
         return self.to_dict(snap)
 
     def assess_working(self,intent_id,actor='SYSTEM',reason='Working-order assessment'):
+        from .entry_chase import monotonic_broker_candidate, adaptive_chase_state
         m=self.s.get(ExecutionIntentModel,intent_id)
         if not m:raise KeyError('Execution intent not found')
         if m.state not in self.WORKING_STATES:raise ValueError('Execution intent must be working or partially filled')
         tp=self.s.get(TradePlanModel,m.trade_plan_id)
         if not tp:raise KeyError('Trade plan not found')
-        policy=load_execution_intelligence_policy();snap=self._evaluate(m,tp,policy,self.provider or PolygonDirectExecutionQuoteProvider(),actor,reason,'WORKING_ORDER')
+        policy=load_execution_intelligence_policy()
         aggregate=str((m.broker_json or {}).get('aggregate_id') or '');broker=self.s.scalar(select(BrokerOrderModel).where(BrokerOrderModel.aggregate_id==aggregate)) if aggregate else None
-        current=float(broker.limit_price if broker and broker.limit_price is not None else self.package_price(list(m.legs_json)))
+        raw=dict((broker.raw_json or {}) if broker else {})
+        reprice_count=int(raw.get('m70_reprice_count',0) or 0)
+        progressive_aggression=min(100.0,float(policy.initial_limit_aggression_pct)+float(reprice_count+1)*float(policy.chase_step_aggression_pct))
+        snap=self._evaluate(m,tp,policy,self.provider or PolygonDirectExecutionQuoteProvider(),actor,reason,'WORKING_ORDER',aggression_pct=progressive_aggression)
+        legs=list(m.legs_json)
+        broker_current=float(broker.limit_price if broker and broker.limit_price is not None else abs(self.package_price(legs)))
+        reference=float((snap.envelope_json or {}).get('reference_price') or 0)
+        candidate=float(snap.governed_limit_price)
+        side=str(legs[0].get('side') or '').upper() if len(legs)==1 else ''
+        if len(legs)==1:
+            broker_candidate=monotonic_broker_candidate(side,broker_current,abs(candidate))
+            candidate=broker_candidate if side=='BUY' else -broker_candidate
+            current=broker_current if side=='BUY' else -broker_current
+        else:
+            current=float(broker_current if reference>=0 else -broker_current)
         age=_age(broker.submitted_at) if broker else 0.0;filled=float(broker.filled_quantity or 0) if broker else 0.0;remaining=float(broker.remaining_quantity or 0) if broker else 0.0
-        checks=dict(snap.validation_json.get('checks') or {});reprice_count=int(((broker.raw_json or {}) if broker else {}).get('m70_reprice_count',0) or 0)
-        delta_pct=abs(_pct_change(float(snap.governed_limit_price),current)) if abs(current)>1e-9 else 0.0
-        if snap.decision in {'BLOCK','REVALIDATE'} or age>policy.working_order_max_age_seconds:action='CANCEL'
-        elif snap.decision=='WAIT':action='CONTINUE'
-        elif reprice_count<policy.maximum_reprices and age>=policy.working_reprice_after_seconds and delta_pct>=policy.working_reprice_min_change_pct:action='REPRICE'
-        else:action='CONTINUE'
-        aid=f'M70-WORK-{uuid4().hex.upper()}';evidence={'decision':snap.decision,'checks':checks,'reprice_count':reprice_count,'maximum_reprices':policy.maximum_reprices,'limit_change_pct':delta_pct,'market_drift_pct':snap.adverse_price_drift_pct,'crossing_slippage_pct':snap.evidence_json.get('crossing_slippage_pct'),'quote_age_seconds':snap.quote_age_seconds}
-        row=WorkingOrderAssessmentModel(assessment_id=aid,execution_intent_id=m.execution_intent_id,execution_snapshot_id=snap.execution_snapshot_id,state=m.state,recommended_action=action,current_limit_price=current,governed_limit_price=float(snap.governed_limit_price),filled_quantity=filled,remaining_quantity=remaining,working_age_seconds=float(age or 0),evidence_json=evidence,created_at=now());self.s.add(row);self.s.commit()
-        return {'assessment_id':aid,'execution_intent_id':m.execution_intent_id,'execution_snapshot_id':snap.execution_snapshot_id,'state':m.state,'recommended_action':action,'current_limit_price':current,'governed_limit_price':float(snap.governed_limit_price),'filled_quantity':filled,'remaining_quantity':remaining,'working_age_seconds':float(age or 0),'evidence':evidence,'snapshot':self.to_dict(snap)}
+        checks=dict(snap.validation_json.get('checks') or {})
+        delta_pct=abs(_pct_change(float(candidate),current)) if abs(current)>1e-9 else 0.0
+        edge_lost=not bool(checks.get('expected_value_retention',True) and checks.get('expected_value_threshold',True) and checks.get('return_on_risk_threshold',True) and checks.get('edge_threshold',True))
+        history=list(raw.get('m70_reprice_history') or [])
+        last_real=next((x for x in reversed(history) if x.get('broker_modified',True)),None)
+        last_attempt=dict(raw.get('m70_last_modify_result') or {}) or last_real
+        last_modify_age=_age((last_attempt or {}).get('at')) if last_attempt else None
+
+        envelope=dict(snap.envelope_json or {})
+        boundary=float(envelope.get('maximum_debit')) if reference>=0 and envelope.get('maximum_debit') is not None else (-float(envelope.get('minimum_credit')) if reference<0 and envelope.get('minimum_credit') is not None else reference)
+        fresh_executable=float(snap.fresh_executable_price or 0.0)
+        chase=adaptive_chase_state(current_price=current,fresh_executable_price=fresh_executable,frozen_boundary_price=boundary,age_seconds=age,active_chase_window_seconds=policy.active_chase_window_seconds,maximum_working_order_age_seconds=policy.working_order_max_age_seconds,reprice_count=reprice_count,fast_reprice_limit=policy.maximum_reprices,adaptive_enabled=policy.adaptive_chase_enabled)
+        action='CONTINUE';action_reason='WAIT_MARKET_UNCHANGED'
+        if chase['cancel_required']:
+            action='CANCEL';action_reason='ORDER_AGE_EXCEEDED'
+        elif policy.automatic_cancel_on_edge_loss and edge_lost:
+            action='CANCEL';action_reason='EDGE_LOST'
+        elif snap.decision=='REVALIDATE':
+            action='CANCEL';action_reason='APPROVAL_ENVELOPE_OR_RISK_BREACH'
+        elif snap.decision=='BLOCK':
+            # A transient stale/missing quote must fail closed for repricing, but
+            # should not destroy an already-accepted broker order before the
+            # governed hard working-order timeout.
+            action='CONTINUE';action_reason='WAIT_STALE_OR_UNUSABLE_QUOTES'
+        elif snap.decision=='WAIT':
+            action='CONTINUE';action_reason='WAIT_MARKET_QUALITY'
+        elif chase['phase']=='RESTING':
+            action='CONTINUE';action_reason=str(chase['reason'])
+        else:
+            modify_interval=float(policy.minimum_modify_interval_seconds if chase['phase']=='ACTIVE_CHASE' else policy.adaptive_modify_interval_seconds)
+            if last_modify_age is not None and last_modify_age<modify_interval:
+                action='CONTINUE';action_reason='WAIT_MIN_MODIFY_INTERVAL' if chase['phase']=='ACTIVE_CHASE' else 'WAIT_ADAPTIVE_MODIFY_INTERVAL'
+            elif age is not None and age>=policy.working_reprice_after_seconds and chase.get('needs_chase') and float(candidate)>float(current)+1e-9 and (delta_pct>=policy.working_reprice_min_change_pct or chase['phase']=='ADAPTIVE_CHASE'):
+                action='REPRICE';action_reason='REPRICE_MORE_AGGRESSIVE' if chase['phase']=='ACTIVE_CHASE' else 'REPRICE_ADAPTIVE_CHASE'
+
+        aid=f'M70-WORK-{uuid4().hex.upper()}'
+        evidence={'decision':snap.decision,'checks':checks,'reprice_count':reprice_count,'maximum_reprices':policy.maximum_reprices,'limit_change_pct':delta_pct,'progressive_aggression_pct':progressive_aggression,'edge_lost':edge_lost,'market_drift_pct':snap.adverse_price_drift_pct,'crossing_slippage_pct':snap.evidence_json.get('crossing_slippage_pct'),'quote_age_seconds':snap.quote_age_seconds,'action_reason':action_reason,'minimum_modify_interval_seconds':policy.minimum_modify_interval_seconds,'adaptive_modify_interval_seconds':policy.adaptive_modify_interval_seconds,'last_modify_age_seconds':last_modify_age,'monotonic_side':side or None,'raw_governed_limit_price':float(snap.governed_limit_price),'monotonic_governed_limit_price':float(candidate),'lifetime_phase':chase['phase'],'lifetime_reason':chase['reason'],'chase_target_price':chase['target_price'],'adaptive_chase_enabled':policy.adaptive_chase_enabled,'active_chase_window_seconds':policy.active_chase_window_seconds,'maximum_working_order_age_seconds':policy.working_order_max_age_seconds}
+        row=WorkingOrderAssessmentModel(assessment_id=aid,execution_intent_id=m.execution_intent_id,execution_snapshot_id=snap.execution_snapshot_id,state=m.state,recommended_action=action,current_limit_price=current,governed_limit_price=float(candidate),filled_quantity=filled,remaining_quantity=remaining,working_age_seconds=float(age or 0),evidence_json=evidence,created_at=now());self.s.add(row);self.s.commit()
+        return {'assessment_id':aid,'execution_intent_id':m.execution_intent_id,'execution_snapshot_id':snap.execution_snapshot_id,'state':m.state,'recommended_action':action,'action_reason':action_reason,'current_limit_price':current,'governed_limit_price':float(candidate),'filled_quantity':filled,'remaining_quantity':remaining,'working_age_seconds':float(age or 0),'evidence':evidence,'snapshot':self.to_dict(snap)}
+
+    def working_telemetry(self,intent_id):
+        from .entry_chase import adaptive_chase_state
+        m=self.s.get(ExecutionIntentModel,intent_id)
+        if not m:raise KeyError('Execution intent not found')
+        policy=load_execution_intelligence_policy()
+        aggregate=str((m.broker_json or {}).get('aggregate_id') or '')
+        broker=self.s.scalar(select(BrokerOrderModel).where(BrokerOrderModel.aggregate_id==aggregate)) if aggregate else None
+        raw=dict((broker.raw_json or {}) if broker else {})
+        latest=self.s.scalar(select(WorkingOrderAssessmentModel).where(WorkingOrderAssessmentModel.execution_intent_id==intent_id).order_by(desc(WorkingOrderAssessmentModel.created_at)).limit(1))
+        submission=self.s.get(ExecutionOrderTelemetryModel,intent_id)
+        envelope=dict((m.metadata_json or {}).get('execution_approval_envelope') or {})
+        reference=float(envelope.get('reference_price') or 0.0)
+        maximum_debit=envelope.get('maximum_debit')
+        minimum_credit=envelope.get('minimum_credit')
+        boundary=float(maximum_debit) if reference>=0 and maximum_debit is not None else (-float(minimum_credit) if reference<0 and minimum_credit is not None else reference)
+        current=float(broker.limit_price or 0.0) if broker and broker.limit_price is not None else float((latest.current_limit_price if latest else 0.0) or 0.0)
+        # Keep combo credit prices in signed economic terms. Single-leg broker prices are positive.
+        if reference<0 and current>0:current=-current
+        initial=float(submission.submitted_limit_price or 0.0) if submission else current
+        if reference<0 and initial>0:initial=-initial
+        reprice_count=int(raw.get('m70_reprice_count',0) or 0)
+        age=_age(broker.submitted_at) if broker else None
+        if broker:
+            snap_for_phase=self.s.get(ExecutionIntelligenceSnapshotModel,latest.execution_snapshot_id) if latest else None
+            fresh_for_phase=float(snap_for_phase.fresh_executable_price) if snap_for_phase else current
+            chase=adaptive_chase_state(current_price=current,fresh_executable_price=fresh_for_phase,frozen_boundary_price=boundary,age_seconds=age,active_chase_window_seconds=policy.active_chase_window_seconds,maximum_working_order_age_seconds=policy.working_order_max_age_seconds,reprice_count=reprice_count,fast_reprice_limit=policy.maximum_reprices,adaptive_enabled=policy.adaptive_chase_enabled)
+        else:
+            chase={'phase':'NOT_WORKING','reason':'BROKER_ORDER_NOT_FOUND','cancel_required':False,'target_price':current,'needs_chase':False}
+        phase=str(chase.get('phase') or 'NOT_WORKING')
+        phase_reason=str(chase.get('reason') or phase)
+        span=boundary-initial
+        progress=0.0 if abs(span)<1e-9 else (current-initial)/span*100.0
+        progress=max(0.0,min(100.0,progress))
+        remaining=max(0.0,abs(boundary-current))
+        ev=dict(latest.evidence_json or {}) if latest else {}
+        snap=self.s.get(ExecutionIntelligenceSnapshotModel,latest.execution_snapshot_id) if latest else None
+        history=list(raw.get('m70_reprice_history') or [])
+        last_reprice=history[-1] if history else None
+        return {
+            'execution_intent_id':intent_id,'state':m.state,'aggregate_id':aggregate or None,
+            'broker_order_id':getattr(broker,'broker_order_id',None),'current_working_limit':current,
+            'initial_submitted_limit':initial,'approved_reference_price':reference,
+            'frozen_boundary_type':'MAXIMUM_DEBIT' if reference>=0 else 'MINIMUM_CREDIT',
+            'frozen_boundary_price':boundary,'maximum_debit':maximum_debit,'minimum_credit':minimum_credit,
+            'envelope_consumed_pct':round(progress,4),'envelope_remaining':round(remaining,4),
+            'at_approved_reference':bool(current>=reference-1e-9) if reference>=0 else bool(current>=reference-1e-9),
+            'at_frozen_boundary':abs(current-boundary)<=1e-9,
+            'phase':phase,'phase_reason':phase_reason,'working_age_seconds':float(age or 0.0),
+            'active_chase_window_seconds':float(policy.active_chase_window_seconds),
+            'maximum_working_order_age_seconds':float(policy.working_order_max_age_seconds),
+            'reprice_count':reprice_count,'maximum_reprices':int(policy.maximum_reprices),
+            'fast_reprice_limit':int(policy.maximum_reprices),'fast_reprices_completed':min(reprice_count,int(policy.maximum_reprices)),
+            'adaptive_chase_enabled':bool(policy.adaptive_chase_enabled),'adaptive_modify_interval_seconds':float(policy.adaptive_modify_interval_seconds),
+            'current_modify_interval_seconds':float(policy.minimum_modify_interval_seconds if phase=='ACTIVE_CHASE' else policy.adaptive_modify_interval_seconds if phase=='ADAPTIVE_CHASE' else 0.0),
+            'chase_target_price':float(chase.get('target_price') or current),'needs_chase':bool(chase.get('needs_chase')),
+            'fresh_executable_price':float(snap.fresh_executable_price) if snap else None,
+            'fresh_midpoint_price':float((snap.evidence_json or {}).get('fresh_midpoint_price') or 0.0) if snap else None,
+            'quote_age_seconds':float(snap.quote_age_seconds) if snap and snap.quote_age_seconds is not None else None,
+            'latest_recommended_action':getattr(latest,'recommended_action',None),
+            'latest_action_reason':ev.get('action_reason'),'last_reprice':last_reprice,
+            'reprice_history':history,'generated_at':now(),
+        }
 
     def record_submission(self,m,snapshot:dict,broker_result:dict,submitted_limit:float):
         row=self.s.get(ExecutionOrderTelemetryModel,m.execution_intent_id);ts=now();ev=dict(snapshot.get('evidence_json') or {})
@@ -168,13 +374,7 @@ class ExecutionIntelligenceService:
         if not broker:return
         row=self.s.get(ExecutionOrderTelemetryModel,m.execution_intent_id);ts=now()
         if row is None:
-            # Historical/backfill path: preserve the original pre-route evidence when
-            # record_submission was not present in the installed release that routed
-            # the order. This prevents valid completed orders from becoming zero-valued
-            # execution samples merely because telemetry was introduced later.
-            preflight=self.s.scalar(select(ExecutionIntelligenceSnapshotModel).where(ExecutionIntelligenceSnapshotModel.execution_intent_id==m.execution_intent_id).order_by(ExecutionIntelligenceSnapshotModel.created_at.desc()).limit(1))
-            evidence=dict(preflight.evidence_json or {}) if preflight else {}
-            row=ExecutionOrderTelemetryModel(execution_intent_id=m.execution_intent_id,trade_plan_id=m.trade_plan_id,execution_snapshot_id=preflight.execution_snapshot_id if preflight else None,aggregate_id=broker.aggregate_id,broker_order_id=broker.broker_order_id,symbol=m.symbol,strategy=m.strategy,state=broker.status,approved_reference_price=float(preflight.approved_reference_price or 0) if preflight else 0,fresh_midpoint_price=float(evidence.get('fresh_midpoint_price') or 0),fresh_executable_price=float(preflight.fresh_executable_price or 0) if preflight else 0,submitted_limit_price=float(broker.limit_price or (preflight.governed_limit_price if preflight else 0) or 0),average_fill_price=None,filled_quantity=0,remaining_quantity=float(broker.quantity or 0),commission_total=0,quote_age_seconds=preflight.quote_age_seconds if preflight else None,execution_confidence=float(preflight.execution_confidence or 0) if preflight else 0,market_drift_pct=float(preflight.adverse_price_drift_pct or 0) if preflight else 0,execution_slippage_pct=float(evidence.get('crossing_slippage_pct') or 0),realized_slippage_pct=None,fill_rate_pct=0,execution_quality_score=float(preflight.execution_confidence or 0) if preflight else 0,first_submitted_at=broker.submitted_at,acknowledged_at=broker.submitted_at if str(broker.status or '').upper() in {'PRESUBMITTED','SUBMITTED','ACKNOWLEDGED','WORKING','FILLED'} else None,first_fill_at=None,filled_at=None,updated_at=ts,details_json={'backfilled':True,'preflight':self.to_dict(preflight) if preflight else None});self.s.add(row)
+            row=ExecutionOrderTelemetryModel(execution_intent_id=m.execution_intent_id,trade_plan_id=m.trade_plan_id,execution_snapshot_id=None,aggregate_id=broker.aggregate_id,broker_order_id=broker.broker_order_id,symbol=m.symbol,strategy=m.strategy,state=broker.status,approved_reference_price=0,fresh_midpoint_price=0,fresh_executable_price=0,submitted_limit_price=float(broker.limit_price or 0),average_fill_price=None,filled_quantity=0,remaining_quantity=float(broker.quantity or 0),commission_total=0,quote_age_seconds=None,execution_confidence=0,market_drift_pct=0,execution_slippage_pct=0,realized_slippage_pct=None,fill_rate_pct=0,execution_quality_score=0,first_submitted_at=broker.submitted_at,acknowledged_at=None,first_fill_at=None,filled_at=None,updated_at=ts,details_json={});self.s.add(row)
         row.state=broker.status;row.broker_order_id=broker.broker_order_id;row.average_fill_price=float(broker.average_fill_price or 0) or None;row.filled_quantity=float(broker.filled_quantity or 0);row.remaining_quantity=float(broker.remaining_quantity or 0);row.fill_rate_pct=round(row.filled_quantity/max(float(broker.quantity or 1),1e-9)*100,4);row.updated_at=ts
         if row.filled_quantity>0 and not row.first_fill_at:row.first_fill_at=broker.updated_at
         if str(broker.status).upper()=='FILLED':row.filled_at=broker.updated_at

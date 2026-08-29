@@ -1,0 +1,23 @@
+{
+  "milestone": "M77.19.6.5.2.19",
+  "name": "Native Observable Consolidation Trigger Causal Replay",
+  "authority_report_5218_sha256": "bc2c4f7411698d7ad25ba7fa85b384d4431d666547a09c4be3126ecfc91cd8aa",
+  "authority_runner_5218_sha256": "979592ee06af3c5668f386f0e89f0d0b47633b0724be7eaeb7820ef703353818",
+  "arms": [
+    "NATIVE_CONTROL",
+    "OBSERVABLE_SPLIT_WIDE_ELIGIBLE_MERGE",
+    "OBSERVABLE_PRESERVE_SEED_ON_WIDE_DRIFT"
+  ],
+  "trigger_threshold_source": "existing native LevelIntelligence 0.3% merge threshold",
+  "native_internal_atr_merge_multiplier": 0.35,
+  "native_top12_retention_unchanged": true,
+  "frozen_target_identity_prohibited": true,
+  "symbol_identity_prohibited": true,
+  "historical_answer_leakage_prohibited": true,
+  "threshold_search_or_optimization": false,
+  "database_mode": "READ_ONLY_SPY_SESSION_CALENDAR_ONLY",
+  "parity_tolerance": 1e-09,
+  "candidate_semantic_promoted": false,
+  "full_23_year_reconstruction_authorized": false,
+  "production_authority_effect": false
+}

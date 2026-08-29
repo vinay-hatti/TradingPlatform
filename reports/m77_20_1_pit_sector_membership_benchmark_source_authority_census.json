@@ -1,0 +1,158 @@
+{
+  "F071_formula_materialization_performed": false,
+  "benchmark_contract": {
+    "benchmark_inception_history_authority_present": false,
+    "current_mapping_sources": [
+      "src/trading_ai/trend_intelligence/service.py",
+      "src/trading_ai/market_intelligence/engine.py"
+    ],
+    "current_static_sector_etf_mapping_present": true,
+    "historical_F071_benchmark_authority_certified": false,
+    "historical_benchmark_effective_date_authority_present": false,
+    "pre_inception_substitution_authorized": false,
+    "prospective_benchmark_mapping_capture_eligible": true
+  },
+  "canonical_csv_census": {
+    "all_rows_have_as_of_date": true,
+    "distinct_as_of_date_count": 1,
+    "distinct_as_of_dates": [
+      "2026-07-20"
+    ],
+    "row_count": 611,
+    "sector_count": 89
+  },
+  "census_conclusion": "BLOCKED_NO_REPO_CERTIFIED_HISTORICAL_PIT_SECTOR_MEMBERSHIP_SOURCE",
+  "consumed_final_holdout_F071_materialization_authorized": false,
+  "cycle2_authority_sha256": "f0f5434e2da3180ce1badef0a8f54956cb78a88c744b43dcf831c238664120a9",
+  "development_F071_materialization_authorized": false,
+  "historical_F071_materialization_authorized": false,
+  "historical_pit_authority_candidate_count": 0,
+  "historical_pit_sector_membership_authority_certified": false,
+  "next_step": "BUILD_M77_20_2_EXTERNAL_HISTORICAL_PIT_SECTOR_SOURCE_DECISION_OR_PROSPECTIVE_ONLY_RESEARCH_DESIGN_GATE",
+  "previous_validation_F071_materialization_authorized": false,
+  "production_authority_effect": false,
+  "prospective_capture_candidate_count": 5,
+  "prospective_membership_snapshot_capture_authorized": true,
+  "prospective_outcomes_opened": false,
+  "prospective_sector_benchmark_snapshot_capture_authorized": true,
+  "repo_source_sha256": {
+    "canonical_csv": "8a468a7608db6684ac83d8873a5692bbd3cbc56336388545ec162243d327aa67",
+    "daily_sector": "ccc36493b56025e94651e8d0cc7ce085b9e4a8d4b648f1e9817a8fe09aaad614",
+    "historical_analytics": "f354fe12e37062f5af9076a35a349ca3e8429d1b97e14c59d3ef1042bd95dac1",
+    "market_engine": "cc72ba135b193f4aa9604180730a0d31590f01d960ba843566968643a1d44a8a",
+    "market_model": "9fa05388e27e38300bb186f97f1f7e600c344113c7374f76be9d69978723e414",
+    "market_service": "56d367f3a1cfc9e27922c636153b9ce3f4ea437a080346fc14c5d67dd8bfeb58",
+    "migration": "58f914b6defd03f3f28b3263886ef4f29ce88825972692b10b7b42f80e3ac46e",
+    "sector_config": "d8207be0b6596a2bb462131f9358be20e364add4d47064692c42149d3b159314",
+    "trend_service": "d6e98beb3946c1337fadf748f5051133b61f05f00903b43881b3f9605c250bc2"
+  },
+  "source_candidate_count": 8,
+  "source_candidates": [
+    {
+      "has_effective_from_semantics": true,
+      "has_effective_to_semantics": false,
+      "has_sector": true,
+      "has_symbol": true,
+      "historical_multi_snapshot_evidence": false,
+      "historical_pit_membership_authority": false,
+      "location": "data/universe/us_listed_equities_etfs.csv",
+      "prospective_capture_eligible": true,
+      "reason": "All repo rows share one as_of_date; valid as a dated snapshot, not historical membership history.",
+      "source_id": "CANONICAL_UNIVERSE_CSV",
+      "source_type": "CURRENT_DATED_SNAPSHOT"
+    },
+    {
+      "has_effective_from_semantics": true,
+      "has_effective_to_semantics": true,
+      "has_sector": true,
+      "has_symbol": true,
+      "historical_multi_snapshot_evidence": false,
+      "historical_pit_membership_authority": false,
+      "location": "sector_membership",
+      "prospective_capture_eligible": true,
+      "reason": "Schema supports temporal records, but repo producer derives them from current canonical CSV; storage capability is not historical source evidence.",
+      "source_id": "SECTOR_MEMBERSHIP_TABLE_SCHEMA",
+      "source_type": "TEMPORAL_CAPABLE_DATABASE_SCHEMA"
+    },
+    {
+      "has_effective_from_semantics": true,
+      "has_effective_to_semantics": false,
+      "has_sector": true,
+      "has_symbol": true,
+      "historical_multi_snapshot_evidence": false,
+      "historical_pit_membership_authority": false,
+      "location": "src/trading_ai/market_intelligence/service.py",
+      "prospective_capture_eligible": true,
+      "reason": "Writes sector_membership effective_from from canonical CSV as_of_date; does not reconstruct historical membership.",
+      "source_id": "MARKET_INTELLIGENCE_MEMBERSHIP_PRODUCER",
+      "source_type": "CURRENT_CANONICAL_SNAPSHOT_DERIVATION"
+    },
+    {
+      "has_effective_from_semantics": false,
+      "has_effective_to_semantics": false,
+      "has_sector": true,
+      "has_symbol": true,
+      "historical_multi_snapshot_evidence": false,
+      "historical_pit_membership_authority": false,
+      "location": "src/trading_ai/trend_intelligence/service.py",
+      "prospective_capture_eligible": true,
+      "reason": "Reads current canonical sector and static SECTOR_ETFS mapping; no historical membership intervals.",
+      "source_id": "TREND_INTELLIGENCE_MAPPING",
+      "source_type": "CURRENT_STATIC_SECTOR_AND_BENCHMARK_MAPPING"
+    },
+    {
+      "has_effective_from_semantics": false,
+      "has_effective_to_semantics": false,
+      "has_sector": true,
+      "has_symbol": false,
+      "historical_multi_snapshot_evidence": false,
+      "historical_pit_membership_authority": false,
+      "location": "src/trading_ai/market_intelligence/engine.py",
+      "prospective_capture_eligible": true,
+      "reason": "Useful current benchmark map only; contains no symbol membership or benchmark effective-date history.",
+      "source_id": "MARKET_INTELLIGENCE_SECTOR_ETFS",
+      "source_type": "STATIC_SECTOR_BENCHMARK_MAP"
+    },
+    {
+      "has_effective_from_semantics": false,
+      "has_effective_to_semantics": false,
+      "has_sector": true,
+      "has_symbol": true,
+      "historical_multi_snapshot_evidence": false,
+      "historical_pit_membership_authority": false,
+      "location": "src/trading_ai/daily/sectors.py",
+      "prospective_capture_eligible": false,
+      "reason": "Static hard-coded subset with no dates/provenance history.",
+      "source_id": "LEGACY_DAILY_SECTOR_MAP",
+      "source_type": "SMALL_STATIC_SYMBOL_SECTOR_MAP"
+    },
+    {
+      "has_effective_from_semantics": false,
+      "has_effective_to_semantics": false,
+      "has_sector": true,
+      "has_symbol": true,
+      "historical_multi_snapshot_evidence": false,
+      "historical_pit_membership_authority": false,
+      "location": "config/sectors.json",
+      "prospective_capture_eligible": false,
+      "reason": "Static JSON subset with no dates/provenance history.",
+      "source_id": "LEGACY_SECTOR_CONFIG",
+      "source_type": "SMALL_STATIC_SYMBOL_SECTOR_CONFIG"
+    },
+    {
+      "has_effective_from_semantics": false,
+      "has_effective_to_semantics": false,
+      "has_sector": false,
+      "has_symbol": false,
+      "historical_multi_snapshot_evidence": false,
+      "historical_pit_membership_authority": false,
+      "location": "src/trading_ai/historical_underlying_replay/analytics.py",
+      "prospective_capture_eligible": false,
+      "reason": "Explicitly states historical PIT sector membership unavailable and prohibits sector-certification claim.",
+      "source_id": "HISTORICAL_REPLAY_ANALYTICS",
+      "source_type": "EXPLICIT_NEGATIVE_AUTHORITY"
+    }
+  ],
+  "status": "READY",
+  "version": "M77.20.1-PIT-SECTOR-MEMBERSHIP-BENCHMARK-SOURCE-AUTHORITY-CENSUS-1.0"
+}

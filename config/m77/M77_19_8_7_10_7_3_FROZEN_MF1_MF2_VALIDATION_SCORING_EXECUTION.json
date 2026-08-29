@@ -1,0 +1,37 @@
+{
+  "milestone": "M77.19.8.7.10.7.3",
+  "scope": "FROZEN_MF1_MF2_VALIDATION_SCORING_EXECUTION_WITH_DEVELOPMENT_ONLY_FIT",
+  "mf1_frozen_configs": {
+    "5": {
+      "C": 10.0
+    },
+    "10": {
+      "C": 1.0
+    },
+    "20": {
+      "C": 0.1
+    }
+  },
+  "mf2_frozen_configs": {
+    "5": {
+      "l2_penalty": 0.1,
+      "spline_knots": 4
+    },
+    "10": {
+      "l2_penalty": 0.1,
+      "spline_knots": 4
+    },
+    "20": {
+      "l2_penalty": 0.1,
+      "spline_knots": 4
+    }
+  },
+  "validation_preprocessor_refit_authorized": false,
+  "validation_model_refit_authorized": false,
+  "validation_retuning_authorized": false,
+  "validation_threshold_search_authorized": false,
+  "validation_feature_selection_search_authorized": false,
+  "champion_selection_authorized": false,
+  "final_holdout_open_authorized": false,
+  "production_authority_effect": false
+}

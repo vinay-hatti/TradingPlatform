@@ -1,0 +1,19 @@
+{
+  "milestone": "M77.19.7.4.6",
+  "version": "M77.19.7.4.6-BEARISH-LIFECYCLE-EXHAUSTION-CONTINUATION-CAUSAL-FORENSICS-1.0",
+  "lifecycle": {
+    "early_max_streak": 2,
+    "established_max_streak": 8,
+    "persistent_late_min_streak": 9
+  },
+  "overlays": {
+    "prior20_decline": -0.1,
+    "prior10_decline": -0.07,
+    "drawdown63": -0.15,
+    "strong_bearish_tf_min": 2
+  },
+  "threshold_search_or_optimization": false,
+  "parameter_fitting": false,
+  "automatic_bearish_signal_inversion": false,
+  "production_authority_effect": false
+}

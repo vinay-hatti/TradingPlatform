@@ -1,0 +1,12 @@
+{
+  "milestone": "M77.19.8.7.10.5.2.3.2",
+  "parameterization_scope": "PARTITION_END_AND_PARTITION_LABEL_ONLY",
+  "development_defaults": {
+    "partition_end": "2017-12-31",
+    "partition_label": "DEVELOPMENT"
+  },
+  "development_parity_required": true,
+  "validation_outcomes_opened": false,
+  "final_holdout_opened": false,
+  "production_authority_effect": false
+}

@@ -1,0 +1,4 @@
+family,rank,function,lineno,end_lineno,args,tags,score,source_sha256,selected_primary
+MF1_REGULARIZED_LOGISTIC_DIRECTION,1,evaluate_mf1,134,153,train_rows|test_rows|feature_cols|target_key|grid|ml|progress_prefix,BALANCED_ACCURACY|FIT|LOGISTIC|PREDICT_PROBA|PREPROCESS,21,c8391b00951357592fbb8b948c377953f56b200d4a73e0332d6dbc5fb1c4a5c2,True
+MF1_REGULARIZED_LOGISTIC_DIRECTION,2,build_preprocessor,96,116,rows|feature_cols|ml,ENCODER|IMPUTER|PREPROCESS|SCALER,10,f7c55eb235e23a3403f37aa89d45e8a7187e6f68c2f156d7c7e90a50b275f4d0,False
+MF2_MONOTONIC_GAM_DIRECTION,1,balanced_accuracy,117,123,y|p,BALANCED_ACCURACY,3,8e2539d224bf28bc9260c48322d7e5877c2c81c3dac212f962b6644cdde3274d,True

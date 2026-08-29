@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 import csv
 import json
 import os
@@ -251,6 +252,15 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--options-minimum-volume", type=int, default=0)
     parser.add_argument("--options-maximum-strike-distance-pct", type=float, default=.40)
     parser.add_argument("--polygon-requests-per-second", type=float, default=8.0)
+    parser.add_argument(
+        "--polygon-network-workers",
+        type=int,
+        default=4,
+        help=(
+            "Concurrent Polygon option-chain symbol fetch workers. A single shared "
+            "global requests-per-second limiter remains authoritative across all workers."
+        ),
+    )
     parser.add_argument("--options-batch-size", type=int, default=10000)
     parser.add_argument("--options-manifest", default="reports/market_ingestion/options_manifest.json")
     parser.add_argument("--options-report", default="reports/market_ingestion/options_latest.json")
@@ -264,6 +274,15 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--dealer-sign-convention", choices=["street_proxy", "customer_long_proxy", "unsigned_market_exposure"], default="street_proxy")
     parser.add_argument("--dealer-positioning-write-reports", action="store_true")
     parser.add_argument("--dealer-positioning-fail-fast", action="store_true")
+    parser.add_argument(
+        "--dealer-positioning-max-workers",
+        type=int,
+        default=4,
+        help=(
+            "Maximum per-symbol dealer-positioning workers for fresh option cycles. "
+            "Each worker owns an independent service/session; fail-fast mode remains sequential."
+        ),
+    )
     parser.add_argument(
         "--skip-trend-intelligence",
         action="store_true",
@@ -665,6 +684,133 @@ def _market_overview_is_current(session) -> bool:
         return False
 
 
+def _begin_fresh_option_lineage(
+    *,
+    symbols: tuple[str, ...],
+    capture_date: date,
+    snapshot_id: str,
+    snapshot_timestamp: datetime,
+) -> dict[str, object]:
+    """Create/resume the BUILDING governed run used for exact cycle membership."""
+    from trading_ai.database import SessionLocal
+    from trading_ai.market_intelligence.ingestion_orchestrator import PolygonDerivedSnapshotPublisher
+
+    with SessionLocal() as session:
+        result = PolygonDerivedSnapshotPublisher(session).begin_option_snapshot(
+            symbols=symbols,
+            capture_date=capture_date,
+            snapshot_timestamp=snapshot_timestamp,
+            snapshot_id=snapshot_id,
+        )
+    return dict(result)
+
+
+def _finalize_fresh_option_lineage(
+    *,
+    symbols: tuple[str, ...],
+    capture_date: date,
+    snapshot_id: str,
+    snapshot_timestamp: datetime,
+) -> dict[str, object]:
+    """Finalize the exact current-cycle snapshot before any derived intelligence runs."""
+    from trading_ai.database import SessionLocal
+    from trading_ai.market_intelligence.ingestion_orchestrator import PolygonDerivedSnapshotPublisher
+
+    with SessionLocal() as session:
+        result = PolygonDerivedSnapshotPublisher(session).finalize_option_snapshot(
+            symbols=symbols,
+            capture_date=capture_date,
+            snapshot_timestamp=snapshot_timestamp,
+            snapshot_id=snapshot_id,
+        )
+    if int(result.get("rows_written", 0) or 0) <= 0:
+        raise RuntimeError(
+            "Fresh Polygon ingestion produced no exact governed option snapshot rows; "
+            "downstream publication is blocked."
+        )
+    return dict(result)
+
+
+def _build_fresh_option_volatility(snapshot_id: str, capture_date: date) -> dict[str, object]:
+    from trading_ai.database import SessionLocal
+    from trading_ai.market_intelligence.ingestion_orchestrator import PolygonDerivedSnapshotPublisher
+
+    started = perf_counter()
+    with SessionLocal() as session:
+        result = PolygonDerivedSnapshotPublisher(session).build_volatility_snapshots(
+            snapshot_id=snapshot_id, capture_date=capture_date
+        )
+    payload = dict(result)
+    payload["duration_seconds"] = round(perf_counter() - started, 4)
+    return payload
+
+
+def _build_fresh_option_liquidity(snapshot_id: str, capture_date: date) -> dict[str, object]:
+    from trading_ai.database import SessionLocal
+    from trading_ai.market_intelligence.ingestion_orchestrator import PolygonDerivedSnapshotPublisher
+
+    started = perf_counter()
+    with SessionLocal() as session:
+        result = PolygonDerivedSnapshotPublisher(session).build_liquidity_snapshots(
+            snapshot_id=snapshot_id, capture_date=capture_date
+        )
+    payload = dict(result)
+    payload["duration_seconds"] = round(perf_counter() - started, 4)
+    return payload
+
+
+def _run_fresh_option_derived_lanes(
+    args: argparse.Namespace,
+    *,
+    snapshot_id: str,
+    capture_date: date,
+    symbols: tuple[str, ...],
+) -> dict[str, object]:
+    """Build volatility, liquidity, and dealer intelligence behind one barrier.
+
+    The three lanes consume immutable current-cycle inputs and write disjoint tables.
+    Market Overview and all later authorities must wait for this function to return.
+    """
+    started = perf_counter()
+
+    def dealer_lane() -> tuple[tuple[int, bool], float]:
+        lane_started = perf_counter()
+        result = _run_dealer_positioning(
+            args, symbols, capture_date, force_refresh=True
+        )
+        return result, perf_counter() - lane_started
+
+    with ThreadPoolExecutor(max_workers=3, thread_name_prefix="options-derived") as executor:
+        vol_future = executor.submit(_build_fresh_option_volatility, snapshot_id, capture_date)
+        liq_future = executor.submit(_build_fresh_option_liquidity, snapshot_id, capture_date)
+        dealer_future = None if args.skip_dealer_positioning else executor.submit(dealer_lane)
+
+        volatility = vol_future.result()
+        liquidity = liq_future.result()
+        dealer_failed = 0
+        dealer_refreshed = False
+        dealer_seconds = 0.0
+        if dealer_future is not None:
+            (dealer_failed, dealer_refreshed), dealer_seconds = dealer_future.result()
+
+    volatility_rows = int(volatility.get("rows_written", 0) or 0)
+    liquidity_rows = int(liquidity.get("rows_written", 0) or 0)
+    if volatility_rows <= 0 or liquidity_rows <= 0:
+        raise RuntimeError(
+            "Fresh option lineage is incomplete: "
+            f"volatility_rows={volatility_rows}, liquidity_rows={liquidity_rows}. "
+            "Downstream publication is blocked."
+        )
+    return {
+        "volatility": volatility,
+        "liquidity": liquidity,
+        "dealer_failed": dealer_failed,
+        "dealer_refreshed": dealer_refreshed,
+        "dealer_seconds": round(dealer_seconds, 4),
+        "wall_seconds": round(perf_counter() - started, 4),
+    }
+
+
 def _publish_fresh_option_lineage(
     *,
     symbols: tuple[str, ...],
@@ -735,7 +881,13 @@ def _publish_fresh_option_lineage(
     return result
 
 
-def _run_dealer_positioning(args: argparse.Namespace, symbols: tuple[str, ...], capture_date: date) -> tuple[int, bool]:
+def _run_dealer_positioning(
+    args: argparse.Namespace,
+    symbols: tuple[str, ...],
+    capture_date: date,
+    *,
+    force_refresh: bool | None = None,
+) -> tuple[int, bool]:
     """Incrementally refresh missing dealer rows, or rebuild all rows when forced."""
     from trading_ai.database import SessionLocal
     from trading_ai.institutional_market_structure.contracts import DealerPositioningPolicy
@@ -746,12 +898,13 @@ def _run_dealer_positioning(args: argparse.Namespace, symbols: tuple[str, ...], 
         print("Dealer positioning refresh: no options-eligible symbols selected")
         return 0, False
 
+    effective_force = args.force_dealer_refresh if force_refresh is None else bool(force_refresh)
     session = SessionLocal()
     try:
-        current = set() if args.force_dealer_refresh else _current_dealer_symbols(session, requested, capture_date)
+        current = set() if effective_force else _current_dealer_symbols(session, requested, capture_date)
     finally:
         session.close()
-    refresh_symbols = requested if args.force_dealer_refresh else tuple(symbol for symbol in requested if symbol not in current)
+    refresh_symbols = requested if effective_force else tuple(symbol for symbol in requested if symbol not in current)
 
     if not refresh_symbols:
         print(
@@ -770,15 +923,51 @@ def _run_dealer_positioning(args: argparse.Namespace, symbols: tuple[str, ...], 
         positioning_policy,
         output_dir=Path(args.dealer_positioning_output_dir),
         write_reports=args.dealer_positioning_write_reports,
-    ).run(refresh_symbols, capture_date, continue_on_error=not args.dealer_positioning_fail_fast)
+    ).run(
+        refresh_symbols,
+        capture_date,
+        continue_on_error=not args.dealer_positioning_fail_fast,
+        max_workers=max(1, int(getattr(args, "dealer_positioning_max_workers", 4))),
+    )
     write_refresh_profile(positioning_profile, args.dealer_positioning_report)
     print(
         "Dealer positioning refresh: "
         f"{positioning_profile.refreshed_symbols} refreshed, "
         f"{positioning_profile.skipped_symbols} skipped, "
         f"{positioning_profile.failed_symbols} failed, "
-        f"{len(current)} reused"
+        f"{len(current)} reused, "
+        f"mode={positioning_profile.execution_mode}, "
+        f"workers={positioning_profile.worker_count}, "
+        f"preload={positioning_profile.preload_seconds:.2f}s, "
+        f"execution={positioning_profile.execution_seconds:.2f}s"
     )
+    if positioning_profile.timing_totals:
+        totals = positioning_profile.timing_totals
+        if positioning_profile.execution_mode == "PARALLEL_PURE_COMPUTE_SINGLE_BULK_WRITER":
+            print(
+                "Dealer timing profile: "
+                f"preload={positioning_profile.preload_seconds:.2f}s, "
+                f"compute_wall={positioning_profile.compute_seconds:.2f}s, "
+                f"compute_worker={totals.get('compute_worker_seconds', 0.0):.2f}s, "
+                f"persistence={positioning_profile.persistence_seconds:.2f}s "
+                f"(delete={totals.get('bulk_delete_seconds', 0.0):.2f}s, "
+                f"prepare={totals.get('bulk_prepare_seconds', 0.0):.2f}s, "
+                f"insert={totals.get('bulk_insert_seconds', 0.0):.2f}s, "
+                f"commit={totals.get('bulk_commit_seconds', 0.0):.2f}s), "
+                f"reports={positioning_profile.report_seconds:.2f}s"
+            )
+        else:
+            print(
+                "Dealer timing profile (aggregate worker-seconds): "
+                f"input={totals.get('input_seconds', 0.0):.2f}s, "
+                f"compute={totals.get('compute_seconds', 0.0):.2f}s, "
+                f"persistence={totals.get('persistence_seconds', 0.0):.2f}s "
+                f"(merge={totals.get('persistence_merge_seconds', 0.0):.2f}s, "
+                f"delete={totals.get('persistence_delete_seconds', 0.0):.2f}s, "
+                f"prepare={totals.get('persistence_prepare_seconds', 0.0):.2f}s, "
+                f"commit={totals.get('persistence_commit_seconds', 0.0):.2f}s), "
+                f"reports={totals.get('report_seconds', 0.0):.2f}s"
+            )
     failed = positioning_profile.failed_symbols if args.dealer_positioning_fail_fast else 0
     return failed, positioning_profile.refreshed_symbols > 0
 
@@ -1064,13 +1253,28 @@ def main(argv=None) -> int:
                     minimum_volume=args.options_minimum_volume,
                     maximum_strike_distance_pct=args.options_maximum_strike_distance_pct,
                     requests_per_second=args.polygon_requests_per_second,
+                    network_workers=max(1, int(getattr(args, "polygon_network_workers", 4))),
                 ),
                 symbol_resolver=lambda symbol: snapshot_tickers[symbol.strip().upper()],
             )
+            cycle_started = perf_counter()
+            building = _begin_fresh_option_lineage(
+                symbols=options_symbols,
+                capture_date=capture_date,
+                snapshot_id=cycle_id,
+                snapshot_timestamp=datetime.now(timezone.utc),
+            )
+            capture_started = perf_counter()
             with _exclusive_file_lock(args.options_lock_file):
                 session = SessionLocal()
                 try:
-                    profile = OptionHistoryIngestionService(session, provider, manifest_store=manifest).run(
+                    profile = OptionHistoryIngestionService(
+                        session,
+                        provider,
+                        manifest_store=manifest,
+                        governed_snapshot_run_id=int(building["run_id"]),
+                        governed_snapshot_timestamp=building["snapshot_timestamp"],
+                    ).run(
                         symbols=options_symbols,
                         batch_size=args.options_batch_size,
                         resume=True,
@@ -1079,14 +1283,46 @@ def main(argv=None) -> int:
                     )
                 finally:
                     session.close()
+            capture_seconds = perf_counter() - capture_started
             lineage_result: dict[str, object] | None = None
-            if profile.failed_batches == 0 and profile.valid_records > 0:
-                lineage_result = _publish_fresh_option_lineage(
+            performance: dict[str, object] = {"capture_seconds": round(capture_seconds, 4)}
+            if profile.failed_batches == 0:
+                finalize_started = perf_counter()
+                lineage_result = _finalize_fresh_option_lineage(
                     symbols=options_symbols,
                     capture_date=capture_date,
                     snapshot_id=cycle_id,
                     snapshot_timestamp=datetime.fromisoformat(profile.completed_at),
                 )
+                performance["snapshot_finalize_seconds"] = round(perf_counter() - finalize_started, 4)
+                derived = _run_fresh_option_derived_lanes(
+                    args, snapshot_id=cycle_id, capture_date=capture_date, symbols=options_symbols
+                )
+                volatility = dict(derived["volatility"])
+                liquidity = dict(derived["liquidity"])
+                dealer_refreshed = bool(derived["dealer_refreshed"])
+                failed += int(derived["dealer_failed"] or 0)
+                lineage_result.update({
+                    "option_rows": int(lineage_result.get("rows_written", 0) or 0),
+                    "volatility_rows": int(volatility.get("rows_written", 0) or 0),
+                    "liquidity_rows": int(liquidity.get("rows_written", 0) or 0),
+                })
+                performance.update({
+                    "derived_parallel_wall_seconds": derived["wall_seconds"],
+                    "volatility_seconds": volatility.get("duration_seconds", 0),
+                    "liquidity_seconds": liquidity.get("duration_seconds", 0),
+                    "dealer_seconds": derived["dealer_seconds"],
+                    "dealer_workers": max(1, int(getattr(args, "dealer_positioning_max_workers", 4))),
+                })
+                options_refreshed = True
+                print(
+                    "Governed option lineage: "
+                    f"snapshot={lineage_result['snapshot_id']}, timestamp={lineage_result['snapshot_timestamp']}, "
+                    f"contracts={lineage_result['option_rows']}, volatility={lineage_result['volatility_rows']}, "
+                    f"liquidity={lineage_result['liquidity_rows']}, completeness={lineage_result['completeness_score']}, "
+                    f"stale_daily_rows_pruned={lineage_result.get('stale_daily_rows_pruned', 0)}"
+                )
+            performance["domain_cycle_seconds"] = round(perf_counter() - cycle_started, 4)
             manifest.complete_cycle(
                 cycle_id,
                 metadata={
@@ -1100,11 +1336,12 @@ def main(argv=None) -> int:
                     "governed_option_rows": (lineage_result or {}).get("option_rows", 0),
                     "governed_volatility_rows": (lineage_result or {}).get("volatility_rows", 0),
                     "governed_liquidity_rows": (lineage_result or {}).get("liquidity_rows", 0),
+                    "stale_daily_rows_pruned": (lineage_result or {}).get("stale_daily_rows_pruned", 0),
+                    "performance": performance,
                 },
             )
             write_ingestion_profile_json(profile, args.options_report)
             failed += profile.failed_batches
-            options_refreshed = profile.failed_batches == 0 and lineage_result is not None
             print(
                 f"Options snapshot mode: {mode}; cycle={cycle_id}; "
                 f"capture_window={profile.started_at}..{profile.completed_at}"
@@ -1114,14 +1351,13 @@ def main(argv=None) -> int:
                 f"{profile.inserted_records} persisted/upserted, "
                 f"{profile.failed_batches} failed batches, {profile.resumed_batches} resumed batches"
             )
+            print(
+                "Options performance: "
+                + ", ".join(f"{key}={value}" for key, value in performance.items())
+            )
 
-        if not args.skip_dealer_positioning:
-            # A fresh Polygon snapshot always invalidates same-date dealer analytics.
-            original_force_dealer = args.force_dealer_refresh
-            if options_refreshed:
-                args.force_dealer_refresh = True
+        if args.reuse_options_snapshot and not args.skip_dealer_positioning:
             dealer_failed, dealer_refreshed = _run_dealer_positioning(args, options_symbols, capture_date)
-            args.force_dealer_refresh = original_force_dealer
             failed += dealer_failed
 
     if args.data_scope == "underlying" and args.force_dealer_refresh and not args.skip_dealer_positioning:

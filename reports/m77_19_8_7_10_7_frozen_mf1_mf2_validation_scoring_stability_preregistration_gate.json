@@ -1,0 +1,93 @@
+{
+  "MF1_config_source": "MF1_DEVELOPMENT_REPORT",
+  "MF2_config_source": "VALIDATION_SCOPE_AUTHORITY",
+  "advancement_gate_sha256": "5488e2e16e408e8a48a4e3ae87ccbd6322915b2ed15df8ad119623c707b34d4f",
+  "authorized_validation_scope": {
+    "MF1_REGULARIZED_LOGISTIC_DIRECTION": [
+      5,
+      10,
+      20
+    ],
+    "MF2_MONOTONIC_GAM_DIRECTION": [
+      5,
+      10,
+      20
+    ]
+  },
+  "final_holdout_open_authorized": false,
+  "final_holdout_opened": false,
+  "frozen_MF1_selected_configs": {
+    "10": {
+      "C": 1.0
+    },
+    "20": {
+      "C": 0.1
+    },
+    "5": {
+      "C": 10.0
+    }
+  },
+  "frozen_MF2_selected_configs": {
+    "10": {
+      "l2_penalty": 0.1,
+      "spline_knots": 4
+    },
+    "20": {
+      "l2_penalty": 0.1,
+      "spline_knots": 4
+    },
+    "5": {
+      "l2_penalty": 0.1,
+      "spline_knots": 4
+    }
+  },
+  "mf1_development_sha256": "1f60cc5923847a3787793795b25b4d17305daa7a8c7cb650c475738e11622b48",
+  "mf2_development_sha256": "dd51082d1c55586064eec91836c399da40295b3959554f8559ced2226788d2aa",
+  "model_family_champion_selected": false,
+  "model_family_champion_selection_authorized": false,
+  "next_step": "BUILD_M77_19_8_7_10_7_1_FROZEN_MF1_MF2_VALIDATION_SCORING_EXECUTION_WITH_DEVELOPMENT_PREPROCESSOR_REUSE",
+  "production_authority_effect": false,
+  "status": "READY",
+  "validation_feature_selection_search_authorized": false,
+  "validation_model_refit_authorized": false,
+  "validation_model_retuning_authorized": false,
+  "validation_preprocessor_fit_authorized": false,
+  "validation_scope_authority_sha256": "fe7efc8e222acd3aa306995da314b395ff3cf6ae7ab0acbebc51f1ba4bf143c0",
+  "validation_scoring_authorized": true,
+  "validation_scoring_performed": false,
+  "validation_target_authority_sha256": "f860dc26636a7bf70ffb02a6c313a72b4cce011ea572699c7c651e59ebe54550",
+  "validation_target_horizon_summary": [
+    {
+      "DOWN": 65503,
+      "UP": 74681,
+      "ZERO": 246,
+      "horizon": 5,
+      "matured": 140430,
+      "partition_overlap_purged": 1137,
+      "source_session_missing": 0,
+      "symbol_target_session_missing": 0
+    },
+    {
+      "DOWN": 63210,
+      "UP": 76440,
+      "ZERO": 212,
+      "horizon": 10,
+      "matured": 139862,
+      "partition_overlap_purged": 1705,
+      "source_session_missing": 0,
+      "symbol_target_session_missing": 0
+    },
+    {
+      "DOWN": 61825,
+      "UP": 76780,
+      "ZERO": 121,
+      "horizon": 20,
+      "matured": 138726,
+      "partition_overlap_purged": 2841,
+      "source_session_missing": 0,
+      "symbol_target_session_missing": 0
+    }
+  ],
+  "validation_threshold_search_authorized": false,
+  "version": "M77.19.8.7.10.7-FROZEN-MF1-MF2-VALIDATION-SCORING-STABILITY-PREREGISTRATION-GATE-1.0"
+}

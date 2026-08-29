@@ -1,0 +1,25 @@
+{
+  "version": "M77.19.5-ORIGINAL-601-SYMBOL-LONG-HISTORY-SOURCE-AUTHORITY-1.0",
+  "provider": "POLYGON",
+  "api_key_env": "POLYGON_API_KEY",
+  "requested_start": "2003-09-10",
+  "requested_end": "2026-08-21",
+  "storage_root": "research_data/m77_19_5/original_cohort_long_history",
+  "cohort_semantics": "FROZEN_2022_2026_COHORT_RETROSPECTIVELY_EXTENDED_BACKWARD",
+  "important_limitation": "Not a point-in-time historical constituent universe; survivorship and listing-age selection are explicit.",
+  "workers": 4,
+  "certification": {
+    "cohort_min": 590,
+    "cohort_max": 610,
+    "success_pct": 95.0,
+    "starts_by_2004": 150,
+    "aggregate_symbol_years": 5000.0,
+    "median_rows": 2500
+  },
+  "governance": {
+    "database_read_only": true,
+    "database_writes": false,
+    "production_price_history_writes": false,
+    "production_authority_effect": false
+  }
+}

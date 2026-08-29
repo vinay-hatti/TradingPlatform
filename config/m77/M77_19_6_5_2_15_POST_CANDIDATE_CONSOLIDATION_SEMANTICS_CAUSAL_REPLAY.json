@@ -1,0 +1,28 @@
+{
+  "milestone": "M77.19.6.5.2.15",
+  "name": "Post-Candidate Consolidation Semantics Causal Replay",
+  "authority_report_5214_sha256": "3cced0fca689833455e548e9f5f66fe54bcad5bd9b53f470af62f7c4f7ca275b",
+  "authority_runner_5214_sha256": "2fc32620d3e05927f7a85ada94c4364b47b49df32c63acbe432e8556e40132dd",
+  "preconsolidation_target_authority": 3,
+  "predeclared_arms": [
+    "NATIVE_CONTROL",
+    "NO_TOP12_BASELINE",
+    "NO_TOP12_KEEP_SEED_PRICE",
+    "NO_TOP12_NEAREST_MATCH",
+    "NO_TOP12_FIXED_SEED_MEMBERSHIP"
+  ],
+  "candidate_generation": {
+    "pivot_radius": 2,
+    "rolling_windows": [
+      20,
+      50,
+      100
+    ]
+  },
+  "native_internal_atr_merge_multiplier": 0.35,
+  "native_level_reachability_threshold": 0.003,
+  "database_mode": "READ_ONLY_SPY_SESSION_CALENDAR_ONLY",
+  "parity_tolerance": 1e-09,
+  "production_authority_effect": false,
+  "full_23_year_reconstruction_authorized": false
+}

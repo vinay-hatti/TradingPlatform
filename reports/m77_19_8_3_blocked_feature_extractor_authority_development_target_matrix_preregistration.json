@@ -1,0 +1,172 @@
+{
+  "blocked_feature_extractor_count": 10,
+  "development_matrix_authority": {
+    "development_end": "2017-12-31",
+    "row_count": 303689,
+    "symbol_count": 524
+  },
+  "extractors": [
+    {
+      "feature_id": "F012",
+      "future_access": false,
+      "name": "timeframe_states_payload",
+      "semantics": "Expose only explicitly enumerated scalar numeric/enum leaf fields after schema census; no whole-payload embedding.",
+      "source_authority": "profile.timeframe_states",
+      "status": "FIELD_LEVEL_FLATTENING_PREREGISTERED"
+    },
+    {
+      "feature_id": "F020",
+      "future_access": false,
+      "name": "atr_1d",
+      "semantics": "Read the native 1d ATR field only; no ATR recomputation from future or external data.",
+      "source_authority": "profile.timeframe_states['1d'] native ATR scalar if present",
+      "status": "EXTRACTOR_PREREGISTERED"
+    },
+    {
+      "feature_id": "F021",
+      "future_access": false,
+      "name": "atr_normalized",
+      "semantics": "ATR/reference_price using values available at the replay as_of only.",
+      "source_authority": "same-as-of F020 divided by same-as-of reference close",
+      "status": "EXTRACTOR_PREREGISTERED"
+    },
+    {
+      "feature_id": "F030",
+      "future_access": false,
+      "name": "nearest_support_distance_pct",
+      "semantics": "Nearest support by absolute price distance; signed as (support-reference)/reference.",
+      "source_authority": "profile.support_levels + same-as-of reference close",
+      "status": "EXTRACTOR_PREREGISTERED"
+    },
+    {
+      "feature_id": "F031",
+      "future_access": false,
+      "name": "nearest_resistance_distance_pct",
+      "semantics": "Nearest resistance by absolute price distance; signed as (resistance-reference)/reference.",
+      "source_authority": "profile.resistance_levels + same-as-of reference close",
+      "status": "EXTRACTOR_PREREGISTERED"
+    },
+    {
+      "feature_id": "F051",
+      "future_access": false,
+      "name": "institutional_volume_state",
+      "semantics": "Schema census then scalar field whitelist only; no free-form/opaque payload encoding.",
+      "source_authority": "profile.institutional_volume",
+      "status": "FIELD_LEVEL_FLATTENING_PREREGISTERED"
+    },
+    {
+      "feature_id": "F070",
+      "future_access": false,
+      "name": "relative_strength_vs_spy_proxy",
+      "semantics": "Two scalar features later: trailing 13w and 26w symbol return minus SPY return, using only sessions <= as_of.",
+      "source_authority": "frozen symbol daily prefix + frozen SPY daily prefix",
+      "status": "EXTRACTOR_PREREGISTERED"
+    },
+    {
+      "feature_id": "F071",
+      "future_access": false,
+      "name": "relative_strength_vs_sector",
+      "semantics": "Must remain unavailable until historical point-in-time sector membership and benchmark authority is certified.",
+      "source_authority": "none yet",
+      "status": "BLOCKED_PENDING_PIT_SECTOR_AUTHORITY"
+    },
+    {
+      "feature_id": "F080",
+      "future_access": false,
+      "name": "symbol_drawdown_from_52w_peak",
+      "semantics": "close_asof/max(close over prior 252 available sessions inclusive)-1.",
+      "source_authority": "frozen symbol daily prefix",
+      "status": "EXTRACTOR_PREREGISTERED"
+    },
+    {
+      "feature_id": "F081",
+      "future_access": false,
+      "name": "distance_from_52w_low",
+      "semantics": "close_asof/min(close over prior 252 available sessions inclusive)-1.",
+      "source_authority": "frozen symbol daily prefix",
+      "status": "EXTRACTOR_PREREGISTERED"
+    }
+  ],
+  "feature_authority_sha256": "57acdcdd1784c5c067a4754a36f427bb529cb2ed17c691d1622809500c89ce6e",
+  "matrix_authority_sha256": "f7892e39183965fe4391008e61356e70f08795cac64ca4af13b1a624c27121a2",
+  "next_step": "BUILD_M77_19_8_4_BLOCKED_FEATURE_SCHEMA_CENSUS_AND_DEVELOPMENT_FEATURE_BACKFILL_AUTHORITY",
+  "production_governance": {
+    "production_authority_effect": false,
+    "production_model_change_authorized": false
+  },
+  "research_governance": {
+    "development_target_scoring_performed": false,
+    "feature_backfill_performed": false,
+    "feature_selection_performed": false,
+    "final_holdout_data_opened": false,
+    "imputation_fit": false,
+    "model_scoring_performed": false,
+    "model_training_performed": false,
+    "outcome_or_target_file_opened": false,
+    "standardization_fit": false,
+    "target_matrix_materialized": false,
+    "validation_data_opened": false
+  },
+  "schema_census_requirements": {
+    "institutional_volume_schema_census_required_before_F051_materialization": true,
+    "opaque_payload_embedding_prohibited": true,
+    "timeframe_states_schema_census_required_before_F012_materialization": true,
+    "unregistered_nested_fields_prohibited": true
+  },
+  "sector_relative_strength_state": "BLOCKED_PENDING_PIT_SECTOR_AUTHORITY",
+  "status": "READY",
+  "target_preregistration": {
+    "feature_partition": "DEVELOPMENT_ONLY",
+    "forward_sessions_must_follow_frozen_SPY_session_calendar": true,
+    "future_data_authorized_for_features": false,
+    "future_data_authorized_for_target_labeling_only": true,
+    "horizons": [
+      5,
+      10,
+      20
+    ],
+    "join_key": [
+      "symbol",
+      "as_of"
+    ],
+    "target_maturity_required": true,
+    "target_partition": "DEVELOPMENT_ONLY",
+    "target_rows_without_full_horizon_are_not_matured": true,
+    "targets": [
+      {
+        "formula": "symbol_close[t+h]/symbol_close[t]-1",
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "name": "absolute_forward_return",
+        "partition": "DEVELOPMENT_ONLY",
+        "target_id": "T_ABS_RET"
+      },
+      {
+        "formula": "symbol_forward_return - SPY_forward_return over same session horizon",
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "name": "market_relative_forward_return",
+        "partition": "DEVELOPMENT_ONLY",
+        "target_id": "T_REL_SPY_RET"
+      },
+      {
+        "formula": "UP if absolute_forward_return>0; DOWN if <0; ZERO if ==0",
+        "horizons": [
+          5,
+          10,
+          20
+        ],
+        "name": "direction_label",
+        "partition": "DEVELOPMENT_ONLY",
+        "target_id": "T_DIRECTION"
+      }
+    ]
+  },
+  "version": "M77.19.8.3-BLOCKED-FEATURE-EXTRACTOR-AUTHORITY-DEVELOPMENT-TARGET-MATRIX-PREREGISTRATION-1.0"
+}

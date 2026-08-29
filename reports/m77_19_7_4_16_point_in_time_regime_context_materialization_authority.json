@@ -1,0 +1,58 @@
+{
+  "continuous_observables": [
+    "breadth_bullish_fraction",
+    "breadth_bearish_fraction",
+    "breadth_neutral_fraction",
+    "breakdown_setup_fraction",
+    "breakdown_confirmed_fraction",
+    "capitulation_fraction",
+    "spy_return_4w",
+    "spy_return_13w",
+    "spy_return_26w",
+    "spy_realized_vol_13w_annualized",
+    "spy_realized_vol_26w_annualized",
+    "spy_drawdown_from_52w_peak",
+    "spy_direction",
+    "spy_confidence",
+    "spy_overall_score",
+    "spy_breakout_state",
+    "spy_participation_state"
+  ],
+  "development_context_row_count": 685,
+  "final_holdout_protection": {
+    "candidate_scoring_performed": false,
+    "context_rows_materialized": 0,
+    "diagnostic_regime_peeking_performed": false,
+    "profile_rows_seen_and_skipped": 111027,
+    "spy_outcome_rows_seen_and_skipped": 190,
+    "start": "2023-01-01"
+  },
+  "first_context_as_of": "2004-11-19",
+  "governance": {
+    "automatic_bearish_signal_inversion": false,
+    "classifier_training": false,
+    "new_candidate_scored": false,
+    "parameter_fitting": false,
+    "production_authority_effect": false,
+    "production_model_change_authorized": false,
+    "threshold_search_or_optimization": false
+  },
+  "last_context_as_of": "2022-12-30",
+  "materialization_contract": {
+    "candidate_outcomes_used_to_define_regime": false,
+    "cross_section_from_same_as_of_native_profiles_only": true,
+    "future_returns_used_to_define_regime": false,
+    "regime_categories_materialized": false,
+    "regime_combinations_searched": false,
+    "regime_thresholds_fitted": false,
+    "same_as_of_spy_base_close_used": true
+  },
+  "materialized_context_row_count": 946,
+  "next_step": "BUILD_M77_19_7_4_17_REGIME_THRESHOLD_AND_COMBINATION_PREREGISTRATION_AUTHORITY",
+  "outcome_authority_sha256": "d8c8ea6fd2a6412d3b2898f87fa1e3f19ba6968b112eb100998c81ac2bb07775",
+  "replay_authority_sha256": "0d2e684363e51ddf4de4df81d0978e03c5c5c0a6d5604f77b438494dd36c87b3",
+  "research_authority_sha256": "e05bdc7e0055d1916a1c2adff898f302b214a6b2d5472ca2b3ba8597420ee2ec",
+  "status": "READY",
+  "validation_context_row_count": 261,
+  "version": "M77.19.7.4.16-PIT-REGIME-CONTEXT-MATERIALIZATION-AUTHORITY-1.0"
+}

@@ -1,0 +1,413 @@
+{
+  "certified_adapter_dev_end_reference_lines": [
+    28,
+    166,
+    203,
+    281,
+    336
+  ],
+  "certified_adapter_development_literals": [
+    {
+      "lineno": 2,
+      "value": "\nM77.19.8.2 \u2014 Development-Only Feature Matrix Materialization & Schema Validation\n\nMaterializes the first Prospective Edge Intelligence feature matrix using ONLY\npoint-in-time replay rows whose as_of <= 2017-12-31.\n\nImportant:\n- no Validation rows are materialized;\n- no Final Holdout rows are materialized;\n- no outcome/target data is read;\n- no model is trained or scored;\n- all 27 frozen feature IDs are represented;\n- features that require an unbuilt extractor/authority remain NULL with explicit\n  missingness rather than being approximated;\n- structured payloads are not flattened opportunistically.\n"
+    },
+    {
+      "lineno": 25,
+      "value": "M77.19.8.2-DEVELOPMENT-ONLY-FEATURE-MATRIX-MATERIALIZATION-SCHEMA-VALIDATION-1.0"
+    },
+    {
+      "lineno": 281,
+      "value": "development_end"
+    },
+    {
+      "lineno": 322,
+      "value": "BUILD_M77_19_8_3_BLOCKED_FEATURE_EXTRACTOR_AUTHORITY_AND_DEVELOPMENT_TARGET_MATRIX_PREREGISTRATION"
+    },
+    {
+      "lineno": 334,
+      "value": "=== M77.19.8.2 DEVELOPMENT-ONLY FEATURE MATRIX MATERIALIZATION & SCHEMA VALIDATION ==="
+    },
+    {
+      "lineno": 336,
+      "value": "development_end:"
+    },
+    {
+      "lineno": 352,
+      "value": "next_step: BUILD_M77_19_8_3_BLOCKED_FEATURE_EXTRACTOR_AUTHORITY_AND_DEVELOPMENT_TARGET_MATRIX_PREREGISTRATION"
+    },
+    {
+      "lineno": 130,
+      "value": "research_data/m77_19_8_2/development_only_feature_matrix"
+    },
+    {
+      "lineno": 131,
+      "value": "reports/m77_19_8_2_development_only_feature_matrix_materialization_schema_validation.json"
+    },
+    {
+      "lineno": 290,
+      "value": "development_only"
+    },
+    {
+      "lineno": 309,
+      "value": "development_feature_matrix_materialized"
+    },
+    {
+      "lineno": 166,
+      "value": "DEVELOPMENT"
+    }
+  ],
+  "certified_adapter_script_sha256": "160f415f44f6189a41a1855fa0238b624bb974e893f201de194f2da071935abc",
+  "failed_adapter_last_as_of": "2017-12-29",
+  "failed_adapter_total_row_count": 303689,
+  "failed_validation_only_row_count": 0,
+  "feature_formula_change_authorized": false,
+  "feature_matrix_mutated": false,
+  "final_holdout_opened": false,
+  "next_step": "REVIEW_M77_19_8_7_10_5_2_3_1_EXACT_PARTITION_GATE_EVIDENCE_BEFORE_PARAMETERIZATION",
+  "partition_signal_assignments": [
+    {
+      "end_lineno": 25,
+      "lineno": 25,
+      "source": "VERSION=\"M77.19.8.2-DEVELOPMENT-ONLY-FEATURE-MATRIX-MATERIALIZATION-SCHEMA-VALIDATION-1.0\"",
+      "targets": [
+        "VERSION"
+      ]
+    },
+    {
+      "end_lineno": 28,
+      "lineno": 28,
+      "source": "DEV_END=\"2017-12-31\"",
+      "targets": [
+        "DEV_END"
+      ]
+    },
+    {
+      "end_lineno": 29,
+      "lineno": 29,
+      "source": "VALIDATION_START=\"2018-01-01\"",
+      "targets": [
+        "VALIDATION_START"
+      ]
+    },
+    {
+      "end_lineno": 158,
+      "lineno": 158,
+      "source": "validation_context_rows_seen_and_skipped=0",
+      "targets": [
+        "validation_context_rows_seen_and_skipped"
+      ]
+    },
+    {
+      "end_lineno": 181,
+      "lineno": 181,
+      "source": "validation_replay_rows_seen_and_skipped=0",
+      "targets": [
+        "validation_replay_rows_seen_and_skipped"
+      ]
+    },
+    {
+      "end_lineno": 320,
+      "lineno": 272,
+      "source": "report={\n        \"version\":VERSION,\n        \"status\":\"READY\",\n        \"feature_authority_sha256\":sha256_file(fp),\n        \"replay_authority_sha256\":EXPECTED_REPLAY_SHA,\n        \"context_csv_sha256\":sha256_file(cp),\n        \"development_end\":DEV_END,\n        \"feature_count\":len(feature_ids),\n        \"direct_materializable_feature_count\":len(DIRECT_FEATURES),\n        \"authority_blocked_feature_count\":len(AUTHORITY_BLOCKED_FEATURES),\n        \"materialized_symbol_count\":len(symbol_summaries),\n        \"materialized_row_count\":total_rows,\n        \"symbols\":symbol_summaries,\n        \"schema_summary\":schema_rows,\n        \"scope_protection\":{\n            \"development_only\":True,\n            \"outcome_or_target_data_read\":False,\n            \"validation_context_rows_seen_and_skipped\":validation_context_rows_seen_and_skipped,\n            \"validation_replay_rows_seen_and_skipped\":validation_replay_rows_seen_and_skipped,\n            \"final_holdout_context_rows_seen\":final_holdout_context_rows_seen,\n            \"final_holdout_replay_rows_seen_and_skipped\":final_holdout_replay_rows_seen_and_skipped,\n            \"validation_matrix_materialized\":False,\n            \"final_holdout_matrix_materialized\":False,\n        },\n        \"schema_governance\":{\n            \"all_27_feature_ids_represented\":True,\n            \"blocked_features_approximated\":False,\n            \"structured_payloads_flattened_opportunistically\":False,\n            \"missingness_explicit_per_feature_per_row\":True,\n            \"symbol_identity_in_feature_values\":False,\n            \"closed_hypothesis_identity_in_feature_values\":False,\n            \"future_information_in_feature_values\":False,\n        },\n        \"execution_state\":{\n            \"development_feature_matrix_materialized\":True,\n            \"training_targets_materialized\":False,\n            \"standardization_parameters_fit\":False,\n            \"categorical_vocabulary_fit\":False,\n            \"imputation_parameters_fit\":False,\n            \"feature_selection_performed\":False,\n            \"models_trained\":False,\n            \"models_scored\":False,\n            \"validation_opened_for_model_scoring\":False,\n            \"final_holdout_opened\":False,\n            \"production_model_change_authorized\":False,\n            \"production_authority_effect\":False,\n        },\n        \"next_step\":\"BUILD_M77_19_8_3_BLOCKED_FEATURE_EXTRACTOR_AUTHORITY_AND_DEVELOPMENT_TARGET_MATRIX_PREREGISTRATION\",\n    }",
+      "targets": [
+        "report"
+      ]
+    },
+    {
+      "end_lineno": 162,
+      "lineno": 162,
+      "source": "as_of=str(r[\"as_of\"])[:10]",
+      "targets": [
+        "as_of"
+      ]
+    },
+    {
+      "end_lineno": 192,
+      "lineno": 192,
+      "source": "as_of=str(row.get(\"as_of\") or \"\")[:10]",
+      "targets": [
+        "as_of"
+      ]
+    },
+    {
+      "end_lineno": 215,
+      "lineno": 215,
+      "source": "ctx=context.get(as_of) or {}",
+      "targets": [
+        "ctx"
+      ]
+    },
+    {
+      "end_lineno": 164,
+      "lineno": 164,
+      "source": "context[as_of]=r",
+      "targets": []
+    }
+  ],
+  "partition_signal_calls": [
+    {
+      "callee": "ap.add_argument",
+      "lineno": 129,
+      "source": "ap.add_argument(\"--output-root\",default=\"research_data/m77_19_8_2/development_only_feature_matrix\")"
+    },
+    {
+      "callee": "ap.add_argument",
+      "lineno": 130,
+      "source": "ap.add_argument(\"--output-json\",default=\"reports/m77_19_8_2_development_only_feature_matrix_materialization_schema_validation.json\")"
+    },
+    {
+      "callee": "print",
+      "lineno": 331,
+      "source": "print(\"=== M77.19.8.2 DEVELOPMENT-ONLY FEATURE MATRIX MATERIALIZATION & SCHEMA VALIDATION ===\")"
+    },
+    {
+      "callee": "print",
+      "lineno": 333,
+      "source": "print(\"development_end:\",DEV_END)"
+    },
+    {
+      "callee": "print",
+      "lineno": 340,
+      "source": "print(\"validation_context_rows_seen_and_skipped:\",validation_context_rows_seen_and_skipped)"
+    },
+    {
+      "callee": "print",
+      "lineno": 341,
+      "source": "print(\"validation_replay_rows_seen_and_skipped:\",validation_replay_rows_seen_and_skipped)"
+    },
+    {
+      "callee": "print",
+      "lineno": 343,
+      "source": "print(\"validation_matrix_materialized: False\")"
+    },
+    {
+      "callee": "print",
+      "lineno": 349,
+      "source": "print(\"next_step: BUILD_M77_19_8_3_BLOCKED_FEATURE_EXTRACTOR_AUTHORITY_AND_DEVELOPMENT_TARGET_MATRIX_PREREGISTRATION\")"
+    },
+    {
+      "callee": "materialized.append",
+      "lineno": 236,
+      "source": "materialized.append({\n                \"symbol\":symbol,\n                \"as_of\":as_of,\n                \"cadence\":\"WEEKLY\",\n                \"source_semantic_hash\":row.get(\"semantic_hash\"),\n                \"feature_values\":values,\n                \"feature_missing\":missing,\n                \"feature_missing_reason\":reasons,\n            })"
+    },
+    {
+      "callee": "MatrixError",
+      "lineno": 207,
+      "source": "MatrixError(f\"{symbol} {as_of}: REPLAYED row missing full profile\")"
+    },
+    {
+      "callee": "context.get",
+      "lineno": 215,
+      "source": "context.get(as_of)"
+    }
+  ],
+  "partition_signal_constants": [
+    {
+      "lineno": 2,
+      "value": "\nM77.19.8.2 \u2014 Development-Only Feature Matrix Materialization & Schema Validation\n\nMaterializes the first Prospective Edge Intelligence feature matrix using ONLY\npoint-in-time replay rows whose as_of <= 2017-12-31.\n\nImportant:\n- no Validation rows are materialized;\n- no Final Holdout rows are materialized;\n- no outcome/target data is read;\n- no model is trained or scored;\n- all 27 frozen feature IDs are represented;\n- features that require an unbuilt extractor/authority remain NULL with explicit\n  missingness rather than being approximated;\n- structured payloads are not flattened opportunistically.\n"
+    },
+    {
+      "lineno": 25,
+      "value": "M77.19.8.2-DEVELOPMENT-ONLY-FEATURE-MATRIX-MATERIALIZATION-SCHEMA-VALIDATION-1.0"
+    },
+    {
+      "lineno": 28,
+      "value": "2017-12-31"
+    },
+    {
+      "lineno": 29,
+      "value": "2018-01-01"
+    },
+    {
+      "lineno": 278,
+      "value": "development_end"
+    },
+    {
+      "lineno": 319,
+      "value": "BUILD_M77_19_8_3_BLOCKED_FEATURE_EXTRACTOR_AUTHORITY_AND_DEVELOPMENT_TARGET_MATRIX_PREREGISTRATION"
+    },
+    {
+      "lineno": 331,
+      "value": "=== M77.19.8.2 DEVELOPMENT-ONLY FEATURE MATRIX MATERIALIZATION & SCHEMA VALIDATION ==="
+    },
+    {
+      "lineno": 333,
+      "value": "development_end:"
+    },
+    {
+      "lineno": 340,
+      "value": "validation_context_rows_seen_and_skipped:"
+    },
+    {
+      "lineno": 341,
+      "value": "validation_replay_rows_seen_and_skipped:"
+    },
+    {
+      "lineno": 343,
+      "value": "validation_matrix_materialized: False"
+    },
+    {
+      "lineno": 349,
+      "value": "next_step: BUILD_M77_19_8_3_BLOCKED_FEATURE_EXTRACTOR_AUTHORITY_AND_DEVELOPMENT_TARGET_MATRIX_PREREGISTRATION"
+    },
+    {
+      "lineno": 129,
+      "value": "research_data/m77_19_8_2/development_only_feature_matrix"
+    },
+    {
+      "lineno": 130,
+      "value": "reports/m77_19_8_2_development_only_feature_matrix_materialization_schema_validation.json"
+    },
+    {
+      "lineno": 287,
+      "value": "development_only"
+    },
+    {
+      "lineno": 289,
+      "value": "validation_context_rows_seen_and_skipped"
+    },
+    {
+      "lineno": 290,
+      "value": "validation_replay_rows_seen_and_skipped"
+    },
+    {
+      "lineno": 293,
+      "value": "validation_matrix_materialized"
+    },
+    {
+      "lineno": 306,
+      "value": "development_feature_matrix_materialized"
+    },
+    {
+      "lineno": 314,
+      "value": "validation_opened_for_model_scoring"
+    },
+    {
+      "lineno": 163,
+      "value": "DEVELOPMENT"
+    }
+  ],
+  "partition_signal_gates": [
+    {
+      "end_lineno": 168,
+      "kind": "If",
+      "lineno": 163,
+      "source": "if as_of<=DEV_END and r.get(\"partition\")==\"DEVELOPMENT\":\n                context[as_of]=r\n            elif VALIDATION_START<=as_of<FINAL_HOLDOUT_START:\n                validation_context_rows_seen_and_skipped+=1\n            elif as_of>=FINAL_HOLDOUT_START:\n                final_holdout_context_rows_seen+=1",
+      "test_source": "as_of<=DEV_END and r.get(\"partition\")==\"DEVELOPMENT\""
+    },
+    {
+      "end_lineno": 196,
+      "kind": "If",
+      "lineno": 194,
+      "source": "if as_of>=FINAL_HOLDOUT_START:\n                final_holdout_replay_rows_seen_and_skipped+=1\n                continue",
+      "test_source": "as_of>=FINAL_HOLDOUT_START"
+    },
+    {
+      "end_lineno": 199,
+      "kind": "If",
+      "lineno": 197,
+      "source": "if VALIDATION_START<=as_of<FINAL_HOLDOUT_START:\n                validation_replay_rows_seen_and_skipped+=1\n                continue",
+      "test_source": "VALIDATION_START<=as_of<FINAL_HOLDOUT_START"
+    },
+    {
+      "end_lineno": 201,
+      "kind": "If",
+      "lineno": 200,
+      "source": "if not as_of or as_of>DEV_END:\n                continue",
+      "test_source": "not as_of or as_of>DEV_END"
+    },
+    {
+      "end_lineno": 168,
+      "kind": "If",
+      "lineno": 165,
+      "source": "elif VALIDATION_START<=as_of<FINAL_HOLDOUT_START:\n                validation_context_rows_seen_and_skipped+=1\n            elif as_of>=FINAL_HOLDOUT_START:\n                final_holdout_context_rows_seen+=1",
+      "test_source": "VALIDATION_START<=as_of<FINAL_HOLDOUT_START"
+    },
+    {
+      "end_lineno": 168,
+      "kind": "If",
+      "lineno": 167,
+      "source": "elif as_of>=FINAL_HOLDOUT_START:\n                final_holdout_context_rows_seen+=1",
+      "test_source": "as_of>=FINAL_HOLDOUT_START"
+    }
+  ],
+  "production_authority_effect": false,
+  "ranked_likely_partition_gates": [
+    {
+      "end_lineno": 168,
+      "forensic_score": 15,
+      "kind": "If",
+      "lineno": 163,
+      "reasons": [
+        "REFERENCES_DEVELOPMENT_LITERAL_OR_STATE",
+        "REFERENCES_DEV_END",
+        "REFERENCES_AS_OF",
+        "REFERENCES_PARTITION"
+      ],
+      "source": "if as_of<=DEV_END and r.get(\"partition\")==\"DEVELOPMENT\":\n                context[as_of]=r\n            elif VALIDATION_START<=as_of<FINAL_HOLDOUT_START:\n                validation_context_rows_seen_and_skipped+=1\n            elif as_of>=FINAL_HOLDOUT_START:\n                final_holdout_context_rows_seen+=1",
+      "test_source": "as_of<=DEV_END and r.get(\"partition\")==\"DEVELOPMENT\""
+    },
+    {
+      "end_lineno": 201,
+      "forensic_score": 6,
+      "kind": "If",
+      "lineno": 200,
+      "reasons": [
+        "REFERENCES_DEV_END",
+        "REFERENCES_AS_OF"
+      ],
+      "source": "if not as_of or as_of>DEV_END:\n                continue",
+      "test_source": "not as_of or as_of>DEV_END"
+    },
+    {
+      "end_lineno": 168,
+      "forensic_score": 3,
+      "kind": "If",
+      "lineno": 165,
+      "reasons": [
+        "REFERENCES_AS_OF"
+      ],
+      "source": "elif VALIDATION_START<=as_of<FINAL_HOLDOUT_START:\n                validation_context_rows_seen_and_skipped+=1\n            elif as_of>=FINAL_HOLDOUT_START:\n                final_holdout_context_rows_seen+=1",
+      "test_source": "VALIDATION_START<=as_of<FINAL_HOLDOUT_START"
+    },
+    {
+      "end_lineno": 168,
+      "forensic_score": 3,
+      "kind": "If",
+      "lineno": 167,
+      "reasons": [
+        "REFERENCES_AS_OF"
+      ],
+      "source": "elif as_of>=FINAL_HOLDOUT_START:\n                final_holdout_context_rows_seen+=1",
+      "test_source": "as_of>=FINAL_HOLDOUT_START"
+    },
+    {
+      "end_lineno": 196,
+      "forensic_score": 3,
+      "kind": "If",
+      "lineno": 194,
+      "reasons": [
+        "REFERENCES_AS_OF"
+      ],
+      "source": "if as_of>=FINAL_HOLDOUT_START:\n                final_holdout_replay_rows_seen_and_skipped+=1\n                continue",
+      "test_source": "as_of>=FINAL_HOLDOUT_START"
+    },
+    {
+      "end_lineno": 199,
+      "forensic_score": 3,
+      "kind": "If",
+      "lineno": 197,
+      "reasons": [
+        "REFERENCES_AS_OF"
+      ],
+      "source": "if VALIDATION_START<=as_of<FINAL_HOLDOUT_START:\n                validation_replay_rows_seen_and_skipped+=1\n                continue",
+      "test_source": "VALIDATION_START<=as_of<FINAL_HOLDOUT_START"
+    }
+  ],
+  "source_script_sha256": "674fbd58b33476627b432cf1515aa45c00db7008ff1df80bf9c9109d2a70fec3",
+  "status": "READY",
+  "validation_outcomes_opened": false,
+  "validation_scoring_performed": false,
+  "validation_targets_opened": false,
+  "version": "M77.19.8.7.10.5.2.3.1-EXACT-8.2-PARTITION-GATE-FORENSICS-1.0"
+}

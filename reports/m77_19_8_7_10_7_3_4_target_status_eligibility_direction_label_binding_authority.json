@@ -1,0 +1,91 @@
+{
+  "development_score_eligible_rule": "status == MATURED AND direction_label IN {UP,DOWN}",
+  "development_target_status_label_binding": {
+    "10": {
+      "label_counts": {
+        "DOWN": 134438,
+        "UP": 166888,
+        "ZERO": 753
+      },
+      "matured": 302079,
+      "status_counts": {
+        "MATURED": 302079,
+        "PURGED_PARTITION_OVERLAP": 1557,
+        "SYMBOL_TARGET_SESSION_MISSING": 53
+      }
+    },
+    "20": {
+      "label_counts": {
+        "DOWN": 128032,
+        "UP": 172473,
+        "ZERO": 507
+      },
+      "matured": 301012,
+      "status_counts": {
+        "MATURED": 301012,
+        "PURGED_PARTITION_OVERLAP": 2595,
+        "SYMBOL_TARGET_SESSION_MISSING": 82
+      }
+    },
+    "5": {
+      "label_counts": {
+        "DOWN": 139028,
+        "UP": 162496,
+        "ZERO": 1086
+      },
+      "matured": 302610,
+      "status_counts": {
+        "MATURED": 302610,
+        "PURGED_PARTITION_OVERLAP": 1038,
+        "SYMBOL_TARGET_SESSION_MISSING": 41
+      }
+    }
+  },
+  "final_holdout_opened": false,
+  "model_family_champion_selected": false,
+  "next_step": "RUN_M77_19_8_7_10_7_3_5_REPO_GROUNDED_FROZEN_VALIDATION_SCORING",
+  "production_authority_effect": false,
+  "status": "READY",
+  "target_status_eligibility_binding_certified": true,
+  "validation_flat_matured_only_representation_certified": true,
+  "validation_model_refit_performed": false,
+  "validation_model_retuning_performed": false,
+  "validation_preprocessor_refit_performed": false,
+  "validation_score_eligible_rule": "ROW_PRESENT_IN_10_6_HORIZON_SUBDIRECTORY_AND_T_DIRECTION_IN_{UP,DOWN}",
+  "validation_scoring_execution_authorized": true,
+  "validation_scoring_performed": false,
+  "validation_target_representation_binding": {
+    "10": {
+      "file_count": 569,
+      "label_counts": {
+        "DOWN": 63210,
+        "UP": 76440,
+        "ZERO": 212
+      },
+      "matured": 139862,
+      "representation": "HORIZON_SUBDIRECTORY_FLAT_MATURED_ONLY"
+    },
+    "20": {
+      "file_count": 569,
+      "label_counts": {
+        "DOWN": 61825,
+        "UP": 76780,
+        "ZERO": 121
+      },
+      "matured": 138726,
+      "representation": "HORIZON_SUBDIRECTORY_FLAT_MATURED_ONLY"
+    },
+    "5": {
+      "file_count": 569,
+      "label_counts": {
+        "DOWN": 65503,
+        "UP": 74681,
+        "ZERO": 246
+      },
+      "matured": 140430,
+      "representation": "HORIZON_SUBDIRECTORY_FLAT_MATURED_ONLY"
+    }
+  },
+  "version": "M77.19.8.7.10.7.3.4-TARGET-STATUS-ELIGIBILITY-DIRECTION-LABEL-BINDING-AUTHORITY-1.1",
+  "zero_label_policy": "EXCLUDE_FROM_BINARY_DIRECTION_SCORING_WITHOUT_REMAPPING"
+}

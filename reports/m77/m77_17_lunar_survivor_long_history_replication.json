@@ -1,0 +1,217 @@
+{
+  "version": "M77.17-VEDIC-CLOSURE-LUNAR-SURVIVOR-LONG-HISTORY-REPLICATION-1.0",
+  "status": "READY",
+  "lunar_registry": "/Users/vinay.hatti/TradingPlatform/data/m77/m77_17_1_lunar_phase_daily_2000_2040.csv",
+  "frozen_survivor": {
+    "target": "NDX",
+    "hypothesis": "FIRST_QUARTER_WINDOW",
+    "horizon_sessions": 10,
+    "outcome": "ABSOLUTE_RETURN",
+    "prediction": "SUPPRESSED_10D_ABSOLUTE_MOVE",
+    "historical_incremental_reference": -0.007495998887858346
+  },
+  "authority": {
+    "common_start": "2003-09-10",
+    "common_end": "2026-08-21",
+    "common_sessions": 5773
+  },
+  "primary_replication_target": "NDX",
+  "results": {
+    "NDX": {
+      "target": "NDX",
+      "instrument": "QQQ_LINEAGE",
+      "event_n": 747,
+      "event_mean_absolute_return": 0.029352896487645233,
+      "complement_mean_absolute_return": 0.02934481799551651,
+      "incremental_vs_complement": 8.07849212872136e-06,
+      "incremental_vs_weekday_month": 2.4504872147498136e-05,
+      "dependence_robust_empirical_p": 0.9138086191380862,
+      "dependence_robust_null_mean": 0.029468841734946575,
+      "bootstrap_ci95": [
+        -0.0030370474196062505,
+        0.0032905776878461323
+      ],
+      "nonoverlap_event_n": 283,
+      "nonoverlap_incremental": 0.00036069757168236474,
+      "era_stats": [
+        {
+          "era": [
+            "2003-09-10",
+            "2008-12-31"
+          ],
+          "event_n": 174,
+          "incremental_vs_complement": 0.0004912672989830467
+        },
+        {
+          "era": [
+            "2009-01-01",
+            "2014-12-31"
+          ],
+          "event_n": 191,
+          "incremental_vs_complement": -0.0011334770279371777
+        },
+        {
+          "era": [
+            "2015-01-01",
+            "2020-12-31"
+          ],
+          "event_n": 198,
+          "incremental_vs_complement": 0.002486874751972807
+        },
+        {
+          "era": [
+            "2021-01-01",
+            "2026-08-21"
+          ],
+          "event_n": 184,
+          "incremental_vs_complement": -0.001992533047823892
+        }
+      ],
+      "gates": {
+        "negative_incremental": false,
+        "dependence_robust_empirical_p_le_0_05": false,
+        "bootstrap_ci_excludes_zero_negative": false,
+        "at_least_3_eligible_eras": true,
+        "at_least_3_same_direction_eras": false,
+        "nonoverlap_same_direction": false,
+        "weekday_month_control_same_direction": false,
+        "economic_effect_abs_ge_min": false
+      },
+      "replication_pass": false
+    },
+    "SPX": {
+      "target": "SPX",
+      "instrument": "SPY",
+      "event_n": 747,
+      "event_mean_absolute_return": 0.0227846883601477,
+      "complement_mean_absolute_return": 0.022792046807721608,
+      "incremental_vs_complement": -7.358447573907467e-06,
+      "incremental_vs_weekday_month": -2.0712341416296897e-05,
+      "dependence_robust_empirical_p": 0.9246075392460754,
+      "dependence_robust_null_mean": 0.02287931652887405,
+      "bootstrap_ci95": [
+        -0.002831985603782926,
+        0.0031242659367081028
+      ],
+      "nonoverlap_event_n": 283,
+      "nonoverlap_incremental": -5.1778607140541555e-05,
+      "era_stats": [
+        {
+          "era": [
+            "2003-09-10",
+            "2008-12-31"
+          ],
+          "event_n": 174,
+          "incremental_vs_complement": 6.039240404974097e-05
+        },
+        {
+          "era": [
+            "2009-01-01",
+            "2014-12-31"
+          ],
+          "event_n": 191,
+          "incremental_vs_complement": -0.0013477046417256014
+        },
+        {
+          "era": [
+            "2015-01-01",
+            "2020-12-31"
+          ],
+          "event_n": 198,
+          "incremental_vs_complement": 0.0015005384972585356
+        },
+        {
+          "era": [
+            "2021-01-01",
+            "2026-08-21"
+          ],
+          "event_n": 184,
+          "incremental_vs_complement": -0.00023467890681687018
+        }
+      ],
+      "gates": {
+        "negative_incremental": true,
+        "dependence_robust_empirical_p_le_0_05": false,
+        "bootstrap_ci_excludes_zero_negative": false,
+        "at_least_3_eligible_eras": true,
+        "at_least_3_same_direction_eras": false,
+        "nonoverlap_same_direction": true,
+        "weekday_month_control_same_direction": true,
+        "economic_effect_abs_ge_min": false
+      },
+      "replication_pass": false
+    },
+    "RUT": {
+      "target": "RUT",
+      "instrument": "IWM",
+      "event_n": 747,
+      "event_mean_absolute_return": 0.029974400714428768,
+      "complement_mean_absolute_return": 0.031460905049424386,
+      "incremental_vs_complement": -0.0014865043349956177,
+      "incremental_vs_weekday_month": -0.0014848271568305234,
+      "dependence_robust_empirical_p": 0.26147385261473854,
+      "dependence_robust_null_mean": 0.03138012195143838,
+      "bootstrap_ci95": [
+        -0.005154665470708672,
+        0.002626223731724645
+      ],
+      "nonoverlap_event_n": 283,
+      "nonoverlap_incremental": -0.0011412529659684915,
+      "era_stats": [
+        {
+          "era": [
+            "2003-09-10",
+            "2008-12-31"
+          ],
+          "event_n": 174,
+          "incremental_vs_complement": -0.0008587711972061554
+        },
+        {
+          "era": [
+            "2009-01-01",
+            "2014-12-31"
+          ],
+          "event_n": 191,
+          "incremental_vs_complement": -0.003643098756833458
+        },
+        {
+          "era": [
+            "2015-01-01",
+            "2020-12-31"
+          ],
+          "event_n": 198,
+          "incremental_vs_complement": 0.0027665843586179885
+        },
+        {
+          "era": [
+            "2021-01-01",
+            "2026-08-21"
+          ],
+          "event_n": 184,
+          "incremental_vs_complement": -0.00434305524725466
+        }
+      ],
+      "gates": {
+        "negative_incremental": true,
+        "dependence_robust_empirical_p_le_0_05": false,
+        "bootstrap_ci_excludes_zero_negative": false,
+        "at_least_3_eligible_eras": true,
+        "at_least_3_same_direction_eras": true,
+        "nonoverlap_same_direction": true,
+        "weekday_month_control_same_direction": true,
+        "economic_effect_abs_ge_min": false
+      },
+      "replication_pass": false
+    }
+  },
+  "primary_replication_pass": false,
+  "all_three_same_framework_pass": false,
+  "disposition": "TERMINATE_M77_14_PROSPECTIVE_SHADOW_AND_CLOSE_LUNAR_RESEARCH",
+  "prospective_shadow_policy": {
+    "automatic_stop_action": false,
+    "automatic_production_promotion": false,
+    "human_review_required": true
+  },
+  "database_writes": false,
+  "production_authority_effect": false
+}

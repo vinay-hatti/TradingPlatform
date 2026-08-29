@@ -3,11 +3,14 @@ from __future__ import annotations
 from datetime import date, datetime, timezone
 from math import ceil
 from uuid import uuid4
+from zoneinfo import ZoneInfo
 
 from sqlalchemy import select, text
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
 from trading_ai.advanced_trade_builder.models import TradePlanModel
+from trading_ai.authoritative_paper_trading.database_models import CanonicalOrderModel
 from trading_ai.broker.ibkr.database_models import BrokerAccountBindingModel
 from trading_ai.broker.ibkr.models import IbkrPaperConnectionConfig
 from trading_ai.broker.ibkr.order_models import IbkrPaperComboLegRequest, IbkrPaperComboOrderRequest, IbkrPaperOrderRequest
@@ -41,6 +44,10 @@ class DynamicPositionManagementService:
     """
 
     ACTIVE_STATES = {"OPEN", "PARTIAL", "HEDGED", "ROLLED"}
+    M74_14_VERSION = "M74.14-UNIFIED-EXIT-MATERIALIZATION-AUTONOMOUS-HEALTH-1.0"
+    LEGACY_CANONICAL_MISSING_FRAGMENT = "canonical order not found: M62-EXIT-"
+    CRITICAL_PROTECTION_LABELS = {"EMERGENCY_OPTION_STOP", "EXPIRATION_GUARD_EXIT", "STRUCTURAL_STOP", "SHORT_LEG_ASSIGNMENT_EXIT", "THETA_EXIT", "VOLATILITY_EXIT"}
+    PROFIT_TARGET_LABELS = {"TARGET_1", "TARGET_2", "TARGET_3"}
 
     def __init__(self, session: Session):
         self.s = session
@@ -106,13 +113,23 @@ class DynamicPositionManagementService:
         market = self._market_snapshot(position, management)
         current_stop, trailing_updated = self._advance_trailing_stop(position, management, market, actor)
         instructions = self._instructions(position.position_id)
+        repaired_failures = self._rearm_legacy_canonical_missing_failures(position, instructions, actor)
+        if repaired_failures:
+            metadata["m74_14_exit_recovery"] = {
+                "version": self.M74_14_VERSION,
+                "rearmed_count": repaired_failures,
+                "rearmed_at": utc_now(),
+                "reason": "LEGACY_CANONICAL_EXIT_ORDER_MISSING",
+            }
         triggered: list[dict] = []
+        priority={"EMERGENCY_OPTION_STOP":0,"EXPIRATION_GUARD_EXIT":1,"STRUCTURAL_STOP":2,"SHORT_LEG_ASSIGNMENT_EXIT":3,"THETA_EXIT":4,"VOLATILITY_EXIT":5,"TARGET_3":6,"TARGET_2":7,"TARGET_1":8}
+        eligible=[]
         for instruction in instructions:
+            payload=dict(instruction.payload or {})
+            if instruction.status not in {"ARMED","SUBMISSION_FAILED"}:continue
+            if self._triggered(position,payload,market,current_stop):eligible.append((priority.get(str(payload.get("label")),99),instruction))
+        for _,instruction in sorted(eligible,key=lambda x:x[0])[:1]:
             payload = dict(instruction.payload or {})
-            if instruction.status not in {"ARMED", "SUBMISSION_FAILED"}:
-                continue
-            if not self._triggered(position, payload, market, current_stop):
-                continue
             status = self._govern_instruction(position, instruction, mode, actor)
             item = {"instruction_id": instruction.instruction_id, "label": payload.get("label"), "action": instruction.action,
                     "quantity": instruction.quantity, "status": status, "trigger_type": payload.get("trigger_type"),
@@ -121,12 +138,16 @@ class DynamicPositionManagementService:
                 try:
                     broker = self._submit_exit(position, instruction, actor)
                     instruction.status = "SUBMITTED"
+                    payload.pop("submission_error", None)
+                    payload.pop("submission_failed_at", None)
                     payload["broker_submission"] = broker
                     payload["submitted_at"] = utc_now()
+                    payload["submission_recovered"] = bool(dict(broker or {}).get("canonical_exit_order", {}).get("source") in {"M74_13_1_SELF_HEALING_MATERIALIZATION", "CONCURRENT_CANONICAL_EXIT_ORDER"})
                     instruction.payload = payload
                     item["status"] = "SUBMITTED"
                 except Exception as exc:
                     instruction.status = "SUBMISSION_FAILED"
+                    payload["submission_attempt_count"] = int(payload.get("submission_attempt_count") or 0) + 1
                     payload["submission_error"] = f"{type(exc).__name__}: {exc}"
                     payload["submission_failed_at"] = utc_now()
                     instruction.payload = payload
@@ -154,6 +175,97 @@ class DynamicPositionManagementService:
         return ManagementEvaluation(position.position_id, position.symbol, mode.value, market.get("underlying_price"),
             market.get("option_mark"), market.get("days_to_expiry"), current_stop, next_target, tuple(triggered),
             trailing_updated, health["thesis_integrity"], "ACTION_TRIGGERED" if triggered else "HOLD", position.updated_at)
+
+    def _is_legacy_canonical_missing_failure(self, instruction) -> bool:
+        if str(instruction.status or '').upper() != "SUBMISSION_FAILED":
+            return False
+        payload = dict(instruction.payload or {})
+        return self.LEGACY_CANONICAL_MISSING_FRAGMENT in str(payload.get("submission_error") or "")
+
+    def _rearm_legacy_canonical_missing_failures(self, position, instructions, actor: str) -> int:
+        """Repair the pre-M74.13.1 failure mode without erasing audit evidence.
+
+        The old manager could mark an otherwise-valid instruction SUBMISSION_FAILED before
+        the deterministic M62-EXIT canonical order existed.  M74.13.1 fixed the routing
+        path, but those persisted statuses remained terminal-looking and therefore never
+        re-entered the unified submission path unless explicitly repaired.  M74.14 turns
+        only that known construction failure back into ARMED.  The original error is
+        retained in submission_failure_history; no broker order is transmitted here.
+        """
+        repaired = 0
+        now = utc_now()
+        for instruction in instructions:
+            if not self._is_legacy_canonical_missing_failure(instruction):
+                continue
+            payload = dict(instruction.payload or {})
+            history = list(payload.get("submission_failure_history") or [])
+            history.append({
+                "error": payload.get("submission_error"),
+                "failed_at": payload.get("submission_failed_at"),
+                "superseded_at": now,
+                "superseded_by": self.M74_14_VERSION,
+                "recovery": "REARM_FOR_UNIFIED_EXIT_MATERIALIZATION",
+            })
+            payload["submission_failure_history"] = history[-20:]
+            payload["legacy_submission_error_superseded"] = payload.get("submission_error")
+            payload["legacy_submission_failed_at_superseded"] = payload.get("submission_failed_at")
+            payload.pop("submission_error", None)
+            payload.pop("submission_failed_at", None)
+            payload["submission_recovery_state"] = "REARMED_FOR_UNIFIED_EXIT_MATERIALIZATION"
+            payload["submission_recovered_at"] = now
+            payload["submission_recovered_by"] = actor
+            payload["unified_exit_materialization_version"] = self.M74_14_VERSION
+            instruction.payload = payload
+            instruction.status = "ARMED"
+            repaired += 1
+        if repaired:
+            self._event(position, "LEGACY_EXIT_SUBMISSION_FAILURES_REARMED", actor,
+                        "Re-armed legacy canonical-order-missing exits for unified materialization",
+                        {"count": repaired, "version": self.M74_14_VERSION})
+        return repaired
+
+    def repair_legacy_submission_failures(self, portfolio_id: str | None = None, actor: str = "M74_14_REPAIR") -> dict:
+        """Idempotently re-arm only legacy canonical-order-missing exit failures.
+
+        This is safe to run as an operational repair: it does not submit an order and it
+        does not alter failures caused by IBKR, price governance, contract resolution, or
+        any other downstream condition.  The next normal management cycle decides whether
+        each re-armed instruction is currently triggered and, if so, routes it through the
+        unified self-healing materializer.
+        """
+        query = select(ManagedPositionModel).where(ManagedPositionModel.state.in_(self.ACTIVE_STATES))
+        if portfolio_id:
+            query = query.where(ManagedPositionModel.portfolio_id == portfolio_id)
+        positions = list(self.s.scalars(query))
+        repaired_positions = 0
+        repaired_instructions = 0
+        details = []
+        for position in positions:
+            instructions = self._instructions(position.position_id)
+            repaired = self._rearm_legacy_canonical_missing_failures(position, instructions, actor)
+            if not repaired:
+                continue
+            repaired_positions += 1
+            repaired_instructions += repaired
+            metadata = dict(position.metadata_json or {})
+            metadata["m74_14_exit_recovery"] = {
+                "version": self.M74_14_VERSION,
+                "rearmed_count": repaired,
+                "rearmed_at": utc_now(),
+                "reason": "LEGACY_CANONICAL_EXIT_ORDER_MISSING",
+            }
+            position.metadata_json = metadata
+            position.updated_at = utc_now()
+            details.append({"position_id": position.position_id, "symbol": position.symbol, "rearmed": repaired})
+        self.s.commit()
+        return {
+            "version": self.M74_14_VERSION,
+            "portfolio_id": portfolio_id,
+            "positions_scanned": len(positions),
+            "positions_repaired": repaired_positions,
+            "instructions_rearmed": repaired_instructions,
+            "details": details,
+        }
 
     def approve_instruction(self, instruction_id: str, actor: str, reason: str, submit: bool = False) -> dict:
         instruction = self.s.scalar(select(PositionExitInstructionModel).where(PositionExitInstructionModel.instruction_id == instruction_id))
@@ -183,6 +295,12 @@ class DynamicPositionManagementService:
         return [self._instruction_payload(x) for x in self.s.scalars(query)]
 
     def _market_snapshot(self, position: ManagedPositionModel, management: dict) -> dict:
+        # M73 injects a direct Polygon snapshot immediately before every autonomous
+        # management evaluation. Persisted history remains the fallback for advisory
+        # / offline workflows only.
+        live = dict((position.metadata_json or {}).get("m73_live_market") or {})
+        if live.get("source") == "POLYGON_DIRECT" and live.get("underlying_price") is not None:
+            return live
         underlying = self.s.execute(text("SELECT close, high, low, date::text FROM price_history WHERE UPPER(symbol)=UPPER(:symbol) ORDER BY date DESC LIMIT 2"), {"symbol": position.symbol}).mappings().all()
         current = underlying[0] if underlying else {}
         previous = underlying[1] if len(underlying) > 1 else {}
@@ -224,6 +342,20 @@ class DynamicPositionManagementService:
         elif policy == "UNDERLYING_LOWER_HIGH" and str(position.direction).upper() in {"BEARISH","PUT"}:
             candidate=_float(market.get("previous_high"))
             if candidate is not None and original is not None and candidate >= original: candidate=None
+        elif policy == "INSTITUTIONAL_STRUCTURE_ZONE":
+            # The persisted plan may supply an updated institutional structure zone.
+            # When a direct zone is unavailable, use a conservative price-relative
+            # candidate that only tightens risk; never loosen the original stop.
+            zone=management.get("institutional_structure_zone") or {}
+            price=_float(market.get("underlying_price"))
+            if str(position.direction).upper() in {"BULLISH","CALL"}:
+                candidate=_float(zone.get("low")) if isinstance(zone,dict) else None
+                if candidate is None and price is not None:candidate=price*0.9925
+                if original is not None and candidate is not None and candidate<=original:candidate=None
+            else:
+                candidate=_float(zone.get("high")) if isinstance(zone,dict) else None
+                if candidate is None and price is not None:candidate=price*1.0075
+                if original is not None and candidate is not None and candidate>=original:candidate=None
         if candidate is None:return original,False
         management["current_underlying_stop"]=round(candidate,4)
         management["trailing_stop_updated_at"]=utc_now()
@@ -244,7 +376,14 @@ class DynamicPositionManagementService:
             if label=="STRUCTURAL_STOP":return price<=trigger if direction in {"BULLISH","CALL"} else price>=trigger
             return price>=trigger if direction in {"BULLISH","CALL"} else price<=trigger
         if typ=="OPTION_LOSS_PCT":return ret <= -abs((_float(value,0) or 0)*100)
+        if typ=="EXPIRATION_GUARD_DATE":
+            try:
+                exit_date=date.fromisoformat(str(value)[:10])
+            except Exception:
+                return False
+            return datetime.now(ZoneInfo("America/New_York")).date() >= exit_date
         if typ=="DTE":return market.get("days_to_expiry") is not None and market["days_to_expiry"]<=int(value)
+        if typ=="SHORT_LEG_DTE":return market.get("short_leg_dte") is not None and market["short_leg_dte"]<=int(value)
         if typ=="VOLATILITY_RULE":
             return market.get("iv_change_pct") is not None and market["iv_change_pct"]<=-0.25 and self._thesis_integrity(position,market)<0.60
         return False
@@ -258,6 +397,109 @@ class DynamicPositionManagementService:
         instruction.status=status;instruction.payload=payload
         self._event(position,"EXIT_RULE_TRIGGERED",actor,f"{payload.get('label')} triggered in {mode.value} mode",{"instruction_id":instruction.instruction_id,"status":status})
         return status
+
+    def _ensure_canonical_exit_order(self, position, instruction, request, legs_json):
+        """Durably materialize the canonical exit order before any broker transmission.
+
+        Recovered/re-armed positions can legitimately have a fresh exit instruction
+        without a pre-existing canonical order.  The IBKR routing service intentionally
+        refuses to transmit in that condition.  Materializing here preserves the same
+        persist-before-transmit invariant used by entry routing and makes retries
+        idempotent by deterministic aggregate/client order ids.
+        """
+        session_factory = __import__('trading_ai.database.session', fromlist=['SessionLocal']).SessionLocal
+        aggregate_id = str(request.aggregate_id)
+        client_order_id = str(request.client_order_id)
+        s = session_factory()
+        try:
+            existing = s.get(CanonicalOrderModel, aggregate_id)
+            if existing is not None:
+                return {
+                    'aggregate_id': aggregate_id,
+                    'client_order_id': existing.client_order_id,
+                    'created': False,
+                    'state': existing.state,
+                    'durable_before_transmit': True,
+                    'source': 'EXISTING_CANONICAL_EXIT_ORDER',
+                }
+            ts = utc_now()
+            canonical = CanonicalOrderModel(
+                aggregate_id=aggregate_id,
+                client_order_id=client_order_id,
+                account_id=position.portfolio_id,
+                idempotency_key=aggregate_id,
+                order_type=str(request.order_type).upper(),
+                time_in_force=str(request.time_in_force).upper(),
+                state='VALIDATED',
+                version=1,
+                total_quantity=float(request.quantity),
+                filled_quantity=0.0,
+                remaining_quantity=float(request.quantity),
+                average_fill_price=None,
+                limit_price=_float(getattr(request, 'limit_price', None)),
+                stop_price=_float(getattr(request, 'stop_price', None)),
+                outside_regular_hours=bool(getattr(request, 'outside_regular_hours', False)),
+                strategy_name=position.strategy,
+                broker_order_id=None,
+                parent_aggregate_id=None,
+                root_aggregate_id=aggregate_id,
+                replace_count=0,
+                legs_json=list(legs_json or []),
+                created_at=ts,
+                updated_at=ts,
+                terminal_at=None,
+                last_event_id=None,
+                metadata_json={
+                    'paper_only': True,
+                    'managed_position_id': position.position_id,
+                    'trade_plan_id': position.trade_plan_id,
+                    'execution_intent_id': position.execution_id,
+                    'exit_instruction_id': instruction.instruction_id,
+                    'exit_action': instruction.action,
+                    'exit_label': dict(instruction.payload or {}).get('label'),
+                    'exit_execution_scope': dict(instruction.payload or {}).get('execution_scope'),
+                    'exit_method': dict(instruction.payload or {}).get('exit_method'),
+                    'canonical_exit_materialization': 'M74.13.1',
+                    'unified_exit_materialization_version': self.M74_14_VERSION,
+                    'durable_before_transmit': True,
+                },
+            )
+            s.add(canonical)
+            s.commit()
+            return {
+                'aggregate_id': aggregate_id,
+                'client_order_id': client_order_id,
+                'created': True,
+                'state': 'VALIDATED',
+                'durable_before_transmit': True,
+                'source': 'M74_13_1_SELF_HEALING_MATERIALIZATION',
+            }
+        except IntegrityError:
+            # A concurrent management cycle may have won the deterministic insert.
+            # Treat that as successful idempotent materialization only when the exact
+            # aggregate now exists; otherwise preserve the database failure.
+            s.rollback()
+            existing = s.get(CanonicalOrderModel, aggregate_id)
+            if existing is None:
+                raise
+            return {
+                'aggregate_id': aggregate_id,
+                'client_order_id': existing.client_order_id,
+                'created': False,
+                'state': existing.state,
+                'durable_before_transmit': True,
+                'source': 'CONCURRENT_CANONICAL_EXIT_ORDER',
+            }
+        except Exception:
+            s.rollback()
+            raise
+        finally:
+            s.close()
+
+    @staticmethod
+    def _submit_strategy_combo(service, request):
+        # M74.10 strategy-level routing contract: one atomic BAG submission.
+        return service.submit_combo(request)
 
     def _submit_exit(self, position, instruction, actor):
         if position.metadata_json.get("paper_only") is not True:
@@ -274,16 +516,33 @@ class DynamicPositionManagementService:
             transport.connect(IbkrPaperConnectionConfig(host=binding.host,port=binding.port,client_id=binding.client_id,environment='PAPER',expected_account_id=binding.broker_account_id,timeout_seconds=15,read_only=False))
             if len(legs)==1:
                 leg=legs[0]; resolved=transport.resolve_option_contract(symbol=position.symbol,expiry=str(leg['expiry']),strike=float(leg['strike']),right=str(leg['option_right']),currency=binding.base_currency or 'USD',exchange='SMART',multiplier='100',local_symbol=str(leg.get('option_symbol') or ''))
-                request=IbkrPaperOrderRequest(aggregate_id=aggregate,client_order_id=client,portfolio_id=position.portfolio_id,broker_account_id=binding.broker_account_id,symbol=position.symbol,security_type='OPT',side='SELL' if str(leg.get('side')).upper()=='BUY' else 'BUY',quantity=float(close_qty),order_type='MKT',time_in_force='DAY',currency=binding.base_currency or 'USD',exchange='SMART',contract_id=resolved.contract_id,local_symbol=resolved.local_symbol,expiry=str(leg['expiry']),strike=float(leg['strike']),right=str(leg['option_right']).upper()[0],multiplier=resolved.multiplier,metadata={'managed_position_id':position.position_id,'exit_instruction_id':instruction.instruction_id,'actor':actor})
-                return service.submit(request)
+                close_side='SELL' if str(leg.get('side')).upper()=='BUY' else 'BUY'
+                request=IbkrPaperOrderRequest(aggregate_id=aggregate,client_order_id=client,portfolio_id=position.portfolio_id,broker_account_id=binding.broker_account_id,symbol=position.symbol,security_type='OPT',side=close_side,quantity=float(close_qty),order_type='MKT',time_in_force='DAY',currency=binding.base_currency or 'USD',exchange='SMART',contract_id=resolved.contract_id,local_symbol=resolved.local_symbol,expiry=str(leg['expiry']),strike=float(leg['strike']),right=str(leg['option_right']).upper()[0],multiplier=resolved.multiplier,metadata={'managed_position_id':position.position_id,'exit_instruction_id':instruction.instruction_id,'actor':actor,'unified_exit_materialization':True,'exit_method':'SINGLE_LEG','trigger_label':str((instruction.payload or {}).get('label') or instruction.action),'strategy_type':position.strategy})
+                canonical_info=self._ensure_canonical_exit_order(position,instruction,request,[{**dict(leg),'side':close_side,'quantity':float(close_qty),'contract_id':resolved.contract_id,'local_symbol':resolved.local_symbol}])
+                result=service.submit(request)
+                return {**dict(result),'canonical_exit_order':canonical_info}
             resolved_legs=[]
             base=max(1,min(max(1,int(float(x.get('quantity',1)))) for x in legs))
             for leg in legs:
                 resolved=transport.resolve_option_contract(symbol=position.symbol,expiry=str(leg['expiry']),strike=float(leg['strike']),right=str(leg['option_right']),currency=binding.base_currency or 'USD',exchange='SMART',multiplier='100',local_symbol=str(leg.get('option_symbol') or ''))
                 original=str(leg.get('side')).upper();close_action='SELL' if original=='BUY' else 'BUY'
                 resolved_legs.append(IbkrPaperComboLegRequest(contract_id=resolved.contract_id,ratio=max(1,int(round(float(leg.get('quantity',1))/base))),action=close_action,exchange=resolved.exchange,symbol=position.symbol,local_symbol=resolved.local_symbol,expiry=str(leg['expiry']),strike=float(leg['strike']),right=str(leg['option_right']).upper(),multiplier=resolved.multiplier))
-            request=IbkrPaperComboOrderRequest(aggregate_id=aggregate,client_order_id=client,portfolio_id=position.portfolio_id,broker_account_id=binding.broker_account_id,symbol=position.symbol,quantity=float(close_qty),combo_legs=tuple(resolved_legs),order_type='LMT',time_in_force='DAY',limit_price=round(-float(position.mark_json.get('mark_price') or 0.01),4),currency=binding.base_currency or 'USD',exchange='SMART',metadata={'managed_position_id':position.position_id,'exit_instruction_id':instruction.instruction_id,'actor':actor,'closing_combo':True})
-            return service.submit_combo(request)
+            request=IbkrPaperComboOrderRequest(aggregate_id=aggregate,client_order_id=client,portfolio_id=position.portfolio_id,broker_account_id=binding.broker_account_id,symbol=position.symbol,quantity=float(close_qty),combo_legs=tuple(resolved_legs),order_type='LMT',time_in_force='DAY',limit_price=round(-float(position.mark_json.get('mark_price') or 0.01),4),currency=binding.base_currency or 'USD',exchange='SMART',metadata={'managed_position_id':position.position_id,'exit_instruction_id':instruction.instruction_id,'actor':actor,'closing_combo':True,'strategy_level_exit':True,'includes_short_legs':True,'exit_method':'ATOMIC_BAG','trigger_label':str((instruction.payload or {}).get('label') or instruction.action),'strategy_type':position.strategy,'unified_exit_materialization':True})
+            canonical_legs=[{
+                'contract_id':x.contract_id,
+                'ratio':x.ratio,
+                'side':x.action,
+                'exchange':x.exchange,
+                'symbol':x.symbol,
+                'local_symbol':x.local_symbol,
+                'expiry':x.expiry,
+                'strike':x.strike,
+                'option_right':x.right,
+                'multiplier':x.multiplier,
+            } for x in resolved_legs]
+            canonical_info=self._ensure_canonical_exit_order(position,instruction,request,canonical_legs)
+            result=self._submit_strategy_combo(service,request)
+            return {**dict(result),'canonical_exit_order':canonical_info}
         finally:transport.disconnect()
 
     def _health(self, position, market, stop):

@@ -1,0 +1,17 @@
+{
+  "version": "M77.19.6.5-CONTROLLED-ADAPTER-EXECUTION-PARITY-CERTIFICATION-1.0",
+  "milestone": "M77.19.6.5",
+  "title": "Controlled Adapter Execution & Strict Parity Certification",
+  "research_only": true,
+  "production_database_access_required": false,
+  "production_authority_effect": false,
+  "full_23_year_reconstruction_authorized": false,
+  "precondition": "M77.19.6.4.2 exact_frozen_input_context_adapter_ready=true",
+  "strict_thresholds": {
+    "direction_match_pct": 100.0,
+    "overall_score_max_abs_error": 1e-09,
+    "confidence_max_abs_error": 1e-09,
+    "semantic_hash_match_pct": 100.0,
+    "deterministic_repeat_pct": 100.0
+  }
+}

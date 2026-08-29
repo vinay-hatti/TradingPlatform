@@ -1,0 +1,123 @@
+{
+  "automatic_pass_fail_rule_applied": false,
+  "development_only_fit": true,
+  "execution_mode": "ONE_FAMILY_HORIZON_PER_FRESH_SUBPROCESS",
+  "family_horizon_metrics": [
+    {
+      "balanced_accuracy": 0.5048909647402545,
+      "brier_score": 0.24855636303590234,
+      "config": {
+        "C": 1.0
+      },
+      "development_binary_rows": 301326,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "final_holdout_binary_rows": 109680,
+      "horizon": 10,
+      "log_loss": 0.6906266090542725,
+      "roc_auc": 0.5148287432175491
+    },
+    {
+      "balanced_accuracy": 0.5043064835264843,
+      "brier_score": 0.248049015488994,
+      "config": {
+        "C": 0.1
+      },
+      "development_binary_rows": 300505,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "final_holdout_binary_rows": 108532,
+      "horizon": 20,
+      "log_loss": 0.6896749125413103,
+      "roc_auc": 0.5098872888698349
+    },
+    {
+      "balanced_accuracy": 0.5031818325645765,
+      "brier_score": 0.24890374041016977,
+      "config": {
+        "C": 10.0
+      },
+      "development_binary_rows": 301524,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "final_holdout_binary_rows": 110252,
+      "horizon": 5,
+      "log_loss": 0.6913080620789493,
+      "roc_auc": 0.5147639973756687
+    },
+    {
+      "balanced_accuracy": 0.4993884812004296,
+      "brier_score": 0.24855150673497528,
+      "config": {
+        "l2_penalty": 0.1,
+        "spline_knots": 4
+      },
+      "development_binary_rows": 301326,
+      "family": "MF2_MONOTONIC_GAM_DIRECTION",
+      "final_holdout_binary_rows": 109680,
+      "horizon": 10,
+      "log_loss": 0.6905890339484996,
+      "roc_auc": 0.5013116405498563
+    },
+    {
+      "balanced_accuracy": 0.5001048788009101,
+      "brier_score": 0.2474553336442766,
+      "config": {
+        "l2_penalty": 0.1,
+        "spline_knots": 4
+      },
+      "development_binary_rows": 300505,
+      "family": "MF2_MONOTONIC_GAM_DIRECTION",
+      "final_holdout_binary_rows": 108532,
+      "horizon": 20,
+      "log_loss": 0.6881485872136004,
+      "roc_auc": 0.5011118744069589
+    },
+    {
+      "balanced_accuracy": 0.5010201371747769,
+      "brier_score": 0.24894192942218488,
+      "config": {
+        "l2_penalty": 0.1,
+        "spline_knots": 4
+      },
+      "development_binary_rows": 301524,
+      "family": "MF2_MONOTONIC_GAM_DIRECTION",
+      "final_holdout_binary_rows": 110252,
+      "horizon": 5,
+      "log_loss": 0.6910375255149309,
+      "roc_auc": 0.5067546399655629
+    }
+  ],
+  "feature_selection_search_performed": false,
+  "final_holdout_model_refit_performed": false,
+  "final_holdout_model_retuning_performed": false,
+  "final_holdout_preprocessor_refit_performed": false,
+  "final_holdout_rows_used_for_fit": false,
+  "final_holdout_scoring_performed": true,
+  "final_holdout_stability_evidence": {
+    "MF1_REGULARIZED_LOGISTIC_DIRECTION": {
+      "above_chance_horizons": 3,
+      "horizon_count": 3,
+      "max_balanced_accuracy": 0.5048909647402545,
+      "mean_balanced_accuracy": 0.5041264269437717,
+      "min_balanced_accuracy": 0.5031818325645765,
+      "std_balanced_accuracy": 0.0007092712119812699
+    },
+    "MF2_MONOTONIC_GAM_DIRECTION": {
+      "above_chance_horizons": 2,
+      "horizon_count": 3,
+      "max_balanced_accuracy": 0.5010201371747769,
+      "mean_balanced_accuracy": 0.5001711657253722,
+      "min_balanced_accuracy": 0.4993884812004296,
+      "std_balanced_accuracy": 0.000667767809906893
+    }
+  },
+  "hyperparameter_search_performed": false,
+  "model_family_champion_selected": false,
+  "model_family_champion_selection_authorized": false,
+  "next_step": "BUILD_M77_19_8_7_10_7_8_FINAL_HOLDOUT_EVIDENCE_PUBLICATION_AND_RESEARCH_CLOSURE_GOVERNANCE",
+  "production_authority_effect": false,
+  "production_model_change_authorized": false,
+  "single_use_final_holdout_scoring_consumed": true,
+  "status": "READY",
+  "threshold_search_performed": false,
+  "validation_rows_used_for_fit": false,
+  "version": "M77.19.8.7.10.7.7.1-MEMORY-BOUND-ISOLATED-FROZEN-FINAL-HOLDOUT-SCORING-1.0"
+}

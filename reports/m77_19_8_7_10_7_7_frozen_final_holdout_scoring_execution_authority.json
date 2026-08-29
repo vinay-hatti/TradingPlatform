@@ -1,0 +1,80 @@
+{
+  "authorized_final_holdout_scope": {
+    "MF1_REGULARIZED_LOGISTIC_DIRECTION": [
+      5,
+      10,
+      20
+    ],
+    "MF2_MONOTONIC_GAM_DIRECTION": [
+      5,
+      10,
+      20
+    ]
+  },
+  "automatic_pass_fail_rule_defined": false,
+  "decision_threshold": 0.5,
+  "development_only_model_fit_required": true,
+  "development_only_preprocessor_fit_required": true,
+  "evaluation_population_frozen_before_scoring": true,
+  "execution_mode": "ONE_FAMILY_HORIZON_PER_FRESH_SUBPROCESS",
+  "family_elimination_authorized": false,
+  "feature_selection_search_authorized": false,
+  "final_holdout_binary_eligible_rows": {
+    "10": 109680,
+    "20": 108532,
+    "5": 110252
+  },
+  "final_holdout_role": "PURE_FROZEN_EVIDENCE_ESTIMATION",
+  "final_holdout_rows_used_for_fit": false,
+  "final_holdout_scoring_execution_authorized": true,
+  "final_holdout_scoring_performed": false,
+  "frozen_MF1_selected_configs": {
+    "10": {
+      "C": 1.0
+    },
+    "20": {
+      "C": 0.1
+    },
+    "5": {
+      "C": 10.0
+    }
+  },
+  "frozen_MF2_selected_configs": {
+    "10": {
+      "l2_penalty": 0.1,
+      "spline_knots": 4
+    },
+    "20": {
+      "l2_penalty": 0.1,
+      "spline_knots": 4
+    },
+    "5": {
+      "l2_penalty": 0.1,
+      "spline_knots": 4
+    }
+  },
+  "hyperparameter_search_authorized": false,
+  "implementation_sha256": {
+    "MF1_development_script": "a5a7e2bf44f11e6919634c0571015006af32e6b7cb4aabf1ff11eeab0a390bbb",
+    "MF2_development_script": "f4d00ed8c9afe5621bb49eb271e83e0d477201bc5a6edd21de0cd39b93da287c",
+    "MF2_runtime_module": "31c082fffedcd413beadca205bf77d425f8d8166ea2a25ca0124947a6c7e1de6"
+  },
+  "model_family_champion_selected": false,
+  "model_family_champion_selection_authorized": false,
+  "next_step": "RUN_M77_19_8_7_10_7_7_1_MEMORY_BOUND_ISOLATED_FROZEN_FINAL_HOLDOUT_SCORING",
+  "production_authority_effect": false,
+  "production_model_change_authorized": false,
+  "single_use_final_holdout_scoring_authorized": true,
+  "status": "READY",
+  "threshold_search_authorized": false,
+  "upstream_sha256": {
+    "combined_invocation": "1c6eb2fd41ddaff25c7918b087a632caee2baeb9f0745e0058a96e1872d6e4b1",
+    "final_holdout_feature": "427088f2cd5e44645411706d1b9ae79d2a0625a4188912f56167009cf3e22b69",
+    "final_holdout_target": "e2c2e8f978f1a2b325905ed19543d97284c283df3c750be29ac718b0ab518ca4",
+    "protocol": "24bb2707fbdf502d79b74a2fd0fd668267123c67940fb646182dfe37d07f5490",
+    "validation_scoring": "6ac1121a9ca659f0c190a76fd0a939dd62c838d886241da9548b5571be721bae"
+  },
+  "validation_rows_used_for_fit": false,
+  "version": "M77.19.8.7.10.7.7-FROZEN-FINAL-HOLDOUT-SCORING-EXECUTION-AUTHORITY-1.0",
+  "zero_label_rows_excluded_per_preregistered_policy": true
+}

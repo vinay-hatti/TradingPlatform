@@ -1,0 +1,21 @@
+{
+  "milestone": "M77.19.8.7.10.7.2.4",
+  "certifiable_model_class": "CertifiedMonotonicGAM",
+  "required_configs": {
+    "5": {
+      "l2_penalty": 0.1,
+      "spline_knots": 4
+    },
+    "10": {
+      "l2_penalty": 0.1,
+      "spline_knots": 4
+    },
+    "20": {
+      "l2_penalty": 0.1,
+      "spline_knots": 4
+    }
+  },
+  "validation_scoring_performed": false,
+  "final_holdout_opened": false,
+  "production_authority_effect": false
+}

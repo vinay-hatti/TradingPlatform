@@ -8,6 +8,7 @@ from .context import *
 from .scoring import *
 from .service import *
 from .position_intelligence import *
+from .decision_intelligence import *
 
 from .option_integration import (
     StockIntelligenceOptionProvider,

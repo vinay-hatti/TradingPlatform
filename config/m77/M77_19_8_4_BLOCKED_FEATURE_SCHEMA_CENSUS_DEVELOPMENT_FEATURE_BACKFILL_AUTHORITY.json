@@ -1,0 +1,24 @@
+{
+  "milestone": "M77.19.8.4",
+  "development_end": "2017-12-31",
+  "backfill_features": [
+    "F020",
+    "F021",
+    "F030",
+    "F031",
+    "F070",
+    "F080",
+    "F081"
+  ],
+  "census_only_features": [
+    "F012",
+    "F051"
+  ],
+  "still_blocked": [
+    "F071"
+  ],
+  "target_matrix_materialized": false,
+  "validation_open": false,
+  "final_holdout_open": false,
+  "production_authority_effect": false
+}

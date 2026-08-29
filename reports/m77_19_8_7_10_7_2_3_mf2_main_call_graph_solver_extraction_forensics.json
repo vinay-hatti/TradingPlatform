@@ -1,0 +1,427 @@
+{
+  "MF2_development_analysis": {
+    "classification": "MF2_MODEL_LOGIC_IN_NESTED_MAIN_LOCAL_CALLABLES",
+    "direct_model_semantic_calls": [
+      {
+        "call_name": "ap.add_argument",
+        "lineno": 160,
+        "source": "ap.add_argument(\"--semantic-authority-csv\",default=\"reports/m77_19_8_7_3_mf2_monotonic_sign_registry.csv\")",
+        "tags": [
+          "MONOTONIC"
+        ]
+      },
+      {
+        "call_name": "selected.append",
+        "lineno": 269,
+        "source": "selected.append({\n            \"family\":\"MF2_MONOTONIC_GAM_DIRECTION\",\"horizon\":h,\n            \"selected_config\":{\"spline_knots\":best[4],\"l2_penalty\":best[5]},\n            \"mean_walk_forward_balanced_accuracy\":best[0],\n            \"std_walk_forward_balanced_accuracy\":-best[1],\n            \"fold_balanced_accuracies\":best[6],\n            \"fold_count\":len(best[6]),\n        })",
+        "tags": [
+          "BALANCED_ACCURACY",
+          "MONOTONIC",
+          "SPLINE"
+        ]
+      },
+      {
+        "call_name": "int",
+        "lineno": 185,
+        "source": "int(r[\"monotonic_sign\"])",
+        "tags": [
+          "MONOTONIC"
+        ]
+      },
+      {
+        "call_name": "len",
+        "lineno": 203,
+        "source": "len(mf2_grid[\"spline_knots\"])",
+        "tags": [
+          "SPLINE"
+        ]
+      },
+      {
+        "call_name": "append",
+        "lineno": 258,
+        "source": "by_h[int(e[\"horizon\"])][(int(e[\"spline_knots\"]),float(e[\"l2_penalty\"]))].append(float(e[\"balanced_accuracy\"]))",
+        "tags": [
+          "BALANCED_ACCURACY",
+          "SPLINE"
+        ]
+      },
+      {
+        "call_name": "stability.append",
+        "lineno": 267,
+        "source": "stability.append({\"horizon\":h,\"spline_knots\":k,\"l2_penalty\":l,\"fold_count\":len(scores),\"mean_balanced_accuracy\":mean,\"std_balanced_accuracy\":std,\"min_balanced_accuracy\":mn,\"max_balanced_accuracy\":mx})",
+        "tags": [
+          "BALANCED_ACCURACY",
+          "SPLINE"
+        ]
+      },
+      {
+        "call_name": "fit",
+        "lineno": 240,
+        "source": "CertifiedMonotonicGAM(knot_count=int(knots),l2_penalty=float(l2),max_iter=300).fit(Xtr,ytr,prep.output_signs)",
+        "tags": [
+          "FIT",
+          "MONOTONIC"
+        ]
+      },
+      {
+        "call_name": "evidence.append",
+        "lineno": 243,
+        "source": "evidence.append({\n                    \"fold_id\":fold[\"fold_id\"],\"horizon\":h,\"family\":\"MF2_MONOTONIC_GAM_DIRECTION\",\n                    \"status\":\"EVALUATED\",\"spline_knots\":knots,\"l2_penalty\":l2,\n                    \"train_count\":len(dtr),\"test_count\":len(dte),\"balanced_accuracy\":bal,\n                    \"elapsed_seconds\":time.perf_counter()-t\n                })",
+        "tags": [
+          "BALANCED_ACCURACY",
+          "MONOTONIC",
+          "SPLINE"
+        ]
+      },
+      {
+        "call_name": "CertifiedMonotonicGAM",
+        "lineno": 240,
+        "source": "CertifiedMonotonicGAM(knot_count=int(knots),l2_penalty=float(l2),max_iter=300)",
+        "tags": [
+          "MONOTONIC"
+        ]
+      },
+      {
+        "call_name": "int",
+        "lineno": 258,
+        "source": "int(e[\"spline_knots\"])",
+        "tags": [
+          "SPLINE"
+        ]
+      }
+    ],
+    "direct_solver_line_numbers": [
+      160,
+      185,
+      203,
+      240,
+      243,
+      258,
+      267,
+      269
+    ],
+    "main_end_lineno": 316,
+    "main_lineno": 156,
+    "main_to_top_level_helper_calls": [
+      {
+        "callee": "resolve",
+        "callee_lineno": 20,
+        "lineno": 169,
+        "source": "Path(a.project_root).resolve()"
+      },
+      {
+        "callee": "resolve",
+        "callee_lineno": 20,
+        "lineno": 171,
+        "source": "resolve(root,a.continuation_authority_json)"
+      },
+      {
+        "callee": "resolve",
+        "callee_lineno": 20,
+        "lineno": 171,
+        "source": "resolve(root,a.training_gate_json)"
+      },
+      {
+        "callee": "resolve",
+        "callee_lineno": 20,
+        "lineno": 171,
+        "source": "resolve(root,a.target_authority_json)"
+      },
+      {
+        "callee": "load_json",
+        "callee_lineno": 18,
+        "lineno": 172,
+        "source": "load_json(apath)"
+      },
+      {
+        "callee": "load_json",
+        "callee_lineno": 18,
+        "lineno": 172,
+        "source": "load_json(gpath)"
+      },
+      {
+        "callee": "load_json",
+        "callee_lineno": 18,
+        "lineno": 172,
+        "source": "load_json(tpath)"
+      },
+      {
+        "callee": "resolve",
+        "callee_lineno": 20,
+        "lineno": 183,
+        "source": "resolve(root,a.semantic_authority_csv)"
+      },
+      {
+        "callee": "load_rows",
+        "callee_lineno": 125,
+        "lineno": 188,
+        "source": "load_rows(resolve(root,a.feature_matrix_root),resolve(root,a.target_root),resolve(root,a.replay_root),gate)"
+      },
+      {
+        "callee": "resolve",
+        "callee_lineno": 20,
+        "lineno": 188,
+        "source": "resolve(root,a.feature_matrix_root)"
+      },
+      {
+        "callee": "resolve",
+        "callee_lineno": 20,
+        "lineno": 188,
+        "source": "resolve(root,a.target_root)"
+      },
+      {
+        "callee": "resolve",
+        "callee_lineno": 20,
+        "lineno": 188,
+        "source": "resolve(root,a.replay_root)"
+      },
+      {
+        "callee": "resolve",
+        "callee_lineno": 20,
+        "lineno": 195,
+        "source": "resolve(root,a.checkpoint_json)"
+      },
+      {
+        "callee": "load_json",
+        "callee_lineno": 18,
+        "lineno": 198,
+        "source": "load_json(checkpoint)"
+      },
+      {
+        "callee": "load_json",
+        "callee_lineno": 18,
+        "lineno": 209,
+        "source": "load_json(checkpoint)"
+      },
+      {
+        "callee": "atomic_json",
+        "callee_lineno": 34,
+        "lineno": 215,
+        "source": "atomic_json(checkpoint,base)"
+      },
+      {
+        "callee": "balanced_accuracy",
+        "callee_lineno": 117,
+        "lineno": 242,
+        "source": "balanced_accuracy(yte,pred)"
+      },
+      {
+        "callee": "sha256_file",
+        "callee_lineno": 23,
+        "lineno": 280,
+        "source": "sha256_file(apath)"
+      },
+      {
+        "callee": "sha256_file",
+        "callee_lineno": 23,
+        "lineno": 280,
+        "source": "sha256_file(gpath)"
+      },
+      {
+        "callee": "sha256_file",
+        "callee_lineno": 23,
+        "lineno": 280,
+        "source": "sha256_file(tpath)"
+      },
+      {
+        "callee": "resolve",
+        "callee_lineno": 20,
+        "lineno": 296,
+        "source": "resolve(root,a.output_json)"
+      },
+      {
+        "callee": "resolve",
+        "callee_lineno": 20,
+        "lineno": 296,
+        "source": "resolve(root,a.output_csv)"
+      },
+      {
+        "callee": "atomic_json",
+        "callee_lineno": 34,
+        "lineno": 296,
+        "source": "atomic_json(oj,report)"
+      }
+    ],
+    "model_related_assignments": [
+      {
+        "lineno": 203,
+        "source": "expected_total=len(folds)*len(HORIZONS)*len(mf2_grid[\"spline_knots\"])*len(mf2_grid[\"l2_penalty\"])",
+        "tags": [
+          "KNOTS",
+          "L2_PENALTY",
+          "SPLINE_KNOTS"
+        ]
+      },
+      {
+        "lineno": 278,
+        "source": "report={\n        \"version\":VERSION,\"status\":\"READY\",\n        \"continuation_authority_sha256\":sha256_file(apath),\"training_gate_sha256\":sha256_file(gpath),\"target_authority_sha256\":sha256_file(tpath),\n        \"development_only\":True,\"training_observation_count\":len(rows),\"raw_feature_column_count\":len(feature_cols),\n        \"MF2_expected_config_evaluation_count\":expected_total,\n        \"MF2_completed_config_evaluation_count\":len(config_done),\n        \"MF2_existing_checkpoint_reuse_count\":auth.get(\"MF2_existing_completed_config_checkpoint_count\",0),\n        \"MF2_walk_forward_evidence\":evidence,\n        \"MF2_config_stability\":stability,\n        \"MF2_development_selected_configs\":selected,\n        \"MF1_retuning_performed\":False,\n        \"MF3_execution_performed\":False,\n        \"MF3_rescue_search_performed\":False,\n        \"model_family_champion_selected\":False,\n        \"validation_opened\":False,\"final_holdout_opened\":False,\n        \"production_model_change_authorized\":False,\"production_authority_effect\":False,\n        \"next_step\":\"BUILD_M77_19_8_7_9_MF1_VS_MF2_DEVELOPMENT_EVIDENCE_STABILITY_AND_VALIDATION_ADVANCEMENT_GATE\",\n    }",
+        "tags": [
+          "SELECTED_CONFIG"
+        ]
+      },
+      {
+        "lineno": 240,
+        "source": "m=CertifiedMonotonicGAM(knot_count=int(knots),l2_penalty=float(l2),max_iter=300).fit(Xtr,ytr,prep.output_signs)",
+        "tags": [
+          "KNOTS",
+          "L2_PENALTY"
+        ]
+      },
+      {
+        "lineno": 223,
+        "source": "cfg=(\"MF2\",fold[\"fold_id\"],h,str(knots),str(l2))",
+        "tags": [
+          "KNOTS"
+        ]
+      }
+    ],
+    "nested_function_count": 1,
+    "nested_functions": [
+      {
+        "args": [],
+        "end_lineno": 215,
+        "lineno": 206,
+        "name": "save_checkpoint",
+        "source_excerpt": "def save_checkpoint():\n        base={}\n        if checkpoint.exists():\n            base=load_json(checkpoint)\n        other_e=[e for e in base.get(\"evidence\") or [] if e.get(\"family\")!=\"MF2_MONOTONIC_GAM_DIRECTION\"]\n        other_cfg=[x for x in base.get(\"completed_configs\") or [] if not x or x[0]!=\"MF2\"]\n        base[\"evidence\"]=other_e+evidence\n        base[\"completed_configs\"]=other_cfg+[list(x) for x in sorted(config_done)]\n        base[\"validation_opened\"]=False;base[\"final_holdout_opened\"]=False;base[\"production_authority_effect\"]=False\n        atomic_json(checkpoint,base)",
+        "source_sha256": "5fbef505c9552e01fd450594d9e1cf1c77f5531c6e2c38d4ce48408927a2bd4c",
+        "tags": [
+          "MONOTONIC"
+        ]
+      }
+    ],
+    "nested_solver_candidates": [
+      {
+        "args": [],
+        "end_lineno": 215,
+        "lineno": 206,
+        "name": "save_checkpoint",
+        "source_excerpt": "def save_checkpoint():\n        base={}\n        if checkpoint.exists():\n            base=load_json(checkpoint)\n        other_e=[e for e in base.get(\"evidence\") or [] if e.get(\"family\")!=\"MF2_MONOTONIC_GAM_DIRECTION\"]\n        other_cfg=[x for x in base.get(\"completed_configs\") or [] if not x or x[0]!=\"MF2\"]\n        base[\"evidence\"]=other_e+evidence\n        base[\"completed_configs\"]=other_cfg+[list(x) for x in sorted(config_done)]\n        base[\"validation_opened\"]=False;base[\"final_holdout_opened\"]=False;base[\"production_authority_effect\"]=False\n        atomic_json(checkpoint,base)",
+        "source_sha256": "5fbef505c9552e01fd450594d9e1cf1c77f5531c6e2c38d4ce48408927a2bd4c",
+        "tags": [
+          "MONOTONIC"
+        ]
+      }
+    ],
+    "script_sha256": "f4d00ed8c9afe5621bb49eb271e83e0d477201bc5a6edd21de0cd39b93da287c"
+  },
+  "MF2_exact_solver_extraction_authorized": true,
+  "MF2_formula_reimplementation_authorized": false,
+  "MF2_model_logic_exposed_as_certifiable_top_level_callable": false,
+  "MF2_runtime_analysis": {
+    "classification": "MF2_MODEL_LOGIC_INLINE_INSIDE_MAIN",
+    "direct_model_semantic_calls": [
+      {
+        "call_name": "ap.add_argument",
+        "lineno": 31,
+        "source": "ap.add_argument(\"--semantic-gate-json\",default=\"reports/m77_19_8_7_3_mf2_monotonic_sign_semantic_authority_mf3_solver_decision_gate.json\")",
+        "tags": [
+          "MONOTONIC"
+        ]
+      },
+      {
+        "call_name": "print",
+        "lineno": 91,
+        "source": "print(\"MF2_runtime: SCIPY_LBFGSB_LINEAR_SPLINE_GAM\")",
+        "tags": [
+          "LBFGSB",
+          "SPLINE"
+        ]
+      }
+    ],
+    "direct_solver_line_numbers": [
+      31,
+      91
+    ],
+    "main_end_lineno": 105,
+    "main_lineno": 28,
+    "main_to_top_level_helper_calls": [
+      {
+        "callee": "resolve",
+        "callee_lineno": 17,
+        "lineno": 34,
+        "source": "Path(a.project_root).resolve()"
+      },
+      {
+        "callee": "resolve",
+        "callee_lineno": 17,
+        "lineno": 35,
+        "source": "resolve(root,a.semantic_gate_json)"
+      },
+      {
+        "callee": "load_json",
+        "callee_lineno": 15,
+        "lineno": 35,
+        "source": "load_json(sp)"
+      },
+      {
+        "callee": "sha256_file",
+        "callee_lineno": 10,
+        "lineno": 56,
+        "source": "sha256_file(sp)"
+      },
+      {
+        "callee": "sha256_file",
+        "callee_lineno": 10,
+        "lineno": 56,
+        "source": "sha256_file(solver_path)"
+      },
+      {
+        "callee": "resolve",
+        "callee_lineno": 17,
+        "lineno": 85,
+        "source": "resolve(root,a.output_json)"
+      },
+      {
+        "callee": "resolve",
+        "callee_lineno": 17,
+        "lineno": 85,
+        "source": "resolve(root,a.output_csv)"
+      },
+      {
+        "callee": "atomic_json",
+        "callee_lineno": 19,
+        "lineno": 85,
+        "source": "atomic_json(oj,report)"
+      }
+    ],
+    "model_related_assignments": [
+      {
+        "lineno": 46,
+        "source": "mf3_cert=bool(mf3_checks[\"all_finite\"] and mf3_checks[\"all_objective_matches_contract\"] and mf3_checks[\"median_fit_directionally_sane\"])",
+        "tags": [
+          "OBJECTIVE"
+        ]
+      },
+      {
+        "lineno": 55,
+        "source": "report={\n      \"version\":VERSION,\"status\":\"READY\",\"semantic_gate_sha256\":sha256_file(sp),\"solver_module_sha256\":sha256_file(solver_path),\n      \"MF2\":{\n        \"runtime\":\"SCIPY_LBFGSB_LINEAR_SPLINE_GAM\",\n        \"objective\":\"LOGISTIC_NLL_PLUS_L2\",\n        \"monotonic_enforcement\":\"COEFFICIENT_BOUNDS_ON_LINEAR_HINGE_SPLINE_BASIS\",\n        \"semantic_sign_authority_required\":True,\n        \"synthetic_certification\":mf2_checks,\n        \"runtime_certified\":True,\n        \"development_scoring_authorized\":True,\n      },\n      \"MF3\":{\n        \"runtime\":\"SCIPY_POWELL_EXACT_PINBALL_ELASTIC_NET_REFERENCE_SOLVER\",\n        \"objective\":\"MEAN_PINBALL_PLUS_ALPHA_TIMES_ELASTIC_NET\",\n        \"alpha_supported\":True,\"l1_ratio_supported\":True,\"quantile_supported\":True,\n        \"synthetic_certification\":mf3_checks,\n        \"objective_contract_certified\":True,\n        \"reference_runtime_certified\":True,\n        \"development_scoring_authorized\":False,\n        \"development_scoring_block_reason\":\"REFERENCE_SOLVER_EXACT_BUT_NOT_CERTIFIED_SCALABLE_FOR_300K_ROW_WALK_FORWARD\",\n        \"next_requirement\":\"CERTIFY_SCALABLE_SOLVER_WITH_NUMERICAL_PARITY_TO_REFERENCE\",\n      },\n      \"model_family_comparison_complete\":False,\n      \"validation_open_authorized\":False,\n      \"final_holdout_open_authorized\":False,\n      \"MF1_retuning_authorized\":False,\n      \"preregistration_change_authorized\":False,\n      \"production_authority_effect\":False,\n      \"next_step\":\"BUILD_M77_19_8_7_5_MF2_DEVELOPMENT_WALK_FORWARD_AND_MF3_SCALABLE_SOLVER_PARITY_AUTHORITY\",\n    }",
+        "tags": [
+          "COEFFICIENTS",
+          "OBJECTIVE",
+          "SPLINE_BASIS"
+        ]
+      }
+    ],
+    "nested_function_count": 0,
+    "nested_functions": [],
+    "nested_solver_candidates": [],
+    "script_sha256": "3d858b6efe7765c1a11cc52d27a0fe9cace8d2da1081d0dc339a54477926ed29"
+  },
+  "MF2_semantic_equivalent_rewrite_authorized": false,
+  "failed_parity_report_status": "READY",
+  "failed_parity_sha256": "4cac9da7d3a847bc492e891aeeae06046e23875f05daa8cfce40ab418d1b42c4",
+  "final_holdout_opened": false,
+  "model_family_champion_selected": false,
+  "next_step": "BUILD_M77_19_8_7_10_7_2_4_EXACT_MF2_SOLVER_CALL_GRAPH_EXTRACTION_AND_DEVELOPMENT_PARITY_GATE",
+  "production_authority_effect": false,
+  "reuse_binding_sha256": "6e900ba88b0f1bfd549a348dc202fa617b718b6757a2fda1c629b05e7b4eaea1",
+  "root_cause": "MF2_MODEL_LOGIC_IN_NESTED_MAIN_LOCAL_CALLABLES",
+  "root_cause_certified": true,
+  "status": "READY",
+  "validation_model_refit_performed": false,
+  "validation_model_retuning_performed": false,
+  "validation_preprocessor_refit_performed": false,
+  "validation_scoring_execution_authorized": false,
+  "validation_scoring_performed": false,
+  "version": "M77.19.8.7.10.7.2.3-MF2-MAIN-CALL-GRAPH-SOLVER-EXTRACTION-FORENSICS-1.0"
+}

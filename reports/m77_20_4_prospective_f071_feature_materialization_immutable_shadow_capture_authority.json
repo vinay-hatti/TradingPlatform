@@ -1,0 +1,43 @@
+{
+  "F071_full_13w_26w_coverage_count": 504,
+  "F071_materialized_observation_count": 504,
+  "F071_missing_observation_count": 107,
+  "F071_partial_coverage_count": 0,
+  "benchmark_fallback_to_SPY_performed": false,
+  "consumed_final_holdout_opened": false,
+  "cross_sector_imputation_performed": false,
+  "different_content_same_date_rewrite_authorized": false,
+  "effective_endpoint_session_counts": {
+    "2026-08-04": 2,
+    "2026-08-14": 2,
+    "2026-08-17": 2,
+    "2026-08-25": 1014
+  },
+  "endpoint_session_match_required": true,
+  "execution_mode": "IDEMPOTENT_EXISTING_F071_SNAPSHOT_REUSED",
+  "feature_snapshot_file": "research_data/m77_20_4/prospective_f071_shadow/2026-08-26/f071_shadow_feature_snapshot.json",
+  "feature_snapshot_immutability_certified": true,
+  "feature_snapshot_semantic_sha256": "88ed630f397c2198974d551e1c09dc0435ee7a7f008501fdeb303a20940a3b68",
+  "formula_semantics_frozen": true,
+  "historical_F071_backfill_performed": false,
+  "manifest_file": "research_data/m77_20_4/prospective_f071_shadow/manifest.json",
+  "missing_reason_counts": {
+    "END_SESSION_MISMATCH": 6,
+    "INSUFFICIENT_TRAILING_SESSIONS": 6,
+    "MISSING_NO_GOVERNED_BENCHMARK": 101
+  },
+  "next_step": "BUILD_M77_20_5_PROSPECTIVE_BASELINE_FEATURE_SHADOW_CAPTURE_AND_PAIRED_OBSERVATION_AUTHORITY",
+  "observation_count": 611,
+  "price_source": "POSTGRESQL_PRICE_HISTORY_READ_ONLY",
+  "production_authority_effect": false,
+  "prospective_F071_materialized": true,
+  "prospective_outcomes_opened": false,
+  "prospective_scoring_performed": false,
+  "rs_sector_13w_present_count": 504,
+  "rs_sector_26w_present_count": 504,
+  "same_as_of_or_prior_only": true,
+  "sector_snapshot_semantic_sha256": "f8c9a934dc4e8439334f363e0ee6cd3e6cb4818fc7e5ac72dcb45309c3e064e4",
+  "snapshot_date": "2026-08-26",
+  "status": "READY",
+  "version": "M77.20.4-PROSPECTIVE-F071-FEATURE-MATERIALIZATION-IMMUTABLE-SHADOW-CAPTURE-AUTHORITY-1.0"
+}

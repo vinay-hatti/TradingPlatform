@@ -1,0 +1,19 @@
+{
+  "milestone": "M77.19.6.5.2.9",
+  "mode": "RESEARCH_ONLY_SYNTHETIC_COMPONENT_OUTPUT_INTERVENTION",
+  "database_mode": "READ_ONLY_SPY_SESSION_CALENDAR_ONLY",
+  "authority_reports": {
+    "m77_19_6_5_2_8_sha256": "d227650425b2221da14b4e67c3bcdc0f3bc880c24909f97f75233a2e50cf0101",
+    "m77_19_6_5_2_7_sha256": "bfba461d7b788112235a0d565bd7e0bc4e1398a6ed188022faf94357ae49835e"
+  },
+  "native_runner_sha256": "bcc5b49b87ddceba6ac417000d5af3d4a57efd14145595f4d712eb36ae81204b",
+  "parity_tolerance": 1e-9,
+  "arms": [
+    "CONTROL_WEEKLY_PARTICIPATION",
+    "LEVELS_ONLY",
+    "STRUCTURE_ONLY",
+    "LEVELS_AND_STRUCTURE"
+  ],
+  "production_authority_effect": false,
+  "full_23_year_reconstruction_authorized": false
+}

@@ -2,6 +2,7 @@ from __future__ import annotations
 import argparse,time
 from trading_ai.database.session import SessionLocal
 from trading_ai.dynamic_position_management.service import DynamicPositionManagementService
+from trading_ai.autonomous_position_management import AutonomousPositionManagementService, load_m73_policy
 
 def main():
  p=argparse.ArgumentParser(description='Run Milestone 62 Phase 10 dynamic position management')
@@ -9,9 +10,13 @@ def main():
  a=p.parse_args()
  while True:
   with SessionLocal() as s:
-   result=DynamicPositionManagementService(s).evaluate_all(portfolio_id=a.portfolio_id,actor=a.actor,submit_automatic=not a.no_submit_automatic,limit=a.limit)
-   print(f'Dynamic management: requested={result.requested}, evaluated={result.evaluated}, triggered={result.triggered}, advisory={result.advisory}, pending_approval={result.pending_approval}, submitted={result.submitted}, failed={result.failed}')
-   for error in result.errors:print(f'Dynamic management error: {error}')
+   if load_m73_policy().enabled:
+    result=AutonomousPositionManagementService(s).run_cycle(portfolio_id=a.portfolio_id,actor='m73:'+a.actor,submit_automatic=not a.no_submit_automatic,limit=a.limit)
+    print('M73 autonomous management:',result)
+   else:
+    result=DynamicPositionManagementService(s).evaluate_all(portfolio_id=a.portfolio_id,actor=a.actor,submit_automatic=not a.no_submit_automatic,limit=a.limit)
+    print(f'Dynamic management: requested={result.requested}, evaluated={result.evaluated}, triggered={result.triggered}, advisory={result.advisory}, pending_approval={result.pending_approval}, submitted={result.submitted}, failed={result.failed}')
+    for error in result.errors:print(f'Dynamic management error: {error}')
   if not a.daemon:break
   time.sleep(max(15,a.interval_seconds))
 if __name__=='__main__':main()

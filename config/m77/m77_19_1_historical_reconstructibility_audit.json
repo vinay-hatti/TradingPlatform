@@ -1,0 +1,56 @@
+{
+  "version": "M77.19.1-MULTI-CADENCE-HISTORICAL-RECONSTRUCTIBILITY-AUDIT-1.0",
+  "original_study_contract": {
+    "M77_11_expected_symbols": 600,
+    "M77_12_expected_symbols": 603,
+    "cadences": [
+      "DAILY",
+      "WEEKLY",
+      "MONTHLY"
+    ],
+    "pit_regime_required": true,
+    "outcome_horizons": [
+      5,
+      10,
+      20,
+      60,
+      120
+    ]
+  },
+  "target_history": {
+    "desired_start": "2003-09-10",
+    "desired_end": "2026-08-21",
+    "desired_sessions": 5773,
+    "proxy_authority": {
+      "SPX": "SPY",
+      "NDX": "QQQ_LINEAGE",
+      "RUT": "IWM"
+    },
+    "proxy_only_exact_replication": false
+  },
+  "runner_patterns": {
+    "weekly": [
+      "scripts/run_m77_2*.py",
+      "scripts/*weekly*replay*.py"
+    ],
+    "pit": [
+      "scripts/run_m77_8*.py",
+      "scripts/*pit*regime*.py"
+    ],
+    "daily": [
+      "scripts/run_m77_9*.py",
+      "scripts/*daily*replay*.py"
+    ],
+    "monthly": [
+      "scripts/run_m77_10*.py",
+      "scripts/*monthly*replay*.py"
+    ]
+  },
+  "governance": {
+    "read_only": true,
+    "automatic_replay_execution": false,
+    "database_writes": false,
+    "production_authority_effect": false,
+    "no_fabricated_pit_regimes": true
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "version": "M77.19.2-DEEP-REPLAY-PIT-RECONSTRUCTIBILITY-AUDIT-1.0",
+  "purpose": "Deep static/runtime audit of whether M77.8/M77.9 daily PIT and replay authorities can be safely extended historically without look-ahead or fabricated state.",
+  "target_history": {
+    "desired_start": "2003-09-10",
+    "desired_end": "2026-08-21",
+    "desired_sessions": 5773
+  },
+  "required_sources": {
+    "weekly_runner": "scripts/run_m77_2_multiyear_frozen_champion.py",
+    "pit_runner": "scripts/run_m77_8_daily_pit_replay_authority.py",
+    "daily_runner": "scripts/run_m77_9_daily_model_replay.py",
+    "monthly_runner": "scripts/run_m77_10_monthly_model_replay.py"
+  },
+  "semantic_requirements": {
+    "historical_date_parameterization": true,
+    "as_of_bounded_feature_access": true,
+    "as_of_bounded_price_access": true,
+    "future_leakage_prohibited": true,
+    "point_in_time_regime_derivation": true,
+    "deterministic_replay_identity": true,
+    "historical_namespace_isolation": true,
+    "production_table_mutation_prohibited": true
+  },
+  "governance": {
+    "read_only": true,
+    "automatic_replay_execution": false,
+    "database_writes": false,
+    "source_mutation": false,
+    "production_authority_effect": false,
+    "no_fabricated_pit_regimes": true,
+    "no_threshold_changes": true
+  }
+}

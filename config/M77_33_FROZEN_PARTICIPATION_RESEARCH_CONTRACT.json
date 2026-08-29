@@ -1,0 +1,24 @@
+{
+  "automatic_retraining": false,
+  "bottom_quantile": 0.2,
+  "development_end": "2017-12-31",
+  "feature_authority": "M77.21 frozen PIT panel",
+  "forbidden_outcome_window": "2018-01-01 THROUGH 2026-12-31",
+  "management_retuning": false,
+  "new_probability_up_thresholds": 0,
+  "new_top_k_values": 0,
+  "point_in_time_same_date_cross_sectional_ranking": true,
+  "production_authority_effect": false,
+  "read_or_modify_prospective_protocols": false,
+  "source_population": "M77.26.1 executable NEXT_OPEN / 5ATR / 3ATR / 60-session cohort",
+  "states": [
+    "VOLUME_RATIO_20_TOP20",
+    "VOLUME_RATIO_PERSISTENCE_TOP20",
+    "VOLUME_ACCELERATION_TOP20",
+    "VOLUME_DECELERATION_BOTTOM20",
+    "ACCUMULATION_CONFIRMATION",
+    "DISTRIBUTION_WARNING"
+  ],
+  "top_quantile": 0.8,
+  "version": "M77.33-FROZEN-PARTICIPATION-RESEARCH-CONTRACT-1.0"
+}

@@ -1,0 +1,201 @@
+{
+  "authorized_scope": {
+    "H2_BREAKDOWN_INITIATION": [
+      5,
+      10
+    ],
+    "H4_ROOM_PCT_5_10PCT": [
+      5,
+      10,
+      20
+    ],
+    "H4_ROOM_PCT_GE_10PCT": [
+      5,
+      10,
+      20
+    ]
+  },
+  "candidate_summary": {
+    "H2_BREAKDOWN_INITIATION": {
+      "all_authorized_horizons_pass": false,
+      "authorized_horizons": [
+        5,
+        10
+      ],
+      "failed_horizons": [
+        5,
+        10
+      ],
+      "passed_horizons": []
+    },
+    "H4_ROOM_PCT_5_10PCT": {
+      "all_authorized_horizons_pass": false,
+      "authorized_horizons": [
+        5,
+        10,
+        20
+      ],
+      "failed_horizons": [
+        5,
+        10,
+        20
+      ],
+      "passed_horizons": []
+    },
+    "H4_ROOM_PCT_GE_10PCT": {
+      "all_authorized_horizons_pass": false,
+      "authorized_horizons": [
+        5,
+        10,
+        20
+      ],
+      "failed_horizons": [
+        5,
+        10,
+        20
+      ],
+      "passed_horizons": []
+    }
+  },
+  "evaluation_scope": {
+    "candidate_definitions_changed": false,
+    "champion_selected": false,
+    "development_used_for_validation_scoring": false,
+    "final_holdout_opened": false,
+    "final_holdout_used_for_validation_scoring": false,
+    "thresholds_changed": false,
+    "validation_partition_only": true
+  },
+  "evidence": [
+    {
+      "accuracy": 0.40607734806629836,
+      "accuracy_delta_vs_validation_bearish": -0.0537960696552206,
+      "baseline_accuracy": 0.45987341772151896,
+      "baseline_median": -0.003952515140007051,
+      "candidate_id": "H2_BREAKDOWN_INITIATION",
+      "count": 362,
+      "horizon_sessions": 5,
+      "mean": -0.012568338732902605,
+      "median": -0.014120456905503564,
+      "median_delta_vs_validation_bearish": -0.010167941765496513,
+      "minimum_validation_count": 300,
+      "validation_pass": false
+    },
+    {
+      "accuracy": 0.4558011049723757,
+      "accuracy_delta_vs_validation_bearish": 0.026003636617945303,
+      "baseline_accuracy": 0.4297974683544304,
+      "baseline_median": -0.009309273620505931,
+      "candidate_id": "H2_BREAKDOWN_INITIATION",
+      "count": 362,
+      "horizon_sessions": 10,
+      "mean": -0.009606575855847455,
+      "median": -0.005521642477187005,
+      "median_delta_vs_validation_bearish": 0.003787631143318926,
+      "minimum_validation_count": 300,
+      "validation_pass": false
+    },
+    {
+      "accuracy": 0.477891156462585,
+      "accuracy_delta_vs_validation_bearish": 0.018017738741066047,
+      "baseline_accuracy": 0.45987341772151896,
+      "baseline_median": -0.003952515140007051,
+      "candidate_id": "H4_ROOM_PCT_GE_10PCT",
+      "count": 588,
+      "horizon_sessions": 5,
+      "mean": -0.019378359818503103,
+      "median": -0.006632926922782056,
+      "median_delta_vs_validation_bearish": -0.002680411782775005,
+      "minimum_validation_count": 300,
+      "validation_pass": false
+    },
+    {
+      "accuracy": 0.336734693877551,
+      "accuracy_delta_vs_validation_bearish": -0.09306277447687938,
+      "baseline_accuracy": 0.4297974683544304,
+      "baseline_median": -0.009309273620505931,
+      "candidate_id": "H4_ROOM_PCT_GE_10PCT",
+      "count": 588,
+      "horizon_sessions": 10,
+      "mean": -0.05690731815452992,
+      "median": -0.0566214733478535,
+      "median_delta_vs_validation_bearish": -0.04731219972734757,
+      "minimum_validation_count": 300,
+      "validation_pass": false
+    },
+    {
+      "accuracy": 0.27380952380952384,
+      "accuracy_delta_vs_validation_bearish": -0.14125376732971667,
+      "baseline_accuracy": 0.4150632911392405,
+      "baseline_median": -0.017831554331796062,
+      "candidate_id": "H4_ROOM_PCT_GE_10PCT",
+      "count": 588,
+      "horizon_sessions": 20,
+      "mean": -0.12478696586853127,
+      "median": -0.09433644569861332,
+      "median_delta_vs_validation_bearish": -0.07650489136681726,
+      "minimum_validation_count": 300,
+      "validation_pass": false
+    },
+    {
+      "accuracy": 0.4211908931698774,
+      "accuracy_delta_vs_validation_bearish": -0.03868252455164156,
+      "baseline_accuracy": 0.45987341772151896,
+      "baseline_median": -0.003952515140007051,
+      "candidate_id": "H4_ROOM_PCT_5_10PCT",
+      "count": 1142,
+      "horizon_sessions": 5,
+      "mean": -0.01594814586691067,
+      "median": -0.015594458872920991,
+      "median_delta_vs_validation_bearish": -0.01164194373291394,
+      "minimum_validation_count": 300,
+      "validation_pass": false
+    },
+    {
+      "accuracy": 0.3861646234676007,
+      "accuracy_delta_vs_validation_bearish": -0.04363284488682967,
+      "baseline_accuracy": 0.4297974683544304,
+      "baseline_median": -0.009309273620505931,
+      "candidate_id": "H4_ROOM_PCT_5_10PCT",
+      "count": 1142,
+      "horizon_sessions": 10,
+      "mean": -0.030369999729127753,
+      "median": -0.03127821378090567,
+      "median_delta_vs_validation_bearish": -0.02196894016039974,
+      "minimum_validation_count": 300,
+      "validation_pass": false
+    },
+    {
+      "accuracy": 0.31961471103327493,
+      "accuracy_delta_vs_validation_bearish": -0.09544858010596557,
+      "baseline_accuracy": 0.4150632911392405,
+      "baseline_median": -0.017831554331796062,
+      "candidate_id": "H4_ROOM_PCT_5_10PCT",
+      "count": 1142,
+      "horizon_sessions": 20,
+      "mean": -0.062466055187006764,
+      "median": -0.06287216296820508,
+      "median_delta_vs_validation_bearish": -0.04504060863640902,
+      "minimum_validation_count": 300,
+      "validation_pass": false
+    }
+  ],
+  "gate_authority_sha256": "52def1dbdda59322091a30b4389bfd80f5b7565b92239e21254ce8d0edc9307c",
+  "governance": {
+    "automatic_bearish_signal_inversion": false,
+    "calibrator_fitting": false,
+    "classifier_training": false,
+    "parameter_fitting": false,
+    "production_authority_effect": false,
+    "production_model_change_authorized": false,
+    "threshold_search_or_optimization": false
+  },
+  "h4_authority_sha256": "a290d8291b92bec11f99a443912d1a94bb377debf71a110fbaa5983b69802a43",
+  "minimum_validation_count": 300,
+  "next_step": "REVIEW_M77_19_7_4_13_VALIDATION_EVIDENCE_BEFORE_ANY_FINAL_HOLDOUT_OPEN",
+  "outcome_authority_sha256": "d8c8ea6fd2a6412d3b2898f87fa1e3f19ba6968b112eb100998c81ac2bb07775",
+  "status": "READY",
+  "validation_end": "2022-12-31",
+  "validation_start": "2018-01-01",
+  "version": "M77.19.7.4.13-AUTHORIZED-CANDIDATE-VALIDATION-ONLY-EVALUATION-1.0"
+}

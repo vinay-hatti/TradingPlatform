@@ -1,0 +1,91 @@
+{
+  "version": "M77.16.1-MUNDANE-MARKET-CHART-AUTHORITY-RAHU-KETU-HOUSE-PREREGISTRATION-1.0",
+  "status": "READY",
+  "market_chart_authority": {
+    "reference_event": {
+      "name": "NYSE_MODERN_REFERENCE_CHART",
+      "date": "1792-05-17",
+      "time_local": "12:00:00",
+      "time_authority": "FIXED_RESEARCH_CONVENTION_NOT_HISTORICALLY_CLAIMED_EXACT",
+      "location": {
+        "name": "New York City",
+        "latitude_deg": 40.7128,
+        "longitude_deg": -74.006,
+        "timezone": "America/New_York"
+      },
+      "rationale": "Buttonwood Agreement date used as a reproducible U.S. equity-market reference event; noon is an explicit research convention because exact historical signing time is not asserted."
+    },
+    "zodiac": "SIDEREAL",
+    "ayanamsha": "LAHIRI",
+    "house_system": "WHOLE_SIGN",
+    "node_type": "TRUE_NODE",
+    "ascendant_required": true,
+    "lordship_scheme": {
+      "ARIES": "MARS",
+      "TAURUS": "VENUS",
+      "GEMINI": "MERCURY",
+      "CANCER": "MOON",
+      "LEO": "SUN",
+      "VIRGO": "MERCURY",
+      "LIBRA": "VENUS",
+      "SCORPIO": "MARS",
+      "SAGITTARIUS": "JUPITER",
+      "CAPRICORN": "SATURN",
+      "AQUARIUS": "SATURN",
+      "PISCES": "JUPITER"
+    },
+    "alternatives_search_prohibited": true,
+    "posthoc_chart_changes_prohibited": true
+  },
+  "h3_preregistration": {
+    "hypothesis": "H3_RAHU_KETU_FINANCIAL_HOUSE_AXIS",
+    "states": [
+      "RAHU_IN_5TH_HOUSE",
+      "KETU_IN_5TH_HOUSE",
+      "RAHU_IN_11TH_HOUSE",
+      "KETU_IN_11TH_HOUSE",
+      "RAHU_CONJUNCT_5TH_LORD",
+      "KETU_CONJUNCT_5TH_LORD",
+      "RAHU_CONJUNCT_11TH_LORD",
+      "KETU_CONJUNCT_11TH_LORD"
+    ],
+    "conjunction_orb_deg": 3.0,
+    "horizons": [
+      5,
+      10,
+      20,
+      60
+    ],
+    "predictions": {
+      "ABSOLUTE_RETURN": "POSITIVE",
+      "REALIZED_VOLATILITY": "POSITIVE",
+      "MAX_ADVERSE_EXCURSION": "MORE_NEGATIVE"
+    },
+    "factor_combinations": false,
+    "neighboring_orb_search": false,
+    "posthoc_threshold_changes": false
+  },
+  "gates": {
+    "reference_event_frozen": true,
+    "location_frozen": true,
+    "ayanamsha_frozen": true,
+    "house_system_frozen": true,
+    "true_node_frozen": true,
+    "lordship_scheme_frozen": true,
+    "alternatives_search_prohibited": true,
+    "posthoc_chart_changes_prohibited": true,
+    "h3_states_horizons_predictions_frozen": true,
+    "factor_combinations_prohibited": true,
+    "neighboring_orb_search_prohibited": true,
+    "long_history_authority_certified": true
+  },
+  "certified_for_h3_feature_materialization": true,
+  "important_interpretation": {
+    "reference_time_is_research_convention": true,
+    "exact_historical_signing_time_claimed": false,
+    "alternative_chart_search_after_results": "PROHIBITED"
+  },
+  "next_step": "BUILD_M77_16_2_H3_ASTRONOMICAL_FEATURE_MATERIALIZATION_AND_PARITY",
+  "database_writes": false,
+  "production_authority_effect": false
+}

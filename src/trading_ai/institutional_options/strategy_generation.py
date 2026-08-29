@@ -18,6 +18,7 @@ from .domain import (
 )
 from .models import InstitutionalOpportunityModel, OpportunityThesisModel, StrategyCandidateModel
 from .repository import InstitutionalOpportunityRepository
+from .contradictory_evidence import assess_contradictory_evidence
 
 
 @dataclass(frozen=True)
@@ -82,14 +83,24 @@ class RegimeAwareStrategyEligibilityService:
 
     def generate(self, opportunity: InstitutionalOpportunity, thesis: OpportunityThesis) -> list[StrategyCandidate]:
         candidates: list[StrategyCandidate] = []
+        contradiction = assess_contradictory_evidence(opportunity, thesis)
+        contradiction_payload = contradiction.as_dict()
         for definition in _STRATEGIES[: self.policy.maximum_candidates_per_opportunity]:
             accepted: list[str] = []
             rejected: list[str] = []
             score = float(definition.base_score)
 
-            if thesis.direction not in definition.directions:
+            opposite_direction = thesis.direction not in definition.directions
+            conditional_opposite = opposite_direction and contradiction.allow_opposite_conditional
+            if opposite_direction and not conditional_opposite:
                 rejected.append("DIRECTION_INCOMPATIBLE")
                 score -= 60
+            elif conditional_opposite:
+                accepted.append(
+                    f"Opposite-direction candidate retained conditionally by {contradiction.state}"
+                )
+                rejected.append("CONDITIONAL_REVERSAL_CONFIRMATION_REQUIRED")
+                score -= 20
             else:
                 accepted.append(f"Direction compatible: {thesis.direction.value}")
                 score += 8
@@ -123,13 +134,23 @@ class RegimeAwareStrategyEligibilityService:
             elif category:
                 score -= 4
 
-            directional_word = "BULL" if thesis.direction == ThesisDirection.BULLISH else "BEAR"
-            if forecast and directional_word in forecast:
-                score += 6
-                accepted.append("Forecast supports thesis direction")
-            elif forecast and any(word in forecast for word in ("BULL", "BEAR")):
-                score -= 10
-                rejected.append("FORECAST_DIRECTION_CONFLICT")
+            forecast_authority = dict((opportunity.metadata or {}).get("forecast_evidence") or {})
+            forecast_consistent = forecast_authority.get("directional_consistency", True) is not False
+            if not forecast_consistent or forecast_authority.get("conflict_codes"):
+                score -= 8
+                rejected.append("FORECAST_SEMANTIC_CONFLICT")
+            else:
+                candidate_direction = (
+                    "BULL" if ThesisDirection.BULLISH in definition.directions and ThesisDirection.BEARISH not in definition.directions
+                    else "BEAR" if ThesisDirection.BEARISH in definition.directions and ThesisDirection.BULLISH not in definition.directions
+                    else ""
+                )
+                if forecast and candidate_direction and candidate_direction in forecast:
+                    score += 6
+                    accepted.append(f"Forecast supports {candidate_direction.lower()}ish candidate direction")
+                elif forecast and candidate_direction and any(word in forecast for word in ("BULL", "BEAR")):
+                    score -= 10
+                    rejected.append("FORECAST_DIRECTION_CONFLICT")
 
             if participation in {"ACCUMULATION", "RE_ACCUMULATION"} and thesis.direction == ThesisDirection.BULLISH:
                 score += 5
@@ -149,9 +170,14 @@ class RegimeAwareStrategyEligibilityService:
             score += min(6.0, max(-6.0, (opportunity.confidence - 70.0) * 0.15))
             score = round(max(0.0, min(100.0, score)), 4)
 
-            hard_rejection = "DIRECTION_INCOMPATIBLE" in rejected or "FORECAST_DIRECTION_CONFLICT" in rejected
-            eligible = (not hard_rejection) and score >= self.policy.minimum_eligibility_score
-            disposition = StrategyDisposition.ELIGIBLE if eligible else StrategyDisposition.REJECTED
+            hard_rejection = "DIRECTION_INCOMPATIBLE" in rejected or "FORECAST_DIRECTION_CONFLICT" in rejected or "FORECAST_SEMANTIC_CONFLICT" in rejected
+            eligible = (not hard_rejection) and (not conditional_opposite) and score >= self.policy.minimum_eligibility_score
+            conditional = conditional_opposite and score >= self.policy.minimum_eligibility_score
+            disposition = (
+                StrategyDisposition.ELIGIBLE if eligible
+                else StrategyDisposition.CONDITIONAL if conditional
+                else StrategyDisposition.REJECTED
+            )
             if not eligible and not hard_rejection and score < self.policy.minimum_eligibility_score:
                 rejected.append("ELIGIBILITY_SCORE_BELOW_MINIMUM")
 
@@ -171,6 +197,11 @@ class RegimeAwareStrategyEligibilityService:
                     "market_regime": thesis.market_regime,
                     "structure_state": thesis.structure_state,
                     "setup_category": thesis.setup_category,
+                    "contradictory_evidence_authority": contradiction_payload,
+                    "execution_blocked_by_contradiction": bool(
+                        contradiction.execution_blocked and not conditional_opposite
+                    ),
+                    "conditional_opposite_direction": bool(conditional_opposite),
                 },
             ))
         return candidates
@@ -215,12 +246,16 @@ class InstitutionalStrategyGenerationService:
                         overall_score=row.overall_score,
                         confidence=row.confidence,
                         conviction=row.conviction,
-                        lineage=OpportunityLineage(**opportunity_payload["lineage"]),
+                        lineage=OpportunityLineage.from_payload(
+                            opportunity_payload["lineage"]
+                        ),
                         thesis_id=row.thesis_id,
                         version=row.version,
                         created_at=row.created_at,
                         updated_at=row.updated_at,
                         metadata=opportunity_payload.get("metadata") or {},
+                        inflection_intelligence=opportunity_payload.get("inflection_intelligence") or {},
+                        intelligence_extensions=opportunity_payload.get("intelligence_extensions") or {},
                     )
                     thesis = OpportunityThesis(
                         thesis_id=thesis_row.thesis_id,
@@ -250,10 +285,11 @@ class InstitutionalStrategyGenerationService:
                         (item for item in candidates if item.disposition == StrategyDisposition.ELIGIBLE),
                         key=lambda item: (-item.eligibility_score, item.strategy),
                     )
+                    conditional = [item for item in candidates if item.disposition == StrategyDisposition.CONDITIONAL]
                     rejected = [item for item in candidates if item.disposition == StrategyDisposition.REJECTED]
 
                     if not eligible:
-                        self.repository.save_strategy_evaluations(rejected)
+                        self.repository.save_strategy_evaluations(conditional + rejected)
                         self.session.flush()
                         rejected_count += len(rejected)
                         failed += 1
@@ -265,7 +301,7 @@ class InstitutionalStrategyGenerationService:
                         ranked_candidates.append(
                             replace(candidate, rank=rank, strategy_score=candidate.eligibility_score)
                         )
-                    all_candidates = ranked_candidates + rejected
+                    all_candidates = ranked_candidates + conditional + rejected
                     self.repository.save_strategy_candidates(all_candidates)
                     self.session.flush()
 
@@ -286,7 +322,13 @@ class InstitutionalStrategyGenerationService:
                         comparison_id=f"m62-comparison-{uuid4().hex}",
                         opportunity_id=opportunity_id,
                         ranked_strategy_candidate_ids=ranked_ids,
-                        selected_strategy_candidate_id=None,
+                        # Contract construction needs one deterministic
+                        # pre-valuation path.  Phase 5 may replace this with
+                        # the contract-aware winner after every eligible
+                        # strategy has been optimized.
+                        selected_strategy_candidate_id=(
+                            ranked_ids[0] if ranked_ids else None
+                        ),
                         comparison_policy_version=self.policy.policy_version,
                         rationale=(
                             "Strategies ranked by directional, regime, structure, setup, dealer, forecast, and opportunity-quality compatibility",
@@ -298,7 +340,7 @@ class InstitutionalStrategyGenerationService:
                         opportunity_id,
                         OpportunityState.STRATEGIES_GENERATED,
                         actor="m62_strategy_generation",
-                        reason=f"Generated {len(eligible)} eligible strategies and {len(rejected)} explainable rejections",
+                        reason=f"Generated {len(eligible)} eligible strategies, {len(conditional)} conditional reversal-watch strategies, and {len(rejected)} explainable rejections",
                     )
                     generated += 1
                     eligible_count += len(eligible)

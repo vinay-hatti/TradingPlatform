@@ -1,0 +1,19 @@
+{
+  "version": "M77.19.6.2-EXACT-INPUT-CONTEXT-HASH-PARITY-1.0",
+  "milestone": "M77.19.6.2",
+  "title": "Exact Input, Context & Hash Semantics Parity",
+  "research_only": true,
+  "database_mode": "READ_ONLY",
+  "production_authority_effect": false,
+  "full_23_year_reconstruction_authorized": false,
+  "parity_thresholds_relaxed": false,
+  "acceptance": [
+    "discover installed M77.19.6/M77.19.6.1 artifacts and source semantics",
+    "discover frozen production price_history/replay/context authorities read-only",
+    "decompose raw state_hash construction markers",
+    "define diagnostic canonical semantic hash excluding run metadata only",
+    "inventory external-context dependencies and recoverable frozen context fields",
+    "authorize only a controlled exact-input parity replay when prerequisites exist",
+    "never authorize full 23-year reconstruction in this package"
+  ]
+}

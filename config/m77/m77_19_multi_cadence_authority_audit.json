@@ -1,0 +1,24 @@
+{
+  "version": "M77.19-MULTI-CADENCE-LONG-HISTORY-REPLICATION-AUTHORITY-AUDIT-1.0",
+  "long_history": {
+    "start": "2003-09-10",
+    "end": "2026-08-21",
+    "sessions": 5773
+  },
+  "requirements": [
+    "DAILY_REPLAY_STATES",
+    "WEEKLY_REPLAY_STATES",
+    "MONTHLY_REPLAY_STATES",
+    "PIT_REGIME_STATES"
+  ],
+  "prohibitions": [
+    "NO_FABRICATED_HISTORICAL_PIT_REGIMES",
+    "NO_THRESHOLD_RELAXATION",
+    "NO_POSTHOC_CLASS_OR_ROLE_REDEFINITION"
+  ],
+  "governance": {
+    "read_only": true,
+    "database_writes": false,
+    "production_authority_effect": false
+  }
+}

@@ -92,6 +92,9 @@ function extractContractLegs(opportunity: any): any[] {
 function managementSummary(plan: TradePlan): any {
   return plan.execution_intent?.dynamic_management || {};
 }
+function certificationSummary(plan: TradePlan): any {
+  return (plan.execution_intent as any)?.trade_plan_certification || {};
+}
 function portfolioDecision(plan: TradePlan): any {
   return (plan.execution_intent as any)?.portfolio_decision || (plan.execution_intent as any)?.decision_snapshot?.portfolio_decision || {};
 }
@@ -119,7 +122,9 @@ function validationReviewRows(plan: TradePlan): ValidationReviewRow[] {
         return {check, actual: quantities.length ? quantities.join(', ') : 'No quantities', allowed: 'Every quantity must be > 0'};
       }
       case 'single_expiry':
-        return {check, actual: expiries.size ? Array.from(expiries).join(', ') : 'No expiry', allowed: 'Exactly 1 unique expiry'};
+        return {check, actual: expiries.size ? Array.from(expiries).join(', ') : 'No expiry', allowed: 'Exactly 1 unique expiry for same-expiry strategies'};
+      case 'two_expiries':
+        return {check, actual: expiries.size ? Array.from(expiries).join(', ') : 'No expiry', allowed: 'Exactly 2 unique expiries for calendar/diagonal strategies'};
       case 'defined_risk':
         return {check, actual: `Max loss ${Number.isFinite(Number(plan.max_loss)) ? `$${Number(plan.max_loss).toFixed(2)}` : 'not finite'}`, allowed: 'Defined finite maximum loss required'};
       case 'm62_selected_strategy':
@@ -341,13 +346,18 @@ export function AdvancedTradeBuilderPage() {
     try {
       const response = await tradeBuilderApi.revalidate(plan.trade_plan_id);
       const refreshed = response.data;
+      const meta = (response.metadata || {}) as Record<string, any>;
+      const priorVersion = Number(meta.previous_version ?? plan.version);
+      const currentVersion = Number(meta.current_version ?? refreshed.version);
+      const failedChecks = Array.isArray(meta.failed_checks) ? meta.failed_checks.map((x:any)=>validationLabel(String(x))) : [];
       await load();
       if (refreshed.state === 'VALIDATED') {
         setReviewPlanId('');
-        setMessage(`${refreshed.symbol} revalidation passed. Trade plan advanced to VALIDATED; approval remains a separate governed action.`);
+        setMessage(`${refreshed.symbol} revalidation passed (v${priorVersion} → v${currentVersion}). Trade plan advanced DRAFT → VALIDATED; approval remains a separate governed action.`);
       } else {
         setReviewPlanId(refreshed.trade_plan_id);
-        setMessage(`${refreshed.symbol} revalidation completed. Trade plan remains DRAFT; review the refreshed failed checks below.`);
+        const suffix = failedChecks.length ? ` Failed: ${failedChecks.join(' · ')}.` : '';
+        setMessage(`${refreshed.symbol} revalidation completed (v${priorVersion} → v${currentVersion}) and remains DRAFT.${suffix} Review the refreshed evidence below.`);
       }
     } catch (e:any) {
       setMessage(e.message);
@@ -457,6 +467,7 @@ export function AdvancedTradeBuilderPage() {
           </p>
         </article>
       </div>
+      {plans.some(p=>Object.keys(certificationSummary(p)).length>0)&&<article className="panel"><h3>Institutional trade plan certification</h3><p>M75.2 certification is generated from the latest ingested underlying reference and carried unchanged into Trade Builder.</p><div className="grid metrics">{(()=>{const p=plans.find(x=>x.trade_plan_id===sessionStorage.getItem('m62_trade_plan_id'))||plans.find(x=>Object.keys(certificationSummary(x)).length>0);const c=p?certificationSummary(p):{};const r=c.reference_market||{};return <><div><span>Status</span><b>{String(c.status||'NOT CERTIFIED').replaceAll('_',' ')}</b></div><div><span>Quality</span><b>{c.quality_score==null?'—':`${Number(c.quality_score).toFixed(0)} / 100`}</b></div><div><span>Reference price</span><b>{r.price==null?'—':`$${Number(r.price).toFixed(2)}`}</b></div><div><span>Reference time</span><b>{r.timestamp?new Date(r.timestamp).toLocaleString():'—'}</b></div><div><span>Certification version</span><b>{c.version||'—'}</b></div><div><span>Failures</span><b>{(c.failure_codes||[]).length?`${(c.failure_codes||[]).length} issue${(c.failure_codes||[]).length===1?'':'s'}`:'None'}</b></div>{(c.failure_codes||[]).length>0&&<div className="candidate-risk-panel"><b>Certification failures</b><div>{(c.failure_codes||[]).map((code:string,index:number)=><span key={`${code}-${index}`}><b>{code}:</b> {(c.failure_reasons||[])[index]||'Certification rule failed.'}</span>)}</div></div>}</>})()}</div></article>}
       {plans.some(p=>Object.keys(managementSummary(p)).length>0)&&<article className="panel"><h3>Institutional management handoff</h3><p>Plans created from Institutional Options carry their dynamic stop, targets, trailing, theta, volatility, and assignment rules into the Execution Workspace. They are activated after a confirmed fill.</p><div className="grid metrics">{(()=>{const p=plans.find(x=>x.trade_plan_id===sessionStorage.getItem('m62_trade_plan_id'))||plans.find(x=>Object.keys(managementSummary(x)).length>0);const m=p?managementSummary(p):{};return <><div><span>Structural stop</span><b>{m.underlying_stop==null?'—':`$${Number(m.underlying_stop).toFixed(2)}`}</b></div><div><span>Targets</span><b>{(m.underlying_targets||[]).map((x:number)=>`$${Number(x).toFixed(2)}`).join(' · ')||'—'}</b></div><div><span>Trailing policy</span><b>{String(m.trailing_policy||'—').replaceAll('_',' ')}</b></div><div><span>Activation</span><b>After confirmed fill</b></div></>})()}</div></article>}
       <article className="panel">
         <h3>Trade plans</h3>

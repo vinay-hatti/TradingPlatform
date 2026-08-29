@@ -1,0 +1,9 @@
+component,lineno,source_sha256,source
+preprocessor_fit,232,4b3f33404893a1792eab86fca5c204bd927a1d6813a001dce7b63a32753e99e4,"prep=FoldPreprocessor().fit(dtr,feature_cols,sign_map)"
+preprocessor_transform,233,72496367153b53d1f6cd301abe1ae181066d1191f07dd6e2d7bbac71117d697b,prep.transform(dtr)
+preprocessor_transform,233,78b0e52264917fd85bda05605a603ec36111e17d9f5d5b33ff68bcb65e2ac710,prep.transform(dte)
+mf2_constructor_fit,240,cceebf7ed4974cb72488381c99994c2c3f3362908050547af6a664c65a33b169,"m=CertifiedMonotonicGAM(knot_count=int(knots),l2_penalty=float(l2),max_iter=300).fit(Xtr,ytr,prep.output_signs)"
+predict_proba,241,1ec9b1946291cad91a4d52afa95f548a25f44f677eb3924daad4aac82b195aa2,"prob=m.predict_proba(Xte)[:,1]"
+predict_proba,241,a41fa5a1e047158c81d7e37e468207714256c29546bde658b24ef88099bb143b,m.predict_proba(Xte)
+threshold_050,241,328ef4b031cc5713893a294a7f717225e7eebc3852624b3540c964ee8bd6a1ab,pred=(prob>=.5).astype(int)
+balanced_accuracy,242,76eb50341755be752fd48904ad555482c0f6a23ae3698663d6c4bb8bec88f52a,"balanced_accuracy(yte,pred)"

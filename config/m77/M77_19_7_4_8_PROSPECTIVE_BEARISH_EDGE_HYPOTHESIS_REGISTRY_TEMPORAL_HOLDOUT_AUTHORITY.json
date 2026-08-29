@@ -1,0 +1,24 @@
+{
+  "milestone": "M77.19.7.4.8",
+  "version": "M77.19.7.4.8-PROSPECTIVE-BEARISH-EDGE-HYPOTHESIS-REGISTRY-TEMPORAL-HOLDOUT-AUTHORITY-1.0",
+  "partitions": {
+    "development": {
+      "end": "2017-12-31"
+    },
+    "validation": {
+      "start": "2018-01-01",
+      "end": "2022-12-31"
+    },
+    "final_holdout": {
+      "start": "2023-01-01"
+    }
+  },
+  "hypotheses": [
+    "H1_FRESH_DOWNSIDE_TRANSITION",
+    "H2_BREAKDOWN_INITIATION",
+    "H3_CONTINUATION_WITHOUT_EXHAUSTION",
+    "H4_REMAINING_STRUCTURAL_DOWNSIDE_ROOM"
+  ],
+  "candidate_performance_computed": false,
+  "production_authority_effect": false
+}

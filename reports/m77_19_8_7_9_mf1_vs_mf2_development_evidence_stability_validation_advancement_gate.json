@@ -1,0 +1,205 @@
+{
+  "MF1_retuning_authorized": false,
+  "MF2_retuning_authorized": false,
+  "MF3_reopened": false,
+  "authorized_validation_scope": {
+    "MF1_REGULARIZED_LOGISTIC_DIRECTION": [
+      5,
+      10,
+      20
+    ],
+    "MF2_MONOTONIC_GAM_DIRECTION": [
+      5,
+      10,
+      20
+    ]
+  },
+  "development_advancement_criteria": {
+    "criteria_frozen_before_validation_open": true,
+    "maximum_fold_std_balanced_accuracy": 0.015,
+    "minimum_mean_balanced_accuracy": 0.505,
+    "minimum_positive_fold_count": 3,
+    "minimum_single_fold_balanced_accuracy": 0.495
+  },
+  "family_decisions": {
+    "MF1_REGULARIZED_LOGISTIC_DIRECTION": {
+      "failed_horizons": [],
+      "passed_horizons": [
+        5,
+        10,
+        20
+      ],
+      "validation_advancement_authorized": true
+    },
+    "MF2_MONOTONIC_GAM_DIRECTION": {
+      "failed_horizons": [],
+      "passed_horizons": [
+        5,
+        10,
+        20
+      ],
+      "validation_advancement_authorized": true
+    }
+  },
+  "family_horizon_evidence": [
+    {
+      "development_advancement_pass": true,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_balanced_accuracies": [
+        0.5185513851895548,
+        0.5096585367546761,
+        0.5222156222919546,
+        0.5004931225038496,
+        0.5106613999461513
+      ],
+      "fold_count": 5,
+      "horizon": 5,
+      "mean_balanced_accuracy": 0.5123160133372373,
+      "mean_gate_ge_0_505": true,
+      "min_fold_balanced_accuracy": 0.5004931225038496,
+      "minimum_fold_gate_ge_0_495": true,
+      "positive_fold_count": 5,
+      "positive_fold_gate_ge_3": true,
+      "selected_config": {
+        "C": 10.0
+      },
+      "std_balanced_accuracy": 0.007569184824167237,
+      "std_gate_le_0_015": true
+    },
+    {
+      "development_advancement_pass": true,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_balanced_accuracies": [
+        0.5336453546460993,
+        0.5164957712582106,
+        0.5273982906380127,
+        0.4995920470236379,
+        0.5213189475388472
+      ],
+      "fold_count": 5,
+      "horizon": 10,
+      "mean_balanced_accuracy": 0.5196900822209616,
+      "mean_gate_ge_0_505": true,
+      "min_fold_balanced_accuracy": 0.4995920470236379,
+      "minimum_fold_gate_ge_0_495": true,
+      "positive_fold_count": 4,
+      "positive_fold_gate_ge_3": true,
+      "selected_config": {
+        "C": 1.0
+      },
+      "std_balanced_accuracy": 0.01158407483577286,
+      "std_gate_le_0_015": true
+    },
+    {
+      "development_advancement_pass": true,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "fold_balanced_accuracies": [
+        0.5269715436600679,
+        0.5171661607304233,
+        0.5243617391117303,
+        0.5013188940807678,
+        0.5266630368847499
+      ],
+      "fold_count": 5,
+      "horizon": 20,
+      "mean_balanced_accuracy": 0.5192962748935479,
+      "mean_gate_ge_0_505": true,
+      "min_fold_balanced_accuracy": 0.5013188940807678,
+      "minimum_fold_gate_ge_0_495": true,
+      "positive_fold_count": 5,
+      "positive_fold_gate_ge_3": true,
+      "selected_config": {
+        "C": 0.1
+      },
+      "std_balanced_accuracy": 0.00965982885826329,
+      "std_gate_le_0_015": true
+    },
+    {
+      "development_advancement_pass": true,
+      "family": "MF2_MONOTONIC_GAM_DIRECTION",
+      "fold_balanced_accuracies": [
+        0.522341505045458,
+        0.5102614637698095,
+        0.5023129600005525,
+        0.49983178419996654,
+        0.5046149967787256
+      ],
+      "fold_count": 5,
+      "horizon": 5,
+      "mean_balanced_accuracy": 0.5078725419589023,
+      "mean_gate_ge_0_505": true,
+      "min_fold_balanced_accuracy": 0.49983178419996654,
+      "minimum_fold_gate_ge_0_495": true,
+      "positive_fold_count": 4,
+      "positive_fold_gate_ge_3": true,
+      "selected_config": {
+        "l2_penalty": 0.1,
+        "spline_knots": 4
+      },
+      "std_balanced_accuracy": 0.008015387423064782,
+      "std_gate_le_0_015": true
+    },
+    {
+      "development_advancement_pass": true,
+      "family": "MF2_MONOTONIC_GAM_DIRECTION",
+      "fold_balanced_accuracies": [
+        0.5378909888669525,
+        0.5065923912274665,
+        0.5060988957235922,
+        0.5002548382275782,
+        0.503163860176202
+      ],
+      "fold_count": 5,
+      "horizon": 10,
+      "mean_balanced_accuracy": 0.5108001948443583,
+      "mean_gate_ge_0_505": true,
+      "min_fold_balanced_accuracy": 0.5002548382275782,
+      "minimum_fold_gate_ge_0_495": true,
+      "positive_fold_count": 5,
+      "positive_fold_gate_ge_3": true,
+      "selected_config": {
+        "l2_penalty": 0.1,
+        "spline_knots": 4
+      },
+      "std_balanced_accuracy": 0.013734897879598702,
+      "std_gate_le_0_015": true
+    },
+    {
+      "development_advancement_pass": true,
+      "family": "MF2_MONOTONIC_GAM_DIRECTION",
+      "fold_balanced_accuracies": [
+        0.5265879830981144,
+        0.5071477857179124,
+        0.5055871294133568,
+        0.49910609801402883,
+        0.5020806175684468
+      ],
+      "fold_count": 5,
+      "horizon": 20,
+      "mean_balanced_accuracy": 0.5081019227623719,
+      "mean_gate_ge_0_505": true,
+      "min_fold_balanced_accuracy": 0.49910609801402883,
+      "minimum_fold_gate_ge_0_495": true,
+      "positive_fold_count": 4,
+      "positive_fold_gate_ge_3": true,
+      "selected_config": {
+        "l2_penalty": 0.1,
+        "spline_knots": 4
+      },
+      "std_balanced_accuracy": 0.00965556802022401,
+      "std_gate_le_0_015": true
+    }
+  ],
+  "final_holdout_open_authorized": false,
+  "mf1_development_sha256": "1f60cc5923847a3787793795b25b4d17305daa7a8c7cb650c475738e11622b48",
+  "mf2_development_sha256": "dd51082d1c55586064eec91836c399da40295b3959554f8559ced2226788d2aa",
+  "model_family_champion_selected": false,
+  "next_step": "BUILD_M77_19_8_7_10_AUTHORIZED_MODEL_FAMILY_VALIDATION_ONLY_EVALUATION",
+  "production_authority_effect": false,
+  "production_model_change_authorized": false,
+  "status": "READY",
+  "validation_open_authorized_for_scope_only": true,
+  "validation_outcomes_read": false,
+  "validation_scoring_performed": false,
+  "version": "M77.19.8.7.9-MF1-VS-MF2-DEVELOPMENT-EVIDENCE-STABILITY-VALIDATION-ADVANCEMENT-GATE-1.0"
+}

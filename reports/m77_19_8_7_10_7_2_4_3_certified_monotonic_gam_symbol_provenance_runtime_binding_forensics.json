@@ -1,0 +1,150 @@
+{
+  "MF2_development_script_sha256": "f4d00ed8c9afe5621bb49eb271e83e0d477201bc5a6edd21de0cd39b93da287c",
+  "MF2_formula_reimplementation_authorized": false,
+  "MF2_semantic_equivalent_rewrite_authorized": false,
+  "alias_evidence": [],
+  "all_symbol_evidence": [
+    {
+      "imported": "",
+      "kind": "IMPORT_MODULE",
+      "lineno": 3,
+      "local_name": "argparse",
+      "module": "argparse",
+      "source": "import argparse,csv,gzip,hashlib,json,math,os,tempfile,time"
+    },
+    {
+      "imported": "",
+      "kind": "IMPORT_MODULE",
+      "lineno": 3,
+      "local_name": "csv",
+      "module": "csv",
+      "source": "import argparse,csv,gzip,hashlib,json,math,os,tempfile,time"
+    },
+    {
+      "imported": "",
+      "kind": "IMPORT_MODULE",
+      "lineno": 3,
+      "local_name": "gzip",
+      "module": "gzip",
+      "source": "import argparse,csv,gzip,hashlib,json,math,os,tempfile,time"
+    },
+    {
+      "imported": "",
+      "kind": "IMPORT_MODULE",
+      "lineno": 3,
+      "local_name": "hashlib",
+      "module": "hashlib",
+      "source": "import argparse,csv,gzip,hashlib,json,math,os,tempfile,time"
+    },
+    {
+      "imported": "",
+      "kind": "IMPORT_MODULE",
+      "lineno": 3,
+      "local_name": "json",
+      "module": "json",
+      "source": "import argparse,csv,gzip,hashlib,json,math,os,tempfile,time"
+    },
+    {
+      "imported": "",
+      "kind": "IMPORT_MODULE",
+      "lineno": 3,
+      "local_name": "math",
+      "module": "math",
+      "source": "import argparse,csv,gzip,hashlib,json,math,os,tempfile,time"
+    },
+    {
+      "imported": "",
+      "kind": "IMPORT_MODULE",
+      "lineno": 3,
+      "local_name": "os",
+      "module": "os",
+      "source": "import argparse,csv,gzip,hashlib,json,math,os,tempfile,time"
+    },
+    {
+      "imported": "",
+      "kind": "IMPORT_MODULE",
+      "lineno": 3,
+      "local_name": "tempfile",
+      "module": "tempfile",
+      "source": "import argparse,csv,gzip,hashlib,json,math,os,tempfile,time"
+    },
+    {
+      "imported": "",
+      "kind": "IMPORT_MODULE",
+      "lineno": 3,
+      "local_name": "time",
+      "module": "time",
+      "source": "import argparse,csv,gzip,hashlib,json,math,os,tempfile,time"
+    },
+    {
+      "imported": "",
+      "kind": "IMPORT_MODULE",
+      "lineno": 6,
+      "local_name": "np",
+      "module": "numpy",
+      "source": "import numpy as np"
+    },
+    {
+      "imported": "CertifiedMonotonicGAM",
+      "kind": "IMPORT_FROM",
+      "lineno": 180,
+      "local_name": "CertifiedMonotonicGAM",
+      "module": "trading_ai.research.m77.m77_19_8_7_4_certified_solvers",
+      "source": "from trading_ai.research.m77.m77_19_8_7_4_certified_solvers import CertifiedMonotonicGAM"
+    },
+    {
+      "imported": "",
+      "kind": "NAME_LOAD",
+      "lineno": 240,
+      "local_name": "CertifiedMonotonicGAM",
+      "module": "",
+      "source": "CertifiedMonotonicGAM"
+    }
+  ],
+  "dynamic_binding_evidence": [
+    {
+      "call_name": "fit",
+      "lineno": 240,
+      "source": "CertifiedMonotonicGAM(knot_count=int(knots),l2_penalty=float(l2),max_iter=300).fit(Xtr,ytr,prep.output_signs)"
+    },
+    {
+      "call_name": "CertifiedMonotonicGAM",
+      "lineno": 240,
+      "source": "CertifiedMonotonicGAM(knot_count=int(knots),l2_penalty=float(l2),max_iter=300)"
+    }
+  ],
+  "exact_runtime_binding_execution_authorized": true,
+  "failed_import_forensics_sha256": "0f1e3c3153e894e51b965a0776840bb90690fd1c84146a45e24e7177328c5122",
+  "final_holdout_opened": false,
+  "imported_project_module_search": [
+    {
+      "file": "/Users/vinay.hatti/TradingPlatform/src/trading_ai/research/m77/m77_19_8_7_4_certified_solvers.py",
+      "file_sha256": "31c082fffedcd413beadca205bf77d425f8d8166ea2a25ca0124947a6c7e1de6",
+      "module": "trading_ai.research.m77.m77_19_8_7_4_certified_solvers",
+      "target_definitions": [
+        {
+          "end_lineno": 83,
+          "kind": "CLASS_DEF",
+          "lineno": 37,
+          "name": "CertifiedMonotonicGAM",
+          "source_sha256": "b99e273eacd9704559b7b1d6a407c36ec50816dad271738b33936490c5467df6"
+        }
+      ]
+    }
+  ],
+  "local_target_definitions": [],
+  "model_family_champion_selected": false,
+  "next_step": "BUILD_M77_19_8_7_10_7_2_4_4_EXACT_RUNTIME_SYMBOL_BINDING_AND_FIT_CHAIN_PARITY_GATE",
+  "production_authority_effect": false,
+  "resolved_project_module_definition_count": 1,
+  "root_cause": "CERTIFIED_MONOTONIC_GAM_RESOLVED_THROUGH_IMPORTED_PROJECT_MODULE",
+  "root_cause_certified": true,
+  "status": "READY",
+  "symbol_provenance_certified": true,
+  "target_symbol": "CertifiedMonotonicGAM",
+  "validation_model_refit_performed": false,
+  "validation_model_retuning_performed": false,
+  "validation_scoring_execution_authorized": false,
+  "validation_scoring_performed": false,
+  "version": "M77.19.8.7.10.7.2.4.3-CERTIFIED-MONOTONIC-GAM-SYMBOL-PROVENANCE-RUNTIME-BINDING-FORENSICS-1.0"
+}

@@ -1,0 +1,21 @@
+{
+  "milestone": "M77.19.6.5.2.16",
+  "name": "Target Cluster Ancestry Provenance Trace",
+  "authority_report_5215_sha256": "586cefbb9f01771e1e9dd3f632406a32d559092c5440e3d8ab0e9f0bb81a1768",
+  "authority_runner_5215_sha256": "8e4a3f5f3b723fdfa50ab5ced170f9c5e1605cd0256870b76f1d0de87851bcb0",
+  "target_count": 3,
+  "keep_seed_price_globally_rejected": true,
+  "keep_seed_tradeoff": {
+    "baseline_missing": 54,
+    "keep_seed_missing": 472,
+    "baseline_exact": 1329,
+    "keep_seed_exact": 479,
+    "preconsolidation_targets_recovered": 2
+  },
+  "database_mode": "READ_ONLY_SPY_SESSION_CALENDAR_ONLY",
+  "native_internal_atr_merge_multiplier": 0.35,
+  "reachability_threshold": 0.003,
+  "parity_tolerance": 1e-09,
+  "production_authority_effect": false,
+  "full_23_year_reconstruction_authorized": false
+}

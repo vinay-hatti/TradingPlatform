@@ -1,0 +1,127 @@
+{
+  "MF2_formula_reimplementation_authorized": false,
+  "MF2_semantic_equivalent_rewrite_authorized": false,
+  "available_runtime_method_names": [
+    "fit",
+    "_design",
+    "predict_proba"
+  ],
+  "development_chained_fit_call_count": 1,
+  "development_constructor_call_count": 1,
+  "development_invocation_shapes": {
+    "calls": [
+      {
+        "call_name": "fit",
+        "lineno": 240,
+        "source": "CertifiedMonotonicGAM(knot_count=int(knots),l2_penalty=float(l2),max_iter=300).fit(Xtr,ytr,prep.output_signs)"
+      },
+      {
+        "call_name": "m.predict_proba",
+        "lineno": 241,
+        "source": "m.predict_proba(Xte)"
+      },
+      {
+        "call_name": "CertifiedMonotonicGAM",
+        "lineno": 240,
+        "source": "CertifiedMonotonicGAM(knot_count=int(knots),l2_penalty=float(l2),max_iter=300)"
+      }
+    ],
+    "chained_fit_calls": [
+      {
+        "call_name": "fit",
+        "lineno": 240,
+        "source": "CertifiedMonotonicGAM(knot_count=int(knots),l2_penalty=float(l2),max_iter=300).fit(Xtr,ytr,prep.output_signs)"
+      }
+    ],
+    "chained_predict_calls": [
+      {
+        "call_name": "m.predict_proba",
+        "lineno": 241,
+        "source": "m.predict_proba(Xte)"
+      }
+    ],
+    "constructor_calls": [
+      {
+        "call_name": "CertifiedMonotonicGAM",
+        "lineno": 240,
+        "source": "CertifiedMonotonicGAM(knot_count=int(knots),l2_penalty=float(l2),max_iter=300)"
+      }
+    ],
+    "source_windows": [
+      {
+        "center_lineno": 240,
+        "end_lineno": 248,
+        "start_lineno": 232,
+        "text": " 232:             prep=FoldPreprocessor().fit(dtr,feature_cols,sign_map)\n 233:             Xtr=prep.transform(dtr);Xte=prep.transform(dte)\n 234:             ytr=np.asarray([1 if r[f\"h{h}_direction\"]==\"UP\" else 0 for r in dtr],dtype=float)\n 235:             yte=np.asarray([1 if r[f\"h{h}_direction\"]==\"UP\" else 0 for r in dte],dtype=int)\n 236: \n 237:             for knots,l2,cfg in needed:\n 238:                 t=time.perf_counter()\n 239:                 print(f\"{fold['fold_id']} h{h} MF2 knots={knots} l2={l2} START\",flush=True)\n 240:                 m=CertifiedMonotonicGAM(knot_count=int(knots),l2_penalty=float(l2),max_iter=300).fit(Xtr,ytr,prep.output_signs)\n 241:                 prob=m.predict_proba(Xte)[:,1];pred=(prob>=.5).astype(int)\n 242:                 bal=balanced_accuracy(yte,pred)\n 243:                 evidence.append({\n 244:                     \"fold_id\":fold[\"fold_id\"],\"horizon\":h,\"family\":\"MF2_MONOTONIC_GAM_DIRECTION\",\n 245:                     \"status\":\"EVALUATED\",\"spline_knots\":knots,\"l2_penalty\":l2,\n 246:                     \"train_count\":len(dtr),\"test_count\":len(dte),\"balanced_accuracy\":bal,\n 247:                     \"elapsed_seconds\":time.perf_counter()-t\n 248:                 })"
+      },
+      {
+        "center_lineno": 241,
+        "end_lineno": 249,
+        "start_lineno": 233,
+        "text": " 233:             Xtr=prep.transform(dtr);Xte=prep.transform(dte)\n 234:             ytr=np.asarray([1 if r[f\"h{h}_direction\"]==\"UP\" else 0 for r in dtr],dtype=float)\n 235:             yte=np.asarray([1 if r[f\"h{h}_direction\"]==\"UP\" else 0 for r in dte],dtype=int)\n 236: \n 237:             for knots,l2,cfg in needed:\n 238:                 t=time.perf_counter()\n 239:                 print(f\"{fold['fold_id']} h{h} MF2 knots={knots} l2={l2} START\",flush=True)\n 240:                 m=CertifiedMonotonicGAM(knot_count=int(knots),l2_penalty=float(l2),max_iter=300).fit(Xtr,ytr,prep.output_signs)\n 241:                 prob=m.predict_proba(Xte)[:,1];pred=(prob>=.5).astype(int)\n 242:                 bal=balanced_accuracy(yte,pred)\n 243:                 evidence.append({\n 244:                     \"fold_id\":fold[\"fold_id\"],\"horizon\":h,\"family\":\"MF2_MONOTONIC_GAM_DIRECTION\",\n 245:                     \"status\":\"EVALUATED\",\"spline_knots\":knots,\"l2_penalty\":l2,\n 246:                     \"train_count\":len(dtr),\"test_count\":len(dte),\"balanced_accuracy\":bal,\n 247:                     \"elapsed_seconds\":time.perf_counter()-t\n 248:                 })\n 249:                 config_done.add(cfg);save_checkpoint()"
+      },
+      {
+        "center_lineno": 240,
+        "end_lineno": 248,
+        "start_lineno": 232,
+        "text": " 232:             prep=FoldPreprocessor().fit(dtr,feature_cols,sign_map)\n 233:             Xtr=prep.transform(dtr);Xte=prep.transform(dte)\n 234:             ytr=np.asarray([1 if r[f\"h{h}_direction\"]==\"UP\" else 0 for r in dtr],dtype=float)\n 235:             yte=np.asarray([1 if r[f\"h{h}_direction\"]==\"UP\" else 0 for r in dte],dtype=int)\n 236: \n 237:             for knots,l2,cfg in needed:\n 238:                 t=time.perf_counter()\n 239:                 print(f\"{fold['fold_id']} h{h} MF2 knots={knots} l2={l2} START\",flush=True)\n 240:                 m=CertifiedMonotonicGAM(knot_count=int(knots),l2_penalty=float(l2),max_iter=300).fit(Xtr,ytr,prep.output_signs)\n 241:                 prob=m.predict_proba(Xte)[:,1];pred=(prob>=.5).astype(int)\n 242:                 bal=balanced_accuracy(yte,pred)\n 243:                 evidence.append({\n 244:                     \"fold_id\":fold[\"fold_id\"],\"horizon\":h,\"family\":\"MF2_MONOTONIC_GAM_DIRECTION\",\n 245:                     \"status\":\"EVALUATED\",\"spline_knots\":knots,\"l2_penalty\":l2,\n 246:                     \"train_count\":len(dtr),\"test_count\":len(dte),\"balanced_accuracy\":bal,\n 247:                     \"elapsed_seconds\":time.perf_counter()-t\n 248:                 })"
+      }
+    ]
+  },
+  "development_predict_proba_call_count": 1,
+  "failed_runtime_gate_sha256": "5efa5437ce7f9df74842474ac745a6001c231af75360ca9cb3f0ffdec2563001",
+  "final_holdout_opened": false,
+  "fit_chain_repair_authorized": true,
+  "model_family_champion_selected": false,
+  "next_step": "BUILD_M77_19_8_7_10_7_2_4_6_EXACT_FIT_PREDICT_PROBA_CHAIN_PARITY_GATE",
+  "production_authority_effect": false,
+  "provenance_sha256": "34af889a106c22b644656955d36de3c14f19e09d367686826e4355d9efe8ab9b",
+  "root_cause": "RUNTIME_CONTRACT_IS_FIT_PLUS_PREDICT_PROBA_AND_DEVELOPMENT_USES_NON_ASSIGNMENT_CONSTRUCTOR_FIT_SHAPE",
+  "root_cause_certified": true,
+  "runtime_fit_plus_predict_proba_contract_present": true,
+  "runtime_methods": [
+    {
+      "args": [
+        "self",
+        "X",
+        "y",
+        "monotonic_signs"
+      ],
+      "end_lineno": 73,
+      "lineno": 43,
+      "name": "fit",
+      "source": "def fit(self, X, y, monotonic_signs):\n        X=np.asarray(X,dtype=float); y=np.asarray(y,dtype=float)\n        if X.ndim!=2 or y.ndim!=1 or len(X)!=len(y):raise ValueError(\"shape mismatch\")\n        if len(monotonic_signs)!=X.shape[1]:raise ValueError(\"sign map mismatch\")\n        self.knots_=[]; blocks=[]; bounds=[(None,None)] # intercept\n        for j in range(X.shape[1]):\n            ks=choose_knots(X[:,j],self.knot_count)\n            self.knots_.append(ks)\n            b=spline_basis_1d(X[:,j],ks)\n            blocks.append(b)\n            bounds.extend(monotonic_bounds(int(monotonic_signs[j]),b.shape[1]))\n        B=np.column_stack(blocks) if blocks else np.empty((len(X),0))\n        Z=np.column_stack([np.ones(len(X)),B])\n        lam=float(self.l2_penalty)\n        def fun(beta):\n            eta=Z@beta\n            # stable logistic negative log likelihood\n            loss=np.logaddexp(0.0,eta)-y*eta\n            reg=0.5*lam*np.dot(beta[1:],beta[1:])\n            return float(loss.mean()+reg)\n        def jac(beta):\n            p=sigmoid(Z@beta)\n            g=(Z.T@(p-y))/len(y)\n            g[1:]+=lam*beta[1:]\n            return g\n        res=minimize(fun,np.zeros(Z.shape[1]),jac=jac,bounds=bounds,method=\"L-BFGS-B\",\n                     options={\"maxiter\":self.max_iter,\"ftol\":self.tol,\"gtol\":self.tol})\n        if not res.success:\n            raise RuntimeError(f\"MF2 optimizer failed: {res.message}\")\n        self.coef_=res.x; self.n_features_in_=X.shape[1]\n        return self",
+      "source_sha256": "3f4a6bcf18532e300747e36fb62cde661e3da79876da3667fe29bcc0cc8adbcf"
+    },
+    {
+      "args": [
+        "self",
+        "X"
+      ],
+      "end_lineno": 79,
+      "lineno": 75,
+      "name": "_design",
+      "source": "def _design(self,X):\n        X=np.asarray(X,dtype=float)\n        blocks=[spline_basis_1d(X[:,j],self.knots_[j]) for j in range(X.shape[1])]\n        B=np.column_stack(blocks) if blocks else np.empty((len(X),0))\n        return np.column_stack([np.ones(len(X)),B])",
+      "source_sha256": "5c9d83d86b1abdbe5b4508fa76486afac1d493f260fb8be49149db14fa718a60"
+    },
+    {
+      "args": [
+        "self",
+        "X"
+      ],
+      "end_lineno": 83,
+      "lineno": 81,
+      "name": "predict_proba",
+      "source": "def predict_proba(self,X):\n        p=sigmoid(self._design(X)@self.coef_)\n        return np.column_stack([1-p,p])",
+      "source_sha256": "f97b3d18ea37107a56fd7e4d552b8d17d750192584a4fb1eb2a2697e34a2a0e7"
+    }
+  ],
+  "runtime_module_file": "/Users/vinay.hatti/TradingPlatform/src/trading_ai/research/m77/m77_19_8_7_4_certified_solvers.py",
+  "runtime_module_sha256": "31c082fffedcd413beadca205bf77d425f8d8166ea2a25ca0124947a6c7e1de6",
+  "status": "READY",
+  "validation_model_refit_performed": false,
+  "validation_model_retuning_performed": false,
+  "validation_scoring_execution_authorized": false,
+  "validation_scoring_performed": false,
+  "version": "M77.19.8.7.10.7.2.4.5-RUNTIME-METHOD-AND-CHAINED-FIT-INVOCATION-FORENSICS-1.0"
+}

@@ -1,0 +1,89 @@
+{
+  "blockers": [
+    "DAILY_FROZEN_REPLAY_SAMPLE_NOT_RECOVERED",
+    "WEEKLY_FROZEN_REPLAY_SAMPLE_NOT_RECOVERED",
+    "MONTHLY_FROZEN_REPLAY_SAMPLE_NOT_RECOVERED",
+    "DAILY_EXACT_BUNDLE_COUNT_BELOW_48",
+    "WEEKLY_EXACT_BUNDLE_COUNT_BELOW_48",
+    "MONTHLY_EXACT_BUNDLE_COUNT_BELOW_48"
+  ],
+  "cadences": {
+    "DAILY": {
+      "bundle_files": [],
+      "bundles_with_external_context": 0,
+      "bundles_with_historical_regime": 0,
+      "bundles_with_price_history": 0,
+      "bundles_written": 0,
+      "sample_rows_found": 0,
+      "selected_replay_table": "public.historical_underlying_replay_run"
+    },
+    "MONTHLY": {
+      "bundle_files": [],
+      "bundles_with_external_context": 0,
+      "bundles_with_historical_regime": 0,
+      "bundles_with_price_history": 0,
+      "bundles_written": 0,
+      "sample_rows_found": 0,
+      "selected_replay_table": "public.historical_underlying_replay_run"
+    },
+    "WEEKLY": {
+      "bundle_files": [],
+      "bundles_with_external_context": 0,
+      "bundles_with_historical_regime": 0,
+      "bundles_with_price_history": 0,
+      "bundles_written": 0,
+      "sample_rows_found": 0,
+      "selected_replay_table": "public.historical_underlying_replay_run"
+    }
+  },
+  "controlled_exact_input_parity_certified": false,
+  "discovered_tables": {
+    "context": [
+      "public.institutional_option_outcome_observations",
+      "public.m77_shadow_signals",
+      "public.performance_trade_outcomes",
+      "public.stock_outcome_observations"
+    ],
+    "price_history": [
+      "public.price_history"
+    ],
+    "replay": [
+      "public.historical_replay_comparison",
+      "public.historical_replay_run",
+      "public.historical_underlying_replay_authority",
+      "public.historical_underlying_replay_failure",
+      "public.historical_underlying_replay_outcome",
+      "public.historical_underlying_replay_prediction",
+      "public.historical_underlying_replay_run",
+      "public.m73_replay_events",
+      "public.m77_13_cadence_states",
+      "public.m77_13_forward_outcomes",
+      "public.m77_13_forward_signals",
+      "public.m77_shadow_outcomes",
+      "public.m77_shadow_signals"
+    ]
+  },
+  "exact_frozen_input_context_adapter_ready": false,
+  "full_23_year_reconstruction_authorized": false,
+  "generated_at": "2026-08-23T07:36:05.006541+00:00",
+  "governance": {
+    "database_mode": "READ_ONLY",
+    "filesystem_research_artifacts_only": true,
+    "full_23_year_reconstruction_authorized": false,
+    "parity_thresholds_relaxed": false,
+    "production_authority_effect": false,
+    "production_database_writes": false,
+    "research_only": true
+  },
+  "m77_19_6_3_authority_report": "/Users/vinay.hatti/TradingPlatform/reports/m77_19_6_3_controlled_exact_input_parity_replay.json",
+  "next_step": "RESOLVE_M77_19_6_4_ADAPTER_BLOCKERS",
+  "production_authority_effect": false,
+  "sample_per_cadence_requested": 48,
+  "selected_price_history_table": "public.price_history",
+  "selected_replay_tables": {
+    "DAILY": "public.historical_underlying_replay_run",
+    "MONTHLY": "public.historical_underlying_replay_run",
+    "WEEKLY": "public.historical_underlying_replay_run"
+  },
+  "version": "M77.19.6.4-EXACT-FROZEN-INPUT-CONTEXT-REPLAY-ADAPTER-1.0"
+}

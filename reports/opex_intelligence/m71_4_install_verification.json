@@ -1,0 +1,66 @@
+{
+  "checks": {
+    "atomic_complete_coverage": true,
+    "bounded_cleanup": true,
+    "coherent_time_bases": true,
+    "current_only_learning": true,
+    "event_double_count_guard": true,
+    "exact_publication_authority": true,
+    "full_paths": true,
+    "holiday_aware_calendar": true,
+    "independent_calibration": true,
+    "index_scoped_events": true,
+    "management_fail_closed": true,
+    "official_settlement_truth": true,
+    "point_in_time_prices": true,
+    "runtime_authority_fingerprint": true,
+    "runtime_complete_coverage": true,
+    "runtime_exact_ids": true,
+    "runtime_forecast_fingerprints": true,
+    "runtime_full_paths": true,
+    "runtime_m714_authority": true,
+    "runtime_no_duplicate_fingerprints": true,
+    "runtime_publication": true,
+    "runtime_shadow_only": true,
+    "runtime_unique_ids": true,
+    "scenario_overlap_fixed": true,
+    "semantic_noop": true,
+    "serialized_publication": true,
+    "shadow_governance": true,
+    "ui_provenance": true
+  },
+  "details": {
+    "authority_input_fingerprint": "30292b49cf2768b2b9ac4d46b11440233613300660b3aac2e52744b02ccb7393",
+    "calibration": {
+      "actionable_range_coverage": null,
+      "average_magnet_distance_pct": null,
+      "brier_score": null,
+      "coverage50": null,
+      "coverage68": null,
+      "coverage90": null,
+      "disposition": "ABSTAIN",
+      "distinct_expirations": 0,
+      "expected_calibration_error": null,
+      "governance": {
+        "authority_effect": false,
+        "automatic_activation": false,
+        "runtime_mode": "SHADOW"
+      },
+      "governed_outcome_count": 0,
+      "independent_sample_groups": 0,
+      "log_loss": null,
+      "magnet_zone_hit_rate": null,
+      "raw_outcome_count": 0,
+      "requirements": {
+        "minimum_distinct_expirations": 12,
+        "minimum_independent_sample_groups": 30
+      },
+      "sample_size": 0,
+      "status": "INSUFFICIENT_EVIDENCE"
+    },
+    "forecast_count": 9,
+    "publication_id": "m71-pub-836f375f91d74617939d135cb4840117"
+  },
+  "status": "PASSED",
+  "version": "M71.4.2-GOVERNED-OPEX-VERIFICATION-1.0"
+}

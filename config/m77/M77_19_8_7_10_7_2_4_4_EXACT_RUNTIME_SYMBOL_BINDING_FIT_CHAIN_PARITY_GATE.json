@@ -1,0 +1,12 @@
+{
+  "milestone": "M77.19.8.7.10.7.2.4.4",
+  "target_class": "CertifiedMonotonicGAM",
+  "required_methods": [
+    "__init__",
+    "fit",
+    "predict_score"
+  ],
+  "validation_scoring_performed": false,
+  "final_holdout_opened": false,
+  "production_authority_effect": false
+}

@@ -1,0 +1,23 @@
+{
+  "condition_authority": "M77.26.1 executable candidate fields",
+  "condition_states": [
+    "PROBABILITY_UP_TOP20",
+    "DRVE_RISK_LOWER20",
+    "OVERALL_SCORE_TOP20",
+    "IDI_TRADE_QUALITY_TOP20",
+    "OPTIONS_SUITABILITY_TOP20",
+    "PROBABILITY_UP_BOTTOM20",
+    "DRVE_RISK_HIGHER20",
+    "OVERALL_SCORE_BOTTOM20"
+  ],
+  "development_end": "2017-12-31",
+  "forbidden_outcome_window": "2018-01-01 THROUGH 2026-12-31",
+  "management_retuning": false,
+  "new_probability_up_thresholds": 0,
+  "new_top_k_values": 0,
+  "objective": "PAYOFF_ASYMMETRY_AND_LEFT_TAIL_IMPROVEMENT",
+  "production_authority_effect": false,
+  "read_or_modify_prospective_protocols": false,
+  "source_population": "M77.26.1 executable NEXT_OPEN / 5ATR / 3ATR / 60-session cohort",
+  "version": "M77.37-FROZEN-CONDITIONAL-TAIL-STRUCTURE-RESEARCH-CONTRACT-1.0"
+}

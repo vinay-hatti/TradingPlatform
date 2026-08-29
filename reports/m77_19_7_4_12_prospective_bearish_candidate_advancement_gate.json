@@ -1,0 +1,94 @@
+{
+  "advancement_gate": [
+    {
+      "candidate": "H1_FRESH_DOWNSIDE_TRANSITION",
+      "decision": "REJECT_DEVELOPMENT",
+      "reason": "Development accuracy and median remain weak across all horizons.",
+      "validation_horizons": ""
+    },
+    {
+      "candidate": "H2_BREAKDOWN_INITIATION",
+      "decision": "ADVANCE_VALIDATION_5_10_ONLY",
+      "reason": "Development h5/h10 both >50% accuracy and positive median; h20 does not qualify.",
+      "validation_horizons": "5,10"
+    },
+    {
+      "candidate": "H3_CONTINUATION_WITHOUT_EXHAUSTION",
+      "decision": "REJECT_DEVELOPMENT",
+      "reason": "Development remains weak across all horizons.",
+      "validation_horizons": ""
+    },
+    {
+      "candidate": "H4_ROOM_PCT_GE_10PCT",
+      "decision": "ADVANCE_VALIDATION_5_10_20",
+      "reason": "Pre-frozen >=10% room bin is interpretable and shows strongest Development percent-room evidence.",
+      "validation_horizons": "5,10,20"
+    },
+    {
+      "candidate": "H4_ROOM_PCT_5_10PCT",
+      "decision": "ADVANCE_VALIDATION_DIAGNOSTIC",
+      "reason": "Pre-frozen 5-10% room bin is interpretable and materially improves Development evidence; diagnostic companion to >=10%.",
+      "validation_horizons": "5,10,20"
+    },
+    {
+      "candidate": "H4_ROOM_ATR_GE_3ATR",
+      "decision": "DO_NOT_ADVANCE_INSUFFICIENT_SAMPLE",
+      "reason": "Development signal appears positive but count is below fixed 500-observation interpretation floor.",
+      "validation_horizons": ""
+    },
+    {
+      "candidate": "H4_ROOM_ATR_OTHER",
+      "decision": "REJECT_NONMONOTONIC_DEVELOPMENT",
+      "reason": "Eligible ATR bins are non-monotonic and do not establish robust Development edge.",
+      "validation_horizons": ""
+    }
+  ],
+  "development_candidate_authority_sha256": "b0b5f5b3557bac9fea6f67afc51da8b36293382241fc02042385dad4276d1d8d",
+  "governance": {
+    "automatic_bearish_signal_inversion": false,
+    "candidate_champion_selected": false,
+    "development_evidence_recomputed": false,
+    "final_holdout_scoring_performed": false,
+    "parameter_fitting": false,
+    "production_authority_effect": false,
+    "production_model_change_authorized": false,
+    "threshold_search_or_optimization": false,
+    "validation_scoring_performed": false
+  },
+  "h4_development_authority_sha256": "263532b48b8500d7357dda3ed32270bddb31eafd7d54bb1c7cf6957163581ab7",
+  "holdout_authority_sha256": "a3456385c35cde02d5d0384357087dcd6ee5e84f6e08edda72b2b86f3214008a",
+  "minimum_interpretable_count": 500,
+  "next_step": "BUILD_M77_19_7_4_13_AUTHORIZED_CANDIDATE_VALIDATION_ONLY_EVALUATION",
+  "status": "READY",
+  "validation_gate_contract": {
+    "final_holdout_remains_closed": true,
+    "no_candidate_definition_changes_after_validation_open": true,
+    "no_threshold_changes_after_validation_open": true,
+    "validation_may_be_opened_only_for_authorized_candidates_horizons": true,
+    "validation_success_does_not_authorize_production": true
+  },
+  "validation_scope_authorized": {
+    "H2_BREAKDOWN_INITIATION": [
+      5,
+      10
+    ],
+    "H4_ROOM_PCT_5_10PCT": [
+      5,
+      10,
+      20
+    ],
+    "H4_ROOM_PCT_GE_10PCT": [
+      5,
+      10,
+      20
+    ]
+  },
+  "validation_scope_not_authorized": [
+    "H1_FRESH_DOWNSIDE_TRANSITION",
+    "H2_BREAKDOWN_INITIATION_h20",
+    "H3_CONTINUATION_WITHOUT_EXHAUSTION",
+    "H4_ROOM_ATR_GE_3ATR",
+    "H4_ROOM_ATR_OTHER"
+  ],
+  "version": "M77.19.7.4.12-PROSPECTIVE-BEARISH-CANDIDATE-ADVANCEMENT-GATE-1.0"
+}

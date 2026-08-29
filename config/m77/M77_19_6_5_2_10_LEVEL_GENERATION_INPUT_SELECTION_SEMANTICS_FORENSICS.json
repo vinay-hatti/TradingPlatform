@@ -1,0 +1,16 @@
+{
+  "version": "M77.19.6.5.2.10-LEVEL-GENERATION-INPUT-AND-SELECTION-SEMANTICS-FORENSICS-1.0",
+  "milestone": "M77.19.6.5.2.10",
+  "title": "Level Generation Input & Selection Semantics Forensics",
+  "source_529_sha256": "91b1c236014ea2acef7e21e849434cd91c7fd5638d9ab6f54b3d03b3687ffdcf",
+  "source_529_runner_sha256": "5a3af6f274325813cbf3397baf25ce5a23ef63d95204642fe34534df83ba9feb",
+  "native_runner_sha256": "bcc5b49b87ddceba6ac417000d5af3d4a57efd14145595f4d712eb36ae81204b",
+  "database_mode": "READ_ONLY_SPY_SESSION_CALENDAR_ONLY",
+  "synthetic_level_replacement_used": false,
+  "parity_tolerance": 1e-09,
+  "parity_thresholds_relaxed": false,
+  "research_only": true,
+  "controlled_exact_input_parity_certified": false,
+  "full_23_year_reconstruction_authorized": false,
+  "production_authority_effect": false
+}

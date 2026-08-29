@@ -1,0 +1,349 @@
+{
+  "version": "M77.19.2-DEEP-REPLAY-PIT-RECONSTRUCTIBILITY-AUDIT-1.0",
+  "status": "READY",
+  "mode": "READ_ONLY_DEEP_STATIC_SEMANTIC_AUDIT",
+  "source_analysis": {
+    "weekly_runner": {
+      "path": "scripts/run_m77_2_multiyear_frozen_champion.py",
+      "exists": true,
+      "imports": [
+        "__future__",
+        "argparse",
+        "datetime",
+        "json",
+        "pathlib",
+        "trading_ai.database",
+        "trading_ai.historical_underlying_replay.service"
+      ],
+      "argparse_options": [
+        "--cadence",
+        "--end",
+        "--fresh",
+        "--manifest",
+        "--start",
+        "--symbols"
+      ],
+      "has_start_arg": true,
+      "has_end_arg": true,
+      "has_as_of_arg": false,
+      "explicit_historical_range_parameterization": true,
+      "mentions_point_in_time_semantics": true,
+      "mentions_future_sensitive_tokens": true,
+      "mentions_database_write_tokens": false,
+      "mentions_production_namespaces": true,
+      "mentions_historical_namespace": true,
+      "functions": [
+        {
+          "name": "_segments",
+          "mentions_as_of": false,
+          "mentions_future_token": false,
+          "mentions_write": false,
+          "mentions_historical_namespace": false
+        },
+        {
+          "name": "_load_manifest",
+          "mentions_as_of": false,
+          "mentions_future_token": false,
+          "mentions_write": false,
+          "mentions_historical_namespace": false
+        },
+        {
+          "name": "_save_manifest",
+          "mentions_as_of": false,
+          "mentions_future_token": false,
+          "mentions_write": false,
+          "mentions_historical_namespace": false
+        },
+        {
+          "name": "main",
+          "mentions_as_of": false,
+          "mentions_future_token": false,
+          "mentions_write": false,
+          "mentions_historical_namespace": true
+        }
+      ],
+      "sql_evidence": []
+    },
+    "pit_runner": {
+      "path": "scripts/run_m77_8_daily_pit_replay_authority.py",
+      "exists": true,
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "csv",
+        "datetime",
+        "hashlib",
+        "inspect",
+        "json",
+        "pathlib",
+        "sqlalchemy",
+        "trading_ai.database.session",
+        "trading_ai.historical_underlying_replay.regime",
+        "trading_ai.market.providers.polygon",
+        "typing"
+      ],
+      "argparse_options": [
+        "--m77-3",
+        "--m77-7",
+        "--output",
+        "--snapshots-output",
+        "--universe"
+      ],
+      "has_start_arg": false,
+      "has_end_arg": false,
+      "has_as_of_arg": false,
+      "explicit_historical_range_parameterization": false,
+      "mentions_point_in_time_semantics": true,
+      "mentions_future_sensitive_tokens": true,
+      "mentions_database_write_tokens": false,
+      "mentions_production_namespaces": true,
+      "mentions_historical_namespace": true,
+      "functions": [
+        {
+          "name": "normalize_date",
+          "mentions_as_of": false,
+          "mentions_future_token": false,
+          "mentions_write": false,
+          "mentions_historical_namespace": false
+        },
+        {
+          "name": "sha256_file",
+          "mentions_as_of": false,
+          "mentions_future_token": false,
+          "mentions_write": false,
+          "mentions_historical_namespace": false
+        },
+        {
+          "name": "read_json",
+          "mentions_as_of": false,
+          "mentions_future_token": false,
+          "mentions_write": false,
+          "mentions_historical_namespace": false
+        },
+        {
+          "name": "read_canonical_symbols",
+          "mentions_as_of": false,
+          "mentions_future_token": false,
+          "mentions_write": false,
+          "mentions_historical_namespace": false
+        },
+        {
+          "name": "validate_m77_7",
+          "mentions_as_of": false,
+          "mentions_future_token": false,
+          "mentions_write": false,
+          "mentions_historical_namespace": false
+        },
+        {
+          "name": "verify_polygon_adjustment_semantics",
+          "mentions_as_of": false,
+          "mentions_future_token": false,
+          "mentions_write": false,
+          "mentions_historical_namespace": true
+        },
+        {
+          "name": "discover_price_history",
+          "mentions_as_of": false,
+          "mentions_future_token": false,
+          "mentions_write": false,
+          "mentions_historical_namespace": false
+        },
+        {
+          "name": "build_session_calendar",
+          "mentions_as_of": false,
+          "mentions_future_token": false,
+          "mentions_write": false,
+          "mentions_historical_namespace": false
+        },
+        {
+          "name": "compare_snapshot",
+          "mentions_as_of": false,
+          "mentions_future_token": false,
+          "mentions_write": false,
+          "mentions_historical_namespace": false
+        },
+        {
+          "name": "main",
+          "mentions_as_of": true,
+          "mentions_future_token": true,
+          "mentions_write": false,
+          "mentions_historical_namespace": false
+        }
+      ],
+      "sql_evidence": [
+        "rows = session.execute(text(\"SELECT DISTINCT date FROM price_history WHERE symbol='SPY' ORDER BY date\")).scalars().all()",
+        "unknown_dates = [str(x[\"as_of\"]) for x in daily_snapshots if x.get(\"regime\") == \"UNKNOWN\"]",
+        "partial_dates = [str(x[\"as_of\"]) for x in daily_snapshots if x.get(\"evidence_quality\") != \"FULL\"]",
+        "str(x.get(\"as_of\"))[:10]: x",
+        "if x.get(\"as_of\")",
+        "parity_mismatches.append({\"as_of\": key, \"fields\": fields})"
+      ]
+    },
+    "daily_runner": {
+      "path": "scripts/run_m77_9_daily_model_replay.py",
+      "exists": true,
+      "imports": [
+        "__future__",
+        "argparse",
+        "csv",
+        "datetime",
+        "json",
+        "pathlib",
+        "sqlalchemy",
+        "trading_ai.database.session",
+        "trading_ai.historical_underlying_replay"
+      ],
+      "argparse_options": [
+        "--confirm",
+        "--max-observations",
+        "--symbols"
+      ],
+      "has_start_arg": false,
+      "has_end_arg": false,
+      "has_as_of_arg": false,
+      "explicit_historical_range_parameterization": false,
+      "mentions_point_in_time_semantics": true,
+      "mentions_future_sensitive_tokens": true,
+      "mentions_database_write_tokens": false,
+      "mentions_production_namespaces": true,
+      "mentions_historical_namespace": true,
+      "functions": [
+        {
+          "name": "load_json",
+          "mentions_as_of": false,
+          "mentions_future_token": false,
+          "mentions_write": false,
+          "mentions_historical_namespace": false
+        },
+        {
+          "name": "symbols",
+          "mentions_as_of": false,
+          "mentions_future_token": false,
+          "mentions_write": false,
+          "mentions_historical_namespace": false
+        },
+        {
+          "name": "preflight",
+          "mentions_as_of": false,
+          "mentions_future_token": false,
+          "mentions_write": false,
+          "mentions_historical_namespace": true
+        },
+        {
+          "name": "main",
+          "mentions_as_of": false,
+          "mentions_future_token": false,
+          "mentions_write": false,
+          "mentions_historical_namespace": true
+        }
+      ],
+      "sql_evidence": [
+        "elig=session.execute(text(\"SELECT count(*) FROM historical_underlying_replay_authority WHERE disposition='ELIGIBLE' AND symbol = ANY(:s)\"),{'s':syms}).scalar_one()",
+        "row=s.execute(text('SELECT cadence,status,prediction_count,failure_count FROM historical_underlying_replay_run WHERE replay_run_id=:r'),{'r':run_id}).mappings().one()"
+      ]
+    },
+    "monthly_runner": {
+      "path": "scripts/run_m77_10_monthly_model_replay.py",
+      "exists": true,
+      "imports": [
+        "__future__",
+        "argparse",
+        "hashlib",
+        "json",
+        "pathlib",
+        "sqlalchemy",
+        "subprocess",
+        "sys",
+        "trading_ai.database.session",
+        "trading_ai.historical_underlying_replay.service"
+      ],
+      "argparse_options": [
+        "--confirm"
+      ],
+      "has_start_arg": false,
+      "has_end_arg": false,
+      "has_as_of_arg": false,
+      "explicit_historical_range_parameterization": false,
+      "mentions_point_in_time_semantics": true,
+      "mentions_future_sensitive_tokens": true,
+      "mentions_database_write_tokens": false,
+      "mentions_production_namespaces": true,
+      "mentions_historical_namespace": true,
+      "functions": [
+        {
+          "name": "sha",
+          "mentions_as_of": false,
+          "mentions_future_token": false,
+          "mentions_write": false,
+          "mentions_historical_namespace": false
+        },
+        {
+          "name": "discover_authority_table",
+          "mentions_as_of": false,
+          "mentions_future_token": false,
+          "mentions_write": false,
+          "mentions_historical_namespace": true
+        },
+        {
+          "name": "eligible_authority_symbols",
+          "mentions_as_of": false,
+          "mentions_future_token": false,
+          "mentions_write": false,
+          "mentions_historical_namespace": false
+        },
+        {
+          "name": "run_m77_1_cli",
+          "mentions_as_of": false,
+          "mentions_future_token": false,
+          "mentions_write": false,
+          "mentions_historical_namespace": false
+        },
+        {
+          "name": "main",
+          "mentions_as_of": false,
+          "mentions_future_token": false,
+          "mentions_write": false,
+          "mentions_historical_namespace": true
+        }
+      ],
+      "sql_evidence": [
+        "rows=session.execute(text(f\"SELECT symbol FROM {table} WHERE disposition='ELIGIBLE' ORDER BY symbol\")).scalars().all()"
+      ]
+    }
+  },
+  "gates": {
+    "weekly_historical_range_parameterized": true,
+    "monthly_historical_range_parameterized": false,
+    "daily_historical_range_parameterized": false,
+    "pit_historical_range_parameterized": false,
+    "daily_mentions_point_in_time_semantics": true,
+    "pit_mentions_point_in_time_semantics": true,
+    "daily_uses_historical_namespace": true,
+    "pit_uses_historical_namespace": true,
+    "daily_static_no_obvious_production_write": true,
+    "pit_static_no_obvious_production_write": true,
+    "point_in_time_correctness_fully_certified": false
+  },
+  "exact_long_history_reconstruction_authorized": false,
+  "blockers": [
+    "DAILY_RUNNER_NEEDS_HISTORICAL_DATE_PARAMETERIZATION",
+    "MONTHLY_RUNNER_NEEDS_HISTORICAL_DATE_PARAMETERIZATION",
+    "PIT_RUNNER_NEEDS_HISTORICAL_DATE_PARAMETERIZATION",
+    "POINT_IN_TIME_CORRECTNESS_REQUIRES_CONTROLLED_ISOLATED_REPLAY_CERTIFICATION"
+  ],
+  "required_isolation_contract": {
+    "read_only_source_prices": true,
+    "separate_research_namespace": true,
+    "no_production_table_mutation": true,
+    "date_parameterized_daily_replay": true,
+    "date_parameterized_monthly_replay": true,
+    "date_parameterized_pit_regime_reconstruction": true,
+    "walk_forward_as_of_enforcement": true,
+    "future_leakage_tests_required": true,
+    "deterministic_replay_identity_required": true
+  },
+  "next_step": "BUILD_M77_19_3_DATE_PARAMETERIZED_ISOLATED_DAILY_MONTHLY_PIT_HARNESS",
+  "database_writes": false,
+  "production_authority_effect": false
+}

@@ -1,0 +1,5769 @@
+=== BLIND CORRECTION THESIS AUDIT ===
+Symbols: GLD, SOXL, INTC
+Purpose: inspect current TradingPlatform intelligence without using the external trader thesis as an input.
+
+
+=== RELEVANT SCHEMA ===
+[
+  {
+    "table_name": "dealer_expiration_profile",
+    "column_name": "symbol",
+    "data_type": "character varying",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "dealer_expiration_profile",
+    "column_name": "as_of_date",
+    "data_type": "date",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "dealer_expiration_profile",
+    "column_name": "expiry",
+    "data_type": "date",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "dealer_expiration_profile",
+    "column_name": "dte",
+    "data_type": "integer",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "dealer_expiration_profile",
+    "column_name": "call_open_interest",
+    "data_type": "double precision",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "dealer_expiration_profile",
+    "column_name": "put_open_interest",
+    "data_type": "double precision",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "dealer_expiration_profile",
+    "column_name": "net_gamma_exposure",
+    "data_type": "double precision",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "dealer_expiration_profile",
+    "column_name": "net_delta_exposure",
+    "data_type": "double precision",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "dealer_expiration_profile",
+    "column_name": "net_vanna_exposure",
+    "data_type": "double precision",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "dealer_expiration_profile",
+    "column_name": "net_charm_exposure",
+    "data_type": "double precision",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "dealer_expiration_profile",
+    "column_name": "atm_implied_volatility",
+    "data_type": "double precision",
+    "ordinal_position": 11
+  },
+  {
+    "table_name": "dealer_expiration_profile",
+    "column_name": "expected_move",
+    "data_type": "double precision",
+    "ordinal_position": 12
+  },
+  {
+    "table_name": "dealer_expiration_profile",
+    "column_name": "liquidity_score",
+    "data_type": "double precision",
+    "ordinal_position": 13
+  },
+  {
+    "table_name": "dealer_position_change_snapshot",
+    "column_name": "snapshot_timestamp",
+    "data_type": "timestamp with time zone",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "dealer_position_change_snapshot",
+    "column_name": "symbol",
+    "data_type": "character varying",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "dealer_position_change_snapshot",
+    "column_name": "as_of_date",
+    "data_type": "date",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "dealer_position_change_snapshot",
+    "column_name": "positioning_score",
+    "data_type": "double precision",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "dealer_position_change_snapshot",
+    "column_name": "dealer_conviction_score",
+    "data_type": "double precision",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "dealer_position_change_snapshot",
+    "column_name": "confidence",
+    "data_type": "double precision",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "dealer_position_change_snapshot",
+    "column_name": "provenance",
+    "data_type": "character varying",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "dealer_position_change_snapshot",
+    "column_name": "payload_json",
+    "data_type": "text",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "symbol",
+    "data_type": "character varying",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "as_of_date",
+    "data_type": "date",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "quote_date",
+    "data_type": "date",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "spot_price",
+    "data_type": "double precision",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "source_table",
+    "data_type": "character varying",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "dealer_sign_convention",
+    "data_type": "character varying",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "estimator_name",
+    "data_type": "character varying",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "estimator_version",
+    "data_type": "character varying",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "source_contract_count",
+    "data_type": "integer",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "executable_contract_count",
+    "data_type": "integer",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "quote_coverage_pct",
+    "data_type": "double precision",
+    "ordinal_position": 11
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "unsigned_gamma_exposure",
+    "data_type": "double precision",
+    "ordinal_position": 12
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "unsigned_delta_exposure",
+    "data_type": "double precision",
+    "ordinal_position": 13
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "net_gamma_exposure",
+    "data_type": "double precision",
+    "ordinal_position": 14
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "net_delta_exposure",
+    "data_type": "double precision",
+    "ordinal_position": 15
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "net_vanna_exposure",
+    "data_type": "double precision",
+    "ordinal_position": 16
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "net_charm_exposure",
+    "data_type": "double precision",
+    "ordinal_position": 17
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "gamma_regime",
+    "data_type": "character varying",
+    "ordinal_position": 18
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "gamma_flip",
+    "data_type": "double precision",
+    "ordinal_position": 19
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "gamma_flip_distance_pct",
+    "data_type": "double precision",
+    "ordinal_position": 20
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "gamma_flip_confidence",
+    "data_type": "double precision",
+    "ordinal_position": 21
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "primary_call_wall",
+    "data_type": "double precision",
+    "ordinal_position": 22
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "secondary_call_wall",
+    "data_type": "double precision",
+    "ordinal_position": 23
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "primary_put_wall",
+    "data_type": "double precision",
+    "ordinal_position": 24
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "secondary_put_wall",
+    "data_type": "double precision",
+    "ordinal_position": 25
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "magnet_strike",
+    "data_type": "double precision",
+    "ordinal_position": 26
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "expected_move",
+    "data_type": "double precision",
+    "ordinal_position": 27
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "expected_move_pct",
+    "data_type": "double precision",
+    "ordinal_position": 28
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "atm_iv",
+    "data_type": "double precision",
+    "ordinal_position": 29
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "iv_term_slope",
+    "data_type": "double precision",
+    "ordinal_position": 30
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "put_skew",
+    "data_type": "double precision",
+    "ordinal_position": 31
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "call_skew",
+    "data_type": "double precision",
+    "ordinal_position": 32
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "institutional_positioning_score",
+    "data_type": "double precision",
+    "ordinal_position": 33
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "positioning_label",
+    "data_type": "character varying",
+    "ordinal_position": 34
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "bull_probability",
+    "data_type": "double precision",
+    "ordinal_position": 35
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "bear_probability",
+    "data_type": "double precision",
+    "ordinal_position": 36
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "range_probability",
+    "data_type": "double precision",
+    "ordinal_position": 37
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "breakout_probability",
+    "data_type": "double precision",
+    "ordinal_position": 38
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "breakdown_probability",
+    "data_type": "double precision",
+    "ordinal_position": 39
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "volatility_expansion_probability",
+    "data_type": "double precision",
+    "ordinal_position": 40
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "volatility_compression_probability",
+    "data_type": "double precision",
+    "ordinal_position": 41
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "confidence",
+    "data_type": "character varying",
+    "ordinal_position": 42
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "confidence_score",
+    "data_type": "double precision",
+    "ordinal_position": 43
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "warnings_json",
+    "data_type": "text",
+    "ordinal_position": 44
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "assumptions_json",
+    "data_type": "text",
+    "ordinal_position": 45
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "provenance_json",
+    "data_type": "text",
+    "ordinal_position": 46
+  },
+  {
+    "table_name": "dealer_position_snapshot",
+    "column_name": "payload_json",
+    "data_type": "text",
+    "ordinal_position": 47
+  },
+  {
+    "table_name": "dealer_strike_profile",
+    "column_name": "symbol",
+    "data_type": "character varying",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "dealer_strike_profile",
+    "column_name": "as_of_date",
+    "data_type": "date",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "dealer_strike_profile",
+    "column_name": "expiry",
+    "data_type": "date",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "dealer_strike_profile",
+    "column_name": "strike",
+    "data_type": "double precision",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "dealer_strike_profile",
+    "column_name": "dte",
+    "data_type": "integer",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "dealer_strike_profile",
+    "column_name": "call_open_interest",
+    "data_type": "double precision",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "dealer_strike_profile",
+    "column_name": "put_open_interest",
+    "data_type": "double precision",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "dealer_strike_profile",
+    "column_name": "call_volume",
+    "data_type": "double precision",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "dealer_strike_profile",
+    "column_name": "put_volume",
+    "data_type": "double precision",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "dealer_strike_profile",
+    "column_name": "call_gamma_exposure",
+    "data_type": "double precision",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "dealer_strike_profile",
+    "column_name": "put_gamma_exposure",
+    "data_type": "double precision",
+    "ordinal_position": 11
+  },
+  {
+    "table_name": "dealer_strike_profile",
+    "column_name": "net_gamma_exposure",
+    "data_type": "double precision",
+    "ordinal_position": 12
+  },
+  {
+    "table_name": "dealer_strike_profile",
+    "column_name": "call_delta_exposure",
+    "data_type": "double precision",
+    "ordinal_position": 13
+  },
+  {
+    "table_name": "dealer_strike_profile",
+    "column_name": "put_delta_exposure",
+    "data_type": "double precision",
+    "ordinal_position": 14
+  },
+  {
+    "table_name": "dealer_strike_profile",
+    "column_name": "net_delta_exposure",
+    "data_type": "double precision",
+    "ordinal_position": 15
+  },
+  {
+    "table_name": "dealer_strike_profile",
+    "column_name": "vanna_exposure",
+    "data_type": "double precision",
+    "ordinal_position": 16
+  },
+  {
+    "table_name": "dealer_strike_profile",
+    "column_name": "charm_exposure",
+    "data_type": "double precision",
+    "ordinal_position": 17
+  },
+  {
+    "table_name": "dealer_strike_profile",
+    "column_name": "call_spread_pct",
+    "data_type": "double precision",
+    "ordinal_position": 18
+  },
+  {
+    "table_name": "dealer_strike_profile",
+    "column_name": "put_spread_pct",
+    "data_type": "double precision",
+    "ordinal_position": 19
+  },
+  {
+    "table_name": "dealer_strike_profile",
+    "column_name": "liquidity_score",
+    "data_type": "double precision",
+    "ordinal_position": 20
+  },
+  {
+    "table_name": "dealer_strike_profile",
+    "column_name": "dealer_pressure_score",
+    "data_type": "double precision",
+    "ordinal_position": 21
+  },
+  {
+    "table_name": "dealer_strike_profile",
+    "column_name": "pin_score",
+    "data_type": "double precision",
+    "ordinal_position": 22
+  },
+  {
+    "table_name": "dealer_strike_profile",
+    "column_name": "market_structure_eligible",
+    "data_type": "boolean",
+    "ordinal_position": 23
+  },
+  {
+    "table_name": "dealer_strike_profile",
+    "column_name": "trade_eligible",
+    "data_type": "boolean",
+    "ordinal_position": 24
+  },
+  {
+    "table_name": "institutional_inflection_publications",
+    "column_name": "publication_id",
+    "data_type": "character varying",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "institutional_inflection_publications",
+    "column_name": "publication_name",
+    "data_type": "character varying",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "institutional_inflection_publications",
+    "column_name": "source_run_id",
+    "data_type": "character varying",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "institutional_inflection_publications",
+    "column_name": "status",
+    "data_type": "character varying",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "institutional_inflection_publications",
+    "column_name": "symbol_count",
+    "data_type": "integer",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "institutional_inflection_publications",
+    "column_name": "high_conviction_count",
+    "data_type": "integer",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "institutional_inflection_publications",
+    "column_name": "published_at",
+    "data_type": "character varying",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "institutional_inflection_publications",
+    "column_name": "payload_json",
+    "data_type": "json",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "institutional_inflection_publications",
+    "column_name": "authority_input_fingerprint",
+    "data_type": "character varying",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "institutional_inflection_publications",
+    "column_name": "coverage_status",
+    "data_type": "character varying",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "institutional_inflection_publications",
+    "column_name": "source_as_of_date",
+    "data_type": "character varying",
+    "ordinal_position": 11
+  },
+  {
+    "table_name": "institutional_inflection_publications",
+    "column_name": "option_snapshot_id",
+    "data_type": "character varying",
+    "ordinal_position": 12
+  },
+  {
+    "table_name": "institutional_inflection_snapshots",
+    "column_name": "snapshot_id",
+    "data_type": "character varying",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "institutional_inflection_snapshots",
+    "column_name": "publication_name",
+    "data_type": "character varying",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "institutional_inflection_snapshots",
+    "column_name": "source_run_id",
+    "data_type": "character varying",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "institutional_inflection_snapshots",
+    "column_name": "symbol",
+    "data_type": "character varying",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "institutional_inflection_snapshots",
+    "column_name": "timeframe",
+    "data_type": "character varying",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "institutional_inflection_snapshots",
+    "column_name": "direction",
+    "data_type": "character varying",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "institutional_inflection_snapshots",
+    "column_name": "transition_state",
+    "data_type": "character varying",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "institutional_inflection_snapshots",
+    "column_name": "inflection_score",
+    "data_type": "double precision",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "institutional_inflection_snapshots",
+    "column_name": "confidence",
+    "data_type": "double precision",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "institutional_inflection_snapshots",
+    "column_name": "horizon_min_sessions",
+    "data_type": "integer",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "institutional_inflection_snapshots",
+    "column_name": "horizon_max_sessions",
+    "data_type": "integer",
+    "ordinal_position": 11
+  },
+  {
+    "table_name": "institutional_inflection_snapshots",
+    "column_name": "state_hash",
+    "data_type": "character varying",
+    "ordinal_position": 12
+  },
+  {
+    "table_name": "institutional_inflection_snapshots",
+    "column_name": "snapshot_timestamp",
+    "data_type": "character varying",
+    "ordinal_position": 13
+  },
+  {
+    "table_name": "institutional_inflection_snapshots",
+    "column_name": "payload_json",
+    "data_type": "json",
+    "ordinal_position": 14
+  },
+  {
+    "table_name": "institutional_inflection_snapshots",
+    "column_name": "directional_score",
+    "data_type": "double precision",
+    "ordinal_position": 15
+  },
+  {
+    "table_name": "institutional_inflection_snapshots",
+    "column_name": "signal_strength",
+    "data_type": "double precision",
+    "ordinal_position": 16
+  },
+  {
+    "table_name": "institutional_inflection_snapshots",
+    "column_name": "input_quality",
+    "data_type": "double precision",
+    "ordinal_position": 17
+  },
+  {
+    "table_name": "institutional_inflection_snapshots",
+    "column_name": "disposition",
+    "data_type": "character varying",
+    "ordinal_position": 18
+  },
+  {
+    "table_name": "institutional_inflection_snapshots",
+    "column_name": "input_fingerprint",
+    "data_type": "character varying",
+    "ordinal_position": 19
+  },
+  {
+    "table_name": "institutional_inflection_snapshots",
+    "column_name": "semantic_state_hash",
+    "data_type": "character varying",
+    "ordinal_position": 20
+  },
+  {
+    "table_name": "institutional_inflection_snapshots",
+    "column_name": "source_as_of_date",
+    "data_type": "character varying",
+    "ordinal_position": 21
+  },
+  {
+    "table_name": "institutional_inflection_snapshots",
+    "column_name": "option_snapshot_id",
+    "data_type": "character varying",
+    "ordinal_position": 22
+  },
+  {
+    "table_name": "institutional_inflection_snapshots",
+    "column_name": "dealer_as_of_date",
+    "data_type": "character varying",
+    "ordinal_position": 23
+  },
+  {
+    "table_name": "institutional_inflection_snapshots",
+    "column_name": "coverage_status",
+    "data_type": "character varying",
+    "ordinal_position": 24
+  },
+  {
+    "table_name": "institutional_inflection_timeline_events",
+    "column_name": "event_id",
+    "data_type": "character varying",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "institutional_inflection_timeline_events",
+    "column_name": "symbol",
+    "data_type": "character varying",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "institutional_inflection_timeline_events",
+    "column_name": "timeframe",
+    "data_type": "character varying",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "institutional_inflection_timeline_events",
+    "column_name": "transition_state",
+    "data_type": "character varying",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "institutional_inflection_timeline_events",
+    "column_name": "inflection_score",
+    "data_type": "double precision",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "institutional_inflection_timeline_events",
+    "column_name": "confidence",
+    "data_type": "double precision",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "institutional_inflection_timeline_events",
+    "column_name": "state_hash",
+    "data_type": "character varying",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "institutional_inflection_timeline_events",
+    "column_name": "event_timestamp",
+    "data_type": "character varying",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "institutional_inflection_timeline_events",
+    "column_name": "payload_json",
+    "data_type": "json",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "institutional_inflection_timeline_events",
+    "column_name": "source_run_id",
+    "data_type": "character varying",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "institutional_inflection_timeline_events",
+    "column_name": "previous_transition_state",
+    "data_type": "character varying",
+    "ordinal_position": 11
+  },
+  {
+    "table_name": "institutional_inflection_timeline_events",
+    "column_name": "transition_reason",
+    "data_type": "character varying",
+    "ordinal_position": 12
+  },
+  {
+    "table_name": "institutional_inflection_timeline_events",
+    "column_name": "directional_score",
+    "data_type": "double precision",
+    "ordinal_position": 13
+  },
+  {
+    "table_name": "institutional_inflection_timeline_events",
+    "column_name": "signal_strength",
+    "data_type": "double precision",
+    "ordinal_position": 14
+  },
+  {
+    "table_name": "institutional_inflection_timeline_events",
+    "column_name": "semantic_state_hash",
+    "data_type": "character varying",
+    "ordinal_position": 15
+  },
+  {
+    "table_name": "institutional_inflection_timeline_events",
+    "column_name": "event_fingerprint",
+    "data_type": "character varying",
+    "ordinal_position": 16
+  },
+  {
+    "table_name": "institutional_market_context_evaluation",
+    "column_name": "id",
+    "data_type": "bigint",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "institutional_market_context_evaluation",
+    "column_name": "decision_id",
+    "data_type": "character varying",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "institutional_market_context_evaluation",
+    "column_name": "symbol",
+    "data_type": "character varying",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "institutional_market_context_evaluation",
+    "column_name": "snapshot_timestamp",
+    "data_type": "timestamp with time zone",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "institutional_market_context_evaluation",
+    "column_name": "policy_version",
+    "data_type": "character varying",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "institutional_market_context_evaluation",
+    "column_name": "outcome",
+    "data_type": "character varying",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "institutional_market_context_evaluation",
+    "column_name": "allowed",
+    "data_type": "boolean",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "institutional_market_context_evaluation",
+    "column_name": "total_adjustment",
+    "data_type": "double precision",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "institutional_market_context_evaluation",
+    "column_name": "confidence",
+    "data_type": "double precision",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "institutional_market_context_evaluation",
+    "column_name": "reasons_json",
+    "data_type": "text",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "institutional_market_context_evaluation",
+    "column_name": "conflicts_json",
+    "data_type": "text",
+    "ordinal_position": 11
+  },
+  {
+    "table_name": "institutional_market_context_evaluation",
+    "column_name": "payload_json",
+    "data_type": "text",
+    "ordinal_position": 12
+  },
+  {
+    "table_name": "institutional_market_context_evaluation",
+    "column_name": "created_at",
+    "data_type": "timestamp with time zone",
+    "ordinal_position": 13
+  },
+  {
+    "table_name": "institutional_option_contract_recommendations",
+    "column_name": "contract_recommendation_id",
+    "data_type": "character varying",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "institutional_option_contract_recommendations",
+    "column_name": "opportunity_id",
+    "data_type": "character varying",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "institutional_option_contract_recommendations",
+    "column_name": "strategy_candidate_id",
+    "data_type": "character varying",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "institutional_option_contract_recommendations",
+    "column_name": "option_snapshot_id",
+    "data_type": "character varying",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "institutional_option_contract_recommendations",
+    "column_name": "executable",
+    "data_type": "boolean",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "institutional_option_contract_recommendations",
+    "column_name": "liquidity_score",
+    "data_type": "double precision",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "institutional_option_contract_recommendations",
+    "column_name": "created_at",
+    "data_type": "character varying",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "institutional_option_contract_recommendations",
+    "column_name": "payload_json",
+    "data_type": "jsonb",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "institutional_option_decision_snapshots",
+    "column_name": "decision_snapshot_id",
+    "data_type": "character varying",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "institutional_option_decision_snapshots",
+    "column_name": "opportunity_id",
+    "data_type": "character varying",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "institutional_option_decision_snapshots",
+    "column_name": "strategy_candidate_id",
+    "data_type": "character varying",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "institutional_option_decision_snapshots",
+    "column_name": "contract_recommendation_id",
+    "data_type": "character varying",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "institutional_option_decision_snapshots",
+    "column_name": "valuation_id",
+    "data_type": "character varying",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "institutional_option_decision_snapshots",
+    "column_name": "execution_recommendation_id",
+    "data_type": "character varying",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "institutional_option_decision_snapshots",
+    "column_name": "management_snapshot_id",
+    "data_type": "character varying",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "institutional_option_decision_snapshots",
+    "column_name": "institutional_score",
+    "data_type": "double precision",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "institutional_option_decision_snapshots",
+    "column_name": "calibrated_probability",
+    "data_type": "double precision",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "institutional_option_decision_snapshots",
+    "column_name": "expected_value",
+    "data_type": "double precision",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "institutional_option_decision_snapshots",
+    "column_name": "capital_required",
+    "data_type": "double precision",
+    "ordinal_position": 11
+  },
+  {
+    "table_name": "institutional_option_decision_snapshots",
+    "column_name": "selected_strategy",
+    "data_type": "character varying",
+    "ordinal_position": 12
+  },
+  {
+    "table_name": "institutional_option_decision_snapshots",
+    "column_name": "policy_version",
+    "data_type": "character varying",
+    "ordinal_position": 13
+  },
+  {
+    "table_name": "institutional_option_decision_snapshots",
+    "column_name": "state_hash",
+    "data_type": "character varying",
+    "ordinal_position": 14
+  },
+  {
+    "table_name": "institutional_option_decision_snapshots",
+    "column_name": "created_at",
+    "data_type": "character varying",
+    "ordinal_position": 15
+  },
+  {
+    "table_name": "institutional_option_decision_snapshots",
+    "column_name": "payload_json",
+    "data_type": "jsonb",
+    "ordinal_position": 16
+  },
+  {
+    "table_name": "institutional_option_edge_ledger",
+    "column_name": "ledger_id",
+    "data_type": "character varying",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "institutional_option_edge_ledger",
+    "column_name": "contract_recommendation_id",
+    "data_type": "character varying",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "institutional_option_edge_ledger",
+    "column_name": "opportunity_id",
+    "data_type": "character varying",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "institutional_option_edge_ledger",
+    "column_name": "state_hash",
+    "data_type": "character varying",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "institutional_option_edge_ledger",
+    "column_name": "observed_at",
+    "data_type": "character varying",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "institutional_option_edge_ledger",
+    "column_name": "payload_json",
+    "data_type": "json",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "institutional_option_execution_recommendations",
+    "column_name": "execution_recommendation_id",
+    "data_type": "character varying",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "institutional_option_execution_recommendations",
+    "column_name": "opportunity_id",
+    "data_type": "character varying",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "institutional_option_execution_recommendations",
+    "column_name": "strategy_candidate_id",
+    "data_type": "character varying",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "institutional_option_execution_recommendations",
+    "column_name": "contract_recommendation_id",
+    "data_type": "character varying",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "institutional_option_execution_recommendations",
+    "column_name": "underlying_stop",
+    "data_type": "double precision",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "institutional_option_execution_recommendations",
+    "column_name": "trailing_policy",
+    "data_type": "character varying",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "institutional_option_execution_recommendations",
+    "column_name": "ready_for_trade_builder",
+    "data_type": "boolean",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "institutional_option_execution_recommendations",
+    "column_name": "created_at",
+    "data_type": "character varying",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "institutional_option_execution_recommendations",
+    "column_name": "payload_json",
+    "data_type": "jsonb",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "institutional_option_handoffs",
+    "column_name": "handoff_id",
+    "data_type": "character varying",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "institutional_option_handoffs",
+    "column_name": "opportunity_id",
+    "data_type": "character varying",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "institutional_option_handoffs",
+    "column_name": "strategy_candidate_id",
+    "data_type": "character varying",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "institutional_option_handoffs",
+    "column_name": "contract_recommendation_id",
+    "data_type": "character varying",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "institutional_option_handoffs",
+    "column_name": "execution_recommendation_id",
+    "data_type": "character varying",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "institutional_option_handoffs",
+    "column_name": "account_id",
+    "data_type": "character varying",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "institutional_option_handoffs",
+    "column_name": "trade_plan_id",
+    "data_type": "character varying",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "institutional_option_handoffs",
+    "column_name": "execution_intent_id",
+    "data_type": "character varying",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "institutional_option_handoffs",
+    "column_name": "status",
+    "data_type": "character varying",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "institutional_option_handoffs",
+    "column_name": "overrides_json",
+    "data_type": "json",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "institutional_option_handoffs",
+    "column_name": "lineage_json",
+    "data_type": "json",
+    "ordinal_position": 11
+  },
+  {
+    "table_name": "institutional_option_handoffs",
+    "column_name": "payload_json",
+    "data_type": "json",
+    "ordinal_position": 12
+  },
+  {
+    "table_name": "institutional_option_handoffs",
+    "column_name": "created_at",
+    "data_type": "character varying",
+    "ordinal_position": 13
+  },
+  {
+    "table_name": "institutional_option_handoffs",
+    "column_name": "updated_at",
+    "data_type": "character varying",
+    "ordinal_position": 14
+  },
+  {
+    "table_name": "institutional_option_learning_snapshots",
+    "column_name": "learning_snapshot_id",
+    "data_type": "character varying",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "institutional_option_learning_snapshots",
+    "column_name": "scope",
+    "data_type": "character varying",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "institutional_option_learning_snapshots",
+    "column_name": "scope_value",
+    "data_type": "character varying",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "institutional_option_learning_snapshots",
+    "column_name": "observation_count",
+    "data_type": "integer",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "institutional_option_learning_snapshots",
+    "column_name": "win_rate",
+    "data_type": "double precision",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "institutional_option_learning_snapshots",
+    "column_name": "expectancy_pct",
+    "data_type": "double precision",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "institutional_option_learning_snapshots",
+    "column_name": "brier_score",
+    "data_type": "double precision",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "institutional_option_learning_snapshots",
+    "column_name": "expected_calibration_error",
+    "data_type": "double precision",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "institutional_option_learning_snapshots",
+    "column_name": "created_at",
+    "data_type": "character varying",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "institutional_option_learning_snapshots",
+    "column_name": "payload_json",
+    "data_type": "jsonb",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "institutional_option_management_snapshots",
+    "column_name": "management_snapshot_id",
+    "data_type": "character varying",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "institutional_option_management_snapshots",
+    "column_name": "opportunity_id",
+    "data_type": "character varying",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "institutional_option_management_snapshots",
+    "column_name": "strategy_candidate_id",
+    "data_type": "character varying",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "institutional_option_management_snapshots",
+    "column_name": "thesis_integrity",
+    "data_type": "double precision",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "institutional_option_management_snapshots",
+    "column_name": "position_health",
+    "data_type": "double precision",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "institutional_option_management_snapshots",
+    "column_name": "action",
+    "data_type": "character varying",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "institutional_option_management_snapshots",
+    "column_name": "trailing_policy",
+    "data_type": "character varying",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "institutional_option_management_snapshots",
+    "column_name": "created_at",
+    "data_type": "character varying",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "institutional_option_management_snapshots",
+    "column_name": "payload_json",
+    "data_type": "jsonb",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "institutional_option_opportunities",
+    "column_name": "opportunity_id",
+    "data_type": "character varying",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "institutional_option_opportunities",
+    "column_name": "symbol",
+    "data_type": "character varying",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "institutional_option_opportunities",
+    "column_name": "asset_class",
+    "data_type": "character varying",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "institutional_option_opportunities",
+    "column_name": "state",
+    "data_type": "character varying",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "institutional_option_opportunities",
+    "column_name": "direction",
+    "data_type": "character varying",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "institutional_option_opportunities",
+    "column_name": "category",
+    "data_type": "character varying",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "institutional_option_opportunities",
+    "column_name": "overall_score",
+    "data_type": "double precision",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "institutional_option_opportunities",
+    "column_name": "confidence",
+    "data_type": "double precision",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "institutional_option_opportunities",
+    "column_name": "conviction",
+    "data_type": "character varying",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "institutional_option_opportunities",
+    "column_name": "thesis_id",
+    "data_type": "character varying",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "institutional_option_opportunities",
+    "column_name": "stock_publication_name",
+    "data_type": "character varying",
+    "ordinal_position": 11
+  },
+  {
+    "table_name": "institutional_option_opportunities",
+    "column_name": "stock_scanner_run_id",
+    "data_type": "character varying",
+    "ordinal_position": 12
+  },
+  {
+    "table_name": "institutional_option_opportunities",
+    "column_name": "stock_candidate_id",
+    "data_type": "character varying",
+    "ordinal_position": 13
+  },
+  {
+    "table_name": "institutional_option_opportunities",
+    "column_name": "stock_state_hash",
+    "data_type": "character varying",
+    "ordinal_position": 14
+  },
+  {
+    "table_name": "institutional_option_opportunities",
+    "column_name": "option_snapshot_id",
+    "data_type": "character varying",
+    "ordinal_position": 15
+  },
+  {
+    "table_name": "institutional_option_opportunities",
+    "column_name": "version",
+    "data_type": "integer",
+    "ordinal_position": 16
+  },
+  {
+    "table_name": "institutional_option_opportunities",
+    "column_name": "created_at",
+    "data_type": "character varying",
+    "ordinal_position": 17
+  },
+  {
+    "table_name": "institutional_option_opportunities",
+    "column_name": "updated_at",
+    "data_type": "character varying",
+    "ordinal_position": 18
+  },
+  {
+    "table_name": "institutional_option_opportunities",
+    "column_name": "payload_json",
+    "data_type": "jsonb",
+    "ordinal_position": 19
+  },
+  {
+    "table_name": "institutional_option_opportunity_audit",
+    "column_name": "audit_id",
+    "data_type": "character varying",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "institutional_option_opportunity_audit",
+    "column_name": "opportunity_id",
+    "data_type": "character varying",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "institutional_option_opportunity_audit",
+    "column_name": "previous_state",
+    "data_type": "character varying",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "institutional_option_opportunity_audit",
+    "column_name": "new_state",
+    "data_type": "character varying",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "institutional_option_opportunity_audit",
+    "column_name": "actor",
+    "data_type": "character varying",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "institutional_option_opportunity_audit",
+    "column_name": "reason",
+    "data_type": "text",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "institutional_option_opportunity_audit",
+    "column_name": "event_timestamp",
+    "data_type": "character varying",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "institutional_option_opportunity_audit",
+    "column_name": "payload_json",
+    "data_type": "jsonb",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "institutional_option_outcome_attributions",
+    "column_name": "attribution_id",
+    "data_type": "character varying",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "institutional_option_outcome_attributions",
+    "column_name": "opportunity_id",
+    "data_type": "character varying",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "institutional_option_outcome_attributions",
+    "column_name": "strategy_candidate_id",
+    "data_type": "character varying",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "institutional_option_outcome_attributions",
+    "column_name": "contract_recommendation_id",
+    "data_type": "character varying",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "institutional_option_outcome_attributions",
+    "column_name": "outcome",
+    "data_type": "character varying",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "institutional_option_outcome_attributions",
+    "column_name": "realized_return_pct",
+    "data_type": "double precision",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "institutional_option_outcome_attributions",
+    "column_name": "exit_reason",
+    "data_type": "character varying",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "institutional_option_outcome_attributions",
+    "column_name": "payload_json",
+    "data_type": "jsonb",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "institutional_option_outcome_observations",
+    "column_name": "observation_id",
+    "data_type": "character varying",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "institutional_option_outcome_observations",
+    "column_name": "opportunity_id",
+    "data_type": "character varying",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "institutional_option_outcome_observations",
+    "column_name": "strategy_candidate_id",
+    "data_type": "character varying",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "institutional_option_outcome_observations",
+    "column_name": "setup_category",
+    "data_type": "character varying",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "institutional_option_outcome_observations",
+    "column_name": "market_regime",
+    "data_type": "character varying",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "institutional_option_outcome_observations",
+    "column_name": "management_policy",
+    "data_type": "character varying",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "institutional_option_outcome_observations",
+    "column_name": "predicted_probability",
+    "data_type": "double precision",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "institutional_option_outcome_observations",
+    "column_name": "realized_return_pct",
+    "data_type": "double precision",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "institutional_option_outcome_observations",
+    "column_name": "realized_pnl",
+    "data_type": "double precision",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "institutional_option_outcome_observations",
+    "column_name": "outcome",
+    "data_type": "character varying",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "institutional_option_outcome_observations",
+    "column_name": "exit_reason",
+    "data_type": "character varying",
+    "ordinal_position": 11
+  },
+  {
+    "table_name": "institutional_option_outcome_observations",
+    "column_name": "entry_timestamp",
+    "data_type": "character varying",
+    "ordinal_position": 12
+  },
+  {
+    "table_name": "institutional_option_outcome_observations",
+    "column_name": "exit_timestamp",
+    "data_type": "character varying",
+    "ordinal_position": 13
+  },
+  {
+    "table_name": "institutional_option_outcome_observations",
+    "column_name": "payload_json",
+    "data_type": "jsonb",
+    "ordinal_position": 14
+  },
+  {
+    "table_name": "institutional_option_relative_value_snapshots",
+    "column_name": "relative_value_id",
+    "data_type": "character varying",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "institutional_option_relative_value_snapshots",
+    "column_name": "valuation_run_id",
+    "data_type": "character varying",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "institutional_option_relative_value_snapshots",
+    "column_name": "contract_recommendation_id",
+    "data_type": "character varying",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "institutional_option_relative_value_snapshots",
+    "column_name": "symbol",
+    "data_type": "character varying",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "institutional_option_relative_value_snapshots",
+    "column_name": "sector",
+    "data_type": "character varying",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "institutional_option_relative_value_snapshots",
+    "column_name": "peer_group",
+    "data_type": "character varying",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "institutional_option_relative_value_snapshots",
+    "column_name": "symbol_iv",
+    "data_type": "double precision",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "institutional_option_relative_value_snapshots",
+    "column_name": "peer_median_iv",
+    "data_type": "double precision",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "institutional_option_relative_value_snapshots",
+    "column_name": "divergence_pct",
+    "data_type": "double precision",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "institutional_option_relative_value_snapshots",
+    "column_name": "z_score",
+    "data_type": "double precision",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "institutional_option_relative_value_snapshots",
+    "column_name": "relationship_regime",
+    "data_type": "character varying",
+    "ordinal_position": 11
+  },
+  {
+    "table_name": "institutional_option_relative_value_snapshots",
+    "column_name": "snapshot_timestamp",
+    "data_type": "character varying",
+    "ordinal_position": 12
+  },
+  {
+    "table_name": "institutional_option_relative_value_snapshots",
+    "column_name": "payload_json",
+    "data_type": "json",
+    "ordinal_position": 13
+  },
+  {
+    "table_name": "institutional_option_strategy_candidates",
+    "column_name": "strategy_candidate_id",
+    "data_type": "character varying",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "institutional_option_strategy_candidates",
+    "column_name": "opportunity_id",
+    "data_type": "character varying",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "institutional_option_strategy_candidates",
+    "column_name": "strategy",
+    "data_type": "character varying",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "institutional_option_strategy_candidates",
+    "column_name": "disposition",
+    "data_type": "character varying",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "institutional_option_strategy_candidates",
+    "column_name": "eligibility_score",
+    "data_type": "double precision",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "institutional_option_strategy_candidates",
+    "column_name": "strategy_score",
+    "data_type": "double precision",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "institutional_option_strategy_candidates",
+    "column_name": "complexity",
+    "data_type": "character varying",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "institutional_option_strategy_candidates",
+    "column_name": "rank",
+    "data_type": "integer",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "institutional_option_strategy_candidates",
+    "column_name": "selected",
+    "data_type": "boolean",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "institutional_option_strategy_candidates",
+    "column_name": "payload_json",
+    "data_type": "jsonb",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "institutional_option_strategy_comparisons",
+    "column_name": "comparison_id",
+    "data_type": "character varying",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "institutional_option_strategy_comparisons",
+    "column_name": "opportunity_id",
+    "data_type": "character varying",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "institutional_option_strategy_comparisons",
+    "column_name": "selected_strategy_candidate_id",
+    "data_type": "character varying",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "institutional_option_strategy_comparisons",
+    "column_name": "policy_version",
+    "data_type": "character varying",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "institutional_option_strategy_comparisons",
+    "column_name": "created_at",
+    "data_type": "character varying",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "institutional_option_strategy_comparisons",
+    "column_name": "payload_json",
+    "data_type": "jsonb",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "institutional_option_strategy_valuations",
+    "column_name": "valuation_id",
+    "data_type": "character varying",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "institutional_option_strategy_valuations",
+    "column_name": "opportunity_id",
+    "data_type": "character varying",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "institutional_option_strategy_valuations",
+    "column_name": "strategy_candidate_id",
+    "data_type": "character varying",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "institutional_option_strategy_valuations",
+    "column_name": "strategy_score",
+    "data_type": "double precision",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "institutional_option_strategy_valuations",
+    "column_name": "calibrated_probability",
+    "data_type": "double precision",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "institutional_option_strategy_valuations",
+    "column_name": "expected_value",
+    "data_type": "double precision",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "institutional_option_strategy_valuations",
+    "column_name": "expected_return_on_risk",
+    "data_type": "double precision",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "institutional_option_strategy_valuations",
+    "column_name": "selected",
+    "data_type": "boolean",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "institutional_option_strategy_valuations",
+    "column_name": "created_at",
+    "data_type": "character varying",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "institutional_option_strategy_valuations",
+    "column_name": "payload_json",
+    "data_type": "jsonb",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "institutional_option_theses",
+    "column_name": "thesis_id",
+    "data_type": "character varying",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "institutional_option_theses",
+    "column_name": "opportunity_id",
+    "data_type": "character varying",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "institutional_option_theses",
+    "column_name": "direction",
+    "data_type": "character varying",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "institutional_option_theses",
+    "column_name": "setup_category",
+    "data_type": "character varying",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "institutional_option_theses",
+    "column_name": "primary_timeframe",
+    "data_type": "character varying",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "institutional_option_theses",
+    "column_name": "invalidation_level",
+    "data_type": "double precision",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "institutional_option_theses",
+    "column_name": "entry_zone_low",
+    "data_type": "double precision",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "institutional_option_theses",
+    "column_name": "entry_zone_high",
+    "data_type": "double precision",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "institutional_option_theses",
+    "column_name": "created_at",
+    "data_type": "character varying",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "institutional_option_theses",
+    "column_name": "payload_json",
+    "data_type": "jsonb",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "event_id",
+    "data_type": "character varying",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "symbol",
+    "data_type": "character varying",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "event_type",
+    "data_type": "character varying",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "event_date",
+    "data_type": "character varying",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "status",
+    "data_type": "character varying",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "expected_move_pct",
+    "data_type": "double precision",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "historical_move_pct",
+    "data_type": "double precision",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "confidence",
+    "data_type": "double precision",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "source",
+    "data_type": "character varying",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "payload_json",
+    "data_type": "json",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "source_event_key",
+    "data_type": "character varying",
+    "ordinal_position": 11
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "release_name",
+    "data_type": "character varying",
+    "ordinal_position": 12
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "event_time",
+    "data_type": "character varying",
+    "ordinal_position": 13
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "event_timezone",
+    "data_type": "character varying",
+    "ordinal_position": 14
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "event_session",
+    "data_type": "character varying",
+    "ordinal_position": 15
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "event_time_status",
+    "data_type": "character varying",
+    "ordinal_position": 16
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "calendar_source",
+    "data_type": "character varying",
+    "ordinal_position": 17
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "date_status",
+    "data_type": "character varying",
+    "ordinal_position": 18
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "implied_move_pct",
+    "data_type": "double precision",
+    "ordinal_position": 19
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "forecast_move_pct",
+    "data_type": "double precision",
+    "ordinal_position": 20
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "historical_sample_size",
+    "data_type": "integer",
+    "ordinal_position": 21
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "calculation_method",
+    "data_type": "character varying",
+    "ordinal_position": 22
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "options_snapshot_id",
+    "data_type": "character varying",
+    "ordinal_position": 23
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "event_components_json",
+    "data_type": "json",
+    "ordinal_position": 24
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "evidence_json",
+    "data_type": "json",
+    "ordinal_position": 25
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "source_updated_at",
+    "data_type": "character varying",
+    "ordinal_position": 26
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "first_seen_at",
+    "data_type": "character varying",
+    "ordinal_position": 27
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "last_seen_at",
+    "data_type": "character varying",
+    "ordinal_position": 28
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "superseded_at",
+    "data_type": "character varying",
+    "ordinal_position": 29
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "revision_number",
+    "data_type": "integer",
+    "ordinal_position": 30
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "meeting_start_date",
+    "data_type": "character varying",
+    "ordinal_position": 31
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "meeting_end_date",
+    "data_type": "character varying",
+    "ordinal_position": 32
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "content_hash",
+    "data_type": "character varying",
+    "ordinal_position": 33
+  },
+  {
+    "table_name": "institutional_option_valuation_events",
+    "column_name": "record_origin",
+    "data_type": "character varying",
+    "ordinal_position": 34
+  },
+  {
+    "table_name": "institutional_option_valuation_publications",
+    "column_name": "publication_id",
+    "data_type": "character varying",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "institutional_option_valuation_publications",
+    "column_name": "publication_name",
+    "data_type": "character varying",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "institutional_option_valuation_publications",
+    "column_name": "status",
+    "data_type": "character varying",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "institutional_option_valuation_publications",
+    "column_name": "contract_count",
+    "data_type": "integer",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "institutional_option_valuation_publications",
+    "column_name": "underpriced_count",
+    "data_type": "integer",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "institutional_option_valuation_publications",
+    "column_name": "overpriced_count",
+    "data_type": "integer",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "institutional_option_valuation_publications",
+    "column_name": "published_at",
+    "data_type": "character varying",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "institutional_option_valuation_publications",
+    "column_name": "payload_json",
+    "data_type": "json",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "institutional_option_valuation_snapshots",
+    "column_name": "snapshot_id",
+    "data_type": "character varying",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "institutional_option_valuation_snapshots",
+    "column_name": "contract_recommendation_id",
+    "data_type": "character varying",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "institutional_option_valuation_snapshots",
+    "column_name": "opportunity_id",
+    "data_type": "character varying",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "institutional_option_valuation_snapshots",
+    "column_name": "symbol",
+    "data_type": "character varying",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "institutional_option_valuation_snapshots",
+    "column_name": "classification",
+    "data_type": "character varying",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "institutional_option_valuation_snapshots",
+    "column_name": "market_mid",
+    "data_type": "double precision",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "institutional_option_valuation_snapshots",
+    "column_name": "fair_value",
+    "data_type": "double precision",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "institutional_option_valuation_snapshots",
+    "column_name": "mispricing_pct",
+    "data_type": "double precision",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "institutional_option_valuation_snapshots",
+    "column_name": "edge_score",
+    "data_type": "double precision",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "institutional_option_valuation_snapshots",
+    "column_name": "confidence",
+    "data_type": "double precision",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "institutional_option_valuation_snapshots",
+    "column_name": "stability_index",
+    "data_type": "double precision",
+    "ordinal_position": 11
+  },
+  {
+    "table_name": "institutional_option_valuation_snapshots",
+    "column_name": "state_hash",
+    "data_type": "character varying",
+    "ordinal_position": 12
+  },
+  {
+    "table_name": "institutional_option_valuation_snapshots",
+    "column_name": "snapshot_timestamp",
+    "data_type": "character varying",
+    "ordinal_position": 13
+  },
+  {
+    "table_name": "institutional_option_valuation_snapshots",
+    "column_name": "payload_json",
+    "data_type": "json",
+    "ordinal_position": 14
+  },
+  {
+    "table_name": "market_intelligence_snapshot",
+    "column_name": "snapshot_timestamp",
+    "data_type": "timestamp with time zone",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "market_intelligence_snapshot",
+    "column_name": "as_of_date",
+    "data_type": "date",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "market_intelligence_snapshot",
+    "column_name": "universe_name",
+    "data_type": "character varying",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "market_intelligence_snapshot",
+    "column_name": "source_snapshot_timestamp",
+    "data_type": "timestamp with time zone",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "market_intelligence_snapshot",
+    "column_name": "confidence",
+    "data_type": "double precision",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "market_intelligence_snapshot",
+    "column_name": "provenance",
+    "data_type": "character varying",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "market_intelligence_snapshot",
+    "column_name": "calculation_version",
+    "data_type": "character varying",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "market_intelligence_snapshot",
+    "column_name": "payload_json",
+    "data_type": "text",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "market_intelligence_snapshot",
+    "column_name": "created_at",
+    "data_type": "timestamp with time zone",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "market_overview_snapshot",
+    "column_name": "snapshot_timestamp",
+    "data_type": "timestamp with time zone",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "market_overview_snapshot",
+    "column_name": "as_of_date",
+    "data_type": "date",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "market_overview_snapshot",
+    "column_name": "market_bias",
+    "data_type": "character varying",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "market_overview_snapshot",
+    "column_name": "preferred_strategy",
+    "data_type": "character varying",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "market_overview_snapshot",
+    "column_name": "market_health_score",
+    "data_type": "double precision",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "market_overview_snapshot",
+    "column_name": "trend_score",
+    "data_type": "double precision",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "market_overview_snapshot",
+    "column_name": "momentum_score",
+    "data_type": "double precision",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "market_overview_snapshot",
+    "column_name": "breadth_score",
+    "data_type": "double precision",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "market_overview_snapshot",
+    "column_name": "risk_on_score",
+    "data_type": "double precision",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "market_overview_snapshot",
+    "column_name": "sentiment_score",
+    "data_type": "double precision",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "market_overview_snapshot",
+    "column_name": "confidence_score",
+    "data_type": "double precision",
+    "ordinal_position": 11
+  },
+  {
+    "table_name": "market_overview_snapshot",
+    "column_name": "trend_regime",
+    "data_type": "character varying",
+    "ordinal_position": 12
+  },
+  {
+    "table_name": "market_overview_snapshot",
+    "column_name": "volatility_regime",
+    "data_type": "character varying",
+    "ordinal_position": 13
+  },
+  {
+    "table_name": "market_overview_snapshot",
+    "column_name": "breadth_regime",
+    "data_type": "character varying",
+    "ordinal_position": 14
+  },
+  {
+    "table_name": "market_overview_snapshot",
+    "column_name": "liquidity_regime",
+    "data_type": "character varying",
+    "ordinal_position": 15
+  },
+  {
+    "table_name": "market_overview_snapshot",
+    "column_name": "correlation_regime",
+    "data_type": "character varying",
+    "ordinal_position": 16
+  },
+  {
+    "table_name": "market_overview_snapshot",
+    "column_name": "regime_transition_risk",
+    "data_type": "character varying",
+    "ordinal_position": 17
+  },
+  {
+    "table_name": "market_overview_snapshot",
+    "column_name": "payload_json",
+    "data_type": "text",
+    "ordinal_position": 18
+  },
+  {
+    "table_name": "market_volatility_snapshot",
+    "column_name": "snapshot_timestamp",
+    "data_type": "timestamp with time zone",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "market_volatility_snapshot",
+    "column_name": "as_of_date",
+    "data_type": "date",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "market_volatility_snapshot",
+    "column_name": "score",
+    "data_type": "double precision",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "market_volatility_snapshot",
+    "column_name": "regime",
+    "data_type": "character varying",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "market_volatility_snapshot",
+    "column_name": "confidence",
+    "data_type": "double precision",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "market_volatility_snapshot",
+    "column_name": "provenance",
+    "data_type": "character varying",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "market_volatility_snapshot",
+    "column_name": "payload_json",
+    "data_type": "text",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "stock_institutional_trend_snapshot",
+    "column_name": "id",
+    "data_type": "bigint",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "stock_institutional_trend_snapshot",
+    "column_name": "symbol",
+    "data_type": "character varying",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "stock_institutional_trend_snapshot",
+    "column_name": "as_of_date",
+    "data_type": "date",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "stock_institutional_trend_snapshot",
+    "column_name": "snapshot_timestamp",
+    "data_type": "timestamp with time zone",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "stock_institutional_trend_snapshot",
+    "column_name": "status",
+    "data_type": "character varying",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "stock_institutional_trend_snapshot",
+    "column_name": "participation_score",
+    "data_type": "double precision",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "stock_institutional_trend_snapshot",
+    "column_name": "leadership_score",
+    "data_type": "double precision",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "stock_institutional_trend_snapshot",
+    "column_name": "trend_quality_score",
+    "data_type": "double precision",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "stock_institutional_trend_snapshot",
+    "column_name": "deterioration_risk_score",
+    "data_type": "double precision",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "stock_institutional_trend_snapshot",
+    "column_name": "payload_json",
+    "data_type": "jsonb",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "stock_position_intelligence_snapshots",
+    "column_name": "id",
+    "data_type": "character varying",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "stock_position_intelligence_snapshots",
+    "column_name": "symbol",
+    "data_type": "character varying",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "stock_position_intelligence_snapshots",
+    "column_name": "scanner_run_id",
+    "data_type": "character varying",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "stock_position_intelligence_snapshots",
+    "column_name": "candidate_id",
+    "data_type": "character varying",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "stock_position_intelligence_snapshots",
+    "column_name": "snapshot_timestamp",
+    "data_type": "character varying",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "stock_position_intelligence_snapshots",
+    "column_name": "payload_json",
+    "data_type": "json",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "stock_position_intelligence_snapshots",
+    "column_name": "action",
+    "data_type": "character varying",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "stock_position_intelligence_snapshots",
+    "column_name": "thesis_integrity",
+    "data_type": "double precision",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "stock_position_intelligence_snapshots",
+    "column_name": "management_quality",
+    "data_type": "double precision",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "stock_trend_forecast_snapshot",
+    "column_name": "id",
+    "data_type": "bigint",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "stock_trend_forecast_snapshot",
+    "column_name": "symbol",
+    "data_type": "character varying",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "stock_trend_forecast_snapshot",
+    "column_name": "as_of_date",
+    "data_type": "date",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "stock_trend_forecast_snapshot",
+    "column_name": "snapshot_timestamp",
+    "data_type": "timestamp with time zone",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "stock_trend_forecast_snapshot",
+    "column_name": "horizon_days",
+    "data_type": "integer",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "stock_trend_forecast_snapshot",
+    "column_name": "status",
+    "data_type": "character varying",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "stock_trend_forecast_snapshot",
+    "column_name": "payload_json",
+    "data_type": "jsonb",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "stock_trend_snapshot",
+    "column_name": "snapshot_timestamp",
+    "data_type": "timestamp with time zone",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "stock_trend_snapshot",
+    "column_name": "symbol",
+    "data_type": "character varying",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "stock_trend_snapshot",
+    "column_name": "as_of_date",
+    "data_type": "date",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "stock_trend_snapshot",
+    "column_name": "short_term_state",
+    "data_type": "character varying",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "stock_trend_snapshot",
+    "column_name": "intermediate_term_state",
+    "data_type": "character varying",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "stock_trend_snapshot",
+    "column_name": "long_term_state",
+    "data_type": "character varying",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "stock_trend_snapshot",
+    "column_name": "alignment_score",
+    "data_type": "double precision",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "stock_trend_snapshot",
+    "column_name": "trend_quality_score",
+    "data_type": "double precision",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "stock_trend_snapshot",
+    "column_name": "trend_confidence",
+    "data_type": "double precision",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "stock_trend_snapshot",
+    "column_name": "trend_stage",
+    "data_type": "character varying",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "stock_trend_snapshot",
+    "column_name": "trend_age_days",
+    "data_type": "integer",
+    "ordinal_position": 11
+  },
+  {
+    "table_name": "stock_trend_snapshot",
+    "column_name": "relative_strength_vs_spy",
+    "data_type": "double precision",
+    "ordinal_position": 12
+  },
+  {
+    "table_name": "stock_trend_snapshot",
+    "column_name": "relative_strength_vs_sector",
+    "data_type": "double precision",
+    "ordinal_position": 13
+  },
+  {
+    "table_name": "stock_trend_snapshot",
+    "column_name": "sector",
+    "data_type": "character varying",
+    "ordinal_position": 14
+  },
+  {
+    "table_name": "stock_trend_snapshot",
+    "column_name": "sector_etf",
+    "data_type": "character varying",
+    "ordinal_position": 15
+  },
+  {
+    "table_name": "stock_trend_snapshot",
+    "column_name": "calculation_version",
+    "data_type": "character varying",
+    "ordinal_position": 16
+  },
+  {
+    "table_name": "stock_trend_snapshot",
+    "column_name": "payload_json",
+    "data_type": "json",
+    "ordinal_position": 17
+  },
+  {
+    "table_name": "stock_trend_snapshot",
+    "column_name": "created_at",
+    "data_type": "timestamp with time zone",
+    "ordinal_position": 18
+  },
+  {
+    "table_name": "stock_trend_transition_snapshot",
+    "column_name": "snapshot_timestamp",
+    "data_type": "timestamp with time zone",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "stock_trend_transition_snapshot",
+    "column_name": "symbol",
+    "data_type": "character varying",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "stock_trend_transition_snapshot",
+    "column_name": "as_of_date",
+    "data_type": "date",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "stock_trend_transition_snapshot",
+    "column_name": "transition_state",
+    "data_type": "character varying",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "stock_trend_transition_snapshot",
+    "column_name": "transition_direction",
+    "data_type": "character varying",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "stock_trend_transition_snapshot",
+    "column_name": "breakout_state",
+    "data_type": "character varying",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "stock_trend_transition_snapshot",
+    "column_name": "confirmation_score",
+    "data_type": "double precision",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "stock_trend_transition_snapshot",
+    "column_name": "reversal_risk_score",
+    "data_type": "double precision",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "stock_trend_transition_snapshot",
+    "column_name": "exhaustion_risk_score",
+    "data_type": "double precision",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "stock_trend_transition_snapshot",
+    "column_name": "volatility_state",
+    "data_type": "character varying",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "stock_trend_transition_snapshot",
+    "column_name": "calculation_version",
+    "data_type": "character varying",
+    "ordinal_position": 11
+  },
+  {
+    "table_name": "stock_trend_transition_snapshot",
+    "column_name": "payload_json",
+    "data_type": "json",
+    "ordinal_position": 12
+  },
+  {
+    "table_name": "stock_trend_transition_snapshot",
+    "column_name": "created_at",
+    "data_type": "timestamp with time zone",
+    "ordinal_position": 13
+  },
+  {
+    "table_name": "underlying_volatility_snapshot",
+    "column_name": "snapshot_timestamp",
+    "data_type": "timestamp with time zone",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "underlying_volatility_snapshot",
+    "column_name": "underlying_symbol",
+    "data_type": "character varying",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "underlying_volatility_snapshot",
+    "column_name": "as_of_date",
+    "data_type": "date",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "underlying_volatility_snapshot",
+    "column_name": "atm_iv_30d",
+    "data_type": "double precision",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "underlying_volatility_snapshot",
+    "column_name": "realized_vol_20d",
+    "data_type": "double precision",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "underlying_volatility_snapshot",
+    "column_name": "iv_rank_252d",
+    "data_type": "double precision",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "underlying_volatility_snapshot",
+    "column_name": "iv_percentile_252d",
+    "data_type": "double precision",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "underlying_volatility_snapshot",
+    "column_name": "volatility_risk_premium",
+    "data_type": "double precision",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "underlying_volatility_snapshot",
+    "column_name": "put_skew_25d",
+    "data_type": "double precision",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "underlying_volatility_snapshot",
+    "column_name": "term_structure_slope",
+    "data_type": "double precision",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "underlying_volatility_snapshot",
+    "column_name": "strategy_fit",
+    "data_type": "character varying",
+    "ordinal_position": 11
+  },
+  {
+    "table_name": "underlying_volatility_snapshot",
+    "column_name": "observation_count",
+    "data_type": "integer",
+    "ordinal_position": 12
+  },
+  {
+    "table_name": "underlying_volatility_snapshot",
+    "column_name": "confidence",
+    "data_type": "double precision",
+    "ordinal_position": 13
+  },
+  {
+    "table_name": "underlying_volatility_snapshot",
+    "column_name": "provenance",
+    "data_type": "character varying",
+    "ordinal_position": 14
+  },
+  {
+    "table_name": "underlying_volatility_snapshot",
+    "column_name": "payload_json",
+    "data_type": "text",
+    "ordinal_position": 15
+  }
+]
+
+
+=== LATEST STOCK / INSTITUTIONAL OPTIONS LINEAGE ===
+{
+  "stock_scanner_run_id": "stock-scan-758df313015a4abea6ffaad5cc5e2278",
+  "latest_updated_at": "2026-08-17T15:16:06.341100+00:00",
+  "opportunity_count": 349
+}
+
+
+=== CURRENT INSTITUTIONAL OPTION OPPORTUNITIES ===
+[
+  {
+    "opportunity_id": "m62-opp-8010ba9e2173453d98328d88b3d2a8fd",
+    "symbol": "GLD",
+    "asset_class": "EQUITY",
+    "state": "CONTRACTS_OPTIMIZED",
+    "direction": "BULLISH",
+    "category": "BULLISH",
+    "overall_score": 56.1,
+    "confidence": 86.17,
+    "conviction": "LOW",
+    "thesis_id": "m62-thesis-f4c808cd4eb04abd86d07c16eeb6336f",
+    "stock_publication_name": "current_stock_intelligence",
+    "stock_scanner_run_id": "stock-scan-758df313015a4abea6ffaad5cc5e2278",
+    "stock_candidate_id": "stock-candidate-bd8a5e7ff0eb42c2ba10dead7ac7b6e4",
+    "stock_state_hash": "2db92cd41766ee312d28664e6245515b37c98a8ad62409684415a99e2ade4f7e",
+    "option_snapshot_id": "polygon-options-2026-08-17",
+    "version": 27,
+    "created_at": "2026-08-14T00:31:00.660940+00:00",
+    "updated_at": "2026-08-17T15:13:13.423192+00:00",
+    "payload_json": {
+      "state": "VALIDATED",
+      "symbol": "GLD",
+      "lineage": {
+        "market_run_id": "market-ingestion-20260817T145613458738Z",
+        "source_provider": "POLYGON_PERSISTED",
+        "stock_state_hash": "2db92cd41766ee312d28664e6245515b37c98a8ad62409684415a99e2ade4f7e",
+        "option_snapshot_id": "polygon-options-2026-08-17",
+        "stock_candidate_id": "stock-candidate-bd8a5e7ff0eb42c2ba10dead7ac7b6e4",
+        "stock_scanner_run_id": "stock-scan-758df313015a4abea6ffaad5cc5e2278",
+        "stock_publication_name": "current_stock_intelligence",
+        "market_publication_name": "current_market_state",
+        "option_snapshot_timestamp": "2026-08-17",
+        "source_option_snapshot_id": null,
+        "contract_option_snapshot_id": "polygon-options-2026-08-17"
+      },
+      "version": 24,
+      "category": "BULLISH",
+      "metadata": {
+        "freshness": 100.0,
+        "entry_execution": {
+          "atr": 7.2372,
+          "target_1": 417.7263,
+          "entry_type": "DEMAND_BOUNCE",
+          "chase_limit": 404.7163,
+          "disposition": "WAITING_FOR_ENTRY",
+          "reason_codes": [
+            "ABOVE_CHASE_LIMIT_WAIT_FOR_PULLBACK_OR_CONFIRMATION"
+          ],
+          "entry_zone_low": 400.8684,
+          "entry_zone_high": 403.0396,
+          "reference_price": 405.25,
+          "trade_builder_ready": false,
+          "confirmation_trigger": 406.3356,
+          "minimum_target_1_room": 2.02625,
+          "target_1_remaining_room": 12.4763
+        },
+        "reference_market": {
+          "price": 405.25,
+          "source": "LATEST_UNDERLYING_INGESTION",
+          "provider": "POLYGON",
+          "timestamp": "2026-08-17T14:56:26.466956+00:00",
+          "primary_timeframe": "1d",
+          "freshness_minutes_at_certification": 0.16
+        },
+        "primary_timeframe": "1d",
+        "management_quality": 85.98,
+        "m76_2_trade_quality": 58.57,
+        "opportunity_quality": 67.0842,
+        "eligibility_warnings": [],
+        "institutional_volume": {
+          "regime": "QUIET",
+          "signal": "ACCUMULATION_CONFIRMED",
+          "evidence": {
+            "cmf_20d": 0.0165,
+            "version": "M76-INSTITUTIONAL-VOLUME-1.0",
+            "volume_1d": 2971993.54,
+            "absorption_side": "NONE",
+            "price_change_1d": 0.0094,
+            "climactic_volume": false,
+            "price_return_20d": 0.0812,
+            "average_volume_20d": 7899424.11,
+            "average_volume_60d": 7568832.39,
+            "dry_up_ratio_5d_vs_20d": 0.9175,
+            "signed_volume_flow_20d": 0.5211,
+            "range_ratio_vs_20d_median": 1.0102,
+            "elevated_volume_sessions_10d": 5
+          },
+          "dry_up_score": 8.58,
+          "absorption_score": 0.0,
+          "persistence_score": 51.31,
+          "volume_zscore_20d": -1.54,
+          "accumulation_score": 93.34,
+          "distribution_score": 34.88,
+          "relative_volume_1d": 0.376,
+          "relative_volume_5d": 0.918,
+          "relative_volume_20d": 1.037,
+          "close_location_value": 0.543,
+          "volume_percentile_60d": 1.67,
+          "up_down_volume_ratio_20d": 3.177,
+          "breakout_confirmation_score": 0.0,
+          "breakdown_confirmation_score": 0.0,
+          "institutional_participation_score": 46.89
+        },
+        "execution_disposition": "WAITING_FOR_ENTRY",
+        "m76_2_2_continuity_key": "GLD|BULLISH|BULLISH|1d",
+        "m76_2_capital_priority": 66.56,
+        "structural_reward_risk": 3.77,
+        "source_plan_fingerprint": "231706c455009d013f8ba1182c435a6dd3fdfb71c32076c4226506464d42f293",
+        "m76_2_2_continuity_match": "LOGICAL_REFRESH",
+        "m76_2_decision_readiness": 72.05,
+        "trade_plan_certification": {
+          "status": "PASS",
+          "domains": {
+            "risk": {
+              "name": "RISK",
+              "rules": [
+                {
+                  "code": "TPC-RISK-001",
+                  "status": "PASS",
+                  "message": "Structural reward/risk must be positive.",
+                  "evidence": {
+                    "structural_reward_risk": 3.77
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-RISK-002",
+                  "status": "PASS",
+                  "message": "Defined structural stop is required.",
+                  "evidence": {
+                    "stop": 395.4405
+                  },
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            },
+            "market": {
+              "name": "MARKET",
+              "rules": [
+                {
+                  "code": "TPC-MKT-001",
+                  "status": "PASS",
+                  "message": "Reference underlying price must be available from the latest ingestion.",
+                  "evidence": {
+                    "reference_price": 405.25
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MKT-002",
+                  "status": "PASS",
+                  "message": "Reference market timestamp must be present.",
+                  "evidence": {
+                    "timestamp": "2026-08-17T14:56:26.466956+00:00"
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MKT-003",
+                  "status": "PASS",
+                  "message": "Reference market lineage must be Polygon.",
+                  "evidence": {
+                    "provider": "POLYGON"
+                  },
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            },
+            "lineage": {
+              "name": "LINEAGE",
+              "rules": [],
+              "score": 100.0,
+              "status": "NOT_APPLICABLE"
+            },
+            "geometry": {
+              "name": "GEOMETRY",
+              "rules": [
+                {
+                  "code": "TPC-GEO-000",
+                  "status": "PASS",
+                  "message": "Trade plan must have a directional bullish or bearish thesis.",
+                  "evidence": {
+                    "direction": "BULLISH"
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-004",
+                  "status": "PASS",
+                  "message": "Entry zone must be positive and ordered.",
+                  "evidence": {
+                    "entry_zone_low": 400.8684,
+                    "entry_zone_high": 403.0396
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-001",
+                  "status": "PASS",
+                  "message": "Every bullish target must be strictly above the reference underlying price.",
+                  "evidence": {
+                    "targets": [
+                      417.7263,
+                      420.0,
+                      426.5201
+                    ],
+                    "invalid_targets": [],
+                    "reference_price": 405.25
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-003",
+                  "status": "PASS",
+                  "message": "Bullish targets must be strictly increasing.",
+                  "evidence": {
+                    "targets": [
+                      417.7263,
+                      420.0,
+                      426.5201
+                    ]
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-005",
+                  "status": "PASS",
+                  "message": "Bullish structural stop must be below the reference price.",
+                  "evidence": {
+                    "stop": 395.4405,
+                    "reference_price": 405.25
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-006",
+                  "status": "PASS",
+                  "message": "Bullish structural stop must be below the entry zone.",
+                  "evidence": {
+                    "stop": 395.4405,
+                    "entry_zone_low": 400.8684
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-007",
+                  "status": "PASS",
+                  "message": "Bullish Target 1 must be above the entry zone.",
+                  "evidence": {
+                    "target_1": 417.7263,
+                    "entry_zone_high": 403.0396
+                  },
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            },
+            "strategy": {
+              "name": "STRATEGY",
+              "rules": [],
+              "score": 100.0,
+              "status": "NOT_APPLICABLE"
+            },
+            "execution": {
+              "name": "EXECUTION",
+              "rules": [],
+              "score": 100.0,
+              "status": "NOT_APPLICABLE"
+            },
+            "lifecycle": {
+              "name": "LIFECYCLE",
+              "rules": [],
+              "score": 100.0,
+              "status": "NOT_APPLICABLE"
+            },
+            "management": {
+              "name": "AUTONOMOUS_MANAGEMENT",
+              "rules": [
+                {
+                  "code": "TPC-MGMT-001",
+                  "status": "PASS",
+                  "message": "Structural stop must be available for autonomous management.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MGMT-002",
+                  "status": "PASS",
+                  "message": "At least one governed profit target must be available.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MGMT-003",
+                  "status": "PASS",
+                  "message": "Trailing policy must be defined.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MGMT-004",
+                  "status": "PASS",
+                  "message": "Underlying exit intelligence must be available.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            }
+          },
+          "version": "M68.2.1-CONDITIONAL-ENTRY-GOVERNANCE-1.0",
+          "direction": "BULLISH",
+          "publishable": true,
+          "certified_at": "2026-08-17T14:56:35.779624+00:00",
+          "plan_mutated": false,
+          "failure_codes": [],
+          "quality_score": 100.0,
+          "entry_execution": {
+            "atr": 7.2372,
+            "target_1": 417.7263,
+            "entry_type": "DEMAND_BOUNCE",
+            "chase_limit": 404.7163,
+            "disposition": "WAITING_FOR_ENTRY",
+            "reason_codes": [
+              "ABOVE_CHASE_LIMIT_WAIT_FOR_PULLBACK_OR_CONFIRMATION"
+            ],
+            "entry_zone_low": 400.8684,
+            "entry_zone_high": 403.0396,
+            "reference_price": 405.25,
+            "trade_builder_ready": false,
+            "confirmation_trigger": 406.3356,
+            "minimum_target_1_room": 2.02625,
+            "target_1_remaining_room": 12.4763
+          },
+          "failure_reasons": [],
+          "certification_id": "TPC-GLD-PENDING",
+          "plan_fingerprint": "231706c455009d013f8ba1182c435a6dd3fdfb71c32076c4226506464d42f293",
+          "reference_market": {
+            "price": 405.25,
+            "source": "LATEST_UNDERLYING_INGESTION",
+            "provider": "POLYGON",
+            "timestamp": "2026-08-17T14:56:26.466956+00:00",
+            "primary_timeframe": "1d",
+            "freshness_minutes_at_certification": 0.16
+          },
+          "certification_scope": "STOCK_TRADE_PLAN",
+          "trade_builder_ready": false,
+          "execution_disposition": "WAITING_FOR_ENTRY",
+          "source_plan_fingerprint": "231706c455009d013f8ba1182c435a6dd3fdfb71c32076c4226506464d42f293"
+        },
+        "m76_2_barrier_probability": {
+          "model": "DETERMINISTIC_GEOMETRY_PRIOR",
+          "evidence": {
+            "atr": 7.2372,
+            "note": "Deterministic prior only; outcome calibration is intentionally not active in M76.2.",
+            "stop": 395.4405,
+            "entry": 401.954,
+            "atr_pct": 1.8005,
+            "targets": [
+              417.7263,
+              420.0,
+              426.5201
+            ],
+            "quality_edge": 0.3923,
+            "risk_distance": 6.5135
+          },
+          "expected_mae_pct": 5.63,
+          "expected_mfe_pct": 10.88,
+          "calibration_status": "UNCALIBRATED",
+          "target_1_before_stop": 39.8,
+          "target_2_before_stop": 36.56,
+          "target_3_before_stop": 29.57,
+          "expected_holding_days": 30
+        },
+        "source_option_snapshot_id": "options-20260817T143006429302Z",
+        "eligibility_policy_version": "M62-PH2-1.0",
+        "institutional_plan_mutated": false,
+        "contract_option_snapshot_id": "polygon-options-2026-08-17",
+        "m75_2_2_source_plan_changed": true,
+        "m76_2_2_source_candidate_id": "stock-candidate-bd8a5e7ff0eb42c2ba10dead7ac7b6e4",
+        "m75_2_certification_required": true,
+        "m76_2_2_previous_candidate_id": "stock-candidate-c0b1d0ba8981433f8da398b357b910c0",
+        "m76_2_2_source_scanner_run_id": "stock-scan-758df313015a4abea6ffaad5cc5e2278",
+        "institutional_plan_fingerprint": "a4c51b4286df23e5942ce538ddc66fc1b7d33bc7cc1901187229fb572d3e754d",
+        "selected_strategy_candidate_id": "m62-strategy-f69d8384245642658b8c73f658533534",
+        "m68_2_1_3_option_lineage_policy": "SOURCE_AND_CONTRACT_IDENTITIES_SEPARATED",
+        "m76_2_2_previous_scanner_run_id": "stock-scan-b283656bb5174dbe88d4d13277597426",
+        "institutional_plan_certification": {
+          "status": "PASS",
+          "domains": {
+            "risk": {
+              "name": "RISK",
+              "rules": [
+                {
+                  "code": "TPC-RISK-001",
+                  "status": "PASS",
+                  "message": "Institutional underlying reward/risk must remain positive after transformation.",
+                  "evidence": {
+                    "structural_reward_risk": 2.421478467797639
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-RISK-002",
+                  "status": "PASS",
+                  "message": "Institutional underlying plan must retain a defined structural stop.",
+                  "evidence": {
+                    "stop": 395.4405
+                  },
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            },
+            "market": {
+              "name": "MARKET",
+              "rules": [
+                {
+                  "code": "TPC-MKT-001",
+                  "status": "PASS",
+                  "message": "Reference underlying price must remain available from the certified Stock Intelligence plan.",
+                  "evidence": {
+                    "reference_price": 405.25
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MKT-002",
+                  "status": "PASS",
+                  "message": "Reference market timestamp must remain bound to the Institutional Options plan.",
+                  "evidence": {
+                    "timestamp": "2026-08-17T14:56:26.466956+00:00"
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MKT-003",
+                  "status": "PASS",
+                  "message": "Reference market lineage must remain Polygon.",
+                  "evidence": {
+                    "provider": "POLYGON"
+                  },
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            },
+            "lineage": {
+              "name": "LINEAGE",
+              "rules": [
+                {
+                  "code": "TPC-LIN-001",
+                  "status": "PASS",
+                  "message": "Source Stock Intelligence trade plan certification must PASS.",
+                  "evidence": {
+                    "source_status": "PASS"
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-LIN-002",
+                  "status": "PASS",
+                  "message": "Source Stock Intelligence plan fingerprint must be present.",
+                  "evidence": {
+                    "source_plan_fingerprint": "231706c455009d013f8ba1182c435a6dd3fdfb71c32076c4226506464d42f293"
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-LIN-003",
+                  "status": "PASS",
+                  "message": "Final Institutional Options plan fingerprint must be materialized.",
+                  "evidence": {
+                    "plan_fingerprint": "a4c51b4286df23e5942ce538ddc66fc1b7d33bc7cc1901187229fb572d3e754d"
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-LIN-004",
+                  "status": "PASS",
+                  "message": "Any downstream plan mutation is explicitly re-certified before readiness.",
+                  "evidence": {
+                    "plan_mutated": false
+                  },
+                  "severity": "INFO"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            },
+            "geometry": {
+              "name": "GEOMETRY",
+              "rules": [
+                {
+                  "code": "TPC-GEO-000",
+                  "status": "PASS",
+                  "message": "Trade plan must have a directional bullish or bearish thesis.",
+                  "evidence": {
+                    "direction": "BULLISH"
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-004",
+                  "status": "PASS",
+                  "message": "Entry zone must be positive and ordered.",
+                  "evidence": {
+                    "entry_zone_low": 400.8684,
+                    "entry_zone_high": 403.0396
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-001",
+                  "status": "PASS",
+                  "message": "Every bullish target must be strictly above the reference underlying price.",
+                  "evidence": {
+                    "targets": [
+                      417.7263,
+                      420.0,
+                      426.5201
+                    ],
+                    "invalid_targets": [],
+                    "reference_price": 405.25
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-003",
+                  "status": "PASS",
+                  "message": "Bullish targets must be strictly increasing.",
+                  "evidence": {
+                    "targets": [
+                      417.7263,
+                      420.0,
+                      426.5201
+                    ]
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-005",
+                  "status": "PASS",
+                  "message": "Bullish structural stop must be below the reference price.",
+                  "evidence": {
+                    "stop": 395.4405,
+                    "reference_price": 405.25
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-006",
+                  "status": "PASS",
+                  "message": "Bullish structural stop must be below the entry zone.",
+                  "evidence": {
+                    "stop": 395.4405,
+                    "entry_zone_low": 400.8684
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-007",
+                  "status": "PASS",
+                  "message": "Bullish Target 1 must be above the entry zone.",
+                  "evidence": {
+                    "target_1": 417.7263,
+                    "entry_zone_high": 403.0396
+                  },
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            },
+            "strategy": {
+              "name": "STRATEGY",
+              "rules": [
+                {
+                  "code": "TPC-STR-001",
+                  "status": "PASS",
+                  "message": "Strategy must contain at least one option leg.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-STR-002",
+                  "status": "PASS",
+                  "message": "Every option leg must carry exact Polygon contract identity.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-STR-020",
+                  "status": "PASS",
+                  "message": "BULL_CALL_SPREAD must contain one long and one short leg with the same expiry.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-STR-021",
+                  "status": "PASS",
+                  "message": "BULL_CALL_SPREAD strike ordering is invalid.",
+                  "evidence": {
+                    "buy_strike": 404.0,
+                    "sell_strike": 425.0
+                  },
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            },
+            "execution": {
+              "name": "EXECUTION",
+              "rules": [
+                {
+                  "code": "TPC-EXEC-020",
+                  "status": "PASS",
+                  "message": "Selected Institutional Options contract recommendation must be executable.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-EXEC-021",
+                  "status": "PASS",
+                  "message": "Final Institutional Options plan must retain exact contract identity.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            },
+            "lifecycle": {
+              "name": "LIFECYCLE",
+              "rules": [],
+              "score": 100.0,
+              "status": "NOT_APPLICABLE"
+            },
+            "management": {
+              "name": "AUTONOMOUS_MANAGEMENT",
+              "rules": [
+                {
+                  "code": "TPC-MGMT-010",
+                  "status": "PASS",
+                  "message": "Institutional Options management plan must retain the structural stop.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MGMT-011",
+                  "status": "PASS",
+                  "message": "Institutional Options management plan must retain governed underlying targets.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MGMT-012",
+                  "status": "PASS",
+                  "message": "Institutional Options management plan must define trailing policy.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MGMT-013",
+                  "status": "PASS",
+                  "message": "Institutional Options management plan must define volatility exit governance.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            }
+          },
+          "version": "M68.2.1-CONDITIONAL-ENTRY-GOVERNANCE-1.0",
+          "strategy": "BULL_CALL_SPREAD",
+          "direction": "BULLISH",
+          "publishable": true,
+          "certified_at": "2026-08-17T15:46:47.720595+00:00",
+          "plan_mutated": false,
+          "failure_codes": [],
+          "quality_score": 100.0,
+          "lineage_status": "UNCHANGED_RECERTIFIED",
+          "entry_execution": {
+            "atr": 7.2372,
+            "target_1": 417.7263,
+            "entry_type": "DEMAND_BOUNCE",
+            "chase_limit": 404.7163,
+            "disposition": "WAITING_FOR_ENTRY",
+            "reason_codes": [
+              "ABOVE_CHASE_LIMIT_WAIT_FOR_PULLBACK_OR_CONFIRMATION"
+            ],
+            "entry_zone_low": 400.8684,
+            "entry_zone_high": 403.0396,
+            "reference_price": 405.25,
+            "trade_builder_ready": false,
+            "confirmation_trigger": 406.3356,
+            "minimum_target_1_room": 2.02625,
+            "target_1_remaining_room": 12.4763
+          },
+          "failure_reasons": [],
+          "certification_id": "TPC-IO-A4C51B4286DF23E5",
+          "plan_fingerprint": "a4c51b4286df23e5942ce538ddc66fc1b7d33bc7cc1901187229fb572d3e754d",
+          "reference_market": {
+            "price": 405.25,
+            "source": "LATEST_UNDERLYING_INGESTION",
+            "provider": "POLYGON",
+            "timestamp": "2026-08-17T14:56:26.466956+00:00",
+            "primary_timeframe": "1d",
+            "freshness_minutes_at_certification": 0.16
+          },
+          "certification_scope": "INSTITUTIONAL_OPTIONS_FINAL_PLAN",
+          "trade_builder_ready": false,
+          "execution_disposition": "WAITING_FOR_ENTRY",
+          "source_certification_id": "TPC-GLD-PENDING",
+          "source_plan_fingerprint": "231706c455009d013f8ba1182c435a6dd3fdfb71c32076c4226506464d42f293",
+          "underlying_plan_fingerprint": "231706c455009d013f8ba1182c435a6dd3fdfb71c32076c4226506464d42f293"
+        },
+        "previous_source_plan_fingerprint": "4918d9905b083cb010983a63bf7c54222fc68fa3270c8f6ec99f4a49a59679b8",
+        "source_option_snapshot_timestamp": "2026-08-17 09:38:46.856739-05:00",
+        "m76_2_2_current_decision_snapshot": true,
+        "institutional_decision_intelligence": {
+          "version": "M76.2-IDI-1.0",
+          "decision": "WATCH",
+          "warnings": [
+            "TARGET_1_BARRIER_PRIOR_BELOW_50"
+          ],
+          "state_hash": "efe1770a82cc9e6332a359e1c39d3b9c81022a934d486c982928231516250493",
+          "competition": {
+            "status": "READY",
+            "version": "M76.2-IDI-1.0",
+            "rank_label": "Rank #221 / 614",
+            "market_rank": 221,
+            "top_percent": 35.99,
+            "ranking_basis": "CAPITAL_PRIORITY_THEN_TRADE_QUALITY",
+            "population_size": 614,
+            "market_percentile": 64.17
+          },
+          "passport_id": "IDI-EFE1770A82CC9E63",
+          "explainability": {
+            "version": "M76.2.1-EXPLAINABILITY-1.0",
+            "trade_quality": {
+              "score": 58.57,
+              "components": [
+                {
+                  "key": "directional_quality",
+                  "score": 80.0,
+                  "weight": 0.09,
+                  "contribution": 7.2
+                },
+                {
+                  "key": "trend_quality",
+                  "score": 97.39,
+                  "weight": 0.08,
+                  "contribution": 7.79
+                },
+                {
+                  "key": "structure_quality",
+                  "score": 75.27,
+                  "weight": 0.11,
+                  "contribution": 8.28
+                },
+                {
+                  "key": "breakout_quality",
+                  "score": 2.07,
+                  "weight": 0.08,
+                  "contribution": 0.17
+                },
+                {
+                  "key": "institutional_volume_quality",
+                  "score": 46.89,
+                  "weight": 0.09,
+                  "contribution": 4.22
+                },
+                {
+                  "key": "participation_quality",
+                  "score": 61.4,
+                  "weight": 0.06,
+                  "contribution": 3.68
+                },
+                {
+                  "key": "relative_strength_quality",
+                  "score": 20.0,
+                  "weight": 0.07,
+                  "contribution": 1.4
+                },
+                {
+                  "key": "market_alignment",
+                  "score": 48.53,
+                  "weight": 0.07,
+                  "contribution": 3.4
+                },
+                {
+                  "key": "dealer_quality",
+                  "score": 50.0,
+                  "weight": 0.04,
+                  "contribution": 2.0
+                },
+                {
+                  "key": "liquidity_quality",
+                  "score": 12.03,
+                  "weight": 0.05,
+                  "contribution": 0.6
+                },
+                {
+                  "key": "risk_quality",
+                  "score": 95.32,
+                  "weight": 0.08,
+                  "contribution": 7.63
+                },
+                {
+                  "key": "target_quality",
+                  "score": 38.13,
+                  "weight": 0.08,
+                  "contribution": 3.05
+                },
+                {
+                  "key": "management_quality",
+                  "score": 85.98,
+                  "weight": 0.06,
+                  "contribution": 5.16
+                },
+                {
+                  "key": "certification_quality",
+                  "score": 100.0,
+                  "weight": 0.04,
+                  "contribution": 4.0
+                }
+              ],
+              "ranking_basis": "DETERMINISTIC_WEIGHTED_QUALITY_VECTOR"
+            },
+            "capital_priority": {
+              "score": 66.56,
+              "components": {
+                "risk_quality": {
+                  "score": 95.32,
+                  "weight": 0.1,
+                  "contribution": 9.53
+                },
+                "trade_quality": {
+                  "score": 58.57,
+                  "weight": 0.58,
+                  "contribution": 33.97
+                },
+                "decision_readiness": {
+                  "score": 72.05,
+                  "weight": 0.32,
+                  "contribution": 23.05
+                }
+              },
+              "ranking_basis": "CAPITAL_PRIORITY_THEN_TRADE_QUALITY"
+            },
+            "decision_readiness": {
+              "score": 72.05,
+              "certified": true,
+              "components": {
+                "confidence": {
+                  "score": 86.17,
+                  "weight": 0.13,
+                  "contribution": 11.2
+                },
+                "trade_quality": {
+                  "score": 58.57,
+                  "weight": 0.42,
+                  "contribution": 24.6
+                },
+                "management_quality": {
+                  "score": 85.98,
+                  "weight": 0.15,
+                  "contribution": 12.9
+                },
+                "institutional_volume": {
+                  "score": 46.89,
+                  "weight": 0.1,
+                  "contribution": 4.69
+                },
+                "opportunity_freshness": {
+                  "score": 93.28,
+                  "weight": 0.2,
+                  "contribution": 18.66
+                }
+              },
+              "fail_closed_cap": null
+            },
+            "barrier_probability": {
+              "model": "DETERMINISTIC_GEOMETRY_PRIOR",
+              "expected_mae_pct": 5.63,
+              "expected_mfe_pct": 10.88,
+              "calibration_status": "UNCALIBRATED",
+              "target_1_before_stop": 39.8,
+              "target_2_before_stop": 36.56,
+              "target_3_before_stop": 29.57,
+              "expected_holding_days": 30
+            },
+            "opportunity_freshness": {
+              "score": 93.28,
+              "entry_zone": [
+                400.8684,
+                403.0396
+              ],
+              "aging_penalty": 6.72,
+              "extension_atr": 0.305,
+              "reference_price": 405.25
+            }
+          },
+          "quality_vector": {
+            "risk_quality": 95.32,
+            "trend_quality": 97.39,
+            "dealer_quality": 50.0,
+            "target_quality": 38.13,
+            "breakout_quality": 2.07,
+            "market_alignment": 48.53,
+            "liquidity_quality": 12.03,
+            "structure_quality": 75.27,
+            "management_quality": 85.98,
+            "directional_quality": 80.0,
+            "certification_quality": 100.0,
+            "participation_quality": 61.4,
+            "relative_strength_quality": 20.0,
+            "institutional_volume_quality": 46.89
+          },
+          "capital_priority": 66.56,
+          "evidence_registry": [
+            {
+              "key": "directional_quality",
+              "label": "Directional thesis",
+              "score": 80.0,
+              "status": "STRONG"
+            },
+            {
+              "key": "trend_quality",
+              "label": "Trend",
+              "score": 97.39,
+              "status": "STRONG"
+            },
+            {
+              "key": "structure_quality",
+              "label": "Structure",
+              "score": 75.27,
+              "status": "SUPPORTIVE"
+            },
+            {
+              "key": "breakout_quality",
+              "label": "Breakout / breakdown",
+              "score": 2.07,
+              "status": "WEAK"
+            },
+            {
+              "key": "institutional_volume_quality",
+              "label": "Institutional volume",
+              "score": 46.89,
+              "status": "WEAK"
+            },
+            {
+              "key": "participation_quality",
+              "label": "Participation",
+              "score": 61.4,
+              "status": "MIXED"
+            },
+            {
+              "key": "relative_strength_quality",
+              "label": "Relative strength",
+              "score": 20.0,
+              "status": "WEAK"
+            },
+            {
+              "key": "market_alignment",
+              "label": "Market alignment",
+              "score": 48.53,
+              "status": "WEAK"
+            },
+            {
+              "key": "dealer_quality",
+              "label": "Dealer context",
+              "score": 50.0,
+              "status": "MIXED"
+            },
+            {
+              "key": "liquidity_quality",
+              "label": "Underlying liquidity proxy",
+              "score": 12.03,
+              "status": "WEAK"
+            },
+            {
+              "key": "risk_quality",
+              "label": "Risk geometry",
+              "score": 95.32,
+              "status": "STRONG"
+            },
+            {
+              "key": "target_quality",
+              "label": "Barrier / target quality",
+              "score": 38.13,
+              "status": "WEAK"
+            },
+            {
+              "key": "management_quality",
+              "label": "Management",
+              "score": 85.98,
+              "status": "STRONG"
+            },
+            {
+              "key": "certification_quality",
+              "label": "Trade-plan certification",
+              "score": 100.0,
+              "status": "STRONG"
+            },
+            {
+              "key": "barrier_probability",
+              "label": "Target 1 before stop",
+              "score": 39.8,
+              "status": "UNCALIBRATED_PRIOR",
+              "details": {
+                "atr": 7.2372,
+                "note": "Deterministic prior only; outcome calibration is intentionally not active in M76.2.",
+                "stop": 395.4405,
+                "entry": 401.954,
+                "atr_pct": 1.8005,
+                "targets": [
+                  417.7263,
+                  420.0,
+                  426.5201
+                ],
+                "quality_edge": 0.3923,
+                "risk_distance": 6.5135
+              }
+            },
+            {
+              "key": "opportunity_aging",
+              "label": "Opportunity aging",
+              "score": null,
+              "status": "MEASURED",
+              "details": {
+                "entry_zone": [
+                  400.8684,
+                  403.0396
+                ],
+                "aging_penalty": 6.72,
+                "extension_atr": 0.305,
+                "reference_price": 405.25
+              }
+            }
+          ],
+          "learning_snapshot": {
+            "mode": "SHADOW_CAPTURE",
+            "features": {
+              "barrier_t1": 39.8,
+              "barrier_t2": 36.56,
+              "barrier_t3": 29.57,
+              "risk_quality": 95.32,
+              "trend_quality": 97.39,
+              "dealer_quality": 50.0,
+              "target_quality": 38.13,
+              "alignment_score": 60.0,
+              "breakout_quality": 2.07,
+              "market_alignment": 48.53,
+              "liquidity_quality": 12.03,
+              "structure_quality": 75.27,
+              "management_quality": 85.98,
+              "relative_volume_1d": 0.376,
+              "directional_quality": 80.0,
+              "certification_quality": 100.0,
+              "participation_quality": 61.4,
+              "structural_reward_risk": 3.77,
+              "relative_strength_quality": 20.0,
+              "institutional_volume_quality": 46.89
+            },
+            "feature_version": "M76.2-IDI-1.0",
+            "adaptive_influence": false,
+            "outcome_fields_pending": [
+              "MFE",
+              "MAE",
+              "TARGET_SEQUENCE",
+              "STOP_HIT",
+              "HOLDING_PERIOD",
+              "REALIZED_RETURN"
+            ]
+          },
+          "decision_readiness": 72.05,
+          "barrier_probability": {
+            "model": "DETERMINISTIC_GEOMETRY_PRIOR",
+            "evidence": {
+              "atr": 7.2372,
+              "note": "Deterministic prior only; outcome calibration is intentionally not active in M76.2.",
+              "stop": 395.4405,
+              "entry": 401.954,
+              "atr_pct": 1.8005,
+              "targets": [
+                417.7263,
+                420.0,
+                426.5201
+              ],
+              "quality_edge": 0.3923,
+              "risk_distance": 6.5135
+            },
+            "expected_mae_pct": 5.63,
+            "expected_mfe_pct": 10.88,
+            "calibration_status": "UNCALIBRATED",
+            "target_1_before_stop": 39.8,
+            "target_2_before_stop": 36.56,
+            "target_3_before_stop": 29.57,
+            "expected_holding_days": 30
+          },
+          "institutional_grade": "C",
+          "outcome_probability": {
+            "mode": "SHADOW",
+            "status": "SHADOW_NOT_READY",
+            "lineage": {
+              "runtime_mode": "SHADOW",
+              "scanner_run_id": null,
+              "feature_version": "M77.0-POINT-IN-TIME-FEATURES-1.0",
+              "source_provider": "polygon",
+              "authority_effect": false,
+              "feature_allow_list": [
+                "directional_quality",
+                "trend_quality",
+                "structure_quality",
+                "breakout_quality",
+                "institutional_volume_quality",
+                "participation_quality",
+                "relative_strength_quality",
+                "market_alignment",
+                "dealer_quality",
+                "liquidity_quality",
+                "risk_quality",
+                "management_quality",
+                "certification_quality",
+                "overall_trade_quality",
+                "decision_readiness",
+                "opportunity_freshness",
+                "alignment_score",
+                "scanner_score",
+                "scanner_confidence",
+                "relative_volume_1d",
+                "volume_persistence",
+                "breakout_confirmation",
+                "breakout_follow_through",
+                "breakout_failure",
+                "structural_reward_risk",
+                "entry_extension_atr",
+                "bullish_direction",
+                "bearish_direction",
+                "accumulation_setup",
+                "distribution_setup",
+                "breakout_setup",
+                "mean_reversion_setup",
+                "uptrend_regime",
+                "downtrend_regime",
+                "negative_gamma_regime"
+              ],
+              "snapshot_timestamp": "2026-08-17T14:56:26.466956+00:00",
+              "candidate_state_hash": "1015199ad9f8d8277358a2a3ed9d251a499a862f407f6edb264ba9dda5c8c0d5",
+              "future_fields_excluded": true
+            },
+            "version": "M77.0-OUTCOME-PROBABILITY-1.0",
+            "model_id": null,
+            "warnings": [
+              "NO_APPROVED_SHADOW_MODEL",
+              "DETERMINISTIC_M76_BARRIER_PRIOR_REMAINS_AUTHORITATIVE_INPUT"
+            ],
+            "state_hash": "74631765f69da42cdf1246f0d266a9ad6c5da2c609e5d786b7029bf97314d809",
+            "model_version": null,
+            "analog_evidence": {},
+            "authority_effect": false,
+            "expected_mae_pct": null,
+            "expected_mfe_pct": null,
+            "expected_value_r": null,
+            "model_confidence": 0.0,
+            "calibration_status": "NOT_AVAILABLE",
+            "thesis_invalidation": null,
+            "target_1_before_stop": null,
+            "target_2_before_stop": null,
+            "target_3_before_stop": null,
+            "epistemic_uncertainty": 1.0,
+            "expected_days_to_stop": null,
+            "feature_contributions": [],
+            "profitable_at_horizon": null,
+            "recommended_disposition": "ABSTAIN",
+            "expected_days_to_target_1": null,
+            "out_of_distribution_score": 1.0
+          },
+          "opportunity_freshness": 93.28,
+          "opportunity_lifecycle": "ACTIONABLE",
+          "overall_trade_quality": 58.57
+        },
+        "m68_2_1_12_exact_lineage_precedence": true,
+        "m68_2_1_13_executable_package_count": 7,
+        "m68_2_1_3_source_option_snapshot_id": "options-20260817T143006429302Z",
+        "m76_2_2_source_decision_fingerprint": "20a7d1390f24d1a5e3a89dc03779c8499aa695c4ebddeec3d1f4c1be0a4f0039",
+        "m68_2_1_3_contract_option_snapshot_id": "polygon-options-2026-08-17",
+        "m68_2_1_12_logical_collision_prevented": false,
+        "m75_2_2_final_plan_certification_pending": true,
+        "m68_2_1_13_global_feasible_package_proven": true,
+        "m68_2_1_13_selected_strategy_candidate_id": "m62-strategy-e0943f9b8c0d4f4db56e6fd8e9ea1f28",
+        "m68_2_1_3_source_option_snapshot_timestamp": "2026-08-17 09:38:46.856739-05:00",
+        "m76_2_2_previous_source_decision_fingerprint": "e0f26fe662d48f937ee940378592cf4fd306e063d4102eeddf48f13b53239e63"
+      },
+      "direction": "BULLISH",
+      "thesis_id": "m62-thesis-f4c808cd4eb04abd86d07c16eeb6336f",
+      "confidence": 86.17,
+      "conviction": "LOW",
+      "created_at": "2026-08-14T00:31:00.660940+00:00",
+      "updated_at": "2026-08-17T14:57:24.696321+00:00",
+      "asset_class": "EQUITY",
+      "overall_score": 56.1,
+      "opportunity_id": "m62-opp-8010ba9e2173453d98328d88b3d2a8fd",
+      "inflection_intelligence": {
+        "symbol": "GLD",
+        "lineage": {
+          "breadth": {
+            "score": 58.0267176149056,
+            "available": true,
+            "as_of_date": "2026-08-17",
+            "resolution": "CANONICAL_MARKET_FALLBACK",
+            "source_table": "market_breadth_snapshot",
+            "universe_name": "canonical",
+            "breadth_regime": "HEALTHY_NARROW",
+            "evaluated_symbols": 613,
+            "snapshot_timestamp": "2026-08-17T09:55:57.336219-05:00"
+          },
+          "build_mode": "OPTIONS_ENRICHMENT",
+          "dealer_as_of_date": "2026-08-17",
+          "option_as_of_date": "2026-08-17",
+          "source_as_of_date": "2026-08-17",
+          "option_snapshot_id": "options-20260817T153001093979Z",
+          "component_freshness": {
+            "breadth": "CURRENT_EXACT",
+            "underlying": "CURRENT_EXACT",
+            "dealer_options": "CURRENT_EXACT"
+          },
+          "stock_scanner_run_id": "stock-scan-758df313015a4abea6ffaad5cc5e2278",
+          "stock_publication_name": "current_stock_intelligence",
+          "option_snapshot_timestamp": "2026-08-17 10:38:35.502680-05:00",
+          "stock_publication_timestamp": "2026-08-17T14:56:26.466956+00:00"
+        },
+        "evidence": [
+          "structure:+64.6 (bullish)",
+          "trend:+60.2 (bullish)",
+          "volatility:+17.7 (bullish)",
+          "breadth:+16.1 (bullish)"
+        ],
+        "velocity": 0.6732,
+        "direction": "BULLISH",
+        "timeframe": "1d",
+        "build_mode": "OPTIONS_ENRICHMENT",
+        "components": {
+          "trend": 60.2247,
+          "dealer": 15.6647,
+          "breadth": 16.0534,
+          "structure": 64.5591,
+          "volatility": 17.7234,
+          "participation": 12.1672
+        },
+        "confidence": 99.97,
+        "state_hash": "d4744c2e922fd3e15150fc2a2872f8a36f21c8b6db66717d87dac9bb0d774c0d",
+        "thresholds": {
+          "watch": 60.0,
+          "actionable": 70.0,
+          "high_conviction": 80.0
+        },
+        "diagnostics": {
+          "agreement": 100.0,
+          "momentum_5": 0.67322502,
+          "momentum_20": 10.24211099,
+          "volume_ratio": 0.78185083,
+          "range_position": 0.89665475,
+          "compression_ratio": 0.62162924,
+          "liquidity_quality": 99.7254,
+          "implied_volatility": 0.22950177,
+          "material_acceleration": true,
+          "volatility_divergence": -0.46446384,
+          "realized_volatility_20d": 0.22485713
+        },
+        "disposition": "DEVELOPING",
+        "acceleration": -1.8873,
+        "invalidation": {
+          "price_above": null,
+          "price_below": 366.526,
+          "confidence_below": 55.0,
+          "directional_score_inside_deadband": 15.0
+        },
+        "input_quality": 99.95,
+        "missing_inputs": [],
+        "policy_version": "M68.2.1-POINT-IN-TIME-BREADTH-INFLECTION-1.0",
+        "coverage_status": "CURRENT_EXACT",
+        "signal_strength": 47.7758,
+        "weight_contract": {
+          "policy": "FIXED_NO_RENORMALIZATION",
+          "available_weight_total": 1.0,
+          "configured_weight_total": 1.0
+        },
+        "inflection_score": 47.7758,
+        "transition_state": "TREND_EXHAUSTION",
+        "directional_score": 37.7332,
+        "input_fingerprint": "04d16e9ace361b2a94c8e1f788a860abb6e546af4af53594ee2a64c8d7393bd2",
+        "semantic_state_hash": "8de0a8cf3b15d0ffb7cb69ddd7c1cbdcdf9f2a767bae854343ec0b9372b74d38",
+        "conflicting_evidence": [],
+        "horizon_max_sessions": 7,
+        "horizon_min_sessions": 1,
+        "component_availability": {
+          "trend": true,
+          "dealer": true,
+          "breadth": true,
+          "structure": true,
+          "volatility": true,
+          "participation": true,
+          "option_liquidity": true,
+          "implied_volatility": true
+        },
+        "component_decomposition": {
+          "trend": {
+            "available": true,
+            "raw_score": 60.2247,
+            "configured_weight": 0.25,
+            "weighted_contribution": 15.0562
+          },
+          "dealer": {
+            "available": true,
+            "raw_score": 15.6647,
+            "configured_weight": 0.18,
+            "weighted_contribution": 2.8196
+          },
+          "breadth": {
+            "available": true,
+            "raw_score": 16.0534,
+            "configured_weight": 0.11,
+            "weighted_contribution": 1.7659
+          },
+          "structure": {
+            "available": true,
+            "raw_score": 64.5591,
+            "configured_weight": 0.23,
+            "weighted_contribution": 14.8486
+          },
+          "volatility": {
+            "available": true,
+            "raw_score": 17.7234,
+            "configured_weight": 0.08,
+            "weighted_contribution": 1.4179
+          },
+          "participation": {
+            "available": true,
+            "raw_score": 12.1672,
+            "configured_weight": 0.15,
+            "weighted_contribution": 1.8251
+          }
+        }
+      },
+      "intelligence_extensions": {}
+    }
+  },
+  {
+    "opportunity_id": "m62-opp-b7def89ae02c4a19a32a9ca348a6bdb4",
+    "symbol": "INTC",
+    "asset_class": "EQUITY",
+    "state": "CONTRACTS_OPTIMIZED",
+    "direction": "BULLISH",
+    "category": "BULLISH",
+    "overall_score": 67.0,
+    "confidence": 86.17,
+    "conviction": "MODERATE",
+    "thesis_id": "m62-thesis-d4d0cea2968242afa00b7003a48bd313",
+    "stock_publication_name": "current_stock_intelligence",
+    "stock_scanner_run_id": "stock-scan-758df313015a4abea6ffaad5cc5e2278",
+    "stock_candidate_id": "stock-candidate-b47e58cb778a4948b2ada36246326664",
+    "stock_state_hash": "1141492cd19be4c41e576fa68193a70a780442d9929faface07749cc2ad6015e",
+    "option_snapshot_id": "polygon-options-2026-08-13",
+    "version": 6,
+    "created_at": "2026-08-13T13:33:56.246368+00:00",
+    "updated_at": "2026-08-17T15:15:50.514667+00:00",
+    "payload_json": {
+      "state": "READY_FOR_EXECUTION",
+      "symbol": "INTC",
+      "lineage": {
+        "market_run_id": "market-ingestion-20260817T145613458738Z",
+        "source_provider": "POLYGON_PERSISTED",
+        "stock_state_hash": "1141492cd19be4c41e576fa68193a70a780442d9929faface07749cc2ad6015e",
+        "option_snapshot_id": "polygon-options-2026-08-13",
+        "stock_candidate_id": "stock-candidate-b47e58cb778a4948b2ada36246326664",
+        "stock_scanner_run_id": "stock-scan-758df313015a4abea6ffaad5cc5e2278",
+        "stock_publication_name": "current_stock_intelligence",
+        "market_publication_name": "current_market_state",
+        "option_snapshot_timestamp": "2026-08-13",
+        "source_option_snapshot_id": null,
+        "contract_option_snapshot_id": "polygon-options-2026-08-13"
+      },
+      "version": 5,
+      "category": "BULLISH",
+      "metadata": {
+        "freshness": 100.0,
+        "entry_execution": {
+          "atr": 6.4446,
+          "target_1": 103.978,
+          "entry_type": "DEMAND_BOUNCE",
+          "chase_limit": 103.3991,
+          "disposition": "REGENERATE_REQUIRED",
+          "reason_codes": [
+            "TARGET_1_REMAINING_ROOM_INSUFFICIENT"
+          ],
+          "entry_zone_low": 100.5203,
+          "entry_zone_high": 101.1435,
+          "reference_price": 103.875,
+          "trade_builder_ready": false,
+          "confirmation_trigger": 104.8417,
+          "minimum_target_1_room": 1.61115,
+          "target_1_remaining_room": 0.103
+        },
+        "reference_market": {
+          "price": 103.875,
+          "source": "LATEST_UNDERLYING_INGESTION",
+          "provider": "POLYGON",
+          "timestamp": "2026-08-17T14:56:26.466956+00:00",
+          "primary_timeframe": "1d",
+          "freshness_minutes_at_certification": 0.16
+        },
+        "primary_timeframe": "1d",
+        "management_quality": 87.37,
+        "m76_2_trade_quality": 61.68,
+        "opportunity_quality": 70.5351,
+        "eligibility_warnings": [],
+        "institutional_volume": {
+          "regime": "QUIET",
+          "signal": "NEUTRAL",
+          "evidence": {
+            "cmf_20d": -0.0866,
+            "version": "M76-INSTITUTIONAL-VOLUME-1.0",
+            "volume_1d": 26135699.69,
+            "absorption_side": "NONE",
+            "price_change_1d": 0.0134,
+            "climactic_volume": false,
+            "price_return_20d": -0.0149,
+            "average_volume_20d": 119300340.11,
+            "average_volume_60d": 121208534.1,
+            "dry_up_ratio_5d_vs_20d": 0.947,
+            "signed_volume_flow_20d": -0.0541,
+            "range_ratio_vs_20d_median": 0.5151,
+            "elevated_volume_sessions_10d": 2
+          },
+          "dry_up_score": 8.48,
+          "absorption_score": 0.0,
+          "persistence_score": 20.0,
+          "volume_zscore_20d": -2.942,
+          "accumulation_score": 46.4,
+          "distribution_score": 62.59,
+          "relative_volume_1d": 0.219,
+          "relative_volume_5d": 0.947,
+          "relative_volume_20d": 0.958,
+          "close_location_value": 0.431,
+          "volume_percentile_60d": 1.67,
+          "up_down_volume_ratio_20d": 0.897,
+          "breakout_confirmation_score": 0.0,
+          "breakdown_confirmation_score": 39.0,
+          "institutional_participation_score": 34.93
+        },
+        "execution_disposition": "REGENERATE_REQUIRED",
+        "m76_2_2_continuity_key": "INTC|BULLISH|BULLISH|1d",
+        "m76_2_capital_priority": 68.67,
+        "structural_reward_risk": 6.96,
+        "source_plan_fingerprint": "ee888d31c9beafc930141806cd5ab0267ce89300de8f902ac067393197d76fed",
+        "m76_2_2_continuity_match": "LOGICAL_REFRESH",
+        "m76_2_decision_readiness": 71.84,
+        "trade_plan_certification": {
+          "status": "PASS",
+          "domains": {
+            "risk": {
+              "name": "RISK",
+              "rules": [
+                {
+                  "code": "TPC-RISK-001",
+                  "status": "PASS",
+                  "message": "Structural reward/risk must be positive.",
+                  "evidence": {
+                    "structural_reward_risk": 6.96
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-RISK-002",
+                  "status": "PASS",
+                  "message": "Defined structural stop is required.",
+                  "evidence": {
+                    "stop": 95.0317
+                  },
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            },
+            "market": {
+              "name": "MARKET",
+              "rules": [
+                {
+                  "code": "TPC-MKT-001",
+                  "status": "PASS",
+                  "message": "Reference underlying price must be available from the latest ingestion.",
+                  "evidence": {
+                    "reference_price": 103.875
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MKT-002",
+                  "status": "PASS",
+                  "message": "Reference market timestamp must be present.",
+                  "evidence": {
+                    "timestamp": "2026-08-17T14:56:26.466956+00:00"
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MKT-003",
+                  "status": "PASS",
+                  "message": "Reference market lineage must be Polygon.",
+                  "evidence": {
+                    "provider": "POLYGON"
+                  },
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            },
+            "lineage": {
+              "name": "LINEAGE",
+              "rules": [],
+              "score": 100.0,
+              "status": "NOT_APPLICABLE"
+            },
+            "geometry": {
+              "name": "GEOMETRY",
+              "rules": [
+                {
+                  "code": "TPC-GEO-000",
+                  "status": "PASS",
+                  "message": "Trade plan must have a directional bullish or bearish thesis.",
+                  "evidence": {
+                    "direction": "BULLISH"
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-004",
+                  "status": "PASS",
+                  "message": "Entry zone must be positive and ordered.",
+                  "evidence": {
+                    "entry_zone_low": 100.5203,
+                    "entry_zone_high": 101.1435
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-001",
+                  "status": "PASS",
+                  "message": "Every bullish target must be strictly above the reference underlying price.",
+                  "evidence": {
+                    "targets": [
+                      103.978,
+                      110.0,
+                      141.1995
+                    ],
+                    "invalid_targets": [],
+                    "reference_price": 103.875
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-003",
+                  "status": "PASS",
+                  "message": "Bullish targets must be strictly increasing.",
+                  "evidence": {
+                    "targets": [
+                      103.978,
+                      110.0,
+                      141.1995
+                    ]
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-005",
+                  "status": "PASS",
+                  "message": "Bullish structural stop must be below the reference price.",
+                  "evidence": {
+                    "stop": 95.0317,
+                    "reference_price": 103.875
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-006",
+                  "status": "PASS",
+                  "message": "Bullish structural stop must be below the entry zone.",
+                  "evidence": {
+                    "stop": 95.0317,
+                    "entry_zone_low": 100.5203
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-007",
+                  "status": "PASS",
+                  "message": "Bullish Target 1 must be above the entry zone.",
+                  "evidence": {
+                    "target_1": 103.978,
+                    "entry_zone_high": 101.1435
+                  },
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            },
+            "strategy": {
+              "name": "STRATEGY",
+              "rules": [],
+              "score": 100.0,
+              "status": "NOT_APPLICABLE"
+            },
+            "execution": {
+              "name": "EXECUTION",
+              "rules": [],
+              "score": 100.0,
+              "status": "NOT_APPLICABLE"
+            },
+            "lifecycle": {
+              "name": "LIFECYCLE",
+              "rules": [],
+              "score": 100.0,
+              "status": "NOT_APPLICABLE"
+            },
+            "management": {
+              "name": "AUTONOMOUS_MANAGEMENT",
+              "rules": [
+                {
+                  "code": "TPC-MGMT-001",
+                  "status": "PASS",
+                  "message": "Structural stop must be available for autonomous management.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MGMT-002",
+                  "status": "PASS",
+                  "message": "At least one governed profit target must be available.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MGMT-003",
+                  "status": "PASS",
+                  "message": "Trailing policy must be defined.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MGMT-004",
+                  "status": "PASS",
+                  "message": "Underlying exit intelligence must be available.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            }
+          },
+          "version": "M68.2.1-CONDITIONAL-ENTRY-GOVERNANCE-1.0",
+          "direction": "BULLISH",
+          "publishable": true,
+          "certified_at": "2026-08-17T14:56:35.984970+00:00",
+          "plan_mutated": false,
+          "failure_codes": [],
+          "quality_score": 100.0,
+          "entry_execution": {
+            "atr": 6.4446,
+            "target_1": 103.978,
+            "entry_type": "DEMAND_BOUNCE",
+            "chase_limit": 103.3991,
+            "disposition": "REGENERATE_REQUIRED",
+            "reason_codes": [
+              "TARGET_1_REMAINING_ROOM_INSUFFICIENT"
+            ],
+            "entry_zone_low": 100.5203,
+            "entry_zone_high": 101.1435,
+            "reference_price": 103.875,
+            "trade_builder_ready": false,
+            "confirmation_trigger": 104.8417,
+            "minimum_target_1_room": 1.61115,
+            "target_1_remaining_room": 0.103
+          },
+          "failure_reasons": [],
+          "certification_id": "TPC-INTC-PENDING",
+          "plan_fingerprint": "ee888d31c9beafc930141806cd5ab0267ce89300de8f902ac067393197d76fed",
+          "reference_market": {
+            "price": 103.875,
+            "source": "LATEST_UNDERLYING_INGESTION",
+            "provider": "POLYGON",
+            "timestamp": "2026-08-17T14:56:26.466956+00:00",
+            "primary_timeframe": "1d",
+            "freshness_minutes_at_certification": 0.16
+          },
+          "certification_scope": "STOCK_TRADE_PLAN",
+          "trade_builder_ready": false,
+          "execution_disposition": "REGENERATE_REQUIRED",
+          "source_plan_fingerprint": "ee888d31c9beafc930141806cd5ab0267ce89300de8f902ac067393197d76fed"
+        },
+        "m76_2_barrier_probability": {
+          "model": "DETERMINISTIC_GEOMETRY_PRIOR",
+          "evidence": {
+            "atr": 6.4446,
+            "note": "Deterministic prior only; outcome calibration is intentionally not active in M76.2.",
+            "stop": 95.0317,
+            "entry": 100.8319,
+            "atr_pct": 6.3914,
+            "targets": [
+              103.978,
+              110.0,
+              141.1995
+            ],
+            "quality_edge": 0.331,
+            "risk_distance": 5.8002
+          },
+          "expected_mae_pct": 20.32,
+          "expected_mfe_pct": 38.02,
+          "calibration_status": "UNCALIBRATED",
+          "target_1_before_stop": 73.3,
+          "target_2_before_stop": 47.76,
+          "target_3_before_stop": 15.1,
+          "expected_holding_days": 30
+        },
+        "source_option_snapshot_id": "options-20260817T143006429302Z",
+        "eligibility_policy_version": "M62-PH2-1.0",
+        "institutional_plan_mutated": false,
+        "contract_option_snapshot_id": "polygon-options-2026-08-13",
+        "m75_2_2_source_plan_changed": false,
+        "m76_2_2_source_candidate_id": "stock-candidate-b47e58cb778a4948b2ada36246326664",
+        "m75_2_certification_required": true,
+        "m76_2_2_previous_candidate_id": "stock-candidate-680df2cf80854e92a38d3d7017e65c4a",
+        "m76_2_2_source_scanner_run_id": "stock-scan-758df313015a4abea6ffaad5cc5e2278",
+        "institutional_plan_fingerprint": "9b32f9232c1aef7008dcfa35bf07953061e92a03ca86e819c84f67e090423905",
+        "selected_strategy_candidate_id": "m62-strategy-13928280463c49daacc755f695158e2d",
+        "m68_2_1_3_option_lineage_policy": "SOURCE_AND_CONTRACT_IDENTITIES_SEPARATED",
+        "m76_2_2_previous_scanner_run_id": "stock-scan-a32943f48b7d4d659f063d5411d604d7",
+        "institutional_plan_certification": {
+          "status": "PASS",
+          "domains": {
+            "risk": {
+              "name": "RISK",
+              "rules": [
+                {
+                  "code": "TPC-RISK-001",
+                  "status": "PASS",
+                  "message": "Institutional underlying reward/risk must remain positive after transformation.",
+                  "evidence": {
+                    "structural_reward_risk": 0.5424123306092873
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-RISK-002",
+                  "status": "PASS",
+                  "message": "Institutional underlying plan must retain a defined structural stop.",
+                  "evidence": {
+                    "stop": 95.0317
+                  },
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            },
+            "market": {
+              "name": "MARKET",
+              "rules": [
+                {
+                  "code": "TPC-MKT-001",
+                  "status": "PASS",
+                  "message": "Reference underlying price must remain available from the certified Stock Intelligence plan.",
+                  "evidence": {
+                    "reference_price": 103.875
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MKT-002",
+                  "status": "PASS",
+                  "message": "Reference market timestamp must remain bound to the Institutional Options plan.",
+                  "evidence": {
+                    "timestamp": "2026-08-17T14:56:26.466956+00:00"
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MKT-003",
+                  "status": "PASS",
+                  "message": "Reference market lineage must remain Polygon.",
+                  "evidence": {
+                    "provider": "POLYGON"
+                  },
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            },
+            "lineage": {
+              "name": "LINEAGE",
+              "rules": [
+                {
+                  "code": "TPC-LIN-001",
+                  "status": "PASS",
+                  "message": "Source Stock Intelligence trade plan certification must PASS.",
+                  "evidence": {
+                    "source_status": "PASS"
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-LIN-002",
+                  "status": "PASS",
+                  "message": "Source Stock Intelligence plan fingerprint must be present.",
+                  "evidence": {
+                    "source_plan_fingerprint": "ee888d31c9beafc930141806cd5ab0267ce89300de8f902ac067393197d76fed"
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-LIN-003",
+                  "status": "PASS",
+                  "message": "Final Institutional Options plan fingerprint must be materialized.",
+                  "evidence": {
+                    "plan_fingerprint": "9b32f9232c1aef7008dcfa35bf07953061e92a03ca86e819c84f67e090423905"
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-LIN-004",
+                  "status": "PASS",
+                  "message": "Any downstream plan mutation is explicitly re-certified before readiness.",
+                  "evidence": {
+                    "plan_mutated": false
+                  },
+                  "severity": "INFO"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            },
+            "geometry": {
+              "name": "GEOMETRY",
+              "rules": [
+                {
+                  "code": "TPC-GEO-000",
+                  "status": "PASS",
+                  "message": "Trade plan must have a directional bullish or bearish thesis.",
+                  "evidence": {
+                    "direction": "BULLISH"
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-004",
+                  "status": "PASS",
+                  "message": "Entry zone must be positive and ordered.",
+                  "evidence": {
+                    "entry_zone_low": 100.5203,
+                    "entry_zone_high": 101.1435
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-001",
+                  "status": "PASS",
+                  "message": "Every bullish target must be strictly above the reference underlying price.",
+                  "evidence": {
+                    "targets": [
+                      103.978,
+                      110.0,
+                      141.1995
+                    ],
+                    "invalid_targets": [],
+                    "reference_price": 103.875
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-003",
+                  "status": "PASS",
+                  "message": "Bullish targets must be strictly increasing.",
+                  "evidence": {
+                    "targets": [
+                      103.978,
+                      110.0,
+                      141.1995
+                    ]
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-005",
+                  "status": "PASS",
+                  "message": "Bullish structural stop must be below the reference price.",
+                  "evidence": {
+                    "stop": 95.0317,
+                    "reference_price": 103.875
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-006",
+                  "status": "PASS",
+                  "message": "Bullish structural stop must be below the entry zone.",
+                  "evidence": {
+                    "stop": 95.0317,
+                    "entry_zone_low": 100.5203
+                  },
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-GEO-007",
+                  "status": "PASS",
+                  "message": "Bullish Target 1 must be above the entry zone.",
+                  "evidence": {
+                    "target_1": 103.978,
+                    "entry_zone_high": 101.1435
+                  },
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            },
+            "strategy": {
+              "name": "STRATEGY",
+              "rules": [
+                {
+                  "code": "TPC-STR-001",
+                  "status": "PASS",
+                  "message": "Strategy must contain at least one option leg.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-STR-002",
+                  "status": "PASS",
+                  "message": "Every option leg must carry exact Polygon contract identity.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-STR-030",
+                  "status": "PASS",
+                  "message": "CALL_DIAGONAL must contain one long and one short leg across two expirations.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-STR-031",
+                  "status": "PASS",
+                  "message": "Diagonal long leg must expire after the short leg.",
+                  "evidence": {
+                    "long_expiry": "2026-10-16",
+                    "short_expiry": "2026-09-11"
+                  },
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            },
+            "execution": {
+              "name": "EXECUTION",
+              "rules": [
+                {
+                  "code": "TPC-EXEC-020",
+                  "status": "PASS",
+                  "message": "Selected Institutional Options contract recommendation must be executable.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-EXEC-021",
+                  "status": "PASS",
+                  "message": "Final Institutional Options plan must retain exact contract identity.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            },
+            "lifecycle": {
+              "name": "LIFECYCLE",
+              "rules": [],
+              "score": 100.0,
+              "status": "NOT_APPLICABLE"
+            },
+            "management": {
+              "name": "AUTONOMOUS_MANAGEMENT",
+              "rules": [
+                {
+                  "code": "TPC-MGMT-010",
+                  "status": "PASS",
+                  "message": "Institutional Options management plan must retain the structural stop.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MGMT-011",
+                  "status": "PASS",
+                  "message": "Institutional Options management plan must retain governed underlying targets.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MGMT-012",
+                  "status": "PASS",
+                  "message": "Institutional Options management plan must define trailing policy.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                },
+                {
+                  "code": "TPC-MGMT-013",
+                  "status": "PASS",
+                  "message": "Institutional Options management plan must define volatility exit governance.",
+                  "evidence": {},
+                  "severity": "ERROR"
+                }
+              ],
+              "score": 100.0,
+              "status": "PASS"
+            }
+          },
+          "version": "M68.2.1-CONDITIONAL-ENTRY-GOVERNANCE-1.0",
+          "strategy": "CALL_DIAGONAL",
+          "direction": "BULLISH",
+          "publishable": true,
+          "certified_at": "2026-08-17T15:46:45.369393+00:00",
+          "plan_mutated": false,
+          "failure_codes": [],
+          "quality_score": 100.0,
+          "lineage_status": "UNCHANGED_RECERTIFIED",
+          "entry_execution": {
+            "atr": 6.4446,
+            "target_1": 103.978,
+            "entry_type": "DEMAND_BOUNCE",
+            "chase_limit": 103.3991,
+            "disposition": "REGENERATE_REQUIRED",
+            "reason_codes": [
+              "TARGET_1_REMAINING_ROOM_INSUFFICIENT"
+            ],
+            "entry_zone_low": 100.5203,
+            "entry_zone_high": 101.1435,
+            "reference_price": 103.875,
+            "trade_builder_ready": false,
+            "confirmation_trigger": 104.8417,
+            "minimum_target_1_room": 1.61115,
+            "target_1_remaining_room": 0.103
+          },
+          "failure_reasons": [],
+          "certification_id": "TPC-IO-9B32F9232C1AEF70",
+          "plan_fingerprint": "9b32f9232c1aef7008dcfa35bf07953061e92a03ca86e819c84f67e090423905",
+          "reference_market": {
+            "price": 103.875,
+            "source": "LATEST_UNDERLYING_INGESTION",
+            "provider": "POLYGON",
+            "timestamp": "2026-08-17T14:56:26.466956+00:00",
+            "primary_timeframe": "1d",
+            "freshness_minutes_at_certification": 0.16
+          },
+          "certification_scope": "INSTITUTIONAL_OPTIONS_FINAL_PLAN",
+          "trade_builder_ready": false,
+          "execution_disposition": "REGENERATE_REQUIRED",
+          "source_certification_id": "TPC-INTC-PENDING",
+          "source_plan_fingerprint": "ee888d31c9beafc930141806cd5ab0267ce89300de8f902ac067393197d76fed",
+          "underlying_plan_fingerprint": "ee888d31c9beafc930141806cd5ab0267ce89300de8f902ac067393197d76fed"
+        },
+        "previous_source_plan_fingerprint": null,
+        "source_option_snapshot_timestamp": "2026-08-17 09:38:46.856739-05:00",
+        "m76_2_2_current_decision_snapshot": true,
+        "institutional_decision_intelligence": {
+          "version": "M76.2-IDI-1.0",
+          "decision": "WATCH",
+          "warnings": [],
+          "state_hash": "4287fc1941130747fa3b9a01bd9b88deb7fe48323994892a3fbf8a9cd07e8b90",
+          "competition": {
+            "status": "READY",
+            "version": "M76.2-IDI-1.0",
+            "rank_label": "Rank #131 / 614",
+            "market_rank": 131,
+            "top_percent": 21.34,
+            "ranking_basis": "CAPITAL_PRIORITY_THEN_TRADE_QUALITY",
+            "population_size": 614,
+            "market_percentile": 78.83
+          },
+          "passport_id": "IDI-4287FC1941130747",
+          "explainability": {
+            "version": "M76.2.1-EXPLAINABILITY-1.0",
+            "trade_quality": {
+              "score": 61.68,
+              "components": [
+                {
+                  "key": "directional_quality",
+                  "score": 95.0,
+                  "weight": 0.09,
+                  "contribution": 8.55
+                },
+                {
+                  "key": "trend_quality",
+                  "score": 72.82,
+                  "weight": 0.08,
+                  "contribution": 5.83
+                },
+                {
+                  "key": "structure_quality",
+                  "score": 82.7,
+                  "weight": 0.11,
+                  "contribution": 9.1
+                },
+                {
+                  "key": "breakout_quality",
+                  "score": 43.47,
+                  "weight": 0.08,
+                  "contribution": 3.48
+                },
+                {
+                  "key": "institutional_volume_quality",
+                  "score": 34.93,
+                  "weight": 0.09,
+                  "contribution": 3.14
+                },
+                {
+                  "key": "participation_quality",
+                  "score": 36.76,
+                  "weight": 0.06,
+                  "contribution": 2.21
+                },
+                {
+                  "key": "relative_strength_quality",
+                  "score": 20.0,
+                  "weight": 0.07,
+                  "contribution": 1.4
+                },
+                {
+                  "key": "market_alignment",
+                  "score": 47.31,
+                  "weight": 0.07,
+                  "contribution": 3.31
+                },
+                {
+                  "key": "dealer_quality",
+                  "score": 50.0,
+                  "weight": 0.04,
+                  "contribution": 2.0
+                },
+                {
+                  "key": "liquidity_quality",
+                  "score": 10.38,
+                  "weight": 0.05,
+                  "contribution": 0.52
+                },
+                {
+                  "key": "risk_quality",
+                  "score": 99.0,
+                  "weight": 0.08,
+                  "contribution": 7.92
+                },
+                {
+                  "key": "target_quality",
+                  "score": 62.37,
+                  "weight": 0.08,
+                  "contribution": 4.99
+                },
+                {
+                  "key": "management_quality",
+                  "score": 87.37,
+                  "weight": 0.06,
+                  "contribution": 5.24
+                },
+                {
+                  "key": "certification_quality",
+                  "score": 100.0,
+                  "weight": 0.04,
+                  "contribution": 4.0
+                }
+              ],
+              "ranking_basis": "DETERMINISTIC_WEIGHTED_QUALITY_VECTOR"
+            },
+            "capital_priority": {
+              "score": 68.67,
+              "components": {
+                "risk_quality": {
+                  "score": 99.0,
+                  "weight": 0.1,
+                  "contribution": 9.9
+                },
+                "trade_quality": {
+                  "score": 61.68,
+                  "weight": 0.58,
+                  "contribution": 35.78
+                },
+                "decision_readiness": {
+                  "score": 71.84,
+                  "weight": 0.32,
+                  "contribution": 22.99
+                }
+              },
+              "ranking_basis": "CAPITAL_PRIORITY_THEN_TRADE_QUALITY"
+            },
+            "decision_readiness": {
+              "score": 71.84,
+              "certified": true,
+              "components": {
+                "confidence": {
+                  "score": 86.17,
+                  "weight": 0.13,
+                  "contribution": 11.2
+                },
+                "trade_quality": {
+                  "score": 61.68,
+                  "weight": 0.42,
+                  "contribution": 25.91
+                },
+                "management_quality": {
+                  "score": 87.37,
+                  "weight": 0.15,
+                  "contribution": 13.11
+                },
+                "institutional_volume": {
+                  "score": 34.93,
+                  "weight": 0.1,
+                  "contribution": 3.49
+                },
+                "opportunity_freshness": {
+                  "score": 90.68,
+                  "weight": 0.2,
+                  "contribution": 18.14
+                }
+              },
+              "fail_closed_cap": null
+            },
+            "barrier_probability": {
+              "model": "DETERMINISTIC_GEOMETRY_PRIOR",
+              "expected_mae_pct": 20.32,
+              "expected_mfe_pct": 38.02,
+              "calibration_status": "UNCALIBRATED",
+              "target_1_before_stop": 73.3,
+              "target_2_before_stop": 47.76,
+              "target_3_before_stop": 15.1,
+              "expected_holding_days": 30
+            },
+            "opportunity_freshness": {
+              "score": 90.68,
+              "entry_zone": [
+                100.5203,
+                101.1435
+              ],
+              "aging_penalty": 9.32,
+              "extension_atr": 0.424,
+              "reference_price": 103.875
+            }
+          },
+          "quality_vector": {
+            "risk_quality": 99.0,
+            "trend_quality": 72.82,
+            "dealer_quality": 50.0,
+            "target_quality": 62.37,
+            "breakout_quality": 43.47,
+            "market_alignment": 47.31,
+            "liquidity_quality": 10.38,
+            "structure_quality": 82.7,
+            "management_quality": 87.37,
+            "directional_quality": 95.0,
+            "certification_quality": 100.0,
+            "participation_quality": 36.76,
+            "relative_strength_quality": 20.0,
+            "institutional_volume_quality": 34.93
+          },
+          "capital_priority": 68.67,
+          "evidence_registry": [
+            {
+              "key": "directional_quality",
+              "label": "Directional thesis",
+              "score": 95.0,
+              "status": "STRONG"
+            },
+            {
+              "key": "trend_quality",
+              "label": "Trend",
+              "score": 72.82,
+              "status": "SUPPORTIVE"
+            },
+            {
+              "key": "structure_quality",
+              "label": "Structure",
+              "score": 82.7,
+              "status": "STRONG"
+            },
+            {
+              "key": "breakout_quality",
+              "label": "Breakout / breakdown",
+              "score": 43.47,
+              "status": "WEAK"
+            },
+            {
+              "key": "institutional_volume_quality",
+              "label": "Institutional volume",
+              "score": 34.93,
+              "status": "WEAK"
+            },
+            {
+              "key": "participation_quality",
+              "label": "Participation",
+              "score": 36.76,
+              "status": "WEAK"
+            },
+            {
+              "key": "relative_strength_quality",
+              "label": "Relative strength",
+              "score": 20.0,
+              "status": "WEAK"
+            },
+            {
+              "key": "market_alignment",
+              "label": "Market alignment",
+              "score": 47.31,
+              "status": "WEAK"
+            },
+            {
+              "key": "dealer_quality",
+              "label": "Dealer context",
+              "score": 50.0,
+              "status": "MIXED"
+            },
+            {
+              "key": "liquidity_quality",
+              "label": "Underlying liquidity proxy",
+              "score": 10.38,
+              "status": "WEAK"
+            },
+            {
+              "key": "risk_quality",
+              "label": "Risk geometry",
+              "score": 99.0,
+              "status": "STRONG"
+            },
+            {
+              "key": "target_quality",
+              "label": "Barrier / target quality",
+              "score": 62.37,
+              "status": "MIXED"
+            },
+            {
+              "key": "management_quality",
+              "label": "Management",
+              "score": 87.37,
+              "status": "STRONG"
+            },
+            {
+              "key": "certification_quality",
+              "label": "Trade-plan certification",
+              "score": 100.0,
+              "status": "STRONG"
+            },
+            {
+              "key": "barrier_probability",
+              "label": "Target 1 before stop",
+              "score": 73.3,
+              "status": "UNCALIBRATED_PRIOR",
+              "details": {
+                "atr": 6.4446,
+                "note": "Deterministic prior only; outcome calibration is intentionally not active in M76.2.",
+                "stop": 95.0317,
+                "entry": 100.8319,
+                "atr_pct": 6.3914,
+                "targets": [
+                  103.978,
+                  110.0,
+                  141.1995
+                ],
+                "quality_edge": 0.331,
+                "risk_distance": 5.8002
+              }
+            },
+            {
+              "key": "opportunity_aging",
+              "label": "Opportunity aging",
+              "score": null,
+              "status": "MEASURED",
+              "details": {
+                "entry_zone": [
+                  100.5203,
+                  101.1435
+                ],
+                "aging_penalty": 9.32,
+                "extension_atr": 0.424,
+                "reference_price": 103.875
+              }
+            }
+          ],
+          "learning_snapshot": {
+            "mode": "SHADOW_CAPTURE",
+            "features": {
+              "barrier_t1": 73.3,
+              "barrier_t2": 47.76,
+              "barrier_t3": 15.1,
+              "risk_quality": 99.0,
+              "trend_quality": 72.82,
+              "dealer_quality": 50.0,
+              "target_quality": 62.37,
+              "alignment_score": 83.85,
+              "breakout_quality": 43.47,
+              "market_alignment": 47.31,
+              "liquidity_quality": 10.38,
+              "structure_quality": 82.7,
+              "management_quality": 87.37,
+              "relative_volume_1d": 0.219,
+              "directional_quality": 95.0,
+              "certification_quality": 100.0,
+              "participation_quality": 36.76,
+              "structural_reward_risk": 6.96,
+              "relative_strength_quality": 20.0,
+              "institutional_volume_quality": 34.93
+            },
+            "feature_version": "M76.2-IDI-1.0",
+            "adaptive_influence": false,
+            "outcome_fields_pending": [
+              "MFE",
+              "MAE",
+              "TARGET_SEQUENCE",
+              "STOP_HIT",
+              "HOLDING_PERIOD",
+              "REALIZED_RETURN"
+            ]
+          },
+          "decision_readiness": 71.84,
+          "barrier_probability": {
+            "model": "DETERMINISTIC_GEOMETRY_PRIOR",
+            "evidence": {
+              "atr": 6.4446,
+              "note": "Deterministic prior only; outcome calibration is intentionally not active in M76.2.",
+              "stop": 95.0317,
+              "entry": 100.8319,
+              "atr_pct": 6.3914,
+              "targets": [
+                103.978,
+                110.0,
+                141.1995
+              ],
+              "quality_edge": 0.331,
+              "risk_distance": 5.8002
+            },
+            "expected_mae_pct": 20.32,
+            "expected_mfe_pct": 38.02,
+            "calibration_status": "UNCALIBRATED",
+            "target_1_before_stop": 73.3,
+            "target_2_before_stop": 47.76,
+            "target_3_before_stop": 15.1,
+            "expected_holding_days": 30
+          },
+          "institutional_grade": "C+",
+          "outcome_probability": {
+            "mode": "SHADOW",
+            "status": "SHADOW_NOT_READY",
+            "lineage": {
+              "runtime_mode": "SHADOW",
+              "scanner_run_id": null,
+              "feature_version": "M77.0-POINT-IN-TIME-FEATURES-1.0",
+              "source_provider": "polygon",
+              "authority_effect": false,
+              "feature_allow_list": [
+                "directional_quality",
+                "trend_quality",
+                "structure_quality",
+                "breakout_quality",
+                "institutional_volume_quality",
+                "participation_quality",
+                "relative_strength_quality",
+                "market_alignment",
+                "dealer_quality",
+                "liquidity_quality",
+                "risk_quality",
+                "management_quality",
+                "certification_quality",
+                "overall_trade_quality",
+                "decision_readiness",
+                "opportunity_freshness",
+                "alignment_score",
+                "scanner_score",
+                "scanner_confidence",
+                "relative_volume_1d",
+                "volume_persistence",
+                "breakout_confirmation",
+                "breakout_follow_through",
+                "breakout_failure",
+                "structural_reward_risk",
+                "entry_extension_atr",
+                "bullish_direction",
+                "bearish_direction",
+                "accumulation_setup",
+                "distribution_setup",
+                "breakout_setup",
+                "mean_reversion_setup",
+                "uptrend_regime",
+                "downtrend_regime",
+                "negative_gamma_regime"
+              ],
+              "snapshot_timestamp": "2026-08-17T14:56:26.466956+00:00",
+              "candidate_state_hash": "6c28f3e29d001b4dbf06131847473a00b7d5f6ec2abe3fe72ee32327451aa43c",
+              "future_fields_excluded": true
+            },
+            "version": "M77.0-OUTCOME-PROBABILITY-1.0",
+            "model_id": null,
+            "warnings": [
+              "NO_APPROVED_SHADOW_MODEL",
+              "DETERMINISTIC_M76_BARRIER_PRIOR_REMAINS_AUTHORITATIVE_INPUT"
+            ],
+            "state_hash": "930874bebcbf106e28caa6b322e6645427cb55728800a944ab02a828ab9bd7a1",
+            "model_version": null,
+            "analog_evidence": {},
+            "authority_effect": false,
+            "expected_mae_pct": null,
+            "expected_mfe_pct": null,
+            "expected_value_r": null,
+            "model_confidence": 0.0,
+            "calibration_status": "NOT_AVAILABLE",
+            "thesis_invalidation": null,
+            "target_1_before_stop": null,
+            "target_2_before_stop": null,
+            "target_3_before_stop": null,
+            "epistemic_uncertainty": 1.0,
+            "expected_days_to_stop": null,
+            "feature_contributions": [],
+            "profitable_at_horizon": null,
+            "recommended_disposition": "ABSTAIN",
+            "expected_days_to_target_1": null,
+            "out_of_distribution_score": 1.0
+          },
+          "opportunity_freshness": 90.68,
+          "opportunity_lifecycle": "BREAKOUT_READY",
+          "overall_trade_quality": 61.68
+        },
+        "m68_2_1_12_exact_lineage_precedence": true,
+        "m68_2_1_3_source_option_snapshot_id": "options-20260817T143006429302Z",
+        "m76_2_2_source_decision_fingerprint": "409e810ffd1f8351d07c09b0c5207a6765d259181d79ae9fe1fa60c7309b4a1d",
+        "m68_2_1_3_contract_option_snapshot_id": "polygon-options-2026-08-13",
+        "m68_2_1_12_logical_collision_prevented": false,
+        "m75_2_2_final_plan_certification_pending": true,
+        "m68_2_1_3_source_option_snapshot_timestamp": "2026-08-17 09:38:46.856739-05:00",
+        "m76_2_2_previous_source_decision_fingerprint": null
+      },
+      "direction": "BULLISH",
+      "thesis_id": "m62-thesis-d4d0cea2968242afa00b7003a48bd313",
+      "confidence": 86.17,
+      "conviction": "MODERATE",
+      "created_at": "2026-08-13T13:33:56.246368+00:00",
+      "updated_at": "2026-08-17T14:57:24.696321+00:00",
+      "asset_class": "EQUITY",
+      "overall_score": 67.0,
+      "opportunity_id": "m62-opp-b7def89ae02c4a19a32a9ca348a6bdb4",
+      "inflection_intelligence": {
+        "symbol": "INTC",
+        "lineage": {
+          "breadth": {
+            "score": 73.77,
+            "sector": "Information Technology",
+            "available": true,
+            "as_of_date": "2026-08-17",
+            "confidence": 100.0,
+            "provenance": "COMPUTED",
+            "resolution": "EFFECTIVE_SECTOR_MEMBERSHIP",
+            "sector_etf": "XLK",
+            "source_table": "sector_breadth_snapshot",
+            "constituent_count": 77,
+            "snapshot_timestamp": "2026-08-17T09:55:57.973416-05:00",
+            "membership_effective_from": "2026-07-20"
+          },
+          "build_mode": "OPTIONS_ENRICHMENT",
+          "dealer_as_of_date": "2026-08-17",
+          "option_as_of_date": "2026-08-17",
+          "source_as_of_date": "2026-08-17",
+          "option_snapshot_id": "options-20260817T153001093979Z",
+          "component_freshness": {
+            "breadth": "CURRENT_EXACT",
+            "underlying": "CURRENT_EXACT",
+            "dealer_options": "CURRENT_EXACT"
+          },
+          "stock_scanner_run_id": "stock-scan-758df313015a4abea6ffaad5cc5e2278",
+          "stock_publication_name": "current_stock_intelligence",
+          "option_snapshot_timestamp": "2026-08-17 10:38:35.502680-05:00",
+          "stock_publication_timestamp": "2026-08-17T14:56:26.466956+00:00"
+        },
+        "evidence": [
+          "trend:+100.0 (bullish)",
+          "participation:+67.5 (bullish)",
+          "structure:+51.4 (bullish)",
+          "volatility:+49.3 (bullish)"
+        ],
+        "velocity": 6.5166,
+        "direction": "BULLISH",
+        "timeframe": "1d",
+        "build_mode": "OPTIONS_ENRICHMENT",
+        "components": {
+          "trend": 100.0,
+          "dealer": 22.3096,
+          "breadth": 47.54,
+          "structure": 51.3607,
+          "volatility": 49.2558,
+          "participation": 67.4909
+        },
+        "confidence": 99.97,
+        "state_hash": "779b3d6b2632ff1573f2ffe65e7465d8be9e4bbc2c272475a2ea9bbfd2ec3de6",
+        "thresholds": {
+          "watch": 60.0,
+          "actionable": 70.0,
+          "high_conviction": 80.0
+        },
+        "diagnostics": {
+          "agreement": 100.0,
+          "momentum_5": 6.51661198,
+          "momentum_20": 7.02143004,
+          "volume_ratio": 0.68423664,
+          "range_position": 0.71334368,
+          "compression_ratio": 0.36424872,
+          "liquidity_quality": 99.7111,
+          "implied_volatility": 0.65942043,
+          "material_acceleration": true,
+          "volatility_divergence": 13.76466885,
+          "realized_volatility_20d": 0.79706712
+        },
+        "disposition": "ACTIONABLE",
+        "acceleration": 4.7613,
+        "invalidation": {
+          "price_above": null,
+          "price_below": 81.79,
+          "confidence_below": 55.0,
+          "directional_score_inside_deadband": 15.0
+        },
+        "input_quality": 99.95,
+        "missing_inputs": [],
+        "policy_version": "M68.2.1-POINT-IN-TIME-BREADTH-INFLECTION-1.0",
+        "coverage_status": "CURRENT_EXACT",
+        "signal_strength": 72.7181,
+        "weight_contract": {
+          "policy": "FIXED_NO_RENORMALIZATION",
+          "available_weight_total": 1.0,
+          "configured_weight_total": 1.0
+        },
+        "inflection_score": 72.7181,
+        "transition_state": "TREND_CONTINUATION",
+        "directional_score": 60.1222,
+        "input_fingerprint": "b8aaf51b6a9ce6794c8d3b67e84c72e7064c0117b21e5bdd07b51c276f00567d",
+        "semantic_state_hash": "6c1c67b507aa4bba10925f73d66b1ab90e3d22effb52329672fd37e81448819e",
+        "conflicting_evidence": [],
+        "horizon_max_sessions": 10,
+        "horizon_min_sessions": 3,
+        "component_availability": {
+          "trend": true,
+          "dealer": true,
+          "breadth": true,
+          "structure": true,
+          "volatility": true,
+          "participation": true,
+          "option_liquidity": true,
+          "implied_volatility": true
+        },
+        "component_decomposition": {
+          "trend": {
+            "available": true,
+            "raw_score": 100.0,
+            "configured_weight": 0.25,
+            "weighted_contribution": 25.0
+          },
+          "dealer": {
+            "available": true,
+            "raw_score": 22.3096,
+            "configured_weight": 0.18,
+            "weighted_contribution": 4.0157
+          },
+          "breadth": {
+            "available": true,
+            "raw_score": 47.54,
+            "configured_weight": 0.11,
+            "weighted_contribution": 5.2294
+          },
+          "structure": {
+            "available": true,
+            "raw_score": 51.3607,
+            "configured_weight": 0.23,
+            "weighted_contribution": 11.813
+          },
+          "volatility": {
+            "available": true,
+            "raw_score": 49.2558,
+            "configured_weight": 0.08,
+            "weighted_contribution": 3.9405
+          },
+          "participation": {
+            "available": true,
+            "raw_score": 67.4909,
+            "configured_weight": 0.15,
+            "weighted_contribution": 10.1236
+          }
+        }
+      },
+      "intelligence_extensions": {}
+    }
+  }
+]
+Traceback (most recent call last):
+  File "/Users/vinay.hatti/TradingPlatform/.venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/vinay.hatti/TradingPlatform/.venv/lib/python3.13/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column sc.created_at does not exist
+LINE 8:         ORDER BY o.symbol, sc.created_at DESC
+                                   ^
+HINT:  Perhaps you meant to reference the column "o.created_at".
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<stdin>", line 87, in <module>
+  File "/Users/vinay.hatti/TradingPlatform/.venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py", line 2373, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/vinay.hatti/TradingPlatform/.venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py", line 2280, in _execute_internal
+    result = conn.execute(
+        statement, params or {}, execution_options=execution_options
+    )
+  File "/Users/vinay.hatti/TradingPlatform/.venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "/Users/vinay.hatti/TradingPlatform/.venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/vinay.hatti/TradingPlatform/.venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "/Users/vinay.hatti/TradingPlatform/.venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/vinay.hatti/TradingPlatform/.venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/vinay.hatti/TradingPlatform/.venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/vinay.hatti/TradingPlatform/.venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/vinay.hatti/TradingPlatform/.venv/lib/python3.13/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column sc.created_at does not exist
+LINE 8:         ORDER BY o.symbol, sc.created_at DESC
+                                   ^
+HINT:  Perhaps you meant to reference the column "o.created_at".
+
+[SQL: 
+        SELECT sc.*
+        FROM institutional_option_strategy_candidates sc
+        JOIN institutional_option_opportunities o
+          ON o.opportunity_id = sc.opportunity_id
+        WHERE o.stock_scanner_run_id = %(run_id)s
+          AND o.symbol IN %(symbols)s
+        ORDER BY o.symbol, sc.created_at DESC
+    ]
+[parameters: {'run_id': 'stock-scan-758df313015a4abea6ffaad5cc5e2278', 'symbols': ('GLD', 'SOXL', 'INTC')}]
+(Background on this error at: https://sqlalche.me/e/20/f405)

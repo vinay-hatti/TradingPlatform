@@ -1,0 +1,9 @@
+#!/usr/bin/env python
+"""M64.2.4.3 governed invalid-history purge and authority recovery."""
+from __future__ import annotations
+
+from run_m64_2_1_regenerate_current_portfolio_decisions import main
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(require_governed_purge=True))

@@ -1,0 +1,673 @@
+{
+  "blockers": [],
+  "controlled_exact_input_parity_certified": false,
+  "daily_monthly_native_contract": {
+    "blockers": [],
+    "imports": [
+      {
+        "line": 1,
+        "module": "__future__",
+        "names": [
+          {
+            "asname": null,
+            "name": "annotations"
+          }
+        ],
+        "type": "from"
+      },
+      {
+        "line": 2,
+        "module": "collections",
+        "names": [
+          {
+            "asname": null,
+            "name": "defaultdict"
+          },
+          {
+            "asname": null,
+            "name": "deque"
+          }
+        ],
+        "type": "from"
+      },
+      {
+        "line": 3,
+        "module": "dataclasses",
+        "names": [
+          {
+            "asname": null,
+            "name": "dataclass"
+          }
+        ],
+        "type": "from"
+      },
+      {
+        "line": 4,
+        "module": "datetime",
+        "names": [
+          {
+            "asname": null,
+            "name": "date"
+          }
+        ],
+        "type": "from"
+      },
+      {
+        "line": 5,
+        "module": "math",
+        "names": [
+          {
+            "asname": null,
+            "name": "sqrt"
+          }
+        ],
+        "type": "from"
+      },
+      {
+        "line": 6,
+        "module": "statistics",
+        "names": [
+          {
+            "asname": null,
+            "name": "mean"
+          }
+        ],
+        "type": "from"
+      }
+    ],
+    "native_calls": [],
+    "path": "src/trading_ai/historical_underlying_replay/m77_19_4_isolated_adapters.py",
+    "required_function_contracts": {
+      "daily_dates": {
+        "args": [
+          "sessions",
+          "start",
+          "end",
+          "warmup",
+          "horizon"
+        ],
+        "kwarg": null,
+        "line": 12,
+        "name": "daily_dates",
+        "source": "def daily_dates(sessions,start,end,warmup=252,horizon=60):\n s=sorted(set(sessions))\n return [d for i,d in enumerate(s) if start<=d<=end and i>=warmup and i+horizon<len(s)]",
+        "vararg": null
+      },
+      "monthly_dates": {
+        "args": [
+          "sessions",
+          "start",
+          "end"
+        ],
+        "kwarg": null,
+        "line": 16,
+        "name": "monthly_dates",
+        "source": "def monthly_dates(sessions,start,end):\n m={}\n for d in sorted(set(sessions)):\n  if start<=d<=end:m[(d.year,d.month)]=d\n return [m[k] for k in sorted(m)]",
+        "vararg": null
+      },
+      "snapshot": {
+        "args": [
+          "price_rows",
+          "as_of"
+        ],
+        "kwarg": null,
+        "line": 35,
+        "name": "snapshot",
+        "source": "def snapshot(price_rows,as_of):\n by=defaultdict(list)\n for sym,d,c in price_rows:\n  if d<=as_of and c is not None and float(c)>0:by[str(sym)].append((d,float(c)))\n f={s:features(sorted(v)) for s,v in by.items()};spy=f.get(\"SPY\",{}).get(as_of)\n if not spy:return {\"as_of\":str(as_of),\"regime\":\"UNKNOWN\"}\n breadth=[x[as_of][\"above50\"] for s,x in f.items() if s not in {\"SPX\",\"NDX\",\"RUT\"} and as_of in x and x[as_of][\"above50\"] is not None]\n b=sum(breadth)/len(breadth)*100 if breadth else None\n close,s50,s200,ret=spy[\"close\"],spy[\"sma50\"],spy[\"sma200\"],spy[\"ret20\"]\n trend=\"UNKNOWN\" if None in (close,s50,s200,ret) else (\"BULL_TREND\" if close>s50>s200 and ret>0 else \"BEAR_TREND\" if close<s50<s200 and ret<0 else \"TRANSITION_UP\" if close>s50 and s50<=s200 else \"TRANSITION_DOWN\" if close<s50 and s50>=s200 else \"RANGE_MIXED\")\n vp=spy[\"vol_percentile\"];vol=\"UNKNOWN\" if vp is None else \"EXTREME\" if vp>=90 else \"HIGH\" if vp>=75 else \"LOW\" if vp<=25 else \"NORMAL\"\n bs=\"UNKNOWN\" if b is None else \"BROAD_STRONG\" if b>=65 else \"BROAD_WEAK\" if b<=35 else \"MIXED\"\n stressed=vol in {\"HIGH\",\"EXTREME\"}\n regime=\"UNKNOWN\" if \"UNKNOWN\" in (trend,vol,bs) else (\"BULL_STRESSED\" if trend==\"BULL_TREND\" and (stressed or bs==\"BROAD_WEAK\") else \"BULL_HEALTHY\" if trend==\"BULL_TREND\" else \"BEAR_STRESSED\" if trend==\"BEAR_TREND\" and stressed else \"BEAR_ORDERLY\" if trend==\"BEAR_TREND\" else trend if trend in {\"TRANSITION_UP\",\"TRANSITION_DOWN\"} else \"RANGE_STRESSED\" if stressed else \"RANGE_NORMAL\")\n return {\"as_of\":str(as_of),\"regime\":regime,\"trend_state\":trend,\"volatility_state\":vol,\"breadth_state\":bs,\"spy_close\":close,\"spy_sma50\":s50,\"spy_sma200\":s200,\"spy_return20_pct\":ret,\"spy_realized_vol20_pct\":spy[\"vol20\"],\"vol20_percentile_252\":vp,\"breadth_above_50d_pct\":b,\"breadth_eligible_symbols\":len(breadth)}",
+        "vararg": null
+      }
+    },
+    "resolved": true,
+    "semantic_markers": [
+      {
+        "line": 1,
+        "text": "from __future__ import annotations"
+      },
+      {
+        "line": 35,
+        "text": "def snapshot(price_rows,as_of):"
+      },
+      {
+        "line": 38,
+        "text": "if d<=as_of and c is not None and float(c)>0:by[str(sym)].append((d,float(c)))"
+      },
+      {
+        "line": 39,
+        "text": "f={s:features(sorted(v)) for s,v in by.items()};spy=f.get(\"SPY\",{}).get(as_of)"
+      },
+      {
+        "line": 40,
+        "text": "if not spy:return {\"as_of\":str(as_of),\"regime\":\"UNKNOWN\"}"
+      },
+      {
+        "line": 41,
+        "text": "breadth=[x[as_of][\"above50\"] for s,x in f.items() if s not in {\"SPX\",\"NDX\",\"RUT\"} and as_of in x and x[as_of][\"above50\"] is not None]"
+      },
+      {
+        "line": 49,
+        "text": "return {\"as_of\":str(as_of),\"regime\":regime,\"trend_state\":trend,\"volatility_state\":vol,\"breadth_state\":bs,\"spy_close\":close,\"spy_sma50\":s50,\"spy_sma200\":s200,\"spy_return20_pct\":ret,\"spy_realized_vol20_pct\":spy[\"vol20\"],\"vol20_percentile_252\":vp,\"breadth_above_50d_pct\":b,\"breadth_eligible_symbols\":len(breadth)}"
+      }
+    ],
+    "sha256": "ba9d0f03f22252f719afd34d4257e951e2f327d732c082bc57ffcebd359751ea"
+  },
+  "full_23_year_reconstruction_authorized": false,
+  "governance": {
+    "controlled_exact_input_parity_certified": false,
+    "database_access": false,
+    "full_23_year_reconstruction_authorized": false,
+    "heuristic_adapter_execution_allowed": false,
+    "parity_thresholds_relaxed": false,
+    "production_authority_effect": false,
+    "replay_execution": false,
+    "research_only": true
+  },
+  "native_invocation_contract_ready": true,
+  "next_step": "BUILD_M77_19_6_5_2_NATIVE_CONTROLLED_EXECUTION_AND_PARITY_CERTIFICATION",
+  "prior_report": "/Users/vinay.hatti/TradingPlatform/reports/m77_19_6_5_1_native_replay_invocation_contract_recovery.json",
+  "production_authority_effect": false,
+  "version": "M77.19.6.5.1.1-IMPORTED-NATIVE-CONTRACT-RESOLUTION-1.0",
+  "weekly_native_contract": {
+    "blockers": [],
+    "call_profile_call_sites": [
+      {
+        "args": [
+          "svc",
+          "sym",
+          "rows",
+          "as_of",
+          "session_set",
+          "policy[\"authority_warmup_rows\"]",
+          "policy[\"history_window_rows\"]"
+        ],
+        "call": "call_profile",
+        "expression": "call_profile(\n                        svc, sym, rows, as_of, session_set,\n                        policy[\"authority_warmup_rows\"],\n                        policy[\"history_window_rows\"],\n                    )",
+        "kwargs": {},
+        "line": 289
+      },
+      {
+        "args": [
+          "svc",
+          "sym",
+          "rows",
+          "as_of",
+          "session_set",
+          "policy[\"authority_warmup_rows\"]",
+          "policy[\"history_window_rows\"]"
+        ],
+        "call": "call_profile",
+        "expression": "call_profile(\n                        svc, sym, rows, as_of, session_set,\n                        policy[\"authority_warmup_rows\"],\n                        policy[\"history_window_rows\"],\n                    )",
+        "kwargs": {},
+        "line": 294
+      }
+    ],
+    "imports": [
+      {
+        "line": 2,
+        "module": "__future__",
+        "names": [
+          {
+            "asname": null,
+            "name": "annotations"
+          }
+        ],
+        "type": "from"
+      },
+      {
+        "line": 4,
+        "module": null,
+        "names": [
+          {
+            "asname": null,
+            "name": "argparse"
+          }
+        ],
+        "type": "import"
+      },
+      {
+        "line": 5,
+        "module": null,
+        "names": [
+          {
+            "asname": null,
+            "name": "csv"
+          }
+        ],
+        "type": "import"
+      },
+      {
+        "line": 6,
+        "module": null,
+        "names": [
+          {
+            "asname": null,
+            "name": "json"
+          }
+        ],
+        "type": "import"
+      },
+      {
+        "line": 7,
+        "module": "collections",
+        "names": [
+          {
+            "asname": null,
+            "name": "defaultdict"
+          }
+        ],
+        "type": "from"
+      },
+      {
+        "line": 8,
+        "module": "dataclasses",
+        "names": [
+          {
+            "asname": null,
+            "name": "asdict"
+          }
+        ],
+        "type": "from"
+      },
+      {
+        "line": 9,
+        "module": "datetime",
+        "names": [
+          {
+            "asname": null,
+            "name": "date"
+          }
+        ],
+        "type": "from"
+      },
+      {
+        "line": 10,
+        "module": "pathlib",
+        "names": [
+          {
+            "asname": null,
+            "name": "Path"
+          }
+        ],
+        "type": "from"
+      },
+      {
+        "line": 11,
+        "module": "statistics",
+        "names": [
+          {
+            "asname": null,
+            "name": "mean"
+          }
+        ],
+        "type": "from"
+      },
+      {
+        "line": 13,
+        "module": "sqlalchemy",
+        "names": [
+          {
+            "asname": null,
+            "name": "text"
+          }
+        ],
+        "type": "from"
+      },
+      {
+        "line": 15,
+        "module": "trading_ai.database.session",
+        "names": [
+          {
+            "asname": null,
+            "name": "SessionLocal"
+          }
+        ],
+        "type": "from"
+      },
+      {
+        "line": 16,
+        "module": "trading_ai.stock_intelligence.service",
+        "names": [
+          {
+            "asname": null,
+            "name": "StockIntelligenceService"
+          }
+        ],
+        "type": "from"
+      },
+      {
+        "line": 17,
+        "module": "trading_ai.stock_intelligence.publication_service",
+        "names": [
+          {
+            "asname": null,
+            "name": "StockIntelligencePublicationService"
+          }
+        ],
+        "type": "from"
+      }
+    ],
+    "native_assignments": [
+      {
+        "expression": "rows[i-1], rows[i]",
+        "line": 63,
+        "targets": [
+          "p, c"
+        ]
+      },
+      {
+        "expression": "engine_rows(rows)",
+        "line": 75,
+        "targets": [
+          "d"
+        ]
+      },
+      {
+        "expression": "continuity(rows)",
+        "line": 94,
+        "targets": [
+          "_, segment, _"
+        ]
+      },
+      {
+        "expression": "[r for r in segment if r[\"date\"] in session_set and r[\"date\"].weekday() < 5]",
+        "line": 95,
+        "targets": [
+          "valid"
+        ]
+      },
+      {
+        "expression": "valid[warmup-1][\"date\"]",
+        "line": 98,
+        "targets": [
+          "eligible_from"
+        ]
+      },
+      {
+        "expression": "valid[max(0, pos-(history_rows-1)):pos+1]",
+        "line": 105,
+        "targets": [
+          "history"
+        ]
+      },
+      {
+        "expression": "service.analyze(\n        None,\n        timeframes(history),\n        snapshot_timestamp=f\"{as_of.isoformat()}T20:00:00+00:00\",\n        external_context={},\n        symbol_override=None,\n    )",
+        "line": 106,
+        "targets": [
+          "profile"
+        ]
+      },
+      {
+        "expression": "continuity(rows)",
+        "line": 121,
+        "targets": [
+          "_, segment, _"
+        ]
+      },
+      {
+        "expression": "[r for r in segment if r[\"date\"] in session_set and r[\"date\"].weekday() < 5]",
+        "line": 122,
+        "targets": [
+          "valid"
+        ]
+      },
+      {
+        "expression": "valid[warmup-1][\"date\"]",
+        "line": 125,
+        "targets": [
+          "eligible_from"
+        ]
+      },
+      {
+        "expression": "valid[max(0, pos-(history_rows-1)):pos+1]",
+        "line": 132,
+        "targets": [
+          "history"
+        ]
+      },
+      {
+        "expression": "[\n            x[\"date\"] for x in load_symbol_rows(root, \"SPY\")\n        ]",
+        "line": 241,
+        "targets": [
+          "spy_dates"
+        ]
+      },
+      {
+        "expression": "set(spy_dates)",
+        "line": 244,
+        "targets": [
+          "session_set"
+        ]
+      },
+      {
+        "expression": "stored_rows(session, cadence, manifests)",
+        "line": 249,
+        "targets": [
+          "rows"
+        ]
+      },
+      {
+        "expression": "rows",
+        "line": 250,
+        "targets": [
+          "stored_by_cadence[cadence]"
+        ]
+      },
+      {
+        "expression": "len(rows)",
+        "line": 251,
+        "targets": [
+          "counts[cadence]"
+        ]
+      },
+      {
+        "expression": "StockIntelligenceService()",
+        "line": 266,
+        "targets": [
+          "svc"
+        ]
+      },
+      {
+        "expression": "cfg[\"parity_policy\"]",
+        "line": 267,
+        "targets": [
+          "policy"
+        ]
+      },
+      {
+        "expression": "deterministic_sample(\n                stored_by_cadence[cadence],\n                policy[\"symbols\"],\n                policy[\"observations_per_cadence\"],\n            )",
+        "line": 271,
+        "targets": [
+          "sample"
+        ]
+      },
+      {
+        "expression": "cache.get(sym)",
+        "line": 285,
+        "targets": [
+          "rows"
+        ]
+      },
+      {
+        "expression": "load_symbol_rows(root, sym)",
+        "line": 287,
+        "targets": [
+          "rows"
+        ]
+      },
+      {
+        "expression": "rows",
+        "line": 288,
+        "targets": [
+          "cache[sym]"
+        ]
+      },
+      {
+        "expression": "call_profile(\n                        svc, sym, rows, as_of, session_set,\n                        policy[\"authority_warmup_rows\"],\n                        policy[\"history_window_rows\"],\n                    )",
+        "line": 289,
+        "targets": [
+          "p1"
+        ]
+      },
+      {
+        "expression": "call_profile(\n                        svc, sym, rows, as_of, session_set,\n                        policy[\"authority_warmup_rows\"],\n                        policy[\"history_window_rows\"],\n                    )",
+        "line": 294,
+        "targets": [
+          "p2"
+        ]
+      },
+      {
+        "expression": "{\n                \"minimum_comparisons\": n >= policy[\"minimum_comparisons_per_cadence\"],\n                \"direction_exact\": direction_pct >= policy[\"direction_exact_required_pct\"],\n                \"score_exact\": max_score is not None and max_score <= policy[\"overall_score_max_abs_error\"],\n                \"confidence_exact\": max_conf is not None and max_conf <= policy[\"confidence_max_abs_error\"],\n                \"state_hash_exact\": (\n                    state_pct == 100.0 if policy[\"state_hash_exact_required\"] else True\n                ),\n                \"deterministic_repeat\": (\n                    repeat_pct == 100.0 if policy[\"deterministic_repeat_required\"] else True\n                ),\n            }",
+        "line": 331,
+        "targets": [
+          "gates"
+        ]
+      }
+    ],
+    "native_calls": [
+      {
+        "args": [
+          "d",
+          "\"week\""
+        ],
+        "call": "StockIntelligencePublicationService._aggregate",
+        "expression": "StockIntelligencePublicationService._aggregate(d, \"week\")",
+        "kwargs": {},
+        "line": 78
+      },
+      {
+        "args": [
+          "d",
+          "\"month\""
+        ],
+        "call": "StockIntelligencePublicationService._aggregate",
+        "expression": "StockIntelligencePublicationService._aggregate(d, \"month\")",
+        "kwargs": {},
+        "line": 79
+      },
+      {
+        "args": [
+          "(round(i*(len(symbols)-1)/(n_symbols-1)) for i in range(n_symbols))"
+        ],
+        "call": "set",
+        "expression": "set(round(i*(len(symbols)-1)/(n_symbols-1)) for i in range(n_symbols))",
+        "kwargs": {},
+        "line": 185
+      },
+      {
+        "args": [
+          "(round(i*(len(rs)-1)/(n_dates-1)) for i in range(n_dates))"
+        ],
+        "call": "set",
+        "expression": "set(round(i*(len(rs)-1)/(n_dates-1)) for i in range(n_dates))",
+        "kwargs": {},
+        "line": 195
+      },
+      {
+        "args": [
+          "spy_dates"
+        ],
+        "call": "set",
+        "expression": "set(spy_dates)",
+        "kwargs": {},
+        "line": 244
+      },
+      {
+        "args": [],
+        "call": "StockIntelligenceService",
+        "expression": "StockIntelligenceService()",
+        "kwargs": {},
+        "line": 266
+      },
+      {
+        "args": [
+          "svc",
+          "sym",
+          "rows",
+          "as_of",
+          "session_set",
+          "policy[\"authority_warmup_rows\"]",
+          "policy[\"history_window_rows\"]"
+        ],
+        "call": "call_profile",
+        "expression": "call_profile(\n                        svc, sym, rows, as_of, session_set,\n                        policy[\"authority_warmup_rows\"],\n                        policy[\"history_window_rows\"],\n                    )",
+        "kwargs": {},
+        "line": 289
+      },
+      {
+        "args": [
+          "svc",
+          "sym",
+          "rows",
+          "as_of",
+          "session_set",
+          "policy[\"authority_warmup_rows\"]",
+          "policy[\"history_window_rows\"]"
+        ],
+        "call": "call_profile",
+        "expression": "call_profile(\n                        svc, sym, rows, as_of, session_set,\n                        policy[\"authority_warmup_rows\"],\n                        policy[\"history_window_rows\"],\n                    )",
+        "kwargs": {},
+        "line": 294
+      }
+    ],
+    "path": "scripts/run_m77_19_6_isolated_replay_engine_parity.py",
+    "required_function_contracts": {
+      "call_profile": {
+        "args": [
+          "service",
+          "symbol",
+          "rows",
+          "as_of",
+          "session_set",
+          "warmup",
+          "history_rows"
+        ],
+        "kwarg": null,
+        "line": 115,
+        "name": "call_profile",
+        "source": "def call_profile(service, symbol, rows, as_of, session_set, warmup, history_rows):\n    \"\"\"\n    Preserve original service call semantics. Some installed StockIntelligenceService\n    versions accept analyze(symbol, timeframes, ...), while newer compatible versions\n    may expose symbol_override. Try the canonical historical signature first.\n    \"\"\"\n    _, segment, _ = continuity(rows)\n    valid = [r for r in segment if r[\"date\"] in session_set and r[\"date\"].weekday() < 5]\n    if len(valid) < warmup:\n        return None\n    eligible_from = valid[warmup-1][\"date\"]\n    if as_of < eligible_from:\n        return None\n    index = {r[\"date\"]: i for i, r in enumerate(valid)}\n    if as_of not in index:\n        return None\n    pos = index[as_of]\n    history = valid[max(0, pos-(history_rows-1)):pos+1]\n    tf = timeframes(history)\n    try:\n        return service.analyze(\n            symbol,\n            tf,\n            snapshot_timestamp=f\"{as_of.isoformat()}T20:00:00+00:00\",\n            external_context={},\n        )\n    except TypeError:\n        return service.analyze(\n            tf,\n            snapshot_timestamp=f\"{as_of.isoformat()}T20:00:00+00:00\",\n            external_context={},\n            symbol_override=symbol,\n        )",
+        "vararg": null
+      },
+      "isolated_profile": {
+        "args": [
+          "service",
+          "rows",
+          "as_of",
+          "session_set",
+          "warmup",
+          "history_rows"
+        ],
+        "kwarg": null,
+        "line": 93,
+        "name": "isolated_profile",
+        "source": "def isolated_profile(service, rows, as_of, session_set, warmup=300, history_rows=750):\n    _, segment, _ = continuity(rows)\n    valid = [r for r in segment if r[\"date\"] in session_set and r[\"date\"].weekday() < 5]\n    if len(valid) < warmup:\n        return None\n    eligible_from = valid[warmup-1][\"date\"]\n    if as_of < eligible_from:\n        return None\n    index = {r[\"date\"]: i for i, r in enumerate(valid)}\n    if as_of not in index:\n        return None\n    pos = index[as_of]\n    history = valid[max(0, pos-(history_rows-1)):pos+1]\n    profile = service.analyze(\n        None,\n        timeframes(history),\n        snapshot_timestamp=f\"{as_of.isoformat()}T20:00:00+00:00\",\n        external_context={},\n        symbol_override=None,\n    )\n    return profile",
+        "vararg": null
+      },
+      "main": {
+        "args": [],
+        "kwarg": null,
+        "line": 225,
+        "name": "main",
+        "source": "def main():\n    ap = argparse.ArgumentParser()\n    ap.add_argument(\"mode\", choices=(\"preflight\", \"certify\"))\n    args = ap.parse_args()\n    cfg = json.loads(CFG.read_text())\n\n    source_cert = load_json(cfg[\"source_authority\"][\"certification\"])\n    if not source_cert.get(\"certified_for_m77_19_6_reconstruction\"):\n        raise SystemExit(\"M77.19.6 blocked: M77.19.5 source authority not certified\")\n\n    manifests = {\n        k: load_json(v) for k, v in cfg[\"frozen_manifests\"].items()\n    }\n    root = ROOT / cfg[\"source_authority\"][\"root\"]\n\n    with SessionLocal() as session:\n        spy_dates = [\n            x[\"date\"] for x in load_symbol_rows(root, \"SPY\")\n        ]\n        session_set = set(spy_dates)\n\n        counts = {}\n        stored_by_cadence = {}\n        for cadence in (\"DAILY\", \"MONTHLY\", \"WEEKLY\"):\n            rows = stored_rows(session, cadence, manifests)\n            stored_by_cadence[cadence] = rows\n            counts[cadence] = len(rows)\n\n        if args.mode == \"preflight\":\n            print(json.dumps({\n                \"version\": cfg[\"version\"],\n                \"status\": \"READY\",\n                \"m77_19_5_certified\": True,\n                \"stored_prediction_counts\": counts,\n                \"source_root\": str(root),\n                \"parity_policy\": cfg[\"parity_policy\"],\n                \"database_writes\": False,\n                \"production_authority_effect\": False,\n            }, indent=2))\n            return\n\n        svc = StockIntelligenceService()\n        policy = cfg[\"parity_policy\"]\n        cadence_results = {}\n\n        for cadence in (\"DAILY\", \"MONTHLY\", \"WEEKLY\"):\n            sample = deterministic_sample(\n                stored_by_cadence[cadence],\n                policy[\"symbols\"],\n                policy[\"observations_per_cadence\"],\n            )\n            evidence = []\n            errors = []\n            cache = {}\n            for stored in sample:\n                sym = str(stored[\"symbol\"])\n                as_of = stored[\"as_of\"]\n                if not isinstance(as_of, date):\n                    as_of = date.fromisoformat(str(as_of)[:10])\n                try:\n                    rows = cache.get(sym)\n                    if rows is None:\n                        rows = load_symbol_rows(root, sym)\n                        cache[sym] = rows\n                    p1 = call_profile(\n                        svc, sym, rows, as_of, session_set,\n                        policy[\"authority_warmup_rows\"],\n                        policy[\"history_window_rows\"],\n                    )\n                    p2 = call_profile(\n                        svc, sym, rows, as_of, session_set,\n                        policy[\"authority_warmup_rows\"],\n                        policy[\"history_window_rows\"],\n                    )\n                    if p1 is None or p2 is None:\n                        errors.append({\"symbol\": sym, \"as_of\": str(as_of), \"error\": \"NOT_ELIGIBLE\"})\n                        continue\n                    c1 = compare_profile(p1, stored)\n                    c2 = compare_profile(p2, stored)\n                    c1[\"symbol\"] = sym\n                    c1[\"as_of\"] = str(as_of)\n                    c1[\"deterministic_repeat\"] = c1[\"isolated\"] == c2[\"isolated\"]\n                    evidence.append(c1)\n                except Exception as exc:\n                    errors.append({\n                        \"symbol\": sym,\n                        \"as_of\": str(as_of),\n                        \"error\": type(exc).__name__,\n                        \"message\": str(exc)[:1000],\n                    })\n\n            n = len(evidence)\n            direction_pct = (\n                100.0 * sum(x[\"direction_match\"] for x in evidence) / n\n                if n else 0.0\n            )\n            state_pct = (\n                100.0 * sum(x[\"state_hash_match\"] for x in evidence) / n\n                if n else 0.0\n            )\n            repeat_pct = (\n                100.0 * sum(x[\"deterministic_repeat\"] for x in evidence) / n\n                if n else 0.0\n            )\n            max_score = max((x[\"score_abs_error\"] for x in evidence), default=None)\n            max_conf = max((x[\"confidence_abs_error\"] for x in evidence), default=None)\n            gates = {\n                \"minimum_comparisons\": n >= policy[\"minimum_comparisons_per_cadence\"],\n                \"direction_exact\": direction_pct >= policy[\"direction_exact_required_pct\"],\n                \"score_exact\": max_score is not None and max_score <= policy[\"overall_score_max_abs_error\"],\n                \"confidence_exact\": max_conf is not None and max_conf <= policy[\"confidence_max_abs_error\"],\n                \"state_hash_exact\": (\n                    state_pct == 100.0 if policy[\"state_hash_exact_required\"] else True\n                ),\n                \"deterministic_repeat\": (\n                    repeat_pct == 100.0 if policy[\"deterministic_repeat_required\"] else True\n                ),\n            }\n            cadence_results[cadence] = {\n                \"sample_requested\": len(sample),\n                \"comparisons\": n,\n                \"errors\": errors,\n                \"direction_match_pct\": direction_pct,\n                \"state_hash_match_pct\": state_pct,\n                \"deterministic_repeat_pct\": repeat_pct,\n                \"max_score_abs_error\": max_score,\n                \"max_confidence_abs_error\": max_conf,\n                \"gates\": gates,\n                \"evidence\": evidence,\n                \"pass\": all(gates.values()),\n            }\n\n    certified = all(x[\"pass\"] for x in cadence_results.values())\n    result = {\n        \"version\": cfg[\"version\"],\n        \"status\": \"READY\",\n        \"source_authority_certified\": True,\n        \"cadence_results\": cadence_results,\n        \"isolated_replay_engine_parity_certified\": certified,\n        \"full_23_year_reconstruction_authorized\": certified,\n        \"interpretation\": (\n            \"Exact parity against frozen replay outputs demonstrated; long-history reconstruction may proceed.\"\n            if certified else\n            \"Exact parity not demonstrated. Do not run the 23-year reconstruction until differences are resolved.\"\n        ),\n        \"next_step\": (\n            \"BUILD_M77_19_6_1_FULL_LONG_HISTORY_RECONSTRUCTION\"\n            if certified else\n            \"FORENSIC_REVIEW_M77_19_6_PARITY_DIFFERENCES\"\n        ),\n        \"database_writes\": False,\n        \"production_authority_effect\": False,\n    }\n    write_json_atomic(OUT, result)\n    print(json.dumps({\n        \"version\": result[\"version\"],\n        \"status\": \"READY\",\n        \"isolated_replay_engine_parity_certified\": certified,\n        \"full_23_year_reconstruction_authorized\": certified,\n        \"cadence_summary\": {\n            k: {\n                \"comparisons\": v[\"comparisons\"],\n                \"direction_match_pct\": v[\"direction_match_pct\"],\n                \"state_hash_match_pct\": v[\"state_hash_match_pct\"],\n                \"max_score_abs_error\": v[\"max_score_abs_error\"],\n                \"max_confidence_abs_error\": v[\"max_confidence_abs_error\"],\n                \"deterministic_repeat_pct\": v[\"deterministic_repeat_pct\"],\n                \"pass\": v[\"pass\"],\n                \"error_count\": len(v[\"errors\"]),\n            }\n            for k, v in cadence_results.items()\n        },\n        \"next_step\": result[\"next_step\"],\n        \"production_authority_effect\": False,\n    }, indent=2))",
+        "vararg": null
+      }
+    },
+    "resolved": true,
+    "service_construction_call_sites": [
+      {
+        "args": [],
+        "call": "StockIntelligenceService",
+        "expression": "StockIntelligenceService()",
+        "kwargs": {},
+        "line": 266
+      }
+    ],
+    "session_set_assignments": [
+      {
+        "expression": "set(spy_dates)",
+        "line": 244,
+        "targets": [
+          "session_set"
+        ]
+      }
+    ],
+    "sha256": "bcc5b49b87ddceba6ac417000d5af3d4a57efd14145595f4d712eb36ae81204b"
+  }
+}

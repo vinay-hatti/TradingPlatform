@@ -39,12 +39,17 @@ def test_precision_forecast_exposes_actionable_path_and_magnet_zone():
     assert f['actionable_range']['low'] < f['actionable_range']['high']
     assert f['actionable_range']['conditional'] is True
     assert f['magnet']['zone']['low'] < f['magnet']['zone']['high']
-    assert f['magnet']['zone']['probability'] >= f['magnet']['probability']
+    assert 0 <= f['magnet']['zone']['probability'] <= 100
+    assert f['magnet']['zone']['probability_method']=='RISK_NEUTRAL_SURFACE_MASS'
+    assert f['magnet']['probability_semantics']=='NORMALIZED_STRIKE_ATTRACTION_WEIGHT_NOT_CALIBRATED'
     assert f['path_distribution']['levels']
     assert all(0 <= x['touch_probability'] <= 100 for x in f['path_distribution']['levels'])
     assert f['range_width_contributors'] and round(sum(f['range_width_contributors'].values()),0)==100
     assert f['dealer']['positioning_scope']=='TARGET_EXPIRATION'
     assert 'cross_index_confirmation' in f
+    assert f['path_completeness']['status']=='COMPLETE'
+    assert f['expected_daily_path'][-1]['date']==str(expiry)
+    assert f['daily_flows'][-1]['date']==str(expiry)
 
 def test_position_change_inference_is_explicit_not_fabricated():
     svc=OpexIntelligenceService(None)

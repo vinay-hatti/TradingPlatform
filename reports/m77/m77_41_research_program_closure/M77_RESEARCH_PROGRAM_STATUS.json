@@ -1,0 +1,99 @@
+{
+  "automatic_production_promotion": false,
+  "automatic_retraining": false,
+  "classification_counts": {
+    "DEVELOPMENT_SURVIVOR": 5,
+    "FORENSIC_ONLY": 7,
+    "NOT_IDENTIFIABLE": 1,
+    "PRODUCTION_CERTIFIED": 1,
+    "PROSPECTIVE_CERTIFICATION_PENDING": 5,
+    "REJECTED_DEVELOPMENT_HYPOTHESIS": 8
+  },
+  "generated_at": "2026-08-28T22:04:28.675316+00:00",
+  "historical_exploration_status": "COMPLETE",
+  "launchd": {
+    "available": true,
+    "healthy": true,
+    "label": "com.tradingplatform.m77-6-shadow",
+    "last_exit_code": "0",
+    "runs": "1",
+    "state": "active"
+  },
+  "new_historical_edge_discovery_permitted": false,
+  "next_step": "ALLOW FROZEN PROSPECTIVE EVIDENCE TO MATURE; EVALUATE ONLY AGAINST PREREGISTERED GATES; NO AUTOMATIC PRODUCTION PROMOTION",
+  "overall_operational_health": "HEALTHY",
+  "production_certified_count": 1,
+  "production_changes_pending": "NONE",
+  "prospective_pending_count": 5,
+  "prospective_protocol_count": 5,
+  "prospective_resolved_count": 0,
+  "prospective_tracks": [
+    {
+      "certification_status": "ACCUMULATING",
+      "certification_verdict": "NOT_ENOUGH_PROSPECTIVE_EVIDENCE",
+      "latest_snapshot": "2026-08-28",
+      "matured_snapshot_count": 0,
+      "milestone": "M77.24.1",
+      "production_authority_effect": false,
+      "protocol_frozen": true,
+      "protocol_id": "PSVE-CANDIDATE-001",
+      "protocol_sha256": "3fb69e472f1ebacf1f4aa79fae4bf9228cdf9557adf2ed51a4f9895ea9fb3c32",
+      "snapshot_count": 2,
+      "track": "PSVE"
+    },
+    {
+      "certification_status": "ACCUMULATING",
+      "certification_verdict": "NOT_ENOUGH_PROSPECTIVE_EVIDENCE",
+      "latest_snapshot": "2026-08-28",
+      "matured_snapshot_count": 0,
+      "milestone": "M77.26.2",
+      "production_authority_effect": false,
+      "protocol_frozen": true,
+      "protocol_id": "MGE-CANDIDATE-001",
+      "protocol_sha256": "13f0f9aeef338e488ffbb476ac841a85db41cb435c94aaa11b337fff51e956aa",
+      "snapshot_count": 2,
+      "track": "MGE"
+    },
+    {
+      "certification_status": "ACCUMULATING",
+      "certification_verdict": "NOT_ENOUGH_PROSPECTIVE_EVIDENCE",
+      "latest_snapshot": "2026-08-28",
+      "matured_snapshot_count": 0,
+      "milestone": "M77.27.1",
+      "production_authority_effect": false,
+      "protocol_frozen": true,
+      "protocol_id": "CQMI-CANDIDATE-001",
+      "protocol_sha256": "ce4147864d3cfe63750e656d4708072e1a857984230258ca30ae8d85fa4bf836",
+      "snapshot_count": 2,
+      "track": "CQMI"
+    },
+    {
+      "certification_status": "ACCUMULATING",
+      "certification_verdict": "NOT_ENOUGH_PROSPECTIVE_EVIDENCE",
+      "latest_snapshot": "2026-08-28",
+      "matured_snapshot_count": 0,
+      "milestone": "M77.30",
+      "production_authority_effect": false,
+      "protocol_frozen": true,
+      "protocol_id": "CPRE-CANDIDATE-001",
+      "protocol_sha256": "e68d3f680a9f77b2f2327598f56322d0a14cafb0b3b40630a2379590af7cb1df",
+      "snapshot_count": 2,
+      "track": "CPRE"
+    },
+    {
+      "certification_status": "ACCUMULATING",
+      "certification_verdict": "NOT_ENOUGH_PROSPECTIVE_EVIDENCE",
+      "latest_snapshot": "2026-08-28",
+      "matured_snapshot_count": 0,
+      "milestone": "M77.40",
+      "production_authority_effect": false,
+      "protocol_frozen": true,
+      "protocol_id": "CACA-CANDIDATE-001",
+      "protocol_sha256": "f867431d5d4069c8d85c1d604860a344c55ab0ded0d138632ac509a242141968",
+      "snapshot_count": 1,
+      "track": "CACA"
+    }
+  ],
+  "research_program_phase": "PROSPECTIVE_EVIDENCE_ACCUMULATION",
+  "version": "M77.41.0-RESEARCH-PROGRAM-CLOSURE-EVIDENCE-REGISTRY-PROSPECTIVE-GOVERNANCE-DASHBOARD-1.0"
+}

@@ -1,0 +1,161 @@
+{
+  "version": "M77.15.0-VEDIC-EPHEMERIS-FOUNDATION-1.0",
+  "status": "READY",
+  "mode": "AUTHORITATIVE_EPHEMERIS_FOUNDATION_AND_DIAGNOSTIC_PARITY",
+  "authoritative_provider": "NASA_JPL_HORIZONS",
+  "authoritative_state_count": 28,
+  "diagnostic_candidate_parity": {
+    "comparisons": 16,
+    "mean_angular_error_deg": 58.97104648072739,
+    "max_angular_error_deg": 171.24242580530077,
+    "rows": [
+      {
+        "date": "2023-03-20",
+        "body": "MERCURY",
+        "jpl_tropical_longitude_deg": 2.3187683144640463,
+        "existing_m77_14_low_precision_deg": 173.56119411976482,
+        "angular_error_deg": 171.24242580530077
+      },
+      {
+        "date": "2023-03-20",
+        "body": "MARS",
+        "jpl_tropical_longitude_deg": 87.30316080501322,
+        "existing_m77_14_low_precision_deg": 145.10449805145993,
+        "angular_error_deg": 57.80133724644671
+      },
+      {
+        "date": "2023-03-20",
+        "body": "JUPITER",
+        "jpl_tropical_longitude_deg": 16.06005178405089,
+        "existing_m77_14_low_precision_deg": 24.53368147950181,
+        "angular_error_deg": 8.473629695450917
+      },
+      {
+        "date": "2023-03-20",
+        "body": "SATURN",
+        "jpl_tropical_longitude_deg": 331.17114436630976,
+        "existing_m77_14_low_precision_deg": 325.4723797300382,
+        "angular_error_deg": 5.698764636271562
+      },
+      {
+        "date": "2024-09-22",
+        "body": "MERCURY",
+        "jpl_tropical_longitude_deg": 172.58114109319496,
+        "existing_m77_14_low_precision_deg": 13.127243479732135,
+        "angular_error_deg": 159.45389761346283
+      },
+      {
+        "date": "2024-09-22",
+        "body": "MARS",
+        "jpl_tropical_longitude_deg": 99.92005767296511,
+        "existing_m77_14_low_precision_deg": 35.69882635012152,
+        "angular_error_deg": 64.2212313228436
+      },
+      {
+        "date": "2024-09-22",
+        "body": "JUPITER",
+        "jpl_tropical_longitude_deg": 80.5287116327305,
+        "existing_m77_14_low_precision_deg": 59.66969544921066,
+        "angular_error_deg": 20.85901618351985
+      },
+      {
+        "date": "2024-09-22",
+        "body": "SATURN",
+        "jpl_tropical_longitude_deg": 344.6021844641969,
+        "existing_m77_14_low_precision_deg": 347.68651019138434,
+        "angular_error_deg": 3.0843257271874336
+      },
+      {
+        "date": "2025-12-01",
+        "body": "MERCURY",
+        "jpl_tropical_longitude_deg": 230.61235740481524,
+        "existing_m77_14_low_precision_deg": 82.72934105150604,
+        "angular_error_deg": 147.8830163533092
+      },
+      {
+        "date": "2025-12-01",
+        "body": "MARS",
+        "jpl_tropical_longitude_deg": 259.3129011599152,
+        "existing_m77_14_low_precision_deg": 295.3717339128116,
+        "angular_error_deg": 36.058832752896365
+      },
+      {
+        "date": "2025-12-01",
+        "body": "JUPITER",
+        "jpl_tropical_longitude_deg": 114.13781858096391,
+        "existing_m77_14_low_precision_deg": 101.11899578078877,
+        "angular_error_deg": 13.018822800175144
+      },
+      {
+        "date": "2025-12-01",
+        "body": "SATURN",
+        "jpl_tropical_longitude_deg": 354.804730634114,
+        "existing_m77_14_low_precision_deg": 6.092803985063635,
+        "angular_error_deg": 11.288073350949674
+      },
+      {
+        "date": "2026-08-21",
+        "body": "MERCURY",
+        "jpl_tropical_longitude_deg": 141.688084559179,
+        "existing_m77_14_low_precision_deg": 339.80368902859726,
+        "angular_error_deg": 161.88439553058174
+      },
+      {
+        "date": "2026-08-21",
+        "body": "MARS",
+        "jpl_tropical_longitude_deg": 96.28813587510034,
+        "existing_m77_14_low_precision_deg": 28.99842431633087,
+        "angular_error_deg": 67.28971155876947
+      },
+      {
+        "date": "2026-08-21",
+        "body": "JUPITER",
+        "jpl_tropical_longitude_deg": 131.09382782069858,
+        "existing_m77_14_low_precision_deg": 123.69148842299695,
+        "angular_error_deg": 7.402339397701624
+      },
+      {
+        "date": "2026-08-21",
+        "body": "SATURN",
+        "jpl_tropical_longitude_deg": 13.821515371156952,
+        "existing_m77_14_low_precision_deg": 5.94459165438556,
+        "angular_error_deg": 7.876923716771392
+      }
+    ],
+    "disposition": "DIAGNOSTIC_ONLY_EXISTING_LOW_PRECISION_ENGINE_NOT_VEDIC_AUTHORITY"
+  },
+  "vedic_conventions": {
+    "zodiac": "SIDEREAL",
+    "ayanamsha": "LAHIRI_CHITRAPAKSHA",
+    "observer": "GEOCENTRIC",
+    "time_basis": "UTC",
+    "daily_reference_time_utc": "12:00:00",
+    "graha_scope_phase_0": [
+      "SUN",
+      "MOON",
+      "MERCURY",
+      "VENUS",
+      "MARS",
+      "JUPITER",
+      "SATURN"
+    ],
+    "node_convention": "TRUE_NODE",
+    "node_status": "DEFERRED_PENDING_AUTHORITATIVE_LUNAR_ORBIT_PLANE_DERIVATION",
+    "rashi_count": 12,
+    "nakshatra_count": 27,
+    "pada_count_per_nakshatra": 4,
+    "tithi_count": 30,
+    "boundary_policy": "LEFT_CLOSED_RIGHT_OPEN",
+    "traditional_financial_interpretations": "NOT_ASSUMED",
+    "production_authority_effect": false
+  },
+  "acceptance": {
+    "jpl_authoritative_states_materialized": true,
+    "sidereal_feature_materialization": false,
+    "lahiri_ayanamsha_parity": false,
+    "true_node_authority": false,
+    "production_authority_effect": false
+  },
+  "next_step": "BUILD_M77_15_1_LAHIRI_AYANAMSHA_AND_TRUE_NODE_PARITY_THEN_PANCHANGA",
+  "production_authority_effect": false
+}

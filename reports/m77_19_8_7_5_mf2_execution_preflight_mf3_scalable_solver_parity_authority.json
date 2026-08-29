@@ -1,0 +1,28 @@
+{
+  "MF1_retuning_authorized": false,
+  "MF2": {
+    "development_walk_forward_executed": false,
+    "development_walk_forward_execution_authorized": true,
+    "elapsed_seconds": 0.006799165974371135,
+    "execution_preflight_feature_count": 12,
+    "execution_preflight_row_count": 5000,
+    "monotonic_contract_passed": true
+  },
+  "MF3": {
+    "all_parity_cases_passed": true,
+    "development_walk_forward_executed": false,
+    "development_walk_forward_execution_authorized": true,
+    "max_relative_objective_gap": -2.7006803171834594e-05,
+    "parity_case_count": 36,
+    "parity_tolerance": 0.015,
+    "scalable_runtime": "PRIMAL_DUAL_PINBALL_ELASTIC_NET",
+    "scalable_solver_certified": true
+  },
+  "final_holdout_open_authorized": false,
+  "next_step": "BUILD_M77_19_8_7_6_DEVELOPMENT_ONLY_MF2_MF3_WALK_FORWARD_EVALUATION_WITH_CHECKPOINTS",
+  "production_authority_effect": false,
+  "solver_certification_sha256": "e553edf80f2c6a197b47778c7bea37f19802deb0d9395323de969cf556805369",
+  "status": "READY",
+  "validation_open_authorized": false,
+  "version": "M77.19.8.7.5-MF2-EXECUTION-PREFLIGHT-MF3-SCALABLE-SOLVER-PARITY-AUTHORITY-1.0"
+}

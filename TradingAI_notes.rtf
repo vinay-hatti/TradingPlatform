@@ -1,0 +1,427 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2870
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\froman\fcharset0 Times-Roman;\f2\fmodern\fcharset0 Courier;
+\f3\fnil\fcharset0 Menlo-Regular;\f4\froman\fcharset0 Times-Bold;\f5\fnil\fcharset0 .AppleSystemUIFontMonospaced-Regular;
+\f6\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue0;\red255\green255\blue255;
+\red255\green255\blue255;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\csgray\c0;\cssrgb\c100000\c100000\c99985;
+\cssrgb\c100000\c100000\c100000;\cssrgb\c100000\c100000\c99971;}
+\margl1440\margr1440\vieww51000\viewh26840\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf2 \
+uv run python scripts/run_m40_production_api.py \\\
+  --host 127.0.0.1 \\\
+  --port 8000\
+\
+uv run uvicorn trading_ai.production_api.app:app \\\
+  --host 127.0.0.1 \\\
+  --port 8000\
+\
+
+\f1 \cf0 Swagger UI:
+\f2\fs26 \
+http://127.0.0.1:8000/docs\
+\
+
+\f1\fs24 OpenAPI schema:
+\f2\fs26 \
+http://127.0.0.1:8000/openapi.json\cf2 \expnd0\expndtw0\kerning0
+\
+
+\f0\fs24 \kerning1\expnd0\expndtw0 \
+Start UI:\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f3\fs22 \cf3 \CocoaLigature0 v run python scripts/run_m41_workstation.py --host 127.0.0.1 --port 8000\
+\
+export TRADING_AI_ALLOW_API_MUTATIONS=true\
+uv run python scripts/run_m42_command_center.py
+\f0\fs24 \cf2 \CocoaLigature1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf2 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "http://127.0.0.1:8000/#/scanner"}}{\fldrslt \cf2 http://127.0.0.1:8000/}}\
+\
+\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f4\b\fs36 \cf2 \expnd0\expndtw0\kerning0
+Everyday startup
+\f2\b0\fs26 \
+\pard\pardeftab720\partightenfactor0
+\cf2 cd /Users/vinay.hatti/TradingPlatform\
+./start_platform.sh\
+\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\fs24 \cf2 It will open: 
+\f2\fs26  http://127.0.0.1:5173\
+\pard\pardeftab720\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f4\b\fs36 \cf2 Stop the platform
+\f2\b0\fs26 \
+\pard\pardeftab720\partightenfactor0
+\cf2 cd /Users/vinay.hatti/TradingPlatform\
+./stop_platform.sh\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f4\b\fs36 \cf2 \
+Check status
+\f2\b0\fs26 \
+\pard\pardeftab720\partightenfactor0
+\cf2 cd /Users/vinay.hatti/TradingPlatform\
+./platform_status.sh\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f4\b\fs36 \cf2 \
+Other useful commands\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf2 Start without opening the browser:
+\f2\fs26 \
+\pard\pardeftab720\partightenfactor0
+\cf2 ./start_platform.sh --no-browser\
+\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\fs24 \cf2 Restart both launcher-managed services:\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf2 \
+uv run python scripts/platform_launcher.py restart\
+\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\fs24 \cf2 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f4\b\fs36 \cf2 View backend logs:
+\f2\b0\fs26 \
+\pard\pardeftab720\partightenfactor0
+\cf2 uv run python scripts/platform_launcher.py \\\
+  logs \\\
+  --service backend \\\
+  --lines 200\
+\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f4\b\fs36 \cf2 View frontend logs:
+\f2\b0\fs26 \
+\pard\pardeftab720\partightenfactor0
+\cf2 uv run python scripts/platform_launcher.py \\\
+  logs \\\
+  --service frontend \\\
+  --lines 200\
+\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\fs24 \cf2 The launcher uses the current production API command:
+\f2\fs26 \
+\pard\pardeftab720\partightenfactor0
+\cf2 uv run python scripts/run_m40_production_api.py --host 127.0.0.1 --port 8000\
+\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\fs24 \cf2 and the current workstation command:\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf2 \
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf2 \kerning1\expnd0\expndtw0 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f3\fs22 \cf2 \CocoaLigature0 curl -H "X-API-Key: UOC5YZQZMvhWxPOGp6NEXVrcNX2RWyxh" http://127.0.0.1:8000/api/v1/platform/overview\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf2 \CocoaLigature1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f3\fs22 \cf2 \CocoaLigature0 curl -H "X-API-Key: UOC5YZQZMvhWxPOGp6NEXVrcNX2RWyxh" 
+\f1\fs24 \expnd0\expndtw0\kerning0
+\CocoaLigature1 http://127.0.0.1:8000/api/v1/platform/portfolio
+\f3\fs22 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+\
+curl -H "X-API-Key: UOC5YZQZMvhWxPOGp6NEXVrcNX2RWyxh" 
+\f1\fs24 \expnd0\expndtw0\kerning0
+\CocoaLigature1 http://127.0.0.1:8000/api/v1/platform/risk
+\f3\fs22 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+\
+curl -H "X-API-Key: UOC5YZQZMvhWxPOGp6NEXVrcNX2RWyxh" 
+\f1\fs24 \expnd0\expndtw0\kerning0
+\CocoaLigature1 http://127.0.0.1:8000/api/v1/platform/execution
+\f3\fs22 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+\
+curl -H "X-API-Key: UOC5YZQZMvhWxPOGp6NEXVrcNX2RWyxh" 
+\f1\fs24 \expnd0\expndtw0\kerning0
+\CocoaLigature1 http://127.0.0.1:8000/api/v1/platform/positions
+\f3\fs22 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+\
+curl -H "X-API-Key: UOC5YZQZMvhWxPOGp6NEXVrcNX2RWyxh" 
+\f1\fs24 \expnd0\expndtw0\kerning0
+\CocoaLigature1 http://127.0.0.1:8000/api/v1/platform/exit-instructions
+\f0 \kerning1\expnd0\expndtw0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf2 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf2 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+FINDING LIVE TRADES:\
+\
+
+\f3\fs22 \cf3 \CocoaLigature0 Mac-mini:TradingPlatform vinay.hatti$ uv run python scripts/test_m43_market_ingestion_symbol_sources.py\
+Milestone 43 market-ingestion symbol-source assertions passed.\
+Mac-mini:TradingPlatform vinay.hatti$ uv run python scripts/run_market_ingestion.py --help\
+usage: run_market_ingestion.py [-h] [--symbols SYMBOLS | --symbols-file SYMBOLS_FILE] [--universe-file UNIVERSE_FILE] [--start START] [--end END] [--lookback-days LOOKBACK_DAYS]\
+                               [--max-workers MAX_WORKERS] [--request-interval REQUEST_INTERVAL] [--max-retries MAX_RETRIES] [--initial-backoff INITIAL_BACKOFF]\
+                               [--max-backoff MAX_BACKOFF] [--force-refresh] [--continue-on-error]\
+\
+Download Yahoo underlying OHLCV data with rate-limit pacing and retry. With no symbol arguments, all active symbols from data/universe/us_listed_equities_etfs.csv are ingested.\
+\
+options:\
+  -h, --help            show this help message and exit\
+  --symbols SYMBOLS     Comma-separated symbol override, for example AAPL,MSFT,NVDA.\
+  --symbols-file SYMBOLS_FILE\
+                        CSV/TSV/text file containing symbols. CSV files may use a symbol, provider_symbol, or ticker column and an optional active column.\
+  --universe-file UNIVERSE_FILE\
+                        Canonical universe used when neither --symbols nor --symbols-file is provided. Default: data/universe/us_listed_equities_etfs.csv\
+  --start START\
+  --end END\
+  --lookback-days LOOKBACK_DAYS\
+  --max-workers MAX_WORKERS\
+  --request-interval REQUEST_INTERVAL\
+  --max-retries MAX_RETRIES\
+  --initial-backoff INITIAL_BACKOFF\
+  --max-backoff MAX_BACKOFF\
+  --force-refresh\
+  --continue-on-error\
+Mac-mini:TradingPlatform vinay.hatti$ \
+
+\f0\fs24 \cf2 \CocoaLigature1 \
+Market_Ingestion:\
+**********************\
+
+\f3\fs22 \cf3 \CocoaLigature0 Full data load: (about 13 minutes)\
+\
+echo "*********** Start Time: " `date` ; uv run python scripts/ingest_underlying_data.py   --universe-file data/universe/us_listed_equities_etfs.csv   --index-universe-file data/universe/us_market_indices.csv   --asset-classes EQUITY,ETF,INDEX   --end "$(date +%F)"   --lookback-days 1460 --underlying-fetch-mode auto   --underlying-incremental-sessions 5   --underlying-stale-threshold-days 10   --max-workers 4   --request-interval 15   --require-stock-intelligence   --require-institutional-options   --require-finalize   --continue-on-error ; uv run python scripts/ingest_options_data.py   --universe-file data/universe/us_listed_equities_etfs.csv   --index-universe-file data/universe/us_market_indices.csv   --asset-classes EQUITY,ETF,INDEX   --end "$(date +%F)"   --force-options-refresh   --force-dealer-refresh   --options-minimum-dte 1   --options-maximum-dte 180   --options-minimum-open-interest 1   --options-minimum-volume 0   --options-maximum-strike-distance-pct 0.40   --polygon-requests-per-second 4   --options-batch-size 5000   --require-institutional-options   --require-finalize   --continue-on-error ; echo "*********** End Time: " `date`\
+\
+\
+\
+\
+\
+echo "######## Start time: " `date` ; 
+\f5\fs24 \cf0 \CocoaLigature1 uv run python scripts/run_market_ingestion.py --mode daily --data-scope all --universe-file data/universe/us_listed_equities_etfs.csv --index-universe-file data/universe/us_market_indices.csv --asset-classes EQUITY,ETF,INDEX --end "$(date +%F)" --lookback-days 730 --underlying-fetch-mode auto --underlying-incremental-sessions 5 --underlying-stale-threshold-days 10 --max-workers 4 --request-interval 15 --polygon-connect-timeout 5 --polygon-read-timeout 30 --polygon-sdk-retries 0 --polygon-pools-per-worker 1 --network-backoff 5 --polygon-rate-limit-floor 15 --max-retries 5 --initial-backoff 30 --max-backoff 300 --force-options-refresh --options-minimum-dte 1 --options-maximum-dte 180 --options-minimum-open-interest 1 --options-minimum-volume 0 --options-maximum-strike-distance-pct 0.40 --polygon-requests-per-second 4 --options-batch-size 5000 --options-manifest reports/market_ingestion/options_manifest.json --options-report reports/market_ingestion/options_bod_latest.json --options-lock-file reports/market_ingestion/options_ingestion.lock --dealer-positioning-minimum-dte 1 --dealer-positioning-maximum-dte 365 --dealer-positioning-maximum-snapshot-age-days 0 --dealer-sign-convention street_proxy --dealer-positioning-output-dir reports/m44 --dealer-positioning-report reports/market_ingestion/dealer_positioning_bod_latest.json --trend-execution-mode in-process --trend-platform-report reports/trend_intelligence/platform_integration_bod_latest.json --publication-name current_market_state --lifecycle-report reports/market_ingestion/lifecycle_bod_latest.json --continue-on-error 
+\f3\fs22 \cf3 \CocoaLigature0 ; echo "######## End time: " `date`
+\f6\fs26 \cf0 \CocoaLigature1 \
+
+\f3\fs22 \cf3 \CocoaLigature0 \
+\
+echo "######## Start time: " `date` ; uv run python scripts/run_market_ingestion.py   --continue-on-error   --data-scope all   --options-minimum-dte 1   --options-maximum-dte 180   --lookback-days 730   --force-options-refresh   --force-dealer-refresh   --underlying-fetch-mode auto   --underlying-incremental-sessions 3   --underlying-stale-threshold-days 10   --request-interval 15   --polygon-rate-limit-floor 15   --polygon-connect-timeout 5   --polygon-read-timeout 30   --polygon-sdk-retries 0   --max-retries 5   --initial-backoff 30   --max-backoff 300 ; echo "######## End time: " `date`\
+\
+\
+Intraday Underlying only: (about 10 minutes)\
+echo "Start time: " `date` ; \cf2 \expnd0\expndtw0\kerning0
+\CocoaLigature1 uv run python scripts/run_market_ingestion.py --mode intraday --data-scope underlying --continue-on-error --lookback-days 730 --underlying-fetch-mode auto --underlying-incremental-sessions 2 --underlying-stale-threshold-days 10 --max-workers 4 --request-interval 15 --polygon-rate-limit-floor 15 --polygon-connect-timeout 5 --polygon-read-timeout 30 --polygon-sdk-retries 0 --polygon-pools-per-worker 1 --network-backoff 5 --max-retries 5 --initial-backoff 30 --max-backoff 300 --force-dealer-refresh --force-trend-refresh --force-market-overview-refresh --publication-name current_market_state --lifecycle-report reports/market_ingestion/intraday_ohlcv_latest.json \cf3 \kerning1\expnd0\expndtw0 \CocoaLigature0 ; echo "End time: " `date`
+\f1\fs24 \cf5 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs22 \cf3 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\
+Intraday full options: (about 12-13 minutes)\
+echo "Start time: " `date` ; 
+\fs24 \cf2 \expnd0\expndtw0\kerning0
+\CocoaLigature1 uv run python scripts/run_market_ingestion.py --mode intraday --data-scope options --continue-on-error --options-minimum-dte 1 --options-maximum-dte 180 --options-minimum-open-interest 1 --options-minimum-volume 0 --options-maximum-strike-distance-pct 0.40 --options-batch-size 5000 --polygon-requests-per-second 4 --max-retries 5 --initial-backoff 30 --max-backoff 300 --force-dealer-refresh --force-trend-refresh --force-market-overview-refresh --publication-name current_market_state --lifecycle-report reports/market_ingestion/intraday_options_latest.json ; 
+\fs22 \cf3 \kerning1\expnd0\expndtw0 \CocoaLigature0 echo "End time: " `date`
+\fs24 \cf2 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\pardeftab720\partightenfactor0
+
+\fs22 \cf3 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\
+Intraday just Index: (about 2 minutes)\
+echo "Start time: " `date` ; uv run python scripts/run_market_ingestion.py --mode intraday --asset-classes INDEX --continue-on-error --options-minimum-dte 1 --options-maximum-dte 180 ; echo "End time: " `date`\
+\
+
+\f0\fs24 \cf2 \CocoaLigature1 **********************\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f3\fs22 \cf2 \CocoaLigature0 uv run python scripts/run_market_ingestion.py --data-scope options --options-minimum-dte 1 --options-maximum-dte 180 --continue-on-error \expnd0\expndtw0\kerning0
+\CocoaLigature1 --force-refresh\
+\pard\pardeftab720\partightenfactor0
+\cf2 \
+uv run python scripts/run_market_ingestion.py --universe-file data/universe/us_listed_equities_etfs.csv --data-scope all --max-workers 1 --request-interval 1 --polygon-requests-per-second 4 --continue-on-error\
+\
+uv run python scripts/run_market_ingestion.py --universe-file data/universe/us_listed_equities_etfs.csv --data-scope all --max-workers 1 --request-interval 20 --max-retries 8 --initial-backoff 60 --max-backoff 600 --polygon-requests-per-second 4 --continue-on-error\cf3 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf2 \CocoaLigature1 \
+uv run python scripts/run_m46_market_intelligence_refresh.py\
+\
+uv run python scripts/run_market_ingestion.py --lookback-days 730 --max-workers 1 --request-interval 15 --max-retries 5 --initial-backoff 30 --max-backoff 300  --continue-on-error\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf2 \expnd0\expndtw0\kerning0
+uv run python scripts/run_market_ingestion.py --data-scope options --options-minimum-dte 1 --options-maximum-dte 180 --continue-on-error
+\f0 \kerning1\expnd0\expndtw0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf2 \
+
+\f3\fs22 \cf3 \CocoaLigature0 uv run python scripts/run_market_ingestion.py --continue-on-error\
+uv run python scripts/run_market_ingestion.py --symbols-file data/custom_symbols.csv\
+uv run python scripts/run_market_ingestion.py --symbols AAPL,MSFT,NVDA\
+\
+uv run python -m trading_ai generate-signals --start 2025-07-23 --end 2026-07-23 --min-score 10.0 --top 25 --pricing-dte 90 --symbols AMZN,GOOGL,META,AVGO,TSLA,LLY,JPM,BRK.B,SPY,QQQ,IWM,GLD
+\f0\fs24 \cf2 \CocoaLigature1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf2 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f3\fs22 \cf3 \CocoaLigature0 uv run python scripts/run_m35_phase5_opportunity_rankings.py   --rankings-json reports/daily/2026-07-21/live_trade_candidates.json   --top-n 50   --page-size 25 --select-symbol AMZN,AVGO,LLY,META,TSLA,JPM\
+\
+
+\f0\fs24 \cf2 \CocoaLigature1 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf2 \
+Extract options and load into database:\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf2 \expnd0\expndtw0\kerning0
+uv run python scripts/run_m35_phase3_capture_polygon_option_snapshot.py --canonical-csv data/universe/us_listed_equities_etfs.csv --capture-date 2026-07-20 --output-csv data/options/historical_options.csv --minimum-dte 7 --maximum-dte 60 --minimum-open-interest 100 --minimum-volume 100 --maximum-strike-distance-pct 0.40 --requests-per-second 4 --batch-size 5000 --fail-fast --restart\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f3\fs22 \cf3 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+
+\f0\fs24 \cf2 \CocoaLigature1 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1 \cf2 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f4\b\fs36 \cf2 Longer-term enhancement
+\fs28 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0 \cf2 One capability I think we should add later in M73 is an explicit 
+\f4\b "Adopt Existing Position"
+\f1\b0  workflow.\
+Instead of treating broker-discovered positions as permanently advisory, the platform could let you intentionally adopt them.\
+For example:
+\f2 \
+\pard\pardeftab720\partightenfactor0
+\cf2 Existing IBKR Position\
+        
+\f3 \uc0\u8595 
+\f2 \
+Click "Adopt"\
+        
+\f3 \uc0\u8595 
+\f2 \
+Platform reconstructs thesis\
+        
+\f3 \uc0\u8595 
+\f2 \
+You review\
+        
+\f3 \uc0\u8595 
+\f2 \
+You approve\
+        
+\f3 \uc0\u8595 
+\f2 \
+Platform generates trade plan\
+        
+\f3 \uc0\u8595 
+\f2 \
+M73 becomes FULLY_AUTOMATIC\
+\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1 \cf2 That would require an explicit user action and creation of a governed trade plan. Only after that approval would M73 be allowed to autonomously manage exits. I think this is the right design because it preserves safety while giving you the flexibility to bring manually opened positions under platform management.\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs36 \cf2 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf2 \kerning1\expnd0\expndtw0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97
+\f1\fs36 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sa240\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f4\b\fs28 \cf2 Add governed events\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0 \cf2 Example earnings event:\
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf2 \
+cd /Users/vinay.hatti/TradingPlatform\
+\
+uv run python scripts/manage_m69_event_registry.py add \\\
+  --symbol AAPL \\\
+  --event-type EARNINGS \\\
+  --event-date 2026-10-29 \\\
+  --expected-move-pct 6.5 \\\
+  --historical-move-pct 5.8 \\\
+  --confidence 80\
+\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1 \cf2 Example macro event applying to all symbols:\
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf2 \
+uv run python scripts/manage_m69_event_registry.py add \\\
+  --symbol '*' \\\
+  --event-type FOMC \\\
+  --event-date 2026-09-16 \\\
+  --expected-move-pct 2.0 \\\
+  --historical-move-pct 1.6 \\\
+  --confidence 75\
+\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1 \cf2 List active events:\
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf2 \
+uv run python scripts/manage_m69_event_registry.py list\
+\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1 \cf2 Disable an event:\
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf2 \
+uv run python scripts/manage_m69_event_registry.py disable \\\
+  --event-id <EVENT_ID>\
+\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1 \cf2 The dates above are command examples only; use your verified event calendar and governed expected-move assumptions.\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs36 \cf2 \
+\pard\pardeftab720\partightenfactor0
+\cf2 uv run python scripts/ingest_underlying_data.py --universe-file data/universe/us_listed_equities_etfs.csv 
+\f3\fs22 \cf3 \kerning1\expnd0\expndtw0 \CocoaLigature0 --symbols
+\f1\fs36 \cf2 \expnd0\expndtw0\kerning0
+\CocoaLigature1  SPCX  --start "$(date -v-3m +%F)" --end "$(date +%F)" --lookback-days 90 --underlying-fetch-mode auto --max-workers 4 --request-interval 15 --force-refresh --require-stock-intelligence --require-institutional-options --require-finalize
+\fs28 \
+\
+
+\fs36 \
+uv run python scripts/ingest_underlying_data.py --universe-file data/universe/us_listed_equities_etfs.csv --index-universe-file data/universe/us_market_indices.csv --asset-classes EQUITY,ETF,INDEX --end "$(date +%F)" --lookback-days 1460 --underlying-fetch-mode auto --underlying-incremental-sessions 5 --underlying-stale-threshold-days 10 --max-workers 4 --request-interval 15 --require-stock-intelligence --require-institutional-options --require-finalize ; uv run python scripts/ingest_options_data.py --universe-file data/universe/us_listed_equities_etfs.csv --index-universe-file data/universe/us_market_indices.csv --asset-classes EQUITY,ETF,INDEX --end "$(date +%F)" --force-options-refresh --force-dealer-refresh --options-minimum-dte 1 --options-maximum-dte 180 --options-minimum-open-interest 1 --options-minimum-volume 0 --options-maximum-strike-distance-pct 0.40 --polygon-requests-per-second 8 --options-batch-size 10000 --require-institutional-options --require-finalize}

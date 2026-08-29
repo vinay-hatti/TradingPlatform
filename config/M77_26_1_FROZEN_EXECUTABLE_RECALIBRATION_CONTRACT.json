@@ -1,0 +1,52 @@
+{
+  "candidate_population": "PIT_TRADE_BUILDER_READY_LONG_AND_DRVE_PASS",
+  "consumed_2018_2026_forbidden_for_tuning": true,
+  "development_end": "2017-12-31",
+  "entry_policy": "NEXT_OPEN",
+  "frozen_horizons": [
+    10,
+    15,
+    20,
+    30,
+    45,
+    60
+  ],
+  "frozen_stop_atr_grid": [
+    1.0,
+    1.5,
+    2.0,
+    2.5,
+    3.0
+  ],
+  "frozen_target_atr_grid": [
+    1.0,
+    1.5,
+    2.0,
+    2.5,
+    3.0,
+    4.0,
+    5.0
+  ],
+  "m77_26_grid_expansion_allowed": false,
+  "production_authority_effect": false,
+  "r_unit": "configured_stop_atr_times_candidate_atr",
+  "readiness_gates": {
+    "maximum_gap_stop_fraction": 0.08,
+    "maximum_top10_abs_contribution_fraction": 0.25,
+    "minimum_1pct_tail_r": -2.5,
+    "minimum_equal_symbol_mean_r": 0.05,
+    "minimum_mean_r": 0.08,
+    "minimum_nonoverlap_mean_r": 0.05,
+    "minimum_nonoverlap_profit_factor": 1.1,
+    "minimum_observations": 5000,
+    "minimum_positive_symbol_fraction": 0.55,
+    "minimum_positive_year_fraction": 0.8,
+    "minimum_profit_factor": 1.15,
+    "minimum_symbols": 400
+  },
+  "same_bar_target_stop": "CONSERVATIVE_STOP",
+  "stop_gap_fill": "OPEN_PRICE_IF_OPEN_AT_OR_BELOW_STOP",
+  "target_gap_fill": "TARGET_PRICE_IF_OPEN_AT_OR_ABOVE_TARGET",
+  "unresolved_by_horizon": "EXIT_AT_HORIZON_CLOSE",
+  "version": "M77.26.1-FROZEN-EXECUTABLE-RECALIBRATION-CONTRACT-1.0"
+}

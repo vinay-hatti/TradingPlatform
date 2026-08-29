@@ -1,0 +1,15 @@
+{
+  "version": "M77.19.4.1-ISOLATED-ADAPTER-PIT-LEAKAGE-CERTIFICATION-1.0",
+  "frozen_sha256": {
+    "scripts/run_m77_8_daily_pit_replay_authority.py": "015af1c623d69a5e6c2b3e8e2392d8975afc2faed8f76f6078d453fbf4dbb392",
+    "scripts/run_m77_9_daily_model_replay.py": "1073dc83ad0a778994d799fcc51b336ddccb6658cc0cc82dbb734d6f2246d534",
+    "scripts/run_m77_10_monthly_model_replay.py": "152f9cd4f0f149a5ce7ac28f13a7f09c592e66f254f936896e7eaaf59df965d7",
+    "src/trading_ai/historical_underlying_replay/service.py": "a3b914ce03f209c13929f0cd8061e825673813e749868859583f379588f155d9",
+    "src/trading_ai/historical_underlying_replay/regime.py": "130bf26e635af255b73fa31faaced5783bd64117ebf2855516bc11e17818f2c8"
+  },
+  "governance": {
+    "database_writes": false,
+    "production_authority_effect": false,
+    "automatic_historical_replay": false
+  }
+}

@@ -22,6 +22,8 @@ from .models import (
     StrategyValuationModel,
 )
 from .valuation import InstitutionalStrategyValuationService
+from .repository import InstitutionalOpportunityRepository
+from .trade_builder_authority import classify_trade_builder_authority
 
 try:
     from trading_ai.portfolio_management.database_models import PortfolioSnapshotModel
@@ -41,6 +43,13 @@ class InstitutionalDecisionResult:
     created: int
     refreshed: int
     failed: int
+    prerequisite_requested: int = 0
+    valuation_failed: int = 0
+    management_failed: int = 0
+    remaining_contracts_optimized: int = 0
+    reconciled_ready: int = 0
+    governed_not_ready: int = 0
+    governed_not_ready_opportunity_ids: tuple[str, ...] = ()
     errors: tuple[str, ...] = ()
 
 
@@ -53,40 +62,154 @@ class InstitutionalDecisionService:
         self._portfolio_snapshot_cache = None
         self._portfolio_table_available: bool | None = None
 
+    def _ready_chain_is_complete(
+        self,
+        opportunity: InstitutionalOpportunityModel,
+    ) -> bool:
+        """Check the exact prerequisite chain behind a READY lifecycle label."""
+
+        oid = str(opportunity.opportunity_id)
+        comparison = (
+            self.session.query(StrategyComparisonModel)
+            .filter_by(opportunity_id=oid)
+            .one_or_none()
+        )
+        selected_id = (
+            None
+            if comparison is None
+            else comparison.selected_strategy_candidate_id
+        )
+        if not selected_id:
+            return False
+        strategy = self.session.get(StrategyCandidateModel, selected_id)
+        if strategy is None or str(strategy.opportunity_id) != oid:
+            return False
+        valuation = (
+            self.session.query(StrategyValuationModel)
+            .filter_by(
+                opportunity_id=oid,
+                strategy_candidate_id=selected_id,
+                selected=True,
+            )
+            .one_or_none()
+        )
+        execution = (
+            self.session.query(ExecutionRecommendationModel)
+            .filter_by(opportunity_id=oid)
+            .one_or_none()
+        )
+        if valuation is None or execution is None:
+            return False
+        if str(execution.strategy_candidate_id) != str(selected_id):
+            return False
+        contract = (
+            self.session.query(ContractRecommendationModel)
+            .filter_by(
+                contract_recommendation_id=(
+                    execution.contract_recommendation_id
+                ),
+                opportunity_id=oid,
+                strategy_candidate_id=selected_id,
+                option_snapshot_id=opportunity.option_snapshot_id,
+                executable=True,
+            )
+            .one_or_none()
+        )
+        if contract is None:
+            return False
+        management = (
+            self.session.query(PositionManagementSnapshotModel)
+            .filter_by(
+                opportunity_id=oid,
+                strategy_candidate_id=selected_id,
+            )
+            .first()
+        )
+        if management is None:
+            return False
+        authority = classify_trade_builder_authority(
+            execution.payload_json,
+            execution.ready_for_trade_builder,
+        )
+        return authority["authorized"] is True
+
     def build(self, *, opportunity_ids: Iterable[str] | None = None, limit: int | None = None) -> InstitutionalDecisionResult:
         ids = tuple(opportunity_ids or ())
 
-        # Only execute prerequisite valuation/management for opportunities that
-        # have not yet reached READY_FOR_EXECUTION. Existing decision snapshots
-        # are refreshed directly from their persisted valuation and management
-        # records, which keeps rebuilds idempotent and avoids unrelated stage
-        # failures blocking metadata backfills.
-        prerequisite_query = self.session.query(InstitutionalOpportunityModel.opportunity_id).filter(
-            InstitutionalOpportunityModel.state == OpportunityState.CONTRACTS_OPTIMIZED.value
+        # Capture the complete decision-stage population before prerequisites
+        # mutate lifecycle state. Reporting only the rows that eventually reach
+        # READY_FOR_EXECUTION hides valuation and management failures.
+        target_query = self.session.query(InstitutionalOpportunityModel).filter(
+            InstitutionalOpportunityModel.state.in_((
+                OpportunityState.CONTRACTS_OPTIMIZED.value,
+                OpportunityState.READY_FOR_EXECUTION.value,
+            ))
         )
         if ids:
-            prerequisite_query = prerequisite_query.filter(
+            target_query = target_query.filter(
                 InstitutionalOpportunityModel.opportunity_id.in_(ids)
             )
-        prerequisite_query = prerequisite_query.order_by(
+        target_query = target_query.order_by(
             desc(InstitutionalOpportunityModel.overall_score),
             InstitutionalOpportunityModel.symbol,
         )
         if limit is not None:
-            prerequisite_query = prerequisite_query.limit(limit)
-        prerequisite_ids = tuple(item[0] for item in prerequisite_query.all())
-        # Prerequisite services isolate their own per-opportunity failures. Their
-        # errors are provisional: an existing authoritative snapshot may still
-        # refresh successfully from persisted selection, valuation, contract,
-        # and management records. Do not leak those recovered intermediate
-        # conditions into the final decision result. Only terminal snapshot
-        # creation/refresh failures are reported below.
+            target_query = target_query.limit(limit)
+        targets = target_query.all()
+        target_ids = tuple(str(item.opportunity_id) for item in targets)
+
+        # A lifecycle label is not authority.  Partial or interrupted refreshes
+        # can leave an old READY row whose current exact decision chain is no
+        # longer complete.  Move only those rows back to the governed rebuild
+        # point so valuation/management can repair them idempotently.
+        repository = InstitutionalOpportunityRepository(self.session)
+        reconciled_ready_ids: list[str] = []
+        for item in targets:
+            if (
+                item.state == OpportunityState.READY_FOR_EXECUTION.value
+                and not self._ready_chain_is_complete(item)
+            ):
+                repository.invalidate_ready_for_execution(
+                    str(item.opportunity_id),
+                    actor="m68.2.1.15-certification-reconciliation",
+                    reason=(
+                        "READY_FOR_EXECUTION exact strategy, contract, management, "
+                        "or final certification authority is incomplete; governed "
+                        "rebuild required"
+                    ),
+                    payload={
+                        "reconciliation_version": (
+                            "M68.2.1.15-CERTIFIED-DECISION-PREREQUISITES-1.0"
+                        )
+                    },
+                )
+                reconciled_ready_ids.append(str(item.opportunity_id))
+        self.session.flush()
+
+        prerequisite_ids = tuple(
+            str(item[0])
+            for item in (
+                self.session.query(InstitutionalOpportunityModel.opportunity_id)
+                .filter(
+                    InstitutionalOpportunityModel.opportunity_id.in_(
+                        target_ids
+                    ),
+                    InstitutionalOpportunityModel.state
+                    == OpportunityState.CONTRACTS_OPTIMIZED.value,
+                )
+                .all()
+                if target_ids
+                else ()
+            )
+        )
+        valuation_result = None
+        management_result = None
         if prerequisite_ids:
-            InstitutionalStrategyValuationService(self.session).value(
+            valuation_result = InstitutionalStrategyValuationService(self.session).value(
                 opportunity_ids=prerequisite_ids, limit=None
             )
             self.session.flush()
-            InstitutionalDynamicManagementService(self.session).generate(
+            management_result = InstitutionalDynamicManagementService(self.session).generate(
                 opportunity_ids=prerequisite_ids, limit=None
             )
             self.session.flush()
@@ -94,8 +217,12 @@ class InstitutionalDecisionService:
         query = self.session.query(InstitutionalOpportunityModel).filter(
             InstitutionalOpportunityModel.state == OpportunityState.READY_FOR_EXECUTION.value
         )
-        if ids:
-            query = query.filter(InstitutionalOpportunityModel.opportunity_id.in_(ids))
+        if target_ids:
+            query = query.filter(
+                InstitutionalOpportunityModel.opportunity_id.in_(target_ids)
+            )
+        else:
+            query = query.filter(False)
         query = query.order_by(
             desc(InstitutionalOpportunityModel.overall_score),
             InstitutionalOpportunityModel.symbol,
@@ -104,7 +231,7 @@ class InstitutionalDecisionService:
             query = query.limit(limit)
         opportunities = query.all()
 
-        created = refreshed = failed = 0
+        created = refreshed = decision_failed = 0
         errors: list[str] = []
         for opportunity in opportunities:
             opportunity_id = str(opportunity.opportunity_id)
@@ -153,10 +280,82 @@ class InstitutionalDecisionService:
                     else:
                         created += 1
             except Exception as exc:
-                failed += 1
+                decision_failed += 1
                 errors.append(f"{opportunity_id}: {type(exc).__name__}: {exc}")
+
+        remaining_rows: tuple[InstitutionalOpportunityModel, ...] = ()
+        if prerequisite_ids:
+            remaining_rows = tuple(
+                self.session.query(InstitutionalOpportunityModel)
+                    .filter(
+                        InstitutionalOpportunityModel.opportunity_id.in_(prerequisite_ids),
+                        InstitutionalOpportunityModel.state
+                        == OpportunityState.CONTRACTS_OPTIMIZED.value,
+                    )
+                    .all()
+            )
+        prerequisite_errors: dict[str, list[str]] = {}
+        for result in (valuation_result, management_result):
+            for detail in (() if result is None else result.errors):
+                opportunity_id = str(detail).split(":", 1)[0]
+                prerequisite_errors.setdefault(opportunity_id, []).append(str(detail))
+        governed_not_ready_ids: list[str] = []
+        unexpected_remaining_ids: list[str] = []
+        for remaining in remaining_rows:
+            opportunity_id = str(remaining.opportunity_id)
+            execution = (
+                self.session.query(ExecutionRecommendationModel)
+                .filter_by(opportunity_id=opportunity_id)
+                .one_or_none()
+            )
+            certification = dict(
+                (
+                    {}
+                    if execution is None
+                    else (execution.payload_json or {}).get(
+                        "trade_plan_certification"
+                    )
+                )
+                or {}
+            )
+            disposition = str(
+                certification.get("execution_disposition") or ""
+            )
+            if (
+                certification.get("status") == "PASS"
+                and disposition in {
+                    "WAITING_FOR_ENTRY",
+                    "REGENERATE_REQUIRED",
+                }
+            ):
+                governed_not_ready_ids.append(opportunity_id)
+                continue
+            unexpected_remaining_ids.append(opportunity_id)
+            errors.extend(
+                prerequisite_errors.get(opportunity_id)
+                or [
+                    f"{opportunity_id}: prerequisite regeneration left "
+                    "opportunity CONTRACTS_OPTIMIZED without a governed "
+                    "non-actionable disposition"
+                ]
+            )
+
+        failed = decision_failed + len(unexpected_remaining_ids)
         return InstitutionalDecisionResult(
-            len(opportunities), created, refreshed, failed, tuple(errors)
+            requested=len(target_ids),
+            created=created,
+            refreshed=refreshed,
+            failed=failed,
+            prerequisite_requested=len(prerequisite_ids),
+            valuation_failed=0 if valuation_result is None else valuation_result.failed,
+            management_failed=0 if management_result is None else management_result.failed,
+            remaining_contracts_optimized=len(remaining_rows),
+            reconciled_ready=len(reconciled_ready_ids),
+            governed_not_ready=len(governed_not_ready_ids),
+            governed_not_ready_opportunity_ids=tuple(
+                governed_not_ready_ids
+            ),
+            errors=tuple(errors),
         )
 
     @staticmethod
@@ -181,16 +380,23 @@ class InstitutionalDecisionService:
         valuation = self.session.query(StrategyValuationModel).filter_by(
             opportunity_id=oid, strategy_candidate_id=selected_id, selected=True
         ).one()
-        contracts = self.session.query(ContractRecommendationModel).filter_by(
-            opportunity_id=oid, strategy_candidate_id=selected_id, executable=True
-        ).all()
-        if not contracts:
-            raise ValueError("No executable contract for selected strategy")
-        contract = max(
-            contracts,
-            key=lambda item: float((item.payload_json or {}).get("optimization_scores", {}).get("overall_contract_score", item.liquidity_score or 0.0)),
-        )
         execution = self.session.query(ExecutionRecommendationModel).filter_by(opportunity_id=oid).one()
+        if execution.strategy_candidate_id != selected_id:
+            raise ValueError(
+                "Execution recommendation does not match the current strategy authority"
+            )
+        contract = self.session.query(ContractRecommendationModel).filter_by(
+            contract_recommendation_id=execution.contract_recommendation_id,
+            opportunity_id=oid,
+            strategy_candidate_id=selected_id,
+            option_snapshot_id=opportunity.option_snapshot_id,
+            executable=True,
+        ).one_or_none()
+        if contract is None:
+            raise ValueError(
+                "Execution recommendation does not reference an executable contract "
+                "from the current option snapshot"
+            )
         management = self.session.query(PositionManagementSnapshotModel).filter_by(
             opportunity_id=oid, strategy_candidate_id=selected_id
         ).order_by(desc(PositionManagementSnapshotModel.created_at)).first()
@@ -210,12 +416,19 @@ class InstitutionalDecisionService:
         execution_quality = float(contract_payload.get("optimization_scores", {}).get("execution_quality", 0.0))
         try:
             portfolio_context = self._portfolio_context(opportunity, valuation)
-        except Exception as exc:  # portfolio context must never block a decision refresh
+        except Exception as exc:
+            # M76.2.3: preserve the decision snapshot for diagnosis, but explicitly
+            # classify an implementation exception as a governance error. It is not
+            # equivalent to a legitimate portfolio REJECT or to an absent snapshot.
             portfolio_context = {
                 "available": False,
+                "status": "ERROR",
+                "routing_eligible": False,
                 "portfolio_id": None,
                 "portfolio_fit_score": 0.0,
-                "warnings": [f"PORTFOLIO_CONTEXT_UNAVAILABLE:{type(exc).__name__}"],
+                "error_type": type(exc).__name__,
+                "error_message": str(exc),
+                "warnings": [f"PORTFOLIO_CONTEXT_ERROR:{type(exc).__name__}:{exc}"],
             }
         portfolio_fit = float(portfolio_context["portfolio_fit_score"])
         if portfolio_context["available"]:
@@ -278,6 +491,12 @@ class InstitutionalDecisionService:
                 "execution": execution_payload,
             },
             "portfolio_context": portfolio_context,
+            "portfolio_governance": {
+                "status": str(portfolio_context.get("status") or ("AVAILABLE" if portfolio_context.get("available") else "UNAVAILABLE")),
+                "routing_eligible": bool(portfolio_context.get("routing_eligible", portfolio_context.get("available", False))),
+                "fail_closed": True,
+                "warnings": list(portfolio_context.get("warnings") or []),
+            },
             "lineage": op_payload.get("lineage", {}),
             "explainability": {
                 "why_underlying": (thesis.payload_json or {}).get("evidence", []),
@@ -295,9 +514,8 @@ class InstitutionalDecisionService:
             )
         if not self._portfolio_table_available:
             return {
-                "available": False,
-                "portfolio_id": None,
-                "portfolio_fit_score": 0.0,
+                "available": False, "status": "UNAVAILABLE", "routing_eligible": False,
+                "portfolio_id": None, "portfolio_fit_score": 0.0,
                 "warnings": ["PORTFOLIO_CONTEXT_UNAVAILABLE"],
             }
         if self._portfolio_snapshot_cache is None:
@@ -307,17 +525,31 @@ class InstitutionalDecisionService:
         snapshot = self._portfolio_snapshot_cache
         if snapshot is None:
             return {
-                "available": False,
-                "portfolio_id": None,
-                "portfolio_fit_score": 0.0,
+                "available": False, "status": "UNAVAILABLE", "routing_eligible": False,
+                "portfolio_id": None, "portfolio_fit_score": 0.0,
                 "warnings": ["PORTFOLIO_CONTEXT_UNAVAILABLE"],
             }
-        exposure = dict(snapshot.exposure_json or {})
-        capital_required = float(valuation.capital_required or 0.0)
-        nlv = float(exposure.get("net_liquidation_value") or 0.0)
-        utilization = float(exposure.get("capital_utilization_pct") or 0.0)
+        exposure_raw = getattr(snapshot, "exposure_json", None)
+        if exposure_raw is None:
+            exposure_raw = getattr(snapshot, "payload_json", None)
+        exposure = dict(exposure_raw or {})
+        balances = dict(exposure.get("balances") or exposure.get("capital") or {})
+        # StrategyValuationModel intentionally stores the rich valuation domain
+        # payload in payload_json; the physical table has no capital_required
+        # column.  Read the governed domain value instead of assuming a mapped
+        # attribute exists.
+        valuation_payload = dict(valuation.payload_json or {})
+        capital_raw = valuation_payload.get("capital_required")
+        if capital_raw is None:
+            capital_raw = dict(valuation_payload.get("capital") or {}).get("capital_required")
+        if capital_raw is None:
+            capital_raw = valuation_payload.get("maximum_loss")
+        capital_required = float(capital_raw or 0.0)
+        nlv = float(exposure.get("net_liquidation_value") or balances.get("net_liquidation_value") or balances.get("net_liquidation") or 0.0)
+        utilization = float(exposure.get("capital_utilization_pct") or balances.get("capital_utilization_pct") or balances.get("capital_usage_pct") or 0.0)
         symbol_pct = 0.0
-        for item in exposure.get("by_symbol") or []:
+        by_symbol = exposure.get("by_symbol") or (exposure.get("exposures") or {}).get("by_symbol") or []
+        for item in by_symbol:
             if str(item.get("key", "")).upper() == opportunity.symbol.upper():
                 symbol_pct = float(item.get("capital_pct") or 0.0)
                 break
@@ -333,9 +565,11 @@ class InstitutionalDecisionService:
             warnings.append("PROJECTED_SYMBOL_CONCENTRATION_ABOVE_10_PCT")
         return {
             "available": True,
-            "portfolio_id": snapshot.portfolio_id,
-            "snapshot_id": snapshot.snapshot_id,
-            "generated_at": snapshot.generated_at,
+            "status": "AVAILABLE",
+            "routing_eligible": True,
+            "portfolio_id": getattr(snapshot, "portfolio_id", None),
+            "snapshot_id": getattr(snapshot, "snapshot_id", None),
+            "generated_at": getattr(snapshot, "generated_at", getattr(snapshot, "snapshot_timestamp", None)),
             "capital_utilization_pct": round(utilization, 4),
             "current_symbol_exposure_pct": round(symbol_pct, 4),
             "incremental_capital_pct": round(incremental_pct, 4),

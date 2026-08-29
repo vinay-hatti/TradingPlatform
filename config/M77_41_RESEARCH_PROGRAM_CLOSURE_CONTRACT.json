@@ -1,0 +1,24 @@
+{
+  "automatic_production_promotion": false,
+  "automatic_retraining": false,
+  "historical_exploration_status": "COMPLETE",
+  "new_historical_edge_discovery_permitted": false,
+  "production_authority_effect": false,
+  "prospective_tracks": [
+    "PSVE",
+    "MGE",
+    "CQMI",
+    "CPRE",
+    "CACA"
+  ],
+  "registry_classifications": [
+    "PRODUCTION_CERTIFIED",
+    "PROSPECTIVE_CERTIFICATION_PENDING",
+    "DEVELOPMENT_SURVIVOR",
+    "REJECTED_DEVELOPMENT_HYPOTHESIS",
+    "FORENSIC_ONLY",
+    "SUPERSEDED",
+    "NOT_IDENTIFIABLE"
+  ],
+  "version": "M77.41-FROZEN-RESEARCH-PROGRAM-CLOSURE-CONTRACT-1.0"
+}

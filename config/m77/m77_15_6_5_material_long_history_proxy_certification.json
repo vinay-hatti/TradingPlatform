@@ -1,0 +1,49 @@
+{
+  "version": "M77.15.6.5-MATERIAL-LONG-HISTORY-PROXY-AUTHORITY-CERTIFICATION-1.0",
+  "source_manifest": "research_data/m77_15_6_4/polygon_coverage_lineage/manifests/latest.json",
+  "authority_type": "MATERIAL_LONG_HISTORY_TRADABLE_PROXY",
+  "certified_common_start": "2003-09-10",
+  "minimum_common_sessions": 5700,
+  "targets": {
+    "SPX": {
+      "research_instrument": "SPY",
+      "source_series": "SPY"
+    },
+    "NDX": {
+      "research_instrument": "QQQ_LINEAGE",
+      "source_series": "QQQ_LINEAGE"
+    },
+    "RUT": {
+      "research_instrument": "IWM",
+      "source_series": "IWM"
+    }
+  },
+  "qqq_lineage": {
+    "required_segments": [
+      {
+        "ticker": "QQQ",
+        "through": "2004-11-30"
+      },
+      {
+        "ticker": "QQQQ",
+        "from": "2004-12-01",
+        "through": "2011-03-22"
+      },
+      {
+        "ticker": "QQQ",
+        "from": "2011-03-23"
+      }
+    ],
+    "row_level_source_ticker_required": true
+  },
+  "common_session_intersection_required": true,
+  "zero_duplicate_dates_required": true,
+  "zero_ohlc_violations_required": true,
+  "source_provenance_checksums_required": true,
+  "canonical_index_authority_overwrite": false,
+  "proxy_may_be_represented_as_index": false,
+  "proxy_only_survivor_may_advance": false,
+  "database_writes": false,
+  "production_price_history_writes": false,
+  "production_authority_effect": false
+}

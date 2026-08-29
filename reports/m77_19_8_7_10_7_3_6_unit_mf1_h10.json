@@ -1,0 +1,13 @@
+{
+  "C": 1.0,
+  "balanced_accuracy": 0.5079039039587212,
+  "brier_score": 0.24807867237230533,
+  "development_fit_row_count": 301326,
+  "elapsed_seconds": 60.19210004096385,
+  "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+  "horizon": 10,
+  "log_loss": 0.6893480302446391,
+  "roc_auc": 0.517177494742923,
+  "status": "EVALUATED",
+  "validation_score_row_count": 139650
+}

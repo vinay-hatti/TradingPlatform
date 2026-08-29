@@ -1,0 +1,34 @@
+{
+  "base_management": {
+    "entry": "NEXT_OPEN",
+    "execution_semantics": "M77.26.1_FULL_COHORT_EXECUTABLE",
+    "horizon_sessions": 60,
+    "stop_atr": 3.0,
+    "target_atr": 5.0
+  },
+  "consumed_2018_2026_forbidden_for_tuning": true,
+  "development_end": "2017-12-31",
+  "fixed_states": [
+    "PROBABILITY_UP_TOP20",
+    "PROBABILITY_UP_BOTTOM20",
+    "DRVE_RISK_LOWER_HALF",
+    "DRVE_RISK_HIGHER_DECILE",
+    "OVERALL_QUALITY_TOP25",
+    "OVERALL_QUALITY_BOTTOM25",
+    "IDI_TRADE_QUALITY_TOP25",
+    "IDI_TRADE_QUALITY_BOTTOM25",
+    "OPTIONS_SUITABILITY_TOP25",
+    "OPTIONS_SUITABILITY_BOTTOM25",
+    "ATR_PCT_HIGH",
+    "ATR_PCT_LOW",
+    "ABOVE_SMA20",
+    "BELOW_SMA20",
+    "MOM5_POSITIVE",
+    "MOM5_NONPOSITIVE"
+  ],
+  "interaction_comparator": "STATE_VS_CONTEMPORANEOUS_COMPLEMENT",
+  "m77_24_1_psve_candidate_001_unchanged": true,
+  "m77_26_2_mge_candidate_001_unchanged": true,
+  "production_authority_effect": false,
+  "version": "M77.27-FROZEN-INTERACTION-RESEARCH-CONTRACT-1.0"
+}

@@ -1,0 +1,17 @@
+{
+  "version": "M77.19.6.4.2-JOINED-FROZEN-REPLAY-AUTHORITY-RECOVERY-1.0",
+  "milestone": "M77.19.6.4.2",
+  "title": "Joined Frozen Replay Authority Recovery",
+  "research_only": true,
+  "database_mode": "READ_ONLY",
+  "generic_filesystem_fallback_allowed": false,
+  "prediction_table": "public.historical_underlying_replay_prediction",
+  "run_table": "public.historical_underlying_replay_run",
+  "join_key": "replay_run_id",
+  "prediction_date_column": "as_of",
+  "cadence_source": "historical_underlying_replay_run.cadence",
+  "sample_per_cadence": 48,
+  "controlled_exact_input_parity_certified": false,
+  "full_23_year_reconstruction_authorized": false,
+  "production_authority_effect": false
+}

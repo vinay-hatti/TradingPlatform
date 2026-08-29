@@ -1,0 +1,93 @@
+{
+  "development_feature_tree_sha256": "4699cff2cf853ab6801c0b37a361a7a02044bd114da70ad40716c8ee54b29758",
+  "final_holdout_feature_rows_opened": false,
+  "final_holdout_outcomes_opened": false,
+  "final_holdout_targets_opened": false,
+  "frozen_preprocessor_contract_certified": true,
+  "future_bars_used_for_feature_construction": false,
+  "future_bars_used_for_target_labeling_only": true,
+  "model_family_champion_selected": false,
+  "next_step": "BUILD_M77_19_8_7_10_7_FROZEN_MF1_MF2_VALIDATION_SCORING_AND_STABILITY_EVIDENCE",
+  "partition_overlap_purged": true,
+  "preprocessor_authority": {
+    "development_feature_tree_sha256": "4699cff2cf853ab6801c0b37a361a7a02044bd114da70ad40716c8ee54b29758",
+    "development_target_authority_sha256": "ef5e7dabc5291e89863afd55a45008bc155b5a253d53383becea5d24da34832c",
+    "fit_partition": "DEVELOPMENT_ONLY",
+    "model_retuning_authorized": false,
+    "training_gate_sha256": "0440ac1ec4f2da34606ba6ba6500b4191086730eff282eaaccf4b6bfd8de0a9c",
+    "validation_category_vocabulary_expansion_authorized": false,
+    "validation_feature_tree_sha256_recorded_for_transform_only": "1cc70029914e5b543ba24618ee49fd4a8a62606ed0066694fe0e11c70c497b35",
+    "validation_imputer_refit_authorized": false,
+    "validation_refit_authorized": false,
+    "validation_scaler_refit_authorized": false
+  },
+  "preprocessor_fit_executed_by_this_step": false,
+  "preprocessor_fit_partition": "DEVELOPMENT_ONLY",
+  "production_authority_effect": false,
+  "status": "READY",
+  "target_horizon_summary": [
+    {
+      "DOWN": 65503,
+      "UP": 74681,
+      "ZERO": 246,
+      "horizon": 5,
+      "matured": 140430,
+      "partition_overlap_purged": 1137,
+      "source_session_missing": 0,
+      "symbol_target_session_missing": 0
+    },
+    {
+      "DOWN": 63210,
+      "UP": 76440,
+      "ZERO": 212,
+      "horizon": 10,
+      "matured": 139862,
+      "partition_overlap_purged": 1705,
+      "source_session_missing": 0,
+      "symbol_target_session_missing": 0
+    },
+    {
+      "DOWN": 61825,
+      "UP": 76780,
+      "ZERO": 121,
+      "horizon": 20,
+      "matured": 138726,
+      "partition_overlap_purged": 2841,
+      "source_session_missing": 0,
+      "symbol_target_session_missing": 0
+    }
+  ],
+  "target_horizons": [
+    5,
+    10,
+    20
+  ],
+  "target_ids": [
+    "T_ABS_RET",
+    "T_REL_SPY_RET",
+    "T_DIRECTION"
+  ],
+  "training_gate_governance_certified": true,
+  "training_gate_governance_resolution": {
+    "execution_state.final_holdout_opened": false,
+    "execution_state.validation_opened": false,
+    "selection_and_metrics.final_holdout_used_for_selection": false,
+    "selection_and_metrics.validation_used_for_selection": false,
+    "walk_forward_preregistration.final_holdout_used": false,
+    "walk_forward_preregistration.selection_scope": "DEVELOPMENT_ONLY",
+    "walk_forward_preregistration.validation_period_used": false
+  },
+  "validation_backfill_authority_sha256": "2a2d3aa4db757b5bb2b6916fccbfa47a4162127f968bcfc1367f4286f81b2c11",
+  "validation_feature_observation_count": 141567,
+  "validation_feature_tree_sha256": "1cc70029914e5b543ba24618ee49fd4a8a62606ed0066694fe0e11c70c497b35",
+  "validation_model_refit_performed": false,
+  "validation_model_retuning_performed": false,
+  "validation_outcomes_opened": true,
+  "validation_partition_end": "2022-12-31",
+  "validation_partition_start": "2018-01-01",
+  "validation_preprocessor_refit_performed": false,
+  "validation_scoring_performed": false,
+  "validation_targets_materialized": true,
+  "validation_targets_opened": true,
+  "version": "M77.19.8.7.10.6-FROZEN-DEVELOPMENT-PREPROCESSOR-VALIDATION-TARGET-MATERIALIZATION-AUTHORITY-1.0"
+}

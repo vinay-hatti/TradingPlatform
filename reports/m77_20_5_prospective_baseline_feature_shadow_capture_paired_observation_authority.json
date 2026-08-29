@@ -1,0 +1,28 @@
+{
+  "F071_observation_count": 611,
+  "F090_F091_first_capture_missing_by_design": true,
+  "baseline_observation_count": 611,
+  "baseline_snapshot_file": "research_data/m77_20_5/prospective_baseline_shadow/2026-08-26/baseline_feature_shadow_snapshot.json",
+  "baseline_snapshot_immutability_certified": true,
+  "baseline_snapshot_semantic_sha256": "b874445d2bdf32e4e1ccb4ce755dab8070534899a5b590fece1bd9f70205944e",
+  "capture_date": "2026-08-26",
+  "effective_observation_session": "2026-08-25",
+  "execution_mode": "NEW_IMMUTABLE_BASELINE_SHADOW_SNAPSHOT_CAPTURED",
+  "frozen_baseline_feature_column_count": 99,
+  "historical_state_history_backfill_performed": false,
+  "next_step": "BUILD_M77_20_6_PROSPECTIVE_DAILY_CAPTURE_ORCHESTRATION_AND_PRE_OUTCOME_ACCUMULATION_AUTHORITY",
+  "paired_ineligibility_reason_counts": {
+    "F071_NOT_FULLY_AVAILABLE": 107
+  },
+  "paired_observation_eligible_count": 504,
+  "paired_observation_ineligible_count": 107,
+  "paired_same_effective_session_required": true,
+  "production_authority_effect": false,
+  "prospective_F071_already_materialized": true,
+  "prospective_baseline_materialized": true,
+  "prospective_outcomes_opened": false,
+  "prospective_scoring_performed": false,
+  "status": "READY",
+  "stock_scanner_run_id": "stock-scan-efde2484bb854d6288934ded4f2f012d",
+  "version": "M77.20.5-PROSPECTIVE-BASELINE-FEATURE-SHADOW-CAPTURE-PAIRED-OBSERVATION-AUTHORITY-1.0"
+}

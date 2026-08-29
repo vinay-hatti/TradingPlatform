@@ -1,0 +1,19 @@
+{
+  "milestone": "M77.19.7.4.20",
+  "validation_window": [
+    "2018-01-01",
+    "2022-12-31"
+  ],
+  "minimum_validation_count": 300,
+  "authorized_candidates": [
+    "RC_H4_GE10_DOWNTREND_HIGH_VOL",
+    "RC_H4_5_10_BEAR_MARKET_WEAK_BREADTH"
+  ],
+  "horizons": [
+    5,
+    10,
+    20
+  ],
+  "final_holdout_open": false,
+  "production_authority_effect": false
+}

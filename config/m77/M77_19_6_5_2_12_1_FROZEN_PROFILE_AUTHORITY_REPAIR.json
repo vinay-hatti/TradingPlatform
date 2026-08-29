@@ -1,0 +1,16 @@
+{
+  "milestone": "M77.19.6.5.2.12.1",
+  "title": "Frozen Profile Authority Repair",
+  "repair_scope": "dependency wiring only",
+  "pre_repair_m77_19_6_5_2_12_runner_sha256": "077fa2fe0cb4db216f0a2a9d47304a73520c9cc07b94faead244849dce7f2c7d",
+  "frozen_authority": "bundle['frozen_profile']",
+  "normalization_authority": "pinned helper529.normalize_rows",
+  "governance": {
+    "research_only": true,
+    "database_mode": "READ_ONLY_SPY_SESSION_CALENDAR_ONLY",
+    "merge_threshold": 0.003,
+    "parity_tolerance": 1e-09,
+    "production_authority_effect": false,
+    "full_23_year_reconstruction_authorized": false
+  }
+}

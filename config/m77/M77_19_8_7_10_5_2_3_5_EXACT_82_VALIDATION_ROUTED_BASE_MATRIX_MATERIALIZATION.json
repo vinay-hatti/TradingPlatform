@@ -1,0 +1,12 @@
+{
+  "milestone": "M77.19.8.7.10.5.2.3.5",
+  "validation_partition": {
+    "start": "2018-01-01",
+    "end": "2022-12-31",
+    "label": "VALIDATION"
+  },
+  "validation_targets_opened": false,
+  "validation_outcomes_opened": false,
+  "final_holdout_opened": false,
+  "production_authority_effect": false
+}

@@ -1,0 +1,46 @@
+{
+  "version": "M77.15.6.3-POLYGON-LONG-HISTORY-TRADABLE-PROXY-RESEARCH-AUTHORITY-1.0",
+  "provider": "POLYGON",
+  "provider_mode": "REST_AGGREGATES_DAILY",
+  "api_key_env": "POLYGON_API_KEY",
+  "requested_start_date": "2000-01-01",
+  "requested_end_date_policy": "TODAY_UTC",
+  "authority_type": "LONG_HISTORY_TRADABLE_PROXY",
+  "targets": {
+    "SPX": {
+      "research_target": "SPX",
+      "research_instrument": "SPY",
+      "proxy_for": "SPX",
+      "polygon_ticker": "SPY",
+      "certification_start_no_later_than": "2000-01-10",
+      "minimum_rows": 6000
+    },
+    "NDX": {
+      "research_target": "NDX",
+      "research_instrument": "QQQ",
+      "proxy_for": "NDX",
+      "polygon_ticker": "QQQ",
+      "certification_start_no_later_than": "2000-01-10",
+      "minimum_rows": 6000
+    },
+    "RUT": {
+      "research_target": "RUT",
+      "research_instrument": "IWM",
+      "proxy_for": "RUT",
+      "polygon_ticker": "IWM",
+      "certification_start_no_later_than": "2000-06-01",
+      "minimum_rows": 6000
+    }
+  },
+  "storage_root": "research_data/m77_15_6_3/tradable_proxy_history",
+  "raw_storage": "research_data/m77_15_6_3/tradable_proxy_history/raw",
+  "normalized_storage": "research_data/m77_15_6_3/tradable_proxy_history/normalized",
+  "manifest_storage": "research_data/m77_15_6_3/tradable_proxy_history/manifests",
+  "canonical_index_authority_overwrite": false,
+  "proxy_may_be_represented_as_index": false,
+  "fallback_substitution": false,
+  "database_writes": false,
+  "production_price_history_writes": false,
+  "production_ingestion_changes": false,
+  "production_authority_effect": false
+}

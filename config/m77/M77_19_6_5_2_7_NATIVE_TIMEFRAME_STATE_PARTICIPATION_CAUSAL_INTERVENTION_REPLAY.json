@@ -1,0 +1,15 @@
+{
+  "version": "M77.19.6.5.2.7-NATIVE-TIMEFRAME-STATE-AND-PARTICIPATION-CAUSAL-INTERVENTION-REPLAY-1.0",
+  "milestone": "M77.19.6.5.2.7",
+  "title": "Native Timeframe State & Participation Causal Intervention Replay",
+  "research_only": true,
+  "database_mode": "READ_ONLY_SPY_SESSION_CALENDAR_ONLY",
+  "native_runner_sha256": "bcc5b49b87ddceba6ac417000d5af3d4a57efd14145595f4d712eb36ae81204b",
+  "source_525_sha256": "a293b8f87ef56762d60989cda3cc03ad224999a1a6d846af7b64e318c48d4e8a",
+  "source_526_sha256": "80a47e00da8951f15dec66c156f312601e6261bdf37430a1da3dae7d83301187",
+  "parity_tolerance": 1e-09,
+  "parity_thresholds_relaxed": false,
+  "controlled_exact_input_parity_certified": false,
+  "full_23_year_reconstruction_authorized": false,
+  "production_authority_effect": false
+}

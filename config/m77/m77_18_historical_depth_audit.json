@@ -1,0 +1,94 @@
+{
+  "version": "M77.18-HISTORICAL-DEPTH-REPLICATION-AUTHORITY-AUDIT-1.0",
+  "mode": "READ_ONLY_AUDIT",
+  "scope": {
+    "roots": [
+      "scripts",
+      "src/trading_ai",
+      "config/m77",
+      "reports/m77",
+      "data/m77",
+      "research_data"
+    ],
+    "m77_name_regex": "(?i)(^|[^0-9])m77([._-]|$)",
+    "include_report_json": true,
+    "include_python": true,
+    "include_shell": true,
+    "include_config": true,
+    "include_markdown": true
+  },
+  "long_history_authority": {
+    "certification": "reports/m77/m77_15_6_5_2_material_long_history_proxy_authority_certification.json",
+    "common_start": "2003-09-10",
+    "common_end": "2026-08-21",
+    "expected_common_sessions": 5773,
+    "targets": {
+      "SPX": "SPY",
+      "NDX": "QQQ_LINEAGE",
+      "RUT": "IWM"
+    }
+  },
+  "classification_policy": [
+    "LONG_HISTORY_ALREADY_CERTIFIED",
+    "SHORT_HISTORY_EMPIRICAL_REPLICATION_REQUIRED",
+    "PROSPECTIVE_ONLY",
+    "STRUCTURAL_ENGINEERING",
+    "DESCRIPTIVE_ONLY",
+    "CLOSED_SUPERSEDED",
+    "UNKNOWN_REVIEW_REQUIRED"
+  ],
+  "known_closed_branches": {
+    "M77.14": "CLOSED_UNSUPPORTED_LONG_HISTORY_REPLICATION_FAILURE",
+    "M77.15": "CLOSED_UNSUPPORTED",
+    "M77.16": "CLOSED_UNSUPPORTED"
+  },
+  "known_long_history_markers": [
+    "5773",
+    "2003-09-10",
+    "MATERIAL_LONG_HISTORY_TRADABLE_PROXY",
+    "LONG_HISTORY",
+    "long_history"
+  ],
+  "empirical_markers": [
+    "hypothesis",
+    "backtest",
+    "seasonality",
+    "cyclical",
+    "cycle",
+    "forward_return",
+    "absolute_return",
+    "realized_volatility",
+    "max_adverse_excursion",
+    "max_favorable_excursion",
+    "permutation",
+    "bootstrap",
+    "empirical_p",
+    "bh_q",
+    "research_supported"
+  ],
+  "prospective_markers": [
+    "prospective",
+    "shadow",
+    "forward_shadow",
+    "waiting_episode",
+    "completed_episode"
+  ],
+  "structural_markers": [
+    "installer",
+    "migration",
+    "orchestration",
+    "launchagent",
+    "verification",
+    "provider",
+    "ephemeris",
+    "authority",
+    "parity"
+  ],
+  "governance": {
+    "database_writes": false,
+    "production_authority_effect": false,
+    "source_files_mutated": false,
+    "reports_mutated": false,
+    "historical_artifacts_deleted": false
+  }
+}

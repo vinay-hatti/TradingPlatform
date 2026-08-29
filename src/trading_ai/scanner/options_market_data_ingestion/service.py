@@ -22,7 +22,7 @@ from .contracts import (
     OptionHistoryProvider,
 )
 from .manifest import IngestionManifestStore
-from .persistence import OptionHistoryWriter
+from .persistence import GovernedOptionSnapshotWriter, OptionHistoryWriter
 
 
 class OptionHistoryIngestionService:
@@ -33,6 +33,8 @@ class OptionHistoryIngestionService:
         *,
         manifest_store: IngestionManifestStore,
         validation_policy: OptionContractValidationPolicy | None = None,
+        governed_snapshot_run_id: int | None = None,
+        governed_snapshot_timestamp: datetime | None = None,
     ) -> None:
         self.provider = provider
         self.manifest_store = manifest_store
@@ -41,6 +43,15 @@ class OptionHistoryIngestionService:
         )
         self.deduplicator = OptionContractDeduplicator()
         self.writer = OptionHistoryWriter(database)
+        self.snapshot_writer = (
+            GovernedOptionSnapshotWriter(
+                database,
+                snapshot_run_id=governed_snapshot_run_id,
+                snapshot_timestamp=governed_snapshot_timestamp or datetime.now(timezone.utc),
+            )
+            if governed_snapshot_run_id is not None
+            else None
+        )
 
     def run(
         self,
@@ -78,6 +89,8 @@ class OptionHistoryIngestionService:
                 )
                 rejected_count = sum(not result.valid for result in validations)
                 write_result = self.writer.write(valid_records)
+                if self.snapshot_writer is not None:
+                    self.snapshot_writer.write(valid_records)
 
                 batch_result = IngestionBatchResult(
                     batch_id=batch.batch_id,

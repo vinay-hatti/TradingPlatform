@@ -1,0 +1,13 @@
+{
+  "milestone": "M77.19.8.6",
+  "walk_forward_fold_count": 5,
+  "model_families": [
+    "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+    "MF2_MONOTONIC_GAM_DIRECTION",
+    "MF3_QUANTILE_LINEAR_RETURN_DISTRIBUTION"
+  ],
+  "models_trained": false,
+  "validation_opened": false,
+  "final_holdout_opened": false,
+  "production_authority_effect": false
+}

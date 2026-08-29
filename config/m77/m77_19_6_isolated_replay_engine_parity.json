@@ -1,0 +1,34 @@
+{
+  "version": "M77.19.6-ISOLATED-REPLAY-ENGINE-PARITY-CERTIFICATION-1.0",
+  "purpose": "Prove that a filesystem-backed, database-read-only isolated replay reproduces the frozen M77 daily/monthly/weekly replay outputs before authorizing a multi-million-observation 23-year reconstruction.",
+  "source_authority": {
+    "root": "research_data/m77_19_5/original_cohort_long_history/normalized",
+    "certification": "reports/m77/m77_19_5_original_cohort_long_history_certification.json",
+    "required_certified": true
+  },
+  "frozen_manifests": {
+    "daily": "reports/m77/m77_9_daily_model_replay_manifest.json",
+    "monthly": "reports/m77/m77_10_monthly_model_replay_manifest.json",
+    "weekly": "reports/m77/m77_2_multiyear_frozen_champion_manifest.json"
+  },
+  "parity_policy": {
+    "symbols": 12,
+    "observations_per_cadence": 4,
+    "minimum_comparisons_per_cadence": 20,
+    "direction_exact_required_pct": 100.0,
+    "overall_score_max_abs_error": 1e-09,
+    "confidence_max_abs_error": 1e-09,
+    "state_hash_exact_required": true,
+    "deterministic_repeat_required": true,
+    "history_window_rows": 750,
+    "authority_warmup_rows": 300
+  },
+  "governance": {
+    "database_read_only": true,
+    "database_writes": false,
+    "research_files_read_only": true,
+    "production_price_history_writes": false,
+    "production_authority_effect": false,
+    "full_long_history_reconstruction": false
+  }
+}

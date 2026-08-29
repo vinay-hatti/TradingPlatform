@@ -1,0 +1,29 @@
+{
+  "milestone": "M77.19.6.5.2.22",
+  "name": "Native Event State Discriminator Forensics",
+  "authority_report_5221_sha256": "13ca75225a523cd7993e990af495734bc1ea0ca559f575119a031fe57122fb44",
+  "authority_runner_5221_sha256": "c7fd0c6e1773cc367653f1cd56a5a277c2d50056fd3b73ff92b7fec09a5dbe79",
+  "event_count_required": 4991,
+  "causal_labels_required": [
+    "AES_RESISTANCE",
+    "ANET_SUPPORT",
+    "ATO_RESISTANCE"
+  ],
+  "diagnostics": [
+    "native-action-conditioned empirical ranks",
+    "timeframe/side/source-conditioned empirical ranks",
+    "categorical support counts",
+    "fixed rank-space nearest native neighbors",
+    "causal state fingerprints"
+  ],
+  "classifier_trained": false,
+  "decision_boundary_fitted": false,
+  "neighbor_cutoff_selected": false,
+  "threshold_search_or_optimization": false,
+  "new_trigger_semantic_introduced": false,
+  "new_threshold_introduced": false,
+  "database_mode": "NONE_REPORT_ONLY",
+  "candidate_semantic_promoted": false,
+  "full_23_year_reconstruction_authorized": false,
+  "production_authority_effect": false
+}\n

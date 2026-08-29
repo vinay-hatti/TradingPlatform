@@ -1,0 +1,29 @@
+{
+  "components": [
+    "PROBABILITY_UP",
+    "DRVE_LOW_RISK",
+    "OVERALL_SCORE",
+    "IDI_TRADE_QUALITY",
+    "OPTIONS_SUITABILITY"
+  ],
+  "consumed_2018_2026_forbidden": true,
+  "development_end": "2017-12-31",
+  "ensemble_weights_retuned": false,
+  "new_rankers_tested": 0,
+  "new_thresholds_tested": 0,
+  "positive_tail_fractions": [
+    0.01,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "production_authority_effect": false,
+  "psve_mge_cqmi_unchanged": true,
+  "questions": [
+    "DIVERGENCE_PAYOFF_DISTRIBUTION",
+    "POSITIVE_TAIL_CONTRIBUTION",
+    "LEAVE_ONE_COMPONENT_OUT_CAUSALITY",
+    "COMPONENT_RANK_DELTA_OUTCOME_ASSOCIATION"
+  ],
+  "version": "M77.29.3-FROZEN-FORENSIC-CONTRACT-1.0"
+}

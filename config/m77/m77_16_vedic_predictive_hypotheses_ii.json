@@ -1,0 +1,124 @@
+{
+  "version": "M77.16-VEDIC-PREDICTIVE-HYPOTHESES-II-PREREGISTERED-LONG-HISTORY-1.0",
+  "authority": {
+    "required_certification": "reports/m77/m77_15_6_5_2_material_long_history_proxy_authority_certification.json",
+    "authority_type": "MATERIAL_LONG_HISTORY_TRADABLE_PROXY",
+    "common_start": "2003-09-10",
+    "common_end": "2026-08-21",
+    "minimum_common_sessions": 5700,
+    "expected_common_sessions": 5773,
+    "long_history_instruments": {
+      "SPX": {
+        "instrument": "SPY",
+        "file": "research_data/m77_15_6_5_2/certified_common_proxy_authority/SPX_SPY_COMMON.csv"
+      },
+      "NDX": {
+        "instrument": "QQQ_LINEAGE",
+        "display_instrument": "QQQ",
+        "file": "research_data/m77_15_6_5_2/certified_common_proxy_authority/NDX_QQQ_LINEAGE_COMMON.csv"
+      },
+      "RUT": {
+        "instrument": "IWM",
+        "file": "research_data/m77_15_6_5_2/certified_common_proxy_authority/RUT_IWM_COMMON.csv"
+      }
+    },
+    "canonical_recent_confirmation": {
+      "SPX": "SPX",
+      "NDX": "NDX",
+      "RUT": "RUT"
+    },
+    "scope_note": "Canonical RUT does not have 23 years in current Polygon authority; 23-year RUT-target evidence therefore uses IWM explicitly as proxy, while canonical RUT remains mandatory for recent confirmation."
+  },
+  "frozen_eras": [
+    [
+      "2003-09-10",
+      "2008-12-31"
+    ],
+    [
+      "2009-01-01",
+      "2014-12-31"
+    ],
+    [
+      "2015-01-01",
+      "2020-12-31"
+    ],
+    [
+      "2021-01-01",
+      "2026-08-21"
+    ]
+  ],
+  "hypotheses": {
+    "H1_JUPITER_RAHU_EXPANSION": {
+      "states": [
+        "JUPITER_RAHU_CONJUNCTION",
+        "JUPITER_RAHU_TRINE"
+      ],
+      "horizons": [
+        5,
+        10,
+        20,
+        60
+      ],
+      "prediction": {
+        "FORWARD_RETURN": "POSITIVE",
+        "MAX_FAVORABLE_EXCURSION": "POSITIVE",
+        "ABSOLUTE_RETURN": "NONNEGATIVE"
+      },
+      "event_orb_deg": 1.5
+    },
+    "H2_SOLAR_INGRESS_SANKRANTI": {
+      "features": [
+        "SUN_INGRESS_RASHI",
+        "MOON_NAKSHATRA_AT_INGRESS",
+        "TITHI_AT_INGRESS",
+        "WEEKDAY_AT_INGRESS"
+      ],
+      "horizon_sessions": 20,
+      "outcomes": [
+        "FORWARD_RETURN",
+        "ABSOLUTE_RETURN",
+        "REALIZED_VOLATILITY"
+      ],
+      "factor_combinations": false
+    },
+    "H3_RAHU_KETU_FINANCIAL_HOUSE_AXIS": {
+      "status": "BLOCKED_PENDING_MARKET_CHART_AUTHORITY",
+      "required": [
+        "FROZEN_MARKET_REFERENCE_CHART",
+        "FROZEN_GEOGRAPHIC_LOCATION",
+        "FROZEN_AYANAMSHA",
+        "FROZEN_HOUSE_SYSTEM",
+        "FROZEN_5TH_11TH_LORDSHIP_RULES"
+      ]
+    },
+    "H4_JUPITER_ATICHARI_VELOCITY": {
+      "measure": "SIDEREAL_LONGITUDE_DEG_PER_DAY",
+      "threshold_definition": "TOP_DECILE_OF_DIRECT_VELOCITY_WITHIN_FULL_ASTRONOMICAL_REGISTRY",
+      "threshold_fixed_before_financial_outcomes": true,
+      "horizons": [
+        5,
+        10,
+        20,
+        60
+      ],
+      "prediction": {
+        "ABSOLUTE_RETURN": "POSITIVE",
+        "REALIZED_VOLATILITY": "POSITIVE"
+      }
+    }
+  },
+  "multiple_testing": "BENJAMINI_HOCHBERG_WITHIN_HYPOTHESIS_FAMILY",
+  "null_model": "CIRCULAR_CALENDAR_SHIFT",
+  "matched_controls": [
+    "WEEKDAY",
+    "CALENDAR_MONTH"
+  ],
+  "promotion_governance": {
+    "proxy_only_survivor_may_advance": false,
+    "canonical_recent_confirmation_required": true,
+    "same_effect_direction_required": true,
+    "dependence_robust_confirmation_required": true
+  },
+  "database_writes": false,
+  "production_authority_effect": false
+}

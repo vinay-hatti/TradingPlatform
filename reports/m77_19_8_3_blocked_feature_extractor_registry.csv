@@ -1,0 +1,11 @@
+feature_id,name,status,source_authority,semantics,future_access
+F012,timeframe_states_payload,FIELD_LEVEL_FLATTENING_PREREGISTERED,profile.timeframe_states,Expose only explicitly enumerated scalar numeric/enum leaf fields after schema census; no whole-payload embedding.,False
+F020,atr_1d,EXTRACTOR_PREREGISTERED,profile.timeframe_states['1d'] native ATR scalar if present,Read the native 1d ATR field only; no ATR recomputation from future or external data.,False
+F021,atr_normalized,EXTRACTOR_PREREGISTERED,same-as-of F020 divided by same-as-of reference close,ATR/reference_price using values available at the replay as_of only.,False
+F030,nearest_support_distance_pct,EXTRACTOR_PREREGISTERED,profile.support_levels + same-as-of reference close,Nearest support by absolute price distance; signed as (support-reference)/reference.,False
+F031,nearest_resistance_distance_pct,EXTRACTOR_PREREGISTERED,profile.resistance_levels + same-as-of reference close,Nearest resistance by absolute price distance; signed as (resistance-reference)/reference.,False
+F051,institutional_volume_state,FIELD_LEVEL_FLATTENING_PREREGISTERED,profile.institutional_volume,Schema census then scalar field whitelist only; no free-form/opaque payload encoding.,False
+F070,relative_strength_vs_spy_proxy,EXTRACTOR_PREREGISTERED,frozen symbol daily prefix + frozen SPY daily prefix,"Two scalar features later: trailing 13w and 26w symbol return minus SPY return, using only sessions <= as_of.",False
+F071,relative_strength_vs_sector,BLOCKED_PENDING_PIT_SECTOR_AUTHORITY,none yet,Must remain unavailable until historical point-in-time sector membership and benchmark authority is certified.,False
+F080,symbol_drawdown_from_52w_peak,EXTRACTOR_PREREGISTERED,frozen symbol daily prefix,close_asof/max(close over prior 252 available sessions inclusive)-1.,False
+F081,distance_from_52w_low,EXTRACTOR_PREREGISTERED,frozen symbol daily prefix,close_asof/min(close over prior 252 available sessions inclusive)-1.,False

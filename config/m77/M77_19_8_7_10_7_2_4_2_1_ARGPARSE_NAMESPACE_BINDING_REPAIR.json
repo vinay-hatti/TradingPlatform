@@ -1,0 +1,10 @@
+{
+  "milestone": "M77.19.8.7.10.7.2.4.2.1",
+  "repair": "ARGPARSE_NAMESPACE_HYPHEN_TO_UNDERSCORE",
+  "whole_file_malformed_namespace_guard": true,
+  "forensics_logic_change": false,
+  "model_logic_change": false,
+  "validation_scoring_performed": false,
+  "final_holdout_opened": false,
+  "production_authority_effect": false
+}

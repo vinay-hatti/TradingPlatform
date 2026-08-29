@@ -1,0 +1,4419 @@
+{
+  "aggregate_native_not_eligible_count": 0,
+  "aggregate_observation_count": 0,
+  "aggregate_replayed_profile_count": 0,
+  "blocked_symbol_carried_forward_count": 9,
+  "blocked_symbols": [
+    {
+      "asset_type": "EQUITY",
+      "bar_count": null,
+      "blockers": [
+        "PREDECESSOR_LINEAGE_JOIN_NOT_AUTHORIZED",
+        "INSUFFICIENT_POST_ANCHOR_WARMUP"
+      ],
+      "data_sha256": null,
+      "materialization_start": null,
+      "materialization_status": "CARRIED_FORWARD_BLOCKED_NO_POLYGON_MATERIALIZATION",
+      "replay_end": null,
+      "replay_scored_session_count": null,
+      "replay_start": null,
+      "resumed": false,
+      "symbol": "BNY",
+      "upstream_replay_window_status": "BLOCKED_INSUFFICIENT_POST_ANCHOR_WARMUP",
+      "warmup_session_count_through_replay_start": null
+    },
+    {
+      "asset_type": "EQUITY",
+      "bar_count": null,
+      "blockers": [
+        "PREDECESSOR_LINEAGE_JOIN_NOT_AUTHORIZED",
+        "PRELISTING_TICKER_HISTORY_NOT_AUTHORIZED",
+        "INSUFFICIENT_POST_ANCHOR_WARMUP"
+      ],
+      "data_sha256": null,
+      "materialization_start": null,
+      "materialization_status": "CARRIED_FORWARD_BLOCKED_NO_POLYGON_MATERIALIZATION",
+      "replay_end": null,
+      "replay_scored_session_count": null,
+      "replay_start": null,
+      "resumed": false,
+      "symbol": "ECHO",
+      "upstream_replay_window_status": "BLOCKED_INSUFFICIENT_POST_ANCHOR_WARMUP",
+      "warmup_session_count_through_replay_start": null
+    },
+    {
+      "asset_type": "EQUITY",
+      "bar_count": null,
+      "blockers": [
+        "UPSTREAM_INSUFFICIENT_WARMUP"
+      ],
+      "data_sha256": null,
+      "materialization_start": null,
+      "materialization_status": "CARRIED_FORWARD_BLOCKED_NO_POLYGON_MATERIALIZATION",
+      "replay_end": null,
+      "replay_scored_session_count": null,
+      "replay_start": null,
+      "resumed": false,
+      "symbol": "FDXF",
+      "upstream_replay_window_status": "BLOCKED_UPSTREAM_INSUFFICIENT_WARMUP",
+      "warmup_session_count_through_replay_start": null
+    },
+    {
+      "asset_type": "EQUITY",
+      "bar_count": null,
+      "blockers": [
+        "PREDECESSOR_LINEAGE_JOIN_NOT_AUTHORIZED",
+        "INSUFFICIENT_POST_ANCHOR_WARMUP"
+      ],
+      "data_sha256": null,
+      "materialization_start": null,
+      "materialization_status": "CARRIED_FORWARD_BLOCKED_NO_POLYGON_MATERIALIZATION",
+      "replay_end": null,
+      "replay_scored_session_count": null,
+      "replay_start": null,
+      "resumed": false,
+      "symbol": "HON",
+      "upstream_replay_window_status": "BLOCKED_INSUFFICIENT_POST_ANCHOR_WARMUP",
+      "warmup_session_count_through_replay_start": null
+    },
+    {
+      "asset_type": "EQUITY",
+      "bar_count": null,
+      "blockers": [
+        "UPSTREAM_INSUFFICIENT_WARMUP"
+      ],
+      "data_sha256": null,
+      "materialization_start": null,
+      "materialization_status": "CARRIED_FORWARD_BLOCKED_NO_POLYGON_MATERIALIZATION",
+      "replay_end": null,
+      "replay_scored_session_count": null,
+      "replay_start": null,
+      "resumed": false,
+      "symbol": "HONA",
+      "upstream_replay_window_status": "BLOCKED_UPSTREAM_INSUFFICIENT_WARMUP",
+      "warmup_session_count_through_replay_start": null
+    },
+    {
+      "asset_type": "EQUITY",
+      "bar_count": null,
+      "blockers": [
+        "PREDECESSOR_LINEAGE_JOIN_NOT_AUTHORIZED",
+        "INSUFFICIENT_POST_ANCHOR_WARMUP"
+      ],
+      "data_sha256": null,
+      "materialization_start": null,
+      "materialization_status": "CARRIED_FORWARD_BLOCKED_NO_POLYGON_MATERIALIZATION",
+      "replay_end": null,
+      "replay_scored_session_count": null,
+      "replay_start": null,
+      "resumed": false,
+      "symbol": "MRSH",
+      "upstream_replay_window_status": "BLOCKED_INSUFFICIENT_POST_ANCHOR_WARMUP",
+      "warmup_session_count_through_replay_start": null
+    },
+    {
+      "asset_type": "EQUITY",
+      "bar_count": null,
+      "blockers": [
+        "UPSTREAM_INSUFFICIENT_WARMUP"
+      ],
+      "data_sha256": null,
+      "materialization_start": null,
+      "materialization_status": "CARRIED_FORWARD_BLOCKED_NO_POLYGON_MATERIALIZATION",
+      "replay_end": null,
+      "replay_scored_session_count": null,
+      "replay_start": null,
+      "resumed": false,
+      "symbol": "PSKY",
+      "upstream_replay_window_status": "BLOCKED_UPSTREAM_INSUFFICIENT_WARMUP",
+      "warmup_session_count_through_replay_start": null
+    },
+    {
+      "asset_type": "EQUITY",
+      "bar_count": null,
+      "blockers": [
+        "PRELISTING_TICKER_HISTORY_NOT_AUTHORIZED",
+        "INSUFFICIENT_POST_ANCHOR_WARMUP"
+      ],
+      "data_sha256": null,
+      "materialization_start": null,
+      "materialization_status": "CARRIED_FORWARD_BLOCKED_NO_POLYGON_MATERIALIZATION",
+      "replay_end": null,
+      "replay_scored_session_count": null,
+      "replay_start": null,
+      "resumed": false,
+      "symbol": "Q",
+      "upstream_replay_window_status": "BLOCKED_INSUFFICIENT_POST_ANCHOR_WARMUP",
+      "warmup_session_count_through_replay_start": null
+    },
+    {
+      "asset_type": "EQUITY",
+      "bar_count": null,
+      "blockers": [
+        "PRELISTING_TICKER_HISTORY_NOT_AUTHORIZED",
+        "INSUFFICIENT_POST_ANCHOR_WARMUP"
+      ],
+      "data_sha256": null,
+      "materialization_start": null,
+      "materialization_status": "CARRIED_FORWARD_BLOCKED_NO_POLYGON_MATERIALIZATION",
+      "replay_end": null,
+      "replay_scored_session_count": null,
+      "replay_start": null,
+      "resumed": false,
+      "symbol": "SPCX",
+      "upstream_replay_window_status": "BLOCKED_INSUFFICIENT_POST_ANCHOR_WARMUP",
+      "warmup_session_count_through_replay_start": null
+    }
+  ],
+  "cadences": [
+    "WEEKLY"
+  ],
+  "certified_symbol_count_in_scope": 602,
+  "failed_symbol_cadence_replay_count": 602,
+  "failures": [
+    {
+      "cadence": "WEEKLY",
+      "error": "ABBV 2014-03-14: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ABBV"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ABNB 2022-02-18: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ABNB"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "A 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "A"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "AAPL 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "AAPL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ABT 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ABT"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ADBE 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ADBE"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ACN 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ACN"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ACGL 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ACGL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ADI 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ADI"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ADP 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ADP"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ADM 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ADM"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ADSK 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ADSK"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "AEE 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "AEE"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "AEP 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "AEP"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "AES 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "AES"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "AFL 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "AFL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "AIZ 2005-04-15: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "AIZ"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "AIG 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "AIG"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ALAB 2025-05-30: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ALAB"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "AGG 2004-12-03: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "AGG"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "AJG 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "AJG"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "AKAM 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "AKAM"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ALB 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ALB"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ALGN 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ALGN"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ALL 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ALL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ALLE 2015-02-13: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ALLE"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "AMCR 2020-08-21: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "AMCR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ALNY 2005-08-05: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ALNY"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "AMAT 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "AMAT"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "AMD 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "AMD"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "AMGN 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "AMGN"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "AME 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "AME"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "AMP 2006-12-08: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "AMP"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "AMT 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "AMT"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ANET 2015-08-14: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ANET"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "AMZN 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "AMZN"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "AON 2011-02-11: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "AON"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "AOS 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "AOS"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "APA 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "APA"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "APP 2022-06-24: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "APP"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "APD 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "APD"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "APO 2012-06-08: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "APO"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "APTV 2019-02-15: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "APTV"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "APH 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "APH"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ARM 2024-11-22: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ARM"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ARES 2015-07-10: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ARES"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ARE 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ARE"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ARKK 2016-01-15: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ARKK"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ASML 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ASML"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ATO 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ATO"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "AVGO 2010-10-15: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "AVGO"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "AVB 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "AVB"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "AWK 2009-07-02: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "AWK"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "AXON 2022-04-01: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "AXON"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "AVY 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "AVY"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "AZO 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "AZO"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "AXP 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "AXP"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "BAC 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "BAC"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "BALL 2023-07-21: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "BALL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "BA 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "BA"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "BAX 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "BAX"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "BBY 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "BBY"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "BDX 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "BDX"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "BEN 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "BEN"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "BF.B 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "BF.B"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "BITO 2022-12-30: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "BITO"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "BG 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "BG"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "BKNG 2019-05-10: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "BKNG"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "BKR 2020-12-24: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "BKR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "BIIB 2005-01-28: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "BIIB"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "BLDR 2006-09-01: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "BLDR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "BMY 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "BMY"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "BLK 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "BLK"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "BR 2008-06-13: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "BR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "BND 2008-06-20: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "BND"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "BRK.B 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "BRK.B"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "BRO 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "BRO"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "BX 2008-08-29: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "BX"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "BSX 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "BSX"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "BXP 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "BXP"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CARR 2021-06-11: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CARR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "C 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "C"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CAH 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CAH"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CASY 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CASY"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CAT 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CAT"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CB 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CB"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CBRE 2019-05-31: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CBRE"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CBOE 2011-08-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CBOE"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CCEP 2020-01-17: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CCEP"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CDW 2014-09-05: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CDW"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CCL 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CCL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CDNS 2007-01-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CDNS"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CEG 2023-04-14: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CEG"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CCI 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CCI"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CFG 2015-12-04: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CFG"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CHRW 2007-01-26: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CHRW"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CHD 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CHD"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CF 2006-10-20: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CF"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CHTR 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CHTR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CIBR 2016-09-16: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CIBR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CIEN 2008-01-04: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CIEN"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CI 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CI"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CINF 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CINF"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CLX 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CLX"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CMCSA 2006-01-20: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CMCSA"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CL 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CMG 2007-04-05: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CMG"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CME 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CME"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CMI 2005-02-18: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CMI"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CMS 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CMS"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CNP 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CNP"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CNC 2004-12-23: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CNC"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "COIN 2022-06-24: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "COIN"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "COHR 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "COHR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "COF 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "COF"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "COO 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "COO"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "COR 2024-11-08: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "COR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CPAY 2025-06-06: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CPAY"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "COP 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "COP"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "COST 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "COST"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CPRT 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CPRT"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CRH 2024-12-06: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CRH"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CPT 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CPT"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CRWD 2020-08-21: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CRWD"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CRL 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CRL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CRWV 2026-06-12: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CRWV"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CRM 2005-09-02: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CRM"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CSGP 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CSGP"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CSCO 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CSCO"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CSX 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CSX"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CTVA 2020-08-07: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CTVA"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CTAS 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CTAS"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CVNA 2018-07-06: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CVNA"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CTSH 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CTSH"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "D 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "D"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "DAL 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "DAL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CVX 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CVX"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "DASH 2022-02-18: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "DASH"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "DDOG 2020-11-27: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "DDOG"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "DBA 2008-03-14: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "DBA"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "CVS 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "CVS"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "DD 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "DD"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "DELL 2020-03-13: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "DELL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "DECK 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "DECK"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "DE 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "DE"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "DG 2011-01-28: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "DG"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "DGX 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "DGX"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "DHI 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "DHI"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "DHR 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "DHR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "DIA 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "DIA"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "DIS 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "DIS"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "DLR 2006-01-06: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "DLR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "DOC 2025-05-16: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "DOC"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "DOW 2020-06-12: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "DOW"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "DLTR 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "DLTR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "DOV 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "DOV"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "DPZ 2005-09-16: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "DPZ"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "DRI 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "DRI"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "DUK 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "DUK"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "DTE 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "DTE"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "DVN 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "DVN"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "DVA 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "DVA"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "EA 2013-03-08: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "EA"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "DXCM 2006-06-23: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "DXCM"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ECL 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ECL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "EBAY 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "EBAY"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ED 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ED"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "EEM 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "EEM"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "EG 2024-09-20: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "EG"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "EFX 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "EFX"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "EFA 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "EFA"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ELV 2023-09-08: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ELV"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "EIX 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "EIX"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "EL 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "EL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "EME 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "EME"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "EMR 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "EMR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "EOG 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "EOG"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "EQIX 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "EQIX"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "EQR 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "EQR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ERIE 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ERIE"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "EQT 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "EQT"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ETHA 2025-10-03: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ETHA"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ES 2009-01-30: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ES"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ESS 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ESS"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ETN 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ETN"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ETR 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ETR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "EVRG 2019-08-16: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "EVRG"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "EW 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "EW"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "EWJ 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "EWJ"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "EXC 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "EXC"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "EXE 2025-12-12: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "EXE"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "EXPE 2013-03-08: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "EXPE"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "EWZ 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "EWZ"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "EXPD 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "EXPD"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "EXR 2005-10-21: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "EXR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "FANG 2013-12-27: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "FANG"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "FBTC 2025-03-28: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "FBTC"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "FAST 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "FAST"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "F 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "F"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "FDS 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "FDS"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "FCX 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "FCX"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "FER 2025-07-25: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "FER"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "FDX 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "FDX"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "FE 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "FE"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "FICO 2010-10-29: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "FICO"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "FIS 2007-04-13: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "FIS"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "FFIV 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "FFIV"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "FISV 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "FISV"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "FITB 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "FITB"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "FOX 2020-05-29: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "FOX"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "FIX 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "FIX"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "FLEX 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "FLEX"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "FOXA 2020-05-08: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "FOXA"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "FRT 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "FRT"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "FSLR 2008-02-01: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "FSLR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "FTNT 2011-01-28: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "FTNT"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "GDDY 2016-06-10: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "GDDY"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "FTV 2017-09-15: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "FTV"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "FXI 2005-12-16: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "FXI"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "GD 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "GD"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "GDXJ 2011-01-21: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "GDXJ"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "GDX 2007-08-03: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "GDX"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "GEHC 2024-03-15: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "GEHC"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "GEN 2024-01-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "GEN"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "GEV 2025-06-13: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "GEV"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "GL 2020-10-16: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "GL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "GE 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "GE"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "GIS 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "GIS"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "GILD 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "GILD"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "GLD 2006-01-27: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "GLD"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "GNRC 2011-04-21: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "GNRC"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "GM 2012-01-27: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "GM"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "GLW 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "GLW"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "GOOGL 2015-06-12: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "GOOGL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "GOOG 2005-10-28: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "GOOG"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "GPC 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "GPC"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "GPN 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "GPN"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "HACK 2016-01-22: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "HACK"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "GRMN 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "GRMN"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "GS 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "GS"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "GWW 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "GWW"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "HAS 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "HAS"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "HBAN 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "HBAN"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "HAL 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "HAL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "HCA 2012-05-18: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "HCA"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "HD 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "HD"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "HII 2012-06-08: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "HII"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "HIG 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "HIG"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "HOOD 2022-10-07: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "HOOD"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "HLT 2015-02-27: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "HLT"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "HPE 2017-01-13: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "HPE"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "HPQ 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "HPQ"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "HSIC 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "HSIC"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "HRL 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "HRL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "HST 2007-06-29: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "HST"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "HUBB 2017-03-10: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "HUBB"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "HSY 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "HSY"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "HWM 2021-06-11: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "HWM"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "HUM 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "HUM"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "IBIT 2025-03-28: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "IBIT"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "HYG 2008-06-20: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "HYG"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "IAU 2006-04-07: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "IAU"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "IBB 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "IBB"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "IBKR 2008-07-11: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "IBKR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "IBM 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "IBM"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ICLN 2009-09-04: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ICLN"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ICE 2007-02-02: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ICE"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "IEX 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "IEX"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "IDXX 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "IDXX"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "IEF 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "IEF"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "IFF 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "IFF"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "IGV 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "IGV"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "IHI 2007-07-20: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "IHI"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "INCY 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "INCY"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "INVH 2018-04-13: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "INVH"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "INDA 2013-05-24: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "INDA"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "INTU 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "INTU"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "INTC 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "INTC"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "IQV 2019-02-01: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "IQV"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "IR 2018-07-20: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "IR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "IP 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "IP"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "IRM 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "IRM"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "IT 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "IT"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ISRG 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ISRG"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ITOT 2014-01-03: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ITOT"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ITB 2007-07-20: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ITB"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ITW 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ITW"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "IVV 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "IVV"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "IVZ 2008-08-01: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "IVZ"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "IWD 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "IWD"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "IWM 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "IWM"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "IWF 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "IWF"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "IYR 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "IYR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "J 2021-02-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "J"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "JBL 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "JBL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "JCI 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "JCI"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "JBHT 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "JBHT"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "JEPI 2021-07-30: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "JEPI"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "JEPQ 2023-07-14: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "JEPQ"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "JETS 2016-07-08: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "JETS"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "JPM 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "JPM"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "JKHY 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "JKHY"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "JNJ 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "JNJ"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "KBE 2007-01-26: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "KBE"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "KEYS 2016-01-15: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "KEYS"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "KHC 2016-09-09: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "KHC"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "KDP 2019-09-20: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "KDP"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "KEY 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "KEY"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "KKR 2011-09-23: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "KKR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "KIM 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "KIM"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "KMB 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "KMB"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "KLAC 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "KLAC"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "KMI 2012-04-20: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "KMI"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "KO 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "KO"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "KVUE 2024-07-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "KVUE"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "KRE 2007-08-31: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "KRE"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "KR 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "KR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "KWEB 2014-10-17: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "KWEB"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "L 2009-09-04: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "L"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "LDOS 2014-12-05: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "LDOS"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "LHX 2020-09-04: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "LHX"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "LH 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "LH"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "LEN 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "LEN"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "LII 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "LII"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "LIN 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "LIN"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "LITE 2016-10-14: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "LITE"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "LNT 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "LNT"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "LMT 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "LMT"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "LOW 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "LOW"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "LLY 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "LLY"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "LRCX 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "LRCX"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "LULU 2008-10-03: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "LULU"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "LQD 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "LQD"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "LVS 2006-02-24: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "LVS"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "LYV 2007-03-09: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "LYV"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "LUV 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "LUV"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MAA 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MAA"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "LYB 2011-12-23: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "LYB"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MAR 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MAR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MAS 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MAS"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MCD 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MCD"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MA 2007-08-03: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MA"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MCHP 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MCHP"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MDLZ 2013-12-13: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MDLZ"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MCO 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MCO"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MDT 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MDT"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "META 2023-08-18: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "META"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MCK 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MCK"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MELI 2008-10-17: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MELI"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MET 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MET"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MGM 2006-07-14: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MGM"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MKC 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MKC"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MLM 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MLM"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MNST 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MNST"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MMM 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MMM"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MO 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MO"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MOS 2005-12-30: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MOS"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MPC 2012-09-07: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MPC"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MPWR 2007-06-15: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MPWR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MRK 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MRK"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MRNA 2020-02-21: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MRNA"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MRVL 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MRVL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MSCI 2011-09-16: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MSCI"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MS 2007-03-30: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MS"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MSFT 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MSFT"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MSI 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MSI"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MSTR 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MSTR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MTUM 2014-06-27: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MTUM"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MTB 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MTB"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MTD 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MTD"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "NBIS 2026-01-02: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "NBIS"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "NCLH 2014-03-28: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "NCLH"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "MU 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "MU"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "NDAQ 2006-04-21: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "NDAQ"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "NDSN 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "NDSN"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "NEE 2011-09-02: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "NEE"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "NFLX 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "NFLX"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "NEM 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "NEM"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "NI 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "NI"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "NKE 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "NKE"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "NOW 2013-09-13: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "NOW"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "NOC 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "NOC"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "NSC 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "NSC"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "NRG 2005-06-03: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "NRG"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "NTAP 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "NTAP"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "NTRS 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "NTRS"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "NVDA 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "NVDA"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "NUE 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "NUE"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "NWS 2014-09-12: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "NWS"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "NWSA 2014-08-29: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "NWSA"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "NVR 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "NVR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "NXPI 2011-10-14: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "NXPI"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "O 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "O"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "OIH 2013-03-08: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "OIH"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ODFL 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ODFL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "OKE 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "OKE"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "OMC 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "OMC"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "OTIS 2021-06-11: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "OTIS"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ON 2016-06-17: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ON"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ORLY 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ORLY"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ORCL 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ORCL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "PANW 2013-10-04: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "PANW"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "OXY 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "OXY"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "PAYX 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "PAYX"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "PCG 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "PCG"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "PCAR 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "PCAR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "PDD 2019-10-04: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "PDD"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "PEG 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "PEG"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "PEP 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "PEP"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "PFE 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "PFE"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "PFG 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "PFG"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "PG 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "PG"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "PGR 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "PGR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "PHM 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "PHM"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "PKG 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "PKG"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "PLD 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "PLD"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "PLTR 2021-12-10: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "PLTR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "PH 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "PH"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "PM 2009-06-05: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "PM"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "PNW 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "PNW"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "PNR 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "PNR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "PNC 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "PNC"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "PPG 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "PPG"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "PPL 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "PPL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "PRU 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "PRU"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "PODD 2008-07-25: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "PODD"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "PTC 2015-02-13: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "PTC"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "PSA 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "PSA"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "PSX 2013-07-12: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "PSX"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "QQQ 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "QQQ"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "PWR 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "PWR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "QCOM 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "QCOM"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "PYPL 2016-09-23: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "PYPL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "QQQM 2021-12-23: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "QQQM"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "QUAL 2014-09-26: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "QUAL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "RCL 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "RCL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "REG 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "REG"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "REGN 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "REGN"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "RKLB 2022-11-04: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "RKLB"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "RF 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "RF"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "RJF 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "RJF"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "RL 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "RL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "RMD 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "RMD"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ROL 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ROL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ROK 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ROK"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ROST 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ROST"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ROP 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ROP"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "RVTY 2024-07-26: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "RVTY"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "RTX 2021-06-11: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "RTX"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "RSP 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "RSP"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "RSG 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "RSG"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "SBAC 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "SBAC"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "SBUX 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "SBUX"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "SCHD 2013-01-04: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "SCHD"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "SCHB 2011-01-14: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "SCHB"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "SHOP 2016-07-29: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "SHOP"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "SCHW 2007-03-09: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "SCHW"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "SHY 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "SHY"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "SHW 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "SHW"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "SKYY 2012-09-14: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "SKYY"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "SJM 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "SJM"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "SMCI 2008-06-06: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "SMCI"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "SLV 2007-07-13: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "SLV"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "SNDK 2026-05-08: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "SNDK"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "SLB 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "SLB"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "SMH 2013-03-08: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "SMH"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "SOLV 2025-06-13: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "SOLV"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "SNA 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "SNA"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "SO 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "SO"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "SNPS 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "SNPS"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "SOXX 2011-12-23: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "SOXX"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "SPGI 2017-07-07: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "SPGI"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "SPG 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "SPG"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "SPXU 2010-09-03: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "SPXU"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "SQQQ 2011-04-21: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "SQQQ"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "STE 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "STE"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "SRE 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "SRE"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "SPY 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "SPY"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "STLD 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "STLD"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "SW 2025-09-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "SW"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "STT 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "STT"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "STX 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "STX"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "SYF 2015-10-09: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "SYF"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "STZ 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "STZ"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "SWK 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "SWK"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "SWKS 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "SWKS"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "SYK 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "SYK"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "SYY 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "SYY"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "TAN 2009-06-26: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "TAN"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "TAP 2006-04-21: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "TAP"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "TDG 2007-05-25: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "TDG"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "T 2007-02-16: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "T"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "TEL 2008-09-12: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "TEL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "TDY 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "TDY"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "TECH 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "TECH"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "TFC 2005-03-11: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "TFC"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "TER 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "TER"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "TIP 2005-02-18: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "TIP"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "TKO 2024-11-22: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "TKO"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "TJX 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "TJX"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "TGT 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "TGT"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "TMO 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "TMO"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "TLT 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "TLT"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "TPR 2004-12-10: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "TPR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "TMUS 2014-07-11: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "TMUS"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "TQQQ 2011-04-21: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "TQQQ"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "TPL 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "TPL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "TRGP 2012-02-17: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "TRGP"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "TRMB 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "TRMB"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "TRI 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "TRI"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "TROW 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "TROW"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "TSCO 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "TSCO"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "TRV 2008-05-09: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "TRV"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "TSLA 2011-09-02: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "TSLA"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "TT 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "TT"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "TSN 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "TSN"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "TTD 2017-12-01: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "TTD"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "TTWO 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "TTWO"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "TXN 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "TXN"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "TXT 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "TXT"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "UBER 2020-07-17: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "UBER"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "UAL 2011-12-09: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "UAL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "TYL 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "TYL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "UDR 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "UDR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ULTA 2009-01-02: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ULTA"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "UHS 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "UHS"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "UNG 2008-06-27: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "UNG"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "UPRO 2010-09-03: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "UPRO"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "UNH 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "UNH"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "UNP 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "UNP"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "UPS 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "UPS"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "URI 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "URI"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "USMV 2013-01-11: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "USMV"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "USB 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "USB"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "USO 2007-06-22: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "USO"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "UVXY 2012-12-14: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "UVXY"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "VEEV 2014-12-26: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "VEEV"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "V 2009-05-29: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "V"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "VICI 2019-04-12: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "VICI"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "VEA 2008-10-03: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "VEA"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "VIXY 2012-03-16: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "VIXY"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "VIG 2007-07-06: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "VIG"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "VLTO 2024-12-13: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "VLTO"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "VLUE 2014-10-17: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "VLUE"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "VMC 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "VMC"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "VLO 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "VLO"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "VOO 2011-11-18: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "VOO"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "VNQ 2005-12-09: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "VNQ"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "VRT 2021-04-23: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "VRT"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "VRSN 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "VRSN"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "VRSK 2010-12-17: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "VRSK"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "VST 2018-07-20: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "VST"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "VRTX 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "VRTX"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "VTRS 2022-01-28: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "VTRS"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "VTR 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "VTR"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "VTV 2005-04-08: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "VTV"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "VTI 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "VTI"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "VWO 2006-05-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "VWO"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "VUG 2005-04-15: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "VUG"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "VYM 2008-02-01: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "VYM"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "VZ 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "VZ"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "WBD 2023-06-23: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "WBD"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "WAT 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "WAT"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "WAB 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "WAB"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "WDAY 2013-12-27: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "WDAY"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "WELL 2019-05-10: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "WELL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "WEC 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "WEC"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "WDC 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "WDC"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "WFC 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "WFC"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "WM 2010-10-15: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "WM"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "WMB 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "WMB"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "WMT 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "WMT"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "WTW 2023-03-24: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "WTW"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "WRB 2009-06-26: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "WRB"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "WSM 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "WSM"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "WST 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "WST"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "WY 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "WY"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "XBI 2007-04-20: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "XBI"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "WYNN 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "WYNN"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "XEL 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "XEL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "XLC 2019-08-30: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "XLC"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "XHB 2007-04-20: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "XHB"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "XLB 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "XLB"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "XLF 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "XLF"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "XLE 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "XLE"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "XLK 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "XLK"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "XLRE 2016-12-23: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "XLRE"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "XLI 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "XLI"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "XLP 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "XLP"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "XLV 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "XLV"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "XLU 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "XLU"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "XLY 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "XLY"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "XOP 2007-08-31: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "XOP"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "XOM 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "XOM"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "XPH 2007-09-28: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "XPH"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "XYZ 2026-04-02: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "XYZ"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "XRT 2007-09-07: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "XRT"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "XYL 2013-01-11: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "XYL"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ZBH 2016-09-09: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ZBH"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ZBRA 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ZBRA"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "YUM 2004-11-19: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "YUM"
+    },
+    {
+      "cadence": "WEEKLY",
+      "error": "ZTS 2014-04-11: native profile missing direction/score/confidence",
+      "error_type": "ReplayError",
+      "status": "REPLAY_FAILED",
+      "symbol": "ZTS"
+    }
+  ],
+  "full_authority_run": true,
+  "governance": {
+    "database_access": "NONE",
+    "full_23_year_reconstruction_authorized": false,
+    "future_daily_bar_access_authorized": false,
+    "future_weekly_monthly_bar_access_authorized": false,
+    "native_history_rows": 750,
+    "native_runner_sha_pinned": true,
+    "native_warmup_sessions": 300,
+    "point_in_time_price_prefix_only": true,
+    "point_in_time_spy_calendar_prefix_only": true,
+    "polygon_api_queried": false,
+    "predecessor_successor_series_automatically_concatenated": false,
+    "price_history_table_used": false,
+    "production_authority_effect": false,
+    "replay_before_certified_start_authorized": false,
+    "source_history": "M77.19.7.2_POLYGON_DIRECT_MATERIALIZATION",
+    "spy_data_sha256": "12510d08659753b0a5c077687ab83be90fa2e9d24f5f3af6e829db989d4506c9",
+    "spy_session_calendar_source": "M77.19.7.2_FROZEN_POLYGON_SPY_DAILY_BARS",
+    "threshold_search_or_optimization": false,
+    "ticker_lineage_join_authorized": false
+  },
+  "native_runner_sha256": "bcc5b49b87ddceba6ac417000d5af3d4a57efd14145595f4d712eb36ae81204b",
+  "next_step": "COMPLETE_M77_19_7_3_POINT_IN_TIME_SYMBOL_SPECIFIC_STOCK_INTELLIGENCE_REPLAY",
+  "output_root": "/Users/vinay.hatti/TradingPlatform/research_data/m77_19_7_3/point_in_time_stock_intelligence_replay",
+  "status": "INCOMPLETE",
+  "successful_symbol_cadence_replay_count": 0,
+  "symbols": [],
+  "upstream_authority_sha256": "8e92c45c46027865a0fd6336bdb0e548c4cccf453ff7c599cf98fc5ded5d607c",
+  "version": "M77.19.7.3-POINT-IN-TIME-SYMBOL-SPECIFIC-STOCK-INTELLIGENCE-REPLAY-1.0"
+}

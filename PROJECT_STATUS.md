@@ -1,125 +1,284 @@
 # TradingPlatform Project Status
 
-## Milestone 56 — Advanced Trade Builder & Execution
+**Status date:** 2026-08-29\
+**Database head:** `m78_001`\
+**Runtime:** macOS; Python 3.13 via `uv`; PostgreSQL 17;
+React/TypeScript/Vite\
+**Execution:** Interactive Brokers Paper Trading\
+**Governance:** deterministic, explainable, auditable, fail-closed;
+research cannot automatically change production.
 
-**Status:** COMPLETE — cumulative milestone package prepared July 30, 2026.
+## Current Architecture
 
-Delivered:
-- Canonical, versioned advanced trade-plan domain tied to Opportunity version and latest Institutional Intelligence snapshot.
-- Defined-risk economics for single-leg and vertical option structures.
-- Risk-budget, expiry, quantity, leg-count, and defined-risk validation.
-- Net Delta, Gamma, Theta, and Vega aggregation.
-- Governed lifecycle: DRAFT → VALIDATED → APPROVED → PAPER_READY, with CANCELLED exits.
-- Append-only trade-plan audit history and optimistic version checks.
-- Execution-ready paper intent that preserves existing IBKR governance and never enables live trading.
-- REST API and workstation Trade Builder page.
-- Alembic migration and milestone contract tests.
+``` text
+Market/Event/Broker Data
+ -> Market Intelligence / Market Overview
+ -> Trend Intelligence
+ -> Stock Intelligence
+ -> Institutional Options + Valuation + Inflection
+ -> Institutional Decision Intelligence
+ -> Portfolio Risk / Fit / Capital Allocation
+ -> Advanced Trade Builder
+ -> Execution Intelligence / Execution Workspace
+ -> IBKR Paper Broker Truth
+ -> Autonomous Dynamic Position Management
+ -> Performance Calibration / Outcome Learning
+```
 
-Validation:
-- Python compilation: PASS.
-- Milestone 56 contract assertions: PASS.
-- TypeScript typecheck: PASS.
-- Existing workstation tests: PASS.
+M78 adds a shadow-only research branch:
 
-Next milestone: Milestone 57 — Portfolio Intelligence & Active Position Management.
+`Stock Intelligence -> Setup Intelligence -> setup lifecycle -> M77 outcomes -> setup probability/EV -> shadow ranking -> prospective certification`
 
-## UI Milestone 1 — Foundation & Design System — COMPLETE
-- Central semantic design tokens established for color, typography surfaces, spacing, borders, elevation, and responsive layout.
-- Institutional application shell introduced with grouped workflow navigation and collapsible sidebar.
-- Global Intelligence Header introduced with published context, market/readiness status, paper-governed mode, connection state, global search foundation, and refresh control.
-- Shared workspace canvas and diagnostics status bar integrated without changing existing routes or API contracts.
-- Design-system contract tests and TypeScript validation added.
+There is no automatic production promotion.
 
+## Binding Rules
 
-## UI Modernization Milestone 2 — Shell Productivity (Complete)
+-   Preserve current authority lineage; stale/missing/incompatible
+    authority fails closed.
+-   Every major recommendation must be explainable and auditable.
+-   Historical/prospective research is isolated from production.
+-   No automatic champion/model/weight promotion.
+-   Database access uses `SessionLocal()` and `session.get_bind()`.
+-   Milestones are delivered cumulatively with install, rollback, tests
+    and verification.
+-   Polygon is authoritative current market data; IBKR is broker truth.
+-   Earnings: Alpha Vantage. Macro: Federal Reserve, BLS, BEA.
+-   Live-capital execution is disabled; current execution is PAPER.
 
-Completed July 30, 2026.
+## Milestone Status
 
-- Added keyboard-driven global command palette (`Command/Ctrl+K`).
-- Added searchable workspace navigation and shell commands.
-- Added recent-workspace history and favorite workspace shortcuts.
-- Added browser-persisted compact-density, reduced-motion, and status-bar preferences.
-- Added keyboard shortcuts for refresh, navigation collapse, and preferences.
-- Added accessible command and preferences overlays with Escape dismissal.
-- Preserved all workstation routes, API contracts, and trading workflows.
-- UI contract tests and TypeScript validation passed.
+### Milestones 1-28 --- Core Foundations
 
-## UI Milestone 5 — Institutional Intelligence Workspace Refinement
-- Refined institutional intelligence workspace installed.
-- Existing intelligence REST contracts and versioned snapshots preserved.
-- Added evidence hierarchy, category filtering, risk panels, recommendations, playbook, invalidation, and snapshot history.
+**COMPLETE / incorporated.** Project/database architecture, ingestion,
+canonical universe, EMA/RSI/MACD/ATR, scanners, backtesting, options
+foundations, probability/risk analytics and reporting.
 
-## UI Milestone 7 — Portfolio Intelligence Command Center
-- Status: COMPLETE
-- Refined managed-position queue, portfolio health, aggregate Greeks, exposure, alerts, explainable decisions, and governed lifecycle actions.
-- Existing Milestone 57 APIs and IBKR paper-order governance remain authoritative.
+### Milestone 29 --- Institutional Backtesting / Risk / Execution Analytics
 
-## UI Milestone 8 — Market Overview Command Center
-- Status: COMPLETE
-- Refined breadth, regime, institutional participation, volatility, liquidity, sector rotation, cross-asset, dealer-positioning, risk, and freshness views.
-- Market ingestion remains the authoritative central data driver; the page consumes persisted Market Overview snapshots only.
+**COMPLETE / incorporated.** Distribution/tail risk, risk surfaces,
+regime analytics, walk-forward governance, execution analytics and
+Decision Engine integration.
 
-## UI Milestone 9 — Performance Analytics & Continuous Learning
-- Status: COMPLETE
-- Refined performance attribution, strategy and directional analytics, probability calibration, decision quality, governed recommendations, and learning-policy governance.
-- Learning remains human-approved, versioned, evidence-backed, bounded, and non-autonomous.
+### Milestones 30-55 --- Institutional Intelligence Expansion
 
-## Milestone 59 — Institutional Execution Workspace (OMS)
+**COMPLETE / incorporated.** Market/options intelligence, decision
+governance, portfolio/position concepts, execution foundations,
+audit/lineage and workstation modernization.
 
-**Status:** COMPLETE — 2026-08-03
+### Milestone 56 --- Advanced Trade Builder
 
-Delivered a governed paper-execution layer between Trade Builder and Portfolio Intelligence:
+**COMPLETE.** Versioned trade plans, defined-risk economics,
+risk/expiry/quantity/leg validation, aggregate Greeks, governed
+lifecycle, audit, API and workstation. The prior status recorded
+validation passing.
 
-- Canonical execution-intent domain and immutable audit trail.
-- PAPER_READY → VALIDATED → APPROVED → SUBMITTED/ACKNOWLEDGED/PARTIALLY_FILLED/FILLED lifecycle.
-- Explicit operator confirmation for IBKR paper submission; live trading remains disabled.
-- Existing IBKR account binding, routing activation, canonical orders, broker orders, synchronization, cancellation, and fill import are reused.
-- Filled intents create idempotent managed positions in Portfolio Intelligence.
-- Dedicated `#/execution-workspace` OMS queue with validation, risk, order legs, broker status, lifecycle actions, and timeline.
-- Trade Builder now creates/opens execution intents after PAPER_READY.
-- Multi-leg intents are retained and reviewable; direct broker submission is blocked until atomic IBKR combo-contract support is enabled.
+### Milestone 57 --- Portfolio Intelligence & Active Position Management
 
-## Milestone 60 — Native IBKR Atomic Combo Execution
+**COMPLETE / operational.** Managed positions, portfolio health,
+aggregate Greeks/exposure, alerts, explainable decisions and lifecycle
+actions.
 
-**Status:** COMPLETE — 2026-08-03
+### Milestone 58 --- Institutional Workflow Integration
 
-- Added IBKR `BAG` combo-contract construction for governed multi-leg option intents.
-- Resolves each option leg to an IBKR contract ID immediately before submission.
-- Submits one atomic paper limit order using governed leg ratios and BUY/SELL actions.
-- Preserves exact confirmation, paper-only routing, idempotency, cancellation, synchronization, and managed-position handoff.
-- Single-leg option submission remains backward compatible.
-- No database migration required.
+**COMPLETE / incorporated.** Integrated institutional decisions, trade
+plans, portfolio state and managed positions.
 
----
+### Milestone 59 --- Institutional Execution Workspace
 
-# Milestone 70 — Institutional Execution Intelligence
+**COMPLETE.** Canonical execution intents, immutable audit, paper
+lifecycle, IBKR reuse, managed-position handoff and OMS workspace.
 
-**Status: COMPLETE (2026-08-07)**
+### Milestone 60 --- Native IBKR Atomic Combo Execution
 
-Completed scope includes direct Polygon exact-contract preflight, timestamp/freshness governance, multi-sample quote stability, execution confidence, midpoint-vs-crossing-cost separation, governed intelligent limit pricing, fresh risk/envelope revalidation, IBKR paper routing, working-order assessment and confirmation-gated in-place repricing, broker lifecycle/fill telemetry, execution-quality metrics, learning hooks, and the Execution Intelligence Operations page. Live trading remains disabled and paper-only governance remains binding.
+**COMPLETE.** IBKR BAG construction, exact leg resolution, atomic paper
+combo orders, idempotency/cancellation/synchronization and single-leg
+compatibility.
 
-Database head: `m70_003`.
+### Milestone 61 --- Unified Underlying Intelligence & Scanners
 
-Next strategic focus: Portfolio Risk & Capital Allocation / portfolio-aware best-next-trade optimization, followed by Performance Command Center & Outcome Learning and continued production/live-governance hardening.
+**COMPLETE / operational.** Multi-timeframe Stock Intelligence
+(1D/1W/1M), structural levels/zones, strength/confluence/hold,
+underlying thesis, current publication and Stock Scanner.
 
-## Milestone 71 — OPEX Intelligence & Probabilistic Path Forecasting
+### Milestone 62 --- Institutional Options
 
-Status: IMPLEMENTED — pending user-environment migration and operational acceptance.
+**COMPLETE / operational.** Underlying-first strategy generation, exact
+contract optimization, DTE/strike selection, Greeks/liquidity,
+probability/context, structural entry/stop/targets and Trade Builder
+handoff.
 
-Scope: SPX/NDX/RUT multi-OPEX probabilistic settlement ranges, price magnets, support/resistance and dealer-level migration, gamma-flip/call-wall/put-wall forecasts, daily charm/vanna flow, dealer hedging pressure, scenario probabilities, confidence decomposition, continuously refreshed forecast history, Cross-OPEX Transition Map, OPEX Analytics UI, and historical calibration/outcome realization. Refresh is integrated with both split ingestion finalizers.
+### Milestone 63 --- Broker Portfolio Synchronization
 
-## Milestone 72 — Performance Calibration & Execution Learning
+**COMPLETE / operational.** IBKR account, cash, positions, orders/fills
+and broker truth synchronized into portfolio/management authorities.
 
-**Status:** IMPLEMENTED — pending user-environment migration and operational acceptance.
+### Milestone 64 --- Portfolio Risk & Capital Allocation
 
-Delivered on the Aug 8, 2026 baseline:
-- Unified immutable prediction registry spanning Institutional Options trade decisions and OPEX forecasts.
-- Idempotent realized-outcome linkage for trade wins/losses and OPEX 50/68/90 coverage, actionable-range, and magnet-zone outcomes.
-- Segmented probability calibration by source, model version, symbol, strategy, and market regime using Brier score, log loss, ECE, and reliability buckets.
-- OPEX calibration target-error tracking for nominal 50/68/90 coverage plus actionable/magnet hit rates.
-- Execution-quality analytics using M70 telemetry: realized slippage, fill rate, decision-to-submit latency, time-to-first-fill, commissions, quality score, execution edge drag, and expected-edge preservation.
-- Performance Analytics `Outcome learning` UI integrating prediction registry, OPEX calibration, execution quality, and segmented calibration.
-- Shared ingestion finalization automatically advances the evidence-only learning cycle after futures/OPEX refresh.
-- Learning governance remains human-approved; autonomous model/weight activation is explicitly disabled.
+**COMPLETE / operational.** Portfolio Greeks/exposure,
+correlation/concentration, stress/tail risk, risk budgets, fit,
+opportunity cost, optimization, capital allocation, best-next-trade
+ranking, recommended actions and hedges.
 
-Database head after install: `m72_001`.
+### Milestone 65 --- Performance Command Center & Outcome Learning
+
+**COMPLETE / operational foundation.** Attribution,
+prediction-vs-actual, calibration, execution/management quality and
+governed human-approved learning.
+
+### Milestone 66 --- Production Operations & Reliability
+
+**COMPLETE / operational.** Scheduling, health/readiness,
+freshness/dependencies, monitoring, recovery/replay and alerts.
+
+### Milestone 67 --- Live Trading Governance
+
+**FOUNDATION IMPLEMENTED; LIVE CAPITAL DISABLED.** Environment
+isolation, approvals, audit, controls, kill-switch concepts,
+rollback/recovery and certification boundaries.
+
+### Milestone 68 --- Governed Inflection Intelligence
+
+**COMPLETE / integrated.** Multi-factor/multi-timeframe inflection
+evidence plus authority, forecast, underlying-\>options orchestration,
+Trade Builder revalidation and ingestion-performance hardening.
+
+### Milestone 69 --- Option Valuation & Relative Value
+
+**COMPLETE / integrated.** Fair value, volatility mispricing,
+surface/skew/term structure, relative value, event/dealer-flow
+mispricing and valuation divergence. M69.6 event intelligence uses Alpha
+Vantage and Fed/BLS/BEA.
+
+### Milestone 70 --- Institutional Execution Intelligence
+
+**COMPLETE.** Exact-contract preflight, freshness/stability, execution
+confidence, intelligent limits, risk/envelope revalidation, IBKR paper
+routing, working-order assessment/repricing and execution-quality
+telemetry.
+
+### Milestone 71 --- OPEX Intelligence & Probabilistic Path Forecasting
+
+**IMPLEMENTED / incorporated.** OPEX ranges, magnets, dealer migration,
+gamma flip/walls, charm/vanna, hedging pressure, scenarios, confidence,
+history, UI and calibration.
+
+### Milestone 72 --- Performance Calibration & Execution Learning
+
+**IMPLEMENTED / incorporated.** Prediction registry, outcomes, Brier/log
+loss/ECE/reliability, OPEX calibration, slippage/fill/latency/commission
+analytics and Outcome Learning UI.
+
+### Milestone 73 --- Autonomous Dynamic Position Management
+
+**IMPLEMENTED and hardened.** Broker-truth lifecycle, tick
+normalization, chase/retry, adaptive order lifetime, cancellation
+reconciliation, freshness revalidation, fill activation, quantity sync,
+structure-zone trailing, exit arbitration and expiration governance.
+Multi-leg positions close before the earliest leg expiration.
+
+### Milestones 74-76 --- Production Hardening / Research Preparation
+
+**IMPLEMENTED in cumulative platform.** Freshness-aware execution,
+broker reconciliation, authority continuity, production/research
+boundaries, reliability and M77 preparation.
+
+## Milestone 77 --- Historical Underlying Research & Prospective Evidence
+
+**HISTORICAL DISCOVERY CLOSED; PROSPECTIVE PROTOCOLS ACCUMULATING.**
+
+Includes isolated historical replay, long-history replication,
+downside-risk veto, probability ranking, management geometry,
+candidate-quality/positive-selection protocols, CPRE capital-priority
+research, CACA capacity-aware allocation, evidence registry and
+prospective governance.
+
+M77.40 date-lineage repair is complete. Effective market date is:
+
+`portfolio publication -> optimization snapshot -> stock_scanner_run_id -> Stock Scanner lineage.market_as_of_date`
+
+`published_at` is processing metadata, not market-session authority.
+
+## Milestone 78 --- Governed Setup Intelligence & Conditional Alpha
+
+**IMPLEMENTED; SHADOW EVIDENCE ACCUMULATING; NO PRODUCTION AUTHORITY.**
+
+Delivered: canonical setup taxonomy/lifecycle; trend
+pullback/continuation; breakout/breakdown
+setup-confirmation-retest-continuation; failed breakout/breakdown
+reversal; support/resistance reversal; PEAD research archetypes; setup
+snapshots/transitions; M77 outcome linkage; hierarchical empirical
+probability; readiness gates/shrinkage; expected return/R and
+capital/time efficiency; shadow option-expression; cross-sectional
+ranking; model challenger lifecycle; explicit shadow
+approval/activation; prospective certification; publications/audit.
+
+Observed successful capture: 614 candidates and 960 setup snapshots,
+including 474 trend continuation, 310 trend pullback, 66 support
+reversal, 37 resistance reversal, 27 breakout continuation, 16 breakout
+confirmed and 10 breakdown confirmed.
+
+Current state: `INSUFFICIENT_EVIDENCE`; no active shadow model;
+automatic training/activation/certification false; authority effect
+false.
+
+## Current Automation
+
+`com.tradingplatform.m77-m78-daily-shadow` runs Monday-Friday at 18:30.
+
+Sequence: M77 -\> explicit READY -\> M78. If M77 fails/degrades, M78 is
+skipped. Verified final state:
+`status=READY M77=READY M78=READY authority_effect=FALSE`.
+
+## Current Ingestion Schedule
+
+  Service                Schedule
+  ---------------------- ----------------------------
+  Futures pre-open       Mon-Fri 07:55
+  Event intelligence     Mon-Fri 08:10
+  Morning ingestion      Mon-Fri 08:30
+  Intraday options       Mon-Fri 09:30-14:30 hourly
+  End-of-day ingestion   Mon-Fri 15:20
+  M77 -\> M78 research   Mon-Fri 18:30
+
+Continuous broker sync, production operations, dynamic management,
+portfolio intelligence and entry-fill management remain separate.
+
+## Current Database
+
+Alembic head: `m78_001`.
+
+M78 tables: `setup_intelligence_snapshots`,
+`setup_intelligence_transitions`, `setup_intelligence_outcomes`,
+`setup_probability_model_artifacts`, `setup_probability_predictions`,
+`setup_intelligence_publications`, `setup_intelligence_certifications`,
+`setup_intelligence_audit_events`.
+
+## Current Workstation
+
+Market Overview, Daily Scanner, Stock Scanner, Institutional Options,
+Institutional Intelligence, valuation/mispricing, inflection analytics,
+Portfolio Intelligence, Advanced Trade Builder, Execution Workspace,
+Performance/Outcome Learning and operations/diagnostics.
+
+## Open / Accumulating Work
+
+1.  M77 prospective protocols continue accumulating evidence.
+2.  M78 needs matured outcomes/distinct dates before training.
+3.  No M78 shadow model is active at the observed checkpoint.
+4.  M78 production integration is intentionally disabled pending
+    certification.
+5.  Live-capital execution remains disabled.
+6.  Continue observing breakout/breakdown retest populations.
+7.  PEAD, volatility-risk-premium and statistical relative-value remain
+    future research opportunities after current evidence matures.
+
+## Current Priorities
+
+-   Keep weekday ingestion healthy/current.
+-   Keep M77 -\> M78 nightly shadow chain healthy.
+-   Monitor evidence maturity/readiness.
+-   Preserve production/research isolation.
+-   Maintain broker truth and autonomous-management health.
+-   Continue calibration/performance review.
+-   Never promote research into production without explicit
+    certification and approval.

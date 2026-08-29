@@ -1,0 +1,18 @@
+{
+  "milestone": "M77.19.8.7.10.7",
+  "families": [
+    "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+    "MF2_MONOTONIC_GAM_DIRECTION"
+  ],
+  "horizons": [
+    5,
+    10,
+    20
+  ],
+  "validation_scoring_authorized": true,
+  "validation_refit_authorized": false,
+  "validation_retuning_authorized": false,
+  "champion_selection_authorized": false,
+  "final_holdout_open_authorized": false,
+  "production_authority_effect": false
+}

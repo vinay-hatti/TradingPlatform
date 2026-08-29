@@ -1,0 +1,14 @@
+{
+  "version": "M77.19.6.5.2.3.1-MONTHLY-FORENSIC-PROBE-SEMANTIC-ADAPTER-REPAIR-1.0",
+  "milestone": "M77.19.6.5.2.3.1",
+  "title": "Monthly Forensic Probe Semantic Adapter Repair",
+  "research_only": true,
+  "forensic_probe_only": true,
+  "database_mode": "READ_ONLY_SPY_SESSION_CALENDAR_ONLY",
+  "invalidates_prior_523_forensic_conclusion": true,
+  "reason": "ZERO_BASELINE_COMPARISONS_CAUSED_BY_SEMANTIC_ADAPTER_ATTRIBUTEERROR",
+  "parity_thresholds_relaxed": false,
+  "controlled_exact_input_parity_certified": false,
+  "full_23_year_reconstruction_authorized": false,
+  "production_authority_effect": false
+}

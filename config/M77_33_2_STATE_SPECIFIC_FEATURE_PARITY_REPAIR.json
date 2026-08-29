@@ -1,0 +1,25 @@
+{
+  "2018_2026_read": false,
+  "development_end": "2017-12-31",
+  "frozen_states_unchanged": true,
+  "global_required_features": [
+    "volume_ratio_10",
+    "volume_ratio_20",
+    "volume_ratio_60"
+  ],
+  "imputation_allowed": false,
+  "master_panel_row_deletion": false,
+  "missing_state_specific_feature_semantics": "EXCLUDE_FROM_STATE_AND_ITS_COMPLEMENT",
+  "production_authority_effect": false,
+  "prospective_protocols_modified": false,
+  "quantiles_unchanged": true,
+  "state_specific_requirements": {
+    "ACCUMULATION_CONFIRMATION": [
+      "clv"
+    ],
+    "DISTRIBUTION_WARNING": [
+      "clv"
+    ]
+  },
+  "version": "M77.33.2-STATE-SPECIFIC-FEATURE-PARITY-REPAIR-1.0"
+}

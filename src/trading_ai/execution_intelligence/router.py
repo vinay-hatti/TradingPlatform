@@ -22,6 +22,11 @@ def working(intent_id:str,payload:dict,request:Request,actor:str=Depends(require
 @router.get('/intents/{intent_id}/latest',response_model=ApiEnvelope)
 def latest(intent_id:str,request:Request,_:str=Depends(require_access)):
  with SessionLocal() as s:return env(request,ExecutionIntelligenceService(s).latest(intent_id))
+@router.get('/intents/{intent_id}/working-telemetry',response_model=ApiEnvelope)
+def working_telemetry(intent_id:str,request:Request,_:str=Depends(require_access)):
+ try:
+  with SessionLocal() as s:return env(request,ExecutionIntelligenceService(s).working_telemetry(intent_id))
+ except Exception as e:raise fail(e)
 @router.get('/dashboard',response_model=ApiEnvelope)
 def dashboard(request:Request,_:str=Depends(require_access)):
  with SessionLocal() as s:return env(request,ExecutionIntelligenceService(s).dashboard())

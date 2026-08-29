@@ -1,0 +1,131 @@
+{
+  "version": "M77.14.2-INCREMENTAL-YEARLY-STABILITY-DEPENDENCE-ROBUST-NULL-1.0",
+  "status": "READY",
+  "frozen_survivor": {
+    "target": "NDX",
+    "price_symbol": "NDX",
+    "horizon_sessions": 10,
+    "hypothesis": "FIRST_QUARTER_WINDOW",
+    "outcome": "ABSOLUTE_RETURN"
+  },
+  "overall": {
+    "event_n": 120,
+    "event_mean": 0.022805432403945603,
+    "controls": {
+      "unconditional_complement_mean": 0.03030143129180395,
+      "incremental_vs_complement": -0.007495998887858346,
+      "incremental_vs_regime": -0.007742848822321797,
+      "incremental_vs_calendar_month": -0.007352689475857559,
+      "incremental_vs_regime_calendar": -0.00788463241018894
+    }
+  },
+  "yearly_incremental": {
+    "2023": {
+      "event_n": 34,
+      "event_mean": 0.019899203763380627,
+      "same_year_complement_mean": 0.030614279676130146,
+      "incremental_vs_same_year_complement": -0.01071507591274952,
+      "incremental_vs_regime": -0.011398743738016612,
+      "incremental_vs_calendar_month": -0.008989417090677534,
+      "incremental_vs_regime_calendar": -0.007975298423732539
+    },
+    "2024": {
+      "event_n": 32,
+      "event_mean": 0.022009493789651224,
+      "same_year_complement_mean": 0.02858600052685771,
+      "incremental_vs_same_year_complement": -0.006576506737206486,
+      "incremental_vs_regime": -0.008126651994351568,
+      "incremental_vs_calendar_month": -0.006672933393935333,
+      "incremental_vs_regime_calendar": -0.011582066849709796
+    },
+    "2025": {
+      "event_n": 34,
+      "event_mean": 0.022058061366279694,
+      "same_year_complement_mean": 0.03009517471766033,
+      "incremental_vs_same_year_complement": -0.008037113351380635,
+      "incremental_vs_regime": -0.006148238370590732,
+      "incremental_vs_calendar_month": -0.009637833629278583,
+      "incremental_vs_regime_calendar": -0.009019837152932067
+    },
+    "2026": {
+      "event_n": 20,
+      "event_mean": 0.030290053639809116,
+      "same_year_complement_mean": 0.03310952651787286,
+      "incremental_vs_same_year_complement": -0.0028194728780637467,
+      "incremental_vs_regime": -0.003400053674364567,
+      "incremental_vs_calendar_month": -0.0015255105682963012,
+      "incremental_vs_regime_calendar": -0.0013128978031478338
+    }
+  },
+  "year_stability": {
+    "eligible_years": 4,
+    "supportive_years": 4,
+    "negative_years": 4,
+    "positive_years": 0,
+    "median_incremental": -0.0073068100442935605,
+    "worst_opposite_increment_abs": 0.0
+  },
+  "dependence_robust_null": {
+    "method": "YEAR_STRATIFIED_CIRCULAR_EVENT_CALENDAR_SHIFT",
+    "iterations": 10000,
+    "null_mean": 0.029298189118827964,
+    "empirical_p": 0.011898810118988102
+  },
+  "cluster_bootstrap": {
+    "method": "CONSECUTIVE_EVENT_CLUSTER_BOOTSTRAP_VS_COMPLEMENT",
+    "iterations": 10000,
+    "incremental_ci95": [
+      -0.012470462255408528,
+      -0.0018237292577193468
+    ]
+  },
+  "nonoverlap_sensitivity": {
+    "event_n": 43,
+    "event_mean": 0.0248617631231302,
+    "complement_mean": 0.03030143129180395,
+    "incremental": -0.00543966816867375
+  },
+  "regime_incremental": {
+    "BULL_HEALTHY": {
+      "event_n": 63,
+      "event_mean": 0.01690503048135277,
+      "regime_complement_mean": 0.024995135578799114,
+      "incremental": -0.008090105097446343
+    },
+    "BULL_STRESSED": {
+      "event_n": 8,
+      "event_mean": 0.04067096887656839,
+      "regime_complement_mean": 0.0283830213784832,
+      "incremental": 0.012287947498085188
+    },
+    "TRANSITION_DOWN": {
+      "event_n": 34,
+      "event_mean": 0.029669548849242673,
+      "regime_complement_mean": 0.04258047897396289,
+      "incremental": -0.012910930124720214
+    }
+  },
+  "research_gate": {
+    "event_sample_size": true,
+    "dependence_robust_circular_p_le_0_05": true,
+    "bootstrap_ci_excludes_zero": true,
+    "at_least_3_supportive_years": true,
+    "majority_year_sign_consistency": true,
+    "no_catastrophic_opposite_year": true,
+    "nonoverlap_same_direction": true,
+    "regime_stability": true,
+    "independent_lunar_phase_calculation": true
+  },
+  "certification_disposition": "RESEARCH_SUPPORTED_FOR_PROSPECTIVE_SHADOW",
+  "governance": {
+    "research_only": true,
+    "database_read_only": true,
+    "database_writes": false,
+    "production_authority_effect": false,
+    "automatic_shadow_promotion": false,
+    "single_frozen_survivor_only": true,
+    "neighboring_search": false
+  },
+  "next_step": "BUILD_PROSPECTIVE_LUNAR_SHADOW",
+  "production_authority_effect": false
+}

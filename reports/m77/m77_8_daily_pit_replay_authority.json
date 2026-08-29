@@ -1,0 +1,122 @@
+{
+  "version": "M77.8-DAILY-PIT-REPLAY-AUTHORITY-1.0",
+  "status": "READY",
+  "governance": {
+    "mode": "READ_ONLY_DAILY_PIT_REPLAY_AUTHORITY",
+    "research_only": true,
+    "database_read_only": true,
+    "database_writes": false,
+    "database_migrations": false,
+    "production_source_replacements": false,
+    "production_authority_effect": false,
+    "production_ingestion_change": false,
+    "production_stock_intelligence_change": false,
+    "production_decision_change": false,
+    "production_execution_change": false,
+    "production_portfolio_change": false,
+    "existing_weekly_m77_mutation": false
+  },
+  "lineage": {
+    "m77_7": "reports/m77/m77_7_multi_cadence_replay_coverage_feasibility.json",
+    "m77_7_sha256": "ca4997ea54d19aefcb63b3cba464a53c61bd416079cd47a0bec1d25983c695bd",
+    "m77_3_frozen_weekly_authority": "reports/m77/m77_3_historical_regime_authority.json",
+    "m77_3_sha256": "3d4533db01e4085c65fdfef42a4f1cac1d6ab61a7cefd6b56d03294a6fb675c7",
+    "m77_3_regime_authority_version": "M77.3-HISTORICAL-REGIME-AUTHORITY-1.0",
+    "canonical_universe": "data/universe/us_listed_equities_etfs.csv",
+    "canonical_universe_sha256": "8a468a7608db6684ac83d8873a5692bbd3cbc56336388545ec162243d327aa67"
+  },
+  "price_adjustment_provenance": {
+    "provider": "POLYGON",
+    "source_file": "/Users/vinay.hatti/TradingPlatform/src/trading_ai/market/providers/polygon.py",
+    "adjusted_true_occurrences": 3,
+    "historical_fetch_present": true,
+    "grouped_daily_present": true,
+    "stored_price_history_semantic": "POLYGON_ADJUSTED_AGGREGATES",
+    "gate": "PASSED"
+  },
+  "source": {
+    "canonical_symbols": 611,
+    "price_history": {
+      "table": "price_history",
+      "columns": [
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "symbol",
+        "volume"
+      ],
+      "date_col": "date",
+      "price_col": "close"
+    },
+    "session_calendar_symbol": "SPY",
+    "session_calendar_first": "2021-08-09",
+    "session_calendar_last": "2026-08-28",
+    "session_calendar_sessions": 1270
+  },
+  "daily_contract": {
+    "cadence": "EVERY_STORED_US_MARKET_SESSION",
+    "warmup_sessions": 252,
+    "outcome_horizons_sessions": [
+      5,
+      10,
+      20,
+      40,
+      60
+    ],
+    "regime_authority_dates": 1018,
+    "first_regime_date": "2022-08-09",
+    "last_regime_date": "2026-08-28",
+    "outcome_eligible_observation_dates": 958,
+    "first_replay_date": "2022-08-09",
+    "last_replay_date": "2026-06-03",
+    "eligible_observation_counts_by_horizon": {
+      "5": 958,
+      "10": 958,
+      "20": 958,
+      "40": 958,
+      "60": 958
+    }
+  },
+  "regime_authority": {
+    "daily_point_in_time_regime_authority": true,
+    "snapshot_count": 1018,
+    "regime_counts": {
+      "BEAR_ORDERLY": 31,
+      "BEAR_STRESSED": 33,
+      "BULL_HEALTHY": 497,
+      "BULL_STRESSED": 85,
+      "RANGE_NORMAL": 45,
+      "RANGE_STRESSED": 24,
+      "TRANSITION_DOWN": 200,
+      "TRANSITION_UP": 103
+    },
+    "evidence_quality_counts": {
+      "FULL": 1018
+    },
+    "unknown_dates": [],
+    "partial_dates": [],
+    "snapshots_artifact": "reports/m77/m77_8_daily_pit_regime_snapshots.json"
+  },
+  "frozen_weekly_parity": {
+    "frozen_snapshot_count": 207,
+    "comparable_frozen_snapshot_count": 207,
+    "checked": 207,
+    "mismatch_count": 0,
+    "mismatches": [],
+    "status": "PASSED"
+  },
+  "acceptance": {
+    "m77_7_daily_bar_coverage_feasible": true,
+    "polygon_adjusted_price_semantics_verified": true,
+    "daily_pit_regime_materialized": true,
+    "frozen_weekly_regime_parity": true,
+    "daily_regime_unknown_zero": true,
+    "daily_regime_partial_zero": true,
+    "daily_pit_replay_authority_ready": true,
+    "multi_cadence_confluence_ready": false
+  },
+  "next_step": "BUILD_DAILY_MODEL_REPLAY_AND_WALK_FORWARD_CERTIFICATION",
+  "production_authority_effect": false
+}

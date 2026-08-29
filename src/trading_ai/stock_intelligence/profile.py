@@ -52,10 +52,16 @@ class DynamicUnderlyingTradePlan:
     entry_zone_low:float|None=None; entry_zone_high:float|None=None; confirmation_trigger:float|None=None; chase_limit:float|None=None; invalidation_level:float|None=None; targets:list[float]=field(default_factory=list); stop_policy:str='STRUCTURAL'; exit_policy:str='DYNAMIC'; rationale:list[str]=field(default_factory=list)
 @dataclass
 class StockIntelligenceProfile:
-    symbol:str; snapshot_timestamp:str; provider:str='polygon'; primary_timeframe:str='1d'; timeframe_states:dict[str,TimeframeState]=field(default_factory=dict); direction:str='NEUTRAL'; structure:str='SIDEWAYS'; alignment_score:float=0.; confidence:float=0.; support_levels:list[PriceLevel]=field(default_factory=list); resistance_levels:list[PriceLevel]=field(default_factory=list); demand_zones:list[PriceZone]=field(default_factory=list); supply_zones:list[PriceZone]=field(default_factory=list); structure_zones:list[InstitutionalStructureZone]=field(default_factory=list); participation:ParticipationProfile|None=None; breakout:BreakoutProfile|None=None; context:StockContextProfile|None=None; scores:OpportunityScores|None=None; trade_plan:DynamicUnderlyingTradePlan|None=None; categories:list[str]=field(default_factory=list); warnings:list[str]=field(default_factory=list); metadata:dict[str,Any]=field(default_factory=dict); state_hash:str=''
+    symbol:str; snapshot_timestamp:str; provider:str='polygon'; primary_timeframe:str='1d'; timeframe_states:dict[str,TimeframeState]=field(default_factory=dict); direction:str='NEUTRAL'; structure:str='SIDEWAYS'; alignment_score:float=0.; confidence:float=0.; support_levels:list[PriceLevel]=field(default_factory=list); resistance_levels:list[PriceLevel]=field(default_factory=list); demand_zones:list[PriceZone]=field(default_factory=list); supply_zones:list[PriceZone]=field(default_factory=list); structure_zones:list[InstitutionalStructureZone]=field(default_factory=list); participation:ParticipationProfile|None=None; institutional_volume:Any|None=None; breakout:BreakoutProfile|None=None; context:StockContextProfile|None=None; scores:OpportunityScores|None=None; trade_plan:DynamicUnderlyingTradePlan|None=None; decision_intelligence:Any|None=None; categories:list[str]=field(default_factory=list); warnings:list[str]=field(default_factory=list); metadata:dict[str,Any]=field(default_factory=dict); state_hash:str=''
     def finalize(self):
         if self.provider.lower()!='polygon': raise ValueError('Milestone 61 requires Polygon lineage')
-        d=asdict(self); d.pop('state_hash',None); self.state_hash=stable_hash(d); return self
+        d=asdict(self); d.pop('state_hash',None)
+        # M77 is segregated shadow evidence. It is serialized for inspection but
+        # excluded from the canonical candidate identity so it cannot mutate
+        # M61/M64 authority, certification fingerprints, or ranking lineage.
+        decision=d.get('decision_intelligence')
+        if isinstance(decision,dict): decision.pop('outcome_probability',None)
+        self.state_hash=stable_hash(d); return self
 
 class EntryType(str, Enum):
     PULLBACK='PULLBACK'; BREAKOUT='BREAKOUT'; RETEST='RETEST'; DEMAND_BOUNCE='DEMAND_BOUNCE'; SUPPLY_REJECTION='SUPPLY_REJECTION'; STRUCTURE_BREAK='STRUCTURE_BREAK'; VWAP_RECLAIM='VWAP_RECLAIM'; MOMENTUM_CONTINUATION='MOMENTUM_CONTINUATION'; REVERSAL_CONFIRMATION='REVERSAL_CONFIRMATION'
@@ -86,6 +92,6 @@ class ExitIntelligence:
     action:str='HOLD'; reason:str='THESIS_HEALTHY'; thesis_integrity:float=100.; position_health:float=100.; opportunity_decay:str='STABLE'; reduce_fraction:float=0.; scale_in_allowed:bool=False; warnings:list[str]=field(default_factory=list); rationale:list[str]=field(default_factory=list)
 @dataclass
 class PositionIntelligenceProfile:
-    entry:EntryProfile=field(default_factory=EntryProfile); stop:StopProfile=field(default_factory=StopProfile); targets:TargetProfile=field(default_factory=TargetProfile); trailing:TrailingProfile=field(default_factory=TrailingProfile); exit:ExitIntelligence=field(default_factory=ExitIntelligence); expected_hold_days:int=0; structural_reward_risk:float=0.; management_quality:float=0.; state_hash:str=''
+    entry:EntryProfile=field(default_factory=EntryProfile); stop:StopProfile=field(default_factory=StopProfile); targets:TargetProfile=field(default_factory=TargetProfile); trailing:TrailingProfile=field(default_factory=TrailingProfile); exit:ExitIntelligence=field(default_factory=ExitIntelligence); expected_hold_days:int=0; structural_reward_risk:float=0.; management_quality:float=0.; reference_market:dict[str,Any]=field(default_factory=dict); certification:dict[str,Any]=field(default_factory=dict); geometry_context:dict[str,Any]=field(default_factory=dict); state_hash:str=''
     def finalize(self):
         d=asdict(self);d.pop('state_hash',None);self.state_hash=stable_hash(d);return self

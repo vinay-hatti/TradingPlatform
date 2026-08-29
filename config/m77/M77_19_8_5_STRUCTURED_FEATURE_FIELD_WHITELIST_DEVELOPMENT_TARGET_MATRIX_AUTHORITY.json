@@ -1,0 +1,14 @@
+{
+  "milestone": "M77.19.8.5",
+  "target_partition": "DEVELOPMENT_ONLY",
+  "horizons": [
+    5,
+    10,
+    20
+  ],
+  "partition_overlap_purged": true,
+  "validation_outcomes_opened": false,
+  "final_holdout_outcomes_opened": false,
+  "model_training_performed": false,
+  "production_authority_effect": false
+}

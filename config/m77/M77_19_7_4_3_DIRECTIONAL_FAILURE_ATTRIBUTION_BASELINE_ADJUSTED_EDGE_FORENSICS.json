@@ -1,0 +1,23 @@
+{
+  "milestone": "M77.19.7.4.3",
+  "version": "M77.19.7.4.3-DIRECTIONAL-FAILURE-ATTRIBUTION-BASELINE-ADJUSTED-EDGE-FORENSICS-1.0",
+  "fixed_horizons_sessions": [
+    5,
+    10,
+    20
+  ],
+  "baseline_adjusted_skill": {
+    "bullish": "P(up | bullish signal) - P(up)",
+    "bearish": "P(down | bearish signal) - P(down)"
+  },
+  "interactions": [
+    "NATIVE_DIRECTION_X_FIXED_CONFIDENCE_BIN",
+    "NATIVE_DIRECTION_X_FIXED_OVERALL_SCORE_BIN"
+  ],
+  "failure_attribution_metric": "DIRECTIONAL_EVALUABLE_COUNT_X_MEAN_DIRECTIONAL_RETURN",
+  "failure_attribution_diagnostic_only": true,
+  "threshold_search_or_optimization": false,
+  "parameter_fitting": false,
+  "calibrator_fitting": false,
+  "production_model_change_authorized": false
+}

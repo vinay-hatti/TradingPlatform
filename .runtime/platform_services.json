@@ -1,22 +1,22 @@
 {
   "root": "/Users/vinay.hatti/TradingPlatform",
-  "updated_at": "2026-08-08T18:28:50.990523+00:00",
+  "updated_at": "2026-08-29T02:08:24.342572+00:00",
   "services": {
     "backend": {
       "name": "backend",
-      "pid": 73486,
+      "pid": 1561,
       "managed": true,
       "url": "http://127.0.0.1:8000",
-      "log_path": "/Users/vinay.hatti/TradingPlatform/logs/platform_launcher/backend_20260808_132849.log",
-      "started_at": "2026-08-08T18:28:49.153507+00:00"
+      "log_path": "/Users/vinay.hatti/TradingPlatform/logs/platform_launcher/backend_20260828_210820.log",
+      "started_at": "2026-08-29T02:08:20.389847+00:00"
     },
     "frontend": {
       "name": "frontend",
-      "pid": 73488,
+      "pid": 1569,
       "managed": true,
       "url": "http://127.0.0.1:5173",
-      "log_path": "/Users/vinay.hatti/TradingPlatform/logs/platform_launcher/frontend_20260808_132850.log",
-      "started_at": "2026-08-08T18:28:50.459823+00:00"
+      "log_path": "/Users/vinay.hatti/TradingPlatform/logs/platform_launcher/frontend_20260828_210823.log",
+      "started_at": "2026-08-29T02:08:23.301725+00:00"
     }
   }
 }

@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from datetime import date, datetime
 from math import erf, exp, log, pi, sqrt
 from statistics import mean
+from time import perf_counter
 from typing import Any, Iterable
 from .contracts import DealerPositioningPolicy, ExpirationExposure, HistoricalComparison, InstitutionalMarketStructureSnapshot, IVSurfacePoint, MetricProvenance, StrikeExposure
 
@@ -60,9 +61,12 @@ class _M:
 class InstitutionalMarketStructureEngine:
     ESTIMATOR_NAME='OI_GREEKS_DEALER_POSITION_PROXY'
     ESTIMATOR_VERSION='44.2.1'
-    def __init__(self, policy:DealerPositioningPolicy|None=None): self.policy=policy or DealerPositioningPolicy()
+    def __init__(self, policy:DealerPositioningPolicy|None=None):
+        self.policy=policy or DealerPositioningPolicy()
+        self.last_profile={}
 
     def analyze(self,symbol:str,as_of:date,spot:float,rows:Iterable[dict[str,Any]],realized_volatility:float|None=None,source_table:str='option_contract_history',previous_snapshot:InstitutionalMarketStructureSnapshot|None=None)->InstitutionalMarketStructureSnapshot:
+        profile_started=perf_counter()
         data=list(rows); qdates=[x for x in (_d(r.get('quote_date')) for r in data) if x]
         if not qdates: raise ValueError(f'No persisted option snapshot for {symbol} on or before {as_of}')
         snapshot_date=max(qdates)
@@ -95,6 +99,7 @@ class InstitutionalMarketStructureEngine:
             metrics.append(_M(expiry,dte,strike,right,oi,volume,iv,bid,ask,mid,delta,gamma,vanna,charm,sgn,gex,dex,vex,cex,premium,spread,trade_ok))
             if has_quote:
                 iv_surface.append(IVSurfacePoint(expiry.isoformat(),dte,strike,right,strike/spot,delta,iv,bid,ask,mid,spread))
+        metrics_seconds=perf_counter()-profile_started
         if not metrics: raise ValueError(f'No eligible persisted option contracts for {symbol} on {snapshot_date}')
         age=(as_of-snapshot_date).days
         if age>self.policy.maximum_snapshot_age_days: warnings.append(f'STALE_OPTION_SNAPSHOT:{age}_DAYS')
@@ -125,6 +130,7 @@ class InstitutionalMarketStructureEngine:
             pressure=_clip(50+b['gex']/max_abs_gex*35+b['dex']/(abs(b['dex'])+1)*15)
             strikes.append(StrikeExposure(expiry.isoformat(),(expiry-snapshot_date).days,strike,coi,poi,b['call_volume'],b['put_volume'],b['call_gex'],b['put_gex'],b['gex'],b['call_dex'],b['put_dex'],b['dex'],b['vex'],b['cex'],mean(b['call_spreads']) if b['call_spreads'] else None,mean(b['put_spreads']) if b['put_spreads'] else None,liq,pressure,pin,True,b['trade_ok']>0))
 
+        strike_seconds=perf_counter()-profile_started-metrics_seconds
         # Aggregate strike walls across expirations using weighted OI/GEX/proximity/liquidity.
         by_strike=defaultdict(lambda:defaultdict(float))
         for s in strikes:
@@ -159,6 +165,7 @@ class InstitutionalMarketStructureEngine:
         put_skew=(mean(puts)-mean(atms)) if puts and atms else None; call_skew=(mean(calls)-mean(atms)) if calls and atms else None
         vrp=atm_iv-realized_volatility if atm_iv is not None and realized_volatility is not None else None
 
+        structure_seconds=perf_counter()-profile_started-metrics_seconds-strike_seconds
         net_gex=sum(m.gex for m in metrics); net_dex=sum(m.dex for m in metrics); net_vex=sum(m.vex for m in metrics); net_cex=sum(m.cex for m in metrics)
         unsigned_gex=sum(abs(m.gex) for m in metrics); unsigned_dex=sum(abs(m.dex) for m in metrics)
         gamma_flip,lower,upper,flip_conf=self._gamma_flip_grid(metrics,spot)
@@ -177,6 +184,14 @@ class InstitutionalMarketStructureEngine:
         if age>self.policy.maximum_snapshot_age_days: conf*=.5
         label='STRONGLY_BULLISH' if score>=75 else 'MODERATELY_BULLISH' if score>=60 else 'NEUTRAL' if score>=40 else 'MODERATELY_BEARISH' if score>=25 else 'STRONGLY_BEARISH'
         comparison=self._comparison(previous_snapshot,snapshot_date,net_gex,net_dex,primary_call,primary_put,gamma_flip,term_slope,put_skew)
+        scoring_seconds=perf_counter()-profile_started-metrics_seconds-strike_seconds-structure_seconds
+        self.last_profile={
+            'metrics_normalization_seconds': round(metrics_seconds,6),
+            'strike_aggregation_seconds': round(strike_seconds,6),
+            'walls_surface_expiration_seconds': round(structure_seconds,6),
+            'gamma_grid_scoring_seconds': round(scoring_seconds,6),
+            'total_engine_seconds': round(perf_counter()-profile_started,6),
+        }
         assumptions=(
             'Dealer positioning is estimated from persisted open interest and Greeks; it is not directly reported dealer inventory.',
             'Open interest is positioning stock; volume and midpoint premium are snapshot activity proxies, not aggressor-side trade flow.',
@@ -193,13 +208,39 @@ class InstitutionalMarketStructureEngine:
         return InstitutionalMarketStructureSnapshot(symbol.upper(),as_of.isoformat(),snapshot_date.isoformat(),spot,source_table,len(metrics),executable,100*quoted/max(len(metrics),1),self.policy.dealer_sign_convention,self.ESTIMATOR_NAME,self.ESTIMATOR_VERSION,unsigned_gex,unsigned_dex,net_gex,net_dex,net_vex,net_cex,regime,gamma_flip,flip_dist,lower,upper,flip_conf,primary_call,secondary_call,primary_put,secondary_put,magnet,primary_put,primary_call,expected_move,expected_move/spot*100 if expected_move else None,spot+expected_move if expected_move else None,spot-expected_move if expected_move else None,atm_iv,term_slope,put_skew,call_skew,vrp,call_prem,put_prem,hedge,score,label,bull,bear,range_p,breakout,breakdown,vol_exp,vol_comp,pin,'HIGH' if conf>=80 else 'MEDIUM' if conf>=55 else 'LOW',conf,assumptions,tuple(warnings),provenance,comparison,tuple(strikes),tuple(expirations),tuple(iv_surface))
 
     def _gamma_flip_grid(self,metrics:list[_M],spot:float):
+        """Governed gamma-flip shock grid with exact-formula compute hardening.
+
+        M68.2.1.15.8.6 deliberately preserves the original Black-Scholes
+        gamma formula, grid construction, metric iteration order, accumulation
+        order and interpolation semantics.  The optimization removes work that
+        never contributes to the gamma grid: delta CDFs, vanna, charm and the
+        one-day-forward delta calculation previously performed by ``_greeks``
+        for every metric at every grid point.
+
+        Per-contract time-to-expiry is prepared once because it is invariant
+        across every shocked spot.  This is a computational optimization only;
+        no approximation, coarser grid or altered exposure weighting is used.
+        """
         pts=[]
+        risk_free_rate=self.policy.risk_free_rate
+        multiplier=self.policy.contract_multiplier
+        # Preserve input order so floating-point accumulation semantics remain
+        # equivalent to the historical implementation.
+        prepared=[
+            (m.strike,max(m.dte/365,1/365),m.iv,m.sign,m.oi)
+            for m in metrics
+        ]
         for i in range(self.policy.gamma_grid_steps):
             s=spot*(self.policy.gamma_grid_min_factor+(self.policy.gamma_grid_max_factor-self.policy.gamma_grid_min_factor)*i/(self.policy.gamma_grid_steps-1))
             total=0.0
-            for m in metrics:
-                _,g,_,_=_greeks(s,m.strike,max(m.dte/365,1/365),m.iv,self.policy.risk_free_rate,m.right)
-                total+=m.sign*g*m.oi*self.policy.contract_multiplier*s*s*.01
+            for strike,t,iv,sign,oi in prepared:
+                # Gamma-only specialization of _greeks.  Keep the same
+                # operation structure for d1/gamma to preserve numerical
+                # equivalence while avoiding all unused Greek calculations.
+                rt=sqrt(t)
+                d1=(log(s/strike)+(risk_free_rate+.5*iv*iv)*t)/(iv*rt)
+                gamma=_pdf(d1)/(s*iv*rt)
+                total+=sign*gamma*oi*multiplier*s*s*.01
             pts.append((s,total))
         for (s1,g1),(s2,g2) in zip(pts,pts[1:]):
             if g1==0: return s1,s1,s1,1.0

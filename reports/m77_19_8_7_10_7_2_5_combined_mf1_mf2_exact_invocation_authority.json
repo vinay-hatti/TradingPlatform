@@ -1,0 +1,113 @@
+{
+  "MF1_exact_invocation_certified": true,
+  "MF1_frozen_config_parity": {
+    "10": true,
+    "20": true,
+    "5": true
+  },
+  "MF1_primary_callable": {
+    "args": [
+      "train_rows",
+      "test_rows",
+      "feature_cols",
+      "target_key",
+      "grid",
+      "ml",
+      "progress_prefix"
+    ],
+    "defaults_count": 1,
+    "end_lineno": 153,
+    "kwonlyargs": [],
+    "lineno": 134,
+    "name": "evaluate_mf1",
+    "reasons": [
+      "LOGISTIC",
+      "PREDICT_PROBA",
+      "BALANCED_ACCURACY",
+      "PREPROCESS"
+    ],
+    "score": 21,
+    "source_sha256": "c8391b00951357592fbb8b948c377953f56b200d4a73e0332d6dbc5fb1c4a5c2",
+    "tags": [
+      "BALANCED_ACCURACY",
+      "FIT",
+      "LOGISTIC",
+      "PREDICT_PROBA",
+      "PREPROCESS"
+    ]
+  },
+  "MF1_primary_callable_name": "evaluate_mf1",
+  "MF1_primary_callable_source_sha256": "c8391b00951357592fbb8b948c377953f56b200d4a73e0332d6dbc5fb1c4a5c2",
+  "MF2_exact_chain_components": {
+    "CertifiedMonotonicGAM_fit_chain_certified": true,
+    "balanced_accuracy_metric_binding_certified": true,
+    "fixed_threshold_050_certified": true,
+    "predict_proba_certified": true,
+    "preprocessor_fit_certified": true,
+    "preprocessor_transform_certified": true
+  },
+  "MF2_exact_invocation_certified": true,
+  "MF2_frozen_config_parity": {
+    "10": true,
+    "20": true,
+    "5": true
+  },
+  "authorized_validation_scope": {
+    "MF1_REGULARIZED_LOGISTIC_DIRECTION": [
+      5,
+      10,
+      20
+    ],
+    "MF2_MONOTONIC_GAM_DIRECTION": [
+      5,
+      10,
+      20
+    ]
+  },
+  "combined_exact_invocation_authority_certified": true,
+  "final_holdout_open_authorized": false,
+  "final_holdout_opened": false,
+  "frozen_MF1_selected_configs": {
+    "10": {
+      "C": 1.0
+    },
+    "20": {
+      "C": 0.1
+    },
+    "5": {
+      "C": 10.0
+    }
+  },
+  "frozen_MF2_selected_configs": {
+    "10": {
+      "l2_penalty": 0.1,
+      "spline_knots": 4
+    },
+    "20": {
+      "l2_penalty": 0.1,
+      "spline_knots": 4
+    },
+    "5": {
+      "l2_penalty": 0.1,
+      "spline_knots": 4
+    }
+  },
+  "mf1_mf2_parity_sha256": "4cac9da7d3a847bc492e891aeeae06046e23875f05daa8cfce40ab418d1b42c4",
+  "mf2_exact_chain_sha256": "707dec37e06f2527cf3cfa0da6cd1f741cf69f0bd253d469e2527f53acc26b66",
+  "model_family_champion_selected": false,
+  "model_family_champion_selection_authorized": false,
+  "next_step": "BUILD_M77_19_8_7_10_7_3_FROZEN_MF1_MF2_VALIDATION_SCORING_EXECUTION_WITH_DEVELOPMENT_ONLY_FIT",
+  "production_authority_effect": false,
+  "status": "READY",
+  "validation_feature_selection_search_performed": false,
+  "validation_model_refit_performed": false,
+  "validation_model_retuning_performed": false,
+  "validation_preprocessor_refit_performed": false,
+  "validation_preregistration_sha256": "b017500c472f0523d224a3fdaf55d8954ec097faea82c5e757f1c0ed52bd98f7",
+  "validation_scoring_execution_authorized": true,
+  "validation_scoring_performed": false,
+  "validation_target_authority_sha256": "f860dc26636a7bf70ffb02a6c313a72b4cce011ea572699c7c651e59ebe54550",
+  "validation_targets_materialized": true,
+  "validation_threshold_search_performed": false,
+  "version": "M77.19.8.7.10.7.2.5-COMBINED-MF1-MF2-EXACT-INVOCATION-AUTHORITY-1.0"
+}

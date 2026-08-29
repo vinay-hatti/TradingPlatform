@@ -1,0 +1,873 @@
+{
+  "development_authority": {
+    "development_end": "2017-12-31",
+    "feature_observation_count": 303689,
+    "structured_F012_path_count": 42,
+    "structured_F051_path_count": 30,
+    "structured_materialized_column_count": 72
+  },
+  "encoding_and_missingness": {
+    "boolean": {
+      "encoding": "0_1",
+      "missing_policy": "EXPLICIT_MISSING_INDICATOR"
+    },
+    "categorical": {
+      "encoding": "ONE_HOT",
+      "fit_scope": "TRAIN_FOLD_ONLY",
+      "rare_category_collapse": "DISABLED",
+      "unknown_policy": "EXPLICIT_UNKNOWN_CATEGORY"
+    },
+    "numeric": {
+      "fit_scope": "TRAIN_FOLD_ONLY",
+      "missing_policy": "MISSING_INDICATOR_PLUS_TRAIN_FOLD_MEDIAN",
+      "standardization": "MEAN_STD",
+      "zero_variance": "DROP_WITHIN_FOLD_AND_RECORD"
+    },
+    "structured": {
+      "free_form_flattening": false,
+      "only_8_5_whitelisted_paths": true
+    }
+  },
+  "execution_state": {
+    "development_walk_forward_scored": false,
+    "final_holdout_opened": false,
+    "model_family_selected": false,
+    "models_trained": false,
+    "production_authority_effect": false,
+    "production_model_change_authorized": false,
+    "structured_training_matrix_materialized": false,
+    "training_preprocessors_fit": false,
+    "validation_opened": false
+  },
+  "model_family_preregistration": {
+    "MF1_REGULARIZED_LOGISTIC_DIRECTION": {
+      "class_weight": "NONE",
+      "fixed_grid": {
+        "C": [
+          0.01,
+          0.1,
+          1.0,
+          10.0
+        ]
+      },
+      "horizons": [
+        5,
+        10,
+        20
+      ],
+      "multiclass_policy": "DROP_ZERO_LABEL_ROWS_THEN_BINARY_UP_VS_DOWN",
+      "solver_family": "L2_LOGISTIC",
+      "target": "T_DIRECTION"
+    },
+    "MF2_MONOTONIC_GAM_DIRECTION": {
+      "basis": "UNIVARIATE_MONOTONIC_SPLINES",
+      "fixed_grid": {
+        "l2_penalty": [
+          0.1,
+          1.0,
+          10.0
+        ],
+        "spline_knots": [
+          4,
+          6,
+          8
+        ]
+      },
+      "horizons": [
+        5,
+        10,
+        20
+      ],
+      "monotonic_constraints": "ONLY_WHERE_PREDECLARED_DOMAIN_SIGN_EXISTS_OTHERWISE_UNCONSTRAINED",
+      "multiclass_policy": "DROP_ZERO_LABEL_ROWS_THEN_BINARY_UP_VS_DOWN",
+      "target": "T_DIRECTION"
+    },
+    "MF3_QUANTILE_LINEAR_RETURN_DISTRIBUTION": {
+      "fixed_grid": {
+        "alpha": [
+          0.0001,
+          0.001,
+          0.01
+        ],
+        "l1_ratio": [
+          0.0,
+          0.5,
+          1.0
+        ]
+      },
+      "horizons": [
+        5,
+        10,
+        20
+      ],
+      "quantiles": [
+        0.1,
+        0.25,
+        0.5,
+        0.75,
+        0.9
+      ],
+      "secondary_target": "T_REL_SPY_RET",
+      "target": "T_ABS_RET"
+    }
+  },
+  "next_step": "BUILD_M77_19_8_7_DEVELOPMENT_ONLY_STRUCTURED_TRAINING_MATRIX_AND_WALK_FORWARD_MODEL_FAMILY_EVALUATION",
+  "selection_and_metrics": {
+    "family_selection_rule": "LOWEST_MEAN_WALK_FORWARD_PRIMARY_LOSS_WITH_COMPLEXITY_TIE_BREAK",
+    "final_holdout_used_for_selection": false,
+    "global_feature_selection_search": false,
+    "horizon_specific_models": true,
+    "interaction_search": false,
+    "primary_direction_metric": "BALANCED_ACCURACY",
+    "return_metrics": [
+      "PINBALL_LOSS",
+      "MEDIAN_ABSOLUTE_ERROR",
+      "DIRECTIONAL_ACCURACY_FROM_MEDIAN_SIGN"
+    ],
+    "secondary_direction_metrics": [
+      "LOG_LOSS",
+      "Brier_SCORE",
+      "ROC_AUC"
+    ],
+    "threshold_search": false,
+    "tie_break": "PREFER_SIMPLER_MODEL_WITHIN_1_STANDARD_ERROR",
+    "validation_used_for_selection": false
+  },
+  "status": "READY",
+  "structured_columns": [
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1d__atr",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1d.atr"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1d__close",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1d.close"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1d__confidence",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1d.confidence"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1d__direction",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1d.direction"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1d__efficiency_ratio",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1d.efficiency_ratio"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1d__evidence__ema21",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1d.evidence.ema21"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1d__evidence__ema50",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1d.evidence.ema50"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1d__evidence__ema8",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1d.evidence.ema8"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1d__evidence__return10_pct",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1d.evidence.return10_pct"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1d__momentum_score",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1d.momentum_score"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1d__realized_volatility",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1d.realized_volatility"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1d__structure",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1d.structure"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1d__timeframe",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1d.timeframe"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1d__trend_strength",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1d.trend_strength"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1mo__atr",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1mo.atr"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1mo__close",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1mo.close"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1mo__confidence",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1mo.confidence"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1mo__direction",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1mo.direction"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1mo__efficiency_ratio",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1mo.efficiency_ratio"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1mo__evidence__ema21",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1mo.evidence.ema21"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1mo__evidence__ema50",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1mo.evidence.ema50"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1mo__evidence__ema8",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1mo.evidence.ema8"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1mo__evidence__return10_pct",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1mo.evidence.return10_pct"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1mo__momentum_score",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1mo.momentum_score"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1mo__realized_volatility",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1mo.realized_volatility"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1mo__structure",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1mo.structure"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1mo__timeframe",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1mo.timeframe"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1mo__trend_strength",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1mo.trend_strength"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1w__atr",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1w.atr"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1w__close",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1w.close"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1w__confidence",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1w.confidence"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1w__direction",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1w.direction"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1w__efficiency_ratio",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1w.efficiency_ratio"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1w__evidence__ema21",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1w.evidence.ema21"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1w__evidence__ema50",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1w.evidence.ema50"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1w__evidence__ema8",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1w.evidence.ema8"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1w__evidence__return10_pct",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1w.evidence.return10_pct"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1w__momentum_score",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1w.momentum_score"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1w__realized_volatility",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1w.realized_volatility"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1w__structure",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1w.structure"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1w__timeframe",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1w.timeframe"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F012__1w__trend_strength",
+      "feature_id": "F012",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "1w.trend_strength"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F051__absorption_score",
+      "feature_id": "F051",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "absorption_score"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F051__accumulation_score",
+      "feature_id": "F051",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "accumulation_score"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F051__breakdown_confirmation_score",
+      "feature_id": "F051",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "breakdown_confirmation_score"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F051__breakout_confirmation_score",
+      "feature_id": "F051",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "breakout_confirmation_score"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F051__close_location_value",
+      "feature_id": "F051",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "close_location_value"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F051__distribution_score",
+      "feature_id": "F051",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "distribution_score"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F051__dry_up_score",
+      "feature_id": "F051",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "dry_up_score"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F051__evidence__absorption_side",
+      "feature_id": "F051",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "evidence.absorption_side"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F051__evidence__average_volume_20d",
+      "feature_id": "F051",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "evidence.average_volume_20d"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F051__evidence__average_volume_60d",
+      "feature_id": "F051",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "evidence.average_volume_60d"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F051__evidence__climactic_volume",
+      "feature_id": "F051",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "evidence.climactic_volume"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F051__evidence__cmf_20d",
+      "feature_id": "F051",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "evidence.cmf_20d"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F051__evidence__dry_up_ratio_5d_vs_20d",
+      "feature_id": "F051",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "evidence.dry_up_ratio_5d_vs_20d"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F051__evidence__elevated_volume_sessions_10d",
+      "feature_id": "F051",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "evidence.elevated_volume_sessions_10d"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F051__evidence__price_change_1d",
+      "feature_id": "F051",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "evidence.price_change_1d"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F051__evidence__price_return_20d",
+      "feature_id": "F051",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "evidence.price_return_20d"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F051__evidence__range_ratio_vs_20d_median",
+      "feature_id": "F051",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "evidence.range_ratio_vs_20d_median"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F051__evidence__signed_volume_flow_20d",
+      "feature_id": "F051",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "evidence.signed_volume_flow_20d"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F051__evidence__version",
+      "feature_id": "F051",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "evidence.version"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F051__evidence__volume_1d",
+      "feature_id": "F051",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "evidence.volume_1d"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F051__institutional_participation_score",
+      "feature_id": "F051",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "institutional_participation_score"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F051__persistence_score",
+      "feature_id": "F051",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "persistence_score"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F051__regime",
+      "feature_id": "F051",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "regime"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F051__relative_volume_1d",
+      "feature_id": "F051",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "relative_volume_1d"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F051__relative_volume_20d",
+      "feature_id": "F051",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "relative_volume_20d"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F051__relative_volume_5d",
+      "feature_id": "F051",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "relative_volume_5d"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F051__signal",
+      "feature_id": "F051",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "signal"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F051__up_down_volume_ratio_20d",
+      "feature_id": "F051",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "up_down_volume_ratio_20d"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F051__volume_percentile_60d",
+      "feature_id": "F051",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "volume_percentile_60d"
+    },
+    {
+      "categorical_encoding": "ONE_HOT_IF_STRING_FIXED_FROM_DEVELOPMENT_TRAIN_FOLD_ONLY",
+      "column_name": "F051__volume_zscore_20d",
+      "feature_id": "F051",
+      "materialization": "SCALAR_EXACT_PATH",
+      "missingness": "EXPLICIT_MISSING_INDICATOR_PLUS_NO_GLOBAL_IMPUTATION",
+      "numeric_scaling": "STANDARDIZE_FROM_TRAIN_FOLD_ONLY",
+      "source_path": "volume_zscore_20d"
+    }
+  ],
+  "target_authority_sha256": "ef5e7dabc5291e89863afd55a45008bc155b5a253d53383becea5d24da34832c",
+  "training_feature_contract": {
+    "F071_excluded_from_training": true,
+    "blocked_feature_ids": [
+      "F071"
+    ],
+    "closed_hypothesis_identity_excluded": true,
+    "existing_base_feature_ids": [
+      "F001",
+      "F002",
+      "F003",
+      "F010",
+      "F011",
+      "F020",
+      "F021",
+      "F030",
+      "F031",
+      "F032",
+      "F033",
+      "F040",
+      "F050",
+      "F060",
+      "F061",
+      "F062",
+      "F063",
+      "F064",
+      "F065",
+      "F070",
+      "F080",
+      "F081",
+      "F090",
+      "F091"
+    ],
+    "structured_source_ids": [
+      "F012",
+      "F051"
+    ],
+    "symbol_identity_excluded": true
+  },
+  "version": "M77.19.8.6-STRUCTURED-FEATURE-MATERIALIZATION-DEVELOPMENT-MODEL-TRAINING-PREREGISTRATION-GATE-1.0",
+  "walk_forward_preregistration": {
+    "embargo_sessions_after_test": 0,
+    "expanding_window": true,
+    "final_holdout_used": false,
+    "folds": [
+      {
+        "fold_id": "WF1",
+        "test_end": "2010-12-31",
+        "test_start": "2009-01-01",
+        "train_end": "2008-12-31"
+      },
+      {
+        "fold_id": "WF2",
+        "test_end": "2012-12-31",
+        "test_start": "2011-01-01",
+        "train_end": "2010-12-31"
+      },
+      {
+        "fold_id": "WF3",
+        "test_end": "2014-12-31",
+        "test_start": "2013-01-01",
+        "train_end": "2012-12-31"
+      },
+      {
+        "fold_id": "WF4",
+        "test_end": "2016-12-31",
+        "test_start": "2015-01-01",
+        "train_end": "2014-12-31"
+      },
+      {
+        "fold_id": "WF5",
+        "test_end": "2017-12-31",
+        "test_start": "2017-01-01",
+        "train_end": "2016-12-31"
+      }
+    ],
+    "purge_rule": "REMOVE_TRAIN_ROWS_WHOSE_TARGET_SESSION_REACHES_OR_EXCEEDS_TEST_START",
+    "purge_sessions_by_horizon": {
+      "10": 10,
+      "20": 20,
+      "5": 5
+    },
+    "selection_scope": "DEVELOPMENT_ONLY",
+    "test_windows_non_overlapping": true,
+    "validation_period_used": false
+  }
+}

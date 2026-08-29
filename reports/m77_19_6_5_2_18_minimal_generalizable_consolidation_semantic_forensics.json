@@ -1,0 +1,112 @@
+{
+  "authority_5217": {
+    "candidate_semantic_not_promoted": true,
+    "causal_split_confirmed": true,
+    "combined_arm_forensic_only": true,
+    "pass": true,
+    "production_authority_unchanged": true,
+    "report_sha256": "6b607a5807c380e7dfb0ab12116e3648e4918c12ab17a26648aa45e639e9d5d4",
+    "runner_sha256": "118e8e00ed5c16acfcbfbc8c15f348414b5613002f8cfed2e7eb282100072dde"
+  },
+  "candidate_semantic_promoted": false,
+  "classification_summary": {
+    "ambiguous_count": 0,
+    "exact_classification_count": 3,
+    "identity_free_mechanism_classification_closed": true,
+    "unresolved_count": 0
+  },
+  "controlled_exact_input_parity_certified": false,
+  "forensic_conclusion": "SYMBOL_IDENTITY_FREE_MECHANISM_PREDICATES_CLOSE_3_OF_3_BUT_REQUIRE_FROZEN_TARGET_ANCESTRY",
+  "full_23_year_reconstruction_authorized": false,
+  "generalization_assessment": {
+    "frozen_target_ancestry_required": true,
+    "mechanism_specific": true,
+    "native_observable_only": false,
+    "production_generalizable_semantic_certified": false,
+    "reason": "A production rule cannot depend on knowing which native candidate should match a frozen historical target.",
+    "symbol_identity_free": true
+  },
+  "governance": {
+    "candidate_semantic_promoted": false,
+    "controlled_exact_input_parity_certified": false,
+    "database_mode": "NONE_REPORT_ONLY",
+    "full_23_year_reconstruction_authorized": false,
+    "native_level_merge_threshold": 0.003,
+    "native_level_merge_threshold_relaxed": false,
+    "native_observable_production_generalization_certified": false,
+    "parity_thresholds_relaxed": false,
+    "parity_tolerance": 1e-09,
+    "production_authority_effect": false,
+    "production_database_writes": false,
+    "research_only": true,
+    "symbol_specific_rules_prohibited": true,
+    "target_specific_rules_prohibited_for_promotion": true,
+    "threshold_search_or_optimization": false
+  },
+  "identity_free_predicates": {
+    "POST_SEED_CENTROID_DRIFT": {
+      "definition": "target_seeded_new_cluster == true AND target_cluster_touch_count > 1 AND nearest_relative_distance >= 0.003",
+      "uses_frozen_target_ancestry": true,
+      "uses_symbol_identity": false
+    },
+    "PREEXISTING_CLUSTER_ABSORPTION": {
+      "definition": "target_seeded_new_cluster == false AND nearest_relative_distance >= 0.003",
+      "uses_frozen_target_ancestry": true,
+      "uses_symbol_identity": false
+    }
+  },
+  "native_causal_record_count": 3,
+  "next_step": "BUILD_M77_19_6_5_2_19_NATIVE_OBSERVABLE_CONSOLIDATION_TRIGGER_CAUSAL_REPLAY",
+  "production_authority_effect": false,
+  "records": [
+    {
+      "absorption_predicate": true,
+      "centroid_drift_predicate": false,
+      "expected_mechanism": "PREEXISTING_CLUSTER_ABSORPTION",
+      "identity_free_input_projection": {
+        "nearest_relative_distance": 0.004099960952752848,
+        "recovered_within_0_3pct": false,
+        "target_cluster_final_centroid": 25.505,
+        "target_cluster_touch_count": 2,
+        "target_price": 25.61,
+        "target_seeded_new_cluster": false
+      },
+      "identity_free_predicate_mechanism": "PREEXISTING_CLUSTER_ABSORPTION",
+      "predicate_match": true,
+      "symbol": "AES"
+    },
+    {
+      "absorption_predicate": false,
+      "centroid_drift_predicate": true,
+      "expected_mechanism": "POST_SEED_CENTROID_DRIFT",
+      "identity_free_input_projection": {
+        "nearest_relative_distance": 0.017268844729649617,
+        "recovered_within_0_3pct": false,
+        "target_cluster_final_centroid": 22.496583333333334,
+        "target_cluster_touch_count": 6,
+        "target_price": 22.8919,
+        "target_seeded_new_cluster": true
+      },
+      "identity_free_predicate_mechanism": "POST_SEED_CENTROID_DRIFT",
+      "predicate_match": true,
+      "symbol": "ANET"
+    },
+    {
+      "absorption_predicate": false,
+      "centroid_drift_predicate": true,
+      "expected_mechanism": "POST_SEED_CENTROID_DRIFT",
+      "identity_free_input_projection": {
+        "nearest_relative_distance": 0.004464645487806906,
+        "recovered_within_0_3pct": false,
+        "target_cluster_final_centroid": 102.94333333333333,
+        "target_cluster_touch_count": 3,
+        "target_price": 103.405,
+        "target_seeded_new_cluster": true
+      },
+      "identity_free_predicate_mechanism": "POST_SEED_CENTROID_DRIFT",
+      "predicate_match": true,
+      "symbol": "ATO"
+    }
+  ],
+  "version": "M77.19.6.5.2.18-MINIMAL-GENERALIZABLE-CONSOLIDATION-SEMANTIC-FORENSICS-1.0"
+}

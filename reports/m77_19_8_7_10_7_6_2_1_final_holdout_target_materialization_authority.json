@@ -1,0 +1,82 @@
+{
+  "final_holdout_end": "2026-08-21",
+  "final_holdout_feature_observation_count": 111027,
+  "final_holdout_feature_rows_opened": true,
+  "final_holdout_feature_symbol_count": 602,
+  "final_holdout_model_refit_performed": false,
+  "final_holdout_outcomes_opened": true,
+  "final_holdout_preprocessor_refit_performed": false,
+  "final_holdout_scoring_authorized": false,
+  "final_holdout_scoring_performed": false,
+  "final_holdout_start": "2023-01-01",
+  "final_holdout_targets_materialized": true,
+  "final_holdout_targets_opened": true,
+  "final_holdout_used_for_family_selection": false,
+  "future_bars_used_for_feature_construction": false,
+  "future_bars_used_for_target_labeling_only": true,
+  "model_family_champion_selected": false,
+  "model_family_champion_selection_authorized": false,
+  "next_step": "BUILD_M77_19_8_7_10_7_7_FROZEN_FINAL_HOLDOUT_SCORING_EXECUTION_AUTHORITY",
+  "partition_overlap_purged": true,
+  "production_authority_effect": false,
+  "production_model_change_authorized": false,
+  "right_edge_unmatured_targets_remain_unlabeled": true,
+  "status": "READY",
+  "target_formula_reimplementation_performed": false,
+  "target_horizon_summary": [
+    {
+      "DOWN": 51067,
+      "UP": 59185,
+      "ZERO": 172,
+      "feature_observations": 111027,
+      "horizon": 5,
+      "matured": 110424,
+      "matured_fraction": 0.9945688886487071,
+      "partition_overlap_purged": 0,
+      "right_censored_target_session_missing": 603,
+      "source_session_missing": 0,
+      "target_file_count": 602
+    },
+    {
+      "DOWN": 49787,
+      "UP": 59893,
+      "ZERO": 143,
+      "feature_observations": 111027,
+      "horizon": 10,
+      "matured": 109823,
+      "matured_fraction": 0.9891557909337368,
+      "partition_overlap_purged": 0,
+      "right_censored_target_session_missing": 1204,
+      "source_session_missing": 0,
+      "target_file_count": 602
+    },
+    {
+      "DOWN": 47841,
+      "UP": 60691,
+      "ZERO": 89,
+      "feature_observations": 111027,
+      "horizon": 20,
+      "matured": 108621,
+      "matured_fraction": 0.9783295955037964,
+      "partition_overlap_purged": 0,
+      "right_censored_target_session_missing": 2406,
+      "source_session_missing": 0,
+      "target_file_count": 602
+    }
+  ],
+  "target_horizons": [
+    5,
+    10,
+    20
+  ],
+  "target_ids": [
+    "T_ABS_RET",
+    "T_REL_SPY_RET",
+    "T_DIRECTION"
+  ],
+  "target_label_mapping_change_performed": false,
+  "target_semantics_source": "EXACT_10_6_PARTITION_PARAMETERIZED_ADAPTER_WITH_VALIDATION_SEMANTIC_PARITY_CERTIFIED",
+  "validation_model_refit_performed": false,
+  "validation_used_for_family_selection": false,
+  "version": "M77.19.8.7.10.7.6.2.1-FINAL-HOLDOUT-TARGET-MATERIALIZATION-AUTHORITY-1.0"
+}

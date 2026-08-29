@@ -1,0 +1,313 @@
+{
+  "architecture_authority_sha256": "9083efc058785f4c08dd393e083c73f041d2e02c99f22c02ae703dcb7ce5cb7d",
+  "execution_state": {
+    "development_training_matrix_materialized": false,
+    "feature_matrix_materialized": false,
+    "final_holdout_matrix_materialized": false,
+    "final_holdout_opened": false,
+    "models_scored": false,
+    "models_trained": false,
+    "production_authority_effect": false,
+    "production_model_change_authorized": false,
+    "validation_matrix_materialized": false,
+    "validation_opened_for_new_architecture": false
+  },
+  "feature_count": 27,
+  "feature_domain_count": 10,
+  "feature_domains": [
+    "BREAKOUT_BREAKDOWN_STATE",
+    "DRAW_DOWN_AND_DISTANCE_FROM_EXTREMES",
+    "MARKET_REGIME_AND_BREADTH",
+    "MULTITIMEFRAME_ALIGNMENT",
+    "PARTICIPATION_AND_VOLUME",
+    "PRICE_TREND_AND_MOMENTUM",
+    "RELATIVE_STRENGTH_VS_MARKET_AND_SECTOR",
+    "STATE_TRANSITION_AND_PERSISTENCE",
+    "SUPPORT_RESISTANCE_AND_STRUCTURE",
+    "VOLATILITY_AND_RANGE"
+  ],
+  "features": [
+    {
+      "domain": "PRICE_TREND_AND_MOMENTUM",
+      "id": "F001",
+      "missing": "FAIL_ROW_IF_REPLAYED_AND_MISSING",
+      "name": "overall_score",
+      "source": "native_replay_row.overall_score",
+      "transform": "RAW",
+      "type": "continuous"
+    },
+    {
+      "domain": "PRICE_TREND_AND_MOMENTUM",
+      "id": "F002",
+      "missing": "FAIL_ROW_IF_REPLAYED_AND_MISSING",
+      "name": "profile_confidence",
+      "source": "profile.confidence",
+      "transform": "RAW",
+      "type": "continuous"
+    },
+    {
+      "domain": "PRICE_TREND_AND_MOMENTUM",
+      "id": "F003",
+      "missing": "UNKNOWN_CATEGORY",
+      "name": "direction_state",
+      "source": "profile.direction",
+      "transform": "FIXED_ENUM_ONE_HOT_LATER",
+      "type": "categorical"
+    },
+    {
+      "domain": "MULTITIMEFRAME_ALIGNMENT",
+      "id": "F010",
+      "missing": "EXPLICIT_NULL",
+      "name": "alignment_score",
+      "source": "profile.alignment_score",
+      "transform": "RAW",
+      "type": "continuous"
+    },
+    {
+      "domain": "MULTITIMEFRAME_ALIGNMENT",
+      "id": "F011",
+      "missing": "UNKNOWN_CATEGORY",
+      "name": "primary_timeframe",
+      "source": "profile.primary_timeframe",
+      "transform": "FIXED_ENUM_ONE_HOT_LATER",
+      "type": "categorical"
+    },
+    {
+      "domain": "MULTITIMEFRAME_ALIGNMENT",
+      "id": "F012",
+      "missing": "EXPLICIT_MISSINGNESS_FLAGS",
+      "name": "timeframe_states_payload",
+      "source": "profile.timeframe_states",
+      "transform": "FLATTEN_PREDECLARED_NUMERIC_AND_ENUM_FIELDS_ONLY",
+      "type": "structured"
+    },
+    {
+      "domain": "VOLATILITY_AND_RANGE",
+      "id": "F020",
+      "missing": "EXPLICIT_MISSINGNESS_FLAG",
+      "name": "atr_1d",
+      "source": "profile.timeframe_states.1d.*ATR_NATIVE_FIELD*",
+      "transform": "RAW_IF_NATIVE_FIELD_PRESENT",
+      "type": "continuous"
+    },
+    {
+      "domain": "VOLATILITY_AND_RANGE",
+      "id": "F021",
+      "missing": "EXPLICIT_MISSINGNESS_FLAG",
+      "name": "atr_normalized",
+      "source": "same_as_of_ATR/reference_price",
+      "transform": "ATR_DIV_REFERENCE_PRICE",
+      "type": "continuous"
+    },
+    {
+      "domain": "SUPPORT_RESISTANCE_AND_STRUCTURE",
+      "id": "F030",
+      "missing": "EXPLICIT_MISSINGNESS_FLAG",
+      "name": "nearest_support_distance_pct",
+      "source": "profile.support_levels + same_as_of_reference_price",
+      "transform": "SIGNED_DISTANCE_TO_NEAREST_LEVEL",
+      "type": "continuous"
+    },
+    {
+      "domain": "SUPPORT_RESISTANCE_AND_STRUCTURE",
+      "id": "F031",
+      "missing": "EXPLICIT_MISSINGNESS_FLAG",
+      "name": "nearest_resistance_distance_pct",
+      "source": "profile.resistance_levels + same_as_of_reference_price",
+      "transform": "SIGNED_DISTANCE_TO_NEAREST_LEVEL",
+      "type": "continuous"
+    },
+    {
+      "domain": "SUPPORT_RESISTANCE_AND_STRUCTURE",
+      "id": "F032",
+      "missing": "ZERO_IF_EMPTY_LIST",
+      "name": "support_level_count",
+      "source": "profile.support_levels",
+      "transform": "COUNT",
+      "type": "count"
+    },
+    {
+      "domain": "SUPPORT_RESISTANCE_AND_STRUCTURE",
+      "id": "F033",
+      "missing": "ZERO_IF_EMPTY_LIST",
+      "name": "resistance_level_count",
+      "source": "profile.resistance_levels",
+      "transform": "COUNT",
+      "type": "count"
+    },
+    {
+      "domain": "BREAKOUT_BREAKDOWN_STATE",
+      "id": "F040",
+      "missing": "UNKNOWN_CATEGORY",
+      "name": "breakout_state",
+      "source": "profile.breakout.state",
+      "transform": "FIXED_ENUM_ONE_HOT_LATER",
+      "type": "categorical"
+    },
+    {
+      "domain": "PARTICIPATION_AND_VOLUME",
+      "id": "F050",
+      "missing": "UNKNOWN_CATEGORY",
+      "name": "participation_state",
+      "source": "profile.participation.state",
+      "transform": "FIXED_ENUM_ONE_HOT_LATER",
+      "type": "categorical"
+    },
+    {
+      "domain": "PARTICIPATION_AND_VOLUME",
+      "id": "F051",
+      "missing": "EXPLICIT_MISSINGNESS_FLAGS",
+      "name": "institutional_volume_state",
+      "source": "profile.institutional_volume",
+      "transform": "FLATTEN_PREDECLARED_NUMERIC_AND_ENUM_FIELDS_ONLY",
+      "type": "structured"
+    },
+    {
+      "domain": "MARKET_REGIME_AND_BREADTH",
+      "id": "F060",
+      "missing": "EXPLICIT_MISSINGNESS_FLAG",
+      "name": "breadth_bullish_fraction",
+      "source": "m77_19_7_4_16.breadth_bullish_fraction",
+      "transform": "RAW",
+      "type": "continuous"
+    },
+    {
+      "domain": "MARKET_REGIME_AND_BREADTH",
+      "id": "F061",
+      "missing": "EXPLICIT_MISSINGNESS_FLAG",
+      "name": "breadth_bearish_fraction",
+      "source": "m77_19_7_4_16.breadth_bearish_fraction",
+      "transform": "RAW",
+      "type": "continuous"
+    },
+    {
+      "domain": "MARKET_REGIME_AND_BREADTH",
+      "id": "F062",
+      "missing": "EXPLICIT_MISSINGNESS_FLAG",
+      "name": "spy_return_13w",
+      "source": "m77_19_7_4_16.spy_return_13w",
+      "transform": "RAW",
+      "type": "continuous"
+    },
+    {
+      "domain": "MARKET_REGIME_AND_BREADTH",
+      "id": "F063",
+      "missing": "EXPLICIT_MISSINGNESS_FLAG",
+      "name": "spy_return_26w",
+      "source": "m77_19_7_4_16.spy_return_26w",
+      "transform": "RAW",
+      "type": "continuous"
+    },
+    {
+      "domain": "MARKET_REGIME_AND_BREADTH",
+      "id": "F064",
+      "missing": "EXPLICIT_MISSINGNESS_FLAG",
+      "name": "spy_realized_vol_26w",
+      "source": "m77_19_7_4_16.spy_realized_vol_26w_annualized",
+      "transform": "RAW",
+      "type": "continuous"
+    },
+    {
+      "domain": "MARKET_REGIME_AND_BREADTH",
+      "id": "F065",
+      "missing": "EXPLICIT_MISSINGNESS_FLAG",
+      "name": "spy_drawdown_52w",
+      "source": "m77_19_7_4_16.spy_drawdown_from_52w_peak",
+      "transform": "RAW",
+      "type": "continuous"
+    },
+    {
+      "domain": "RELATIVE_STRENGTH_VS_MARKET_AND_SECTOR",
+      "id": "F070",
+      "missing": "EXPLICIT_MISSINGNESS_FLAG",
+      "name": "relative_strength_vs_spy_proxy",
+      "source": "same_as_of symbol trailing return minus SPY trailing return",
+      "transform": "FIXED_13W_AND_26W_LATER",
+      "type": "continuous"
+    },
+    {
+      "domain": "RELATIVE_STRENGTH_VS_MARKET_AND_SECTOR",
+      "id": "F071",
+      "missing": "NOT_AVAILABLE_AUTHORITY_BLOCKED",
+      "name": "relative_strength_vs_sector",
+      "source": "PIT_SECTOR_BENCHMARK_REQUIRED",
+      "transform": "NOT_MATERIALIZED_UNTIL_SECTOR_PIT_AUTHORITY_EXISTS",
+      "type": "continuous"
+    },
+    {
+      "domain": "DRAW_DOWN_AND_DISTANCE_FROM_EXTREMES",
+      "id": "F080",
+      "missing": "EXPLICIT_MISSINGNESS_FLAG",
+      "name": "symbol_drawdown_from_52w_peak",
+      "source": "frozen symbol daily history prefix",
+      "transform": "CURRENT_CLOSE_DIV_TRAILING_52W_PEAK_MINUS_1",
+      "type": "continuous"
+    },
+    {
+      "domain": "DRAW_DOWN_AND_DISTANCE_FROM_EXTREMES",
+      "id": "F081",
+      "missing": "EXPLICIT_MISSINGNESS_FLAG",
+      "name": "distance_from_52w_low",
+      "source": "frozen symbol daily history prefix",
+      "transform": "CURRENT_CLOSE_DIV_TRAILING_52W_LOW_MINUS_1",
+      "type": "continuous"
+    },
+    {
+      "domain": "STATE_TRANSITION_AND_PERSISTENCE",
+      "id": "F090",
+      "missing": "ZERO_AT_FIRST_OBSERVATION",
+      "name": "direction_state_age_observations",
+      "source": "prior PIT replay direction states only",
+      "transform": "RUN_LENGTH",
+      "type": "count"
+    },
+    {
+      "domain": "STATE_TRANSITION_AND_PERSISTENCE",
+      "id": "F091",
+      "missing": "FALSE_AT_FIRST_OBSERVATION",
+      "name": "direction_changed_from_prior",
+      "source": "prior PIT replay direction state only",
+      "transform": "BOOLEAN",
+      "type": "boolean"
+    }
+  ],
+  "materialization_contract": {
+    "closed_hypothesis_identity_feature": false,
+    "final_holdout_results_used_as_features": false,
+    "future_information_access": false,
+    "future_outcomes_used_as_features": false,
+    "missingness_explicit": true,
+    "point_in_time_only": true,
+    "raw_structured_payloads_may_not_enter_models_directly": true,
+    "same_as_of_or_prior_only": true,
+    "sector_relative_strength_blocked_until_pit_sector_authority": true,
+    "structured_payloads_require_separate_field_preregistration_before_flattening": true,
+    "symbol_identity_feature": false,
+    "validation_results_used_as_features": false
+  },
+  "next_step": "BUILD_M77_19_8_2_DEVELOPMENT_ONLY_FEATURE_MATRIX_MATERIALIZATION_AND_SCHEMA_VALIDATION",
+  "prohibited_features": [
+    "future_forward_return",
+    "future_direction_label",
+    "future_SPY_return",
+    "validation_pass_fail",
+    "final_holdout_result",
+    "closed_H1_H2_H3_H4_identity",
+    "regime_conditioned_candidate_identity",
+    "symbol_identity_or_ticker_one_hot",
+    "post_as_of_corporate_action_information"
+  ],
+  "regime_context_authority_sha256": "f9a749854689235a28550d248c764188a7ade3ac3a4e0cbb9b70274f5a4bbbdd",
+  "replay_authority_sha256": "0d2e684363e51ddf4de4df81d0978e03c5c5c0a6d5604f77b438494dd36c87b3",
+  "status": "READY",
+  "transformation_governance": {
+    "categorical_vocabulary_fit": false,
+    "development_only_fit_required_later": true,
+    "feature_selection_performed": false,
+    "imputation_parameters_fit": false,
+    "interaction_search_performed": false,
+    "nonlinear_transformation_search_performed": false,
+    "standardization_parameters_fit": false
+  },
+  "version": "M77.19.8.1-POINT-IN-TIME-PROSPECTIVE-EDGE-FEATURE-AUTHORITY-1.0"
+}

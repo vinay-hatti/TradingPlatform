@@ -132,7 +132,7 @@ def test_all_rejected_valuations_are_persisted_and_opportunity_is_governed_rejec
         assert comparison.selected_strategy_candidate_id is None
 
 
-def test_eligible_valuation_still_advances_to_ready_for_execution():
+def test_eligible_valuation_stages_current_winner_for_final_certification():
     engine = create_engine("sqlite+pysqlite:///:memory:")
     Base.metadata.create_all(engine)
     with Session(engine) as session:
@@ -146,4 +146,9 @@ def test_eligible_valuation_still_advances_to_ready_for_execution():
         assert result.failed == 0
         assert result.selected == 1
         row = session.get(InstitutionalOpportunityModel, opportunity_id)
-        assert row.state == OpportunityState.READY_FOR_EXECUTION.value
+        assert row.state == OpportunityState.CONTRACTS_OPTIMIZED.value
+        assert row.payload_json["metadata"]["m75_2_2_final_plan_certification_pending"] is True
+        comparison = session.query(StrategyComparisonModel).filter_by(
+            opportunity_id=opportunity_id
+        ).one()
+        assert comparison.selected_strategy_candidate_id is not None

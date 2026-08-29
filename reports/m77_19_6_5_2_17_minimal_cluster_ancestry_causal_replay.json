@@ -1,0 +1,321 @@
+{
+  "arm_summaries": {
+    "ABSORPTION_ONLY_FORCE_TARGET_NEW_CLUSTER": {
+      "recovered_count": 1,
+      "recovered_symbols": [
+        "AES"
+      ]
+    },
+    "CENTROID_DRIFT_ONLY_PIN_TARGET_CLUSTER": {
+      "recovered_count": 2,
+      "recovered_symbols": [
+        "ANET",
+        "ATO"
+      ]
+    },
+    "COMBINED_MINIMAL_TARGET_LOCAL": {
+      "recovered_count": 3,
+      "recovered_symbols": [
+        "AES",
+        "ANET",
+        "ATO"
+      ]
+    },
+    "NATIVE_TRACE_CONTROL": {
+      "recovered_count": 0,
+      "recovered_symbols": []
+    }
+  },
+  "arms": [
+    "NATIVE_TRACE_CONTROL",
+    "ABSORPTION_ONLY_FORCE_TARGET_NEW_CLUSTER",
+    "CENTROID_DRIFT_ONLY_PIN_TARGET_CLUSTER",
+    "COMBINED_MINIMAL_TARGET_LOCAL"
+  ],
+  "authority_5216": {
+    "classification_split_exact": true,
+    "keep_seed_price_globally_rejected": true,
+    "pass": true,
+    "production_authority_unchanged": true,
+    "report_sha256": "14d27a0b77de03c306baa76f4b1178201f97305612f32f84e9c97ce2b8c41752",
+    "runner_sha256": "870593692bdb5532bac463606c0715726a2667431d6fd699adf7bd8c9b21d762",
+    "target_count_3": true
+  },
+  "candidate_semantic_promoted": false,
+  "combined_arm_forensic_only": true,
+  "controlled_exact_input_parity_certified": false,
+  "forensic_conclusion": "CLUSTER_ANCESTRY_SPLIT_MECHANISMS_CAUSALLY_FALSIFIED_AND_CONFIRMED",
+  "full_23_year_reconstruction_authorized": false,
+  "governance": {
+    "controlled_exact_input_parity_certified": false,
+    "database_mode": "NONE_REPORT_ONLY",
+    "full_23_year_reconstruction_authorized": false,
+    "global_semantic_inference_authorized": false,
+    "native_candidate_generation_unchanged": true,
+    "native_internal_atr_merge_multiplier": 0.35,
+    "native_internal_atr_merge_multiplier_relaxed": false,
+    "native_level_merge_threshold": 0.003,
+    "native_level_merge_threshold_relaxed": false,
+    "parity_thresholds_relaxed": false,
+    "parity_tolerance": 1e-09,
+    "production_authority_effect": false,
+    "production_database_writes": false,
+    "research_only": true,
+    "target_local_interventions_only": true,
+    "threshold_search_or_optimization": false
+  },
+  "mechanism_map": {
+    "AES": "PREEXISTING_CLUSTER_ABSORPTION",
+    "ANET": "POST_SEED_CENTROID_DRIFT",
+    "ATO": "POST_SEED_CENTROID_DRIFT"
+  },
+  "next_step": "BUILD_M77_19_6_5_2_18_MINIMAL_GENERALIZABLE_CONSOLIDATION_SEMANTIC_FORENSICS",
+  "production_authority_effect": false,
+  "records": {
+    "ABSORPTION_ONLY_FORCE_TARGET_NEW_CLUSTER": [
+      {
+        "arm": "ABSORPTION_ONLY_FORCE_TARGET_NEW_CLUSTER",
+        "causal_classification": "TARGET_ABSORBED_INTO_PREEXISTING_CLUSTER",
+        "intervention_events": [
+          {
+            "eligible_native_cluster_count": 1,
+            "eligible_native_cluster_ids": [
+              18
+            ],
+            "intervention": "FORCE_ABSORBED_TARGET_TO_NEW_CLUSTER",
+            "seq": 66,
+            "target_price": 25.61
+          }
+        ],
+        "nearest_relative_distance": 0.0,
+        "recovered_within_0_3pct": true,
+        "symbol": "AES",
+        "target_cluster_final_centroid": 25.61,
+        "target_cluster_id": 29,
+        "target_cluster_touch_count": 1,
+        "target_price": 25.61,
+        "target_seeded_new_cluster": true
+      },
+      {
+        "arm": "ABSORPTION_ONLY_FORCE_TARGET_NEW_CLUSTER",
+        "causal_classification": "TARGET_SEEDS_CLUSTER_THEN_CENTROID_DRIFTS",
+        "intervention_events": [],
+        "nearest_relative_distance": 0.017268844729649617,
+        "recovered_within_0_3pct": false,
+        "symbol": "ANET",
+        "target_cluster_final_centroid": 22.496583333333334,
+        "target_cluster_id": 0,
+        "target_cluster_touch_count": 6,
+        "target_price": 22.8919,
+        "target_seeded_new_cluster": true
+      },
+      {
+        "arm": "ABSORPTION_ONLY_FORCE_TARGET_NEW_CLUSTER",
+        "causal_classification": "TARGET_SEEDS_CLUSTER_THEN_CENTROID_DRIFTS",
+        "intervention_events": [],
+        "nearest_relative_distance": 0.004464645487806906,
+        "recovered_within_0_3pct": false,
+        "symbol": "ATO",
+        "target_cluster_final_centroid": 102.94333333333333,
+        "target_cluster_id": 36,
+        "target_cluster_touch_count": 3,
+        "target_price": 103.405,
+        "target_seeded_new_cluster": true
+      }
+    ],
+    "CENTROID_DRIFT_ONLY_PIN_TARGET_CLUSTER": [
+      {
+        "arm": "CENTROID_DRIFT_ONLY_PIN_TARGET_CLUSTER",
+        "causal_classification": "TARGET_ABSORBED_INTO_PREEXISTING_CLUSTER",
+        "intervention_events": [],
+        "nearest_relative_distance": 0.004099960952752848,
+        "recovered_within_0_3pct": false,
+        "symbol": "AES",
+        "target_cluster_final_centroid": 25.505,
+        "target_cluster_id": 18,
+        "target_cluster_touch_count": 2,
+        "target_price": 25.61,
+        "target_seeded_new_cluster": false
+      },
+      {
+        "arm": "CENTROID_DRIFT_ONLY_PIN_TARGET_CLUSTER",
+        "causal_classification": "TARGET_SEEDS_CLUSTER_THEN_CENTROID_DRIFTS",
+        "intervention_events": [
+          {
+            "centroid_after": 22.8919,
+            "centroid_before": 22.8919,
+            "incoming_price": 22.3931,
+            "intervention": "PIN_TARGET_CLUSTER_CENTROID",
+            "seq": 1
+          },
+          {
+            "centroid_after": 22.8919,
+            "centroid_before": 22.8919,
+            "incoming_price": 22.8275,
+            "intervention": "PIN_TARGET_CLUSTER_CENTROID",
+            "seq": 57
+          }
+        ],
+        "nearest_relative_distance": 0.0,
+        "recovered_within_0_3pct": true,
+        "symbol": "ANET",
+        "target_cluster_final_centroid": 22.8919,
+        "target_cluster_id": 0,
+        "target_cluster_touch_count": 3,
+        "target_price": 22.8919,
+        "target_seeded_new_cluster": true
+      },
+      {
+        "arm": "CENTROID_DRIFT_ONLY_PIN_TARGET_CLUSTER",
+        "causal_classification": "TARGET_SEEDS_CLUSTER_THEN_CENTROID_DRIFTS",
+        "intervention_events": [
+          {
+            "centroid_after": 103.405,
+            "centroid_before": 103.405,
+            "incoming_price": 102.535,
+            "intervention": "PIN_TARGET_CLUSTER_CENTROID",
+            "seq": 80
+          },
+          {
+            "centroid_after": 103.405,
+            "centroid_before": 103.405,
+            "incoming_price": 102.89,
+            "intervention": "PIN_TARGET_CLUSTER_CENTROID",
+            "seq": 81
+          }
+        ],
+        "nearest_relative_distance": 0.0,
+        "recovered_within_0_3pct": true,
+        "symbol": "ATO",
+        "target_cluster_final_centroid": 103.405,
+        "target_cluster_id": 36,
+        "target_cluster_touch_count": 3,
+        "target_price": 103.405,
+        "target_seeded_new_cluster": true
+      }
+    ],
+    "COMBINED_MINIMAL_TARGET_LOCAL": [
+      {
+        "arm": "COMBINED_MINIMAL_TARGET_LOCAL",
+        "causal_classification": "TARGET_ABSORBED_INTO_PREEXISTING_CLUSTER",
+        "intervention_events": [
+          {
+            "eligible_native_cluster_count": 1,
+            "eligible_native_cluster_ids": [
+              18
+            ],
+            "intervention": "FORCE_ABSORBED_TARGET_TO_NEW_CLUSTER",
+            "seq": 66,
+            "target_price": 25.61
+          }
+        ],
+        "nearest_relative_distance": 0.0,
+        "recovered_within_0_3pct": true,
+        "symbol": "AES",
+        "target_cluster_final_centroid": 25.61,
+        "target_cluster_id": 29,
+        "target_cluster_touch_count": 1,
+        "target_price": 25.61,
+        "target_seeded_new_cluster": true
+      },
+      {
+        "arm": "COMBINED_MINIMAL_TARGET_LOCAL",
+        "causal_classification": "TARGET_SEEDS_CLUSTER_THEN_CENTROID_DRIFTS",
+        "intervention_events": [
+          {
+            "centroid_after": 22.8919,
+            "centroid_before": 22.8919,
+            "incoming_price": 22.3931,
+            "intervention": "PIN_TARGET_CLUSTER_CENTROID",
+            "seq": 1
+          },
+          {
+            "centroid_after": 22.8919,
+            "centroid_before": 22.8919,
+            "incoming_price": 22.8275,
+            "intervention": "PIN_TARGET_CLUSTER_CENTROID",
+            "seq": 57
+          }
+        ],
+        "nearest_relative_distance": 0.0,
+        "recovered_within_0_3pct": true,
+        "symbol": "ANET",
+        "target_cluster_final_centroid": 22.8919,
+        "target_cluster_id": 0,
+        "target_cluster_touch_count": 3,
+        "target_price": 22.8919,
+        "target_seeded_new_cluster": true
+      },
+      {
+        "arm": "COMBINED_MINIMAL_TARGET_LOCAL",
+        "causal_classification": "TARGET_SEEDS_CLUSTER_THEN_CENTROID_DRIFTS",
+        "intervention_events": [
+          {
+            "centroid_after": 103.405,
+            "centroid_before": 103.405,
+            "incoming_price": 102.535,
+            "intervention": "PIN_TARGET_CLUSTER_CENTROID",
+            "seq": 80
+          },
+          {
+            "centroid_after": 103.405,
+            "centroid_before": 103.405,
+            "incoming_price": 102.89,
+            "intervention": "PIN_TARGET_CLUSTER_CENTROID",
+            "seq": 81
+          }
+        ],
+        "nearest_relative_distance": 0.0,
+        "recovered_within_0_3pct": true,
+        "symbol": "ATO",
+        "target_cluster_final_centroid": 103.405,
+        "target_cluster_id": 36,
+        "target_cluster_touch_count": 3,
+        "target_price": 103.405,
+        "target_seeded_new_cluster": true
+      }
+    ],
+    "NATIVE_TRACE_CONTROL": [
+      {
+        "arm": "NATIVE_TRACE_CONTROL",
+        "causal_classification": "TARGET_ABSORBED_INTO_PREEXISTING_CLUSTER",
+        "intervention_events": [],
+        "nearest_relative_distance": 0.004099960952752848,
+        "recovered_within_0_3pct": false,
+        "symbol": "AES",
+        "target_cluster_final_centroid": 25.505,
+        "target_cluster_id": 18,
+        "target_cluster_touch_count": 2,
+        "target_price": 25.61,
+        "target_seeded_new_cluster": false
+      },
+      {
+        "arm": "NATIVE_TRACE_CONTROL",
+        "causal_classification": "TARGET_SEEDS_CLUSTER_THEN_CENTROID_DRIFTS",
+        "intervention_events": [],
+        "nearest_relative_distance": 0.017268844729649617,
+        "recovered_within_0_3pct": false,
+        "symbol": "ANET",
+        "target_cluster_final_centroid": 22.496583333333334,
+        "target_cluster_id": 0,
+        "target_cluster_touch_count": 6,
+        "target_price": 22.8919,
+        "target_seeded_new_cluster": true
+      },
+      {
+        "arm": "NATIVE_TRACE_CONTROL",
+        "causal_classification": "TARGET_SEEDS_CLUSTER_THEN_CENTROID_DRIFTS",
+        "intervention_events": [],
+        "nearest_relative_distance": 0.004464645487806906,
+        "recovered_within_0_3pct": false,
+        "symbol": "ATO",
+        "target_cluster_final_centroid": 102.94333333333333,
+        "target_cluster_id": 36,
+        "target_cluster_touch_count": 3,
+        "target_price": 103.405,
+        "target_seeded_new_cluster": true
+      }
+    ]
+  },
+  "version": "M77.19.6.5.2.17-MINIMAL-CLUSTER-ANCESTRY-CAUSAL-REPLAY-1.0"
+}

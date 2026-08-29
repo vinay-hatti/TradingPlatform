@@ -1,0 +1,164 @@
+{
+  "authority_version": "M77.19.8.7.10.7.7-FROZEN-FINAL-HOLDOUT-SCORING-EXECUTION-AUTHORITY-1.0",
+  "completed_units": [
+    {
+      "config": {
+        "C": 1.0
+      },
+      "decision_threshold": 0.5,
+      "development_binary_rows": 301326,
+      "development_only_fit": true,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "feature_selection_search_performed": false,
+      "final_holdout_binary_rows": 109680,
+      "final_holdout_rows_used_for_fit": false,
+      "horizon": 10,
+      "hyperparameter_search_performed": false,
+      "metrics": {
+        "balanced_accuracy": 0.5048909647402545,
+        "brier_score": 0.24855636303590234,
+        "log_loss": 0.6906266090542725,
+        "roc_auc": 0.5148287432175491
+      },
+      "model_family_champion_selected": false,
+      "production_authority_effect": false,
+      "status": "READY",
+      "threshold_search_performed": false,
+      "validation_rows_used_for_fit": false
+    },
+    {
+      "config": {
+        "C": 0.1
+      },
+      "decision_threshold": 0.5,
+      "development_binary_rows": 300505,
+      "development_only_fit": true,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "feature_selection_search_performed": false,
+      "final_holdout_binary_rows": 108532,
+      "final_holdout_rows_used_for_fit": false,
+      "horizon": 20,
+      "hyperparameter_search_performed": false,
+      "metrics": {
+        "balanced_accuracy": 0.5043064835264843,
+        "brier_score": 0.248049015488994,
+        "log_loss": 0.6896749125413103,
+        "roc_auc": 0.5098872888698349
+      },
+      "model_family_champion_selected": false,
+      "production_authority_effect": false,
+      "status": "READY",
+      "threshold_search_performed": false,
+      "validation_rows_used_for_fit": false
+    },
+    {
+      "config": {
+        "C": 10.0
+      },
+      "decision_threshold": 0.5,
+      "development_binary_rows": 301524,
+      "development_only_fit": true,
+      "family": "MF1_REGULARIZED_LOGISTIC_DIRECTION",
+      "feature_selection_search_performed": false,
+      "final_holdout_binary_rows": 110252,
+      "final_holdout_rows_used_for_fit": false,
+      "horizon": 5,
+      "hyperparameter_search_performed": false,
+      "metrics": {
+        "balanced_accuracy": 0.5031818325645765,
+        "brier_score": 0.24890374041016977,
+        "log_loss": 0.6913080620789493,
+        "roc_auc": 0.5147639973756687
+      },
+      "model_family_champion_selected": false,
+      "production_authority_effect": false,
+      "status": "READY",
+      "threshold_search_performed": false,
+      "validation_rows_used_for_fit": false
+    },
+    {
+      "config": {
+        "l2_penalty": 0.1,
+        "spline_knots": 4
+      },
+      "decision_threshold": 0.5,
+      "development_binary_rows": 301326,
+      "development_only_fit": true,
+      "family": "MF2_MONOTONIC_GAM_DIRECTION",
+      "feature_selection_search_performed": false,
+      "final_holdout_binary_rows": 109680,
+      "final_holdout_rows_used_for_fit": false,
+      "horizon": 10,
+      "hyperparameter_search_performed": false,
+      "metrics": {
+        "balanced_accuracy": 0.4993884812004296,
+        "brier_score": 0.24855150673497528,
+        "log_loss": 0.6905890339484996,
+        "roc_auc": 0.5013116405498563
+      },
+      "model_family_champion_selected": false,
+      "production_authority_effect": false,
+      "status": "READY",
+      "threshold_search_performed": false,
+      "validation_rows_used_for_fit": false
+    },
+    {
+      "config": {
+        "l2_penalty": 0.1,
+        "spline_knots": 4
+      },
+      "decision_threshold": 0.5,
+      "development_binary_rows": 300505,
+      "development_only_fit": true,
+      "family": "MF2_MONOTONIC_GAM_DIRECTION",
+      "feature_selection_search_performed": false,
+      "final_holdout_binary_rows": 108532,
+      "final_holdout_rows_used_for_fit": false,
+      "horizon": 20,
+      "hyperparameter_search_performed": false,
+      "metrics": {
+        "balanced_accuracy": 0.5001048788009101,
+        "brier_score": 0.2474553336442766,
+        "log_loss": 0.6881485872136004,
+        "roc_auc": 0.5011118744069589
+      },
+      "model_family_champion_selected": false,
+      "production_authority_effect": false,
+      "status": "READY",
+      "threshold_search_performed": false,
+      "validation_rows_used_for_fit": false
+    },
+    {
+      "config": {
+        "l2_penalty": 0.1,
+        "spline_knots": 4
+      },
+      "decision_threshold": 0.5,
+      "development_binary_rows": 301524,
+      "development_only_fit": true,
+      "family": "MF2_MONOTONIC_GAM_DIRECTION",
+      "feature_selection_search_performed": false,
+      "final_holdout_binary_rows": 110252,
+      "final_holdout_rows_used_for_fit": false,
+      "horizon": 5,
+      "hyperparameter_search_performed": false,
+      "metrics": {
+        "balanced_accuracy": 0.5010201371747769,
+        "brier_score": 0.24894192942218488,
+        "log_loss": 0.6910375255149309,
+        "roc_auc": 0.5067546399655629
+      },
+      "model_family_champion_selected": false,
+      "production_authority_effect": false,
+      "status": "READY",
+      "threshold_search_performed": false,
+      "validation_rows_used_for_fit": false
+    }
+  ],
+  "final_holdout_scoring_complete": true,
+  "model_family_champion_selected": false,
+  "production_authority_effect": false,
+  "single_use_final_holdout_scoring_consumed": true,
+  "status": "COMPLETE",
+  "version": "M77.19.8.7.10.7.7.1-CHECKPOINT-1.0"
+}

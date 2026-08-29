@@ -1,0 +1,735 @@
+=== LAUNCHAGENT INVENTORY ===
+Mon Aug 17 13:21:30 CDT 2026
+
+=== USER LAUNCHAGENTS MATCHING TRADING / INGESTION ===
+com.tradingai.m63-broker-portfolio-sync.plist
+com.tradingai.m66.production-operations.plist
+com.tradingplatform.m62.dynamic-management.plist
+com.tradingplatform.m64-portfolio-intelligence.plist
+com.tradingplatform.m69-6-end-of-day-ingestion.plist
+com.tradingplatform.m69-6-event-intelligence.plist
+com.tradingplatform.m69-6-intraday-options.plist
+com.tradingplatform.m69-6-morning-ingestion.plist
+com.tradingplatform.m71-futures-preopen.plist
+com.tradingplatform.m73.entry-fill-management.plist
+
+=== LOADED LAUNCHCTL SERVICES ===
+-	0	com.tradingplatform.m62.dynamic-management
+73781	0	com.tradingplatform.m73.entry-fill-management
+-	1	com.tradingplatform.m71-futures-preopen
+-	0	com.tradingplatform.m69-6-intraday-options
+30406	143	com.tradingai.m63-broker-portfolio-sync
+-	0	com.tradingplatform.m69-6-end-of-day-ingestion
+73786	0	com.tradingplatform.m64-portfolio-intelligence
+9547	1	com.tradingai.m66.production-operations
+-	0	com.tradingplatform.m69-6-event-intelligence
+-	0	com.tradingplatform.m69-6-morning-ingestion
+
+=== MATCHING PLIST CONTENTS ===
+
+------------------------------------------------------------
+FILE: /Users/vinay.hatti/Library/LaunchAgents/com.tradingai.m63-broker-portfolio-sync.plist
+------------------------------------------------------------
+{
+  "KeepAlive" => true
+  "Label" => "com.tradingai.m63-broker-portfolio-sync"
+  "ProgramArguments" => [
+    0 => "/bin/zsh"
+    1 => "-lc"
+    2 => "cd "/Users/vinay.hatti/TradingPlatform" && uv run python scripts/run_m63_broker_portfolio_sync.py --daemon --interval-seconds "60""
+  ]
+  "RunAtLoad" => true
+  "StandardErrorPath" => "/Users/vinay.hatti/TradingPlatform/logs/m63_broker_portfolio_sync_error.log"
+  "StandardOutPath" => "/Users/vinay.hatti/TradingPlatform/logs/m63_broker_portfolio_sync.log"
+}
+
+------------------------------------------------------------
+FILE: /Users/vinay.hatti/Library/LaunchAgents/com.tradingai.m66.production-operations.plist
+------------------------------------------------------------
+{
+  "KeepAlive" => true
+  "Label" => "com.tradingai.m66.production-operations"
+  "ProgramArguments" => [
+    0 => "/bin/zsh"
+    1 => "-lc"
+    2 => "cd '/Users/vinay.hatti/TradingPlatform' && uv run python scripts/run_m66_production_operations.py --daemon --interval-seconds 300"
+  ]
+  "RunAtLoad" => true
+  "StandardErrorPath" => "/Users/vinay.hatti/TradingPlatform/logs/m66_production_operations_error.log"
+  "StandardOutPath" => "/Users/vinay.hatti/TradingPlatform/logs/m66_production_operations.log"
+}
+
+------------------------------------------------------------
+FILE: /Users/vinay.hatti/Library/LaunchAgents/com.tradingplatform.m62.dynamic-management.plist
+------------------------------------------------------------
+{
+  "Label" => "com.tradingplatform.m62.dynamic-management"
+  "ProgramArguments" => [
+    0 => "/bin/bash"
+    1 => "-lc"
+    2 => "cd /Users/vinay.hatti/TradingPlatform && uv run python scripts/run_m62_dynamic_position_management.py --portfolio-id PAPER-PRIMARY"
+  ]
+  "RunAtLoad" => true
+  "StandardErrorPath" => "/Users/vinay.hatti/TradingPlatform/logs/m62_dynamic_management_error.log"
+  "StandardOutPath" => "/Users/vinay.hatti/TradingPlatform/logs/m62_dynamic_management.log"
+  "StartInterval" => 60
+}
+
+------------------------------------------------------------
+FILE: /Users/vinay.hatti/Library/LaunchAgents/com.tradingplatform.m64-portfolio-intelligence.plist
+------------------------------------------------------------
+{
+  "Label" => "com.tradingplatform.m64-portfolio-intelligence"
+  "ProgramArguments" => [
+    0 => "/bin/bash"
+    1 => "-lc"
+    2 => "cd '/Users/vinay.hatti/TradingPlatform' && uv run python scripts/run_m64_portfolio_intelligence.py"
+  ]
+  "RunAtLoad" => true
+  "StandardErrorPath" => "/Users/vinay.hatti/TradingPlatform/logs/m64_portfolio_intelligence_error.log"
+  "StandardOutPath" => "/Users/vinay.hatti/TradingPlatform/logs/m64_portfolio_intelligence.log"
+  "StartInterval" => 300
+}
+
+------------------------------------------------------------
+FILE: /Users/vinay.hatti/Library/LaunchAgents/com.tradingplatform.m69-6-end-of-day-ingestion.plist
+------------------------------------------------------------
+{
+  "Label" => "com.tradingplatform.m69-6-end-of-day-ingestion"
+  "ProcessType" => "Background"
+  "ProgramArguments" => [
+    0 => "/bin/bash"
+    1 => "/Users/vinay.hatti/TradingPlatform/scripts/m69_6_scheduled/run_eod.sh"
+  ]
+  "RunAtLoad" => false
+  "StandardErrorPath" => "/Users/vinay.hatti/TradingPlatform/logs/com.tradingplatform.m69-6-end-of-day-ingestion.err.log"
+  "StandardOutPath" => "/Users/vinay.hatti/TradingPlatform/logs/com.tradingplatform.m69-6-end-of-day-ingestion.out.log"
+  "StartCalendarInterval" => {
+    "Hour" => 15
+    "Minute" => 20
+  }
+  "WorkingDirectory" => "/Users/vinay.hatti/TradingPlatform"
+}
+
+------------------------------------------------------------
+FILE: /Users/vinay.hatti/Library/LaunchAgents/com.tradingplatform.m69-6-event-intelligence.plist
+------------------------------------------------------------
+{
+  "Label" => "com.tradingplatform.m69-6-event-intelligence"
+  "ProcessType" => "Background"
+  "ProgramArguments" => [
+    0 => "/bin/bash"
+    1 => "/Users/vinay.hatti/TradingPlatform/scripts/m69_6_scheduled/run_event_macro.sh"
+  ]
+  "RunAtLoad" => false
+  "StandardErrorPath" => "/Users/vinay.hatti/TradingPlatform/logs/com.tradingplatform.m69-6-event-intelligence.err.log"
+  "StandardOutPath" => "/Users/vinay.hatti/TradingPlatform/logs/com.tradingplatform.m69-6-event-intelligence.out.log"
+  "StartCalendarInterval" => {
+    "Hour" => 8
+    "Minute" => 10
+  }
+  "WorkingDirectory" => "/Users/vinay.hatti/TradingPlatform"
+}
+
+------------------------------------------------------------
+FILE: /Users/vinay.hatti/Library/LaunchAgents/com.tradingplatform.m69-6-intraday-options.plist
+------------------------------------------------------------
+{
+  "Label" => "com.tradingplatform.m69-6-intraday-options"
+  "ProcessType" => "Background"
+  "ProgramArguments" => [
+    0 => "/bin/bash"
+    1 => "/Users/vinay.hatti/TradingPlatform/scripts/m69_6_scheduled/run_intraday.sh"
+  ]
+  "RunAtLoad" => false
+  "StandardErrorPath" => "/Users/vinay.hatti/TradingPlatform/logs/com.tradingplatform.m69-6-intraday-options.err.log"
+  "StandardOutPath" => "/Users/vinay.hatti/TradingPlatform/logs/com.tradingplatform.m69-6-intraday-options.out.log"
+  "StartCalendarInterval" => [
+    0 => {
+      "Hour" => 9
+      "Minute" => 30
+    }
+    1 => {
+      "Hour" => 10
+      "Minute" => 30
+    }
+    2 => {
+      "Hour" => 11
+      "Minute" => 30
+    }
+    3 => {
+      "Hour" => 12
+      "Minute" => 30
+    }
+    4 => {
+      "Hour" => 13
+      "Minute" => 30
+    }
+    5 => {
+      "Hour" => 14
+      "Minute" => 30
+    }
+  ]
+  "WorkingDirectory" => "/Users/vinay.hatti/TradingPlatform"
+}
+
+------------------------------------------------------------
+FILE: /Users/vinay.hatti/Library/LaunchAgents/com.tradingplatform.m69-6-morning-ingestion.plist
+------------------------------------------------------------
+{
+  "Label" => "com.tradingplatform.m69-6-morning-ingestion"
+  "ProcessType" => "Background"
+  "ProgramArguments" => [
+    0 => "/bin/bash"
+    1 => "/Users/vinay.hatti/TradingPlatform/scripts/m69_6_scheduled/run_morning.sh"
+  ]
+  "RunAtLoad" => false
+  "StandardErrorPath" => "/Users/vinay.hatti/TradingPlatform/logs/com.tradingplatform.m69-6-morning-ingestion.err.log"
+  "StandardOutPath" => "/Users/vinay.hatti/TradingPlatform/logs/com.tradingplatform.m69-6-morning-ingestion.out.log"
+  "StartCalendarInterval" => {
+    "Hour" => 8
+    "Minute" => 30
+  }
+  "WorkingDirectory" => "/Users/vinay.hatti/TradingPlatform"
+}
+
+------------------------------------------------------------
+FILE: /Users/vinay.hatti/Library/LaunchAgents/com.tradingplatform.m71-futures-preopen.plist
+------------------------------------------------------------
+{
+  "Label" => "com.tradingplatform.m71-futures-preopen"
+  "ProcessType" => "Background"
+  "ProgramArguments" => [
+    0 => "/bin/bash"
+    1 => "/Users/vinay.hatti/TradingPlatform/scripts/m69_6_scheduled/run_futures_preopen.sh"
+  ]
+  "RunAtLoad" => false
+  "StandardErrorPath" => "/Users/vinay.hatti/TradingPlatform/logs/com.tradingplatform.m71-futures-preopen.err.log"
+  "StandardOutPath" => "/Users/vinay.hatti/TradingPlatform/logs/com.tradingplatform.m71-futures-preopen.out.log"
+  "StartCalendarInterval" => {
+    "Hour" => 7
+    "Minute" => 55
+  }
+  "WorkingDirectory" => "/Users/vinay.hatti/TradingPlatform"
+}
+
+------------------------------------------------------------
+FILE: /Users/vinay.hatti/Library/LaunchAgents/com.tradingplatform.m73.entry-fill-management.plist
+------------------------------------------------------------
+{
+  "Label" => "com.tradingplatform.m73.entry-fill-management"
+  "ProcessType" => "Background"
+  "ProgramArguments" => [
+    0 => "/bin/zsh"
+    1 => "-lc"
+    2 => "cd '/Users/vinay.hatti/TradingPlatform' && uv run python scripts/run_m73_entry_fill_management.py --portfolio-id PAPER-PRIMARY"
+  ]
+  "RunAtLoad" => true
+  "StandardErrorPath" => "/Users/vinay.hatti/TradingPlatform/logs/m73/entry_fill.err.log"
+  "StandardOutPath" => "/Users/vinay.hatti/TradingPlatform/logs/m73/entry_fill.out.log"
+  "StartInterval" => 5
+}
+
+=== PROJECT REFERENCES TO INGESTION SCRIPTS ===
+scripts/test_m43_prescan_cache_isolation.py:61:    assert command_script(options_refresh) == "scripts/run_market_ingestion.py", options_refresh
+scripts/test_m43_prescan_cache_isolation.py:82:    assert all("scripts/run_market_ingestion.py" not in command for command in cache_only_commands)
+scripts/test_trend_market_ingestion_stage_cli_contracts.py:10:    path = Path(__file__).with_name("run_market_ingestion.py")
+scripts/test_m46_integration_contracts.py:39:        "scripts/run_market_ingestion.py",
+scripts/test_m46_4_publication_recovery.py:4:script=(root/'scripts/run_market_ingestion.py').read_text()
+scripts/run_local_platform.py:13:        "scripts/run_market_ingestion.py",
+scripts/run_local_platform.py:19:        "scripts/run_market_ingestion.py",
+scripts/run_local_platform.py:29:        "scripts/run_market_ingestion.py",
+scripts/run_m43_daily_scan_workflow.py.pre_ui_backend_alignment:68:                "scripts/run_market_ingestion.py",
+scripts/test_m46_2_unified_market_ingestion.py:17:    script=Path(__file__).with_name('run_market_ingestion.py').read_text()
+scripts/test_m43_authoritative_ingestion_contract.py:4:    ingestion=Path('scripts/run_market_ingestion.py').read_text()
+scripts/local_setup_check.py:18:    "scripts/run_market_ingestion.py",
+scripts/run_m43_daily_scan_workflow.py.pre_ui_backend_alignment_v2:68:                "scripts/run_market_ingestion.py",
+scripts/run_m43_daily_scan_workflow.py.pre_database_only_scan:68:                "scripts/run_market_ingestion.py",
+scripts/test_trend_market_ingestion_contract.py:29:    path = Path("scripts/run_market_ingestion.py")
+scripts/test_trend_market_ingestion_contract.py:45:    assert main_function is not None, "run_market_ingestion.py must define main()"
+scripts/run_m68_2_1_8_manual_ingestion_cycle.sh:9:if uv run python scripts/ingest_underlying_data.py "$@"; then
+scripts/run_m68_2_1_8_manual_ingestion_cycle.sh:18:if uv run python scripts/ingest_options_data.py "$@"; then
+scripts/test_m43_market_ingestion_symbol_sources.py:12:SCRIPT = ROOT / "scripts" / "run_market_ingestion.py"
+scripts/test_m52_phase3_6_ingestion_lifecycle.py:10:MODULE_PATH = ROOT / "scripts" / "run_market_ingestion.py"
+scripts/run_m43_market_ingestion_workflow.py:66:            sys.executable, "scripts/run_market_ingestion.py",
+scripts/launchd/com.tradingplatform.market-ingestion.plist.template:5:<key>ProgramArguments</key><array><string>__PROJECT_DIR__/.venv/bin/python</string><string>__PROJECT_DIR__/scripts/run_market_ingestion.py</string><string>--data-scope</string><string>all</string><string>--continue-on-error</string></array>
+scripts/test_local_runtime_cli.py:25:    assert SCRIPT_COMMANDS["ingest-market"] == "run_market_ingestion.py"
+scripts/test_m46_2_authoritative_provider_policy.py:5:    script = Path(__file__).with_name('run_market_ingestion.py').read_text()
+scripts/test_m48_index_price_history_persistence.py:7:    source = Path("scripts/run_market_ingestion.py").read_text(encoding="utf-8")
+scripts/test_m43_scanner_ui_polish.py:9:    ingestion = (root / "scripts/run_market_ingestion.py").read_text(encoding="utf-8")
+scripts/test_trend_market_ingestion_date_propagation.py:10:    path = Path(__file__).with_name("run_market_ingestion.py")
+scripts/m69_6_scheduled/run_intraday.sh:14:run_cmd "${UV_BIN}" run python scripts/ingest_options_data.py "${OPTIONS_ARGS[@]}"
+scripts/m69_6_scheduled/run_eod.sh:14:run_cmd "${UV_BIN}" run python scripts/ingest_underlying_data.py "${UNDERLYING_ARGS[@]}"
+scripts/m69_6_scheduled/run_eod.sh:15:run_cmd "${UV_BIN}" run python scripts/ingest_options_data.py "${OPTIONS_ARGS[@]}" --force-options-refresh --force-dealer-refresh
+scripts/m69_6_scheduled/run_morning.sh:14:run_cmd "${UV_BIN}" run python scripts/ingest_underlying_data.py "${UNDERLYING_ARGS[@]}"
+scripts/m69_6_scheduled/run_morning.sh:15:run_cmd "${UV_BIN}" run python scripts/ingest_options_data.py "${OPTIONS_ARGS[@]}"
+src/trading_ai/options/repository_snapshot_provider.py.before_expiry_fix:84:                "Run scripts/run_market_ingestion.py --data-scope options or all."
+src/trading_ai/options/repository_snapshot_provider.py.before_snapshot_date_fix:84:                "Run scripts/run_market_ingestion.py --data-scope options or all."
+src/trading_ai/stock_intelligence/publication_service.py:153:                "publisher": "run_market_ingestion.py" if request.ingestion_run_id else "run_m61_stock_intelligence_scanner.py",
+src/trading_ai/production_operations/service.py:224:   ('preflight',None),('underlying_ingestion','scripts/ingest_underlying_data.py'),('options_ingestion','scripts/ingest_options_data.py'),('broker_sync','scripts/run_m63_broker_portfolio_sync.py'),('dynamic_management','scripts/run_m62_dynamic_position_management.py'),('portfolio_intelligence','scripts/run_m64_portfolio_intelligence.py'),('performance_learning','scripts/run_m65_performance_learning.py'),('readiness',None)]
+src/trading_ai/__main__.py.before_m44:64:    "ingest-market": "run_market_ingestion.py",
+src/trading_ai/__main__.py:64:    "ingest-market": "run_market_ingestion.py",
+./TradingAI_notes.rtf:178:Mac-mini:TradingPlatform vinay.hatti$ uv run python scripts/run_market_ingestion.py --help\
+./TradingAI_notes.rtf:179:usage: run_market_ingestion.py [-h] [--symbols SYMBOLS | --symbols-file SYMBOLS_FILE] [--universe-file UNIVERSE_FILE] [--start START] [--end END] [--lookback-days LOOKBACK_DAYS]\
+./TradingAI_notes.rtf:210:echo "*********** Start Time: " `date` ; uv run python scripts/ingest_underlying_data.py   --universe-file data/universe/us_listed_equities_etfs.csv   --index-universe-file data/universe/us_market_indices.csv   --asset-classes EQUITY,ETF,INDEX   --end "$(date +%F)"   --lookback-days 1460 --underlying-fetch-mode auto   --underlying-incremental-sessions 5   --underlying-stale-threshold-days 10   --max-workers 4   --request-interval 15   --require-stock-intelligence   --require-institutional-options   --require-finalize   --continue-on-error ; uv run python scripts/ingest_options_data.py   --universe-file data/universe/us_listed_equities_etfs.csv   --index-universe-file data/universe/us_market_indices.csv   --asset-classes EQUITY,ETF,INDEX   --end "$(date +%F)"   --force-options-refresh   --force-dealer-refresh   --options-minimum-dte 1   --options-maximum-dte 180   --options-minimum-open-interest 1   --options-minimum-volume 0   --options-maximum-strike-distance-pct 0.40   --polygon-requests-per-second 4   --options-batch-size 5000   --require-institutional-options   --require-finalize   --continue-on-error ; echo "*********** End Time: " `date`\
+./TradingAI_notes.rtf:217:\f5\fs24 \cf0 \CocoaLigature1 uv run python scripts/run_market_ingestion.py --mode daily --data-scope all --universe-file data/universe/us_listed_equities_etfs.csv --index-universe-file data/universe/us_market_indices.csv --asset-classes EQUITY,ETF,INDEX --end "$(date +%F)" --lookback-days 730 --underlying-fetch-mode auto --underlying-incremental-sessions 5 --underlying-stale-threshold-days 10 --max-workers 4 --request-interval 15 --polygon-connect-timeout 5 --polygon-read-timeout 30 --polygon-sdk-retries 0 --polygon-pools-per-worker 1 --network-backoff 5 --polygon-rate-limit-floor 15 --max-retries 5 --initial-backoff 30 --max-backoff 300 --force-options-refresh --options-minimum-dte 1 --options-maximum-dte 180 --options-minimum-open-interest 1 --options-minimum-volume 0 --options-maximum-strike-distance-pct 0.40 --polygon-requests-per-second 4 --options-batch-size 5000 --options-manifest reports/market_ingestion/options_manifest.json --options-report reports/market_ingestion/options_bod_latest.json --options-lock-file reports/market_ingestion/options_ingestion.lock --dealer-positioning-minimum-dte 1 --dealer-positioning-maximum-dte 365 --dealer-positioning-maximum-snapshot-age-days 0 --dealer-sign-convention street_proxy --dealer-positioning-output-dir reports/m44 --dealer-positioning-report reports/market_ingestion/dealer_positioning_bod_latest.json --trend-execution-mode in-process --trend-platform-report reports/trend_intelligence/platform_integration_bod_latest.json --publication-name current_market_state --lifecycle-report reports/market_ingestion/lifecycle_bod_latest.json --continue-on-error 
+./TradingAI_notes.rtf:223:echo "######## Start time: " `date` ; uv run python scripts/run_market_ingestion.py   --continue-on-error   --data-scope all   --options-minimum-dte 1   --options-maximum-dte 180   --lookback-days 730   --force-options-refresh   --force-dealer-refresh   --underlying-fetch-mode auto   --underlying-incremental-sessions 3   --underlying-stale-threshold-days 10   --request-interval 15   --polygon-rate-limit-floor 15   --polygon-connect-timeout 5   --polygon-read-timeout 30   --polygon-sdk-retries 0   --max-retries 5   --initial-backoff 30   --max-backoff 300 ; echo "######## End time: " `date`\
+./TradingAI_notes.rtf:228:\CocoaLigature1 uv run python scripts/run_market_ingestion.py --mode intraday --data-scope underlying --continue-on-error --lookback-days 730 --underlying-fetch-mode auto --underlying-incremental-sessions 2 --underlying-stale-threshold-days 10 --max-workers 4 --request-interval 15 --polygon-rate-limit-floor 15 --polygon-connect-timeout 5 --polygon-read-timeout 30 --polygon-sdk-retries 0 --polygon-pools-per-worker 1 --network-backoff 5 --max-retries 5 --initial-backoff 30 --max-backoff 300 --force-dealer-refresh --force-trend-refresh --force-market-overview-refresh --publication-name current_market_state --lifecycle-report reports/market_ingestion/intraday_ohlcv_latest.json \cf3 \kerning1\expnd0\expndtw0 \CocoaLigature0 ; echo "End time: " `date`
+./TradingAI_notes.rtf:239:\CocoaLigature1 uv run python scripts/run_market_ingestion.py --mode intraday --data-scope options --continue-on-error --options-minimum-dte 1 --options-maximum-dte 180 --options-minimum-open-interest 1 --options-minimum-volume 0 --options-maximum-strike-distance-pct 0.40 --options-batch-size 5000 --polygon-requests-per-second 4 --max-retries 5 --initial-backoff 30 --max-backoff 300 --force-dealer-refresh --force-trend-refresh --force-market-overview-refresh --publication-name current_market_state --lifecycle-report reports/market_ingestion/intraday_options_latest.json ; 
+./TradingAI_notes.rtf:249:echo "Start time: " `date` ; uv run python scripts/run_market_ingestion.py --mode intraday --asset-classes INDEX --continue-on-error --options-minimum-dte 1 --options-maximum-dte 180 ; echo "End time: " `date`\
+./TradingAI_notes.rtf:256:\f3\fs22 \cf2 \CocoaLigature0 uv run python scripts/run_market_ingestion.py --data-scope options --options-minimum-dte 1 --options-maximum-dte 180 --continue-on-error \expnd0\expndtw0\kerning0
+./TradingAI_notes.rtf:260:uv run python scripts/run_market_ingestion.py --universe-file data/universe/us_listed_equities_etfs.csv --data-scope all --max-workers 1 --request-interval 1 --polygon-requests-per-second 4 --continue-on-error\
+./TradingAI_notes.rtf:262:uv run python scripts/run_market_ingestion.py --universe-file data/universe/us_listed_equities_etfs.csv --data-scope all --max-workers 1 --request-interval 20 --max-retries 8 --initial-backoff 60 --max-backoff 600 --polygon-requests-per-second 4 --continue-on-error\cf3 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+./TradingAI_notes.rtf:268:uv run python scripts/run_market_ingestion.py --lookback-days 730 --max-workers 1 --request-interval 15 --max-retries 5 --initial-backoff 30 --max-backoff 300  --continue-on-error\
+./TradingAI_notes.rtf:272:uv run python scripts/run_market_ingestion.py --data-scope options --options-minimum-dte 1 --options-maximum-dte 180 --continue-on-error
+./TradingAI_notes.rtf:277:\f3\fs22 \cf3 \CocoaLigature0 uv run python scripts/run_market_ingestion.py --continue-on-error\
+./TradingAI_notes.rtf:278:uv run python scripts/run_market_ingestion.py --symbols-file data/custom_symbols.csv\
+./TradingAI_notes.rtf:279:uv run python scripts/run_market_ingestion.py --symbols AAPL,MSFT,NVDA\
+./TradingAI_notes.rtf:419:\cf2 uv run python scripts/ingest_underlying_data.py --universe-file data/universe/us_listed_equities_etfs.csv 
+./TradingAI_notes.rtf:427:uv run python scripts/ingest_underlying_data.py --universe-file data/universe/us_listed_equities_etfs.csv --index-universe-file data/universe/us_market_indices.csv --asset-classes EQUITY,ETF,INDEX --end "$(date +%F)" --lookback-days 1460 --underlying-fetch-mode auto --underlying-incremental-sessions 5 --underlying-stale-threshold-days 10 --max-workers 4 --request-interval 15 --require-stock-intelligence --require-institutional-options --require-finalize ; uv run python scripts/ingest_options_data.py --universe-file data/universe/us_listed_equities_etfs.csv --index-universe-file data/universe/us_market_indices.csv --asset-classes EQUITY,ETF,INDEX --end "$(date +%F)" --force-options-refresh --force-dealer-refresh --options-minimum-dte 1 --options-maximum-dte 180 --options-minimum-open-interest 1 --options-minimum-volume 0 --options-maximum-strike-distance-pct 0.40 --polygon-requests-per-second 8 --options-batch-size 10000 --require-institutional-options --require-finalize}
+./tests/milestone69_runtime_optimization/test_runtime_optimization.py:21:    text = (ROOT / 'scripts/run_market_ingestion.py').read_text()
+./tests/milestone62/test_m62_underlying_opportunity_materialization.py:12:    underlying = (root / "scripts/ingest_underlying_data.py").read_text()
+./tests/milestone62/test_m62_options_ingestion_advancement.py:12:    options = (root / "scripts/ingest_options_data.py").read_text()
+./tests/milestone62/test_m62_production_gate_classification.py:30:    options = (root / "scripts/ingest_options_data.py").read_text()
+./tests/milestone68/test_m68_2_1_8_ingestion_authority_integrity.py:132:    underlying = source.index("scripts/ingest_underlying_data.py")
+./tests/milestone68/test_m68_2_1_8_ingestion_authority_integrity.py:134:    options = source.index("scripts/ingest_options_data.py")
+./tests/milestone61/test_m61_native_split_ingestion.py:7:    for name in ("ingest_underlying_data.py", "ingest_options_data.py"):
+./tests/milestone61/test_m61_native_split_ingestion.py:14:    text = (ROOT / "scripts" / "ingest_underlying_data.py").read_text()
+./tests/milestone61/test_m61_native_split_ingestion.py:20:    text = (ROOT / "scripts" / "ingest_options_data.py").read_text()
+./tests/milestone61/test_m61_split_ingestion_entrypoints.py:12:    assert (root / "scripts/run_market_ingestion.py").is_file()
+./tests/milestone61/test_m61_split_ingestion_entrypoints.py:13:    assert (root / "scripts/ingest_underlying_data.py").is_file()
+./tests/milestone61/test_m61_split_ingestion_entrypoints.py:14:    assert (root / "scripts/ingest_options_data.py").is_file()
+./tests/milestone61/test_m61_split_ingestion_entrypoints.py:20:    underlying = (root / "scripts/ingest_underlying_data.py").read_text()
+./tests/milestone61/test_m61_split_ingestion_entrypoints.py:21:    options = (root / "scripts/ingest_options_data.py").read_text()
+./tests/milestone61/test_m61_split_ingestion_entrypoints.py:35:    underlying = (root / "scripts/ingest_underlying_data.py").read_text()
+./tests/milestone61/test_m61_split_ingestion_entrypoints.py:36:    options = (root / "scripts/ingest_options_data.py").read_text()
+./tests/milestone61/test_m61_stock_scanner_all_symbols_ui_entry.py:20:    text = Path("scripts/run_market_ingestion.py").read_text()
+./tests/milestone61/test_m61_market_ingestion_stock_publication.py:8:    text = Path("scripts/run_market_ingestion.py").read_text()
+./tests/milestone61/test_m61_market_ingestion_stock_publication.py:24:    market_script = Path("scripts/run_market_ingestion.py").read_text()
+./INSTALL_M69_6_LAUNCH_AGENT_M71_FUTURES_0755_V4.sh:163:run_cmd "${UV_BIN}" run python scripts/ingest_underlying_data.py "${UNDERLYING_ARGS[@]}"
+./INSTALL_M69_6_LAUNCH_AGENT_M71_FUTURES_0755_V4.sh:164:run_cmd "${UV_BIN}" run python scripts/ingest_options_data.py "${OPTIONS_ARGS[@]}"
+./INSTALL_M69_6_LAUNCH_AGENT_M71_FUTURES_0755_V4.sh:169:run_cmd "${UV_BIN}" run python scripts/ingest_options_data.py "${OPTIONS_ARGS[@]}"
+./INSTALL_M69_6_LAUNCH_AGENT_M71_FUTURES_0755_V4.sh:174:run_cmd "${UV_BIN}" run python scripts/ingest_underlying_data.py "${UNDERLYING_ARGS[@]}"
+./INSTALL_M69_6_LAUNCH_AGENT_M71_FUTURES_0755_V4.sh:175:run_cmd "${UV_BIN}" run python scripts/ingest_options_data.py "${OPTIONS_ARGS[@]}" --force-options-refresh --force-dealer-refresh
+./logs/m69_6_end_of_day_ingestion.log:3:[Fri Aug  7 15:20:00 CDT 2026] RUN: /opt/homebrew/bin/uv run python scripts/ingest_underlying_data.py --universe-file data/universe/us_listed_equities_etfs.csv --index-universe-file data/universe/us_market_indices.csv --asset-classes EQUITY,ETF,INDEX --end 2026-08-07 --lookback-days 1460 --underlying-fetch-mode auto --underlying-incremental-sessions 5 --underlying-stale-threshold-days 10 --max-workers 4 --request-interval 15 --require-stock-intelligence --require-institutional-options --require-finalize
+./logs/m69_6_end_of_day_ingestion.log:38:[Fri Aug  7 15:23:26 CDT 2026] RUN: /opt/homebrew/bin/uv run python scripts/ingest_options_data.py --universe-file data/universe/us_listed_equities_etfs.csv --index-universe-file data/universe/us_market_indices.csv --asset-classes EQUITY,ETF,INDEX --end 2026-08-07 --options-minimum-dte 1 --options-maximum-dte 180 --options-minimum-open-interest 1 --options-minimum-volume 0 --options-maximum-strike-distance-pct 0.40 --polygon-requests-per-second 8 --options-batch-size 10000 --require-institutional-options --require-finalize --force-options-refresh --force-dealer-refresh
+./logs/m69_6_end_of_day_ingestion.log:77:[Sat Aug  8 15:20:04 CDT 2026] RUN: /opt/homebrew/bin/uv run python scripts/ingest_underlying_data.py --universe-file data/universe/us_listed_equities_etfs.csv --index-universe-file data/universe/us_market_indices.csv --asset-classes EQUITY,ETF,INDEX --end 2026-08-08 --lookback-days 1460 --underlying-fetch-mode auto --underlying-incremental-sessions 5 --underlying-stale-threshold-days 10 --max-workers 4 --request-interval 15 --require-stock-intelligence --require-institutional-options --require-finalize
+./logs/m69_6_end_of_day_ingestion.log:115:[Sat Aug  8 15:24:07 CDT 2026] RUN: /opt/homebrew/bin/uv run python scripts/ingest_options_data.py --universe-file data/universe/us_listed_equities_etfs.csv --index-universe-file data/universe/us_market_indices.csv --asset-classes EQUITY,ETF,INDEX --end 2026-08-08 --options-minimum-dte 1 --options-maximum-dte 180 --options-minimum-open-interest 1 --options-minimum-volume 0 --options-maximum-strike-distance-pct 0.40 --polygon-requests-per-second 8 --options-batch-size 10000 --require-institutional-options --require-finalize --force-options-refresh --force-dealer-refresh
+./logs/m69_6_end_of_day_ingestion.log:159:[Sun Aug  9 15:20:02 CDT 2026] RUN: /opt/homebrew/bin/uv run python scripts/ingest_underlying_data.py --universe-file data/universe/us_listed_equities_etfs.csv --index-universe-file data/universe/us_market_indices.csv --asset-classes EQUITY,ETF,INDEX --end 2026-08-09 --lookback-days 1460 --underlying-fetch-mode auto --underlying-incremental-sessions 5 --underlying-stale-threshold-days 10 --max-workers 4 --request-interval 15 --require-stock-intelligence --require-institutional-options --require-finalize
+./logs/m69_6_end_of_day_ingestion.log:197:[Sun Aug  9 15:24:16 CDT 2026] RUN: /opt/homebrew/bin/uv run python scripts/ingest_options_data.py --universe-file data/universe/us_listed_equities_etfs.csv --index-universe-file data/universe/us_market_indices.csv --asset-classes EQUITY,ETF,INDEX --end 2026-08-09 --options-minimum-dte 1 --options-maximum-dte 180 --options-minimum-open-interest 1 --options-minimum-volume 0 --options-maximum-strike-distance-pct 0.40 --polygon-requests-per-second 8 --options-batch-size 10000 --require-institutional-options --require-finalize --force-options-refresh --force-dealer-refresh
+./logs/m69_6_end_of_day_ingestion.log:241:[Mon Aug 10 15:20:05 CDT 2026] RUN: /opt/homebrew/bin/uv run python scripts/ingest_underlying_data.py --universe-file data/universe/us_listed_equities_etfs.csv --index-universe-file data/universe/us_market_indices.csv --asset-classes EQUITY,ETF,INDEX --end 2026-08-10 --lookback-days 1460 --underlying-fetch-mode auto --underlying-incremental-sessions 5 --underlying-stale-threshold-days 10 --max-workers 4 --request-interval 15 --require-stock-intelligence --require-institutional-options --require-finalize
+./logs/m69_6_end_of_day_ingestion.log:279:[Mon Aug 10 15:24:11 CDT 2026] RUN: /opt/homebrew/bin/uv run python scripts/ingest_options_data.py --universe-file data/universe/us_listed_equities_etfs.csv --index-universe-file data/universe/us_market_indices.csv --asset-classes EQUITY,ETF,INDEX --end 2026-08-10 --options-minimum-dte 1 --options-maximum-dte 180 --options-minimum-open-interest 1 --options-minimum-volume 0 --options-maximum-strike-distance-pct 0.40 --polygon-requests-per-second 8 --options-batch-size 10000 --require-institutional-options --require-finalize --force-options-refresh --force-dealer-refresh
+./logs/m69_6_end_of_day_ingestion.log:317:[Tue Aug 11 15:20:03 CDT 2026] RUN: /opt/homebrew/bin/uv run python scripts/ingest_underlying_data.py --universe-file data/universe/us_listed_equities_etfs.csv --index-universe-file data/universe/us_market_indices.csv --asset-classes EQUITY,ETF,INDEX --end 2026-08-11 --lookback-days 1460 --underlying-fetch-mode auto --underlying-incremental-sessions 5 --underlying-stale-threshold-days 10 --max-workers 4 --request-interval 15 --require-stock-intelligence --require-institutional-options --require-finalize
+./logs/m69_6_end_of_day_ingestion.log:355:[Tue Aug 11 15:24:25 CDT 2026] RUN: /opt/homebrew/bin/uv run python scripts/ingest_options_data.py --universe-file data/universe/us_listed_equities_etfs.csv --index-universe-file data/universe/us_market_indices.csv --asset-classes EQUITY,ETF,INDEX --end 2026-08-11 --options-minimum-dte 1 --options-maximum-dte 180 --options-minimum-open-interest 1 --options-minimum-volume 0 --options-maximum-strike-distance-pct 0.40 --polygon-requests-per-second 8 --options-batch-size 10000 --require-institutional-options --require-finalize --force-options-refresh --force-dealer-refresh
+./logs/m69_6_end_of_day_ingestion.log:394:[Wed Aug 12 15:20:04 CDT 2026] RUN: /opt/homebrew/bin/uv run python scripts/ingest_underlying_data.py --universe-file data/universe/us_listed_equities_etfs.csv --index-universe-file data/universe/us_market_indices.csv --asset-classes EQUITY,ETF,INDEX --end 2026-08-12 --lookback-days 1460 --underlying-fetch-mode auto --underlying-incremental-sessions 5 --underlying-stale-threshold-days 10 --max-workers 4 --request-interval 15 --require-stock-intelligence --require-institutional-options --require-finalize
+./logs/m69_6_end_of_day_ingestion.log:432:[Wed Aug 12 15:24:14 CDT 2026] RUN: /opt/homebrew/bin/uv run python scripts/ingest_options_data.py --universe-file data/universe/us_listed_equities_etfs.csv --index-universe-file data/universe/us_market_indices.csv --asset-classes EQUITY,ETF,INDEX --end 2026-08-12 --options-minimum-dte 1 --options-maximum-dte 180 --options-minimum-open-interest 1 --options-minimum-volume 0 --options-maximum-strike-distance-pct 0.40 --polygon-requests-per-second 8 --options-batch-size 10000 --require-institutional-options --require-finalize --force-options-refresh --force-dealer-refresh
+./logs/m69_6_end_of_day_ingestion.log:473:[Thu Aug 13 15:20:06 CDT 2026] RUN: /opt/homebrew/bin/uv run python scripts/ingest_underlying_data.py --universe-file data/universe/us_listed_equities_etfs.csv --index-universe-file data/universe/us_market_indices.csv --asset-classes EQUITY,ETF,INDEX --end 2026-08-13 --lookback-days 1460 --underlying-fetch-mode auto --underlying-incremental-sessions 5 --underlying-stale-threshold-days 10 --max-workers 4 --request-interval 15 --require-stock-intelligence --require-institutional-options --require-finalize
+./logs/m69_6_end_of_day_ingestion.log:511:[Thu Aug 13 15:25:30 CDT 2026] RUN: /opt/homebrew/bin/uv run python scripts/ingest_options_data.py --universe-file data/universe/us_listed_equities_etfs.csv --index-universe-file data/universe/us_market_indices.csv --asset-classes EQUITY,ETF,INDEX --end 2026-08-13 --options-minimum-dte 1 --options-maximum-dte 180 --options-minimum-open-interest 1 --options-minimum-volume 0 --options-maximum-strike-distance-pct 0.40 --polygon-requests-per-second 8 --options-batch-size 10000 --require-institutional-options --require-finalize --force-options-refresh --force-dealer-refresh
+./logs/m69_6_end_of_day_ingestion.log:553:[Fri Aug 14 15:20:04 CDT 2026] RUN: /opt/homebrew/bin/uv run python scripts/ingest_underlying_data.py --universe-file data/universe/us_listed_equities_etfs.csv --index-universe-file data/universe/us_market_indices.csv --asset-classes EQUITY,ETF,INDEX --end 2026-08-14 --lookback-days 1460 --underlying-fetch-mode auto --underlying-incremental-sessions 5 --underlying-stale-threshold-days 10 --max-workers 4 --request-interval 15 --require-stock-intelligence --require-institutional-options --require-finalize
+./logs/m69_6_end_of_day_ingestion.log:591:[Fri Aug 14 15:25:10 CDT 2026] RUN: /opt/homebrew/bin/uv run python scripts/ingest_options_data.py --universe-file data/universe/us_listed_equities_etfs.csv --index-universe-file data/universe/us_market_indices.csv --asset-classes EQUITY,ETF,INDEX --end 2026-08-14 --options-minimum-dte 1 --options-maximum-dte 180 --options-minimum-open-interest 1 --options-minimum-volume 0 --options-maximum-strike-distance-pct 0.40 --polygon-requests-per-second 8 --options-batch-size 10000 --require-institutional-options --require-finalize --force-options-refresh --force-dealer-refresh
+./logs/m69_6_end_of_day_ingestion.log:630:[Sat Aug 15 15:20:05 CDT 2026] RUN: /opt/homebrew/bin/uv run python scripts/ingest_underlying_data.py --universe-file data/universe/us_listed_equities_etfs.csv --index-universe-file data/universe/us_market_indices.csv --asset-classes EQUITY,ETF,INDEX --end 2026-08-15 --lookback-days 1460 --underlying-fetch-mode auto --underlying-incremental-sessions 5 --underlying-stale-threshold-days 10 --max-workers 4 --request-interval 15 --require-stock-intelligence --require-institutional-options --require-finalize
+./logs/m69_6_end_of_day_ingestion.log:671:[Sat Aug 15 15:28:02 CDT 2026] RUN: /opt/homebrew/bin/uv run python scripts/ingest_options_data.py --universe-file data/universe/us_listed_equities_etfs.csv --index-universe-file data/universe/us_market_indices.csv --asset-classes EQUITY,ETF,INDEX --end 2026-08-15 --options-minimum-dte 1 --options-maximum-dte 180 --options-minimum-open-interest 1 --options-minimum-volume 0 --options-maximum-strike-distance-pct 0.40 --polygon-requests-per-second 8 --options-batch-size 10000 --require-institutional-options --require-finalize --force-options-refresh --force-dealer-refresh
+./logs/m69_6_end_of_day_ingestion.log:726:[Sun Aug 16 15:20:04 CDT 2026] RUN: /opt/homebrew/bin/uv run python scripts/ingest_underlying_data.py --universe-file data/universe/us_listed_equities_etfs.csv --index-universe-file data/universe/us_market_indices.csv --asset-classes EQUITY,ETF,INDEX --end 2026-08-16 --lookback-days 1460 --underlying-fetch-mode auto --underlying-incremental-sessions 5 --underlying-stale-threshold-days 10 --max-workers 4 --request-interval 15 --require-stock-intelligence --require-institutional-options --require-finalize
+./logs/m66_production_operations.log:348:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:358:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:1086:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:1096:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:1824:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:1834:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:2562:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:2572:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:3300:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:3310:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:4038:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:4048:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:4776:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:4786:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:5514:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:5524:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:6288:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:6298:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:7098:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:7108:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:7908:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:7918:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:8718:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:8728:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:9528:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:9538:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:10338:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:10348:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:11148:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:11158:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:11958:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:11968:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:12768:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:12778:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:13578:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:13588:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:14388:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:14398:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:15198:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:15208:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:16008:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:16018:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:16818:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:16828:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:17628:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:17638:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:18458:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:18468:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:19308:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:19318:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:20158:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:20168:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:21008:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:21018:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:21858:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:21868:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:22708:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:22718:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:23558:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:23568:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:24408:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:24418:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:25258:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:25268:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:26108:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:26118:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:26958:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:26968:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:27808:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:27818:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:28658:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:28668:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:29508:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:29518:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:30358:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:30368:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:31208:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:31218:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:32058:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:32068:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:32908:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:32918:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:33758:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:33768:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:34608:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:34618:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:35458:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:35468:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:36308:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:36318:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:37158:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:37168:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:38008:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:38018:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:38858:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:38868:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:39708:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:39718:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:40558:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:40568:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:41408:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:41418:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:42258:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:42268:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:43108:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:43118:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:43958:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:43968:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:44808:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:44818:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:45658:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:45668:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:46508:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:46518:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:47358:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:47368:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:48208:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:48218:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:49058:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:49068:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:49908:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:49918:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:50758:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:50768:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:51608:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:51618:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:52458:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:52468:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:53308:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:53318:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:54158:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:54168:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:55008:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:55018:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:55858:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:55868:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:56708:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:56718:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:57558:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:57568:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:58408:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:58418:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:59258:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:59268:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:60108:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:60118:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:60958:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:60968:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:61808:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:61818:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:62658:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:62668:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:63508:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:63518:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:64358:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:64368:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:65208:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:65218:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:66058:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:66068:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:66908:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:66918:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:67758:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:67768:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:68608:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:68618:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:69458:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:69468:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:70308:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:70318:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:71158:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:71168:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:72008:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:72018:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:72858:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:72868:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:73708:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:73718:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:74558:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:74568:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:75408:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:75418:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:76258:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:76268:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:77108:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:77118:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:77958:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:77968:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:78808:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:78818:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:79658:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:79668:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:80508:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:80518:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:81358:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:81368:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:82208:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:82218:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:83058:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:83068:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:83908:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:83918:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:84758:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:84768:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:85608:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:85618:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:86458:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:86468:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:87308:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:87318:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:88158:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:88168:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:89008:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:89018:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:89858:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:89868:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:90708:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:90718:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:91558:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:91568:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:92408:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:92418:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:93258:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:93268:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:94108:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:94118:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:94958:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:94968:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:95808:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:95818:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:96658:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:96668:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:97508:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:97518:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:98358:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:98368:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:99208:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:99218:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:100058:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:100068:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:100908:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:100918:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:101758:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:101768:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:102608:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:102618:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:103458:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:103468:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:104308:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:104318:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:105158:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:105168:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:106008:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:106018:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:106858:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:106868:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:107708:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:107718:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:108558:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:108568:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:109408:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:109418:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:110258:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:110268:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:111108:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:111118:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:111958:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:111968:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:112808:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:112818:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:113658:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:113668:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:114508:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:114518:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:115358:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:115368:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:116208:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:116218:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:117058:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:117068:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:117908:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:117918:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:118758:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:118768:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:119608:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:119618:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:120458:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:120468:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:121308:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:121318:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:122158:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:122168:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:123008:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:123018:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:123858:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:123868:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:124708:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:124718:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:125558:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:125568:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:126408:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:126418:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:127258:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:127268:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:128108:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:128118:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:128958:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:128968:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:129808:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:129818:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:130658:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:130668:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:131508:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:131518:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:132358:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:132368:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:133208:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:133218:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:134058:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:134068:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:134908:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:134918:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:135758:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:135768:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:136608:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:136618:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:137458:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:137468:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:138308:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:138318:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:139158:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:139168:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:140008:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:140018:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:140858:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:140868:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:141708:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:141718:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:142558:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:142568:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:143408:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:143418:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:144258:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:144268:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:145108:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:145118:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:145958:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:145968:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:146808:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:146818:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:147658:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:147668:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:148508:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:148518:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:149358:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:149368:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:150208:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:150218:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:151058:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:151068:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:151908:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:151918:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:152758:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:152768:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:153608:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:153618:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:154458:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:154468:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:155308:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:155318:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:156158:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:156168:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:157008:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:157018:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:157858:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:157868:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:158708:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:158718:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:159558:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:159568:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:160408:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:160418:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:161258:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:161268:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:162108:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:162118:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:162958:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:162968:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:163808:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:163818:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:164658:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:164668:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:165508:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:165518:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:166358:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:166368:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:167208:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:167218:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:168058:        "command": "scripts/ingest_underlying_data.py",
+./logs/m66_production_operations.log:168068:        "command": "scripts/ingest_options_data.py",
+./logs/m66_production_operations.log:168908:        "command": "scripts/ingest_underlying_data.py",
+
+=== RUNNING INGESTION PROCESSES ===

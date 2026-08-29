@@ -1,0 +1,152 @@
+{
+  "authorized_validation_scope": {
+    "RC_H4_5_10_BEAR_MARKET_WEAK_BREADTH": {
+      "candidate_id": "H4_ROOM_PCT_5_10PCT",
+      "concept": "BEAR_MARKET_PLUS_BREADTH_STRESS",
+      "development_membership_count": 1250,
+      "horizons": [
+        5,
+        10,
+        20
+      ],
+      "regime_id": "RC2_BEAR_MARKET_WEAK_BREADTH"
+    },
+    "RC_H4_GE10_DOWNTREND_HIGH_VOL": {
+      "candidate_id": "H4_ROOM_PCT_GE_10PCT",
+      "concept": "TREND_PLUS_VOLATILITY_STRESS",
+      "development_membership_count": 717,
+      "horizons": [
+        5,
+        10,
+        20
+      ],
+      "regime_id": "RC1_DOWNTREND_HIGH_VOL"
+    }
+  },
+  "collapse_decisions": [
+    {
+      "dropped": "RC_H4_GE10_DOWNTREND_WEAK_BREADTH",
+      "kept": "RC_H4_GE10_DOWNTREND_HIGH_VOL",
+      "pair": [
+        "RC_H4_GE10_DOWNTREND_HIGH_VOL",
+        "RC_H4_GE10_DOWNTREND_WEAK_BREADTH"
+      ],
+      "rule": "JACCARD_GE_0_90_THEN_KEEP_LOWER_FROZEN_PRIORITY_NUMBER"
+    }
+  ],
+  "context_authority_sha256": "f9a749854689235a28550d248c764188a7ade3ac3a4e0cbb9b70274f5a4bbbdd",
+  "context_csv_sha256": "7c9849cf38a3a0bd23d6c0a9dee796391f5d64ad1fcc48a8fe936114a7d9a6d0",
+  "development_end": "2017-12-31",
+  "development_evaluation_sha256": "75d1087e346f89d0bb4b1a97c8c98698dff13f7df6cf06b190ce065affc0aac7",
+  "governance": {
+    "automatic_bearish_signal_inversion": false,
+    "development_membership_only_for_redundancy": true,
+    "final_holdout_candidate_outcomes_read": false,
+    "final_holdout_context_read": false,
+    "new_candidate_scored": false,
+    "parameter_fitting": false,
+    "production_authority_effect": false,
+    "production_model_change_authorized": false,
+    "regime_search_or_optimization": false,
+    "threshold_search_or_optimization": false,
+    "validation_candidate_outcomes_read": false,
+    "validation_context_read": false
+  },
+  "h4_authority_sha256": "a290d8291b92bec11f99a443912d1a94bb377debf71a110fbaa5983b69802a43",
+  "near_duplicate_jaccard_threshold": 0.9,
+  "near_duplicate_pairs": [
+    [
+      "RC_H4_GE10_DOWNTREND_HIGH_VOL",
+      "RC_H4_GE10_DOWNTREND_WEAK_BREADTH"
+    ]
+  ],
+  "next_step": "BUILD_M77_19_7_4_20_AUTHORIZED_REGIME_CONDITIONED_VALIDATION_ONLY_EVALUATION",
+  "outcome_authority_sha256": "d8c8ea6fd2a6412d3b2898f87fa1e3f19ba6968b112eb100998c81ac2bb07775",
+  "pairwise_overlap": [
+    {
+      "candidate_a": "RC_H4_GE10_DOWNTREND_HIGH_VOL",
+      "candidate_b": "RC_H4_GE10_DOWNTREND_WEAK_BREADTH",
+      "containment_a_in_b": 1.0,
+      "containment_b_in_a": 0.9795081967213115,
+      "count_a": 717,
+      "count_b": 732,
+      "intersection_count": 717,
+      "jaccard": 0.9795081967213115,
+      "near_duplicate": true,
+      "union_count": 732
+    },
+    {
+      "candidate_a": "RC_H4_GE10_DOWNTREND_HIGH_VOL",
+      "candidate_b": "RC_H4_5_10_BEAR_MARKET_WEAK_BREADTH",
+      "containment_a_in_b": 0.0,
+      "containment_b_in_a": 0.0,
+      "count_a": 717,
+      "count_b": 1250,
+      "intersection_count": 0,
+      "jaccard": 0.0,
+      "near_duplicate": false,
+      "union_count": 1967
+    },
+    {
+      "candidate_a": "RC_H4_GE10_DOWNTREND_WEAK_BREADTH",
+      "candidate_b": "RC_H4_5_10_BEAR_MARKET_WEAK_BREADTH",
+      "containment_a_in_b": 0.0,
+      "containment_b_in_a": 0.0,
+      "count_a": 732,
+      "count_b": 1250,
+      "intersection_count": 0,
+      "jaccard": 0.0,
+      "near_duplicate": false,
+      "union_count": 1982
+    }
+  ],
+  "preselected_candidates": {
+    "RC_H4_5_10_BEAR_MARKET_WEAK_BREADTH": {
+      "candidate_id": "H4_ROOM_PCT_5_10PCT",
+      "concept": "BEAR_MARKET_PLUS_BREADTH_STRESS",
+      "horizons": [
+        5,
+        10,
+        20
+      ],
+      "priority": 3,
+      "regime_id": "RC2_BEAR_MARKET_WEAK_BREADTH"
+    },
+    "RC_H4_GE10_DOWNTREND_HIGH_VOL": {
+      "candidate_id": "H4_ROOM_PCT_GE_10PCT",
+      "concept": "TREND_PLUS_VOLATILITY_STRESS",
+      "horizons": [
+        5,
+        10,
+        20
+      ],
+      "priority": 1,
+      "regime_id": "RC1_DOWNTREND_HIGH_VOL"
+    },
+    "RC_H4_GE10_DOWNTREND_WEAK_BREADTH": {
+      "candidate_id": "H4_ROOM_PCT_GE_10PCT",
+      "concept": "TREND_PLUS_BREADTH_STRESS",
+      "horizons": [
+        5,
+        10,
+        20
+      ],
+      "priority": 2,
+      "regime_id": "RC4_DOWNTREND_WEAK_BREADTH"
+    }
+  },
+  "regime_authority_sha256": "ddf6d998848ee2694acbc44b4d50e3c32af530d70fe24af6db8959eef2a41ffa",
+  "status": "READY",
+  "unauthorized_validation_scope": [
+    "RC_H4_GE10_DOWNTREND_WEAK_BREADTH"
+  ],
+  "validation_gate_contract": {
+    "candidate_definitions_may_not_change_after_this_gate": true,
+    "final_holdout_remains_sealed": true,
+    "horizons_may_not_change_after_this_gate": true,
+    "only_authorized_validation_scope_may_be_scored": true,
+    "regime_definitions_may_not_change_after_this_gate": true,
+    "validation_results_may_not_expand_scope": true
+  },
+  "version": "M77.19.7.4.19-REGIME-CONDITIONED-CANDIDATE-ADVANCEMENT-REDUNDANCY-GATE-1.0"
+}

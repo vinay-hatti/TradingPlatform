@@ -1,0 +1,133 @@
+{
+  "version": "M77.19.1-MULTI-CADENCE-HISTORICAL-RECONSTRUCTIBILITY-AUDIT-1.0",
+  "status": "READY",
+  "mode": "READ_ONLY_RECONSTRUCTIBILITY_AUDIT",
+  "historical_universe_and_price_coverage": {
+    "original_daily_cohort_symbols": 601,
+    "weekly_symbols": 607,
+    "monthly_symbols": 606,
+    "daily_weekly_monthly_common_symbols": 601,
+    "symbols_with_any_price_history": 601,
+    "symbols_covering_full_desired_range": 0,
+    "full_range_pct_of_original": 0.0,
+    "earliest_price_start_across_original": "2021-08-09",
+    "median_price_rows": 1265,
+    "full_range_symbol_sample": []
+  },
+  "runner_discovery": {
+    "weekly": [
+      {
+        "path": "scripts/run_m77_2_multiyear_frozen_champion.py",
+        "start_arg": true,
+        "end_arg": true,
+        "as_of_arg": false,
+        "explicit_range_capable": true,
+        "mentions_point_in_time": false,
+        "mentions_replay_table": false
+      }
+    ],
+    "pit": [
+      {
+        "path": "scripts/run_m77_8_daily_pit_replay_authority.py",
+        "start_arg": false,
+        "end_arg": false,
+        "as_of_arg": false,
+        "explicit_range_capable": false,
+        "mentions_point_in_time": true,
+        "mentions_replay_table": false
+      }
+    ],
+    "daily": [
+      {
+        "path": "scripts/report_m77_8_daily_pit_replay_authority.py",
+        "start_arg": false,
+        "end_arg": false,
+        "as_of_arg": false,
+        "explicit_range_capable": false,
+        "mentions_point_in_time": true,
+        "mentions_replay_table": false
+      },
+      {
+        "path": "scripts/run_m77_8_daily_pit_replay_authority.py",
+        "start_arg": false,
+        "end_arg": false,
+        "as_of_arg": false,
+        "explicit_range_capable": false,
+        "mentions_point_in_time": true,
+        "mentions_replay_table": false
+      },
+      {
+        "path": "scripts/run_m77_9_daily_model_replay.py",
+        "start_arg": false,
+        "end_arg": false,
+        "as_of_arg": false,
+        "explicit_range_capable": false,
+        "mentions_point_in_time": true,
+        "mentions_replay_table": true
+      },
+      {
+        "path": "scripts/verify_m77_8_daily_pit_replay_authority.py",
+        "start_arg": false,
+        "end_arg": false,
+        "as_of_arg": false,
+        "explicit_range_capable": false,
+        "mentions_point_in_time": true,
+        "mentions_replay_table": false
+      },
+      {
+        "path": "scripts/verify_m77_9_daily_model_replay.py",
+        "start_arg": false,
+        "end_arg": false,
+        "as_of_arg": false,
+        "explicit_range_capable": false,
+        "mentions_point_in_time": true,
+        "mentions_replay_table": false
+      }
+    ],
+    "monthly": [
+      {
+        "path": "scripts/run_m77_10_monthly_model_replay.py",
+        "start_arg": true,
+        "end_arg": true,
+        "as_of_arg": false,
+        "explicit_range_capable": true,
+        "mentions_point_in_time": true,
+        "mentions_replay_table": false
+      },
+      {
+        "path": "scripts/verify_m77_10_monthly_model_replay.py",
+        "start_arg": false,
+        "end_arg": false,
+        "as_of_arg": false,
+        "explicit_range_capable": false,
+        "mentions_point_in_time": true,
+        "mentions_replay_table": false
+      }
+    ]
+  },
+  "gates": {
+    "original_cross_sectional_universe_recoverable": true,
+    "material_long_history_price_coverage_for_original_universe": false,
+    "weekly_replay_runner_historical_range_capable": true,
+    "daily_replay_runner_historical_range_capable": false,
+    "monthly_replay_runner_historical_range_capable": true,
+    "pit_regime_runner_historical_range_capable": false,
+    "all_replay_computation_point_in_time_certified": false,
+    "proxy_only_substitution_rejected": true,
+    "no_fabricated_pit_regimes": true
+  },
+  "exact_long_history_reconstruction_authorized": false,
+  "blockers": [
+    "INSUFFICIENT_23_YEAR_PRICE_HISTORY_FOR_ORIGINAL_CROSS_SECTIONAL_UNIVERSE",
+    "DAILY_HISTORICAL_RANGE_RUNNER_NOT_DEMONSTRATED",
+    "PIT_HISTORICAL_RANGE_RUNNER_NOT_DEMONSTRATED",
+    "POINT_IN_TIME_REPLAY_SEMANTICS_REQUIRE_DEEP_CODE_AUDIT"
+  ],
+  "interpretation": {
+    "three_proxy_authority_is_exact_replication": false,
+    "reason": "M77.11/M77.12 are cross-sectional studies over roughly 600 symbols; SPY/QQQ_LINEAGE/IWM-only evidence would answer a different research question."
+  },
+  "next_step": "BUILD_M77_19_2_DEEP_REPLAY_PIT_RECONSTRUCTIBILITY_AUDIT",
+  "database_writes": false,
+  "production_authority_effect": false
+}

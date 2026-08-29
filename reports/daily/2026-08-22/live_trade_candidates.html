@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trading AI Live Trade Candidates</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background: #f7f7f7;
+            color: #222;
+        }
+        h1, h2 {
+            color: #111;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+            overflow-x: auto;
+        }
+        .metric {
+            display: inline-block;
+            margin-right: 30px;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        .metric strong {
+            display: block;
+            font-size: 13px;
+            color: #666;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            white-space: nowrap;
+        }
+        th, td {
+            border-bottom: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            font-size: 14px;
+        }
+        th {
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Trading AI Live Trade Candidates</h1>
+
+<div class="card">
+    <h2>Summary</h2>
+    <div class="metric"><strong>Date</strong>2026-08-22</div>
+    <div class="metric"><strong>Trade Candidates</strong>1</div>
+    <div class="metric"><strong>Capital</strong>$100,000.00</div>
+    <div class="metric"><strong>Risk / Trade</strong>2.00%</div>
+    <div class="metric"><strong>Max Position</strong>5.00%</div>
+    <div class="metric"><strong>Take Profit</strong>30.00%</div>
+    <div class="metric"><strong>Stop Loss</strong>15.00%</div>
+</div>
+
+<div class="card">
+    <h2>Published Market State</h2>
+    <div class="metric"><strong>Publication</strong>current_market_state</div>
+<div class="metric"><strong>Status</strong>DEGRADED</div>
+<div class="metric"><strong>Published</strong>2026-08-22T20:44:20.636508+00:00</div>
+<div class="metric"><strong>Market Date</strong>2026-08-21</div>
+<div class="metric"><strong>Ingestion Run</strong>market-ingestion-20260822T204408234397Z</div>
+<div class="metric"><strong>Scanner Run</strong>scanner-20260822T222028928041Z-078ea7f85f</div>
+<div class="metric"><strong>Decision Run</strong>—</div>
+<div class="metric"><strong>Scanner Ready</strong>TRUE</div>
+<div class="metric"><strong>Decision Ready</strong>TRUE</div>
+<div class="metric"><strong>Option Snapshot</strong>options-20260822T203216208741Z</div>
+<div class="metric"><strong>Option Snapshot Time</strong>2026-08-22T20:40:58.186636+00:00</div>
+<div class="metric"><strong>Market Intelligence</strong>2026-08-22T20:43:21.632251+00:00</div>
+<div class="metric"><strong>Option Coverage %</strong>99.6742671009772</div>
+<div class="metric"><strong>Market State Hash</strong>fde1c51f4b32e2dea03d70fd2495c1a31ee44ad147678a3c85d64ea9210c8331</div>
+</div>
+    <div class="metric"><strong>Ingestion Run</strong>market-ingestion-20260822T204408234397Z</div>
+    <div class="metric"><strong>Market As-Of</strong>2026-08-21</div>
+    <div class="metric"><strong>Market Intelligence</strong>2026-08-22T20:43:21.632251+00:00</div>
+    <div class="metric"><strong>Option Snapshot</strong>options-20260822T203216208741Z</div>
+    <div class="metric"><strong>Option Coverage</strong>99.6742671009772</div>
+</div>
+
+<div class="card">
+    <h2>Recommended Live Trade Cards</h2>
+    <table><thead><tr><th>Symbol</th><th>Signal</th><th>Confidence</th><th>AI Score</th><th>Underlying</th><th>Strike</th><th>Expiration</th><th>DTE</th><th>Expiry Source</th><th>Entry</th><th>Target</th><th>Stop</th><th>Contracts</th><th>Cost</th><th>Max Risk</th><th>Reward</th><th>R/R</th><th>Delta</th><th>Theta</th><th>Vega</th><th>Regime</th><th>Notes</th></tr></thead><tbody><tr><td>TLT</td><td>PUT</td><td>MEDIUM</td><td>80.89</td><td>$82.05</td><td>$82.00</td><td>2026-11-20</td><td>90</td><td>LIVE_LISTED_CONTRACT</td><td>$1.93</td><td>$2.51</td><td>$1.64</td><td>10</td><td>$1,930.00</td><td>$289.50</td><td>$579.00</td><td>2.00</td><td>-0.5009</td><td>-0.0115</td><td>0.1594</td><td>BEAR_TREND</td><td>Live contract: O:TLT261120P00082000. | Entry source: POLYGON_PERSISTED_QUOTE; quote time: 2026-08-22. | Medium AI score candidate. | Bearish options candidate.</td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Ranking Details</h2>
+    <table><thead><tr><th>Symbol</th><th>AI Score</th><th>Technical</th><th>Greeks</th><th>Regime</th><th>Volatility</th><th>Risk</th><th>Portfolio Penalty</th><th>Ranking Reason</th><th>Portfolio Notes</th></tr></thead><tbody><tr><td>TLT</td><td>80.89</td><td>65.00</td><td>85.09</td><td>100.00</td><td>100.00</td><td>100.00</td><td>0.00</td><td>Technical=65.0 | Greeks=85.1 | Regime=100.0 | Volatility=100.0 | Risk=100.0 | Signal aligned with market regime. | Greeks are in preferred range. | Target-delta strike=82.00; spot=82.05; target |delta|=0.45; resolved delta=-0.5009; Greek source=PERSISTED; moneyness=-1.28%. | expiration_mode=automatic; selected_dte=90. | Dealer positioning NEUTRAL (POSITIVE_GAMMA), adjustment=-4.75, confidence=99.50. | Trend STRONG_BEARISH/BEARISH/BEARISH; signal alignment=96.7, base adjustment=+2.96, total trend adjustment=+3.37, RS=D. | Transition CONTINUATION/IN_CHANNEL; confirmation=48.4, reversal risk=7.1, exhaustion risk=0.0, adjustment=+0.00. | Forecast BEARISH; confidence=58.4, requested horizon=10D, resolved horizon=10D, resolution=EXACT, adjustment=+0.64. | Institutional MIXED; participation=55.7, conviction=32.6, adjustment=-0.22.</td><td></td></tr></tbody></table>
+</div>
+
+<div class="card">
+    <h2>Governance Summary</h2>
+    <div class="metric"><strong>Report Version</strong>m47.phase6.v1</div>
+<div class="metric"><strong>Scanner Version</strong>m47.phase6.v1</div>
+<div class="metric"><strong>Decision Version</strong>—</div>
+<div class="metric"><strong>Policy Version</strong>—</div>
+<div class="metric"><strong>Degraded State</strong>TRUE</div>
+<div class="metric"><strong>Generated At</strong>2026-08-22T22:20:29.225019+00:00</div>
+</div>
+
+</body>
+</html>

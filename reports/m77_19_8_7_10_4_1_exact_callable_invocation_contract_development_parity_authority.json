@@ -1,0 +1,120 @@
+{
+  "binding_authority_sha256": "8839994e0b23615ff0269edf0dcab0b81c34a58f2bf4fc69562368026c95fac2",
+  "blocked_callable_authority_sha256": "a718d5243c0ae3c089ced7bdc1682ec7398399aaa03a66e7f8145932ad3f4b52",
+  "blocking_reason": "FEATURE_LOGIC_IS_DISTRIBUTED_ACROSS_MAIN_REACHABLE_HELPERS_NO_SINGLE_NON_MAIN_FULL_ROW_CALLABLE",
+  "development_backfill_script_sha256": "b201dfb3f760c3511c8abdd30a2551d0354e70069aafacf902b0be2fefa57658",
+  "development_feature_row_count": 303689,
+  "development_feature_schema_column_count": 27,
+  "development_parity_certified": false,
+  "development_parity_execution_performed": false,
+  "development_schema_mismatch_count": 0,
+  "exact_callable_invocation_contract_certified": false,
+  "feature_producing_reachable_function_registry": [
+    {
+      "calls": [
+        "atomic_json",
+        "daily_file_map",
+        "get_path",
+        "iter_jsonl_gz",
+        "load_daily_csv",
+        "load_json",
+        "nearest_distance",
+        "prefix_close_on_or_before",
+        "relative_strength",
+        "resolve",
+        "sha256_file",
+        "to_float",
+        "trailing_52w_location",
+        "unique_native_atr_1d",
+        "write_jsonl_gz"
+      ],
+      "end_lineno": 458,
+      "feature_ids": [
+        "F020",
+        "F021",
+        "F030",
+        "F031",
+        "F070",
+        "F080",
+        "F081"
+      ],
+      "function_name": "main",
+      "lineno": 215,
+      "signature": "() -> 'int'",
+      "source_sha256": "3a9a0989fa6570087d9082fcd45281db2eaef6aacf23e13314f541deb792fa7f"
+    },
+    {
+      "calls": [
+        "prefix_close_on_or_before"
+      ],
+      "end_lineno": 202,
+      "feature_ids": [
+        "F080",
+        "F081"
+      ],
+      "function_name": "trailing_52w_location",
+      "lineno": 192,
+      "signature": "(hist: 'list[tuple[str, float]]', as_of: 'str')",
+      "source_sha256": "6dda86f9c737c33bc313f8d85794a55217eafae54f8e7a87c8880387a554e671"
+    }
+  ],
+  "feature_to_reachable_functions": {
+    "F020": [
+      "main"
+    ],
+    "F021": [
+      "main"
+    ],
+    "F030": [
+      "main"
+    ],
+    "F031": [
+      "main"
+    ],
+    "F070": [
+      "main"
+    ],
+    "F080": [
+      "main",
+      "trailing_52w_location"
+    ],
+    "F081": [
+      "main",
+      "trailing_52w_location"
+    ]
+  },
+  "final_holdout_opened": false,
+  "formula_reimplementation_performed": false,
+  "main_reachable_local_functions": [
+    "atomic_json",
+    "daily_file_map",
+    "extract_level_price",
+    "get_path",
+    "iter_jsonl_gz",
+    "load_daily_csv",
+    "load_json",
+    "main",
+    "nearest_distance",
+    "prefix_close_on_or_before",
+    "relative_strength",
+    "resolve",
+    "sha256_file",
+    "to_float",
+    "trailing_52w_location",
+    "trailing_return_by_sessions",
+    "unique_native_atr_1d",
+    "walk",
+    "write_jsonl_gz"
+  ],
+  "main_source_sha256": "3a9a0989fa6570087d9082fcd45281db2eaef6aacf23e13314f541deb792fa7f",
+  "next_step": "BUILD_M77_19_8_7_10_4_2_EXACT_MAIN_CALL_GRAPH_EXTRACTION_AND_DEVELOPMENT_PARITY_HARNESS",
+  "non_main_full_row_callable_candidates": [],
+  "production_authority_effect": false,
+  "semantic_equivalent_rewrite_performed": false,
+  "status": "BLOCKED_NO_NON_MAIN_FULL_ROW_CALLABLE",
+  "validation_feature_matrix_materialized": false,
+  "validation_outcomes_opened": false,
+  "validation_scoring_performed": false,
+  "validation_targets_opened": false,
+  "version": "M77.19.8.7.10.4.1-EXACT-CALLABLE-INVOCATION-CONTRACT-DEVELOPMENT-PARITY-AUTHORITY-1.0"
+}

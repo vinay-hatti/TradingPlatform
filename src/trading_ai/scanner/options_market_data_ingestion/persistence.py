@@ -37,6 +37,7 @@ class OptionHistoryWriter:
         "underlying_symbol",
         "option_symbol",
         "quote_date",
+        "quote_timestamp",
         "expiry",
         "option_type",
         "strike",
@@ -50,6 +51,7 @@ class OptionHistoryWriter:
         "gamma",
         "theta",
         "vega",
+        "source_underlying_price",
     )
 
     def __init__(self, database: Session | Engine) -> None:
@@ -287,6 +289,7 @@ class OptionHistoryWriter:
             "underlying_symbol": record.identity.underlying_symbol,
             "option_symbol": self._option_symbol(record),
             "quote_date": record.quote_date,
+            "quote_timestamp": (record.metadata or {}).get("quote_timestamp"),
             "expiry": record.identity.expiration_date,
             "option_type": record.identity.option_side.value,
             "strike": record.identity.strike,
@@ -300,6 +303,7 @@ class OptionHistoryWriter:
             "gamma": record.gamma,
             "theta": record.theta,
             "vega": record.vega,
+            "source_underlying_price": (record.metadata or {}).get("underlying_price"),
         }
 
     @staticmethod
@@ -331,3 +335,96 @@ class OptionHistoryWriter:
 
     def _dialect_name(self) -> str:
         return self._bind().dialect.name
+
+
+class GovernedOptionSnapshotWriter:
+    """Persist exact current-cycle validated contracts into the governed snapshot.
+
+    This writer is intentionally separate from the daily compatibility upsert.  The
+    daily table may contain earlier same-day contracts, while snapshot membership
+    must be the exact set observed and validated in the current ingestion cycle.
+    Replays/resumes are idempotent through the snapshot_run_id/option_symbol key.
+    """
+
+    TABLE_NAME = "option_contract_snapshot"
+
+    def __init__(self, database: Session | Engine, *, snapshot_run_id: int, snapshot_timestamp) -> None:
+        self.database = database
+        self.snapshot_run_id = int(snapshot_run_id)
+        self.snapshot_timestamp = snapshot_timestamp
+
+    def write(self, records: Sequence[OptionQuoteRecord]) -> int:
+        if not records:
+            return 0
+        statement = text(
+            f"""
+            INSERT INTO {self.TABLE_NAME} (
+                snapshot_run_id, snapshot_timestamp, underlying_symbol, option_symbol,
+                expiry, option_type, strike, bid, ask, last, mark, volume, open_interest,
+                implied_volatility, delta, gamma, theta, vega, quote_quality, provider
+            ) VALUES (
+                :snapshot_run_id, :snapshot_timestamp, :underlying_symbol, :option_symbol,
+                :expiry, :option_type, :strike, :bid, :ask, :last, :mark, :volume, :open_interest,
+                :implied_volatility, :delta, :gamma, :theta, :vega, :quote_quality, 'POLYGON'
+            )
+            ON CONFLICT (snapshot_run_id, option_symbol) DO UPDATE SET
+                snapshot_timestamp = EXCLUDED.snapshot_timestamp,
+                underlying_symbol = EXCLUDED.underlying_symbol,
+                expiry = EXCLUDED.expiry,
+                option_type = EXCLUDED.option_type,
+                strike = EXCLUDED.strike,
+                bid = EXCLUDED.bid,
+                ask = EXCLUDED.ask,
+                last = EXCLUDED.last,
+                mark = EXCLUDED.mark,
+                volume = EXCLUDED.volume,
+                open_interest = EXCLUDED.open_interest,
+                implied_volatility = EXCLUDED.implied_volatility,
+                delta = EXCLUDED.delta,
+                gamma = EXCLUDED.gamma,
+                theta = EXCLUDED.theta,
+                vega = EXCLUDED.vega,
+                quote_quality = EXCLUDED.quote_quality,
+                provider = EXCLUDED.provider
+            """
+        )
+        params = [self._params(record) for record in records]
+        if isinstance(self.database, Engine):
+            with self.database.begin() as connection:
+                connection.execute(statement, params)
+        else:
+            self.database.execute(statement, params)
+            self.database.commit()
+        return len(records)
+
+    def _params(self, record: OptionQuoteRecord) -> dict[str, object]:
+        bid = record.bid
+        ask = record.ask
+        if bid is not None and ask is not None and bid > 0 and ask > 0:
+            quality = "COMPLETE_QUOTE"
+        elif (bid is not None and bid > 0) or (ask is not None and ask > 0):
+            quality = "ONE_SIDED_QUOTE"
+        else:
+            quality = "NO_QUOTE"
+        mark = record.midpoint if record.midpoint is not None else record.last
+        return {
+            "snapshot_run_id": self.snapshot_run_id,
+            "snapshot_timestamp": self.snapshot_timestamp,
+            "underlying_symbol": record.identity.underlying_symbol,
+            "option_symbol": OptionHistoryWriter._option_symbol(record),
+            "expiry": record.identity.expiration_date,
+            "option_type": record.identity.option_side.value,
+            "strike": record.identity.strike,
+            "bid": bid,
+            "ask": ask,
+            "last": record.last,
+            "mark": mark,
+            "volume": record.volume,
+            "open_interest": record.open_interest,
+            "implied_volatility": record.implied_volatility,
+            "delta": record.delta,
+            "gamma": record.gamma,
+            "theta": record.theta,
+            "vega": record.vega,
+            "quote_quality": quality,
+        }

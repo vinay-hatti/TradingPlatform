@@ -1,12 +1,56 @@
 {
-  "completed_at": "2026-08-08T19:49:35.600962+00:00",
+  "completed_at": "2026-08-29T19:12:56.493358+00:00",
   "dealer_refreshed": true,
   "domain": "options",
   "domain_status": "READY",
+  "downside_risk_veto_refresh": {
+    "candidate_quality_management_interaction_shadow": {
+      "atr_ready_count": 5,
+      "eligible_count": 21,
+      "market_as_of_date": "2026-08-28",
+      "production_authority_effect": false,
+      "selected_count": 5,
+      "status": "ALREADY_FROZEN",
+      "stock_scanner_run_id": "stock-scan-5210b0b4f6314a97bc4bbf2586e39f89"
+    },
+    "cross_sectional_capital_priority_shadow": {
+      "atr_ready_count": 21,
+      "eligible_count": 21,
+      "market_as_of_date": "2026-08-28",
+      "production_authority_effect": false,
+      "selected_count": 3,
+      "status": "ALREADY_FROZEN",
+      "stock_scanner_run_id": "stock-scan-5210b0b4f6314a97bc4bbf2586e39f89"
+    },
+    "management_geometry_shadow": {
+      "atr_ready_count": 21,
+      "candidate_count": 21,
+      "market_as_of_date": "2026-08-28",
+      "production_authority_effect": false,
+      "status": "ALREADY_FROZEN",
+      "stock_scanner_run_id": "stock-scan-5210b0b4f6314a97bc4bbf2586e39f89"
+    },
+    "market_as_of_date": "2026-08-28",
+    "model_fingerprint": "fba7288262fd7ee29d288a9fa21c8dce77f67565938a7e7371a2c25ee8e23285",
+    "positive_selection_shadow": {
+      "candidate_count": 21,
+      "market_as_of_date": "2026-08-28",
+      "production_authority_effect": false,
+      "selected_count": 3,
+      "status": "ALREADY_FROZEN",
+      "stock_scanner_run_id": "stock-scan-5210b0b4f6314a97bc4bbf2586e39f89"
+    },
+    "prospective_observation_count": 0,
+    "scored_symbol_count": 608,
+    "status": "READY",
+    "stock_scanner_run_id": "stock-scan-b36866b5cd3d4d22bce9aacdb1563481",
+    "veto_count": 7
+  },
+  "elapsed_seconds": 1624.7666,
   "failed_batches": 0,
   "finalization_status": 0,
   "options_refreshed": true,
-  "started_at": "2026-08-08T19:30:03.038542+00:00",
+  "started_at": "2026-08-29T18:45:51.932313+00:00",
   "status": "READY",
   "symbols": 614
 }

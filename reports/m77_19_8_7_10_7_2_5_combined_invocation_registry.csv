@@ -1,0 +1,7 @@
+family,horizon,frozen_config_json,invocation_authority_source,exact_invocation_certified,validation_scoring_authorized
+MF1_REGULARIZED_LOGISTIC_DIRECTION,5,"{""C"": 10.0}",M77.19.8.7.10.7.2,True,True
+MF1_REGULARIZED_LOGISTIC_DIRECTION,10,"{""C"": 1.0}",M77.19.8.7.10.7.2,True,True
+MF1_REGULARIZED_LOGISTIC_DIRECTION,20,"{""C"": 0.1}",M77.19.8.7.10.7.2,True,True
+MF2_MONOTONIC_GAM_DIRECTION,5,"{""l2_penalty"": 0.1, ""spline_knots"": 4}",M77.19.8.7.10.7.2.4.6,True,True
+MF2_MONOTONIC_GAM_DIRECTION,10,"{""l2_penalty"": 0.1, ""spline_knots"": 4}",M77.19.8.7.10.7.2.4.6,True,True
+MF2_MONOTONIC_GAM_DIRECTION,20,"{""l2_penalty"": 0.1, ""spline_knots"": 4}",M77.19.8.7.10.7.2.4.6,True,True

@@ -36,6 +36,7 @@ from trading_ai.analytics_dashboard.router import router as analytics_dashboard_
 from trading_ai.execution_intelligence.router import router as execution_intelligence_router
 from trading_ai.opex_intelligence.router import router as opex_intelligence_router
 from trading_ai.futures_intelligence.router import router as futures_intelligence_router
+from trading_ai.outcome_probability.router import router as outcome_probability_router
 
 
 def create_production_app(settings: ProductionApiSettings | None = None) -> FastAPI:
@@ -100,6 +101,7 @@ def create_production_app(settings: ProductionApiSettings | None = None) -> Fast
     app.include_router(execution_intelligence_router)
     app.include_router(opex_intelligence_router)
     app.include_router(futures_intelligence_router)
+    app.include_router(outcome_probability_router)
 
     @app.on_event("startup")
     async def start_m42(): await app.state.m42_service.start()

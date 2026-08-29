@@ -1,0 +1,32 @@
+{
+  "version": "M77.15.6-ISOLATED-LONG-HISTORY-INDEX-RESEARCH-AUTHORITY-1.0",
+  "source": "POLYGON",
+  "source_mode": "REST_AGGREGATES_DAILY",
+  "source_base_url": "https://api.polygon.io",
+  "api_key_env": "POLYGON_API_KEY",
+  "start_date": "2000-01-01",
+  "end_date_policy": "TODAY_UTC",
+  "targets": {
+    "SPX": {
+      "requested_polygon_ticker": "I:SPX",
+      "logical_symbol": "SPX"
+    },
+    "NDX": {
+      "requested_polygon_ticker": "I:NDX",
+      "logical_symbol": "NDX"
+    },
+    "RUT": {
+      "requested_polygon_ticker": "I:RUT",
+      "logical_symbol": "RUT"
+    }
+  },
+  "fallback_tickers_prohibited": true,
+  "research_storage_root": "research_data/m77_15_6/index_history",
+  "raw_storage": "research_data/m77_15_6/index_history/raw",
+  "normalized_storage": "research_data/m77_15_6/index_history/normalized",
+  "manifest_storage": "research_data/m77_15_6/index_history/manifests",
+  "production_price_history_writes": false,
+  "database_writes": false,
+  "production_authority_effect": false,
+  "historical_replay_isolation": "REQUIRED"
+}

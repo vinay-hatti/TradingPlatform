@@ -24,6 +24,7 @@ class OpexForecastSnapshotModel(Base):
     put_wall_current:Mapped[float|None]=mapped_column(Float); put_wall_forecast:Mapped[float|None]=mapped_column(Float)
     dealer_pressure:Mapped[float]=mapped_column(Float,nullable=False)
     confidence:Mapped[float]=mapped_column(Float,nullable=False)
+    input_fingerprint:Mapped[str|None]=mapped_column(String(64),nullable=True,index=True)
     payload_json:Mapped[dict]=mapped_column(JSON,nullable=False,default=dict)
 
 class OpexForecastPublicationModel(Base):
@@ -33,6 +34,8 @@ class OpexForecastPublicationModel(Base):
     status:Mapped[str]=mapped_column(String(24),nullable=False,index=True)
     published_at:Mapped[str]=mapped_column(String(64),nullable=False,index=True)
     forecast_count:Mapped[int]=mapped_column(Integer,nullable=False)
+    authority_input_fingerprint:Mapped[str|None]=mapped_column(String(64),nullable=True,index=True)
+    coverage_status:Mapped[str]=mapped_column(String(32),nullable=False,default='UNKNOWN',index=True)
     payload_json:Mapped[dict]=mapped_column(JSON,nullable=False,default=dict)
 
 class OpexForecastOutcomeModel(Base):
@@ -45,4 +48,23 @@ class OpexForecastOutcomeModel(Base):
     in_50:Mapped[int]=mapped_column(Integer,nullable=False); in_68:Mapped[int]=mapped_column(Integer,nullable=False); in_90:Mapped[int]=mapped_column(Integer,nullable=False)
     magnet_distance_pct:Mapped[float|None]=mapped_column(Float)
     realized_at:Mapped[str]=mapped_column(String(64),nullable=False,index=True)
+    settlement_symbol:Mapped[str|None]=mapped_column(String(32),nullable=True,index=True)
+    settlement_style:Mapped[str|None]=mapped_column(String(64),nullable=True)
+    settlement_source:Mapped[str|None]=mapped_column(String(96),nullable=True,index=True)
+    sample_group_key:Mapped[str|None]=mapped_column(String(160),nullable=True,index=True)
+    horizon_bucket:Mapped[str|None]=mapped_column(String(16),nullable=True,index=True)
     payload_json:Mapped[dict]=mapped_column(JSON,nullable=False,default=dict)
+
+
+class OpexSettlementValueModel(Base):
+    __tablename__='opex_settlement_values'
+    __table_args__=(UniqueConstraint('underlying_symbol','expiration',name='uq_m714_opex_settlement_cycle'),)
+    settlement_id:Mapped[str]=mapped_column(String(128),primary_key=True)
+    underlying_symbol:Mapped[str]=mapped_column(String(16),nullable=False,index=True)
+    expiration:Mapped[str]=mapped_column(String(16),nullable=False,index=True)
+    settlement_symbol:Mapped[str]=mapped_column(String(32),nullable=False,index=True)
+    settlement_style:Mapped[str]=mapped_column(String(64),nullable=False)
+    settlement_value:Mapped[float]=mapped_column(Float,nullable=False)
+    settlement_source:Mapped[str]=mapped_column(String(96),nullable=False,index=True)
+    observed_at:Mapped[str]=mapped_column(String(64),nullable=False,index=True)
+    lineage_json:Mapped[dict]=mapped_column(JSON,nullable=False,default=dict)

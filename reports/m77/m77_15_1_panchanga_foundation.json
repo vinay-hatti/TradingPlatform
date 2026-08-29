@@ -1,0 +1,175 @@
+{
+  "version": "M77.15.1-LAHIRI-TRUE-NODE-PANCHANGA-FOUNDATION-1.0",
+  "status": "READY",
+  "mode": "PANCHANGA_FOUNDATION_SAMPLE",
+  "rows": [
+    {
+      "date": "2023-03-20",
+      "lahiri_ayanamsha_deg": 24.181366655646464,
+      "sun_sidereal_deg": 335.11300222718387,
+      "moon_sidereal_deg": 318.3466290904797,
+      "sun_rashi": {
+        "index": 11,
+        "name": "MEENA",
+        "degree_in_rashi": 5.11300222718387
+      },
+      "moon_rashi": {
+        "index": 10,
+        "name": "KUMBHA",
+        "degree_in_rashi": 18.346629090479723
+      },
+      "moon_nakshatra": {
+        "index": 23,
+        "name": "SHATABHISHA",
+        "pada": 4,
+        "degree_in_nakshatra": 11.679962423813038
+      },
+      "tithi": {
+        "index": 28,
+        "number": 29,
+        "paksha": "KRISHNA",
+        "degree_in_tithi": 7.233626863295854
+      },
+      "yoga": {
+        "index": 22,
+        "name": "SHUBHA",
+        "degree_in_yoga": 0.12629798433022188
+      },
+      "karana": {
+        "half_tithi_index": 57,
+        "name": "SHAKUNI",
+        "degree_in_karana": 1.2336268632958536
+      },
+      "rahu_true_node_deg": 34.11854304820403,
+      "ketu_deg": 214.11854304820403
+    },
+    {
+      "date": "2024-09-22",
+      "lahiri_ayanamsha_deg": 24.20247995892496,
+      "sun_sidereal_deg": 155.4287644351919,
+      "moon_sidereal_deg": 36.395219914345496,
+      "sun_rashi": {
+        "index": 5,
+        "name": "KANYA",
+        "degree_in_rashi": 5.428764435191908
+      },
+      "moon_rashi": {
+        "index": 1,
+        "name": "VRISHABHA",
+        "degree_in_rashi": 6.395219914345496
+      },
+      "moon_nakshatra": {
+        "index": 2,
+        "name": "KRITTIKA",
+        "pada": 3,
+        "degree_in_nakshatra": 9.728553247678828
+      },
+      "tithi": {
+        "index": 20,
+        "number": 21,
+        "paksha": "KRISHNA",
+        "degree_in_tithi": 0.9664554791535807
+      },
+      "yoga": {
+        "index": 14,
+        "name": "VAJRA",
+        "degree_in_yoga": 5.157317682870712
+      },
+      "karana": {
+        "half_tithi_index": 40,
+        "name": "GARA",
+        "degree_in_karana": 0.9664554791535807
+      },
+      "rahu_true_node_deg": 6.307560978035658,
+      "ketu_deg": 186.30756097803567
+    },
+    {
+      "date": "2025-12-01",
+      "lahiri_ayanamsha_deg": 24.21911825867045,
+      "sun_sidereal_deg": 224.9699654931228,
+      "moon_sidereal_deg": 356.1012774860469,
+      "sun_rashi": {
+        "index": 7,
+        "name": "VRISCHIKA",
+        "degree_in_rashi": 14.9699654931228
+      },
+      "moon_rashi": {
+        "index": 11,
+        "name": "MEENA",
+        "degree_in_rashi": 26.10127748604691
+      },
+      "moon_nakshatra": {
+        "index": 26,
+        "name": "REVATI",
+        "pada": 3,
+        "degree_in_nakshatra": 9.434610819380225
+      },
+      "tithi": {
+        "index": 10,
+        "number": 11,
+        "paksha": "SHUKLA",
+        "degree_in_tithi": 11.131311992924111
+      },
+      "yoga": {
+        "index": 16,
+        "name": "VYATIPATA",
+        "degree_in_yoga": 7.737909645836368
+      },
+      "karana": {
+        "half_tithi_index": 21,
+        "name": "VISHTI",
+        "degree_in_karana": 5.131311992924111
+      },
+      "rahu_true_node_deg": 343.88578835679687,
+      "ketu_deg": 163.88578835679687
+    },
+    {
+      "date": "2026-08-21",
+      "lahiri_ayanamsha_deg": 24.229177778779796,
+      "sun_sidereal_deg": 123.8640893747101,
+      "moon_sidereal_deg": 229.07768101308858,
+      "sun_rashi": {
+        "index": 4,
+        "name": "SIMHA",
+        "degree_in_rashi": 3.8640893747101046
+      },
+      "moon_rashi": {
+        "index": 7,
+        "name": "VRISCHIKA",
+        "degree_in_rashi": 19.07768101308858
+      },
+      "moon_nakshatra": {
+        "index": 17,
+        "name": "JYESHTHA",
+        "pada": 1,
+        "degree_in_nakshatra": 2.4110143464218936
+      },
+      "tithi": {
+        "index": 8,
+        "number": 9,
+        "paksha": "SHUKLA",
+        "degree_in_tithi": 9.213591638378475
+      },
+      "yoga": {
+        "index": 26,
+        "name": "VAIDHRITI",
+        "degree_in_yoga": 6.275103721131984
+      },
+      "karana": {
+        "half_tithi_index": 17,
+        "name": "KAULAVA",
+        "degree_in_karana": 3.2135916383784746
+      },
+      "rahu_true_node_deg": 329.4393850167818,
+      "ketu_deg": 149.43938501678178
+    }
+  ],
+  "governance": {
+    "financial_backtesting": false,
+    "traditional_interpretation": false,
+    "database_writes": false,
+    "production_authority_effect": false
+  },
+  "next_step": "BUILD_M77_15_2_SINGLE_FACTOR_PANCHANGA_STUDY",
+  "production_authority_effect": false
+}

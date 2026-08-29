@@ -179,11 +179,21 @@ class UnderlyingOptionIntegrationService:
         else:
             recommended_strategy = "BULL_CALL_SPREAD" if bullish else "BEAR_PUT_SPREAD"
 
+        primary_timeframe = str(payload.get("primary_timeframe") or "1d")
+        primary_state = _mapping(_mapping(payload.get("timeframe_states")).get(primary_timeframe))
+        current_underlying = _number(primary_state.get("close"), 0.0)
         targets = []
+        skipped_directional_targets = []
         for target in targets_profile.get("targets") or []:
             price = _number(_mapping(target).get("price"), 0.0)
-            if price > 0:
-                targets.append(price)
+            if price <= 0:
+                continue
+            directionally_valid = (price > current_underlying) if bullish else (price < current_underlying)
+            if current_underlying > 0 and not directionally_valid:
+                skipped_directional_targets.append(price)
+                continue
+            targets.append(price)
+        targets = sorted(set(targets), reverse=not bullish)
 
         entry_low = _number(entry.get("zone_low"), 0.0) or None
         entry_high = _number(entry.get("zone_high"), 0.0) or None
@@ -209,7 +219,12 @@ class UnderlyingOptionIntegrationService:
         if recommended_stop is None:
             rejection_reasons.append("UNDERLYING_STRUCTURAL_STOP_MISSING")
         if not targets:
-            rejection_reasons.append("UNDERLYING_TARGETS_MISSING")
+            rejection_reasons.append("NO_DIRECTIONALLY_VALID_UNDERLYING_TARGETS" if current_underlying > 0 else "UNDERLYING_TARGETS_MISSING")
+        if skipped_directional_targets:
+            warnings.append(
+                "CROSSED_UNDERLYING_TARGETS_SKIPPED:"
+                + ",".join(f"{item:.6f}" for item in skipped_directional_targets)
+            )
 
         liquidity = _clamp(_number(option_liquidity_score), 0.0, 100.0)
         rr_multiplier = _clamp(structural_rr / 2.0, 0.4, 1.5)

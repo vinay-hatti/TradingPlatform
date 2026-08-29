@@ -1,0 +1,15 @@
+{
+  "milestone": "M77.19.8.7.10.5.2.3.4",
+  "parameterization_scope": "PARTITION_ROUTING_START_END_LABEL_ONLY",
+  "development_defaults": {
+    "start": "",
+    "end": "2017-12-31",
+    "label": "DEVELOPMENT"
+  },
+  "final_holdout_skip_unconditional": true,
+  "development_parity_required": true,
+  "validation_targets_opened": false,
+  "validation_outcomes_opened": false,
+  "final_holdout_opened": false,
+  "production_authority_effect": false
+}

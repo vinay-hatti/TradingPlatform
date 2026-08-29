@@ -1,0 +1,89 @@
+{
+  "authority_contract": {
+    "cadence_source": "historical_underlying_replay_run.cadence",
+    "join_key": "replay_run_id",
+    "prediction_date_column": "as_of",
+    "prediction_table": "public.historical_underlying_replay_prediction",
+    "run_table": "public.historical_underlying_replay_run"
+  },
+  "blockers": [],
+  "cadence_inventory": [
+    {
+      "cadence": "DAILY",
+      "first_as_of": "2022-10-14",
+      "last_as_of": "2026-08-21",
+      "prediction_rows": 532441,
+      "replay_runs": 7,
+      "status": "READY",
+      "symbols": 605
+    },
+    {
+      "cadence": "MONTHLY",
+      "first_as_of": "2022-10-31",
+      "last_as_of": "2026-08-20",
+      "prediction_rows": 27007,
+      "replay_runs": 3,
+      "status": "READY",
+      "symbols": 607
+    },
+    {
+      "cadence": "WEEKLY",
+      "first_as_of": "2022-10-14",
+      "last_as_of": "2026-08-21",
+      "prediction_rows": 124746,
+      "replay_runs": 13,
+      "status": "READY",
+      "symbols": 607
+    }
+  ],
+  "cadences": {
+    "DAILY": {
+      "authority_source": "public.historical_underlying_replay_prediction JOIN public.historical_underlying_replay_run USING (replay_run_id)",
+      "authority_source_type": "DATABASE_JOINED_FROZEN_REPLAY_AUTHORITY",
+      "bundles_with_frozen_lineage": 48,
+      "bundles_with_frozen_profile": 48,
+      "bundles_with_price_history": 48,
+      "bundles_written": 48,
+      "rows_recovered": 48
+    },
+    "MONTHLY": {
+      "authority_source": "public.historical_underlying_replay_prediction JOIN public.historical_underlying_replay_run USING (replay_run_id)",
+      "authority_source_type": "DATABASE_JOINED_FROZEN_REPLAY_AUTHORITY",
+      "bundles_with_frozen_lineage": 48,
+      "bundles_with_frozen_profile": 48,
+      "bundles_with_price_history": 48,
+      "bundles_written": 48,
+      "rows_recovered": 48
+    },
+    "WEEKLY": {
+      "authority_source": "public.historical_underlying_replay_prediction JOIN public.historical_underlying_replay_run USING (replay_run_id)",
+      "authority_source_type": "DATABASE_JOINED_FROZEN_REPLAY_AUTHORITY",
+      "bundles_with_frozen_lineage": 48,
+      "bundles_with_frozen_profile": 48,
+      "bundles_with_price_history": 48,
+      "bundles_written": 48,
+      "rows_recovered": 48
+    }
+  },
+  "controlled_exact_input_parity_certified": false,
+  "exact_frozen_input_context_adapter_ready": true,
+  "full_23_year_reconstruction_authorized": false,
+  "generated_at": "2026-08-23T07:44:00.033890+00:00",
+  "governance": {
+    "controlled_exact_input_parity_certified": false,
+    "database_mode": "READ_ONLY",
+    "filesystem_research_artifacts_only": true,
+    "full_23_year_reconstruction_authorized": false,
+    "generic_filesystem_fallback_allowed": false,
+    "parity_thresholds_relaxed": false,
+    "production_authority_effect": false,
+    "production_database_writes": false,
+    "research_only": true
+  },
+  "next_step": "BUILD_M77_19_6_5_CONTROLLED_ADAPTER_EXECUTION_AND_PARITY_CERTIFICATION",
+  "prior_report": "/Users/vinay.hatti/TradingPlatform/reports/m77_19_6_4_1_replay_authority_resolution_adapter_recovery.json",
+  "production_authority_effect": false,
+  "sample_per_cadence_requested": 48,
+  "selected_price_history_table": "public.price_history",
+  "version": "M77.19.6.4.2-JOINED-FROZEN-REPLAY-AUTHORITY-RECOVERY-1.0"
+}

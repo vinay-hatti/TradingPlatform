@@ -1,0 +1,28 @@
+{
+  "version": "M77.19.6.1-PARITY-FORENSIC-DECOMPOSITION-1.0",
+  "purpose": "Determine why filesystem-backed replay differs from frozen M77 replay outputs before any 23-year reconstruction.",
+  "source_parity_report": "reports/m77/m77_19_6_isolated_replay_engine_parity_certification.json",
+  "source_authority_root": "research_data/m77_19_5/original_cohort_long_history/normalized",
+  "forensic_dimensions": [
+    "STATE_HASH_NONDETERMINISM",
+    "PROFILE_NONHASH_DETERMINISM",
+    "OHLCV_INPUT_PARITY",
+    "EXTERNAL_CONTEXT_DEPENDENCY",
+    "SNAPSHOT_TIMESTAMP_DEPENDENCY",
+    "COMPONENT_SCORE_DRIFT",
+    "DIRECTION_DRIFT"
+  ],
+  "sample_policy": {
+    "max_evidence_per_cadence": 48,
+    "price_history_lookback_rows": 750,
+    "ohlcv_tolerance": 1e-09
+  },
+  "governance": {
+    "database_read_only": true,
+    "database_writes": false,
+    "production_price_history_writes": false,
+    "source_mutation": false,
+    "production_authority_effect": false,
+    "full_long_history_reconstruction": false
+  }
+}

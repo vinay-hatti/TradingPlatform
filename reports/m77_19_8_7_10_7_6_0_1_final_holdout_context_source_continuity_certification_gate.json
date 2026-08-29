@@ -1,0 +1,16 @@
+{
+  "final_holdout_context_adapter_certified": true,
+  "final_holdout_outcomes_opened": false,
+  "final_holdout_rows_read_by_this_step": false,
+  "final_holdout_scoring_performed": false,
+  "final_holdout_targets_opened": false,
+  "frozen_daily_spy_close_parity_certified": true,
+  "next_step": "RUN_M77_19_8_7_10_7_6_1_FINAL_HOLDOUT_CONTEXT_AND_FEATURE_MATRIX_MATERIALIZATION",
+  "outcome_authority_required_for_final_holdout_context": false,
+  "preholdout_context_row_count": 946,
+  "preholdout_daily_context_parity_mismatch_count": 0,
+  "production_authority_effect": false,
+  "rolling_4w_13w_26w_52w_continuity_certified": true,
+  "status": "READY",
+  "version": "M77.19.8.7.10.7.6.0.1-FINAL-HOLDOUT-CONTEXT-SOURCE-CONTINUITY-CERTIFICATION-1.0"
+}

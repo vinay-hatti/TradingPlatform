@@ -12,6 +12,9 @@ from trading_ai.advanced_trade_builder.contracts import LegSide, OptionRight, Tr
 from trading_ai.advanced_trade_builder.models import TradePlanAuditModel, TradePlanModel
 from trading_ai.advanced_trade_builder.service import AdvancedTradeBuilderService
 from trading_ai.execution_workspace.service import ExecutionWorkspaceService
+from trading_ai.portfolio_risk_allocation.models import PortfolioIntelligencePublicationModel
+from trading_ai.trade_plan_certification import certify_option_trade_plan
+from trading_ai.downside_risk_veto import DownsideRiskVetoService
 
 from .domain import OpportunityState
 from .models import (
@@ -27,6 +30,7 @@ from .models import (
     StrategyComparisonModel,
     StrategyValuationModel,
 )
+from .trade_builder_authority import classify_trade_builder_authority
 
 
 def now() -> str:
@@ -79,8 +83,53 @@ class InstitutionalOptionsHandoffService:
         valuation = bundle["valuation"]
         management = bundle["management"]
 
-        if not execution.ready_for_trade_builder:
-            raise ValueError("Execution recommendation is not ready for Trade Builder")
+        execution_payload = dict(execution.payload_json or {})
+        trade_builder_authority = classify_trade_builder_authority(
+            execution_payload,
+            execution.ready_for_trade_builder,
+        )
+        if not trade_builder_authority["authorized"]:
+            raise ValueError(
+                "Execution recommendation lacks certified Trade Builder authority: "
+                + ",".join(trade_builder_authority["reason_codes"])
+            )
+        downside_risk_veto = DownsideRiskVetoService().evaluate(
+            symbol=str(opp.symbol),
+            direction=str(opp.direction),
+            stock_scanner_run_id=str(opp.stock_scanner_run_id),
+            trade_builder_ready=True,
+        )
+        self.session.add(InstitutionalOpportunityAuditModel(
+            audit_id=f"IOA-{uuid4().hex.upper()}",
+            opportunity_id=opp.opportunity_id,
+            previous_state=str(opp.state),
+            new_state=str(opp.state),
+            actor=actor,
+            reason="M77.23 certified downside-risk veto evaluation",
+            event_timestamp=now(),
+            payload_json={"downside_risk_veto": downside_risk_veto.as_dict()},
+        ))
+        if downside_risk_veto.blocked:
+            self.session.commit()
+            raise ValueError(
+                "Trade Builder handoff blocked by certified downside-risk veto: "
+                + ",".join(downside_risk_veto.reason_codes)
+            )
+        execution_certification = dict(
+            execution_payload.get("trade_plan_certification") or {}
+        )
+        if (
+            execution_certification.get("trade_builder_ready") is not True
+            or execution_certification.get("execution_disposition") != "READY_NOW"
+        ):
+            disposition = str(
+                execution_certification.get("execution_disposition")
+                or "UNAVAILABLE"
+            )
+            raise ValueError(
+                "Trade Builder handoff is blocked by entry governance: "
+                f"{disposition}"
+            )
         if not contract.executable:
             raise ValueError("Selected contract recommendation is not executable")
         if float(capital) < self.policy.minimum_capital:
@@ -129,13 +178,16 @@ class InstitutionalOptionsHandoffService:
                 "option_symbol": leg.option_symbol,
             })
 
-        debit, credit, max_loss, max_profit, rr, budget, greeks, checks = AdvancedTradeBuilderService.economics(tuple(legs), float(capital), float(risk_budget_pct))
+        debit, credit, max_loss, max_profit, rr, budget, greeks, checks = AdvancedTradeBuilderService.economics(
+            tuple(legs), float(capital), float(risk_budget_pct), strategy=strategy.strategy
+        )
         checks.update({
             "m62_selected_strategy": bool(strategy.selected),
             "m62_exact_polygon_contracts": len({x["option_symbol"] for x in normalized_legs}) == len(normalized_legs),
             "m62_thesis_lineage": bool(opp.stock_state_hash and opp.stock_scanner_run_id),
             "m62_dynamic_management": bool(execution.payload_json.get("underlying_targets") and execution.underlying_stop),
             "m62_override_governance": True,
+            "m77_23_downside_risk_veto_pass": downside_risk_veto.authorized and not downside_risk_veto.blocked,
         })
         checks["valid"] = all(bool(value) for value in checks.values())
         state = TradePlanState.VALIDATED.value if checks["valid"] else TradePlanState.DRAFT.value
@@ -154,6 +206,7 @@ class InstitutionalOptionsHandoffService:
             "execution_recommendation_id": execution.execution_recommendation_id,
             "valuation_id": valuation.valuation_id if valuation else None,
             "management_snapshot_id": management.management_snapshot_id if management else None,
+            "downside_risk_veto": downside_risk_veto.as_dict(),
         }
         execution_payload = dict(execution.payload_json or {})
         management_payload = dict(management.payload_json or {}) if management else {}
@@ -177,6 +230,22 @@ class InstitutionalOptionsHandoffService:
             "management_mode": "PLATFORM_MANAGED_AFTER_FILL",
             "broker_protection_status": "NOT_SUBMITTED",
         }
+        execution_certification = dict(execution_payload.get("trade_plan_certification") or {})
+        if (
+            execution_certification.get("status") != "PASS"
+            or execution_certification.get("certification_scope")
+            != "INSTITUTIONAL_OPTIONS_FINAL_PLAN"
+            or execution_certification.get("trade_builder_ready") is not True
+            or execution_certification.get("execution_disposition") != "READY_NOW"
+        ):
+            raise ValueError("Final Institutional Options plan is not M75.2.2 certified for Trade Builder handoff")
+        trade_plan_certification = certify_option_trade_plan(
+            strategy=strategy.strategy, legs=normalized_legs, stock_certification=execution_certification,
+            checks=checks, dynamic_management=dynamic_management,
+        )
+        checks["m75_2_trade_plan_certified"] = trade_plan_certification.get("status") == "PASS"
+        checks["valid"] = all(bool(value) for key, value in checks.items() if key != "valid")
+        state = TradePlanState.VALIDATED.value if checks["valid"] else TradePlanState.DRAFT.value
         thesis_payload = dict(thesis.payload_json)
         governed_overrides = {
             "quantity_multiplier": quantity_multiplier,
@@ -228,6 +297,7 @@ class InstitutionalOptionsHandoffService:
                     "dynamic_management": dynamic_management,
                     "decision_snapshot_id": bundle["decision"].decision_snapshot_id,
                     "decision_state_hash": bundle["decision"].state_hash,
+                    "trade_plan_certification": trade_plan_certification,
                 }
                 existing_plan.updated_at = now()
             existing.contract_recommendation_id = contract.contract_recommendation_id
@@ -239,6 +309,7 @@ class InstitutionalOptionsHandoffService:
                 "thesis": thesis_payload,
                 "dynamic_management": dynamic_management,
                 "validation": checks,
+                "trade_plan_certification": trade_plan_certification,
             }
             existing.status = "TRADE_PLAN_VALIDATED" if state == TradePlanState.VALIDATED.value else "TRADE_PLAN_REVALIDATED_DRAFT"
             existing.updated_at = now()
@@ -254,7 +325,7 @@ class InstitutionalOptionsHandoffService:
             estimated_debit=debit, estimated_credit=credit, max_loss=max_loss,
             max_profit=max_profit, reward_risk_ratio=rr, net_greeks_json=greeks,
             validation_json=checks, legs_json=normalized_legs,
-            execution_intent_json={"m62_lineage": lineage, "underlying_thesis": thesis_payload, "dynamic_management": dynamic_management, "decision_snapshot_id": bundle["decision"].decision_snapshot_id, "decision_state_hash": bundle["decision"].state_hash},
+            execution_intent_json={"m62_lineage": lineage, "underlying_thesis": thesis_payload, "dynamic_management": dynamic_management, "decision_snapshot_id": bundle["decision"].decision_snapshot_id, "decision_state_hash": bundle["decision"].state_hash, "trade_plan_certification": trade_plan_certification},
             notes="Generated from Milestone 62 Institutional Options recommendation",
             created_by=actor, created_at=ts, updated_at=ts,
         )
@@ -263,7 +334,7 @@ class InstitutionalOptionsHandoffService:
             audit_id=f"TPA-M62-{uuid4().hex.upper()}", trade_plan_id=plan.trade_plan_id,
             trade_plan_version=1, event_type="M62_TRADE_PLAN_HANDOFF", actor=actor,
             reason="Created from selected Institutional Options strategy and exact Polygon contracts",
-            event_timestamp=ts, payload_json={"lineage": lineage, "overrides": governed_overrides, "dynamic_management": dynamic_management, "decision_snapshot_id": bundle["decision"].decision_snapshot_id, "decision_state_hash": bundle["decision"].state_hash},
+            event_timestamp=ts, payload_json={"lineage": lineage, "overrides": governed_overrides, "dynamic_management": dynamic_management, "trade_plan_certification": trade_plan_certification, "decision_snapshot_id": bundle["decision"].decision_snapshot_id, "decision_state_hash": bundle["decision"].state_hash},
         ))
         handoff = InstitutionalOptionHandoffModel(
             handoff_id=f"m62-handoff-{uuid4().hex}", opportunity_id=opportunity_id,
@@ -272,7 +343,7 @@ class InstitutionalOptionsHandoffService:
             execution_recommendation_id=execution.execution_recommendation_id,
             account_id=account_id, trade_plan_id=plan.trade_plan_id, execution_intent_id=None,
             status="TRADE_PLAN_CREATED", overrides_json=governed_overrides, lineage_json=lineage,
-            payload_json={"thesis": thesis_payload, "dynamic_management": dynamic_management, "validation": checks},
+            payload_json={"thesis": thesis_payload, "dynamic_management": dynamic_management, "validation": checks, "trade_plan_certification": trade_plan_certification},
             created_at=ts, updated_at=ts,
         )
         self.session.add(handoff)
@@ -328,8 +399,72 @@ class InstitutionalOptionsHandoffService:
         opp = self.session.get(InstitutionalOpportunityModel, opportunity_id)
         if opp is None:
             raise LookupError("Institutional Opportunity not found")
-        if opp.state not in {OpportunityState.CONTRACTS_OPTIMIZED.value, OpportunityState.READY_FOR_EXECUTION.value}:
-            raise ValueError("Opportunity must have optimized contracts before handoff")
+        if opp.state != OpportunityState.READY_FOR_EXECUTION.value:
+            raise ValueError("Opportunity must be READY_FOR_EXECUTION with a certified final Institutional Options plan before handoff")
+        opportunity_payload = dict(opp.payload_json or {})
+        opportunity_metadata = dict(opportunity_payload.get("metadata") or {})
+        current_idi = dict(opportunity_metadata.get("institutional_decision_intelligence") or {})
+        if not current_idi.get("version") or not opportunity_metadata.get("m76_2_2_current_decision_snapshot", False):
+            raise ValueError(
+                "Current M76.2 decision-intelligence snapshot is missing; refresh Institutional Options from the latest Stock Intelligence publication before handoff"
+            )
+        # M76.2.3: portfolio governance is a first-class handoff gate. A real
+        # portfolio REJECT or an implementation/context error cannot coexist with
+        # an operator-visible Trade Builder-ready state.
+        if decision is None:
+            raise ValueError(
+                "Institutional decision snapshot is missing; rebuild the current "
+                "Institutional Options and M64 authority before Trade Builder handoff"
+            )
+        if decision is not None:
+            decision_payload = dict(decision.payload_json or {})
+            portfolio_decision = dict(decision_payload.get("portfolio_decision") or {})
+            portfolio_governance = dict(decision_payload.get("portfolio_governance") or {})
+            portfolio_context = dict(decision_payload.get("portfolio_context") or {})
+            lifecycle = dict(portfolio_decision.get("lifecycle") or {})
+            identity = dict(portfolio_decision.get("decision_identity") or {})
+            publication = self.session.scalar(select(PortfolioIntelligencePublicationModel).where(
+                PortfolioIntelligencePublicationModel.portfolio_id == "PAPER-PRIMARY",
+                PortfolioIntelligencePublicationModel.publication_name == "current_portfolio_allocation",
+            ))
+            publication_payload = dict(publication.payload_json or {}) if publication else {}
+            if publication is None:
+                raise ValueError(
+                    "Authoritative current portfolio allocation is missing; run the current M64 authoritative cycle before Trade Builder handoff"
+                )
+            if (
+                lifecycle.get("status") != "CURRENT"
+                or lifecycle.get("source_stock_scanner_run_id") != opp.stock_scanner_run_id
+                or identity.get("risk_snapshot_id") != publication.risk_snapshot_id
+                or publication_payload.get("stock_scanner_run_id") != opp.stock_scanner_run_id
+            ):
+                raise ValueError(
+                    "Portfolio decision is not authoritative for the current Stock Intelligence and risk publication"
+                )
+            portfolio_decision_value = str(portfolio_decision.get("decision") or "").upper()
+            if not portfolio_decision_value:
+                raise ValueError("Portfolio-aware decision is missing; build current portfolio decision intelligence before Trade Builder handoff")
+            if portfolio_decision_value == "REJECT":
+                raise ValueError("Portfolio governance rejected this opportunity; rebuild portfolio decision intelligence before Trade Builder handoff")
+            if portfolio_decision_value not in {"ACCEPT", "REVIEW"}:
+                raise ValueError(f"Portfolio governance status {portfolio_decision_value} is not eligible for Trade Builder handoff")
+            optimizer_selection = dict(
+                portfolio_decision.get("optimizer_selection") or {}
+            )
+            if (
+                optimizer_selection.get("optimality_proven") is not True
+                or optimizer_selection.get("selected") is not True
+                or optimizer_selection.get("status")
+                != "SELECTED_GLOBAL_FEASIBLE"
+            ):
+                raise ValueError(
+                    "Portfolio optimizer did not select this opportunity in "
+                    "the proven global feasible subset; Trade Builder handoff "
+                    "is blocked"
+                )
+            # Legacy/lightweight portfolio_context diagnostics remain visible but do
+            # not override a current M64 portfolio decision. The portfolio_decision
+            # object is the authoritative handoff gate.
         thesis = self.session.scalar(select(OpportunityThesisModel).where(OpportunityThesisModel.opportunity_id == opportunity_id))
         comparison = self.session.scalar(select(StrategyComparisonModel).where(StrategyComparisonModel.opportunity_id == opportunity_id))
         selected_id = comparison.selected_strategy_candidate_id if comparison else None

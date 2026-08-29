@@ -1,0 +1,77 @@
+{
+  "version": "CYCLICAL-SEASONALITY-FROZEN-CANDIDATE-TARGETED-ROBUSTNESS-1.0",
+  "status": "READY",
+  "governance": {
+    "research_only": true,
+    "read_only_artifact_analysis": true,
+    "database_writes": false,
+    "database_migrations": false,
+    "production_authority_effect": false,
+    "production_model_mutation": false,
+    "production_threshold_change": false,
+    "production_weight_change": false,
+    "production_decision_change": false,
+    "automatic_shadow_activation": false,
+    "automatic_champion_promotion": false,
+    "certification_thresholds_relaxed": false,
+    "neighbor_candidate_search_prohibited": true
+  },
+  "lineage": {
+    "audit": "reports/cyclical_seasonality/cyclical_seasonality_candidate_refinement_stability_audit.json",
+    "audit_sha256": "aadc488fdb17f3d3553ba363d3cb55680cc5ef92f8d5d0e4d8354cdfc084fa44",
+    "predecessor": "reports/cyclical_seasonality/cyclical_seasonality_fold_native_shadow_certification.json",
+    "predecessor_sha256": "d3540853e529340ccb629691cae7f516ab137c8f643021d04f0c1e5f5afe65d8"
+  },
+  "frozen_candidate": {
+    "candidate_id": "STATE_PERSISTENCE::category_age_bucket::AGE_2_3::STRONG_BULLISH::20",
+    "factor_family": "STATE_PERSISTENCE",
+    "factor": "category_age_bucket",
+    "state": "AGE_2_3",
+    "direction": "STRONG_BULLISH",
+    "horizon": 20
+  },
+  "strict_existing_gate": {
+    "min_full_years": 2,
+    "min_matched_n_each_full_year": 100,
+    "min_coverage_pct_each_full_year": 80.0,
+    "min_matched_excess_pct_each_full_year": 0.25,
+    "max_fdr_q_each_full_year": 0.1,
+    "min_symbols": 300,
+    "max_top_10_symbol_share_pct": 15.0
+  },
+  "full_year_metrics": [
+    {
+      "year": 2024,
+      "matched_excess_pct": 0.6470475819367303,
+      "fdr_q": 0.11368236720484348,
+      "thesis_return_pct": 2.0232129171597633,
+      "coverage_pct": 99.90147783251231,
+      "matched_n": 1014
+    },
+    {
+      "year": 2025,
+      "matched_excess_pct": 0.8248202496711751,
+      "fdr_q": 0.08458279723913202,
+      "thesis_return_pct": 2.0888499034907597,
+      "coverage_pct": 99.8974358974359,
+      "matched_n": 974
+    }
+  ],
+  "strict_checks": {
+    "both_years_n_ge_100": true,
+    "both_years_coverage_ge_80": true,
+    "both_years_excess_ge_0_25": true,
+    "both_years_thesis_positive": true,
+    "both_years_q_le_0_10": false,
+    "symbol_breadth_ge_300": true,
+    "top10_symbol_share_le_15pct": true
+  },
+  "strict_historical_certified": false,
+  "observation_level_robustness": {
+    "available": false,
+    "reason": "PREDECESSOR_ARTIFACT_DOES_NOT_EXPOSE_OBSERVATION_LEVEL_VECTOR_FOR_FROZEN_CANDIDATE",
+    "certification_effect": false
+  },
+  "disposition": "HISTORICAL_ROBUSTNESS_CANDIDATE_FDR_ONLY_FAILURE_RETAIN_RESEARCH_ONLY",
+  "next_action": "DO_NOT_ACTIVATE_SHADOW_OR_PRODUCTION; accumulate genuinely new forward evidence unless strict historical q<=0.10 is satisfied in every required full-year fold."
+}

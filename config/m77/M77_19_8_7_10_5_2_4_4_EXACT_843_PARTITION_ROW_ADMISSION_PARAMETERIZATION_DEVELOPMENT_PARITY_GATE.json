@@ -1,0 +1,17 @@
+{
+  "milestone": "M77.19.8.7.10.5.2.4.4",
+  "parameterization_scope": "ACTIVE_PARTITION_START_END_LABEL_PLUS_EXISTING_INPUT_CARDINALITY",
+  "development_defaults": {
+    "start": "",
+    "end": "2017-12-31",
+    "label": "DEVELOPMENT",
+    "symbols": 524,
+    "rows": 303689
+  },
+  "feature_formula_change": false,
+  "development_parity_required": true,
+  "validation_targets_opened": false,
+  "validation_outcomes_opened": false,
+  "final_holdout_opened": false,
+  "production_authority_effect": false
+}

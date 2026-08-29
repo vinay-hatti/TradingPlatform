@@ -29,15 +29,24 @@ def moneyness_bucket(spot: float, strike: float, right: str) -> str:
     return 'DEEP_OTM'
 
 
-def contract_features(row, symbol: str, sector: str, spot: float) -> dict[str,Any]:
-    payload=dict(row.payload_json or {})
+def contract_features(
+    row,
+    symbol: str,
+    sector: str,
+    spot: float,
+    *,
+    payload_override: dict[str, Any] | None = None,
+) -> dict[str,Any]:
+    payload=dict(payload_override if payload_override is not None else (row.payload_json or {}))
     legs=extract_legs(payload)
     iv,_=weighted_leg_value(legs,'implied_volatility','iv')
-    if iv is None: iv=num(deep_get(payload,'implied_volatility','iv'))
-    dte=num(deep_get(payload,'dte','days_to_expiration'),45)
-    strike=num(deep_get(payload,'strike','strike_price'),spot)
-    right=str(deep_get(payload,'right','option_type',default='C')).upper()[:1]
-    strategy=str(deep_get(payload,'strategy_name','strategy_type','strategy',default='UNKNOWN')).upper()
+    if iv is None: iv=num(payload.get('implied_volatility') or payload.get('iv'))
+    leg_dtes=[num(leg.get('dte')) for leg in legs if num(leg.get('dte'))>0]
+    dte=min(leg_dtes) if leg_dtes else num(payload.get('dte') or payload.get('days_to_expiration'),45)
+    representative=next((leg for leg in legs if str(leg.get('side','BUY')).upper()=='BUY'),legs[0] if legs else {})
+    strike=num(representative.get('strike') or representative.get('strike_price'),spot)
+    right=str(representative.get('right') or representative.get('option_type') or 'C').upper()[:1]
+    strategy=str(payload.get('strategy') or payload.get('strategy_name') or payload.get('strategy_type') or 'UNKNOWN').upper()
     liquidity=num(getattr(row,'liquidity_score',None),50)
     return {
         'contract_recommendation_id':row.contract_recommendation_id,'symbol':symbol,'sector':sector or 'UNKNOWN',

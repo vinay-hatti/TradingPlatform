@@ -1,0 +1,13 @@
+{
+  "milestone": "M77.19.8.7.10.7.3.4",
+  "development_eligible_status": "MATURED",
+  "development_ineligible_statuses": [
+    "PURGED_PARTITION_OVERLAP",
+    "SYMBOL_TARGET_SESSION_MISSING"
+  ],
+  "zero_label_policy": "EXCLUDE_FROM_BINARY_DIRECTION_SCORING_WITHOUT_REMAPPING",
+  "validation_representation": "10.6_CERTIFIED_MATURED_ONLY_FLAT_TARGET_MATRIX",
+  "validation_scoring_performed": false,
+  "final_holdout_opened": false,
+  "production_authority_effect": false
+}

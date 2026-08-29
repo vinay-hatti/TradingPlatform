@@ -13,6 +13,7 @@ class OptionContractHistory(Base):
     option_symbol: Mapped[str] = mapped_column(String, index=True)
 
     quote_date: Mapped[Date] = mapped_column(Date, index=True)
+    quote_timestamp: Mapped[str | None] = mapped_column(String(64), index=True)
     expiry: Mapped[Date] = mapped_column(Date, index=True)
 
     option_type: Mapped[str] = mapped_column(String)  # CALL / PUT
@@ -33,3 +34,4 @@ class OptionContractHistory(Base):
     theta: Mapped[float] = mapped_column(Float, default=0.0)
     vega: Mapped[float] = mapped_column(Float, default=0.0)
     rho: Mapped[float] = mapped_column(Float, default=0.0)
+    source_underlying_price: Mapped[float | None] = mapped_column(Float)
